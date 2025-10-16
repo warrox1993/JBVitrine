@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./css/main.css";
 import PreloadRemover from "./PreloadRemover";
 import Script from "next/script";
+import HeaderBasic from "../components/HeaderBasic/HeaderBasic";
 
 export const metadata: Metadata = {
   title: "JB site vitrine",
@@ -30,7 +31,10 @@ export default function RootLayout({
         </section>
 
         {/* Wrapper */}
-        <div id="wrapper">{children}</div>
+        <div id="wrapper">
+          <HeaderBasic />
+          {children}
+        </div>
 
         {/* Footer (exact Hyperspace markup) */}
         <footer id="footer" className="wrapper style1-alt">

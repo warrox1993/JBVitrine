@@ -1,0 +1,41 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(10, 10, 20, 0.7);
+  backdrop-filter: saturate(140%) blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 1rem;
+}
+
+.brand {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.4px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
