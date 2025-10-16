@@ -5,6 +5,3 @@ import ViewUser from "@/containers/Users/ViewUser/ViewUser";
 export default function Page() {
   return <ViewUser />;
 }
-
-
-.
