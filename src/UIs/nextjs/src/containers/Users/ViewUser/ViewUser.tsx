@@ -424,6 +424,7 @@ const ViewUser = () => {
               title={user.userName}
               width={50}
               height={50}
+              loading="lazy"
             />
           </div>
         </div>

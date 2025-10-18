@@ -1,3 +1,6 @@
+
+@import url(fontawesome-all.min.css);
+
 /*
 	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
@@ -3817,7 +3820,7 @@ input, select, textarea {
 					-ms-flex-direction: row;
 					flex-direction: row;
 					-moz-align-items: -moz-stretch;
-					-webkit-align-items: -webkit-stretch;
+					-webkit-align-items: stretch;
 					-ms-align-items: -ms-stretch;
 					align-items: stretch;
 					height: inherit;

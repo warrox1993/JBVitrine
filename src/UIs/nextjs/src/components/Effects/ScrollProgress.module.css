@@ -1,0 +1,25 @@
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  z-index: 2147483646; /* ensure overlay on top of transformed/clipping sections */
+  pointer-events: none;
+  isolation: isolate;
+  contain: layout paint style;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2));
+  transform-origin: left;
+  transform: scaleX(var(--progress, 0));
+  transition: transform .08s linear;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progressFill { transition: none; }
+}

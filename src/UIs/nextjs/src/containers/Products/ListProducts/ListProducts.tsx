@@ -175,6 +175,7 @@ class ListProducts extends Component<any, any> {
               width={50}
               height={50}
               title={product.name}
+              loading="lazy"
               style={{ width: "50px", margin: "2px" }}
             />
           ) : null}

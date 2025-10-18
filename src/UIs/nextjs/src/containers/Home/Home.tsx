@@ -26,6 +26,7 @@ function Home() {
               className="img-responsive center-block"
               width={200}
               height={200}
+              loading="lazy"
               style={{ maxHeight: "300px", paddingBottom: "10px" }}
             />
           </div>
