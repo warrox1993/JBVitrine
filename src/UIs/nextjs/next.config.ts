@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
     // Allow production builds to complete even if there are type errors in legacy sections.
     ignoreBuildErrors: true,
   },
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
 };
 
 export default nextConfig;

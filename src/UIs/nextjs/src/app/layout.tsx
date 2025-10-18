@@ -1,16 +1,17 @@
 import './globals.css';
+import './elements.css';
+import './utilities.css';
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { Inter, Instrument_Sans } from 'next/font/google';
-import { SkipLink } from '@/components/effects/SkipLink';
-import { ScrollProgress } from '@/components/effects/ScrollProgress';
-import { CursorGlow } from '@/components/effects/CursorGlow';
+import FXReady from './FXReady';
+import { RootEffects } from '@/components/effects/RootEffects';
 import Sidebar from '@/components/Sidebar';
 import Header from '@/components/Header';
 import { organizationSchema, websiteSchema } from '@/lib/schema';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-base', display: 'swap', preload: true });
-const instrument = Instrument_Sans({ subsets: ['latin'], variable: '--font-display', display: 'swap', preload: true });
+const inter = Inter({ subsets: ['latin'], weight: ['400','700'], variable: '--font-base', display: 'swap', preload: true });
+const instrument = Instrument_Sans({ subsets: ['latin'], weight: ['400','700'], variable: '--font-display', display: 'swap', preload: true });
 
 export const metadata: Metadata = {
   title: 'YourBrand — Web Design Premium & Développement Next.js',
@@ -55,12 +56,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       </head>
       <body>
-        <SkipLink />
-        <ScrollProgress />
-        <CursorGlow />
-        <Sidebar />
-        <Header />
-        <main id="main">{children}</main>
+        <FXReady />
+        <RootEffects>
+          <Sidebar />
+          <Header />
+          <main id="main">{children}</main>
+        </RootEffects>
       </body>
     </html>
   );

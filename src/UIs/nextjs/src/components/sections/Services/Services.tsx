@@ -1,5 +1,5 @@
 "use client";
-import { Check } from "lucide-react";
+import { CheckIcon } from "@/components/icons/CheckIcon";
 import styles from "./Services.module.css";
 
 export function Services() {
@@ -59,7 +59,7 @@ export function Services() {
               <p className={styles.cardDesc}>{s.desc}</p>
               <ul className={styles.featureList}>
                 {s.features.map((f, j) => (
-                  <li key={j} className={styles.featureItem}><Check size={16} color="var(--color-accent-1)" />{f}</li>
+                  <li key={j} className={styles.featureItem}><CheckIcon />{f}</li>
                 ))}
               </ul>
               <div className={styles.price}>{s.price}</div>

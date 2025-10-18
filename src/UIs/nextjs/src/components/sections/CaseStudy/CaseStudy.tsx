@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
 import styles from "./CaseStudy.module.css";
 
 export function CaseStudy() {
@@ -18,10 +18,10 @@ export function CaseStudy() {
                 <div key={k.label}><div className={styles.kpiValue}>{k.value}</div><div className={styles.kpiLabel}>{k.label}</div></div>
               ))}
             </div>
-            <button className={styles.primary}>Voir le cas complet <ArrowRight size={20} /></button>
+            <button className={styles.primary}>Voir le cas complet <ArrowRightIcon /></button>
           </div>
           <div className={styles.visual}>
-            <div className={styles.panel} style={{ background: showAfter ? "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" : "linear-gradient(135deg, #434343 0%, #000000 100%)" } as any}>
+            <div className={`${styles.panel} ${showAfter ? styles.panelAfter : styles.panelBefore}`}>
               {showAfter ? "Après" : "Avant"}
             </div>
             <button className={styles.toggle} onClick={() => setShowAfter(v=>!v)}>{showAfter ? "← Voir Avant" : "Voir Après →"}</button>
@@ -31,4 +31,3 @@ export function CaseStudy() {
     </section>
   );
 }
-

@@ -1,7 +1,7 @@
 "use client";
 import { SkipLink } from "./SkipLink";
 import { ScrollProgress } from "./ScrollProgress";
-import { CursorGlow } from "./CursorGlow";
+import LazyCursorGlow from "./LazyCursorGlow";
 
 interface RootEffectsProps { children: React.ReactNode }
 
@@ -10,9 +10,8 @@ export function RootEffects({ children }: RootEffectsProps) {
     <>
       <SkipLink />
       <ScrollProgress />
-      <CursorGlow />
+      <LazyCursorGlow />
       {children}
     </>
   );
 }
-

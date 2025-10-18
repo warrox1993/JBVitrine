@@ -1,6 +1,6 @@
 "use client";
 import { useState, FormEvent } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
 import styles from "./CTA.module.css";
 
 export function CTA() {
@@ -70,7 +70,7 @@ export function CTA() {
               <input type="text" name="website" value={formState.honeypot} onChange={(e) => setFormState({ ...formState, honeypot: e.target.value })} className={styles.honeypot} tabIndex={-1} autoComplete="off" aria-hidden="true" />
               <button type="submit" disabled={isSubmitting} className={styles.submit} aria-label={isSubmitting ? "Envoi en cours..." : "Envoyer le message"}>
                 {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
-                <ArrowRight size={20} aria-hidden="true" />
+                <ArrowRightIcon aria-hidden="true" />
               </button>
               {errors.submit && (<div className={styles.errorText} role="alert">{errors.submit}</div>)}
             </form>
@@ -85,4 +85,3 @@ export function CTA() {
     </section>
   );
 }
-

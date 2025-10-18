@@ -1,8 +1,8 @@
- .skipLink {
+.skipLink {
   position: absolute;
   left: -9999px;
   top: 0;
-  z-index: 9999;
+  z-index: var(--z-overlay);
   padding: var(--space-3) var(--space-4);
   background: var(--color-accent-1);
   color: white;
@@ -15,7 +15,6 @@
 .skipLink:focus {
   left: var(--space-4);
   top: var(--space-4);
-  outline: 2px solid white;
+  outline: 2px solid color-mix(in oklab, var(--color-text-1), white 20%);
   outline-offset: 4px;
 }
-

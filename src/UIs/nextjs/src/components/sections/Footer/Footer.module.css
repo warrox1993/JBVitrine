@@ -9,6 +9,5 @@
 .bottom { padding-top: var(--space-5); border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4); }
 .legal { font-size: var(--text-sm); color: var(--color-text-3); }
 .socials { display: flex; gap: var(--space-4); }
-.social { width: 40px; height: 40px; border-radius: 50%; background: var(--color-surface); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-size: var(--text-xs); color: var(--color-text-2); text-decoration: none; transition: all 0.3s; }
+.social { width: 40px; height: 40px; border-radius: 50%; background: var(--color-surface); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-size: var(--text-xs); color: var(--color-text-2); text-decoration: none; transition: var(--transition-fast); }
 .social:hover { background: var(--color-accent-1); color: white; border-color: var(--color-accent-1); transform: translateY(-2px); }
-

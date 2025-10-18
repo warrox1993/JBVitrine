@@ -1,7 +1,7 @@
 "use client";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { Button } from "@/components/ui/Button/Button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
 import styles from "./Hero.module.css";
 
 const stats = [
@@ -36,7 +36,7 @@ export function Hero() {
           <div className={styles.actions}>
             <Button variant="primary" magnetic aria-label="View our projects">
               View Our Projects
-              <ArrowRight size={20} aria-hidden="true" />
+              <ArrowRightIcon aria-hidden="true" />
             </Button>
             <Button variant="secondary" aria-label="Let’s discuss your vision">
               Let’s Discuss Your Vision

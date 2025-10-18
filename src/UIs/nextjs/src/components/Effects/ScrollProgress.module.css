@@ -5,7 +5,7 @@
   right: 0;
   height: 3px;
   background: transparent;
-  z-index: 2147483646; /* ensure overlay on top of transformed/clipping sections */
+  z-index: var(--z-progress); /* ensure overlay on top of transformed/clipping sections */
   pointer-events: none;
   isolation: isolate;
   contain: layout paint style;

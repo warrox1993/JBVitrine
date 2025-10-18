@@ -13,6 +13,7 @@
     --color-text-3: hsl(250, 8%, 55%);
     --color-border: hsla(250, 20%, 30%, 0.3);
     --color-glow: hsla(280, 70%, 60%, 0.4);
+    --color-danger: hsl(0, 70%, 60%);
 
     /* Spacing */
     --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 1rem; --space-4: 1.5rem;
@@ -46,6 +47,29 @@
     --dur-1: 120ms; --dur-2: 180ms; --dur-3: 240ms;
     --transition-fast: all 0.25s ease;
     --transition-base: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Z-index scale */
+    --z-base: 1;
+    --z-header: 200;
+    --z-sidebar: 300;
+    --z-overlay: 1000;
+    --z-progress: 2147483646; /* overlay over everything */
+
+    /* Breakpoints */
+    --bp-sm: 600px;
+    --bp-md: 900px;
+    --bp-lg: 1200px;
+    --bp-xl: 1440px;
+
+    /* Sidebar tokens */
+    --sidebar-collapsed: 80px;
+    --sidebar-expanded: 240px;
+    --sidebar-shift: 160px; /* expanded - collapsed */
+
+    /* Component tokens */
+    --card-bg: var(--color-surface);
+    --card-border: var(--color-border);
 }
 
 /* Base */
@@ -53,7 +77,7 @@
 html, body { height: 100%; }
 body {
     margin: 0;
-    font-family: var(--font-base);
+    font-family: var(--font-base), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-size: var(--text-base);
     line-height: 1.55;
     color: var(--color-text-1);
@@ -63,8 +87,9 @@ body {
             var(--color-bg-1);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size-adjust: 0.5;
 }
-h1,h2,h3,h4 { font-family: var(--font-display); letter-spacing: -0.01em; margin: 0; }
+h1,h2,h3,h4 { font-family: var(--font-display), var(--font-base), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; letter-spacing: -0.01em; margin: 0; }
 a { color: var(--color-text-2); text-decoration: none; }
 a:hover { color: var(--color-text-1); text-decoration: underline; }
 ::selection { background: color-mix(in oklab, var(--color-accent-1), transparent 60%); }
@@ -145,15 +170,15 @@ a:hover { color: var(--color-text-1); text-decoration: underline; }
 /* Sidebar + Header (CSS-only hover behavior) */
 .sidebar {
   position: fixed; top: 0; left: 0; bottom: 0;
-  width: 80px;
+  width: var(--sidebar-collapsed);
   background: var(--color-bg-2);
   border-right: 1px solid var(--color-border);
   transition: width 0.3s cubic-bezier(.4, 0, .2, 1), background-color 0.2s ease;
   overflow: hidden;
-  z-index: 300;
+  z-index: var(--z-sidebar);
   will-change: width, transform;
 }
-.sidebar:hover { width: 240px; }
+.sidebar:hover { width: var(--sidebar-expanded); }
 
 .sidebar-brand { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4) var(--space-3); border-bottom: 1px solid var(--color-border); }
 .sidebar-icon { width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2)); display: grid; place-items: center; color: white; font-weight: 700; }
@@ -167,8 +192,8 @@ a:hover { color: var(--color-text-1); text-decoration: underline; }
 .sidebar-link-text { opacity: 0; transform: translateX(-8px); transition: all 0.2s; white-space: nowrap; }
 .sidebar:hover .sidebar-link-text { opacity: 1; transform: translateX(0); }
 
-header { position: sticky; top: 0; height: 64px; display: flex; align-items: center; gap: 24px; background: var(--color-bg-1); border-bottom: 1px solid var(--color-border); margin-left: 80px; transition: transform 0.3s cubic-bezier(.4, 0, .2, 1); z-index: 200; will-change: transform; }
-.sidebar:hover ~ header, body.sidebar-hovered header { transform: translateX(160px); }
+header { position: sticky; top: 0; height: 64px; display: flex; align-items: center; gap: 24px; background: var(--color-bg-1); border-bottom: 1px solid var(--color-border); margin-left: var(--sidebar-collapsed); transition: transform 0.3s cubic-bezier(.4, 0, .2, 1); z-index: var(--z-header); will-change: transform; }
+.sidebar:hover ~ header, body.sidebar-hovered header { transform: translateX(var(--sidebar-shift)); }
 
 .header-nav { display: flex; align-items: center; gap: 40px; margin-left: auto; padding-inline: var(--container-padding); }
 .header-link { color: var(--color-text-2); text-decoration: none; font-weight: 600; font-size: var(--text-sm); position: relative; transition: var(--transition-fast); }
@@ -181,8 +206,8 @@ header { position: sticky; top: 0; height: 64px; display: flex; align-items: cen
 .navbar-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; flex-shrink: 0; color: #fff; }
 .navbar-text { font-weight: 700; font-size: 20px; color: var(--color-text-1); white-space: nowrap; font-family: var(--font-display); }
 
-main { margin-left: 80px; transition: transform 0.3s cubic-bezier(.4, 0, .2, 1); will-change: transform; }
-.sidebar:hover ~ main, body.sidebar-hovered main { transform: translateX(160px); }
+main { margin-left: var(--sidebar-collapsed); transition: transform 0.3s cubic-bezier(.4, 0, .2, 1); will-change: transform; }
+.sidebar:hover ~ main, body.sidebar-hovered main { transform: translateX(var(--sidebar-shift)); }
 
 footer { margin-left: 0; }
 

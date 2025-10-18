@@ -1,7 +1,7 @@
  .section { padding: var(--space-7) 0; background: var(--color-bg-2); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
 .intro { text-align: center; font-size: var(--text-sm); color: var(--color-text-3); margin-bottom: var(--space-5); text-transform: uppercase; letter-spacing: 0.1em; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-5); align-items: center; justify-items: center; }
-.logo { padding: var(--space-4); font-size: var(--text-base); font-weight: 600; color: var(--color-text-3); transition: all 0.3s; cursor: pointer; opacity: .6; }
+.logo { padding: var(--space-4); font-size: var(--text-base); font-weight: 600; color: var(--color-text-3); transition: var(--transition-fast); cursor: pointer; opacity: .6; }
 .logo:hover { color: var(--color-accent-1); opacity: 1; transform: scale(1.05); }
 
 /* Autocarousel témoignages */

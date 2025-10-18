@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRight } from "lucide-react";
+import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
 import styles from "./Showreel.module.css";
 
 export function Showreel() {
@@ -25,7 +25,7 @@ export function Showreel() {
                 <div className={styles.tag}>{p.tag}</div>
                 <h3 className={styles.cardTitle}>{p.title}</h3>
               </div>
-              <div className={styles.hoverIcon}><ArrowRight color="white" size={20} /></div>
+              <div className={styles.hoverIcon}><ArrowRightIcon /></div>
             </div>
           ))}
         </div>

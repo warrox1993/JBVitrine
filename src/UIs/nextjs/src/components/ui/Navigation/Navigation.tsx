@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { MenuIcon } from "@/components/icons/MenuIcon";
+import { CloseIcon } from "@/components/icons/CloseIcon";
 import { NAVIGATION_ITEMS } from "@/lib/constants";
 import styles from "./Navigation.module.css";
 
@@ -66,7 +67,7 @@ export function Navigation() {
             aria-expanded={isOpen}
             aria-controls="nav-menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
 
           <ul id="nav-menu" className={`${styles.links} ${isOpen ? styles.open : ""}`} role="list">

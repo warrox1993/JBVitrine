@@ -1,40 +1,16 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Image from 'next/image';
 import styles from "./Proof.module.css";
 
 export function Proof() {
   const logos = ["Acme Corp", "TechStart", "Innovate", "DigitalFlow", "Nexus", "Quantum"];
   const testimonials = [
-    {
-      quote: "L’équipe a transformé notre vision en une expérience web exceptionnelle.",
-      name: "Sarah Laurent",
-      role: "CMO, TechStart",
-      avatar: "/images/testimonials/sarah.jpg",
-    },
-    {
-      quote: "Code propre, planning tenu, résultats mesurables dès le mois 1.",
-      name: "Marc Dubois",
-      role: "CTO, Innovate",
-      avatar: "/images/testimonials/marc.jpg",
-    },
-    {
-      quote: "UX orientée conversion. Notre CAC a baissé de 23%.",
-      name: "Aïcha Benali",
-      role: "Growth Lead, DigitalFlow",
-      avatar: "/images/testimonials/aicha.jpg",
-    },
-    {
-      quote: "Accompagnement clair, zéro surprise, perf Lighthouse au vert.",
-      name: "Lucas Peters",
-      role: "Founder, Nexus",
-      avatar: "/images/testimonials/lucas.jpg",
-    },
-    {
-      quote: "Refonte SEO + React: +61% de leads qualifiés en 90 jours.",
-      name: "Chloé Martin",
-      role: "Marketing Director, Quantum",
-      avatar: "/images/testimonials/chloe.jpg",
-    },
+    { quote: "L’équipe a transformé notre vision en une expérience web exceptionnelle.", name: "Sarah Laurent", role: "CMO, TechStart", avatar: "/images/pic01.webp" },
+    { quote: "Code propre, planning tenu, résultats mesurables dès le mois 1.", name: "Marc Dubois", role: "CTO, Innovate", avatar: "/images/pic02.webp" },
+    { quote: "UX orientée conversion. Notre CAC a baissé de 23%.", name: "Aïcha Benali", role: "Growth Lead, DigitalFlow", avatar: "/images/pic03.webp" },
+    { quote: "Accompagnement clair, zéro surprise, perf Lighthouse au vert.", name: "Lucas Peters", role: "Founder, Nexus", avatar: "/images/pic04.webp" },
+    { quote: "Refonte SEO + React: +61% de leads qualifiés en 90 jours.", name: "Chloé Martin", role: "Marketing Director, Quantum", avatar: "/images/pic05.webp" },
   ];
 
   const trackRef = useRef<HTMLDivElement | null>(null);
@@ -131,7 +107,7 @@ export function Proof() {
                 <blockquote className={styles.quote}>“{quote}”</blockquote>
                 <footer>
                   <div className={styles.proofPerson}>
-                    <img src={avatar} alt={name} className={styles.proofAvatar} />
+                    <Image src={avatar} alt={name} className={styles.proofAvatar as any} width={96} height={96} loading="lazy" fetchPriority="low" quality={80} />
                     <div>
                       <span className={styles.authorName}>{name}</span><br />
                       <span className={styles.authorRole}>{role}</span>
