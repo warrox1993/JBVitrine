@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
+import { Button } from "@/components/ui/Button/Button";
 import styles from "./CaseStudy.module.css";
 
 export function CaseStudy() {
@@ -18,13 +19,17 @@ export function CaseStudy() {
                 <div key={k.label}><div className={styles.kpiValue}>{k.value}</div><div className={styles.kpiLabel}>{k.label}</div></div>
               ))}
             </div>
-            <button className={`${styles.primary} btn-anim`}>Voir le cas complet <ArrowRightIcon /></button>
+            <Button variant="solid" size="md" className={styles.primary} trailingIcon={<ArrowRightIcon />}>
+              Voir le cas complet
+            </Button>
           </div>
           <div className={styles.visual}>
             <div className={`${styles.panel} ${showAfter ? styles.panelAfter : styles.panelBefore}`}>
               {showAfter ? "Après" : "Avant"}
             </div>
-            <button className={`${styles.toggle} btn-anim`} onClick={() => setShowAfter(v=>!v)}>{showAfter ? "← Voir Avant" : "Voir Après →"}</button>
+            <Button as="button" variant="ghost" size="sm" className={styles.toggle} onClick={() => setShowAfter(v=>!v)}>
+              {showAfter ? "← Voir Avant" : "Voir Après →"}
+            </Button>
           </div>
         </div>
       </div>

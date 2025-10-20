@@ -114,6 +114,24 @@
     --btn-bg-disabled: color-mix(in srgb, var(--color-accent-1) 30%, var(--color-bg) 70%);
     --btn-fg-disabled: color-mix(in srgb, white 60%, transparent);
     --btn-border-disabled: transparent;
+
+    /* Unified Button variants (solid/outline/ghost) mapped to existing tokens */
+    --btn-solid-bg: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2));
+    --btn-solid-fg: white;
+    --btn-solid-bg-hover: linear-gradient(135deg, var(--color-accent-2), var(--color-accent-1));
+    --btn-solid-bg-active: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2));
+
+    --btn-outline-fg: var(--color-accent-1);
+    --btn-outline-border: var(--color-accent-1);
+    --btn-outline-bg-hover: color-mix(in oklab, var(--color-accent-1), transparent 88%);
+
+    --btn-ghost-fg: var(--color-accent-1);
+    --btn-ghost-bg-hover: color-mix(in oklab, var(--color-accent-1), transparent 90%);
+
+    --btn-disabled-bg: color-mix(in oklab, var(--color-accent-1) 25%, var(--color-bg) 75%);
+    --btn-disabled-fg: color-mix(in oklab, var(--color-text-1) 60%, transparent);
+    --btn-anim-t: 180ms;
+    --btn-anim-ease: cubic-bezier(.2,.8,.2,1);
 }
 
 /* Base */

@@ -36,11 +36,10 @@ export function Hero() {
             Every pixel, every line of code, every decision is made to grow your brand’s digital impact.
           </p>
           <div className={styles.actions}>
-            <Button variant="primary" magnetic aria-label="View our projects">
+            <Button variant="solid" size="md" ariaLabel="View our projects" trailingIcon={<ArrowRightIcon aria-hidden="true" />}> 
               View Our Projects
-              <ArrowRightIcon aria-hidden="true" />
             </Button>
-            <Button variant="secondary" aria-label="Let’s discuss your vision">
+            <Button variant="outline" size="md" ariaLabel="Let’s discuss your vision">
               Let’s Discuss Your Vision
             </Button>
           </div>

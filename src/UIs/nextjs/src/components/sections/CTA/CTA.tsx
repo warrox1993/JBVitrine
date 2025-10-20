@@ -1,6 +1,7 @@
 "use client";
 import { useState, FormEvent } from "react";
 import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
+import { Button } from "@/components/ui/Button/Button";
 import styles from "./CTA.module.css";
 
 export function CTA() {
@@ -68,10 +69,18 @@ export function CTA() {
                 {errors.message && (<span id="message-error" className={styles.errorText} role="alert">{errors.message}</span>)}
               </div>
               <input type="text" name="website" value={formState.honeypot} onChange={(e) => setFormState({ ...formState, honeypot: e.target.value })} className={styles.honeypot} tabIndex={-1} autoComplete="off" aria-hidden="true" />
-              <button type="submit" disabled={isSubmitting} className={`${styles.submit} btn-anim`} aria-label={isSubmitting ? "Envoi en cours..." : "Envoyer le message"}>
+              <Button
+                as="button"
+                type="submit"
+                variant="solid"
+                size="md"
+                disabled={isSubmitting}
+                ariaLabel={isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
+                className={styles.submit}
+                trailingIcon={<ArrowRightIcon aria-hidden="true" />}
+              >
                 {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
-                <ArrowRightIcon aria-hidden="true" />
-              </button>
+              </Button>
               {errors.submit && (<div className={styles.errorText} role="alert">{errors.submit}</div>)}
             </form>
           )}
