@@ -1,0 +1,32 @@
+/* Global reusable button animations (no color changes) */
+
+/* Transitions and will-change matching the hero CTA behavior */
+.btn-anim {
+  transition:
+    transform var(--btn-anim-t, 0.4s) var(--btn-anim-ease, cubic-bezier(0.4, 0, 0.2, 1)),
+    box-shadow var(--btn-anim-t, 0.4s) var(--btn-anim-ease, cubic-bezier(0.4, 0, 0.2, 1)),
+    filter var(--btn-anim-t, 0.4s) var(--btn-anim-ease, cubic-bezier(0.4, 0, 0.2, 1)),
+    background-position var(--btn-anim-t, 0.4s) var(--btn-anim-ease, cubic-bezier(0.4, 0, 0.2, 1)),
+    opacity var(--btn-anim-t, 0.4s) var(--btn-anim-ease, cubic-bezier(0.4, 0, 0.2, 1));
+  will-change: transform, box-shadow, filter, background-position, opacity;
+}
+
+/* States: replicate hero CTA animated behavior without changing colors */
+.btn-anim:hover {
+  transform: translateY(-2px);
+}
+
+.btn-anim:active {
+  transform: scale(0.98);
+}
+
+.btn-anim:focus-visible {
+  outline: none;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn-anim { transition: none; }
+  .btn-anim:hover, .btn-anim:active { transform: none; }
+}
+

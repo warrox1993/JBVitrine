@@ -68,7 +68,7 @@ export function CTA() {
                 {errors.message && (<span id="message-error" className={styles.errorText} role="alert">{errors.message}</span>)}
               </div>
               <input type="text" name="website" value={formState.honeypot} onChange={(e) => setFormState({ ...formState, honeypot: e.target.value })} className={styles.honeypot} tabIndex={-1} autoComplete="off" aria-hidden="true" />
-              <button type="submit" disabled={isSubmitting} className={styles.submit} aria-label={isSubmitting ? "Envoi en cours..." : "Envoyer le message"}>
+              <button type="submit" disabled={isSubmitting} className={`${styles.submit} btn-anim`} aria-label={isSubmitting ? "Envoi en cours..." : "Envoyer le message"}>
                 {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
                 <ArrowRightIcon aria-hidden="true" />
               </button>

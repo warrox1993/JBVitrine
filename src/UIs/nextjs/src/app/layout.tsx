@@ -1,6 +1,7 @@
 import './globals.css';
 import './elements.css';
 import './utilities.css';
+import '../styles/buttons.animations.css';
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { Inter, Instrument_Sans } from 'next/font/google';

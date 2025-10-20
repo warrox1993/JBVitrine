@@ -94,6 +94,26 @@
     /* Component tokens */
     --card-bg: var(--color-surface);
     --card-border: var(--color-border);
+
+    /* Button color variables (unified via CaseStudy primary) */
+    --btn-bg: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2));
+    --btn-fg: white;
+    --btn-border: transparent;
+    --btn-shadow: var(--shadow-glow);
+
+    --btn-bg-hover: linear-gradient(135deg, var(--color-accent-2), var(--color-accent-1));
+    --btn-fg-hover: white;
+    --btn-border-hover: transparent;
+
+    --btn-bg-active: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2));
+    --btn-fg-active: white;
+    --btn-border-active: transparent;
+
+    --btn-focus-ring: 0 0 0 3px color-mix(in srgb, var(--color-accent-1) 40%, transparent);
+
+    --btn-bg-disabled: color-mix(in srgb, var(--color-accent-1) 30%, var(--color-bg) 70%);
+    --btn-fg-disabled: color-mix(in srgb, white 60%, transparent);
+    --btn-border-disabled: transparent;
 }
 
 /* Base */

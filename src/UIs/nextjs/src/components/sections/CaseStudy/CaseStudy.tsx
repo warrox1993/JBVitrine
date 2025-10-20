@@ -18,13 +18,13 @@ export function CaseStudy() {
                 <div key={k.label}><div className={styles.kpiValue}>{k.value}</div><div className={styles.kpiLabel}>{k.label}</div></div>
               ))}
             </div>
-            <button className={styles.primary}>Voir le cas complet <ArrowRightIcon /></button>
+            <button className={`${styles.primary} btn-anim`}>Voir le cas complet <ArrowRightIcon /></button>
           </div>
           <div className={styles.visual}>
             <div className={`${styles.panel} ${showAfter ? styles.panelAfter : styles.panelBefore}`}>
               {showAfter ? "Après" : "Avant"}
             </div>
-            <button className={styles.toggle} onClick={() => setShowAfter(v=>!v)}>{showAfter ? "← Voir Avant" : "Voir Après →"}</button>
+            <button className={`${styles.toggle} btn-anim`} onClick={() => setShowAfter(v=>!v)}>{showAfter ? "← Voir Avant" : "Voir Après →"}</button>
           </div>
         </div>
       </div>

@@ -24,7 +24,7 @@ export function Button({
   return (
     <button
       ref={magneticRef}
-      className={`${styles.button} ${styles[variant]} ${className || ""}`}
+      className={`${styles.button} ${styles[variant]} btn-anim ${className || ""}`}
       {...props}
     >
       {children}
