@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import styles from "./Footer.module.css";
 import FooterSocial from "./FooterSocial";
 
@@ -7,9 +8,15 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.grid}>
-          <div>
-            <div className={styles.brand}>YourBrand</div>
-            <p className={styles.brandText}>Excellence digitale depuis 2015</p>
+          <div className={styles.logoCell}>
+            <Image
+              src="/images/logofooter/LogoFoot.webp"
+              alt="Smidjan footer logo"
+              width={300}
+              height={300}
+              unoptimized
+              className={styles.logoFooter}
+            />
           </div>
           <div>
             <h4 className={styles.heading}>Navigation</h4>
@@ -33,7 +40,7 @@ export function Footer() {
           </div>
         </div>
         <div className={styles.bottom}>
-          <p className={styles.legal}>© 2025 YourBrand. Tous droits réservés.</p>
+          <p className={styles.legal}>© 2025 SMIDJAN. Tous droits réservés.</p>
           <FooterSocial />
         </div>
       </div>

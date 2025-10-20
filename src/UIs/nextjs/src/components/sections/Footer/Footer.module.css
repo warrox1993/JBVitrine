@@ -1,8 +1,6 @@
  .footer { padding: var(--space-7) 0 var(--space-5); background: var(--color-bg-2); border-top: 1px solid var(--color-border); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-6); }
-.brand { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; background: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-3); }
-.brandText { font-size: var(--text-sm); color: var(--color-text-3); line-height: 1.6; }
-.heading { font-size: var(--text-sm); font-weight: 600; color: var(--color-text-1); margin-bottom: var(--space-3); }
+ .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-6); align-items: center; }
+ .heading { font-size: var(--text-sm); font-weight: 600; color: var(--color-text-1); margin-bottom: var(--space-3); }
 .nav { list-style: none; padding: 0; margin: 0; }
 .nav a { font-size: var(--text-sm); color: var(--color-text-3); text-decoration: none; transition: color 0.2s; }
 .nav a:hover { color: var(--color-accent-1); }
@@ -11,3 +9,20 @@
 .socials { display: flex; gap: var(--space-4); }
 .social { width: 40px; height: 40px; border-radius: 50%; background: var(--color-surface); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-size: var(--text-xs); color: var(--color-text-2); text-decoration: none; transition: var(--transition-fast); }
 .social:hover { background: var(--color-accent-1); color: white; border-color: var(--color-accent-1); transform: translateY(-2px); }
+/* Dedicated cell wrapper for the logo */
+.logoCell { display: flex; align-items: center; justify-content: flex-start; line-height: 0; }
+
+/* Footer logo: block-level, centered vertically in its cell, no stretch */
+.logoFooter {
+  display: block;
+  width: 300px;
+  height: 300px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  max-width: none;
+  max-height: none;
+  image-rendering: crisp-edges;
+  -webkit-user-drag: none;
+  user-select: none;
+  transform: none;
+}

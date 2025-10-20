@@ -1,0 +1,9 @@
+/* Header logo: preserve 1:1 ratio, prevent stretch */
+.logoHeader {
+  width: auto;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  max-width: none;
+  max-height: none;
+}

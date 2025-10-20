@@ -1,15 +1,30 @@
-"use client";
+﻿"use client";
 
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./Header.module.css";
 import { sections } from "@/config/nav";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 
 export default function Header() {
   return (
     <header>
-      <div className="navbar-brand" aria-label="Identité de la marque">
-        <div className="navbar-icon" aria-hidden="true">V</div>
-        <span className="navbar-text">VotreBrand</span>
+      {/* Left: Logo + Brand */}
+      <div className="left cluster">
+        <Link href="/" aria-label="Go to homepage" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+          <Image
+            src="/images/logoheader/LogoHead.webp"
+            alt="Smidjan logo"
+            width={72}
+            height={72}
+            priority
+            className={styles.logoHeader}
+          />
+          <div data-testid="brand-name">Smidjan</div>
+        </Link>
       </div>
+
+      {/* Right: existing nav remains unchanged */}
       <nav className="header-nav" aria-label="Navigation principale (haut)">
         {(() => {
           const items = sections.filter(s => s.id !== 'hero');
@@ -22,6 +37,3 @@ export default function Header() {
     </header>
   );
 }
-
-
-
