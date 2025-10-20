@@ -1,4 +1,4 @@
- .section { padding: var(--space-8) 0; position: relative; }
+ .section { padding: var(--space-8) 0; position: relative; background: var(--color-bg); isolation: isolate; }
 /* Nudge up by 5px to avoid overlap */
 .showreelModule { transform: translateY(-5px); }
 .intro { max-width: 600px; margin-bottom: var(--space-7); }

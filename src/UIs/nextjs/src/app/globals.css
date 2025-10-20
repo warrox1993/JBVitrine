@@ -105,13 +105,26 @@ body {
     font-size: var(--text-base);
     line-height: 1.55;
     color: var(--color-text-1);
-    background:
-            radial-gradient(1200px 800px at 20% -10%, var(--color-bg-alt), transparent 60%),
-            radial-gradient(1000px 600px at 120% 10%, var(--color-surface), transparent 55%),
-            var(--color-bg);
+    /* Single source of truth for background */
+    background-color: var(--color-bg);
+    /* Fallback gradient without color-mix (older engines) */
+    background-image:
+      radial-gradient(1600px 1400px at 15% 20%, rgba(255,106,0,0.10), transparent),
+      radial-gradient(1800px 1600px at 85% 80%, rgba(255,196,58,0.08), transparent);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-blend-mode: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size-adjust: 0.5;
+}
+/* Progressive enhancement: soften gradient using color-mix when supported */
+@supports (color: color-mix(in srgb, white, black)) {
+  body {
+    background-image:
+      radial-gradient(1600px 1400px at 15% 20%, color-mix(in srgb, var(--color-primary) 10%, transparent)),
+      radial-gradient(1800px 1600px at 85% 80%, color-mix(in srgb, var(--color-secondary) 8%, transparent));
+  }
 }
 h1,h2,h3,h4 { font-family: var(--font-display), var(--font-base), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; letter-spacing: -0.01em; margin: 0; }
 a { color: var(--color-accent); text-decoration: none; }
@@ -274,6 +287,8 @@ footer { margin-left: 0; }
 .services-grid > .service-auto { order: 3; }
 
 /* Noise Overlay */
+/* Component-specific noise overlay retained
+   (Global anti-banding lives on body::before below) */
 .noise-overlay::after {
   content: '';
   position: absolute;
@@ -281,6 +296,19 @@ footer { margin-left: 0; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 2;
+}
+
+/* Global anti-banding noise overlay (very subtle) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("/images/noise-2pct.png");
+  background-repeat: repeat;
+  opacity: 0.025; /* 2.5% */
+  mix-blend-mode: normal;
+  z-index: 0;
 }
 
 /* Animations */

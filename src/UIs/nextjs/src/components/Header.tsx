@@ -14,13 +14,13 @@ export default function Header() {
         <Link href="/" aria-label="Go to homepage" className={styles.headerLogo}>
           <Image
             src="/images/logoheader/LogoHead.webp"
-            alt="Smidjan logo"
+            alt="SMIDJAN logo"
             width={72}
             height={72}
             priority
             className={styles.logoHeader}
           />
-          <div data-testid="brand-name" className={styles.brand}>Smidjan</div>
+          <div data-testid="brand-name" className={styles.brand}>SMIDJAN</div>
         </Link>
       </div>
 
