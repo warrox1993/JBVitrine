@@ -1,0 +1,5 @@
+/* Minimal hard fallback CSS to avoid white page if globals fail to load */
+:root { --fallback-bg: #0F0E15; --fallback-text: #F2F4F6; --fallback-link: #FF7A1A; }
+html, body { margin:0; padding:0; background: var(--fallback-bg); color: var(--fallback-text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; min-height:100%; }
+a { color: var(--fallback-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
