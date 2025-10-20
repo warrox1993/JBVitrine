@@ -1,11 +1,13 @@
-/* Header logo: preserve 1:1 ratio, prevent stretch */
+/* Header logo: preserve 1:1 ratio, scale with header */
 .logoHeader {
   width: auto;
-  height: auto;
+  height: clamp(99px, 12.35vh, 148px);
+  max-height: calc(var(--header-height) - 16px);
   aspect-ratio: 1 / 1;
   object-fit: contain;
   max-width: none;
-  max-height: none;
+  display: block;
+  /* No blending needed; asset has alpha */
 }
 
 /* Align flame icon + brand text; ensures stable baseline */

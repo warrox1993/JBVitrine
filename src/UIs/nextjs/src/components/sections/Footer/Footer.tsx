@@ -10,7 +10,7 @@ export function Footer() {
         <div className={styles.grid}>
           <div className={styles.logoCell}>
             <Image
-              src="/images/logofooter/LogoFoot.webp"
+              src="/images/logofooter/LogoFooter-removebg-preview.webp"
               alt="Smidjan footer logo"
               width={300}
               height={300}
@@ -47,3 +47,5 @@ export function Footer() {
     </footer>
   );
 }
+
+

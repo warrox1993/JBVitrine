@@ -13,10 +13,10 @@ export default function Header() {
       <div className="left cluster">
         <Link href="/" aria-label="Go to homepage" className={styles.headerLogo}>
           <Image
-            src="/images/logoheader/LogoHead.webp"
+            src="/images/logoheader/LogoHeader-removebg-preview.webp"
             alt="SMIDJAN logo"
-            width={72}
-            height={72}
+            width={256}
+            height={256}
             priority
             className={styles.logoHeader}
           />
