@@ -44,7 +44,7 @@ export const viewport: Viewport = { themeColor: '#000000' };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr" className={`${inter.variable} ${instrument.variable}`}>
+    <html lang="fr">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -55,7 +55,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       </head>
-      <body>
+      {/* Apply next/font variables on <body> so CSS vars resolve globally */}
+      <body className={`${inter.variable} ${instrument.variable}`}>
         <FXReady />
         <RootEffects>
           <Sidebar />

@@ -24,8 +24,17 @@ li { margin: 0 0 var(--space-2) 0; }
 
 /* Links */
 a { color: var(--color-accent); text-decoration: none; transition: color var(--dur-2) var(--ease-standard); }
-a:hover { color: color-mix(in oklab, var(--color-accent), var(--color-primary) 10%); text-decoration: underline; }
-a:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-accent), transparent 70%); border-radius: var(--radius-sm); }
+/* Fallback hover */
+a:hover { color: var(--color-accent); text-decoration: underline; }
+/* Progressive enhancement */
+@supports (color: color-mix(in oklab, white, black)) {
+  a:hover { color: color-mix(in oklab, var(--color-accent), var(--color-primary) 10%); }
+}
+/* Fallback focus ring */
+a:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--color-accent); border-radius: var(--radius-sm); }
+@supports (color: color-mix(in oklab, white, black)) {
+  a:focus-visible { box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-accent), transparent 70%); }
+}
 
 /* Media */
 img, video { max-width: 100%; height: auto; display: block; }
@@ -41,7 +50,11 @@ tbody tr:hover { background: color-mix(in oklab, var(--color-bg-3), transparent 
 /* Forms */
 label { display: inline-block; margin-bottom: var(--space-1); color: var(--color-text-2); }
 input, textarea, select { width: 100%; padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text-1); transition: border-color var(--dur-2) var(--ease-standard), background var(--dur-2) var(--ease-standard); }
-input:focus-visible, textarea:focus-visible, select:focus-visible { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-accent), transparent 80%); }
+/* Inputs focus fallback */
+input:focus-visible, textarea:focus-visible, select:focus-visible { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px var(--color-accent); }
+@supports (color: color-mix(in oklab, white, black)) {
+  input:focus-visible, textarea:focus-visible, select:focus-visible { box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-accent), transparent 80%); }
+}
 input[disabled], textarea[disabled], select[disabled] { opacity: .6; cursor: not-allowed; }
 
 button, input[type="button"], input[type="submit"], input[type="reset"] { cursor: pointer; border: none; background: none; color: inherit; font: inherit; }

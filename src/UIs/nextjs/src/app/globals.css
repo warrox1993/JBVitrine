@@ -15,6 +15,13 @@
     --color-accent: #3A85FF;        /* Steel Blue (sparing) */
     --color-danger: #E5484D;
 
+    /* Fonts — fallback stacks; next/font overrides via CSS variables on <body> */
+    /* Keep as pure font-family stacks; no weights here. */
+    --font-base: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-display: 'Instrument Sans', Inter, ui-sans-serif, system-ui, -apple-system,
+                    BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
     /* Legacy/compat mappings */
     --color-bg-1: var(--color-bg);
     --color-bg-2: var(--color-bg-alt);
@@ -108,8 +115,15 @@ body {
 }
 h1,h2,h3,h4 { font-family: var(--font-display), var(--font-base), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; letter-spacing: -0.01em; margin: 0; }
 a { color: var(--color-accent); text-decoration: none; }
-a:hover { color: color-mix(in oklab, var(--color-accent), var(--color-primary) 10%); text-decoration: underline; }
-::selection { background: color-mix(in oklab, var(--color-accent), transparent 60%); }
+/* Fallback hover (always parses). Guard color-mix below. */
+a:hover { color: var(--color-accent); text-decoration: underline; }
+/* Progressive enhancement — guard experimental color-mix */
+@supports (color: color-mix(in oklab, white, black)) {
+  a:hover { color: color-mix(in oklab, var(--color-accent), var(--color-primary) 10%); }
+}
+/* Selection fallback; guarded enhancement provided below if needed */
+::selection { background: var(--color-accent); color: white; }
+::-moz-selection { background: var(--color-accent); color:white; }
 
 .container { max-width: var(--container-max); margin: 0 auto; padding-inline: var(--container-padding); }
 .surface {
@@ -126,7 +140,10 @@ a:hover { color: color-mix(in oklab, var(--color-accent), var(--color-primary) 1
     box-shadow: var(--shadow-md);
 }
 
-:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-accent), transparent 70%); }
+:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--color-accent); }
+@supports (color: color-mix(in oklab, white, black)) {
+  :focus-visible { box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-accent), transparent 70%); }
+}
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 
 /* Light mode support */
@@ -158,12 +175,23 @@ a:hover { color: color-mix(in oklab, var(--color-accent), var(--color-primary) 1
 
 /* Utilities */
 .sr-only { position: absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip: rect(0,0,0,0); white-space:nowrap; border-width:0; }
+.not-sr-only { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; white-space: normal; border-width: initial; }
 .glass-strong { background: hsla(250, 20%, 20%, 0.8); backdrop-filter: blur(30px) saturate(200%); -webkit-backdrop-filter: blur(30px) saturate(200%); border: 1px solid var(--color-border-hover); }
 .gradient-text { background: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .gradient-border { position: relative; border: 1px solid transparent; background-clip: padding-box; }
 .gradient-border::before { content:''; position:absolute; inset:0; border-radius:inherit; padding:1px; background: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events:none; }
-.section { content-visibility: auto; contain-intrinsic-size: auto 500px; }
-.gpu-accelerated { transform: translateZ(0); will-change: transform; backface-visibility: hidden; perspective: 1000px; }
+.section { /* fallback: render normally where unsupported */ }
+/* Guard content-visibility for cross-browser stability; avoid CLS */
+@supports (content-visibility: auto) {
+  .section {
+    content-visibility: auto;
+    contain-intrinsic-size: 700px; /* tune per section type via QA */
+  }
+}
+/* Safer GPU hint: opt-in, no heavy 3D hacks by default to prevent text blur */
+.gpu-accelerated { will-change: transform; backface-visibility: hidden; }
+/* Optional stronger 3D utility for media-heavy components only */
+.gpu-accelerated-3d { transform: translateZ(0); perspective: 1000px; backface-visibility: hidden; }
 .mobile-hidden { display:none !important; }
 @media (min-width: 769px){ .desktop-hidden { display:none !important; } .mobile-hidden { display: initial !important; } }
 
@@ -182,9 +210,7 @@ a:hover { color: color-mix(in oklab, var(--color-accent), var(--color-primary) 1
 ::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
 * { scrollbar-width: thin; scrollbar-color: var(--color-surface) var(--color-bg-2); }
 
-/* Selection */
-::selection { background: var(--color-accent); color: white; }
-::-moz-selection { background: var(--color-accent); color:white; }
+/* Selection (fallback already above) */
 
 /* Skeleton */
 @keyframes skeleton-loading { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }

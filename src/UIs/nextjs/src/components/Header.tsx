@@ -11,7 +11,7 @@ export default function Header() {
     <header>
       {/* Left: Logo + Brand */}
       <div className="left cluster">
-        <Link href="/" aria-label="Go to homepage" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+        <Link href="/" aria-label="Go to homepage" className={styles.headerLogo}>
           <Image
             src="/images/logoheader/LogoHead.webp"
             alt="Smidjan logo"
@@ -20,7 +20,7 @@ export default function Header() {
             priority
             className={styles.logoHeader}
           />
-          <div data-testid="brand-name">Smidjan</div>
+          <div data-testid="brand-name" className={styles.brand}>Smidjan</div>
         </Link>
       </div>
 

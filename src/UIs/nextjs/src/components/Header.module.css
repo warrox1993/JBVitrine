@@ -7,3 +7,44 @@
   max-width: none;
   max-height: none;
 }
+
+/* Align flame icon + brand text; ensures stable baseline */
+.headerLogo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none; /* ensure no underline on the anchor */
+  color: inherit;        /* avoid global link hover accent color */
+}
+
+/* Remove underline/blue line on hover/focus explicitly */
+.headerLogo:hover,
+.headerLogo:focus-visible {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+/* Brand name visibility fix */
+.brand {
+  font-family: var(--font-display), var(--font-base);
+  font-weight: 700;             /* Strong visual anchor */
+  font-size: 1.25rem;           /* Slightly larger than nav links */
+  color: var(--color-text);     /* Neutral light, not link accent */
+  text-decoration: none;        /* Remove underline */
+  letter-spacing: 0.02em;       /* Subtle presence */
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Hover/focus — copper tint; keep subtle */
+.brand:hover,
+.headerLogo:hover .brand,
+.headerLogo:focus-visible .brand {
+  color: var(--color-primary);  /* Copper accent (#FF6A00) */
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+/* Optional fine-tuning for mobile */
+@media (max-width: 768px) {
+  .brand { font-size: 1.1rem; }
+}
