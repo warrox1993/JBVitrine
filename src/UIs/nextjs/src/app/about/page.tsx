@@ -3,7 +3,7 @@ import HeroAbout from '@/components/about/HeroAbout';
 import Mission from '@/components/about/Mission';
 import ValuesCards from '@/components/about/ValuesCards';
 import Timeline from './Timeline';
-import Team from '@/components/about/Team';
+import Team from './Team';
 import ProcessMini from '@/components/about/ProcessMini';
 // Removed per AboutFix5: Proof/Testimonials, FAQ, Contact CTA on About page
 import { Footer } from '@/components/sections/Footer/Footer';

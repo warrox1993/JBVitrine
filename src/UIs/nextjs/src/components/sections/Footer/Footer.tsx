@@ -71,7 +71,7 @@ export function Footer() {
               </a>
             </li>
             <li className={styles.legal}>
-              Réponse sous 24h — 98% de satisfaction
+              Réponse sous 24h
             </li>
           </ul>
         </div>
