@@ -3,15 +3,16 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev --turbopack",
+        "dev": "next dev -p 3000 --turbopack",
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
         "postbuild": "next-sitemap",
         "perf:build": "next build",
         "perf:start": "next start",
-        "perf:lh:desktop": "npx lighthouse http://localhost:3000 --output html --output json --output-path reports/performance/lh-desktop --chrome-flags=\"--headless=new\" --throttling-method=devtools --form-factor=desktop --screenEmulation.mobile=false",
-        "perf:lh:mobile": "npx lighthouse http://localhost:3000 --output html --output json --output-path reports/performance/lh-mobile --chrome-flags=\"--headless=new\" --throttling-method=devtools --form-factor=mobile --screenEmulation.mobile=true",
+        "perf:lh:desktop": "npx lighthouse http://localhost:3000/ --output html --output json --output-path reports/performance/lh-desktop --chrome-flags=\"--headless=new\" --throttling-method=devtools --form-factor=desktop --screenEmulation.mobile=false",
+        "perf:lh:mobile": "npx lighthouse http://localhost:3000/ --output html --output json --output-path reports/performance/lh-mobile --chrome-flags=\"--headless=new\" --throttling-method=devtools --form-factor=mobile --screenEmulation.mobile=true",
+        "open": "powershell -NoProfile -Command \"start '' 'http://localhost:3000/'\"",
         "perf:all": "npm run perf:build && start cmd /c \"npm run perf:start\" && timeout 5 && npm run perf:lh:desktop && npm run perf:lh:mobile"
     },
     "dependencies": {
@@ -24,7 +25,8 @@
         "react-bootstrap": "^2.10.7",
         "react-datepicker": "^7.6.0",
         "react-dom": "^19.0.0",
-        "react-toastify": "^11.0.2"
+        "react-toastify": "^11.0.2",
+        "swiper": "^12.0.2"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",

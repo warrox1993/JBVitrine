@@ -78,7 +78,37 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - ClassifiedAds.WebMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row">
+                <section class="col-md-6" aria-labelledby="footer-contact-heading">
+                    <h5 id="footer-contact-heading" class="text-dark">Contact</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a
+                                href="mailto:jeanbaptiste.dhondt1@gmail.com"
+                                class="text-muted"
+                                aria-label="Envoyer un e-mail à Jean-Baptiste Dhondt"
+                            >
+                                jeanbaptiste.dhondt1@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="tel:+32475205562"
+                                class="text-muted"
+                                aria-label="Appeler le numéro de téléphone"
+                            >
+                                +32 475205562
+                            </a>
+                        </li>
+                        <li class="text-muted">
+                            Réponse sous 24h — 98% de satisfaction
+                        </li>
+                    </ul>
+                </section>
+                <div class="col-md-6 text-md-right mt-3 mt-md-0">
+                    &copy; 2020 - ClassifiedAds.WebMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </div>
         </div>
     </footer>
     <environment include="Development">

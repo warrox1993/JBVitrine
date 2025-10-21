@@ -42,6 +42,9 @@ export function Hero() {
             <Button variant="outline" size="md" ariaLabel="Let’s discuss your vision">
               Let’s Discuss Your Vision
             </Button>
+            <Button as="a" href="/about" variant="ghost" size="md" ariaLabel="En savoir plus sur nous">
+              En savoir plus sur nous
+            </Button>
           </div>
           {showStats ? (
             <ul className={styles.stats} role="list" aria-label="Key stats">

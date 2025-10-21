@@ -1,5 +1,6 @@
 "use client";
 import { CheckIcon } from "@/components/icons/CheckIcon";
+import { Heading } from "@/components/ui/Heading";
 import styles from "./Services.module.css";
 
 export function Services() {
@@ -43,7 +44,7 @@ export function Services() {
     <section id="services" className={styles.section}>
       <div className="container">
         <div className={styles.header}>
-          <h2 className={styles.title}>Services Excellence</h2>
+          <Heading as="h2" accent className={styles.title}>Services Excellence</Heading>
           <p className={styles.desc}>Tailored digital solutions designed to elevate your brand, secure your infrastructure, and automate your growth.</p>
         </div>
         <div className={`${styles.grid} services-grid`}>

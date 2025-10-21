@@ -84,11 +84,7 @@ export function CTA() {
               {errors.submit && (<div className={styles.errorText} role="alert">{errors.submit}</div>)}
             </form>
           )}
-          <div className={styles.contactInfo}>
-            <div className={styles.infoItem}><span className={styles.infoLabel}>Email</span><a href="mailto:contact@yourbrand.com" className={styles.infoLink}>contact@yourbrand.com</a></div>
-            <div className={styles.infoItem}><span className={styles.infoLabel}>Téléphone</span><a href="tel:+33123456789" className={styles.infoLink}>+33 1 23 45 67 89</a></div>
-            <div className={styles.infoItem}><span className={styles.infoLabel}>Réponse sous 24h — 98% de satisfaction</span></div>
-          </div>
+          {/* Contact info removed to avoid redundancy with global Footer */}
         </div>
       </div>
     </section>

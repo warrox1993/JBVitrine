@@ -7,7 +7,8 @@ import type { ReactNode } from 'react';
 import { Inter, Instrument_Sans } from 'next/font/google';
 import FXReady from './FXReady';
 import { RootEffects } from '@/components/effects/RootEffects';
-import Sidebar from '@/components/Sidebar';
+import RouteProgressProvider from '@/app/RouteProgressProvider';
+import SidebarRouterBridge from '@/components/SidebarRouterBridge';
 import Header from '@/components/Header';
 import { organizationSchema, websiteSchema } from '@/lib/schema';
 
@@ -60,7 +61,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={`${inter.variable} ${instrument.variable}`}>
         <FXReady />
         <RootEffects>
-          <Sidebar />
+          <RouteProgressProvider />
+          <SidebarRouterBridge />
           <Header />
           <main id="main">{children}</main>
         </RootEffects>

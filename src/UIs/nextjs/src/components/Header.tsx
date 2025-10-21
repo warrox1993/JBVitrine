@@ -5,8 +5,10 @@ import Image from "next/image";
 import styles from "./Header.module.css";
 import { sections } from "@/config/nav";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
   return (
     <header>
       {/* Left: Logo + Brand */}
@@ -29,9 +31,19 @@ export default function Header() {
         {(() => {
           const items = sections.filter(s => s.id !== 'hero');
           const activeId = useScrollSpy(sections.map(x => x.id), 120);
-          return items.map(s => (
-            <a key={s.id} href={s.href} className="header-link" aria-current={activeId === s.id ? 'page' : undefined}>{s.label}</a>
-          ));
+          return items.map(s => {
+            const isActive = s.id === 'about' ? (pathname?.startsWith('/about')) : (activeId === s.id);
+            return (
+              <a
+                key={s.id}
+                href={s.href}
+                className="header-link"
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {s.label}
+              </a>
+            );
+          });
         })()}
       </nav>
     </header>

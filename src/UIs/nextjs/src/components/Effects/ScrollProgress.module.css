@@ -3,19 +3,19 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: transparent;
-  z-index: var(--z-progress); /* ensure overlay on top of transformed/clipping sections */
+  height: var(--progress-height);
+  background: var(--progress-bg);
+  z-index: var(--z-progress); /* overlay above header/sidebar */
   pointer-events: none;
-  isolation: isolate;
-  contain: layout paint style;
+  opacity: 0; /* hidden by default; shown only on scroll/route */
+  transition: opacity .12s linear;
 }
 
 .progressFill {
   height: 100%;
-  background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2));
+  background: var(--progress-color);
   transform-origin: left;
-  transform: scaleX(var(--progress, 0));
+  transform: scaleX(max(var(--scroll, 0), var(--route, 0)));
   transition: transform .08s linear;
   will-change: transform;
 }

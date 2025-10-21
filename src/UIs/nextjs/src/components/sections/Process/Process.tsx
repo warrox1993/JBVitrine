@@ -1,4 +1,5 @@
 "use client";
+import { Heading } from "@/components/ui/Heading";
 import styles from "./Process.module.css";
 
 export function Process() {
@@ -48,7 +49,7 @@ export function Process() {
     <section id="process" className={styles.section}>
       <div className="container">
         <div className={styles.header}>
-          <h2 className={styles.title}>Notre Processus Créatif</h2>
+          <Heading as="h2" accent className={styles.title}>Notre Processus Créatif</Heading>
           <p className={styles.desc}>A proven methodology that balances creativity and technical precision. Each stage — from discovery to launch — aligns strategy, design and technology in one coherent journey.</p>
         </div>
         <section className={styles.processModule} aria-label="Processus créatif">

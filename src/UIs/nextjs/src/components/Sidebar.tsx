@@ -7,26 +7,72 @@ import { GridIcon } from "@/components/icons/GridIcon";
 import { MailIcon } from "@/components/icons/MailIcon";
 import { sections } from "@/config/nav";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
+import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
+import { AboutIcon } from "@/components/icons/AboutIcon";
 
-export default function Sidebar() {
+type Item = { href: string; label: string; icon?: ReactNode };
+
+export default function Sidebar({ items }: { items?: Item[] }) {
+  const pathname = usePathname();
+  const useProvidedItems = Array.isArray(items) && items.length > 0;
+  const providedIds = items?.map(i => i.href.replace(/^#/, '')) || [];
+  const activeId = useScrollSpy(useProvidedItems ? providedIds : sections.map(x => x.id), 120);
   return (
     <aside
       className="sidebar"
       aria-label="Navigation latérale"
-      onMouseEnter={() => document?.body?.classList?.add('sidebar-hovered')}
-      onMouseLeave={() => document?.body?.classList?.remove('sidebar-hovered')}
+      onMouseEnter={() => { document?.body?.classList?.add('sidebar-hovered'); document?.body?.classList?.add('sidebar-open'); }}
+      onMouseLeave={() => { document?.body?.classList?.remove('sidebar-hovered'); document?.body?.classList?.remove('sidebar-open'); }}
     >
       <nav className="sidebar-nav" aria-label="Navigation latérale">
-        {sections.map((s) => {
-          const activeId = useScrollSpy(sections.map(x => x.id), 120);
-          const Icon = s.id === 'hero' ? HomeIcon : s.id === 'projects' ? GridIcon : s.id === 'process' ? ProcessIcon : s.id === 'services' ? ServicesIcon : s.id === 'contact' ? MailIcon : undefined;
-          return (
-            <a key={s.id} href={s.href} className={"sidebar-link" + (activeId === s.id ? " is-active" : "")} data-section={s.id} aria-label={s.label} aria-current={activeId === s.id ? "page" : undefined}>
-              {Icon ? <Icon className="sidebar-link-icon" aria-hidden="true" /> : null}
-              <span className="sidebar-link-text">{s.label}</span>
-            </a>
-          );
-        })}
+        {useProvidedItems && items
+          ? items.map((it) => {
+              const id = it.href.replace(/^#/, '');
+              const isActive = activeId === id;
+              return (
+                <a
+                  key={it.href}
+                  href={it.href}
+                  className={"sidebar-link" + (isActive ? " is-active" : "")}
+                  data-section={id}
+                  aria-label={it.label}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  {it.icon ? it.icon : null}
+                  <span className="sidebar-link-text">{it.label}</span>
+                </a>
+              );
+            })
+          : sections.map((s) => {
+              const isActive = s.id === 'about' ? (pathname?.startsWith('/about')) : (activeId === s.id);
+              const Icon = s.id === 'hero'
+                ? HomeIcon
+                : s.id === 'projects'
+                ? GridIcon
+                : s.id === 'process'
+                ? ProcessIcon
+                : s.id === 'services'
+                ? ServicesIcon
+                : s.id === 'about'
+                ? AboutIcon
+                : s.id === 'contact'
+                ? MailIcon
+                : undefined;
+              return (
+                <a
+                  key={s.id}
+                  href={s.href}
+                  className={"sidebar-link" + (isActive ? " is-active" : "")}
+                  data-section={s.id}
+                  aria-label={s.label}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  {Icon ? <Icon className="sidebar-link-icon" aria-hidden="true" /> : null}
+                  <span className="sidebar-link-text">{s.label}</span>
+                </a>
+              );
+            })}
       </nav>
     </aside>
   );
