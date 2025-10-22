@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import HeroAbout from '@/components/about/HeroAbout';
-import Mission from '@/components/about/Mission';
+import Mission from './Mission';
 import ValuesCards from '@/components/about/ValuesCards';
 import Timeline from './Timeline';
 import Team from './Team';
@@ -40,12 +40,8 @@ export default function AboutPage() {
 
         {/* IntroSignature section removed per request */}
 
-        {/* MISSION */}
-        <section id="mission" className="section" style={{ scrollMarginTop: 'var(--header-height)' }}>
-          <div className="container">
-            <Mission />
-          </div>
-        </section>
+        {/* MISSION (scoped section component) */}
+        <Mission />
 
         {/* VALUES CARDS (below hero/mission, before timeline/team) */}
         <section id="values" className="section is-alt" style={{ scrollMarginTop: 'var(--header-height)' }}>

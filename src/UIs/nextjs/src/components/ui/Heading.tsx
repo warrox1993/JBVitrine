@@ -6,9 +6,10 @@ type HeadingProps = {
   children: React.ReactNode;
   accent?: boolean;
   style?: React.CSSProperties;
+  id?: string;
 };
 
-export function Heading({ as = 'h2', className, children, accent, style }: HeadingProps) {
+export function Heading({ as = 'h2', className, children, accent, style, id }: HeadingProps) {
   const Tag = as as any;
   const cls = className ? ` ${className}` : '';
   const base: React.CSSProperties = {
@@ -28,6 +29,7 @@ export function Heading({ as = 'h2', className, children, accent, style }: Headi
     : undefined;
   return (
     <Tag
+      id={id}
       className={cls.trim()}
       style={{ ...base, ...(accentStyle || {}), ...(style || {}) }}
     >

@@ -29,21 +29,20 @@ export function Hero() {
       </svg>
       <div className="container">
         <div className={styles.content}>
-          <h1 id="hero-title" className={styles.title}>Exceptional Design, Flawless Code, Measurable Results</h1>
+          <h1 id="hero-title" className={styles.title}>Smidjan : agence digitale experte en développement web, cybersécurité et IA.</h1>
           <p className={styles.description}>
-            We craft premium digital experiences that don’t just look elegant — they perform.
-            Our approach blends high-end design systems, scalable engineering, and measurable business outcomes.
-            Every pixel, every line of code, every decision is made to grow your brand’s digital impact.
+            Nous forgeons des expériences digitales sur mesure : sites, applications et automatisations pensées pour la performance, la sécurité et la fiabilité.
+              Chez Smidjan, chaque ligne de code et chaque détail de design servent un même but : bâtir un web plus robuste, plus intelligent et durable pour votre entreprise.
           </p>
           <div className={styles.actions}>
-            <Button variant="solid" size="md" ariaLabel="View our projects" trailingIcon={<ArrowRightIcon aria-hidden="true" />}> 
+            <Button variant="solid" size="md" ariaLabel="Voir nos projets" trailingIcon={<ArrowRightIcon aria-hidden="true" />}> 
               View Our Projects
             </Button>
-            <Button variant="outline" size="md" ariaLabel="Let’s discuss your vision">
+            <Button variant="outline" size="md" ariaLabel="Lancer votre projet">
               Let’s Discuss Your Vision
             </Button>
             <Button as="a" href="/about" variant="ghost" size="md" ariaLabel="En savoir plus sur nous">
-              En savoir plus sur nous
+                Découvrir notre méthode
             </Button>
           </div>
           {showStats ? (
