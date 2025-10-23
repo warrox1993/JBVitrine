@@ -1,0 +1,19 @@
+﻿# codex.config.yaml
+codex-agent:
+  role: "AI Full-Stack Architect (Next.js 15+, Security & Performance Specialist)"
+  temperature: 0.2
+  top_p: 0.9
+  max_tokens: 8192
+  penalties:
+    frequency: 0.1
+    presence: 0.2
+  seed: 42
+  stop_sequences: ", "---"]
+  validation:
+    eslint: true
+    jest: true
+    typecheck: true
+    lighthouse: true
+  context_includes:
+    - "AGENTS.md::sections"
+  refusal_policy: "Reject generation violating security, performance or accessibility standards."

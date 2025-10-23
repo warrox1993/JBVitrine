@@ -1,5 +1,6 @@
 {
   "devDependencies": {
-    "@openai/codex": "^0.46.0"
+    "@openai/codex": "^0.46.0",
+    "husky": "^9.1.7"
   }
 }
