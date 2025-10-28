@@ -17,6 +17,7 @@ En cas de conflit ou d'arbitrage, respecter cet ordre **STRICT** :
 *Règle : jamais sacrifier accessibilité pour un micro-gain perf.*
 
 ---
+## 0. CSS -> Tailwind CSS (Obligatoire)
 
 ## 1. Architecture Next.js App Router (Obligatoire)
 
