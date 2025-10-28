@@ -594,13 +594,12 @@ export function ErrorBoundary({ error, reset }: { error: Error; reset: () => voi
 
 ---
 
-## 23. Migration Future Tailwind CSS (Optionnel)
-
-- Lors de conversion/ajout : proposer équivalent Tailwind en miroir visuel
-- Variables CSS globales = source de vérité (préfigurent `tailwind.config.js`)
-- Ne jamais supprimer logique CSS avant remplacement vérifié à rendu IDENTIQUE
-- Approche progressive : composant par composant, jamais "big bang"
-
+## 23. Migration Future Tailwind CSS — **AUTORISÉE**
+- Migration progressive des composants CSS Modules → Tailwind CSS permise.
+- Pour chaque .module.css migré, remplacer par des classes utilitaires Tailwind au plus près du design et du comportement existant.
+- Le mapping CSS natif → Tailwind doit être documenté pour chaque composant migré.
+- Les audit/migration automatiques via Codex CLI sont dès aujourd'hui autorisés pour tous les composants/fichiers front-end.
+- La vérification de conformité visuelle et fonctionnelle est obligatoire post-migration.
 ---
 
 ## 24. Checklist Avant Push/Merge

@@ -1,0 +1,96 @@
+﻿# 🛡️ AUDIT COMPLET CSS / HTML / JS — DOSSIER PROJET
+
+## 🎯 Objectif général
+
+- Analyser l'intégralité des fichiers CSS, HTML et JavaScript du projet.
+- Dresser la liste complète des styles, composants, patterns, et interactions front-end.
+- Mettre en évidence :
+  - Les redondances et incohérences CSS
+  - Les problèmes de responsive et d’accessibilité
+  - Les dépendances et patterns code critiques
+  - Les opportunités de migration vers un design system (ex : Tailwind CSS)
+
+---
+
+## 1. 🎨 **Audit CSS global**
+
+### a) Extraction
+
+- Recense tous les fichiers CSS (externes, modules, inline).
+- Liste tous les sélecteurs, propriétés, media queries, variables utilisées.
+
+### b) Analyse
+
+- Identifie les styles non utilisés (dead CSS).
+- Détecte les doublons/redondances et conflits de cascade.
+- Classe les styles par : Layout, Composant, Utilitaire, Animation, Responsive.
+- Repère les patterns particuliers (BEM, custom naming, etc.).
+- Analyse la couverture mobile/tablette, responsive breakpoints, et tous les pseudo-états : `:hover`, `:focus`, etc.
+
+### c) Mapping Tailwind (si migration souhaitée)
+
+- Pour chaque règle CSS, propose la (ou les) classe(s) Tailwind équivalente(s).
+- Réalise un tableau de correspondance CSS ➔ Tailwind avec niveau de correspondance (total/partiel/absence).
+
+---
+
+## 2. 🧩 **Audit HTML/JSX/TSX**
+
+### a) Arborescence des composants
+
+- Liste tous les fichiers HTML, `.jsx`, `.tsx` et leurs composants principaux.
+- Détaille la structure DOM, la profondeur, les patterns de réutilisation.
+
+### b) Propreté et accessibilité
+
+- Analyse la hiérarchie sémantique (`<main>`, `<nav>`, `<section>`, etc.).
+- Signale les erreurs/risques pour l’accessibilité (`aria-*`, contrastes, alt...).
+- Repère les classes non utilisées, ou conflits avec le CSS.
+
+---
+
+## 3. ⚡ **Audit JavaScript**
+
+### a) Fichiers récapitulés
+
+- Recense tous les fichiers `.js` et `.ts` présents.
+
+### b) Patterns & code critique
+
+- Dresse la liste :
+  - Fonctions, hooks personnalisés, classes complexes
+  - Patterns anti-patterns ou legacy
+  - Points d’entrée critiques au chargement CSS/HTML
+
+- Signale toute dépendance inline ou manipulation dynamique de style.
+
+---
+
+## 4. 📊 **Rapport final attendu**
+
+- **Mapping CSS ➔ Tailwind** (tableau markdown + csv/json au besoin)
+- **Liste des composants HTML/JSX analysés** (avec structure hiérarchique)
+- **Diagnostic accessibilité & responsive**
+- **Points critiques (performance, sécurité, organisation)**
+- **Liste de tous les fichiers analysés**
+
+---
+
+## 5. 🚦 **Roadmap & recommandations**
+
+- Priorité : pages à refactorer/migrer en premier (critères UI/UX)
+- Suggestions d’automatisation (scripts, CI, clean archi)
+- Shortlist de patterns/problèmes à corriger avant migration
+- Recommandations pour démarrage du chantier Tailwind
+
+---
+
+### 📦 **Livrables attendus**
+- Rapport markdown organisé par section majeure
+- Tableaux de mapping CSS ➔ Tailwind (markdown + .csv)
+- Log synthétique des composants impactés
+- Fiches d’action priorisées
+
+---
+
+*Ce document peut être utilisé tel quel avec Codex ou toute IA professionnelle pour rendre l’audit automatisé, précis, orienté migration, documentation et refactorisation complète.*

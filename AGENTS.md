@@ -1725,7 +1725,7 @@ function Analytics() {
 
 ## 34. Resources Critiques
 
-- **Next.js 15 Docs** : https://nextjs.org/docs
+- **Next.js 16 Docs** : https://nextjs.org/docs
 - **WCAG 2.1 Guidelines** : https://www.w3.org/WAI/WCAG21/quickref/
 - **Core Web Vitals** : https://web.dev/vitals/
 - **Security Headers** : https://securityheaders.com/
