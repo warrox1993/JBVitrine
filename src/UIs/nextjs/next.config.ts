@@ -1,16 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  eslint: {
-    // Ignore ESLint errors during production builds to avoid blocking builds on legacy pages.
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    // Allow production builds to complete even if there are type errors in legacy sections.
-    ignoreBuildErrors: true,
-  },
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ["image/avif", "image/webp"],
+    qualities: [75, 80, 90], // ajouté pour Next.js 16 (qualité autorisée)
+  },
+  turbopack: {
+    root: __dirname, // ← indique explicitement que le root du workspace est ce dossier
   },
 };
 

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>http://localhost:3000</loc><lastmod>2025-10-20T18:25:04.629Z</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
-<url><loc>http://localhost:3000/logout</loc><lastmod>2025-10-20T18:25:04.630Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/login</loc><lastmod>2025-10-20T18:25:04.630Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/files</loc><lastmod>2025-10-20T18:25:04.630Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/auditlogs</loc><lastmod>2025-10-20T18:25:04.630Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/products/add</loc><lastmod>2025-10-20T18:25:04.630Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/settings</loc><lastmod>2025-10-20T18:25:04.630Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/files/upload</loc><lastmod>2025-10-20T18:25:04.630Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/about</loc><lastmod>2025-10-20T18:25:04.630Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/home</loc><lastmod>2025-10-20T18:25:04.630Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/users</loc><lastmod>2025-10-20T18:25:04.630Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/oidc-login-redirect</loc><lastmod>2025-10-20T18:25:04.630Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/users/add</loc><lastmod>2025-10-20T18:25:04.630Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/products</loc><lastmod>2025-10-20T18:25:04.630Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/products/add</loc><lastmod>2025-10-28T11:07:33.690Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/logout</loc><lastmod>2025-10-28T11:07:33.691Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/oidc-login-redirect</loc><lastmod>2025-10-28T11:07:33.691Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/settings</loc><lastmod>2025-10-28T11:07:33.691Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/users</loc><lastmod>2025-10-28T11:07:33.691Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/users/add</loc><lastmod>2025-10-28T11:07:33.691Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/auditlogs</loc><lastmod>2025-10-28T11:07:33.691Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/about</loc><lastmod>2025-10-28T11:07:33.691Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000</loc><lastmod>2025-10-28T11:07:33.691Z</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
+<url><loc>http://localhost:3000/files/upload</loc><lastmod>2025-10-28T11:07:33.691Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/home</loc><lastmod>2025-10-28T11:07:33.691Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/login</loc><lastmod>2025-10-28T11:07:33.691Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/files</loc><lastmod>2025-10-28T11:07:33.691Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/products</loc><lastmod>2025-10-28T11:07:33.691Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>

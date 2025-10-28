@@ -1,0 +1,2097 @@
+[
+  {
+    "name": "--acc",
+    "occurrences": [
+      {
+        "value": "var(--color-accent-1)",
+        "file": "src\\UIs\\nextjs\\src\\app\\about\\mission.css",
+        "line": 2
+      }
+    ]
+  },
+  {
+    "name": "--bg",
+    "occurrences": [
+      {
+        "value": "var(--color-accent-1)",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 2
+      },
+      {
+        "value": "var(--color-surface)",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 15
+      },
+      {
+        "value": "transparent",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 16
+      }
+    ]
+  },
+  {
+    "name": "--bg-hover",
+    "occurrences": [
+      {
+        "value": "color-mix(in oklab, var(--color-accent-1), #000 12%)",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 3
+      }
+    ]
+  },
+  {
+    "name": "--blue",
+    "occurrences": [
+      {
+        "value": "#007bff",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#007bff",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#007bff",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#007bff",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--bp-lg",
+    "occurrences": [
+      {
+        "value": "1200px",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 87
+      }
+    ]
+  },
+  {
+    "name": "--bp-md",
+    "occurrences": [
+      {
+        "value": "900px",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 86
+      }
+    ]
+  },
+  {
+    "name": "--bp-sm",
+    "occurrences": [
+      {
+        "value": "600px",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 85
+      }
+    ]
+  },
+  {
+    "name": "--bp-xl",
+    "occurrences": [
+      {
+        "value": "1440px",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 88
+      }
+    ]
+  },
+  {
+    "name": "--breakpoint-lg",
+    "occurrences": [
+      {
+        "value": "992px",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "992px",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "992px",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "992px",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--breakpoint-md",
+    "occurrences": [
+      {
+        "value": "768px",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "768px",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "768px",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "768px",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--breakpoint-sm",
+    "occurrences": [
+      {
+        "value": "576px",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "576px",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "576px",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "576px",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--breakpoint-xl",
+    "occurrences": [
+      {
+        "value": "1200px",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "1200px",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "1200px",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "1200px",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--breakpoint-xs",
+    "occurrences": [
+      {
+        "value": "0",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "0",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "0",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "0",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--btn-anim-ease",
+    "occurrences": [
+      {
+        "value": "cubic-bezier(.2,.8,.2,1)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 144
+      }
+    ]
+  },
+  {
+    "name": "--btn-anim-t",
+    "occurrences": [
+      {
+        "value": "180ms",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 143
+      }
+    ]
+  },
+  {
+    "name": "--btn-bg",
+    "occurrences": [
+      {
+        "value": "linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2))",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 109
+      }
+    ]
+  },
+  {
+    "name": "--btn-bg-active",
+    "occurrences": [
+      {
+        "value": "linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2))",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 118
+      }
+    ]
+  },
+  {
+    "name": "--btn-bg-disabled",
+    "occurrences": [
+      {
+        "value": "color-mix(in srgb, var(--color-accent-1) 30%, var(--color-bg) 70%)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 124
+      }
+    ]
+  },
+  {
+    "name": "--btn-bg-hover",
+    "occurrences": [
+      {
+        "value": "linear-gradient(135deg, var(--color-accent-2), var(--color-accent-1))",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 114
+      }
+    ]
+  },
+  {
+    "name": "--btn-border",
+    "occurrences": [
+      {
+        "value": "transparent",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 111
+      }
+    ]
+  },
+  {
+    "name": "--btn-border-active",
+    "occurrences": [
+      {
+        "value": "transparent",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 120
+      }
+    ]
+  },
+  {
+    "name": "--btn-border-disabled",
+    "occurrences": [
+      {
+        "value": "transparent",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 126
+      }
+    ]
+  },
+  {
+    "name": "--btn-border-hover",
+    "occurrences": [
+      {
+        "value": "transparent",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 116
+      }
+    ]
+  },
+  {
+    "name": "--btn-disabled-bg",
+    "occurrences": [
+      {
+        "value": "color-mix(in oklab, var(--color-accent-1) 25%, var(--color-bg) 75%)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 141
+      }
+    ]
+  },
+  {
+    "name": "--btn-disabled-fg",
+    "occurrences": [
+      {
+        "value": "color-mix(in oklab, var(--color-text-1) 60%, transparent)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 142
+      }
+    ]
+  },
+  {
+    "name": "--btn-fg",
+    "occurrences": [
+      {
+        "value": "white",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 110
+      }
+    ]
+  },
+  {
+    "name": "--btn-fg-active",
+    "occurrences": [
+      {
+        "value": "white",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 119
+      }
+    ]
+  },
+  {
+    "name": "--btn-fg-disabled",
+    "occurrences": [
+      {
+        "value": "color-mix(in srgb, white 60%, transparent)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 125
+      }
+    ]
+  },
+  {
+    "name": "--btn-fg-hover",
+    "occurrences": [
+      {
+        "value": "white",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 115
+      }
+    ]
+  },
+  {
+    "name": "--btn-focus-ring",
+    "occurrences": [
+      {
+        "value": "0 0 0 3px color-mix(in srgb, var(--color-accent-1) 40%, transparent)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 122
+      }
+    ]
+  },
+  {
+    "name": "--btn-ghost-bg-hover",
+    "occurrences": [
+      {
+        "value": "color-mix(in oklab, var(--color-accent-1), transparent 90%)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 139
+      }
+    ]
+  },
+  {
+    "name": "--btn-ghost-fg",
+    "occurrences": [
+      {
+        "value": "var(--color-accent-1)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 138
+      }
+    ]
+  },
+  {
+    "name": "--btn-outline-bg-hover",
+    "occurrences": [
+      {
+        "value": "color-mix(in oklab, var(--color-accent-1), transparent 88%)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 136
+      }
+    ]
+  },
+  {
+    "name": "--btn-outline-border",
+    "occurrences": [
+      {
+        "value": "var(--color-accent-1)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 135
+      }
+    ]
+  },
+  {
+    "name": "--btn-outline-fg",
+    "occurrences": [
+      {
+        "value": "var(--color-accent-1)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 134
+      }
+    ]
+  },
+  {
+    "name": "--btn-shadow",
+    "occurrences": [
+      {
+        "value": "var(--shadow-glow)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 112
+      }
+    ]
+  },
+  {
+    "name": "--btn-solid-bg",
+    "occurrences": [
+      {
+        "value": "linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2))",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 129
+      }
+    ]
+  },
+  {
+    "name": "--btn-solid-bg-active",
+    "occurrences": [
+      {
+        "value": "linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2))",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 132
+      }
+    ]
+  },
+  {
+    "name": "--btn-solid-bg-hover",
+    "occurrences": [
+      {
+        "value": "linear-gradient(135deg, var(--color-accent-2), var(--color-accent-1))",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 131
+      }
+    ]
+  },
+  {
+    "name": "--btn-solid-fg",
+    "occurrences": [
+      {
+        "value": "white",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 130
+      }
+    ]
+  },
+  {
+    "name": "--card-bg",
+    "occurrences": [
+      {
+        "value": "var(--color-surface)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 100
+      }
+    ]
+  },
+  {
+    "name": "--card-border",
+    "occurrences": [
+      {
+        "value": "var(--color-border)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 101
+      }
+    ]
+  },
+  {
+    "name": "--color-accent",
+    "occurrences": [
+      {
+        "value": "#3A85FF",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 15
+      }
+    ]
+  },
+  {
+    "name": "--color-accent-1",
+    "occurrences": [
+      {
+        "value": "var(--color-primary)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 32
+      }
+    ]
+  },
+  {
+    "name": "--color-accent-2",
+    "occurrences": [
+      {
+        "value": "var(--color-secondary)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 33
+      }
+    ]
+  },
+  {
+    "name": "--color-accent-3",
+    "occurrences": [
+      {
+        "value": "var(--color-primary-strong)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 34
+      }
+    ]
+  },
+  {
+    "name": "--color-bg",
+    "occurrences": [
+      {
+        "value": "#0F1115",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 4
+      },
+      {
+        "value": "hsl(220, 20%, 98%)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 222
+      }
+    ]
+  },
+  {
+    "name": "--color-bg-1",
+    "occurrences": [
+      {
+        "value": "var(--color-bg)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 26
+      },
+      {
+        "value": "var(--color-bg)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 234
+      }
+    ]
+  },
+  {
+    "name": "--color-bg-2",
+    "occurrences": [
+      {
+        "value": "var(--color-bg-alt)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 27
+      },
+      {
+        "value": "var(--color-bg-alt)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 235
+      }
+    ]
+  },
+  {
+    "name": "--color-bg-3",
+    "occurrences": [
+      {
+        "value": "var(--color-surface)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 28
+      },
+      {
+        "value": "color-mix(in oklab, var(--color-surface), #fff 10%)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 236
+      }
+    ]
+  },
+  {
+    "name": "--color-bg-alt",
+    "occurrences": [
+      {
+        "value": "#161A22",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 5
+      },
+      {
+        "value": "hsl(220, 20%, 96%)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 223
+      }
+    ]
+  },
+  {
+    "name": "--color-bg-header",
+    "occurrences": [
+      {
+        "value": "var(--color-surface-glass)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 103
+      }
+    ]
+  },
+  {
+    "name": "--color-border",
+    "occurrences": [
+      {
+        "value": "#2B3342",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 8
+      },
+      {
+        "value": "hsla(220, 20%, 20%, 0.15)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 229
+      },
+      {
+        "value": "hsla(250, 20%, 30%, 0.5)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 244
+      }
+    ]
+  },
+  {
+    "name": "--color-border-hover",
+    "occurrences": [
+      {
+        "value": "hsla(220, 20%, 20%, 0.25)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 230
+      }
+    ]
+  },
+  {
+    "name": "--color-danger",
+    "occurrences": [
+      {
+        "value": "#E5484D",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 16
+      }
+    ]
+  },
+  {
+    "name": "--color-glow",
+    "occurrences": [
+      {
+        "value": "rgba(255, 106, 0, 0.24)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 40
+      }
+    ]
+  },
+  {
+    "name": "--color-primary",
+    "occurrences": [
+      {
+        "value": "#FF6A00",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 11
+      }
+    ]
+  },
+  {
+    "name": "--color-primary-contrast",
+    "occurrences": [
+      {
+        "value": "#0F1115",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 13
+      }
+    ]
+  },
+  {
+    "name": "--color-primary-strong",
+    "occurrences": [
+      {
+        "value": "#E45700",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 12
+      }
+    ]
+  },
+  {
+    "name": "--color-secondary",
+    "occurrences": [
+      {
+        "value": "#FFC43A",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 14
+      }
+    ]
+  },
+  {
+    "name": "--color-shadow",
+    "occurrences": [
+      {
+        "value": "hsla(220, 20%, 10%, 0.1)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 231
+      }
+    ]
+  },
+  {
+    "name": "--color-surface",
+    "occurrences": [
+      {
+        "value": "#1E2430",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 6
+      },
+      {
+        "value": "hsl(220, 20%, 96%)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 224
+      }
+    ]
+  },
+  {
+    "name": "--color-surface-elevated",
+    "occurrences": [
+      {
+        "value": "hsl(0,0%,100%)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 226
+      }
+    ]
+  },
+  {
+    "name": "--color-surface-glass",
+    "occurrences": [
+      {
+        "value": "rgba(30, 36, 48, 0.6)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 7
+      },
+      {
+        "value": "hsla(220, 20%, 98%, 0.8)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 225
+      }
+    ]
+  },
+  {
+    "name": "--color-text",
+    "occurrences": [
+      {
+        "value": "#F6F7F9",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 9
+      },
+      {
+        "value": "hsl(220, 20%, 10%)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 227
+      }
+    ]
+  },
+  {
+    "name": "--color-text-1",
+    "occurrences": [
+      {
+        "value": "var(--color-text)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 29
+      },
+      {
+        "value": "var(--color-text)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 237
+      }
+    ]
+  },
+  {
+    "name": "--color-text-2",
+    "occurrences": [
+      {
+        "value": "var(--color-text-muted)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 30
+      },
+      {
+        "value": "var(--color-text-muted)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 238
+      },
+      {
+        "value": "var(--color-text-1)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 244
+      }
+    ]
+  },
+  {
+    "name": "--color-text-3",
+    "occurrences": [
+      {
+        "value": "color-mix(in oklab, var(--color-text-muted), #000 30%)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 31
+      },
+      {
+        "value": "color-mix(in oklab, var(--color-text-muted), #000 20%)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 239
+      }
+    ]
+  },
+  {
+    "name": "--color-text-muted",
+    "occurrences": [
+      {
+        "value": "#C8CDD6",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 10
+      },
+      {
+        "value": "hsl(220, 15%, 35%)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 228
+      }
+    ]
+  },
+  {
+    "name": "--container-max",
+    "occurrences": [
+      {
+        "value": "1440px",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 66
+      },
+      {
+        "value": "1440px",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 25
+      }
+    ]
+  },
+  {
+    "name": "--container-padding",
+    "occurrences": [
+      {
+        "value": "clamp(1.5rem, 1vw, 6rem)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 67
+      },
+      {
+        "value": "clamp(1.5rem, 5vw, 6rem)",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 26
+      }
+    ]
+  },
+  {
+    "name": "--cyan",
+    "occurrences": [
+      {
+        "value": "#17a2b8",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#17a2b8",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#17a2b8",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#17a2b8",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--danger",
+    "occurrences": [
+      {
+        "value": "#dc3545",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#dc3545",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#dc3545",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#dc3545",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--dark",
+    "occurrences": [
+      {
+        "value": "#343a40",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#343a40",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#343a40",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#343a40",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--dur-1",
+    "occurrences": [
+      {
+        "value": "120ms",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 71
+      }
+    ]
+  },
+  {
+    "name": "--dur-2",
+    "occurrences": [
+      {
+        "value": "180ms",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 71
+      }
+    ]
+  },
+  {
+    "name": "--dur-3",
+    "occurrences": [
+      {
+        "value": "240ms",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 71
+      }
+    ]
+  },
+  {
+    "name": "--ease-standard",
+    "occurrences": [
+      {
+        "value": "cubic-bezier(.2,.6,.2,1)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 70
+      }
+    ]
+  },
+  {
+    "name": "--fallback-bg",
+    "occurrences": [
+      {
+        "value": "#0F0E15",
+        "file": "src\\UIs\\nextjs\\public\\_css\\hard-fallback.css",
+        "line": 2
+      }
+    ]
+  },
+  {
+    "name": "--fallback-link",
+    "occurrences": [
+      {
+        "value": "#FF7A1A",
+        "file": "src\\UIs\\nextjs\\public\\_css\\hard-fallback.css",
+        "line": 2
+      }
+    ]
+  },
+  {
+    "name": "--fallback-text",
+    "occurrences": [
+      {
+        "value": "#F2F4F6",
+        "file": "src\\UIs\\nextjs\\public\\_css\\hard-fallback.css",
+        "line": 2
+      }
+    ]
+  },
+  {
+    "name": "--fg",
+    "occurrences": [
+      {
+        "value": "var(--color-bg-1)",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 2
+      },
+      {
+        "value": "var(--color-text-1)",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 15
+      },
+      {
+        "value": "var(--color-text-1)",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 16
+      }
+    ]
+  },
+  {
+    "name": "--font-base",
+    "occurrences": [
+      {
+        "value": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,\n                 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 20
+      }
+    ]
+  },
+  {
+    "name": "--font-display",
+    "occurrences": [
+      {
+        "value": "'Instrument Sans', Inter, ui-sans-serif, system-ui, -apple-system,\n                    BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 22
+      }
+    ]
+  },
+  {
+    "name": "--font-family-sans-serif",
+    "occurrences": [
+      {
+        "value": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--gray",
+    "occurrences": [
+      {
+        "value": "#6c757d",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#6c757d",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#6c757d",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#6c757d",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--gray-dark",
+    "occurrences": [
+      {
+        "value": "#343a40",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#343a40",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#343a40",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#343a40",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--green",
+    "occurrences": [
+      {
+        "value": "#28a745",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#28a745",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#28a745",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#28a745",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--header-h",
+    "occurrences": [
+      {
+        "value": "var(--header-height)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 97
+      }
+    ]
+  },
+  {
+    "name": "--header-height",
+    "occurrences": [
+      {
+        "value": "clamp(114px, 15.2vh, 171px)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 106
+      }
+    ]
+  },
+  {
+    "name": "--hero-decor-height",
+    "occurrences": [
+      {
+        "value": "clamp(120px, 20vw, 260px)",
+        "file": "src\\UIs\\nextjs\\src\\components\\sections\\Hero\\Hero.module.css",
+        "line": 3
+      }
+    ]
+  },
+  {
+    "name": "--hero-decor-offset",
+    "occurrences": [
+      {
+        "value": "8vh",
+        "file": "src\\UIs\\nextjs\\src\\components\\sections\\Hero\\Hero.module.css",
+        "line": 4
+      }
+    ]
+  },
+  {
+    "name": "--indigo",
+    "occurrences": [
+      {
+        "value": "#6610f2",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#6610f2",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#6610f2",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#6610f2",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--info",
+    "occurrences": [
+      {
+        "value": "#17a2b8",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#17a2b8",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#17a2b8",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#17a2b8",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--light",
+    "occurrences": [
+      {
+        "value": "#f8f9fa",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#f8f9fa",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#f8f9fa",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#f8f9fa",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--orange",
+    "occurrences": [
+      {
+        "value": "#fd7e14",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#fd7e14",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#fd7e14",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#fd7e14",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--pink",
+    "occurrences": [
+      {
+        "value": "#e83e8c",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#e83e8c",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#e83e8c",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#e83e8c",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--primary",
+    "occurrences": [
+      {
+        "value": "#007bff",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#007bff",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#007bff",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#007bff",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--progress-bg",
+    "occurrences": [
+      {
+        "value": "transparent",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 154
+      }
+    ]
+  },
+  {
+    "name": "--progress-color",
+    "occurrences": [
+      {
+        "value": "var(--color-accent-1)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 153
+      }
+    ]
+  },
+  {
+    "name": "--progress-height",
+    "occurrences": [
+      {
+        "value": "3px",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 152
+      }
+    ]
+  },
+  {
+    "name": "--purple",
+    "occurrences": [
+      {
+        "value": "#6f42c1",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#6f42c1",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#6f42c1",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#6f42c1",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--radius-full",
+    "occurrences": [
+      {
+        "value": "9999px",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 47
+      }
+    ]
+  },
+  {
+    "name": "--radius-lg",
+    "occurrences": [
+      {
+        "value": "1.25rem",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 47
+      }
+    ]
+  },
+  {
+    "name": "--radius-md",
+    "occurrences": [
+      {
+        "value": "0.75rem",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 47
+      }
+    ]
+  },
+  {
+    "name": "--radius-sm",
+    "occurrences": [
+      {
+        "value": "0.375rem",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 47
+      }
+    ]
+  },
+  {
+    "name": "--radius-xl",
+    "occurrences": [
+      {
+        "value": "2rem",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 47
+      }
+    ]
+  },
+  {
+    "name": "--red",
+    "occurrences": [
+      {
+        "value": "#dc3545",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#dc3545",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#dc3545",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#dc3545",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--ring",
+    "occurrences": [
+      {
+        "value": "0 0 0 3px color-mix(in oklab, var(--color-accent-1), transparent 70%)",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 4
+      }
+    ]
+  },
+  {
+    "name": "--secondary",
+    "occurrences": [
+      {
+        "value": "#6c757d",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#6c757d",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#6c757d",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#6c757d",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--shadow-glow",
+    "occurrences": [
+      {
+        "value": "var(--shadow-glow-outer), var(--shadow-glow-inner)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 53
+      }
+    ]
+  },
+  {
+    "name": "--shadow-glow-inner",
+    "occurrences": [
+      {
+        "value": "0 0 12px rgba(255, 196, 58, 0.12)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 38
+      }
+    ]
+  },
+  {
+    "name": "--shadow-glow-outer",
+    "occurrences": [
+      {
+        "value": "0 0 24px rgba(255, 106, 0, 0.24)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 37
+      }
+    ]
+  },
+  {
+    "name": "--shadow-lg",
+    "occurrences": [
+      {
+        "value": "0 12px 40px rgba(6, 7, 9, 0.35)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 52
+      }
+    ]
+  },
+  {
+    "name": "--shadow-md",
+    "occurrences": [
+      {
+        "value": "0 4px 12px rgba(6, 7, 9, 0.25)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 51
+      }
+    ]
+  },
+  {
+    "name": "--shadow-sm",
+    "occurrences": [
+      {
+        "value": "0 1px 2px rgba(6, 7, 9, 0.15)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 50
+      }
+    ]
+  },
+  {
+    "name": "--sidebar-collapsed",
+    "occurrences": [
+      {
+        "value": "80px",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 91
+      }
+    ]
+  },
+  {
+    "name": "--sidebar-expanded",
+    "occurrences": [
+      {
+        "value": "240px",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 92
+      }
+    ]
+  },
+  {
+    "name": "--sidebar-shift",
+    "occurrences": [
+      {
+        "value": "160px",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 93
+      }
+    ]
+  },
+  {
+    "name": "--sidebar-w",
+    "occurrences": [
+      {
+        "value": "var(--sidebar-collapsed)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 95
+      }
+    ]
+  },
+  {
+    "name": "--sidebar-w-open",
+    "occurrences": [
+      {
+        "value": "var(--sidebar-expanded)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 96
+      }
+    ]
+  },
+  {
+    "name": "--space-1",
+    "occurrences": [
+      {
+        "value": "0.25rem",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 43
+      }
+    ]
+  },
+  {
+    "name": "--space-2",
+    "occurrences": [
+      {
+        "value": "0.5rem",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 43
+      }
+    ]
+  },
+  {
+    "name": "--space-3",
+    "occurrences": [
+      {
+        "value": "1rem",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 43
+      }
+    ]
+  },
+  {
+    "name": "--space-4",
+    "occurrences": [
+      {
+        "value": "1.5rem",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 43
+      }
+    ]
+  },
+  {
+    "name": "--space-5",
+    "occurrences": [
+      {
+        "value": "2.5rem",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 44
+      }
+    ]
+  },
+  {
+    "name": "--space-6",
+    "occurrences": [
+      {
+        "value": "4rem",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 44
+      }
+    ]
+  },
+  {
+    "name": "--space-7",
+    "occurrences": [
+      {
+        "value": "6.5rem",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 44
+      }
+    ]
+  },
+  {
+    "name": "--space-8",
+    "occurrences": [
+      {
+        "value": "10rem",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 44
+      }
+    ]
+  },
+  {
+    "name": "--success",
+    "occurrences": [
+      {
+        "value": "#28a745",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#28a745",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#28a745",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#28a745",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--teal",
+    "occurrences": [
+      {
+        "value": "#20c997",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#20c997",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#20c997",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#20c997",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--text-2xl",
+    "occurrences": [
+      {
+        "value": "clamp(1.75rem, 1.5rem + 1vw, 2.25rem)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 61
+      },
+      {
+        "value": "clamp(1.75rem, 1.5rem + 1vw, 2.25rem)",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 20
+      }
+    ]
+  },
+  {
+    "name": "--text-3xl",
+    "occurrences": [
+      {
+        "value": "clamp(2.25rem, 1.75rem + 2vw, 3.5rem)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 62
+      },
+      {
+        "value": "clamp(2.25rem, 1.75rem + 2vw, 3.5rem)",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 21
+      }
+    ]
+  },
+  {
+    "name": "--text-4xl",
+    "occurrences": [
+      {
+        "value": "clamp(3rem, 2rem + 4vw, 5rem)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 63
+      },
+      {
+        "value": "clamp(3rem, 2rem + 4vw, 5rem)",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 22
+      }
+    ]
+  },
+  {
+    "name": "--text-base",
+    "occurrences": [
+      {
+        "value": "clamp(1rem, 0.95rem + 0.25vw, 1.125rem)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 58
+      }
+    ]
+  },
+  {
+    "name": "--text-lg",
+    "occurrences": [
+      {
+        "value": "clamp(1.125rem, 1rem + 0.5vw, 1.375rem)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 59
+      },
+      {
+        "value": "clamp(1.125rem, 1rem + 0.5vw, 1.375rem)",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 18
+      }
+    ]
+  },
+  {
+    "name": "--text-sm",
+    "occurrences": [
+      {
+        "value": "clamp(0.875rem, 0.8rem + 0.35vw, 1rem)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 57
+      }
+    ]
+  },
+  {
+    "name": "--text-xl",
+    "occurrences": [
+      {
+        "value": "clamp(1.375rem, 1.2rem + 0.75vw, 1.75rem)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 60
+      },
+      {
+        "value": "clamp(1.375rem, 1.2rem + 0.75vw, 1.75rem)",
+        "file": "src\\UIs\\nextjs\\src\\components\\atoms\\Button.module.css",
+        "line": 19
+      }
+    ]
+  },
+  {
+    "name": "--text-xs",
+    "occurrences": [
+      {
+        "value": "clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 56
+      }
+    ]
+  },
+  {
+    "name": "--tl-accent",
+    "occurrences": [
+      {
+        "value": "var(--color-accent-1, #d4a024)",
+        "file": "src\\UIs\\nextjs\\src\\app\\about\\timeline.css",
+        "line": 4
+      }
+    ]
+  },
+  {
+    "name": "--tl-bg",
+    "occurrences": [
+      {
+        "value": "var(--color-bg-1, #111111)",
+        "file": "src\\UIs\\nextjs\\src\\app\\about\\timeline.css",
+        "line": 2
+      }
+    ]
+  },
+  {
+    "name": "--tl-divider",
+    "occurrences": [
+      {
+        "value": "rgba(255, 255, 255, 0.2)",
+        "file": "src\\UIs\\nextjs\\src\\app\\about\\timeline.css",
+        "line": 5
+      }
+    ]
+  },
+  {
+    "name": "--tl-fg",
+    "occurrences": [
+      {
+        "value": "var(--color-fg-1, #ffffff)",
+        "file": "src\\UIs\\nextjs\\src\\app\\about\\timeline.css",
+        "line": 3
+      }
+    ]
+  },
+  {
+    "name": "--tl-shadow",
+    "occurrences": [
+      {
+        "value": "rgba(0, 0, 0, 0.7)",
+        "file": "src\\UIs\\nextjs\\src\\app\\about\\timeline.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--transition-base",
+    "occurrences": [
+      {
+        "value": "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 73
+      }
+    ]
+  },
+  {
+    "name": "--transition-fast",
+    "occurrences": [
+      {
+        "value": "all 0.25s ease",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 72
+      }
+    ]
+  },
+  {
+    "name": "--transition-smooth",
+    "occurrences": [
+      {
+        "value": "0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 74
+      }
+    ]
+  },
+  {
+    "name": "--warning",
+    "occurrences": [
+      {
+        "value": "#ffc107",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#ffc107",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#ffc107",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#ffc107",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--white",
+    "occurrences": [
+      {
+        "value": "#fff",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#fff",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#fff",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#fff",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--yellow",
+    "occurrences": [
+      {
+        "value": "#ffc107",
+        "file": "src\\IdentityServers\\Duende\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#ffc107",
+        "file": "src\\IdentityServers\\OpenIddict\\ClassifiedAds.IdentityServer\\wwwroot\\css\\bundle.min.css",
+        "line": 6
+      },
+      {
+        "value": "#ffc107",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorServerSide\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      },
+      {
+        "value": "#ffc107",
+        "file": "src\\Monolith\\ClassifiedAds.BlazorWebAssembly\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "name": "--z-base",
+    "occurrences": [
+      {
+        "value": "0",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 77
+      }
+    ]
+  },
+  {
+    "name": "--z-header",
+    "occurrences": [
+      {
+        "value": "100",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 78
+      }
+    ]
+  },
+  {
+    "name": "--z-modal",
+    "occurrences": [
+      {
+        "value": "1000",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 82
+      }
+    ]
+  },
+  {
+    "name": "--z-overlay",
+    "occurrences": [
+      {
+        "value": "300",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 80
+      }
+    ]
+  },
+  {
+    "name": "--z-progress",
+    "occurrences": [
+      {
+        "value": "10000",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 81
+      }
+    ]
+  },
+  {
+    "name": "--z-sidebar",
+    "occurrences": [
+      {
+        "value": "200",
+        "file": "src\\UIs\\nextjs\\src\\app\\globals.css",
+        "line": 79
+      }
+    ]
+  }
+]

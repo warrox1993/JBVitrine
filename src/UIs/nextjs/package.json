@@ -1,44 +1,48 @@
 {
-    "name": "my-next-app",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev -p 3000 --turbopack",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
-        "postbuild": "next-sitemap",
-        "perf:build": "next build",
-        "perf:start": "next start",
-        "perf:lh:desktop": "npx lighthouse http://localhost:3000/ --output html --output json --output-path reports/performance/lh-desktop --chrome-flags=\"--headless=new\" --throttling-method=devtools --form-factor=desktop --screenEmulation.mobile=false",
-        "perf:lh:mobile": "npx lighthouse http://localhost:3000/ --output html --output json --output-path reports/performance/lh-mobile --chrome-flags=\"--headless=new\" --throttling-method=devtools --form-factor=mobile --screenEmulation.mobile=true",
-        "open": "powershell -NoProfile -Command \"start '' 'http://localhost:3000/'\"",
-        "perf:all": "npm run perf:build && start cmd /c \"npm run perf:start\" && timeout 5 && npm run perf:lh:desktop && npm run perf:lh:mobile",
-        "prepare": "husky install"
-    },
-    "dependencies": {
-        "@fortawesome/fontawesome-free": "^7.1.0",
-        "axios": "^1.7.9",
-        "bootstrap": "^5.3.3",
-        "next": "^15.5.6",
-        "oidc-client-ts": "^3.1.0",
-        "react": "^19.0.0",
-        "react-bootstrap": "^2.10.7",
-        "react-datepicker": "^7.6.0",
-        "react-dom": "^19.0.0",
-        "react-toastify": "^11.0.2",
-        "swiper": "^12.0.2"
-    },
-    "devDependencies": {
-        "@eslint/eslintrc": "^3",
-        "@types/node": "^20",
-        "@types/react": "^19",
-        "@types/react-dom": "^19",
-        "eslint": "^9",
-        "eslint-config-next": "15.1.4",
-        "husky": "^9.1.7",
-        "next-sitemap": "^4.2.3",
-        "sharp": "^0.34.4",
-        "typescript": "^5"
-    }
+  "name": "my-next-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000 --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postbuild": "next-sitemap",
+    "perf:build": "next build",
+    "perf:start": "next start",
+    "perf:lh:desktop": "npx lighthouse http://localhost:3000/ --output html --output json --output-path reports/performance/lh-desktop --chrome-flags=\"--headless=new\" --throttling-method=devtools --form-factor=desktop --screenEmulation.mobile=false",
+    "perf:lh:mobile": "npx lighthouse http://localhost:3000/ --output html --output json --output-path reports/performance/lh-mobile --chrome-flags=\"--headless=new\" --throttling-method=devtools --form-factor=mobile --screenEmulation.mobile=true",
+    "open": "powershell -NoProfile -Command \"start '' 'http://localhost:3000/'\"",
+    "perf:all": "npm run perf:build && start cmd /c \"npm run perf:start\" && timeout 5 && npm run perf:lh:desktop && npm run perf:lh:mobile",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.1.0",
+    "axios": "^1.7.9",
+    "bootstrap": "^5.3.3",
+    "next": "16.0.0",
+    "oidc-client-ts": "^3.1.0",
+    "react": "19.2.0",
+    "react-bootstrap": "^2.10.7",
+    "react-datepicker": "^7.6.0",
+    "react-dom": "19.2.0",
+    "react-toastify": "^11.0.2",
+    "swiper": "^12.0.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.0",
+    "husky": "^9.1.7",
+    "next-sitemap": "^4.2.3",
+    "sharp": "^0.34.4",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2"
+  }
 }
