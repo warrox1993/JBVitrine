@@ -13,8 +13,9 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true } as any);
-    return () => window.removeEventListener("scroll", handleScroll as any);
+    const scrollOptions: AddEventListenerOptions = { passive: true };
+    window.addEventListener("scroll", handleScroll, scrollOptions);
+    return () => window.removeEventListener("scroll", handleScroll, scrollOptions);
   }, []);
 
   useEffect(() => {

@@ -44,15 +44,15 @@ export default function AboutPage() {
         <Mission />
 
         {/* VALUES CARDS (below hero/mission, before timeline/team) */}
-        <section id="values" className="section is-alt" style={{ scrollMarginTop: 'var(--header-height)' }}>
-          <div className="container">
+        <section id="values" className={`${styles.section} ${styles.sectionAlt}`}>
+          <div className={styles.sectionContainer}>
             <ValuesCards />
           </div>
         </section>
 
         {/* STORY (ALTERNANCE) */}
-        <section id="story" className="section" style={{ scrollMarginTop: 'var(--header-height)' }}>
-          <div className="container">
+        <section id="story" className={styles.section}>
+          <div className={styles.sectionContainer}>
             <Timeline />
           </div>
         </section>
@@ -62,15 +62,15 @@ export default function AboutPage() {
         {/* Values old section removed: replaced by ValuesCards above */}
 
         {/* TEAM (ALTERNANCE) */}
-        <section id="team" className="section is-alt" style={{ scrollMarginTop: 'var(--header-height)' }}>
-          <div className="container">
+        <section id="team" className={`${styles.section} ${styles.sectionAlt}`}>
+          <div className={styles.sectionContainer}>
             <Team />
           </div>
         </section>
 
         {/* PROCESS MINI */}
-        <section id="process-mini" className="section" style={{ scrollMarginTop: 'var(--header-height)' }}>
-          <div className="container">
+        <section id="process-mini" className={styles.section}>
+          <div className={styles.sectionContainer}>
             <ProcessMini />
           </div>
         </section>

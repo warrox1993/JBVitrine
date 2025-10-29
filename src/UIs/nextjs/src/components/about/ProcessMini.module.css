@@ -1,0 +1,117 @@
+/* Compact process overview with responsive list presentation */
+
+.process-root {
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--color-surface), transparent 50%);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 40%);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.process-header {
+  display: grid;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.process-heading {
+  margin: 0;
+}
+
+.process-intro {
+  margin: 0 auto;
+  max-width: 60ch;
+  color: var(--color-text-2);
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
+
+.process-grid {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.process-step {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-surface), transparent 60%);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 30%);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--dur-2) var(--ease-standard),
+    border-color var(--dur-2) var(--ease-standard);
+}
+
+.process-stepTitle {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text-1);
+  margin: 0;
+}
+
+.process-stepText {
+  margin: 0;
+  color: var(--color-text-2);
+  line-height: 1.7;
+}
+
+.process-step:hover,
+.process-step:focus-within {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--color-accent-1), transparent 60%);
+}
+
+.process-linkWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.process-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: 600;
+  color: var(--color-accent-1);
+  text-decoration: none;
+  transition: color var(--dur-2) var(--ease-standard);
+}
+
+.process-link:hover,
+.process-link:focus-visible {
+  color: color-mix(
+    in srgb,
+    var(--color-accent-1) 80%,
+    var(--color-secondary) 20%
+  );
+}
+
+.process-link:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-accent-1), transparent 40%);
+  outline-offset: 2px;
+  border-radius: var(--radius-full);
+}
+
+.process-linkIcon {
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-step {
+    transition: none;
+  }
+}

@@ -1,0 +1,102 @@
+/* Sidebar navigation rail: handles collapsed/expanded hover behaviour */
+.sidebar-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-collapsed);
+  background: color-mix(
+    in srgb,
+    var(--color-bg-alt) 94%,
+    transparent 6%
+  );
+  border-right: 1px solid var(--color-border);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s ease;
+  overflow: hidden;
+  z-index: var(--z-sidebar);
+  will-change: width, transform;
+}
+
+.sidebar-root:hover {
+  width: var(--sidebar-expanded);
+  background: color-mix(
+    in srgb,
+    var(--color-bg-alt) 99%,
+    var(--color-surface) 1%
+  );
+  box-shadow: var(--shadow-md);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3) 0;
+  gap: 0.25rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text-2);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-link:hover {
+  background: color-mix(
+    in srgb,
+    var(--color-bg-alt) 86%,
+    var(--color-surface) 14%
+  );
+  color: var(--color-text-1);
+  transform: translateX(4px);
+}
+
+.sidebar-link-active {
+  color: var(--color-text-1);
+  opacity: 1;
+  background: color-mix(
+    in srgb,
+    var(--color-bg-alt) 84%,
+    var(--color-surface) 16%
+  );
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-accent-1) 15%, transparent 85%);
+}
+
+.sidebar-link-icon {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+}
+
+.sidebar-link-text {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.sidebar-root:hover .sidebar-link-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .sidebar-root {
+    width: var(--sidebar-w-open);
+    transform: translateX(-100%);
+    transition: transform 180ms ease;
+  }
+}
+
+:global(body.sidebar-open) .sidebar-root {
+  transform: translateX(0);
+}
+
+/* Adjust CSS variable for header when sidebar is hovered */
+:global(body.sidebar-hovered) {
+  --sidebar-w: var(--sidebar-expanded);
+}

@@ -1,21 +1,39 @@
 "use client";
+
 import { useEffect, useState } from "react";
 
+const resolveMatch = (query: string): boolean => {
+  if (
+    typeof window === "undefined" ||
+    typeof window.matchMedia !== "function"
+  ) {
+    return false;
+  }
+  return window.matchMedia(query).matches;
+};
+
 export function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const [matches, setMatches] = useState(() => resolveMatch(query));
 
   useEffect(() => {
-    setMounted(true);
-    const media = window.matchMedia(query);
+    if (
+      typeof window === "undefined" ||
+      typeof window.matchMedia !== "function"
+    ) {
+      return;
+    }
 
-    if (media.matches !== matches) setMatches(media.matches);
-    const listener = (e: MediaQueryListEvent) => setMatches(e.matches);
+    const mediaList = window.matchMedia(query);
+    const updateMatches = (event?: MediaQueryListEvent) => {
+      const nextMatch = event ? event.matches : mediaList.matches;
+      setMatches(nextMatch);
+    };
 
-    media.addEventListener("change", listener);
-    return () => media.removeEventListener("change", listener);
+    updateMatches();
+    mediaList.addEventListener("change", updateMatches);
+
+    return () => mediaList.removeEventListener("change", updateMatches);
   }, [query]);
 
-  return mounted ? matches : false;
+  return matches;
 }
-

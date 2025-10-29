@@ -14,7 +14,8 @@ export function Proof() {
   ];
 
   const trackRef = useRef<HTMLDivElement | null>(null);
-  const timerRef = useRef<number | null>(null);
+  const intervalRef = useRef<number | null>(null);
+  const resumeTimeoutRef = useRef<number | null>(null);
   const pausedRef = useRef(false);
   const visibleRef = useRef(true);
 
@@ -25,7 +26,11 @@ export function Proof() {
     const items = Array.from(track.children);
     const intervalMs = 5000;
 
-    const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReducedMotion = () =>
+      typeof window !== "undefined" &&
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     const currentIndex = () => Math.round(track.scrollLeft / track.clientWidth);
     const goTo = (i: number) => {
       const clamped = ((i % items.length) + items.length) % items.length;
@@ -33,19 +38,33 @@ export function Proof() {
     };
 
     const start = () => {
-      if (timerRef.current || pausedRef.current || !visibleRef.current || prefersReducedMotion()) return;
-      timerRef.current = window.setInterval(() => goTo(currentIndex() + 1), intervalMs);
+      if (
+        intervalRef.current !== null ||
+        pausedRef.current ||
+        !visibleRef.current ||
+        prefersReducedMotion()
+      ) {
+        return;
+      }
+      intervalRef.current = window.setInterval(
+        () => goTo(currentIndex() + 1),
+        intervalMs
+      );
     };
     const stop = () => {
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-        timerRef.current = null;
+      if (intervalRef.current !== null) {
+        window.clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+      if (resumeTimeoutRef.current !== null) {
+        window.clearTimeout(resumeTimeoutRef.current);
+        resumeTimeoutRef.current = null;
       }
     };
     const restartSoon = () => {
       stop();
       if (!pausedRef.current && visibleRef.current && !prefersReducedMotion()) {
-        timerRef.current = window.setTimeout(() => start(), 1200) as unknown as number;
+        resumeTimeoutRef.current = window.setTimeout(start, 1200);
       }
     };
 
@@ -53,26 +72,34 @@ export function Proof() {
     const onPointerLeave = () => { pausedRef.current = false; start(); };
     const onFocusIn = () => { pausedRef.current = true; stop(); };
     const onFocusOut = () => { pausedRef.current = false; start(); };
-    let userScroll: number | undefined;
+    let userScrollTimeout: number | null = null;
     const onScroll = () => {
-      if (userScroll) window.clearTimeout(userScroll);
-      userScroll = window.setTimeout(restartSoon, 300);
+      if (userScrollTimeout !== null) {
+        window.clearTimeout(userScrollTimeout);
+      }
+      userScrollTimeout = window.setTimeout(restartSoon, 300);
     };
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight") { e.preventDefault(); goTo(currentIndex() + 1); restartSoon(); }
       if (e.key === "ArrowLeft") { e.preventDefault(); goTo(currentIndex() - 1); restartSoon(); }
     };
 
+    const passiveOptions: AddEventListenerOptions = { passive: true };
+
     track.addEventListener("pointerenter", onPointerEnter);
     track.addEventListener("pointerleave", onPointerLeave);
     track.addEventListener("focusin", onFocusIn);
     track.addEventListener("focusout", onFocusOut);
-    track.addEventListener("scroll", onScroll, { passive: true } as any);
+    track.addEventListener("scroll", onScroll, passiveOptions);
     track.addEventListener("keydown", onKeyDown);
 
     const io = new IntersectionObserver(([entry]) => {
       visibleRef.current = entry.isIntersecting;
-      visibleRef.current ? start() : stop();
+      if (visibleRef.current) {
+        start();
+      } else {
+        stop();
+      }
     }, { threshold: 0.3 });
     io.observe(track);
 
@@ -80,12 +107,15 @@ export function Proof() {
 
     return () => {
       stop();
+      if (userScrollTimeout !== null) {
+        window.clearTimeout(userScrollTimeout);
+      }
       io.disconnect();
       track.removeEventListener("pointerenter", onPointerEnter);
       track.removeEventListener("pointerleave", onPointerLeave);
       track.removeEventListener("focusin", onFocusIn);
       track.removeEventListener("focusout", onFocusOut);
-      track.removeEventListener("scroll", onScroll as any);
+      track.removeEventListener("scroll", onScroll, passiveOptions);
       track.removeEventListener("keydown", onKeyDown);
     };
   }, []);
@@ -107,7 +137,7 @@ export function Proof() {
                 <blockquote className={styles.quote}>“{quote}”</blockquote>
                 <footer>
                   <div className={styles.proofPerson}>
-                    <Image src={avatar} alt={name} className={styles.proofAvatar as any} width={96} height={96} loading="lazy" fetchPriority="low" quality={80} />
+                    <Image src={avatar} alt={name} className={styles.proofAvatar} width={96} height={96} loading="lazy" fetchPriority="low" quality={80} />
                     <div>
                       <span className={styles.authorName}>{name}</span><br />
                       <span className={styles.authorRole}>{role}</span>

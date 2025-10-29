@@ -1,4 +1,36 @@
-.aboutPage h3 {
-  color: var(--color-accent-1) !important;
+.aboutPage {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 8vw, 96px);
+  width: 100%;
+  background: var(--color-bg);
 }
 
+.aboutPage h3 {
+  color: var(--color-accent-1);
+}
+
+.section {
+  padding-block: clamp(48px, 8vw, 96px);
+  scroll-margin-top: var(--header-height);
+  background: color-mix(in srgb, var(--color-bg) 92%, var(--color-bg-alt) 8%);
+  border-top: 1px solid color-mix(in srgb, var(--color-border), transparent 50%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--color-border), transparent 65%);
+}
+
+.sectionAlt {
+  background: color-mix(in srgb, var(--color-bg-alt) 88%, transparent 12%);
+  border-top: 1px solid color-mix(in srgb, var(--color-border), transparent 25%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--color-border), transparent 35%);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.28) inset;
+}
+
+.sectionContainer {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  display: grid;
+  gap: clamp(var(--space-4), 3vw, var(--space-6));
+}

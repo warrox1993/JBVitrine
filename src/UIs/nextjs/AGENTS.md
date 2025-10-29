@@ -402,7 +402,7 @@ Priorité absolue : clarté, sécurité, cohérence, maintenabilité
 ## 17. Strict DO & DON'T
 
 ### DO (Obligatoire)
-- 1 composant = 1 fichier `.module.css` importé uniquement par ce composant
+- 1 composant = 1 fichier `.module.tailwind` importé uniquement par ce composant
 - Nommer classes par bloc fonctionnel, préfixées par composant (`.navbar-root`, `.footer-link`)
 - Zéro duplication : factoriser en utilitaires ou variables
 - Unités fluides : `rem`, `em`, `clamp()` ; `px` toléré UNIQUEMENT pour bordures fines
@@ -433,9 +433,9 @@ Priorité absolue : clarté, sécurité, cohérence, maintenabilité
 
 ---
 
-## 18. Conventions CSS (États & Modificateurs)
+## 18. Conventions Tailwind (États & Modificateurs)
 
-Pour garantir cohérence du nommage CSS, utiliser ces conventions :
+Pour garantir cohérence du nommage tailwind, utiliser ces conventions :
 
 - **États actifs** : `.is-active`, `.is-open`, `.is-disabled`, `.is-loading`
 - **États erreur/validation** : `.has-error`, `.has-warning`, `.has-success`, `.is-invalid`

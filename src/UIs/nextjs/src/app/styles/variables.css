@@ -1,0 +1,172 @@
+:root {
+  /* Colors — Forge/Flame theme */
+  /* Semantic tokens */
+  --color-bg: #0f1115;
+  --color-bg-alt: #161a22;
+  --color-surface: #1e2430;
+  --color-surface-glass: rgba(30, 36, 48, 0.92);
+  --color-surface-solid: #1e2430;
+  --color-border: #2b3342;
+  --color-text: #f6f7f9;
+  --color-text-muted: #c8cdd6;
+  --color-primary: #ff6a00;
+  --color-primary-strong: #e45700;
+  --color-primary-contrast: #0f1115;
+  --color-secondary: #ffc43a;
+  --color-accent: #3a85ff;
+  --color-danger: #e5484d;
+
+  /* Fonts */
+  --font-base:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display:
+    "Instrument Sans", Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Legacy mappings */
+  --color-bg-1: var(--color-bg);
+  --color-bg-2: var(--color-bg-alt);
+  --color-bg-3: var(--color-surface);
+  --color-text-1: var(--color-text);
+  --color-text-2: var(--color-text-muted);
+  --color-text-3: color-mix(in oklab, var(--color-text-muted), #000 30%);
+  --color-accent-1: var(--color-primary);
+  --color-accent-2: var(--color-secondary);
+  --color-accent-3: var(--color-primary-strong);
+
+  /* Glows */
+  --shadow-glow-outer: 0 0 24px rgba(255, 106, 0, 0.24);
+  --shadow-glow-inner: 0 0 12px rgba(255, 196, 58, 0.12);
+  --color-glow: rgba(255, 106, 0, 0.24);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-7: 6.5rem;
+  --space-8: 10rem;
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 2rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(6, 7, 9, 0.15);
+  --shadow-md: 0 4px 12px rgba(6, 7, 9, 0.25);
+  --shadow-lg: 0 12px 40px rgba(6, 7, 9, 0.35);
+  --shadow-glow: var(--shadow-glow-outer), var(--shadow-glow-inner);
+
+  /* Typography scale */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --text-xl: clamp(1.375rem, 1.2rem + 0.75vw, 1.75rem);
+  --text-2xl: clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
+  --text-3xl: clamp(2.25rem, 1.75rem + 2vw, 3.5rem);
+  --text-4xl: clamp(3rem, 2rem + 4vw, 5rem);
+
+  /* Layout */
+  --container-max: 1440px;
+  --container-padding: clamp(1.5rem, 1vw, 6rem);
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --dur-1: 120ms;
+  --dur-2: 180ms;
+  --dur-3: 240ms;
+  --transition-fast: all 0.25s ease;
+  --transition-base: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-index scale */
+  --z-base: 0;
+  --z-header: 100;
+  --z-sidebar: 200;
+  --z-overlay: 300;
+  --z-progress: 10000;
+  --z-modal: 1000;
+
+  /* Breakpoints */
+  --bp-sm: 600px;
+  --bp-md: 900px;
+  --bp-lg: 1200px;
+  --bp-xl: 1440px;
+
+  /* Sidebar tokens */
+  --sidebar-collapsed: 80px;
+  --sidebar-expanded: 240px;
+  --sidebar-shift: 160px;
+  --sidebar-w: var(--sidebar-collapsed);
+  --sidebar-w-open: var(--sidebar-expanded);
+  --header-h: var(--header-height);
+
+  /* Component tokens */
+  --card-bg: var(--color-surface);
+  --card-border: var(--color-border);
+  --color-bg-header: color-mix(in srgb, var(--color-surface) 95%, transparent 5%);
+  --header-height: clamp(114px, 15.2vh, 171px);
+
+  --btn-bg: var(--color-primary);
+  --btn-fg: var(--color-primary-contrast);
+  --btn-border: transparent;
+  --btn-shadow: 0 10px 24px rgba(255, 106, 0, 0.22);
+
+  --btn-bg-hover: color-mix(in srgb, var(--color-primary) 88%, #fff 12%);
+  --btn-fg-hover: var(--color-primary-contrast);
+  --btn-border-hover: transparent;
+
+  --btn-bg-active: color-mix(in srgb, var(--color-primary-strong) 94%, #000 6%);
+  --btn-fg-active: var(--color-primary-contrast);
+  --btn-border-active: transparent;
+
+  --btn-focus-ring: 0 0 0 3px
+    color-mix(in srgb, var(--color-accent-1) 40%, transparent);
+
+  --btn-bg-disabled: color-mix(
+    in srgb,
+    var(--color-accent-1) 30%,
+    var(--color-bg) 70%
+  );
+  --btn-fg-disabled: color-mix(in srgb, white 60%, transparent);
+  --btn-border-disabled: transparent;
+
+  /* Progress indicators */
+  --progress-height: 4px;
+  --progress-color: var(--color-accent-1);
+  --progress-bg: transparent;
+}
+
+[data-theme="light"] {
+  --color-bg: hsl(220, 20%, 98%);
+  --color-bg-alt: hsl(220, 20%, 96%);
+  --color-surface: hsl(220, 20%, 96%);
+  --color-surface-glass: hsla(220, 20%, 98%, 0.8);
+  --color-surface-elevated: hsl(0, 0%, 100%);
+  --color-text: hsl(220, 20%, 10%);
+  --color-text-muted: hsl(220, 15%, 35%);
+  --color-border: hsla(220, 20%, 20%, 0.15);
+  --color-border-hover: hsla(220, 20%, 20%, 0.25);
+  --color-shadow: hsla(220, 20%, 10%, 0.1);
+
+  --color-bg-1: var(--color-bg);
+  --color-bg-2: var(--color-bg-alt);
+  --color-bg-3: color-mix(in oklab, var(--color-surface), #fff 10%);
+  --color-text-1: var(--color-text);
+  --color-text-2: var(--color-text-muted);
+  --color-text-3: color-mix(in oklab, var(--color-text-muted), #000 20%);
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-text-2: var(--color-text-1);
+    --color-border: hsla(250, 20%, 30%, 0.5);
+  }
+}

@@ -1,0 +1,68 @@
+/* Differentiators grid cards emphasising unique value props */
+
+.diff-section {
+  padding: clamp(48px, 8vw, 96px) 0;
+  background: color-mix(in srgb, var(--color-surface), transparent 70%);
+}
+
+.diff-container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  display: grid;
+  gap: var(--space-5);
+}
+
+.diff-heading {
+  margin: 0;
+  text-align: center;
+}
+
+.diff-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.diff-card {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-surface), transparent 50%);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 30%);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--dur-2) var(--ease-standard),
+    border-color var(--dur-2) var(--ease-standard);
+}
+
+.diff-cardTitle {
+  margin: 0;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text-1);
+}
+
+.diff-cardText {
+  margin: 0;
+  color: var(--color-text-2);
+  line-height: 1.7;
+}
+
+.diff-card:hover,
+.diff-card:focus-within {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--color-accent-1), transparent 50%);
+}
+
+@media (min-width: 768px) {
+  .diff-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diff-card {
+    transition: none;
+  }
+}

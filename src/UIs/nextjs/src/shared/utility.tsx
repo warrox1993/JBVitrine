@@ -1,57 +1,82 @@
-export const updateObject = (oldObject, updatedProperties) => {
-  return {
-    ...oldObject,
-    ...updatedProperties,
-  };
+type ValidationRules = {
+  required?: boolean;
+  minLength?: number;
+  maxLength?: number;
+  isEmail?: boolean;
+  isNumeric?: boolean;
 };
 
-export const checkValidity = (value, rules) => {
-  let rs: any = { isValid: true };
+type ValidationResult = {
+  isValid: boolean;
+  required?: true;
+  minLength?: true;
+  maxLength?: true;
+  email?: true;
+  numeric?: true;
+};
+
+export const updateObject = <TTarget, TUpdate extends Partial<TTarget>>(
+  original: TTarget,
+  updates: TUpdate
+): TTarget & TUpdate => ({
+  ...original,
+  ...updates,
+});
+
+export const checkValidity = (
+  value: unknown,
+  rules?: ValidationRules
+): ValidationResult => {
+  const result: ValidationResult = { isValid: true };
+
   if (!rules) {
-    return rs;
+    return result;
   }
+
+  const stringValue = typeof value === "string" ? value : String(value ?? "");
 
   if (rules.required) {
-    rs.isValid = (value || "").trim() !== "";
-    if (!rs.isValid) {
-      rs.required = true;
-      return rs;
+    result.isValid = stringValue.trim().length > 0;
+    if (!result.isValid) {
+      result.required = true;
+      return result;
     }
   }
 
-  if (rules.minLength) {
-    rs.isValid = value.length >= rules.minLength;
-    if (!rs.isValid) {
-      rs.minLength = true;
-      return rs;
+  if (typeof rules.minLength === "number") {
+    result.isValid = stringValue.length >= rules.minLength;
+    if (!result.isValid) {
+      result.minLength = true;
+      return result;
     }
   }
 
-  if (rules.maxLength) {
-    rs.isValid = value.length <= rules.maxLength;
-    if (!rs.isValid) {
-      rs.maxLength = true;
-      return rs;
+  if (typeof rules.maxLength === "number") {
+    result.isValid = stringValue.length <= rules.maxLength;
+    if (!result.isValid) {
+      result.maxLength = true;
+      return result;
     }
   }
 
   if (rules.isEmail) {
-    const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-    rs.isValid = pattern.test(value);
-    if (!rs.isValid) {
-      rs.email = true;
-      return rs;
+    const emailPattern =
+      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i;
+    result.isValid = emailPattern.test(stringValue);
+    if (!result.isValid) {
+      result.email = true;
+      return result;
     }
   }
 
   if (rules.isNumeric) {
-    const pattern = /^\d+$/;
-    rs.isValid = pattern.test(value);
-    if (!rs.isValid) {
-      rs.numeric = true;
-      return rs;
+    const numericPattern = /^\d+$/;
+    result.isValid = numericPattern.test(stringValue);
+    if (!result.isValid) {
+      result.numeric = true;
+      return result;
     }
   }
 
-  return rs;
+  return result;
 };

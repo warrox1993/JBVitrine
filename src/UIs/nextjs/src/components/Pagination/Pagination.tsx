@@ -1,7 +1,13 @@
 import { Pagination as BootstrapPagination } from "react-bootstrap";
 
-const Pagination = (props) => {
-  const { totalItems, currentPage, pageSize } = props;
+type PaginationProps = {
+  totalItems: number;
+  currentPage: number;
+  pageSize: number;
+  pageSelected: (page: number) => void;
+};
+
+const Pagination = ({ totalItems, currentPage, pageSize, pageSelected }: PaginationProps) => {
   const totalPages = Math.ceil(totalItems / pageSize);
 
   const pageNumbers: Array<number> = [];
@@ -24,10 +30,6 @@ const Pagination = (props) => {
   for (let i = startIndex; i <= endIndex; i++) {
     pageNumbers.push(i);
   }
-
-  const pageSelected = (page: number) => {
-    props.pageSelected(page);
-  };
 
   const pageItems = pageNumbers.map((index) => (
     <BootstrapPagination.Item

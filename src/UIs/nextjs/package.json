@@ -6,7 +6,7 @@
     "dev": "next dev -p 3000 --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --max-warnings=0",
     "postbuild": "next-sitemap",
     "perf:build": "next build",
     "perf:start": "next start",

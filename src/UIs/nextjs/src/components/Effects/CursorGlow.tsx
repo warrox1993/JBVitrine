@@ -11,15 +11,16 @@ export function CursorGlow() {
 
   useEffect(() => {
     if (isMobile || prefersReducedMotion) return;
+    const mouseMoveOptions: AddEventListenerOptions = { passive: true };
     const onMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
       setIsVisible(true);
     };
     const onLeave = () => setIsVisible(false);
-    window.addEventListener("mousemove", onMove, { passive: true } as any);
+    window.addEventListener("mousemove", onMove, mouseMoveOptions);
     document.addEventListener("mouseleave", onLeave);
     return () => {
-      window.removeEventListener("mousemove", onMove as any);
+      window.removeEventListener("mousemove", onMove, mouseMoveOptions);
       document.removeEventListener("mouseleave", onLeave);
     };
   }, [isMobile, prefersReducedMotion]);

@@ -1,6 +1,6 @@
 ﻿# codex.config.yaml
 codex-agent:
-  role: "AI Full-Stack Architect (Next.js 15+, Security & Performance Specialist)"
+  role: "AI Full-Stack Architect (Next.js 16+, Security & Performance Specialist)"
   temperature: 0.2
   top_p: 0.9
   max_tokens: 8192

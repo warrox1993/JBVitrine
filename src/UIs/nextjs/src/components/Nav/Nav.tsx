@@ -2,102 +2,115 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import classes from "./Nav.module.css";
 import { usePathname } from "next/navigation";
+import styles from "./Nav.module.css";
 
+type NavItem = {
+  readonly href: string;
+  readonly label: string;
+  readonly aliases?: readonly string[];
+  readonly requiresAuth?: boolean;
+  readonly hideWhenAuthenticated?: boolean;
+};
+
+const NAV_ITEMS: readonly NavItem[] = [
+  { href: "/home", label: "Home", aliases: ["/"] },
+  { href: "/settings", label: "Settings" },
+  { href: "/files", label: "Files" },
+  { href: "/products", label: "Products" },
+  { href: "/users", label: "Users" },
+  { href: "/auditlogs", label: "Audit Logs" },
+  { href: "/login", label: "Login", hideWhenAuthenticated: true },
+  { href: "/logout", label: "Logout", requiresAuth: true },
+];
+
+const BRAND_TITLE = "ClassifiedAds.NextJs";
+const NEXT_VERSION = "15.1.4";
+
+const brandLabel = `${BRAND_TITLE} ${NEXT_VERSION}`;
+
+const combineClassNames = (...classNames: Array<string | undefined>): string =>
+  classNames.filter(Boolean).join(" ");
+
+/** Primary navigation bar for the application shell. */
 const Nav = () => {
-  const pageTitle = "ClassifiedAds.NextJs";
-  const nextVersion = "15.1.4";
-
-  const pathname = usePathname();
-
-  const isActive = (path) => {
-    return pathname === path || pathname.startsWith(path + "/");
-  };
-
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const pathname = usePathname() ?? "/";
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
+    if (typeof window === "undefined") {
+      return false;
+    }
+    try {
+      return window.localStorage.getItem("access_token") !== null;
+    } catch {
+      return false;
+    }
+  });
 
   useEffect(() => {
-    setIsAuthenticated(localStorage.getItem("access_token") != null);
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === "access_token") {
+        setIsAuthenticated(event.newValue !== null);
+      }
+    };
+
+    window.addEventListener("storage", handleStorage);
+
+    return () => window.removeEventListener("storage", handleStorage);
   }, []);
 
+  const isActive = (item: NavItem): boolean => {
+    if (pathname === item.href) {
+      return true;
+    }
+
+    if (item.aliases?.some((aliasPath) => pathname === aliasPath)) {
+      return true;
+    }
+
+    return pathname.startsWith(`${item.href}/`);
+  };
+
+  const visibleItems = NAV_ITEMS.filter((item) => {
+    if (item.requiresAuth && !isAuthenticated) {
+      return false;
+    }
+
+    if (item.hideWhenAuthenticated && isAuthenticated) {
+      return false;
+    }
+
+    return true;
+  });
+
   return (
-    <nav
-      className={"navbar navbar-expand navbar-light bg-light " + classes.Nav}
-      style={{ paddingLeft: "1rem", paddingRight: "1rem" }}
-    >
-      <Link className="navbar-brand" href="/">
-        {pageTitle + " " + nextVersion}
+    <nav className={styles["nav-root"]} aria-label="Primary navigation">
+      <Link className={styles["nav-brand"]} href="/">
+        {brandLabel}
       </Link>
-      <ul className="nav nav-pills">
-        <li>
-          <Link
-            className={
-              isActive("/home") || isActive("/")
-                ? "nav-link active"
-                : "nav-link"
-            }
-            href="/home"
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={isActive("/settings") ? "nav-link active" : "nav-link"}
-            href="/settings"
-          >
-            Settings
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={isActive("/files") ? "nav-link active" : "nav-link"}
-            href="/files"
-          >
-            Files
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={isActive("/products") ? "nav-link active" : "nav-link"}
-            href="/products"
-          >
-            Products
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={isActive("/users") ? "nav-link active" : "nav-link"}
-            href="/users"
-          >
-            Users
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={isActive("/auditlogs") ? "nav-link active" : "nav-link"}
-            href="/auditlogs"
-          >
-            Audit Logs
-          </Link>
-        </li>
+      <ul className={styles["nav-menu"]}>
+        {visibleItems.map((item) => {
+          const active = isActive(item);
+          const linkClassName = combineClassNames(
+            styles["nav-link"],
+            active ? styles["nav-link--active"] : undefined
+          );
 
-        {!isAuthenticated ? (
-          <li>
-            <Link className="nav-link" href="/login">
-              Login
-            </Link>
-          </li>
-        ) : null}
-
-        {isAuthenticated ? (
-          <li>
-            <Link className="nav-link" href="/logout">
-              Logout
-            </Link>
-          </li>
-        ) : null}
+          return (
+            <li key={item.href}>
+              <Link
+                className={linkClassName}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+              >
+                {item.label}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

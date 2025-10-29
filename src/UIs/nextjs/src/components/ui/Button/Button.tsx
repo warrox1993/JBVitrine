@@ -1,9 +1,16 @@
 "use client";
-import { ReactNode, MouseEventHandler, ButtonHTMLAttributes } from "react";
+import {
+  ReactNode,
+  ButtonHTMLAttributes,
+  MouseEvent,
+  MouseEventHandler,
+} from "react";
 import styles from "./Button.module.css";
 
 type ButtonVariant = 'solid' | 'outline' | 'ghost' | 'primary' | 'secondary';
 type ButtonSize = 'sm' | 'md' | 'lg';
+
+type ButtonClickEvent = MouseEvent<HTMLButtonElement | HTMLAnchorElement>;
 
 export type UnifiedButtonProps = {
   as?: 'button' | 'a';
@@ -16,7 +23,7 @@ export type UnifiedButtonProps = {
   leadingIcon?: ReactNode;
   trailingIcon?: ReactNode;
   className?: string;
-  onClick?: MouseEventHandler<HTMLElement>;
+  onClick?: (event: ButtonClickEvent) => void;
   type?: 'button' | 'submit' | 'reset';
   ariaLabel?: string;
   children: ReactNode;
@@ -29,10 +36,19 @@ function classes(
   extra?: string,
   disabled?: boolean | null,
 ) {
-  const v = variant === 'primary' ? 'solid' : variant === 'secondary' ? 'outline' : variant;
+  const variantClassMap: Record<ButtonVariant, keyof typeof styles> = {
+    solid: "solid",
+    outline: "outline",
+    ghost: "ghost",
+    primary: "solid",
+    secondary: "outline",
+  };
+
+  const resolvedVariant = variantClassMap[variant];
+
   return [
     styles.root,
-    styles[v as 'solid' | 'outline' | 'ghost'],
+    styles[resolvedVariant],
     styles[size],
     fullWidth ? styles.fullWidth : '',
     disabled ? styles.disabled : '',
@@ -66,7 +82,7 @@ export function Button({
         e.stopPropagation();
         return;
       }
-      (onClick as any)?.(e);
+      onClick?.(e);
     };
     return (
       <a
@@ -83,13 +99,21 @@ export function Button({
     );
   }
 
+  const handleButtonClick: MouseEventHandler<HTMLButtonElement> = (event) => {
+    if (loading) {
+      event.preventDefault();
+      return;
+    }
+    onClick?.(event);
+  };
+
   return (
     <button
       type={type}
       className={cls}
       disabled={disabled || loading}
       aria-label={ariaLabel}
-      onClick={onClick as any}
+      onClick={handleButtonClick}
       {...rest}
     >
       {leadingIcon && <span className={styles.icon}>{leadingIcon}</span>}

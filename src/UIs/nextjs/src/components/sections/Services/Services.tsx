@@ -16,6 +16,7 @@ export function Services() {
       ],
       price: "Sur devis",
       featured: true,
+      orderKey: "dev" as const,
     },
     {
       title: "Cybersécurité Web",
@@ -27,6 +28,7 @@ export function Services() {
         "Monitoring & réponse aux incidents",
       ],
       price: "Sur devis",
+      orderKey: "cyber" as const,
     },
     {
       title: "Automatisation n8n & IA",
@@ -38,8 +40,15 @@ export function Services() {
         "Observabilité & alertes",
       ],
       price: "Sur devis",
+      orderKey: "auto" as const,
     },
   ];
+  type ServiceOrderKey = (typeof services)[number]["orderKey"];
+  const orderClasses: Record<ServiceOrderKey, string> = {
+    dev: styles.cardDev,
+    cyber: styles.cardCyber,
+    auto: styles.cardAuto,
+  };
   return (
     <section id="services" className={styles.section}>
       <div className="container">
@@ -47,13 +56,15 @@ export function Services() {
           <Heading as="h2" accent className={styles.title}>Services Excellence</Heading>
           <p className={styles.desc}>Tailored digital solutions designed to elevate your brand, secure your infrastructure, and automate your growth.</p>
         </div>
-        <div className={`${styles.grid} services-grid`}>
+        <div className={styles.grid}>
           {services.map((s, i) => (
             <div
               key={i}
-              className={`${styles.card} ${s.featured ? styles.featured : styles.regular} service-card ${
-                s.title.startsWith('Développement Web') ? 'service-dev' : s.title.startsWith('Cybersécurité') ? 'service-cyber' : 'service-auto'
-              }`}
+              className={[
+                styles.card,
+                s.featured ? styles.featured : styles.regular,
+                orderClasses[s.orderKey],
+              ].join(" ")}
             >
               {s.featured && <div className={styles.badge}>Populaire</div>}
               <h3 className={styles.cardTitle}>{s.title}</h3>

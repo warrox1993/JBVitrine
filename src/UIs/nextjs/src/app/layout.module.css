@@ -1,0 +1,17 @@
+/* Root layout spacing for sidebar/header shell */
+.main {
+  margin-left: var(--sidebar-collapsed);
+  padding-top: var(--header-h);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+:global(body.sidebar-open) .main {
+  margin-left: var(--sidebar-collapsed);
+}
+
+@media (max-width: 768px) {
+  .main {
+    margin-left: 0;
+  }
+}

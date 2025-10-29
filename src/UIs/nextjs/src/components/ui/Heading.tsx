@@ -10,13 +10,12 @@ type HeadingProps = {
 };
 
 export function Heading({ as = 'h2', className, children, accent, style, id }: HeadingProps) {
-  const Tag = as as any;
-  const cls = className ? ` ${className}` : '';
+  const Tag = as;
   const base: React.CSSProperties = {
     fontFamily: 'var(--font-display)',
     fontWeight: 700,
     fontSize: 'var(--text-3xl)',
-    lineHeight: 1.2 as any,
+    lineHeight: 1.2,
     marginBottom: 'var(--space-4)'
   };
   const accentStyle: React.CSSProperties | undefined = accent
@@ -24,14 +23,20 @@ export function Heading({ as = 'h2', className, children, accent, style, id }: H
         background: 'linear-gradient(135deg, var(--color-text-1) 0%, var(--color-accent-1) 100%)',
         backgroundClip: 'text',
         WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent' as any
+        WebkitTextFillColor: 'transparent'
       }
     : undefined;
+  const combinedStyle: React.CSSProperties = {
+    ...base,
+    ...(accentStyle ?? {}),
+    ...(style ?? {}),
+  };
+
   return (
     <Tag
       id={id}
-      className={cls.trim()}
-      style={{ ...base, ...(accentStyle || {}), ...(style || {}) }}
+      className={className}
+      style={combinedStyle}
     >
       {children}
     </Tag>

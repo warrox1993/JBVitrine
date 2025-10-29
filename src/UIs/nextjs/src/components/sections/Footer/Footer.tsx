@@ -23,19 +23,19 @@ export function Footer() {
           <h4 className={styles.heading}>Navigation</h4>
           <nav aria-label="Liens de pied de page">
             <ul className={styles.nav}>
-              <li style={{ marginBottom: 'var(--space-2)' }}>
+              <li className={styles.navItem}>
                 <Link href="/#projects">Projets</Link>
               </li>
-              <li style={{ marginBottom: 'var(--space-2)' }}>
+              <li className={styles.navItem}>
                 <Link href="/#process">Processus</Link>
               </li>
-              <li style={{ marginBottom: 'var(--space-2)' }}>
+              <li className={styles.navItem}>
                 <Link href="/#services">Services</Link>
               </li>
-              <li style={{ marginBottom: 'var(--space-2)' }}>
+              <li className={styles.navItem}>
                 <Link href="/about">À propos</Link>
               </li>
-              <li style={{ marginBottom: 'var(--space-2)' }}>
+              <li className={styles.navItem}>
                 <Link href="/#contact">Contact</Link>
               </li>
             </ul>
@@ -45,7 +45,7 @@ export function Footer() {
           <h4 className={styles.heading}>Légal</h4>
           <ul className={styles.nav}>
             {["Mentions légales", "Confidentialité", "CGV"].map((link) => (
-              <li key={link} style={{ marginBottom: 'var(--space-2)' }}>
+              <li key={link} className={styles.navItem}>
                 <a href="#">{link}</a>
               </li>
             ))}
@@ -54,7 +54,7 @@ export function Footer() {
         <div>
           <h4 className={styles.heading}>Contact</h4>
           <ul className={styles.nav}>
-            <li style={{ marginBottom: 'var(--space-2)' }}>
+            <li className={styles.navItem}>
               <a
                 href="mailto:jeanbaptiste.dhondt1@gmail.com"
                 aria-label="Envoyer un e-mail à Jean-Baptiste Dhondt"
@@ -62,7 +62,7 @@ export function Footer() {
                 jeanbaptiste.dhondt1@gmail.com
               </a>
             </li>
-            <li style={{ marginBottom: 'var(--space-2)' }}>
+            <li className={styles.navItem}>
               <a
                 href="tel:+32475205562"
                 aria-label="Appeler le numéro de téléphone"
@@ -84,5 +84,4 @@ export function Footer() {
     </footer>
   );
 }
-
 

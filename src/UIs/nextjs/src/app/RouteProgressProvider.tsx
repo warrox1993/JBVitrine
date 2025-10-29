@@ -1,43 +1,72 @@
 "use client";
-import { useEffect, useRef } from 'react';
-import { usePathname } from 'next/navigation';
 
-export default function RouteProgressProvider() {
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
+
+type ProgressController = {
+  set: (value: number) => void;
+  done: () => void;
+};
+
+declare global {
+  interface Window {
+    __progress?: ProgressController;
+  }
+}
+
+export default function RouteProgressProvider(): null {
   const pathname = usePathname();
   // Avoid triggering the progress bar on the very first page load
   const isFirstRenderRef = useRef(true);
+
   useEffect(() => {
     if (isFirstRenderRef.current) {
       isFirstRenderRef.current = false;
       return;
     }
-    let cancelled = false;
-    let t1: any, t2: any, t3: any, poll: any;
 
-    const kick = () => {
-      const p = (window as any).__progress;
-      if (!p) return false;
-      p.set(15);
-      t1 = setTimeout(() => p.set(55), 120);
-      t2 = setTimeout(() => p.set(85), 240);
-      t3 = setTimeout(() => p.done(), 420);
+    let cancelled = false;
+    let tickOne: ReturnType<typeof setTimeout> | undefined;
+    let tickTwo: ReturnType<typeof setTimeout> | undefined;
+    let tickThree: ReturnType<typeof setTimeout> | undefined;
+    let poll: ReturnType<typeof setInterval> | undefined;
+
+    const kick = (): boolean => {
+      const progress = window.__progress;
+      if (!progress) return false;
+
+      progress.set(15);
+      tickOne = setTimeout(() => progress.set(55), 120);
+      tickTwo = setTimeout(() => progress.set(85), 240);
+      tickThree = setTimeout(() => progress.done(), 420);
       return true;
     };
 
     if (!kick()) {
       poll = setInterval(() => {
         if (cancelled) return;
-        if (kick()) clearInterval(poll);
+        if (kick()) {
+          clearInterval(poll);
+          poll = undefined;
+        }
       }, 16);
     }
 
     return () => {
       cancelled = true;
-      if (poll) clearInterval(poll);
-      clearTimeout(t1); clearTimeout(t2); clearTimeout(t3);
-      const p = (window as any).__progress;
-      if (p && typeof p.done === 'function') p.done();
+      if (poll) {
+        clearInterval(poll);
+      }
+      if (tickOne) clearTimeout(tickOne);
+      if (tickTwo) clearTimeout(tickTwo);
+      if (tickThree) clearTimeout(tickThree);
+
+      const progress = window.__progress;
+      if (progress) {
+        progress.done();
+      }
     };
   }, [pathname]);
+
   return null;
 }

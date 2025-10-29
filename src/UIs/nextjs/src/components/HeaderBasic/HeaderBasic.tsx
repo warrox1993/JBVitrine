@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./HeaderBasic.module.css";
 
 type LinkItem = { href: string; label: string };
@@ -19,9 +20,9 @@ export default function HeaderBasic({
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <a href="/" className={styles.brand}>
+        <Link href="/" className={styles.brand}>
           {brand}
-        </a>
+        </Link>
         <nav className={styles.nav}>
           {links.map((l) => (
             <a key={l.href} href={l.href} className={styles.link}>
@@ -33,4 +34,3 @@ export default function HeaderBasic({
     </header>
   );
 }
-

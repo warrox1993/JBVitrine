@@ -1,13 +1,15 @@
 // src/app/layout.tsx
+import './styles/variables.css';
+import './styles/typography.css';
+import './styles/utilities.css';
 import './globals.css';
-import './elements.css';
-import './utilities.css';
 import '../styles/buttons.animations.css';
+import layoutStyles from './layout.module.css';
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { Inter, Instrument_Sans } from 'next/font/google';
 import FXReady from './FXReady';
-import { RootEffects } from '@/components/effects/RootEffects';
+import { RootEffects } from '@/components/Effects/RootEffects';
 import RouteProgressProvider from '@/app/RouteProgressProvider';
 import SidebarRouterBridge from '@/components/SidebarRouterBridge';
 import Header from '@/components/Header';
@@ -195,7 +197,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <RouteProgressProvider />
             <SidebarRouterBridge />
             <Header />
-            <main id="main">{children}</main>
+            <main id="main" className={layoutStyles.main}>{children}</main>
         </RootEffects>
         </body>
         </html>

@@ -2,8 +2,14 @@
 import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
 import styles from "./Showreel.module.css";
 
+type ProjectCard = {
+  title: string;
+  tag: string;
+  gradient: string;
+};
+
 export function Showreel() {
-  const projects = [
+  const projects: ProjectCard[] = [
     { title: "E-commerce Luxury", tag: "Next.js", gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" },
     { title: "SaaS Dashboard", tag: "React", gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)" },
     { title: "Portfolio Créatif", tag: "WebGL", gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)" },
@@ -19,11 +25,15 @@ export function Showreel() {
           <p className={styles.description}>Chaque projet est une opportunité de repousser les limites du design et de la technique.</p>
         </div>
         <div className={styles.grid}>
-          {projects.map((p, i) => (
-            <div key={i} className={styles.card} style={{ background: p.gradient } as any}>
+          {projects.map((project) => (
+            <div
+              key={project.title}
+              className={styles.card}
+              style={{ background: project.gradient }}
+            >
               <div className={styles.overlay}>
-                <div className={styles.tag}>{p.tag}</div>
-                <h3 className={styles.cardTitle}>{p.title}</h3>
+                <div className={styles.tag}>{project.tag}</div>
+                <h3 className={styles.cardTitle}>{project.title}</h3>
               </div>
               <div className={styles.hoverIcon}><ArrowRightIcon /></div>
             </div>

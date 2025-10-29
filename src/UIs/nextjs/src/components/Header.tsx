@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useMemo } from "react";
 import styles from "./Header.module.css";
 import { sections } from "@/config/nav";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
@@ -9,10 +10,17 @@ import { usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
+  const trackedIds = useMemo(() => sections.map((section) => section.id), []);
+  const activeId = useScrollSpy(trackedIds, 120);
+  const navItems = useMemo(
+    () => sections.filter((section) => section.id !== "hero"),
+    []
+  );
+
   return (
-    <header>
+    <header className={styles["header-root"]}>
       {/* Left: Logo + Brand */}
-      <div className="left cluster">
+      <div className={styles["header-left"]}>
         <Link href="/" aria-label="Go to homepage" className={styles.headerLogo}>
           <Image
             src="/images/logoheader/LogoHeader-removebg-preview.webp"
@@ -27,24 +35,27 @@ export default function Header() {
       </div>
 
       {/* Right: existing nav remains unchanged */}
-      <nav className="header-nav" aria-label="Navigation principale (haut)">
-        {(() => {
-          const items = sections.filter(s => s.id !== 'hero');
-          const activeId = useScrollSpy(sections.map(x => x.id), 120);
-          return items.map(s => {
-            const isActive = s.id === 'about' ? (pathname?.startsWith('/about')) : (activeId === s.id);
-            return (
-              <a
-                key={s.id}
-                href={s.href}
-                className="header-link"
-                aria-current={isActive ? 'page' : undefined}
-              >
-                {s.label}
-              </a>
-            );
-          });
-        })()}
+      <nav className={styles["header-nav"]} aria-label="Navigation principale (haut)">
+        {navItems.map((section) => {
+          const isActive =
+            section.id === "about"
+              ? pathname?.startsWith("/about")
+              : activeId === section.id;
+          const linkClassName = `${styles["header-link"]}${
+            isActive ? ` ${styles["header-link-active"]}` : ""
+          }`;
+
+          return (
+            <a
+              key={section.id}
+              href={section.href}
+              className={linkClassName}
+              aria-current={isActive ? "page" : undefined}
+            >
+              {section.label}
+            </a>
+          );
+        })}
       </nav>
     </header>
   );

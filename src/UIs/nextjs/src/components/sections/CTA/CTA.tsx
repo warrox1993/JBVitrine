@@ -29,7 +29,8 @@ export function CTA() {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       setSubmitSuccess(true);
       setFormState({ name: "", email: "", message: "", honeypot: "" });
-    } catch (err) {
+    } catch (error) {
+      console.error("CTA submission failed", error);
       setErrors({ submit: "Une erreur est survenue. Veuillez réessayer." });
     } finally {
       setIsSubmitting(false);
@@ -47,7 +48,6 @@ export function CTA() {
           {submitSuccess ? (
             <div className={styles.success} role="alert">
               <h3>Message envoyé avec succès ! 🎉</h3>
-              <p>Nous vous répondrons sous 24h.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className={styles.form} noValidate>
