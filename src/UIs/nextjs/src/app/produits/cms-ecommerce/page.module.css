@@ -1,0 +1,518 @@
+/* Styles spécifiques à la page produit CMS e-commerce (sections, grilles, CTA) */
+
+.pageRoot {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(var(--space-6), 8vw, var(--space-8));
+  background: var(--color-bg);
+}
+
+.section {
+  padding-block: clamp(var(--space-6), 10vw, var(--space-8));
+  scroll-margin-top: var(--header-height);
+}
+
+.altBackground {
+  background: color-mix(in srgb, var(--color-bg-alt) 90%, transparent 10%);
+  border-block: 1px solid
+    color-mix(in srgb, var(--color-border), transparent 60%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.02),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.sectionHeader {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 720px;
+  margin-bottom: clamp(var(--space-4), 4vw, var(--space-6));
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.sectionLead {
+  margin: 0;
+  color: var(--color-text-2);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+}
+
+/* Hero */
+.heroSection {
+  position: relative;
+  isolation: isolate;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(var(--space-5), 6vw, var(--space-7));
+  align-items: center;
+}
+
+.heroContent {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 4vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  background: linear-gradient(
+    135deg,
+    var(--color-text-1),
+    var(--color-accent-1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  margin: 0;
+  font-size: var(--text-lg);
+  color: var(--color-text-2);
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.heroHighlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.heroHighlightItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-surface), transparent 35%);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 40%);
+  box-shadow: var(--shadow-sm);
+}
+
+.heroHighlightIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--color-accent-1) 40%, transparent 60%);
+  color: var(--color-text-1);
+}
+
+.heroVisual {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.heroVisualGlow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(
+    circle at 20% 20%,
+    rgba(255, 106, 0, 0.4),
+    transparent 55%
+  );
+  filter: blur(80px);
+  z-index: 1;
+}
+
+.heroImage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Proofs */
+.proofsSection {
+  background: color-mix(in srgb, var(--color-bg-alt) 85%, transparent 15%);
+}
+
+.proofList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.proofItem {
+  display: grid;
+  gap: var(--space-2);
+  align-items: start;
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-surface), transparent 45%);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 35%);
+  box-shadow: var(--shadow-sm);
+}
+
+.proofIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--color-accent-1) 35%, transparent 65%);
+}
+
+.proofLabel {
+  font-weight: 600;
+  color: var(--color-text-1);
+}
+
+/* Benefits */
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+.benefitCard {
+  display: grid;
+  gap: var(--space-2);
+  padding: clamp(var(--space-3), 3vw, var(--space-4));
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 40%);
+  background: color-mix(in srgb, var(--color-surface), transparent 40%);
+  box-shadow: var(--shadow-sm);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text-1);
+}
+
+.cardDescription {
+  margin: 0;
+  color: var(--color-text-2);
+  line-height: 1.7;
+}
+
+/* Modules */
+.modulesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.moduleCard {
+  display: grid;
+  gap: var(--space-3);
+  padding: clamp(var(--space-3), 3vw, var(--space-4));
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 35%);
+  background: color-mix(in srgb, var(--color-surface), transparent 30%);
+  box-shadow: var(--shadow-sm);
+}
+
+.moduleList {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.moduleItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  color: var(--color-text-2);
+}
+
+.moduleItem svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent-1);
+  flex-shrink: 0;
+}
+
+/* Plans */
+.plansGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+}
+
+.planCard {
+  display: grid;
+  gap: 0;
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-surface), transparent 20%);
+}
+
+.planCardHighlight {
+  border: 1px solid color-mix(in srgb, var(--color-accent-1), transparent 20%);
+  box-shadow: var(--shadow-glow);
+}
+
+.planHeader {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.planBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--color-accent-1), transparent 60%);
+  color: var(--color-text-1);
+  font-weight: 600;
+  width: fit-content;
+}
+
+.planFeatures {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.planFeatures li {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  color: var(--color-text-2);
+}
+
+.planFeatures svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-accent-1);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.planFooter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: flex-end;
+}
+
+.planPrimaryCta {
+  flex: 1 1 auto;
+}
+
+/* Integrations */
+.integrationsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.integrationItem {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-surface), transparent 30%);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 40%);
+}
+
+.integrationName {
+  font-weight: 600;
+  font-size: var(--text-lg);
+  color: var(--color-text-1);
+}
+
+.integrationDescription {
+  margin: 0;
+  color: var(--color-text-2);
+  line-height: 1.6;
+}
+
+/* Showcase */
+.showcaseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+.showcaseItem {
+  display: grid;
+  gap: var(--space-2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-surface), transparent 25%);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 40%);
+  box-shadow: var(--shadow-sm);
+}
+
+.showcaseImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.showcaseCaption {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  color: var(--color-text-2);
+}
+
+.showcaseCaption strong {
+  color: var(--color-text-1);
+  font-weight: 600;
+}
+
+/* Case Study */
+.caseWrapper {
+  display: grid;
+  gap: var(--space-4);
+  border-radius: var(--radius-xl);
+  padding: clamp(var(--space-4), 4vw, var(--space-6));
+  background: color-mix(in srgb, var(--color-surface), transparent 20%);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 30%);
+  box-shadow: var(--shadow-md);
+}
+
+.caseMetrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.caseMetricLabel {
+  font-size: var(--text-sm);
+  color: var(--color-text-2);
+  margin: 0;
+}
+
+.caseMetricValue {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-text-1);
+  margin: 0;
+}
+
+/* FAQ */
+.faqList {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.faqItem {
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 40%);
+  background: color-mix(in srgb, var(--color-surface), transparent 35%);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+
+.faqSummary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-text-1);
+  list-style: none;
+}
+
+.faqSummary::-webkit-details-marker {
+  display: none;
+}
+
+.faqItem[open] .faqSummary {
+  color: var(--color-accent-1);
+}
+
+.faqAnswer {
+  margin: var(--space-2) 0 0;
+  color: var(--color-text-2);
+  line-height: 1.7;
+}
+
+/* Final CTA */
+.finalCta {
+  display: grid;
+  gap: var(--space-3);
+  padding: clamp(var(--space-4), 4vw, var(--space-6));
+  border-radius: var(--radius-xl);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent-1), transparent 15%),
+    color-mix(in srgb, var(--color-accent-2), transparent 30%)
+  );
+  color: var(--color-text-1);
+  box-shadow: var(--shadow-glow);
+}
+
+.finalCtaButton {
+  justify-self: start;
+}
+
+@media (max-width: 1024px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+  .heroVisual {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .planFooter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .planPrimaryCta {
+    width: 100%;
+  }
+  .caseWrapper {
+    padding: var(--space-4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroHighlightItem,
+  .planCard,
+  .integrationItem,
+  .finalCta {
+    transition: none;
+  }
+}

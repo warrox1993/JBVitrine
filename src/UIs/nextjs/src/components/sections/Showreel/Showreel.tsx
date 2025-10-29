@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
 import styles from "./Showreel.module.css";
 
@@ -6,6 +7,8 @@ type ProjectCard = {
   title: string;
   tag: string;
   gradient: string;
+  href?: string;
+  ariaLabel?: string;
 };
 
 export function Showreel() {
@@ -15,7 +18,13 @@ export function Showreel() {
     { title: "Portfolio Créatif", tag: "WebGL", gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)" },
     { title: "Plateforme Finance", tag: "TypeScript", gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)" },
     { title: "App Mobile Hybrid", tag: "React Native", gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)" },
-    { title: "Site Institutionnel", tag: "CMS", gradient: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)" },
+    {
+      title: "Site Institutionnel",
+      tag: "CMS",
+      gradient: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
+      href: "/produits/cms-ecommerce",
+      ariaLabel: "Découvrir le CMS e-commerce SMIDJAN",
+    },
   ];
   return (
     <section id="projects" className={`${styles.section} ${styles.showreelModule}`}>
@@ -25,19 +34,37 @@ export function Showreel() {
           <p className={styles.description}>Chaque projet est une opportunité de repousser les limites du design et de la technique.</p>
         </div>
         <div className={styles.grid}>
-          {projects.map((project) => (
-            <div
-              key={project.title}
-              className={styles.card}
-              style={{ background: project.gradient }}
-            >
-              <div className={styles.overlay}>
-                <div className={styles.tag}>{project.tag}</div>
-                <h3 className={styles.cardTitle}>{project.title}</h3>
+          {projects.map((project) => {
+            const content = (
+              <>
+                <div className={styles.overlay}>
+                  <div className={styles.tag}>{project.tag}</div>
+                  <h3 className={styles.cardTitle}>{project.title}</h3>
+                </div>
+                <div className={styles.hoverIcon}>
+                  <ArrowRightIcon aria-hidden="true" />
+                </div>
+              </>
+            );
+            if (project.href) {
+              return (
+                <Link
+                  key={project.title}
+                  href={project.href}
+                  className={styles.card}
+                  style={{ background: project.gradient }}
+                  aria-label={project.ariaLabel}
+                >
+                  {content}
+                </Link>
+              );
+            }
+            return (
+              <div key={project.title} className={styles.card} style={{ background: project.gradient }}>
+                {content}
               </div>
-              <div className={styles.hoverIcon}><ArrowRightIcon /></div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
