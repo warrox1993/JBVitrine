@@ -169,8 +169,14 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
-        <html lang="fr-BE">
+        <html lang="fr-BE" data-theme="dark">
         <head>
+            <script
+                id="smidjan-theme-init"
+                dangerouslySetInnerHTML={{
+                    __html: `(function(){try{var stored=localStorage.getItem('theme');var prefersLight=window.matchMedia('(prefers-color-scheme: light)').matches;var theme=stored||(prefersLight?'light':'dark');document.documentElement.setAttribute('data-theme', theme);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`
+                }}
+            />
             {/* Preconnect pour améliorer les performances */}
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

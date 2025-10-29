@@ -1,12 +1,16 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
-import { useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 import styles from "./Header.module.css";
 import { sections } from "@/config/nav";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { usePathname } from "next/navigation";
+import { SunIcon } from "@/components/icons/SunIcon";
+import { MoonIcon } from "@/components/icons/MoonIcon";
+
+type ThemeMode = "dark" | "light";
 
 export default function Header() {
   const pathname = usePathname();
@@ -17,9 +21,30 @@ export default function Header() {
     []
   );
 
+  const [theme, setTheme] = useState<ThemeMode>(() => {
+    if (typeof document === "undefined") {
+      return "dark";
+    }
+    return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  });
+
+  const toggleTheme = useCallback(() => {
+    if (typeof document === "undefined") {
+      return;
+    }
+    const root = document.documentElement;
+    const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+    root.setAttribute("data-theme", next);
+    setTheme(next as ThemeMode);
+    try {
+      localStorage.setItem("theme", next);
+    } catch {
+      // storage might be unavailable; ignore
+    }
+  }, []);
+
   return (
     <header className={styles["header-root"]}>
-      {/* Left: Logo + Brand */}
       <div className={styles["header-left"]}>
         <Link href="/" aria-label="Go to homepage" className={styles.headerLogo}>
           <Image
@@ -30,11 +55,12 @@ export default function Header() {
             priority
             className={styles.logoHeader}
           />
-          <div data-testid="brand-name" className={styles.brand}>SMIDJAN</div>
+          <div data-testid="brand-name" className={styles.brand}>
+            SMIDJAN
+          </div>
         </Link>
       </div>
 
-      {/* Right: existing nav remains unchanged */}
       <nav className={styles["header-nav"]} aria-label="Navigation principale (haut)">
         {navItems.map((section) => {
           const isActive =
@@ -56,7 +82,17 @@ export default function Header() {
             </a>
           );
         })}
+        <button
+          type="button"
+          className={styles["theme-toggle"]}
+          onClick={toggleTheme}
+          aria-pressed={theme === "light"}
+          aria-label={`Basculer en mode ${theme === "light" ? "sombre" : "clair"}`}
+        >
+          {theme === "light" ? <SunIcon aria-hidden="true" /> : <MoonIcon aria-hidden="true" />}
+        </button>
       </nav>
     </header>
   );
 }
+

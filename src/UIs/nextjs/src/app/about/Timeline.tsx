@@ -46,12 +46,15 @@ export default function Timeline() {
       setScrollProgress(Math.min(progress, 100));
     };
     const el = containerRef.current;
-    if (el) {
-      el.addEventListener("scroll", handleScroll, { passive: true } as AddEventListenerOptions);
-      // init
-      handleScroll();
-      return () => el.removeEventListener("scroll", handleScroll);
-    }
+    if (!el) return;
+
+    const options: AddEventListenerOptions = { passive: true };
+    el.addEventListener("scroll", handleScroll, options);
+    handleScroll();
+
+    return () => {
+      el.removeEventListener("scroll", handleScroll, options);
+    };
   }, []);
 
   // Responsive: afficher le rail de droite uniquement en >= lg (>= 1024px)
@@ -61,8 +64,10 @@ export default function Timeline() {
       setIsLg(window.innerWidth >= 1024);
     };
     update();
-    window.addEventListener("resize", update, { passive: true } as any);
-    return () => window.removeEventListener("resize", update as any);
+
+    const options: AddEventListenerOptions = { passive: true };
+    window.addEventListener("resize", update, options);
+    return () => window.removeEventListener("resize", update, options);
   }, []);
 
   // Palette du site
@@ -71,8 +76,6 @@ export default function Timeline() {
   const text2 = "var(--color-text-2)";
   const text3 = "var(--color-text-3)";
   const bg = "var(--color-bg)";
-
-  const currentItem = TIMELINE_ITEMS[Math.max(0, Math.min(activeIndex, TIMELINE_ITEMS.length - 1))];
 
   return (
     <div className="relative" style={{ height: "100vh", width: "100%", overflow: "hidden", backgroundColor: bg }}>
@@ -177,7 +180,9 @@ export default function Timeline() {
         {TIMELINE_ITEMS.map((item, index) => (
           <div
             key={item.year}
-            ref={(el) => (itemRefs.current[index] = el)}
+            ref={(el) => {
+              itemRefs.current[index] = el;
+            }}
             style={{ minHeight: "92vh", scrollSnapAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", padding: "3rem 1.25rem" }}
           >
             <div style={{ maxWidth: "72rem", width: "100%", margin: "0 auto" }}>
@@ -195,7 +200,7 @@ export default function Timeline() {
                         letterSpacing: "-0.02em",
                         userSelect: "none",
                         color: "transparent",
-                        WebkitTextStroke: `2px ${accent}` as any,
+                        WebkitTextStroke: `2px ${accent}`,
                         opacity: 0.2,
                       }}
                     >
@@ -215,13 +220,13 @@ export default function Timeline() {
                   <div style={{ display: "grid", gap: "1.5rem" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
                       <span style={{ fontWeight: 800, fontSize: "clamp(1.5rem, 4vw, 2.75rem)", color: accent }}>{String(index + 1).padStart(2, "0")}</span>
-                      <div style={{ flex: 1, height: 1, backgroundColor: "color-mix(in srgb, var(--color-accent-1), transparent 75%)" as any }} />
+                      <div style={{ flex: 1, height: 1, backgroundColor: "color-mix(in srgb, var(--color-accent-1), transparent 75%)" }} />
                     </div>
                     <h2 style={{ fontWeight: 800, color: text1, lineHeight: 1.1, letterSpacing: "-0.02em", fontSize: "clamp(1.75rem, 5vw, 3.25rem)" }}>{item.title}</h2>
                     <div style={{ display: "flex", alignItems: "center", gap: 6, paddingBlock: 6 }}>
                       <div style={{ width: 48, height: 2, borderRadius: 9999, backgroundColor: accent }} />
-                      <div style={{ width: 6, height: 6, borderRadius: 9999, backgroundColor: "color-mix(in srgb, var(--color-accent-1), transparent 40%)" as any }} />
-                      <div style={{ width: 24, height: 2, borderRadius: 9999, backgroundColor: "color-mix(in srgb, var(--color-accent-1), transparent 60%)" as any }} />
+                      <div style={{ width: 6, height: 6, borderRadius: 9999, backgroundColor: "color-mix(in srgb, var(--color-accent-1), transparent 40%)" }} />
+                      <div style={{ width: 24, height: 2, borderRadius: 9999, backgroundColor: "color-mix(in srgb, var(--color-accent-1), transparent 60%)" }} />
                     </div>
                     <p style={{ color: text2, fontSize: "clamp(1.125rem, 2.2vw, 1.5rem)", lineHeight: 1.7, fontWeight: 300, maxWidth: "42rem" }}>{item.text}</p>
                     <div style={{ paddingTop: 16, display: "grid", gap: 12 }}>
@@ -260,7 +265,7 @@ export default function Timeline() {
       >
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
           <span style={{ color: text3, fontSize: 12, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
-          <div style={{ width: 20, height: 32, borderRadius: 12, border: `1px solid ${"color-mix(in srgb, var(--color-text-3), transparent 40%)" as any}`, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: 4 }}>
+          <div style={{ width: 20, height: 32, borderRadius: 12, border: "1px solid color-mix(in srgb, var(--color-text-3), transparent 40%)", display: "flex", alignItems: "flex-start", justifyContent: "center", padding: 4 }}>
             <div style={{ width: 3, height: 8, borderRadius: 9999, background: accent, animation: "wheelBounce 1.4s ease-in-out infinite" }} />
           </div>
         </div>

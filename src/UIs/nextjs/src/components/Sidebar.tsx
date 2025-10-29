@@ -14,7 +14,7 @@ import styles from "./Sidebar.module.css";
 
 type Item = { href: string; label: string; icon?: ReactNode };
 
-export default function Sidebar({ items }: { items?: Item[] }) {
+export default function Sidebar({ items }: { items?: ReadonlyArray<Item> }) {
   const pathname = usePathname();
   const useProvidedItems = Array.isArray(items) && items.length > 0;
   const providedIds = items?.map(i => i.href.replace(/^#/, '')) || [];

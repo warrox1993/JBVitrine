@@ -111,7 +111,11 @@
   /* Component tokens */
   --card-bg: var(--color-surface);
   --card-border: var(--color-border);
-  --color-bg-header: color-mix(in srgb, var(--color-surface) 95%, transparent 5%);
+  --color-bg-header: color-mix(
+    in srgb,
+    var(--color-surface) 95%,
+    transparent 5%
+  );
   --header-height: clamp(114px, 15.2vh, 171px);
 
   --btn-bg: var(--color-primary);
@@ -144,24 +148,71 @@
   --progress-bg: transparent;
 }
 
-[data-theme="light"] {
-  --color-bg: hsl(220, 20%, 98%);
-  --color-bg-alt: hsl(220, 20%, 96%);
-  --color-surface: hsl(220, 20%, 96%);
-  --color-surface-glass: hsla(220, 20%, 98%, 0.8);
-  --color-surface-elevated: hsl(0, 0%, 100%);
-  --color-text: hsl(220, 20%, 10%);
-  --color-text-muted: hsl(220, 15%, 35%);
-  --color-border: hsla(220, 20%, 20%, 0.15);
-  --color-border-hover: hsla(220, 20%, 20%, 0.25);
-  --color-shadow: hsla(220, 20%, 10%, 0.1);
+:root[data-theme="light"] {
+  --color-bg: #ffffff;
+  --color-bg-alt: #f5f7fb;
+  --color-surface: #f7f9fc;
+  --color-surface-glass: rgba(255, 255, 255, 0.82);
+  --color-surface-solid: #ffffff;
+  --color-border: rgba(12, 18, 27, 0.08);
+  --color-text: #0c121b;
+  --color-text-muted: #4a5565;
+  --color-primary: #e86e10;
+  --color-primary-strong: #c25a0d;
+  --color-primary-contrast: #ffffff;
+  --color-secondary: #f7a93e;
+  --color-accent: #2563eb;
+  --color-danger: #d92d20;
 
   --color-bg-1: var(--color-bg);
   --color-bg-2: var(--color-bg-alt);
-  --color-bg-3: color-mix(in oklab, var(--color-surface), #fff 10%);
+  --color-bg-3: color-mix(in srgb, var(--color-surface) 92%, #ffffff 8%);
   --color-text-1: var(--color-text);
   --color-text-2: var(--color-text-muted);
-  --color-text-3: color-mix(in oklab, var(--color-text-muted), #000 20%);
+  --color-text-3: color-mix(in srgb, var(--color-text-muted), #ffffff 25%);
+  --color-accent-1: var(--color-primary);
+  --color-accent-2: var(--color-secondary);
+  --color-accent-3: color-mix(
+    in srgb,
+    var(--color-primary-strong) 92%,
+    #000000 8%
+  );
+
+  --shadow-glow-outer: 0 0 24px rgba(232, 110, 16, 0.18);
+  --shadow-glow-inner: 0 0 12px rgba(247, 169, 62, 0.12);
+  --color-glow: rgba(232, 110, 16, 0.18);
+
+  --card-bg: var(--color-surface);
+  --card-border: var(--color-border);
+  --color-bg-header: color-mix(in srgb, var(--color-surface) 88%, #ffffff 12%);
+
+  --btn-bg: var(--color-primary);
+  --btn-fg: var(--color-primary-contrast);
+  --btn-border: transparent;
+  --btn-shadow: 0 12px 30px rgba(232, 110, 16, 0.18);
+  --btn-bg-hover: color-mix(in srgb, var(--color-primary) 92%, #000000 8%);
+  --btn-fg-hover: var(--color-primary-contrast);
+  --btn-border-hover: transparent;
+  --btn-bg-active: color-mix(
+    in srgb,
+    var(--color-primary-strong) 95%,
+    #000000 5%
+  );
+  --btn-fg-active: var(--color-primary-contrast);
+  --btn-border-active: transparent;
+  --btn-fg-disabled: color-mix(in srgb, #1f2933 70%, #ffffff 30%);
+  --btn-border-disabled: transparent;
+  --btn-bg-disabled: color-mix(
+    in srgb,
+    var(--color-primary) 22%,
+    var(--color-bg) 78%
+  );
+
+  --progress-color: var(--color-accent);
+  --progress-bg: color-mix(in srgb, var(--color-border), transparent 60%);
+
+  --color-border-hover: rgba(12, 18, 27, 0.14);
+  --color-shadow: rgba(12, 18, 27, 0.08);
 }
 
 @media (prefers-contrast: more) {

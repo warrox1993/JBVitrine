@@ -146,3 +146,30 @@
     font-size: 1.1rem;
   }
 }
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--color-text-2);
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast) ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: var(--color-text-1);
+  outline: none;
+}
+
+.theme-toggle[aria-pressed="true"] {
+  color: var(--color-primary);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
