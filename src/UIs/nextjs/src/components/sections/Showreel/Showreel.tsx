@@ -1,71 +1,50 @@
 "use client";
-import Link from "next/link";
-import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
 import styles from "./Showreel.module.css";
 
 type ProjectCard = {
   title: string;
   tag: string;
-  gradient: string;
-  href?: string;
-  ariaLabel?: string;
+  description: string;
 };
 
 export function Showreel() {
   const projects: ProjectCard[] = [
-    { title: "E-commerce Luxury", tag: "Next.js", gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" },
-    { title: "SaaS Dashboard", tag: "React", gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)" },
-    { title: "Portfolio Créatif", tag: "WebGL", gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)" },
-    { title: "Plateforme Finance", tag: "TypeScript", gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)" },
-    { title: "App Mobile Hybrid", tag: "React Native", gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)" },
     {
-      title: "Site Institutionnel",
-      tag: "CMS",
-      gradient: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
-      href: "/produits/cms-ecommerce",
-      ariaLabel: "Découvrir le CMS e-commerce SMIDJAN",
+      title: "SMIDJAN CMS",
+      tag: "E-commerce",
+      description:
+        "Un CMS modulaire et complet pour produits, services et abonnements, conçu pour grandir avec ton entreprise.",
     },
   ];
   return (
     <section id="projects" className={`${styles.section} ${styles.showreelModule}`}>
       <div className="container">
         <div className={styles.intro}>
-          <h2 className={styles.title}>Projets qui marquent</h2>
-          <p className={styles.description}>Chaque projet est une opportunité de repousser les limites du design et de la technique.</p>
+          <h2 className={styles.title}>Notre projet phare</h2>
+          <p className={styles.description}>
+            SMIDJAN CMS est le cœur de notre savoir-faire : une solution e-commerce modulaire, sécurisée et entièrement personnalisable.
+            Nous le faisons évoluer en continu pour repousser les limites du design, de la performance et de l’automatisation.
+          </p>
         </div>
         <div className={styles.grid}>
           {projects.map((project) => {
-            const content = (
-              <>
+            return (
+              <article key={project.title} className={styles.card}>
                 <div className={styles.overlay}>
                   <div className={styles.tag}>{project.tag}</div>
                   <h3 className={styles.cardTitle}>{project.title}</h3>
+                  <p className={styles.cardDescription}>{project.description}</p>
+                  <a className={styles.cardCta} href="/produits/cms-ecommerce">
+                    Découvrir le projet
+                  </a>
                 </div>
-                <div className={styles.hoverIcon}>
-                  <ArrowRightIcon aria-hidden="true" />
-                </div>
-              </>
-            );
-            if (project.href) {
-              return (
-                <Link
-                  key={project.title}
-                  href={project.href}
-                  className={styles.card}
-                  style={{ background: project.gradient }}
-                  aria-label={project.ariaLabel}
-                >
-                  {content}
-                </Link>
-              );
-            }
-            return (
-              <div key={project.title} className={styles.card} style={{ background: project.gradient }}>
-                {content}
-              </div>
+              </article>
             );
           })}
         </div>
+        <p className={styles.footnote}>
+          D’autres projets seront prochainement présentés. Chaque réalisation SMIDJAN est sélectionnée pour son ambition technique et son impact durable.
+        </p>
       </div>
     </section>
   );

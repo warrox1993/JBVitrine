@@ -41,6 +41,14 @@
   line-height: 1.7;
 }
 
+.sectionSub {
+  margin: 0;
+  color: var(--color-text-2);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
 /* Hero */
 .heroSection {
   position: relative;
@@ -152,8 +160,8 @@
 
 .proofList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
   padding: 0;
   margin: 0;
   list-style: none;
@@ -170,38 +178,20 @@
   box-shadow: var(--shadow-sm);
 }
 
-.proofIcon {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-full);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: color-mix(in srgb, var(--color-accent-1) 35%, transparent 65%);
-}
-
-.proofLabel {
+.proofTitle {
+  margin: 0;
+  font-size: var(--text-xl);
   font-weight: 600;
   color: var(--color-text-1);
 }
 
+.proofDescription {
+  margin: 0;
+  color: var(--color-text-2);
+  line-height: 1.7;
+}
+
 /* Benefits */
-.benefitsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--space-4);
-}
-
-.benefitCard {
-  display: grid;
-  gap: var(--space-2);
-  padding: clamp(var(--space-3), 3vw, var(--space-4));
-  border-radius: var(--radius-lg);
-  border: 1px solid color-mix(in srgb, var(--color-border), transparent 40%);
-  background: color-mix(in srgb, var(--color-surface), transparent 40%);
-  box-shadow: var(--shadow-sm);
-}
-
 .cardTitle {
   margin: 0;
   font-size: var(--text-xl);
@@ -254,109 +244,6 @@
   flex-shrink: 0;
 }
 
-/* Plans */
-.plansGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-4);
-}
-
-.planCard {
-  display: grid;
-  gap: 0;
-  position: relative;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  background: color-mix(in srgb, var(--color-surface), transparent 20%);
-}
-
-.planCardHighlight {
-  border: 1px solid color-mix(in srgb, var(--color-accent-1), transparent 20%);
-  box-shadow: var(--shadow-glow);
-}
-
-.planHeader {
-  display: grid;
-  gap: var(--space-2);
-}
-
-.planBadge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
-  background: color-mix(in srgb, var(--color-accent-1), transparent 60%);
-  color: var(--color-text-1);
-  font-weight: 600;
-  width: fit-content;
-}
-
-.planFeatures {
-  display: grid;
-  gap: var(--space-2);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.planFeatures li {
-  display: flex;
-  gap: var(--space-2);
-  align-items: flex-start;
-  color: var(--color-text-2);
-}
-
-.planFeatures svg {
-  width: 18px;
-  height: 18px;
-  color: var(--color-accent-1);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.planFooter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  justify-content: flex-end;
-}
-
-.planPrimaryCta {
-  flex: 1 1 auto;
-}
-
-/* Integrations */
-.integrationsList {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-3);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.integrationItem {
-  display: grid;
-  gap: var(--space-2);
-  padding: var(--space-3);
-  border-radius: var(--radius-lg);
-  background: color-mix(in srgb, var(--color-surface), transparent 30%);
-  border: 1px solid color-mix(in srgb, var(--color-border), transparent 40%);
-}
-
-.integrationName {
-  font-weight: 600;
-  font-size: var(--text-lg);
-  color: var(--color-text-1);
-}
-
-.integrationDescription {
-  margin: 0;
-  color: var(--color-text-2);
-  line-height: 1.6;
-}
-
 /* Showcase */
 .showcaseGrid {
   display: grid;
@@ -393,35 +280,35 @@
   font-weight: 600;
 }
 
-/* Case Study */
-.caseWrapper {
+/* Evolution */
+.evolutionGrid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--space-4);
-  border-radius: var(--radius-xl);
-  padding: clamp(var(--space-4), 4vw, var(--space-6));
-  background: color-mix(in srgb, var(--color-surface), transparent 20%);
-  border: 1px solid color-mix(in srgb, var(--color-border), transparent 30%);
-  box-shadow: var(--shadow-md);
 }
 
-.caseMetrics {
+.evolutionCard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: var(--space-3);
-  margin: 0;
+  padding: clamp(var(--space-3), 3vw, var(--space-4));
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 35%);
+  background: color-mix(in srgb, var(--color-surface), transparent 30%);
+  box-shadow: var(--shadow-sm);
 }
 
-.caseMetricLabel {
-  font-size: var(--text-sm);
+.evolutionList {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding-left: var(--space-3);
   color: var(--color-text-2);
-  margin: 0;
 }
 
-.caseMetricValue {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 700;
-  color: var(--color-text-1);
-  margin: 0;
+.evolutionFooter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: clamp(var(--space-4), 4vw, var(--space-6));
 }
 
 /* FAQ */
@@ -496,23 +383,19 @@
     flex-direction: column;
     align-items: stretch;
   }
-  .planFooter {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .planPrimaryCta {
-    width: 100%;
-  }
-  .caseWrapper {
-    padding: var(--space-4);
+  .evolutionFooter {
+    justify-content: flex-start;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .heroHighlightItem,
-  .planCard,
-  .integrationItem,
   .finalCta {
     transition: none;
   }
+}
+
+/* Evolution – heading spacing */
+.evolutionGrid .cardTitle {
+  margin-bottom: 0;
 }

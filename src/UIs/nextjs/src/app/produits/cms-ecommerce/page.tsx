@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Fragment } from "react";
 import { CheckIcon } from "@/components/icons/CheckIcon";
 import { ShieldCheckIcon } from "@/components/icons/ShieldCheckIcon";
 import { SparklesIcon } from "@/components/icons/SparklesIcon";
@@ -9,14 +8,14 @@ import { TargetIcon } from "@/components/icons/TargetIcon";
 import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
 import { Button } from "@/components/ui/Button/Button";
 import { Heading } from "@/components/ui/Heading";
-import { Card, CardBody, CardFooter, CardHeader } from "@/components/atoms/Card";
+import { Card, CardBody, CardHeader } from "@/components/atoms/Card";
 import { Footer } from "@/components/sections/Footer/Footer";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "SMIDJAN CMS e-commerce — rapide, sécurisé, modulaire",
+  title: "SMIDJAN CMS — La solution e-commerce tout-en-un",
   description:
-    "CMS e-commerce pour produits, services ou offres hybrides : performance front, sécurité OWASP, intégrations Stripe, n8n, SEO technique, facturation européenne.",
+    "CMS complet et modulaire pour produits, services ou offres hybrides. Performant, sécurisé, personnalisable et prêt à l’emploi.",
   alternates: {
     canonical: "/produits/cms-ecommerce",
     languages: {
@@ -25,9 +24,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "SMIDJAN CMS e-commerce — rapide, sécurisé, modulaire",
+    title: "SMIDJAN CMS — La solution e-commerce tout-en-un",
     description:
-      "Une plateforme CMS e-commerce modulaire avec performances Core Web Vitals, sécurité intégrée, automatisations n8n et intégrations Stripe.",
+      "Solution e-commerce modulaire pour lancer produits, services ou offres hybrides. Performance, sécurité et personnalisation sans compromis.",
     url: "https://smidjan.be/produits/cms-ecommerce",
     siteName: "SMIDJAN",
     images: [
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
         url: "https://smidjan.be/logo.png",
         width: 512,
         height: 512,
-        alt: "SMIDJAN CMS e-commerce",
+        alt: "SMIDJAN CMS — La solution e-commerce tout-en-un",
       },
     ],
     locale: "fr_BE",
@@ -43,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SMIDJAN CMS e-commerce — rapide, sécurisé, modulaire",
+    title: "SMIDJAN CMS — La solution e-commerce tout-en-un",
     description:
-      "CMS e-commerce SMIDJAN : front performant, sécurité OWASP native, Stripe, n8n et reporting pour vos catalogues produits et services.",
+      "CMS e-commerce complet, sécurisé, personnalisable et prêt à l’emploi. Produits, services ou abonnements : vendez sans limite.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -65,221 +64,214 @@ export const dynamic = "error";
 
 const heroHighlights = [
   {
-    label: "Performance Core Web Vitals",
+    label: "Tout est inclus : catalogue, commandes, paiements, analytics",
     icon: <SparklesIcon aria-hidden="true" />,
   },
   {
-    label: "Sécurité intégrée (OWASP, headers, secrets)",
+    label: "100 % personnalisable, sans thème imposé",
+    icon: <TargetIcon aria-hidden="true" />,
+  },
+  {
+    label: "Sécurisé, évolutif et prêt pour la croissance",
     icon: <ShieldCheckIcon aria-hidden="true" />,
   },
   {
-    label: "Intégrations Stripe / n8n / emailing",
+    label: "Pensé pour les pros et intégrable à ton écosystème",
     icon: <WorkflowIcon aria-hidden="true" />,
-  },
-  {
-    label: "Multi-catalogue produits & services",
-    icon: <TargetIcon aria-hidden="true" />,
   },
 ] as const;
 
-const benefits = [
+const whySmidjanReasons = [
   {
-    title: "Vitesse de mise en ligne",
-    description: "Base Next.js optimisée, design system prêt, déploiements CI/CD sécurisés pour lancer en quelques semaines.",
+    title: "Base e-commerce robuste",
+    description:
+      "Un socle back-end unique, stable et sécurisé, utilisé pour tous les projets. Tu gagnes du temps et de la fiabilité sans repartir de zéro à chaque fois.",
   },
   {
-    title: "Admin simple et documenté",
-    description: "Back-office guidé, rôles utilisateurs, documentation intégrée et tutoriels contextualisés.",
+    title: "Front ultra-modulable",
+    description:
+      "Chaque site dispose d’un front entièrement sur mesure : React, Next.js, Tailwind ou Blade. Tu crées exactement l’expérience que tes clients veulent, sans contrainte.",
   },
   {
-    title: "SEO technique & accessibilité",
-    description: "Balises structurées, sitemaps, tests axe et monitoring Lighthouse automatisé.",
+    title: "Déploiement rapide et accessible",
+    description:
+      "Le CMS est prêt dès l’installation : produits, paiements et facturation inclus. Lance un e-commerce complet en quelques heures, sans complexité technique.",
   },
   {
-    title: "Scalabilité maîtrisée",
-    description: "Architecture modulaire, tests automatisés, monitoring de charge et observabilité.",
-  },
-  {
-    title: "Automatisations n8n",
-    description: "Workflows CRM, facturation, emailing et synchronisation ERP déclenchés en temps réel.",
-  },
-  {
-    title: "Observabilité & logs",
-    description: "Dashboards de suivi, alertes, journaux de transactions et audit trail complet.",
+    title: "Intégrable à tout écosystème",
+    description:
+      "Connecte ton CMS à Stripe, n8n, ERP, CRM ou tout autre outil via API. Aucune dépendance, tout reste ouvert et extensible.",
   },
 ] as const;
 
 const functionalModules = [
   {
-    title: "Catalogue",
+    title: "Catalogue & produits",
     items: [
-      "Produits & services illimités",
-      "Variantes, attributs, SKU",
-      "Catégories hiérarchiques",
-      "Gestion d’inventaire et stocks",
+      "Produits simples, configurables, groupés ou téléchargeables",
+      "Gestion d’attributs, de variantes, d’options et de packs",
+      "Stock multi-entrepôts et inventaire en temps réel",
+      "Import/export via CSV ou API",
+      "Catégories hiérarchiques avec SEO intégré",
     ],
   },
   {
-    title: "Paiements & facturation",
+    title: "Commandes & clients",
     items: [
-      "Intégration Stripe & virement",
-      "Facturation UE et TVA multi-régions",
-      "Automatisation des reçus",
-      "Plans de paiement récurrents",
+      "Panier intelligent et tunnel de commande fluide",
+      "Commandes, factures, avoirs et retours gérés de bout en bout",
+      "Comptes clients, multi-adresses, groupes B2B/B2C",
+      "Historique complet et notifications automatiques",
+      "Espace client personnalisable avec suivi d’état",
     ],
   },
   {
-    title: "Commandes & logistique",
+    title: "Paiement & facturation",
     items: [
-      "Statuts personnalisables",
-      "Notifications transactionnelles",
-      "Transporteurs & point relais",
-      "Portail client en libre-service",
+      "Stripe, virement ou solution sur mesure",
+      "Factures conformes UE générées automatiquement",
+      "Taxes, devises et taux de change multiples",
+      "Emails de confirmation et relances automatiques",
     ],
   },
   {
-    title: "CMS & contenu",
+    title: "Marketing & promotion",
     items: [
-      "Pages, blog, ressources",
-      "Gestion media optimisée (AVIF/WebP)",
-      "SEO éditorial intégré",
-      "A/B testing des pages clés",
+      "Coupons, remises progressives et packs promo",
+      "Bannières dynamiques et pages de campagne",
+      "Newsletter intégrée et ciblage par segment",
+      "Sitemap, meta et rich snippets inclus",
     ],
   },
   {
-    title: "Sécurité",
+    title: "Administration & gestion",
     items: [
-      "Auth multi-facteurs",
-      "Gestion des secrets & KV",
-      "Headers CSP/HSTS durcis",
-      "Tests DAST & SAST en pipeline",
+      "Tableau de bord ventes, commandes, clients, produits",
+      "Multi-utilisateurs et rôles ACL avancés",
+      "Journalisation des actions et logs d’audit",
+      "Configuration paiement, livraison, taxes, langues, emails",
+      "Système modulaire prêt pour extensions",
     ],
   },
   {
-    title: "Analytics & reporting",
+    title: "Sécurité & performances",
     items: [
-      "Tableaux personnalisés",
-      "Exports CSV programmés",
-      "Connecteurs BI (Metabase, Looker)",
-      "Alerting sur anomalies",
-    ],
-  },
-] as const;
-
-type PlanId = "mvp" | "pro" | "premium";
-
-const plans: Array<{
-  id: PlanId;
-  name: string;
-  description: string;
-  features: readonly string[];
-  highlight?: boolean;
-}> = [
-  {
-    id: "mvp",
-    name: "MVP",
-    description: "Base e-commerce opérationnelle pour produits OU services, panier, paiement et facturation.",
-    features: [
-      "Catalogue + panier + checkout Stripe",
-      "Page produits + landing pack SEO",
-      "Automatisation factures PDF",
-      "Support lancement 30 jours",
+      "Auth sécurisée et gestion fine des permissions",
+      "Headers de sécurité, protections CSRF, XSS, SQLi",
+      "Sauvegardes automatisées et restauration simple",
+      "Optimisations Core Web Vitals et cache intelligent",
+      "Monitoring intégré et alertes d’anomalies",
     ],
   },
   {
-    id: "pro",
-    name: "Pro",
-    description: "Sécurité CI/CD renforcée, automatisations n8n et optimisation continue des performances.",
-    features: [
-      "Workflows n8n (CRM, mailing, ERP)",
-      "Scans SAST + DAST en pipeline",
-      "Monitoring Lighthouse + Web Vitals",
-      "Coaching équipe interne & doc avancée",
+    title: "Design & personnalisation",
+    items: [
+      "Design 100 % modulable, compatible Tailwind, Bootstrap…",
+      "Templates éditables sans toucher au noyau",
+      "Gestion avancée thèmes, couleurs, polices, composants",
+      "Blocs réutilisables pour construire les pages",
+      "Responsive design optimisé nativement",
     ],
-    highlight: true,
   },
   {
-    id: "premium",
-    name: "Premium",
-    description: "Scalabilité avancée, catalogue mixte produits & services, intégrations sur mesure et SLA prioritaire.",
-    features: [
-      "Catalogue hybride + pricing dynamique",
-      "Intégrations spécifiques (PIM, OMS)",
-      "SLA 24h + support incident critique",
-      "Feature flags & rollbacks sécurisés",
+    title: "Automatisations & intégrations",
+    items: [
+      "Workflows n8n prêts : facturation, rappels, CRM, emailing",
+      "Connecteurs vers ERP, marketing, analytics",
+      "Webhooks et endpoints sécurisés",
+      "IA embarquée pour suggestions et analyses (option)",
     ],
   },
-];
-
-const integrations = [
-  { name: "Stripe", description: "Paiements sécurisés, paiement fractionné, abonnements." },
-  { name: "n8n", description: "Automatisations CRM, facturation, back-office." },
-  { name: "Suite emailing", description: "Transactional + marketing (Brevo, Mailjet, Postmark)." },
-  { name: "Hébergement cloud", description: "Vercel, Azure, OVHcloud ou infrastructure dédiée." },
-  { name: "Key Vault / KMS", description: "Gestion des secrets et rotation automatisée." },
 ] as const;
 
 const showcaseShots = [
   {
     src: "/images/pic01.webp",
-    title: "Catalogue modulable",
-    description: "Vue produits responsive avec filtres dynamiques et prévisualisation rapide.",
+    title: "Interface sur mesure",
+    description:
+      "Chaque interface est imaginée à partir de ton identité visuelle. Structure, interactions et animations sont intégrées directement sans modifier le noyau du CMS.",
   },
   {
     src: "/images/pic02.webp",
-    title: "Checkout optimisé",
-    description: "Tunnel de commande rapide, support des paniers mixtes et codes promo.",
+    title: "Thèmes flexibles & composants réutilisables",
+    description:
+      "Sections, formulaires, galeries ou blocs produits restent modulaires. Tu ajustes couleurs, typographies et mises en page librement selon tes besoins.",
   },
   {
     src: "/images/pic03.webp",
-    title: "Dashboard analytics",
-    description: "Tableaux temps réel : ventes, panier moyen, sources d’acquisition.",
+    title: "Expériences optimisées",
+    description:
+      "Les designs sont pensés pour la vitesse, le SEO et la conversion. Chaque front est audité et testé pour garantir performance et accessibilité.",
   },
 ] as const;
 
-const caseStudy = {
-  client: "Nova Retail",
-  summary: "Migration d’un site vitrine vers SMIDJAN CMS e-commerce avec catalogue produits et services synchronisé.",
-  metrics: [
-    { label: "Lancement", value: "5 semaines" },
-    { label: "Panier moyen", value: "+32%" },
-    { label: "Core Web Vitals", value: "98 / 100" },
-  ] as const,
-};
+const evolutionCards = [
+  {
+    title: "Noyau stable et évolutif",
+    items: [
+      "Même socle back-end pour tous les projets",
+      "Sécurité et performances maintenues en continu",
+      "Les évolutions globales profitent à tous",
+    ],
+  },
+  {
+    title: "Extensions sur mesure",
+    items: [
+      "Modules dédiés pour logique métier spécifique",
+      "Automatisations, reporting ou passerelles métiers",
+      "Extensions intégrées sans modifier le noyau",
+    ],
+  },
+  {
+    title: "Front libre et découplé",
+    items: [
+      "Design, framework et UX totalement libres",
+      "API prêtes pour connecter toute interface",
+      "Une identité unique sur un socle commun",
+    ],
+  },
+] as const;
 
 const faqItems = [
   {
-    question: "Quelle licence est incluse ?",
+    question: "Quelle est la portée des fonctionnalités incluses ?",
     answer:
-      "Le CMS est fourni sous licence propriétaire SMIDJAN avec code source livré et réutilisable dans votre infrastructure.",
+      "Le CMS couvre catalogue, commandes, paiements, marketing, analytics et sécurité. Tout est prêt dès l’installation, sans achat d’extensions cachées.",
   },
   {
-    question: "Peut-on personnaliser le design ?",
+    question: "Quel est le modèle de prix ?",
     answer:
-      "Oui. Le design system est modulable : chartes graphiques, composants React et templates peuvent être adaptés.",
+      "Le tarif est fixe pour tous les projets, transparent et sans surcoûts. Les 40 premières heures de mise en place et d’adaptation sont offertes pour garantir un démarrage solide sans frais additionnels.",
   },
   {
-    question: "Quels délais moyens pour un déploiement ?",
-    answer: "Un MVP complet se livre en 4 à 6 semaines. Les versions Pro et Premium varient entre 6 et 10 semaines.",
-  },
-  {
-    question: "Comment est gérée la sécurité ?",
+    question: "Puis-je personnaliser l’expérience utilisateur ?",
     answer:
-      "CI/CD sécurisé, audits OWASP, scans SAST/DAST, gestion des secrets et revue de code. Les plans Pro et Premium incluent monitoring continu.",
+      "Le design system est modulable et découplé du back-end. Tu peux brancher ton front existant (Next.js, React, autre) ou utiliser nos templates comme base.",
   },
   {
-    question: "Qui possède les données et le code ?",
-    answer: "Vous. Les dépôts Git, pipelines et environnements vous sont transférés avec documentation complète.",
-  },
-  {
-    question: "Proposez-vous une formation ?",
+    question: "Qui détient le code et les données ?",
     answer:
-      "Chaque lancement inclut ateliers admin + formation équipe marketing/ops, ainsi qu’un guide PDF et vidéos.",
+      "Le code source et le design structurel du CMS restent la propriété exclusive de SMIDJAN. Tu conserves la propriété de tes données, de ton contenu et de ton identité visuelle pour garantir sécurité et compatibilité dans le temps.",
   },
   {
-    question: "Le CMS gère-t-il le SEO avancé ?",
+    question: "Le CMS s’intègre-t-il avec mes outils existants ?",
     answer:
-      "Oui : sitemaps, balises, Open Graph, données structurées, redirections et monitoring Search Console.",
+      "Oui, via API, webhooks, n8n et connecteurs fournis. Nous accompagnons l’intégration à ton ERP, CRM ou plateforme marketing.",
+  },
+  {
+    question: "Y a-t-il des fonctionnalités d’IA intégrées ?",
+    answer:
+      "Oui. Le CMS peut se connecter à des API d’IA externes (OpenAI, Anthropic, etc.) pour automatiser des tâches. Une IA intégrée génère déjà des descriptions produits optimisées SEO et le système est prêt pour recommandations, catégorisation ou contenu marketing.",
+  },
+  {
+    question: "Quelle est la politique de sécurité ?",
+    answer:
+      "SMIDJAN CMS applique les protections OWASP, gère les secrets, renforce les headers et propose des tests SAST/DAST selon ton contexte.",
+  },
+  {
+    question: "Proposez-vous de l’accompagnement ?",
+    answer:
+      "Oui. Chaque client bénéficie d’un accompagnement complet : cadrage, mise en production, formation et support humain direct, avec documentation et suivi technique.",
   },
 ] as const;
 
@@ -287,9 +279,9 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "SMIDJAN CMS e-commerce",
+    name: "SMIDJAN CMS — La solution e-commerce tout-en-un",
     description:
-      "CMS e-commerce modulaire pour produits et services avec performances optimisées, sécurité OWASP, intégrations Stripe et automatisations n8n.",
+      "CMS e-commerce complet, modulaire et personnalisable pour produits, services ou offres hybrides. Sécurité avancée, intégrations et automatisations incluses.",
     brand: {
       "@type": "Brand",
       name: "SMIDJAN",
@@ -309,7 +301,7 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "SMIDJAN CMS e-commerce",
+    name: "SMIDJAN CMS — La solution e-commerce tout-en-un",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     offers: {
@@ -338,11 +330,10 @@ function HeroSection() {
         <div className={styles.heroGrid}>
           <div className={styles.heroContent}>
             <Heading as="h1" className={styles.heroTitle} id="cms-hero-title">
-              SMIDJAN CMS — e-commerce modulaire, performant et sécurisé
+              SMIDJAN CMS — La solution e-commerce tout-en-un
             </Heading>
             <p className={styles.heroSubtitle}>
-              Lancez une boutique produits, services, ou hybride. Architecture propre, sécurité intégrée, automations
-              prêtes à l’emploi.
+              SMIDJAN CMS est une solution e-commerce complète et évolutive, prête pour vendre produits physiques, services digitaux ou abonnements récurrents. Chaque module s’adapte à ton activité — sans dépendance à un modèle figé.
             </p>
             <div className={styles.heroActions}>
               <Button
@@ -350,19 +341,19 @@ function HeroSection() {
                 href="/contact"
                 variant="solid"
                 size="lg"
-                ariaLabel="Demander une démo du CMS e-commerce"
+                ariaLabel="Demander une démonstration du CMS e-commerce SMIDJAN"
                 trailingIcon={<ArrowRightIcon aria-hidden="true" />}
               >
                 Demander une démo
               </Button>
               <Button
                 as="a"
-                href="#plans"
+                href="#cms-modules"
                 variant="outline"
                 size="lg"
-                ariaLabel="Voir les plans CMS e-commerce"
+                ariaLabel="Voir les fonctionnalités natives du CMS SMIDJAN"
               >
-                Voir les plans
+                Explorer les fonctionnalités
               </Button>
             </div>
             <ul className={styles.heroHighlights} role="list">
@@ -378,7 +369,7 @@ function HeroSection() {
             <div className={styles.heroVisualGlow} aria-hidden="true" />
             <Image
               src="/images/pic04.webp"
-              alt="Interface du CMS e-commerce SMIDJAN montrant le catalogue produits et services"
+              alt="Interface SMIDJAN CMS présentant un catalogue produits et services"
               width={720}
               height={520}
               priority
@@ -396,42 +387,22 @@ function QuickProofsSection() {
   return (
     <section id="cms-proofs" className={`${styles.section} ${styles.proofsSection}`} aria-labelledby="cms-proofs-title">
       <div className="container">
-        <Heading as="h2" id="cms-proofs-title" className={styles.sectionTitle} accent>
-          Preuves rapides
-        </Heading>
+        <div className={styles.sectionHeader}>
+          <Heading as="h2" id="cms-proofs-title" className={styles.sectionTitle} accent>
+            Pourquoi choisir SMIDJAN CMS ?
+          </Heading>
+          <p className={styles.sectionLead}>
+            Un back-end e-commerce commun, un front sur mesure à chaque projet. SMIDJAN CMS sépare la logique métier du design pour offrir des sites uniques, performants et faciles à maintenir.
+          </p>
+        </div>
         <ul className={styles.proofList} role="list">
-          {heroHighlights.map((item) => (
-            <li key={item.label} className={styles.proofItem}>
-              <span className={styles.proofIcon}>{item.icon}</span>
-              <span className={styles.proofLabel}>{item.label}</span>
+          {whySmidjanReasons.map((reason) => (
+            <li key={reason.title} className={styles.proofItem}>
+              <h3 className={styles.proofTitle}>{reason.title}</h3>
+              <p className={styles.proofDescription}>{reason.description}</p>
             </li>
           ))}
         </ul>
-      </div>
-    </section>
-  );
-}
-
-function BenefitsSection() {
-  return (
-    <section id="cms-benefits" className={`${styles.section} ${styles.altBackground}`} aria-labelledby="cms-benefits-title">
-      <div className="container">
-        <div className={styles.sectionHeader}>
-          <Heading as="h2" id="cms-benefits-title" className={styles.sectionTitle} accent>
-            Bénéfices clés
-          </Heading>
-          <p className={styles.sectionLead}>
-            Une base technique solide pour accélérer votre go-to-market, simplifier l’opérationnel et fiabiliser vos performances.
-          </p>
-        </div>
-        <div className={styles.benefitsGrid}>
-          {benefits.map((benefit) => (
-            <article key={benefit.title} className={styles.benefitCard}>
-              <h3 className={styles.cardTitle}>{benefit.title}</h3>
-              <p className={styles.cardDescription}>{benefit.description}</p>
-            </article>
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -443,10 +414,10 @@ function FunctionalitySection() {
       <div className="container">
         <div className={styles.sectionHeader}>
           <Heading as="h2" id="cms-modules-title" className={styles.sectionTitle} accent>
-            Modules fonctionnels
+            Fonctionnalités natives
           </Heading>
           <p className={styles.sectionLead}>
-            Des blocs modulables pour composer votre plateforme : chaque module respecte nos exigences de sécurité, performance et accessibilité.
+            Tu disposes dès l’installation d’un environnement professionnel prêt à l’emploi pour gérer catalogue, commandes, marketing, sécurité et automatisations.
           </p>
         </div>
         <div className={styles.modulesGrid}>
@@ -469,111 +440,19 @@ function FunctionalitySection() {
   );
 }
 
-function PlansSection() {
-  return (
-    <section id="plans" className={`${styles.section} ${styles.altBackground}`} aria-labelledby="cms-plans-title">
-      <div className="container">
-        <div className={styles.sectionHeader}>
-          <Heading as="h2" id="cms-plans-title" className={styles.sectionTitle} accent>
-            Plans &amp; tarifs
-          </Heading>
-          <p className={styles.sectionLead}>
-            Trois niveaux pour aligner votre roadmap business, votre niveau d’exigence sécurité et vos intégrations existantes.
-          </p>
-        </div>
-        <div className={styles.plansGrid}>
-          {plans.map((plan) => (
-            <Card
-              key={plan.id}
-              className={`${styles.planCard}${plan.highlight ? ` ${styles.planCardHighlight}` : ""}`}
-              id={plan.id}
-              aria-labelledby={`${plan.id}-title`}
-            >
-              <CardHeader className={styles.planHeader}>
-                <span className={styles.planBadge}>{plan.name}</span>
-                <h3 id={`${plan.id}-title`} className={styles.cardTitle}>
-                  {plan.description}
-                </h3>
-              </CardHeader>
-              <CardBody>
-                <ul className={styles.planFeatures}>
-                  {plan.features.map((feature) => (
-                    <li key={feature}>
-                      <CheckIcon aria-hidden="true" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardBody>
-              <CardFooter className={styles.planFooter}>
-                <Button
-                  as="a"
-                  href="/contact"
-                  variant="solid"
-                  size="md"
-                  ariaLabel={`Demander un devis pour le plan ${plan.name}`}
-                  trailingIcon={<ArrowRightIcon aria-hidden="true" />}
-                  className={styles.planPrimaryCta}
-                >
-                  Demander un devis
-                </Button>
-                <Button
-                  as="a"
-                  href={`#${plan.id}`}
-                  variant="ghost"
-                  size="md"
-                  ariaLabel={`Voir le détail du plan ${plan.name}`}
-                >
-                  Voir le détail du plan
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function IntegrationsSection() {
-  return (
-    <section
-      id="cms-integrations"
-      className={styles.section}
-      aria-labelledby="cms-integrations-title"
-    >
-      <div className="container">
-        <div className={styles.sectionHeader}>
-          <Heading as="h2" id="cms-integrations-title" className={styles.sectionTitle} accent>
-            Intégrations prêtes
-          </Heading>
-          <p className={styles.sectionLead}>
-            Connectez votre CMS aux outils indispensables pour vos opérations : paiements, automatisations, emailing, hébergement et sécurité.
-          </p>
-        </div>
-        <ul className={styles.integrationsList} role="list">
-          {integrations.map((integration) => (
-            <li key={integration.name} className={styles.integrationItem}>
-              <div className={styles.integrationName}>{integration.name}</div>
-              <p className={styles.integrationDescription}>{integration.description}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
-
 function ShowcaseSection() {
   return (
     <section id="cms-showcase" className={`${styles.section} ${styles.altBackground}`} aria-labelledby="cms-showcase-title">
       <div className="container">
         <div className={styles.sectionHeader}>
           <Heading as="h2" id="cms-showcase-title" className={styles.sectionTitle} accent>
-            Captures &amp; démos
+            Design &amp; personnalisation sur mesure
           </Heading>
           <p className={styles.sectionLead}>
-            Visualisez l’expérience côté client et côté équipe : interfaces rapides, lisibles et accessibles pensée pour convertir.
+            Chaque projet démarre avec la base solide de SMIDJAN CMS, mais l’interface est créée sur mesure. Charte, expérience, structure : tout est adapté à ton univers.
+          </p>
+          <p className={styles.sectionSub}>
+            Le visuel s’adapte à ton projet, pas l’inverse. SMIDJAN CMS devient le moteur invisible de ton identité digitale.
           </p>
         </div>
         <div className={styles.showcaseGrid}>
@@ -600,25 +479,43 @@ function ShowcaseSection() {
   );
 }
 
-function CaseStudySection() {
+function EvolutionSection() {
   return (
-    <section id="cms-case" className={styles.section} aria-labelledby="cms-case-title">
+    <section id="evolutivite" className={styles.section} aria-labelledby="evolutivite-title">
       <div className="container">
-        <div className={styles.caseWrapper}>
-          <div>
-            <Heading as="h2" id="cms-case-title" className={styles.sectionTitle} accent>
-              Cas client — {caseStudy.client}
-            </Heading>
-            <p className={styles.sectionLead}>{caseStudy.summary}</p>
-          </div>
-          <dl className={styles.caseMetrics}>
-            {caseStudy.metrics.map((metric) => (
-              <Fragment key={metric.label}>
-                <dt className={styles.caseMetricLabel}>{metric.label}</dt>
-                <dd className={styles.caseMetricValue}>{metric.value}</dd>
-              </Fragment>
-            ))}
-          </dl>
+        <div className={styles.sectionHeader}>
+          <Heading as="h2" id="evolutivite-title" className={styles.sectionTitle} accent>
+            Un CMS pensé pour évoluer
+          </Heading>
+          <p className={styles.sectionLead}>
+            Le back-end de SMIDJAN CMS reste la base commune de tous les projets : robuste, éprouvé et maintenu en continu. Chaque client s’appuie sur cette architecture solide et peut y ajouter des modules spécifiques selon ses besoins. Le front, lui, reste totalement libre et découplé pour offrir une expérience unique.
+          </p>
+        </div>
+        <div className={styles.evolutionGrid}>
+          {evolutionCards.map((card) => (
+            <Card key={card.title} className={styles.evolutionCard}>
+              <CardHeader className={styles.cardTitle}>{card.title}</CardHeader>
+              <CardBody>
+                <ul className={styles.evolutionList}>
+                  {card.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </CardBody>
+            </Card>
+          ))}
+        </div>
+        <div className={styles.evolutionFooter}>
+          <Button
+            as="a"
+            href="#cms-cta"
+            variant="outline"
+            size="md"
+            ariaLabel="Discuter d’une évolution sur mesure"
+            trailingIcon={<ArrowRightIcon aria-hidden="true" />}
+          >
+            Discuter d’une évolution sur mesure
+          </Button>
         </div>
       </div>
     </section>
@@ -653,19 +550,21 @@ function FinalCtaSection() {
       <div className="container">
         <div className={styles.finalCta}>
           <Heading as="h2" id="cms-cta-title" className={styles.sectionTitle} accent>
-            Prêt à lancer ?
+            Prêt à passer à la vitesse supérieure ?
           </Heading>
-          <p className={styles.sectionLead}>Discutons de votre projet. Nous auditons vos besoins et alignons la feuille de route en moins de 72 heures.</p>
+          <p className={styles.sectionLead}>
+            Lance ton e-commerce avec une base solide, performante et totalement maîtrisée. Contacte-nous pour une démonstration ou un accompagnement sur mesure.
+          </p>
           <Button
             as="a"
             href="/contact"
             variant="solid"
             size="lg"
-            ariaLabel="Contacter SMIDJAN pour un projet CMS e-commerce"
+            ariaLabel="Contacter SMIDJAN pour adopter le CMS e-commerce"
             trailingIcon={<ArrowRightIcon aria-hidden="true" />}
             className={styles.finalCtaButton}
           >
-            Prendre contact
+            Nous contacter
           </Button>
         </div>
       </div>
@@ -680,12 +579,9 @@ export default function CmsEcommercePage() {
       <div className={styles.pageRoot}>
         <HeroSection />
         <QuickProofsSection />
-        <BenefitsSection />
         <FunctionalitySection />
-        <PlansSection />
-        <IntegrationsSection />
         <ShowcaseSection />
-        <CaseStudySection />
+        <EvolutionSection />
         <FaqSection />
         <FinalCtaSection />
       </div>
@@ -693,4 +589,3 @@ export default function CmsEcommercePage() {
     </>
   );
 }
-
