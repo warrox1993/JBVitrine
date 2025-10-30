@@ -49,6 +49,12 @@ export function Services() {
     cyber: styles.cardCyber,
     auto: styles.cardAuto,
   };
+  const ctaTargets: Record<ServiceOrderKey, string> = {
+    dev: "/services#developpement-web",
+    cyber: "/services#cybersecurite",
+    auto: "/services#automatisation-ia",
+  };
+
   return (
     <section id="services" className={styles.section}>
       <div className="container">
@@ -75,7 +81,12 @@ export function Services() {
                 ))}
               </ul>
               <div className={styles.price}>{s.price}</div>
-              <button className={`${styles.cta} ${s.featured ? styles.ctaFeatured : styles.ctaRegular}`}>Démarrer un projet</button>
+              <a
+                href={ctaTargets[s.orderKey]}
+                className={`${styles.cta} ${s.featured ? styles.ctaFeatured : styles.ctaRegular}`}
+              >
+                Démarrer un projet
+              </a>
             </div>
           ))}
         </div>

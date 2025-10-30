@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, startTransition } from "react";
 import styles from "./Header.module.css";
 import { sections } from "@/config/nav";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
@@ -17,7 +17,7 @@ export default function Header() {
   const trackedIds = useMemo(() => sections.map((section) => section.id), []);
   const activeId = useScrollSpy(trackedIds, 120);
   const navItems = useMemo(
-    () => sections.filter((section) => section.id !== "hero"),
+    () => sections.filter((section) => section.id !== "hero" && section.id !== "services"),
     []
   );
 
@@ -42,6 +42,16 @@ export default function Header() {
       // storage might be unavailable; ignore
     }
   }, []);
+
+  useEffect(() => {
+    if (typeof document === "undefined") {
+      return;
+    }
+    const current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+    if (current !== theme) {
+      startTransition(() => setTheme(current));
+    }
+  }, [theme]);
 
   return (
     <header className={styles["header-root"]}>
@@ -82,6 +92,13 @@ export default function Header() {
             </a>
           );
         })}
+        <Link
+          href="/services"
+          className={`${styles["header-link"]}${pathname === "/services" ? ` ${styles["header-link-active"]}` : ""}`}
+          aria-current={pathname === "/services" ? "page" : undefined}
+        >
+          Services
+        </Link>
         <button
           type="button"
           className={styles["theme-toggle"]}
