@@ -67,24 +67,24 @@ body {
 }
 
 ::selection {
-  background: var(--color-accent);
+  background: var(--color-accent-1);
   color: #fff;
 }
 
 ::-moz-selection {
-  background: var(--color-accent);
+  background: var(--color-accent-1);
   color: #fff;
 }
 
 :focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-1);
 }
 
 @supports (color: color-mix(in oklab, white, black)) {
   :focus-visible {
     box-shadow: 0 0 0 3px
-      color-mix(in oklab, var(--color-accent), transparent 70%);
+      color-mix(in oklab, var(--color-accent-1), transparent 70%);
   }
 }
 

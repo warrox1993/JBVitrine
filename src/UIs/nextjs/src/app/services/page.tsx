@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Card, CardBody, CardHeader } from "@/components/atoms/Card";
 import { Button } from "@/components/ui/Button/Button";
 import { Heading } from "@/components/ui/Heading";
+import { Footer } from "@/components/sections/Footer/Footer";
+import { TechStackEnhanced } from "@/components/sections/TechStack/TechStackEnhanced";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -29,170 +31,81 @@ const servicePillars = [
   {
     id: "developpement-web",
     title: "Développement Web",
+    subtitle: "Des architectures web sur mesure, rapides et prêtes à évoluer.",
     description:
-      "Applications et sites sur mesure (Next.js, TypeScript), front découplé et CMS modulaire. Architecture propre, accessible et performante.",
-    points: [
-      "Next.js, TypeScript, API REST et GraphQL",
-      "CMS modulaire (catalogue, contenu, SEO)",
-      "Intégrations paiement et facturation UE",
-      "Performance et Core Web Vitals",
-      "Documentation et transfert de compétences",
+      "Nous créons des sites, applications et plateformes taillés pour la performance : rapides à charger, simples à maintenir et adaptés à votre croissance. De la vitrine à l'écosystème complet, chaque projet repose sur un code robuste et un design clair.",
+    technologies: "Next.js / React / Smidjan CMS / PostgreSQL / Stripe / API REST",
+    benefits: [
+      "Un site ou une application à haute performance (LCP < 2 s)",
+      "Une architecture évolutive et bien documentée",
+      "Un front-end optimisé SEO et accessible",
+      "Une intégration fluide avec vos outils internes",
     ],
+    examples: [
+      "Site vitrine premium pour PME locale",
+      "Plateforme e-commerce connectée à Stripe et ERP",
+      "Application interne avec tableau de bord et gestion utilisateurs",
+    ],
+    cta: "Démarrer un projet web",
   },
   {
     id: "cybersecurite",
     title: "Cybersécurité Web",
+    subtitle: "Sécuriser vos sites et applications dès la conception.",
     description:
-      "Sécurité intégrée au cycle de vie : audit, durcissement, supervision et réponses rapides.",
-    points: [
-      "Audit OWASP et revue d’architecture",
-      "Durcissement (headers, secrets, auth)",
-      "CI/CD sécurisée et scans réguliers",
-      "Monitoring, alertes et journaux d’audit",
-      "Plan d’action et remédiation pilotée",
+      "Nous intégrons la sécurité dans chaque ligne de code : analyse, test, surveillance et durcissement des environnements web. L'objectif : anticiper les failles avant qu'elles ne deviennent des menaces.",
+    technologies: "Audit OWASP / Pentest / Durcissement serveur / Monitoring IA / RGPD / DevSecOps",
+    benefits: [
+      "Un audit complet et priorisé",
+      "Un code auditable et un serveur durci",
+      "Une surveillance continue et alertes intelligentes",
+      "Une conformité RGPD documentée",
     ],
+    examples: [
+      "Audit de sécurité avant levée de fonds",
+      "Protection d'une plateforme e-commerce",
+      "Sécurisation d'une API exposée",
+    ],
+    cta: "Sécuriser mon projet",
   },
   {
     id: "automatisation-ia",
     title: "Automatisation & IA",
+    subtitle: "Automatiser, connecter, accélérer.",
     description:
-      "Automatiser les processus métiers : n8n, webhooks et IA pour accélérer le quotidien sans code superflu.",
-    points: [
-      "Workflows n8n (CRM, facturation, emailing)",
-      "Connecteurs ERP, CRM et analytics",
-      "IA via API (contenus, tagging, recommandations)",
-      "Webhooks sécurisés (signatures, replay)",
-      "Tableaux de bord et reporting métiers",
+      "Nous mettons en place des workflows intelligents et des assistants IA capables de réduire la charge opérationnelle et d'améliorer vos processus quotidiens. Du simple déclencheur n8n au micro-service IA, tout est pensé pour fluidifier votre activité.",
+    technologies: "n8n / Python (FastAPI) / GPT / Zapier / Notion / CRM / API REST",
+    benefits: [
+      "Des tâches automatisées et synchronisées entre vos outils",
+      "Des rapports et dashboards automatiques",
+      "Des agents IA formés sur vos données internes",
+      "Moins de frictions et plus de productivité",
     ],
+    examples: [
+      "Automatisation des factures et emails internes",
+      "Assistant IA pour support client ou marketing",
+      "Connexion CRM ↔ Stripe ↔ Notion",
+    ],
+    cta: "Automatiser mon business",
   },
 ] as const;
 
-const engagements = [
-  {
-    title: "Code propre & durable",
-    text: "Base technique maintenable, testée et extensible. Chaque livraison inclut revues de code, conventions claires et documentation.",
-  },
-  {
-    title: "Sécurité dès la conception",
-    text: "La sécurité est intégrée dès la conception. Politics de secrets, access management et durcissement applicatif systématisés.",
-  },
-  {
-    title: "Accompagnement personnalisé",
-    text: "Formation de vos équipes, support direct et conseil stratégique. Nos livrables sont pensés pour être repris en interne.",
-  },
-  {
-    title: "Méthodologie transparente",
-    text: "Nous travaillons en cycles courts, avec jalons vérifiables et accès continu aux environnements. Vous savez où en est le projet.",
-  },
-] as const;
-
-const processSteps = [
-  {
-    step: "01",
-    title: "Cadrage",
-    description: "Atelier de compréhension métier, définition des priorités et des KPIs. Cahier de charge fonctionnel et technique synthétisé.",
-  },
-  {
-    step: "02",
-    title: "Architecture",
-    description: "Design technique, sécurité, dataflow, modules et choix d’intégrations. Les décisions sont documentées et validées ensemble.",
-  },
-  {
-    step: "03",
-    title: "Implémentation",
-    description: "Développement itératif, CI/CD, tests automatisés et supervision. Mise en place des automatisations et suivi de la qualité.",
-  },
-  {
-    step: "04",
-    title: "Livraison & suivi",
-    description: "Mise en production accompagnée, formation, monitoring et plan d’évolution pour garantir la continuité opérationnelle.",
-  },
-] as const;
-
-const integrationCategories = [
-  {
-    title: "DevOps & Observabilité",
-    items: ["CI/CD GitHub Actions", "Infrastructure as Code", "Sentry & DataDog", "Alerting et escalade"],
-  },
-  {
-    title: "Qualité & documentation",
-    items: ["Tests end-to-end", "Lint/format automatique", "Handbook projet", "Guides d’exploitation"],
-  },
-  {
-    title: "Conformité & sécurité",
-    items: ["Traçabilité utilisateurs", "Gestion des secrets", "Accès restreints", "Journalisation complète"],
-  },
-] as const;
 
 const packages = [
   {
     name: "Pack Build",
-    description: "Développement complet d’une plateforme ou d’un produit sur mesure, avec transfert aux équipes internes.",
-    points: [
-      "Architecture, design system et intégration",
-      "CI/CD, tests, observabilité",
-      "Support lancement 30 jours",
-    ],
+    subtitle: "lancer vite, solide et mesurable.",
+    description: "Inclut : développement web complet, hébergement, mise en ligne, documentation.",
   },
   {
     name: "Pack Sécurité",
-    description: "Audit, durcissement et supervision continue pour sécuriser vos plateformes web et vos environnements.",
-    points: [
-      "Audit OWASP complet + recommandations",
-      "Durcissement applicatif et infrastructure",
-      "Monitoring, alertes et réponse à incident",
-    ],
+    subtitle: "auditer, durcir, stabiliser.",
+    description: "Inclut : audit OWASP, monitoring IA, plan de remédiation.",
   },
   {
     name: "Pack Automatisation & IA",
-    description: "Conception et déploiement de workflows n8n, scripts et intégrations IA autour de vos process métiers.",
-    points: [
-      "Cartographie de vos processus critiques",
-      "Workflows n8n, scripts et alertes",
-      "Connexion à vos API d’IA ou modèles internes",
-    ],
-  },
-] as const;
-
-const deliverables = [
-  {
-    title: "Livrables structurés",
-    text: "Roadmap, backlog priorisé, documentation technique, guides d’administration et handover complet.",
-  },
-  {
-    title: "Gouvernance projet",
-    text: "Cadence claire : weekly ou biweekly, comité projet, dashboards de suivi et RACI partagé.",
-  },
-  {
-    title: "Support & formation",
-    text: "Coaching des équipes, sessions de prise en main et assistance directe pendant la phase de stabilisation.",
-  },
-] as const;
-
-const techStack = [
-  {
-    title: "Frontend",
-    text: "React, Next.js, TypeScript, Tailwind CSS, state managers modernes et animations optimisées.",
-  },
-  {
-    title: "Backend & API",
-    text: "Node.js, Python (Django/FastAPI), GraphQL, PostgreSQL, Redis. API sécurisées et scalables.",
-  },
-  {
-    title: "Cloud & DevOps",
-    text: "Infrastructure AWS/Azure, Docker, Kubernetes, Terraform, GitHub Actions, Nginx.",
-  },
-  {
-    title: "Sécurité",
-    text: "OWASP, authentification forte, gestion centralisée des secrets, scans SAST/DAST, WAF.",
-  },
-  {
-    title: "Automatisation & IA",
-    text: "n8n, webhooks sécurisés, intégration OpenAI/Anthropic, orchestration de tâches et reporting automatisé.",
-  },
-  {
-    title: "Analytics",
-    text: "Mixpanel, DataDog, Sentry, Grafana et pipelines de données pour piloter le ROI.",
+    subtitle: "connecter, fluidifier, accélérer.",
+    description: "Inclut : automatisations n8n / Zapier / API + intégration IA personnalisée.",
   },
 ] as const;
 
@@ -256,25 +169,15 @@ export default function ServicesPage() {
         </svg>
         <div className="container">
           <div className={styles.heroInner}>
-            <span className={styles.badge}>Services SMIDJAN</span>
             <h1 id="services-hero-title" className={styles.heroTitle}>
-              Des services pensés pour la performance, la sécurité et la scalabilité
+              Des solutions digitales prêtes à performer.
             </h1>
             <p className={styles.heroLead}>
-              Nous concevons, sécurisons et automatisons des systèmes web qui tiennent dans le temps. Un seul objectif&nbsp;: livrer vite, propre et mesurable, sans complexité inutile.
+              Smidjan conçoit et sécurise des systèmes web sur mesure : sites, plateformes et automatisations qui augmentent votre efficacité réelle — pas votre jargon.
             </p>
             <div className={styles.heroActions}>
               <Button as="a" href="/contact" variant="solid" size="md" ariaLabel="Démarrer un projet avec SMIDJAN">
                 Démarrer un projet
-              </Button>
-              <Button
-                as="a"
-                href="/produits/cms-ecommerce"
-                variant="outline"
-                size="md"
-                ariaLabel="Découvrir le CMS SMIDJAN"
-              >
-                Découvrir le CMS
               </Button>
             </div>
           </div>
@@ -289,128 +192,50 @@ export default function ServicesPage() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <Heading as="h2" accent className={styles.sectionTitle} id="services-pillars-title">
-              Nos trois pôles d’excellence
+              Nos services
             </Heading>
             <p className={styles.sectionLead}>
-              Développement sur mesure, cybersécurité et automatisation : trois expertises qui partagent un même socle méthodologique, technique et humain.
+              Chaque service Smidjan est pensé pour résoudre un problème réel : plus de lenteur, plus d'incertitude technique, plus de perte de temps. Nous livrons des solutions mesurables, documentées et évolutives.
             </p>
           </div>
-          <div className={styles.pillarsGrid}>
-            {servicePillars.map((pillar) => (
-              <div key={pillar.id} id={pillar.id} className={styles.pillarAnchor}>
-                <Card className={styles.pillarCard}>
-                  <CardHeader className={styles.pillarHeader}>{pillar.title}</CardHeader>
-                  <CardBody className={styles.pillarBody}>
-                    <p className={styles.pillarDescription}>{pillar.description}</p>
-                    <ul className={styles.pillarList}>
-                      {pillar.points.map((point) => (
-                        <li key={point}>{point}</li>
-                      ))}
-                    </ul>
-                  </CardBody>
-                </Card>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+          <div className={styles.servicesDetailed}>
+            {servicePillars.map((service) => (
+              <div key={service.id} id={service.id} className={styles.serviceBlock}>
+                <h3 className={styles.serviceTitle}>{service.title}</h3>
+                <p className={styles.serviceSubtitle}>{service.subtitle}</p>
+                <p className={styles.serviceDescription}>{service.description}</p>
 
-      <section
-        id="services-engagements"
-        className={`${styles.section} ${styles.engagements}`}
-        aria-labelledby="services-engagements-title"
-      >
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <Heading as="h2" accent className={styles.sectionTitle} id="services-engagements-title">
-              Nos engagements
-            </Heading>
-            <p className={styles.sectionLead}>
-              Des fondations techniques solides, une transparence totale et un accompagnement humain pour créer de la valeur mesurable.
-            </p>
-          </div>
-          <div className={styles.engagementsGrid}>
-            {engagements.map((engagement) => (
-              <div key={engagement.title} className={styles.engagementCard}>
-                <h3 className={styles.engagementTitle}>{engagement.title}</h3>
-                <p className={styles.engagementText}>{engagement.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="services-process" className={`${styles.section} ${styles.sectionSurface}`} aria-labelledby="services-process-title">
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <Heading as="h2" accent className={styles.sectionTitle} id="services-process-title">
-              Un cycle projet clair et documenté
-            </Heading>
-            <p className={styles.sectionLead}>
-              Chaque mission suit un déroulé maîtrisé : cadrage, architecture, implémentation puis livraison et suivi. Vous savez précisément où nous en sommes et ce qui reste à faire.
-            </p>
-          </div>
-          <div className={styles.processGrid}>
-            {processSteps.map((step) => (
-              <div key={step.step} className={styles.processCard}>
-                <span className={styles.processStep}>{step.step}</span>
-                <h3 className={styles.processTitle}>{step.title}</h3>
-                <p className={styles.processDescription}>{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="services-integrations" className={styles.section} aria-labelledby="services-integrations-title">
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <Heading as="h2" accent className={styles.sectionTitle} id="services-integrations-title">
-              Ce que nous intégrons systématiquement
-            </Heading>
-            <p className={styles.sectionLead}>
-              Nous ne nous limitons pas au code&nbsp;: DevOps, observabilité, sécurité et documentation font partie du package.
-            </p>
-          </div>
-          <div className={styles.integrationsGrid}>
-            {integrationCategories.map((category) => (
-              <div key={category.title} className={styles.integrationCard}>
-                <h3 className={styles.integrationTitle}>{category.title}</h3>
-                <ul className={styles.integrationList}>
-                  {category.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="services-packages" className={`${styles.section} ${styles.sectionSurface}`} aria-labelledby="services-packages-title">
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <Heading as="h2" accent className={styles.sectionTitle} id="services-packages-title">
-              Des packs pour aller droit à l’essentiel
-            </Heading>
-            <p className={styles.sectionLead}>
-              Trois offres pour couvrir la construction, la sécurisation et l’automatisation de vos plateformes digitales.
-            </p>
-          </div>
-          <div className={styles.packagesGrid}>
-            {packages.map((pack) => (
-              <div key={pack.name} className={styles.packageCard}>
-                <div className={styles.packageHeader}>
-                  <h3 className={styles.packageName}>{pack.name}</h3>
-                  <p className={styles.packageDescription}>{pack.description}</p>
+                <div className={styles.serviceTech}>
+                  <strong>Technologies :</strong>
+                  <p>{service.technologies}</p>
                 </div>
-                <ul className={styles.packageList}>
-                  {pack.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-                <Button as="a" href="/contact" variant="solid" size="sm" ariaLabel={`Démarrer le pack ${pack.name}`}>
-                  Démarrer ce pack
+
+                <div className={styles.serviceBenefits}>
+                  <strong>Ce que vous obtenez :</strong>
+                  <ul>
+                    {service.benefits.map((benefit) => (
+                      <li key={benefit}>{benefit}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className={styles.serviceExamples}>
+                  <strong>Exemples de projets :</strong>
+                  <ul>
+                    {service.examples.map((example) => (
+                      <li key={example}>{example}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Button
+                  as="a"
+                  href="/contact"
+                  variant="solid"
+                  size="sm"
+                  ariaLabel={service.cta}
+                >
+                  {service.cta}
                 </Button>
               </div>
             ))}
@@ -418,63 +243,19 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="services-deliverables" className={styles.section} aria-labelledby="services-deliverables-title">
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <Heading as="h2" accent className={styles.sectionTitle} id="services-deliverables-title">
-              Livrables et accompagnement
-            </Heading>
-            <p className={styles.sectionLead}>
-              Nos engagements ne s’arrêtent pas à la mise en production. Nous vous accompagnons dans la durée.
-            </p>
-          </div>
-          <div className={styles.deliverablesGrid}>
-            {deliverables.map((deliverable) => (
-              <div key={deliverable.title} className={styles.deliverableCard}>
-                <h3 className={styles.deliverableTitle}>{deliverable.title}</h3>
-                <p className={styles.deliverableText}>{deliverable.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="services-tech" className={`${styles.section} ${styles.sectionSurface}`} aria-labelledby="services-tech-stack">
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <Heading as="h2" accent className={styles.sectionTitle} id="services-tech-stack">
-              Notre stack technologique
-            </Heading>
-            <p className={styles.sectionLead}>
-              Nous choisissons des outils éprouvés, performants et maintenus pour garantir la pérennité de vos projets.
-            </p>
-          </div>
-          <div className={styles.techGrid}>
-            {techStack.map((category) => (
-              <div key={category.title} className={styles.techCard}>
-                <h3 className={styles.techTitle}>{category.title}</h3>
-                <p className={styles.techText}>{category.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+      <section id="services-tech" className={styles.section} aria-labelledby="services-tech-stack">
+        <TechStackEnhanced />
       </section>
 
       <section id="services-cms" className={styles.section} aria-labelledby="services-cms-highlight">
         <div className="container">
           <div className={styles.sectionHeader}>
             <Heading as="h2" accent className={styles.sectionTitle} id="services-cms-highlight">
-              SMIDJAN CMS, le socle produit que nous faisons évoluer en continu
+              Smidjan CMS — le socle produit que nous faisons évoluer en continu.
             </Heading>
             <p className={styles.sectionLead}>
-              Un CMS e-commerce headless, sécurisé et administrable. Nous l’adaptons selon vos besoins métiers tout en garantissant des évolutions continues.
+              Au cœur de notre savoir-faire, un CMS e-commerce modulaire et évolutif, conçu pour offrir la liberté du sur-mesure avec la stabilité d'une architecture éprouvée. Multi-store, sécurisé et rapide, Smidjan CMS propulse nos projets internes et ceux de nos clients pilotes.
             </p>
-          </div>
-          <div className={styles.testimonial}>
-            <p className={styles.testimonialText}>
-              «&nbsp;Grâce à SMIDJAN, nous avons pu lancer notre plateforme e-commerce en six semaines au lieu de six mois. Le CMS est d’une flexibilité incroyable et l’équipe a su s’adapter à nos besoins spécifiques sans compromis sur la qualité.&nbsp;»
-            </p>
-            <span className={styles.testimonialAuthor}>Marie Dubois — CTO, TechRetail</span>
           </div>
           <div className={`${styles.packagesGrid} ${styles.cmsPackages}`}>
             {cmsFeatures.map((feature) => (
@@ -488,17 +269,49 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
+          <div style={{ marginTop: "var(--space-4)", textAlign: "center" }}>
+            <Button as="a" href="/contact" variant="solid" size="md" ariaLabel="Découvrir Smidjan CMS">
+              Découvrir Smidjan CMS
+            </Button>
+          </div>
         </div>
       </section>
 
-      <section id="services-contact" className={`${styles.section} ${styles.sectionSurface}`} aria-labelledby="services-final-cta">
+      <section id="services-packages" className={`${styles.section} ${styles.sectionSurface}`} aria-labelledby="services-packages-title">
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <Heading as="h2" accent className={styles.sectionTitle} id="services-packages-title">
+              Trois formules pour passer de l'idée au résultat
+            </Heading>
+            <p className={styles.sectionLead}>
+              Chaque pack est une porte d'entrée vers la solution adaptée à votre projet. Nous ajustons ensuite chaque prestation selon vos besoins exacts.
+            </p>
+          </div>
+          <div className={styles.packagesGrid}>
+            {packages.map((pack) => (
+              <div key={pack.name} className={styles.packageCard}>
+                <div className={styles.packageHeader}>
+                  <h3 className={styles.packageName}>{pack.name}</h3>
+                  <p className={styles.packageDescription}>{pack.subtitle}</p>
+                </div>
+                <p className={styles.packageDescription}>{pack.description}</p>
+                <Button as="a" href="/contact" variant="solid" size="sm" ariaLabel={`Demander un devis pour ${pack.name}`}>
+                  Demander un devis personnalisé
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="services-contact" className={styles.section} aria-labelledby="services-final-cta">
         <div className="container">
           <div className={styles.finalCta}>
             <h2 id="services-final-cta" className={styles.finalCtaTitle}>
-              Besoin d’un accompagnement sur mesure&nbsp;?
+              Votre projet mérite une architecture solide.
             </h2>
             <p className={styles.finalCtaText}>
-              Parlons de votre contexte et de vos contraintes. Nous planifions une session gratuite pour vous conseiller sur la faisabilité, les choix technologiques, la sécurité et la performance.
+              Discutons de vos objectifs, et voyons comment les traduire en code. Chez Smidjan, chaque collaboration repose sur un engagement simple : livrer des résultats mesurables, pas des promesses vagues.
             </p>
             <Button
               as="a"
@@ -513,6 +326,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

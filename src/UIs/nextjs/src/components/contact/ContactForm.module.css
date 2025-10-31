@@ -1,0 +1,109 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 700px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.error {
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+  margin-top: var(--space-1);
+}
+
+.charCount {
+  color: var(--color-text-3);
+  font-size: var(--text-xs);
+  margin-top: var(--space-1);
+}
+
+.checkboxLabel {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  font-size: var(--text-sm);
+  color: var(--color-text-2);
+  cursor: pointer;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  margin-top: 0.2rem;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--color-accent-1);
+}
+
+.link {
+  color: var(--color-accent-1);
+  text-decoration: underline;
+  transition: color var(--dur-2) var(--ease-standard);
+}
+
+.link:hover {
+  color: var(--color-accent-3);
+}
+
+.globalError {
+  padding: var(--space-3);
+  background: color-mix(in oklab, var(--color-danger), transparent 85%);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-md);
+  color: var(--color-text-1);
+}
+
+.globalError strong {
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.globalError p {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-2);
+}
+
+.submit {
+  align-self: flex-start;
+  min-width: 200px;
+}
+
+.success {
+  padding: var(--space-5);
+  background: color-mix(in oklab, var(--color-accent-1), transparent 85%);
+  border: 1px solid var(--color-accent-1);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.successTitle {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text-1);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.successText {
+  font-size: var(--text-base);
+  color: var(--color-text-2);
+  margin: 0;
+  line-height: 1.6;
+}

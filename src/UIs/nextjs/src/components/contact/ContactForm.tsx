@@ -1,0 +1,351 @@
+'use client';
+
+import React, { useState } from 'react';
+import { Input } from '@/components/atoms/Input';
+import { Select } from '@/components/atoms/Select';
+import { Textarea } from '@/components/atoms/Textarea';
+import { Label } from '@/components/atoms/Label';
+import { Button } from '@/components/atoms/Button';
+import cls from './ContactForm.module.css';
+
+type FormData = {
+    type: string;
+    name: string;
+    email: string;
+    phone: string;
+    company: string;
+    budget: string;
+    timeline: string;
+    message: string;
+    consent: boolean;
+    honeypot: string;
+};
+
+type FieldErrors = Partial<Record<keyof FormData, string>>;
+
+const initialFormData: FormData = {
+    type: '',
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    budget: '',
+    timeline: '',
+    message: '',
+    consent: false,
+    honeypot: '',
+};
+
+export function ContactForm() {
+    const [formData, setFormData] = useState<FormData>(initialFormData);
+    const [errors, setErrors] = useState<FieldErrors>({});
+    const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+    const [globalError, setGlobalError] = useState<string>('');
+
+    const validateField = (name: keyof FormData, value: string | boolean): string => {
+        switch (name) {
+            case 'type':
+                return !value ? 'Veuillez sélectionner un type de demande' : '';
+            case 'name':
+                if (!value) return 'Le nom est requis';
+                if (typeof value === 'string' && (value.length < 2 || value.length > 80)) {
+                    return 'Le nom doit contenir entre 2 et 80 caractères';
+                }
+                return '';
+            case 'email':
+                if (!value) return 'L\'email est requis';
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return !emailRegex.test(String(value)) ? 'Email invalide' : '';
+            case 'message':
+                if (!value) return 'La description est requise';
+                if (typeof value === 'string' && (value.length < 30 || value.length > 1500)) {
+                    return 'La description doit contenir entre 30 et 1 500 caractères';
+                }
+                return '';
+            case 'consent':
+                return !value ? 'Vous devez accepter les conditions' : '';
+            default:
+                return '';
+        }
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        const { name, value, type } = e.target;
+        const fieldValue = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
+
+        setFormData(prev => ({ ...prev, [name]: fieldValue }));
+
+        // Clear error when user starts typing
+        if (errors[name as keyof FormData]) {
+            setErrors(prev => ({ ...prev, [name]: '' }));
+        }
+    };
+
+    const validateForm = (): boolean => {
+        const newErrors: FieldErrors = {};
+
+        (Object.keys(formData) as Array<keyof FormData>).forEach(key => {
+            if (key !== 'honeypot' && key !== 'phone' && key !== 'company' && key !== 'budget' && key !== 'timeline') {
+                const error = validateField(key, formData[key]);
+                if (error) newErrors[key] = error;
+            }
+        });
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setGlobalError('');
+
+        // Honeypot check
+        if (formData.honeypot) {
+            console.warn('Bot detected');
+            return;
+        }
+
+        if (!validateForm()) {
+            return;
+        }
+
+        setStatus('submitting');
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    type: formData.type,
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone || null,
+                    company: formData.company || null,
+                    budget: formData.budget || null,
+                    timeline: formData.timeline || null,
+                    message: formData.message,
+                    consent: formData.consent,
+                    utm: {
+                        source: new URLSearchParams(window.location.search).get('utm_source'),
+                        campaign: new URLSearchParams(window.location.search).get('utm_campaign'),
+                    },
+                }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                if (data.fieldErrors) {
+                    setErrors(data.fieldErrors);
+                }
+                throw new Error(data.message || 'Une erreur est survenue');
+            }
+
+            setStatus('success');
+            setFormData(initialFormData);
+        } catch (error) {
+            setStatus('error');
+            setGlobalError(error instanceof Error ? error.message : 'Un souci est survenu. Réessayez dans quelques minutes, ou écrivez-nous à support@smidjan.dev.');
+        }
+    };
+
+    if (status === 'success') {
+        return (
+            <div className={cls.success} role="status" aria-live="polite">
+                <h3 className={cls.successTitle}>Bien reçu.</h3>
+                <p className={cls.successText}>
+                    Merci, on vous répond sous 24h ouvrées. Vous recevrez un accusé par email.
+                </p>
+            </div>
+        );
+    }
+
+    return (
+        <form
+            onSubmit={handleSubmit}
+            className={cls.form}
+            noValidate
+            data-analytics="contact-form"
+        >
+            {/* Honeypot field */}
+            <input
+                type="text"
+                name="honeypot"
+                value={formData.honeypot}
+                onChange={handleChange}
+                style={{ display: 'none' }}
+                tabIndex={-1}
+                autoComplete="off"
+            />
+
+            <div className={cls.field}>
+                <Label htmlFor="type" required>Type de demande</Label>
+                <Select
+                    id="type"
+                    name="type"
+                    value={formData.type}
+                    onChange={handleChange}
+                    required
+                    aria-invalid={!!errors.type}
+                    aria-describedby={errors.type ? 'type-error' : undefined}
+                >
+                    <option value="">Sélectionner...</option>
+                    <option value="projet">Projet/Devis</option>
+                    <option value="support">Support/Question</option>
+                    <option value="partenariat">Partenariat</option>
+                </Select>
+                {errors.type && <span id="type-error" className={cls.error} role="alert">{errors.type}</span>}
+            </div>
+
+            <div className={cls.field}>
+                <Label htmlFor="name" required>Nom complet</Label>
+                <Input
+                    id="name"
+                    name="name"
+                    type="text"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Ex. Marie Dupont"
+                    required
+                    maxLength={80}
+                    aria-invalid={!!errors.name}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
+                />
+                {errors.name && <span id="name-error" className={cls.error} role="alert">{errors.name}</span>}
+            </div>
+
+            <div className={cls.field}>
+                <Label htmlFor="email" required>Email professionnel</Label>
+                <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="votre.email@exemple.com"
+                    required
+                    aria-invalid={!!errors.email}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
+                />
+                {errors.email && <span id="email-error" className={cls.error} role="alert">{errors.email}</span>}
+            </div>
+
+            <div className={cls.field}>
+                <Label htmlFor="phone">Téléphone</Label>
+                <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+32 4 ..."
+                />
+            </div>
+
+            <div className={cls.field}>
+                <Label htmlFor="company">Entreprise</Label>
+                <Input
+                    id="company"
+                    name="company"
+                    type="text"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Nom de votre entreprise"
+                />
+            </div>
+
+            <div className={cls.row}>
+                <div className={cls.field}>
+                    <Label htmlFor="budget">Budget estimé</Label>
+                    <Select
+                        id="budget"
+                        name="budget"
+                        value={formData.budget}
+                        onChange={handleChange}
+                    >
+                        <option value="">Non spécifié</option>
+                        <option value="<2000">&lt; 2 000 €</option>
+                        <option value="2-5k">2 000 - 5 000 €</option>
+                        <option value="5-10k">5 000 - 10 000 €</option>
+                        <option value="10-25k">10 000 - 25 000 €</option>
+                        <option value=">25k">&gt; 25 000 €</option>
+                    </Select>
+                </div>
+
+                <div className={cls.field}>
+                    <Label htmlFor="timeline">Délai souhaité</Label>
+                    <Select
+                        id="timeline"
+                        name="timeline"
+                        value={formData.timeline}
+                        onChange={handleChange}
+                    >
+                        <option value="">Non spécifié</option>
+                        <option value="asap">ASAP (1-2 semaines)</option>
+                        <option value="1m">1 mois</option>
+                        <option value="2-3m">2-3 mois</option>
+                        <option value=">3m">&gt; 3 mois</option>
+                    </Select>
+                </div>
+            </div>
+
+            <div className={cls.field}>
+                <Label htmlFor="message" required>Description du besoin</Label>
+                <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Contexte, objectifs, périmètre, exemples…"
+                    required
+                    minLength={30}
+                    maxLength={1500}
+                    rows={6}
+                    aria-invalid={!!errors.message}
+                    aria-describedby={errors.message ? 'message-error' : undefined}
+                />
+                <span className={cls.charCount}>
+                    {formData.message.length} / 1 500 caractères
+                </span>
+                {errors.message && <span id="message-error" className={cls.error} role="alert">{errors.message}</span>}
+            </div>
+
+            <div className={cls.field}>
+                <label className={cls.checkboxLabel}>
+                    <input
+                        type="checkbox"
+                        name="consent"
+                        checked={formData.consent}
+                        onChange={handleChange}
+                        required
+                        aria-invalid={!!errors.consent}
+                        aria-describedby={errors.consent ? 'consent-error' : undefined}
+                    />
+                    <span>
+                        J'accepte que Smidjan traite ces informations pour répondre à ma demande.
+                        Aucune vente de données. <a href="/privacy" className={cls.link}>Politique de confidentialité</a>.
+                    </span>
+                </label>
+                {errors.consent && <span id="consent-error" className={cls.error} role="alert">{errors.consent}</span>}
+            </div>
+
+            {globalError && (
+                <div className={cls.globalError} role="alert">
+                    <strong>Un souci est survenu.</strong>
+                    <p>{globalError}</p>
+                </div>
+            )}
+
+            <Button
+                type="submit"
+                disabled={status === 'submitting'}
+                data-cta="submit-contact"
+                className={cls.submit}
+            >
+                {status === 'submitting' ? 'Envoi en cours...' : 'Envoyer ma demande'}
+            </Button>
+        </form>
+    );
+}

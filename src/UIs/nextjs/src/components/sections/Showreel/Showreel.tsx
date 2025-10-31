@@ -13,7 +13,7 @@ export function Showreel() {
       title: "SMIDJAN CMS",
       tag: "E-commerce",
       description:
-        "Un CMS modulaire et complet pour produits, services et abonnements, conçu pour grandir avec ton entreprise.",
+        "Une base e-commerce modulaire, conçue pour évoluer avec les besoins des marques ambitieuses.",
     },
   ];
   return (
@@ -22,8 +22,7 @@ export function Showreel() {
         <div className={styles.intro}>
           <h2 className={styles.title}>Notre projet phare</h2>
           <p className={styles.description}>
-            SMIDJAN CMS est le cœur de notre savoir-faire : une solution e-commerce modulaire, sécurisée et entièrement personnalisable.
-            Nous le faisons évoluer en continu pour repousser les limites du design, de la performance et de l’automatisation.
+            SMIDJAN CMS incarne notre philosophie : un outil e-commerce modulaire, pensé pour la performance, la sécurité et la liberté totale de création.
           </p>
         </div>
         <div className={styles.grid}>
@@ -37,13 +36,16 @@ export function Showreel() {
                   <a className={styles.cardCta} href="/produits/cms-ecommerce">
                     Découvrir le projet
                   </a>
+                  <p className={styles.reassurance}>
+                    Une solution conçue pour repousser les limites du design et de l'automatisation.
+                  </p>
                 </div>
               </article>
             );
           })}
         </div>
         <p className={styles.footnote}>
-          D’autres projets seront prochainement présentés. Chaque réalisation SMIDJAN est sélectionnée pour son ambition technique et son impact durable.
+          D'autres projets seront prochainement présentés. Chaque réalisation SMIDJAN est sélectionnée pour son ambition technique et son impact durable.
         </p>
       </div>
     </section>

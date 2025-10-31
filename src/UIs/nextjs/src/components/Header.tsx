@@ -17,7 +17,13 @@ export default function Header() {
   const trackedIds = useMemo(() => sections.map((section) => section.id), []);
   const activeId = useScrollSpy(trackedIds, 120);
   const navItems = useMemo(
-    () => sections.filter((section) => section.id !== "hero" && section.id !== "services"),
+    () => sections.filter((section) =>
+      section.id !== "hero" &&
+      section.id !== "services" &&
+      section.id !== "contact" &&
+      section.id !== "projects" &&
+      section.id !== "process"
+    ),
     []
   );
 
@@ -98,6 +104,13 @@ export default function Header() {
           aria-current={pathname === "/services" ? "page" : undefined}
         >
           Services
+        </Link>
+        <Link
+          href="/contact"
+          className={`${styles["header-link"]}${pathname === "/contact" ? ` ${styles["header-link-active"]}` : ""}`}
+          aria-current={pathname === "/contact" ? "page" : undefined}
+        >
+          Contact
         </Link>
         <button
           type="button"

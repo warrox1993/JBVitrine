@@ -11,7 +11,9 @@
 }
 .intro {
   max-width: 600px;
+  margin-inline: auto;
   margin-bottom: var(--space-7);
+  text-align: center;
 }
 .title {
   font-family: var(--font-display);
@@ -39,68 +41,98 @@
 }
 .card {
   position: relative;
-  width: min(460px, 100%);
-  aspect-ratio: 3 / 2;
+  width: min(800px, 95%);
+  aspect-ratio: 16 / 9;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent-1) 80%, var(--color-bg) 20%) 0%,
+    color-mix(in srgb, var(--color-accent-1) 40%, var(--color-bg) 60%) 50%,
+    var(--color-surface) 100%
+  );
+  border: 1px solid color-mix(in oklab, var(--color-accent-1), transparent 70%);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 40px color-mix(in oklab, var(--color-accent-1), transparent 75%),
+    inset 0 1px 0 color-mix(in oklab, white, transparent 90%);
   display: flex;
   margin-inline: auto;
+  transition: transform var(--dur-3) var(--ease-standard);
+}
+
+.card:hover {
+  transform: translateY(-4px);
 }
 .overlay {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   gap: var(--space-3);
-  padding: var(--space-5);
+  padding: var(--space-6);
   width: 100%;
   background: linear-gradient(
-    200deg,
-    color-mix(in oklab, rgba(0, 0, 0, 0.15), transparent 20%) 0%,
-    rgba(0, 0, 0, 0.4) 100%
+    180deg,
+    transparent 0%,
+    color-mix(in oklab, var(--color-bg), transparent 20%) 40%,
+    color-mix(in oklab, var(--color-bg), transparent 5%) 100%
   );
 }
 .tag {
   display: inline-block;
   padding: var(--space-1) var(--space-3);
-  background: color-mix(in oklab, var(--color-text-1), transparent 75%);
+  background: var(--color-accent-1);
   border-radius: var(--radius-full);
   font-size: var(--text-xs);
-  font-weight: 600;
-  color: white;
+  font-weight: 700;
+  color: var(--color-bg);
   width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 .cardTitle {
-  font-size: var(--text-xl);
+  font-size: var(--text-2xl);
   font-weight: 700;
-  color: white;
+  color: var(--color-text-1);
   margin: 0;
+  font-family: var(--font-display);
 }
 .cardDescription {
   margin: 0;
-  color: color-mix(in srgb, white 85%, transparent 15%);
+  color: var(--color-text-2);
   line-height: 1.7;
-  max-width: 52ch;
+  max-width: 60ch;
+  font-size: var(--text-base);
 }
 .cardCta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-3) var(--space-5);
   border-radius: var(--radius-lg);
-  background: color-mix(in srgb, white 92%, transparent 8%);
+  background: var(--color-accent-1);
   color: var(--color-bg);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   width: fit-content;
+  font-size: var(--text-base);
+  border: 2px solid transparent;
   transition:
-    transform var(--transition-base),
-    box-shadow var(--transition-base);
+    transform var(--dur-2) var(--ease-standard),
+    box-shadow var(--dur-2) var(--ease-standard),
+    background var(--dur-2) var(--ease-standard);
 }
 .cardCta:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 24px
+    color-mix(in oklab, var(--color-accent-1), transparent 50%);
+  background: color-mix(in oklab, var(--color-accent-1), white 10%);
+}
+.reassurance {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-3);
+  font-style: italic;
 }
 .footnote {
   margin-top: var(--space-5);
@@ -109,7 +141,7 @@
   font-size: var(--text-base);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .card {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -117,5 +149,8 @@
   .overlay {
     padding: var(--space-4);
     gap: var(--space-2);
+  }
+  .cardTitle {
+    font-size: var(--text-xl);
   }
 }

@@ -6,98 +6,92 @@
   border-bottom: none;
   margin: 0;
 }
-.intro {
+
+.container {
+  max-width: min(900px, 90%);
+  margin: 0 auto;
   text-align: center;
-  font-size: var(--text-sm);
-  color: var(--color-text-3);
-  margin-bottom: var(--space-5);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: var(--space-5);
-  align-items: center;
-  justify-items: center;
-}
-.logo {
-  padding: var(--space-4);
-  font-size: var(--text-base);
-  font-weight: 600;
-  color: var(--color-text-3);
-  transition: var(--transition-fast);
-  cursor: pointer;
-  opacity: 0.6;
-}
-.logo:hover {
-  color: var(--color-accent-1);
-  opacity: 1;
-  transform: scale(1.05);
+  padding-inline: var(--space-5);
 }
 
-/* Autocarousel témoignages */
-.proofModule {
-  position: relative;
-  overflow: hidden;
-  margin-top: var(--space-7);
-}
-.proofTrack {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 100%;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.proofTrack::-webkit-scrollbar {
-  display: none;
-}
-
-.proofItem {
-  scroll-snap-align: center;
-  padding: clamp(24px, 5vw, 48px) 0;
-  display: grid;
-  place-items: center;
-  text-align: center;
-}
-.quote {
-  font-size: var(--text-lg);
-  color: var(--color-text-2);
-  font-style: italic;
-  margin-bottom: var(--space-4);
-  line-height: 1.7;
-  max-width: 900px;
-}
-.person {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-3);
-}
-.authorName {
-  font-weight: 600;
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: 700;
   color: var(--color-text-1);
-}
-.authorRole {
-  font-size: var(--text-sm);
-  color: var(--color-text-3);
+  line-height: 1.2;
+  margin: 0;
+  text-wrap: balance;
 }
 
-/* Testimonials persons visuals */
-.proofPerson {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 16px;
-  gap: 6px;
+.lead {
+  margin-top: var(--space-5);
+  font-size: clamp(var(--text-base), 2vw, var(--text-xl));
+  color: var(--color-text-2);
+  line-height: 1.7;
+  text-wrap: pretty;
+  opacity: 0.9;
+  max-width: 80ch;
+  margin-inline: auto;
 }
-.proofAvatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--color-accent-1);
+
+.conclusion {
+  margin-top: var(--space-5);
+  font-size: clamp(var(--text-sm), 1.5vw, var(--text-lg));
+  color: var(--color-text-2);
+  line-height: 1.6;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.ctaWrapper {
+  margin-top: var(--space-7);
+  display: flex;
+  justify-content: center;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-1);
+  color: var(--color-bg);
+  border: none;
+  box-shadow: var(--shadow-sm);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  text-decoration: none;
+  transition:
+    background var(--dur-2) var(--ease-standard),
+    box-shadow var(--dur-2) var(--ease-standard),
+    transform var(--dur-2) var(--ease-standard);
+}
+
+.cta:hover {
+  background: color-mix(in oklab, var(--color-accent-1), #000 12%);
+  box-shadow: 0 8px 24px
+    color-mix(in oklab, var(--color-accent-1), transparent 50%);
+  transform: translateY(-2px);
+}
+
+.cta:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px
+    color-mix(in oklab, var(--color-accent-1), transparent 70%);
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: var(--text-2xl);
+  }
+
+  .lead {
+    font-size: var(--text-base);
+  }
+
+  .container {
+    padding-inline: var(--space-3);
+  }
 }

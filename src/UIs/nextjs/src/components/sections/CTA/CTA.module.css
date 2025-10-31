@@ -61,7 +61,7 @@
 .input:focus,
 .textarea:focus {
   outline: none;
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-1);
   box-shadow: var(--shadow-glow-inner);
 }
 .error {

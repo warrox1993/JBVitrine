@@ -22,10 +22,10 @@ export function Services() {
       title: "Cybersécurité Web",
       desc: "Sécurisation bout-à-bout des applications et de la chaîne CI/CD.",
       features: [
-        "Audit OWASP, durcissement headers & CSP",
-        "Auth & gestion secrets, Key Vault / KMS",
-        "Tests SAST/DAST, revues de code",
-        "Monitoring & réponse aux incidents",
+        "Audit et durcissement des failles web",
+        "Surveillance continue et alertes IA",
+        "Sécurisation des API et données clients",
+        "Conformité RGPD et SOC",
       ],
       price: "Sur devis",
       orderKey: "cyber" as const,
@@ -60,7 +60,7 @@ export function Services() {
       <div className="container">
         <div className={styles.header}>
           <Heading as="h2" accent className={styles.title}>Services Excellence</Heading>
-          <p className={styles.desc}>Tailored digital solutions designed to elevate your brand, secure your infrastructure, and automate your growth.</p>
+          <p className={styles.desc}>Trois domaines d'excellence pour bâtir des sites plus rapides, plus sûrs et plus intelligents.</p>
         </div>
         <div className={styles.grid}>
           {services.map((s, i) => (

@@ -24,19 +24,13 @@ export function Footer() {
           <nav aria-label="Liens de pied de page">
             <ul className={styles.nav}>
               <li className={styles.navItem}>
-                <Link href="/#projects">Projets</Link>
-              </li>
-              <li className={styles.navItem}>
-                <Link href="/#process">Processus</Link>
-              </li>
-              <li className={styles.navItem}>
                 <Link href="/#services">Services</Link>
               </li>
               <li className={styles.navItem}>
                 <Link href="/about">À propos</Link>
               </li>
               <li className={styles.navItem}>
-                <Link href="/#contact">Contact</Link>
+                <Link href="/contact">Contact</Link>
               </li>
             </ul>
           </nav>
@@ -75,6 +69,9 @@ export function Footer() {
             </li>
           </ul>
         </div>
+        </div>
+        <div className={styles.tagline}>
+          <p>Smidjan – digital craft. Forged in Liège, built for the world.</p>
         </div>
         <div className={styles.bottom}>
           <p className={styles.legal}>© 2025 SMIDJAN. Tous droits réservés.</p>

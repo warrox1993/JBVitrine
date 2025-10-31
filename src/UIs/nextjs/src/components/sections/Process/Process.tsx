@@ -6,41 +6,41 @@ export function Process() {
   const steps = [
     {
       num: "01",
-      title: "Discovery",
+      title: "Découverte",
       content: (
         <div className={styles.panel}>
-          <p>We dive deep into your goals, audience, and market landscape to identify what truly differentiates your brand. Through workshops and data analysis, we uncover both risks and untapped opportunities.</p>
-          <p>Deliverables: benchmark report, UX strategy outline, technical feasibility notes.</p>
+          <p>On explore vos objectifs, votre audience et vos concurrents pour révéler votre avantage stratégique.</p>
+          <p>Livrables : rapport benchmark, stratégie UX, notes de faisabilité technique.</p>
         </div>
       ),
     },
     {
       num: "02",
-      title: "Design",
+      title: "Conception",
       content: (
         <div className={styles.panel}>
-          <p>Design systems, wireframes and interactive prototypes that bring clarity and speed to decision making.</p>
-          <p>Deliverables: design system foundations, wireframe kit, prototype tests.</p>
+          <p>On conçoit une expérience claire, esthétique et parfaitement adaptée à vos utilisateurs.</p>
+          <p>Livrables : fondations design system, kit wireframe, tests prototypes.</p>
         </div>
       ),
     },
     {
       num: "03",
-      title: "Development",
+      title: "Développement",
       content: (
         <div className={styles.panel}>
-          <p>Clean code, optimized performance, CI/CD, tests and robust security baked in from day one.</p>
-          <p>Deliverables: production‑ready code, perf budget, test coverage report.</p>
+          <p>On forge du code robuste et scalable, prêt à évoluer avec votre entreprise.</p>
+          <p>Livrables : code production, budget performance, rapport couverture tests.</p>
         </div>
       ),
     },
     {
       num: "04",
-      title: "Launch",
+      title: "Lancement",
       content: (
         <div className={styles.panel}>
-          <p>Deployment, monitoring and continuous support with iterative improvements based on real‑world insights.</p>
-          <p>Deliverables: deployment checklist, monitoring dashboard, iteration roadmap.</p>
+          <p>On accompagne la mise en ligne, le suivi des performances et les itérations post-lancement.</p>
+          <p>Livrables : checklist déploiement, dashboard monitoring, roadmap itération.</p>
         </div>
       ),
     },
@@ -50,7 +50,7 @@ export function Process() {
       <div className="container">
         <div className={styles.header}>
           <Heading as="h2" accent className={styles.title}>Notre Processus Créatif</Heading>
-          <p className={styles.desc}>A proven methodology that balances creativity and technical precision. Each stage — from discovery to launch — aligns strategy, design and technology in one coherent journey.</p>
+          <p className={styles.desc}>Une méthodologie claire qui allie créativité et rigueur technique — de la stratégie à la mise en ligne.</p>
         </div>
         <section className={styles.processModule} aria-label="Processus créatif">
           {steps.map((s, i) => (

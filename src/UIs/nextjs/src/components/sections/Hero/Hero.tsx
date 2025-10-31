@@ -31,18 +31,14 @@ export function Hero() {
         <div className={styles.content}>
           <h1 id="hero-title" className={styles.title}>Smidjan : agence digitale experte en développement web, cybersécurité et IA.</h1>
           <p className={styles.description}>
-            Nous forgeons des expériences digitales sur mesure : sites, applications et automatisations pensées pour la performance, la sécurité et la fiabilité.
-              Chez Smidjan, chaque ligne de code et chaque détail de design servent un même but : bâtir un web plus robuste, plus intelligent et durable pour votre entreprise.
+            Nous transformons les idées ambitieuses en plateformes web rapides, sûres et prêtes à l'ère de l'IA.
           </p>
           <div className={styles.actions}>
-            <Button variant="solid" size="md" ariaLabel="Voir nos projets" trailingIcon={<ArrowRightIcon aria-hidden="true" />}> 
-              View Our Projects
+            <Button variant="solid" size="md" ariaLabel="Voir nos projets" trailingIcon={<ArrowRightIcon aria-hidden="true" />}>
+              Voir nos projets
             </Button>
-            <Button variant="outline" size="md" ariaLabel="Lancer votre projet">
-              Let’s Discuss Your Vision
-            </Button>
-            <Button as="a" href="/about" variant="ghost" size="md" ariaLabel="En savoir plus sur nous">
-                Découvrir notre méthode
+            <Button as="a" href="/contact" variant="outline" size="md" ariaLabel="Discuter de votre vision">
+              Discuter de votre vision
             </Button>
           </div>
           {showStats ? (
