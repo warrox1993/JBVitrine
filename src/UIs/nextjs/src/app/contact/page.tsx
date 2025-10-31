@@ -4,6 +4,7 @@ import { Accordion } from '@/components/contact/Accordion';
 import { Card, CardBody } from '@/components/atoms/Card';
 import { Container } from '@/components/atoms/Container';
 import { Footer } from '@/components/sections/Footer/Footer';
+import { SectionWithBackground } from '@/components/ui/SectionWithBackground/SectionWithBackground';
 import { ContactPageClient } from './ContactPageClient';
 import cls from './page.module.css';
 
@@ -90,7 +91,7 @@ export default function ContactPage() {
 
             <Container className={cls.contactContainer}>
                 {/* Hero Section */}
-                <section className={cls.hero} aria-labelledby="hero-title">
+                <SectionWithBackground className={cls.hero} ariaLabel="hero-title" variant="dark">
                     <h1 id="hero-title" className={cls.heroTitle}>
                         Parlons de votre projet.
                     </h1>
@@ -137,10 +138,10 @@ export default function ContactPage() {
                             <span>Données protégées (RGPD)</span>
                         </div>
                     </div>
-                </section>
+                </SectionWithBackground>
 
                 {/* Three Contact Pathways */}
-                <section className={cls.pathways} aria-labelledby="pathways-title">
+                <SectionWithBackground className={cls.pathways} ariaLabel="pathways-title" variant="light">
                     <h2 id="pathways-title" className="sr-only">
                         Choisissez votre type de contact
                     </h2>
@@ -181,32 +182,32 @@ export default function ContactPage() {
                             </CardBody>
                         </Card>
                     </div>
-                </section>
+                </SectionWithBackground>
 
                 {/* Main Content: Form */}
-                <section id="form" className={cls.mainContent} aria-labelledby="form-title">
+                <SectionWithBackground id="form" className={cls.mainContent} ariaLabel="form-title" variant="dark">
                     <div className={cls.formWrapper}>
                         <h2 id="form-title" className={cls.sectionTitle}>
                             Formulaire de contact
                         </h2>
                         <ContactForm />
                     </div>
-                </section>
+                </SectionWithBackground>
 
                 {/* Service Area */}
-                <section className={cls.serviceArea}>
+                <SectionWithBackground className={cls.serviceArea} variant="light">
                     <p className={cls.serviceText}>
                         Nous travaillons à Liège et à distance (Belgique, Europe).
                     </p>
-                </section>
+                </SectionWithBackground>
 
                 {/* FAQ Section */}
-                <section className={cls.faq} aria-labelledby="faq-title">
+                <SectionWithBackground className={cls.faq} ariaLabel="faq-title" variant="dark">
                     <h2 id="faq-title" className={cls.sectionTitle}>
                         Questions fréquentes
                     </h2>
                     <Accordion items={FAQ_ITEMS} />
-                </section>
+                </SectionWithBackground>
             </Container>
 
             <div className={cls.footerWrapper}>

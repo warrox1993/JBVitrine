@@ -1,11 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/Button/Button";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
 import styles from "./Mission.module.css";
 
 export default function Mission() {
   return (
     <div id="mission" className={styles["mission-root"]} aria-labelledby="mission-title">
+      <AnimatedBackground variant="light" />
       <div className={styles["mission-background"]} aria-hidden="true">
         <span className={`${styles["mission-orb"]} ${styles["mission-orb--1"]}`} />
         <span className={`${styles["mission-orb"]} ${styles["mission-orb--2"]}`} />
@@ -17,6 +19,11 @@ export default function Mission() {
           Notre mission
         </h2>
 
+        <p className={styles["mission-intro"]}>
+          Chez SMIDJAN, nous croyons que la technologie n'a de valeur que lorsqu'elle sert des objectifs clairs : gagner du temps, renforcer la sécurité et améliorer les performances.
+          Nous concevons des systèmes sur mesure, pensés pour durer, intégrés avec précision dans la réalité de chaque entreprise.
+        </p>
+
         <div className={styles["mission-grid"]} role="list">
           <article className={styles["mission-card"]} role="listitem">
             <div className={styles["mission-cardIcon"]} aria-hidden="true">
@@ -26,7 +33,7 @@ export default function Mission() {
                 aria-hidden="true"
               >
                 <path
-                  d="M3 20h18M5 20l2-7 5-5 5 5 2 7"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.5"
@@ -35,10 +42,10 @@ export default function Mission() {
                 />
               </svg>
             </div>
-            <h3 className={styles["mission-cardTitle"]}>La forge technique</h3>
+            <h3 className={styles["mission-cardTitle"]}>Performance technique</h3>
             <p className={styles["mission-cardText"]}>
-              Nous transformons le code brut en expériences raffinées. Chaque ligne est forgée
-              avec précision, chaque interface sculptée avec intention.
+              Nous bâtissons des fondations solides : code propre, architecture claire et maintenance facilitée.
+              Chaque ligne est pensée pour la scalabilité.
             </p>
           </article>
 
@@ -50,7 +57,7 @@ export default function Mission() {
                 aria-hidden="true"
               >
                 <path
-                  d="M12 3v18M3 12h18M7 7l10 10M17 7L7 17"
+                  d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.5"
@@ -59,10 +66,9 @@ export default function Mission() {
                 />
               </svg>
             </div>
-            <h3 className={styles["mission-cardTitle"]}>L’art & la science</h3>
+            <h3 className={styles["mission-cardTitle"]}>Sécurité intégrée</h3>
             <p className={styles["mission-cardText"]}>
-              Notre approche marie excellence technique et sensibilité artistique pour créer des
-              produits qui inspirent confiance et fluidité.
+              Nous anticipons les risques dès la conception. Tests automatisés, conformité, chiffrement et supervision sont intégrés au cœur de nos solutions.
             </p>
           </article>
 
@@ -83,31 +89,16 @@ export default function Mission() {
                 />
               </svg>
             </div>
-            <h3 className={styles["mission-cardTitle"]}>Impact mesurable</h3>
+            <h3 className={styles["mission-cardTitle"]}>Résultats mesurables</h3>
             <p className={styles["mission-cardText"]}>
-              Nous visons des résultats tangibles. Chaque décision est guidée par des métriques
-              claires et des effets concrets pour votre marque.
+              Nos projets se jugent aux chiffres. Nous mettons en place des indicateurs précis pour suivre l'impact réel sur votre activité.
             </p>
           </article>
         </div>
 
-        <blockquote className={styles["mission-statement"]}>
-          <p className={styles["mission-quote"]}>
-            SMIDJAN est né d’une conviction :
-            <span className={styles["mission-highlight"]}>
-              la technologie n’est pas un but, c’est un matériau
-            </span>
-            . Comme une forge, nous transformons ce matériau — code, données, interfaces — en
-            <span className={styles["mission-highlight"]}>
-              expériences utiles, élégantes et durables
-            </span>
-            .
-          </p>
-        </blockquote>
-
         <div className={styles["mission-cta"]}>
-          <Button as="a" href="#contact" variant="solid" size="md" ariaLabel="Discuter de votre vision">
-            Discuter de votre vision
+          <Button as="a" href="/services" variant="solid" size="md" ariaLabel="Découvrir nos services">
+            Découvrir nos services
           </Button>
         </div>
       </div>

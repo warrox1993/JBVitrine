@@ -1,4 +1,5 @@
 "use client";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { Button } from "@/components/ui/Button/Button";
 import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
@@ -16,6 +17,7 @@ export function Hero() {
   const showStats = false;
   return (
     <section id="hero" ref={heroRef} className={`${styles.hero} ${isVisible ? styles.visible : ""}`} aria-labelledby="hero-title">
+      <AnimatedBackground variant="dark" />
       <div className={styles.gradientBg} aria-hidden="true" />
       <svg className={styles.decor} viewBox="0 0 1440 200" fill="none" aria-hidden="true" role="presentation" preserveAspectRatio="none">
         <path d="M0,10 Q360,0 720,60 T1440,60 L1440,200 L0,200 Z" fill="url(#hero-gradient)" />

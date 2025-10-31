@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/Button/Button';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { AnimatedBackground } from '@/components/ui/AnimatedBackground/AnimatedBackground';
 import heroStyles from '@/components/sections/Hero/Hero.module.css';
 
 /*
@@ -25,6 +26,7 @@ export default function HeroAbout() {
       className={`${heroStyles.hero} ${isVisible ? heroStyles.visible : ''}`}
       style={{ scrollMarginTop: 'var(--header-height)' }}
     >
+      <AnimatedBackground variant="dark" />
       {/* Subtle top-left light and texture overlay for depth (reuses tokens) */}
       <div className={heroStyles.gradientBg} aria-hidden="true" />
       <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(60% 40% at 0% 0%, rgba(255,106,0,0.12), transparent)', pointerEvents: 'none', zIndex: 0 }} />
@@ -40,18 +42,14 @@ export default function HeroAbout() {
       </svg>
       <div className="container">
         <div className={heroStyles.content}>
-          <h1 className={heroStyles.title}>À propos de SMIDJAN</h1>
+          <h1 className={heroStyles.title}>Des artisans du digital au service de la performance</h1>
           <p className={heroStyles.description} style={{ maxWidth: '70ch', lineHeight: 1.7 }}>
-            Nous forgeons des expériences digitales élégantes, scalables et mesurables. Chaque interface, chaque ligne de code,
-            chaque décision de design vise à produire un effet durable. Notre approche repose sur la conviction que l’élégance n’a
-            de valeur que lorsqu’elle se traduit par des résultats concrets, mesurables, et profondément humains.
+            SMIDJAN accompagne les entreprises à chaque étape de leur transformation numérique — de l'idée à la mise en production.
+            Nous forgeons des solutions stables, sécurisées et évolutives, conçues pour produire des résultats mesurables.
           </p>
           <div className={heroStyles.actions}>
-            <Button as="a" href="/contact" variant="solid" size="md" ariaLabel="Discutons de votre vision">
-              Discutons de votre vision
-            </Button>
-            <Button as="a" href="/projets" variant="outline" size="md" ariaLabel="Voir nos projets">
-              Voir nos projets
+            <Button as="a" href="/contact" variant="solid" size="md" ariaLabel="Démarrer un projet">
+              Démarrer un projet
             </Button>
           </div>
         </div>

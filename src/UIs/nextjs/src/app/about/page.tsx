@@ -7,6 +7,7 @@ import Team from './Team';
 import ProcessMini from '@/components/about/ProcessMini';
 // Removed per AboutFix5: Proof/Testimonials, FAQ, Contact CTA on About page
 import { Footer } from '@/components/sections/Footer/Footer';
+import { SectionWithBackground } from '@/components/ui/SectionWithBackground/SectionWithBackground';
 import styles from './about.module.css';
 
 export const metadata: Metadata = {
@@ -44,36 +45,36 @@ export default function AboutPage() {
         <Mission />
 
         {/* VALUES CARDS (below hero/mission, before timeline/team) */}
-        <section id="values" className={`${styles.section} ${styles.sectionAlt}`}>
+        <SectionWithBackground id="values" className={`${styles.section} ${styles.sectionAlt}`} variant="dark">
           <div className={styles.sectionContainer}>
             <ValuesCards />
           </div>
-        </section>
+        </SectionWithBackground>
 
         {/* STORY (ALTERNANCE) */}
-        <section id="story" className={styles.section}>
+        <SectionWithBackground id="story" className={styles.section} variant="light">
           <div className={styles.sectionContainer}>
             <Timeline />
           </div>
-        </section>
+        </SectionWithBackground>
 
         {/* SplitVisual section removed per request */}
 
         {/* Values old section removed: replaced by ValuesCards above */}
 
         {/* TEAM (ALTERNANCE) */}
-        <section id="team" className={`${styles.section} ${styles.sectionAlt}`}>
+        <SectionWithBackground id="team" className={`${styles.section} ${styles.sectionAlt}`} variant="dark">
           <div className={styles.sectionContainer}>
             <Team />
           </div>
-        </section>
+        </SectionWithBackground>
 
         {/* PROCESS MINI */}
-        <section id="process-mini" className={styles.section}>
+        <SectionWithBackground id="process-mini" className={styles.section} variant="light">
           <div className={styles.sectionContainer}>
             <ProcessMini />
           </div>
-        </section>
+        </SectionWithBackground>
       </div>
 
       {/* Removed per AboutFix5: Proof/Testimonials */}

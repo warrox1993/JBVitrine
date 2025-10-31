@@ -16,8 +16,7 @@ export default function Team() {
           Notre Équipe
         </Heading>
         <p className={styles["team-subtitle"]}>
-          Une équipe en construction, avec l’excellence au cœur de notre ADN et l’ambition
-          de créer des expériences digitales mesurables.
+          Derrière SMIDJAN, une équipe compacte et exigeante, composée de développeurs, designers et consultants réunis par une même vision : créer des outils numériques utiles, élégants et durables.
         </p>
       </div>
 
@@ -39,10 +38,9 @@ export default function Team() {
             Nous recrutons
           </span>
           <h3 className={styles["team-memberName"]}>Consultant Frontend</h3>
-          <p className={styles["team-memberRole"]}>Développeur·se</p>
+          <p className={styles["team-memberRole"]}>Spécialiste UI/UX et performance</p>
           <p className={styles["team-memberDesc"]}>
-            Expert·e React/Next.js et design systems. Focalisé·e performance et UX. Rejoignez-nous
-            pour façonner des interfaces élégantes et scalables.
+            Transforme les maquettes en interfaces réactives, fluides et accessibles.
           </p>
         </article>
 
@@ -50,7 +48,7 @@ export default function Team() {
         <article
           className={`${styles["team-member"]} ${styles["team-member--center"]}`}
           role="listitem"
-          aria-label="Jean-Baptiste D. — CEO & Designer Produit"
+          aria-label="Jean-Baptiste D. — Consultant Full-Stack & Fondateur"
         >
           <div className={styles["team-avatar"]}>
             <Image
@@ -63,10 +61,9 @@ export default function Team() {
             />
           </div>
           <h3 className={styles["team-memberName"]}>Jean-Baptiste D.</h3>
-          <p className={styles["team-memberRole"]}>CEO & Designer Produit</p>
+          <p className={styles["team-memberRole"]}>Consultant Full-Stack & Fondateur</p>
           <p className={styles["team-memberDesc"]}>
-            Conçoit des systèmes clairs où chaque détail sert le parcours. Esthétique utile,
-            mesurable, durable.
+            "Je conçois chaque projet comme un écosystème vivant — où la rigueur technique rencontre la clarté du design."
           </p>
         </article>
 
@@ -87,10 +84,9 @@ export default function Team() {
             Nous recrutons
           </span>
           <h3 className={styles["team-memberName"]}>Consultant Backend</h3>
-          <p className={styles["team-memberRole"]}>Développeur·se</p>
+          <p className={styles["team-memberRole"]}>Expert en architecture, sécurité et automatisation</p>
           <p className={styles["team-memberDesc"]}>
-            Expert·e Node.js/Python/Java/.Net. Architecture scalable, APIs robustes, fiabilité en
-            production.
+            Garant de la stabilité et de la scalabilité des systèmes.
           </p>
         </article>
       </div>

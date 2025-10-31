@@ -1,7 +1,15 @@
 .section {
+  position: relative;
   padding-block: clamp(var(--space-6), 10vw, var(--space-8));
   background: var(--color-bg-2);
+  overflow: hidden;
+  isolation: isolate;
   margin: 0;
+}
+
+.section .container {
+  position: relative;
+  z-index: 10;
 }
 .header {
   text-align: center;

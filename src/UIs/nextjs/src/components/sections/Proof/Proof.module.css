@@ -1,13 +1,17 @@
 .section {
+  position: relative;
   padding-block: clamp(var(--space-6), 10vw, var(--space-8));
   background: var(--color-bg-2);
   isolation: isolate;
+  overflow: hidden;
   border-top: none;
   border-bottom: none;
   margin: 0;
 }
 
 .container {
+  position: relative;
+  z-index: 10;
   max-width: min(900px, 90%);
   margin: 0 auto;
   text-align: center;
