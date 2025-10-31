@@ -25,20 +25,11 @@ function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function XIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-      <path d="M16.98 3H20l-6.5 7.43L21 21h-6.02l-4.71-5.86L4.86 21H2l7.2-8.23L3 3h6.11l4.2 5.43L16.98 3zM8.3 4.5H5.6l10.21 13h2.67L8.3 4.5z" />
-    </svg>
-  );
-}
-
 export default function FooterSocial() {
   const socials = [
+    { name: 'Facebook', href: SITE_CONFIG.social.facebook, Icon: FacebookIcon },
     { name: 'LinkedIn', href: SITE_CONFIG.social.linkedin, Icon: LinkedInIcon },
     { name: 'GitHub', href: SITE_CONFIG.social.github, Icon: GithubIcon },
-    { name: 'Facebook', href: SITE_CONFIG.social.facebook, Icon: FacebookIcon },
-    { name: 'X', href: SITE_CONFIG.social.twitter, Icon: XIcon },
   ];
   return (
     <div style={{ display: 'flex', gap: 'var(--space-4)' }}>

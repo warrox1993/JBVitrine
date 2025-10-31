@@ -14,15 +14,16 @@
   padding-inline: var(--container-padding);
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .mission-heading {
   margin: 0 0 clamp(16px, 3vw, 24px);
   text-align: center;
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(1.6rem, 1rem + 2.2vw, 2.4rem);
-  line-height: 1.15;
+  font-weight: 700;
+  font-size: var(--text-3xl);
+  line-height: 1.2;
   color: var(--color-text-1);
 }
 
@@ -152,6 +153,7 @@
     border-color 0.25s ease;
   will-change: transform;
   overflow: hidden;
+  text-align: left;
 }
 
 .mission-card::before {

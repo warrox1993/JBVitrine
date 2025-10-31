@@ -54,8 +54,31 @@ export function ContactForm() {
                 return '';
             case 'email':
                 if (!value) return 'L\'email est requis';
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                // Improved email regex (RFC 5322 simplified)
+                const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
                 return !emailRegex.test(String(value)) ? 'Email invalide' : '';
+            case 'phone':
+                if (value && typeof value === 'string') {
+                    // Remove common formatting characters
+                    const cleaned = value.replace(/[\s\-\(\)\.]/g, '');
+                    // International format: + followed by 1-3 digit country code, then 4-14 digits
+                    const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+                    if (!phoneRegex.test(cleaned)) {
+                        return 'Format de téléphone invalide (ex: +32 4 XX XX XX XX)';
+                    }
+                }
+                return '';
+            case 'company':
+                if (value && typeof value === 'string') {
+                    if (value.length > 100) {
+                        return 'Le nom de l\'entreprise est trop long (max 100 caractères)';
+                    }
+                    // Reject if contains suspicious patterns
+                    if (/<script|javascript:|onerror=/i.test(value)) {
+                        return 'Caractères non autorisés détectés';
+                    }
+                }
+                return '';
             case 'message':
                 if (!value) return 'La description est requise';
                 if (typeof value === 'string' && (value.length < 30 || value.length > 1500)) {
@@ -85,7 +108,8 @@ export function ContactForm() {
         const newErrors: FieldErrors = {};
 
         (Object.keys(formData) as Array<keyof FormData>).forEach(key => {
-            if (key !== 'honeypot' && key !== 'phone' && key !== 'company' && key !== 'budget' && key !== 'timeline') {
+            // Validate all fields except honeypot, budget, and timeline (which use select with fixed values)
+            if (key !== 'honeypot' && key !== 'budget' && key !== 'timeline') {
                 const error = validateField(key, formData[key]);
                 if (error) newErrors[key] = error;
             }
@@ -103,6 +127,33 @@ export function ContactForm() {
         if (formData.honeypot) {
             console.warn('Bot detected');
             return;
+        }
+
+        // Client-side rate limiting (3 submissions per hour)
+        const rateLimitKey = 'contact_form_submissions';
+        const rateLimitWindow = 60 * 60 * 1000; // 1 hour in ms
+        const maxSubmissions = 3;
+
+        try {
+            const storedData = localStorage.getItem(rateLimitKey);
+            const submissions: number[] = storedData ? JSON.parse(storedData) : [];
+            const now = Date.now();
+
+            // Filter out old submissions outside the time window
+            const recentSubmissions = submissions.filter(timestamp => now - timestamp < rateLimitWindow);
+
+            if (recentSubmissions.length >= maxSubmissions) {
+                setGlobalError('Vous avez atteint la limite de soumissions. Veuillez réessayer dans une heure ou nous contacter directement à contact@smidjan.dev.');
+                setStatus('error');
+                return;
+            }
+
+            // Store this submission timestamp
+            recentSubmissions.push(now);
+            localStorage.setItem(rateLimitKey, JSON.stringify(recentSubmissions));
+        } catch (error) {
+            // If localStorage is not available, continue anyway (privacy mode, etc.)
+            console.warn('Rate limiting unavailable:', error);
         }
 
         if (!validateForm()) {
@@ -241,7 +292,10 @@ export function ContactForm() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+32 4 ..."
+                    aria-invalid={!!errors.phone}
+                    aria-describedby={errors.phone ? 'phone-error' : undefined}
                 />
+                {errors.phone && <span id="phone-error" className={cls.error} role="alert">{errors.phone}</span>}
             </div>
 
             <div className={cls.field}>
@@ -253,7 +307,11 @@ export function ContactForm() {
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Nom de votre entreprise"
+                    maxLength={100}
+                    aria-invalid={!!errors.company}
+                    aria-describedby={errors.company ? 'company-error' : undefined}
                 />
+                {errors.company && <span id="company-error" className={cls.error} role="alert">{errors.company}</span>}
             </div>
 
             <div className={cls.row}>

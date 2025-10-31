@@ -1,166 +1,323 @@
-/* Team spotlight with recruitment call-to-action */
-.team-header {
-  display: grid;
-  gap: var(--space-3);
+/* Team Orbital Animation - Système de physique avec collisions */
+
+.team-hero {
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto clamp(24px, 4vw, 48px);
+  padding: var(--space-10) var(--space-4) var(--space-6);
 }
 
-.team-headingSpacing {
-  margin-bottom: var(--space-4);
+.team-title {
+  margin: 0 0 var(--space-5) 0;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-1) 0%,
+    var(--color-accent-2) 50%,
+    #ffa36c 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .team-subtitle {
-  color: var(--color-text-2);
-  font-size: var(--text-lg);
-  line-height: 1.7;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(20px, 3vw, 28px);
-  align-items: stretch;
-}
-
-.team-member {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: clamp(18px, 2.6vw, 28px);
-  text-align: center;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
-}
-
-.team-member--center {
-  border-color: var(--color-accent-1);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
-}
-
-.team-avatar {
-  width: 100%;
-  max-width: 280px;
-  margin: 0 auto clamp(10px, 2vw, 16px);
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  overflow: hidden;
-  background: color-mix(in oklab, var(--color-text-1), transparent 90%);
-}
-
-.team-avatarImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.team-recruitPlaceholder {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  background: color-mix(in oklab, var(--color-accent-1), transparent 88%);
-}
-
-.team-placeholderMark {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 900;
-  color: var(--color-text-1);
-  opacity: 0.5;
-}
-
-.team-recruitBadge {
-  display: inline-block;
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--color-accent-1), white 8%),
-    var(--color-accent-1)
-  );
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 0.86rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
-  letter-spacing: 0.2px;
-}
-
-.team-memberName {
-  font-size: clamp(1.1rem, 0.8rem + 1vw, 1.6rem);
-  color: var(--color-text-1);
-  font-weight: 800;
-  margin: 6px 0 6px;
-}
-
-.team-member--center .team-memberName {
-  color: var(--color-accent-1);
-}
-
-.team-memberRole {
-  font-size: 1rem;
-  color: var(--color-text-2);
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.team-memberDesc {
-  font-size: 0.98rem;
-  color: var(--color-text-3);
-  line-height: 1.55;
-  max-width: 36ch;
   margin: 0 auto;
-}
-
-.team-note {
-  text-align: center;
-  font-size: 0.95rem;
-  color: var(--color-text-3);
-  font-style: italic;
-  margin-top: clamp(16px, 3vw, 32px);
-  padding: 12px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-}
-
-.team-cta {
-  text-align: center;
-  margin-top: clamp(32px, 6vw, 72px);
-  padding: clamp(24px, 4vw, 48px);
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-.team-ctaTitle {
-  font-size: clamp(1.6rem, 1.1rem + 1.4vw, 2.2rem);
-  margin: 0 0 8px;
-  color: var(--color-text-1);
-}
-
-.team-ctaSubtitle {
-  font-size: 1.05rem;
+  max-width: 900px;
+  font-size: var(--text-lg);
   color: var(--color-text-2);
-  margin: 0 auto 18px;
-  max-width: 70ch;
+  line-height: 1.8;
 }
 
-@media (max-width: 1024px) {
-  .team-grid {
-    gap: 32px;
+.orbital-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-10) 0;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+/* Carte centrale (CEO) */
+.center-card {
+  position: absolute;
+  z-index: 100;
+  width: 400px;
+  height: 400px;
+  background: transparent;
+  border: 3px solid var(--color-accent-1);
+  border-radius: 50%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  box-shadow:
+    0 20px 80px color-mix(in srgb, var(--color-accent-1), transparent 50%),
+    0 0 100px color-mix(in srgb, var(--color-accent-1), transparent 70%);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.center-card:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 30px 120px color-mix(in srgb, var(--color-accent-1), transparent 30%),
+    0 0 150px color-mix(in srgb, var(--color-accent-1), transparent 50%);
+  border-color: var(--color-accent-2);
+}
+
+.center-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent-1);
+  margin: 0 0 0.4rem 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.center-title {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin: 0 0 0.8rem 0;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.center-description {
+  font-size: 0.8rem;
+  color: #a0a0a0;
+  margin: 0;
+  text-align: center;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cercles en orbite (recrutement) */
+.orbit-circle {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid color-mix(in srgb, var(--color-accent-1), transparent 60%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 40px
+    color-mix(in srgb, var(--color-accent-1), transparent 80%);
+  animation: stellarGlow 3s ease-in-out infinite;
+}
+
+@keyframes stellarGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 10px 40px color-mix(in srgb, var(--color-accent-1), transparent 80%),
+      0 0 20px color-mix(in srgb, var(--color-accent-1), transparent 85%);
+  }
+  50% {
+    box-shadow:
+      0 15px 50px color-mix(in srgb, var(--color-accent-1), transparent 60%),
+      0 0 40px color-mix(in srgb, var(--color-accent-1), transparent 70%);
+  }
+}
+
+.orbit-circle:hover {
+  transform: scale(1.15);
+  border-color: var(--color-accent-1);
+  box-shadow: 0 15px 60px
+    color-mix(in srgb, var(--color-accent-1), transparent 50%);
+  z-index: 50;
+  animation-play-state: paused;
+}
+
+/* Liens dans les cercles */
+.center-card a,
+.orbit-circle a {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.center-card a:hover,
+.orbit-circle a:hover {
+  opacity: 0.85;
+}
+
+/* Texte circulaire "NOUS RECRUTONS" */
+.circular-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.circular-text text {
+  fill: var(--color-accent-1);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.orbit-role {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-accent-1);
+  margin-bottom: var(--space-2);
+  position: relative;
+  z-index: 1;
+}
+
+.orbit-type {
+  font-size: var(--text-sm);
+  color: var(--color-text-2);
+  position: relative;
+  z-index: 1;
+}
+
+/* Lignes d'orbite - masquées (positions contrôlées par JS) */
+.orbit-line {
+  display: none;
+}
+
+.orbit-line-1,
+.orbit-line-2,
+.orbit-line-3 {
+  display: none;
+}
+
+/* Particules décoratives */
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--color-accent-1);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float 8s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-100px) translateX(50px);
+    opacity: 0.3;
+  }
+}
+
+/* Particules au survol de la souris */
+.mouse-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--color-accent-1);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleFade 1s ease-out forwards;
+}
+
+@keyframes particleFade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .orbital-container {
+    height: 800px;
   }
 }
 
 @media (max-width: 768px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .team-hero {
+    padding: var(--space-8) var(--space-3) var(--space-5);
   }
 
-  .team-avatar {
-    max-width: 360px;
+  .team-title {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+
+  .team-subtitle {
+    font-size: var(--text-base);
+  }
+
+  .orbital-container {
+    height: 700px;
+  }
+
+  .center-card {
+    width: 320px;
+    height: 320px;
+    padding: 2rem;
+  }
+
+  .center-name {
+    font-size: 1.2rem;
+  }
+
+  .center-title {
+    font-size: 0.9rem;
+  }
+
+  .center-description {
+    font-size: 0.75rem;
+  }
+
+  .orbit-circle {
+    width: 180px;
+    height: 180px;
+    padding: var(--space-4);
+  }
+
+  .orbit-role {
+    font-size: var(--text-base);
+  }
+
+  .orbit-type {
+    font-size: var(--text-xs);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-circle {
+    animation: none;
+  }
+
+  .particle {
+    animation: none;
+  }
+
+  .mouse-particle {
+    animation: none;
   }
 }

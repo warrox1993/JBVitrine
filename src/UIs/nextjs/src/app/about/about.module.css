@@ -1,9 +1,9 @@
 .aboutPage {
   display: flex;
   flex-direction: column;
-  gap: clamp(48px, 8vw, 96px);
   width: 100%;
   background: var(--color-bg);
+  overflow-x: hidden;
 }
 
 .aboutPage h3 {
@@ -17,6 +17,7 @@
   border-top: 1px solid color-mix(in srgb, var(--color-border), transparent 50%);
   border-bottom: 1px solid
     color-mix(in srgb, var(--color-border), transparent 65%);
+  overflow-x: hidden;
 }
 
 .sectionAlt {

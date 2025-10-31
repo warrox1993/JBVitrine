@@ -93,7 +93,7 @@ export default function ContactPage() {
                 {/* Hero Section */}
                 <SectionWithBackground className={cls.hero} ariaLabel="hero-title" variant="dark">
                     <h1 id="hero-title" className={cls.heroTitle}>
-                        Parlons de votre projet.
+                        Parlons de votre projet
                     </h1>
                     <p className={cls.heroSub}>
                         Performance. Sécurité. Simplicité. Dites-nous ce dont vous avez besoin, on revient vers vous sous 24h ouvrées.

@@ -4,7 +4,6 @@ import Mission from './Mission';
 import ValuesCards from '@/components/about/ValuesCards';
 import Timeline from './Timeline';
 import Team from './Team';
-import ProcessMini from '@/components/about/ProcessMini';
 // Removed per AboutFix5: Proof/Testimonials, FAQ, Contact CTA on About page
 import { Footer } from '@/components/sections/Footer/Footer';
 import { SectionWithBackground } from '@/components/ui/SectionWithBackground/SectionWithBackground';
@@ -66,13 +65,6 @@ export default function AboutPage() {
         <SectionWithBackground id="team" className={`${styles.section} ${styles.sectionAlt}`} variant="dark">
           <div className={styles.sectionContainer}>
             <Team />
-          </div>
-        </SectionWithBackground>
-
-        {/* PROCESS MINI */}
-        <SectionWithBackground id="process-mini" className={styles.section} variant="light">
-          <div className={styles.sectionContainer}>
-            <ProcessMini />
           </div>
         </SectionWithBackground>
       </div>

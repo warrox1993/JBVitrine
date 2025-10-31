@@ -20,10 +20,29 @@ type FieldErrors = {
   [key: string]: string;
 };
 
+// Sanitization helper - prevent log injection and basic XSS
+const sanitizeString = (input: string): string => {
+  return input
+    .replace(/[\x00-\x1F\x7F]/g, "") // Remove control characters
+    .replace(/\n/g, " ") // Replace newlines with spaces for logs
+    .replace(/\r/g, "")
+    .trim();
+};
+
 // Validation helpers
 const validateEmail = (email: string): boolean => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Improved email regex (RFC 5322 simplified)
+  const emailRegex =
+    /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
   return emailRegex.test(email);
+};
+
+const validatePhone = (phone: string): boolean => {
+  // Remove common formatting characters
+  const cleaned = phone.replace(/[\s\-\(\)\.]/g, "");
+  // International format: + followed by 1-3 digit country code, then 4-14 digits
+  const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+  return phoneRegex.test(cleaned);
 };
 
 const validateField = (name: string, value: unknown): string | null => {
@@ -52,6 +71,26 @@ const validateField = (name: string, value: unknown): string | null => {
       }
       if (!validateEmail(value)) {
         return "Email invalide";
+      }
+      return null;
+
+    case "phone":
+      if (value && typeof value === "string") {
+        if (!validatePhone(value)) {
+          return "Format de téléphone invalide";
+        }
+      }
+      return null;
+
+    case "company":
+      if (value && typeof value === "string") {
+        if (value.length > 100) {
+          return "Le nom de l'entreprise est trop long (max 100 caractères)";
+        }
+        // Reject if contains suspicious patterns
+        if (/<script|javascript:|onerror=/i.test(value)) {
+          return "Caractères non autorisés détectés";
+        }
       }
       return null;
 
@@ -91,6 +130,18 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Validate optional fields if provided
+    const optionalFields = ["phone", "company"];
+    for (const field of optionalFields) {
+      const value = body[field as keyof ContactFormData];
+      if (value) {
+        const error = validateField(field, value);
+        if (error) {
+          fieldErrors[field] = error;
+        }
+      }
+    }
+
     if (Object.keys(fieldErrors).length > 0) {
       return NextResponse.json(
         {
@@ -105,6 +156,22 @@ export async function POST(request: NextRequest) {
     // Generate ticket ID
     const ticketId = `C-${new Date().getFullYear()}-${String(Math.floor(Math.random() * 100000)).padStart(5, "0")}`;
 
+    // Sanitize all string inputs for safe logging and email rendering
+    const sanitizedData = {
+      type: body.type,
+      name: sanitizeString(body.name),
+      email: sanitizeString(body.email),
+      phone: body.phone ? sanitizeString(body.phone) : null,
+      company: body.company ? sanitizeString(body.company) : null,
+      budget: body.budget,
+      timeline: body.timeline,
+      message: sanitizeString(body.message),
+      utm: {
+        source: body.utm?.source ? sanitizeString(body.utm.source) : null,
+        campaign: body.utm?.campaign ? sanitizeString(body.utm.campaign) : null,
+      },
+    };
+
     // Here you would typically:
     // 1. Save to database
     // 2. Send notification email to team
@@ -113,21 +180,17 @@ export async function POST(request: NextRequest) {
 
     console.log("Contact form submission:", {
       ticketId,
-      type: body.type,
-      name: body.name,
-      email: body.email,
-      phone: body.phone,
-      company: body.company,
-      budget: body.budget,
-      timeline: body.timeline,
-      message: body.message,
-      utm: body.utm,
+      ...sanitizedData,
       timestamp: new Date().toISOString(),
     });
 
-    // Mock email sending
-    await sendConfirmationEmail(body.email, body.name, ticketId);
-    await sendNotificationToTeam(body);
+    // Mock email sending (using sanitized data)
+    await sendConfirmationEmail(
+      sanitizedData.email,
+      sanitizedData.name,
+      ticketId,
+    );
+    await sendNotificationToTeam(sanitizedData as ContactFormData);
 
     return NextResponse.json(
       {

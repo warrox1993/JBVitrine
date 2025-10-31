@@ -36,7 +36,7 @@ export function Hero() {
             Nous transformons les idées ambitieuses en plateformes web rapides, sûres et prêtes à l'ère de l'IA.
           </p>
           <div className={styles.actions}>
-            <Button variant="solid" size="md" ariaLabel="Voir nos projets" trailingIcon={<ArrowRightIcon aria-hidden="true" />}>
+            <Button as="a" href="/cms-ecommerce" variant="solid" size="md" ariaLabel="Voir nos projets" trailingIcon={<ArrowRightIcon aria-hidden="true" />}>
               Voir nos projets
             </Button>
             <Button as="a" href="/contact" variant="outline" size="md" ariaLabel="Discuter de votre vision">

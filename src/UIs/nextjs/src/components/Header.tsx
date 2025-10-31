@@ -2,15 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useCallback, useEffect, useMemo, useState, startTransition } from "react";
+import { useMemo } from "react";
 import styles from "./Header.module.css";
 import { sections } from "@/config/nav";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { usePathname } from "next/navigation";
-import { SunIcon } from "@/components/icons/SunIcon";
-import { MoonIcon } from "@/components/icons/MoonIcon";
-
-type ThemeMode = "dark" | "light";
 
 export default function Header() {
   const pathname = usePathname();
@@ -22,42 +18,12 @@ export default function Header() {
       section.id !== "services" &&
       section.id !== "contact" &&
       section.id !== "projects" &&
-      section.id !== "process"
+      section.id !== "process" &&
+      section.id !== "home" &&
+      section.id !== "cms"
     ),
     []
   );
-
-  const [theme, setTheme] = useState<ThemeMode>(() => {
-    if (typeof document === "undefined") {
-      return "dark";
-    }
-    return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
-  });
-
-  const toggleTheme = useCallback(() => {
-    if (typeof document === "undefined") {
-      return;
-    }
-    const root = document.documentElement;
-    const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
-    root.setAttribute("data-theme", next);
-    setTheme(next as ThemeMode);
-    try {
-      localStorage.setItem("theme", next);
-    } catch {
-      // storage might be unavailable; ignore
-    }
-  }, []);
-
-  useEffect(() => {
-    if (typeof document === "undefined") {
-      return;
-    }
-    const current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
-    if (current !== theme) {
-      startTransition(() => setTheme(current));
-    }
-  }, [theme]);
 
   return (
     <header className={styles["header-root"]}>
@@ -78,6 +44,13 @@ export default function Header() {
       </div>
 
       <nav className={styles["header-nav"]} aria-label="Navigation principale (haut)">
+        <Link
+          href="/"
+          className={`${styles["header-link"]}${pathname === "/" ? ` ${styles["header-link-active"]}` : ""}`}
+          aria-current={pathname === "/" ? "page" : undefined}
+        >
+          Accueil
+        </Link>
         {navItems.map((section) => {
           const isActive =
             section.id === "about"
@@ -106,21 +79,19 @@ export default function Header() {
           Services
         </Link>
         <Link
+          href="/cms-ecommerce"
+          className={`${styles["header-link"]}${pathname === "/cms-ecommerce" ? ` ${styles["header-link-active"]}` : ""}`}
+          aria-current={pathname === "/cms-ecommerce" ? "page" : undefined}
+        >
+          CMS
+        </Link>
+        <Link
           href="/contact"
           className={`${styles["header-link"]}${pathname === "/contact" ? ` ${styles["header-link-active"]}` : ""}`}
           aria-current={pathname === "/contact" ? "page" : undefined}
         >
           Contact
         </Link>
-        <button
-          type="button"
-          className={styles["theme-toggle"]}
-          onClick={toggleTheme}
-          aria-pressed={theme === "light"}
-          aria-label={`Basculer en mode ${theme === "light" ? "sombre" : "clair"}`}
-        >
-          {theme === "light" ? <SunIcon aria-hidden="true" /> : <MoonIcon aria-hidden="true" />}
-        </button>
       </nav>
     </header>
   );
