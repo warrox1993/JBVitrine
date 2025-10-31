@@ -13,4 +13,8 @@
   mix-blend-mode: screen;
 }
 
-@media (prefers-reduced-motion: reduce) { .cursorGlow { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .cursorGlow {
+    display: none;
+  }
+}

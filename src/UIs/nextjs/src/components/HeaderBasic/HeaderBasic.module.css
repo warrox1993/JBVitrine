@@ -7,7 +7,9 @@
   backdrop-filter: none;
   border-bottom: 1px solid var(--color-border);
 }
-body[data-fx-ready="true"] .header { backdrop-filter: blur(8px); }
+body[data-fx-ready="true"] .header {
+  backdrop-filter: blur(8px);
+}
 
 .inner {
   display: flex;

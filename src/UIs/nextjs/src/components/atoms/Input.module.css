@@ -1,8 +1,20 @@
 ﻿.input {
-    width: 100%; padding: 0.625rem 0.75rem; color: var(--color-text-1);
-    background: var(--color-surface); border: 1px solid var(--color-border);
-    border-radius: var(--radius-md); outline: none;
-    transition: border-color var(--dur-2) var(--ease-standard), box-shadow var(--dur-2) var(--ease-standard);
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  color: var(--color-text-1);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition:
+    border-color var(--dur-2) var(--ease-standard),
+    box-shadow var(--dur-2) var(--ease-standard);
 }
-.input::placeholder { color: var(--color-text-3); }
-.input:focus-visible { border-color: var(--color-accent-1); box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-accent-1), transparent 70%); }
+.input::placeholder {
+  color: var(--color-text-3);
+}
+.input:focus-visible {
+  border-color: var(--color-accent-1);
+  box-shadow: 0 0 0 3px
+    color-mix(in oklab, var(--color-accent-1), transparent 70%);
+}

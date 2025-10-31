@@ -18,7 +18,7 @@ export function useMagneticButton<T extends HTMLElement>({
     if (!element) return;
 
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
     if (prefersReducedMotion) return;
 
@@ -43,4 +43,3 @@ export function useMagneticButton<T extends HTMLElement>({
 
   return ref;
 }
-

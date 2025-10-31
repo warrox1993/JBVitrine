@@ -28,7 +28,7 @@ export function useIntersectionObserver<T extends HTMLElement>({
           setIsVisible(false);
         }
       },
-      { threshold, rootMargin }
+      { threshold, rootMargin },
     );
 
     observer.observe(element);
@@ -37,4 +37,3 @@ export function useIntersectionObserver<T extends HTMLElement>({
 
   return { ref, isVisible };
 }
-

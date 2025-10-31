@@ -13,8 +13,13 @@
 }
 
 /* Hide scrollbars visually but keep scrolling */
-.timeline-viewport::-webkit-scrollbar { display: none; }
-.timeline-viewport { scrollbar-width: none; ms-overflow-style: none; }
+.timeline-viewport::-webkit-scrollbar {
+  display: none;
+}
+.timeline-viewport {
+  scrollbar-width: none;
+  ms-overflow-style: none;
+}
 
 /* Container root (kept for backward compat, not used now) */
 .timeline-root {
@@ -68,12 +73,24 @@
   animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.timeline-item:nth-child(1) { animation-delay: 0.1s; }
-.timeline-item:nth-child(2) { animation-delay: 0.2s; }
-.timeline-item:nth-child(3) { animation-delay: 0.3s; }
-.timeline-item:nth-child(4) { animation-delay: 0.4s; }
-.timeline-item:nth-child(5) { animation-delay: 0.5s; }
-.timeline-item:nth-child(6) { animation-delay: 0.6s; }
+.timeline-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.timeline-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.timeline-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.timeline-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.timeline-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.timeline-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
 @keyframes fadeInUp {
   to {
@@ -104,7 +121,11 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2));
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-1),
+    var(--color-accent-2)
+  );
   box-shadow:
     0 0 0 4px var(--color-bg),
     0 0 0 8px var(--color-accent-1),
@@ -113,7 +134,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     box-shadow:
       0 0 0 4px var(--color-bg),
@@ -144,7 +166,7 @@
 }
 
 .timeline-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -183,14 +205,10 @@
 }
 
 .timeline-visual::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 106, 0, 0.1),
-    transparent
-  );
+  background: linear-gradient(135deg, rgba(255, 106, 0, 0.1), transparent);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -281,7 +299,9 @@
 
   .timeline-dot {
     animation: none;
-    box-shadow: 0 0 0 4px var(--color-bg), 0 0 0 8px var(--color-accent-1);
+    box-shadow:
+      0 0 0 4px var(--color-bg),
+      0 0 0 8px var(--color-accent-1);
   }
 
   .timeline-card,
@@ -357,7 +377,11 @@
   justify-items: center;
   gap: var(--space-2);
   padding-block: var(--space-4);
-  background: linear-gradient(to bottom, color-mix(in srgb, var(--color-bg), transparent 0%), transparent 85%);
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-bg), transparent 0%),
+    transparent 85%
+  );
   backdrop-filter: blur(2px);
 }
 
@@ -365,8 +389,13 @@
   width: clamp(64px, 10vw, 120px);
   height: 3px;
   border-radius: var(--radius-full);
-  background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2));
-  box-shadow: 0 0 16px color-mix(in srgb, var(--color-accent-1), transparent 70%);
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-1),
+    var(--color-accent-2)
+  );
+  box-shadow: 0 0 16px
+    color-mix(in srgb, var(--color-accent-1), transparent 70%);
 }
 
 /* Right-side rail */
@@ -382,7 +411,9 @@
 }
 
 @media (min-width: 1024px) {
-  .timeline-rail { display: block; }
+  .timeline-rail {
+    display: block;
+  }
 }
 
 .timeline-rail-line {
@@ -400,10 +431,15 @@
   transform: translateX(-50%);
   width: 3px;
   top: 0;
-  background: linear-gradient(180deg, var(--color-accent-1), var(--color-accent-2));
+  background: linear-gradient(
+    180deg,
+    var(--color-accent-1),
+    var(--color-accent-2)
+  );
   border-radius: var(--radius-full);
   transition: height 0.6s ease;
-  box-shadow: 0 0 10px color-mix(in srgb, var(--color-accent-1), transparent 70%);
+  box-shadow: 0 0 10px
+    color-mix(in srgb, var(--color-accent-1), transparent 70%);
 }
 
 .timeline-rail-dot {
@@ -422,8 +458,13 @@
 .timeline-rail-dot--active {
   width: 12px;
   height: 12px;
-  background: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2));
-  box-shadow: 0 0 20px color-mix(in srgb, var(--color-accent-1), transparent 50%);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-1),
+    var(--color-accent-2)
+  );
+  box-shadow: 0 0 20px
+    color-mix(in srgb, var(--color-accent-1), transparent 50%);
 }
 
 /* Index row and decorative separators */
@@ -462,14 +503,19 @@
   background: var(--color-accent-1);
 }
 
-.timeline-deco-a { width: 48px; }
+.timeline-deco-a {
+  width: 48px;
+}
 .timeline-deco-b {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: color-mix(in srgb, var(--color-accent-1), transparent 40%);
 }
-.timeline-deco-c { width: 24px; opacity: 0.6; }
+.timeline-deco-c {
+  width: 24px;
+  opacity: 0.6;
+}
 
 /* Step progress bar inside the card */
 .timeline-step-progress {
@@ -498,7 +544,11 @@
 .timeline-step-fill {
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2));
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-1),
+    var(--color-accent-2)
+  );
   transition: width 0.8s ease;
 }
 
@@ -541,8 +591,15 @@
 }
 
 @keyframes wheelBounce {
-  0%, 100% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(6px); opacity: 0.7; }
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.7;
+  }
 }
 
 .timeline-scroll-label {
@@ -553,7 +610,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .timeline-scroll-wheel { animation: none; }
-  .timeline-rail-progress { transition: none; }
-  .timeline-step-fill { transition: none; }
+  .timeline-scroll-wheel {
+    animation: none;
+  }
+  .timeline-rail-progress {
+    transition: none;
+  }
+  .timeline-step-fill {
+    transition: none;
+  }
 }
