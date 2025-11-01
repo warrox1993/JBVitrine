@@ -38,11 +38,15 @@ export function Footer() {
         <div>
           <h4 className={styles.heading}>Légal</h4>
           <ul className={styles.nav}>
-            {["Mentions légales", "Confidentialité", "CGV"].map((link) => (
-              <li key={link} className={styles.navItem}>
-                <a href="#">{link}</a>
-              </li>
-            ))}
+            <li className={styles.navItem}>
+              <Link href="/legal-notice">Mentions légales</Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link href="/privacy">Confidentialité</Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link href="/terms">CGV</Link>
+            </li>
           </ul>
         </div>
         <div>
