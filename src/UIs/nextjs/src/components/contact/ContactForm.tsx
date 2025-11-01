@@ -1,11 +1,14 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input } from '@/components/atoms/Input';
 import { Select } from '@/components/atoms/Select';
 import { Textarea } from '@/components/atoms/Textarea';
 import { Label } from '@/components/atoms/Label';
 import { Button } from '@/components/atoms/Button';
+import PhoneInput from 'react-phone-number-input';
+import { isValidPhoneNumber } from 'libphonenumber-js';
+import 'react-phone-number-input/style.css';
 import cls from './ContactForm.module.css';
 
 type FormData = {
@@ -19,6 +22,7 @@ type FormData = {
     message: string;
     consent: boolean;
     honeypot: string;
+    formStartTime?: number; // Timestamp when form was loaded
 };
 
 type FieldErrors = Partial<Record<keyof FormData, string>>;
@@ -36,11 +40,39 @@ const initialFormData: FormData = {
     honeypot: '',
 };
 
+/**
+ * Sanitize UTM parameters to prevent XSS and injection attacks
+ * @param value - UTM parameter value from URL
+ * @returns Sanitized string or null
+ */
+const sanitizeUTM = (value: string | null): string | null => {
+    if (!value) return null;
+
+    // Remove any HTML tags
+    let cleaned = value.replace(/<[^>]*>?/gm, '');
+
+    // Remove javascript: protocol
+    cleaned = cleaned.replace(/javascript:/gi, '');
+
+    // Remove event handlers
+    cleaned = cleaned.replace(/on\w+\s*=/gi, '');
+
+    // Limit length
+    cleaned = cleaned.substring(0, 100);
+
+    return cleaned.trim() || null;
+};
+
 export function ContactForm() {
     const [formData, setFormData] = useState<FormData>(initialFormData);
     const [errors, setErrors] = useState<FieldErrors>({});
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
     const [globalError, setGlobalError] = useState<string>('');
+
+    // Initialize form start time on mount
+    useEffect(() => {
+        setFormData(prev => ({ ...prev, formStartTime: Date.now() }));
+    }, []);
 
     const validateField = (name: keyof FormData, value: string | boolean): string => {
         switch (name) {
@@ -48,8 +80,18 @@ export function ContactForm() {
                 return !value ? 'Veuillez sélectionner un type de demande' : '';
             case 'name':
                 if (!value) return 'Le nom est requis';
-                if (typeof value === 'string' && (value.length < 2 || value.length > 80)) {
-                    return 'Le nom doit contenir entre 2 et 80 caractères';
+                if (typeof value === 'string') {
+                    if (value.length < 2 || value.length > 80) {
+                        return 'Le nom doit contenir entre 2 et 80 caractères';
+                    }
+                    // Reject names containing numbers
+                    if (/\d/.test(value)) {
+                        return 'Le nom ne peut pas contenir de chiffres';
+                    }
+                    // Reject names with excessive special characters
+                    if (/[^a-zA-ZÀ-ÿ\s\-'.]/g.test(value)) {
+                        return 'Le nom contient des caractères non autorisés';
+                    }
                 }
                 return '';
             case 'email':
@@ -59,12 +101,13 @@ export function ContactForm() {
                 return !emailRegex.test(String(value)) ? 'Email invalide' : '';
             case 'phone':
                 if (value && typeof value === 'string') {
-                    // Remove common formatting characters
-                    const cleaned = value.replace(/[\s\-\(\)\.]/g, '');
-                    // International format: + followed by 1-3 digit country code, then 4-14 digits
-                    const phoneRegex = /^\+?[1-9]\d{1,14}$/;
-                    if (!phoneRegex.test(cleaned)) {
-                        return 'Format de téléphone invalide (ex: +32 4 XX XX XX XX)';
+                    // Use libphonenumber-js for accurate validation
+                    try {
+                        if (!isValidPhoneNumber(value)) {
+                            return 'Numéro de téléphone invalide';
+                        }
+                    } catch (error) {
+                        return 'Format de téléphone invalide';
                     }
                 }
                 return '';
@@ -108,8 +151,8 @@ export function ContactForm() {
         const newErrors: FieldErrors = {};
 
         (Object.keys(formData) as Array<keyof FormData>).forEach(key => {
-            // Validate all fields except honeypot, budget, and timeline (which use select with fixed values)
-            if (key !== 'honeypot' && key !== 'budget' && key !== 'timeline') {
+            // Validate all fields except honeypot, budget, timeline, and formStartTime
+            if (key !== 'honeypot' && key !== 'budget' && key !== 'timeline' && key !== 'formStartTime') {
                 const error = validateField(key, formData[key]);
                 if (error) newErrors[key] = error;
             }
@@ -127,6 +170,18 @@ export function ContactForm() {
         if (formData.honeypot) {
             console.warn('Bot detected');
             return;
+        }
+
+        // Timestamp validation - detect bots that fill forms too quickly
+        if (formData.formStartTime) {
+            const fillTime = Date.now() - formData.formStartTime;
+            const minFillTime = 3000; // 3 seconds minimum (human can't fill a form faster)
+
+            if (fillTime < minFillTime) {
+                console.warn('Form filled too quickly - possible bot');
+                setGlobalError('Veuillez ralentir. Prenez le temps de remplir le formulaire correctement.');
+                return;
+            }
         }
 
         // Client-side rate limiting (3 submissions per hour)
@@ -178,9 +233,10 @@ export function ContactForm() {
                     timeline: formData.timeline || null,
                     message: formData.message,
                     consent: formData.consent,
+                    formStartTime: formData.formStartTime,
                     utm: {
-                        source: new URLSearchParams(window.location.search).get('utm_source'),
-                        campaign: new URLSearchParams(window.location.search).get('utm_campaign'),
+                        source: sanitizeUTM(new URLSearchParams(window.location.search).get('utm_source')),
+                        campaign: sanitizeUTM(new URLSearchParams(window.location.search).get('utm_campaign')),
                     },
                 }),
             });
@@ -285,13 +341,20 @@ export function ContactForm() {
 
             <div className={cls.field}>
                 <Label htmlFor="phone">Téléphone</Label>
-                <Input
+                <PhoneInput
                     id="phone"
-                    name="phone"
-                    type="tel"
+                    international
+                    defaultCountry="BE"
+                    countries={['BE', 'FR', 'NL', 'LU', 'DE', 'GB', 'ES', 'IT', 'PT', 'CH', 'AT']}
                     value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+32 4 ..."
+                    onChange={(value) => {
+                        setFormData(prev => ({ ...prev, phone: value || '' }));
+                        if (errors.phone) {
+                            setErrors(prev => ({ ...prev, phone: '' }));
+                        }
+                    }}
+                    placeholder="Entrez votre numéro"
+                    className={cls.phoneInput}
                     aria-invalid={!!errors.phone}
                     aria-describedby={errors.phone ? 'phone-error' : undefined}
                 />

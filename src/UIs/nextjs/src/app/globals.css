@@ -104,3 +104,13 @@ body {
     transition: none !important;
   }
 }
+
+/* Phone Input Global Dark Theme Styles */
+.PhoneInputCountrySelect {
+  color-scheme: dark !important;
+}
+
+.PhoneInputCountrySelect option {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}

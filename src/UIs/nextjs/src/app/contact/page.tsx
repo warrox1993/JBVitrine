@@ -164,7 +164,7 @@ export default function ContactPage() {
                                 <p className={cls.pathwayText}>
                                     Une question technique, un bug, un conseil rapide.
                                 </p>
-                                <a href="mailto:support@smidjan.dev" className={cls.pathwayLink}>
+                                <a href="#form" className={cls.pathwayLink}>
                                     Écrire au support
                                 </a>
                             </CardBody>
