@@ -120,7 +120,7 @@ export default function Team() {
   const centerRef = useRef<HTMLDivElement>(null);
   const orbitRefs = useRef<(HTMLDivElement | null)[]>([]);
   const spheresRef = useRef<Sphere[]>([]);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     if (!containerRef.current || !centerRef.current) return;
