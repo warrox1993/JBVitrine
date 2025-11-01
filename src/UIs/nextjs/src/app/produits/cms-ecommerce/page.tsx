@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/Button/Button";
 import { Heading } from "@/components/ui/Heading";
 import { Card, CardBody, CardHeader } from "@/components/atoms/Card";
 import { Footer } from "@/components/sections/Footer/Footer";
+import { CMSFeaturesEnhanced } from "@/components/sections/CMSFeatures/CMSFeaturesEnhanced";
+import { SectionWithBackground } from "@/components/ui/SectionWithBackground/SectionWithBackground";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -325,86 +327,82 @@ function StructuredData() {
 
 function HeroSection() {
   return (
-    <section id="cms-hero" className={`${styles.section} ${styles.heroSection}`} aria-labelledby="cms-hero-title">
-      <div className="container">
-        <div className={styles.heroGrid}>
-          <div className={styles.heroContent}>
-            <Heading as="h1" className={styles.heroTitle} id="cms-hero-title">
-              SMIDJAN CMS — La solution e-commerce tout-en-un
-            </Heading>
-            <p className={styles.heroSubtitle}>
-              SMIDJAN CMS est une solution e-commerce complète et évolutive, prête pour vendre produits physiques, services digitaux ou abonnements récurrents. Chaque module s’adapte à ton activité — sans dépendance à un modèle figé.
-            </p>
-            <div className={styles.heroActions}>
-              <Button
-                as="a"
-                href="/contact"
-                variant="solid"
-                size="lg"
-                ariaLabel="Demander une démonstration du CMS e-commerce SMIDJAN"
-                trailingIcon={<ArrowRightIcon aria-hidden="true" />}
-              >
-                Demander une démo
-              </Button>
-              <Button
-                as="a"
-                href="#cms-modules"
-                variant="outline"
-                size="lg"
-                ariaLabel="Voir les fonctionnalités natives du CMS SMIDJAN"
-              >
-                Explorer les fonctionnalités
-              </Button>
-            </div>
-            <ul className={styles.heroHighlights} role="list">
-              {heroHighlights.map((item) => (
-                <li key={item.label} className={styles.heroHighlightItem}>
-                  <span className={styles.heroHighlightIcon}>{item.icon}</span>
-                  <span>{item.label}</span>
-                </li>
-              ))}
-            </ul>
+    <div className="container">
+      <div className={styles.heroGrid}>
+        <div className={styles.heroContent}>
+          <Heading as="h1" className={styles.heroTitle} id="cms-hero-title">
+            SMIDJAN CMS — La solution e-commerce tout-en-un
+          </Heading>
+          <p className={styles.heroSubtitle}>
+            SMIDJAN CMS est une solution e-commerce complète et évolutive, prête pour vendre produits physiques, services digitaux ou abonnements récurrents. Chaque module s'adapte à ton activité — sans dépendance à un modèle figé.
+          </p>
+          <div className={styles.heroActions}>
+            <Button
+              as="a"
+              href="/contact"
+              variant="solid"
+              size="lg"
+              ariaLabel="Demander une démonstration du CMS e-commerce SMIDJAN"
+              trailingIcon={<ArrowRightIcon aria-hidden="true" />}
+            >
+              Demander une démo
+            </Button>
+            <Button
+              as="a"
+              href="#cms-modules"
+              variant="outline"
+              size="lg"
+              ariaLabel="Voir les fonctionnalités natives du CMS SMIDJAN"
+            >
+              Explorer les fonctionnalités
+            </Button>
           </div>
-          <div className={styles.heroVisual}>
-            <div className={styles.heroVisualGlow} aria-hidden="true" />
-            <Image
-              src="/images/pic04.webp"
-              alt="Interface SMIDJAN CMS présentant un catalogue produits et services"
-              width={720}
-              height={520}
-              priority
-              sizes="(max-width: 1024px) 100vw, 600px"
-              className={styles.heroImage}
-            />
-          </div>
+          <ul className={styles.heroHighlights} role="list">
+            {heroHighlights.map((item) => (
+              <li key={item.label} className={styles.heroHighlightItem}>
+                <span className={styles.heroHighlightIcon}>{item.icon}</span>
+                <span>{item.label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.heroVisual} style={{ display: 'none' }}>
+          <div className={styles.heroVisualGlow} aria-hidden="true" />
+          <Image
+            src="/images/pic04.webp"
+            alt="Interface SMIDJAN CMS présentant un catalogue produits et services"
+            width={720}
+            height={520}
+            priority
+            sizes="(max-width: 1024px) 100vw, 600px"
+            className={styles.heroImage}
+          />
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
 function QuickProofsSection() {
   return (
-    <section id="cms-proofs" className={`${styles.section} ${styles.proofsSection}`} aria-labelledby="cms-proofs-title">
-      <div className="container">
-        <div className={styles.sectionHeader}>
-          <Heading as="h2" id="cms-proofs-title" className={styles.sectionTitle} accent>
-            Pourquoi choisir SMIDJAN CMS ?
-          </Heading>
-          <p className={styles.sectionLead}>
-            Un back-end e-commerce commun, un front sur mesure à chaque projet. SMIDJAN CMS sépare la logique métier du design pour offrir des sites uniques, performants et faciles à maintenir.
-          </p>
-        </div>
-        <ul className={styles.proofList} role="list">
-          {whySmidjanReasons.map((reason) => (
-            <li key={reason.title} className={styles.proofItem}>
-              <h3 className={styles.proofTitle}>{reason.title}</h3>
-              <p className={styles.proofDescription}>{reason.description}</p>
-            </li>
-          ))}
-        </ul>
+    <div className="container">
+      <div className={styles.sectionHeader}>
+        <Heading as="h2" id="cms-proofs-title" className={styles.sectionTitle} accent>
+          Pourquoi choisir SMIDJAN CMS ?
+        </Heading>
+        <p className={styles.sectionLead}>
+          Un back-end e-commerce commun, un front sur mesure à chaque projet. SMIDJAN CMS sépare la logique métier du design pour offrir des sites uniques, performants et faciles à maintenir.
+        </p>
       </div>
-    </section>
+      <ul className={styles.proofList} role="list">
+        {whySmidjanReasons.map((reason) => (
+          <li key={reason.title} className={styles.proofItem}>
+            <h3 className={styles.proofTitle}>{reason.title}</h3>
+            <p className={styles.proofDescription}>{reason.description}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -442,133 +440,125 @@ function FunctionalitySection() {
 
 function ShowcaseSection() {
   return (
-    <section id="cms-showcase" className={`${styles.section} ${styles.altBackground}`} aria-labelledby="cms-showcase-title">
-      <div className="container">
-        <div className={styles.sectionHeader}>
-          <Heading as="h2" id="cms-showcase-title" className={styles.sectionTitle} accent>
-            Design &amp; personnalisation sur mesure
-          </Heading>
-          <p className={styles.sectionLead}>
-            Chaque projet démarre avec la base solide de SMIDJAN CMS, mais l’interface est créée sur mesure. Charte, expérience, structure : tout est adapté à ton univers.
-          </p>
-          <p className={styles.sectionSub}>
-            Le visuel s’adapte à ton projet, pas l’inverse. SMIDJAN CMS devient le moteur invisible de ton identité digitale.
-          </p>
-        </div>
-        <div className={styles.showcaseGrid}>
-          {showcaseShots.map((shot) => (
-            <figure key={shot.title} className={styles.showcaseItem}>
-              <Image
-                src={shot.src}
-                alt={shot.title}
-                width={480}
-                height={320}
-                loading="lazy"
-                sizes="(max-width: 768px) 100vw, 360px"
-                className={styles.showcaseImage}
-              />
-              <figcaption className={styles.showcaseCaption}>
-                <strong>{shot.title}</strong>
-                <span>{shot.description}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+    <div className="container" style={{ display: 'none' }}>
+      <div className={styles.sectionHeader}>
+        <Heading as="h2" id="cms-showcase-title" className={styles.sectionTitle} accent>
+          Design &amp; personnalisation sur mesure
+        </Heading>
+        <p className={styles.sectionLead}>
+          Chaque projet démarre avec la base solide de SMIDJAN CMS, mais l'interface est créée sur mesure. Charte, expérience, structure : tout est adapté à ton univers.
+        </p>
+        <p className={styles.sectionSub}>
+          Le visuel s'adapte à ton projet, pas l'inverse. SMIDJAN CMS devient le moteur invisible de ton identité digitale.
+        </p>
       </div>
-    </section>
+      <div className={styles.showcaseGrid}>
+        {showcaseShots.map((shot) => (
+          <figure key={shot.title} className={styles.showcaseItem}>
+            <Image
+              src={shot.src}
+              alt={shot.title}
+              width={480}
+              height={320}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 360px"
+              className={styles.showcaseImage}
+            />
+            <figcaption className={styles.showcaseCaption}>
+              <strong>{shot.title}</strong>
+              <span>{shot.description}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
   );
 }
 
 function EvolutionSection() {
   return (
-    <section id="evolutivite" className={styles.section} aria-labelledby="evolutivite-title">
-      <div className="container">
-        <div className={styles.sectionHeader}>
-          <Heading as="h2" id="evolutivite-title" className={styles.sectionTitle} accent>
-            Un CMS pensé pour évoluer
-          </Heading>
-          <p className={styles.sectionLead}>
-            Le back-end de SMIDJAN CMS reste la base commune de tous les projets : robuste, éprouvé et maintenu en continu. Chaque client s’appuie sur cette architecture solide et peut y ajouter des modules spécifiques selon ses besoins. Le front, lui, reste totalement libre et découplé pour offrir une expérience unique.
-          </p>
-        </div>
-        <div className={styles.evolutionGrid}>
-          {evolutionCards.map((card) => (
-            <Card key={card.title} className={styles.evolutionCard}>
-              <CardHeader className={styles.cardTitle}>{card.title}</CardHeader>
-              <CardBody>
-                <ul className={styles.evolutionList}>
-                  {card.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </CardBody>
-            </Card>
-          ))}
-        </div>
-        <div className={styles.evolutionFooter}>
-          <Button
-            as="a"
-            href="#cms-cta"
-            variant="outline"
-            size="md"
-            ariaLabel="Discuter d’une évolution sur mesure"
-            trailingIcon={<ArrowRightIcon aria-hidden="true" />}
-          >
-            Discuter d’une évolution sur mesure
-          </Button>
-        </div>
+    <div className="container">
+      <div className={styles.sectionHeader}>
+        <Heading as="h2" id="evolutivite-title" className={styles.sectionTitle} accent>
+          Un CMS pensé pour évoluer
+        </Heading>
+        <p className={styles.sectionLead}>
+          Le back-end de SMIDJAN CMS reste la base commune de tous les projets : robuste, éprouvé et maintenu en continu. Chaque client s'appuie sur cette architecture solide et peut y ajouter des modules spécifiques selon ses besoins. Le front, lui, reste totalement libre et découplé pour offrir une expérience unique.
+        </p>
       </div>
-    </section>
+      <div className={styles.evolutionGrid}>
+        {evolutionCards.map((card) => (
+          <Card key={card.title} className={styles.evolutionCard}>
+            <CardHeader className={styles.cardTitle}>{card.title}</CardHeader>
+            <CardBody>
+              <ul className={styles.evolutionList}>
+                {card.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </CardBody>
+          </Card>
+        ))}
+      </div>
+      <div className={styles.evolutionFooter}>
+        <Button
+          as="a"
+          href="#cms-cta"
+          variant="outline"
+          size="md"
+          ariaLabel="Discuter d'une évolution sur mesure"
+          trailingIcon={<ArrowRightIcon aria-hidden="true" />}
+        >
+          Discuter d'une évolution sur mesure
+        </Button>
+      </div>
+    </div>
   );
 }
 
 function FaqSection() {
   return (
-    <section id="cms-faq" className={`${styles.section} ${styles.altBackground}`} aria-labelledby="cms-faq-title">
-      <div className="container">
-        <Heading as="h2" id="cms-faq-title" className={styles.sectionTitle} accent>
-          FAQ
-        </Heading>
-        <div className={styles.faqList} role="list">
-          {faqItems.map((item, index) => (
-            <details key={item.question} className={styles.faqItem} {...(index === 0 ? { open: true } : {})}>
-              <summary className={styles.faqSummary}>
-                <span>{item.question}</span>
-              </summary>
-              <p className={styles.faqAnswer}>{item.answer}</p>
-            </details>
-          ))}
-        </div>
+    <div className="container">
+      <Heading as="h2" id="cms-faq-title" className={styles.sectionTitle} accent>
+        FAQ
+      </Heading>
+      <div className={styles.faqList} role="list">
+        {faqItems.map((item, index) => (
+          <details key={item.question} className={styles.faqItem} {...(index === 0 ? { open: true } : {})}>
+            <summary className={styles.faqSummary}>
+              <span>{item.question}</span>
+            </summary>
+            <p className={styles.faqAnswer}>{item.answer}</p>
+          </details>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
 
 function FinalCtaSection() {
   return (
-    <section id="cms-cta" className={styles.section} aria-labelledby="cms-cta-title">
-      <div className="container">
-        <div className={styles.finalCta}>
-          <Heading as="h2" id="cms-cta-title" className={styles.sectionTitle} accent>
-            Prêt à passer à la vitesse supérieure ?
-          </Heading>
-          <p className={styles.sectionLead}>
-            Lance ton e-commerce avec une base solide, performante et totalement maîtrisée. Contacte-nous pour une démonstration ou un accompagnement sur mesure.
-          </p>
-          <Button
-            as="a"
-            href="/contact"
-            variant="solid"
-            size="lg"
-            ariaLabel="Contacter SMIDJAN pour adopter le CMS e-commerce"
-            trailingIcon={<ArrowRightIcon aria-hidden="true" />}
-            className={styles.finalCtaButton}
-          >
-            Nous contacter
-          </Button>
-        </div>
+    <div className="container">
+      <div className={styles.finalCta}>
+        <Heading as="h2" id="cms-cta-title" className={styles.sectionTitle} accent>
+          Prêt à passer à la vitesse supérieure ?
+        </Heading>
+        <p className={styles.sectionLead}>
+          Lance ton e-commerce avec une base solide, performante et totalement maîtrisée. Contacte-nous pour une démonstration ou un accompagnement sur mesure.
+        </p>
+        <Button
+          as="a"
+          href="/contact"
+          variant="solid"
+          size="lg"
+          ariaLabel="Contacter SMIDJAN pour adopter le CMS e-commerce"
+          trailingIcon={<ArrowRightIcon aria-hidden="true" />}
+          className={styles.finalCtaButton}
+        >
+          Nous contacter
+        </Button>
       </div>
-    </section>
+    </div>
   );
 }
 
@@ -577,13 +567,31 @@ export default function CmsEcommercePage() {
     <>
       <StructuredData />
       <div className={styles.pageRoot}>
-        <HeroSection />
-        <QuickProofsSection />
-        <FunctionalitySection />
-        <ShowcaseSection />
-        <EvolutionSection />
-        <FaqSection />
-        <FinalCtaSection />
+        <SectionWithBackground id="cms-hero" className={`${styles.section} ${styles.heroSection}`} variant="dark" ariaLabel="Section hero CMS">
+          <HeroSection />
+        </SectionWithBackground>
+
+        <SectionWithBackground id="cms-proofs" className={styles.section} variant="light" ariaLabel="Pourquoi choisir SMIDJAN CMS">
+          <QuickProofsSection />
+        </SectionWithBackground>
+
+        <CMSFeaturesEnhanced />
+
+        <SectionWithBackground id="cms-showcase" className={styles.section} variant="light" ariaLabel="Design et personnalisation">
+          <ShowcaseSection />
+        </SectionWithBackground>
+
+        <SectionWithBackground id="evolutivite" className={styles.section} variant="light" ariaLabel="CMS pensé pour évoluer">
+          <EvolutionSection />
+        </SectionWithBackground>
+
+        <SectionWithBackground id="cms-faq" className={styles.section} variant="dark" ariaLabel="FAQ">
+          <FaqSection />
+        </SectionWithBackground>
+
+        <SectionWithBackground id="cms-cta" className={styles.section} variant="light" ariaLabel="Call to action final">
+          <FinalCtaSection />
+        </SectionWithBackground>
       </div>
       <Footer />
     </>

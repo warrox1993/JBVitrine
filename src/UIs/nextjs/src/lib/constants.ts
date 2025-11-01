@@ -5,10 +5,10 @@ export const SITE_CONFIG = {
   phone: "+33 1 23 45 67 89",
   description: "Agence digitale spécialisée en web design premium",
   social: {
-    linkedin: "https://linkedin.com/company/yourbrand",
+    linkedin: "https://www.linkedin.com/in/jean-baptistedhondt",
     twitter: "https://twitter.com/yourbrand",
-    facebook: "https://www.facebook.com/yourbrand",
-    github: "https://github.com/yourbrand",
+    facebook: "https://www.facebook.com/jeanbaptiste.dhondt",
+    github: "https://github.com/warrox1993",
   },
 } as const;
 

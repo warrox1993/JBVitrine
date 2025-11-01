@@ -1,4 +1,5 @@
 "use client";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { Button } from "@/components/ui/Button/Button";
 import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
@@ -16,6 +17,7 @@ export function Hero() {
   const showStats = false;
   return (
     <section id="hero" ref={heroRef} className={`${styles.hero} ${isVisible ? styles.visible : ""}`} aria-labelledby="hero-title">
+      <AnimatedBackground variant="dark" />
       <div className={styles.gradientBg} aria-hidden="true" />
       <svg className={styles.decor} viewBox="0 0 1440 200" fill="none" aria-hidden="true" role="presentation" preserveAspectRatio="none">
         <path d="M0,10 Q360,0 720,60 T1440,60 L1440,200 L0,200 Z" fill="url(#hero-gradient)" />
@@ -34,7 +36,7 @@ export function Hero() {
             Nous transformons les idées ambitieuses en plateformes web rapides, sûres et prêtes à l'ère de l'IA.
           </p>
           <div className={styles.actions}>
-            <Button variant="solid" size="md" ariaLabel="Voir nos projets" trailingIcon={<ArrowRightIcon aria-hidden="true" />}>
+            <Button as="a" href="/cms-ecommerce" variant="solid" size="md" ariaLabel="Voir nos projets" trailingIcon={<ArrowRightIcon aria-hidden="true" />}>
               Voir nos projets
             </Button>
             <Button as="a" href="/contact" variant="outline" size="md" ariaLabel="Discuter de votre vision">

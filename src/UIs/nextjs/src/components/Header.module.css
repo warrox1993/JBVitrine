@@ -1,6 +1,5 @@
 /* Header layout and navigation chrome */
 .header-root {
-  isolation: isolate;
   padding-left: var(--container-padding);
   position: fixed;
   top: 0;
@@ -10,18 +9,64 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  background: var(--color-bg-header, rgba(0, 0, 0, 0.6));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: transparent;
   border-bottom: 1px solid var(--color-border);
+  box-shadow:
+    0 4px 24px rgba(255, 106, 53, 0.08),
+    0 0 40px rgba(255, 106, 53, 0.04),
+    0 1px 0 rgba(255, 106, 53, 0.12) inset,
+    0 8px 32px rgba(0, 0, 0, 0.4);
   transition:
     left 0.4s cubic-bezier(0.4, 0, 0.2, 1),
     width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    height 200ms ease;
-  z-index: var(--z-header);
+    height 200ms ease,
+    box-shadow 0.3s ease;
+  z-index: 9999;
   will-change: left, width, height;
   min-width: 0;
-  overflow: hidden;
+  overflow: visible;
+}
+
+/* Multi-layer frosted glass effect - like looking through water */
+.header-root::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-w);
+  width: calc(100vw - var(--sidebar-w));
+  height: var(--header-h);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  z-index: -2;
+  pointer-events: none;
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-root::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-w);
+  width: calc(100vw - var(--sidebar-w));
+  height: var(--header-h);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(100px) saturate(50%) brightness(0.35);
+  -webkit-backdrop-filter: blur(100px) saturate(50%) brightness(0.35);
+  z-index: -1;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 768px) {
+  .header-root::before,
+  .header-root::after {
+    left: 0;
+    width: 100vw;
+  }
 }
 
 .header-left {
@@ -29,6 +74,8 @@
   align-items: center;
   gap: 0.75rem;
   min-width: 0;
+  position: relative;
+  z-index: 10;
 }
 
 .header-nav {
@@ -41,6 +88,8 @@
   min-width: 0;
   overflow: hidden;
   justify-content: flex-end;
+  position: relative;
+  z-index: 10;
 }
 
 .header-link {
@@ -58,6 +107,7 @@
 
 .header-link:hover {
   color: var(--color-text-1);
+  text-shadow: 0 0 12px rgba(255, 106, 53, 0.3);
 }
 
 .header-link::after {
@@ -68,6 +118,7 @@
   width: 0;
   height: 2px;
   background: var(--color-primary);
+  box-shadow: 0 0 8px rgba(255, 106, 53, 0.6);
   transition: width 0.3s ease;
 }
 
@@ -77,6 +128,7 @@
 
 .header-link-active {
   color: var(--color-text-1);
+  text-shadow: 0 0 8px rgba(255, 106, 53, 0.2);
 }
 
 .header-link-active::after {
@@ -99,6 +151,8 @@
   object-fit: contain;
   max-width: none;
   display: block;
+  filter: drop-shadow(0 0 8px rgba(255, 106, 53, 0.25));
+  transition: filter 0.3s ease;
   /* No blending needed; asset has alpha */
 }
 
@@ -118,6 +172,10 @@
   color: inherit;
 }
 
+.headerLogo:hover .logoHeader {
+  filter: drop-shadow(0 0 12px rgba(255, 106, 53, 0.4));
+}
+
 /* Brand name visibility fix */
 .brand {
   font-family: var(--font-display), var(--font-base);
@@ -128,7 +186,8 @@
   letter-spacing: 0.02em; /* Subtle presence */
   transition:
     color 0.2s ease,
-    opacity 0.2s ease;
+    opacity 0.2s ease,
+    text-shadow 0.3s ease;
 }
 
 /* Hover/focus — copper tint; keep subtle */
@@ -138,6 +197,7 @@
   color: var(--color-primary); /* Copper accent (#FF6A00) */
   opacity: 0.9;
   text-decoration: none;
+  text-shadow: 0 0 16px rgba(255, 106, 53, 0.4);
 }
 
 /* Optional fine-tuning for mobile */

@@ -1,4 +1,5 @@
 "use client";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
 import { Heading } from "@/components/ui/Heading";
 import styles from "./Process.module.css";
 
@@ -47,6 +48,7 @@ export function Process() {
   ];
   return (
     <section id="process" className={styles.section}>
+      <AnimatedBackground variant="light" />
       <div className="container">
         <div className={styles.header}>
           <Heading as="h2" accent className={styles.title}>Notre Processus Créatif</Heading>

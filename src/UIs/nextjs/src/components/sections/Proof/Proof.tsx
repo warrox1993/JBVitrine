@@ -1,4 +1,5 @@
 "use client";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
 import styles from "./Proof.module.css";
 
 export function Proof() {
@@ -8,6 +9,7 @@ export function Proof() {
       aria-labelledby="premiers-partenaires-title"
       className={styles.section}
     >
+      <AnimatedBackground variant="light" />
       <div className={styles.container}>
         <h2 id="premiers-partenaires-title" className={styles.title}>
           Devenir partenaire d'une agence, c'est choisir une vision.

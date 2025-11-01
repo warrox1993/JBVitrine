@@ -160,7 +160,7 @@ export default function Timeline() {
                 fontSize: "clamp(1.75rem, 5vw, 4.5rem)",
               }}
             >
-              Mon Histoire
+              Notre Histoire
             </h1>
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "0.5rem" }}>
               <div

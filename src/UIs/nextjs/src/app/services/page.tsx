@@ -1,31 +1,12 @@
-import type { Metadata } from "next";
+"use client";
 import { Card, CardBody, CardHeader } from "@/components/atoms/Card";
 import { Button } from "@/components/ui/Button/Button";
 import { Heading } from "@/components/ui/Heading";
 import { Footer } from "@/components/sections/Footer/Footer";
 import { TechStackEnhanced } from "@/components/sections/TechStack/TechStackEnhanced";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import styles from "./page.module.css";
-
-export const metadata: Metadata = {
-  title: "Services — Développement Web, Cybersécurité, Automatisation & IA | SMIDJAN",
-  description:
-    "Des services pensés pour la performance, la sécurité et la scalabilité : développement web sur mesure, cybersécurité (audit, durcissement, monitoring) et automatisation & IA (workflows, n8n, agents).",
-  alternates: { canonical: "/services" },
-  openGraph: {
-    title: "Services — Développement Web, Cybersécurité, Automatisation & IA | SMIDJAN",
-    description:
-      "Des services pensés pour la performance, la sécurité et la scalabilité : développement web sur mesure, cybersécurité (audit, durcissement, monitoring) et automatisation & IA (workflows, n8n, agents).",
-    url: "https://smidjan.be/services",
-    siteName: "SMIDJAN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Services — Développement Web, Cybersécurité, Automatisation & IA | SMIDJAN",
-    description:
-      "Des services pensés pour la performance, la sécurité et la scalabilité : développement web sur mesure, cybersécurité (audit, durcissement, monitoring) et automatisation & IA (workflows, n8n, agents).",
-  },
-};
 
 const servicePillars = [
   {
@@ -143,13 +124,17 @@ const cmsFeatures = [
 ] as const;
 
 export default function ServicesPage() {
+  const { ref: heroRef, isVisible } = useIntersectionObserver<HTMLElement>({ threshold: 0.1, once: true });
+
   return (
     <div className={styles.page}>
       <section
         id="services-hero"
-        className={`${styles.section} ${styles.hero}`}
+        ref={heroRef}
+        className={`${styles.section} ${styles.hero} ${styles.sectionDark} ${isVisible ? styles.visible : ""}`}
         aria-labelledby="services-hero-title"
       >
+        <AnimatedBackground variant="dark" />
         <svg
           className={styles.heroDecor}
           viewBox="0 0 1440 200"
@@ -186,9 +171,10 @@ export default function ServicesPage() {
 
       <section
         id="services-pillars"
-        className={`${styles.section} ${styles.pillars}`}
+        className={`${styles.section} ${styles.pillars} ${styles.sectionLight}`}
         aria-labelledby="services-pillars-title"
       >
+        <AnimatedBackground variant="light" />
         <div className="container">
           <div className={styles.sectionHeader}>
             <Heading as="h2" accent className={styles.sectionTitle} id="services-pillars-title">
@@ -243,11 +229,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="services-tech" className={styles.section} aria-labelledby="services-tech-stack">
+      <section id="services-tech" className={`${styles.section} ${styles.sectionDark}`} aria-labelledby="services-tech-stack">
         <TechStackEnhanced />
       </section>
 
-      <section id="services-cms" className={styles.section} aria-labelledby="services-cms-highlight">
+      <section id="services-cms" className={`${styles.section} ${styles.sectionLight}`} aria-labelledby="services-cms-highlight">
+        <AnimatedBackground variant="light" />
         <div className="container">
           <div className={styles.sectionHeader}>
             <Heading as="h2" accent className={styles.sectionTitle} id="services-cms-highlight">
@@ -277,7 +264,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="services-packages" className={`${styles.section} ${styles.sectionSurface}`} aria-labelledby="services-packages-title">
+      <section id="services-packages" className={`${styles.section} ${styles.sectionDark}`} aria-labelledby="services-packages-title">
+        <AnimatedBackground variant="dark" />
         <div className="container">
           <div className={styles.sectionHeader}>
             <Heading as="h2" accent className={styles.sectionTitle} id="services-packages-title">
@@ -304,7 +292,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="services-contact" className={styles.section} aria-labelledby="services-final-cta">
+      <section id="services-contact" className={`${styles.section} ${styles.sectionLight}`} aria-labelledby="services-final-cta">
+        <AnimatedBackground variant="light" />
         <div className="container">
           <div className={styles.finalCta}>
             <h2 id="services-final-cta" className={styles.finalCtaTitle}>

@@ -1,4 +1,5 @@
 "use client";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
 import { CheckIcon } from "@/components/icons/CheckIcon";
 import { Heading } from "@/components/ui/Heading";
 import styles from "./Services.module.css";
@@ -57,6 +58,7 @@ export function Services() {
 
   return (
     <section id="services" className={styles.section}>
+      <AnimatedBackground variant="dark" />
       <div className="container">
         <div className={styles.header}>
           <Heading as="h2" accent className={styles.title}>Services Excellence</Heading>

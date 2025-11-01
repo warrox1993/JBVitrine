@@ -1,4 +1,5 @@
 "use client";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
 import styles from "./Showreel.module.css";
 
 type ProjectCard = {
@@ -18,6 +19,7 @@ export function Showreel() {
   ];
   return (
     <section id="projects" className={`${styles.section} ${styles.showreelModule}`}>
+      <AnimatedBackground variant="dark" />
       <div className="container">
         <div className={styles.intro}>
           <h2 className={styles.title}>Notre projet phare</h2>
