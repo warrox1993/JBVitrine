@@ -10,7 +10,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     telephone: "+33-1-23-45-67-89",
     contactType: "Customer Service",
-    email: "contact@yourbrand.com",
+    email: "jeanbaptiste.dhondt1@gmail.com",
     availableLanguage: ["French", "English"],
   },
   sameAs: [

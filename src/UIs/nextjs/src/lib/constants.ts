@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: "YourBrand",
   url: "https://yourbrand.com",
-  email: "contact@yourbrand.com",
+  email: "jeanbaptiste.dhondt1@gmail.com",
   phone: "+33 1 23 45 67 89",
   description: "Agence digitale spécialisée en web design premium",
   social: {

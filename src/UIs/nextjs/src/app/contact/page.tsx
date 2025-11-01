@@ -70,7 +70,7 @@ export default function ContactPage() {
                             '@type': 'Organization',
                             name: 'Smidjan',
                             url: 'https://www.smidjan.dev',
-                            email: 'contact@smidjan.dev',
+                            email: 'jeanbaptiste.dhondt1@gmail.com',
                             address: {
                                 '@type': 'PostalAddress',
                                 addressLocality: 'Liège',
@@ -81,7 +81,7 @@ export default function ContactPage() {
                         contactPoint: {
                             '@type': 'ContactPoint',
                             contactType: 'sales',
-                            email: 'contact@smidjan.dev',
+                            email: 'jeanbaptiste.dhondt1@gmail.com',
                             availableLanguage: ['fr', 'en'],
                             areaServed: 'EU',
                         },

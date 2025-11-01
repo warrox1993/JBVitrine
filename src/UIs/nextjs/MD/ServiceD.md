@@ -682,7 +682,7 @@
             <p>Discutons de votre projet sans engagement. Premier échange de 30 minutes offert pour analyser vos besoins, vous conseiller sur la faisabilité technique et vous proposer une estimation budgétaire réaliste.</p>
             <div class="cta-buttons" style="justify-content: center; margin-top: 30px;">
                 <a href="#contact" class="btn btn-white">Réserver un appel gratuit</a>
-                <a href="mailto:contact@smidjan.com" class="btn btn-white" style="background: transparent; border: 2px solid #fff;">Envoyer un email</a>
+                <a href="mailto:jeanbaptiste.dhondt1@gmail.com" class="btn btn-white" style="background: transparent; border: 2px solid #fff;">Envoyer un email</a>
             </div>
         </div>
     </section>
@@ -718,7 +718,7 @@
                 <div>
                     <h4 style="color: #ff7800; margin-bottom: 15px;">Contact</h4>
                     <p style="color: #b0b0b0; line-height: 2;">
-                        Email: contact@smidjan.com<br>
+                        Email: jeanbaptiste.dhondt1@gmail.com<br>
                         Tél: +33 (0)1 XX XX XX XX<br>
                         LinkedIn: /company/smidjan
                     </p>

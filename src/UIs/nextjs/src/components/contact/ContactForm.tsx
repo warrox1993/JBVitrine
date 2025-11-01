@@ -198,7 +198,7 @@ export function ContactForm() {
             const recentSubmissions = submissions.filter(timestamp => now - timestamp < rateLimitWindow);
 
             if (recentSubmissions.length >= maxSubmissions) {
-                setGlobalError('Vous avez atteint la limite de soumissions. Veuillez réessayer dans une heure ou nous contacter directement à contact@smidjan.dev.');
+                setGlobalError('Vous avez atteint la limite de soumissions. Veuillez réessayer dans une heure ou nous contacter directement à jeanbaptiste.dhondt1@gmail.com.');
                 setStatus('error');
                 return;
             }
@@ -254,7 +254,7 @@ export function ContactForm() {
             setFormData(initialFormData);
         } catch (error) {
             setStatus('error');
-            setGlobalError(error instanceof Error ? error.message : 'Un souci est survenu. Réessayez dans quelques minutes, ou écrivez-nous à support@smidjan.dev.');
+            setGlobalError(error instanceof Error ? error.message : 'Un souci est survenu. Réessayez dans quelques minutes, ou écrivez-nous à jeanbaptiste.dhondt1@gmail.com.');
         }
     };
 

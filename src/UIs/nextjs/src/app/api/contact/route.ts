@@ -145,7 +145,7 @@ export async function POST(request: NextRequest) {
         {
           ok: false,
           message:
-            "Trop de requêtes. Veuillez réessayer dans quelques instants ou nous contacter à contact@smidjan.dev.",
+            "Trop de requêtes. Veuillez réessayer dans quelques instants ou nous contacter à jeanbaptiste.dhondt1@gmail.com.",
         },
         {
           status: 429,

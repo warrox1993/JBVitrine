@@ -135,25 +135,114 @@
   width: 100%;
 }
 
+@media (max-width: 1024px) {
+  .header-nav {
+    gap: 24px;
+  }
+}
+
 @media (max-width: 768px) {
   .header-root {
     left: 0;
     width: 100vw;
+    padding-right: var(--container-padding);
+    gap: 12px;
+  }
+
+  .header-left {
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .headerLogo {
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .header-nav {
+    gap: 12px;
+    padding-inline: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-link {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    white-space: nowrap;
+  }
+
+  .header-link::after {
+    bottom: -2px;
+  }
+
+  .logoHeader {
+    height: clamp(32px, 5vh, 48px);
+  }
+
+  .brand {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-root {
+    gap: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .header-left {
+    gap: 2px;
+  }
+
+  .headerLogo {
+    gap: 2px;
+  }
+
+  .logoHeader {
+    height: clamp(28px, 4vh, 40px);
+  }
+
+  .brand {
+    font-size: 0.65rem;
+  }
+
+  .header-nav {
+    gap: 8px;
+    padding-inline: 4px;
+  }
+
+  .header-link {
+    font-size: 0.7rem;
+    padding: 2px 6px;
   }
 }
 
 /* Header logo: preserve 1:1 ratio, scale with header */
 .logoHeader {
   width: auto;
-  height: clamp(99px, 12.35vh, 148px);
+  height: clamp(60px, 10vw, 148px);
   max-height: calc(var(--header-height) - 16px);
   aspect-ratio: 1 / 1;
   object-fit: contain;
   max-width: none;
   display: block;
   filter: drop-shadow(0 0 8px rgba(255, 106, 53, 0.25));
-  transition: filter 0.3s ease;
+  transition:
+    filter 0.3s ease,
+    height 0.3s ease;
   /* No blending needed; asset has alpha */
+}
+
+/* Tablet logo sizing */
+@media (max-width: 1024px) {
+  .logoHeader {
+    height: clamp(50px, 8vw, 100px);
+  }
 }
 
 /* Align flame icon + brand text; ensures stable baseline */
@@ -198,13 +287,6 @@
   opacity: 0.9;
   text-decoration: none;
   text-shadow: 0 0 16px rgba(255, 106, 53, 0.4);
-}
-
-/* Optional fine-tuning for mobile */
-@media (max-width: 768px) {
-  .brand {
-    font-size: 1.1rem;
-  }
 }
 
 .theme-toggle {

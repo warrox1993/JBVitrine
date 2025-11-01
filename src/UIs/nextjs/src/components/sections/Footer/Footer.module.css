@@ -97,8 +97,8 @@
 /* Footer logo: block-level, centered vertically in its cell, no stretch */
 .logoFooter {
   display: block;
-  width: 300px;
-  height: 300px;
+  width: clamp(150px, 20vw, 300px);
+  height: clamp(150px, 20vw, 300px);
   aspect-ratio: 1 / 1;
   object-fit: contain;
   max-width: none;
@@ -107,4 +107,33 @@
   -webkit-user-drag: none;
   user-select: none;
   transform: none;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease;
+}
+
+/* Responsive adjustments for footer logo */
+@media (max-width: 1024px) {
+  .logoFooter {
+    width: clamp(120px, 18vw, 250px);
+    height: clamp(120px, 18vw, 250px);
+  }
+}
+
+@media (max-width: 768px) {
+  .logoFooter {
+    width: clamp(100px, 25vw, 200px);
+    height: clamp(100px, 25vw, 200px);
+  }
+
+  .logoCell {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoFooter {
+    width: clamp(80px, 30vw, 150px);
+    height: clamp(80px, 30vw, 150px);
+  }
 }

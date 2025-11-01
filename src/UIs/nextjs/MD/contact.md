@@ -50,7 +50,7 @@ Support & Questions
 
 Texte: “Une question technique, un bug, un conseil rapide.”
 
-CTA: “Écrire au support” → mailto: support@smidjan.dev
+CTA: “Écrire au support” → mailto: jeanbaptiste.dhondt1@gmail.com
 
 Partenariats
 
@@ -101,7 +101,7 @@ Option: proposer un créneau Calendly instantané.
 
 Erreur
 Titre: “Un souci est survenu.”
-Texte: “Réessayez dans quelques minutes, ou écrivez-nous à support@smidjan.dev
+Texte: “Réessayez dans quelques minutes, ou écrivez-nous à jeanbaptiste.dhondt1@gmail.com
 .”
 Afficher détails validation champ par champ.
 
@@ -129,9 +129,9 @@ data-cta="submit-contact" sur le bouton
 
 Bloc latéral (ou sous le formulaire) en card:
 
-Email: contact@smidjan.dev
+Email: jeanbaptiste.dhondt1@gmail.com
 
-Support: support@smidjan.dev
+Support: jeanbaptiste.dhondt1@gmail.com
 
 Téléphone: +32 …
 
@@ -189,7 +189,7 @@ Spacing: cohérent avec la grille de la home (sections aérées).
     "@type": "Organization",
     "name": "Smidjan",
     "url": "https://www.smidjan.dev",
-    "email": "contact@smidjan.dev",
+    "email": "jeanbaptiste.dhondt1@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Liège",
@@ -202,7 +202,7 @@ Spacing: cohérent avec la grille de la home (sections aérées).
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "sales",
-    "email": "contact@smidjan.dev",
+    "email": "jeanbaptiste.dhondt1@gmail.com",
     "availableLanguage": ["fr", "en"],
     "areaServed": "EU"
   }
@@ -249,7 +249,7 @@ Consentement: “J’accepte que Smidjan traite ces informations pour répondre 
 
 Success: “Merci, c’est bien reçu. Vous aurez un retour sous 24h ouvrées.”
 
-Erreur: “Un souci est survenu. Réessayez plus tard ou écrivez-nous à support@smidjan.dev
+Erreur: “Un souci est survenu. Réessayez plus tard ou écrivez-nous à jeanbaptiste.dhondt1@gmail.com
 .”
 
 13) Tests à prévoir
