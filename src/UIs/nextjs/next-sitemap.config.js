@@ -1,12 +1,12 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://yourbrand.com",
+  siteUrl: process.env.SITE_URL || "https://smidjan.be",
   generateRobotsTxt: true,
   generateIndexSitemap: false,
-  exclude: ["/api/*", "/admin/*"],
+  exclude: ["/api/*", "/admin/*", "/auditlogs", "/settings"],
   robotsTxtOptions: {
     policies: [{ userAgent: "*", allow: "/", disallow: ["/api/", "/admin/"] }],
-    additionalSitemaps: ["https://yourbrand.com/sitemap.xml"],
+    additionalSitemaps: [],
   },
   transform: async (config, path) => {
     return {
