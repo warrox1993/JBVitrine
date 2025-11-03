@@ -15,6 +15,7 @@ type ButtonClickEvent = MouseEvent<HTMLButtonElement | HTMLAnchorElement>;
 export type UnifiedButtonProps = {
   as?: 'button' | 'a';
   href?: string;
+  target?: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
   fullWidth?: boolean;
@@ -59,6 +60,7 @@ function classes(
 export function Button({
   as = 'button',
   href,
+  target,
   variant = 'solid',
   size = 'md',
   fullWidth,
@@ -87,6 +89,8 @@ export function Button({
     return (
       <a
         href={href}
+        target={target}
+        rel={target === '_blank' ? 'noopener noreferrer' : undefined}
         className={cls}
         aria-label={ariaLabel}
         aria-disabled={disabled || loading || undefined}
