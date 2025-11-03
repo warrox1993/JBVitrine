@@ -6,8 +6,6 @@ import { marked, Tokens } from "marked";
 marked.setOptions({
   gfm: true, // GitHub Flavored Markdown
   breaks: false, // Don't convert \n to <br> for cleaner paragraphs
-  headerIds: true,
-  mangle: false,
 });
 
 // Custom renderer to handle custom heading IDs like {#id}
