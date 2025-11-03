@@ -35,7 +35,7 @@ export function Showreel() {
                   <div className={styles.tag}>{project.tag}</div>
                   <h3 className={styles.cardTitle}>{project.title}</h3>
                   <p className={styles.cardDescription}>{project.description}</p>
-                  <a className={styles.cardCta} href="/produits/cms-ecommerce">
+                  <a className={styles.cardCta} href="/cms-ecommerce">
                     Découvrir le projet
                   </a>
                   <p className={styles.reassurance}>

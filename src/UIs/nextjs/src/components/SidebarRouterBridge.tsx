@@ -19,7 +19,7 @@ export default function SidebarRouterBridge() {
     return <Sidebar items={aboutSidebarItems} />;
   }
 
-  if (pathname?.startsWith('/produits/cms-ecommerce') || pathname?.startsWith('/cms-ecommerce')) {
+  if (pathname?.startsWith('/cms-ecommerce')) {
     return <Sidebar items={cmsEcommerceSidebarItems} />;
   }
 
