@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { CheckIcon } from "@/components/icons/CheckIcon";
 import { ShieldCheckIcon } from "@/components/icons/ShieldCheckIcon";
 import { SparklesIcon } from "@/components/icons/SparklesIcon";
@@ -15,9 +14,9 @@ import { SectionWithBackground } from "@/components/ui/SectionWithBackground/Sec
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "SMIDJAN CMS — La solution e-commerce tout-en-un",
+  title: "CMS E-commerce sur mesure en Belgique | SMIDJAN — Solution tout-en-un",
   description:
-    "CMS complet et modulaire pour produits, services ou offres hybrides. Performant, sécurisé, personnalisable et prêt à l'emploi.",
+    "CMS e-commerce complet développé en Belgique : catalogue produits, paiements Stripe, automatisations et design sur mesure. Idéal pour PME belges, freelances et agences à Liège, Bruxelles et Wallonie.",
   alternates: {
     canonical: "/cms-ecommerce",
     languages: {
@@ -26,9 +25,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "SMIDJAN CMS — La solution e-commerce tout-en-un",
+    title: "CMS E-commerce sur mesure en Belgique | SMIDJAN",
     description:
-      "Solution e-commerce modulaire pour lancer produits, services ou offres hybrides. Performance, sécurité et personnalisation sans compromis.",
+      "Solution e-commerce développée en Belgique pour PME, freelances et agences. Catalogue, paiements, automatisations : tout en un. Disponible à Liège, Bruxelles et toute la Wallonie.",
     url: "https://smidjan.be/cms-ecommerce",
     siteName: "SMIDJAN",
     images: [
@@ -45,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SMIDJAN CMS — La solution e-commerce tout-en-un",
+    title: "CMS E-commerce sur mesure en Belgique | SMIDJAN",
     description:
-      "CMS e-commerce complet, sécurisé, personnalisable et prêt à l'emploi. Produits, services ou abonnements : vendez sans limite.",
+      "CMS e-commerce développé en Belgique : catalogue, paiements Stripe, automatisations. Idéal pour PME belges à Liège, Bruxelles et Wallonie.",
     images: ["/og-image.webp"],
   },
   robots: {
@@ -187,30 +186,6 @@ const functionalModules = [
   },
 ] as const;
 
-const showcaseShots = [
-  {
-    src: "/images/smidjan-cms-interface-personnalisable.webp",
-    title: "Interface sur mesure",
-    alt: "Interface CMS e-commerce personnalisée avec design moderne et navigation intuitive adaptée à l'identité de marque",
-    description:
-      "Chaque interface est imaginée à partir de ton identité visuelle. Structure, interactions et animations sont intégrées directement sans modifier le noyau du CMS.",
-  },
-  {
-    src: "/images/smidjan-cms-composants-modulaires.webp",
-    title: "Thèmes flexibles & composants réutilisables",
-    alt: "Système de composants modulaires pour CMS e-commerce avec thèmes personnalisables et sections réutilisables",
-    description:
-      "Sections, formulaires, galeries ou blocs produits restent modulaires. Tu ajustes couleurs, typographies et mises en page librement selon tes besoins.",
-  },
-  {
-    src: "/images/smidjan-cms-experience-optimisee.webp",
-    title: "Expériences optimisées",
-    alt: "Interface utilisateur CMS optimisée pour la performance web, le SEO et la conversion e-commerce",
-    description:
-      "Les designs sont pensés pour la vitesse, le SEO et la conversion. Chaque front est audité et testé pour garantir performance et accessibilité.",
-  },
-] as const;
-
 const evolutionCards = [
   {
     title: "Noyau stable et évolutif",
@@ -285,9 +260,9 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "SMIDJAN CMS — La solution e-commerce tout-en-un",
+    name: "CMS E-commerce sur mesure développé en Belgique | SMIDJAN",
     description:
-      "CMS e-commerce complet, modulaire et personnalisable pour produits, services ou offres hybrides. Sécurité avancée, intégrations et automatisations incluses.",
+      "CMS e-commerce complet développé à Liège, Belgique. Solution modulaire et personnalisable pour PME belges : catalogue produits, paiements Stripe, automatisations, conformité RGPD et TVA intracommunautaire.",
     brand: {
       "@type": "Brand",
       name: "SMIDJAN",
@@ -298,23 +273,59 @@ const structuredData = [
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       url: "https://smidjan.be/cms-ecommerce",
+      areaServed: {
+        "@type": "Country",
+        name: "Belgique"
+      },
+      availableAtOrFrom: {
+        "@type": "Place",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Liège",
+          addressRegion: "Wallonie",
+          addressCountry: "BE"
+        }
+      }
     },
     audience: {
       "@type": "BusinessAudience",
       audienceType: "B2B",
+      geographicArea: {
+        "@type": "AdministrativeArea",
+        name: "Belgique"
+      }
     },
   },
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "SMIDJAN CMS — La solution e-commerce tout-en-un",
+    name: "SMIDJAN CMS — Solution e-commerce pour entreprises belges",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
+    applicationSubCategory: "E-commerce Platform",
     offers: {
       "@type": "Offer",
       price: "Sur devis",
       priceCurrency: "EUR",
+      areaServed: "BE"
     },
+    featureList: [
+      "Catalogue produits et variantes",
+      "Paiements Stripe intégrés",
+      "Gestion commandes et facturation",
+      "Automatisations n8n",
+      "Design personnalisable",
+      "Conformité RGPD"
+    ],
+    provider: {
+      "@type": "Organization",
+      name: "SMIDJAN",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Liège",
+        addressCountry: "BE"
+      }
+    }
   },
   {
     "@context": "https://schema.org",
@@ -429,10 +440,10 @@ function HeroSection() {
       <div className={styles.heroGrid}>
         <div className={styles.heroContent}>
           <Heading as="h1" className={styles.heroTitle} id="cms-hero-title">
-            SMIDJAN CMS — La solution e-commerce tout-en-un
+            CMS E-commerce sur mesure développé en Belgique
           </Heading>
           <p className={styles.heroSubtitle}>
-            SMIDJAN CMS est une solution e-commerce complète et évolutive, prête pour vendre produits physiques, services digitaux ou abonnements récurrents. Chaque module s'adapte à ton activité — sans dépendance à un modèle figé.
+            SMIDJAN CMS est une solution e-commerce complète et évolutive, développée à Liège pour les PME, freelances et agences belges. Catalogue produits, paiements Stripe, automatisations n8n et design 100% personnalisable : tout ce qu'il faut pour vendre produits physiques, services digitaux ou abonnements récurrents en Belgique et à l'international.
           </p>
           <div className={styles.heroActions}>
             <Button
@@ -464,19 +475,6 @@ function HeroSection() {
             ))}
           </ul>
         </div>
-        <div className={styles.heroVisual} style={{ display: 'none' }}>
-          <div className={styles.heroVisualGlow} aria-hidden="true" />
-          {/* Image temporairement désactivée - retirer priority quand display:none */}
-          {/* <Image
-            src="/images/smidjan-cms-dashboard-ecommerce.webp"
-            alt="Dashboard SMIDJAN CMS - Gestion e-commerce complète avec catalogue produits et commandes"
-            width={720}
-            height={520}
-            loading="lazy"
-            sizes="(max-width: 1024px) 100vw, 600px"
-            className={styles.heroImage}
-          /> */}
-        </div>
       </div>
     </div>
   );
@@ -487,10 +485,10 @@ function QuickProofsSection() {
     <div className="container">
       <div className={styles.sectionHeader}>
         <Heading as="h2" id="cms-proofs-title" className={styles.sectionTitle} accent>
-          Pourquoi choisir SMIDJAN CMS ?
+          Pourquoi les entreprises belges choisissent SMIDJAN CMS ?
         </Heading>
         <p className={styles.sectionLead}>
-          Un back-end e-commerce commun, un front sur mesure à chaque projet. SMIDJAN CMS sépare la logique métier du design pour offrir des sites uniques, performants et faciles à maintenir.
+          Une solution e-commerce développée en Belgique, à Liège, pour répondre aux besoins des PME, freelances et agences. SMIDJAN CMS combine un back-end robuste commun et un front personnalisable à chaque projet, pour des boutiques en ligne uniques, performantes et conformes aux standards belges et européens (RGPD, TVA intracommunautaire).
         </p>
       </div>
       <ul className={styles.proofList} role="list">
@@ -539,36 +537,17 @@ function FunctionalitySection() {
 
 function ShowcaseSection() {
   return (
-    <div className="container" style={{ display: 'none' }}>
+    <div className="container">
       <div className={styles.sectionHeader}>
         <Heading as="h2" id="cms-showcase-title" className={styles.sectionTitle} accent>
-          Design &amp; personnalisation sur mesure
+          Design sur mesure pour e-commerce belge
         </Heading>
         <p className={styles.sectionLead}>
-          Chaque projet démarre avec la base solide de SMIDJAN CMS, mais l'interface est créée sur mesure. Charte, expérience, structure : tout est adapté à ton univers.
+          Chaque projet e-commerce démarre avec la base technique solide de SMIDJAN CMS, développée en Belgique. L'interface est ensuite créée sur mesure pour votre marque : charte graphique, expérience utilisateur et structure adaptées à votre identité visuelle et à vos clients belges.
         </p>
         <p className={styles.sectionSub}>
-          Le visuel s'adapte à ton projet, pas l'inverse. SMIDJAN CMS devient le moteur invisible de ton identité digitale.
+          Votre boutique en ligne reflète votre univers, pas un thème générique. SMIDJAN CMS devient le moteur invisible de votre identité digitale, optimisé pour les performances et le référencement local en Belgique.
         </p>
-      </div>
-      <div className={styles.showcaseGrid}>
-        {showcaseShots.map((shot) => (
-          <figure key={shot.title} className={styles.showcaseItem}>
-            <Image
-              src={shot.src}
-              alt={shot.alt}
-              width={480}
-              height={320}
-              loading="lazy"
-              sizes="(max-width: 768px) 100vw, 360px"
-              className={styles.showcaseImage}
-            />
-            <figcaption className={styles.showcaseCaption}>
-              <strong>{shot.title}</strong>
-              <span>{shot.description}</span>
-            </figcaption>
-          </figure>
-        ))}
       </div>
     </div>
   );
@@ -640,10 +619,10 @@ function FinalCtaSection() {
     <div className="container">
       <div className={styles.finalCta}>
         <Heading as="h2" id="cms-cta-title" className={styles.sectionTitle} accent>
-          Prêt à passer à la vitesse supérieure ?
+          Lancez votre boutique en ligne en Belgique
         </Heading>
         <p className={styles.sectionLead}>
-          Lance ton e-commerce avec une base solide, performante et totalement maîtrisée. Contacte-nous pour une démonstration ou un accompagnement sur mesure.
+          Démarrez votre projet e-commerce avec une solution technique éprouvée, développée et maintenue en Belgique. SMIDJAN vous accompagne de la conception à la mise en ligne, avec support local à Liège, Bruxelles et toute la Wallonie. Contactez-nous pour une démonstration personnalisée ou un devis sur mesure.
         </p>
         <Button
           as="a"
