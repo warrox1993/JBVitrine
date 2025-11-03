@@ -3,7 +3,7 @@
 .pageRoot {
   display: flex;
   flex-direction: column;
-  gap: clamp(var(--space-6), 8vw, var(--space-8));
+  gap: 0;
   background: var(--color-bg);
 }
 
