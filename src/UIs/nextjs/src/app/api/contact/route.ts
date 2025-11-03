@@ -464,9 +464,8 @@ async function sendConfirmationEmail(
   ticketId: string,
 ): Promise<void> {
   try {
-    // Use onboarding@resend.dev until smidjan.be domain is verified
     const { data, error } = await resend.emails.send({
-      from: "Smidjan <onboarding@resend.dev>",
+      from: "Smidjan <contact@smidjan.be>",
       to: [email],
       subject: `✅ Demande reçue - ${ticketId}`,
       html: getConfirmationEmailHtml(name, ticketId),
@@ -493,9 +492,8 @@ async function sendNotificationToTeam(
   ticketId: string,
 ): Promise<void> {
   try {
-    // Use onboarding@resend.dev until smidjan.be domain is verified
     const { data: emailData, error } = await resend.emails.send({
-      from: "Smidjan Contact Form <onboarding@resend.dev>",
+      from: "Smidjan Contact Form <contact@smidjan.be>",
       to: ["jeanbaptiste.dhondt1@gmail.com"], // Your team email
       replyTo: data.email, // Allow direct reply to client
       subject: `🎯 Nouveau contact : ${data.type} - ${data.name}`,
