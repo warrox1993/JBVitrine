@@ -53,6 +53,9 @@
 .heroSection {
   position: relative;
   isolation: isolate;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
 }
 
 .heroGrid {
@@ -60,6 +63,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(var(--space-5), 6vw, var(--space-7));
   align-items: center;
+  width: 100%;
 }
 
 .heroContent {

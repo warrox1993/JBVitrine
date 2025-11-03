@@ -22,7 +22,9 @@ const inter = Inter({
     weight: ['400','700'],
     variable: '--font-base',
     display: 'swap',
-    preload: true
+    preload: true,
+    fallback: ['system-ui', '-apple-system', 'sans-serif'],
+    adjustFontFallback: true
 });
 
 const instrument = Instrument_Sans({
@@ -30,7 +32,9 @@ const instrument = Instrument_Sans({
     weight: ['400','700'],
     variable: '--font-display',
     display: 'swap',
-    preload: true
+    preload: true,
+    fallback: ['system-ui', '-apple-system', 'sans-serif'],
+    adjustFontFallback: true
 });
 
 export const metadata: Metadata = {
