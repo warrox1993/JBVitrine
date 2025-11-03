@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 import { checkRateLimit, getClientIP, getRateLimitInfo } from "./ratelimit";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import {
@@ -6,6 +7,13 @@ import {
   hasSuspiciousEmailPattern,
 } from "./disposable-emails";
 import { checkForSpam } from "./spam-detection";
+import {
+  getConfirmationEmailHtml,
+  getTeamNotificationEmailHtml,
+} from "./email-templates";
+
+// Initialize Resend with API key
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 type ContactFormData = {
   type: "projet" | "support" | "partenariat";
@@ -421,13 +429,13 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString(),
     });
 
-    // Mock email sending (using sanitized data)
+    // Send emails using Resend
     await sendConfirmationEmail(
       sanitizedData.email,
       sanitizedData.name,
       ticketId,
     );
-    await sendNotificationToTeam(sanitizedData as ContactFormData);
+    await sendNotificationToTeam(sanitizedData as ContactFormData, ticketId);
 
     return NextResponse.json(
       {
@@ -449,32 +457,63 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Mock functions for email sending (replace with actual implementation)
+// Email sending functions using Resend
 async function sendConfirmationEmail(
   email: string,
   name: string,
   ticketId: string,
 ): Promise<void> {
-  // TODO: Implement with your email service (SendGrid, Resend, etc.)
-  console.log(`Sending confirmation email to ${email}:
+  try {
+    // Use onboarding@resend.dev until smidjan.be domain is verified
+    const { data, error } = await resend.emails.send({
+      from: "Smidjan <onboarding@resend.dev>",
+      to: [email],
+      subject: `✅ Demande reçue - ${ticketId}`,
+      html: getConfirmationEmailHtml(name, ticketId),
+    });
 
-    Bonjour ${name},
+    if (error) {
+      console.error("Error sending confirmation email:", error);
+      throw new Error(`Failed to send confirmation email: ${error.message}`);
+    }
 
-    Merci pour votre message ! Nous avons bien reçu votre demande.
-    Numéro de ticket : ${ticketId}
-
-    Nous reviendrons vers vous sous 24h ouvrées.
-
-    L'équipe Smidjan
-    `);
+    console.log("Confirmation email sent successfully:", {
+      emailId: data?.id,
+      to: email,
+      ticketId,
+    });
+  } catch (error) {
+    console.error("Failed to send confirmation email:", error);
+    // Don't throw - we don't want to fail the whole request if confirmation email fails
+  }
 }
 
-async function sendNotificationToTeam(data: ContactFormData): Promise<void> {
-  // TODO: Implement with your email service or Slack notification
-  console.log("Sending notification to team:", {
-    type: data.type,
-    name: data.name,
-    email: data.email,
-    message: data.message.substring(0, 100) + "...",
-  });
+async function sendNotificationToTeam(
+  data: ContactFormData,
+  ticketId: string,
+): Promise<void> {
+  try {
+    // Use onboarding@resend.dev until smidjan.be domain is verified
+    const { data: emailData, error } = await resend.emails.send({
+      from: "Smidjan Contact Form <onboarding@resend.dev>",
+      to: ["jeanbaptiste.dhondt1@gmail.com"], // Your team email
+      replyTo: data.email, // Allow direct reply to client
+      subject: `🎯 Nouveau contact : ${data.type} - ${data.name}`,
+      html: getTeamNotificationEmailHtml(data, ticketId),
+    });
+
+    if (error) {
+      console.error("Error sending team notification:", error);
+      throw new Error(`Failed to send team notification: ${error.message}`);
+    }
+
+    console.log("Team notification sent successfully:", {
+      emailId: emailData?.id,
+      ticketId,
+      type: data.type,
+    });
+  } catch (error) {
+    console.error("Failed to send team notification:", error);
+    throw error; // This one should fail the request if it doesn't work
+  }
 }

@@ -86,6 +86,13 @@ export default function Header() {
           CMS
         </Link>
         <Link
+          href="/blog"
+          className={`${styles["header-link"]}${pathname?.startsWith("/blog") ? ` ${styles["header-link-active"]}` : ""}`}
+          aria-current={pathname?.startsWith("/blog") ? "page" : undefined}
+        >
+          Blog
+        </Link>
+        <Link
           href="/contact"
           className={`${styles["header-link"]}${pathname === "/contact" ? ` ${styles["header-link-active"]}` : ""}`}
           aria-current={pathname === "/contact" ? "page" : undefined}

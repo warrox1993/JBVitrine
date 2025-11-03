@@ -9,6 +9,7 @@ interface SectionWithBackgroundProps {
   variant?: "light" | "dark";
   children: ReactNode;
   ariaLabel?: string;
+  allowOverflow?: boolean;
 }
 
 export function SectionWithBackground({
@@ -16,14 +17,19 @@ export function SectionWithBackground({
   className,
   variant = "dark",
   children,
-  ariaLabel
+  ariaLabel,
+  allowOverflow = false
 }: SectionWithBackgroundProps) {
   return (
     <section
       id={id}
       className={className}
       aria-label={ariaLabel}
-      style={{ position: "relative", overflow: "hidden", isolation: "isolate" }}
+      style={{
+        position: "relative",
+        overflow: allowOverflow ? "visible" : "hidden",
+        isolation: "isolate"
+      }}
     >
       <AnimatedBackground variant={variant} />
       {children}

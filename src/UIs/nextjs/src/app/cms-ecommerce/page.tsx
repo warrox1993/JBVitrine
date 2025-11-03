@@ -191,18 +191,21 @@ const showcaseShots = [
   {
     src: "/images/smidjan-cms-interface-personnalisable.webp",
     title: "Interface sur mesure",
+    alt: "Interface CMS e-commerce personnalisée avec design moderne et navigation intuitive adaptée à l'identité de marque",
     description:
       "Chaque interface est imaginée à partir de ton identité visuelle. Structure, interactions et animations sont intégrées directement sans modifier le noyau du CMS.",
   },
   {
     src: "/images/smidjan-cms-composants-modulaires.webp",
     title: "Thèmes flexibles & composants réutilisables",
+    alt: "Système de composants modulaires pour CMS e-commerce avec thèmes personnalisables et sections réutilisables",
     description:
       "Sections, formulaires, galeries ou blocs produits restent modulaires. Tu ajustes couleurs, typographies et mises en page librement selon tes besoins.",
   },
   {
     src: "/images/smidjan-cms-experience-optimisee.webp",
     title: "Expériences optimisées",
+    alt: "Interface utilisateur CMS optimisée pour la performance web, le SEO et la conversion e-commerce",
     description:
       "Les designs sont pensés pour la vitesse, le SEO et la conversion. Chaque front est audité et testé pour garantir performance et accessibilité.",
   },
@@ -312,6 +315,100 @@ const structuredData = [
       price: "Sur devis",
       priceCurrency: "EUR",
     },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Accueil",
+        item: "https://smidjan.be",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://smidjan.be/services",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "CMS E-commerce",
+        item: "https://smidjan.be/cms-ecommerce",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Quelle est la portée des fonctionnalités incluses ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Le CMS couvre catalogue, commandes, paiements, marketing, analytics et sécurité. Tout est prêt dès l'installation, sans achat d'extensions cachées.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quel est le modèle de prix ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Le tarif est fixe pour tous les projets, transparent et sans surcoûts. Les 40 premières heures de mise en place et d'adaptation sont offertes pour garantir un démarrage solide sans frais additionnels.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Puis-je personnaliser l'expérience utilisateur ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Le design system est modulable et découplé du back-end. Tu peux brancher ton front existant (Next.js, React, autre) ou utiliser nos templates comme base.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Qui détient le code et les données ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Le code source et le design structurel du CMS restent la propriété exclusive de SMIDJAN. Tu conserves la propriété de tes données, de ton contenu et de ton identité visuelle pour garantir sécurité et compatibilité dans le temps.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Le CMS s'intègre-t-il avec mes outils existants ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Oui, via API, webhooks, n8n et connecteurs fournis. Nous accompagnons l'intégration à ton ERP, CRM ou plateforme marketing.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Y a-t-il des fonctionnalités d'IA intégrées ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Oui. Le CMS peut se connecter à des API d'IA externes (OpenAI, Anthropic, etc.) pour automatiser des tâches. Une IA intégrée génère déjà des descriptions produits optimisées SEO et le système est prêt pour recommandations, catégorisation ou contenu marketing.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quelle est la politique de sécurité ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "SMIDJAN CMS applique les protections OWASP, gère les secrets, renforce les headers et propose des tests SAST/DAST selon ton contexte.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Proposez-vous de l'accompagnement ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Oui. Chaque client bénéficie d'un accompagnement complet : cadrage, mise en production, formation et support humain direct, avec documentation et suivi technique.",
+        },
+      },
+    ],
   },
 ] as const;
 
@@ -459,7 +556,7 @@ function ShowcaseSection() {
           <figure key={shot.title} className={styles.showcaseItem}>
             <Image
               src={shot.src}
-              alt={shot.title}
+              alt={shot.alt}
               width={480}
               height={320}
               loading="lazy"

@@ -113,6 +113,30 @@ export default function ContactPage() {
                     }),
                 }}
             />
+            {/* JSON-LD Structured Data - BreadcrumbList */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'BreadcrumbList',
+                        itemListElement: [
+                            {
+                                '@type': 'ListItem',
+                                position: 1,
+                                name: 'Accueil',
+                                item: 'https://smidjan.be',
+                            },
+                            {
+                                '@type': 'ListItem',
+                                position: 2,
+                                name: 'Contact',
+                                item: 'https://smidjan.be/contact',
+                            },
+                        ],
+                    }),
+                }}
+            />
 
             <Container className={cls.contactContainer}>
                 {/* Hero Section */}

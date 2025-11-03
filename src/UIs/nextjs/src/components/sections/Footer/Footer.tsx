@@ -30,6 +30,9 @@ export function Footer() {
                 <Link href="/about">À propos</Link>
               </li>
               <li className={styles.navItem}>
+                <Link href="/blog">Blog</Link>
+              </li>
+              <li className={styles.navItem}>
                 <Link href="/contact">Contact</Link>
               </li>
             </ul>

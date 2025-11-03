@@ -22,6 +22,12 @@ module.exports = {
     } else if (path === "/contact") {
       priority = 0.8; // Page de conversion
       changefreq = "monthly";
+    } else if (path === "/blog") {
+      priority = 0.8; // Page blog principale
+      changefreq = "weekly";
+    } else if (path.startsWith("/blog/")) {
+      priority = 0.7; // Articles individuels
+      changefreq = "monthly";
     } else if (path === "/about") {
       priority = 0.6;
       changefreq = "monthly";

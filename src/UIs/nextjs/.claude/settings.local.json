@@ -10,7 +10,18 @@
       "Bash(npm i:*)",
       "Bash(where:*)",
       "Bash(where convert:*)",
-      "Bash(magick:*)"
+      "Bash(magick:*)",
+      "Bash(npm run dev:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill /PID 4080 /F)",
+      "Bash(taskkill:*)",
+      "Bash(nul)",
+      "Bash(node -e:*)",
+      "Bash(node update-blog-content.js:*)",
+      "Bash(node optimize-blog-content.js:*)",
+      "Bash(git reset:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

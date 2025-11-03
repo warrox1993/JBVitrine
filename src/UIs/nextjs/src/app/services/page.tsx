@@ -1,12 +1,71 @@
-"use client";
+import type { Metadata } from "next";
 import { Card, CardBody, CardHeader } from "@/components/atoms/Card";
 import { Button } from "@/components/ui/Button/Button";
 import { Heading } from "@/components/ui/Heading";
 import { Footer } from "@/components/sections/Footer/Footer";
 import { TechStackEnhanced } from "@/components/sections/TechStack/TechStackEnhanced";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { ServicesHero } from "./ServicesHero";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Services — Développement Web, Cybersécurité & IA à Liège",
+  description:
+    "Agence digitale à Liège : développement web sur mesure avec Next.js/React, cybersécurité (OWASP, audits), automatisation IA et CMS e-commerce. Services pour toute la Belgique.",
+  keywords: [
+    "développement web Liège",
+    "cybersécurité Belgique",
+    "automatisation IA",
+    "agence web Wallonie",
+    "CMS e-commerce",
+    "Next.js React",
+    "audit sécurité OWASP",
+    "n8n automatisation",
+  ],
+  alternates: {
+    canonical: "/services",
+    languages: {
+      "fr-BE": "/services",
+      fr: "/services",
+    },
+  },
+  openGraph: {
+    title: "Services Web & Cybersécurité — Smidjan Liège",
+    description:
+      "Développement web performant, cybersécurité avancée et automatisations IA pour entreprises en Belgique. CMS e-commerce, audits OWASP et solutions sur mesure.",
+    url: "https://smidjan.be/services",
+    siteName: "Smidjan",
+    images: [
+      {
+        url: "https://smidjan.be/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Smidjan — Services de développement web et cybersécurité à Liège",
+        type: "image/webp",
+      },
+    ],
+    locale: "fr_BE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services Web & Cybersécurité — Smidjan",
+    description:
+      "Développement web, cybersécurité et IA pour entreprises en Belgique.",
+    images: ["/og-image.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+};
 
 const servicePillars = [
   {
@@ -124,50 +183,96 @@ const cmsFeatures = [
 ] as const;
 
 export default function ServicesPage() {
-  const { ref: heroRef, isVisible } = useIntersectionObserver<HTMLElement>({ threshold: 0.1, once: true });
-
   return (
     <div className={styles.page}>
-      <section
-        id="services-hero"
-        ref={heroRef}
-        className={`${styles.section} ${styles.hero} ${styles.sectionDark} ${isVisible ? styles.visible : ""}`}
-        aria-labelledby="services-hero-title"
-      >
-        <AnimatedBackground variant="dark" />
-        <svg
-          className={styles.heroDecor}
-          viewBox="0 0 1440 200"
-          fill="none"
-          aria-hidden="true"
-          role="presentation"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,10 Q360,0 720,60 T1440,60 L1440,200 L0,200 Z" fill="url(#services-hero-gradient)" />
-          <defs>
-            <linearGradient id="services-hero-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="var(--color-accent-1)" />
-              <stop offset="50%" stopColor="var(--color-accent-2)" />
-              <stop offset="100%" stopColor="var(--color-accent-3)" />
-            </linearGradient>
-          </defs>
-        </svg>
-        <div className="container">
-          <div className={styles.heroInner}>
-            <h1 id="services-hero-title" className={styles.heroTitle}>
-              Des solutions digitales prêtes à performer.
-            </h1>
-            <p className={styles.heroLead}>
-              Smidjan conçoit et sécurise des systèmes web sur mesure : sites, plateformes et automatisations qui augmentent votre efficacité réelle — pas votre jargon.
-            </p>
-            <div className={styles.heroActions}>
-              <Button as="a" href="/contact" variant="solid" size="md" ariaLabel="Démarrer un projet avec SMIDJAN">
-                Démarrer un projet
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* JSON-LD Structured Data - Service Catalog */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            itemListElement: [
+              {
+                "@type": "Service",
+                "@id": "https://smidjan.be/services#developpement-web",
+                name: "Développement Web sur Mesure",
+                description: "Création de sites web, applications et plateformes performantes avec Next.js, React et CMS e-commerce. Architecture évolutive et optimisée SEO.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Smidjan",
+                  url: "https://smidjan.be",
+                },
+                areaServed: {
+                  "@type": "Country",
+                  name: "Belgique",
+                },
+                serviceType: "Développement Web",
+                category: "Web Development",
+              },
+              {
+                "@type": "Service",
+                "@id": "https://smidjan.be/services#cybersecurite",
+                name: "Cybersécurité Web",
+                description: "Audits de sécurité OWASP, tests de pénétration, durcissement serveur et conformité RGPD. Protection complète de vos applications web.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Smidjan",
+                  url: "https://smidjan.be",
+                },
+                areaServed: {
+                  "@type": "Country",
+                  name: "Belgique",
+                },
+                serviceType: "Cybersécurité",
+                category: "Security Services",
+              },
+              {
+                "@type": "Service",
+                "@id": "https://smidjan.be/services#automatisation-ia",
+                name: "Automatisation & Intelligence Artificielle",
+                description: "Automatisations intelligentes avec n8n, intégration IA (GPT, Anthropic) et workflows personnalisés pour optimiser vos processus métier.",
+                provider: {
+                  "@type": "Organization",
+                  name: "Smidjan",
+                  url: "https://smidjan.be",
+                },
+                areaServed: {
+                  "@type": "Country",
+                  name: "Belgique",
+                },
+                serviceType: "Automatisation & IA",
+                category: "Business Automation",
+              },
+            ],
+          }),
+        }}
+      />
+      {/* JSON-LD Structured Data - BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Accueil",
+                item: "https://smidjan.be",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Services",
+                item: "https://smidjan.be/services",
+              },
+            ],
+          }),
+        }}
+      />
+      <ServicesHero />
 
       <section
         id="services-pillars"
