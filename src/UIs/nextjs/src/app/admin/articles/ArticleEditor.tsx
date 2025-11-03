@@ -89,7 +89,7 @@ export function ArticleEditor({ article, mode }: ArticleEditorProps) {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Heading level={1} className={styles.title}>
+        <Heading as="h1" className={styles.title}>
           {mode === "create" ? "Nouvel Article" : "Modifier l'Article"}
         </Heading>
         <Button
