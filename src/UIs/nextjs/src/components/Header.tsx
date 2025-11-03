@@ -30,7 +30,7 @@ export default function Header() {
       <div className={styles["header-left"]}>
         <Link href="/" aria-label="Go to homepage" className={styles.headerLogo}>
           <Image
-            src="/images/logoheader/smidjan-logo-liege.webp"
+            src="/images/logoheader/logo.webp"
             alt="Smidjan - Agence web Liège, développement Next.js et cybersécurité"
             width={256}
             height={256}
