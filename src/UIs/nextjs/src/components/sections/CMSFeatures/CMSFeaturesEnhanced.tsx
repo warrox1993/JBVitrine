@@ -105,15 +105,12 @@ export function CMSFeaturesEnhanced() {
     createParticles();
 
     const cards = document.querySelectorAll('.cms-feature-card');
-    console.log('[CMSFeatures] Initialization - found', cards.length, 'cards');
 
     // Event handler functions that we can reference for cleanup
     const mouseEnterHandler = function (this: any) {
       const typingElements = this.querySelectorAll('.cms-typing-text');
-      console.log('[CMSFeatures] Mouseenter - found', typingElements.length, 'typing elements');
       typingElements.forEach((el: any, index: number) => {
         setTimeout(() => {
-          console.log('[CMSFeatures] Decoding element', index, ':', el.getAttribute('data-original'));
           decodeText(el);
         }, index * 200); // Stagger the start of each decode
       });
@@ -141,13 +138,11 @@ export function CMSFeaturesEnhanced() {
 
       // Initialize all typing texts with Martian characters
       const typingElements = card.querySelectorAll('.cms-typing-text');
-      console.log('[CMSFeatures] Card', cardIndex, '- found', typingElements.length, 'typing elements');
 
       typingElements.forEach(el => {
         // Only initialize if not already initialized
         if (!el.getAttribute('data-original')) {
           const originalText = el.textContent;
-          console.log('[CMSFeatures] Storing original text:', originalText);
           el.setAttribute('data-original', originalText!);
           el.textContent = generateMartianText(originalText!.length);
         }
