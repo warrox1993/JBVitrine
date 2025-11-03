@@ -21,7 +21,8 @@
       "Bash(node update-blog-content.js:*)",
       "Bash(node optimize-blog-content.js:*)",
       "Bash(git reset:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
