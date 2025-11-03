@@ -14,7 +14,7 @@ marked.setOptions({
 const renderer = {
   heading({ tokens, depth, text }: Tokens.Heading) {
     // Get raw text from tokens
-    const rawText = tokens.map(t => 'text' in t ? t.text : '').join('');
+    const rawText = tokens.map((t) => ("text" in t ? t.text : "")).join("");
 
     // Check if text has a custom ID like "Title {#custom-id}"
     const match = rawText.match(/^(.+?)\s*\{#([a-z0-9-]+)\}\s*$/);
@@ -31,13 +31,13 @@ const renderer = {
   },
 
   code({ text, lang }: Tokens.Code) {
-    const language = lang || '';
+    const language = lang || "";
     const escaped = text
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
 
     return `<pre><code class="language-${language}">${escaped}</code></pre>\n`;
   },
@@ -47,8 +47,8 @@ const renderer = {
   },
 
   list({ ordered, items }: Tokens.List) {
-    const type = ordered ? 'ol' : 'ul';
-    const body = items.map(item => this.listitem(item)).join('');
+    const type = ordered ? "ol" : "ul";
+    const body = items.map((item) => this.listitem(item)).join("");
     return `<${type}>\n${body}</${type}>\n`;
   },
 
@@ -69,9 +69,9 @@ const renderer = {
   },
 
   link({ href, title, text }: Tokens.Link) {
-    const titleAttr = title ? ` title="${title}"` : '';
+    const titleAttr = title ? ` title="${title}"` : "";
     return `<a href="${href}"${titleAttr}>${text}</a>`;
-  }
+  },
 };
 
 marked.use({ renderer });

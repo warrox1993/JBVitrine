@@ -107,7 +107,11 @@
 @media (min-width: 1024px) and (min-width: 1520px) {
   /* Grands écrans : TOC dans la marge gauche du container centré */
   .toc {
-    left: calc(var(--sidebar-collapsed) + (100vw - var(--sidebar-collapsed) - var(--container-max)) / 2 + var(--container-padding));
+    left: calc(
+      var(--sidebar-collapsed) +
+        (100vw - var(--sidebar-collapsed) - var(--container-max)) / 2 +
+        var(--container-padding)
+    );
   }
 }
 

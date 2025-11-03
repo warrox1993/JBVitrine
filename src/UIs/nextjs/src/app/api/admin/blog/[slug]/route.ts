@@ -29,14 +29,14 @@ export async function PUT(request: Request, context: Context) {
     } else {
       return NextResponse.json(
         { success: false, error: result.error },
-        { status: 400 }
+        { status: 400 },
       );
     }
   } catch (error) {
     console.error("Error updating article:", error);
     return NextResponse.json(
       { success: false, error: "Erreur lors de la mise à jour de l'article" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
