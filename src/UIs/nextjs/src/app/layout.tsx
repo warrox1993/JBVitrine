@@ -13,7 +13,7 @@ import { RootEffects } from '@/components/Effects/RootEffects';
 import RouteProgressProvider from '@/app/RouteProgressProvider';
 import SidebarRouterBridge from '@/components/SidebarRouterBridge';
 import Header from '@/components/Header';
-import { organizationSchema, websiteSchema } from '@/lib/schema';
+import { organizationSchema, websiteSchema, localBusinessSchema } from '@/lib/schema';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -113,10 +113,11 @@ export const metadata: Metadata = {
         siteName: 'Smidjan',
         images: [
             {
-                url: "https://smidjan.be/logo.png",
-                width: 512,
-                height: 512,
-                alt: 'Smidjan — Agence Digitale à Liège, Belgique'
+                url: "https://smidjan.be/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: 'Smidjan - Agence Web à Liège | Développement Web, Cybersécurité et IA en Belgique',
+                type: 'image/webp',
             }
         ],
         locale: 'fr_BE',
@@ -127,7 +128,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Smidjan | Agence Web Liège - Développement & Cybersécurité',
         description: 'Agence digitale à Liège. Sites web sur mesure, sécurisés et performants pour toute la Belgique.',
-        images: ['/og-image.png'],
+        images: ['/og-image.webp'],
         // Ajoute ton Twitter si tu en as un
         // creator: '@smidjan',
         // site: '@smidjan',
@@ -160,6 +161,8 @@ export const metadata: Metadata = {
         'geo.region': 'BE-WAL',
         'geo.placename': 'Liège',
         'geo.position': '50.6326;5.5797', // Coordonnées de Liège
+        'contact:phone': '+32 475 20 55 62',
+        'contact:email': 'jeanbaptiste.dhondt1@gmail.com',
     },
 };
 
@@ -197,6 +200,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
                 />
             </head>
             <body className={`${inter.variable} ${instrument.variable}`}>

@@ -1,12 +1,12 @@
 export const SITE_CONFIG = {
-  name: "YourBrand",
-  url: "https://yourbrand.com",
+  name: "Smidjan",
+  url: "https://smidjan.be",
   email: "jeanbaptiste.dhondt1@gmail.com",
-  phone: "+33 1 23 45 67 89",
-  description: "Agence digitale spécialisée en web design premium",
+  phone: "+32 475 20 55 62",
+  description:
+    "Studio web à Liège spécialisé en développement de sites, e-commerce, SEO et design digital",
   social: {
     linkedin: "https://www.linkedin.com/in/jean-baptistedhondt",
-    twitter: "https://twitter.com/yourbrand",
     facebook: "https://www.facebook.com/jeanbaptiste.dhondt",
     github: "https://github.com/warrox1993",
   },

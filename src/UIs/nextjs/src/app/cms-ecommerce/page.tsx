@@ -33,10 +33,11 @@ export const metadata: Metadata = {
     siteName: "SMIDJAN",
     images: [
       {
-        url: "https://smidjan.be/logo.png",
-        width: 512,
-        height: 512,
+        url: "https://smidjan.be/og-image.webp",
+        width: 1200,
+        height: 630,
         alt: "SMIDJAN CMS — La solution e-commerce tout-en-un",
+        type: "image/webp",
       },
     ],
     locale: "fr_BE",
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     title: "SMIDJAN CMS — La solution e-commerce tout-en-un",
     description:
       "CMS e-commerce complet, sécurisé, personnalisable et prêt à l'emploi. Produits, services ou abonnements : vendez sans limite.",
-    images: ["/og-image.png"],
+    images: ["/og-image.webp"],
   },
   robots: {
     index: true,
@@ -368,15 +369,16 @@ function HeroSection() {
         </div>
         <div className={styles.heroVisual} style={{ display: 'none' }}>
           <div className={styles.heroVisualGlow} aria-hidden="true" />
-          <Image
+          {/* Image temporairement désactivée - retirer priority quand display:none */}
+          {/* <Image
             src="/images/smidjan-cms-dashboard-ecommerce.webp"
             alt="Dashboard SMIDJAN CMS - Gestion e-commerce complète avec catalogue produits et commandes"
             width={720}
             height={520}
-            priority
+            loading="lazy"
             sizes="(max-width: 1024px) 100vw, 600px"
             className={styles.heroImage}
-          />
+          /> */}
         </div>
       </div>
     </div>

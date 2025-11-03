@@ -11,10 +11,9 @@ const nextConfig: NextConfig = {
 
   // Security Headers
   async headers() {
-    // CSP conditionnelle: Vercel Live autorisé uniquement en preview
-    const isPreview =
-      process.env.VERCEL_ENV === "preview" ||
-      process.env.NODE_ENV !== "production";
+    // CSP conditionnelle: Vercel Live autorisé en dev et preview
+    const isDevelopment = process.env.NODE_ENV === "development";
+    const isPreview = process.env.VERCEL_ENV === "preview";
 
     const baseCsp = [
       "default-src 'self'",
@@ -37,18 +36,18 @@ const nextConfig: NextConfig = {
       "upgrade-insecure-requests",
     ];
 
-    // Preview: autorise Vercel Live
-    if (isPreview) {
+    // Dev/Preview: autorise Vercel Live
+    if (isDevelopment || isPreview) {
       baseCsp.push(
-        "script-src 'self' 'unsafe-inline' https://vercel.live https://va.vercel-scripts.com",
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://*.vercel.live https://va.vercel-scripts.com",
       );
       const connectIndex = baseCsp.findIndex((x) =>
         x.startsWith("connect-src"),
       );
       baseCsp[connectIndex] =
-        "connect-src 'self' https://vercel.live https://vitals.vercel-insights.com https://vercel-insights.com";
+        "connect-src 'self' https://vercel.live wss://ws-us3.pusher.com https://sockjs-us3.pusher.com https://vitals.vercel-insights.com https://vercel-insights.com";
     } else {
-      // Production: Vercel Analytics + Speed Insights
+      // Production: Vercel Analytics + Speed Insights uniquement
       baseCsp.push(
         "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
       );

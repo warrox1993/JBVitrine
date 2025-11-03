@@ -5,6 +5,9 @@ import "./TechStackEnhanced.css";
 
 export function TechStackEnhanced() {
   useEffect(() => {
+    // Detect if device is mobile/tablet (disable 3D animations on small screens)
+    const isMobile = window.innerWidth < 1024;
+
     // Create floating particles
     function createParticles() {
       const section = document.querySelector('.tech-stack-section');
@@ -41,8 +44,11 @@ export function TechStackEnhanced() {
       setTimeout(() => ripple.remove(), 600);
     }
 
-    // 3D tilt effect
+    // 3D tilt effect (only on desktop)
     function handleMouseMove(e: any) {
+      // Skip 3D animations on mobile devices
+      if (isMobile) return;
+
       const card = e.currentTarget;
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -64,6 +70,9 @@ export function TechStackEnhanced() {
     }
 
     function handleMouseLeave(e: any) {
+      // Skip 3D animations on mobile devices
+      if (isMobile) return;
+
       const card = e.currentTarget;
       card.style.transform = '';
     }
@@ -105,15 +114,12 @@ export function TechStackEnhanced() {
     createParticles();
 
     const cards = document.querySelectorAll('.tech-card');
-    console.log('[TechStack] Initialization - found', cards.length, 'cards');
 
     // Event handler functions that we can reference for cleanup
     const mouseEnterHandler = function (this: any) {
       const typingElements = this.querySelectorAll('.typing-text');
-      console.log('[TechStack] Mouseenter - found', typingElements.length, 'typing elements');
       typingElements.forEach((el: any, index: number) => {
         setTimeout(() => {
-          console.log('[TechStack] Decoding element', index, ':', el.getAttribute('data-original'));
           decodeText(el);
         }, index * 200); // Stagger the start of each decode
       });
@@ -141,13 +147,11 @@ export function TechStackEnhanced() {
 
       // Initialize all typing texts with Martian characters
       const typingElements = card.querySelectorAll('.typing-text');
-      console.log('[TechStack] Card', cardIndex, '- found', typingElements.length, 'typing elements');
 
       typingElements.forEach(el => {
         // Only initialize if not already initialized
         if (!el.getAttribute('data-original')) {
           const originalText = el.textContent;
-          console.log('[TechStack] Storing original text:', originalText);
           el.setAttribute('data-original', originalText!);
           el.textContent = generateMartianText(originalText!.length);
         }

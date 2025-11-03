@@ -1,10 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./CMSFeaturesEnhanced.css";
 
 export function CMSFeaturesEnhanced() {
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     // Create floating particles
     function createParticles() {
       const section = document.querySelector('.cms-features-section');
@@ -184,7 +191,7 @@ export function CMSFeaturesEnhanced() {
     return () => {
       document.querySelectorAll('.cms-particle').forEach(p => p.remove());
     };
-  }, []);
+  }, [mounted]);
 
   return (
     <section className="cms-features-section">

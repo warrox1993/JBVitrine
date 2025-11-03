@@ -21,12 +21,19 @@ export const metadata: Metadata = {
         url: 'https://smidjan.be/contact',
         images: [
             {
-                url: '/og/contact-og.jpg',
+                url: 'https://smidjan.be/og/contact-og.webp',
                 width: 1200,
                 height: 630,
-                alt: 'Contact Smidjan',
+                alt: 'Contactez Smidjan - Agence Web à Liège pour votre projet',
+                type: 'image/webp',
             },
         ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Contact — Smidjan',
+        description: 'Démarrez un projet ou posez vos questions.',
+        images: ['/og/contact-og.webp'],
     },
     robots: {
         index: true,
@@ -57,7 +64,7 @@ export default function ContactPage() {
     return (
         <ContactPageClient>
             <div className={cls.contactPageWrapper}>
-            {/* JSON-LD Structured Data */}
+            {/* JSON-LD Structured Data - ContactPage */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -65,26 +72,44 @@ export default function ContactPage() {
                         '@context': 'https://schema.org',
                         '@type': 'ContactPage',
                         name: 'Contact — Smidjan',
-                        url: 'https://www.smidjan.dev/contact',
+                        url: 'https://smidjan.be/contact',
                         about: {
                             '@type': 'Organization',
                             name: 'Smidjan',
-                            url: 'https://www.smidjan.dev',
+                            url: 'https://smidjan.be',
                             email: 'jeanbaptiste.dhondt1@gmail.com',
                             address: {
                                 '@type': 'PostalAddress',
                                 addressLocality: 'Liège',
+                                addressRegion: 'Wallonie',
                                 addressCountry: 'BE',
                             },
-                            sameAs: ['https://www.linkedin.com/company/smidjan'],
                         },
                         contactPoint: {
                             '@type': 'ContactPoint',
                             contactType: 'sales',
                             email: 'jeanbaptiste.dhondt1@gmail.com',
-                            availableLanguage: ['fr', 'en'],
-                            areaServed: 'EU',
+                            availableLanguage: ['fr-BE', 'fr'],
+                            areaServed: ['BE', 'Wallonie'],
                         },
+                    }),
+                }}
+            />
+            {/* JSON-LD Structured Data - FAQPage */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'FAQPage',
+                        mainEntity: FAQ_ITEMS.map((faq) => ({
+                            '@type': 'Question',
+                            name: faq.q,
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: faq.a,
+                            },
+                        })),
                     }),
                 }}
             />

@@ -9,10 +9,35 @@ module.exports = {
     additionalSitemaps: [],
   },
   transform: async (config, path) => {
+    // Priorités SEO optimisées par importance business
+    let priority = 0.7; // default
+    let changefreq = "weekly";
+
+    if (path === "/") {
+      priority = 1.0;
+      changefreq = "daily";
+    } else if (path === "/services" || path === "/cms-ecommerce") {
+      priority = 0.9; // Pages clés commerciales
+      changefreq = "weekly";
+    } else if (path === "/contact") {
+      priority = 0.8; // Page de conversion
+      changefreq = "monthly";
+    } else if (path === "/about") {
+      priority = 0.6;
+      changefreq = "monthly";
+    } else if (
+      path.includes("/legal-notice") ||
+      path.includes("/privacy") ||
+      path.includes("/terms")
+    ) {
+      priority = 0.3; // Pages légales
+      changefreq = "yearly";
+    }
+
     return {
       loc: path,
-      changefreq: path === "/" ? "daily" : "weekly",
-      priority: path === "/" ? 1.0 : 0.7,
+      changefreq,
+      priority,
       lastmod: new Date().toISOString(),
     };
   },

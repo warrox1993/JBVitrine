@@ -387,6 +387,38 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  /* Disable 3D transform animations on mobile/tablet */
+  .tech-card:hover {
+    transform: none !important;
+    border-color: rgba(255, 107, 53, 0.5);
+    box-shadow:
+      0 10px 30px rgba(255, 107, 53, 0.15),
+      0 0 20px rgba(255, 107, 53, 0.1),
+      inset 0 0 20px rgba(255, 107, 53, 0.05);
+  }
+
+  /* Simplify particle animations on mobile */
+  .particle {
+    animation: simpleFade 3s infinite ease-in-out;
+  }
+
+  @keyframes simpleFade {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  /* Disable orbit animations on mobile */
+  .glow-orb {
+    animation: none;
+  }
+}
+
 @media (max-width: 768px) {
   .tech-stack-section {
     padding: 80px 20px;
