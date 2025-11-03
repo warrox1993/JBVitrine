@@ -188,19 +188,19 @@ const functionalModules = [
 
 const showcaseShots = [
   {
-    src: "/images/pic01.webp",
+    src: "/images/smidjan-cms-interface-personnalisable.webp",
     title: "Interface sur mesure",
     description:
       "Chaque interface est imaginée à partir de ton identité visuelle. Structure, interactions et animations sont intégrées directement sans modifier le noyau du CMS.",
   },
   {
-    src: "/images/pic02.webp",
+    src: "/images/smidjan-cms-composants-modulaires.webp",
     title: "Thèmes flexibles & composants réutilisables",
     description:
       "Sections, formulaires, galeries ou blocs produits restent modulaires. Tu ajustes couleurs, typographies et mises en page librement selon tes besoins.",
   },
   {
-    src: "/images/pic03.webp",
+    src: "/images/smidjan-cms-experience-optimisee.webp",
     title: "Expériences optimisées",
     description:
       "Les designs sont pensés pour la vitesse, le SEO et la conversion. Chaque front est audité et testé pour garantir performance et accessibilité.",
@@ -369,8 +369,8 @@ function HeroSection() {
         <div className={styles.heroVisual} style={{ display: 'none' }}>
           <div className={styles.heroVisualGlow} aria-hidden="true" />
           <Image
-            src="/images/pic04.webp"
-            alt="Interface SMIDJAN CMS présentant un catalogue produits et services"
+            src="/images/smidjan-cms-dashboard-ecommerce.webp"
+            alt="Dashboard SMIDJAN CMS - Gestion e-commerce complète avec catalogue produits et commandes"
             width={720}
             height={520}
             priority

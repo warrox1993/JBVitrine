@@ -11,6 +11,46 @@ const nextConfig: NextConfig = {
 
   // Security Headers
   async headers() {
+    // CSP conditionnelle: Vercel Live autorisé uniquement en preview
+    const isPreview =
+      process.env.VERCEL_ENV === "preview" ||
+      process.env.NODE_ENV !== "production";
+
+    const baseCsp = [
+      "default-src 'self'",
+      // Styles: 'unsafe-inline' pour CSS-in-JS + Google Fonts
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      // Fonts: Google Fonts + data URIs
+      "font-src 'self' https://fonts.gstatic.com data:",
+      // Images: self + HTTPS externe + data URIs + blob
+      "img-src 'self' https: data: blob:",
+      // Connexions: base
+      "connect-src 'self'",
+      // Fermeture sécurité object/frame
+      "object-src 'none'",
+      "frame-src 'none'",
+      "frame-ancestors 'none'",
+      // Base et form
+      "base-uri 'self'",
+      "form-action 'self'",
+      // Upgrade HTTP → HTTPS
+      "upgrade-insecure-requests",
+    ];
+
+    // Preview: autorise Vercel Live
+    if (isPreview) {
+      baseCsp.push("script-src 'self' 'unsafe-inline' https://vercel.live");
+      const connectIndex = baseCsp.findIndex((x) =>
+        x.startsWith("connect-src"),
+      );
+      baseCsp[connectIndex] = "connect-src 'self' https://vercel.live";
+    } else {
+      // Production: pas de Vercel Live
+      baseCsp.push("script-src 'self' 'unsafe-inline'");
+    }
+
+    const csp = baseCsp.join("; ");
+
     return [
       {
         source: "/:path*",
@@ -46,17 +86,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "font-src 'self' https://fonts.gstatic.com data:",
-              "img-src 'self' data: https: blob:",
-              "connect-src 'self'",
-              "frame-ancestors 'none'",
-              "base-uri 'self'",
-              "form-action 'self'",
-            ].join("; "),
+            value: csp,
           },
         ],
       },

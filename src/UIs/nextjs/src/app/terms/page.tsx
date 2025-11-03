@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         title: 'CGV — Smidjan',
         description: 'Conditions Générales de Vente : prestations web, cybersécurité et IA.',
         type: 'website',
-        url: 'https://www.smidjan.dev/terms',
+        url: 'https://smidjan.be/terms',
     },
     robots: {
         index: true,
@@ -27,8 +27,8 @@ function BreadcrumbJsonLd() {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.smidjan.dev/' },
-            { '@type': 'ListItem', position: 2, name: 'Conditions Générales de Vente', item: 'https://www.smidjan.dev/terms' },
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://smidjan.be/' },
+            { '@type': 'ListItem', position: 2, name: 'Conditions Générales de Vente', item: 'https://smidjan.be/terms' },
         ],
     };
     return (

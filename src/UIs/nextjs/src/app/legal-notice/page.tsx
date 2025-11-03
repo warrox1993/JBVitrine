@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         title: 'Mentions Légales — Smidjan',
         description: 'Identification du site, statut juridique et informations légales de Smidjan.',
         type: 'website',
-        url: 'https://www.smidjan.dev/legal-notice',
+        url: 'https://smidjan.be/legal-notice',
     },
     robots: {
         index: true,
@@ -27,8 +27,8 @@ function BreadcrumbJsonLd() {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.smidjan.dev/' },
-            { '@type': 'ListItem', position: 2, name: 'Mentions Légales', item: 'https://www.smidjan.dev/legal-notice' },
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://smidjan.be/' },
+            { '@type': 'ListItem', position: 2, name: 'Mentions Légales', item: 'https://smidjan.be/legal-notice' },
         ],
     };
     return (

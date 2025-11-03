@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         title: 'Politique de Confidentialité — Smidjan',
         description: 'Protection de vos données personnelles. Site sans cookies, conforme RGPD.',
         type: 'website',
-        url: 'https://www.smidjan.dev/privacy',
+        url: 'https://smidjan.be/privacy',
     },
     robots: {
         index: true,
@@ -27,8 +27,8 @@ function BreadcrumbJsonLd() {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.smidjan.dev/' },
-            { '@type': 'ListItem', position: 2, name: 'Politique de Confidentialité', item: 'https://www.smidjan.dev/privacy' },
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://smidjan.be/' },
+            { '@type': 'ListItem', position: 2, name: 'Politique de Confidentialité', item: 'https://smidjan.be/privacy' },
         ],
     };
     return (

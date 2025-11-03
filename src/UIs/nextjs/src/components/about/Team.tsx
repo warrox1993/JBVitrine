@@ -6,9 +6,9 @@ import { Heading } from '@/components/ui/Heading';
 
 export default function Team() {
   const team: Member[] = [
-    { name: 'Alexandre N.', role: 'Designer Produit', bio: 'Conçoit des systèmes qui respirent, où chaque détail sert un parcours clair. Partisan d’une esthétique utile et mesurable.', avatar: '/images/pic01.webp' },
-    { name: 'Mina L.', role: 'Ingénieure Frontend', bio: 'Écrit du code maintenable, documente, teste. Cherche le juste équilibre entre performance, accessibilité et scalabilité.', avatar: '/images/pic02.webp' },
-    { name: 'Yanis R.', role: 'Product Builder', bio: 'Relie enjeux métiers et arbitrages techniques. Défend le pragmatisme, la clarté des roadmaps et la valeur livrée.', avatar: '/images/pic03.webp' },
+    { name: 'Alexandre N.', role: 'Designer Produit', bio: "Conçoit des systèmes qui respirent, où chaque détail sert un parcours clair. Partisan d'une esthétique utile et mesurable.", avatar: '/images/smidjan-cms-interface-personnalisable.webp' },
+    { name: 'Mina L.', role: 'Ingénieure Frontend', bio: "Écrit du code maintenable, documente, teste. Cherche le juste équilibre entre performance, accessibilité et scalabilité.", avatar: '/images/smidjan-cms-composants-modulaires.webp' },
+    { name: 'Yanis R.', role: 'Product Builder', bio: "Relie enjeux métiers et arbitrages techniques. Défend le pragmatisme, la clarté des roadmaps et la valeur livrée.", avatar: '/images/smidjan-cms-experience-optimisee.webp' },
   ];
   return (
     <div className="stack">

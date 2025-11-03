@@ -11,8 +11,8 @@ export function Footer() {
         <div className={styles.grid}>
           <div className={styles.logoCell}>
             <Image
-              src="/images/logofooter/LogoFooter-removebg-preview.webp"
-              alt="Smidjan footer logo"
+              src="/images/logofooter/smidjan-footer-logo.webp"
+              alt="Smidjan - Développement web et automatisation IA à Liège"
               width={300}
               height={300}
               unoptimized

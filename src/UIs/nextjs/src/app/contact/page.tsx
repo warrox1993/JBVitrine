@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     title: 'Contact — Smidjan, agence web, cybersécurité & IA',
     description: 'Contactez Smidjan pour un projet web (Next.js/TypeScript/CMS), un audit cybersécurité, ou une automatisation/IA. Réponse sous 24h ouvrées.',
     alternates: {
-        canonical: 'https://www.smidjan.dev/contact',
+        canonical: '/contact',
     },
     openGraph: {
         title: 'Contact — Smidjan',
         description: 'Démarrez un projet ou posez vos questions.',
         type: 'website',
-        url: 'https://www.smidjan.dev/contact',
+        url: 'https://smidjan.be/contact',
         images: [
             {
                 url: '/og/contact-og.jpg',
