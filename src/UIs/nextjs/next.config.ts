@@ -24,8 +24,8 @@ const nextConfig: NextConfig = {
       "font-src 'self' https://fonts.gstatic.com data:",
       // Images: self + HTTPS externe + data URIs + blob
       "img-src 'self' https: data: blob:",
-      // Connexions: base
-      "connect-src 'self'",
+      // Connexions: Vercel Analytics + Speed Insights
+      "connect-src 'self' https://vitals.vercel-insights.com https://vercel-insights.com",
       // Fermeture sécurité object/frame
       "object-src 'none'",
       "frame-src 'none'",
@@ -39,14 +39,19 @@ const nextConfig: NextConfig = {
 
     // Preview: autorise Vercel Live
     if (isPreview) {
-      baseCsp.push("script-src 'self' 'unsafe-inline' https://vercel.live");
+      baseCsp.push(
+        "script-src 'self' 'unsafe-inline' https://vercel.live https://va.vercel-scripts.com",
+      );
       const connectIndex = baseCsp.findIndex((x) =>
         x.startsWith("connect-src"),
       );
-      baseCsp[connectIndex] = "connect-src 'self' https://vercel.live";
+      baseCsp[connectIndex] =
+        "connect-src 'self' https://vercel.live https://vitals.vercel-insights.com https://vercel-insights.com";
     } else {
-      // Production: pas de Vercel Live
-      baseCsp.push("script-src 'self' 'unsafe-inline'");
+      // Production: Vercel Analytics + Speed Insights
+      baseCsp.push(
+        "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
+      );
     }
 
     const csp = baseCsp.join("; ");

@@ -14,6 +14,8 @@ import RouteProgressProvider from '@/app/RouteProgressProvider';
 import SidebarRouterBridge from '@/components/SidebarRouterBridge';
 import Header from '@/components/Header';
 import { organizationSchema, websiteSchema } from '@/lib/schema';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
     subsets: ['latin'],
@@ -170,42 +172,44 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="fr-BE" data-theme="dark">
-        <head>
-            <script
-                id="smidjan-theme-init"
-                dangerouslySetInnerHTML={{
-                    __html: `(function(){try{var stored=localStorage.getItem('theme');var prefersLight=window.matchMedia('(prefers-color-scheme: light)').matches;var theme=stored||(prefersLight?'light':'dark');document.documentElement.setAttribute('data-theme', theme);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`
-                }}
-            />
-            {/* Preconnect pour améliorer les performances */}
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+            <head>
+                <script
+                    id="smidjan-theme-init"
+                    dangerouslySetInnerHTML={{
+                        __html: `(function(){try{var stored=localStorage.getItem('theme');var prefersLight=window.matchMedia('(prefers-color-scheme: light)').matches;var theme=stored||(prefersLight?'light':'dark');document.documentElement.setAttribute('data-theme', theme);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`
+                    }}
+                />
+                {/* Preconnect pour améliorer les performances */}
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-            {/* Favicons */}
-            <link rel="icon" href="/favicon.ico" sizes="any" />
-            <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-            <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-            <link rel="manifest" href="/manifest.json" />
+                {/* Favicons */}
+                <link rel="icon" href="/favicon.ico" sizes="any" />
+                <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+                <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+                <link rel="manifest" href="/manifest.json" />
 
-            {/* Schema.org pour le SEO local */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-            />
-        </head>
-        <body className={`${inter.variable} ${instrument.variable}`}>
-        <FXReady />
-        <RootEffects>
-            <RouteProgressProvider />
-            <SidebarRouterBridge />
-            <Header />
-            <main id="main" className={layoutStyles.main}>{children}</main>
-        </RootEffects>
-        </body>
+                {/* Schema.org pour le SEO local */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+                />
+            </head>
+            <body className={`${inter.variable} ${instrument.variable}`}>
+                <FXReady />
+                <RootEffects>
+                    <RouteProgressProvider />
+                    <SidebarRouterBridge />
+                    <Header />
+                    <main id="main" className={layoutStyles.main}>{children}</main>
+                </RootEffects>
+                <Analytics />
+                <SpeedInsights />
+            </body>
         </html>
     );
 }

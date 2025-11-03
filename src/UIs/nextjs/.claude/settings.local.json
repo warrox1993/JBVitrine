@@ -6,7 +6,8 @@
       "Bash(npx tsc:*)",
       "Bash(npm run build:*)",
       "Bash(npx next-sitemap:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npm i:*)"
     ],
     "deny": [],
     "ask": []
