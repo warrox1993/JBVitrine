@@ -20,7 +20,7 @@ export default async function AdminDashboard() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Heading level={1} className={styles.title}>
+        <Heading as="h1" className={styles.title}>
           Admin Dashboard
         </Heading>
         <Button
@@ -60,7 +60,7 @@ export default async function AdminDashboard() {
       </div>
 
       <div className={styles.articlesSection}>
-        <Heading level={2} className={styles.sectionTitle}>
+        <Heading as="h2" className={styles.sectionTitle}>
           Tous les articles
         </Heading>
 
