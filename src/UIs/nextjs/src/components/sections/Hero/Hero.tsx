@@ -39,8 +39,11 @@ export function Hero() {
             <Button as="a" href="/cms-ecommerce" variant="solid" size="md" ariaLabel="Voir nos projets" trailingIcon={<ArrowRightIcon aria-hidden="true" />}>
               Voir nos projets
             </Button>
+            <Button as="a" href="/about" variant="outline" size="md" ariaLabel="À propos de Smidjan">
+              À propos
+            </Button>
             <Button as="a" href="/contact" variant="outline" size="md" ariaLabel="Discuter de votre vision">
-              Discuter de votre vision
+              Nous contacter
             </Button>
           </div>
           {showStats ? (
