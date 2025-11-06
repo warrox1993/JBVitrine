@@ -71,8 +71,8 @@ export function WhySmidjan() {
             </strong>
           </p>
           <p className={styles.cta}>
-            Smidjan est la <span className={styles.highlight}>seule agence en Wallonie</span>{" "}
-            à maîtriser l'<strong>AI Search Optimization (AISO)</strong> ET le SEO classique.
+            Chez Smidjan, nous sommes <span className={styles.highlight}>experts en Wallonie</span>{" "}
+            en <strong>AI Search Optimization (AISO)</strong> et SEO classique.
           </p>
         </div>
 
