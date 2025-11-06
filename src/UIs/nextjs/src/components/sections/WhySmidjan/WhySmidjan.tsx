@@ -89,58 +89,30 @@ export function WhySmidjan() {
         </div>
 
         <div className={styles.caseStudy}>
+          <h3 className={styles.caseTitle}>
+            Résultats théoriques estimés
+          </h3>
           <div className={styles.proof}>
             <div className={styles.proofItem}>
-              <div className={styles.proofValue}>92%</div>
-              <div className={styles.proofLabel}>
-                de nos clients sont cités par ChatGPT
-              </div>
+              <div className={styles.proofValue}>+250%</div>
+              <div className={styles.proofLabel}>Trafic IA estimé</div>
             </div>
             <div className={styles.proofItem}>
               <div className={styles.proofValue}>Top 3</div>
-              <div className={styles.proofLabel}>
-                Position moyenne Google après 60 jours
-              </div>
+              <div className={styles.proofLabel}>Position Google visée</div>
             </div>
             <div className={styles.proofItem}>
-              <div className={styles.proofValue}>100/100</div>
-              <div className={styles.proofLabel}>Score Lighthouse moyen clients</div>
+              <div className={styles.proofValue}>95+</div>
+              <div className={styles.proofLabel}>Score Lighthouse</div>
             </div>
           </div>
-
-          <h3 className={styles.caseTitle}>
-            Cas concret : PME liégeoise (e-commerce)
-          </h3>
-          <div className={styles.caseGrid}>
-            <div className={styles.caseMetric}>
-              <div className={styles.caseLabel}>Trafic IA (ChatGPT + Perplexity)</div>
-              <div className={styles.caseValue}>+340%</div>
-              <div className={styles.casePeriod}>en 90 jours</div>
-            </div>
-            <div className={styles.caseMetric}>
-              <div className={styles.caseLabel}>Trafic Google organique</div>
-              <div className={styles.caseValue}>+180%</div>
-              <div className={styles.casePeriod}>en 90 jours</div>
-            </div>
-            <div className={styles.caseMetric}>
-              <div className={styles.caseLabel}>Conversions totales</div>
-              <div className={styles.caseValue}>+250%</div>
-              <div className={styles.casePeriod}>en 90 jours</div>
-            </div>
-          </div>
-          <p className={styles.caseFootnote}>
-            Résultat obtenu grâce à notre approche hybride AISO + SEO + Performance
-          </p>
 
           <div className={styles.finalCta}>
-            <p className={styles.finalText}>
-              <strong>Ne restez pas invisible sur les IA.</strong> Vos concurrents s'y préparent déjà.
-            </p>
             <a href="#form" className={styles.ctaButton}>
               Audit gratuit IA + SEO
             </a>
             <a href="/blog/ai-search-optimization-chatgpt-perplexity-2025" className={styles.ctaLink}>
-              → Lire notre guide complet AISO 2025
+              → Guide complet AISO 2025
             </a>
           </div>
         </div>
