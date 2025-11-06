@@ -12,6 +12,7 @@ export default function Timeline() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isLg, setIsLg] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -58,10 +59,12 @@ export default function Timeline() {
   }, []);
 
   // Responsive: afficher le rail de droite uniquement en >= lg (>= 1024px)
+  // Détecter mobile pour désactiver scroll-snap
   useEffect(() => {
     const update = () => {
       if (typeof window === "undefined") return;
       setIsLg(window.innerWidth >= 1024);
+      setIsMobile(window.innerWidth < 768);
     };
     update();
 
@@ -78,7 +81,7 @@ export default function Timeline() {
   const bg = "var(--color-bg)";
 
   return (
-    <div className="relative" style={{ height: "100vh", width: "100%", overflow: "hidden", backgroundColor: bg }}>
+    <div className="relative" style={{ minHeight: isMobile ? "auto" : "100vh", height: isMobile ? "auto" : "100vh", width: "100%", overflow: "hidden", backgroundColor: bg }}>
       {/* Subtle background glow (utilise la couleur d'accent globale) */}
       <div
         className="pointer-events-none"
@@ -143,13 +146,26 @@ export default function Timeline() {
       {/* Scrollable content (internal container) */}
       <div
         ref={containerRef}
-        style={{ height: "100%", overflowY: "scroll", scrollSnapType: "y mandatory", scrollBehavior: "smooth" }}
+        style={{
+          height: "100%",
+          overflowY: "scroll",
+          scrollSnapType: isMobile ? "none" : "y mandatory",
+          scrollBehavior: "smooth"
+        }}
       >
         {/* Hide scrollbar (webkit) */}
         <style>{`div::-webkit-scrollbar{display:none}`}</style>
 
         {/* Section-scoped header (sticky inside timeline) */}
-        <div style={{ position: "sticky", top: 0, zIndex: 10, pointerEvents: "none", padding: "1rem 1rem 0.5rem" }}>
+        <div style={{
+          position: isMobile ? "relative" : "sticky",
+          top: 0,
+          zIndex: 10,
+          pointerEvents: "none",
+          padding: isMobile ? "1.5rem 1rem 0.5rem" : "1rem 1rem 0.5rem",
+          opacity: isMobile && scrollProgress > 10 ? 0 : 1,
+          transition: "opacity 0.3s ease"
+        }}>
           <div style={{ maxWidth: "80rem", margin: "0 auto" }}>
             <h1
               style={{
@@ -175,7 +191,7 @@ export default function Timeline() {
           </div>
         </div>
 
-        <div style={{ height: "8vh" }} />
+        <div style={{ height: isMobile ? "4vh" : "8vh" }} />
 
         {TIMELINE_ITEMS.map((item, index) => (
           <div
@@ -183,7 +199,15 @@ export default function Timeline() {
             ref={(el) => {
               itemRefs.current[index] = el;
             }}
-            style={{ minHeight: "92vh", scrollSnapAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", padding: "3rem 1.25rem" }}
+            style={{
+              minHeight: isMobile ? "auto" : "92vh",
+              scrollSnapAlign: isMobile ? "none" : "center",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative",
+              padding: isMobile ? "2rem 1rem" : "3rem 1.25rem"
+            }}
           >
             <div style={{ maxWidth: "72rem", width: "100%", margin: "0 auto" }}>
               <div style={{ display: "grid", gap: "2rem", alignItems: "center", gridTemplateColumns: "repeat(1, minmax(0, 1fr))" }}>
@@ -247,7 +271,7 @@ export default function Timeline() {
           </div>
         ))}
 
-        <div style={{ height: "8vh" }} />
+        <div style={{ height: isMobile ? "4vh" : "8vh" }} />
       </div>
 
       {/* Scroll indicator (scoped to section) */}

@@ -88,16 +88,46 @@
   transform: translateX(0);
 }
 
+/* Overlay mobile */
+.sidebar-overlay {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .sidebar-root {
     width: var(--sidebar-w-open);
+    max-width: 320px;
     transform: translateX(-100%);
-    transition: transform 180ms ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10000;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
   }
-}
 
-:global(body.sidebar-open) .sidebar-root {
-  transform: translateX(0);
+  :global(body.sidebar-open) .sidebar-root {
+    transform: translateX(0);
+  }
+
+  :global(body.sidebar-open) .sidebar-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
 
 /* Adjust CSS variable for header when sidebar is hovered */

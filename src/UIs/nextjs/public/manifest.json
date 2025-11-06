@@ -1,12 +1,27 @@
 {
-  "name": "YourBrand",
-  "short_name": "YourBrand",
+  "name": "Smidjan - Agence Web Liège | Développement Next.js & Cybersécurité",
+  "short_name": "Smidjan",
+  "description": "Agence digitale à Liège spécialisée en développement web Next.js, cybersécurité OWASP et automatisation IA pour PME belges. Sites performants et sécurisés.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#0f0d1a",
-  "theme_color": "#0f0d1a",
+  "theme_color": "#ff6a00",
+  "lang": "fr-BE",
+  "dir": "ltr",
+  "orientation": "any",
   "icons": [
-    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "business",
+    "productivity",
+    "technology"
   ]
 }
 

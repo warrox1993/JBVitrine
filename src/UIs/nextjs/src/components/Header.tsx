@@ -7,6 +7,8 @@ import styles from "./Header.module.css";
 import { sections } from "@/config/nav";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { usePathname } from "next/navigation";
+import MobileMenu from "./MobileMenu";
+import SidebarToggleButton from "./SidebarToggleButton";
 
 export default function Header() {
   const pathname = usePathname();
@@ -28,6 +30,9 @@ export default function Header() {
   return (
     <header className={styles["header-root"]}>
       <div className={styles["header-left"]}>
+        {/* Bouton sidebar toggle (mobile uniquement) */}
+        <SidebarToggleButton />
+
         <Link href="/" aria-label="Go to homepage" className={styles.headerLogo}>
           <Image
             src="/images/logoheader/logo.webp"
@@ -35,6 +40,7 @@ export default function Header() {
             width={256}
             height={256}
             priority
+            sizes="(max-width: 480px) 40px, (max-width: 768px) 60px, 148px"
             className={styles.logoHeader}
           />
           <div data-testid="brand-name" className={styles.brand}>
@@ -43,6 +49,7 @@ export default function Header() {
         </Link>
       </div>
 
+      {/* Navigation desktop */}
       <nav className={styles["header-nav"]} aria-label="Navigation principale (haut)">
         <Link
           href="/"
@@ -100,6 +107,9 @@ export default function Header() {
           Contact
         </Link>
       </nav>
+
+      {/* Menu mobile hamburger */}
+      <MobileMenu />
     </header>
   );
 }

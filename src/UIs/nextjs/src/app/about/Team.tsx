@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Heading } from "@/components/ui/Heading";
 import { SITE_CONFIG } from "@/lib/constants";
 import styles from "./Team.module.css";
@@ -20,16 +20,25 @@ class Sphere {
     this.element = element;
     this.container = container;
     this.isCenter = isCenter;
-    this.radius = isCenter ? 200 : 110;
+
+    // Adapter les rayons selon la largeur de l'écran
+    const containerWidth = container.getBoundingClientRect().width;
+    if (containerWidth < 480) {
+      this.radius = isCenter ? 120 : 75;
+    } else if (containerWidth < 768) {
+      this.radius = isCenter ? 160 : 90;
+    } else {
+      this.radius = isCenter ? 200 : 110;
+    }
 
     const containerRect = container.getBoundingClientRect();
     const maxX = containerRect.width - this.radius * 2;
     const maxY = containerRect.height - this.radius * 2;
 
-    this.x = Math.random() * maxX;
-    this.y = Math.random() * maxY;
+    this.x = Math.max(0, Math.random() * maxX);
+    this.y = Math.max(0, Math.random() * maxY);
 
-    const speed = 3 + Math.random() * 3;
+    const speed = containerWidth < 768 ? 1.5 + Math.random() * 2 : 3 + Math.random() * 3;
     const angle = Math.random() * Math.PI * 2;
     this.vx = Math.cos(angle) * speed;
     this.vy = Math.sin(angle) * speed;
@@ -116,20 +125,39 @@ const ORBIT_POSITIONS = [
 ];
 
 export default function Team() {
+  const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const centerRef = useRef<HTMLDivElement>(null);
   const orbitRefs = useRef<(HTMLDivElement | null)[]>([]);
   const spheresRef = useRef<Sphere[]>([]);
   const animationRef = useRef<number | undefined>(undefined);
 
+  // Détecter la taille d'écran
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   useEffect(() => {
     if (!containerRef.current || !centerRef.current) return;
+
+    // Pas d'animation sur mobile
+    if (isMobile) return;
 
     const container = containerRef.current;
     const centerCard = centerRef.current;
     const orbitCircles = orbitRefs.current.filter(
       (ref): ref is HTMLDivElement => ref !== null
     );
+
+    const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (isReducedMotion) return;
 
     const spheres: Sphere[] = [];
     spheres.push(new Sphere(centerCard, container, true));
@@ -176,8 +204,63 @@ export default function Team() {
       }
       container.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [isMobile]);
 
+  // Version mobile simplifiée
+  if (isMobile) {
+    return (
+      <>
+        <div className={styles["team-hero"]}>
+          <Heading as="h2" accent className={styles["team-title"]}>
+            Notre Équipe
+          </Heading>
+          <p className={styles["team-subtitle"]}>
+            Une équipe en construction, avec l'excellence au cœur de notre ADN et
+            l'ambition de créer des expériences digitales mesurables.
+          </p>
+        </div>
+
+        <div className={styles["team-mobile-container"]}>
+          {/* Carte CEO */}
+          <div className={styles["team-mobile-ceo"]}>
+            <a
+              href={SITE_CONFIG.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles["team-mobile-ceo-link"]}
+            >
+              <div className={styles["team-mobile-ceo-name"]}>Jean-Baptiste D.</div>
+              <div className={styles["team-mobile-ceo-title"]}>CEO & Designer Produit</div>
+              <div className={styles["team-mobile-ceo-description"]}>
+                Conçoit des systèmes clairs où chaque détail sert le parcours.
+                Esthétique utile, mesurable, durable.
+              </div>
+            </a>
+          </div>
+
+          {/* Section recrutement */}
+          <div className={styles["team-mobile-recruiting"]}>
+            <h3 className={styles["team-mobile-recruiting-title"]}>Nous Recrutons</h3>
+            <div className={styles["team-mobile-grid"]}>
+              {ORBIT_POSITIONS.map((position) => (
+                <a
+                  key={position.id}
+                  href="/contact"
+                  className={styles["team-mobile-card"]}
+                >
+                  <div className={styles["team-mobile-card-role"]}>{position.role}</div>
+                  <div className={styles["team-mobile-card-type"]}>{position.type}</div>
+                  <div className={styles["team-mobile-card-cta"]}>Postuler →</div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  // Version desktop avec animations
   return (
     <>
       <div className={styles["team-hero"]}>

@@ -243,10 +243,25 @@ export default function ContactPage() {
                     </div>
                 </SectionWithBackground>
 
-                {/* Service Area */}
+                {/* Service Area with Google Maps */}
                 <SectionWithBackground className={cls.serviceArea} variant="light">
-                    <p className={cls.serviceText}>
-                        Nous travaillons à Liège et à distance (Belgique, Europe).
+                    <h2 className={cls.sectionTitle} style={{ marginBottom: 'var(--space-4, 1rem)', textAlign: 'center' }}>
+                        Notre localisation à Liège
+                    </h2>
+                    <div className={cls.mapWrapper} style={{ margin: '0 auto', maxWidth: '1000px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.4891234!2d5.5797!3d50.6326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDM3JzU3LjQiTiA1wrAzNCc0Ni45IkU!5e0!3m2!1sfr!2sbe!4v1699999999999"
+                            width="100%"
+                            height="450"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Localisation Smidjan à Liège, Belgique"
+                        />
+                    </div>
+                    <p className={cls.serviceText} style={{ marginTop: 'var(--space-4, 1rem)', textAlign: 'center' }}>
+                        📍 Basés à Liège, nous intervenons dans toute la Wallonie (Namur, Charleroi, Verviers, Mons) ainsi qu'à Bruxelles et partout en Belgique.
                     </p>
                 </SectionWithBackground>
 

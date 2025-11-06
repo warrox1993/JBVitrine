@@ -272,7 +272,8 @@
   }
 
   .orbital-container {
-    height: 700px;
+    height: 600px;
+    margin: var(--space-6) 0;
   }
 
   .center-card {
@@ -299,12 +300,238 @@
     padding: var(--space-4);
   }
 
+  .circular-text text {
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+
   .orbit-role {
     font-size: var(--text-base);
   }
 
   .orbit-type {
     font-size: var(--text-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .team-hero {
+    padding: var(--space-6) var(--space-2) var(--space-4);
+  }
+
+  .team-title {
+    font-size: clamp(1.75rem, 8vw, 2rem);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .team-subtitle {
+    font-size: var(--text-sm);
+    padding: 0 var(--space-2);
+  }
+
+  .orbital-container {
+    height: 500px;
+    margin: var(--space-4) 0;
+  }
+
+  .center-card {
+    width: 240px;
+    height: 240px;
+    padding: 1.5rem;
+    border-width: 2px;
+  }
+
+  .center-name {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .center-title {
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .center-description {
+    font-size: 0.7rem;
+    line-height: 1.4;
+  }
+
+  .orbit-circle {
+    width: 150px;
+    height: 150px;
+    padding: var(--space-3);
+    border-width: 1.5px;
+  }
+
+  .circular-text text {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .orbit-role {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-1);
+  }
+
+  .orbit-type {
+    font-size: 0.7rem;
+  }
+
+  .particle {
+    width: 2px;
+    height: 2px;
+  }
+}
+
+/* ===========================
+   VERSION MOBILE SIMPLIFIÉE
+   =========================== */
+
+.team-mobile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* Carte CEO mobile */
+.team-mobile-ceo {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-surface), transparent 10%),
+    color-mix(in srgb, var(--color-bg-alt), transparent 5%)
+  );
+  border: 2px solid var(--color-accent-1);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow:
+    0 10px 40px color-mix(in srgb, var(--color-accent-1), transparent 70%),
+    0 0 60px color-mix(in srgb, var(--color-accent-1), transparent 85%);
+}
+
+.team-mobile-ceo-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.team-mobile-ceo-name {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-accent-1);
+  margin-bottom: var(--space-2);
+  text-align: center;
+}
+
+.team-mobile-ceo-title {
+  font-size: var(--text-base);
+  color: var(--color-text-1);
+  margin-bottom: var(--space-3);
+  font-weight: 500;
+  text-align: center;
+}
+
+.team-mobile-ceo-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-2);
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Section recrutement mobile */
+.team-mobile-recruiting {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.team-mobile-recruiting-title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text-1);
+  text-align: center;
+  margin: 0;
+  position: relative;
+  padding-bottom: var(--space-3);
+}
+
+.team-mobile-recruiting-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-1),
+    var(--color-accent-2)
+  );
+  border-radius: var(--radius-full);
+}
+
+/* Grille de cartes mobile */
+.team-mobile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.team-mobile-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5) var(--space-4);
+  background: color-mix(in srgb, var(--color-surface), transparent 30%);
+  border: 1px solid color-mix(in srgb, var(--color-accent-1), transparent 70%);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  min-height: 120px;
+  justify-content: center;
+}
+
+.team-mobile-card:hover {
+  border-color: var(--color-accent-1);
+  background: color-mix(in srgb, var(--color-surface), transparent 10%);
+  box-shadow: 0 8px 24px
+    color-mix(in srgb, var(--color-accent-1), transparent 80%);
+  transform: translateY(-2px);
+}
+
+.team-mobile-card-role {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text-1);
+}
+
+.team-mobile-card-type {
+  font-size: var(--text-sm);
+  color: var(--color-text-2);
+  margin-bottom: var(--space-1);
+}
+
+.team-mobile-card-cta {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent-1);
+  margin-top: var(--space-1);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.team-mobile-card:hover .team-mobile-card-cta {
+  gap: var(--space-2);
+}
+
+/* 2 colonnes sur écrans plus larges (480px+) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .team-mobile-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -319,5 +546,13 @@
 
   .mouse-particle {
     animation: none;
+  }
+
+  .team-mobile-card {
+    transition: none;
+  }
+
+  .team-mobile-card:hover {
+    transform: none;
   }
 }

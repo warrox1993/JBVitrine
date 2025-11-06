@@ -14,9 +14,9 @@ import { SectionWithBackground } from "@/components/ui/SectionWithBackground/Sec
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "CMS E-commerce sur mesure en Belgique | SMIDJAN — Solution tout-en-un",
+  title: "CMS E-commerce Belgique | SMIDJAN - Solution Pro",
   description:
-    "CMS e-commerce complet développé en Belgique : catalogue produits, paiements Stripe, automatisations et design sur mesure. Idéal pour PME belges, freelances et agences à Liège, Bruxelles et Wallonie.",
+    "CMS e-commerce développé à Liège : catalogue, paiements Stripe, automatisations. Solution complète pour PME et agences en Belgique.",
   alternates: {
     canonical: "/cms-ecommerce",
     languages: {

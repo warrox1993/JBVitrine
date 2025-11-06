@@ -31,9 +31,9 @@ export function Hero() {
       </svg>
       <div className="container">
         <div className={styles.content}>
-          <h1 id="hero-title" className={styles.title}>Smidjan : agence digitale experte en développement web, cybersécurité et IA.</h1>
+          <h1 id="hero-title" className={styles.title}>Smidjan : votre agence web à Liège experte en développement Next.js, cybersécurité et IA</h1>
           <p className={styles.description}>
-            Nous transformons les idées ambitieuses en plateformes web rapides, sûres et prêtes à l'ère de l'IA.
+            Basés à Liège, nous transformons les idées ambitieuses des PME wallonnes en plateformes web rapides, sûres et optimisées pour l'ère de l'IA.
           </p>
           <div className={styles.actions}>
             <Button as="a" href="/cms-ecommerce" variant="solid" size="md" ariaLabel="Voir nos projets" trailingIcon={<ArrowRightIcon aria-hidden="true" />}>

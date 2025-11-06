@@ -68,8 +68,14 @@ export function Footer() {
                 href="tel:+32475205562"
                 aria-label="Appeler le numéro de téléphone"
               >
-                +32 475205562
+                +32 475 20 55 62
               </a>
+            </li>
+            <li className={styles.navItem}>
+              <address style={{ fontStyle: 'normal' }}>
+                📍 Rue de la Régence 45<br />
+                4000 Liège, Belgique
+              </address>
             </li>
             <li className={styles.legal}>
               Réponse sous 24h

@@ -1,16 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://smidjan.be/about</loc><lastmod>2025-11-03T23:32:20.673Z</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-<url><loc>https://smidjan.be/admin</loc><lastmod>2025-11-03T23:32:20.673Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://smidjan.be/blog/automatiser-workflows-n8n-ia-entreprise</loc><lastmod>2025-11-03T23:32:20.673Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://smidjan.be/blog/optimiser-performances-nextjs-belgique</loc><lastmod>2025-11-03T23:32:20.673Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://smidjan.be/blog/securiser-application-web-owasp-belgique</loc><lastmod>2025-11-03T23:32:20.673Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://smidjan.be/blog</loc><lastmod>2025-11-03T23:32:20.674Z</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://smidjan.be/cms-ecommerce</loc><lastmod>2025-11-03T23:32:20.674Z</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://smidjan.be/contact</loc><lastmod>2025-11-03T23:32:20.674Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-<url><loc>https://smidjan.be/legal-notice</loc><lastmod>2025-11-03T23:32:20.674Z</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-<url><loc>https://smidjan.be</loc><lastmod>2025-11-03T23:32:20.674Z</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
-<url><loc>https://smidjan.be/privacy</loc><lastmod>2025-11-03T23:32:20.674Z</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-<url><loc>https://smidjan.be/services</loc><lastmod>2025-11-03T23:32:20.674Z</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-<url><loc>https://smidjan.be/terms</loc><lastmod>2025-11-03T23:32:20.674Z</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://smidjan.be</loc>
+    <lastmod>2025-01-06T00:00:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://smidjan.be/og-image.webp</image:loc>
+      <image:title>SMIDJAN — Agence web et développement sur mesure en Belgique</image:title>
+      <image:caption>Solutions web Next.js, automatisations et cybersécurité pour PME belges</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Pages principales -->
+  <url>
+    <loc>https://smidjan.be/about</loc>
+    <lastmod>2025-01-06T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://smidjan.be/og-image.webp</image:loc>
+      <image:title>À propos de SMIDJAN — Agence web à Liège</image:title>
+      <image:caption>Notre histoire, notre équipe et notre vision du développement web en Belgique</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://smidjan.be/services</loc>
+    <lastmod>2025-01-06T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://smidjan.be/og-image.webp</image:loc>
+      <image:title>Services de développement web — SMIDJAN</image:title>
+      <image:caption>Applications Next.js, automatisations n8n et audits de sécurité pour entreprises belges</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://smidjan.be/cms-ecommerce</loc>
+    <lastmod>2025-01-06T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://smidjan.be/og-image.webp</image:loc>
+      <image:title>CMS E-commerce sur mesure — SMIDJAN</image:title>
+      <image:caption>Solution e-commerce développée en Belgique pour PME et agences</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://smidjan.be/contact</loc>
+    <lastmod>2025-01-06T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://smidjan.be/og-image.webp</image:loc>
+      <image:title>Contact SMIDJAN — Agence web Liège</image:title>
+      <image:caption>Contactez-nous pour votre projet web en Belgique</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://smidjan.be/blog</loc>
+    <lastmod>2025-01-06T00:00:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://smidjan.be/og-image.webp</image:loc>
+      <image:title>Blog SMIDJAN — Développement web et cybersécurité</image:title>
+      <image:caption>Guides techniques, tutoriels Next.js et bonnes pratiques pour développeurs</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Articles de blog -->
+  <url>
+    <loc>https://smidjan.be/blog/optimiser-performances-nextjs-belgique</loc>
+    <lastmod>2025-11-03T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://smidjan.be/og-image.webp</image:loc>
+      <image:title>Optimiser les performances d'un site Next.js : guide complet 2025</image:title>
+      <image:caption>Techniques avancées pour atteindre un score Lighthouse de 100/100 avec Next.js</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://smidjan.be/blog/securiser-application-web-owasp-belgique</loc>
+    <lastmod>2025-10-28T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://smidjan.be/og-image.webp</image:loc>
+      <image:title>Sécuriser son application web : le guide OWASP 2025</image:title>
+      <image:caption>Les 10 vulnérabilités web critiques selon l'OWASP et leurs solutions concrètes</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://smidjan.be/blog/automatiser-workflows-n8n-ia-entreprise</loc>
+    <lastmod>2025-10-20T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://smidjan.be/og-image.webp</image:loc>
+      <image:title>Automatiser vos processus avec n8n et l'IA en 2025</image:title>
+      <image:caption>Transformez votre productivité avec n8n et l'intelligence artificielle</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Pages légales -->
+  <url>
+    <loc>https://smidjan.be/legal-notice</loc>
+    <lastmod>2025-01-06T00:00:00.000Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <image:image>
+      <image:loc>https://smidjan.be/og-image.webp</image:loc>
+      <image:title>Mentions légales — SMIDJAN</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://smidjan.be/privacy</loc>
+    <lastmod>2025-01-06T00:00:00.000Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <image:image>
+      <image:loc>https://smidjan.be/og-image.webp</image:loc>
+      <image:title>Politique de confidentialité — SMIDJAN</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://smidjan.be/terms</loc>
+    <lastmod>2025-01-06T00:00:00.000Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <image:image>
+      <image:loc>https://smidjan.be/og-image.webp</image:loc>
+      <image:title>Conditions générales — SMIDJAN</image:title>
+    </image:image>
+  </url>
+
 </urlset>

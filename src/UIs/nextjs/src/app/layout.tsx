@@ -13,6 +13,7 @@ import { RootEffects } from '@/components/Effects/RootEffects';
 import RouteProgressProvider from '@/app/RouteProgressProvider';
 import SidebarRouterBridge from '@/components/SidebarRouterBridge';
 import Header from '@/components/Header';
+import { SidebarMobileProvider } from '@/hooks/useSidebarMobile';
 import { organizationSchema, websiteSchema, localBusinessSchema } from '@/lib/schema';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -211,13 +212,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 />
             </head>
             <body className={`${inter.variable} ${instrument.variable}`}>
+                <a href="#main" className={layoutStyles.skipToContent}>
+                    Aller au contenu principal
+                </a>
                 <FXReady />
-                <RootEffects>
-                    <RouteProgressProvider />
-                    <SidebarRouterBridge />
-                    <Header />
-                    <main id="main" className={layoutStyles.main}>{children}</main>
-                </RootEffects>
+                <SidebarMobileProvider>
+                    <RootEffects>
+                        <RouteProgressProvider />
+                        <SidebarRouterBridge />
+                        <Header />
+                        <main id="main" className={layoutStyles.main}>{children}</main>
+                    </RootEffects>
+                </SidebarMobileProvider>
                 <Analytics />
                 <SpeedInsights />
             </body>

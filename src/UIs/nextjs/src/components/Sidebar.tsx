@@ -1,9 +1,10 @@
 "use client";
 
-import { cloneElement, isValidElement, type ReactElement, type ReactNode } from "react";
+import { cloneElement, isValidElement, useEffect, type ReactElement, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { sections } from "@/config/nav";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
+import { useSidebarMobile } from "@/hooks/useSidebarMobile";
 import { HomeIcon } from "@/components/icons/HomeIcon";
 import { ServicesIcon } from "@/components/icons/ServicesIcon";
 import { ProcessIcon } from "@/components/icons/ProcessIcon";
@@ -16,9 +17,16 @@ type Item = { href: string; label: string; icon?: ReactNode };
 
 export default function Sidebar({ items }: { items?: ReadonlyArray<Item> }) {
   const pathname = usePathname();
+  const { close } = useSidebarMobile();
   const useProvidedItems = Array.isArray(items) && items.length > 0;
   const providedIds = items?.map(i => i.href.replace(/^#/, '')) || [];
   const activeId = useScrollSpy(useProvidedItems ? providedIds : sections.map(x => x.id), 120);
+
+  // Fermer la sidebar lors du changement de page sur mobile
+  useEffect(() => {
+    close();
+  }, [pathname, close]);
+
   const renderIcon = (icon?: ReactNode) => {
     if (!icon) {
       return null;
@@ -35,12 +43,17 @@ export default function Sidebar({ items }: { items?: ReadonlyArray<Item> }) {
     return icon;
   };
   return (
-    <aside
-      className={styles["sidebar-root"]}
-      aria-label="Navigation latérale"
-      onMouseEnter={() => { document?.body?.classList?.add('sidebar-hovered'); document?.body?.classList?.add('sidebar-open'); }}
-      onMouseLeave={() => { document?.body?.classList?.remove('sidebar-hovered'); document?.body?.classList?.remove('sidebar-open'); }}
-    >
+    <>
+      {/* Overlay mobile pour fermer la sidebar */}
+      <div className={styles["sidebar-overlay"]} onClick={close} aria-hidden="true" />
+
+      <aside
+        id="sidebar"
+        className={styles["sidebar-root"]}
+        aria-label="Navigation latérale"
+        onMouseEnter={() => { document?.body?.classList?.add('sidebar-hovered'); }}
+        onMouseLeave={() => { document?.body?.classList?.remove('sidebar-hovered'); }}
+      >
       <nav className={styles["sidebar-nav"]} aria-label="Navigation latérale">
         {useProvidedItems && items
           ? items.map((it) => {
@@ -93,6 +106,7 @@ export default function Sidebar({ items }: { items?: ReadonlyArray<Item> }) {
             })}
       </nav>
     </aside>
+    </>
   );
 }
 

@@ -7,7 +7,7 @@ import { BlogFilter } from "@/components/blog/BlogFilter";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Blog — Développement Web, Cybersécurité & IA | Smidjan Liège",
+  title: "Blog Dev Web & IA | Smidjan Liège",
   description:
     "Articles techniques sur le développement web, la cybersécurité, l'automatisation IA et les bonnes pratiques SEO. Conseils d'experts pour PME en Belgique.",
   keywords: [

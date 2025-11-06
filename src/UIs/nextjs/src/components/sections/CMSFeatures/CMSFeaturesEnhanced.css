@@ -116,16 +116,18 @@
   position: relative;
   background: rgba(20, 25, 40, 0.6);
   border-radius: 20px;
-  padding: 60px 50px;
+  padding: 40px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 107, 53, 0.1);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   cursor: pointer;
-  min-height: 280px;
+  min-height: 420px;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .cms-feature-card::before {
@@ -181,9 +183,9 @@
 /* Number badge for visual hierarchy */
 .cms-card-number {
   position: absolute;
-  top: 30px;
-  right: 30px;
-  font-size: 5rem;
+  top: 25px;
+  right: 25px;
+  font-size: 4rem;
   font-weight: 900;
   color: rgba(255, 107, 53, 0.08);
   line-height: 1;
@@ -197,50 +199,62 @@
 }
 
 .cms-card-title {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  margin-top: 0;
   color: #ffffff;
   transition: color 0.3s ease;
   letter-spacing: -0.5px;
+  width: 100%;
 }
 
 .cms-card-description {
-  font-size: 1.15rem;
-  line-height: 2;
+  font-size: 1rem;
+  line-height: 1.7;
   color: #b0b0b0;
   letter-spacing: 0.3px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .cms-card-description.cms-paragraph-mode {
-  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
 }
 
 .cms-card-description.cms-list-mode {
-  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
 }
 
 .cms-feature-card:hover .cms-card-description.cms-paragraph-mode {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .cms-feature-card:hover .cms-card-description.cms-list-mode {
-  display: block;
+  opacity: 1;
 }
 
 .cms-feature-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  position: relative;
 }
 
 .cms-feature-list li {
   padding-left: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   position: relative;
   opacity: 0;
   transform: translateX(-10px);
+  will-change: opacity, transform;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .cms-feature-card:hover .cms-feature-list li {
@@ -307,12 +321,18 @@
   width: 60px;
   height: 3px;
   background: linear-gradient(90deg, #ff6b35, transparent);
-  margin: 25px 0 30px 0;
+  margin: 15px 0 20px 0;
   transition: width 0.5s ease;
 }
 
 .cms-feature-card:hover .cms-card-separator {
   width: 120px;
+}
+
+.cms-description-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
 }
 
 /* Animated accent lines */
@@ -399,6 +419,7 @@
 
   .cms-feature-card {
     padding: 30px;
+    cursor: default; /* Pas de hover sur mobile */
   }
 
   .cms-features-section h1 {
@@ -407,6 +428,87 @@
 
   .cms-subtitle {
     font-size: 1.1rem;
+  }
+
+  /* Sur mobile : afficher directement le mode liste quand la carte est active */
+  .cms-feature-card.cms-mobile-active .cms-card-description.cms-paragraph-mode {
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+    pointer-events: none;
+  }
+
+  .cms-feature-card.cms-mobile-active .cms-card-description.cms-list-mode {
+    opacity: 1;
+    transition: opacity 0.6s ease-in 0.3s;
+  }
+
+  /* Par défaut sur mobile, préparer les deux modes */
+  .cms-feature-card .cms-card-description.cms-list-mode {
+    opacity: 0;
+  }
+
+  .cms-feature-card .cms-card-description.cms-paragraph-mode {
+    opacity: 1;
+    transition: opacity 0.4s ease-out;
+  }
+
+  /* Sur mobile : pas d'effet hover */
+  .cms-feature-card:hover {
+    transform: none;
+    border-color: rgba(255, 107, 53, 0.1);
+    box-shadow: none;
+  }
+
+  .cms-feature-card:hover::before,
+  .cms-feature-card:hover::after {
+    opacity: 0;
+  }
+
+  /* Désactiver les animations hover sur mobile */
+  .cms-feature-card:hover .cms-card-title {
+    color: #ffffff;
+  }
+
+  .cms-feature-card:hover .cms-card-number {
+    color: rgba(255, 107, 53, 0.08);
+    transform: none;
+  }
+
+  .cms-feature-card:hover .cms-card-separator {
+    width: 60px;
+  }
+
+  /* Effet 3D désactivé sur mobile */
+  .cms-feature-card {
+    transform: none !important;
+  }
+
+  /* Les items de liste sont initialement masqués sur mobile */
+  .cms-feature-list li {
+    opacity: 0;
+    transform: translateX(-20px);
+    will-change: opacity, transform;
+  }
+
+  /* Animation automatique au scroll pour les cartes actives */
+  .cms-feature-card.cms-mobile-active .cms-card-separator {
+    width: 120px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .cms-feature-card.cms-mobile-active {
+    border-color: rgba(255, 107, 53, 0.3);
+    transition: border-color 0.8s ease-out;
+  }
+
+  /* Optimisation des performances sur mobile */
+  .cms-feature-card,
+  .cms-card-description,
+  .cms-feature-list li {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 }
 

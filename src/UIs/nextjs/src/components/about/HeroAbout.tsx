@@ -42,10 +42,10 @@ export default function HeroAbout() {
       </svg>
       <div className="container">
         <div className={heroStyles.content}>
-          <h1 className={heroStyles.title}>Des artisans du digital au service de la performance</h1>
+          <h1 className={heroStyles.title}>Agence digitale basée à Liège, au service de votre performance</h1>
           <p className={heroStyles.description} style={{ maxWidth: '70ch', lineHeight: 1.7 }}>
-            SMIDJAN accompagne les entreprises à chaque étape de leur transformation numérique — de l'idée à la mise en production.
-            Nous forgeons des solutions stables, sécurisées et évolutives, conçues pour produire des résultats mesurables.
+            Depuis Liège, SMIDJAN accompagne les entreprises de Wallonie et de Belgique à chaque étape de leur transformation numérique — de l'idée à la mise en production.
+            Nous forgeons des solutions web stables, sécurisées et évolutives, conçues pour produire des résultats mesurables.
           </p>
           <div className={heroStyles.actions}>
             <Button as="a" href="/contact" variant="solid" size="md" ariaLabel="Démarrer un projet">

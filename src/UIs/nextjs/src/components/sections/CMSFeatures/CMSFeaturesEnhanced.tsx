@@ -5,9 +5,20 @@ import "./CMSFeaturesEnhanced.css";
 
 export function CMSFeaturesEnhanced() {
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+
+    // Détecter si on est sur mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
@@ -133,13 +144,20 @@ export function CMSFeaturesEnhanced() {
     };
 
     cards.forEach((card, cardIndex) => {
+      const isMobileDevice = window.innerWidth < 768;
+
       // Only add listeners if not already added (check for a marker)
       if (!(card as any).__cmsFeaturesInitialized) {
         card.addEventListener('click', createRipple);
         card.addEventListener('mousemove', handleMouseMove);
         card.addEventListener('mouseleave', handleMouseLeave);
-        card.addEventListener('mouseenter', mouseEnterHandler);
-        card.addEventListener('mouseleave', cardMouseLeaveHandler);
+
+        // Ajouter les listeners hover seulement sur desktop
+        if (!isMobileDevice) {
+          card.addEventListener('mouseenter', mouseEnterHandler);
+          card.addEventListener('mouseleave', cardMouseLeaveHandler);
+        }
+
         (card as any).__cmsFeaturesInitialized = true;
       }
 
@@ -151,7 +169,12 @@ export function CMSFeaturesEnhanced() {
         if (!el.getAttribute('data-original')) {
           const originalText = el.textContent;
           el.setAttribute('data-original', originalText!);
-          el.textContent = generateMartianText(originalText!.length);
+
+          // Sur desktop : initialiser avec du Martian
+          // Sur mobile : garder le texte normal
+          if (!isMobileDevice) {
+            el.textContent = generateMartianText(originalText!.length);
+          }
         }
       });
     });
@@ -161,9 +184,30 @@ export function CMSFeaturesEnhanced() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           (entry.target as HTMLElement).style.animation = 'cmsFadeInUp 0.8s ease-out forwards';
+
+          // Sur mobile : déclencher automatiquement l'affichage de la liste au scroll
+          if (window.innerWidth < 768) {
+            const card = entry.target as HTMLElement;
+
+            // Délai avant de commencer l'animation (laisser le fade-in se terminer)
+            setTimeout(() => {
+              // Ajouter la classe pour afficher la liste avec transition douce
+              card.classList.add('cms-mobile-active');
+
+              // Animer les items de liste avec des délais progressifs plus longs
+              const listItems = card.querySelectorAll('.cms-feature-list li');
+              listItems.forEach((item: any, index: number) => {
+                setTimeout(() => {
+                  item.style.opacity = '1';
+                  item.style.transform = 'translateX(0)';
+                  item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                }, index * 150); // Délai progressif de 150ms entre chaque item
+              });
+            }, 400); // Attendre 400ms que le fade-in de la carte soit bien avancé
+          }
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 }); // Seuil légèrement plus bas pour démarrer plus tôt
 
     document.querySelectorAll('.cms-feature-card').forEach((card, index) => {
       (card as HTMLElement).style.opacity = '0';
@@ -194,7 +238,7 @@ export function CMSFeaturesEnhanced() {
   }, [mounted]);
 
   return (
-    <section className="cms-features-section">
+    <section id="cms-fonctionnalites-natives" className="cms-features-section">
       {/* Animated background */}
       <div className="cms-animated-bg"></div>
 
@@ -217,17 +261,19 @@ export function CMSFeaturesEnhanced() {
           <div className="cms-card-number">01</div>
           <h3 className="cms-card-title">Catalogue & produits</h3>
           <div className="cms-card-separator"></div>
-          <p className="cms-card-description cms-paragraph-mode">
-            Produits simples, configurables, groupés ou téléchargeables, avec gestion d'attributs, de variantes, d'options et de packs.
-          </p>
-          <div className="cms-card-description cms-list-mode">
-            <ul className="cms-feature-list">
-              <li><span className="cms-typing-text">Produits simples, configurables, groupés ou téléchargeables</span></li>
-              <li><span className="cms-typing-text">Gestion d'attributs, de variantes, d'options et de packs</span></li>
-              <li><span className="cms-typing-text">Stock multi-entrepôts et inventaire en temps réel</span></li>
-              <li><span className="cms-typing-text">Import/export via CSV ou API</span></li>
-              <li><span className="cms-typing-text">Catégories hiérarchiques avec SEO intégré</span></li>
-            </ul>
+          <div className="cms-description-wrapper">
+            <p className="cms-card-description cms-paragraph-mode">
+              Produits simples, configurables, groupés ou téléchargeables, avec gestion d'attributs, de variantes, d'options et de packs.
+            </p>
+            <div className="cms-card-description cms-list-mode">
+              <ul className="cms-feature-list">
+                <li><span className="cms-typing-text">Produits simples, configurables, groupés ou téléchargeables</span></li>
+                <li><span className="cms-typing-text">Gestion d'attributs, de variantes, d'options et de packs</span></li>
+                <li><span className="cms-typing-text">Stock multi-entrepôts et inventaire en temps réel</span></li>
+                <li><span className="cms-typing-text">Import/export via CSV ou API</span></li>
+                <li><span className="cms-typing-text">Catégories hiérarchiques avec SEO intégré</span></li>
+              </ul>
+            </div>
           </div>
           <div className="cms-accent-line cms-bottom"></div>
         </div>
@@ -237,17 +283,19 @@ export function CMSFeaturesEnhanced() {
           <div className="cms-card-number">02</div>
           <h3 className="cms-card-title">Commandes & clients</h3>
           <div className="cms-card-separator"></div>
-          <p className="cms-card-description cms-paragraph-mode">
-            Panier intelligent et tunnel de commande fluide avec gestion complète des commandes, factures, avoirs et retours.
-          </p>
-          <div className="cms-card-description cms-list-mode">
-            <ul className="cms-feature-list">
-              <li><span className="cms-typing-text">Panier intelligent et tunnel de commande fluide</span></li>
-              <li><span className="cms-typing-text">Commandes, factures, avoirs et retours gérés de bout en bout</span></li>
-              <li><span className="cms-typing-text">Comptes clients, multi-adresses, groupes B2B/B2C</span></li>
-              <li><span className="cms-typing-text">Historique complet et notifications automatiques</span></li>
-              <li><span className="cms-typing-text">Espace client personnalisable avec suivi d'état</span></li>
-            </ul>
+          <div className="cms-description-wrapper">
+            <p className="cms-card-description cms-paragraph-mode">
+              Panier intelligent et tunnel de commande fluide avec gestion complète des commandes, factures, avoirs et retours.
+            </p>
+            <div className="cms-card-description cms-list-mode">
+              <ul className="cms-feature-list">
+                <li><span className="cms-typing-text">Panier intelligent et tunnel de commande fluide</span></li>
+                <li><span className="cms-typing-text">Commandes, factures, avoirs et retours gérés de bout en bout</span></li>
+                <li><span className="cms-typing-text">Comptes clients, multi-adresses, groupes B2B/B2C</span></li>
+                <li><span className="cms-typing-text">Historique complet et notifications automatiques</span></li>
+                <li><span className="cms-typing-text">Espace client personnalisable avec suivi d'état</span></li>
+              </ul>
+            </div>
           </div>
           <div className="cms-accent-line cms-bottom"></div>
         </div>
@@ -257,16 +305,18 @@ export function CMSFeaturesEnhanced() {
           <div className="cms-card-number">03</div>
           <h3 className="cms-card-title">Paiement & facturation</h3>
           <div className="cms-card-separator"></div>
-          <p className="cms-card-description cms-paragraph-mode">
-            Stripe, virement ou solution sur mesure avec factures conformes UE générées automatiquement.
-          </p>
-          <div className="cms-card-description cms-list-mode">
-            <ul className="cms-feature-list">
-              <li><span className="cms-typing-text">Stripe, virement ou solution sur mesure</span></li>
-              <li><span className="cms-typing-text">Factures conformes UE générées automatiquement</span></li>
-              <li><span className="cms-typing-text">Taxes, devises et taux de change multiples</span></li>
-              <li><span className="cms-typing-text">Emails de confirmation et relances automatiques</span></li>
-            </ul>
+          <div className="cms-description-wrapper">
+            <p className="cms-card-description cms-paragraph-mode">
+              Stripe, virement ou solution sur mesure avec factures conformes UE générées automatiquement.
+            </p>
+            <div className="cms-card-description cms-list-mode">
+              <ul className="cms-feature-list">
+                <li><span className="cms-typing-text">Stripe, virement ou solution sur mesure</span></li>
+                <li><span className="cms-typing-text">Factures conformes UE générées automatiquement</span></li>
+                <li><span className="cms-typing-text">Taxes, devises et taux de change multiples</span></li>
+                <li><span className="cms-typing-text">Emails de confirmation et relances automatiques</span></li>
+              </ul>
+            </div>
           </div>
           <div className="cms-accent-line cms-bottom"></div>
         </div>
@@ -276,16 +326,18 @@ export function CMSFeaturesEnhanced() {
           <div className="cms-card-number">04</div>
           <h3 className="cms-card-title">Marketing & promotion</h3>
           <div className="cms-card-separator"></div>
-          <p className="cms-card-description cms-paragraph-mode">
-            Coupons, remises progressives et packs promo avec bannières dynamiques et pages de campagne.
-          </p>
-          <div className="cms-card-description cms-list-mode">
-            <ul className="cms-feature-list">
-              <li><span className="cms-typing-text">Coupons, remises progressives et packs promo</span></li>
-              <li><span className="cms-typing-text">Bannières dynamiques et pages de campagne</span></li>
-              <li><span className="cms-typing-text">Newsletter intégrée et ciblage par segment</span></li>
-              <li><span className="cms-typing-text">Sitemap, meta et rich snippets inclus</span></li>
-            </ul>
+          <div className="cms-description-wrapper">
+            <p className="cms-card-description cms-paragraph-mode">
+              Coupons, remises progressives et packs promo avec bannières dynamiques et pages de campagne.
+            </p>
+            <div className="cms-card-description cms-list-mode">
+              <ul className="cms-feature-list">
+                <li><span className="cms-typing-text">Coupons, remises progressives et packs promo</span></li>
+                <li><span className="cms-typing-text">Bannières dynamiques et pages de campagne</span></li>
+                <li><span className="cms-typing-text">Newsletter intégrée et ciblage par segment</span></li>
+                <li><span className="cms-typing-text">Sitemap, meta et rich snippets inclus</span></li>
+              </ul>
+            </div>
           </div>
           <div className="cms-accent-line cms-bottom"></div>
         </div>
@@ -295,17 +347,19 @@ export function CMSFeaturesEnhanced() {
           <div className="cms-card-number">05</div>
           <h3 className="cms-card-title">Administration & gestion</h3>
           <div className="cms-card-separator"></div>
-          <p className="cms-card-description cms-paragraph-mode">
-            Tableau de bord ventes, commandes, clients, produits avec multi-utilisateurs et rôles ACL avancés.
-          </p>
-          <div className="cms-card-description cms-list-mode">
-            <ul className="cms-feature-list">
-              <li><span className="cms-typing-text">Tableau de bord ventes, commandes, clients, produits</span></li>
-              <li><span className="cms-typing-text">Multi-utilisateurs et rôles ACL avancés</span></li>
-              <li><span className="cms-typing-text">Journalisation des actions et logs d'audit</span></li>
-              <li><span className="cms-typing-text">Configuration paiement, livraison, taxes, langues, emails</span></li>
-              <li><span className="cms-typing-text">Système modulaire prêt pour extensions</span></li>
-            </ul>
+          <div className="cms-description-wrapper">
+            <p className="cms-card-description cms-paragraph-mode">
+              Tableau de bord ventes, commandes, clients, produits avec multi-utilisateurs et rôles ACL avancés.
+            </p>
+            <div className="cms-card-description cms-list-mode">
+              <ul className="cms-feature-list">
+                <li><span className="cms-typing-text">Tableau de bord ventes, commandes, clients, produits</span></li>
+                <li><span className="cms-typing-text">Multi-utilisateurs et rôles ACL avancés</span></li>
+                <li><span className="cms-typing-text">Journalisation des actions et logs d'audit</span></li>
+                <li><span className="cms-typing-text">Configuration paiement, livraison, taxes, langues, emails</span></li>
+                <li><span className="cms-typing-text">Système modulaire prêt pour extensions</span></li>
+              </ul>
+            </div>
           </div>
           <div className="cms-accent-line cms-bottom"></div>
         </div>
@@ -315,17 +369,19 @@ export function CMSFeaturesEnhanced() {
           <div className="cms-card-number">06</div>
           <h3 className="cms-card-title">Sécurité & performances</h3>
           <div className="cms-card-separator"></div>
-          <p className="cms-card-description cms-paragraph-mode">
-            Auth sécurisée et gestion fine des permissions, headers de sécurité, protections CSRF, XSS, SQLi.
-          </p>
-          <div className="cms-card-description cms-list-mode">
-            <ul className="cms-feature-list">
-              <li><span className="cms-typing-text">Auth sécurisée et gestion fine des permissions</span></li>
-              <li><span className="cms-typing-text">Headers de sécurité, protections CSRF, XSS, SQLi</span></li>
-              <li><span className="cms-typing-text">Sauvegardes automatisées et restauration simple</span></li>
-              <li><span className="cms-typing-text">Optimisations Core Web Vitals et cache intelligent</span></li>
-              <li><span className="cms-typing-text">Monitoring intégré et alertes d'anomalies</span></li>
-            </ul>
+          <div className="cms-description-wrapper">
+            <p className="cms-card-description cms-paragraph-mode">
+              Auth sécurisée et gestion fine des permissions, headers de sécurité, protections CSRF, XSS, SQLi.
+            </p>
+            <div className="cms-card-description cms-list-mode">
+              <ul className="cms-feature-list">
+                <li><span className="cms-typing-text">Auth sécurisée et gestion fine des permissions</span></li>
+                <li><span className="cms-typing-text">Headers de sécurité, protections CSRF, XSS, SQLi</span></li>
+                <li><span className="cms-typing-text">Sauvegardes automatisées et restauration simple</span></li>
+                <li><span className="cms-typing-text">Optimisations Core Web Vitals et cache intelligent</span></li>
+                <li><span className="cms-typing-text">Monitoring intégré et alertes d'anomalies</span></li>
+              </ul>
+            </div>
           </div>
           <div className="cms-accent-line cms-bottom"></div>
         </div>
@@ -335,17 +391,19 @@ export function CMSFeaturesEnhanced() {
           <div className="cms-card-number">07</div>
           <h3 className="cms-card-title">Design & personnalisation</h3>
           <div className="cms-card-separator"></div>
-          <p className="cms-card-description cms-paragraph-mode">
-            Design 100 % modulable, compatible Tailwind, Bootstrap… avec templates éditables sans toucher au noyau.
-          </p>
-          <div className="cms-card-description cms-list-mode">
-            <ul className="cms-feature-list">
-              <li><span className="cms-typing-text">Design 100 % modulable, compatible Tailwind, Bootstrap…</span></li>
-              <li><span className="cms-typing-text">Templates éditables sans toucher au noyau</span></li>
-              <li><span className="cms-typing-text">Gestion avancée thèmes, couleurs, polices, composants</span></li>
-              <li><span className="cms-typing-text">Blocs réutilisables pour construire les pages</span></li>
-              <li><span className="cms-typing-text">Responsive design optimisé nativement</span></li>
-            </ul>
+          <div className="cms-description-wrapper">
+            <p className="cms-card-description cms-paragraph-mode">
+              Design 100 % modulable, compatible Tailwind, Bootstrap… avec templates éditables sans toucher au noyau.
+            </p>
+            <div className="cms-card-description cms-list-mode">
+              <ul className="cms-feature-list">
+                <li><span className="cms-typing-text">Design 100 % modulable, compatible Tailwind, Bootstrap…</span></li>
+                <li><span className="cms-typing-text">Templates éditables sans toucher au noyau</span></li>
+                <li><span className="cms-typing-text">Gestion avancée thèmes, couleurs, polices, composants</span></li>
+                <li><span className="cms-typing-text">Blocs réutilisables pour construire les pages</span></li>
+                <li><span className="cms-typing-text">Responsive design optimisé nativement</span></li>
+              </ul>
+            </div>
           </div>
           <div className="cms-accent-line cms-bottom"></div>
         </div>
@@ -355,16 +413,18 @@ export function CMSFeaturesEnhanced() {
           <div className="cms-card-number">08</div>
           <h3 className="cms-card-title">Automatisations & intégrations</h3>
           <div className="cms-card-separator"></div>
-          <p className="cms-card-description cms-paragraph-mode">
-            Workflows n8n prêts : facturation, rappels, CRM, emailing avec connecteurs vers ERP, marketing, analytics.
-          </p>
-          <div className="cms-card-description cms-list-mode">
-            <ul className="cms-feature-list">
-              <li><span className="cms-typing-text">Workflows n8n prêts : facturation, rappels, CRM, emailing</span></li>
-              <li><span className="cms-typing-text">Connecteurs vers ERP, marketing, analytics</span></li>
-              <li><span className="cms-typing-text">Webhooks et endpoints sécurisés</span></li>
-              <li><span className="cms-typing-text">IA embarquée pour suggestions et analyses (option)</span></li>
-            </ul>
+          <div className="cms-description-wrapper">
+            <p className="cms-card-description cms-paragraph-mode">
+              Workflows n8n prêts : facturation, rappels, CRM, emailing avec connecteurs vers ERP, marketing, analytics.
+            </p>
+            <div className="cms-card-description cms-list-mode">
+              <ul className="cms-feature-list">
+                <li><span className="cms-typing-text">Workflows n8n prêts : facturation, rappels, CRM, emailing</span></li>
+                <li><span className="cms-typing-text">Connecteurs vers ERP, marketing, analytics</span></li>
+                <li><span className="cms-typing-text">Webhooks et endpoints sécurisés</span></li>
+                <li><span className="cms-typing-text">IA embarquée pour suggestions et analyses (option)</span></li>
+              </ul>
+            </div>
           </div>
           <div className="cms-accent-line cms-bottom"></div>
         </div>

@@ -10,9 +10,9 @@ import { SectionWithBackground } from '@/components/ui/SectionWithBackground/Sec
 import styles from './about.module.css';
 
 export const metadata: Metadata = {
-  title: 'À propos — SMIDJAN',
+  title: 'À propos | Agence Web Liège & Wallonie | SMIDJAN',
   description:
-    "À propos de SMIDJAN : nous forgeons des expériences digitales élégantes, scalables et mesurables. Notre méthode relie design system, ingénierie et performance web Next.js pour produire des résultats concrets, traçables et durables.",
+    "Découvrez SMIDJAN, agence web à Liège. Nous créons des expériences digitales sur mesure avec Next.js : sites performants, sécurisés et évolutifs.",
   alternates: { canonical: '/about' },
 };
 

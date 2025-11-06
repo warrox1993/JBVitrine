@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import AppVitrine from "../components/SiteVitrine/AppVitrine";
 
 export const metadata: Metadata = {
-  title: 'Smidjan | Studio Web à Liège - Développement, E-commerce & SEO',
-  description: 'Smidjan, studio web à Liège spécialisé en développement de sites, e-commerce, SEO et design digital.',
+  title: 'Smidjan | Studio Web Liège - Développement & SEO',
+  description: 'Transformez votre projet digital avec Smidjan. Sites Next.js ultra-performants, audits cybersécurité et automatisations IA pour entreprises belges.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Smidjan | Studio Web à Liège - Développement, E-commerce & SEO',
-    description: 'Smidjan, studio web à Liège spécialisé en développement de sites, e-commerce, SEO et design digital.',
+    title: 'Smidjan | Studio Web Liège - Développement & SEO',
+    description: 'Transformez votre projet digital avec Smidjan. Sites Next.js ultra-performants, audits cybersécurité et automatisations IA pour entreprises belges.',
     url: 'https://smidjan.be',
     siteName: 'Smidjan',
     images: [

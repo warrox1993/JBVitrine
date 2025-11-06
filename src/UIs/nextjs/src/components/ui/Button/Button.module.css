@@ -119,6 +119,22 @@
   height: 1.1em;
 }
 
+/* Augmenter légèrement les tailles sur mobile pour faciliter le toucher */
+@media (max-width: 768px) {
+  .sm {
+    height: 54px;
+    font-size: 0.95rem;
+  }
+  .md {
+    height: 62px;
+    font-size: 1.05rem;
+  }
+  .lg {
+    height: 70px;
+    font-size: 1.125rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .root {
     transition: none;
