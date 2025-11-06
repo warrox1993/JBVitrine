@@ -12,11 +12,11 @@ export default function AppVitrine() {
   return (
     <>
       <Hero />
-      <Proof />
+      <WhySmidjan />
       <Showreel />
       <Process />
       <Services />
-      <WhySmidjan />
+      <Proof />
       <Footer />
     </>
   );

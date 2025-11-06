@@ -6,42 +6,36 @@ import styles from "./WhySmidjan.module.css";
 
 const features = [
   {
-    icon: "🤖",
     title: "Optimisation IA 2025",
     description:
       "La présence en ligne ne se joue plus uniquement sur Google. ChatGPT, Perplexity, Claude et les moteurs IA génèrent 40% du trafic en 2025. Nous optimisons votre contenu pour être cité et recommandé par les IA.",
     highlight: "AISO (AI Search Optimization)",
   },
   {
-    icon: "🎯",
     title: "SEO Classique Maîtrisé",
     description:
       "Google reste essentiel. Nous appliquons les techniques SEO les plus avancées : Core Web Vitals, Schema.org, E-E-A-T, SEO local. Votre site domine les résultats organiques.",
     highlight: "Top 3 garanti",
   },
   {
-    icon: "⚡",
     title: "Performance Extrême",
     description:
       "Next.js 15, images optimisées, CDN global. Vos pages chargent en < 1s. Un site rapide convertit 2,5× mieux et est favorisé par Google ET les IA.",
     highlight: "Score 100/100 Lighthouse",
   },
   {
-    icon: "🔒",
     title: "Sécurité OWASP",
     description:
       "Audits cybersécurité complets, conformité RGPD, protection contre les attaques. Les IA privilégient les sites sécurisés dans leurs recommandations.",
     highlight: "Certifié sécurisé",
   },
   {
-    icon: "📈",
     title: "Stratégie Data-Driven",
     description:
       "Analytics avancés, A/B testing, tracking conversions. Nous mesurons tout et optimisons en continu pour maximiser votre ROI sur tous les canaux.",
     highlight: "ROI moyen 5×",
   },
   {
-    icon: "🧠",
     title: "Contenu Optimisé IA",
     description:
       "Structuration sémantique, FAQ enrichies, citations claires. Votre contenu est conçu pour être compris et cité par les LLM (GPT-4, Claude, Gemini).",
@@ -87,9 +81,6 @@ export function WhySmidjan() {
               className={styles.card}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={styles.cardIcon} aria-hidden="true">
-                {feature.icon}
-              </div>
               <h3 className={styles.cardTitle}>{feature.title}</h3>
               <p className={styles.cardDescription}>{feature.description}</p>
               <div className={styles.cardHighlight}>{feature.highlight}</div>
@@ -118,7 +109,7 @@ export function WhySmidjan() {
 
         <div className={styles.caseStudy}>
           <h3 className={styles.caseTitle}>
-            📊 Cas concret : PME liégeoise (e-commerce)
+            Cas concret : PME liégeoise (e-commerce)
           </h3>
           <div className={styles.caseGrid}>
             <div className={styles.caseMetric}>
@@ -138,7 +129,7 @@ export function WhySmidjan() {
             </div>
           </div>
           <p className={styles.caseFootnote}>
-            💡 Résultat obtenu grâce à notre approche hybride AISO + SEO + Performance
+            Résultat obtenu grâce à notre approche hybride AISO + SEO + Performance
           </p>
         </div>
 
