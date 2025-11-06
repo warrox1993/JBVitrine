@@ -4,6 +4,7 @@ import { GridIcon } from '@/components/icons/GridIcon';
 import { ProcessIcon } from '@/components/icons/ProcessIcon';
 import { ServicesIcon } from '@/components/icons/ServicesIcon';
 import { UsersIcon } from '@/components/icons/UsersIcon';
+import { SparklesIcon } from '@/components/icons/SparklesIcon';
 
 export const homeSidebarItems = [
   { href: '#hero',                 label: 'Introduction',        icon: <HomeIcon aria-hidden="true" /> },
@@ -11,4 +12,5 @@ export const homeSidebarItems = [
   { href: '#projects',             label: 'Projets',             icon: <GridIcon aria-hidden="true" /> },
   { href: '#process',              label: 'Processus',           icon: <ProcessIcon aria-hidden="true" /> },
   { href: '#services',             label: 'Services',            icon: <ServicesIcon aria-hidden="true" /> },
+  { href: '#why-smidjan',          label: 'Pourquoi Smidjan',    icon: <SparklesIcon aria-hidden="true" /> },
 ];
