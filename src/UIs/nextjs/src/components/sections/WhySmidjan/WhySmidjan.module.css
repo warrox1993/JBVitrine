@@ -1,6 +1,6 @@
 .whySection {
   padding: var(--space-12, 6rem) 0;
-  background: var(--color-bg-1);
+  background: var(--color-bg-2);
   position: relative;
   overflow: hidden;
 }
