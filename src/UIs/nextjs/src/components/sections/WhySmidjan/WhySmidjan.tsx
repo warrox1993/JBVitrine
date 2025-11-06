@@ -2,6 +2,7 @@
 
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { Heading } from "@/components/ui/Heading";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
 import styles from "./WhySmidjan.module.css";
 
 const features = [
@@ -55,6 +56,7 @@ export function WhySmidjan() {
       ref={ref}
       className={`${styles.whySection} ${isVisible ? styles.visible : ""}`}
     >
+      <AnimatedBackground variant="light" />
       <div className="container">
         <div className={styles.header}>
           <Heading as="h2" accent className={styles.title}>

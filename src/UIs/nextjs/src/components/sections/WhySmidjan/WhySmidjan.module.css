@@ -1,40 +1,8 @@
 .whySection {
   padding: var(--space-12, 6rem) 0;
-  background: linear-gradient(
-    135deg,
-    var(--color-bg-1) 0%,
-    var(--color-bg-2) 50%,
-    var(--color-bg-1) 100%
-  );
+  background: var(--color-bg-1);
   position: relative;
   overflow: hidden;
-}
-
-.whySection::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-accent-1),
-    transparent
-  );
-}
-
-.whySection::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 20% 50%,
-    rgba(255, 106, 0, 0.03),
-    transparent 50%
-  );
-  pointer-events: none;
 }
 
 /* Header */
