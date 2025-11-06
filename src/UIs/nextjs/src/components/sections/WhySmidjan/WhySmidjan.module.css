@@ -294,10 +294,74 @@
   font-style: italic;
 }
 
+/* Comparison Grid */
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6, 1.5rem);
+  margin-bottom: var(--space-6, 1.5rem);
+}
+
+@media (max-width: 768px) {
+  .comparisonGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.comparisonColumn {
+  background: var(--color-bg-1);
+  border-radius: 12px;
+  padding: var(--space-5, 1.25rem);
+  border: 1px solid var(--color-border-1);
+  transition: transform 0.3s ease;
+}
+
+.comparisonColumn:hover {
+  transform: translateY(-2px);
+}
+
+.comparisonHeader {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: var(--space-4, 1rem);
+  color: var(--color-text-1);
+  padding-bottom: var(--space-3, 0.75rem);
+  border-bottom: 2px solid var(--color-accent-1);
+}
+
+.comparisonMetric {
+  text-align: center;
+  padding: var(--space-3, 0.75rem) 0;
+}
+
+.comparisonValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent-1);
+  margin-bottom: var(--space-1, 0.25rem);
+}
+
+.comparisonLabel {
+  font-size: 0.875rem;
+  color: var(--color-text-3);
+  line-height: 1.4;
+}
+
+/* Disclaimer */
+.disclaimer {
+  font-size: 0.75rem;
+  color: var(--color-text-3);
+  text-align: center;
+  font-style: italic;
+  margin-top: var(--space-4, 1rem);
+  opacity: 0.8;
+}
+
 /* Final CTA */
 .finalCta {
   text-align: center;
-  padding: var(--space-8, 2rem) var(--space-4, 1rem);
+  padding: var(--space-4, 1rem) var(--space-4, 1rem);
   position: relative;
   z-index: 1;
 }

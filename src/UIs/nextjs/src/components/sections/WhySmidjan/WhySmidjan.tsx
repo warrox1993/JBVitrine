@@ -90,20 +90,38 @@ export function WhySmidjan() {
 
         <div className={styles.caseStudy}>
           <h3 className={styles.caseTitle}>
-            Résultats théoriques estimés
+            Impact théorique : avec vs sans AISO*
           </h3>
-          <div className={styles.proof}>
-            <div className={styles.proofItem}>
-              <div className={styles.proofValue}>+250%</div>
-              <div className={styles.proofLabel}>Trafic IA estimé</div>
+          <div className={styles.comparisonGrid}>
+            <div className={styles.comparisonColumn}>
+              <div className={styles.comparisonHeader}>Sans AISO</div>
+              <div className={styles.comparisonMetric}>
+                <div className={styles.comparisonValue}>1 000</div>
+                <div className={styles.comparisonLabel}>visiteurs/mois</div>
+              </div>
+              <div className={styles.comparisonMetric}>
+                <div className={styles.comparisonValue}>20</div>
+                <div className={styles.comparisonLabel}>leads/mois</div>
+              </div>
+              <div className={styles.comparisonMetric}>
+                <div className={styles.comparisonValue}>1</div>
+                <div className={styles.comparisonLabel}>source (Google)</div>
+              </div>
             </div>
-            <div className={styles.proofItem}>
-              <div className={styles.proofValue}>Top 3</div>
-              <div className={styles.proofLabel}>Position Google visée</div>
-            </div>
-            <div className={styles.proofItem}>
-              <div className={styles.proofValue}>95+</div>
-              <div className={styles.proofLabel}>Score Lighthouse</div>
+            <div className={styles.comparisonColumn}>
+              <div className={styles.comparisonHeader}>Avec AISO</div>
+              <div className={styles.comparisonMetric}>
+                <div className={styles.comparisonValue}>2 500</div>
+                <div className={styles.comparisonLabel}>visiteurs/mois (+150%)</div>
+              </div>
+              <div className={styles.comparisonMetric}>
+                <div className={styles.comparisonValue}>45</div>
+                <div className={styles.comparisonLabel}>leads/mois (+125%)</div>
+              </div>
+              <div className={styles.comparisonMetric}>
+                <div className={styles.comparisonValue}>4</div>
+                <div className={styles.comparisonLabel}>sources (Google + IA)</div>
+              </div>
             </div>
           </div>
 
@@ -115,6 +133,10 @@ export function WhySmidjan() {
               → Guide complet AISO 2025
             </a>
           </div>
+
+          <p className={styles.disclaimer}>
+            * Résultats théoriques estimés basés sur une stratégie AISO complète sur 6 mois
+          </p>
         </div>
       </div>
     </section>
