@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { BlogForm } from "@/components/admin/BlogForm";
 import styles from "./page.module.css";
 
@@ -14,6 +15,12 @@ export const metadata: Metadata = {
 export default function NewArticlePage() {
   return (
     <div className={styles.container}>
+      <Breadcrumb items={[
+        { label: 'Admin', href: '/admin' },
+        { label: 'Blog', href: '/admin/blog' },
+        { label: 'Nouvel Article', href: '/admin/blog/new' }
+      ]} />
+
       <div className={styles.header}>
         <div>
           <h1 className={styles.title}>Nouvel Article</h1>

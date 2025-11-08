@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { Footer } from '@/components/sections/Footer/Footer';
 import { Container } from '@/components/atoms/Container';
 import { SectionWithBackground } from '@/components/ui/SectionWithBackground/SectionWithBackground';
@@ -44,6 +45,8 @@ export default function TermsPage() {
                 {/* Hero Section */}
                 <SectionWithBackground className={styles.hero} variant="dark" ariaLabel="hero-title">
                     <Container>
+                        <Breadcrumb />
+
                         <h1 id="hero-title" className={styles.heroTitle}>
                             Conditions Générales de Vente
                         </h1>

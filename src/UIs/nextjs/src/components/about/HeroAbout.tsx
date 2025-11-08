@@ -1,5 +1,6 @@
 "use client";
 
+import { Breadcrumb } from '@/components/Breadcrumb';
 import { Button } from '@/components/ui/Button/Button';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { AnimatedBackground } from '@/components/ui/AnimatedBackground/AnimatedBackground';
@@ -41,6 +42,8 @@ export default function HeroAbout() {
         </defs>
       </svg>
       <div className="container">
+        <Breadcrumb />
+
         <div className={heroStyles.content}>
           <h1 className={heroStyles.title}>Agence digitale basée à Liège, au service de votre performance</h1>
           <p className={heroStyles.description} style={{ maxWidth: '70ch', lineHeight: 1.7 }}>

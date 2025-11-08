@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { getArticleBySlug } from "@/lib/blogActions";
 import { ArticleEditor } from "../../ArticleEditor";
 
@@ -30,5 +31,14 @@ export default async function EditArticlePage({ params }: PageProps) {
     notFound();
   }
 
-  return <ArticleEditor article={article} mode="edit" />;
+  return (
+    <>
+      <Breadcrumb items={[
+        { label: 'Admin', href: '/admin' },
+        { label: 'Articles', href: '/admin' },
+        { label: 'Éditer', href: `/admin/articles/${slug}/edit` }
+      ]} />
+      <ArticleEditor article={article} mode="edit" />
+    </>
+  );
 }

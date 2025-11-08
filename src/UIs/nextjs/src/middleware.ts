@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { getToken } from "next-auth/jwt";
 
 // List of suspicious user agents (common bots, scanners)
 const SUSPICIOUS_USER_AGENTS = [
@@ -23,7 +24,7 @@ const SUSPICIOUS_PATHS = [
   "/wp-admin",
   "/phpmyadmin",
   "/.env",
-  "/admin",
+  // "/admin", - Removed, protected by authentication instead
   "/xmlrpc.php",
   "/.git",
   "/config",
@@ -39,8 +40,9 @@ const SUSPICIOUS_PATHS = [
 /**
  * Security Middleware
  * Runs on every request to add security headers and block malicious traffic
+ * Also handles authentication for admin routes
  */
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const userAgent = request.headers.get("user-agent") || "";
 
@@ -90,7 +92,65 @@ export function middleware(request: NextRequest) {
     return new NextResponse("Bad Request", { status: 400 });
   }
 
-  // 4. Add security headers to response
+  // 4. Authentication check for admin routes
+  if (pathname.startsWith("/admin") && !pathname.startsWith("/admin/login")) {
+    const token = await getToken({
+      req: request,
+      secret: process.env.NEXTAUTH_SECRET,
+    });
+
+    if (!token) {
+      // Redirect to login page
+      const loginUrl = new URL("/admin/login", request.url);
+      loginUrl.searchParams.set("callbackUrl", pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+
+    // Check role permissions
+    if (pathname.startsWith("/admin/leads")) {
+      const userRole = token.role as string;
+
+      // Only admin and sales can access leads
+      if (userRole === "viewer") {
+        return new NextResponse(
+          JSON.stringify({ error: "Forbidden: Insufficient permissions" }),
+          { status: 403, headers: { "Content-Type": "application/json" } },
+        );
+      }
+    }
+  }
+
+  // 5. Authentication check for admin API routes
+  if (pathname.startsWith("/api/admin")) {
+    // Skip digest endpoint (protected by CRON_SECRET)
+    if (pathname === "/api/admin/leads/digest") {
+      // Continue to next step
+    } else {
+      const token = await getToken({
+        req: request,
+        secret: process.env.NEXTAUTH_SECRET,
+      });
+
+      if (!token) {
+        return new NextResponse(
+          JSON.stringify({ error: "Unauthorized: Authentication required" }),
+          { status: 401, headers: { "Content-Type": "application/json" } },
+        );
+      }
+
+      // Check role permissions for admin APIs
+      const userRole = token.role as string;
+
+      if (userRole === "viewer") {
+        return new NextResponse(
+          JSON.stringify({ error: "Forbidden: Insufficient permissions" }),
+          { status: 403, headers: { "Content-Type": "application/json" } },
+        );
+      }
+    }
+  }
+
+  // 6. Add security headers to response
   const response = NextResponse.next();
 
   // Add additional security headers not covered by next.config.ts

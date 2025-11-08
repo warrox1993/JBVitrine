@@ -72,7 +72,7 @@ export function Footer() {
               </a>
             </li>
             <li className={styles.navItem}>
-              <address style={{ fontStyle: 'normal' }}>
+              <address className={styles.address}>
                 Rue Mont Saint-Martin 31<br />
                 4000 Liège, Belgique
               </address>

@@ -165,7 +165,7 @@ export const metadata: Metadata = {
     other: {
         'geo.region': 'BE-WAL',
         'geo.placename': 'Liège',
-        'geo.position': '50.6326;5.5797', // Coordonnées de Liège
+        'geo.position': '50.6446374;5.5664509', // Coordonnées GPS Smidjan
         'contact:phone': '+32 475 20 55 62',
         'contact:email': 'jeanbaptiste.dhondt1@gmail.com',
     },

@@ -66,8 +66,8 @@ export const localBusinessSchema = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 50.6326,
-    longitude: 5.5797,
+    latitude: 50.6446374,
+    longitude: 5.5664509,
   },
   areaServed: [
     {

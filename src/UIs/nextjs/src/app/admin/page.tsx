@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { getAllArticles } from "@/lib/blogActions";
 import { DeleteArticleButton } from "./DeleteArticleButton";
 import { Heading } from "@/components/ui/Heading";
@@ -19,6 +20,8 @@ export default async function AdminDashboard() {
 
   return (
     <div className={styles.container}>
+      <Breadcrumb items={[{ label: 'Admin', href: '/admin' }]} />
+
       <div className={styles.header}>
         <Heading as="h1" className={styles.title}>
           Admin Dashboard

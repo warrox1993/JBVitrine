@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { Card, CardBody, CardHeader } from "@/components/atoms/Card";
 import { Button } from "@/components/ui/Button/Button";
 import { Heading } from "@/components/ui/Heading";

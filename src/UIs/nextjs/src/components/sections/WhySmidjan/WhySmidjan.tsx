@@ -3,6 +3,7 @@
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { Heading } from "@/components/ui/Heading";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
+import { Button } from "@/components/ui/Button/Button";
 import styles from "./WhySmidjan.module.css";
 
 const features = [
@@ -128,9 +129,9 @@ export function WhySmidjan() {
           </div>
 
           <div className={styles.finalCta}>
-            <a href="#form" className={styles.ctaButton}>
+            <Button as="a" href="#form" variant="solid" size="md" ariaLabel="Audit gratuit IA + SEO">
               Audit gratuit IA + SEO
-            </a>
+            </Button>
             <a href="/blog/ai-search-optimization-chatgpt-perplexity-2025" className={styles.ctaLink}>
               → Guide complet AISO 2025
             </a>

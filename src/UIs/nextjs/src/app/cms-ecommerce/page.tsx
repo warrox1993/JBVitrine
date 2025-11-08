@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { CheckIcon } from "@/components/icons/CheckIcon";
 import { ShieldCheckIcon } from "@/components/icons/ShieldCheckIcon";
 import { SparklesIcon } from "@/components/icons/SparklesIcon";
@@ -646,6 +647,9 @@ export default function CmsEcommercePage() {
       <StructuredData />
       <div className={styles.pageRoot}>
         <SectionWithBackground id="cms-hero" className={`${styles.section} ${styles.heroSection}`} variant="dark" ariaLabel="Section hero CMS">
+          <div className="container">
+            <Breadcrumb />
+          </div>
           <HeroSection />
         </SectionWithBackground>
 

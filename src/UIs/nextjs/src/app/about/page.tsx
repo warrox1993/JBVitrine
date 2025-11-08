@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Breadcrumb } from '@/components/Breadcrumb';
 import HeroAbout from '@/components/about/HeroAbout';
 import Mission from './Mission';
 import ValuesCards from '@/components/about/ValuesCards';

@@ -263,7 +263,7 @@
 - **Email:** jeanbaptiste.dhondt1@gmail.com
 - **Téléphone:** +32 475 20 55 62
 - **Localisation:** Liège, Wallonie, Belgique
-- **GPS:** 50.6326, 5.5797
+- **GPS:** 50.6446374, 5.5664509
 - **Fondation:** 2025
 - **Langue:** fr-BE
 

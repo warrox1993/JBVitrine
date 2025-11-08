@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { Heading } from "@/components/ui/Heading";
 import { Footer } from "@/components/sections/Footer/Footer";
 import { SectionWithBackground } from "@/components/ui/SectionWithBackground/SectionWithBackground";
@@ -133,6 +134,8 @@ export default async function BlogPage() {
           ariaLabel="Blog hero section"
         >
           <div className="container">
+            <Breadcrumb />
+
             <Heading as="h1" className={styles.heroTitle}>
               Blog Technique
             </Heading>

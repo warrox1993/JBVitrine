@@ -1,17 +1,37 @@
 /* Global overrides for contact page */
+:global(body.contact-page) :global(aside.sidebar) {
+  display: none !important;
+}
+
 :global(body.contact-page) :global(#main) {
   margin-left: 0 !important;
+  width: 100vw !important;
 }
 
 :global(body.contact-page) :global(header) {
   left: 0 !important;
   width: 100vw !important;
+  padding-left: var(--space-4, 1rem) !important;
+  padding-right: var(--space-4, 1rem) !important;
+}
+
+:global(body.contact-page) :global(header)::before,
+:global(body.contact-page) :global(header)::after {
+  left: 0 !important;
+  width: 100vw !important;
+}
+
+:global(body.contact-page) :global(header) :global(nav) {
+  padding-inline: 0 !important;
 }
 
 /* Contact Page Wrapper */
 .contactPageWrapper {
   width: 100%;
   max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
 /* Contact Container - Override padding and add margin */
@@ -19,12 +39,27 @@
   padding-inline: var(--space-5);
   max-width: 1440px;
   margin: 0 auto;
+  position: relative;
+  z-index: 10;
 }
 
 .contactContainer > section > *,
 .contactContainer > section > div {
   position: relative;
   z-index: 10;
+}
+
+/* Ensure all content is above background */
+.contactPageWrapper > *:not(.animated-bg-container) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Background should be fixed and cover viewport */
+.contactPageWrapper :global(.animated-bg-container) {
+  position: fixed !important;
+  height: 100vh !important;
+  z-index: 0 !important;
 }
 
 /* Breadcrumb */
@@ -50,24 +85,24 @@
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: var(--space-6) 0;
+  padding: var(--space-3, 1rem) 0;
   max-width: 900px;
-  margin: 0 auto var(--space-7);
+  margin: 0 auto var(--space-3, 1rem);
 }
 
 .heroTitle {
-  font-size: var(--text-4xl);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 700;
   color: var(--color-text-1);
-  margin: 0 0 var(--space-4) 0;
+  margin: 0 0 var(--space-2, 0.5rem) 0;
   line-height: 1.2;
 }
 
 .heroSub {
-  font-size: var(--text-lg);
+  font-size: var(--text-base, 1rem);
   color: var(--color-text-2);
-  line-height: 1.6;
-  margin: 0 0 var(--space-5) 0;
+  line-height: 1.5;
+  margin: 0 0 var(--space-3, 1rem) 0;
 }
 
 .trust {

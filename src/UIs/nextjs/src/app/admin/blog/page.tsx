@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { getAllArticles, deleteArticle } from "@/lib/blogActions";
 import { Button } from "@/components/ui/Button/Button";
 import { DeleteButton } from "@/components/admin/DeleteButton";
@@ -18,6 +19,11 @@ export default async function AdminBlogPage() {
 
   return (
     <div className={styles.adminContainer}>
+      <Breadcrumb items={[
+        { label: 'Admin', href: '/admin' },
+        { label: 'Blog', href: '/admin/blog' }
+      ]} />
+
       <div className={styles.adminHeader}>
         <div>
           <h1 className={styles.title}>Gestion des Articles</h1>

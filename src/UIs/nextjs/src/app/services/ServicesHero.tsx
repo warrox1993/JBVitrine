@@ -1,4 +1,5 @@
 "use client";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { Button } from "@/components/ui/Button/Button";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
@@ -33,6 +34,8 @@ export function ServicesHero() {
         </defs>
       </svg>
       <div className="container">
+        <Breadcrumb />
+
         <div className={styles.heroInner}>
           <h1 id="services-hero-title" className={styles.heroTitle}>
             Des solutions digitales prêtes à performer.

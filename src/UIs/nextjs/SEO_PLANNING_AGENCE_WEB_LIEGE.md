@@ -115,7 +115,7 @@
   <section className={styles.mapSection}>
     <h2>Notre localisation à Liège</h2>
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2531.234!2d5.5797!3d50.6326..."
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2531.234!2d5.5664509!3d50.6446374..."
       width="100%"
       height="450"
       style={{ border: 0, borderRadius: '12px' }}

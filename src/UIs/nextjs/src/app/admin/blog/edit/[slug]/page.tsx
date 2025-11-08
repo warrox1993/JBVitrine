@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { getArticleBySlug } from "@/lib/blogActions";
 import { BlogForm } from "@/components/admin/BlogForm";
 import styles from "./page.module.css";
@@ -27,6 +28,12 @@ export default async function EditArticlePage({ params }: Props) {
 
   return (
     <div className={styles.container}>
+      <Breadcrumb items={[
+        { label: 'Admin', href: '/admin' },
+        { label: 'Blog', href: '/admin/blog' },
+        { label: 'Éditer', href: `/admin/blog/edit/${slug}` }
+      ]} />
+
       <div className={styles.header}>
         <div>
           <h1 className={styles.title}>Éditer l'Article</h1>

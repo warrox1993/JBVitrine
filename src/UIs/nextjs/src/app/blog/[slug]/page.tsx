@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { Heading } from "@/components/ui/Heading";
 import { Button } from "@/components/ui/Button/Button";
 import { Footer } from "@/components/sections/Footer/Footer";
@@ -883,9 +884,13 @@ export default async function BlogArticlePage({ params }: Props) {
             ariaLabel="Article header"
           >
             <div className="container">
-              <div className={styles.breadcrumb}>
-                <Link href="/blog">← Retour au blog</Link>
-              </div>
+              <Breadcrumb
+                items={[
+                  { label: 'Blog', href: '/blog' },
+                  { label: article.title, href: `/blog/${slug}` }
+                ]}
+              />
+
               <div className={styles.articleMeta}>
                 <span className={styles.category}>{article.category}</span>
                 <time dateTime={article.publishedAt}>

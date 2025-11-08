@@ -23,11 +23,12 @@ const nextConfig: NextConfig = {
       "font-src 'self' https://fonts.gstatic.com data:",
       // Images: self + HTTPS externe + data URIs + blob
       "img-src 'self' https: data: blob:",
-      // Connexions: Vercel Analytics + Speed Insights
-      "connect-src 'self' https://vitals.vercel-insights.com https://vercel-insights.com",
+      // Connexions: Vercel Analytics + Speed Insights + reCAPTCHA
+      "connect-src 'self' https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com",
       // Fermeture sécurité object/frame
       "object-src 'none'",
-      "frame-src 'none'",
+      // Allow Google Maps + reCAPTCHA embeds on contact page
+      "frame-src https://www.google.com https://recaptcha.google.com https://www.recaptcha.net",
       "frame-ancestors 'none'",
       // Base et form
       "base-uri 'self'",
@@ -36,20 +37,20 @@ const nextConfig: NextConfig = {
       "upgrade-insecure-requests",
     ];
 
-    // Dev/Preview: autorise Vercel Live
+    // Dev/Preview: autorise Vercel Live + reCAPTCHA
     if (isDevelopment || isPreview) {
       baseCsp.push(
-        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://*.vercel.live https://va.vercel-scripts.com",
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://*.vercel.live https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com",
       );
       const connectIndex = baseCsp.findIndex((x) =>
         x.startsWith("connect-src"),
       );
       baseCsp[connectIndex] =
-        "connect-src 'self' https://vercel.live wss://ws-us3.pusher.com https://sockjs-us3.pusher.com https://vitals.vercel-insights.com https://vercel-insights.com";
+        "connect-src 'self' https://vercel.live wss://ws-us3.pusher.com https://sockjs-us3.pusher.com https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com";
     } else {
-      // Production: Vercel Analytics + Speed Insights uniquement
+      // Production: Vercel Analytics + Speed Insights + reCAPTCHA
       baseCsp.push(
-        "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
+        "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com",
       );
     }
 
