@@ -1,0 +1,190 @@
+/* Reuse styles from previous steps */
+.step {
+  width: 100%;
+  padding: var(--space-3, 1rem) var(--space-4, 1.5rem);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-3, 1rem);
+}
+
+.stepNumber {
+  display: inline-block;
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--color-accent-1, #ff6a00);
+  background: color-mix(
+    in srgb,
+    var(--color-accent-1, #ff6a00) 10%,
+    transparent
+  );
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full, 9999px);
+  margin-bottom: var(--space-2, 0.5rem);
+}
+
+.title {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: var(--color-text-1, #f6f7f9);
+  margin: 0 0 var(--space-2, 0.5rem) 0;
+}
+
+.subtitle {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text-2, #c8cdd6);
+  margin: 0;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1.5rem);
+  margin-bottom: var(--space-3, 1rem);
+}
+
+.section {
+}
+
+.sectionTitle {
+  font-size: var(--text-base, 1rem);
+  font-weight: 600;
+  color: var(--color-text-1, #f6f7f9);
+  margin: 0 0 var(--space-2, 0.5rem) 0;
+  padding-bottom: var(--space-1, 0.25rem);
+  border-bottom: 2px solid var(--color-accent-1, #ff6a00);
+  display: inline-block;
+}
+
+.options {
+  display: grid;
+  gap: var(--space-3, 1rem);
+}
+
+.optionCard {
+  background: var(--color-surface, #1e2430);
+  border: 2px solid var(--color-border, #2b3342);
+  border-radius: var(--radius-md, 0.75rem);
+  padding: var(--space-4, 1.5rem);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.optionCard:hover {
+  border-color: var(--color-accent-1, #ff6a00);
+}
+
+.optionCard.selected {
+  border-color: var(--color-accent-1, #ff6a00);
+  background: color-mix(
+    in srgb,
+    var(--color-accent-1, #ff6a00) 5%,
+    var(--color-surface, #1e2430)
+  );
+}
+
+.optionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2, 0.5rem);
+}
+
+.optionHeader h4 {
+  font-size: var(--text-base, 1rem);
+  font-weight: 600;
+  color: var(--color-text-1, #f6f7f9);
+  margin: 0;
+}
+
+.optionPrice {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--color-accent-1, #ff6a00);
+}
+
+.optionDescription {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text-2, #c8cdd6);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 1rem);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 1rem);
+  padding: var(--space-3, 1rem);
+  background: var(--color-surface, #1e2430);
+  border: 2px solid var(--color-border, #2b3342);
+  border-radius: var(--radius-md, 0.75rem);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkbox:hover {
+  border-color: var(--color-accent-1, #ff6a00);
+}
+
+.checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.checkbox span {
+  font-size: var(--text-base, 1rem);
+  color: var(--color-text-1, #f6f7f9);
+}
+
+.footer {
+  display: flex;
+  gap: var(--space-3, 1rem);
+  justify-content: center;
+  padding-top: var(--space-4, 1.5rem);
+  border-top: 1px solid var(--color-border, #2b3342);
+}
+
+.btnPrimary,
+.btnSecondary {
+  padding: var(--space-3, 1rem) var(--space-5, 2.5rem);
+  font-size: var(--text-base, 1rem);
+  font-weight: 600;
+  border-radius: var(--radius-md, 0.75rem);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-family: inherit;
+}
+
+.btnPrimary {
+  background: var(--color-accent-1, #ff6a00);
+  color: white;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  background: var(--color-primary-strong, #e45700);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--color-text-1, #f6f7f9);
+  border: 2px solid var(--color-border, #2b3342);
+}
+
+.btnSecondary:hover {
+  border-color: var(--color-accent-1, #ff6a00);
+}

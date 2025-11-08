@@ -1,29 +1,34 @@
 .whySection {
-  padding: var(--space-12, 6rem) 0;
-  background: var(--color-bg-2);
+  padding-block: clamp(var(--space-6), 10vw, var(--space-8));
+  background: color-mix(in srgb, var(--color-bg-alt) 92%, transparent 8%);
   position: relative;
   overflow: hidden;
+  margin: 0;
+  isolation: isolate;
 }
 
 /* Header */
 .header {
   max-width: 900px;
-  margin: 0 auto var(--space-10, 5rem);
+  margin-inline: auto;
+  margin-bottom: var(--space-10);
   text-align: center;
   position: relative;
   z-index: 1;
 }
 
 .title {
-  margin-bottom: var(--space-4, 1rem);
-  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: var(--space-4);
+  font-size: var(--text-3xl);
+  text-align: center !important;
 }
 
 .subtitle {
-  font-size: 1.125rem;
+  font-size: var(--text-lg);
   line-height: 1.7;
   color: var(--color-text-2);
-  margin-bottom: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-3);
+  text-align: center !important;
 }
 
 .subtitle strong {
@@ -32,10 +37,11 @@
 }
 
 .cta {
-  font-size: 1.25rem;
+  font-size: var(--text-xl);
   font-weight: 600;
   color: var(--color-text-1);
-  margin-top: var(--space-4, 1rem);
+  margin-top: var(--space-4);
+  text-align: center !important;
 }
 
 .highlight {
@@ -49,29 +55,41 @@
 /* Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--space-6, 1.5rem);
-  margin-bottom: var(--space-10, 5rem);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
   position: relative;
   z-index: 1;
+  grid-auto-rows: 1fr;
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
 }
 
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: var(--space-4, 1rem);
+    gap: var(--space-3);
   }
 }
 
 /* Cards */
 .card {
-  background: var(--color-bg-2);
-  border: 1px solid var(--color-border-1);
-  border-radius: 16px;
-  padding: var(--space-6, 1.5rem);
+  background: color-mix(in srgb, var(--color-surface) 98%, transparent 2%);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 35%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .visible .card {
@@ -109,7 +127,7 @@
 .card:hover {
   border-color: var(--color-accent-1);
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(255, 106, 0, 0.15);
+  box-shadow: var(--shadow-md);
 }
 
 .card:hover::before {
@@ -123,32 +141,35 @@
 }
 
 .cardTitle {
-  font-size: 1.25rem;
+  font-size: var(--text-xl);
   font-weight: 600;
   color: var(--color-text-1);
-  margin-bottom: var(--space-2, 0.5rem);
+  margin-bottom: var(--space-2);
 }
 
 .cardDescription {
-  font-size: 0.9375rem;
+  font-size: var(--text-base);
   line-height: 1.6;
   color: var(--color-text-3);
-  margin-bottom: var(--space-4, 1rem);
+  margin-bottom: var(--space-3);
+  flex-grow: 1;
 }
 
 .cardHighlight {
   display: inline-block;
-  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  padding: var(--space-1) var(--space-3);
   background: linear-gradient(
     135deg,
     rgba(255, 106, 0, 0.1),
     rgba(255, 106, 0, 0.05)
   );
-  border: 1px solid rgba(255, 106, 0, 0.3);
-  border-radius: 20px;
-  font-size: 0.8125rem;
+  border: 1px solid
+    color-mix(in srgb, var(--color-accent-1) 30%, transparent 70%);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
   font-weight: 600;
   color: var(--color-accent-1);
+  margin-top: auto;
 }
 
 /* Proof Section */
@@ -156,13 +177,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--space-8, 2rem);
+  gap: var(--space-8);
   flex-wrap: wrap;
-  padding: var(--space-8, 2rem) var(--space-6, 1.5rem);
-  background: var(--color-bg-2);
-  border: 1px solid var(--color-border-1);
-  border-radius: 16px;
-  margin-bottom: var(--space-8, 2rem);
+  padding: var(--space-8) var(--space-6);
+  background: color-mix(in srgb, var(--color-surface) 98%, transparent 2%);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 35%);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-8);
   position: relative;
   z-index: 1;
 }
@@ -174,7 +195,7 @@
 }
 
 .proofValue {
-  font-size: 3rem;
+  font-size: var(--text-4xl);
   font-weight: 700;
   background: linear-gradient(
     135deg,
@@ -184,43 +205,39 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: var(--space-2, 0.5rem);
+  margin-bottom: var(--space-2);
 }
 
 .proofLabel {
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
   color: var(--color-text-3);
   line-height: 1.4;
 }
 
 /* Case Study */
 .caseStudy {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 106, 0, 0.08),
-    rgba(255, 106, 0, 0.02)
-  );
-  border: 1px solid rgba(255, 106, 0, 0.2);
-  border-radius: 16px;
-  padding: var(--space-8, 2rem);
-  margin-bottom: var(--space-8, 2rem);
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 50%);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-6);
   position: relative;
   z-index: 1;
 }
 
 .caseTitle {
-  font-size: 1.5rem;
+  font-size: var(--text-xl);
   font-weight: 600;
   color: var(--color-text-1);
-  margin-bottom: var(--space-6, 1.5rem);
+  margin-bottom: var(--space-4);
   text-align: center;
 }
 
 .caseGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-6, 1.5rem);
-  margin-bottom: var(--space-4, 1rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
 }
 
 @media (max-width: 768px) {
@@ -231,32 +248,32 @@
 
 .caseMetric {
   text-align: center;
-  padding: var(--space-4, 1rem);
-  background: var(--color-bg-1);
-  border-radius: 12px;
+  padding: var(--space-3);
+  background: color-mix(in srgb, var(--color-bg) 100%, transparent 0%);
+  border-radius: var(--radius-md);
 }
 
 .caseLabel {
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
   color: var(--color-text-3);
-  margin-bottom: var(--space-2, 0.5rem);
+  margin-bottom: var(--space-1);
 }
 
 .caseValue {
-  font-size: 2.5rem;
+  font-size: var(--text-2xl);
   font-weight: 700;
   color: var(--color-accent-1);
-  margin-bottom: var(--space-1, 0.25rem);
+  margin-bottom: var(--space-1);
 }
 
 .casePeriod {
-  font-size: 0.8125rem;
+  font-size: var(--text-sm);
   color: var(--color-text-3);
   font-style: italic;
 }
 
 .caseFootnote {
-  font-size: 0.9375rem;
+  font-size: var(--text-base);
   color: var(--color-text-2);
   text-align: center;
   font-style: italic;
@@ -266,8 +283,8 @@
 .comparisonGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-6, 1.5rem);
-  margin-bottom: var(--space-6, 1.5rem);
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
 @media (max-width: 768px) {
@@ -277,10 +294,10 @@
 }
 
 .comparisonColumn {
-  background: var(--color-bg-1);
-  border-radius: 12px;
-  padding: var(--space-5, 1.25rem);
-  border: 1px solid var(--color-border-1);
+  background: color-mix(in srgb, var(--color-bg) 100%, transparent 0%);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  border: 1px solid color-mix(in srgb, var(--color-border), transparent 35%);
   transition: transform 0.3s ease;
 }
 
@@ -289,55 +306,55 @@
 }
 
 .comparisonHeader {
-  font-size: 1.125rem;
+  font-size: var(--text-base);
   font-weight: 600;
   text-align: center;
-  margin-bottom: var(--space-4, 1rem);
+  margin-bottom: var(--space-3);
   color: var(--color-text-1);
-  padding-bottom: var(--space-3, 0.75rem);
+  padding-bottom: var(--space-2);
   border-bottom: 2px solid var(--color-accent-1);
 }
 
 .comparisonMetric {
   text-align: center;
-  padding: var(--space-3, 0.75rem) 0;
+  padding: var(--space-2) 0;
 }
 
 .comparisonValue {
-  font-size: 2rem;
+  font-size: var(--text-2xl);
   font-weight: 700;
   color: var(--color-accent-1);
-  margin-bottom: var(--space-1, 0.25rem);
+  margin-bottom: var(--space-1);
 }
 
 .comparisonLabel {
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
   color: var(--color-text-3);
   line-height: 1.4;
 }
 
 /* Disclaimer */
 .disclaimer {
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
   color: var(--color-text-3);
   text-align: center;
   font-style: italic;
-  margin-top: var(--space-4, 1rem);
+  margin-top: var(--space-4);
   opacity: 0.8;
 }
 
 /* Final CTA */
 .finalCta {
   text-align: center;
-  padding: var(--space-4, 1rem) var(--space-4, 1rem);
+  padding: var(--space-4) var(--space-4);
   position: relative;
   z-index: 1;
 }
 
 .finalText {
-  font-size: 1.25rem;
+  font-size: var(--text-xl);
   color: var(--color-text-2);
-  margin-bottom: var(--space-6, 1.5rem);
+  margin-bottom: var(--space-6);
 }
 
 .finalText strong {
@@ -345,38 +362,14 @@
   font-weight: 600;
 }
 
-.ctaButton {
-  display: inline-block;
-  padding: var(--space-3, 0.75rem) var(--space-6, 1.5rem);
-  background: linear-gradient(
-    135deg,
-    var(--color-accent-1),
-    var(--color-accent-2)
-  );
-  color: var(--color-bg-1);
-  font-weight: 600;
-  font-size: 1.125rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
-  margin-right: var(--space-4, 1rem);
-  margin-bottom: var(--space-3, 0.75rem);
-}
-
-.ctaButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
-}
-
 .ctaLink {
   display: inline-block;
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: var(--color-accent-1);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
-  margin-bottom: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-3);
 }
 
 .ctaLink:hover {
@@ -385,13 +378,6 @@
 }
 
 @media (max-width: 768px) {
-  .ctaButton {
-    display: block;
-    margin: 0 auto var(--space-3, 0.75rem);
-    width: 100%;
-    max-width: 300px;
-  }
-
   .ctaLink {
     display: block;
   }

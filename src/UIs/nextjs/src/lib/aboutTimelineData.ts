@@ -57,8 +57,8 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
   },
   {
     year: "2026",
-    title: "Master en Cybersécurité (en projet)",
-    text: "Objectif 2026-2027 : intégrer un master en cybersécurité à l'UNamur ou à l'université de Bruxelles. Poursuite des certifications professionnelles en parallèle pour rester à la pointe des nouvelles menaces et techniques de défense.",
+    title: "Le grand saut : passage en indépendant",
+    text: "Je suis en train de passer indépendant avec SMIDJAN. Après des années d'expérience cumulée en informatique, cybersécurité et développement web, je franchis le cap de l'entrepreneuriat. L'objectif : accompagner les PME wallonnes dans leur transformation digitale avec une expertise pointue en sécurité, développement moderne (Next.js, React) et automatisation IA. Un nouveau chapitre s'ouvre, porté par la passion technique et l'envie d'avoir un impact concret sur le tissu économique local.",
     imageUrl: "/images/timeline/2026.jpg",
   },
 ];

@@ -1,0 +1,18 @@
+.heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-3xl);
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+}
+
+.accent {
+  background: linear-gradient(
+    135deg,
+    var(--color-text-1) 0%,
+    var(--color-accent-1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

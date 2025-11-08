@@ -1,5 +1,6 @@
 import React from "react";
 import { SITE_CONFIG } from "@/lib/constants";
+import styles from "./FooterSocial.module.css";
 
 function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -32,10 +33,16 @@ export default function FooterSocial() {
     { name: 'GitHub', href: SITE_CONFIG.social.github, Icon: GithubIcon },
   ];
   return (
-    <div style={{ display: 'flex', gap: 'var(--space-4)' }}>
+    <div className={styles.socialContainer}>
       {socials.map(({ name, href, Icon }) => (
-        <a key={name} href={href} target="_blank" rel="noopener noreferrer" aria-label={name}
-           className="social-link" style={{ width: 40, height: 40, borderRadius: '50%', background: 'var(--color-surface)', border: '1px solid var(--color-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-2)', textDecoration: 'none', transition: 'all 0.3s' }}>
+        <a
+          key={name}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={name}
+          className={styles.socialLink}
+        >
           <Icon width={18} height={18} />
         </a>
       ))}

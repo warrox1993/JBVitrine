@@ -1,0 +1,118 @@
+/* Breadcrumb Navigation - Dark Theme */
+
+.breadcrumb {
+  margin-bottom: var(--space-6, 2rem);
+  padding: var(--space-3, 0.75rem) 0;
+}
+
+.breadcrumbList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2, 0.5rem);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: var(--font-size-sm, 0.875rem);
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+  color: var(--color-text-2, #c8cdd6);
+  transition: color 0.2s ease;
+}
+
+.breadcrumbLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  color: var(--color-text-2, #c8cdd6);
+  text-decoration: none;
+  padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+  border-radius: var(--radius-sm, 4px);
+  transition: all 0.2s ease;
+}
+
+.breadcrumbLink:hover {
+  color: var(--color-accent-1, #ff6a00);
+  background: rgba(255, 106, 0, 0.1);
+}
+
+.breadcrumbLink:focus-visible {
+  outline: 2px solid var(--color-accent-1, #ff6a00);
+  outline-offset: 2px;
+}
+
+.homeIcon {
+  flex-shrink: 0;
+}
+
+.breadcrumbSeparator {
+  display: flex;
+  align-items: center;
+  color: var(--color-text-3, #6b7280);
+  pointer-events: none;
+}
+
+.breadcrumbItemActive {
+  color: var(--color-text-1, #f6f7f9);
+  font-weight: 500;
+}
+
+.breadcrumbCurrent {
+  color: var(--color-text-1, #f6f7f9);
+  padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+  cursor: default;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .breadcrumb {
+    margin-bottom: var(--space-4, 1rem);
+    padding: var(--space-2, 0.5rem) 0;
+  }
+
+  .breadcrumbList {
+    font-size: var(--font-size-xs, 0.75rem);
+    gap: var(--space-1, 0.25rem);
+  }
+
+  .breadcrumbLink,
+  .breadcrumbCurrent {
+    padding: var(--space-1, 0.25rem);
+  }
+
+  .homeIcon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .breadcrumbSeparator svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Animation on mount */
+@keyframes breadcrumbFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.breadcrumb {
+  animation: breadcrumbFadeIn 0.3s ease;
+}
+
+/* Print styles */
+@media print {
+  .breadcrumb {
+    display: none;
+  }
+}

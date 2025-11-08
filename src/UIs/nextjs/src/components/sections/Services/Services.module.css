@@ -40,6 +40,8 @@
   border-radius: var(--radius-xl);
   position: relative;
   transition: var(--transition-base);
+  display: flex;
+  flex-direction: column;
 }
 .card:hover {
   transform: translateY(-8px);
@@ -107,6 +109,7 @@
   font-weight: 700;
   color: var(--color-accent-1);
   margin-bottom: var(--space-4);
+  margin-top: auto;
 }
 .cta {
   width: 100%;
