@@ -6,7 +6,9 @@
 
 .section {
   position: relative;
-  padding-block: clamp(var(--space-6), 9vw, var(--space-8));
+  padding-block: clamp(var(--space-6), 10vw, var(--space-8));
+  margin: 0;
+  background: var(--color-bg);
   overflow: hidden;
   isolation: isolate;
 }
@@ -245,14 +247,14 @@
 
 .servicesDetailed {
   display: grid;
-  gap: clamp(var(--space-6), 6vw, var(--space-8));
+  gap: var(--space-4);
 }
 
 .serviceBlock {
   display: grid;
-  gap: var(--space-4);
-  padding: clamp(var(--space-5), 4vw, var(--space-6));
-  border-radius: var(--radius-xl);
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
   background: color-mix(in srgb, var(--color-surface) 98%, transparent 2%);
   border: 1px solid color-mix(in srgb, var(--color-border), transparent 35%);
   box-shadow: var(--shadow-md);
@@ -261,62 +263,62 @@
 .serviceTitle {
   margin: 0;
   font-family: var(--font-display);
-  font-size: var(--text-3xl);
+  font-size: var(--text-2xl);
   font-weight: 700;
   color: var(--color-text);
 }
 
 .serviceSubtitle {
   margin: 0;
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   font-weight: 600;
   color: var(--color-text-2);
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .serviceDescription {
   margin: 0;
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   color: var(--color-text-2);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .serviceTech,
 .serviceBenefits,
 .serviceExamples {
   display: grid;
-  gap: var(--space-2);
+  gap: var(--space-1);
 }
 
 .serviceTech strong,
 .serviceBenefits strong,
 .serviceExamples strong {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   font-weight: 700;
   color: var(--color-text);
 }
 
 .serviceTech p {
   margin: 0;
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   color: var(--color-text-2);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .serviceBenefits ul,
 .serviceExamples ul {
   margin: 0;
-  padding-left: var(--space-5);
+  padding-left: var(--space-4);
   display: grid;
-  gap: var(--space-2);
+  gap: var(--space-1);
   color: var(--color-text-2);
-  font-size: var(--text-base);
-  line-height: 1.6;
+  font-size: var(--text-sm);
+  line-height: 1.5;
 }
 
 .serviceBenefits li,
 .serviceExamples li {
-  padding-left: var(--space-1);
+  padding-left: 0;
 }
 
 .serviceBlock button,

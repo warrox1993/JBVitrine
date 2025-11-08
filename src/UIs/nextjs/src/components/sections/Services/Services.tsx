@@ -51,9 +51,9 @@ export function Services() {
     auto: styles.cardAuto,
   };
   const ctaTargets: Record<ServiceOrderKey, string> = {
-    dev: "/services#developpement-web",
-    cyber: "/services#cybersecurite",
-    auto: "/services#automatisation-ia",
+    dev: "/contact",
+    cyber: "/contact",
+    auto: "/contact",
   };
 
   return (
@@ -61,8 +61,8 @@ export function Services() {
       <AnimatedBackground variant="dark" />
       <div className="container">
         <div className={styles.header}>
-          <Heading as="h2" accent className={styles.title}>Services Excellence</Heading>
-          <p className={styles.desc}>Trois domaines d'excellence pour bâtir des sites plus rapides, plus sûrs et plus intelligents.</p>
+          <Heading as="h2" accent className={styles.title}>Domaines d'Expertise</Heading>
+          <p className={styles.desc}>Solutions sur mesure combinant développement web, cybersécurité et automatisation IA. Chaque projet est unique et configuré selon vos besoins.</p>
         </div>
         <div className={styles.grid}>
           {services.map((s, i) => (
@@ -74,7 +74,7 @@ export function Services() {
                 orderClasses[s.orderKey],
               ].join(" ")}
             >
-              {s.featured && <div className={styles.badge}>Populaire</div>}
+              {s.featured && <div className={styles.badge}>Recommandé</div>}
               <h3 className={styles.cardTitle}>{s.title}</h3>
               <p className={styles.cardDesc}>{s.desc}</p>
               <ul className={styles.featureList}>
@@ -87,7 +87,7 @@ export function Services() {
                 href={ctaTargets[s.orderKey]}
                 className={`${styles.cta} ${s.featured ? styles.ctaFeatured : styles.ctaRegular}`}
               >
-                Démarrer un projet
+                Configurer mon projet
               </a>
             </div>
           ))}

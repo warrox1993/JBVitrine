@@ -438,6 +438,7 @@ function StructuredData() {
 function HeroSection() {
   return (
     <div className="container">
+      <Breadcrumb />
       <div className={styles.heroGrid}>
         <div className={styles.heroContent}>
           <Heading as="h1" className={styles.heroTitle} id="cms-hero-title">
@@ -647,9 +648,6 @@ export default function CmsEcommercePage() {
       <StructuredData />
       <div className={styles.pageRoot}>
         <SectionWithBackground id="cms-hero" className={`${styles.section} ${styles.heroSection}`} variant="dark" ariaLabel="Section hero CMS">
-          <div className="container">
-            <Breadcrumb />
-          </div>
           <HeroSection />
         </SectionWithBackground>
 

@@ -131,25 +131,6 @@ const servicePillars = [
   },
 ] as const;
 
-
-const packages = [
-  {
-    name: "Pack Build",
-    subtitle: "lancer vite, solide et mesurable.",
-    description: "Inclut : développement web complet, hébergement, mise en ligne, documentation.",
-  },
-  {
-    name: "Pack Sécurité",
-    subtitle: "auditer, durcir, stabiliser.",
-    description: "Inclut : audit OWASP, monitoring IA, plan de remédiation.",
-  },
-  {
-    name: "Pack Automatisation & IA",
-    subtitle: "connecter, fluidifier, accélérer.",
-    description: "Inclut : automatisations n8n / Zapier / API + intégration IA personnalisée.",
-  },
-] as const;
-
 const cmsFeatures = [
   {
     title: "Fonctionnalités clés",
@@ -335,9 +316,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="services-tech" className={`${styles.section} ${styles.sectionDark}`} aria-labelledby="services-tech-stack">
-        <TechStackEnhanced />
-      </section>
+      <TechStackEnhanced />
 
       <section id="services-cms" className={`${styles.section} ${styles.sectionLight}`} aria-labelledby="services-cms-highlight">
         <AnimatedBackground variant="light" />
@@ -366,34 +345,6 @@ export default function ServicesPage() {
             <Button as="a" href="/contact" variant="solid" size="md" ariaLabel="Découvrir Smidjan CMS">
               Découvrir Smidjan CMS
             </Button>
-          </div>
-        </div>
-      </section>
-
-      <section id="services-packages" className={`${styles.section} ${styles.sectionDark}`} aria-labelledby="services-packages-title">
-        <AnimatedBackground variant="dark" />
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <Heading as="h2" accent className={styles.sectionTitle} id="services-packages-title">
-              Trois formules pour passer de l'idée au résultat
-            </Heading>
-            <p className={styles.sectionLead}>
-              Chaque pack est une porte d'entrée vers la solution adaptée à votre projet. Nous ajustons ensuite chaque prestation selon vos besoins exacts.
-            </p>
-          </div>
-          <div className={styles.packagesGrid}>
-            {packages.map((pack) => (
-              <div key={pack.name} className={styles.packageCard}>
-                <div className={styles.packageHeader}>
-                  <h3 className={styles.packageName}>{pack.name}</h3>
-                  <p className={styles.packageDescription}>{pack.subtitle}</p>
-                </div>
-                <p className={styles.packageDescription}>{pack.description}</p>
-                <Button as="a" href="/contact" variant="solid" size="sm" ariaLabel={`Demander un devis pour ${pack.name}`}>
-                  Demander un devis personnalisé
-                </Button>
-              </div>
-            ))}
           </div>
         </div>
       </section>

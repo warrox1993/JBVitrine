@@ -13,7 +13,6 @@ export const servicesSidebarItems = [
   { href: "#automatisation-ia", label: "Automatisation & IA", icon: <WorkflowIcon aria-hidden="true" /> },
   { href: "#services-tech", label: "Stack tech", icon: <SparklesIcon aria-hidden="true" /> },
   { href: "#services-cms", label: "CMS SMIDJAN", icon: <ServicesIcon aria-hidden="true" /> },
-  { href: "#services-packages", label: "Packs", icon: <GridIcon aria-hidden="true" /> },
   { href: "#services-contact", label: "Contact", icon: <MailIcon aria-hidden="true" /> },
 ] as const;
 

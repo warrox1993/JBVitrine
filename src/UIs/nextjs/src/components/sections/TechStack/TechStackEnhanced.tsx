@@ -196,7 +196,7 @@ export function TechStackEnhanced() {
   }, []);
 
   return (
-    <section className="tech-stack-section">
+    <section id="services-tech" className="tech-stack-section">
       {/* Animated background */}
       <div className="animated-bg"></div>
 
