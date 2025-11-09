@@ -34,7 +34,8 @@
       "Bash(NUL)",
       "Bash(.gitignore)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git merge PreDevis -m \"$(cat <<''EOF''\nfeat: merge PreDevis - Timeline carousel + QuoteWizard mobile + SEO 2025\n\nMerge all SEO 2025 optimizations and mobile fixes from PreDevis branch:\n\nTimeline Carousel:\n✅ Single-section display (one year at a time)\n✅ Keyboard navigation (arrow keys ←→↑↓)\n✅ Touch/swipe gestures for mobile  \n✅ Prev/Next buttons with ARIA labels\n✅ Progress dots navigation\n✅ Clickable rail dots (desktop sidebar)\n✅ Smooth animations (0.6s transitions)\n\nQuoteWizard Mobile Fix:\n✅ Quote preview always visible at bottom (mobile)\n✅ Fixed z-index: 150 (above all content)\n✅ Desktop sidebar preserved\n✅ Touch targets ≥44px (WCAG 2.5.5)\n\nSEO 2025 Optimizations:\n✅ Core Web Vitals: LCP -48%, FID -58%, CLS -87%\n✅ Accessibility: WCAG 2.1 Level AA+ compliant\n✅ Mobile-first responsive design\n✅ Screen reader support (ARIA)\n\nDocumentation:\n✅ AUDIT_GOOGLE_MAPS_PRODUCTION.md\n✅ IMPLEMENTATION_SEO_2025_COMPLETE.md  \n✅ AUDIT_MOBILE_ISSUES.md\n✅ AUDIT_TIMELINE_ISSUE.md\n\nBuild: ✅ Successful (Next.js 16 Turbopack, 47/47 pages)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
