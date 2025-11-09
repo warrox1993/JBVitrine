@@ -61,7 +61,7 @@ export function WhySmidjan() {
       <div className="container">
         <div className={styles.header}>
           <Heading as="h2" accent className={styles.title}>
-            Pourquoi choisir Smidjan en 2025 ?
+            Pourquoi Choisir une Agence Web à Liège Spécialisée Next.js et SEO ?
           </Heading>
           <p className={styles.subtitle}>
             La présence en ligne a radicalement changé. Les IA (ChatGPT, Perplexity, Claude)
@@ -129,8 +129,8 @@ export function WhySmidjan() {
           </div>
 
           <div className={styles.finalCta}>
-            <Button as="a" href="#form" variant="solid" size="md" ariaLabel="Audit gratuit IA + SEO">
-              Audit gratuit IA + SEO
+            <Button as="a" href="/contact" variant="solid" size="md" ariaLabel="Demander un audit SEO gratuit Liège">
+              Audit SEO Gratuit
             </Button>
             <a href="/blog/ai-search-optimization-chatgpt-perplexity-2025" className={styles.ctaLink}>
               → Guide complet AISO 2025

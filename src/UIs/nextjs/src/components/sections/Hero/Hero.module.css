@@ -187,16 +187,22 @@ body[data-fx-ready="true"] .gradientBg {
   }
   .hero .container {
     padding-left: var(--space-4);
+    padding-right: var(--space-4);
   }
   .content {
-    padding-top: calc(var(--header-height) + var(--space-4));
+    /* Mobile: Réduire padding-top (56px header + 16px = 72px au lieu de 138px) */
+    padding-top: calc(var(--header-height) + var(--space-3));
     top: 0;
+    padding-right: 0; /* Override desktop padding */
   }
   .actions {
     flex-direction: column;
+    gap: var(--space-3); /* Réduire gap entre boutons */
   }
   .actions button {
     width: 100%;
+    max-width: 320px; /* Éviter boutons trop larges */
+    margin-inline: auto;
     justify-content: center;
   }
   .stats {
@@ -205,6 +211,23 @@ body[data-fx-ready="true"] .gradientBg {
   }
   .statValue {
     font-size: var(--text-xl);
+  }
+}
+
+/* Petits mobiles - Ajustements supplémentaires */
+@media (max-width: 480px) {
+  .content {
+    padding-top: calc(var(--header-height) + var(--space-2));
+  }
+
+  .title {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    margin-bottom: var(--space-4);
+  }
+
+  .description {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-5);
   }
 }
 

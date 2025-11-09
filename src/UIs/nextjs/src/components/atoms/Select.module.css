@@ -1,6 +1,8 @@
 .select {
   width: 100%;
   padding: 0.625rem 0.75rem;
+  /* Touch target: minimum 44px de hauteur */
+  min-height: 44px;
   color: var(--color-text-1);
   background: var(--color-surface);
   border: 1px solid var(--color-border);

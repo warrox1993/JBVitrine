@@ -60,7 +60,13 @@ export class RealTimeLeadScorer {
     };
     const projectTypeScore = projectValue[data.projectType || ""] || 0;
     score += projectTypeScore;
-    console.log('[Lead Scoring] Project Type:', data.projectType, '→', projectTypeScore, 'pts');
+    console.log(
+      "[Lead Scoring] Project Type:",
+      data.projectType,
+      "→",
+      projectTypeScore,
+      "pts",
+    );
 
     // Budget estimé (0-10 pts)
     let budgetScore = 0;
@@ -71,7 +77,13 @@ export class RealTimeLeadScorer {
       else if (estimate.min >= 2500) budgetScore = 4;
       else budgetScore = 2;
       score += budgetScore;
-      console.log('[Lead Scoring] Budget:', estimate.min, '€ →', budgetScore, 'pts');
+      console.log(
+        "[Lead Scoring] Budget:",
+        estimate.min,
+        "€ →",
+        budgetScore,
+        "pts",
+      );
     }
 
     // Complexité projet (0-10 pts)
@@ -82,8 +94,14 @@ export class RealTimeLeadScorer {
     else if (featureCount >= 3) complexityScore = 4;
     else if (featureCount >= 1) complexityScore = 2;
     score += complexityScore;
-    console.log('[Lead Scoring] Features:', featureCount, '→', complexityScore, 'pts');
-    console.log('[Lead Scoring] Total Project Score:', score, '/ 30');
+    console.log(
+      "[Lead Scoring] Features:",
+      featureCount,
+      "→",
+      complexityScore,
+      "pts",
+    );
+    console.log("[Lead Scoring] Total Project Score:", score, "/ 30");
 
     return Math.min(score, 30);
   }
@@ -127,12 +145,7 @@ export class RealTimeLeadScorer {
   scoreCompletion(data: QuoteData): number {
     let score = 0;
     const requiredFields = ["projectType", "design", "seo", "timeline"];
-    const optionalFields = [
-      "features",
-      "maintenance",
-      "hosting",
-      "training",
-    ];
+    const optionalFields = ["features", "maintenance", "hosting", "training"];
 
     // Champs requis complétés (0-10 pts)
     const completedRequired = requiredFields.filter(
@@ -158,7 +171,9 @@ export class RealTimeLeadScorer {
 
   scoreEnrichment(): number {
     if (!this.enrichedData) {
-      console.log('[Lead Scoring] Enrichment: No enriched data yet (email not submitted) → 0 pts');
+      console.log(
+        "[Lead Scoring] Enrichment: No enriched data yet (email not submitted) → 0 pts",
+      );
       return 0;
     }
 
@@ -168,7 +183,13 @@ export class RealTimeLeadScorer {
     if (this.enrichedData.emailValidation?.valid) {
       score += 3;
       if (this.enrichedData.emailValidation.score >= 80) score += 2;
-      console.log('[Lead Scoring] Email validation:', this.enrichedData.emailValidation.score, '→', score, 'pts');
+      console.log(
+        "[Lead Scoring] Email validation:",
+        this.enrichedData.emailValidation.score,
+        "→",
+        score,
+        "pts",
+      );
     }
 
     // Hunter.io Company Data (0-5 pts)
@@ -177,9 +198,19 @@ export class RealTimeLeadScorer {
       companyScore += 2; // Domaine trouvé
       if (this.enrichedData.companyData.organization) companyScore += 1;
       if (this.enrichedData.companyData.industry) companyScore += 1;
-      if (this.enrichedData.companyData.linkedin || this.enrichedData.companyData.twitter) companyScore += 1;
+      if (
+        this.enrichedData.companyData.linkedin ||
+        this.enrichedData.companyData.twitter
+      )
+        companyScore += 1;
       score += companyScore;
-      console.log('[Lead Scoring] Company data (Hunter.io):', this.enrichedData.companyData.organization, '→', companyScore, 'pts');
+      console.log(
+        "[Lead Scoring] Company data (Hunter.io):",
+        this.enrichedData.companyData.organization,
+        "→",
+        companyScore,
+        "pts",
+      );
     }
 
     // Brandfetch Data (0-3 pts)
@@ -189,7 +220,13 @@ export class RealTimeLeadScorer {
       if (this.enrichedData.brandData.logo) brandScore += 1;
       if (this.enrichedData.brandData.industry) brandScore += 1;
       score += brandScore;
-      console.log('[Lead Scoring] Brand data (Brandfetch):', this.enrichedData.brandData.name, '→', brandScore, 'pts');
+      console.log(
+        "[Lead Scoring] Brand data (Brandfetch):",
+        this.enrichedData.brandData.name,
+        "→",
+        brandScore,
+        "pts",
+      );
     }
 
     // Tech Stack Detection (0-2 pts)
@@ -203,10 +240,16 @@ export class RealTimeLeadScorer {
       if (totalTech >= 3) techScore = 2;
       else if (totalTech >= 1) techScore = 1;
       score += techScore;
-      console.log('[Lead Scoring] Tech stack detected:', totalTech, 'technologies →', techScore, 'pts');
+      console.log(
+        "[Lead Scoring] Tech stack detected:",
+        totalTech,
+        "technologies →",
+        techScore,
+        "pts",
+      );
     }
 
-    console.log('[Lead Scoring] Total Enrichment Score:', score, '/ 15');
+    console.log("[Lead Scoring] Total Enrichment Score:", score, "/ 15");
     return Math.min(score, 15);
   }
 
@@ -216,26 +259,26 @@ export class RealTimeLeadScorer {
 
   scoreBehavioral(behavioral: BehavioralData): number {
     let score = 0;
-    console.log('[Lead Scoring] Behavioral data received:', {
+    console.log("[Lead Scoring] Behavioral data received:", {
       pagesCount: behavioral.visitedPages?.length || 0,
       sessionDurationMinutes: (behavioral.sessionDuration / 60000).toFixed(2),
-      utmSource: behavioral.utm_source || 'none',
-      wizardStarted: behavioral.wizardStarted
+      utmSource: behavioral.utm_source || "none",
+      wizardStarted: behavioral.wizardStarted,
     });
 
     // Pages visitées avant wizard (0-5 pts)
     let pagesScore = 0;
     if (behavioral.visitedPages.some((p) => p.path.includes("/portfolio"))) {
       pagesScore += 2;
-      console.log('[Lead Scoring] Portfolio visited: +2 pts');
+      console.log("[Lead Scoring] Portfolio visited: +2 pts");
     }
     if (behavioral.visitedPages.some((p) => p.path.includes("/blog"))) {
       pagesScore += 1;
-      console.log('[Lead Scoring] Blog visited: +1 pt');
+      console.log("[Lead Scoring] Blog visited: +1 pt");
     }
     if (behavioral.visitedPages.some((p) => p.path.includes("/services"))) {
       pagesScore += 2;
-      console.log('[Lead Scoring] Services visited: +2 pts');
+      console.log("[Lead Scoring] Services visited: +2 pts");
     }
     score += pagesScore;
 
@@ -246,7 +289,13 @@ export class RealTimeLeadScorer {
     else if (totalMinutes >= 5) timeScore = 2;
     else if (totalMinutes >= 2) timeScore = 1;
     score += timeScore;
-    console.log('[Lead Scoring] Time on site:', totalMinutes.toFixed(2), 'min →', timeScore, 'pts');
+    console.log(
+      "[Lead Scoring] Time on site:",
+      totalMinutes.toFixed(2),
+      "min →",
+      timeScore,
+      "pts",
+    );
 
     // Source de trafic (0-2 pts)
     let trafficScore = 0;
@@ -259,8 +308,14 @@ export class RealTimeLeadScorer {
       trafficScore = 1;
     }
     score += trafficScore;
-    console.log('[Lead Scoring] Traffic source:', behavioral.utm_source || 'none', '→', trafficScore, 'pts');
-    console.log('[Lead Scoring] Total Behavioral Score:', score, '/ 10');
+    console.log(
+      "[Lead Scoring] Traffic source:",
+      behavioral.utm_source || "none",
+      "→",
+      trafficScore,
+      "pts",
+    );
+    console.log("[Lead Scoring] Total Behavioral Score:", score, "/ 10");
 
     return Math.min(score, 10);
   }
