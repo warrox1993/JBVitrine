@@ -46,6 +46,23 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
 
+  // Redirections SEO 2025
+  async redirects() {
+    return [
+      // Redirection ancienne URL produits vers nouvelle structure
+      {
+        source: "/produits/cms-ecommerce",
+        destination: "/cms-ecommerce",
+        permanent: true, // 301 redirect
+      },
+      {
+        source: "/produits/:slug*",
+        destination: "/:slug*",
+        permanent: true,
+      },
+    ];
+  },
+
   // Security Headers
   async headers() {
     // CSP conditionnelle: Vercel Live autorisé en dev et preview

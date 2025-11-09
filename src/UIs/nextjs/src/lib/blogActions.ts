@@ -2,6 +2,7 @@
 
 import fs from "fs/promises";
 import path from "path";
+import { revalidatePath } from "next/cache";
 
 export interface BlogArticle {
   slug: string;
@@ -24,6 +25,41 @@ const BLOG_DATA_PATH = path.join(
   "data",
   "blogArticles.json",
 );
+
+/**
+ * Notifie Google Search Console de la mise à jour du sitemap
+ * SEO 2025: Indexation automatique des nouveaux articles
+ */
+async function notifyGoogleSearchConsole(): Promise<void> {
+  try {
+    const sitemapUrl = "https://smidjan.be/sitemap.xml";
+    const pingUrl = `https://www.google.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`;
+
+    const response = await fetch(pingUrl, { method: "GET" });
+
+    if (response.ok) {
+      console.log("✅ Google Search Console notifié avec succès");
+    } else {
+      console.warn("⚠️ Échec notification Google:", response.status);
+    }
+  } catch (error) {
+    // Ne pas bloquer l'opération si la notification échoue
+    console.warn("⚠️ Erreur notification Google Search Console:", error);
+  }
+}
+
+/**
+ * Revalide le cache Next.js pour le blog et le sitemap
+ * SEO 2025: Mise à jour instantanée du sitemap dynamique
+ */
+function revalidateBlogCache(slug?: string): void {
+  revalidatePath("/blog");
+  revalidatePath("/sitemap.xml");
+
+  if (slug) {
+    revalidatePath(`/blog/${slug}`);
+  }
+}
 
 export async function getAllArticles(): Promise<BlogArticle[]> {
   try {
@@ -62,6 +98,10 @@ export async function createArticle(
     const data: BlogData = { articles };
     await fs.writeFile(BLOG_DATA_PATH, JSON.stringify(data, null, 2), "utf-8");
 
+    // SEO 2025: Revalidation instantanée + notification Google
+    revalidateBlogCache(article.slug);
+    await notifyGoogleSearchConsole();
+
     return { success: true };
   } catch (error) {
     console.error("Error creating article:", error);
@@ -94,6 +134,13 @@ export async function updateArticle(
     const data: BlogData = { articles };
     await fs.writeFile(BLOG_DATA_PATH, JSON.stringify(data, null, 2), "utf-8");
 
+    // SEO 2025: Revalidation instantanée + notification Google
+    revalidateBlogCache(slug);
+    if (slug !== updatedArticle.slug) {
+      revalidateBlogCache(updatedArticle.slug); // Si le slug a changé
+    }
+    await notifyGoogleSearchConsole();
+
     return { success: true };
   } catch (error) {
     console.error("Error updating article:", error);
@@ -117,6 +164,10 @@ export async function deleteArticle(
 
     const data: BlogData = { articles: filteredArticles };
     await fs.writeFile(BLOG_DATA_PATH, JSON.stringify(data, null, 2), "utf-8");
+
+    // SEO 2025: Revalidation instantanée + notification Google
+    revalidateBlogCache(slug);
+    await notifyGoogleSearchConsole();
 
     return { success: true };
   } catch (error) {
