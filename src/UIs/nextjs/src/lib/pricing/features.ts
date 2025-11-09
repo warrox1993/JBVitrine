@@ -21,8 +21,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "pages-1-5",
         name: "1-5 pages",
         description: "Site compact - Accueil, Services, À propos, Contact",
-      explanation: `Site compact de 1 à 5 pages couvrant l'essentiel : Accueil, Services, À propos, Contact. **C'est quoi ?** Le minimum pour avoir une présence web professionnelle. **Pourquoi ?** Coût maîtrisé, rapide à mettre en ligne (2-3 semaines), parfait pour TPE/indépendants qui démarrent. 80% des visiteurs ne consultent que 3-4 pages max.`,
-     
+        explanation: `Site compact de 1 à 5 pages couvrant l'essentiel : Accueil, Services, À propos, Contact. **C'est quoi ?** Le minimum pour avoir une présence web professionnelle. **Pourquoi ?** Coût maîtrisé, rapide à mettre en ligne (2-3 semaines), parfait pour TPE/indépendants qui démarrent. 80% des visiteurs ne consultent que 3-4 pages max.`,
+
         category: "scope",
         selected: true,
         mutuallyExclusive: true,
@@ -31,8 +31,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "pages-6-10",
         name: "6-10 pages",
         description: "Site complet - Pages essentielles + pages secondaires",
-      explanation: `Site complet de 6 à 10 pages incluant les pages essentielles plus des pages secondaires (témoignages, FAQ, services détaillés). **C'est quoi ?** Un site web professionnel avec toutes les informations nécessaires. **Pourquoi ?** Vous donnez confiance (site complet), améliorez votre SEO (plus de contenu indexé), et répondez aux questions avant même qu'on vous contacte. Idéal pour PME établies.`,
-     
+        explanation: `Site complet de 6 à 10 pages incluant les pages essentielles plus des pages secondaires (témoignages, FAQ, services détaillés). **C'est quoi ?** Un site web professionnel avec toutes les informations nécessaires. **Pourquoi ?** Vous donnez confiance (site complet), améliorez votre SEO (plus de contenu indexé), et répondez aux questions avant même qu'on vous contacte. Idéal pour PME établies.`,
+
         category: "scope",
         selected: false,
         mutuallyExclusive: true,
@@ -41,8 +41,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "pages-11-20",
         name: "11-20 pages",
         description: "Site étendu - Multi-services ou multi-localités",
-      explanation: `Site étendu de 11 à 20 pages pour entreprises multi-services ou multi-localités. **C'est quoi ?** Un site structuré avec des pages dédiées par service, localité ou segment client. **Pourquoi ?** Vous ciblez mieux chaque audience, boostez votre SEO local/thématique, et vous positionnez comme acteur sérieux. Nécessaire si vous avez plusieurs activités ou bureaux.`,
-     
+        explanation: `Site étendu de 11 à 20 pages pour entreprises multi-services ou multi-localités. **C'est quoi ?** Un site structuré avec des pages dédiées par service, localité ou segment client. **Pourquoi ?** Vous ciblez mieux chaque audience, boostez votre SEO local/thématique, et vous positionnez comme acteur sérieux. Nécessaire si vous avez plusieurs activités ou bureaux.`,
+
         category: "scope",
         selected: false,
         mutuallyExclusive: true,
@@ -61,7 +61,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "blog",
         name: "Blog / Actualités",
         description: "CMS pour articles, filtres par catégorie, recherche",
-      explanation: `Section blog intégrée pour publier des articles régulièrement. Excellent pour le SEO (Google favorise les sites qui publient du contenu frais). Vous apparaissez comme expert dans votre domaine. Augmente le trafic de 55% en moyenne. WordPress, Medium et tous les grands sites ont un blog.`,
+        explanation: `Section blog intégrée pour publier des articles régulièrement. Excellent pour le SEO (Google favorise les sites qui publient du contenu frais). Vous apparaissez comme expert dans votre domaine. Augmente le trafic de 55% en moyenne. WordPress, Medium et tous les grands sites ont un blog.`,
         category: "content",
         selected: false,
       },
@@ -69,7 +69,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "portfolio",
         name: "Portfolio / Réalisations",
         description: "Galerie projets avec filtres, lightbox, et détails",
-      explanation: `Galerie de vos réalisations/projets avec images, descriptions détaillées, catégories. Indispensable pour photographes, designers, architectes, agences. Permet aux clients de voir votre travail avant de vous contacter. Augmente les demandes de devis qualifiées de 60%.`,
+        explanation: `Galerie de vos réalisations/projets avec images, descriptions détaillées, catégories. Indispensable pour photographes, designers, architectes, agences. Permet aux clients de voir votre travail avant de vous contacter. Augmente les demandes de devis qualifiées de 60%.`,
         category: "content",
         selected: false,
       },
@@ -84,7 +84,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "testimonials",
         name: "Témoignages clients",
         description: "Section avis clients avec carousel et ratings",
-      explanation: `Section témoignages clients avec avis, photos, logos d'entreprises. 92% des consommateurs lisent les avis avant d'acheter. Les témoignages authentiques augmentent les conversions de 34%. Plus crédible que votre propre discours commercial.`,
+        explanation: `Section témoignages clients avec avis, photos, logos d'entreprises. 92% des consommateurs lisent les avis avant d'acheter. Les témoignages authentiques augmentent les conversions de 34%. Plus crédible que votre propre discours commercial.`,
         category: "content",
         selected: false,
       },
@@ -92,7 +92,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "case-studies",
         name: "Études de cas",
         description: "Success stories détaillées avec métriques et résultats",
-      explanation: `Études de cas détaillées montrant comment vous avez résolu les problèmes de vos clients (avant/après, résultats chiffrés). Plus convaincant que les témoignages simples. Parfait pour le B2B où les cycles de vente sont longs. Augmente la crédibilité et les conversions qualifiées.`,
+        explanation: `Études de cas détaillées montrant comment vous avez résolu les problèmes de vos clients (avant/après, résultats chiffrés). Plus convaincant que les témoignages simples. Parfait pour le B2B où les cycles de vente sont longs. Augmente la crédibilité et les conversions qualifiées.`,
         category: "content",
         selected: false,
       },
@@ -100,8 +100,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "faq-section",
         name: "Section FAQ",
         description: "Questions/réponses organisées par catégorie",
-      explanation: `Section FAQ avec questions/réponses organisées par catégorie et recherche intégrée. **C'est quoi ?** Une page dédiée aux questions fréquentes de vos clients. **Pourquoi ?** Réduit les appels/emails répétitifs de 30-40%, améliore le SEO (Google affiche les FAQ en résultats enrichis), et facilite la décision d'achat en levant les objections courantes.`,
-     
+        explanation: `Section FAQ avec questions/réponses organisées par catégorie et recherche intégrée. **C'est quoi ?** Une page dédiée aux questions fréquentes de vos clients. **Pourquoi ?** Réduit les appels/emails répétitifs de 30-40%, améliore le SEO (Google affiche les FAQ en résultats enrichis), et facilite la décision d'achat en levant les objections courantes.`,
+
         category: "content",
         selected: false,
       },
@@ -109,8 +109,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "video-gallery",
         name: "Galerie vidéo",
         description: "Intégration YouTube/Vimeo avec playlists",
-      explanation: `Galerie vidéo professionnelle avec intégration YouTube/Vimeo et organisation en playlists. **C'est quoi ?** Une section présentant vos vidéos de manière organisée et élégante. **Pourquoi ?** La vidéo génère 1200% plus de partages que texte+image combinés. Parfait pour tutoriels, témoignages vidéo, visites virtuelles. Les visiteurs restent 88% plus longtemps sur une page avec vidéo.`,
-     
+        explanation: `Galerie vidéo professionnelle avec intégration YouTube/Vimeo et organisation en playlists. **C'est quoi ?** Une section présentant vos vidéos de manière organisée et élégante. **Pourquoi ?** La vidéo génère 1200% plus de partages que texte+image combinés. Parfait pour tutoriels, témoignages vidéo, visites virtuelles. Les visiteurs restent 88% plus longtemps sur une page avec vidéo.`,
+
         category: "content",
         selected: false,
       },
@@ -120,8 +120,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "contact-form-basic",
         name: "Formulaire de contact simple",
         description: "Formulaire standard avec validation et anti-spam",
-      explanation: `Formulaire de contact simple avec validation en temps réel et protection anti-spam reCAPTCHA. **C'est quoi ?** Un formulaire standard (nom, email, message) sécurisé. **Pourquoi ?** Le minimum vital pour être contacté. 44% des visiteurs B2B préfèrent un formulaire au téléphone. Sans formulaire, vous perdez des leads.`,
-     
+        explanation: `Formulaire de contact simple avec validation en temps réel et protection anti-spam reCAPTCHA. **C'est quoi ?** Un formulaire standard (nom, email, message) sécurisé. **Pourquoi ?** Le minimum vital pour être contacté. 44% des visiteurs B2B préfèrent un formulaire au téléphone. Sans formulaire, vous perdez des leads.`,
+
         category: "features",
         selected: true,
       },
@@ -129,8 +129,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "contact-advanced",
         name: "Formulaire de contact avancé",
         description: "Multi-étapes, upload fichiers, validation RGPD",
-      explanation: `Formulaire de contact avancé multi-étapes avec upload de fichiers, champs conditionnels et conformité RGPD complète. **C'est quoi ?** Un formulaire sophistiqué qui s'adapte selon les réponses et permet l'envoi de documents. **Pourquoi ?** Améliore la qualité des leads (+35%), réduit les allers-retours par email, et donne une image professionnelle. Essentiel si vous avez besoin de documents (devis, cahier des charges).`,
-     
+        explanation: `Formulaire de contact avancé multi-étapes avec upload de fichiers, champs conditionnels et conformité RGPD complète. **C'est quoi ?** Un formulaire sophistiqué qui s'adapte selon les réponses et permet l'envoi de documents. **Pourquoi ?** Améliore la qualité des leads (+35%), réduit les allers-retours par email, et donne une image professionnelle. Essentiel si vous avez besoin de documents (devis, cahier des charges).`,
+
         category: "features",
         selected: false,
       },
@@ -138,8 +138,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "quote-wizard",
         name: "Générateur de devis interactif",
         description: "Wizard multi-étapes pour estimation en ligne",
-      explanation: `Générateur de devis interactif guidant l'utilisateur étape par étape vers une estimation personnalisée. **C'est quoi ?** Un wizard qui pose des questions et calcule un tarif estimatif en temps réel. **Pourquoi ?** Filtre les prospects non sérieux, éduque sur vos services, et génère des leads plus qualifiés (+60%). Réduit votre temps commercial de 40%. Les visiteurs adorent savoir où ils vont côté budget.`,
-     
+        explanation: `Générateur de devis interactif guidant l'utilisateur étape par étape vers une estimation personnalisée. **C'est quoi ?** Un wizard qui pose des questions et calcule un tarif estimatif en temps réel. **Pourquoi ?** Filtre les prospects non sérieux, éduque sur vos services, et génère des leads plus qualifiés (+60%). Réduit votre temps commercial de 40%. Les visiteurs adorent savoir où ils vont côté budget.`,
+
         category: "features",
         selected: false,
       },
@@ -147,8 +147,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "booking-calendar",
         name: "Calendrier de réservation",
         description: "Prise de RDV en ligne avec gestion des créneaux",
-      explanation: `Calendrier de réservation en ligne synchronisé avec votre agenda (Google Calendar, Outlook). **C'est quoi ?** Système de prise de RDV automatique montrant vos disponibilités réelles. **Pourquoi ?** Élimine les échanges d'emails interminables pour fixer un rendez-vous. Augmente les conversions de 25% (action immédiate vs "je vous rappelle"). Indispensable pour consultants, médecins, coiffeurs, etc.`,
-     
+        explanation: `Calendrier de réservation en ligne synchronisé avec votre agenda (Google Calendar, Outlook). **C'est quoi ?** Système de prise de RDV automatique montrant vos disponibilités réelles. **Pourquoi ?** Élimine les échanges d'emails interminables pour fixer un rendez-vous. Augmente les conversions de 25% (action immédiate vs "je vous rappelle"). Indispensable pour consultants, médecins, coiffeurs, etc.`,
+
         category: "features",
         selected: false,
       },
@@ -156,7 +156,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "live-chat",
         name: "Chat en direct",
         description: "Widget de chat pour support client instantané",
-      explanation: `Chat en direct pour discuter instantanément avec vos visiteurs. Augmente les conversions de 45% car vous répondez aux questions en temps réel. Disponible via Intercom, Crisp, Tidio. 79% des clients préfèrent le chat au téléphone pour les questions rapides.`,
+        explanation: `Chat en direct pour discuter instantanément avec vos visiteurs. Augmente les conversions de 45% car vous répondez aux questions en temps réel. Disponible via Intercom, Crisp, Tidio. 79% des clients préfèrent le chat au téléphone pour les questions rapides.`,
         category: "features",
         selected: false,
       },
@@ -164,8 +164,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "search-engine",
         name: "Moteur de recherche interne",
         description: "Recherche full-text avec résultats pertinents",
-      explanation: `Moteur de recherche interne avec indexation full-text et résultats pertinents instantanés. **C'est quoi ?** Une barre de recherche permettant de trouver rapidement du contenu sur votre site. **Pourquoi ?** Sur un site de 15+ pages, 30% des visiteurs utilisent la recherche. Améliore l'UX, réduit le taux de rebond, et vous montre ce que cherchent vos visiteurs (insights précieux).`,
-     
+        explanation: `Moteur de recherche interne avec indexation full-text et résultats pertinents instantanés. **C'est quoi ?** Une barre de recherche permettant de trouver rapidement du contenu sur votre site. **Pourquoi ?** Sur un site de 15+ pages, 30% des visiteurs utilisent la recherche. Améliore l'UX, réduit le taux de rebond, et vous montre ce que cherchent vos visiteurs (insights précieux).`,
+
         category: "features",
         selected: false,
       },
@@ -173,8 +173,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "map-locations",
         name: "Carte interactive",
         description: "Google Maps avec markers et directions",
-      explanation: `Carte interactive Google Maps avec markers personnalisés, itinéraire et Street View. **C'est quoi ?** Une carte montrant votre/vos localisation(s) avec possibilité d'obtenir un itinéraire. **Pourquoi ?** 86% des visiteurs vérifient la localisation sur une carte avant de venir. Améliore le référencement local Google Maps. Essentiel si vous avez un lieu physique.`,
-     
+        explanation: `Carte interactive Google Maps avec markers personnalisés, itinéraire et Street View. **C'est quoi ?** Une carte montrant votre/vos localisation(s) avec possibilité d'obtenir un itinéraire. **Pourquoi ?** 86% des visiteurs vérifient la localisation sur une carte avant de venir. Améliore le référencement local Google Maps. Essentiel si vous avez un lieu physique.`,
+
         category: "features",
         selected: false,
       },
@@ -182,8 +182,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "newsletter-signup",
         name: "Inscription newsletter",
         description: "Formulaire newsletter avec intégration email service",
-      explanation: `Formulaire d'inscription newsletter avec double opt-in et intégration automatique à votre outil d'emailing. **C'est quoi ?** Un formulaire pour collecter des emails et constituer une liste de diffusion. **Pourquoi ?** L'email marketing génère 38€ de ROI pour 1€ investi. Vous gardez le contact avec vos prospects, les convertissez à votre rythme, et ne dépendez pas des algorithmes des réseaux sociaux. Votre liste email est un actif qui vous appartient.`,
-     
+        explanation: `Formulaire d'inscription newsletter avec double opt-in et intégration automatique à votre outil d'emailing. **C'est quoi ?** Un formulaire pour collecter des emails et constituer une liste de diffusion. **Pourquoi ?** L'email marketing génère 38€ de ROI pour 1€ investi. Vous gardez le contact avec vos prospects, les convertissez à votre rythme, et ne dépendez pas des algorithmes des réseaux sociaux. Votre liste email est un actif qui vous appartient.`,
+
         category: "features",
         selected: false,
       },
@@ -193,8 +193,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "login-area",
         name: "Espace client sécurisé",
         description: "Zone privée avec authentification et documents",
-      explanation: `Espace client sécurisé avec authentification forte (2FA optionnel) et gestion des sessions. **C'est quoi ?** Une zone privée du site accessible uniquement après connexion. **Pourquoi ?** Permet de partager des documents confidentiels, suivre des projets en cours, ou donner accès à du contenu premium. Améliore la fidélisation et réduit le support (clients autonomes). Indispensable en B2B.`,
-     
+        explanation: `Espace client sécurisé avec authentification forte (2FA optionnel) et gestion des sessions. **C'est quoi ?** Une zone privée du site accessible uniquement après connexion. **Pourquoi ?** Permet de partager des documents confidentiels, suivre des projets en cours, ou donner accès à du contenu premium. Améliore la fidélisation et réduit le support (clients autonomes). Indispensable en B2B.`,
+
         category: "user-area",
         selected: false,
       },
@@ -202,8 +202,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "document-downloads",
         name: "Téléchargements protégés",
         description: "Documents PDF/fichiers accessibles après connexion",
-      explanation: `Zone de téléchargement sécurisée pour documents PDF, fichiers et ressources protégées. **C'est quoi ?** Une bibliothèque de documents accessibles uniquement aux clients connectés. **Pourquoi ?** Centralisez factures, contrats, manuels, rapports au lieu d'envoyer par email. Traçabilité complète (qui a téléchargé quoi et quand). Renforce le professionnalisme et facilite la collaboration.`,
-     
+        explanation: `Zone de téléchargement sécurisée pour documents PDF, fichiers et ressources protégées. **C'est quoi ?** Une bibliothèque de documents accessibles uniquement aux clients connectés. **Pourquoi ?** Centralisez factures, contrats, manuels, rapports au lieu d'envoyer par email. Traçabilité complète (qui a téléchargé quoi et quand). Renforce le professionnalisme et facilite la collaboration.`,
+
         category: "user-area",
         selected: false,
       },
@@ -211,7 +211,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "user-dashboard",
         name: "Tableau de bord client",
         description: "Interface personnalisée avec historique et infos",
-      explanation: `Tableau de bord personnalisé pour chaque client montrant son historique, ses documents, ses stats. Interface intuitive avec graphiques. Améliore l'expérience client et réduit le support. Utilisé par toutes les grandes plateformes (Amazon, Netflix, etc).`,
+        explanation: `Tableau de bord personnalisé pour chaque client montrant son historique, ses documents, ses stats. Interface intuitive avec graphiques. Améliore l'expérience client et réduit le support. Utilisé par toutes les grandes plateformes (Amazon, Netflix, etc).`,
         category: "user-area",
         selected: false,
       },
@@ -221,7 +221,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "monolingual-fr",
         name: "Site monolingue (français uniquement)",
         description: "Site en français uniquement, pas de traduction",
-      explanation: `Site entièrement en français sans traduction. Simple et économique si vous ne ciblez que le marché francophone. Pas besoin de gérer plusieurs langues ni de dupliquer votre contenu.`,
+        explanation: `Site entièrement en français sans traduction. Simple et économique si vous ne ciblez que le marché francophone. Pas besoin de gérer plusieurs langues ni de dupliquer votre contenu.`,
         category: "international",
         selected: true,
         mutuallyExclusive: true,
@@ -230,7 +230,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "multi-language-2",
         name: "Site bilingue (2 langues)",
         description: "FR/NL ou FR/EN avec switch automatique",
-      explanation: `Site disponible en 2 langues avec détection automatique selon la localisation du visiteur. Les utilisateurs peuvent basculer entre les langues via un sélecteur. Idéal pour cibler la Belgique (FR/NL) ou l'international (FR/EN). Augmente votre portée de 50% à 100%.`,
+        explanation: `Site disponible en 2 langues avec détection automatique selon la localisation du visiteur. Les utilisateurs peuvent basculer entre les langues via un sélecteur. Idéal pour cibler la Belgique (FR/NL) ou l'international (FR/EN). Augmente votre portée de 50% à 100%.`,
         category: "international",
         selected: false,
         mutuallyExclusive: true,
@@ -239,7 +239,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "multi-language-3",
         name: "Site trilingue (3 langues)",
         description: "FR/NL/EN avec détection géolocalisée",
-      explanation: `Site en 3 langues (FR/NL/EN) qui détecte automatiquement la langue du visiteur selon sa localisation géographique. Parfait pour cibler la Belgique et l'international. Chaque page existe en 3 versions traduites.`,
+        explanation: `Site en 3 langues (FR/NL/EN) qui détecte automatiquement la langue du visiteur selon sa localisation géographique. Parfait pour cibler la Belgique et l'international. Chaque page existe en 3 versions traduites.`,
         category: "international",
         selected: false,
         mutuallyExclusive: true,
@@ -248,7 +248,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "multi-language-4plus",
         name: "Site multilingue (4+ langues)",
         description: "Support de 4 langues ou plus",
-      explanation: `Site multilingue 4+ langues pour rayonnement international maximal. Chaque langue a son propre domaine ou sous-domaine pour le SEO. Détection géolocalisée + sélecteur manuel. Nécessite traduction professionnelle de tout le contenu. Pour entreprises exportatrices ou multinationales.`,
+        explanation: `Site multilingue 4+ langues pour rayonnement international maximal. Chaque langue a son propre domaine ou sous-domaine pour le SEO. Détection géolocalisée + sélecteur manuel. Nécessite traduction professionnelle de tout le contenu. Pour entreprises exportatrices ou multinationales.`,
         category: "international",
         selected: false,
         mutuallyExclusive: true,
@@ -259,7 +259,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "seo-basic",
         name: "SEO basique",
         description: "Meta titles, descriptions, URLs optimisées, sitemap XML",
-      explanation: `Optimisation de base pour être trouvé sur Google : titres de pages optimisés, descriptions courtes, URLs propres, sitemap XML pour Google. C'est le minimum syndical pour apparaître dans les résultats de recherche. Sans SEO, votre site est invisible sur Google.`,
+        explanation: `Optimisation de base pour être trouvé sur Google : titres de pages optimisés, descriptions courtes, URLs propres, sitemap XML pour Google. C'est le minimum syndical pour apparaître dans les résultats de recherche. Sans SEO, votre site est invisible sur Google.`,
         category: "seo",
         selected: true,
         mutuallyExclusive: true,
@@ -267,8 +267,9 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "seo-advanced",
         name: "SEO avancé",
-        description: "Rich snippets, Schema.org markup, OpenGraph, Twitter Cards",
-      explanation: `SEO professionnel avec données structurées (Schema.org) pour apparaître dans les résultats enrichis de Google (étoiles, prix, FAQ). Optimisation OpenGraph pour un bel aperçu sur Facebook/LinkedIn. Twitter Cards pour Twitter. Améliore votre taux de clic de 30%.`,
+        description:
+          "Rich snippets, Schema.org markup, OpenGraph, Twitter Cards",
+        explanation: `SEO professionnel avec données structurées (Schema.org) pour apparaître dans les résultats enrichis de Google (étoiles, prix, FAQ). Optimisation OpenGraph pour un bel aperçu sur Facebook/LinkedIn. Twitter Cards pour Twitter. Améliore votre taux de clic de 30%.`,
         category: "seo",
         selected: false,
         mutuallyExclusive: true,
@@ -276,8 +277,9 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "seo-expert",
         name: "SEO expert",
-        description: "Audit SEO complet, recherche mots-clés, stratégie de contenu",
-      explanation: `Audit SEO complet par expert : analyse concurrence, recherche de 50+ mots-clés pertinents, stratégie de contenu sur mesure, recommandations techniques. Création de contenu optimisé. Pour entreprises visant le top 3 Google sur leurs mots-clés. ROI très élevé sur le long terme.`,
+        description:
+          "Audit SEO complet, recherche mots-clés, stratégie de contenu",
+        explanation: `Audit SEO complet par expert : analyse concurrence, recherche de 50+ mots-clés pertinents, stratégie de contenu sur mesure, recommandations techniques. Création de contenu optimisé. Pour entreprises visant le top 3 Google sur leurs mots-clés. ROI très élevé sur le long terme.`,
         category: "seo",
         selected: false,
         mutuallyExclusive: true,
@@ -285,16 +287,18 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "seo-local",
         name: "SEO local",
-        description: "Google Business Profile, optimisation locale, avis clients",
-      explanation: `Optimisation pour les recherches locales type "plombier Bruxelles". Configuration de votre profil Google Business, optimisation pour Google Maps, gestion des avis clients. Essentiel si vous avez une présence physique ou ciblez une zone géographique précise.`,
+        description:
+          "Google Business Profile, optimisation locale, avis clients",
+        explanation: `Optimisation pour les recherches locales type "plombier Bruxelles". Configuration de votre profil Google Business, optimisation pour Google Maps, gestion des avis clients. Essentiel si vous avez une présence physique ou ciblez une zone géographique précise.`,
         category: "seo",
         selected: false,
       },
       {
         id: "seo-technical",
         name: "SEO technique avancé",
-        description: "Core Web Vitals, données structurées, robots.txt optimisé",
-      explanation: `Optimisation technique poussée : vitesse de chargement maximale, Core Web Vitals (critères Google), fichier robots.txt optimisé. Google favorise les sites rapides dans son classement. Un site lent peut perdre 50% de ses visiteurs.`,
+        description:
+          "Core Web Vitals, données structurées, robots.txt optimisé",
+        explanation: `Optimisation technique poussée : vitesse de chargement maximale, Core Web Vitals (critères Google), fichier robots.txt optimisé. Google favorise les sites rapides dans son classement. Un site lent peut perdre 50% de ses visiteurs.`,
         category: "seo",
         selected: false,
       },
@@ -302,7 +306,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "seo-content-optimization",
         name: "Optimisation du contenu",
         description: "Réécriture SEO, balises Hn optimisées, maillage interne",
-      explanation: `Réécriture professionnelle de vos textes pour le SEO : densité de mots-clés optimale, balises H1/H2/H3 structurées, maillage interne (liens entre vos pages), images optimisées avec alt text. Améliore le positionnement de 50-200 positions selon la concurrence.`,
+        explanation: `Réécriture professionnelle de vos textes pour le SEO : densité de mots-clés optimale, balises H1/H2/H3 structurées, maillage interne (liens entre vos pages), images optimisées avec alt text. Améliore le positionnement de 50-200 positions selon la concurrence.`,
         category: "seo",
         selected: false,
       },
@@ -310,7 +314,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "seo-breadcrumbs",
         name: "Fil d'Ariane (Breadcrumbs)",
         description: "Navigation structurée pour meilleur référencement",
-      explanation: `Fil d'Ariane (Accueil > Services > Développement Web) afin que les visiteurs sachent où ils sont. Améliore l'UX et le SEO (Google affiche les breadcrumbs dans les résultats). Réduit le taux de rebond de 20%. Obligatoire sur les sites de +10 pages.`,
+        explanation: `Fil d'Ariane (Accueil > Services > Développement Web) afin que les visiteurs sachent où ils sont. Améliore l'UX et le SEO (Google affiche les breadcrumbs dans les résultats). Réduit le taux de rebond de 20%. Obligatoire sur les sites de +10 pages.`,
         category: "seo",
         selected: false,
       },
@@ -318,15 +322,16 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "seo-redirections",
         name: "Gestion des redirections",
         description: "Redirections 301 pour éviter contenu dupliqué et 404",
-      explanation: `Gestion professionnelle des redirections 301 pour éviter les erreurs 404 et le contenu dupliqué. Important lors d'une refonte ou changement d'URLs. Préserve votre référencement existant. Google pénalise les sites avec beaucoup d'erreurs 404.`,
+        explanation: `Gestion professionnelle des redirections 301 pour éviter les erreurs 404 et le contenu dupliqué. Important lors d'une refonte ou changement d'URLs. Préserve votre référencement existant. Google pénalise les sites avec beaucoup d'erreurs 404.`,
         category: "seo",
         selected: false,
       },
       {
         id: "seo-blog-strategy",
         name: "Stratégie de blog SEO",
-        description: "Calendrier éditorial, recherche keywords, optimisation articles",
-      explanation: `Stratégie de blog SEO complète : calendrier éditorial de 12 mois, recherche de mots-clés longue traîne, optimisation de chaque article, internal linking. Objectif: attirer du trafic organique qualifié. Les entreprises qui bloguent obtiennent 67% de leads en plus.`,
+        description:
+          "Calendrier éditorial, recherche keywords, optimisation articles",
+        explanation: `Stratégie de blog SEO complète : calendrier éditorial de 12 mois, recherche de mots-clés longue traîne, optimisation de chaque article, internal linking. Objectif: attirer du trafic organique qualifié. Les entreprises qui bloguent obtiennent 67% de leads en plus.`,
         category: "seo",
         selected: false,
       },
@@ -334,7 +339,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "seo-competitive-analysis",
         name: "Analyse concurrentielle SEO",
         description: "Étude concurrents, opportunités de mots-clés, backlinks",
-      explanation: `Analyse approfondie de vos 5 principaux concurrents : leurs mots-clés, backlinks, stratégie de contenu, points faibles. Identification d'opportunités non exploitées. Permet de savoir exactement quoi faire pour les dépasser. Gain de temps énorme (évite de copier ce qui ne marche pas).`,
+        explanation: `Analyse approfondie de vos 5 principaux concurrents : leurs mots-clés, backlinks, stratégie de contenu, points faibles. Identification d'opportunités non exploitées. Permet de savoir exactement quoi faire pour les dépasser. Gain de temps énorme (évite de copier ce qui ne marche pas).`,
         category: "seo",
         selected: false,
       },
@@ -342,7 +347,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "seo-international",
         name: "SEO international (hreflang)",
         description: "Optimisation multi-pays avec balises hreflang",
-      explanation: `SEO international avec balises hreflang pour indiquer à Google quelle version linguistique montrer selon le pays. Évite le contenu dupliqué entre les versions linguistiques. Essentiel si vous visez plusieurs pays (FR, BE, CH, CA ont tous du français mais sont des marchés différents).`,
+        explanation: `SEO international avec balises hreflang pour indiquer à Google quelle version linguistique montrer selon le pays. Évite le contenu dupliqué entre les versions linguistiques. Essentiel si vous visez plusieurs pays (FR, BE, CH, CA ont tous du français mais sont des marchés différents).`,
         category: "seo",
         selected: false,
       },
@@ -352,7 +357,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "pwa-support",
         name: "Progressive Web App (PWA)",
         description: "Site installable, mode offline, notifications push",
-      explanation: `Progressive Web App : votre site se comporte comme une application mobile. Les clients peuvent l'installer sur leur téléphone, l'utiliser hors-ligne, recevoir des notifications push. Plus rapide qu'un site normal. Coûte 10x moins cher qu'une vraie app iOS/Android.`,
+        explanation: `Progressive Web App : votre site se comporte comme une application mobile. Les clients peuvent l'installer sur leur téléphone, l'utiliser hors-ligne, recevoir des notifications push. Plus rapide qu'un site normal. Coûte 10x moins cher qu'une vraie app iOS/Android.`,
         category: "performance",
         selected: false,
       },
@@ -360,7 +365,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "performance-optimization",
         name: "Optimisation extrême",
         description: "Score 95+ Lighthouse, lazy loading, CDN",
-      explanation: `Optimisation maximale pour un site ultra-rapide : score Lighthouse 95+, images compressées automatiquement, chargement différé, CDN mondial. Un site rapide augmente les conversions de 30%. Amazon perd 1% de revenus par 100ms de latence.`,
+        explanation: `Optimisation maximale pour un site ultra-rapide : score Lighthouse 95+, images compressées automatiquement, chargement différé, CDN mondial. Un site rapide augmente les conversions de 30%. Amazon perd 1% de revenus par 100ms de latence.`,
         category: "performance",
         selected: false,
       },
@@ -368,7 +373,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "analytics-setup",
         name: "Analytics & tracking",
         description: "Google Analytics 4, Tag Manager, conversion tracking",
-      explanation: `Configuration professionnelle de Google Analytics 4 + Tag Manager pour suivre tout : visiteurs, sources de trafic, conversions, parcours client, produits consultés. Tableaux de bord prêts à l'emploi. Sans analytics, vous pilotez à l'aveugle.`,
+        explanation: `Configuration professionnelle de Google Analytics 4 + Tag Manager pour suivre tout : visiteurs, sources de trafic, conversions, parcours client, produits consultés. Tableaux de bord prêts à l'emploi. Sans analytics, vous pilotez à l'aveugle.`,
         category: "performance",
         selected: false,
       },
@@ -378,8 +383,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "crm-integration",
         name: "Intégration CRM",
         description: "HubSpot, Salesforce, Pipedrive - sync contacts",
-      explanation: `Intégration bidirectionnelle avec votre CRM (HubSpot, Salesforce, Pipedrive) pour synchronisation automatique des contacts. **C'est quoi ?** Connexion de votre site à votre outil CRM pour transférer automatiquement les leads. **Pourquoi ?** Zéro saisie manuelle, aucun lead perdu, relance automatique. Vos commerciaux ont instantanément les infos. ROI immédiat : un lead perdu = minimum 500-5000€ selon votre secteur.`,
-     
+        explanation: `Intégration bidirectionnelle avec votre CRM (HubSpot, Salesforce, Pipedrive) pour synchronisation automatique des contacts. **C'est quoi ?** Connexion de votre site à votre outil CRM pour transférer automatiquement les leads. **Pourquoi ?** Zéro saisie manuelle, aucun lead perdu, relance automatique. Vos commerciaux ont instantanément les infos. ROI immédiat : un lead perdu = minimum 500-5000€ selon votre secteur.`,
+
         category: "integrations",
         selected: false,
       },
@@ -387,8 +392,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "email-marketing-integration",
         name: "Email marketing",
         description: "Mailchimp, Brevo, ActiveCampaign - listes automatiques",
-      explanation: `Connexion automatique avec votre plateforme email marketing (Mailchimp, Brevo, ActiveCampaign) pour gestion de listes et campagnes. **C'est quoi ?** Synchronisation entre votre site et votre outil d'emailing. **Pourquoi ?** Automatisez vos campagnes (nouveau client = série de bienvenue automatique), segmentez finement votre audience, mesurez tout. Augmente l'engagement de 50% vs emails manuels.`,
-     
+        explanation: `Connexion automatique avec votre plateforme email marketing (Mailchimp, Brevo, ActiveCampaign) pour gestion de listes et campagnes. **C'est quoi ?** Synchronisation entre votre site et votre outil d'emailing. **Pourquoi ?** Automatisez vos campagnes (nouveau client = série de bienvenue automatique), segmentez finement votre audience, mesurez tout. Augmente l'engagement de 50% vs emails manuels.`,
+
         category: "integrations",
         selected: false,
       },
@@ -396,8 +401,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "social-media-feed",
         name: "Flux réseaux sociaux",
         description: "Intégration Instagram, Facebook, LinkedIn, Twitter",
-      explanation: `Flux en temps réel de vos réseaux sociaux (Instagram, Facebook, LinkedIn, Twitter) affiché sur votre site. **C'est quoi ?** Intégration de vos posts réseaux sociaux directement sur votre site web. **Pourquoi ?** Montre que vous êtes actif, incite à vous suivre (+40% d'abonnés), et garde votre site visuellement à jour sans effort. Votre contenu social sert deux fois.`,
-     
+        explanation: `Flux en temps réel de vos réseaux sociaux (Instagram, Facebook, LinkedIn, Twitter) affiché sur votre site. **C'est quoi ?** Intégration de vos posts réseaux sociaux directement sur votre site web. **Pourquoi ?** Montre que vous êtes actif, incite à vous suivre (+40% d'abonnés), et garde votre site visuellement à jour sans effort. Votre contenu social sert deux fois.`,
+
         category: "integrations",
         selected: false,
       },
@@ -406,9 +411,10 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "copywriting",
         name: "Rédaction de contenu SEO",
-        description: "Rédaction professionnelle de tous les textes (800-1200 mots/page)",
-      explanation: `Rédaction professionnelle SEO-optimisée de tous vos contenus web (800-1200 mots par page). **C'est quoi ?** Un rédacteur professionnel écrit tous les textes de votre site. **Pourquoi ?** Vous n'avez pas le temps, l'expertise SEO, ou le recul nécessaire. Un bon copywriting augmente les conversions de 60-200%. Google privilégie les textes bien écrits et structurés. Investissement qui se rentabilise rapidement.`,
-     
+        description:
+          "Rédaction professionnelle de tous les textes (800-1200 mots/page)",
+        explanation: `Rédaction professionnelle SEO-optimisée de tous vos contenus web (800-1200 mots par page). **C'est quoi ?** Un rédacteur professionnel écrit tous les textes de votre site. **Pourquoi ?** Vous n'avez pas le temps, l'expertise SEO, ou le recul nécessaire. Un bon copywriting augmente les conversions de 60-200%. Google privilégie les textes bien écrits et structurés. Investissement qui se rentabilise rapidement.`,
+
         category: "services",
         selected: false,
       },
@@ -416,8 +422,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "professional-photography",
         name: "Photos professionnelles",
         description: "Shooting photo sur site (half-day) + retouches",
-      explanation: `Shooting photo professionnel sur site (demi-journée) avec retouches et 30-50 photos HD livrées. **C'est quoi ?** Un photographe professionnel vient chez vous pour shooter vos locaux, équipes, produits. **Pourquoi ?** Les photos stock font amateur et nuisent à la crédibilité. 67% des consommateurs jugent les photos plus importantes que les descriptions. Des vraies photos augmentent la confiance de 75%.`,
-     
+        explanation: `Shooting photo professionnel sur site (demi-journée) avec retouches et 30-50 photos HD livrées. **C'est quoi ?** Un photographe professionnel vient chez vous pour shooter vos locaux, équipes, produits. **Pourquoi ?** Les photos stock font amateur et nuisent à la crédibilité. 67% des consommateurs jugent les photos plus importantes que les descriptions. Des vraies photos augmentent la confiance de 75%.`,
+
         category: "services",
         selected: false,
       },
@@ -425,17 +431,18 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "video-production",
         name: "Vidéo de présentation",
         description: "Vidéo corporate 1-2 minutes avec montage professionnel",
-      explanation: `Production d'une vidéo de présentation corporate 1-2 minutes avec script, tournage, montage et motion design. **C'est quoi ?** Une vidéo professionnelle présentant votre entreprise, équipe et savoir-faire. **Pourquoi ?** 72% des clients préfèrent la vidéo au texte pour découvrir un produit/service. Augmente les conversions de 80%. Réutilisable sur site, réseaux sociaux, salons. ROI énorme si bien faite.`,
-     
+        explanation: `Production d'une vidéo de présentation corporate 1-2 minutes avec script, tournage, montage et motion design. **C'est quoi ?** Une vidéo professionnelle présentant votre entreprise, équipe et savoir-faire. **Pourquoi ?** 72% des clients préfèrent la vidéo au texte pour découvrir un produit/service. Augmente les conversions de 80%. Réutilisable sur site, réseaux sociaux, salons. ROI énorme si bien faite.`,
+
         category: "services",
         selected: false,
       },
       {
         id: "logo-design",
         name: "Création de logo",
-        description: "Design de logo professionnel (3 propositions + révisions)",
-      explanation: `Création de logo professionnel avec 3 propositions, révisions illimitées et livraison tous formats (vectoriel, PNG, JPG). **C'est quoi ?** Un designer crée votre identité visuelle unique. **Pourquoi ?** Le logo est la première impression (7 secondes pour marquer). Un logo amateur = image amateur = moins de clients. Un bon logo augmente la mémorisation de 80% et la reconnaissance de marque.`,
-     
+        description:
+          "Design de logo professionnel (3 propositions + révisions)",
+        explanation: `Création de logo professionnel avec 3 propositions, révisions illimitées et livraison tous formats (vectoriel, PNG, JPG). **C'est quoi ?** Un designer crée votre identité visuelle unique. **Pourquoi ?** Le logo est la première impression (7 secondes pour marquer). Un logo amateur = image amateur = moins de clients. Un bon logo augmente la mémorisation de 80% et la reconnaissance de marque.`,
+
         category: "services",
         selected: false,
       },
@@ -443,8 +450,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "brand-identity",
         name: "Charte graphique complète",
         description: "Logo, couleurs, typographies, guidelines (PDF 20+ pages)",
-      explanation: `Charte graphique complète avec logo, palette couleurs, typographies et guidelines (PDF 20+ pages). **C'est quoi ?** Un document définissant votre identité visuelle dans les moindres détails. **Pourquoi ?** Cohérence sur tous supports (web, print, réseaux sociaux), professionnalisme, et guide pour vos prestataires futurs. Les grandes marques ont toutes une charte stricte. Investissement unique qui sert 5-10 ans.`,
-     
+        explanation: `Charte graphique complète avec logo, palette couleurs, typographies et guidelines (PDF 20+ pages). **C'est quoi ?** Un document définissant votre identité visuelle dans les moindres détails. **Pourquoi ?** Cohérence sur tous supports (web, print, réseaux sociaux), professionnalisme, et guide pour vos prestataires futurs. Les grandes marques ont toutes une charte stricte. Investissement unique qui sert 5-10 ans.`,
+
         category: "services",
         selected: false,
       },
@@ -464,8 +471,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "products-50",
         name: "Moins de 50 produits",
         description: "Catalogue compact - TPE/boutique spécialisée",
-      explanation: `Catalogue jusqu'à 50 produits avec fiches détaillées, photos, prix et gestion de stock. **C'est quoi ?** Boutique en ligne pour petite gamme de produits. **Pourquoi ?** Budget maîtrisé, gestion simple. Parfait pour artisans, créateurs, petits producteurs qui démarrent en ligne. 50 produits bien présentés valent mieux que 500 mal mis en avant.`,
-     
+        explanation: `Catalogue jusqu'à 50 produits avec fiches détaillées, photos, prix et gestion de stock. **C'est quoi ?** Boutique en ligne pour petite gamme de produits. **Pourquoi ?** Budget maîtrisé, gestion simple. Parfait pour artisans, créateurs, petits producteurs qui démarrent en ligne. 50 produits bien présentés valent mieux que 500 mal mis en avant.`,
+
         category: "catalog-size",
         selected: true,
         mutuallyExclusive: true,
@@ -474,8 +481,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "products-50-200",
         name: "50-200 produits",
         description: "Catalogue moyen - PME/multi-catégories",
-      explanation: `Catalogue moyen de 50 à 200 produits pour PME avec plusieurs catégories. **C'est quoi ?** E-commerce de taille intermédiaire nécessitant une bonne organisation. **Pourquoi ?** Suffisamment varié pour attirer différents segments, mais gérable sans équipe dédiée. Navigation par catégories et filtres devient indispensable. Volume idéal pour tester le marché avant d'investir massivement.`,
-     
+        explanation: `Catalogue moyen de 50 à 200 produits pour PME avec plusieurs catégories. **C'est quoi ?** E-commerce de taille intermédiaire nécessitant une bonne organisation. **Pourquoi ?** Suffisamment varié pour attirer différents segments, mais gérable sans équipe dédiée. Navigation par catégories et filtres devient indispensable. Volume idéal pour tester le marché avant d'investir massivement.`,
+
         category: "catalog-size",
         selected: false,
         mutuallyExclusive: true,
@@ -484,8 +491,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "products-200-500",
         name: "200-500 produits",
         description: "Grand catalogue - E-commerce établi",
-      explanation: `Grand catalogue de 200 à 500 produits pour e-commerce établi. **C'est quoi ?** E-commerce mature avec gestion de stock complexe. **Pourquoi ?** Vous êtes un acteur sérieux du marché, besoin d'outils pros (ERP, automatisation), et performance critique. Les clients attendent une expérience fluide malgré le volume. Potentiel CA 100k-500k€/an.`,
-     
+        explanation: `Grand catalogue de 200 à 500 produits pour e-commerce établi. **C'est quoi ?** E-commerce mature avec gestion de stock complexe. **Pourquoi ?** Vous êtes un acteur sérieux du marché, besoin d'outils pros (ERP, automatisation), et performance critique. Les clients attendent une expérience fluide malgré le volume. Potentiel CA 100k-500k€/an.`,
+
         category: "catalog-size",
         selected: false,
         mutuallyExclusive: true,
@@ -494,8 +501,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "products-500-2000",
         name: "500-2000 produits",
         description: "Très grand catalogue - Multi-marques",
-      explanation: `Très grand catalogue de 500 à 2000 produits pour multi-marques ou distributeurs. **C'est quoi ?** E-commerce professionnel avec infrastructure robuste. **Pourquoi ?** Recherche instantanée obligatoire, filtres multicritères, recommandations IA. Intégration ERP/PIM indispensable. Équipe dédiée nécessaire. Potentiel CA 500k-2M€/an. Concurrence directe avec les marketplaces.`,
-     
+        explanation: `Très grand catalogue de 500 à 2000 produits pour multi-marques ou distributeurs. **C'est quoi ?** E-commerce professionnel avec infrastructure robuste. **Pourquoi ?** Recherche instantanée obligatoire, filtres multicritères, recommandations IA. Intégration ERP/PIM indispensable. Équipe dédiée nécessaire. Potentiel CA 500k-2M€/an. Concurrence directe avec les marketplaces.`,
+
         category: "catalog-size",
         selected: false,
         mutuallyExclusive: true,
@@ -514,7 +521,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "product-variants",
         name: "Variantes de produits",
         description: "Couleurs, tailles, matériaux - gestion SKU automatique",
-      explanation: `Gestion des variantes : même produit en plusieurs couleurs/tailles/matériaux. Ex: T-shirt rouge M, T-shirt bleu L, etc. Chaque variante a son propre stock et référence (SKU). Essentiel pour la mode, chaussures, etc. Sans ça, vous devez créer un produit séparé pour chaque couleur.`,
+        explanation: `Gestion des variantes : même produit en plusieurs couleurs/tailles/matériaux. Ex: T-shirt rouge M, T-shirt bleu L, etc. Chaque variante a son propre stock et référence (SKU). Essentiel pour la mode, chaussures, etc. Sans ça, vous devez créer un produit séparé pour chaque couleur.`,
         category: "product-management",
         selected: true,
       },
@@ -522,8 +529,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "product-bundles",
         name: "Produits groupés / Bundles",
         description: "Vente de lots avec prix dégressif",
-      explanation: `Produits groupés permettant la vente de lots avec prix dégressif automatique. **C'est quoi ?** Vendre plusieurs produits ensemble avec réduction (ex: "Pack débutant" avec 3 produits). **Pourquoi ?** Augmente le panier moyen de 20-35% (clients achètent plus pour profiter du bundle), simplifie la décision (package prêt), et déstocker produits lents. McDonald's base son CA sur les menus (bundles).`,
-     
+        explanation: `Produits groupés permettant la vente de lots avec prix dégressif automatique. **C'est quoi ?** Vendre plusieurs produits ensemble avec réduction (ex: "Pack débutant" avec 3 produits). **Pourquoi ?** Augmente le panier moyen de 20-35% (clients achètent plus pour profiter du bundle), simplifie la décision (package prêt), et déstocker produits lents. McDonald's base son CA sur les menus (bundles).`,
+
         category: "product-management",
         selected: false,
       },
@@ -531,7 +538,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "product-reviews",
         name: "Avis clients vérifiés",
         description: "Reviews avec photos, votes utiles, modération",
-      explanation: `Système d'avis clients vérifiés avec photos, notation par étoiles, votes "utile/pas utile". Les clients peuvent uniquement laisser un avis après achat (avis vérifiés). 95% des acheteurs lisent les avis avant d'acheter. Augmente les ventes de 20%.`,
+        explanation: `Système d'avis clients vérifiés avec photos, notation par étoiles, votes "utile/pas utile". Les clients peuvent uniquement laisser un avis après achat (avis vérifiés). 95% des acheteurs lisent les avis avant d'acheter. Augmente les ventes de 20%.`,
         category: "product-management",
         selected: false,
       },
@@ -539,8 +546,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "product-questions",
         name: "Questions/Réponses produits",
         description: "Clients posent des questions, vous répondez publiquement",
-      explanation: `Section Questions/Réponses où clients posent des questions et vous répondez publiquement. **C'est quoi ?** FAQ collaborative directement sur la fiche produit. **Pourquoi ?** Répond aux objections avant l'achat (+15% conversion), réduit le support (la réponse sert à tous), et améliore le SEO (contenu généré par utilisateurs). Amazon, Zalando, tous les grands ont cette fonction.`,
-     
+        explanation: `Section Questions/Réponses où clients posent des questions et vous répondez publiquement. **C'est quoi ?** FAQ collaborative directement sur la fiche produit. **Pourquoi ?** Répond aux objections avant l'achat (+15% conversion), réduit le support (la réponse sert à tous), et améliore le SEO (contenu généré par utilisateurs). Amazon, Zalando, tous les grands ont cette fonction.`,
+
         category: "product-management",
         selected: false,
       },
@@ -548,7 +555,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "wishlist",
         name: "Liste de souhaits",
         description: "Favoris avec notifications de baisse de prix",
-      explanation: `Liste de souhaits où les clients sauvent leurs produits favoris pour plus tard. Email automatique si le prix baisse ou le produit va être en rupture. Fidélise les clients (ils reviennent), permet de voir quels produits intéressent le plus (analytics). Augmente les ventes de 20%.`,
+        explanation: `Liste de souhaits où les clients sauvent leurs produits favoris pour plus tard. Email automatique si le prix baisse ou le produit va être en rupture. Fidélise les clients (ils reviennent), permet de voir quels produits intéressent le plus (analytics). Augmente les ventes de 20%.`,
         category: "product-management",
         selected: false,
       },
@@ -562,9 +569,10 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "product-recommendations",
         name: "Recommandations AI",
-        description: "Suggestions produits basées sur historique et similitudes",
-      explanation: `Recommandations produits intelligentes : "Vous aimerez aussi", "Souvent achetés ensemble", "Vus récemment". **C'est quoi ?** Suggestions de produits personnalisées basées sur le comportement. **Pourquoi ?** Augmente le panier moyen de 10-30% (cross-sell/up-sell), améliore la découverte produits, et imite l'expérience "vendeur conseil". Amazon fait 35% de son CA grâce aux recommandations.`,
-     
+        description:
+          "Suggestions produits basées sur historique et similitudes",
+        explanation: `Recommandations produits intelligentes : "Vous aimerez aussi", "Souvent achetés ensemble", "Vus récemment". **C'est quoi ?** Suggestions de produits personnalisées basées sur le comportement. **Pourquoi ?** Augmente le panier moyen de 10-30% (cross-sell/up-sell), améliore la découverte produits, et imite l'expérience "vendeur conseil". Amazon fait 35% de son CA grâce aux recommandations.`,
+
         category: "product-management",
         selected: false,
       },
@@ -572,8 +580,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "recently-viewed",
         name: "Produits récemment consultés",
         description: "Historique de navigation client",
-      explanation: `Historique des produits récemment consultés par le visiteur. **C'est quoi ?** Widget montrant les 5-10 derniers produits vus. **Pourquoi ?** Facilite le retour à un produit vu plus tôt (sans refaire la recherche), augmente le temps passé sur site (+25%), et améliore UX. Basique mais apprécié : 40% des visiteurs l'utilisent.`,
-     
+        explanation: `Historique des produits récemment consultés par le visiteur. **C'est quoi ?** Widget montrant les 5-10 derniers produits vus. **Pourquoi ?** Facilite le retour à un produit vu plus tôt (sans refaire la recherche), augmente le temps passé sur site (+25%), et améliore UX. Basique mais apprécié : 40% des visiteurs l'utilisent.`,
+
         category: "product-management",
         selected: false,
       },
@@ -581,8 +589,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "quick-view",
         name: "Aperçu rapide",
         description: "Modal produit sans quitter la page catalogue",
-      explanation: `Aperçu rapide produit via modal sans quitter la page catalogue. **C'est quoi ?** Popup montrant l'essentiel du produit (prix, photo, ajout panier) sans changer de page. **Pourquoi ?** Réduit les frictions, accélère l'achat impulsif (+18% conversion), et améliore UX mobile. Le visiteur compare rapidement sans perdre sa place. Standard e-commerce moderne.`,
-     
+        explanation: `Aperçu rapide produit via modal sans quitter la page catalogue. **C'est quoi ?** Popup montrant l'essentiel du produit (prix, photo, ajout panier) sans changer de page. **Pourquoi ?** Réduit les frictions, accélère l'achat impulsif (+18% conversion), et améliore UX mobile. Le visiteur compare rapidement sans perdre sa place. Standard e-commerce moderne.`,
+
         category: "product-management",
         selected: false,
       },
@@ -591,8 +599,9 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "payment-stripe",
         name: "Stripe (cartes + wallets)",
-        description: "CB, Visa, Mastercard, Amex, Apple Pay, Google Pay, SEPA - 3D Secure",
-      explanation: `Plateforme de paiement complète acceptant toutes les cartes bancaires (Visa, Mastercard, Amex) + Apple Pay et Google Pay pour paiement en 1 clic sur mobile. Paiement sécurisé 3D Secure obligatoire en Europe. Stripe prend 1.5% de commission + 0.25€ par transaction. C'est la solution la plus populaire et fiable.`,
+        description:
+          "CB, Visa, Mastercard, Amex, Apple Pay, Google Pay, SEPA - 3D Secure",
+        explanation: `Plateforme de paiement complète acceptant toutes les cartes bancaires (Visa, Mastercard, Amex) + Apple Pay et Google Pay pour paiement en 1 clic sur mobile. Paiement sécurisé 3D Secure obligatoire en Europe. Stripe prend 1.5% de commission + 0.25€ par transaction. C'est la solution la plus populaire et fiable.`,
         category: "payment",
         selected: true,
       },
@@ -600,7 +609,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "payment-mollie",
         name: "Mollie (méthodes locales)",
         description: "Bancontact, iDEAL, Sofort - spécifique Belgique/Pays-Bas",
-      explanation: `Spécialiste des méthodes de paiement locales belges et néerlandaises : Bancontact (90% des Belges), iDEAL (Pays-Bas), Sofort. Essentiel si vous vendez en Belgique. Commission similaire à Stripe mais meilleure acceptation locale.`,
+        explanation: `Spécialiste des méthodes de paiement locales belges et néerlandaises : Bancontact (90% des Belges), iDEAL (Pays-Bas), Sofort. Essentiel si vous vendez en Belgique. Commission similaire à Stripe mais meilleure acceptation locale.`,
         category: "payment",
         selected: false,
       },
@@ -608,7 +617,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "payment-paypal",
         name: "PayPal & PayPal Express",
         description: "Alternative populaire - paiement sans création de compte",
-      explanation: `PayPal : portefeuille électronique utilisé par 400M de personnes. Permet de payer sans créer de compte (PayPal Express) ou avec compte PayPal. Rassurant pour beaucoup d'acheteurs (protection acheteur). Augmente les conversions de 15%. Commission ~2.5% (plus cher que Stripe mais certains clients ne jurent que par PayPal).`,
+        explanation: `PayPal : portefeuille électronique utilisé par 400M de personnes. Permet de payer sans créer de compte (PayPal Express) ou avec compte PayPal. Rassurant pour beaucoup d'acheteurs (protection acheteur). Augmente les conversions de 15%. Commission ~2.5% (plus cher que Stripe mais certains clients ne jurent que par PayPal).`,
         category: "payment",
         selected: false,
       },
@@ -616,25 +625,27 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "payment-klarna",
         name: "Klarna / Paiement différé (via Stripe)",
         description: "Paiement en 3x ou 4x sans frais - intégré dans Stripe",
-      explanation: `Option "Paiez plus tard" très populaire qui permet au client d'acheter maintenant et de payer en 3x ou 4x sans frais. Intégré dans Stripe. Augmente le panier moyen de 20-40% car les clients achètent plus facilement. Klarna prend le risque de non-paiement.`,
+        explanation: `Option "Paiez plus tard" très populaire qui permet au client d'acheter maintenant et de payer en 3x ou 4x sans frais. Intégré dans Stripe. Augmente le panier moyen de 20-40% car les clients achètent plus facilement. Klarna prend le risque de non-paiement.`,
         category: "payment",
         selected: false,
       },
       {
         id: "payment-wire-transfer",
         name: "Virement bancaire manuel",
-        description: "Virement manuel avec instructions - pour commandes importantes",
-      explanation: `Paiement par virement bancaire manuel avec instructions automatiques. **C'est quoi ?** Le client reçoit vos coordonnées bancaires et fait un virement classique. **Pourquoi ?** Zéro frais de transaction (vs 1,5-3% CB), rassurant pour gros montants (+1000€), et préféré par certains clients B2B. Délai de paiement 1-3 jours. Commande validée à réception du virement.`,
-     
+        description:
+          "Virement manuel avec instructions - pour commandes importantes",
+        explanation: `Paiement par virement bancaire manuel avec instructions automatiques. **C'est quoi ?** Le client reçoit vos coordonnées bancaires et fait un virement classique. **Pourquoi ?** Zéro frais de transaction (vs 1,5-3% CB), rassurant pour gros montants (+1000€), et préféré par certains clients B2B. Délai de paiement 1-3 jours. Commande validée à réception du virement.`,
+
         category: "payment",
         selected: false,
       },
       {
         id: "payment-invoice",
         name: "Paiement sur facture (B2B)",
-        description: "Conditions 30/60 jours pour professionnels - Stripe Invoicing",
-      explanation: `Paiement sur facture B2B avec conditions 30/60 jours pour professionnels agréés. **C'est quoi ?** Conditions de paiement différé réservées aux clients professionnels validés. **Pourquoi ?** Standard en B2B (80% des transactions), facilite les gros achats (cash flow), et attire les grands comptes. Risque d'impayés à gérer (assurance crédit recommandée). Via Stripe Invoicing ou module dédié.`,
-     
+        description:
+          "Conditions 30/60 jours pour professionnels - Stripe Invoicing",
+        explanation: `Paiement sur facture B2B avec conditions 30/60 jours pour professionnels agréés. **C'est quoi ?** Conditions de paiement différé réservées aux clients professionnels validés. **Pourquoi ?** Standard en B2B (80% des transactions), facilite les gros achats (cash flow), et attire les grands comptes. Risque d'impayés à gérer (assurance crédit recommandée). Via Stripe Invoicing ou module dédié.`,
+
         category: "payment",
         selected: false,
       },
@@ -644,7 +655,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "stock-management",
         name: "Gestion de stock en temps réel",
         description: "Suivi multi-entrepôts, alertes rupture, réassort auto",
-      explanation: `Suivi du stock en temps réel pour chaque produit et variante. Alertes automatiques quand le stock est bas. Empêche la survente (vendre un produit en rupture). Affiche "Plus que 3 en stock" pour créer l'urgence. Essentiel pour éviter les déceptions clients.`,
+        explanation: `Suivi du stock en temps réel pour chaque produit et variante. Alertes automatiques quand le stock est bas. Empêche la survente (vendre un produit en rupture). Affiche "Plus que 3 en stock" pour créer l'urgence. Essentiel pour éviter les déceptions clients.`,
         category: "inventory",
         selected: true,
       },
@@ -652,8 +663,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "stock-reservations",
         name: "Réservation de stock",
         description: "Stock temporairement bloqué pendant le checkout",
-      explanation: `Réservation temporaire de stock pendant le processus de checkout. **C'est quoi ?** Le produit mis au panier est bloqué 15-30 minutes pour éviter double vente. **Pourquoi ?** Évite la frustration (produit devenu indisponible en plein paiement), réduit les surventes, et améliore UX. Essentiel pour produits à stock limité ou forte demande. Amazon le fait sur tous ses produits.`,
-     
+        explanation: `Réservation temporaire de stock pendant le processus de checkout. **C'est quoi ?** Le produit mis au panier est bloqué 15-30 minutes pour éviter double vente. **Pourquoi ?** Évite la frustration (produit devenu indisponible en plein paiement), réduit les surventes, et améliore UX. Essentiel pour produits à stock limité ou forte demande. Amazon le fait sur tous ses produits.`,
+
         category: "inventory",
         selected: false,
       },
@@ -661,17 +672,18 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "backorders",
         name: "Précommandes / Backorders",
         description: "Vente de produits en rupture avec date de disponibilité",
-      explanation: `Précommandes permettant la vente de produits en rupture avec date de disponibilité. **C'est quoi ?** Clients commandent des produits indisponibles, livrés plus tard. **Pourquoi ?** Ne perdez aucune vente (CA immédiat malgré rupture), jaugez la demande avant production, et fidélisez (le client attend chez vous vs aller concurrent). Apple maîtrise l'art du backorder.`,
-     
+        explanation: `Précommandes permettant la vente de produits en rupture avec date de disponibilité. **C'est quoi ?** Clients commandent des produits indisponibles, livrés plus tard. **Pourquoi ?** Ne perdez aucune vente (CA immédiat malgré rupture), jaugez la demande avant production, et fidélisez (le client attend chez vous vs aller concurrent). Apple maîtrise l'art du backorder.`,
+
         category: "inventory",
         selected: false,
       },
       {
         id: "product-availability-alerts",
         name: "Alertes de disponibilité",
-        description: "Email automatique quand produit en rupture revient en stock",
-      explanation: `Alertes email automatiques quand un produit en rupture revient en stock. **C'est quoi ?** Bouton "M'alerter" sur produits indispos, email auto envoyé au retour stock. **Pourquoi ?** Récupérez des ventes perdues (+15-25% des alertes convertissent), comprenez la demande (combien d'alertes = indicateur), et fidélisez (vous pensez à eux). Coût quasi nul, ROI énorme.`,
-     
+        description:
+          "Email automatique quand produit en rupture revient en stock",
+        explanation: `Alertes email automatiques quand un produit en rupture revient en stock. **C'est quoi ?** Bouton "M'alerter" sur produits indispos, email auto envoyé au retour stock. **Pourquoi ?** Récupérez des ventes perdues (+15-25% des alertes convertissent), comprenez la demande (combien d'alertes = indicateur), et fidélisez (vous pensez à eux). Coût quasi nul, ROI énorme.`,
+
         category: "inventory",
         selected: false,
       },
@@ -681,8 +693,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "shipping-flat-rate",
         name: "Tarif de livraison fixe",
         description: "Prix unique quelle que soit la commande",
-      explanation: `Tarif de livraison fixe unique quelle que soit la commande. **C'est quoi ?** Frais de port identiques pour toute commande (ex: 5€ partout). **Pourquoi ?** Ultra-simple pour le client (pas de surprise), facile à gérer pour vous, et peut être absorbé dans vos marges. Fonctionne bien si vos produits ont poids/taille homogènes. Evitez si vous vendez du très lourd ET très léger (vous perdez de l'argent).`,
-     
+        explanation: `Tarif de livraison fixe unique quelle que soit la commande. **C'est quoi ?** Frais de port identiques pour toute commande (ex: 5€ partout). **Pourquoi ?** Ultra-simple pour le client (pas de surprise), facile à gérer pour vous, et peut être absorbé dans vos marges. Fonctionne bien si vos produits ont poids/taille homogènes. Evitez si vous vendez du très lourd ET très léger (vous perdez de l'argent).`,
+
         category: "shipping",
         selected: true,
       },
@@ -690,8 +702,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "shipping-calculation",
         name: "Calcul de livraison dynamique",
         description: "Frais selon poids, destination, et transporteur",
-      explanation: `Calcul automatique des frais de port selon poids/dimension/destination. **C'est quoi ?** Algorithme calculant les frais exacts selon le panier et l'adresse. **Pourquoi ?** Précision (vous ne perdez pas d'argent), transparence client, et gestion de produits variés. Alternative aux transporteurs API si vous gérez vous-même la logistique.`,
-     
+        explanation: `Calcul automatique des frais de port selon poids/dimension/destination. **C'est quoi ?** Algorithme calculant les frais exacts selon le panier et l'adresse. **Pourquoi ?** Précision (vous ne perdez pas d'argent), transparence client, et gestion de produits variés. Alternative aux transporteurs API si vous gérez vous-même la logistique.`,
+
         category: "shipping",
         selected: false,
       },
@@ -699,8 +711,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "shipping-zones",
         name: "Zones de livraison multiples",
         description: "Tarifs différents par région/pays",
-      explanation: `Zones de livraison personnalisées avec tarifs différenciés (Belgique/Europe/Monde). **C'est quoi ?** Définition de zones géographiques avec prix de port spécifiques. **Pourquoi ?** Flexibilité totale (Belgique 5€, UE 12€, Hors UE 25€), rentabilité préservée, et simplicité pour le client. Standard pour tout e-commerce international.`,
-     
+        explanation: `Zones de livraison personnalisées avec tarifs différenciés (Belgique/Europe/Monde). **C'est quoi ?** Définition de zones géographiques avec prix de port spécifiques. **Pourquoi ?** Flexibilité totale (Belgique 5€, UE 12€, Hors UE 25€), rentabilité préservée, et simplicité pour le client. Standard pour tout e-commerce international.`,
+
         category: "shipping",
         selected: false,
       },
@@ -708,8 +720,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "shipping-carrier-integration",
         name: "Intégration transporteurs",
         description: "Bpost, DHL, UPS, Colissimo - étiquettes automatiques",
-      explanation: `Intégration directe transporteurs : génération étiquettes, suivi automatique, pickup scheduling. **C'est quoi ?** Connexion profonde avec Bpost/DPD/UPS pour tout automatiser. **Pourquoi ?** Gain de temps énorme (étiquettes automatiques), erreurs minimisées, suivi client automatique, et tarifs négociés. Indispensable dès 50 colis/semaine. ROI immédiat.`,
-     
+        explanation: `Intégration directe transporteurs : génération étiquettes, suivi automatique, pickup scheduling. **C'est quoi ?** Connexion profonde avec Bpost/DPD/UPS pour tout automatiser. **Pourquoi ?** Gain de temps énorme (étiquettes automatiques), erreurs minimisées, suivi client automatique, et tarifs négociés. Indispensable dès 50 colis/semaine. ROI immédiat.`,
+
         category: "shipping",
         selected: false,
       },
@@ -717,8 +729,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "order-tracking",
         name: "Suivi de commande en temps réel",
         description: "Tracking avec lien transporteur et notifications",
-      explanation: `Tracking de commande en temps réel avec notifications automatiques à chaque étape. **C'est quoi ?** Page de suivi montrant l'état exact de la commande (préparation > expédition > livraison). **Pourquoi ?** Réduit les demandes SAV de 60% ("où est ma commande?"), améliore satisfaction client, et réduit l'anxiété post-achat. Amazon a éduqué les clients à ça.`,
-     
+        explanation: `Tracking de commande en temps réel avec notifications automatiques à chaque étape. **C'est quoi ?** Page de suivi montrant l'état exact de la commande (préparation > expédition > livraison). **Pourquoi ?** Réduit les demandes SAV de 60% ("où est ma commande?"), améliore satisfaction client, et réduit l'anxiété post-achat. Amazon a éduqué les clients à ça.`,
+
         category: "shipping",
         selected: false,
       },
@@ -726,8 +738,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "click-collect",
         name: "Click & Collect",
         description: "Retrait en magasin avec sélection de point",
-      explanation: `Click & Collect : commande en ligne, retrait en magasin gratuit. **C'est quoi ?** Service de retrait en boutique physique. **Pourquoi ?** Économise les frais de port, augmente trafic magasin (+40% achats additionnels), réduit retours, et séduit 45% des acheteurs qui préfèrent récupérer directement.`,
-     
+        explanation: `Click & Collect : commande en ligne, retrait en magasin gratuit. **C'est quoi ?** Service de retrait en boutique physique. **Pourquoi ?** Économise les frais de port, augmente trafic magasin (+40% achats additionnels), réduit retours, et séduit 45% des acheteurs qui préfèrent récupérer directement.`,
+
         category: "shipping",
         selected: false,
       },
@@ -743,8 +755,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "delivery-date-picker",
         name: "Choix de date de livraison",
         description: "Client sélectionne créneau de livraison souhaité",
-      explanation: `Sélecteur de date de livraison permettant au client de choisir quand recevoir. **C'est quoi ?** Calendrier interactif pour choisir le jour de livraison souhaité. **Pourquoi ?** Améliore UX (+20% satisfaction), réduit livraisons ratées (client est là), et différencie (service premium). Essentiel pour gros achats (meubles, électroménager) ou frais (fleurs, alimentaire).`,
-     
+        explanation: `Sélecteur de date de livraison permettant au client de choisir quand recevoir. **C'est quoi ?** Calendrier interactif pour choisir le jour de livraison souhaité. **Pourquoi ?** Améliore UX (+20% satisfaction), réduit livraisons ratées (client est là), et différencie (service premium). Essentiel pour gros achats (meubles, électroménager) ou frais (fleurs, alimentaire).`,
+
         category: "shipping",
         selected: false,
       },
@@ -762,8 +774,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "flash-sales",
         name: "Ventes flash / Countdown",
         description: "Promotions limitées dans le temps avec timer",
-      explanation: `Ventes flash avec compteur temps réel et stock limité visible. **C'est quoi ?** Promotions courtes (24-72h) avec urgence affichée (timer + stock restant). **Pourquoi ?** FOMO (Fear Of Missing Out) = +200% conversions sur période flash. Déstocker rapidement, créer du buzz, et collecter emails (alertes flash sales). Vinted, Veepee, Zalando en abusent car ça marche.`,
-     
+        explanation: `Ventes flash avec compteur temps réel et stock limité visible. **C'est quoi ?** Promotions courtes (24-72h) avec urgence affichée (timer + stock restant). **Pourquoi ?** FOMO (Fear Of Missing Out) = +200% conversions sur période flash. Déstocker rapidement, créer du buzz, et collecter emails (alertes flash sales). Vinted, Veepee, Zalando en abusent car ça marche.`,
+
         category: "marketing",
         selected: false,
       },
@@ -771,8 +783,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "bulk-discounts",
         name: "Remises quantitatives",
         description: "Prix dégressif selon quantité achetée",
-      explanation: `Remises par quantité automatiques (achetez 3, payez 2 ou -10% dès 5 unités). **C'est quoi ?** Prix dégressifs selon quantité achetée. **Pourquoi ?** Augmente panier moyen de 25-40% (incitation volume), déstockage rapide, et attire B2B (gros volumes). Costco base son modèle sur ça. Configuration simple, impact énorme.`,
-     
+        explanation: `Remises par quantité automatiques (achetez 3, payez 2 ou -10% dès 5 unités). **C'est quoi ?** Prix dégressifs selon quantité achetée. **Pourquoi ?** Augmente panier moyen de 25-40% (incitation volume), déstockage rapide, et attire B2B (gros volumes). Costco base son modèle sur ça. Configuration simple, impact énorme.`,
+
         category: "marketing",
         selected: false,
       },
@@ -780,8 +792,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "loyalty-program",
         name: "Programme de fidélité",
         description: "Points cumulés, paliers VIP, récompenses",
-      explanation: `Programme de fidélité complet avec points, niveaux et récompenses. **C'est quoi ?** Système de fidélisation multi-facettes (points + avantages exclusifs). **Pourquoi ?** Clients fidèles dépensent 67% de plus, coût acquisition 5x moindre que nouveaux clients, et CLV multipliée par 3-5. Sephora génère 80% de son CA via son programme fidélité. Investissement rentabilisé en 6-12 mois.`,
-     
+        explanation: `Programme de fidélité complet avec points, niveaux et récompenses. **C'est quoi ?** Système de fidélisation multi-facettes (points + avantages exclusifs). **Pourquoi ?** Clients fidèles dépensent 67% de plus, coût acquisition 5x moindre que nouveaux clients, et CLV multipliée par 3-5. Sephora génère 80% de son CA via son programme fidélité. Investissement rentabilisé en 6-12 mois.`,
+
         category: "marketing",
         selected: false,
       },
@@ -789,16 +801,17 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "gift-cards",
         name: "Cartes cadeaux digitales",
         description: "Vente et utilisation de e-gift cards",
-      explanation: `Cartes cadeaux numériques : achat, personnalisation, envoi automatique et gestion des soldes. **C'est quoi ?** Vente de bons d'achat dématérialisés. **Pourquoi ?** CA immédiat (souvent non dépensé = argent gratuit), acquisition de nouveaux clients (cadeau = découverte), et boost période fêtes (+40% CA décembre). 20% des cartes cadeaux ne sont jamais utilisées (pure marge).`,
-     
+        explanation: `Cartes cadeaux numériques : achat, personnalisation, envoi automatique et gestion des soldes. **C'est quoi ?** Vente de bons d'achat dématérialisés. **Pourquoi ?** CA immédiat (souvent non dépensé = argent gratuit), acquisition de nouveaux clients (cadeau = découverte), et boost période fêtes (+40% CA décembre). 20% des cartes cadeaux ne sont jamais utilisées (pure marge).`,
+
         category: "marketing",
         selected: false,
       },
       {
         id: "newsletter",
         name: "Newsletter e-commerce",
-        description: "Inscription newsletter avec automation (panier abandonné, nouveautés)",
-      explanation: `Système d'inscription newsletter avec popup ou formulaire intégré. Intégration Mailchimp/Brevo pour envoyer des emails automatiques. Permet de garder contact avec vos visiteurs et les convertir plus tard. Email marketing a un ROI de 4200% (42€ de retour par 1€ investi).`,
+        description:
+          "Inscription newsletter avec automation (panier abandonné, nouveautés)",
+        explanation: `Système d'inscription newsletter avec popup ou formulaire intégré. Intégration Mailchimp/Brevo pour envoyer des emails automatiques. Permet de garder contact avec vos visiteurs et les convertir plus tard. Email marketing a un ROI de 4200% (42€ de retour par 1€ investi).`,
         category: "marketing",
         selected: false,
       },
@@ -806,8 +819,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "abandoned-cart",
         name: "Récupération paniers abandonnés",
         description: "Emails automatiques avec code promo",
-      explanation: `Emails automatiques de récupération de paniers abandonnés avec code promo incitatif. **C'est quoi ?** Relances automatiques aux abandons de panier. **Pourquoi ?** 70% de paniers abandonnés. Email bien fait en récupère 10-15% = +7-10% CA immédiat. ROI de 4000%. Sequence type : email 1h après (+5% code), rappel 24h, dernier rappel 72h.`,
-     
+        explanation: `Emails automatiques de récupération de paniers abandonnés avec code promo incitatif. **C'est quoi ?** Relances automatiques aux abandons de panier. **Pourquoi ?** 70% de paniers abandonnés. Email bien fait en récupère 10-15% = +7-10% CA immédiat. ROI de 4000%. Sequence type : email 1h après (+5% code), rappel 24h, dernier rappel 72h.`,
+
         category: "marketing",
         selected: false,
       },
@@ -815,8 +828,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "referral-program",
         name: "Programme de parrainage",
         description: "Parrains/filleuls reçoivent des avantages",
-      explanation: `Programme de parrainage avec récompenses pour parrain et filleul. **C'est quoi ?** Client existant parraine un ami, tous deux reçoivent une réduction. **Pourquoi ?** Acquisition client 5x moins chère que la pub, taux de conversion 4x supérieur (recommandation d'ami), et croissance virale. Dropbox a explosé grâce au parrainage (espace gratuit). ROI démentiel.`,
-     
+        explanation: `Programme de parrainage avec récompenses pour parrain et filleul. **C'est quoi ?** Client existant parraine un ami, tous deux reçoivent une réduction. **Pourquoi ?** Acquisition client 5x moins chère que la pub, taux de conversion 4x supérieur (recommandation d'ami), et croissance virale. Dropbox a explosé grâce au parrainage (espace gratuit). ROI démentiel.`,
+
         category: "marketing",
         selected: false,
       },
@@ -824,8 +837,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "cross-sell-upsell",
         name: "Cross-sell & Up-sell",
         description: "Produits complémentaires et upgrades suggérés",
-      explanation: `Cross-sell et up-sell intelligents : "Souvent achetés ensemble" + "Upgrade disponible". **C'est quoi ?** Suggestions produits complémentaires et supérieurs durant l'achat. **Pourquoi ?** Cross-sell +15-30% panier (frites avec burger), up-sell +10-20% marge (modèle supérieur pour 20€ de plus). Amazon fait 35% de son CA ainsi. Algorithmes simples = gros gains.`,
-     
+        explanation: `Cross-sell et up-sell intelligents : "Souvent achetés ensemble" + "Upgrade disponible". **C'est quoi ?** Suggestions produits complémentaires et supérieurs durant l'achat. **Pourquoi ?** Cross-sell +15-30% panier (frites avec burger), up-sell +10-20% marge (modèle supérieur pour 20€ de plus). Amazon fait 35% de son CA ainsi. Algorithmes simples = gros gains.`,
+
         category: "marketing",
         selected: false,
       },
@@ -835,8 +848,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "guest-checkout",
         name: "Achat sans compte",
         description: "Checkout simplifié sans création de compte",
-      explanation: `Achat invité : commande possible sans créer de compte (email uniquement). **C'est quoi ?** Option d'acheter sans s'inscrire. **Pourquoi ?** 24% des abandons de panier sont dus à la création de compte obligatoire. Proposer les deux options (compte ou invité) maximise les conversions. L'achat invité rapide = achat impulsif favorisé.`,
-     
+        explanation: `Achat invité : commande possible sans créer de compte (email uniquement). **C'est quoi ?** Option d'acheter sans s'inscrire. **Pourquoi ?** 24% des abandons de panier sont dus à la création de compte obligatoire. Proposer les deux options (compte ou invité) maximise les conversions. L'achat invité rapide = achat impulsif favorisé.`,
+
         category: "customer-experience",
         selected: true,
       },
@@ -844,8 +857,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "one-page-checkout",
         name: "Checkout sur une page",
         description: "Processus de commande ultra-rapide",
-      explanation: `Checkout une page : toutes les étapes visibles sur un seul écran. **C'est quoi ?** Processus d'achat condensé sur une page unique. **Pourquoi ?** Réduit abandons de 20-30% (moins de clics = moins de friction), augmente conversions mobiles, et accélère achat impulsif. Recommandé pour paniers <3 produits. Amazon a popularisé le one-click.`,
-     
+        explanation: `Checkout une page : toutes les étapes visibles sur un seul écran. **C'est quoi ?** Processus d'achat condensé sur une page unique. **Pourquoi ?** Réduit abandons de 20-30% (moins de clics = moins de friction), augmente conversions mobiles, et accélère achat impulsif. Recommandé pour paniers <3 produits. Amazon a popularisé le one-click.`,
+
         category: "customer-experience",
         selected: false,
       },
@@ -853,8 +866,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "customer-accounts",
         name: "Comptes clients complets",
         description: "Historique, adresses, wishlist, points fidélité",
-      explanation: `Comptes clients avec historique commandes, wishlist et informations sauvegardées. **C'est quoi ?** Vos clients créent un compte pour retrouver leurs infos et commandes. **Pourquoi ?** Augmente la fidélisation (+35% de commandes repeat), raccourcit le checkout (infos pré-remplies), et permet des fonctions avancées (wishlist, tracking). 73% des e-shoppers préfèrent créer un compte.`,
-     
+        explanation: `Comptes clients avec historique commandes, wishlist et informations sauvegardées. **C'est quoi ?** Vos clients créent un compte pour retrouver leurs infos et commandes. **Pourquoi ?** Augmente la fidélisation (+35% de commandes repeat), raccourcit le checkout (infos pré-remplies), et permet des fonctions avancées (wishlist, tracking). 73% des e-shoppers préfèrent créer un compte.`,
+
         category: "customer-experience",
         selected: false,
       },
@@ -862,8 +875,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "order-returns",
         name: "Gestion des retours",
         description: "Système de demande de retour client avec workflow",
-      explanation: `Système de retours en ligne : demande, impression étiquette, suivi, remboursement automatique. **C'est quoi ?** Portail self-service pour gérer les retours clients. **Pourquoi ?** Réduit SAV de 50% (client autonome), améliore satisfaction (processus simple = +30% NPS), et obligatoire légalement (14 jours rétractation UE). Zalando a fait des retours gratuits un avantage concurrentiel.`,
-     
+        explanation: `Système de retours en ligne : demande, impression étiquette, suivi, remboursement automatique. **C'est quoi ?** Portail self-service pour gérer les retours clients. **Pourquoi ?** Réduit SAV de 50% (client autonome), améliore satisfaction (processus simple = +30% NPS), et obligatoire légalement (14 jours rétractation UE). Zalando a fait des retours gratuits un avantage concurrentiel.`,
+
         category: "customer-experience",
         selected: false,
       },
@@ -871,8 +884,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "order-invoices",
         name: "Factures automatiques",
         description: "PDF générés et envoyés par email",
-      explanation: `Génération automatique de factures PDF conformes, envoi email, et archivage légal. **C'est quoi ?** Système de facturation automatique à chaque commande. **Pourquoi ?** OBLIGATION LÉGALE, gain de temps énorme (zéro saisie manuelle), conformité comptable, et image pro. B2B impossible sans vraies factures. Archivage 10 ans automatique.`,
-     
+        explanation: `Génération automatique de factures PDF conformes, envoi email, et archivage légal. **C'est quoi ?** Système de facturation automatique à chaque commande. **Pourquoi ?** OBLIGATION LÉGALE, gain de temps énorme (zéro saisie manuelle), conformité comptable, et image pro. B2B impossible sans vraies factures. Archivage 10 ans automatique.`,
+
         category: "customer-experience",
         selected: false,
       },
@@ -888,8 +901,9 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "b2c-loyalty-program",
         name: "Programme de fidélité",
-        description: "Points cumulés, récompenses, paliers VIP, offres exclusives",
-      explanation: `Programme de fidélité qui récompense vos clients : 1€ dépensé = X points. Les points donnent des réductions, cadeaux, livraison gratuite. Paliers VIP (Bronze/Argent/Or) avec avantages croissants. Augmente le taux de clients réguliers de 40%. Starbucks et Sephora l'utilisent avec succès.`,
+        description:
+          "Points cumulés, récompenses, paliers VIP, offres exclusives",
+        explanation: `Programme de fidélité qui récompense vos clients : 1€ dépensé = X points. Les points donnent des réductions, cadeaux, livraison gratuite. Paliers VIP (Bronze/Argent/Or) avec avantages croissants. Augmente le taux de clients réguliers de 40%. Starbucks et Sephora l'utilisent avec succès.`,
         category: "b2c",
         selected: false,
       },
@@ -897,7 +911,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "b2c-gift-cards",
         name: "Cartes cadeaux digitales",
         description: "Vente et utilisation de e-gift cards, personnalisables",
-      explanation: `Cartes cadeaux numériques que vos clients peuvent acheter et offrir. Reçues par email avec code unique. Utilisables comme moyen de paiement sur votre site. 20% ne sont jamais utilisées (argent gratuit pour vous). Parfait pour Noël et anniversaires.`,
+        explanation: `Cartes cadeaux numériques que vos clients peuvent acheter et offrir. Reçues par email avec code unique. Utilisables comme moyen de paiement sur votre site. 20% ne sont jamais utilisées (argent gratuit pour vous). Parfait pour Noël et anniversaires.`,
         category: "b2c",
         selected: false,
       },
@@ -905,8 +919,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "b2c-product-personalization",
         name: "Personnalisation produits",
         description: "Gravure, broderie, impression - customisation client",
-      explanation: `Personnalisation produit : texte gravé, choix de matériaux/couleurs, configurateur 3D. **C'est quoi ?** Clients personnalisent le produit avant achat. **Pourquoi ?** Prix premium +30-50% (personnalisation = valeur perçue élevée), différenciation totale, et zéro retour (produit unique). NIKEiD génère des millions. Parfait pour cadeaux, bijoux, textile.`,
-     
+        explanation: `Personnalisation produit : texte gravé, choix de matériaux/couleurs, configurateur 3D. **C'est quoi ?** Clients personnalisent le produit avant achat. **Pourquoi ?** Prix premium +30-50% (personnalisation = valeur perçue élevée), différenciation totale, et zéro retour (produit unique). NIKEiD génère des millions. Parfait pour cadeaux, bijoux, textile.`,
+
         category: "b2c",
         selected: false,
       },
@@ -930,7 +944,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "b2c-subscription-box",
         name: "Abonnement / Box mensuelle",
         description: "Produits récurrents avec paiement automatique",
-      explanation: `Abonnement mensuel avec paiement automatique. Ex: box beauté mensuelle, café tous les mois, etc. Paiement récurrent automatique, client peut annuler quand il veut. Revenu prévisible et fidélisation maximale. Modèle utilisé par Netflix, Spotify, Dollar Shave Club.`,
+        explanation: `Abonnement mensuel avec paiement automatique. Ex: box beauté mensuelle, café tous les mois, etc. Paiement récurrent automatique, client peut annuler quand il veut. Revenu prévisible et fidélisation maximale. Modèle utilisé par Netflix, Spotify, Dollar Shave Club.`,
         category: "b2c",
         selected: false,
       },
@@ -938,8 +952,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "b2c-virtual-try-on",
         name: "Essayage virtuel (AR)",
         description: "Essai virtuel lunettes, vêtements, maquillage via AR",
-      explanation: `Essayage virtuel via réalité augmentée (lunettes, maquillage, vêtements). **C'est quoi ?** IA qui simule le produit sur une photo du client. **Pourquoi ?** Réduit retours de 35% (bon choix dès le départ), effet wow (partages sociaux), et +50% conversion. Warby Parker, Sephora, IKEA l'ont généralisé. Technologies accessibles (Snap AR, Banuba).`,
-     
+        explanation: `Essayage virtuel via réalité augmentée (lunettes, maquillage, vêtements). **C'est quoi ?** IA qui simule le produit sur une photo du client. **Pourquoi ?** Réduit retours de 35% (bon choix dès le départ), effet wow (partages sociaux), et +50% conversion. Warby Parker, Sephora, IKEA l'ont généralisé. Technologies accessibles (Snap AR, Banuba).`,
+
         category: "b2c",
         selected: false,
       },
@@ -947,8 +961,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "b2c-size-guide",
         name: "Guide des tailles intelligent",
         description: "Recommandations de taille basées sur mesures client",
-      explanation: `Guide des tailles interactif avec mesures et recommandations personnalisées. **C'est quoi ?** Outil aidant à choisir la bonne taille via questions/mesures. **Pourquoi ?** Réduit retours de 25% (principale raison = mauvaise taille), améliore satisfaction, et augmente conversion (+15%). Obligatoire en mode/chaussures. Algorithmes prédictifs très efficaces.`,
-     
+        explanation: `Guide des tailles interactif avec mesures et recommandations personnalisées. **C'est quoi ?** Outil aidant à choisir la bonne taille via questions/mesures. **Pourquoi ?** Réduit retours de 25% (principale raison = mauvaise taille), améliore satisfaction, et augmente conversion (+15%). Obligatoire en mode/chaussures. Algorithmes prédictifs très efficaces.`,
+
         category: "b2c",
         selected: false,
       },
@@ -958,8 +972,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "b2b-pricing",
         name: "Tarifs B2B personnalisés",
         description: "Prix différents selon type de client (B2C/B2B)",
-      explanation: `Tarifs B2B différenciés : grilles de prix par client/segment avec remises progressives. **C'est quoi ?** Chaque client pro a ses propres prix négociés. **Pourquoi ?** Standard B2B (impossible de facturer le même prix à tous), gestion des contrats cadres, et flexibilité commerciale totale. Cachez les prix aux visiteurs non connectés. Intégration ERP recommandée.`,
-     
+        explanation: `Tarifs B2B différenciés : grilles de prix par client/segment avec remises progressives. **C'est quoi ?** Chaque client pro a ses propres prix négociés. **Pourquoi ?** Standard B2B (impossible de facturer le même prix à tous), gestion des contrats cadres, et flexibilité commerciale totale. Cachez les prix aux visiteurs non connectés. Intégration ERP recommandée.`,
+
         category: "b2b",
         selected: false,
       },
@@ -967,8 +981,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "b2b-wholesale",
         name: "Vente en gros / Wholesale",
         description: "Commandes minimales, tarifs dégressifs volume",
-      explanation: `Espace B2B/Grossiste : tarifs professionnels, commandes en gros, catalogues privés, paiement à terme. **C'est quoi ?** Section dédiée aux professionnels avec prix de gros et conditions spécifiques. **Pourquoi ?** Doublez votre marché (B2C + B2B), marges supérieures sur volumes, et fidélisation pro (commandes récurrentes). Zéro cannibalisation si les prix pros sont cachés aux particuliers.`,
-     
+        explanation: `Espace B2B/Grossiste : tarifs professionnels, commandes en gros, catalogues privés, paiement à terme. **C'est quoi ?** Section dédiée aux professionnels avec prix de gros et conditions spécifiques. **Pourquoi ?** Doublez votre marché (B2C + B2B), marges supérieures sur volumes, et fidélisation pro (commandes récurrentes). Zéro cannibalisation si les prix pros sont cachés aux particuliers.`,
+
         category: "b2b",
         selected: false,
       },
@@ -976,8 +990,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "b2b-quotes",
         name: "Demandes de devis B2B",
         description: "System de devis pour commandes personnalisées",
-      explanation: `Système de devis B2B : demande, génération PDF, négociation, conversion en commande. **C'est quoi ?** Workflow complet de gestion des devis professionnels. **Pourquoi ?** Process B2B standard (peu d'achat direct, tout passe par devis), suivi commercial, historique, et conversion tracking. Évite emails interminables. CRM intégré = dream.`,
-     
+        explanation: `Système de devis B2B : demande, génération PDF, négociation, conversion en commande. **C'est quoi ?** Workflow complet de gestion des devis professionnels. **Pourquoi ?** Process B2B standard (peu d'achat direct, tout passe par devis), suivi commercial, historique, et conversion tracking. Évite emails interminables. CRM intégré = dream.`,
+
         category: "b2b",
         selected: false,
       },
@@ -985,8 +999,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "b2b-quick-order",
         name: "Commande rapide B2B",
         description: "Upload CSV ou saisie SKU en masse",
-      explanation: `Commande rapide B2B : saisie CSV, scan codes-barres, réapprovisionnement auto. **C'est quoi ?** Interface de commande optimisée pour achats récurrents. **Pourquoi ?** Clients B2B commandent souvent les mêmes produits. Quick order réduit friction de 90%, fidélise (trop facile de commander chez vous pour aller ailleurs), et volume +40%. Essayer c'est l'adopter.`,
-     
+        explanation: `Commande rapide B2B : saisie CSV, scan codes-barres, réapprovisionnement auto. **C'est quoi ?** Interface de commande optimisée pour achats récurrents. **Pourquoi ?** Clients B2B commandent souvent les mêmes produits. Quick order réduit friction de 90%, fidélise (trop facile de commander chez vous pour aller ailleurs), et volume +40%. Essayer c'est l'adopter.`,
+
         category: "b2b",
         selected: false,
       },
@@ -996,8 +1010,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "multi-currency",
         name: "Multi-devises",
         description: "EUR, USD, GBP avec taux de change automatique",
-      explanation: `Support multi-devises avec conversion automatique et paiement dans la devise choisie. **C'est quoi ?** Site affiche prix dans plusieurs devises (EUR/USD/GBP). **Pourquoi ?** Vente internationale facilitée (+25% conversions hors zone euro), prix psychologique optimisé (19.99$ vs 18€), et crédibilité pro. Taux de change mis à jour quotidiennement. Stripe gère ça nativement.`,
-     
+        explanation: `Support multi-devises avec conversion automatique et paiement dans la devise choisie. **C'est quoi ?** Site affiche prix dans plusieurs devises (EUR/USD/GBP). **Pourquoi ?** Vente internationale facilitée (+25% conversions hors zone euro), prix psychologique optimisé (19.99$ vs 18€), et crédibilité pro. Taux de change mis à jour quotidiennement. Stripe gère ça nativement.`,
+
         category: "international",
         selected: false,
       },
@@ -1005,8 +1019,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "multi-language-shop",
         name: "Boutique multilingue",
         description: "FR/NL/EN avec traduction produits et checkout",
-      explanation: `E-commerce multilingue avec traductions produits, checkout et emails. **C'est quoi ?** Toute la boutique traduite en plusieurs langues. **Pourquoi ?** 75% des clients préfèrent acheter dans leur langue. Traduction = +40% conversion. Si vous vendez en UE, le multilingue est quasi obligatoire. Attention : traduction auto (Google) = amateur. Vraies traductions nécessaires.`,
-     
+        explanation: `E-commerce multilingue avec traductions produits, checkout et emails. **C'est quoi ?** Toute la boutique traduite en plusieurs langues. **Pourquoi ?** 75% des clients préfèrent acheter dans leur langue. Traduction = +40% conversion. Si vous vendez en UE, le multilingue est quasi obligatoire. Attention : traduction auto (Google) = amateur. Vraies traductions nécessaires.`,
+
         category: "international",
         selected: false,
       },
@@ -1014,8 +1028,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "tax-management",
         name: "Gestion TVA/Taxes",
         description: "Calcul automatique TVA par pays, B2B exempt",
-      explanation: `Gestion automatique de la TVA : taux par pays/catégorie, B2B reverse-charge, exonérations. **C'est quoi ?** Système calculant la TVA correcte selon règles complexes UE. **Pourquoi ?** OBLIGATION LÉGALE : TVA 21% BE, 19% DE, 20% FR, etc. B2B intracommunautaire = autoliquidation. Erreur = redressement fiscal. Un module dédié évite cauchemars. Stripe Tax recommandé.`,
-     
+        explanation: `Gestion automatique de la TVA : taux par pays/catégorie, B2B reverse-charge, exonérations. **C'est quoi ?** Système calculant la TVA correcte selon règles complexes UE. **Pourquoi ?** OBLIGATION LÉGALE : TVA 21% BE, 19% DE, 20% FR, etc. B2B intracommunautaire = autoliquidation. Erreur = redressement fiscal. Un module dédié évite cauchemars. Stripe Tax recommandé.`,
+
         category: "international",
         selected: false,
       },
@@ -1046,8 +1060,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "erp-integration",
         name: "Intégration ERP",
         description: "SAP, Odoo, Microsoft Dynamics - sync stock/commandes",
-      explanation: `Intégration ERP (SAP, Odoo, Sage) : sync bidirectionnelle produits, stocks, commandes. **C'est quoi ?** Connexion entre e-commerce et votre logiciel de gestion. **Pourquoi ?** UNE source de vérité (stock réel), zéro double saisie, erreurs éliminées, et scalabilité. Indispensable dès 100 commandes/mois. Investissement rentabilisé en 3-6 mois (temps gagné).`,
-     
+        explanation: `Intégration ERP (SAP, Odoo, Sage) : sync bidirectionnelle produits, stocks, commandes. **C'est quoi ?** Connexion entre e-commerce et votre logiciel de gestion. **Pourquoi ?** UNE source de vérité (stock réel), zéro double saisie, erreurs éliminées, et scalabilité. Indispensable dès 100 commandes/mois. Investissement rentabilisé en 3-6 mois (temps gagné).`,
+
         category: "integrations",
         selected: false,
       },
@@ -1055,8 +1069,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "accounting-integration",
         name: "Logiciel de comptabilité",
         description: "Exact Online, Yuki, Sage - export factures auto",
-      explanation: `Intégration comptabilité (Yuki, Exact, Pennylane) : factures, paiements, TVA automatiques. **C'est quoi ?** Lien direct avec votre logiciel comptable. **Pourquoi ?** Votre comptable vous aime (+50%), clôtures mensuelles 10x plus rapides, et zéro erreur de saisie. Obligations fiscales respectées automatiquement. Indispensable en B2B.`,
-     
+        explanation: `Intégration comptabilité (Yuki, Exact, Pennylane) : factures, paiements, TVA automatiques. **C'est quoi ?** Lien direct avec votre logiciel comptable. **Pourquoi ?** Votre comptable vous aime (+50%), clôtures mensuelles 10x plus rapides, et zéro erreur de saisie. Obligations fiscales respectées automatiquement. Indispensable en B2B.`,
+
         category: "integrations",
         selected: false,
       },
@@ -1064,8 +1078,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "google-merchant",
         name: "Google Merchant Center",
         description: "Flux produits automatique pour Google Shopping",
-      explanation: `Google Merchant Center : flux produits automatique pour Google Shopping (gratuit). **C'est quoi ?** Export automatique de vos produits vers Google Shopping. **Pourquoi ?** Trafic qualifié GRATUIT (Google Shopping Free Listings depuis 2020). 60% des recherches produits commencent sur Google. ROI infini (gratuit). Seuls 20% des e-commerçants l'ont fait = opportunité.`,
-     
+        explanation: `Google Merchant Center : flux produits automatique pour Google Shopping (gratuit). **C'est quoi ?** Export automatique de vos produits vers Google Shopping. **Pourquoi ?** Trafic qualifié GRATUIT (Google Shopping Free Listings depuis 2020). 60% des recherches produits commencent sur Google. ROI infini (gratuit). Seuls 20% des e-commerçants l'ont fait = opportunité.`,
+
         category: "integrations",
         selected: false,
       },
@@ -1073,8 +1087,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "facebook-catalog",
         name: "Catalogue Facebook/Instagram",
         description: "Sync produits pour vente sur réseaux sociaux",
-      explanation: `Catalogue Facebook/Instagram : vente directe via Facebook Shops et Instagram Shopping. **C'est quoi ?** Vos produits vendables directement sur Facebook/Instagram. **Pourquoi ?** 1,3 milliards d'utilisateurs Instagram Shopping, checkout natif (client n'a plus besoin de quitter l'app), et reach énorme. 44% de découverte produit se fait sur Instagram. Intégration = 30min, ROI = permanent.`,
-     
+        explanation: `Catalogue Facebook/Instagram : vente directe via Facebook Shops et Instagram Shopping. **C'est quoi ?** Vos produits vendables directement sur Facebook/Instagram. **Pourquoi ?** 1,3 milliards d'utilisateurs Instagram Shopping, checkout natif (client n'a plus besoin de quitter l'app), et reach énorme. 44% de découverte produit se fait sur Instagram. Intégration = 30min, ROI = permanent.`,
+
         category: "integrations",
         selected: false,
       },
@@ -1082,8 +1096,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "marketplace-sync",
         name: "Sync marketplaces",
         description: "Amazon, eBay, Bol.com - gestion centralisée",
-      explanation: `Synchronisation marketplaces : Bol.com, Amazon, eBay (produits, stocks, commandes). **C'est quoi ?** Gestion centralisée de tous vos canaux de vente. **Pourquoi ?** Vendez partout sans gérer 5 interfaces, stock synchronisé en temps réel (pas de survente), et commandes centralisées. Amazon = 50% du e-commerce, Bol.com = leader Benelux. Impossible de les ignorer.`,
-     
+        explanation: `Synchronisation marketplaces : Bol.com, Amazon, eBay (produits, stocks, commandes). **C'est quoi ?** Gestion centralisée de tous vos canaux de vente. **Pourquoi ?** Vendez partout sans gérer 5 interfaces, stock synchronisé en temps réel (pas de survente), et commandes centralisées. Amazon = 50% du e-commerce, Bol.com = leader Benelux. Impossible de les ignorer.`,
+
         category: "integrations",
         selected: false,
       },
@@ -1093,7 +1107,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
   appWeb: {
     id: "appWeb",
     name: "Application Web",
-    description: "Application métier professionnelle sur mesure (SaaS, CRM, ERP, Intranet)",
+    description:
+      "Application métier professionnelle sur mesure (SaaS, CRM, ERP, Intranet)",
     icon: "💻",
     basePrice: 10000,
     estimatedTimelineWeeks: { min: 8, max: 32 },
@@ -1102,9 +1117,10 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "auth-basic",
         name: "Authentification complète",
-        description: "Inscription, connexion, reset password, email verification",
-      explanation: `Authentification basique : email/mot de passe avec validation et récupération. **C'est quoi ?** Système de connexion standard par email/password. **Pourquoi ?** Contrôle d'accès nécessaire (comptes clients, admin), sécurisé si bien fait (bcrypt), et attendu par utilisateurs. Le minimum pour tout site avec comptes.`,
-     
+        description:
+          "Inscription, connexion, reset password, email verification",
+        explanation: `Authentification basique : email/mot de passe avec validation et récupération. **C'est quoi ?** Système de connexion standard par email/password. **Pourquoi ?** Contrôle d'accès nécessaire (comptes clients, admin), sécurisé si bien fait (bcrypt), et attendu par utilisateurs. Le minimum pour tout site avec comptes.`,
+
         category: "auth",
         selected: true,
       },
@@ -1112,8 +1128,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "auth-social",
         name: "Connexion sociale (OAuth)",
         description: "Google, Microsoft, Facebook, LinkedIn, GitHub",
-      explanation: `Connexion sociale : "Se connecter avec Google/Facebook/Apple". **C'est quoi ?** Login via comptes sociaux existants. **Pourquoi ?** +20% conversions signup (zéro formulaire à remplir), moins d'abandons, et données enrichies (photo, nom). 77% préfèrent social login vs créer nouveau compte. Google OAuth le plus utilisé.`,
-     
+        explanation: `Connexion sociale : "Se connecter avec Google/Facebook/Apple". **C'est quoi ?** Login via comptes sociaux existants. **Pourquoi ?** +20% conversions signup (zéro formulaire à remplir), moins d'abandons, et données enrichies (photo, nom). 77% préfèrent social login vs créer nouveau compte. Google OAuth le plus utilisé.`,
+
         category: "auth",
         selected: false,
       },
@@ -1121,8 +1137,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "auth-2fa",
         name: "Double authentification (2FA)",
         description: "TOTP (Google Authenticator, Authy), SMS, Email",
-      explanation: `Authentification à deux facteurs via SMS, app (Google Authenticator) ou email. **C'est quoi ?** Double vérification lors de la connexion. **Pourquoi ?** 99,9% des hacks bloqués par 2FA. Protection comptes sensibles (admin, clients VIP). Rassurant pour B2B. Norme de sécurité 2024. Optionnel pour clients, obligatoire pour admins.`,
-     
+        explanation: `Authentification à deux facteurs via SMS, app (Google Authenticator) ou email. **C'est quoi ?** Double vérification lors de la connexion. **Pourquoi ?** 99,9% des hacks bloqués par 2FA. Protection comptes sensibles (admin, clients VIP). Rassurant pour B2B. Norme de sécurité 2024. Optionnel pour clients, obligatoire pour admins.`,
+
         category: "auth",
         selected: false,
       },
@@ -1130,8 +1146,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "auth-sso",
         name: "Single Sign-On (SSO)",
         description: "SAML 2.0, OpenID Connect pour entreprise",
-      explanation: `Single Sign-On : connexion unique partagée entre plusieurs applications de votre écosystème. **C'est quoi ?** Un seul login pour accéder à tous vos services. **Pourquoi ?** UX fluide (connexion une fois = accès partout), sécurité centralisée, et gestion simplifiée. Nécessaire si vous avez site + app mobile + backoffice. Google Workspace, Office 365 le font.`,
-     
+        explanation: `Single Sign-On : connexion unique partagée entre plusieurs applications de votre écosystème. **C'est quoi ?** Un seul login pour accéder à tous vos services. **Pourquoi ?** UX fluide (connexion une fois = accès partout), sécurité centralisée, et gestion simplifiée. Nécessaire si vous avez site + app mobile + backoffice. Google Workspace, Office 365 le font.`,
+
         category: "auth",
         selected: false,
       },
@@ -1146,8 +1162,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "auth-magic-link",
         name: "Magic Links (Passwordless)",
         description: "Connexion sans mot de passe par email",
-      explanation: `Magic Link : connexion sans mot de passe via lien email. **C'est quoi ?** Clic sur lien reçu par email = connecté, zéro password. **Pourquoi ?** UX parfaite (pas de password oublié), sécurité élevée (lien unique temporaire), et tendance 2024 (Slack, Medium l'utilisent). Conversion +15% vs password classique.`,
-     
+        explanation: `Magic Link : connexion sans mot de passe via lien email. **C'est quoi ?** Clic sur lien reçu par email = connecté, zéro password. **Pourquoi ?** UX parfaite (pas de password oublié), sécurité élevée (lien unique temporaire), et tendance 2024 (Slack, Medium l'utilisent). Conversion +15% vs password classique.`,
+
         category: "auth",
         selected: false,
       },
@@ -1157,8 +1173,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "user-profiles",
         name: "Profils utilisateurs",
         description: "Gestion complète avec avatar, bio, préférences",
-      explanation: `Profils utilisateurs complets : photo, bio, préférences, historique, documents. **C'est quoi ?** Page de profil riche pour chaque utilisateur. **Pourquoi ?** Personnalisation expérience, historique accessible, fidélisation (investissement client dans son profil), et communauté (si aspect social). LinkedIn, GitHub basent tout là-dessus.`,
-     
+        explanation: `Profils utilisateurs complets : photo, bio, préférences, historique, documents. **C'est quoi ?** Page de profil riche pour chaque utilisateur. **Pourquoi ?** Personnalisation expérience, historique accessible, fidélisation (investissement client dans son profil), et communauté (si aspect social). LinkedIn, GitHub basent tout là-dessus.`,
+
         category: "users",
         selected: true,
       },
@@ -1166,8 +1182,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "user-roles",
         name: "Système de rôles (RBAC)",
         description: "Admin, Manager, User, Custom roles",
-      explanation: `Système de rôles granulaire : Admin, Manager, Editor, Viewer avec permissions custom. **C'est quoi ?** Gestion fine des droits d'accès selon rôle. **Pourquoi ?** Sécurité (stagiaire ≠ CEO), workflows respectés (validation hiérarchique), et responsabilités claires. Indispensable dès 3+ utilisateurs. RBAC (Role-Based Access Control) standard.`,
-     
+        explanation: `Système de rôles granulaire : Admin, Manager, Editor, Viewer avec permissions custom. **C'est quoi ?** Gestion fine des droits d'accès selon rôle. **Pourquoi ?** Sécurité (stagiaire ≠ CEO), workflows respectés (validation hiérarchique), et responsabilités claires. Indispensable dès 3+ utilisateurs. RBAC (Role-Based Access Control) standard.`,
+
         category: "users",
         selected: false,
       },
@@ -1190,7 +1206,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "user-impersonation",
         name: "Mode impersonnification",
-        description: "Admins peuvent se connecter comme un utilisateur (support)",
+        description:
+          "Admins peuvent se connecter comme un utilisateur (support)",
         explanation: `Mode impersonnification : admin se connecte comme un utilisateur pour déboguer. **C'est quoi ?** Admins peuvent "devenir" un utilisateur temporairement. **Pourquoi ?** Support niveau 10x (voir exactement ce que voit le client), debug rapide ("ça marche pas" devient "ah je vois le bug"), et formation facilitée. Audit trail obligatoire pour traçabilité. Shopify, Salesforce l'ont.`,
         category: "users",
         selected: false,
@@ -1217,7 +1234,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "dashboard-advanced",
         name: "Tableau de bord avancé",
-        description: "Dashboards personnalisables, drag & drop, filtres dynamiques",
+        description:
+          "Dashboards personnalisables, drag & drop, filtres dynamiques",
         explanation: `Tableau de bord avancé : widgets personnalisables, drill-down, période comparée. **C'est quoi ?** Dashboard configurable avec interactions (clic sur graphique = détails). **Pourquoi ?** Chaque manager a son dashboard (ventes vs prod vs finance), comparaisons période (vs mois dernier, vs année passée), et autonomie analytics. Notion de "single pane of glass". ROI mesurable.`,
         category: "dashboard",
         selected: false,
@@ -1226,7 +1244,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "dashboard-analytics",
         name: "Dashboard analytics BI",
-        description: "Business Intelligence avec graphiques interactifs (Chart.js, D3.js)",
+        description:
+          "Business Intelligence avec graphiques interactifs (Chart.js, D3.js)",
         explanation: `Dashboard analytics BI : rapports sophistiqués, prédictions, insights IA. **C'est quoi ?** Business Intelligence avancée avec machine learning. **Pourquoi ?** Prédictions (CA prévu mois prochain), détection anomalies (alerte si KPI anormal), et insights automatiques ("Top produit = X"). Tableau, Power BI, mais intégré. Pour data-driven orgs.`,
         category: "dashboard",
         selected: false,
@@ -1375,7 +1394,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "notification-preferences",
         name: "Préférences de notifications",
-        description: "Utilisateurs contrôlent leurs notifications (email, push, SMS)",
+        description:
+          "Utilisateurs contrôlent leurs notifications (email, push, SMS)",
         explanation: `Préférences de notifications : désactivation sélective par canal et type. **C'est quoi ?** Utilisateurs choisissent quelles notifs recevoir et comment. **Pourquoi ?** RGPD compliant (consentement), réduit désabonnements totaux (ils coupent le superflu, gardent l'important), et UX respectueuse. Amazon laisse tout paramétrer. Standard 2024.`,
         category: "notifications",
         selected: false,
@@ -1636,7 +1656,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "pwa",
         name: "Progressive Web App (PWA)",
-        description: "Application installable, mode offline, push notifications",
+        description:
+          "Application installable, mode offline, push notifications",
         explanation: `Progressive Web App : app installable, offline, notifications push comme app native. **C'est quoi ?** Site web qui se comporte comme une vraie application. **Pourquoi ?** Installation sans store (pas de commission Apple/Google), fonctionne offline, notifications push, et coût 10x moindre qu'app native. Twitter, Pinterest sont PWA. ROI démentiel.`,
         category: "mobile",
         selected: false,
@@ -1697,8 +1718,9 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
   auditCyber: {
     id: "auditCyber",
     name: "Audit Cybersécurité",
-    description: "Audit de sécurité complet et tests de pénétration professionnels",
-      explanation: `Audit cybersécurité complet : infrastructure, applications, processus. **C'est quoi ?** Évaluation complète de votre posture sécurité par experts. **Pourquoi ?** 60% PME hackées ferment sous 6 mois. Audit identifie failles critiques, priorise corrections, et roadmap sécurité. ANSSI recommande audit annuel. 5-15k€ sauvent souvent l'entreprise.`,
+    description:
+      "Audit de sécurité complet et tests de pénétration professionnels",
+    explanation: `Audit cybersécurité complet : infrastructure, applications, processus. **C'est quoi ?** Évaluation complète de votre posture sécurité par experts. **Pourquoi ?** 60% PME hackées ferment sous 6 mois. Audit identifie failles critiques, priorise corrections, et roadmap sécurité. ANSSI recommande audit annuel. 5-15k€ sauvent souvent l'entreprise.`,
     icon: "🔒",
     basePrice: 2000,
     estimatedTimelineWeeks: { min: 1, max: 8 },
@@ -1745,7 +1767,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "pentest-external",
         name: "Pentest externe (Black Box)",
-        description: "Test d'intrusion depuis internet sans information préalable",
+        description:
+          "Test d'intrusion depuis internet sans information préalable",
         explanation: `Pentest externe (Black Box) : attaque depuis Internet sans info préalable. **C'est quoi ?** Hackers testent depuis l'extérieur comme un vrai attaquant. **Pourquoi ?** Simule vraie attaque (hackers n'ont aucune info), trouve vulns exposées Internet, et compliance. OWASP Top 10 focus. 3-10k€ selon scope. Annuel recommandé.`,
         category: "audit",
         selected: true,
@@ -1753,7 +1776,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "pentest-internal",
         name: "Pentest interne (Grey Box)",
-        description: "Test d'intrusion depuis le réseau interne avec accès limité",
+        description:
+          "Test d'intrusion depuis le réseau interne avec accès limité",
         explanation: `Pentest interne (Grey Box) : test avec accès réseau interne (employé malveillant). **C'est quoi ?** Simulation d'attaque depuis l'intérieur (réseau corporate). **Pourquoi ?** 70% des breaches = insider threat ou phishing (attaquant entre dans réseau). Teste segmentation, escalade privilèges, mouvement latéral. Complémente pentest externe. 5-15k€.`,
         category: "audit",
         selected: false,
@@ -1761,7 +1785,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "pentest-white-box",
         name: "Pentest White Box",
-        description: "Audit complet avec accès aux codes sources et architecture",
+        description:
+          "Audit complet avec accès aux codes sources et architecture",
         explanation: `Pentest White Box : audit avec accès code source et architecture. **C'est quoi ?** Test sécurité avec toutes les informations (code, infra, creds). **Pourquoi ?** Profondeur maximale (auditeurs comprennent vraiment l'app), trouve vulns subtiles (logic bugs), et éducatif (dev apprennent). Plus cher (10-30k€) mais ROI sécurité x3.`,
         category: "audit",
         selected: false,
@@ -1872,7 +1897,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "compliance-rgpd",
         name: "Conformité RGPD",
-        description: "Audit RGPD, analyse des risques, recommandations détaillées",
+        description:
+          "Audit RGPD, analyse des risques, recommandations détaillées",
         explanation: `Conformité RGPD audit et mise en conformité : registre, PIA, procédures. **C'est quoi ?** Accompagnement complet conformité RGPD. **Pourquoi ?** OBLIGATION LÉGALE UE. Registre traitements, analyses d'impact (PIA), procédures, formation équipes. DPO externalisé possible. Audit 3-10k€, mise conformité 5-30k€. Évite amendes 20M€/4% CA.`,
         category: "compliance",
         selected: false,
@@ -1880,7 +1906,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "compliance-iso27001",
         name: "Conformité ISO 27001",
-        description: "Gap analysis, documentation, roadmap de mise en conformité",
+        description:
+          "Gap analysis, documentation, roadmap de mise en conformité",
         explanation: `Conformité ISO 27001 : SMSI, analyse risques, certification. **C'est quoi ?** Norme internationale système management sécurité. **Pourquoi ?** Différenciateur B2B (grands comptes exigent ISO27001), framework complet (114 contrôles), certification reconnue mondialement. Gap analysis 5-10k€, mise en œuvre 20-100k€, audit certif 10-30k€. Investissement payant.`,
         category: "compliance",
         selected: false,
@@ -1925,7 +1952,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "remediation-consulting",
         name: "Conseil en remédiation",
-        description: "Accompagnement pour la correction des vulnérabilités critiques",
+        description:
+          "Accompagnement pour la correction des vulnérabilités critiques",
         category: "followup",
         selected: false,
       },
@@ -1946,7 +1974,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "vulnerability-management",
         name: "Gestion des vulnérabilités",
-        description: "Programme de gestion continue des vulnérabilités (6 mois)",
+        description:
+          "Programme de gestion continue des vulnérabilités (6 mois)",
         category: "followup",
         selected: false,
       },
@@ -1955,21 +1984,24 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "training-awareness",
         name: "Formation sensibilisation (équipes)",
-        description: "Formation cybersécurité pour tous les collaborateurs (2h)",
+        description:
+          "Formation cybersécurité pour tous les collaborateurs (2h)",
         category: "training",
         selected: false,
       },
       {
         id: "training-technical",
         name: "Formation technique (IT/Dev)",
-        description: "Formation sécurité pour développeurs et équipes IT (1 jour)",
+        description:
+          "Formation sécurité pour développeurs et équipes IT (1 jour)",
         category: "training",
         selected: false,
       },
       {
         id: "training-devsecops",
         name: "Formation DevSecOps",
-        description: "Intégration de la sécurité dans le cycle DevOps (2 jours)",
+        description:
+          "Intégration de la sécurité dans le cycle DevOps (2 jours)",
         category: "training",
         selected: false,
       },
@@ -1985,14 +2017,16 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "report-executive",
         name: "Rapport exécutif",
-        description: "Synthèse managériale avec risques business et recommandations stratégiques",
+        description:
+          "Synthèse managériale avec risques business et recommandations stratégiques",
         category: "reporting",
         selected: true,
       },
       {
         id: "report-technical",
         name: "Rapport technique détaillé",
-        description: "Documentation complète avec PoC, captures, et procédures de correction",
+        description:
+          "Documentation complète avec PoC, captures, et procédures de correction",
         category: "reporting",
         selected: true,
       },
@@ -2006,7 +2040,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "report-presentation",
         name: "Présentation des résultats",
-        description: "Présentation en personne des résultats d'audit (half-day)",
+        description:
+          "Présentation en personne des résultats d'audit (half-day)",
         category: "reporting",
         selected: false,
       },
@@ -2023,7 +2058,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
   aiAutomation: {
     id: "aiAutomation",
     name: "Automatisation IA",
-    description: "Solutions d'intelligence artificielle sur mesure (Chatbots, NLP, Vision, Automatisation)",
+    description:
+      "Solutions d'intelligence artificielle sur mesure (Chatbots, NLP, Vision, Automatisation)",
     icon: "🤖",
     basePrice: 3000,
     estimatedTimelineWeeks: { min: 4, max: 20 },
@@ -2039,7 +2075,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "ai-model-claude",
         name: "Anthropic Claude 3 (Opus/Sonnet)",
-        description: "Excellent pour analyse de documents longs et raisonnement",
+        description:
+          "Excellent pour analyse de documents longs et raisonnement",
         category: "ai-models",
         selected: false,
       },
@@ -2085,7 +2122,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "use-case-content-generation",
         name: "Génération de contenu",
-        description: "Création automatique de textes marketing, articles, descriptions",
+        description:
+          "Création automatique de textes marketing, articles, descriptions",
         category: "use-cases",
         selected: false,
         mutuallyExclusive: true,
@@ -2190,14 +2228,16 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "nlp-sentiment",
         name: "Analyse de sentiment",
-        description: "Positif/Négatif/Neutre - avis, commentaires, réseaux sociaux",
+        description:
+          "Positif/Négatif/Neutre - avis, commentaires, réseaux sociaux",
         category: "nlp",
         selected: false,
       },
       {
         id: "nlp-intent-detection",
         name: "Détection d'intention",
-        description: "Comprendre l'intention utilisateur pour routage intelligent",
+        description:
+          "Comprendre l'intention utilisateur pour routage intelligent",
         category: "nlp",
         selected: false,
       },
@@ -2322,7 +2362,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "workflow-orchestration",
         name: "Orchestration de workflows",
-        description: "Coordination de multiples automatisations (n8n, Zapier, Make)",
+        description:
+          "Coordination de multiples automatisations (n8n, Zapier, Make)",
         category: "automation",
         selected: false,
       },
@@ -2558,7 +2599,8 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
   cmsBlog: {
     id: "cmsBlog",
     name: "CMS / Blog",
-    description: "Solution CMS complète 100% configurée - Il ne reste qu'à définir votre design",
+    description:
+      "Solution CMS complète 100% configurée - Il ne reste qu'à définir votre design",
     icon: "📝",
     basePrice: 2500,
     estimatedTimelineWeeks: { min: 3, max: 12 },
@@ -2567,8 +2609,9 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "design-style-modern",
         name: "Design moderne et épuré",
-        description: "Style minimaliste, espacements généreux, typographie moderne",
-      explanation: `Design minimaliste et contemporain avec beaucoup d'espaces blancs, typographie sans-serif moderne (Helvetica, Inter), animations douces. Inspiré des sites tech comme Apple, Stripe, Airbnb. Convient aux startups, tech, services digitaux.`,
+        description:
+          "Style minimaliste, espacements généreux, typographie moderne",
+        explanation: `Design minimaliste et contemporain avec beaucoup d'espaces blancs, typographie sans-serif moderne (Helvetica, Inter), animations douces. Inspiré des sites tech comme Apple, Stripe, Airbnb. Convient aux startups, tech, services digitaux.`,
         category: "design-preferences",
         selected: false,
         mutuallyExclusive: true,
@@ -2577,7 +2620,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "design-style-classic",
         name: "Design classique et professionnel",
         description: "Style traditionnel, structure formelle, police serif",
-      explanation: `Design professionnel traditionnel avec structure formelle, polices serif (Times, Georgia), mise en page équilibrée. Inspiré des sites institutionnels, banques, cabinets d'avocats. Convient aux professions libérales, institutions, services B2B traditionnels.`,
+        explanation: `Design professionnel traditionnel avec structure formelle, polices serif (Times, Georgia), mise en page équilibrée. Inspiré des sites institutionnels, banques, cabinets d'avocats. Convient aux professions libérales, institutions, services B2B traditionnels.`,
         category: "design-preferences",
         selected: false,
         mutuallyExclusive: true,
@@ -2586,7 +2629,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "design-style-creative",
         name: "Design créatif et audacieux",
         description: "Couleurs vibrantes, animations, mise en page originale",
-      explanation: `Design audacieux et original avec couleurs vibrantes, animations dynamiques, mises en page asymétriques. Inspiré des sites d'agences créatives, artistes, marques lifestyle. Attire l'attention mais peut être moins sobre. Convient aux créatifs, mode, culture.`,
+        explanation: `Design audacieux et original avec couleurs vibrantes, animations dynamiques, mises en page asymétriques. Inspiré des sites d'agences créatives, artistes, marques lifestyle. Attire l'attention mais peut être moins sobre. Convient aux créatifs, mode, culture.`,
         category: "design-preferences",
         selected: false,
         mutuallyExclusive: true,
@@ -2594,8 +2637,9 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       {
         id: "design-style-corporate",
         name: "Design corporate et sobre",
-        description: "Style entreprise, couleurs neutres, mise en page structurée",
-      explanation: `Design entreprise sobre et rassurant avec couleurs neutres (bleu, gris), mise en page structurée et claire. Inspire confiance et professionnalisme. Convient aux PME, services B2B, consultants. C'est le choix le plus sûr et polyvalent.`,
+        description:
+          "Style entreprise, couleurs neutres, mise en page structurée",
+        explanation: `Design entreprise sobre et rassurant avec couleurs neutres (bleu, gris), mise en page structurée et claire. Inspire confiance et professionnalisme. Convient aux PME, services B2B, consultants. C'est le choix le plus sûr et polyvalent.`,
         category: "design-preferences",
         selected: true,
         mutuallyExclusive: true,
@@ -2714,7 +2758,9 @@ export function getCategoryName(
  * Get ordered list of categories for a project type
  * Each category will become a separate step in the wizard
  */
-export function getCategoriesForProjectType(projectType: ProjectType): string[] {
+export function getCategoriesForProjectType(
+  projectType: ProjectType,
+): string[] {
   const config = getProjectTypeConfig(projectType);
   const categories = new Set<string>();
 
@@ -2730,7 +2776,7 @@ export function getCategoriesForProjectType(projectType: ProjectType): string[] 
  */
 export function getCategoryDescription(
   projectType: ProjectType,
-  category: string
+  category: string,
 ): string {
   const descriptions: Record<ProjectType, Record<string, string>> = {
     siteVitrine: {
@@ -2783,7 +2829,8 @@ export function getCategoryDescription(
       monitoring: "Monitoring et analytics",
     },
     cmsBlog: {
-      "design-preferences": "Choisissez le style de design qui correspond à votre image de marque. Le CMS est entièrement configuré avec toutes les fonctionnalités - nous personnalisons uniquement le design selon vos préférences.",
+      "design-preferences":
+        "Choisissez le style de design qui correspond à votre image de marque. Le CMS est entièrement configuré avec toutes les fonctionnalités - nous personnalisons uniquement le design selon vos préférences.",
     },
   };
 
@@ -2798,13 +2845,15 @@ export function getCategoryDescription(
  */
 export function isCategoryMutuallyExclusive(
   projectType: ProjectType,
-  category: string
+  category: string,
 ): boolean {
   const config = getProjectTypeConfig(projectType);
-  const categoryFeatures = config.features.filter((f) => f.category === category);
+  const categoryFeatures = config.features.filter(
+    (f) => f.category === category,
+  );
 
   // Categories like 'scope', 'catalog', 'volume' are typically mutually exclusive
-  const exclusiveCategories = ['scope', 'catalog', 'volume', 'pages'];
+  const exclusiveCategories = ["scope", "catalog", "volume", "pages"];
 
   return (
     exclusiveCategories.includes(category) ||

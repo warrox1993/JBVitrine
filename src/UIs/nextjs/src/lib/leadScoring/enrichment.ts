@@ -52,17 +52,13 @@ export class LeadEnrichmentService {
     const resolvedDomain = domain || this.extractDomain(email);
 
     // Exécuter tous les enrichissements en parallèle (uniquement APIs gratuites)
-    const [
-      emailValidation,
-      companyData,
-      brandData,
-      techStack,
-    ] = await Promise.allSettled([
-      this.validateEmail(email),
-      this.getCompanyDataFromHunter(resolvedDomain),
-      this.getBrandData(resolvedDomain),
-      this.getTechStack(resolvedDomain),
-    ]);
+    const [emailValidation, companyData, brandData, techStack] =
+      await Promise.allSettled([
+        this.validateEmail(email),
+        this.getCompanyDataFromHunter(resolvedDomain),
+        this.getBrandData(resolvedDomain),
+        this.getTechStack(resolvedDomain),
+      ]);
 
     const enriched: EnrichedLeadData = {
       email,
@@ -263,7 +259,10 @@ export class LeadEnrichmentService {
       if (xPoweredBy.includes("next.js") || xGenerator.includes("next.js")) {
         techs.cms.push("Next.js");
       }
-      if (xFramework.includes("wordpress") || xGenerator.includes("wordpress")) {
+      if (
+        xFramework.includes("wordpress") ||
+        xGenerator.includes("wordpress")
+      ) {
         techs.cms.push("WordPress");
       }
       if (server.includes("wix")) techs.cms.push("Wix");
@@ -382,9 +381,7 @@ export class LeadEnrichmentService {
   // MOCK DATA (Pour développement sans API keys)
   // ============================================================================
 
-  private mockCompanyData(
-    domain: string,
-  ): EnrichedLeadData["companyData"] {
+  private mockCompanyData(domain: string): EnrichedLeadData["companyData"] {
     return {
       domain: domain,
       organization: domain.split(".")[0].toUpperCase(),

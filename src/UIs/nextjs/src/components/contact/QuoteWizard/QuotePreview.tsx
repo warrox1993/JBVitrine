@@ -85,13 +85,18 @@ export function QuotePreview({ estimate, quoteData }: QuotePreviewProps) {
   const mobileVersion = (
     <>
       {/* Mobile sticky bottom bar */}
-      <div className={cls.mobileBar}>
+      <div
+        className={cls.mobileBar}
+        role="complementary"
+        aria-label="Aperçu du devis"
+      >
         <button
           type="button"
           className={cls.mobileToggle}
           onClick={() => setIsExpanded(!isExpanded)}
           aria-expanded={isExpanded}
           aria-label="Voir le détail du devis"
+          aria-controls="mobile-quote-panel"
         >
           <div className={cls.mobileBarContent}>
             <div className={cls.mobileBarLeft}>
@@ -108,7 +113,12 @@ export function QuotePreview({ estimate, quoteData }: QuotePreviewProps) {
 
         {/* Expandable detail panel */}
         {isExpanded && (
-          <div className={cls.mobilePanel}>
+          <div
+            id="mobile-quote-panel"
+            className={cls.mobilePanel}
+            role="region"
+            aria-label="Détails du devis"
+          >
             <div className={cls.mobilePanelContent}>
               <div className={cls.projectType}>
                 <span className={cls.name}>{config.name}</span>

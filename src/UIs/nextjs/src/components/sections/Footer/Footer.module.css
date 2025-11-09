@@ -5,10 +5,31 @@
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-6);
-  margin-bottom: var(--space-6);
-  align-items: center;
+  /* Mobile first: 1 colonne centrée */
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
+  align-items: start;
+  text-align: center;
+}
+
+/* Tablette: 2 colonnes */
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    text-align: left;
+  }
+}
+
+/* Desktop: Auto-fit avec minimum 200px */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+    align-items: center;
+  }
 }
 .heading {
   font-size: var(--text-sm);
@@ -101,11 +122,12 @@
   line-height: 0;
 }
 
-/* Footer logo: block-level, centered vertically in its cell, no stretch */
+/* Footer logo: Mobile first approach */
 .logoFooter {
   display: block;
-  width: clamp(150px, 20vw, 300px);
-  height: clamp(150px, 20vw, 300px);
+  /* Mobile: Plus petit et centré */
+  width: 80px;
+  height: 80px;
   aspect-ratio: 1 / 1;
   object-fit: contain;
   max-width: none;
@@ -117,30 +139,40 @@
   transition:
     width 0.3s ease,
     height 0.3s ease;
+  margin-inline: auto; /* Centrer sur mobile */
 }
 
-/* Responsive adjustments for footer logo */
-@media (max-width: 1024px) {
+.logoCell {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrer sur mobile */
+  line-height: 0;
+}
+
+/* Tablette: Taille moyenne */
+@media (min-width: 640px) {
+  .logoFooter {
+    width: 100px;
+    height: 100px;
+  }
+
+  .logoCell {
+    justify-content: flex-start;
+  }
+}
+
+/* Desktop: Taille normale */
+@media (min-width: 1024px) {
   .logoFooter {
     width: clamp(120px, 18vw, 250px);
     height: clamp(120px, 18vw, 250px);
   }
 }
 
-@media (max-width: 768px) {
+/* Large desktop: Taille maximale */
+@media (min-width: 1280px) {
   .logoFooter {
-    width: clamp(100px, 25vw, 200px);
-    height: clamp(100px, 25vw, 200px);
-  }
-
-  .logoCell {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .logoFooter {
-    width: clamp(80px, 30vw, 150px);
-    height: clamp(80px, 30vw, 150px);
+    width: clamp(150px, 20vw, 300px);
+    height: clamp(150px, 20vw, 300px);
   }
 }

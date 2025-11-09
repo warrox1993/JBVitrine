@@ -11,50 +11,56 @@ import { validateCsrfToken } from "@/lib/csrf";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const REQUEST_TYPE_LABELS: Record<string, string> = {
-  cv: 'Candidature (CV)',
-  technical: 'Problème technique',
+  cv: "Candidature (CV)",
+  technical: "Problème technique",
   assistance: "Demande d'assistance",
-  bug: 'Signalement de bug',
-  partnership: 'Proposition de partenariat',
-  other: 'Autre demande',
+  bug: "Signalement de bug",
+  partnership: "Proposition de partenariat",
+  other: "Autre demande",
 };
 
 // Sanitize HTML to prevent XSS
 function sanitizeHtml(text: string): string {
   return text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#x27;')
-    .replace(/\//g, '&#x2F;');
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;")
+    .replace(/\//g, "&#x2F;");
 }
 
 // Get client IP
 function getClientIp(request: Request): string {
-  const forwarded = request.headers.get('x-forwarded-for');
-  const real = request.headers.get('x-real-ip');
-  return forwarded?.split(',')[0] || real || 'unknown';
+  const forwarded = request.headers.get("x-forwarded-for");
+  const real = request.headers.get("x-real-ip");
+  return forwarded?.split(",")[0] || real || "unknown";
 }
 
 // Verify reCAPTCHA token
-async function verifyRecaptcha(token: string, clientIp: string): Promise<{ success: boolean; score?: number }> {
+async function verifyRecaptcha(
+  token: string,
+  clientIp: string,
+): Promise<{ success: boolean; score?: number }> {
   if (!token || !process.env.RECAPTCHA_SECRET) {
     return { success: false };
   }
 
   try {
-    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+    const response = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          secret: process.env.RECAPTCHA_SECRET,
+          response: token,
+          remoteip: clientIp,
+        }),
       },
-      body: new URLSearchParams({
-        secret: process.env.RECAPTCHA_SECRET,
-        response: token,
-        remoteip: clientIp,
-      }),
-    });
+    );
 
     const data = await response.json();
     return {
@@ -62,7 +68,7 @@ async function verifyRecaptcha(token: string, clientIp: string): Promise<{ succe
       score: data.score,
     };
   } catch (error) {
-    console.error('reCAPTCHA verification error:', error);
+    console.error("reCAPTCHA verification error:", error);
     return { success: false };
   }
 }
@@ -83,7 +89,10 @@ export async function POST(request: Request) {
         timestamp: Date.now(),
       });
       return NextResponse.json(
-        { error: "Accès temporairement bloqué. Contactez le support si nécessaire." },
+        {
+          error:
+            "Accès temporairement bloqué. Contactez le support si nécessaire.",
+        },
         { status: 403 },
       );
     }
@@ -111,7 +120,16 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
-    const { requestType, email, name, company, phone, message, csrfToken, recaptchaToken } = body;
+    const {
+      requestType,
+      email,
+      name,
+      company,
+      phone,
+      message,
+      csrfToken,
+      recaptchaToken,
+    } = body;
 
     // CSRF validation
     if (!csrfToken || !(await validateCsrfToken(csrfToken, clientIp))) {
@@ -163,7 +181,14 @@ export async function POST(request: Request) {
     }
 
     // Request type whitelist validation
-    const validTypes = ['cv', 'technical', 'assistance', 'bug', 'partnership', 'other'];
+    const validTypes = [
+      "cv",
+      "technical",
+      "assistance",
+      "bug",
+      "partnership",
+      "other",
+    ];
     if (!validTypes.includes(requestType)) {
       await logSecurityEvent({
         type: SecurityEventType.INVALID_INPUT,
@@ -218,7 +243,10 @@ export async function POST(request: Request) {
         type: SecurityEventType.INVALID_INPUT,
         ip: clientIp,
         userAgent,
-        details: { reason: "Company name too long", companyLength: company.length },
+        details: {
+          reason: "Company name too long",
+          companyLength: company.length,
+        },
         timestamp: Date.now(),
       });
       return NextResponse.json(
@@ -229,7 +257,11 @@ export async function POST(request: Request) {
 
     // XSS prevention check
     const xssPattern = /<script|javascript:|on\w+=/i;
-    if (xssPattern.test(name) || xssPattern.test(message) || (company && xssPattern.test(company))) {
+    if (
+      xssPattern.test(name) ||
+      xssPattern.test(message) ||
+      (company && xssPattern.test(company))
+    ) {
       await logSecurityEvent({
         type: SecurityEventType.XSS_ATTEMPT,
         ip: clientIp,
@@ -253,12 +285,13 @@ export async function POST(request: Request) {
     // Sanitize all inputs before email
     const safeName = sanitizeHtml(name.trim());
     const safeEmail = sanitizeHtml(email.trim());
-    const safeCompany = company ? sanitizeHtml(company.trim()) : '';
-    const safePhone = phone ? sanitizeHtml(phone.trim()) : '';
+    const safeCompany = company ? sanitizeHtml(company.trim()) : "";
+    const safePhone = phone ? sanitizeHtml(phone.trim()) : "";
     const safeMessage = sanitizeHtml(message.trim());
 
     // Send email via Resend
-    const requestTypeLabel = REQUEST_TYPE_LABELS[requestType] || 'Autre demande';
+    const requestTypeLabel =
+      REQUEST_TYPE_LABELS[requestType] || "Autre demande";
     const { data, error } = await resend.emails.send({
       from: "Smidjan Contact <noreply@smidjan.be>",
       to: ["jeanbaptiste.dhondt1@gmail.com"],

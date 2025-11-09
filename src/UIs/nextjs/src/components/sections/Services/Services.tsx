@@ -61,7 +61,7 @@ export function Services() {
       <AnimatedBackground variant="dark" />
       <div className="container">
         <div className={styles.header}>
-          <Heading as="h2" accent className={styles.title}>Domaines d'Expertise</Heading>
+          <Heading as="h2" accent className={styles.title}>Nos Services : Développement Web, Cybersécurité & Automatisation IA</Heading>
           <p className={styles.desc}>Solutions sur mesure combinant développement web, cybersécurité et automatisation IA. Chaque projet est unique et configuré selon vos besoins.</p>
         </div>
         <div className={styles.grid}>
@@ -87,7 +87,7 @@ export function Services() {
                 href={ctaTargets[s.orderKey]}
                 className={`${styles.cta} ${s.featured ? styles.ctaFeatured : styles.ctaRegular}`}
               >
-                Configurer mon projet
+                Demander un Devis
               </a>
             </div>
           ))}

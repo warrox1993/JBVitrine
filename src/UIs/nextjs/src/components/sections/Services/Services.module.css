@@ -27,12 +27,23 @@
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
+  /* Mobile first: 1 colonne */
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
 }
-@media (max-width: 980px) {
+
+/* Tablettes: 2 colonnes */
+@media (min-width: 768px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+}
+
+/* Desktop: 3 colonnes */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .card {

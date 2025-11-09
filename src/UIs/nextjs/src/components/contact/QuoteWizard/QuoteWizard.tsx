@@ -419,14 +419,20 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
           {renderCurrentStep()}
         </div>
 
-        {/* Sidebar Preview (visible from step 2+) */}
+        {/* Sidebar Container for Desktop Layout (visible from step 2+) */}
         {currentStep >= 2 && estimate && quoteData.projectType && (
-          <aside className={cls.sidebar}>
-            {/* Quote Preview */}
-            <QuotePreview estimate={estimate} quoteData={quoteData} />
+          <aside className={cls.sidebar} aria-label="Aperçu du devis">
+            {/* Empty on mobile - QuotePreview renders outside on mobile */}
           </aside>
         )}
       </div>
+
+      {/* Quote Preview - Positioned for desktop sidebar and mobile fixed bar (visible from step 2+) */}
+      {currentStep >= 2 && estimate && quoteData.projectType && (
+        <div className={cls.quotePreviewWrapper}>
+          <QuotePreview estimate={estimate} quoteData={quoteData} />
+        </div>
+      )}
     </div>
   );
 }

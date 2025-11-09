@@ -80,29 +80,48 @@
 }
 
 .sidebar {
-  position: sticky;
-  top: var(--header-height, 64px);
-  right: 0; /* Extreme right */
-  width: 380px;
-  min-width: 380px;
-  max-width: 380px;
-  flex-shrink: 0;
-  max-height: calc(100vh - var(--header-height, 64px));
-  overflow-y: auto;
-  padding: var(--space-3, 1rem);
-  background: var(--color-bg-1, #0d1015);
-  border-left: 2px solid var(--color-border, #2b3342);
-  z-index: 10;
-  animation: slideInFromRight 0.5s ease-out forwards;
-  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.3);
-
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  /* Hide on mobile - QuotePreview renders independently */
+  display: none;
 }
 
-.sidebar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+/* Desktop: Sidebar takes space in layout */
+@media (min-width: 1024px) {
+  .sidebar {
+    display: block;
+    position: sticky;
+    top: var(--header-height, 64px);
+    right: 0;
+    width: 380px;
+    min-width: 380px;
+    max-width: 380px;
+    flex-shrink: 0;
+    max-height: calc(100vh - var(--header-height, 64px));
+    padding: var(--space-3, 1rem);
+    background: var(--color-bg-1, #0d1015);
+    border-left: 2px solid var(--color-border, #2b3342);
+    z-index: 10;
+    animation: slideInFromRight 0.5s ease-out forwards;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Quote Preview Wrapper - Positions QuotePreview correctly on desktop/mobile */
+.quotePreviewWrapper {
+  /* Mobile: No special positioning (mobileBar uses position fixed) */
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .quotePreviewWrapper {
+    /* Desktop: Position in sidebar space */
+    position: fixed;
+    top: var(--header-height, 64px);
+    right: 0;
+    width: 380px;
+    max-height: calc(100vh - var(--header-height, 64px));
+    z-index: 11; /* Above sidebar background */
+    padding: var(--space-3, 1rem);
+  }
 }
 
 @keyframes slideInFromRight {

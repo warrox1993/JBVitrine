@@ -211,16 +211,18 @@
   background: var(--color-accent-1, #ff6a00);
 }
 
-/* Mobile Sticky Bar */
+/* Mobile Sticky Bar - SEO 2025: High z-index for visibility, always accessible */
 .mobileBar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 150; /* Above header and all content for mobile UX */
   background: var(--color-surface, #1e2430);
   border-top: 2px solid var(--color-border, #2b3342);
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  /* Ensure minimum touch target size for mobile accessibility */
+  min-height: 72px;
 }
 
 .mobileToggle {

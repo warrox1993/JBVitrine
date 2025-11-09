@@ -1,6 +1,8 @@
 // src/app/layout.tsx
 import './styles/variables.css';
+import './styles/breakpoints.css'; // Standardized breakpoints system
 import './styles/typography.css';
+import './styles/typography-mobile.css'; // Typography mobile optimizations
 import './styles/utilities.css';
 import './globals.css';
 import '../styles/buttons.animations.css';
@@ -14,7 +16,7 @@ import RouteProgressProvider from '@/app/RouteProgressProvider';
 import SidebarRouterBridge from '@/components/SidebarRouterBridge';
 import Header from '@/components/Header';
 import { SidebarMobileProvider } from '@/hooks/useSidebarMobile';
-import { organizationSchema, websiteSchema, localBusinessSchema } from '@/lib/schema';
+import { organizationSchema, websiteSchema, localBusinessSchema, faqPageSchema } from '@/lib/schema';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -209,6 +211,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
                 />
             </head>
             <body className={`${inter.variable} ${instrument.variable}`}>

@@ -5,7 +5,37 @@ module.exports = {
   generateIndexSitemap: false,
   exclude: ["/api/*", "/admin/*", "/auditlogs", "/settings"],
   robotsTxtOptions: {
-    policies: [{ userAgent: "*", allow: "/", disallow: ["/api/", "/admin/"] }],
+    policies: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/", "/admin/", "/_next/", "/static/"],
+        crawlDelay: 0,
+      },
+      // SEO 2025: Support crawlers IA
+      {
+        userAgent: "GPTBot",
+        allow: ["/", "/blog/", "/about", "/services", "/contact"],
+      },
+      {
+        userAgent: "ChatGPT-User",
+        allow: ["/", "/blog/", "/about", "/services"],
+      },
+      {
+        userAgent: "anthropic-ai",
+        allow: ["/", "/blog/", "/about", "/services"],
+      },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+        crawlDelay: 0,
+      },
+      {
+        userAgent: "Bingbot",
+        allow: "/",
+        crawlDelay: 0,
+      },
+    ],
     additionalSitemaps: [],
   },
   transform: async (config, path) => {

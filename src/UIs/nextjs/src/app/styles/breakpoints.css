@@ -1,0 +1,293 @@
+/**
+ * STANDARDIZED BREAKPOINT SYSTEM
+ * Meilleures pratiques 2025 - Mobile First
+ *
+ * Usage:
+ * @media (min-width: var(--bp-sm)) { }
+ * ou
+ * @media (--screen-md) { }  (Custom media queries)
+ */
+
+:root {
+  /* ============================================
+     BREAKPOINTS STANDARDS
+     ============================================ */
+
+  /* Mobile S - Petits téléphones (iPhone SE, etc.) */
+  --bp-xs: 375px;
+
+  /* Mobile M - Téléphones standard */
+  --bp-sm: 640px;
+
+  /* Mobile L / Tablette Portrait */
+  --bp-md: 768px;
+
+  /* Tablette Landscape / Petit Desktop */
+  --bp-lg: 1024px;
+
+  /* Desktop Standard */
+  --bp-xl: 1280px;
+
+  /* Desktop Large */
+  --bp-2xl: 1536px;
+
+  /* Desktop XL / 4K */
+  --bp-3xl: 1920px;
+
+  /* ============================================
+     CONTAINER MAX-WIDTHS
+     ============================================ */
+
+  --container-xs: 640px;
+  --container-sm: 768px;
+  --container-md: 1024px;
+  --container-lg: 1280px;
+  --container-xl: 1536px;
+  --container-2xl: 1920px;
+
+  /* ============================================
+     MEDIA QUERY RANGES (pour référence)
+     ============================================ */
+
+  /* Mobile Only: < 640px */
+  /* Tablet: 640px - 1024px */
+  /* Desktop: > 1024px */
+}
+
+/* ============================================
+   CUSTOM MEDIA QUERIES
+   (CSS Custom Media Queries Level 5)
+   ============================================ */
+
+/* Note: Support navigateur limité, mais prêt pour le futur */
+@custom-media --screen-xs (min-width: 375px);
+@custom-media --screen-sm (min-width: 640px);
+@custom-media --screen-md (min-width: 768px);
+@custom-media --screen-lg (min-width: 1024px);
+@custom-media --screen-xl (min-width: 1280px);
+@custom-media --screen-2xl (min-width: 1536px);
+@custom-media --screen-3xl (min-width: 1920px);
+
+/* Ranges */
+@custom-media --mobile-only (max-width: 639px);
+@custom-media --tablet-only (min-width: 640px) and (max-width: 1023px);
+@custom-media --desktop-only (min-width: 1024px);
+
+/* Orientation */
+@custom-media --landscape (orientation: landscape);
+@custom-media --portrait (orientation: portrait);
+
+/* Touch vs Mouse */
+@custom-media --touch (hover: none) and (pointer: coarse);
+@custom-media --mouse (hover: hover) and (pointer: fine);
+
+/* ============================================
+   UTILITY CLASSES - VISIBILITY
+   ============================================ */
+
+/* Hide on mobile */
+@media (max-width: 639px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+/* Hide on tablet */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hide-tablet {
+    display: none !important;
+  }
+}
+
+/* Hide on desktop */
+@media (min-width: 1024px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* Show only on mobile */
+.show-mobile {
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .show-mobile {
+    display: none !important;
+  }
+}
+
+/* Show only on tablet */
+.show-tablet {
+  display: none;
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .show-tablet {
+    display: block !important;
+  }
+}
+
+/* Show only on desktop */
+.show-desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .show-desktop {
+    display: block !important;
+  }
+}
+
+/* ============================================
+   RESPONSIVE CONTAINERS
+   ============================================ */
+
+.container-responsive {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    max-width: var(--container-xs);
+  }
+}
+
+@media (min-width: 768px) {
+  .container-responsive {
+    max-width: var(--container-sm);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    max-width: var(--container-md);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-responsive {
+    max-width: var(--container-lg);
+  }
+}
+
+@media (min-width: 1536px) {
+  .container-responsive {
+    max-width: var(--container-xl);
+  }
+}
+
+/* ============================================
+   FLUID TYPOGRAPHY (Container Query aware)
+   ============================================ */
+
+.text-fluid-sm {
+  font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+}
+
+.text-fluid-base {
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+}
+
+.text-fluid-lg {
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+}
+
+.text-fluid-xl {
+  font-size: clamp(1.375rem, 1.2rem + 0.75vw, 1.75rem);
+}
+
+.text-fluid-2xl {
+  font-size: clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
+}
+
+.text-fluid-3xl {
+  font-size: clamp(2.25rem, 1.75rem + 2vw, 3.5rem);
+}
+
+/* ============================================
+   RESPONSIVE SPACING UTILITIES
+   ============================================ */
+
+/* Margins */
+.m-responsive {
+  margin: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .m-responsive {
+    margin: var(--space-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .m-responsive {
+    margin: var(--space-5);
+  }
+}
+
+/* Padding */
+.p-responsive {
+  padding: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .p-responsive {
+    padding: var(--space-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .p-responsive {
+    padding: var(--space-5);
+  }
+}
+
+/* Gap */
+.gap-responsive {
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .gap-responsive {
+    gap: var(--space-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gap-responsive {
+    gap: var(--space-5);
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  /* Hide navigation, footers, etc. */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Optimize for printing */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    text-decoration: underline;
+    color: #000;
+  }
+
+  /* Show URLs after links */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.875em;
+  }
+}

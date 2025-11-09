@@ -116,7 +116,8 @@
     var(--color-surface) 95%,
     transparent 5%
   );
-  --header-height: clamp(114px, 15.2vh, 171px);
+  /* Desktop: Header height optimal pour grande écrans */
+  --header-height: clamp(80px, 12vh, 140px);
 
   --btn-bg: var(--color-primary);
   --btn-fg: var(--color-primary-contrast);
@@ -213,6 +214,54 @@
 
   --color-border-hover: rgba(12, 18, 27, 0.14);
   --color-shadow: rgba(12, 18, 27, 0.08);
+}
+
+/* ============================================
+   MOBILE OPTIMIZATIONS
+   ============================================ */
+
+/* Tablet et Mobile - Ajustements responsives */
+@media (max-width: 1024px) {
+  :root {
+    /* Réduire header sur tablette */
+    --header-height: clamp(64px, 10vh, 100px);
+
+    /* Réduire espaces sur tablette */
+    --space-7: 5rem; /* 80px au lieu de 104px */
+    --space-8: 7rem; /* 112px au lieu de 160px */
+
+    /* Container padding réduit */
+    --container-padding: clamp(1.25rem, 2vw, 3rem);
+  }
+}
+
+/* Mobile - Optimisations critiques */
+@media (max-width: 768px) {
+  :root {
+    /* Header mobile fixe et compact */
+    --header-height: 56px;
+
+    /* Espacements réduits pour mobile */
+    --space-6: 2rem; /* 32px au lieu de 64px */
+    --space-7: 3rem; /* 48px au lieu de 104px */
+    --space-8: 4rem; /* 64px au lieu de 160px */
+
+    /* Container padding mobile */
+    --container-padding: 1rem; /* 16px fixe sur mobile */
+  }
+}
+
+/* Petits mobiles - Espacements minimum */
+@media (max-width: 480px) {
+  :root {
+    /* Espacements encore plus compacts */
+    --space-6: 1.5rem; /* 24px */
+    --space-7: 2rem; /* 32px */
+    --space-8: 2.5rem; /* 40px */
+
+    /* Container padding minimum */
+    --container-padding: 0.75rem; /* 12px */
+  }
 }
 
 @media (prefers-contrast: more) {
