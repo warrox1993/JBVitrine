@@ -40,7 +40,9 @@
       "Bash(npm run lint)",
       "WebSearch",
       "Bash(npm run build:*)",
-      "Bash(vercel env:*)"
+      "Bash(vercel env:*)",
+      "Bash(grep:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

@@ -3,7 +3,14 @@ module.exports = {
   siteUrl: process.env.SITE_URL || "https://smidjan.be",
   generateRobotsTxt: true,
   generateIndexSitemap: false,
-  exclude: ["/api/*", "/admin/*", "/auditlogs", "/settings"],
+  exclude: [
+    "/api/*",
+    "/admin",
+    "/admin/*",
+    "/auditlogs",
+    "/settings",
+    "/sitemap.xml",
+  ],
   robotsTxtOptions: {
     policies: [
       {
