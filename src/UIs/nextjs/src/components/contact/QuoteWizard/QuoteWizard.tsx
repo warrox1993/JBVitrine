@@ -143,13 +143,30 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
       }
     });
     setFeaturesByCategory(initialFeatures);
+
+    // Auto-advance to next step immediately after selection
+    const scrollY = window.scrollY;
+    const isEcommerce = projectType === 'ecommerce';
+    // If ecommerce: go to step 2 (code ownership), otherwise: go to first category step
+    const categories = getCategoriesForProjectType(projectType);
+    const firstCategoryStep = isEcommerce ? 3 : 2;
+    const nextStep = isEcommerce ? 2 : firstCategoryStep;
+    setCurrentStep(nextStep);
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   const handleStep1Next = () => {
+    // This is now only called if there's a manual "Next" button (which we removed)
+    // Keeping for backward compatibility but shouldn't be used
     if (quoteData.projectType) {
-      // If ecommerce, go to code ownership step (step 2), otherwise go to first category step
+      const scrollY = window.scrollY;
       const nextStep = hasCodeOwnershipStep ? 2 : firstCategoryStepNumber;
       setCurrentStep(nextStep);
+      requestAnimationFrame(() => {
+        window.scrollTo(0, scrollY);
+      });
     }
   };
 
@@ -163,7 +180,13 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
 
   const handleCodeOwnershipNext = () => {
     if (quoteData.codeOwnership !== null) {
+      // Save current scroll position before step change
+      const scrollY = window.scrollY;
       setCurrentStep(firstCategoryStepNumber);
+      // Restore scroll position after React renders
+      requestAnimationFrame(() => {
+        window.scrollTo(0, scrollY);
+      });
     }
   };
 
@@ -176,11 +199,23 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
   };
 
   const handleNext = () => {
+    // Save current scroll position before step change
+    const scrollY = window.scrollY;
     setCurrentStep((prev) => Math.min(prev + 1, totalSteps));
+    // Restore scroll position after React renders
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   const handleBack = () => {
+    // Save current scroll position before step change
+    const scrollY = window.scrollY;
     setCurrentStep((prev) => Math.max(prev - 1, 1));
+    // Restore scroll position after React renders
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   // Design & SEO Step

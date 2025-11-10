@@ -72,10 +72,8 @@ export function Step1ProjectType({ selected, onChange, onNext }: Step1ProjectTyp
   const handleSelect = (type: ProjectType) => {
     console.log('Step1: Project type selected:', type);
     onChange(type);
-    setTimeout(() => {
-      console.log('Step1: Calling onNext after delay');
-      onNext();
-    }, 300);
+    console.log('Step1: Auto-advancing to next step');
+    onNext();
   };
 
   // Calculate optimal position for info bubble

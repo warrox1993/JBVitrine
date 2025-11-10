@@ -82,7 +82,12 @@ export function StepCategorySelection({
     return selectedFeatures.some((f) => f.id === featureId);
   };
 
-  const canProceed = selectedFeatures.length > 0;
+  // For non-exclusive categories (checkbox mode), allow proceeding with 0 selections
+  // For exclusive categories (radio mode), require at least 1 selection
+  // Exception: "pages" category always requires a selection (cannot skip)
+  const canProceed = category === 'pages'
+    ? selectedFeatures.length > 0
+    : (!isMutuallyExclusive || selectedFeatures.length > 0);
 
   return (
     <div className={cls.step}>
@@ -154,6 +159,47 @@ export function StepCategorySelection({
               </button>
             );
           })}
+
+          {/* "None of the above" option for mutually exclusive categories */}
+          {/* Exclude "None" option for critical categories like "pages" where a choice is required */}
+          {isMutuallyExclusive && category !== 'pages' && (
+            <button
+              key="none"
+              type="button"
+              className={`${cls.featureCard} ${selectedFeatures.length === 0 ? cls.selected : ''} ${cls.exclusive}`}
+              onClick={() => {
+                setSelectedFeatures([]);
+                onChange([]);
+              }}
+              aria-pressed={selectedFeatures.length === 0}
+            >
+              <div className={cls.featureHeader}>
+                <div className={cls.checkbox} aria-hidden="true">
+                  {selectedFeatures.length === 0 && (
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <path
+                        d="M13 4L6 11L3 8"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
+                </div>
+                <h4 className={cls.featureName}>Aucune de ces propositions</h4>
+              </div>
+              <p className={cls.featureDescription}>
+                Passez cette étape si aucune des options ne correspond à votre besoin
+              </p>
+              <div className={cls.featurePriceIncluded}>Gratuit</div>
+            </button>
+          )}
         </div>
       </div>
 

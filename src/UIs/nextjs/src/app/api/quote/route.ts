@@ -64,31 +64,6 @@ export async function POST(request: NextRequest) {
     // Get client IP
     const clientIP = getClientIP(request);
 
-    // Rate limiting: 3 quote requests per hour (stricter than contact form)
-    if (!checkRateLimit(clientIP, 3, 3600000)) {
-      const rateLimitInfo = getRateLimitInfo(clientIP, 3);
-      return NextResponse.json(
-        {
-          ok: false,
-          message:
-            "Trop de demandes de devis. Veuillez réessayer plus tard ou nous contacter directement.",
-        },
-        {
-          status: 429,
-          headers: {
-            "X-RateLimit-Limit": "3",
-            "X-RateLimit-Remaining": String(rateLimitInfo.remaining),
-            "X-RateLimit-Reset": String(
-              Math.floor(rateLimitInfo.resetTime / 1000),
-            ),
-            "Retry-After": String(
-              Math.ceil((rateLimitInfo.resetTime - Date.now()) / 1000),
-            ),
-          },
-        },
-      );
-    }
-
     // Validate Content-Type
     const contentType = request.headers.get("content-type");
     if (!contentType || !contentType.includes("application/json")) {
@@ -303,6 +278,32 @@ export async function POST(request: NextRequest) {
       email: sanitizedContactInfo.email,
       timestamp: new Date().toISOString(),
     });
+
+    // Rate limiting: 3 successful quote submissions per hour (after all validations)
+    // This ensures only valid submissions count towards the limit
+    if (!checkRateLimit(clientIP, 3, 3600000)) {
+      const rateLimitInfo = getRateLimitInfo(clientIP, 3);
+      return NextResponse.json(
+        {
+          ok: false,
+          message:
+            "Trop de demandes de devis. Veuillez réessayer plus tard ou nous contacter directement.",
+        },
+        {
+          status: 429,
+          headers: {
+            "X-RateLimit-Limit": "3",
+            "X-RateLimit-Remaining": String(rateLimitInfo.remaining),
+            "X-RateLimit-Reset": String(
+              Math.floor(rateLimitInfo.resetTime / 1000),
+            ),
+            "Retry-After": String(
+              Math.ceil((rateLimitInfo.resetTime - Date.now()) / 1000),
+            ),
+          },
+        },
+      );
+    }
 
     // ✅ Save to database (for backward compatibility)
     try {
