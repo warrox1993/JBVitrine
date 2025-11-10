@@ -78,7 +78,7 @@
   padding: var(--space-3, 1rem);
   text-align: left;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   display: flex;
   flex-direction: column;
   gap: var(--space-1, 0.25rem);
@@ -96,7 +96,7 @@
 .featureCard:hover {
   border-color: var(--color-accent-1, #ff6a00);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.1);
+  box-shadow: var(--shadow-md-strong);
 }
 
 .featureCard:focus-visible {
@@ -135,7 +135,7 @@
   align-items: center;
   justify-content: center;
   color: var(--color-accent-1, #ff6a00);
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
 }
 
 .featureCard.selected .checkbox {
@@ -235,7 +235,7 @@
   font-weight: 600;
   border-radius: var(--radius-md, 0.75rem);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   border: none;
   font-family: inherit;
 }
@@ -248,7 +248,7 @@
 .btnPrimary:hover:not(:disabled) {
   background: var(--color-primary-strong, #e45700);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3);
+  box-shadow: var(--shadow-md);
 }
 
 .btnPrimary:disabled {

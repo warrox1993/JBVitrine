@@ -112,7 +112,7 @@ body[data-fx-ready="true"] .gradientBg {
   line-height: 1.75;
   opacity: 0;
   transform: translateY(30px);
-  transition: all var(--transition-smooth) 0.2s;
+  transition: var(--transition-smooth);
 }
 .visible .description {
   opacity: 1;
@@ -124,7 +124,7 @@ body[data-fx-ready="true"] .gradientBg {
   flex-wrap: wrap;
   opacity: 0;
   transform: translateY(30px);
-  transition: all var(--transition-smooth) 0.3s;
+  transition: var(--transition-smooth);
   margin-bottom: 0;
 }
 .visible .actions {

@@ -1,8 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ContactInfo, QuoteEstimate, QuoteData, TimelineOption } from '../types';
 import { formatPriceRange } from '@/lib/pricing/calculator';
+import PhoneInput from 'react-phone-number-input';
+import { isValidPhoneNumber } from 'libphonenumber-js';
+import 'react-phone-number-input/style.css';
 import cls from './Step5Contact.module.css';
 
 interface Step5ContactProps {
@@ -15,6 +18,14 @@ interface Step5ContactProps {
   totalSteps?: number;
 }
 
+// Extended ContactInfo with security fields
+interface SecureContactInfo extends ContactInfo {
+  honeypot?: string;
+  formStartTime?: number;
+  csrfToken?: string;
+  recaptchaToken?: string;
+}
+
 export function Step5Contact({
   estimate,
   quoteData,
@@ -24,32 +35,91 @@ export function Step5Contact({
   stepNumber,
   totalSteps,
 }: Step5ContactProps) {
-  const [formData, setFormData] = useState<ContactInfo>({
+  const [formData, setFormData] = useState<SecureContactInfo>({
     name: '',
     email: '',
     phone: '',
     company: '',
     message: '',
     consent: false,
+    honeypot: '', // Anti-bot honeypot
+    formStartTime: undefined,
+    csrfToken: undefined,
+    recaptchaToken: undefined,
   });
 
   const [errors, setErrors] = useState<Partial<Record<keyof ContactInfo, string>>>({});
   const [selectedTimeline, setSelectedTimeline] = useState<TimelineOption | null>(
     quoteData.timeline
   );
+  const [globalError, setGlobalError] = useState<string>('');
+
+  // Initialize form start time, CSRF token and reCAPTCHA on mount
+  useEffect(() => {
+    setFormData((prev) => ({ ...prev, formStartTime: Date.now() }));
+
+    // Fetch CSRF token
+    const fetchCsrfToken = async () => {
+      try {
+        const response = await fetch('/api/csrf/token');
+        if (response.ok) {
+          const data = await response.json();
+          setFormData((prev) => ({ ...prev, csrfToken: data.token }));
+          console.log('✅ CSRF token fetched successfully');
+        }
+      } catch (error) {
+        console.error('❌ Failed to fetch CSRF token:', error);
+      }
+    };
+
+    fetchCsrfToken();
+
+    // Load reCAPTCHA Enterprise script
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_ID;
+    console.log('🔑 reCAPTCHA Enterprise Site ID:', siteKey ? siteKey.substring(0, 20) + '...' : '❌ NOT FOUND');
+
+    if (!siteKey) {
+      console.error('❌ NEXT_PUBLIC_RECAPTCHA_SITE_ID is not defined');
+      return;
+    }
+
+    if (!document.getElementById('recaptcha-script')) {
+      const script = document.createElement('script');
+      script.id = 'recaptcha-script';
+      script.src = `https://www.google.com/recaptcha/enterprise.js?render=${siteKey}`;
+      script.onload = () => {
+        console.log('✅ reCAPTCHA Enterprise script loaded successfully');
+        setTimeout(() => {
+          if (typeof window !== 'undefined' && (window as any).grecaptcha?.enterprise) {
+            console.log('✅ grecaptcha.enterprise is ready');
+          } else {
+            console.error('❌ grecaptcha.enterprise is not available');
+          }
+        }, 1000);
+      };
+      script.onerror = () => {
+        console.error('❌ Failed to load reCAPTCHA Enterprise script');
+      };
+      document.head.appendChild(script);
+    }
+  }, []);
 
   const validateForm = (): boolean => {
     const newErrors: Partial<Record<keyof ContactInfo, string>> = {};
 
-    // Name validation
+    // Name validation - STRICT (from ContactForm)
     if (!formData.name.trim()) {
       newErrors.name = 'Le nom est requis';
-    } else if (formData.name.trim().length < 2) {
-      newErrors.name = 'Le nom doit contenir au moins 2 caractères';
+    } else if (formData.name.trim().length < 2 || formData.name.trim().length > 80) {
+      newErrors.name = 'Le nom doit contenir entre 2 et 80 caractères';
+    } else if (/\d/.test(formData.name)) {
+      newErrors.name = 'Le nom ne peut pas contenir de chiffres';
+    } else if (/[^a-zA-ZÀ-ÿ\s\-'.]/g.test(formData.name)) {
+      newErrors.name = 'Le nom contient des caractères non autorisés';
     }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Email validation - RFC 5322 simplified (from ContactForm)
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     if (!formData.email.trim()) {
       newErrors.email = "L'email est requis";
     } else if (!emailRegex.test(formData.email)) {
@@ -58,14 +128,28 @@ export function Step5Contact({
 
     // Phone validation (optional but validated if provided)
     if (formData.phone.trim()) {
-      const phoneRegex = /^[\d\s+()-]{8,}$/;
-      if (!phoneRegex.test(formData.phone)) {
-        newErrors.phone = 'Numéro de téléphone invalide';
+      try {
+        if (!isValidPhoneNumber(formData.phone)) {
+          newErrors.phone = 'Numéro de téléphone invalide';
+        }
+      } catch (error) {
+        newErrors.phone = 'Format de téléphone invalide';
       }
     }
 
-    // Company validation (optional)
-    // No validation needed - optional field
+    // Company validation - XSS protection (from ContactForm)
+    if (formData.company && formData.company.length > 100) {
+      newErrors.company = "Le nom de l'entreprise est trop long (max 100 caractères)";
+    } else if (formData.company && /<script|javascript:|onerror=/i.test(formData.company)) {
+      newErrors.company = 'Caractères non autorisés détectés';
+    }
+
+    // Message validation - Min/Max (from ContactForm)
+    if (formData.message && formData.message.trim()) {
+      if (formData.message.length < 10 || formData.message.length > 1500) {
+        newErrors.message = 'Le message doit contenir entre 10 et 1 500 caractères';
+      }
+    }
 
     // Consent validation
     if (!formData.consent) {
@@ -76,12 +160,94 @@ export function Step5Contact({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setGlobalError('');
 
-    if (validateForm()) {
-      onSubmit(formData);
+    // ============================================
+    // SECURITY CHECKS (from ContactForm)
+    // ============================================
+
+    // 1. Honeypot check - Bot detection
+    if (formData.honeypot) {
+      console.warn('🤖 Bot detected via honeypot');
+      return; // Silent fail - don't tell bots they failed
     }
+
+    // 2. FormStartTime check - Too fast = bot
+    if (formData.formStartTime) {
+      const fillTime = Date.now() - formData.formStartTime;
+      const minFillTime = 3000; // 3 seconds minimum
+
+      if (fillTime < minFillTime) {
+        console.warn('⚡ Form filled too quickly - possible bot');
+        setGlobalError('Veuillez ralentir. Prenez le temps de remplir le formulaire correctement.');
+        return;
+      }
+    }
+
+    // 3. Rate limiting - Max 3 submissions per hour (from ContactForm)
+    const rateLimitKey = 'quote_wizard_submissions';
+    const rateLimitWindow = 60 * 60 * 1000; // 1 hour in ms
+    const maxSubmissions = 3;
+
+    try {
+      const storedData = localStorage.getItem(rateLimitKey);
+      const submissions: number[] = storedData ? JSON.parse(storedData) : [];
+      const now = Date.now();
+
+      const recentSubmissions = submissions.filter(
+        (timestamp) => now - timestamp < rateLimitWindow
+      );
+
+      if (recentSubmissions.length >= maxSubmissions) {
+        setGlobalError(
+          'Vous avez atteint la limite de soumissions. Veuillez réessayer dans une heure ou nous contacter directement à contact@smidjan.be'
+        );
+        return;
+      }
+
+      // Store this submission timestamp
+      recentSubmissions.push(now);
+      localStorage.setItem(rateLimitKey, JSON.stringify(recentSubmissions));
+    } catch (error) {
+      console.warn('Rate limiting unavailable:', error);
+    }
+
+    // 4. Validate form
+    if (!validateForm()) {
+      return;
+    }
+
+    // 5. Generate reCAPTCHA Enterprise token
+    let recaptchaToken = '';
+    if (typeof window !== 'undefined' && (window as any).grecaptcha?.enterprise) {
+      try {
+        await (window as any).grecaptcha.enterprise.ready(async () => {
+          recaptchaToken = await (window as any).grecaptcha.enterprise.execute(
+            process.env.NEXT_PUBLIC_RECAPTCHA_SITE_ID,
+            { action: 'quote_submission' }
+          );
+          console.log('✅ reCAPTCHA Enterprise token generated');
+        });
+      } catch (error) {
+        console.error('❌ reCAPTCHA Enterprise error:', error);
+        // Continue without reCAPTCHA if it fails (backend will handle)
+      }
+    }
+
+    // Prepare clean ContactInfo (without security fields)
+    const contactInfo: ContactInfo = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company,
+      message: formData.message,
+      consent: formData.consent,
+    };
+
+    // Call parent's onSubmit with clean ContactInfo
+    onSubmit(contactInfo);
   };
 
   const handleChange = (
@@ -120,6 +286,31 @@ export function Step5Contact({
       <div className={cls.layout}>
         {/* Form */}
         <form onSubmit={handleSubmit} className={cls.form}>
+          {/* Global Error */}
+          {globalError && (
+            <div className={cls.globalError} style={{
+              padding: '0.75rem',
+              background: '#ff4444',
+              color: 'white',
+              borderRadius: 'var(--radius-md)',
+              marginBottom: 'var(--space-3)',
+              fontSize: 'var(--text-sm)'
+            }}>
+              {globalError}
+            </div>
+          )}
+
+          {/* Honeypot field - HIDDEN from humans, visible to bots */}
+          <input
+            type="text"
+            name="honeypot"
+            value={formData.honeypot}
+            onChange={handleChange}
+            style={{ display: 'none' }}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+
           {/* Name */}
           <div className={cls.field}>
             <label htmlFor="name" className={cls.label}>
@@ -161,14 +352,19 @@ export function Step5Contact({
             <label htmlFor="phone" className={cls.label}>
               Téléphone
             </label>
-            <input
-              type="tel"
+            <PhoneInput
               id="phone"
-              name="phone"
+              international
+              defaultCountry="BE"
+              countries={['BE', 'FR', 'NL', 'LU', 'DE', 'GB', 'ES', 'IT', 'PT', 'CH', 'AT']}
               value={formData.phone}
-              onChange={handleChange}
+              onChange={(value) => {
+                setFormData((prev) => ({ ...prev, phone: value || '' }));
+                if (errors.phone) {
+                  setErrors((prev) => ({ ...prev, phone: undefined }));
+                }
+              }}
               className={`${cls.input} ${errors.phone ? cls.inputError : ''}`}
-              placeholder="+32 4 XX XX XX XX"
               disabled={isSubmitting}
             />
             {errors.phone && <span className={cls.error}>{errors.phone}</span>}
@@ -185,10 +381,11 @@ export function Step5Contact({
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className={cls.input}
+              className={`${cls.input} ${errors.company ? cls.inputError : ''}`}
               placeholder="Nom de votre entreprise"
               disabled={isSubmitting}
             />
+            {errors.company && <span className={cls.error}>{errors.company}</span>}
           </div>
 
           {/* Timeline (if not already selected) */}
@@ -229,13 +426,14 @@ export function Step5Contact({
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className={cls.textarea}
+              className={`${cls.textarea} ${errors.message ? cls.inputError : ''}`}
               placeholder="Décrivez votre projet en quelques mots, posez vos questions..."
               rows={4}
               disabled={isSubmitting}
             />
+            {errors.message && <span className={cls.error}>{errors.message}</span>}
             <span className={cls.hint}>
-              Plus vous nous en dites, plus notre devis sera précis
+              Plus vous nous en dites, plus notre devis sera précis (entre 10 et 1 500 caractères)
             </span>
           </div>
 
@@ -252,14 +450,23 @@ export function Step5Contact({
               />
               <span className={errors.consent ? cls.checkboxTextError : ''}>
                 J&apos;accepte que Smidjan traite mes données pour me recontacter
-                au sujet de ma demande.{' '}
+                au sujet de ma demande conformément à la{' '}
                 <a
-                  href="/legal/privacy"
+                  href="/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cls.link}
                 >
-                  Politique de confidentialité
+                  politique de confidentialité
+                </a>
+                {' '}et au{' '}
+                <a
+                  href="/legal-notice"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cls.link}
+                >
+                  RGPD
                 </a>
                 <span className={cls.required}> *</span>
               </span>
@@ -267,6 +474,24 @@ export function Step5Contact({
             {errors.consent && (
               <span className={cls.error}>{errors.consent}</span>
             )}
+          </div>
+
+          {/* reCAPTCHA Badge Notice */}
+          <div style={{
+            fontSize: 'var(--text-xs)',
+            color: 'var(--color-text-3)',
+            marginTop: 'var(--space-2)',
+            fontStyle: 'italic'
+          }}>
+            Ce site est protégé par reCAPTCHA et soumis à la{' '}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent-1)' }}>
+              politique de confidentialité
+            </a>{' '}
+            et aux{' '}
+            <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent-1)' }}>
+              conditions d&apos;utilisation
+            </a>{' '}
+            de Google.
           </div>
 
           {/* Footer */}

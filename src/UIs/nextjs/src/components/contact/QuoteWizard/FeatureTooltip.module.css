@@ -21,7 +21,7 @@
   border-radius: 50%;
   color: var(--color-accent-2, #ffc43a);
   cursor: help;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   flex-shrink: 0;
 }
 
@@ -51,7 +51,7 @@
   border: 2px solid var(--color-accent-2, #ffc43a);
   border-radius: var(--radius-md, 0.75rem);
   z-index: 3; /* Above everything - same as info bubbles */
-  box-shadow: 0 12px 32px rgba(255, 196, 58, 0.3);
+  box-shadow: var(--shadow-xl);
   pointer-events: auto;
   /* Initial hidden state for animation */
   opacity: 0;

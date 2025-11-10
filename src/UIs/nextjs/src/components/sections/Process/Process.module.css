@@ -34,7 +34,7 @@
 .processAcc {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 0;
   overflow: hidden;
 }
@@ -47,13 +47,13 @@
   gap: 14px;
   font-weight: 600;
   transition:
-    background-color 0.25s ease,
-    color 0.25s ease;
+    background-color var(--transition-fast),
+    color var(--transition-fast);
 }
 .processAcc summary::after {
   content: "›";
   margin-left: auto;
-  transition: transform 0.25s ease;
+  transition: transform var(--transition-fast);
 }
 .processAcc[open] summary::after {
   transform: rotate(90deg);

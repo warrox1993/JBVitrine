@@ -56,9 +56,9 @@
   padding: 0.75rem 1.5rem;
   font-size: 0.95rem;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   border: 2px solid transparent;
   font-family: inherit;
 }
@@ -66,12 +66,12 @@
 .btnPrimary {
   background: linear-gradient(135deg, #ff6a00, #ffc43a);
   color: white;
-  box-shadow: 0 2px 8px rgba(255, 106, 0, 0.2);
+  box-shadow: var(--shadow-sm);
 }
 
 .btnPrimary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3);
+  box-shadow: var(--shadow-md);
 }
 
 .btnSecondary {
@@ -92,9 +92,9 @@
   padding: 0.75rem 1.5rem;
   font-size: 0.95rem;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   border: 2px solid transparent;
   font-family: inherit;
   background: white;
@@ -118,26 +118,26 @@
 
 .statCard {
   background: white;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   padding: var(--space-4, 1.5rem);
   display: flex;
   align-items: center;
   gap: var(--space-3, 1rem);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-sm);
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .statCard:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-md-strong);
 }
 
 .statIcon {
   width: 56px;
   height: 56px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,8 +173,8 @@
   flex-wrap: wrap;
   padding: var(--space-4, 1.5rem);
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .filterGroup {
@@ -187,11 +187,11 @@
 .filterBtn,
 .filterActive {
   padding: 0.5rem 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   border: 2px solid #e0e0e0;
   background: white;
   color: #333;
@@ -214,10 +214,10 @@
   min-width: 300px;
   padding: 0.75rem 1rem;
   border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   font-size: 0.95rem;
   font-family: inherit;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
 }
 
 .searchInput:focus {
@@ -231,8 +231,8 @@
   max-width: 1400px;
   margin: var(--space-6, 4rem) auto 0;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
 
@@ -373,7 +373,7 @@
 .scoreBarFill {
   height: 100%;
   background: linear-gradient(90deg, #ff6a00, #ffc43a);
-  transition: width 0.3s ease;
+  transition: width var(--transition-smooth);
 }
 
 .confidence {
@@ -405,7 +405,7 @@
   border-radius: 6px;
   background: #f0f0f0;
   color: #666;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   text-decoration: none;
 }
 

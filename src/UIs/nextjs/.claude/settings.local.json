@@ -47,7 +47,11 @@
       "Bash(dir:*)",
       "Bash(find:*)",
       "Bash(if not exist libemail mkdir libemail)",
-      "Bash(if not exist admin mkdir admin)"
+      "Bash(if not exist admin mkdir admin)",
+      "Bash(for file in src/components/contact/QuoteWizard/steps/Step*.css)",
+      "Bash(do echo \"Processing: $file\")",
+      "Bash(done)",
+      "Bash(ping:*)"
     ],
     "deny": [],
     "ask": []

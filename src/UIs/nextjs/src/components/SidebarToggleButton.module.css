@@ -10,7 +10,7 @@
   cursor: pointer;
   padding: 12px;
   color: var(--color-text-1);
-  transition: all 0.3s ease;
+  transition: var(--transition-base);
   border-radius: var(--radius-md);
 }
 
@@ -27,7 +27,7 @@
 .sidebarToggle svg {
   width: 24px;
   height: 24px;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-smooth);
 }
 
 .sidebarToggle:hover svg {

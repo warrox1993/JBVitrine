@@ -48,26 +48,7 @@
   margin: 0 auto 80px auto;
 }
 
-.cms-features-section h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 700;
-  margin-bottom: 30px;
-  background: linear-gradient(135deg, #ffffff 0%, #ff6b35 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: cmsTitleGlow 3s ease-in-out infinite;
-}
-
-@keyframes cmsTitleGlow {
-  0%,
-  100% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(1.2);
-  }
-}
+/* Title styles now use global .gradient-title class from globals.css */
 
 .cms-subtitle {
   font-size: 1.25rem;
@@ -94,7 +75,7 @@
   padding: 40px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 107, 53, 0.1);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s var(--ease-standard);
   overflow: hidden;
   cursor: pointer;
   min-height: 420px;
@@ -179,7 +160,7 @@
   margin-bottom: 15px;
   margin-top: 0;
   color: #ffffff;
-  transition: color 0.3s ease;
+  transition: color var(--transition-smooth);
   letter-spacing: -0.5px;
   width: 100%;
 }
@@ -197,12 +178,12 @@
 
 .cms-card-description.cms-paragraph-mode {
   opacity: 1;
-  transition: opacity 0.3s ease-out;
+  transition: opacity var(--transition-smooth)-out;
 }
 
 .cms-card-description.cms-list-mode {
   opacity: 0;
-  transition: opacity 0.3s ease-in;
+  transition: opacity var(--transition-smooth)-in;
 }
 
 .cms-feature-card:hover .cms-card-description.cms-paragraph-mode {
@@ -388,7 +369,7 @@
   /* Sur mobile : afficher directement le mode liste quand la carte est active */
   .cms-feature-card.cms-mobile-active .cms-card-description.cms-paragraph-mode {
     opacity: 0;
-    transition: opacity 0.4s ease-out;
+    transition: opacity var(--transition-base)-out;
     pointer-events: none;
   }
 
@@ -404,7 +385,7 @@
 
   .cms-feature-card .cms-card-description.cms-paragraph-mode {
     opacity: 1;
-    transition: opacity 0.4s ease-out;
+    transition: opacity var(--transition-base)-out;
   }
 
   /* Sur mobile : pas d'effet hover */
@@ -448,7 +429,7 @@
   /* Animation automatique au scroll pour les cartes actives */
   .cms-feature-card.cms-mobile-active .cms-card-separator {
     width: 120px;
-    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width 1s var(--ease-standard);
   }
 
   .cms-feature-card.cms-mobile-active {

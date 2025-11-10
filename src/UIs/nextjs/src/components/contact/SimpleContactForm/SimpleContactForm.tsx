@@ -56,9 +56,9 @@ export function SimpleContactForm({ onBack, onSubmit }: SimpleContactFormProps) 
 
     fetchCsrfToken();
 
-    // Load reCAPTCHA v3 script
+    // Load reCAPTCHA Enterprise script
     const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_ID;
-    console.log('🔑 reCAPTCHA Site ID:', siteKey ? siteKey.substring(0, 20) + '...' : '❌ NOT FOUND');
+    console.log('🔑 reCAPTCHA Enterprise Site ID:', siteKey ? siteKey.substring(0, 20) + '...' : '❌ NOT FOUND');
 
     if (!siteKey) {
       console.error('❌ NEXT_PUBLIC_RECAPTCHA_SITE_ID is not defined');
@@ -68,20 +68,20 @@ export function SimpleContactForm({ onBack, onSubmit }: SimpleContactFormProps) 
     if (!document.getElementById('recaptcha-script')) {
       const script = document.createElement('script');
       script.id = 'recaptcha-script';
-      script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+      script.src = `https://www.google.com/recaptcha/enterprise.js?render=${siteKey}`;
       script.onload = () => {
-        console.log('✅ reCAPTCHA script loaded successfully');
+        console.log('✅ reCAPTCHA Enterprise script loaded successfully');
         // Wait for grecaptcha to be ready
         setTimeout(() => {
-          if (typeof window !== 'undefined' && (window as any).grecaptcha) {
-            console.log('✅ grecaptcha is ready');
+          if (typeof window !== 'undefined' && (window as any).grecaptcha?.enterprise) {
+            console.log('✅ grecaptcha.enterprise is ready');
           } else {
-            console.error('❌ grecaptcha is not available');
+            console.error('❌ grecaptcha.enterprise is not available');
           }
         }, 1000);
       };
       script.onerror = () => {
-        console.error('❌ Failed to load reCAPTCHA script');
+        console.error('❌ Failed to load reCAPTCHA Enterprise script');
       };
       document.head.appendChild(script);
     }
@@ -153,16 +153,18 @@ export function SimpleContactForm({ onBack, onSubmit }: SimpleContactFormProps) 
     setSubmitError(null);
 
     try {
-      // Generate reCAPTCHA token
+      // Generate reCAPTCHA Enterprise token
       let recaptchaToken = '';
-      if (typeof window !== 'undefined' && (window as any).grecaptcha) {
+      if (typeof window !== 'undefined' && (window as any).grecaptcha?.enterprise) {
         try {
-          recaptchaToken = await (window as any).grecaptcha.execute(
-            process.env.NEXT_PUBLIC_RECAPTCHA_SITE_ID,
-            { action: 'contact_form' }
-          );
+          await (window as any).grecaptcha.enterprise.ready(async () => {
+            recaptchaToken = await (window as any).grecaptcha.enterprise.execute(
+              process.env.NEXT_PUBLIC_RECAPTCHA_SITE_ID,
+              { action: 'contact_form' }
+            );
+          });
         } catch (error) {
-          console.error('reCAPTCHA error:', error);
+          console.error('reCAPTCHA Enterprise error:', error);
           // Continue without reCAPTCHA if it fails (backend will handle)
         }
       }

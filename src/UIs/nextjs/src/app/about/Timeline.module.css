@@ -319,7 +319,7 @@
   filter: blur(28px);
   background-color: var(--color-accent-1);
   transform: scale(0.5);
-  transition: all var(--transition-smooth) 0.2s;
+  transition: var(--transition-smooth);
 }
 
 .yearGlow2.yearGlowActive {

@@ -148,9 +148,9 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(8px);
   transition:
-    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 0.25s ease;
+    transform 0.35s var(--ease-standard),
+    box-shadow 0.35s var(--ease-standard),
+    border-color var(--transition-fast);
   will-change: transform;
   overflow: hidden;
   text-align: left;
@@ -175,7 +175,7 @@
   transform: translateY(-6px);
   background: rgba(255, 255, 255, 0.05);
   border-color: color-mix(in srgb, var(--mission-accent), white 20%);
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-xl);
 }
 
 .mission-card:hover::before {
@@ -185,7 +185,7 @@
 .mission-cardIcon {
   width: 64px;
   height: 64px;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   display: grid;
   place-items: center;
   margin-bottom: 14px;

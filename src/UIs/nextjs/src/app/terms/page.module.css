@@ -161,7 +161,7 @@
   color: var(--color-accent);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 .contactBox a:hover {
@@ -222,13 +222,13 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-5);
-  transition: all 0.3s ease;
+  transition: var(--transition-base);
 }
 
 .serviceCard:hover {
   border-color: var(--color-accent);
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-lg-strong);
 }
 
 .serviceCard h4 {
@@ -253,7 +253,7 @@
   background: var(--color-bg-2);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  transition: all 0.3s ease;
+  transition: var(--transition-base);
 }
 
 .step:hover {
@@ -339,7 +339,7 @@
   background: var(--color-bg-2);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-md);
-  transition: all 0.3s ease;
+  transition: var(--transition-base);
 }
 
 .paymentStep:hover {
@@ -424,7 +424,7 @@
   color: var(--color-accent);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 .section a:hover {

@@ -209,7 +209,7 @@
   color: var(--color-accent);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 .value a:hover {
@@ -274,13 +274,13 @@
   background: var(--color-bg-2);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  transition: all 0.3s ease;
+  transition: var(--transition-base);
 }
 
 .serviceItem:hover {
   border-color: var(--color-accent);
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg-strong);
 }
 
 .serviceItem svg {
@@ -347,7 +347,7 @@
   color: var(--color-accent);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 .hostingDetails a:hover {
@@ -484,7 +484,7 @@
   color: var(--color-accent);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 .contactBox a:hover {
@@ -517,7 +517,7 @@
   color: var(--color-accent);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 .section a:hover {

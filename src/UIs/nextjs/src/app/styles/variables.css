@@ -40,6 +40,38 @@
   --shadow-glow-inner: 0 0 12px rgba(255, 196, 58, 0.12);
   --color-glow: rgba(255, 106, 0, 0.24);
 
+  /* Primary color opacities (for rgba() replacements) */
+  --color-primary-5: rgba(255, 106, 0, 0.05);
+  --color-primary-8: rgba(255, 106, 0, 0.08);
+  --color-primary-12: rgba(255, 106, 0, 0.12);
+  --color-primary-15: rgba(255, 106, 0, 0.15);
+  --color-primary-20: rgba(255, 106, 0, 0.2);
+  --color-primary-24: rgba(255, 106, 0, 0.24);
+  --color-primary-30: rgba(255, 106, 0, 0.3);
+  --color-primary-40: rgba(255, 106, 0, 0.4);
+
+  /* Status colors */
+  --color-success: #10b981;
+  --color-success-bg: #064e3b;
+  --color-success-border: #065f46;
+  --color-warning: #f59e0b;
+  --color-warning-bg: #78350f;
+  --color-warning-border: #92400e;
+  --color-error: #ef4444;
+  --color-error-bg: #7f1d1d;
+  --color-error-border: #991b1b;
+  --color-info: #3b82f6;
+  --color-info-bg: #1e3a8a;
+  --color-info-border: #1e40af;
+
+  /* Extended shadows (for box-shadow replacements) */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm-strong: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md-strong: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg-strong: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.2);
+  --shadow-2xl: 0 24px 60px rgba(0, 0, 0, 0.25);
+
   /* Spacing */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -96,7 +128,7 @@
 
   /* Breakpoints */
   --bp-sm: 600px;
-  --bp-md: 900px;
+  --bp-md: 768px; /* Standard mobile breakpoint (iPad portrait, Bootstrap, Tailwind) */
   --bp-lg: 1200px;
   --bp-xl: 1440px;
 
@@ -182,6 +214,38 @@
   --shadow-glow-outer: 0 0 24px rgba(232, 110, 16, 0.18);
   --shadow-glow-inner: 0 0 12px rgba(247, 169, 62, 0.12);
   --color-glow: rgba(232, 110, 16, 0.18);
+
+  /* Primary color opacities (light theme) */
+  --color-primary-5: rgba(232, 110, 16, 0.05);
+  --color-primary-8: rgba(232, 110, 16, 0.08);
+  --color-primary-12: rgba(232, 110, 16, 0.12);
+  --color-primary-15: rgba(232, 110, 16, 0.15);
+  --color-primary-20: rgba(232, 110, 16, 0.2);
+  --color-primary-24: rgba(232, 110, 16, 0.24);
+  --color-primary-30: rgba(232, 110, 16, 0.3);
+  --color-primary-40: rgba(232, 110, 16, 0.4);
+
+  /* Status colors (light theme) */
+  --color-success: #059669;
+  --color-success-bg: #d1fae5;
+  --color-success-border: #34d399;
+  --color-warning: #d97706;
+  --color-warning-bg: #fef3c7;
+  --color-warning-border: #fbbf24;
+  --color-error: #dc2626;
+  --color-error-bg: #fee2e2;
+  --color-error-border: #fca5a5;
+  --color-info: #2563eb;
+  --color-info-bg: #dbeafe;
+  --color-info-border: #60a5fa;
+
+  /* Extended shadows (light theme - less opaque) */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-sm-strong: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md-strong: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg-strong: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.15);
+  --shadow-2xl: 0 24px 60px rgba(0, 0, 0, 0.18);
 
   --card-bg: var(--color-surface);
   --card-border: var(--color-border);

@@ -30,7 +30,7 @@
 
 .articlesTable {
   background: var(--color-bg-secondary, #ffffff);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--color-border, #e5e7eb);
   overflow: hidden;
 }
@@ -80,7 +80,7 @@
   padding: 0.25rem 0.75rem;
   background: var(--color-accent-light, #dbeafe);
   color: var(--color-accent-primary, #3b82f6);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   font-size: 0.8rem;
   font-weight: 500;
 }
@@ -100,7 +100,7 @@
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s;
+  transition: background var(--transition-fast);
 }
 
 .editButton:hover {

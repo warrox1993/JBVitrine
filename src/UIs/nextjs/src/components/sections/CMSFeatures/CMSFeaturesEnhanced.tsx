@@ -248,7 +248,7 @@ export function CMSFeaturesEnhanced() {
 
       {/* Header */}
       <div className="cms-header-content">
-        <h1>Fonctionnalités natives</h1>
+        <h1 className="gradient-title">Fonctionnalités natives</h1>
         <p className="cms-subtitle">
           Tu disposes dès l'installation d'un environnement professionnel prêt à l'emploi pour gérer catalogue, commandes, marketing, sécurité et automatisations.
         </p>

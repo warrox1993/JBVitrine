@@ -8,7 +8,7 @@
   background: color-mix(in srgb, var(--color-bg-alt) 94%, transparent 6%);
   border-right: 1px solid var(--color-border);
   transition:
-    width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    width var(--transition-smooth),
     background-color 0.35s ease;
   overflow: hidden;
   z-index: var(--z-sidebar);
@@ -41,7 +41,7 @@
   text-decoration: none;
   border-radius: var(--radius-md);
   transition:
-    background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background var(--transition-smooth),
     color 0.3s ease,
     transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -98,7 +98,7 @@
     width: var(--sidebar-w-open);
     max-width: 320px;
     transform: translateX(-100%);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition-smooth);
     z-index: 10000;
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
   }

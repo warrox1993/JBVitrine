@@ -66,7 +66,7 @@
   padding: var(--space-5, 2.5rem) var(--space-4, 1.5rem);
   text-align: left;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   display: flex;
   flex-direction: column;
   gap: var(--space-3, 1rem);
@@ -99,7 +99,7 @@
 .optionCard:hover {
   border-color: var(--color-accent-1, #ff6a00);
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(255, 106, 0, 0.15);
+  box-shadow: var(--shadow-lg-strong);
 }
 
 .optionCard:focus-visible {
@@ -120,7 +120,7 @@
     ),
     var(--color-surface, #1e2430)
   );
-  box-shadow: 0 8px 24px rgba(255, 106, 0, 0.2);
+  box-shadow: var(--shadow-lg-strong);
 }
 
 .optionHeader {
@@ -140,7 +140,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
 }
 
 .optionCard.selected .checkbox {
@@ -195,7 +195,7 @@
   font-size: var(--text-sm, 0.875rem);
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   margin-top: auto;
 }
 
@@ -322,14 +322,14 @@
   font-weight: 600;
   border-radius: var(--radius-md, 0.75rem);
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   border: none;
   cursor: pointer;
 }
 
 .cmsLink:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.4);
+  box-shadow: var(--shadow-md);
 }
 
 .cmsLink svg {
@@ -358,7 +358,7 @@
   font-weight: 600;
   border-radius: var(--radius-md, 0.75rem);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   border: none;
   font-family: inherit;
 }
@@ -371,7 +371,7 @@
 .btnPrimary:hover:not(:disabled) {
   background: var(--color-primary-strong, #e45700);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3);
+  box-shadow: var(--shadow-md);
 }
 
 .btnPrimary:disabled {

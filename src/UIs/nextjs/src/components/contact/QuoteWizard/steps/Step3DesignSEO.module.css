@@ -69,7 +69,7 @@
   padding: var(--space-4, 1.5rem);
   text-align: left;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
 }
 
 .optionCard:hover {
@@ -127,7 +127,7 @@
   border: 2px solid var(--color-border, #2b3342);
   border-radius: var(--radius-md, 0.75rem);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
 }
 
 .checkbox:hover {
@@ -160,7 +160,7 @@
   font-weight: 600;
   border-radius: var(--radius-md, 0.75rem);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   border: none;
   font-family: inherit;
 }

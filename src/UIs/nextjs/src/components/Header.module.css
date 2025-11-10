@@ -17,10 +17,10 @@
     0 1px 0 rgba(255, 106, 53, 0.12) inset,
     0 8px 32px rgba(0, 0, 0, 0.4);
   transition:
-    left 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    left var(--transition-smooth),
+    width var(--transition-smooth),
     height 200ms ease,
-    box-shadow 0.3s ease;
+    box-shadow var(--transition-smooth);
   z-index: 9999;
   will-change: left, width, height;
   min-width: 0;
@@ -85,7 +85,7 @@
   height: 2px;
   background: var(--color-primary);
   box-shadow: 0 0 8px rgba(255, 106, 53, 0.6);
-  transition: width 0.3s ease;
+  transition: width var(--transition-smooth);
 }
 
 .header-link:hover::after {
@@ -178,8 +178,8 @@
   display: block;
   filter: drop-shadow(0 0 8px rgba(255, 106, 53, 0.25));
   transition:
-    filter 0.3s ease,
-    height 0.3s ease;
+    filter var(--transition-smooth),
+    height var(--transition-smooth);
   /* No blending needed; asset has alpha */
 }
 
@@ -220,7 +220,7 @@
   letter-spacing: 0.02em; /* Subtle presence */
   transition:
     color 0.2s ease,
-    opacity 0.2s ease,
+    opacity var(--transition-smooth),
     text-shadow 0.3s ease;
 }
 

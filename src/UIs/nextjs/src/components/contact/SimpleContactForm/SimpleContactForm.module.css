@@ -15,7 +15,7 @@
   color: var(--color-text-1, #f6f7f9);
   font-size: var(--font-size-sm, 0.875rem);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   margin-bottom: var(--space-3, 1rem);
 }
 
@@ -105,7 +105,7 @@
   font-size: var(--font-size-base, 1rem);
   font-family: inherit;
   color: var(--color-text-1, #f6f7f9);
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   background: var(--color-surface, #1e2430);
 }
 
@@ -135,7 +135,7 @@
   font-family: inherit;
   color: var(--color-text-1, #f6f7f9);
   background: var(--color-surface, #1e2430);
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
 }
 
 .phoneInput :global(.PhoneInputInput):focus {
@@ -227,13 +227,13 @@
   border: none;
   border-radius: var(--radius-md, 0.75rem);
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3);
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-md);
 }
 
 .btnPrimary:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
+  box-shadow: var(--shadow-lg-strong);
 }
 
 .btnPrimary:disabled {

@@ -24,7 +24,7 @@
     var(--color-accent-2)
   );
   border-radius: var(--radius-full);
-  transition: all 0.4s var(--ease-standard);
+  transition: var(--transition-base);
   position: relative;
 }
 

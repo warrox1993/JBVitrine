@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   color: var(--color-text-2, #c8cdd6);
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
 .breadcrumbLink {
@@ -31,7 +31,7 @@
   text-decoration: none;
   padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
   border-radius: var(--radius-sm, 4px);
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
 }
 
 .breadcrumbLink:hover {

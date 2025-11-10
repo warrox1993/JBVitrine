@@ -45,14 +45,14 @@
   border: 2px solid var(--color-border, #e5e5e5);
   border-radius: var(--radius-xl, 16px);
   cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s var(--ease-standard);
   opacity: 1;
   transform: scale(1);
 }
 
 .modeCard:hover {
   border-color: var(--color-primary, #3b82f6);
-  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+  box-shadow: var(--shadow-lg-strong);
   transform: translateY(-4px);
 }
 
@@ -195,7 +195,7 @@
   color: var(--color-text-secondary, #666);
   font-size: var(--font-size-sm, 0.875rem);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-fast);
   margin-bottom: var(--space-2, 0.5rem);
 }
 

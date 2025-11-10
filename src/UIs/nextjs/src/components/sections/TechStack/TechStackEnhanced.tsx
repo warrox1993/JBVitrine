@@ -206,7 +206,7 @@ export function TechStackEnhanced() {
 
       {/* Header */}
       <div className="header-content">
-        <h1>Notre stack technologique</h1>
+        <h1 className="gradient-title">Notre stack technologique</h1>
         <p className="subtitle">
           Nos choix techniques reposent sur la stabilité, la sécurité et la performance.
           Chaque stack est sélectionnée pour garantir rapidité, maintenabilité et évolutivité.

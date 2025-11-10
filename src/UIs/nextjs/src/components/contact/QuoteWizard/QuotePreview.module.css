@@ -263,7 +263,7 @@
 .mobileBarIcon {
   font-size: 1.25rem;
   color: var(--color-accent-1, #ff6a00);
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-smooth);
 }
 
 /* Mobile Expandable Panel */
