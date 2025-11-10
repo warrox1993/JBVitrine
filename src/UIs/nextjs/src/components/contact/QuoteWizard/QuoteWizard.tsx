@@ -345,6 +345,16 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
 
   // Render helper function
   const renderCurrentStep = () => {
+    console.log('[QuoteWizard] renderCurrentStep:', {
+      currentStep,
+      projectType: quoteData.projectType,
+      hasCodeOwnershipStep,
+      firstCategoryStepNumber,
+      categories: categories.length,
+      summaryStepNumber,
+      contactStepNumber,
+    });
+
     // Step 1: Project Type
     if (currentStep === 1) {
       return (

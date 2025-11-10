@@ -41,6 +41,16 @@ export function StepCategorySelection({
   const categoryTitle = getCategoryName(category, projectType);
   const categoryDesc = getCategoryDescription(projectType, category);
 
+  // DEBUG - vérifier les valeurs
+  console.log('[StepCategorySelection] Render:', {
+    projectType,
+    category,
+    stepNumber,
+    totalSteps,
+    categoryTitle,
+    categoryDesc,
+  });
+
   // Initialize with default selections on mount
   useEffect(() => {
     if (initialFeatures.length === 0) {
@@ -82,12 +92,16 @@ export function StepCategorySelection({
     return selectedFeatures.some((f) => f.id === featureId);
   };
 
+  // Determine if "Aucune de ces propositions" option should be shown
+  // Show for mutually exclusive categories EXCEPT for mandatory selections
+  // Mandatory: Site Vitrine scope (pages selection is required)
+  const showNoneOption = isMutuallyExclusive &&
+    !(projectType === 'siteVitrine' && category === 'scope');
+
   // For non-exclusive categories (checkbox mode), allow proceeding with 0 selections
-  // For exclusive categories (radio mode), require at least 1 selection
-  // Exception: "pages" category always requires a selection (cannot skip)
-  const canProceed = category === 'pages'
-    ? selectedFeatures.length > 0
-    : (!isMutuallyExclusive || selectedFeatures.length > 0);
+  // For exclusive categories (radio mode), require at least 1 selection if "None" option is not available
+  // If "None" option is available, always allow proceeding (selecting nothing = selecting "None")
+  const canProceed = !isMutuallyExclusive || showNoneOption || selectedFeatures.length > 0;
 
   return (
     <div className={cls.step}>
@@ -97,11 +111,6 @@ export function StepCategorySelection({
         </span>
         <h2 className={cls.title}>{categoryTitle}</h2>
         <p className={cls.subtitle}>{categoryDesc}</p>
-        {isMutuallyExclusive && (
-          <p className={cls.hint}>
-            Sélectionnez une seule option pour cette catégorie
-          </p>
-        )}
       </header>
 
       <div className={cls.content}>
@@ -111,11 +120,18 @@ export function StepCategorySelection({
             const pricing = getFeaturePrice(projectType, feature.id);
 
             return (
-              <button
+              <div
                 key={feature.id}
-                type="button"
+                role="button"
+                tabIndex={0}
                 className={`${cls.featureCard} ${isSelected ? cls.selected : ''} ${isMutuallyExclusive ? cls.exclusive : ''}`}
                 onClick={() => handleFeatureToggle(feature)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleFeatureToggle(feature);
+                  }
+                }}
                 aria-pressed={isSelected}
               >
                 {feature.explanation && (
@@ -156,20 +172,28 @@ export function StepCategorySelection({
                 {pricing && pricing.min === 0 && (
                   <div className={cls.featurePriceIncluded}>Inclus</div>
                 )}
-              </button>
+              </div>
             );
           })}
 
-          {/* "None of the above" option for mutually exclusive categories */}
-          {/* Exclude "None" option for critical categories like "pages" where a choice is required */}
-          {isMutuallyExclusive && category !== 'pages' && (
-            <button
+          {/* "Aucune de ces propositions" option for mutually exclusive categories */}
+          {/* Excluded for mandatory selections like Site Vitrine pages */}
+          {showNoneOption && (
+            <div
               key="none"
-              type="button"
+              role="button"
+              tabIndex={0}
               className={`${cls.featureCard} ${selectedFeatures.length === 0 ? cls.selected : ''} ${cls.exclusive}`}
               onClick={() => {
                 setSelectedFeatures([]);
                 onChange([]);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedFeatures([]);
+                  onChange([]);
+                }
               }}
               aria-pressed={selectedFeatures.length === 0}
             >
@@ -194,12 +218,15 @@ export function StepCategorySelection({
                 </div>
                 <h4 className={cls.featureName}>Aucune de ces propositions</h4>
               </div>
+
               <p className={cls.featureDescription}>
-                Passez cette étape si aucune des options ne correspond à votre besoin
+                Je ne suis pas sûr(e) de mon choix ou je souhaite en discuter
               </p>
-              <div className={cls.featurePriceIncluded}>Gratuit</div>
-            </button>
+
+              <div className={cls.featurePriceIncluded}>À définir ensemble</div>
+            </div>
           )}
+
         </div>
       </div>
 

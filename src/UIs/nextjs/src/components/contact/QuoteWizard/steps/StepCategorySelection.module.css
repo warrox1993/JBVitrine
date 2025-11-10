@@ -7,37 +7,42 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: var(--space-3, 1rem);
+  margin-bottom: var(--space-4, 1.5rem);
   max-width: 700px;
+  padding: 0 var(--space-3, 1rem);
 }
 
 .stepNumber {
-  display: inline-block;
-  font-size: var(--text-sm, 0.875rem);
-  font-weight: 600;
-  color: var(--color-accent-1, #ff6a00);
-  background: color-mix(
-    in srgb,
-    var(--color-accent-1, #ff6a00) 10%,
-    transparent
-  );
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-full, 9999px);
-  margin-bottom: var(--space-2, 0.5rem);
+  display: inline-block !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: #ff6a00 !important;
+  background: rgba(255, 106, 0, 0.1) !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 9999px !important;
+  margin-bottom: 0.5rem !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .title {
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
-  font-weight: 700;
-  color: var(--color-text-1, #f6f7f9);
-  margin: 0 0 var(--space-2, 0.5rem) 0;
-  line-height: 1.2;
+  display: block !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #f6f7f9 !important;
+  margin: 0 0 0.5rem 0 !important;
+  line-height: 1.2 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .subtitle {
-  font-size: var(--text-sm, 0.875rem);
-  color: var(--color-text-2, #c8cdd6);
-  margin: 0 0 var(--space-1, 0.25rem) 0;
+  display: block !important;
+  font-size: 0.875rem !important;
+  color: #c8cdd6 !important;
+  margin: 0 0 0.25rem 0 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .hint {
