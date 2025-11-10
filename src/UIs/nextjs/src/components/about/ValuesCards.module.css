@@ -1,16 +1,20 @@
 /* Values grid derived from services styling but scoped locally */
 
 .values-section {
+  position: relative;
   display: grid;
   gap: var(--space-7);
+  z-index: 1;
 }
 
 .values-header {
+  position: relative;
   display: grid;
   gap: var(--space-4);
   text-align: center;
   margin: 0 auto;
   max-width: 70ch;
+  z-index: 2;
 }
 
 .values-heading {
@@ -25,8 +29,10 @@
 }
 
 .values-grid {
+  position: relative;
   display: grid;
   gap: var(--space-5);
+  z-index: 2;
 }
 
 .values-card {

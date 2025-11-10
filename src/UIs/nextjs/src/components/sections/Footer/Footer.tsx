@@ -20,11 +20,14 @@ export function Footer() {
             />
           </div>
         <div>
-          <h4 className={styles.heading}>Navigation</h4>
+          <h2 className={styles.heading}>Navigation</h2>
           <nav aria-label="Liens de pied de page">
             <ul className={styles.nav}>
               <li className={styles.navItem}>
-                <Link href="/#services">Services</Link>
+                <Link href="/services">Services</Link>
+              </li>
+              <li className={styles.navItem}>
+                <Link href="/cms-ecommerce">CMS E-commerce</Link>
               </li>
               <li className={styles.navItem}>
                 <Link href="/about">À propos</Link>
@@ -39,7 +42,7 @@ export function Footer() {
           </nav>
         </div>
         <div>
-          <h4 className={styles.heading}>Légal</h4>
+          <h2 className={styles.heading}>Légal</h2>
           <ul className={styles.nav}>
             <li className={styles.navItem}>
               <Link href="/legal-notice">Mentions légales</Link>
@@ -53,7 +56,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className={styles.heading}>Contact</h4>
+          <h2 className={styles.heading}>Contact</h2>
           <ul className={styles.nav}>
             <li className={styles.navItem}>
               <a

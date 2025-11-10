@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { TIMELINE_ITEMS } from "@/lib/aboutTimelineData";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronUp, ChevronDown } from "lucide-react";
+import { ProgressBar } from "@/components/ui/ProgressBar/ProgressBar";
 import styles from './Timeline.module.css';
 
 export default function Timeline() {
@@ -10,6 +11,7 @@ export default function Timeline() {
   const [isLg, setIsLg] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [direction, setDirection] = useState<'next' | 'prev' | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Keyboard navigation
   useEffect(() => {
@@ -65,17 +67,25 @@ export default function Timeline() {
 
   // Navigation handlers
   const handleNext = () => {
-    if (activeIndex < TIMELINE_ITEMS.length - 1) {
-      setDirection('next');
-      setActiveIndex(prev => prev + 1);
-    }
+    setDirection('next');
+    setActiveIndex(prev => {
+      // Loop back to start when reaching the end
+      if (prev >= TIMELINE_ITEMS.length - 1) {
+        return 0;
+      }
+      return prev + 1;
+    });
   };
 
   const handlePrev = () => {
-    if (activeIndex > 0) {
-      setDirection('prev');
-      setActiveIndex(prev => prev - 1);
-    }
+    setDirection('prev');
+    setActiveIndex(prev => {
+      // Loop to end when at the start
+      if (prev <= 0) {
+        return TIMELINE_ITEMS.length - 1;
+      }
+      return prev - 1;
+    });
   };
 
   // Reset direction after transition
@@ -86,6 +96,25 @@ export default function Timeline() {
     }
   }, [direction]);
 
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveIndex(prev => {
+        // Loop back to start when reaching the end
+        if (prev >= TIMELINE_ITEMS.length - 1) {
+          setDirection('next');
+          return 0;
+        }
+        setDirection('next');
+        return prev + 1;
+      });
+    }, 5000); // Auto-advance every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [isPaused, activeIndex]);
+
   const activeItem = TIMELINE_ITEMS[activeIndex];
 
   return (
@@ -94,6 +123,8 @@ export default function Timeline() {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
       {/* Background glow */}
       <div className={styles.backgroundGlow} />
@@ -106,10 +137,14 @@ export default function Timeline() {
             <div className={styles.railLine} />
 
             {/* Progress line */}
-            <div
-              className={styles.railProgress}
-              style={{ height: `${(activeIndex / Math.max(1, TIMELINE_ITEMS.length - 1)) * 100}%` }}
-            />
+            <div className={styles.railProgress}>
+              <ProgressBar
+                value={activeIndex}
+                max={Math.max(1, TIMELINE_ITEMS.length - 1)}
+                direction="vertical"
+                ariaLabel={`Progression: ${activeIndex + 1} sur ${TIMELINE_ITEMS.length}`}
+              />
+            </div>
 
             {/* Dots */}
             {TIMELINE_ITEMS.map((item, index) => (
@@ -194,9 +229,10 @@ export default function Timeline() {
                       <span>{activeIndex + 1} / {TIMELINE_ITEMS.length}</span>
                     </div>
                     <div className={styles.stepBar}>
-                      <div
-                        className={styles.stepFill}
-                        style={{ width: `${((activeIndex + 1) / TIMELINE_ITEMS.length) * 100}%` }}
+                      <ProgressBar
+                        value={activeIndex + 1}
+                        max={TIMELINE_ITEMS.length}
+                        ariaLabel={`Étape ${activeIndex + 1} sur ${TIMELINE_ITEMS.length}`}
                       />
                     </div>
                   </div>
@@ -207,52 +243,27 @@ export default function Timeline() {
         </div>
       </div>
 
-      {/* Navigation Controls */}
-      <div className={styles.navigationControls}>
-        <button
-          onClick={handlePrev}
-          disabled={activeIndex === 0}
-          className={`${styles.navButton} ${styles.navButtonPrev}`}
-          aria-label="Section précédente"
-        >
-          <ChevronLeft size={24} />
-          <span className={styles.navButtonText}>Précédent</span>
-        </button>
+      {/* Navigation Controls - Discrete arrows only */}
+      <button
+        onClick={handlePrev}
+        className={`${styles.navArrow} ${styles.navArrowUp}`}
+        aria-label="Section précédente"
+      >
+        <ChevronUp size={28} />
+      </button>
 
-        <div className={styles.progressIndicator}>
-          <span className={styles.progressText}>
-            {activeItem.year}
-          </span>
-          <div className={styles.progressDots}>
-            {TIMELINE_ITEMS.map((_, index) => (
-              <button
-                key={index}
-                className={`${styles.progressDot} ${index === activeIndex ? styles.progressDotActive : ''}`}
-                onClick={() => {
-                  setDirection(index > activeIndex ? 'next' : 'prev');
-                  setActiveIndex(index);
-                }}
-                aria-label={`Aller à la section ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        <button
-          onClick={handleNext}
-          disabled={activeIndex === TIMELINE_ITEMS.length - 1}
-          className={`${styles.navButton} ${styles.navButtonNext}`}
-          aria-label="Section suivante"
-        >
-          <span className={styles.navButtonText}>Suivant</span>
-          <ChevronRight size={24} />
-        </button>
-      </div>
+      <button
+        onClick={handleNext}
+        className={`${styles.navArrow} ${styles.navArrowDown}`}
+        aria-label="Section suivante"
+      >
+        <ChevronDown size={28} />
+      </button>
 
       {/* Keyboard hint */}
       {!isMobile && (
         <div className={styles.keyboardHint}>
-          <span>Utilisez les flèches ← → pour naviguer</span>
+          <span>Utilisez les flèches ↑ ↓ pour naviguer</span>
         </div>
       )}
     </div>

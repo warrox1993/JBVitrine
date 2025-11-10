@@ -17,7 +17,7 @@ type Item = { href: string; label: string; icon?: ReactNode };
 
 export default function Sidebar({ items }: { items?: ReadonlyArray<Item> }) {
   const pathname = usePathname();
-  const { close } = useSidebarMobile();
+  const { close, isOpen } = useSidebarMobile();
   const useProvidedItems = Array.isArray(items) && items.length > 0;
   const providedIds = items?.map(i => i.href.replace(/^#/, '')) || [];
   const activeId = useScrollSpy(useProvidedItems ? providedIds : sections.map(x => x.id), 120);
@@ -45,11 +45,11 @@ export default function Sidebar({ items }: { items?: ReadonlyArray<Item> }) {
   return (
     <>
       {/* Overlay mobile pour fermer la sidebar */}
-      <div className={styles["sidebar-overlay"]} onClick={close} aria-hidden="true" />
+      <div className={`${styles["sidebar-overlay"]} ${isOpen ? styles["sidebar-overlay-visible"] : ""}`} onClick={close} aria-hidden="true" />
 
       <aside
         id="sidebar"
-        className={styles["sidebar-root"]}
+        className={`${styles["sidebar-root"]} ${isOpen ? styles["sidebar-open"] : ""}`}
         aria-label="Navigation latérale"
         onMouseEnter={() => { document?.body?.classList?.add('sidebar-hovered'); }}
         onMouseLeave={() => { document?.body?.classList?.remove('sidebar-hovered'); }}

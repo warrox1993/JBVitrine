@@ -5,6 +5,7 @@ import {
   LeadScore,
   LeadPriority,
 } from "@/components/contact/QuoteWizard/types";
+import { PRIORITY_COLORS } from "@/lib/constants/colors";
 
 /**
  * Calculate lead score based on multiple factors
@@ -285,12 +286,7 @@ export function getPriorityEmoji(priority: LeadPriority): string {
  * Get priority color
  */
 export function getPriorityColor(priority: LeadPriority): string {
-  const colors: Record<LeadPriority, string> = {
-    high: "#ff6a00", // Orange vif
-    medium: "#ffc43a", // Jaune
-    low: "#6b7280", // Gris
-  };
-  return colors[priority];
+  return PRIORITY_COLORS[priority];
 }
 
 /**

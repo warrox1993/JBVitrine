@@ -42,7 +42,12 @@
       "Bash(npm run build:*)",
       "Bash(vercel env:*)",
       "Bash(grep:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(npx @next/codemod@canary middleware-to-proxy:*)",
+      "Bash(dir:*)",
+      "Bash(find:*)",
+      "Bash(if not exist libemail mkdir libemail)",
+      "Bash(if not exist admin mkdir admin)"
     ],
     "deny": [],
     "ask": []

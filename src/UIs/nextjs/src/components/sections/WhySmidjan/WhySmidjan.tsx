@@ -4,6 +4,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { Heading } from "@/components/ui/Heading";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
 import { Button } from "@/components/ui/Button/Button";
+import { getStaggerDelay } from "@/utils/animations";
 import styles from "./WhySmidjan.module.css";
 
 const features = [
@@ -82,7 +83,7 @@ export function WhySmidjan() {
             <div
               key={feature.title}
               className={styles.card}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: getStaggerDelay(index) }}
             >
               <h3 className={styles.cardTitle}>{feature.title}</h3>
               <p className={styles.cardDescription}>{feature.description}</p>

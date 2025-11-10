@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from "react";
 
 type SidebarMobileContextType = {
   isOpen: boolean;
@@ -13,21 +13,18 @@ const SidebarMobileContext = createContext<SidebarMobileContextType | undefined>
 export function SidebarMobileProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen((prev) => !prev);
-  const close = () => setIsOpen(false);
+  const toggle = useCallback(() => setIsOpen((prev) => !prev), []);
+  const close = useCallback(() => setIsOpen(false), []);
 
   // Empêcher le scroll du body quand le sidebar est ouvert sur mobile
   useEffect(() => {
     if (isOpen && window.innerWidth <= 768) {
       document.body.style.overflow = "hidden";
-      document.body.classList.add("sidebar-open");
     } else {
       document.body.style.overflow = "";
-      document.body.classList.remove("sidebar-open");
     }
     return () => {
       document.body.style.overflow = "";
-      document.body.classList.remove("sidebar-open");
     };
   }, [isOpen]);
 

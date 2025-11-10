@@ -27,59 +27,11 @@
   overflow: visible;
 }
 
-/* Multi-layer frosted glass effect - like looking through water */
-.header-root::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: var(--sidebar-w);
-  width: calc(100vw - var(--sidebar-w));
-  height: var(--header-h);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.55) 100%
-  );
-  z-index: -2;
-  pointer-events: none;
-  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header-root::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: var(--sidebar-w);
-  width: calc(100vw - var(--sidebar-w));
-  height: var(--header-h);
-  background: rgba(0, 0, 0, 0.3);
-  /* Desktop: Effet blur intense pour aesthetique */
-  backdrop-filter: blur(100px) saturate(50%) brightness(0.35);
-  -webkit-backdrop-filter: blur(100px) saturate(50%) brightness(0.35);
-  z-index: -1;
-  pointer-events: none;
-  transform: translate3d(0, 0, 0);
-  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 @media (max-width: 768px) {
   /* Header occupe toute la largeur sur mobile (sidebar cachée) */
   .header-root {
     left: 0 !important;
     width: 100vw !important;
-  }
-
-  .header-root::before,
-  .header-root::after {
-    left: 0 !important;
-    width: 100vw !important;
-  }
-
-  /* Mobile: Réduire blur pour performance (20px au lieu de 100px) */
-  .header-root::after {
-    backdrop-filter: blur(20px) saturate(50%) brightness(0.35);
-    -webkit-backdrop-filter: blur(20px) saturate(50%) brightness(0.35);
-    background: rgba(0, 0, 0, 0.4); /* Légèrement plus opaque pour compenser */
   }
 }
 
@@ -263,7 +215,7 @@
   font-family: var(--font-display), var(--font-base);
   font-weight: 700; /* Strong visual anchor */
   font-size: 1.25rem; /* Slightly larger than nav links */
-  color: var(--color-text); /* Neutral light, not link accent */
+  color: var(--color-text-1); /* Neutral light, not link accent */
   text-decoration: none; /* Remove underline */
   letter-spacing: 0.02em; /* Subtle presence */
   transition:

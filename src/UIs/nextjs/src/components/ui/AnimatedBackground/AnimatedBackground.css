@@ -26,15 +26,6 @@
   z-index: 1;
 }
 
-@keyframes gridMove {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(50px, 50px);
-  }
-}
-
 /* Floating particles */
 .animated-particle {
   position: absolute;
@@ -43,25 +34,9 @@
   background: #ff6b35;
   border-radius: 50%;
   opacity: 0.3;
-  animation: particleFloat 8s infinite ease-in-out;
+  animation: float 8s infinite ease-in-out;
   pointer-events: none;
   z-index: 2;
-}
-
-@keyframes particleFloat {
-  0%,
-  100% {
-    transform: translateY(0) translateX(0);
-  }
-  25% {
-    transform: translateY(-30px) translateX(20px);
-  }
-  50% {
-    transform: translateY(-60px) translateX(-20px);
-  }
-  75% {
-    transform: translateY(-30px) translateX(30px);
-  }
 }
 
 /* Glowing orbs */
@@ -91,19 +66,6 @@
   bottom: 20%;
   right: -5%;
   animation-delay: 2s;
-}
-
-@keyframes orbFloat {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(30px, -30px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
 }
 
 /* Variant styles */
