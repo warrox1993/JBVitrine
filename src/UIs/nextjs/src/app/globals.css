@@ -1,5 +1,8 @@
 /* Document-level resets and base theming (tokens defined in src/app/styles/variables.css) */
 
+/* Import centralized animations (DRY principle) */
+@import "../styles/animations.css";
+
 html {
   scroll-behavior: smooth;
 }

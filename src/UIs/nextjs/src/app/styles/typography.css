@@ -1,4 +1,8 @@
-/* Element-level typography and base text styling */
+/* Typography - Mobile-first unified styles (DRY & KISS principles) */
+
+/* ============================================
+   BASE STYLES (Mobile-first)
+   ============================================ */
 
 h1,
 h2,
@@ -7,65 +11,70 @@ h4 {
   font-family:
     var(--font-display),
     var(--font-base),
-    ui-sans-serif,
     system-ui,
     -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
     sans-serif;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin-bottom: 1em;
 }
 
+/* Headings: Mobile-optimized with fluid scaling */
 h1 {
-  font-size: var(--text-4xl);
-  line-height: 1.1;
-  margin: 0 0 var(--space-4);
+  font-size: clamp(1.75rem, 8vw, var(--text-4xl));
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
 }
 
 h2 {
-  font-size: var(--text-3xl);
-  line-height: 1.15;
-  margin: 0 0 var(--space-4);
+  font-size: clamp(1.375rem, 6vw, var(--text-3xl));
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
 }
 
 h3 {
-  font-size: var(--text-2xl);
+  font-size: clamp(1.25rem, 5vw, var(--text-2xl));
   line-height: 1.2;
-  margin: 0 0 var(--space-3);
+  margin-bottom: var(--space-3);
 }
 
 h4 {
-  font-size: var(--text-xl);
+  font-size: clamp(1.125rem, 4vw, var(--text-xl));
   line-height: 1.25;
-  margin: 0 0 var(--space-3);
+  margin-bottom: var(--space-3);
 }
 
 h5 {
   font-size: var(--text-lg);
   line-height: 1.3;
-  margin: 0 0 var(--space-2);
+  margin-bottom: var(--space-2);
 }
 
 h6 {
   font-size: var(--text-base);
   line-height: 1.35;
-  margin: 0 0 var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+/* Body text */
+body {
+  line-height: 1.6;
+  font-size: var(--text-base);
 }
 
 p {
-  margin: 0 0 var(--space-3);
+  margin: 0 0 1.25em;
   color: var(--color-text-2);
+  line-height: 1.7;
 }
 
 small {
-  font-size: var(--text-sm);
+  font-size: max(0.875rem, 14px);
   color: var(--color-text-3);
 }
 
-strong {
+strong,
+b {
   font-weight: 700;
   color: var(--color-text-1);
 }
@@ -75,10 +84,11 @@ em {
 }
 
 blockquote {
-  margin: var(--space-4) 0;
-  padding: 0 0 0 var(--space-4);
-  border-left: 3px solid var(--color-border);
+  margin: 1.5rem 0;
+  padding: 0 0 0 1rem;
+  border-left: 3px solid var(--color-accent-1);
   color: var(--color-text-2);
+  font-style: italic;
 }
 
 hr {
@@ -88,62 +98,59 @@ hr {
   margin: var(--space-5) 0;
 }
 
+/* Code */
 code {
-  font-family:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  background: var(--color-bg-3);
-  padding: 0 0.35em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: var(--color-surface);
+  padding: 0.2em 0.4em;
   border-radius: var(--radius-sm);
+  font-size: 0.9em;
 }
 
 pre {
   background: var(--color-bg-3);
-  padding: var(--space-3);
+  padding: 1rem;
   border-radius: var(--radius-md);
-  overflow: auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
+/* Lists */
 ul,
 ol {
-  margin: 0 0 var(--space-3) var(--space-4);
+  margin: 0 0 1.25em 1.5rem;
   padding: 0;
 }
 
 li {
-  margin: 0 0 var(--space-2);
+  margin-bottom: 0.5em;
+  line-height: 1.6;
 }
 
+/* Links: Touch-friendly by default */
 a {
   color: var(--color-accent-1);
   text-decoration: none;
   transition: color var(--dur-2) var(--ease-standard);
+  padding: 0.25rem 0;
+  margin: -0.25rem 0;
 }
 
 a:hover {
-  color: var(--color-accent-1);
+  color: color-mix(in oklab, var(--color-accent-1), var(--color-primary) 10%);
   text-decoration: underline;
-}
-
-@supports (color: color-mix(in oklab, white, black)) {
-  a:hover {
-    color: color-mix(in oklab, var(--color-accent-1), var(--color-primary) 10%);
-  }
 }
 
 a:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-accent-1);
+  box-shadow: 0 0 0 3px
+    color-mix(in oklab, var(--color-accent-1), transparent 70%);
   border-radius: var(--radius-sm);
 }
 
-@supports (color: color-mix(in oklab, white, black)) {
-  a:focus-visible {
-    box-shadow: 0 0 0 3px
-      color-mix(in oklab, var(--color-accent-1), transparent 70%);
-  }
-}
-
+/* Media */
 img,
 video {
   max-width: 100%;
@@ -161,6 +168,7 @@ figcaption {
   margin-top: var(--space-1);
 }
 
+/* Tables */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -182,6 +190,7 @@ tbody tr:hover {
   background: color-mix(in oklab, var(--color-bg-3), transparent 60%);
 }
 
+/* Forms */
 label {
   display: inline-block;
   margin-bottom: var(--space-1);
@@ -207,16 +216,8 @@ textarea:focus-visible,
 select:focus-visible {
   outline: none;
   border-color: var(--color-accent-1);
-  box-shadow: 0 0 0 3px var(--color-accent-1);
-}
-
-@supports (color: color-mix(in oklab, white, black)) {
-  input:focus-visible,
-  textarea:focus-visible,
-  select:focus-visible {
-    box-shadow: 0 0 0 3px
-      color-mix(in oklab, var(--color-accent-1), transparent 80%);
-  }
+  box-shadow: 0 0 0 3px
+    color-mix(in oklab, var(--color-accent-1), transparent 80%);
 }
 
 input[disabled],
@@ -235,4 +236,150 @@ input[type="reset"] {
   background: none;
   color: inherit;
   font: inherit;
+}
+
+/* ============================================
+   DESKTOP ENHANCEMENTS (min-width: 768px)
+   ============================================ */
+
+@media (min-width: 768px) {
+  body {
+    line-height: 1.55;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    line-height: 1.1;
+  }
+
+  h3 {
+    line-height: 1.2;
+  }
+
+  p {
+    line-height: 1.65;
+    margin-bottom: var(--space-3);
+  }
+
+  li {
+    margin-bottom: var(--space-2);
+  }
+
+  ul,
+  ol {
+    margin: 0 0 var(--space-3) var(--space-4);
+  }
+
+  blockquote {
+    padding-left: var(--space-4);
+    margin: var(--space-4) 0;
+  }
+
+  pre {
+    padding: var(--space-3);
+  }
+
+  code {
+    padding: 0 0.35em;
+  }
+
+  /* Remove touch padding on desktop */
+  a {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* ============================================
+   TABLET TWEAKS (768px - 1024px)
+   ============================================ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    line-height: 1.575;
+  }
+
+  p {
+    line-height: 1.65;
+  }
+}
+
+/* ============================================
+   READABILITY UTILITIES
+   ============================================ */
+
+.text-readable {
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+.text-content {
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.75;
+  color: var(--color-text-1);
+  text-wrap: pretty;
+  orphans: 2;
+  widows: 2;
+}
+
+.text-content h2 {
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+.text-content h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.text-content p {
+  margin-bottom: 1.25em;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  body {
+    color: var(--color-text-1);
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+
+  strong,
+  b {
+    font-weight: 800;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .text-content {
+    font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  }
+}
+
+/* Font loading optimization */
+@supports (font-variation-settings: normal) {
+  body {
+    font-optical-sizing: auto;
+  }
 }

@@ -218,17 +218,6 @@
   animation: slideDown 0.2s ease;
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .infoTitle {
   font-size: var(--text-base, 1rem);
   font-weight: 700;

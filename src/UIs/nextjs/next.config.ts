@@ -1,6 +1,30 @@
 import type { NextConfig } from "next";
+import bundleAnalyzer from "@next/bundle-analyzer";
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const nextConfig: NextConfig = {
+  // Modern browsers only - No unnecessary polyfills (saves ~14KB)
+  compiler: {
+    removeConsole:
+      process.env.NODE_ENV === "production"
+        ? { exclude: ["error", "warn"] }
+        : false,
+  },
+
+  // Performance optimizations
+  reactStrictMode: true,
+  poweredByHeader: false,
+
+  // CSS Optimization (Next.js 16 built-in)
+  experimental: {
+    optimizeCss: true, // Enable CSS minification and tree-shaking
+    cssChunking: "strict", // Better CSS chunking strategy (less chunks)
+    optimizePackageImports: ["lucide-react"], // Tree-shake lucide-react icons
+  },
+
   images: {
     // Formats modernes (priorité AVIF puis WebP, fallback JPEG/PNG)
     formats: ["image/avif", "image/webp"],
@@ -153,4 +177,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

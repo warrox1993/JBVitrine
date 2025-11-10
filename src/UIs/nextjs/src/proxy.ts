@@ -42,7 +42,7 @@ const SUSPICIOUS_PATHS = [
  * Runs on every request to add security headers and block malicious traffic
  * Also handles authentication for admin routes
  */
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const userAgent = request.headers.get("user-agent") || "";
 

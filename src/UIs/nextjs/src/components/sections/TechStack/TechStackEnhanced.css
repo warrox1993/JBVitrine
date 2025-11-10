@@ -28,15 +28,6 @@
   animation: gridMove 20s linear infinite;
 }
 
-@keyframes gridMove {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(50px, 50px);
-  }
-}
-
 /* Floating particles */
 .particle {
   position: absolute;
@@ -47,22 +38,6 @@
   opacity: 0.3;
   animation: float 8s infinite ease-in-out;
   z-index: 2;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0) translateX(0);
-  }
-  25% {
-    transform: translateY(-30px) translateX(20px);
-  }
-  50% {
-    transform: translateY(-60px) translateX(-20px);
-  }
-  75% {
-    transform: translateY(-30px) translateX(30px);
-  }
 }
 
 .header-content {
@@ -266,13 +241,6 @@
   animation-delay: 1.1s;
 }
 
-@keyframes slideInLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 .tech-list li::before {
   content: "▸";
   position: absolute;
@@ -373,19 +341,6 @@
   animation-delay: 2s;
 }
 
-@keyframes orbFloat {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(30px, -30px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
   /* Disable 3D transform animations on mobile/tablet */
@@ -456,16 +411,5 @@
   to {
     transform: scale(4);
     opacity: 0;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

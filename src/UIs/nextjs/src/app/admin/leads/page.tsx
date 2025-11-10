@@ -16,6 +16,8 @@ import {
   LogOut
 } from 'lucide-react';
 import { signOut } from 'next-auth/react';
+import { LEAD_COLORS, STATS_COLORS } from '@/lib/constants/colors';
+import { ProgressBar } from '@/components/ui/ProgressBar/ProgressBar';
 import cls from './page.module.css';
 
 interface Lead {
@@ -194,7 +196,7 @@ export default function AdminLeadsPage() {
         {stats && (
           <div className={cls.statsGrid}>
             <div className={cls.statCard}>
-              <div className={cls.statIcon} style={{ background: '#4CAF50' }}>
+              <div className={cls.statIcon} style={{ background: STATS_COLORS.total }}>
                 <Users size={24} />
               </div>
               <div className={cls.statContent}>
@@ -204,7 +206,7 @@ export default function AdminLeadsPage() {
             </div>
 
             <div className={cls.statCard}>
-              <div className={cls.statIcon} style={{ background: '#ff4444' }}>
+              <div className={cls.statIcon} style={{ background: LEAD_COLORS.HOT }}>
                 <TrendingUp size={24} />
               </div>
               <div className={cls.statContent}>
@@ -214,7 +216,7 @@ export default function AdminLeadsPage() {
             </div>
 
             <div className={cls.statCard}>
-              <div className={cls.statIcon} style={{ background: '#ffaa00' }}>
+              <div className={cls.statIcon} style={{ background: LEAD_COLORS.WARM }}>
                 <Star size={24} />
               </div>
               <div className={cls.statContent}>
@@ -224,7 +226,7 @@ export default function AdminLeadsPage() {
             </div>
 
             <div className={cls.statCard}>
-              <div className={cls.statIcon} style={{ background: '#ff6a00' }}>
+              <div className={cls.statIcon} style={{ background: STATS_COLORS.average }}>
                 <Activity size={24} />
               </div>
               <div className={cls.statContent}>
@@ -234,7 +236,7 @@ export default function AdminLeadsPage() {
             </div>
 
             <div className={cls.statCard}>
-              <div className={cls.statIcon} style={{ background: '#2196F3' }}>
+              <div className={cls.statIcon} style={{ background: STATS_COLORS.today }}>
                 <Calendar size={24} />
               </div>
               <div className={cls.statContent}>
@@ -258,21 +260,21 @@ export default function AdminLeadsPage() {
             <button
               onClick={() => setFilter('HOT')}
               className={filter === 'HOT' ? cls.filterActive : cls.filterBtn}
-              style={{ borderColor: filter === 'HOT' ? '#ff4444' : undefined }}
+              style={{ borderColor: filter === 'HOT' ? LEAD_COLORS.HOT : undefined }}
             >
               🔥 Hot ({stats?.hot || 0})
             </button>
             <button
               onClick={() => setFilter('WARM')}
               className={filter === 'WARM' ? cls.filterActive : cls.filterBtn}
-              style={{ borderColor: filter === 'WARM' ? '#ffaa00' : undefined }}
+              style={{ borderColor: filter === 'WARM' ? LEAD_COLORS.WARM : undefined }}
             >
               ⚡ Warm ({stats?.warm || 0})
             </button>
             <button
               onClick={() => setFilter('COLD')}
               className={filter === 'COLD' ? cls.filterActive : cls.filterBtn}
-              style={{ borderColor: filter === 'COLD' ? '#4444ff' : undefined }}
+              style={{ borderColor: filter === 'COLD' ? LEAD_COLORS.COLD : undefined }}
             >
               ❄️ Cold ({stats?.cold || 0})
             </button>
@@ -363,9 +365,10 @@ export default function AdminLeadsPage() {
                     <div className={cls.scoreCell}>
                       <div className={cls.scoreValue}>{lead.score_total}/100</div>
                       <div className={cls.scoreBar}>
-                        <div
-                          className={cls.scoreBarFill}
-                          style={{ width: `${lead.score_total}%` }}
+                        <ProgressBar
+                          value={lead.score_total}
+                          max={100}
+                          ariaLabel={`Score: ${lead.score_total} sur 100`}
                         />
                       </div>
                       <div className={cls.confidence}>

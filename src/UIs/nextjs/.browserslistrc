@@ -1,0 +1,24 @@
+# Browserslist - Modern browsers only (2021+)
+# Removes unnecessary polyfills (~14KB saved)
+# Covers ~98% of users worldwide in 2025
+
+# Last 2 versions of modern browsers
+last 2 Chrome versions
+last 2 Firefox versions
+last 2 Safari versions
+last 2 Edge versions
+
+# Browsers with >0.5% usage + ES2022 support
+> 0.5%
+not dead
+not ie 11
+
+# Specific modern baseline
+Chrome >= 90
+Firefox >= 90
+Safari >= 15
+Edge >= 90
+
+# Mobile browsers (modern only)
+iOS >= 15
+Android >= 90

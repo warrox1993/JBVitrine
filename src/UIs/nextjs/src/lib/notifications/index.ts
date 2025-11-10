@@ -5,6 +5,7 @@
  */
 
 import { Resend } from "resend";
+import { getLeadColor } from "@/lib/constants/colors";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -48,12 +49,7 @@ export async function sendSlackNotification(
   try {
     const emoji =
       lead.grade === "HOT" ? "🔥" : lead.grade === "WARM" ? "⚡" : "📋";
-    const color =
-      lead.grade === "HOT"
-        ? "#ff4444"
-        : lead.grade === "WARM"
-          ? "#ffaa00"
-          : "#4444ff";
+    const color = getLeadColor(lead.grade as "HOT" | "WARM" | "COLD");
 
     const message = {
       text: `${emoji} Nouveau lead ${lead.grade} : ${lead.name}`,
@@ -138,12 +134,8 @@ export async function sendDiscordNotification(
   try {
     const emoji =
       lead.grade === "HOT" ? "🔥" : lead.grade === "WARM" ? "⚡" : "📋";
-    const color =
-      lead.grade === "HOT"
-        ? 0xff4444
-        : lead.grade === "WARM"
-          ? 0xffaa00
-          : 0x4444ff;
+    const hexColor = getLeadColor(lead.grade as "HOT" | "WARM" | "COLD");
+    const color = parseInt(hexColor.replace("#", ""), 16);
 
     const embed = {
       title: `${emoji} Nouveau lead ${lead.grade} : ${lead.name}`,

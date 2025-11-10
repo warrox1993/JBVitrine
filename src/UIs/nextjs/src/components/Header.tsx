@@ -40,6 +40,7 @@ export default function Header() {
             width={256}
             height={256}
             priority
+            fetchPriority="high"
             sizes="(max-width: 480px) 40px, (max-width: 768px) 60px, 148px"
             className={styles.logoHeader}
           />

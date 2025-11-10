@@ -1,11 +1,20 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Container } from '@/components/atoms/Container';
-import { Footer } from '@/components/sections/Footer/Footer';
 import { AnimatedBackground } from '@/components/ui/AnimatedBackground/AnimatedBackground';
 import { ContactPageClient } from './ContactPageClient';
-import { UnifiedContactPage } from './UnifiedContactPage';
 import cls from './page.module.css';
+
+// Dynamic imports for heavy components (QuoteWizard ~50KB)
+const UnifiedContactPage = dynamic(() => import('./UnifiedContactPage').then(mod => ({ default: mod.UnifiedContactPage })), {
+  ssr: true,
+  loading: () => <div style={{ minHeight: '400px' }}>Chargement...</div>,
+});
+
+const Footer = dynamic(() => import('@/components/sections/Footer/Footer').then(mod => ({ default: mod.Footer })), {
+  ssr: true,
+});
 
 export const metadata: Metadata = {
     title: 'Contact — Smidjan, agence web, cybersécurité & IA',

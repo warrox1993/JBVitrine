@@ -3,6 +3,7 @@ import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedB
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { Button } from "@/components/ui/Button/Button";
 import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
+import { getStaggerDelay } from "@/utils/animations";
 import styles from "./Hero.module.css";
 
 const stats = [
@@ -49,7 +50,7 @@ export function Hero() {
           {showStats ? (
             <ul className={styles.stats} role="list" aria-label="Key stats">
               {stats.map((stat, i) => (
-                <li key={stat.label} className={styles.stat} style={{ animationDelay: `${0.2 + i * 0.1}s` }} role="listitem">
+                <li key={stat.label} className={styles.stat} style={{ animationDelay: getStaggerDelay(i, 0.2) }} role="listitem">
                   <div className={styles.statValue} aria-label={`${stat.value} ${stat.label}`}>{stat.value}</div>
                   <div className={styles.statLabel}>{stat.label}</div>
                 </li>

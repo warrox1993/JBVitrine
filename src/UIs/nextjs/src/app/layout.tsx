@@ -1,8 +1,7 @@
 // src/app/layout.tsx
 import './styles/variables.css';
-import './styles/breakpoints.css'; // Standardized breakpoints system
-import './styles/typography.css';
-import './styles/typography-mobile.css'; // Typography mobile optimizations
+import './styles/breakpoints.css';
+import './styles/typography.css'; // Unified typography (mobile-first)
 import './styles/utilities.css';
 import './globals.css';
 import '../styles/buttons.animations.css';
@@ -183,15 +182,26 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="fr-BE" data-theme="dark">
             <head>
+                {/* Critical CSS inline - Instant render (KISS) */}
+                <style dangerouslySetInnerHTML={{
+                    __html: `:root{--color-bg:#0f1115;--color-text-1:#f6f7f9;--color-text-2:#c8cdd6;--color-accent-1:#ff6a00;--color-primary:#ff6a00;--space-2:.5rem;--space-3:1rem;--space-4:1.5rem;--text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-xl:clamp(1.375rem,1.2rem + .75vw,1.75rem);--text-4xl:clamp(3rem,2rem + 4vw,5rem);--dur-2:180ms;--ease-standard:cubic-bezier(.2,.6,.2,1)}*,*::before,*::after{box-sizing:border-box}html,body{margin:0;padding:0;min-height:100%;overflow-x:hidden}body{font-family:system-ui,-apple-system,sans-serif;font-size:var(--text-base);line-height:1.6;color:var(--color-text-1);background-color:var(--color-bg)}h1{font-size:clamp(1.75rem,8vw,var(--text-4xl));line-height:1.2;margin:0 0 1rem;font-weight:800}p{margin:0 0 1rem;color:var(--color-text-2)}a{color:var(--color-accent-1);text-decoration:none}header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(15,17,21,.8);backdrop-filter:blur(8px)}.skipToContent{position:absolute;top:-100px;left:0;padding:var(--space-3) var(--space-4);background:var(--color-accent-1);color:#fff;z-index:100;transition:top var(--dur-2) var(--ease-standard)}.skipToContent:focus{top:0}[data-fx-ready="false"] .fx-animation{opacity:0;transform:translateY(20px)}`
+                }} />
+
                 <script
                     id="smidjan-theme-init"
                     dangerouslySetInnerHTML={{
                         __html: `(function(){try{var stored=localStorage.getItem('theme');var prefersLight=window.matchMedia('(prefers-color-scheme: light)').matches;var theme=stored||(prefersLight?'light':'dark');document.documentElement.setAttribute('data-theme', theme);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`
                     }}
                 />
-                {/* Preconnect pour améliorer les performances */}
+                {/* DNS Optimization - Preconnect + DNS-Prefetch */}
+                <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+                <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+                {/* Vercel Analytics - Preconnect for faster metrics */}
+                <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
+                <link rel="preconnect" href="https://vitals.vercel-insights.com" />
 
                 {/* Favicons */}
                 <link rel="icon" href="/favicon.ico" sizes="any" />

@@ -28,6 +28,7 @@ import { QuotePreview } from './QuotePreview';
 import { LeadScoreIndicator } from './LeadScoreIndicator';
 import { EscapeBanner } from './EscapeBanner';
 import { useLeadScoring } from '@/hooks/useLeadScoring';
+import { ProgressBar } from '@/components/ui/ProgressBar/ProgressBar';
 import cls from './QuoteWizard.module.css';
 
 interface QuoteWizardProps {
@@ -392,9 +393,10 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
     <div className={cls.wizard}>
       {/* Progress Bar */}
       <div className={cls.progressBar}>
-        <div
-          className={cls.progressFill}
-          style={{ width: `${(currentStep / totalSteps) * 100}%` }}
+        <ProgressBar
+          value={currentStep}
+          max={totalSteps}
+          ariaLabel={`Étape ${currentStep} sur ${totalSteps}`}
         />
       </div>
 

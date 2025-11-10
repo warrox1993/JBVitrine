@@ -178,7 +178,7 @@ export function UnifiedContactPage() {
         >
           <MapPin
             size={20}
-            style={{ flexShrink: 0, color: 'var(--color-accent-1, #ff6a00)' }}
+            style={{ flexShrink: 0, color: 'var(--color-accent-1)' }}
           />
           <span>
             Basés à Liège, nous intervenons dans toute la Wallonie (Namur,

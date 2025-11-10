@@ -103,12 +103,18 @@
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
   }
 
-  :global(body.sidebar-open) .sidebar-root {
+  /* Mobile: textes toujours visibles (pas de hover) */
+  .sidebar-link-text {
+    opacity: 1;
     transform: translateX(0);
   }
 
-  :global(body.sidebar-open) .sidebar-overlay {
-    display: block;
+  .sidebar-open {
+    transform: translateX(0) !important;
+  }
+
+  .sidebar-overlay-visible {
+    display: block !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -118,15 +124,6 @@
     backdrop-filter: blur(4px);
     z-index: 9999;
     animation: fadeIn 0.3s ease;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
 }
 
