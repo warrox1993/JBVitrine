@@ -1,5 +1,6 @@
 # ============================================================================
-# GitLeaks Ignore File - False Positives
+# GitLeaks Ignore File - False Positives Only
+# Format: Use exact fingerprints from GitLeaks output
 # ============================================================================
 
 # ----------------------------------------------------------------------------
@@ -7,45 +8,45 @@
 # These are demo certificates for the Practical.CleanArchitecture project
 # They are NOT production secrets
 # ----------------------------------------------------------------------------
-**/Certs/*.pfx
-**/ClassifiedAds.IdentityServer/Certs/classifiedads.identityserver.pfx
-**/ClassifiedAds.Services.Configuration.Api/Certs/classifiedads.secretsencryption.pfx
-**/ClassifiedAds.WebAPI/Certs/*.pfx
-**/ClassifiedAds.WebMVC/Certs/*.pfx
+/path/src/IdentityServers/Duende/ClassifiedAds.IdentityServer/Certs/classifiedads.identityserver.pfx:pkcs12-file:0
+/path/src/IdentityServers/OpenIddict/ClassifiedAds.IdentityServer/Certs/classifiedads.identityserver.pfx:pkcs12-file:0
+/path/src/Microservices/Services.Configuration/ClassifiedAds.Services.Configuration.Api/Certs/classifiedads.secretsencryption.pfx:pkcs12-file:0
+/path/src/ModularMonolith/ClassifiedAds.WebAPI/Certs/classifiedads.identityserver.pfx:pkcs12-file:0
+/path/src/ModularMonolith/ClassifiedAds.WebAPI/Certs/classifiedads.secretsencryption.pfx:pkcs12-file:0
+/path/src/Monolith/ClassifiedAds.WebAPI/Certs/classifiedads.identityserver.pfx:pkcs12-file:0
+/path/src/Monolith/ClassifiedAds.WebAPI/Certs/classifiedads.secretsencryption.pfx:pkcs12-file:0
+/path/src/Monolith/ClassifiedAds.WebMVC/Certs/classifiedads.secretsencryption.pfx:pkcs12-file:0
 
 # ----------------------------------------------------------------------------
 # Password Hashes in Database Seed Files
 # These are hashed passwords for test/seed data in database configurations
 # Format: ASP.NET Core Identity PasswordHasher (PBKDF2 with HMAC-SHA256)
+# These are NOT plaintext passwords or real API keys
 # ----------------------------------------------------------------------------
-**/DbConfigurations/UserConfiguration.cs:generic-api-key:34
-src/IdentityServers/Duende/ClassifiedAds.Persistence/DbConfigurations/UserConfiguration.cs
-src/IdentityServers/OpenIddict/ClassifiedAds.Persistence/DbConfigurations/UserConfiguration.cs
-src/Microservices/Services.Identity/ClassifiedAds.Services.Identity/DbConfigurations/UserConfiguration.cs
-src/ModularMonolith/ClassifiedAds.Modules.Identity/DbConfigurations/UserConfiguration.cs
-src/Monolith/ClassifiedAds.Persistence/DbConfigurations/UserConfiguration.cs
+/path/src/IdentityServers/Duende/ClassifiedAds.Persistence/DbConfigurations/UserConfiguration.cs:generic-api-key:34
+/path/src/IdentityServers/OpenIddict/ClassifiedAds.Persistence/DbConfigurations/UserConfiguration.cs:generic-api-key:34
+/path/src/Microservices/Services.Identity/ClassifiedAds.Services.Identity/DbConfigurations/UserConfiguration.cs:generic-api-key:34
+/path/src/ModularMonolith/ClassifiedAds.Modules.Identity/DbConfigurations/UserConfiguration.cs:generic-api-key:34
+/path/src/Monolith/ClassifiedAds.Persistence/DbConfigurations/UserConfiguration.cs:generic-api-key:34
+
+# ----------------------------------------------------------------------------
+# Documentation Files - Example/Placeholder Credentials
+# These files contain EXAMPLE credentials for documentation purposes only
+# NOT real production secrets
+# ----------------------------------------------------------------------------
+/path/src/UIs/nextjs/AUDIT_GOOGLE_MAPS_PRODUCTION.md:gcp-api-key:59
+/path/src/UIs/nextjs/AUDIT_GOOGLE_MAPS_PRODUCTION.md:gcp-api-key:111
+/path/src/UIs/nextjs/AUDIT_GOOGLE_MAPS_PRODUCTION.md:gcp-api-key:255
+/path/src/UIs/nextjs/AUDIT_GOOGLE_MAPS_PRODUCTION.md:gcp-api-key:496
+/path/src/UIs/nextjs/LEAD_SCORING_README.md:curl-auth-header:166
+/path/src/UIs/nextjs/SECURITY.md:generic-api-key:313
 
 # ----------------------------------------------------------------------------
 # Docker Compose - Development Credentials
-# These are default guest credentials for local RabbitMQ development
+# These are default "guest:guest" credentials for local RabbitMQ development
+# Standard RabbitMQ default credentials, not a security risk
 # ----------------------------------------------------------------------------
-tools/docker-compose.yml:curl-auth-user:52
-tools/docker-compose.yml:curl-auth-user:53
-tools/docker-compose.yml:curl-auth-user:54
-tools/docker-compose.yml:curl-auth-user:55
-
-# ----------------------------------------------------------------------------
-# Documentation Files - Example Credentials
-# These files contain EXAMPLE/PLACEHOLDER credentials for documentation
-# NOT real production secrets
-# ----------------------------------------------------------------------------
-**/LEAD_SCORING_README.md:curl-auth-header:166
-
-# ----------------------------------------------------------------------------
-# Audit Files - These should have been masked
-# Will be fixed in next commit
-# ----------------------------------------------------------------------------
-# src/UIs/nextjs/API_KEYS_SECURITY_REPORT.md (TO BE FIXED)
-# src/UIs/nextjs/AUDIT_GOOGLE_MAPS_PRODUCTION.md (examples only)
-# src/UIs/nextjs/SECURITY.md (examples only)
-# src/UIs/nextjs/test-recaptcha-env.js (TO BE REMOVED)
+/path/tools/docker-compose.yml:curl-auth-user:52
+/path/tools/docker-compose.yml:curl-auth-user:53
+/path/tools/docker-compose.yml:curl-auth-user:54
+/path/tools/docker-compose.yml:curl-auth-user:55
