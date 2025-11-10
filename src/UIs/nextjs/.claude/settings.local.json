@@ -51,7 +51,8 @@
       "Bash(for file in src/components/contact/QuoteWizard/steps/Step*.css)",
       "Bash(do echo \"Processing: $file\")",
       "Bash(done)",
-      "Bash(ping:*)"
+      "Bash(ping:*)",
+      "Bash(del:*)"
     ],
     "deny": [],
     "ask": []
