@@ -310,7 +310,7 @@ Verifies Belgian company registration numbers (BCE/KBO) to:
 
 ### Environment Variable
 ```env
-CBEAPI_SECRET=JyhYzlAru26bK5CxqdQLa0buGoZwggpc
+CBEAPI_SECRET=***MASKED_FOR_SECURITY***
 ```
 **IMPORTANT:** This is a server-side secret and must NEVER be exposed to the client.
 

@@ -56,7 +56,7 @@ Google Maps displays correctly on **localhost** but fails in **production** with
 
 **Local Environment** (`.env.local`):
 ```bash
-NEXT_PUBLIC_GOOGLE_MAPS_ID=AIzaSyCPkVJsN0f8Ml8G7ZwFHqGWfA2MQo-dILg
+NEXT_PUBLIC_GOOGLE_MAPS_ID=***MASKED_GOOGLE_MAPS_API_KEY***
 ```
 
 **Production Environment** (Vercel):
@@ -108,7 +108,7 @@ This error message indicates that:
 4. Compare with the key in Google Cloud Console
 
 **Expected Key Format**: `AIza[23 more characters]` (total 39 characters)
-**Example**: `AIzaSyCPkVJsN0f8Ml8G7ZwFHqGWfA2MQo-dILg`
+**Example**: `***MASKED_GOOGLE_MAPS_API_KEY***`
 
 ---
 
@@ -252,7 +252,7 @@ Select APIs:
 **Expected Output**:
 ```
 Name: NEXT_PUBLIC_GOOGLE_MAPS_ID
-Value: AIzaSyCPkVJsN0f8Ml8G7ZwFHqGWfA2MQo-dILg (or similar)
+Value: ***MASKED_GOOGLE_MAPS_API_KEY*** (or similar)
 Environments: ✅ Production ✅ Preview ✅ Development
 ```
 
@@ -493,7 +493,7 @@ https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=50.6446374,5.56645
    - Verify the value is correct and matches Google Cloud Console
 
 2. **Compare with Local**:
-   - Local `.env.local`: `AIzaSyCPkVJsN0f8Ml8G7ZwFHqGWfA2MQo-dILg`
+   - Local `.env.local`: `***MASKED_GOOGLE_MAPS_API_KEY***`
    - Vercel Production: ??? (needs verification)
 
 3. **If different**:
