@@ -137,28 +137,28 @@ Aucun commit nécessaire immédiatement. Les changements sont prêts mais peuven
 # ============================================================================
 
 # Email
-RESEND_API_KEY=re_Sa8e3EeN_EEfEvMrs4ReWDWb5DTMTLZ1i
+RESEND_API_KEY=***MASKED_FOR_SECURITY***
 
 # Lead Enrichment
-HUNTER_API_KEY=55eb054de741d5c0ed8c7f6b0fd61f7dc33ac2d2
-BRANDFETCH_API_KEY=jgAomglBx3gcQSpFKb4f7WUKKiwsrtZxDwa473h72UU=
+HUNTER_API_KEY=***MASKED_FOR_SECURITY***
+BRANDFETCH_API_KEY=***MASKED_FOR_SECURITY***
 
 # Database
-DATABASE_URL=postgresql://neondb_owner:npg_if9P3YdIUupz@ep-dawn-breeze-ag5o402p-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require
+DATABASE_URL=postgresql://***MASKED_USER***:***MASKED_PASSWORD***@***MASKED_HOST***/neondb?sslmode=require
 
 # Authentication
-NEXTAUTH_SECRET=Yxb64WRhNFmpSamU4WLnU9wk1x7RloFNkz6slJkhSQs=
+NEXTAUTH_SECRET=***MASKED_FOR_SECURITY***
 NEXTAUTH_URL=https://smidjan.be
 
 # Google Services (PUBLIQUES mais restreintes)
-NEXT_PUBLIC_GOOGLE_MAPS_ID=AIzaSyCPkVJsN0f8Ml8G7ZwFHqGWfA2MQo-dILg
+NEXT_PUBLIC_GOOGLE_MAPS_ID=***MASKED_FOR_SECURITY***
 
 # Security - reCAPTCHA
-NEXT_PUBLIC_RECAPTCHA_SITE_ID=6LdhVQYsAAAAALXfJhZcRADizzXz_1tfndPyaUEi
-RECAPTCHA_SECRET=6LdhVQYsAAAAAFK3vpcH9uPmoRuPC7xgoz-RQ6Kt
+NEXT_PUBLIC_RECAPTCHA_SITE_ID=***MASKED_FOR_SECURITY***
+RECAPTCHA_SECRET=***MASKED_FOR_SECURITY***
 
 # Company Verification
-CBEAPI_SECRET=JyhYzlAru26bK5CxqdQLa0buGoZwggpc
+CBEAPI_SECRET=***MASKED_FOR_SECURITY***
 
 # ============================================================================
 # OPTIONNELLES (pour plus tard si besoin)

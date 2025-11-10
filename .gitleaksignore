@@ -1,0 +1,51 @@
+# ============================================================================
+# GitLeaks Ignore File - False Positives
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# PKCS12 Certificates (.pfx) - Development/Test Certificates
+# These are demo certificates for the Practical.CleanArchitecture project
+# They are NOT production secrets
+# ----------------------------------------------------------------------------
+**/Certs/*.pfx
+**/ClassifiedAds.IdentityServer/Certs/classifiedads.identityserver.pfx
+**/ClassifiedAds.Services.Configuration.Api/Certs/classifiedads.secretsencryption.pfx
+**/ClassifiedAds.WebAPI/Certs/*.pfx
+**/ClassifiedAds.WebMVC/Certs/*.pfx
+
+# ----------------------------------------------------------------------------
+# Password Hashes in Database Seed Files
+# These are hashed passwords for test/seed data in database configurations
+# Format: ASP.NET Core Identity PasswordHasher (PBKDF2 with HMAC-SHA256)
+# ----------------------------------------------------------------------------
+**/DbConfigurations/UserConfiguration.cs:generic-api-key:34
+src/IdentityServers/Duende/ClassifiedAds.Persistence/DbConfigurations/UserConfiguration.cs
+src/IdentityServers/OpenIddict/ClassifiedAds.Persistence/DbConfigurations/UserConfiguration.cs
+src/Microservices/Services.Identity/ClassifiedAds.Services.Identity/DbConfigurations/UserConfiguration.cs
+src/ModularMonolith/ClassifiedAds.Modules.Identity/DbConfigurations/UserConfiguration.cs
+src/Monolith/ClassifiedAds.Persistence/DbConfigurations/UserConfiguration.cs
+
+# ----------------------------------------------------------------------------
+# Docker Compose - Development Credentials
+# These are default guest credentials for local RabbitMQ development
+# ----------------------------------------------------------------------------
+tools/docker-compose.yml:curl-auth-user:52
+tools/docker-compose.yml:curl-auth-user:53
+tools/docker-compose.yml:curl-auth-user:54
+tools/docker-compose.yml:curl-auth-user:55
+
+# ----------------------------------------------------------------------------
+# Documentation Files - Example Credentials
+# These files contain EXAMPLE/PLACEHOLDER credentials for documentation
+# NOT real production secrets
+# ----------------------------------------------------------------------------
+**/LEAD_SCORING_README.md:curl-auth-header:166
+
+# ----------------------------------------------------------------------------
+# Audit Files - These should have been masked
+# Will be fixed in next commit
+# ----------------------------------------------------------------------------
+# src/UIs/nextjs/API_KEYS_SECURITY_REPORT.md (TO BE FIXED)
+# src/UIs/nextjs/AUDIT_GOOGLE_MAPS_PRODUCTION.md (examples only)
+# src/UIs/nextjs/SECURITY.md (examples only)
+# src/UIs/nextjs/test-recaptcha-env.js (TO BE REMOVED)
