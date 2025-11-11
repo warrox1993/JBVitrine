@@ -97,8 +97,8 @@ const nextConfig: NextConfig = {
       "default-src 'self'",
       // Styles: 'unsafe-inline' pour CSS-in-JS + Google Fonts
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      // Fonts: Google Fonts + data URIs
-      "font-src 'self' https://fonts.gstatic.com data:",
+      // Fonts: Google Fonts + Perplexity AI + data URIs
+      "font-src 'self' https://fonts.gstatic.com https://r2cdn.perplexity.ai data:",
       // Images: self + HTTPS externe + data URIs + blob
       "img-src 'self' https: data: blob:",
       // Connexions: Vercel Analytics + Speed Insights + reCAPTCHA
