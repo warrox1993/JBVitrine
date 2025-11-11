@@ -101,8 +101,8 @@ const nextConfig: NextConfig = {
       "font-src 'self' https://fonts.gstatic.com https://r2cdn.perplexity.ai data:",
       // Images: self + HTTPS externe + data URIs + blob
       "img-src 'self' https: data: blob:",
-      // Connexions: Vercel Analytics + Speed Insights + reCAPTCHA
-      "connect-src 'self' https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com",
+      // Connexions: Vercel Analytics + Speed Insights + reCAPTCHA + Google Maps
+      "connect-src 'self' https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com",
       // Fermeture sécurité object/frame
       "object-src 'none'",
       // Allow Google Maps + reCAPTCHA embeds on contact page
@@ -115,20 +115,20 @@ const nextConfig: NextConfig = {
       "upgrade-insecure-requests",
     ];
 
-    // Dev/Preview: autorise Vercel Live + reCAPTCHA
+    // Dev/Preview: autorise Vercel Live + reCAPTCHA + Google Maps
     if (isDevelopment || isPreview) {
       baseCsp.push(
-        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://*.vercel.live https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com",
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://*.vercel.live https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com",
       );
       const connectIndex = baseCsp.findIndex((x) =>
         x.startsWith("connect-src"),
       );
       baseCsp[connectIndex] =
-        "connect-src 'self' https://vercel.live wss://ws-us3.pusher.com https://sockjs-us3.pusher.com https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com";
+        "connect-src 'self' https://vercel.live wss://ws-us3.pusher.com https://sockjs-us3.pusher.com https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com";
     } else {
-      // Production: Vercel Analytics + Speed Insights + reCAPTCHA
+      // Production: Vercel Analytics + Speed Insights + reCAPTCHA + Google Maps
       baseCsp.push(
-        "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com",
+        "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com",
       );
     }
 
