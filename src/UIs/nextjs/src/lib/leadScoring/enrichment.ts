@@ -222,8 +222,25 @@ export class LeadEnrichmentService {
   private async getTechStack(
     domain: string,
   ): Promise<EnrichedLeadData["techStack"] | null> {
-    // Détection maison 100% gratuite (pas d'API externe)
-    return this.detectTechStackBasic(domain);
+    // Use server-side API to avoid CSP violations
+    try {
+      const response = await fetch("/api/leadScoring/enrich", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ domain }),
+      });
+
+      if (!response.ok) {
+        console.warn("⚠️ Tech stack API failed, using fallback");
+        return null;
+      }
+
+      const data = await response.json();
+      return data.data?.techStack || null;
+    } catch (error) {
+      console.warn("⚠️ Tech stack detection unavailable:", error);
+      return null;
+    }
   }
 
   /**

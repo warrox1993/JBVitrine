@@ -18,6 +18,7 @@ import {
   getQuoteConfirmationEmailHtml,
   getQuoteTeamNotificationEmailHtml,
 } from "./email-templates";
+import { verifyRecaptchaEnterprise } from "@/lib/recaptcha";
 
 // Initialize Resend with API key
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -157,6 +158,48 @@ export async function POST(request: NextRequest) {
         { status: 400 },
       );
     }
+
+    // ✅ Verify reCAPTCHA Enterprise token (REQUIRED)
+    if (!body.recaptchaToken) {
+      console.warn("⚠️ Quote submission without reCAPTCHA token", {
+        ip: clientIP,
+      });
+      return NextResponse.json(
+        {
+          ok: false,
+          message: "Vérification de sécurité manquante",
+          errorCode: "RECAPTCHA_MISSING",
+        },
+        { status: 400 },
+      );
+    }
+
+    const recaptchaResult = await verifyRecaptchaEnterprise(
+      body.recaptchaToken,
+      "quote_submission",
+      clientIP,
+    );
+
+    if (!recaptchaResult.success) {
+      console.warn("⚠️ Quote submission failed reCAPTCHA verification", {
+        ip: clientIP,
+        score: recaptchaResult.score,
+        error: recaptchaResult.error,
+      });
+
+      return NextResponse.json(
+        {
+          ok: false,
+          message: "Vérification anti-bot échouée. Veuillez réessayer.",
+          errorCode: "RECAPTCHA_FAILED",
+        },
+        { status: 403 },
+      );
+    }
+
+    console.log("✅ Quote reCAPTCHA verified", {
+      score: recaptchaResult.score,
+    });
 
     // Validate contact info
     const { contactInfo } = body;
@@ -327,8 +370,23 @@ export async function POST(request: NextRequest) {
 
       console.log(`✅ Quote saved to database: ${quoteId}`);
     } catch (dbError) {
-      console.error("❌ Failed to save quote to database:", dbError);
-      // Don't fail the request if database save fails
+      console.error("❌ Failed to save quote to database:", {
+        error: dbError instanceof Error ? dbError.message : String(dbError),
+        stack: dbError instanceof Error ? dbError.stack : undefined,
+        quoteId,
+        email: sanitizedContactInfo.email,
+        timestamp: new Date().toISOString(),
+      });
+
+      return NextResponse.json(
+        {
+          ok: false,
+          message:
+            "Erreur lors de la sauvegarde. Veuillez réessayer dans quelques instants.",
+          errorCode: "DATABASE_ERROR",
+        },
+        { status: 500 },
+      );
     }
 
     // Send emails

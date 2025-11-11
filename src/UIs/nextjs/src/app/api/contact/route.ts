@@ -11,6 +11,7 @@ import {
   getConfirmationEmailHtml,
   getTeamNotificationEmailHtml,
 } from "./email-templates";
+import { verifyRecaptchaEnterprise } from "@/lib/recaptcha";
 
 // Initialize Resend with API key
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -27,6 +28,7 @@ type ContactFormData = {
   consent: boolean;
   honeypot?: string;
   formStartTime?: number;
+  recaptchaToken?: string;
   utm?: {
     source?: string | null;
     campaign?: string | null;
@@ -213,6 +215,45 @@ export async function POST(request: NextRequest) {
     }
 
     const body: ContactFormData = await request.json();
+
+    // reCAPTCHA verification (REQUIRED)
+    if (!body.recaptchaToken) {
+      console.warn("Contact form submission without reCAPTCHA token", {
+        ip: clientIP,
+      });
+      return NextResponse.json(
+        {
+          ok: false,
+          message: "Vérification de sécurité manquante",
+        },
+        { status: 400 },
+      );
+    }
+
+    const recaptchaResult = await verifyRecaptchaEnterprise(
+      body.recaptchaToken,
+      "contact_form",
+      clientIP,
+    );
+
+    if (!recaptchaResult.success) {
+      console.warn("Contact form failed reCAPTCHA verification", {
+        ip: clientIP,
+        score: recaptchaResult.score,
+        error: recaptchaResult.error,
+      });
+      return NextResponse.json(
+        {
+          ok: false,
+          message: "Vérification anti-bot échouée. Veuillez réessayer.",
+        },
+        { status: 403 },
+      );
+    }
+
+    console.log("Contact form reCAPTCHA verified", {
+      score: recaptchaResult.score,
+    });
 
     // Honeypot validation - bots typically fill hidden fields
     if (body.honeypot) {

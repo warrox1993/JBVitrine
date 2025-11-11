@@ -7,6 +7,7 @@ import {
   isIpBlocked,
 } from "@/lib/security-logger";
 import { validateCsrfToken } from "@/lib/csrf";
+import { verifyRecaptchaEnterprise } from "@/lib/recaptcha";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -37,79 +38,7 @@ function getClientIp(request: Request): string {
   return forwarded?.split(",")[0] || real || "unknown";
 }
 
-// Verify reCAPTCHA Enterprise token
-async function verifyRecaptcha(
-  token: string,
-  clientIp: string,
-): Promise<{ success: boolean; score?: number }> {
-  if (
-    !token ||
-    !process.env.RECAPTCHA_ENTERPRISE_API_KEY ||
-    !process.env.RECAPTCHA_PROJECT_ID
-  ) {
-    console.error("❌ Missing reCAPTCHA Enterprise configuration");
-    return { success: false };
-  }
-
-  try {
-    const apiKey = process.env.RECAPTCHA_ENTERPRISE_API_KEY;
-    const projectId = process.env.RECAPTCHA_PROJECT_ID;
-    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_ID;
-
-    // Call reCAPTCHA Enterprise API
-    const response = await fetch(
-      `https://recaptchaenterprise.googleapis.com/v1/projects/${projectId}/assessments?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          event: {
-            token: token,
-            expectedAction: "contact_form",
-            siteKey: siteKey,
-          },
-        }),
-      },
-    );
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("❌ reCAPTCHA Enterprise API error:", {
-        status: response.status,
-        statusText: response.statusText,
-        body: errorText,
-      });
-      return { success: false };
-    }
-
-    const data = await response.json();
-
-    // Check if token is valid and action matches
-    const isValid =
-      data.tokenProperties?.valid &&
-      data.tokenProperties?.action === "contact_form";
-
-    // Get risk score (0.0 = bot, 1.0 = human)
-    const score = data.riskAnalysis?.score || 0;
-
-    console.log("✅ reCAPTCHA Enterprise verification:", {
-      valid: isValid,
-      score: score,
-      action: data.tokenProperties?.action,
-      reasons: data.riskAnalysis?.reasons,
-    });
-
-    return {
-      success: isValid && score >= 0.5, // Score threshold: 0.5
-      score: score,
-    };
-  } catch (error) {
-    console.error("❌ reCAPTCHA Enterprise verification error:", error);
-    return { success: false };
-  }
-}
+// Function removed - using centralized verifyRecaptchaEnterprise() from @/lib/recaptcha
 
 export async function POST(request: Request) {
   try {
@@ -184,8 +113,26 @@ export async function POST(request: Request) {
       );
     }
 
-    // reCAPTCHA verification
-    const recaptchaResult = await verifyRecaptcha(recaptchaToken, clientIp);
+    // reCAPTCHA verification (REQUIRED)
+    if (!recaptchaToken) {
+      await logSecurityEvent({
+        type: SecurityEventType.CAPTCHA_FAILED,
+        ip: clientIp,
+        userAgent,
+        details: { hasToken: false, reason: "Token missing" },
+        timestamp: Date.now(),
+      });
+      return NextResponse.json(
+        { error: "Vérification de sécurité manquante" },
+        { status: 400 },
+      );
+    }
+
+    const recaptchaResult = await verifyRecaptchaEnterprise(
+      recaptchaToken,
+      "contact_form",
+      clientIp,
+    );
     if (!recaptchaResult.success) {
       await logSecurityEvent({
         type: SecurityEventType.CAPTCHA_FAILED,

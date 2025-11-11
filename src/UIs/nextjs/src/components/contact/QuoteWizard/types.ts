@@ -75,6 +75,7 @@ export interface ContactInfo {
   company: string;
   message?: string;
   consent: boolean;
+  recaptchaToken?: string;
 }
 
 export interface LeadScore {
@@ -103,6 +104,7 @@ export interface QuoteSubmission {
   };
   timestamp: number;
   formStartTime?: number;
+  recaptchaToken?: string;
 }
 
 // Feature definitions by project type

@@ -237,6 +237,9 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
 
       // Save to new lead scoring system
       const savedToNewSystem = await saveCompleteLead(contactInfo, estimate);
+      if (!savedToNewSystem) {
+        console.error('❌ Failed to save to new lead scoring system');
+      }
 
       // Calculate old lead score for backward compatibility
       const oldLeadScore = calculateLeadScore(estimate, quoteData, contactInfo);
@@ -261,6 +264,7 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
           : undefined,
         timestamp: Date.now(),
         formStartTime,
+        recaptchaToken: contactInfo.recaptchaToken,
       };
 
       // Submit to old API for backward compatibility
@@ -272,11 +276,30 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
         body: JSON.stringify(submission),
       });
 
+      // Parse response first to check both status code and response body
+      const result = await response.json();
+
+      // Check HTTP status code
       if (!response.ok) {
-        throw new Error('Erreur lors de l\'envoi de la demande');
+        throw new Error(
+          result.message ||
+          result.error ||
+          'Erreur lors de l\'envoi de la demande'
+        );
       }
 
-      const result = await response.json();
+      // Check response body ok field (backend might return 200 with ok: false)
+      if (!result.ok) {
+        throw new Error(
+          result.message ||
+          'La sauvegarde a échoué. Veuillez réessayer.'
+        );
+      }
+
+      // Log warning if new system failed but old system succeeded
+      if (!savedToNewSystem) {
+        console.warn('⚠️ New lead scoring system failed, but quote was saved via legacy system');
+      }
 
       // Success
       setSubmitSuccess(true);

@@ -75,33 +75,32 @@ export function Step5Contact({
     fetchCsrfToken();
 
     // Load reCAPTCHA Enterprise script
-    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_ID;
-    console.log('🔑 reCAPTCHA Enterprise Site ID:', siteKey ? siteKey.substring(0, 20) + '...' : '❌ NOT FOUND');
+    const loadRecaptcha = async () => {
+      const { RECAPTCHA_SITE_KEY } = await import('@/config/recaptcha');
 
-    if (!siteKey) {
-      console.error('❌ NEXT_PUBLIC_RECAPTCHA_SITE_ID is not defined');
-      return;
-    }
+      if (!RECAPTCHA_SITE_KEY) {
+        console.error('❌ RECAPTCHA_SITE_KEY is not defined');
+        return;
+      }
 
-    if (!document.getElementById('recaptcha-script')) {
-      const script = document.createElement('script');
-      script.id = 'recaptcha-script';
-      script.src = `https://www.google.com/recaptcha/enterprise.js?render=${siteKey}`;
-      script.onload = () => {
-        console.log('✅ reCAPTCHA Enterprise script loaded successfully');
-        setTimeout(() => {
-          if (typeof window !== 'undefined' && (window as any).grecaptcha?.enterprise) {
-            console.log('✅ grecaptcha.enterprise is ready');
-          } else {
-            console.error('❌ grecaptcha.enterprise is not available');
-          }
-        }, 1000);
-      };
-      script.onerror = () => {
-        console.error('❌ Failed to load reCAPTCHA Enterprise script');
-      };
-      document.head.appendChild(script);
-    }
+      console.log('🔑 reCAPTCHA Enterprise Site ID loaded');
+
+      if (!document.getElementById('recaptcha-script')) {
+        const script = document.createElement('script');
+        script.id = 'recaptcha-script';
+        script.src = `https://www.google.com/recaptcha/enterprise.js?render=${RECAPTCHA_SITE_KEY}`;
+        script.async = true;
+        script.onload = () => {
+          console.log('✅ reCAPTCHA Enterprise script loaded successfully');
+        };
+        script.onerror = () => {
+          console.error('❌ Failed to load reCAPTCHA Enterprise script');
+        };
+        document.head.appendChild(script);
+      }
+    };
+
+    loadRecaptcha();
   }, []);
 
   const validateForm = (): boolean => {
@@ -223,9 +222,10 @@ export function Step5Contact({
     let recaptchaToken = '';
     if (typeof window !== 'undefined' && (window as any).grecaptcha?.enterprise) {
       try {
+        const { RECAPTCHA_SITE_KEY } = await import('@/config/recaptcha');
         await (window as any).grecaptcha.enterprise.ready(async () => {
           recaptchaToken = await (window as any).grecaptcha.enterprise.execute(
-            process.env.NEXT_PUBLIC_RECAPTCHA_SITE_ID,
+            RECAPTCHA_SITE_KEY,
             { action: 'quote_submission' }
           );
           console.log('✅ reCAPTCHA Enterprise token generated');
@@ -236,7 +236,7 @@ export function Step5Contact({
       }
     }
 
-    // Prepare clean ContactInfo (without security fields)
+    // Prepare clean ContactInfo (with reCAPTCHA token)
     const contactInfo: ContactInfo = {
       name: formData.name,
       email: formData.email,
@@ -244,6 +244,7 @@ export function Step5Contact({
       company: formData.company,
       message: formData.message,
       consent: formData.consent,
+      recaptchaToken: recaptchaToken || undefined,
     };
 
     // Call parent's onSubmit with clean ContactInfo

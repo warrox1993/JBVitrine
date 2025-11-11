@@ -149,7 +149,7 @@ export const createAdminNotificationEmail = ({
 }): string => {
   const content = `
     <h2 style="${EMAIL_STYLES.sectionTitle}">
-      ${source === "quote" ? "🎯 Nouveau devis demandé" : "📧 Nouveau message"}
+      ${source === "quote" ? "NOUVEAU DEVIS DEMANDE" : "NOUVEAU MESSAGE"}
     </h2>
 
     <div style="${EMAIL_STYLES.infoBox}">

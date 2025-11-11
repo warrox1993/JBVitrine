@@ -9,6 +9,10 @@ import { db } from "@/lib/db";
 
 export async function POST(request: NextRequest) {
   try {
+    // Log database connection status
+    console.log("🔍 DATABASE_URL loaded:", !!process.env.DATABASE_URL);
+    console.log("🔍 POSTGRES_URL loaded:", !!process.env.POSTGRES_URL);
+
     const {
       lead,
       score,
@@ -68,9 +72,9 @@ export async function POST(request: NextRequest) {
       name: lead.name,
       company: lead.company,
       phone: lead.phone,
-      score_total: score.total,
+      score_total: Math.round(score.total),
       score_grade: score.grade,
-      score_confidence: score.confidence,
+      score_confidence: Math.round(score.confidence),
       score_breakdown: score.breakdown,
       enrichment_data: lead,
       enrichment_score: lead.enrichmentScore || 0,
@@ -118,9 +122,14 @@ export async function POST(request: NextRequest) {
     });
   } catch (error) {
     console.error("❌ Error saving lead:", error);
+    console.error("❌ Error details:", {
+      message: (error as Error).message,
+      stack: (error as Error).stack,
+      name: (error as Error).name,
+    });
     return NextResponse.json(
       {
-        error: "Internal server error",
+        error: "Failed to save lead",
         details:
           process.env.NODE_ENV === "development"
             ? (error as Error).message

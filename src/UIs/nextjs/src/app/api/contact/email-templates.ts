@@ -79,9 +79,9 @@ export function getConfirmationEmailHtml(
                 Liège, Belgique
               </p>
               <p style="margin: 0 0 15px; color: #8b919e; font-size: 13px;">
-                📧 <a href="mailto:jeanbaptiste.dhondt1@gmail.com" style="color: #ff6a00; text-decoration: none;">jeanbaptiste.dhondt1@gmail.com</a><br>
-                📞 <a href="tel:+32475205562" style="color: #ff6a00; text-decoration: none;">+32 475 20 55 62</a><br>
-                🌐 <a href="https://smidjan.be" style="color: #ff6a00; text-decoration: none;">smidjan.be</a>
+                Email: <a href="mailto:jeanbaptiste.dhondt1@gmail.com" style="color: #ff6a00; text-decoration: none;">jeanbaptiste.dhondt1@gmail.com</a><br>
+                Tel: <a href="tel:+32475205562" style="color: #ff6a00; text-decoration: none;">+32 475 20 55 62</a><br>
+                Web: <a href="https://smidjan.be" style="color: #ff6a00; text-decoration: none;">smidjan.be</a>
               </p>
               <p style="margin: 15px 0 0; color: #6b7280; font-size: 12px;">
                 Ce message automatique confirme la réception de votre demande.<br>
@@ -153,7 +153,7 @@ export function getTeamNotificationEmailHtml(
           <tr>
             <td style="background: linear-gradient(135deg, #ff6a00, #ffc43a); padding: 30px; text-align: center;">
               <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700;">
-                🎯 Nouvelle Demande de Contact
+                NOUVELLE DEMANDE DE CONTACT
               </h1>
               <p style="margin: 10px 0 0; color: #ffffff; font-size: 14px; opacity: 0.95; text-transform: uppercase; letter-spacing: 0.05em;">
                 ${typeLabels[data.type] || data.type}
@@ -177,7 +177,7 @@ export function getTeamNotificationEmailHtml(
           <tr>
             <td style="padding: 30px;">
               <h2 style="margin: 0 0 20px; color: #0c121b; font-size: 18px; font-weight: 700; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">
-                📋 Informations du contact
+                INFORMATIONS DU CONTACT
               </h2>
 
               <table width="100%" cellpadding="8" cellspacing="0" style="font-size: 15px;">
@@ -241,7 +241,7 @@ export function getTeamNotificationEmailHtml(
           <tr>
             <td style="padding: 0 30px 30px;">
               <h2 style="margin: 0 0 15px; color: #0c121b; font-size: 18px; font-weight: 700; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">
-                💬 Message
+                MESSAGE
               </h2>
               <div style="background-color: #f7f9fc; border-left: 4px solid #ff6a00; padding: 20px; border-radius: 6px;">
                 <p style="margin: 0; color: #0c121b; font-size: 15px; line-height: 1.7; white-space: pre-wrap;">${data.message}</p>
@@ -256,7 +256,7 @@ export function getTeamNotificationEmailHtml(
           <tr>
             <td style="padding: 0 30px 30px;">
               <h2 style="margin: 0 0 15px; color: #0c121b; font-size: 18px; font-weight: 700; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">
-                📊 Tracking
+                TRACKING
               </h2>
               <table width="100%" cellpadding="8" cellspacing="0" style="font-size: 14px; background-color: #f7f9fc; border-radius: 6px;">
                 ${
@@ -290,7 +290,7 @@ export function getTeamNotificationEmailHtml(
           <tr>
             <td style="padding: 30px; background-color: #fff8f0; text-align: center;">
               <a href="mailto:${data.email}?subject=Re: ${typeLabels[data.type]} - ${ticketId}" style="display: inline-block; background: linear-gradient(135deg, #ff6a00, #ffc43a); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 15px; box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3);">
-                ✉️ Répondre au client
+                Répondre au client
               </a>
             </td>
           </tr>

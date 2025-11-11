@@ -3,7 +3,23 @@
     "allow": [
       "Bash(powershell -Command \"Get-Content ''src\\lib\\pricing\\features.ts'' | Measure-Object -Line\")",
       "Bash(sort:*)",
-      "Bash(git -C \"C:\\Users\\jeanb\\Desktop\\Practical.CleanArchitecture\" status --short)"
+      "Bash(git -C \"C:\\Users\\jeanb\\Desktop\\Practical.CleanArchitecture\" status --short)",
+      "Bash(git -C \"C:\\Users\\jeanb\\Desktop\\Practical.CleanArchitecture\" push origin main)",
+      "Bash(cat:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(npx tsx:*)",
+      "Bash(npm run dev:*)",
+      "Bash(taskkill:*)",
+      "Bash(node -e:*)",
+      "Bash(node -r dotenv/config -e:*)",
+      "Bash(set NODE_ENV=development)",
+      "Bash(node --require dotenv/config -e:*)",
+      "Bash(if exist .next rmdir /s /q .next)",
+      "Bash(powershell -Command:*)",
+      "Bash(npm run build:*)",
+      "Bash(nul)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

@@ -24,7 +24,7 @@ export function getQuoteConfirmationEmailHtml(
           <!-- Header -->
           <tr>
             <td style="background: linear-gradient(135deg, #ff6a00 0%, #ffc43a 100%); padding: 40px 30px; border-radius: 12px 12px 0 0; text-align: center;">
-              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">✅ Demande reçue !</h1>
+              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">Demande reçue</h1>
             </td>
           </tr>
 
@@ -42,7 +42,7 @@ export function getQuoteConfirmationEmailHtml(
               <!-- Quote Summary -->
               <div style="background-color: #f8f9fa; border-left: 4px solid #ff6a00; padding: 20px; margin: 30px 0; border-radius: 4px;">
                 <h2 style="margin: 0 0 15px 0; font-size: 18px; font-weight: 600; color: #333333;">
-                  📋 Récapitulatif de votre demande
+                  Récapitulatif de votre demande
                 </h2>
 
                 <table role="presentation" style="width: 100%; border-collapse: collapse;">
@@ -67,7 +67,7 @@ export function getQuoteConfirmationEmailHtml(
 
               <!-- Next Steps -->
               <h3 style="margin: 30px 0 15px 0; font-size: 18px; font-weight: 600; color: #333333;">
-                🔜 Prochaines étapes
+                Prochaines étapes
               </h3>
 
               <ol style="margin: 0; padding-left: 20px; color: #666666; line-height: 1.8;">
@@ -78,7 +78,7 @@ export function getQuoteConfirmationEmailHtml(
               </ol>
 
               <p style="margin: 30px 0 0 0; font-size: 14px; line-height: 1.6; color: #666666;">
-                💡 <strong>Astuce :</strong> En attendant, n'hésitez pas à préparer vos questions et à rassembler vos visuels/documents de référence.
+                <strong>Conseil :</strong> En attendant, n'hésitez pas à préparer vos questions et à rassembler vos visuels/documents de référence.
               </p>
             </td>
           </tr>
@@ -124,9 +124,9 @@ export function getQuoteTeamNotificationEmailHtml(
   };
 
   const priorityLabels = {
-    high: "🔥 PRIORITÉ HAUTE",
-    medium: "⚡ PRIORITÉ MOYENNE",
-    low: "📋 PRIORITÉ BASSE",
+    high: "PRIORITÉ HAUTE",
+    medium: "PRIORITÉ MOYENNE",
+    low: "PRIORITÉ BASSE",
   };
 
   const priorityColor = priorityColors[submission.leadScore.priority];
@@ -168,7 +168,7 @@ export function getQuoteTeamNotificationEmailHtml(
 
               <!-- Contact Info -->
               <h2 style="margin: 0 0 20px 0; font-size: 18px; font-weight: 700; color: #ff6a00; border-bottom: 2px solid #ff6a00; padding-bottom: 10px;">
-                👤 Contact
+                CONTACT
               </h2>
 
               <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
@@ -204,7 +204,7 @@ export function getQuoteTeamNotificationEmailHtml(
 
               <!-- Project Details -->
               <h2 style="margin: 0 0 20px 0; font-size: 18px; font-weight: 700; color: #ff6a00; border-bottom: 2px solid #ff6a00; padding-bottom: 10px;">
-                ${config?.icon} Projet
+                PROJET
               </h2>
 
               <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
@@ -229,7 +229,7 @@ export function getQuoteTeamNotificationEmailHtml(
                 <tr>
                   <td style="padding: 8px 0; font-size: 14px; color: #c8cdd6;">Complexité :</td>
                   <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">
-                    ${submission.estimate.complexity === "simple" ? "🟢 Simple" : submission.estimate.complexity === "medium" ? "🟡 Moyen" : "🔴 Complexe"}
+                    ${submission.estimate.complexity === "simple" ? "Simple" : submission.estimate.complexity === "medium" ? "Moyen" : "Complexe"}
                   </td>
                 </tr>
                 <tr>
@@ -264,10 +264,10 @@ export function getQuoteTeamNotificationEmailHtml(
               <ul style="margin: 0 0 30px 0; padding-left: 20px; color: #c8cdd6; line-height: 1.8;">
                 <li style="font-size: 14px;">Design : <strong style="color: #f6f7f9;">${submission.quoteData.design === "template" ? "Template" : submission.quoteData.design === "semi-custom" ? "Semi-personnalisé" : "Sur mesure"}</strong></li>
                 <li style="font-size: 14px;">SEO : <strong style="color: #f6f7f9;">${submission.quoteData.seo === "none" ? "Aucun" : submission.quoteData.seo === "basic" ? "De base" : "Avancé"}</strong></li>
-                ${submission.quoteData.animations ? '<li style="font-size: 14px;">✓ Animations avancées</li>' : ""}
-                ${submission.quoteData.maintenance ? '<li style="font-size: 14px;">✓ Maintenance mensuelle</li>' : ""}
-                ${submission.quoteData.training ? '<li style="font-size: 14px;">✓ Formation équipe</li>' : ""}
-                ${submission.quoteData.hosting ? '<li style="font-size: 14px;">✓ Hébergement</li>' : ""}
+                ${submission.quoteData.animations ? '<li style="font-size: 14px;">Oui - Animations avancées</li>' : ""}
+                ${submission.quoteData.maintenance ? '<li style="font-size: 14px;">Oui - Maintenance mensuelle</li>' : ""}
+                ${submission.quoteData.training ? '<li style="font-size: 14px;">Oui - Formation équipe</li>' : ""}
+                ${submission.quoteData.hosting ? '<li style="font-size: 14px;">Oui - Hébergement</li>' : ""}
               </ul>
 
               <!-- Message -->
@@ -275,7 +275,7 @@ export function getQuoteTeamNotificationEmailHtml(
                 contactInfo.message
                   ? `
               <h2 style="margin: 0 0 15px 0; font-size: 18px; font-weight: 700; color: #ff6a00; border-bottom: 2px solid #ff6a00; padding-bottom: 10px;">
-                💬 Message
+                MESSAGE
               </h2>
               <div style="background-color: #161a22; border-left: 3px solid #ffc43a; padding: 15px; margin-bottom: 30px; border-radius: 4px;">
                 <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #c8cdd6; white-space: pre-wrap;">${contactInfo.message}</p>
@@ -286,7 +286,7 @@ export function getQuoteTeamNotificationEmailHtml(
 
               <!-- Lead Qualification Notes -->
               <h2 style="margin: 0 0 15px 0; font-size: 18px; font-weight: 700; color: #ff6a00; border-bottom: 2px solid #ff6a00; padding-bottom: 10px;">
-                📊 Analyse de qualification
+                ANALYSE DE QUALIFICATION
               </h2>
 
               <div style="background-color: #161a22; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
@@ -294,37 +294,37 @@ export function getQuoteTeamNotificationEmailHtml(
                   <tr>
                     <td style="padding: 5px 0; font-size: 13px; color: #c8cdd6;">Budget qualifié :</td>
                     <td style="padding: 5px 0; text-align: right;">
-                      ${submission.leadScore.qualificationNotes.budgetQualified ? '<span style="color: #22c55e; font-weight: 600;">✓ Oui</span>' : '<span style="color: #ef4444;">✗ Non</span>'}
+                      ${submission.leadScore.qualificationNotes.budgetQualified ? '<span style="color: #22c55e; font-weight: 600;">Oui</span>' : '<span style="color: #ef4444;">Non</span>'}
                     </td>
                   </tr>
                   <tr>
                     <td style="padding: 5px 0; font-size: 13px; color: #c8cdd6;">Délai réaliste :</td>
                     <td style="padding: 5px 0; text-align: right;">
-                      ${submission.leadScore.qualificationNotes.timelineRealistic ? '<span style="color: #22c55e; font-weight: 600;">✓ Oui</span>' : '<span style="color: #ef4444;">✗ Non</span>'}
+                      ${submission.leadScore.qualificationNotes.timelineRealistic ? '<span style="color: #22c55e; font-weight: 600;">Oui</span>' : '<span style="color: #ef4444;">Non</span>'}
                     </td>
                   </tr>
                   <tr>
                     <td style="padding: 5px 0; font-size: 13px; color: #c8cdd6;">Email professionnel :</td>
                     <td style="padding: 5px 0; text-align: right;">
-                      ${submission.leadScore.qualificationNotes.professionalEmail ? '<span style="color: #22c55e; font-weight: 600;">✓ Oui</span>' : '<span style="color: #ef4444;">✗ Non</span>'}
+                      ${submission.leadScore.qualificationNotes.professionalEmail ? '<span style="color: #22c55e; font-weight: 600;">Oui</span>' : '<span style="color: #ef4444;">Non</span>'}
                     </td>
                   </tr>
                   <tr>
                     <td style="padding: 5px 0; font-size: 13px; color: #c8cdd6;">Entreprise renseignée :</td>
                     <td style="padding: 5px 0; text-align: right;">
-                      ${submission.leadScore.qualificationNotes.companyProvided ? '<span style="color: #22c55e; font-weight: 600;">✓ Oui</span>' : '<span style="color: #ef4444;">✗ Non</span>'}
+                      ${submission.leadScore.qualificationNotes.companyProvided ? '<span style="color: #22c55e; font-weight: 600;">Oui</span>' : '<span style="color: #ef4444;">Non</span>'}
                     </td>
                   </tr>
                   <tr>
                     <td style="padding: 5px 0; font-size: 13px; color: #c8cdd6;">Message détaillé :</td>
                     <td style="padding: 5px 0; text-align: right;">
-                      ${submission.leadScore.qualificationNotes.detailedMessage ? '<span style="color: #22c55e; font-weight: 600;">✓ Oui</span>' : '<span style="color: #ef4444;">✗ Non</span>'}
+                      ${submission.leadScore.qualificationNotes.detailedMessage ? '<span style="color: #22c55e; font-weight: 600;">Oui</span>' : '<span style="color: #ef4444;">Non</span>'}
                     </td>
                   </tr>
                   <tr>
                     <td style="padding: 5px 0; font-size: 13px; color: #c8cdd6;">Téléphone fourni :</td>
                     <td style="padding: 5px 0; text-align: right;">
-                      ${submission.leadScore.qualificationNotes.phoneProvided ? '<span style="color: #22c55e; font-weight: 600;">✓ Oui</span>' : '<span style="color: #ef4444;">✗ Non</span>'}
+                      ${submission.leadScore.qualificationNotes.phoneProvided ? '<span style="color: #22c55e; font-weight: 600;">Oui</span>' : '<span style="color: #ef4444;">Non</span>'}
                     </td>
                   </tr>
                 </table>
@@ -350,7 +350,7 @@ export function getQuoteTeamNotificationEmailHtml(
                 submission.utm?.medium
                   ? `
               <h3 style="margin: 0 0 15px 0; font-size: 16px; font-weight: 600; color: #f6f7f9;">
-                📈 Données marketing (UTM) :
+                DONNEES MARKETING (UTM) :
               </h3>
               <ul style="margin: 0 0 30px 0; padding-left: 20px; color: #c8cdd6; line-height: 1.6;">
                 ${submission.utm.source ? `<li style="font-size: 14px;">Source : <strong style="color: #f6f7f9;">${submission.utm.source}</strong></li>` : ""}
@@ -364,7 +364,7 @@ export function getQuoteTeamNotificationEmailHtml(
               <!-- Action CTA -->
               <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 2px solid #2b3342;">
                 <a href="mailto:${contactInfo.email}" style="display: inline-block; background: linear-gradient(135deg, #ff6a00 0%, #ffc43a 100%); color: #ffffff; text-decoration: none; padding: 15px 40px; border-radius: 8px; font-weight: 600; font-size: 16px;">
-                  📧 Répondre au client
+                  Répondre au client
                 </a>
               </div>
             </td>

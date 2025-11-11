@@ -166,9 +166,9 @@ export default function PrivacyPage() {
                                 </p>
                                 <p className={styles.noCookie}>
                                     <strong>En conséquence :</strong><br />
-                                    ❌ Aucune bannière de consentement n'est nécessaire<br />
-                                    ❌ Aucun cookie n'est utilisé à des fins statistiques, marketing ou de suivi comportemental<br />
-                                    ✅ Respect total de votre vie privée
+                                    • Aucune bannière de consentement n'est nécessaire<br />
+                                    • Aucun cookie n'est utilisé à des fins statistiques, marketing ou de suivi comportemental<br />
+                                    • Respect total de votre vie privée
                                 </p>
                             </section>
 

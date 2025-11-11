@@ -6,17 +6,27 @@
 
 import { neon } from "@neondatabase/serverless";
 
-if (!process.env.DATABASE_URL) {
+// Use DATABASE_URL or fallback to POSTGRES_URL (Vercel/Neon compatibility)
+const databaseUrl = process.env.DATABASE_URL || process.env.POSTGRES_URL;
+
+if (!databaseUrl) {
   throw new Error(
-    "DATABASE_URL is not defined. Please add it to your .env.local file.",
+    "DATABASE_URL or POSTGRES_URL is not defined. Please add it to your environment variables.\n" +
+      "For local development: Add DATABASE_URL to .env.local\n" +
+      "For Vercel: Add DATABASE_URL in project settings",
   );
 }
+
+console.log("✅ Database connection initialized", {
+  url: databaseUrl.substring(0, 30) + "...", // Log partial URL for security
+  source: process.env.DATABASE_URL ? "DATABASE_URL" : "POSTGRES_URL",
+});
 
 /**
  * SQL query executor
  * Uses Neon's serverless driver for optimal performance on serverless platforms
  */
-export const sql = neon(process.env.DATABASE_URL);
+export const sql = neon(databaseUrl);
 
 /**
  * Type-safe query helpers
