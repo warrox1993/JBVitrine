@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(powershell -Command \"Get-Content ''src\\lib\\pricing\\features.ts'' | Measure-Object -Line\")",
-      "Bash(sort:*)"
+      "Bash(sort:*)",
+      "Bash(git -C \"C:\\Users\\jeanb\\Desktop\\Practical.CleanArchitecture\" status --short)"
     ],
     "deny": [],
     "ask": []
