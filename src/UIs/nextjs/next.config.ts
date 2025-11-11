@@ -90,8 +90,10 @@ const nextConfig: NextConfig = {
   // Security Headers
   async headers() {
     // CSP conditionnelle: Vercel Live autorisé en dev et preview
-    const isDevelopment = process.env.NODE_ENV === "development";
+    // Note: Turbopack ne set pas toujours NODE_ENV, donc on détecte aussi via VERCEL_ENV
+    const isDevelopment = process.env.NODE_ENV !== "production";
     const isPreview = process.env.VERCEL_ENV === "preview";
+    const isProduction = process.env.NODE_ENV === "production" && !isPreview;
 
     const baseCsp = [
       "default-src 'self'",
@@ -116,7 +118,7 @@ const nextConfig: NextConfig = {
     ];
 
     // Dev/Preview: autorise Vercel Live + reCAPTCHA + Google Maps
-    if (isDevelopment || isPreview) {
+    if (!isProduction) {
       baseCsp.push(
         "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://*.vercel.live https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com",
       );
@@ -126,7 +128,7 @@ const nextConfig: NextConfig = {
       baseCsp[connectIndex] =
         "connect-src 'self' https://vercel.live wss://ws-us3.pusher.com https://sockjs-us3.pusher.com https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com";
     } else {
-      // Production: Vercel Analytics + Speed Insights + reCAPTCHA + Google Maps
+      // Production STRICT: Vercel Analytics + Speed Insights + reCAPTCHA + Google Maps
       baseCsp.push(
         "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com",
       );
