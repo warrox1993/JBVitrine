@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { QuoteEstimate, QuoteData } from './types';
 import { formatPriceRange, formatPrice } from '@/lib/pricing/calculator';
@@ -14,10 +14,44 @@ interface QuotePreviewProps {
 
 export function QuotePreview({ estimate, quoteData }: QuotePreviewProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isMobileBarVisible, setIsMobileBarVisible] = useState(true);
+  const mobileBarRef = useRef<HTMLDivElement>(null);
 
   const config = quoteData.projectType
     ? getProjectTypeConfig(quoteData.projectType)
     : null;
+
+  // Hook to detect when scrolling reaches footer and hide mobile bar
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleScroll = () => {
+      // Mobile bar logic
+      const wizard = mobileBarRef.current?.closest('[class*="wizard"]');
+      if (wizard) {
+        const wizardRect = wizard.getBoundingClientRect();
+        const wizardBottom = wizardRect.bottom;
+        const windowHeight = window.innerHeight;
+        const offsetToHideLater = -75;
+
+        if (wizardBottom <= windowHeight + offsetToHideLater) {
+          setIsMobileBarVisible(false);
+        } else {
+          setIsMobileBarVisible(true);
+        }
+      }
+    };
+
+    // Run on mount and scroll
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
 
   if (!config) return null;
 
@@ -86,7 +120,13 @@ export function QuotePreview({ estimate, quoteData }: QuotePreviewProps) {
     <>
       {/* Mobile sticky bottom bar */}
       <div
+        ref={mobileBarRef}
         className={cls.mobileBar}
+        style={{
+          opacity: isMobileBarVisible ? 1 : 0,
+          transform: isMobileBarVisible ? 'translateY(0)' : 'translateY(100%)',
+          transition: 'opacity 0.3s ease, transform 0.3s ease',
+        }}
         role="complementary"
         aria-label="Aperçu du devis"
       >

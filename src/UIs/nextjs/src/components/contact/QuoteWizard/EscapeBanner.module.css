@@ -5,7 +5,6 @@
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
   border-bottom: 1px solid #bfdbfe;
   padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
-  margin-bottom: var(--space-6, 3rem);
   animation: slideDown 0.3s ease-out;
 }
 

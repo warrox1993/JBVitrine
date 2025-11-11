@@ -2,8 +2,10 @@
   width: 100%;
   min-height: 100vh;
   background: var(--color-bg-1, #0d1015);
-  padding-bottom: var(--space-6, 4rem);
+  padding-bottom: var(--space-3, 1rem);
   overflow-x: hidden;
+  position: relative;
+  isolation: isolate;
 }
 
 /* Mobile: Add extra padding for sticky mobile bar */
@@ -37,7 +39,7 @@
 .layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-6, 4rem);
+  gap: var(--space-3, 1rem);
   max-width: 100%;
   width: 100%;
   padding: 0;
@@ -62,7 +64,7 @@
   .main {
     flex: 1;
     min-width: 0; /* Prevent flex item from overflowing */
-    margin-right: 0;
+    margin-right: 400px; /* 380px sidebar width + 20px spacing */
   }
 }
 
@@ -87,7 +89,7 @@
 /* Desktop: Sidebar takes space in layout */
 @media (min-width: 1024px) {
   .sidebar {
-    display: block;
+    display: none;
     position: sticky;
     top: var(--header-height, 64px);
     right: 0;
@@ -107,18 +109,29 @@
 
 /* Quote Preview Wrapper - Positions QuotePreview correctly on desktop/mobile */
 .quotePreviewWrapper {
-  /* Mobile: No special positioning (mobileBar uses position fixed) */
+  /* Mobile: Contain the fixed mobile bar within wizard bounds */
   position: relative;
+}
+
+@media (max-width: 1023px) {
+  .quotePreviewWrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    overflow: visible;
+  }
 }
 
 @media (min-width: 1024px) {
   .quotePreviewWrapper {
     /* Desktop: Position in sidebar space */
-    position: fixed;
-    top: var(--header-height, 64px);
+    position: absolute;
+    top: 0;
     right: 0;
+    bottom: 0;
     width: 380px;
-    max-height: calc(100vh - var(--header-height, 64px));
     z-index: 11; /* Above sidebar background */
     padding: var(--space-3, 1rem);
   }
