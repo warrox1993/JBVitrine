@@ -6,7 +6,11 @@
       "Bash(git push:*)",
       "Bash(taskkill:*)",
       "Bash(nul)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(powershell -Command \"Stop-Process -Id 6252 -Force\")",
+      "Bash(powershell -Command \"$env:NODE_ENV\")"
     ],
     "deny": [],
     "ask": []

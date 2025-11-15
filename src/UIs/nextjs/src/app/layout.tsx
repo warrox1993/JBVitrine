@@ -154,7 +154,7 @@ export const metadata: Metadata = {
 
     // Informations de vérification (à ajouter quand tu as les codes)
     verification: {
-        // google: 'ton-code-google-search-console',
+        google: 'z2A8hW5TKExnljJhX2nw2MvH-QWy9ptIOapbP-XA7Ys',
         // yandex: 'ton-code-yandex',
         // bing: 'ton-code-bing',
     },
