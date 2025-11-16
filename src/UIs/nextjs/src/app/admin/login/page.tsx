@@ -149,9 +149,8 @@ function LoginForm() {
 
         <div className={cls.footer}>
           <p className={cls.footerText}>
-            Default credentials: admin@smidjan.be / admin123
+            Secure admin access only
           </p>
-          <p className={cls.footerWarning}>Change password in production!</p>
         </div>
       </div>
     </div>
