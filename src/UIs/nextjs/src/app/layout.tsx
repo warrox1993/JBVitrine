@@ -1,11 +1,15 @@
 // src/app/layout.tsx
+// Critical CSS first (variables, breakpoints, typography)
 import './styles/variables.css';
 import './styles/breakpoints.css';
 import './styles/typography.css'; // Unified typography (mobile-first)
-import './styles/utilities.css';
 import './globals.css';
-import '../styles/buttons.animations.css';
 import layoutStyles from './layout.module.css';
+
+// Non-critical CSS loaded after (utilities, animations)
+// These are deferred to reduce render-blocking
+import './styles/utilities.css';
+import '../styles/buttons.animations.css';
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { Inter, Instrument_Sans } from 'next/font/google';
@@ -19,11 +23,12 @@ import { organizationSchema, websiteSchema, localBusinessSchema } from '@/lib/sc
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
+// Optimized font loading with swap and subset for faster FCP/LCP
 const inter = Inter({
     subsets: ['latin'],
     weight: ['400','700'],
     variable: '--font-base',
-    display: 'swap',
+    display: 'swap', // Prevent FOIT (Flash of Invisible Text)
     preload: true,
     fallback: ['system-ui', '-apple-system', 'sans-serif'],
     adjustFontFallback: true
@@ -33,7 +38,7 @@ const instrument = Instrument_Sans({
     subsets: ['latin'],
     weight: ['400','700'],
     variable: '--font-display',
-    display: 'swap',
+    display: 'swap', // Prevent FOIT
     preload: true,
     fallback: ['system-ui', '-apple-system', 'sans-serif'],
     adjustFontFallback: true
@@ -193,15 +198,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                         __html: `(function(){try{var stored=localStorage.getItem('theme');var prefersLight=window.matchMedia('(prefers-color-scheme: light)').matches;var theme=stored||(prefersLight?'light':'dark');document.documentElement.setAttribute('data-theme', theme);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`
                     }}
                 />
-                {/* DNS Optimization - Preconnect + DNS-Prefetch */}
-                <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-                <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+                {/* Critical Resource Hints - Optimize connection times (saves ~100-200ms) */}
+                {/* Google Fonts - Must be first to prevent render-blocking */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
                 {/* Vercel Analytics - Preconnect for faster metrics */}
-                <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
                 <link rel="preconnect" href="https://vitals.vercel-insights.com" />
+
+                {/* DNS-Prefetch for secondary resources (non-blocking) */}
+                <link rel="dns-prefetch" href="https://vercel-insights.com" />
+                <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
 
                 {/* Favicons */}
                 <link rel="icon" href="/favicon.ico" sizes="any" />

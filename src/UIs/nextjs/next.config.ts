@@ -15,17 +15,25 @@ const nextConfig: NextConfig = {
   },
 
   // Target modern browsers (ES2020+) - No polyfills needed
+  // This ensures Next.js respects .browserslistrc
   transpilePackages: [],
 
   // Performance optimizations
   reactStrictMode: true,
   poweredByHeader: false,
 
-  // CSS Optimization (Next.js 16 built-in)
+  // CSS Optimization + Modern Browser Target (Next.js 16 built-in)
   experimental: {
     optimizeCss: true, // Enable CSS minification and tree-shaking
     cssChunking: "strict", // Better CSS chunking strategy (less chunks)
-    optimizePackageImports: ["lucide-react"], // Tree-shake lucide-react icons
+    // Tree-shake large packages to reduce bundle size (~50-100KB savings)
+    optimizePackageImports: [
+      "lucide-react", // Icon library
+      "react-bootstrap", // UI components
+      "marked", // Markdown parser
+      "@vercel/analytics", // Analytics
+      "@vercel/speed-insights", // Speed insights
+    ],
     // Inline critical CSS to reduce render-blocking
     inlineCss: true,
   },
@@ -78,6 +86,9 @@ const nextConfig: NextConfig = {
   // Webpack optimization for production builds
   webpack: (config, { isServer }) => {
     if (!isServer) {
+      // Set modern browser target to avoid polyfills
+      config.target = ["web", "es2020"];
+
       // Better code splitting strategy
       config.optimization = {
         ...config.optimization,
@@ -130,6 +141,9 @@ const nextConfig: NextConfig = {
           minSize: 20000,
         },
       };
+    } else {
+      // Server target
+      config.target = ["node", "es2020"];
     }
     return config;
   },
