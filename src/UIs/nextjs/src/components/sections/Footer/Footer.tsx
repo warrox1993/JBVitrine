@@ -12,7 +12,7 @@ export function Footer() {
           <div className={styles.logoCell}>
             <Image
               src="/images/logofooter/smidjan-footer-logo.webp"
-              alt="Logo Smidjan - Agence web Liège spécialisée développement Next.js et cybersécurité"
+              alt="Logo Smidjan - Agence web Liège spécialisée développement web et cybersécurité"
               width={300}
               height={300}
               unoptimized

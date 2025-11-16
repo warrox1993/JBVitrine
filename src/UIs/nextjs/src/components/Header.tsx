@@ -36,7 +36,7 @@ export default function Header() {
         <Link href="/" aria-label="Go to homepage" className={styles.headerLogo}>
           <Image
             src="/images/logoheader/logo.webp"
-            alt="Logo Smidjan - Agence web Liège développement Next.js design cybersécurité RGPD"
+            alt="Logo Smidjan - Agence web Liège développement web design cybersécurité RGPD"
             width={256}
             height={256}
             priority

@@ -3,9 +3,9 @@ import AppVitrine from "../components/SiteVitrine/AppVitrine";
 import { faqPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  // SEO optimisé 2025 - Mots-clés prioritaires: agence web Liège, développement Next.js, audit SEO gratuit
-  title: 'Agence Web Liège | Développement Next.js, Design & Cybersécurité - Smidjan',
-  description: 'Agence digitale à Liège spécialisée en développement Next.js, design web et cybersécurité RGPD. Audit SEO gratuit. Services pour PME Belgique et Wallonie.',
+  // SEO optimisé 2025 - Mots-clés prioritaires: agence web Liège, développement web, audit SEO gratuit
+  title: 'Agence Web Liège | Développement web, Design & Cybersécurité - Smidjan',
+  description: 'Agence digitale à Liège spécialisée en développement web, design web et cybersécurité RGPD. Audit SEO gratuit. Services pour PME Belgique et Wallonie.',
   keywords: [
     // Mots-clés primaires critiques
     'agence web Liège',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     'agence e-commerce Belgique',
     'devis site web gratuit Liège',
     // Technologie & autorité
-    'développement Next.js Belgique',
+    'développement web Belgique',
     'React développement web performant',
     'WordPress site web Liège',
     'automatisation IA agence web',
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Agence Web Liège | Développement Next.js, Design & Cybersécurité',
-    description: 'Agence digitale à Liège spécialisée en développement Next.js, design web et cybersécurité RGPD. Audit SEO gratuit pour PME Belgique.',
+    title: 'Agence Web Liège | Développement web, Design & Cybersécurité',
+    description: 'Agence digitale à Liège spécialisée en développement web, design web et cybersécurité RGPD. Audit SEO gratuit pour PME Belgique.',
     url: 'https://smidjan.be',
     siteName: 'Smidjan - Agence Web Liège',
     images: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
         url: 'https://smidjan.be/og-image.webp',
         width: 1200,
         height: 630,
-        alt: 'Smidjan - Agence web Liège développement Next.js design cybersécurité',
+        alt: 'Smidjan - Agence web Liège développement web design cybersécurité',
         type: 'image/webp',
       }
     ],
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Agence Web Liège | Développement Next.js & Design',
-    description: 'Agence digitale Liège: développement Next.js, design web, cybersécurité RGPD. Audit SEO gratuit pour PME Belgique.',
+    title: 'Agence Web Liège | Développement web & Design',
+    description: 'Agence digitale Liège: développement web, design web, cybersécurité RGPD. Audit SEO gratuit pour PME Belgique.',
     images: ['/og-image.webp'],
   },
 };

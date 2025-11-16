@@ -61,7 +61,7 @@ export const metadata: Metadata = {
         'développement web sur mesure',
         'création site web professionnel',
         'application web React',
-        'développement Next.js',
+        'développement web',
         'site e-commerce Belgique',
 
         // Cybersécurité

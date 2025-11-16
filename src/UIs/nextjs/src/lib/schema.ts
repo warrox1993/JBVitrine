@@ -55,7 +55,7 @@ export const localBusinessSchema = {
   alternateName: "Smidjan Studio Web",
   image: "https://smidjan.be/og-image.webp",
   description:
-    "Agence digitale à Liège spécialisée en développement Next.js, design web et cybersécurité RGPD. Audit SEO gratuit. Services pour PME Belgique et Wallonie.",
+    "Agence digitale à Liège spécialisée en développement web, design web et cybersécurité RGPD. Audit SEO gratuit. Services pour PME Belgique et Wallonie.",
   url: "https://smidjan.be",
   telephone: "+32 475 20 55 62",
   email: "jeanbaptiste.dhondt1@gmail.com",
@@ -162,7 +162,7 @@ export const faqPageSchema = {
       name: "Quels services propose Smidjan à Liège ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Smidjan est une agence web à Liège spécialisée en développement Next.js, design web, cybersécurité RGPD et automatisation IA. Nous proposons également des audits SEO gratuits pour les PME en Belgique et Wallonie.",
+        text: "Smidjan est une agence web à Liège spécialisée en développement web, design web, cybersécurité RGPD et automatisation IA. Nous proposons également des audits SEO gratuits pour les PME en Belgique et Wallonie.",
       },
     },
     {

@@ -12,7 +12,9 @@
       "Bash(powershell -Command \"Stop-Process -Id 6252 -Force\")",
       "Bash(powershell -Command \"$env:NODE_ENV\")",
       "Bash(find:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:smidjan.be)"
     ],
     "deny": [],
     "ask": []

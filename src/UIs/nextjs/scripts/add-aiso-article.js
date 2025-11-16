@@ -508,7 +508,7 @@ Une **architecture claire** aide les IA à crawler votre site.
 \`\`\`
 Homepage
 ├── /services
-│   ├── /developpement-nextjs (cible : "développement Next.js")
+│   ├── /developpement-nextjs (cible : "développement web")
 │   ├── /audit-cybersecurite (cible : "audit cybersécurité")
 │   └── /optimisation-aiso (cible : "AI Search Optimization")
 ├── /blog
