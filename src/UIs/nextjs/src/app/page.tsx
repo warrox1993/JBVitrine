@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import AppVitrine from "../components/SiteVitrine/AppVitrine";
+import { faqPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   // SEO optimisé 2025 - Mots-clés prioritaires: agence web Liège, développement Next.js, audit SEO gratuit
@@ -58,5 +59,13 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <AppVitrine />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
+      />
+      <AppVitrine />
+    </>
+  );
 }

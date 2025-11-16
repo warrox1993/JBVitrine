@@ -270,10 +270,18 @@ const structuredData = [
     },
     offers: {
       "@type": "Offer",
-      price: "Sur devis",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       url: "https://smidjan.be/cms-ecommerce",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        priceCurrency: "EUR",
+        referenceQuantity: {
+          "@type": "QuantityValue",
+          value: "1",
+          unitText: "project"
+        }
+      },
       areaServed: {
         "@type": "Country",
         name: "Belgique"
@@ -306,9 +314,12 @@ const structuredData = [
     applicationSubCategory: "E-commerce Platform",
     offers: {
       "@type": "Offer",
-      price: "Sur devis",
       priceCurrency: "EUR",
-      areaServed: "BE"
+      areaServed: "BE",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        priceCurrency: "EUR"
+      }
     },
     featureList: [
       "Catalogue produits et variantes",

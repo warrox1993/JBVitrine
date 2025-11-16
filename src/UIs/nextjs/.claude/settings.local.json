@@ -10,7 +10,8 @@
       "Bash(netstat:*)",
       "Bash(findstr:*)",
       "Bash(powershell -Command \"Stop-Process -Id 6252 -Force\")",
-      "Bash(powershell -Command \"$env:NODE_ENV\")"
+      "Bash(powershell -Command \"$env:NODE_ENV\")",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []
