@@ -190,7 +190,6 @@ export const createAdminNotificationEmail = ({
 export const createQuoteConfirmationEmail = ({
   firstName,
   lastName,
-  email,
   projectDetails,
 }: {
   firstName: string;

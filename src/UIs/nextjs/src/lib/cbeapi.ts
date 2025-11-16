@@ -9,8 +9,8 @@
  * - Lead enrichment
  */
 
-const CBEAPI_BASE_URL =
-  "https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html";
+// const CBEAPI_BASE_URL =
+//   "https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html";
 
 export interface CBECompanyData {
   enterpriseNumber: string;

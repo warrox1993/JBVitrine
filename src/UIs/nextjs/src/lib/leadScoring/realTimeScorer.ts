@@ -6,10 +6,7 @@
  */
 
 import { LeadScore, EnrichedLeadData, BehavioralData } from "./types";
-import {
-  QuoteData,
-  QuoteEstimate,
-} from "@/components/contact/QuoteWizard/types";
+import { QuoteData } from "@/components/contact/QuoteWizard/types";
 import { calculateEstimate } from "@/lib/pricing/calculator";
 
 export class RealTimeLeadScorer {

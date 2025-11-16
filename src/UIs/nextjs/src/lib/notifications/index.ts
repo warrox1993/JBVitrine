@@ -336,7 +336,7 @@ export async function sendSalesEmailNotification(
 </html>
     `;
 
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: "Smidjan Lead Scoring <contact@smidjan.be>",
       to: ["jeanbaptiste.dhondt1@gmail.com"],
       subject: `${emoji} Nouveau lead ${lead.grade} : ${lead.name} (Score ${lead.score}/100)`,

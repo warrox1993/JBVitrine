@@ -7,11 +7,7 @@
  * @see RECOMMENDATION_RULES_ENGINE.md pour la documentation complète
  */
 
-import {
-  ProjectType,
-  Feature,
-  QuoteData,
-} from "@/components/contact/QuoteWizard/types";
+import { ProjectType, Feature } from "@/components/contact/QuoteWizard/types";
 
 // ============================================================================
 // TYPES
@@ -362,7 +358,7 @@ export const technicalRules: RecommendationRule[] = [
     description: "Gestion de stock essentielle pour éviter survente",
     conditions: {
       projectType: ["ecommerce"],
-      customCondition: (ctx) => {
+      customCondition: () => {
         // Assume products > 10 based on catalog size selection
         return true;
       },

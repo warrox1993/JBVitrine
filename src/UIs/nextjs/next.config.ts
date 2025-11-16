@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
         : false,
   },
 
+  // Target modern browsers (ES2020+) - No polyfills needed
+  transpilePackages: [],
+
   // Performance optimizations
   reactStrictMode: true,
   poweredByHeader: false,
@@ -23,6 +26,8 @@ const nextConfig: NextConfig = {
     optimizeCss: true, // Enable CSS minification and tree-shaking
     cssChunking: "strict", // Better CSS chunking strategy (less chunks)
     optimizePackageImports: ["lucide-react"], // Tree-shake lucide-react icons
+    // Inline critical CSS to reduce render-blocking
+    inlineCss: true,
   },
 
   images: {
@@ -70,6 +75,65 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
 
+  // Webpack optimization for production builds
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Better code splitting strategy
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          chunks: "all",
+          cacheGroups: {
+            default: false,
+            vendors: false,
+            // Split framework code
+            framework: {
+              name: "framework",
+              test: /[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/,
+              priority: 40,
+              enforce: true,
+            },
+            // Split common libraries
+            lib: {
+              test(module: any) {
+                return module.size() > 160000;
+              },
+              name(module: any) {
+                const hash = require("crypto")
+                  .createHash("sha1")
+                  .update(module.identifier())
+                  .digest("hex")
+                  .substring(0, 8);
+                return hash;
+              },
+              priority: 30,
+              minChunks: 1,
+              reuseExistingChunk: true,
+            },
+            commons: {
+              name: "commons",
+              minChunks: 2,
+              priority: 20,
+            },
+            shared: {
+              name(module: any, chunks: any) {
+                return (
+                  chunks.map((chunk: any) => chunk.name).join("~") || "shared"
+                );
+              },
+              priority: 10,
+              minChunks: 2,
+              reuseExistingChunk: true,
+            },
+          },
+          maxInitialRequests: 25,
+          minSize: 20000,
+        },
+      };
+    }
+    return config;
+  },
+
   // Redirections SEO 2025
   async redirects() {
     return [
@@ -91,7 +155,6 @@ const nextConfig: NextConfig = {
   async headers() {
     // CSP conditionnelle: Vercel Live autorisé en dev et preview
     // Note: Turbopack ne set pas toujours NODE_ENV, donc on détecte aussi via VERCEL_ENV
-    const isDevelopment = process.env.NODE_ENV !== "production";
     const isPreview = process.env.VERCEL_ENV === "preview";
     const isProduction = process.env.NODE_ENV === "production" && !isPreview;
 

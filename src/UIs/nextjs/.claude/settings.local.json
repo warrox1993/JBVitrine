@@ -14,7 +14,17 @@
       "Bash(find:*)",
       "Bash(cat:*)",
       "Bash(curl:*)",
-      "WebFetch(domain:smidjan.be)"
+      "WebFetch(domain:smidjan.be)",
+      "Bash(npm run lint)",
+      "Bash(npm install:*)",
+      "Bash(npm run build)",
+      "Bash(npm run start)",
+      "WebFetch(domain:localhost)",
+      "Bash(for page in \"/contact\" \"/blog\" \"/cms-ecommerce\" \"/services\" \"/admin/login\")",
+      "Bash(do echo \"Testing $page:\")",
+      "Bash(done)",
+      "Bash(npx playwright install:*)",
+      "Bash(npx playwright test:*)"
     ],
     "deny": [],
     "ask": []

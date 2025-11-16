@@ -180,7 +180,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
-        <html lang="fr-BE" data-theme="dark">
+        <html lang="fr-BE" data-theme="dark" suppressHydrationWarning>
             <head>
                 {/* Critical CSS inline - Instant render (KISS) */}
                 <style dangerouslySetInnerHTML={{
@@ -236,8 +236,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                         <main id="main" className={layoutStyles.main}>{children}</main>
                     </RootEffects>
                 </SidebarMobileProvider>
-                <Analytics />
-                <SpeedInsights />
+                {process.env.NODE_ENV === 'production' && (
+                    <>
+                        <Analytics />
+                        <SpeedInsights />
+                    </>
+                )}
             </body>
         </html>
     );
