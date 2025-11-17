@@ -265,8 +265,8 @@ function WhyPartnership() {
       </div>
 
       <div className={styles.advantagesGrid}>
-        {advantages.map((advantage) => (
-          <div key={advantage.title} className={styles.advantageCard}>
+        {advantages.map((advantage, idx) => (
+          <div key={`advantage-${idx}`} className={styles.advantageCard}>
             <div className={styles.advantageIcon}>{advantage.icon}</div>
             <h3 className={styles.advantageTitle}>{advantage.title}</h3>
             <p className={styles.advantageDescription}>{advantage.description}</p>
@@ -461,8 +461,8 @@ function ServicesSection() {
               <p className={styles.serviceDescription}>{service.description}</p>
 
               <ul className={styles.serviceFeatures} role="list">
-                {service.features.map((feature) => (
-                  <li key={feature}>
+                {service.features.map((feature, idx) => (
+                  <li key={`service-${index}-feature-${idx}`}>
                     <CheckIcon aria-hidden="true" />
                     <span>{feature}</span>
                   </li>
@@ -729,7 +729,7 @@ function FAQSection() {
         <div className={styles.faqList} role="list">
           {faqs.map((item, index) => (
             <details
-              key={item.question}
+              key={`faq-${index}`}
               className={styles.faqItem}
               open={openIndex === index}
               onClick={() => setOpenIndex(index)}

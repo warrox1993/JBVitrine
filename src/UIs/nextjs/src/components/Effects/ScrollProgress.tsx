@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import styles from "./ScrollProgress.module.css";
 
@@ -11,10 +11,15 @@ const passiveOptions: PassiveListenerOptions = { passive: true };
 export function ScrollProgress(): React.ReactPortal | null {
   const barRef = useRef<HTMLDivElement | null>(null);
   const fillRef = useRef<HTMLDivElement | null>(null);
-  const isBrowser = typeof window !== "undefined";
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Set mounted state on client side only
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
-    if (!isBrowser) {
+    if (!isMounted) {
       return;
     }
 
@@ -103,9 +108,9 @@ export function ScrollProgress(): React.ReactPortal | null {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       delete window.__progress;
     };
-  }, [isBrowser]);
+  }, [isMounted]);
 
-  if (!isBrowser) {
+  if (!isMounted) {
     return null;
   }
 
