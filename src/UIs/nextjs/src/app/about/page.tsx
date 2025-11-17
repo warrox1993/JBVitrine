@@ -22,8 +22,8 @@ function BreadcrumbJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: '/' },
-      { '@type': 'ListItem', position: 2, name: 'À propos', item: '/about' },
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://smidjan.be' },
+      { '@type': 'ListItem', position: 2, name: 'À propos', item: 'https://smidjan.be/about' },
     ],
   };
   return (

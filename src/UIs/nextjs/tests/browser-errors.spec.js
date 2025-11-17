@@ -1,12 +1,13 @@
-const { test, expect } = require("@playwright/test");
+import { test, expect } from "@playwright/test";
 
 const pages = [
   { url: "/", name: "Homepage" },
   { url: "/about", name: "About" },
   { url: "/contact", name: "Contact" },
   { url: "/blog", name: "Blog" },
-  { url: "/cms-ecommerce", name: "CMS E-commerce" },
+  { url: "/cms-ecommerce", name: "CMS E-commerce (Bagisto)" },
   { url: "/services", name: "Services" },
+  { url: "/services/smidjan-cms", name: "SMIDJAN CMS" },
   { url: "/admin/login", name: "Admin Login" },
   { url: "/blog/optimiser-performances-nextjs-belgique", name: "Blog Article" },
 ];

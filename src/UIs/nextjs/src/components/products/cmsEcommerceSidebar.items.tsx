@@ -3,16 +3,16 @@ import { SparklesIcon } from "@/components/icons/SparklesIcon";
 import { ShieldCheckIcon } from "@/components/icons/ShieldCheckIcon";
 import { TargetIcon } from "@/components/icons/TargetIcon";
 import { WorkflowIcon } from "@/components/icons/WorkflowIcon";
-import { BookOpenIcon } from "@/components/icons/BookOpenIcon";
+import { CheckIcon } from "@/components/icons/CheckIcon";
 import { HelpCircleIcon } from "@/components/icons/HelpCircleIcon";
 import { MailIcon } from "@/components/icons/MailIcon";
 
 export const cmsEcommerceSidebarItems = [
   { href: "#cms-hero", label: "Vue d'ensemble", icon: <SparklesIcon aria-hidden="true" /> },
-  { href: "#cms-proofs", label: "Modularité", icon: <TargetIcon aria-hidden="true" /> },
-  { href: "#cms-fonctionnalites-natives", label: "Fonctionnalités", icon: <WorkflowIcon aria-hidden="true" /> },
-  { href: "#cms-showcase", label: "Design", icon: <BookOpenIcon aria-hidden="true" /> },
-  { href: "#evolutivite", label: "Évolutivité", icon: <ShieldCheckIcon aria-hidden="true" /> },
-  { href: "#cms-faq", label: "FAQ", icon: <HelpCircleIcon aria-hidden="true" /> },
-  { href: "#cms-cta", label: "Contact", icon: <MailIcon aria-hidden="true" /> },
+  { href: "#partnership", label: "Partenariat", icon: <TargetIcon aria-hidden="true" /> },
+  { href: "#services", label: "Services", icon: <WorkflowIcon aria-hidden="true" /> },
+  { href: "#cases", label: "Cas de succès", icon: <CheckIcon aria-hidden="true" /> },
+  { href: "#technical", label: "Avantages", icon: <ShieldCheckIcon aria-hidden="true" /> },
+  { href: "#faq", label: "FAQ", icon: <HelpCircleIcon aria-hidden="true" /> },
+  { href: "#final-cta", label: "Contact", icon: <MailIcon aria-hidden="true" /> },
 ] as const;
