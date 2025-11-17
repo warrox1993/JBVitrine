@@ -295,6 +295,7 @@ export function CMSFeaturesEnhanced() {
       <div className="cms-features-grid">
         <div className="cms-feature-card" data-category="catalog">
           <div className="cms-accent-line cms-top"></div>
+          {/* Temporarily disabled - images not yet available
           <div className="cms-card-image-wrapper">
             <Image
               src={categoryImages.catalog.src}
@@ -305,6 +306,7 @@ export function CMSFeaturesEnhanced() {
               loading="lazy"
             />
           </div>
+          */}
           <div className="cms-card-number">01</div>
           <h3 className="cms-card-title">Catalogue & produits</h3>
           <div className="cms-card-separator"></div>
@@ -327,6 +329,7 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="orders">
           <div className="cms-accent-line cms-top"></div>
+          {/* Temporarily disabled - images not yet available
           <div className="cms-card-image-wrapper">
             <Image
               src={categoryImages.orders.src}
@@ -337,6 +340,7 @@ export function CMSFeaturesEnhanced() {
               loading="lazy"
             />
           </div>
+          */}
           <div className="cms-card-number">02</div>
           <h3 className="cms-card-title">Commandes & clients</h3>
           <div className="cms-card-separator"></div>
@@ -359,6 +363,7 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="payment">
           <div className="cms-accent-line cms-top"></div>
+          {/* Temporarily disabled - images not yet available
           <div className="cms-card-image-wrapper">
             <Image
               src={categoryImages.payment.src}
@@ -369,6 +374,7 @@ export function CMSFeaturesEnhanced() {
               loading="lazy"
             />
           </div>
+          */}
           <div className="cms-card-number">03</div>
           <h3 className="cms-card-title">Paiement & facturation</h3>
           <div className="cms-card-separator"></div>
@@ -390,6 +396,7 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="marketing">
           <div className="cms-accent-line cms-top"></div>
+          {/* Temporarily disabled - images not yet available
           <div className="cms-card-image-wrapper">
             <Image
               src={categoryImages.marketing.src}
@@ -400,6 +407,7 @@ export function CMSFeaturesEnhanced() {
               loading="lazy"
             />
           </div>
+          */}
           <div className="cms-card-number">04</div>
           <h3 className="cms-card-title">Marketing & promotion</h3>
           <div className="cms-card-separator"></div>
@@ -421,6 +429,7 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="admin">
           <div className="cms-accent-line cms-top"></div>
+          {/* Temporarily disabled - images not yet available
           <div className="cms-card-image-wrapper">
             <Image
               src={categoryImages.admin.src}
@@ -431,6 +440,7 @@ export function CMSFeaturesEnhanced() {
               loading="lazy"
             />
           </div>
+          */}
           <div className="cms-card-number">05</div>
           <h3 className="cms-card-title">Administration & gestion</h3>
           <div className="cms-card-separator"></div>
@@ -453,6 +463,7 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="security">
           <div className="cms-accent-line cms-top"></div>
+          {/* Temporarily disabled - images not yet available
           <div className="cms-card-image-wrapper">
             <Image
               src={categoryImages.security.src}
@@ -463,6 +474,7 @@ export function CMSFeaturesEnhanced() {
               loading="lazy"
             />
           </div>
+          */}
           <div className="cms-card-number">06</div>
           <h3 className="cms-card-title">Sécurité & performances</h3>
           <div className="cms-card-separator"></div>
@@ -485,6 +497,7 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="design">
           <div className="cms-accent-line cms-top"></div>
+          {/* Temporarily disabled - images not yet available
           <div className="cms-card-image-wrapper">
             <Image
               src={categoryImages.design.src}
@@ -495,6 +508,7 @@ export function CMSFeaturesEnhanced() {
               loading="lazy"
             />
           </div>
+          */}
           <div className="cms-card-number">07</div>
           <h3 className="cms-card-title">Design & personnalisation</h3>
           <div className="cms-card-separator"></div>
@@ -517,6 +531,7 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="automation">
           <div className="cms-accent-line cms-top"></div>
+          {/* Temporarily disabled - images not yet available
           <div className="cms-card-image-wrapper">
             <Image
               src={categoryImages.automation.src}
@@ -527,6 +542,7 @@ export function CMSFeaturesEnhanced() {
               loading="lazy"
             />
           </div>
+          */}
           <div className="cms-card-number">08</div>
           <h3 className="cms-card-title">Automatisations & intégrations</h3>
           <div className="cms-card-separator"></div>
