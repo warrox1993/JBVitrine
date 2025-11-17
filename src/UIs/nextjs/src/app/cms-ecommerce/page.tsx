@@ -13,6 +13,18 @@ import { Footer } from "@/components/sections/Footer/Footer";
 import { SectionWithBackground } from "@/components/ui/SectionWithBackground/SectionWithBackground";
 import styles from "./page.module.css";
 
+// Helper component for Bagisto links
+const BagistoLink = ({ children }: { children: React.ReactNode }) => (
+  <a
+    href="https://bagisto.com/en/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.bagistoLink}
+  >
+    {children}
+  </a>
+);
+
 // Structured Data
 const structuredDataJSON = [
   {
@@ -143,17 +155,17 @@ function HeroSection() {
         <div className={styles.heroContent}>
           <div className={styles.heroBadge}>
             <SparklesIcon aria-hidden="true" />
-            <span>SMIDJAN CMS × Bagisto Partnership</span>
+            <span>SMIDJAN CMS × <BagistoLink>Bagisto</BagistoLink> Partnership</span>
           </div>
 
           <Heading as="h1" className={styles.heroTitle} id="cms-hero-title">
             Solution E-commerce
-            <span className="gradient-title"> Propulsée par Bagisto </span>
+            <span className="gradient-title"> Propulsée par <BagistoLink>Bagisto</BagistoLink> </span>
             Développée en Belgique
           </Heading>
 
           <p className={styles.heroSubtitle}>
-            SMIDJAN CMS s'appuie sur Bagisto, la plateforme Laravel open-source de référence,
+            SMIDJAN CMS s'appuie sur <BagistoLink>Bagisto</BagistoLink>, la plateforme Laravel open-source de référence,
             pour vous livrer des solutions e-commerce sur mesure : marketplaces multi-vendeurs,
             migrations, architectures headless. Expertise locale belge + puissance technologique
             internationale.
@@ -211,21 +223,30 @@ function WhyPartnership() {
   const advantages = [
     {
       icon: <ShieldCheckIcon aria-hidden="true" />,
-      title: "Puissance Technologique Bagisto",
-      description:
-        "Architecture Laravel moderne, scalable jusqu'à 10K+ vendeurs. Bagisto est utilisé par des milliers d'entreprises mondialement pour sa robustesse et sa flexibilité.",
+      title: <>Puissance Technologique <BagistoLink>Bagisto</BagistoLink></>,
+      description: (
+        <>
+          Architecture Laravel moderne, scalable jusqu'à 10K+ vendeurs. <BagistoLink>Bagisto</BagistoLink> est utilisé par des milliers d'entreprises mondialement pour sa robustesse et sa flexibilité.
+        </>
+      ),
     },
     {
       icon: <WorkflowIcon aria-hidden="true" />,
       title: "Expertise Locale SMIDJAN",
-      description:
-        "Développement, support et accompagnement en Belgique (Liège). Nous maîtrisons Bagisto de A à Z pour adapter la solution à vos besoins spécifiques belges.",
+      description: (
+        <>
+          Développement, support et accompagnement en Belgique (Liège). Nous maîtrisons <BagistoLink>Bagisto</BagistoLink> de A à Z pour adapter la solution à vos besoins spécifiques belges.
+        </>
+      ),
     },
     {
       icon: <SparklesIcon aria-hidden="true" />,
       title: "Open-Source + Personnalisation",
-      description:
-        "Zéro vendor lock-in grâce à Bagisto open-source. SMIDJAN personnalise l'architecture pour votre identité unique : vous gardez le contrôle total.",
+      description: (
+        <>
+          Zéro vendor lock-in grâce à <BagistoLink>Bagisto</BagistoLink> open-source. SMIDJAN personnalise l'architecture pour votre identité unique : vous gardez le contrôle total.
+        </>
+      ),
     },
   ];
 
@@ -233,18 +254,11 @@ function WhyPartnership() {
     <div className="container">
       <div className={styles.sectionHeader}>
         <Heading as="h2" id="partnership-title" className={styles.sectionTitle} accent>
-          SMIDJAN × Bagisto : Le Meilleur des Deux Mondes
+          SMIDJAN × <BagistoLink>Bagisto</BagistoLink> : Le Meilleur des Deux Mondes
         </Heading>
         <p className={styles.sectionLead}>
           Nous combinons la plateforme e-commerce{" "}
-          <a
-            href="https://bagisto.com/en/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.bagistoLink}
-          >
-            Bagisto
-          </a>{" "}
+          <BagistoLink>Bagisto</BagistoLink>{" "}
           (Laravel) de renommée mondiale avec notre expertise technique belge pour livrer des
           solutions sur mesure performantes.
         </p>
@@ -278,10 +292,10 @@ function TrustedCompanies() {
     <div className="container">
       <div className={styles.sectionHeader}>
         <Heading as="h2" id="trusted-companies-title" className={styles.sectionTitle} accent>
-          Bagisto powers 25,000+ companies
+          <BagistoLink>Bagisto</BagistoLink> powers 25,000+ companies
         </Heading>
         <p className={styles.sectionLead}>
-          Des entreprises du monde entier font confiance à Bagisto pour leurs solutions
+          Des entreprises du monde entier font confiance à <BagistoLink>Bagisto</BagistoLink> pour leurs solutions
           e-commerce. Rejoignez des milliers d'entreprises qui propulsent leur croissance avec
           cette plateforme Laravel open-source.
         </p>
@@ -317,14 +331,7 @@ function TrustedCompanies() {
       </div>
 
       <p className={styles.trustedDescription}>
-        <a
-          href="https://bagisto.com/en/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.bagistoLink}
-        >
-          Bagisto
-        </a>{" "}
+        <BagistoLink>Bagisto</BagistoLink>{" "}
         est la plateforme e-commerce Laravel de confiance pour des entreprises de toutes tailles
         - des startups aux multinationales.
       </p>
@@ -337,10 +344,13 @@ function ServicesSection() {
     {
       title: "Développement E-commerce Custom",
       icon: "https://innowise.com/wp-content/uploads/2024/10/112.svg",
-      description:
-        "Solutions Bagisto sur mesure adaptées à votre business. Modules personnalisés, APIs REST/GraphQL, paiements multi-devises, dashboard analytics. Architecture PSR-12 compliant.",
+      description: (
+        <>
+          Solutions <BagistoLink>Bagisto</BagistoLink> sur mesure adaptées à votre business. Modules personnalisés, APIs REST/GraphQL, paiements multi-devises, dashboard analytics. Architecture PSR-12 compliant.
+        </>
+      ),
       features: [
-        "Modules custom sans modification noyau Bagisto",
+        <>Modules custom sans modification noyau <BagistoLink>Bagisto</BagistoLink></>,
         "Intégrations Stripe, PayPal, Mollie",
         "CRM intégré + automation marketing",
         "SEO native + rich snippets optimisés",
@@ -349,8 +359,11 @@ function ServicesSection() {
     {
       title: "Marketplaces Multi-Vendeurs",
       icon: "https://innowise.com/wp-content/uploads/2025/04/333.png",
-      description:
-        "Plateformes B2B/B2C scalables basées sur Bagisto. Gestion vendeurs complète, commissions automatiques, Stripe Connect. Testées 10K+ vendeurs sans dégradation.",
+      description: (
+        <>
+          Plateformes B2B/B2C scalables basées sur <BagistoLink>Bagisto</BagistoLink>. Gestion vendeurs complète, commissions automatiques, Stripe Connect. Testées 10K+ vendeurs sans dégradation.
+        </>
+      ),
       features: [
         "Onboarding vendeurs automatisé + KYC",
         "Commissions tiered flexibles par catégorie",
@@ -359,10 +372,13 @@ function ServicesSection() {
       ],
     },
     {
-      title: "Migration vers Bagisto",
+      title: <>Migration vers <BagistoLink>Bagisto</BagistoLink></>,
       icon: "https://innowise.com/wp-content/uploads/2025/05/357.svg",
-      description:
-        "Migration zero-downtime depuis Shopify, Magento, WooCommerce vers Bagisto. ETL custom pour 100K+ produits, déploiement blue-green, downtime < 2h.",
+      description: (
+        <>
+          Migration zero-downtime depuis Shopify, Magento, WooCommerce vers <BagistoLink>Bagisto</BagistoLink>. ETL custom pour 100K+ produits, déploiement blue-green, downtime &lt; 2h.
+        </>
+      ),
       features: [
         "Transfert complet données + historique",
         "Data validation automatique",
@@ -373,8 +389,11 @@ function ServicesSection() {
     {
       title: "Optimisation Performance",
       icon: "https://innowise.com/wp-content/uploads/2024/11/224.svg",
-      description:
-        "Core Web Vitals A garanti sur Bagisto. MySQL indexing avancé, Redis caching, Elasticsearch, CDN, PHP-FPM tuning. Load testing 10K users simultanés.",
+      description: (
+        <>
+          Core Web Vitals A garanti sur <BagistoLink>Bagisto</BagistoLink>. MySQL indexing avancé, Redis caching, Elasticsearch, CDN, PHP-FPM tuning. Load testing 10K users simultanés.
+        </>
+      ),
       features: [
         "LCP < 2.5s, FID < 100ms garantis",
         "Redis + Elasticsearch configurés",
@@ -385,8 +404,11 @@ function ServicesSection() {
     {
       title: "Intégrations & Automatisations",
       icon: "https://innowise.com/wp-content/uploads/2024/12/145-1.svg",
-      description:
-        "Connexion Bagisto à votre stack business : ERP, CRM, shipping, marketing. Workflows n8n : facturation auto, rappels panier, sync inventory temps-réel.",
+      description: (
+        <>
+          Connexion <BagistoLink>Bagisto</BagistoLink> à votre stack business : ERP, CRM, shipping, marketing. Workflows n8n : facturation auto, rappels panier, sync inventory temps-réel.
+        </>
+      ),
       features: [
         "ERP: SAP, NetSuite, Odoo, Sage",
         "CRM: Salesforce, HubSpot, Pipedrive",
@@ -397,8 +419,11 @@ function ServicesSection() {
     {
       title: "Support & Maintenance",
       icon: "https://innowise.com/wp-content/uploads/2025/04/337.png",
-      description:
-        "Support technique Bagisto long-terme. SLA 99.9% uptime, bug fixes réactifs (P1 < 2h), sécurité patches Laravel, monitoring continu, backups automatiques.",
+      description: (
+        <>
+          Support technique <BagistoLink>Bagisto</BagistoLink> long-terme. SLA 99.9% uptime, bug fixes réactifs (P1 &lt; 2h), sécurité patches Laravel, monitoring continu, backups automatiques.
+        </>
+      ),
       features: [
         "SLA 99.9% uptime contractuel",
         "Intervention P1 < 2h, P2 < 4h",
@@ -413,10 +438,10 @@ function ServicesSection() {
       <div className="container">
         <div className={styles.sectionHeader}>
           <Heading as="h2" id="services-title" className={styles.sectionTitle} accent>
-            Nos Services Bagisto E-commerce
+            Nos Services <BagistoLink>Bagisto</BagistoLink> E-commerce
           </Heading>
           <p className={styles.sectionLead}>
-            SMIDJAN maîtrise l'écosystème Bagisto-Laravel pour livrer des solutions
+            SMIDJAN maîtrise l'écosystème <BagistoLink>Bagisto</BagistoLink>-Laravel pour livrer des solutions
             e-commerce production-ready. Architecture moderne, tests QA, support long-terme.
           </p>
         </div>
@@ -458,8 +483,11 @@ function CaseStudies() {
       sector: "B2B Infrastructure",
       challenge:
         "Centraliser 500 vendeurs fibre optique avec pricing tiers complexe et gestion commissions automatisée",
-      solution:
-        "Bagisto multi-vendor customisé par SMIDJAN : commission engine sur mesure, Stripe Connect split payments, API ERP synchronisation stock",
+      solution: (
+        <>
+          <BagistoLink>Bagisto</BagistoLink> multi-vendor customisé par SMIDJAN : commission engine sur mesure, Stripe Connect split payments, API ERP synchronisation stock
+        </>
+      ),
       metrics: [
         { label: "Vendeurs actifs", value: "500", suffix: "+" },
         { label: "SKUs catalogue", value: "50", suffix: "K+" },
@@ -473,7 +501,7 @@ function CaseStudies() {
       ],
     },
     {
-      title: "Migration Shopify → Bagisto",
+      title: <>Migration Shopify → <BagistoLink>Bagisto</BagistoLink></>,
       sector: "E-commerce Retail",
       challenge:
         "Migrer 100K produits, 50K clients depuis Shopify. Réduire fees 2.9% et reprendre contrôle architecture",
@@ -494,10 +522,16 @@ function CaseStudies() {
     {
       title: "Headless Commerce Next.js",
       sector: "Fashion Premium",
-      challenge:
-        "Storefront ultra-moderne Next.js 14 découplée de backend Bagisto pour UX premium mobile-first",
-      solution:
-        "Backend Bagisto API (REST + GraphQL), Frontend Next.js 14 PWA par SMIDJAN, SSR + ISR, 100 Lighthouse mobile",
+      challenge: (
+        <>
+          Storefront ultra-moderne Next.js 14 découplée de backend <BagistoLink>Bagisto</BagistoLink> pour UX premium mobile-first
+        </>
+      ),
+      solution: (
+        <>
+          Backend <BagistoLink>Bagisto</BagistoLink> API (REST + GraphQL), Frontend Next.js 14 PWA par SMIDJAN, SSR + ISR, 100 Lighthouse mobile
+        </>
+      ),
       metrics: [
         { label: "Lighthouse score", value: "100", suffix: "" },
         { label: "Conversion mobile", value: "42", suffix: "%+" },
@@ -517,10 +551,10 @@ function CaseStudies() {
       <div className="container">
         <div className={styles.sectionHeader}>
           <Heading as="h2" id="cases-title" className={styles.sectionTitle} accent>
-            Cas de Succès — Bagisto en Production
+            Cas de Succès — <BagistoLink>Bagisto</BagistoLink> en Production
           </Heading>
           <p className={styles.sectionLead}>
-            3 exemples concrets de projets Bagisto livrés par SMIDJAN en production
+            3 exemples concrets de projets <BagistoLink>Bagisto</BagistoLink> livrés par SMIDJAN en production
           </p>
         </div>
 
@@ -574,8 +608,11 @@ function TechnicalAdvantages() {
   const advantages = [
     {
       feature: "Architecture Laravel Moderne",
-      detail:
-        "Bagisto suit les standards PSR-12, SOLID principles. Code patterns propres, extensibilité via modules système sans modification noyau.",
+      detail: (
+        <>
+          <BagistoLink>Bagisto</BagistoLink> suit les standards PSR-12, SOLID principles. Code patterns propres, extensibilité via modules système sans modification noyau.
+        </>
+      ),
     },
     {
       feature: "Scalabilité Éprouvée",
@@ -599,8 +636,11 @@ function TechnicalAdvantages() {
     },
     {
       feature: "Ownership Code Complet",
-      detail:
-        "Bagisto = open-source pur. Code vous appartient, déployable anywhere. Zéro vendor lock-in vs Shopify/Magento propriétaires.",
+      detail: (
+        <>
+          <BagistoLink>Bagisto</BagistoLink> = open-source pur. Code vous appartient, déployable anywhere. Zéro vendor lock-in vs Shopify/Magento propriétaires.
+        </>
+      ),
     },
   ];
 
@@ -609,10 +649,10 @@ function TechnicalAdvantages() {
       <div className="container">
         <div className={styles.sectionHeader}>
           <Heading as="h2" id="advantages-title" className={styles.sectionTitle} accent>
-            Avantages Techniques Bagisto
+            Avantages Techniques <BagistoLink>Bagisto</BagistoLink>
           </Heading>
           <p className={styles.sectionLead}>
-            Pourquoi Bagisto + SMIDJAN = solution e-commerce moderne et pérenne
+            Pourquoi <BagistoLink>Bagisto</BagistoLink> + SMIDJAN = solution e-commerce moderne et pérenne
           </p>
         </div>
 
@@ -634,24 +674,33 @@ function FAQSection() {
 
   const faqs = [
     {
-      question: "Qu'est-ce que SMIDJAN CMS propulsé par Bagisto ?",
-      answer:
-        "SMIDJAN CMS est construit sur Bagisto, la plateforme e-commerce Laravel open-source de référence. Nous combinons la puissance technologique de Bagisto (utilisée par des milliers d'entreprises mondialement) avec notre expertise locale belge pour livrer des solutions sur mesure : marketplaces, migrations, headless commerce.",
+      question: <>Qu'est-ce que SMIDJAN CMS propulsé par <BagistoLink>Bagisto</BagistoLink> ?</>,
+      answer: (
+        <>
+          SMIDJAN CMS est construit sur <BagistoLink>Bagisto</BagistoLink>, la plateforme e-commerce Laravel open-source de référence. Nous combinons la puissance technologique de <BagistoLink>Bagisto</BagistoLink> (utilisée par des milliers d'entreprises mondialement) avec notre expertise locale belge pour livrer des solutions sur mesure : marketplaces, migrations, headless commerce.
+        </>
+      ),
     },
     {
-      question: "Quel délai pour développer une marketplace Bagisto multi-vendeurs ?",
+      question: <>Quel délai pour développer une marketplace <BagistoLink>Bagisto</BagistoLink> multi-vendeurs ?</>,
       answer:
         "MVP fonctionnel (onboarding vendeur, catalogue, checkout) : 6-8 semaines. Plateforme complète (commissions tiered, analytics vendeur, intégrations) : 12-16 semaines. Délai dépend de la complexité métier et volume d'intégrations tierces.",
     },
     {
-      question: "Quelle est la scalabilité maximale de Bagisto ?",
-      answer:
-        "Architecture Bagisto testée en production : 10K+ vendeurs simultanés, millions de transactions/jour, 100M+ produits catalogue. Limites = infrastructure cloud choisie, pas la plateforme. Avec Kubernetes + Aurora DB auto-scaling, potentiel pratiquement illimité.",
+      question: <>Quelle est la scalabilité maximale de <BagistoLink>Bagisto</BagistoLink> ?</>,
+      answer: (
+        <>
+          Architecture <BagistoLink>Bagisto</BagistoLink> testée en production : 10K+ vendeurs simultanés, millions de transactions/jour, 100M+ produits catalogue. Limites = infrastructure cloud choisie, pas la plateforme. Avec Kubernetes + Aurora DB auto-scaling, potentiel pratiquement illimité.
+        </>
+      ),
     },
     {
-      question: "Comment réduire les coûts avec Bagisto vs Shopify/Magento ?",
-      answer:
-        "Shopify = 2.9% + 0.30€/transaction + subscription 300-2000€/mois. Magento = maintenance 50-100K€/an. Bagisto SMIDJAN = développement one-time (10-50K€) + infra (100-500€/mois) + support optionnel. ROI < 6-12 mois. Pour volumes 100K€+/mois : économies exponentielles.",
+      question: <>Comment réduire les coûts avec <BagistoLink>Bagisto</BagistoLink> vs Shopify/Magento ?</>,
+      answer: (
+        <>
+          Shopify = 2.9% + 0.30€/transaction + subscription 300-2000€/mois. Magento = maintenance 50-100K€/an. <BagistoLink>Bagisto</BagistoLink> SMIDJAN = développement one-time (10-50K€) + infra (100-500€/mois) + support optionnel. ROI &lt; 6-12 mois. Pour volumes 100K€+/mois : économies exponentielles.
+        </>
+      ),
     },
     {
       question: "Quel support post-lancement proposez-vous ?",
@@ -659,9 +708,12 @@ function FAQSection() {
         "Support inclus 4 semaines post-launch : bug fixes réactifs (P1 < 2h, P2 < 4h), patches sécurité Laravel, optimisations performance. Support continu optionnel : forfait maintenance 30h/mois, SLA 99.9% uptime contractuel, monitoring 24/7 New Relic, backups automatiques.",
     },
     {
-      question: "Quel est le risque vendor lock-in avec Bagisto ?",
-      answer:
-        "ZÉRO risque. Bagisto = Laravel open-source 100%. Code vous appartient totalement, déployable anywhere (AWS, Azure, on-premise). Modifiable sans permission, contributeur communauté optionnel. Contrairement Shopify/Magento propriétaires : pas de licensing fees croissants, pas de dépendances structurelles, migration facile si nécessaire.",
+      question: <>Quel est le risque vendor lock-in avec <BagistoLink>Bagisto</BagistoLink> ?</>,
+      answer: (
+        <>
+          ZÉRO risque. <BagistoLink>Bagisto</BagistoLink> = Laravel open-source 100%. Code vous appartient totalement, déployable anywhere (AWS, Azure, on-premise). Modifiable sans permission, contributeur communauté optionnel. Contrairement Shopify/Magento propriétaires : pas de licensing fees croissants, pas de dépendances structurelles, migration facile si nécessaire.
+        </>
+      ),
     },
   ];
 
@@ -700,10 +752,10 @@ function FinalCTA() {
       <div className="container">
         <div className={styles.finalCtaContent}>
           <Heading as="h2" id="cta-title" className={styles.finalCtaTitle}>
-            Lancez Votre Projet E-commerce avec Bagisto
+            Lancez Votre Projet E-commerce avec <BagistoLink>Bagisto</BagistoLink>
           </Heading>
           <p className={styles.finalCtaText}>
-            SMIDJAN vous accompagne dans votre transformation e-commerce avec Bagisto. De la
+            SMIDJAN vous accompagne dans votre transformation e-commerce avec <BagistoLink>Bagisto</BagistoLink>. De la
             conception à la mise en ligne, bénéficiez d'une expertise technique locale en
             Belgique (Liège, Bruxelles, Wallonie) et de la puissance d'une plateforme mondiale.
           </p>
