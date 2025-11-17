@@ -342,7 +342,7 @@ export default function ServicesPage() {
             ))}
           </div>
           <div style={{ marginTop: "var(--space-4)", textAlign: "center" }}>
-            <Button as="a" href="/contact" variant="solid" size="md" ariaLabel="Découvrir Smidjan CMS">
+            <Button as="a" href="/cms-ecommerce" variant="solid" size="md" ariaLabel="Découvrir Smidjan CMS">
               Découvrir Smidjan CMS
             </Button>
           </div>
