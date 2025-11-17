@@ -721,12 +721,12 @@ function FinalCTA() {
             </Button>
             <Button
               as="a"
-              href="tel:+3242508080"
+              href="tel:+32475205562"
               variant="outline"
               size="lg"
               ariaLabel="Appelez-nous directement"
             >
-              +32 4 250 80 80
+              +32 475 20 55 62
             </Button>
           </div>
         </div>
