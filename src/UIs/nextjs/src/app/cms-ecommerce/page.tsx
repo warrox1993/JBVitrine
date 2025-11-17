@@ -448,7 +448,7 @@ function ServicesSection() {
 
         <div className={styles.servicesGrid}>
           {services.map((service, index) => (
-            <article key={service.title} className={styles.serviceCard}>
+            <article key={`service-${index}`} className={styles.serviceCard}>
               <img
                 src={service.icon}
                 alt=""
@@ -559,8 +559,8 @@ function CaseStudies() {
         </div>
 
         <div className={styles.casesGrid}>
-          {cases.map((caseStudy) => (
-            <article key={caseStudy.title} className={styles.caseCard}>
+          {cases.map((caseStudy, index) => (
+            <article key={`case-${index}`} className={styles.caseCard}>
               <div className={styles.caseBadge}>{caseStudy.sector}</div>
               <h3 className={styles.caseTitle}>{caseStudy.title}</h3>
 

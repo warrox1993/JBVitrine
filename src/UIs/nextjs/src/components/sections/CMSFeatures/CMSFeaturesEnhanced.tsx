@@ -1,44 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import "./CMSFeaturesEnhanced.css";
-
-// Mapping des images pour chaque catégorie
-const categoryImages: Record<string, { src: string; alt: string }> = {
-  catalog: {
-    src: "/images/smidjan-cms-dashboard-ecommerce.webp",
-    alt: "Interface de gestion de catalogue produits SMIDJAN CMS",
-  },
-  orders: {
-    src: "/images/smidjan-cms-experience-optimisee.webp",
-    alt: "Gestion des commandes et clients optimisée",
-  },
-  payment: {
-    src: "/images/smidjan-cms-interface-personnalisable.webp",
-    alt: "Interface de paiement et facturation personnalisable",
-  },
-  marketing: {
-    src: "/images/smidjan-cms-composants-modulaires.webp",
-    alt: "Composants marketing et promotions modulaires",
-  },
-  admin: {
-    src: "/images/smidjan-cms-dashboard-ecommerce.webp",
-    alt: "Tableau de bord d'administration SMIDJAN CMS",
-  },
-  security: {
-    src: "/images/smidjan-cms-experience-optimisee.webp",
-    alt: "Sécurité et performances optimisées",
-  },
-  design: {
-    src: "/images/smidjan-cms-interface-personnalisable.webp",
-    alt: "Design et personnalisation de l'interface",
-  },
-  automation: {
-    src: "/images/smidjan-cms-composants-modulaires.webp",
-    alt: "Automatisations et intégrations modulaires",
-  },
-};
 
 export function CMSFeaturesEnhanced() {
   const [mounted, setMounted] = useState(false);
