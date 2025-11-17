@@ -231,9 +231,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 />
             </head>
             <body className={`${inter.variable} ${instrument.variable}`}>
-                <a href="#main" className={layoutStyles.skipToContent}>
-                    Aller au contenu principal
-                </a>
                 <FXReady />
                 <SidebarMobileProvider>
                     <RootEffects>

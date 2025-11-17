@@ -1,7 +1,44 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import "./CMSFeaturesEnhanced.css";
+
+// Mapping des images pour chaque catégorie
+const categoryImages: Record<string, { src: string; alt: string }> = {
+  catalog: {
+    src: "/images/smidjan-cms-dashboard-ecommerce.webp",
+    alt: "Interface de gestion de catalogue produits SMIDJAN CMS",
+  },
+  orders: {
+    src: "/images/smidjan-cms-experience-optimisee.webp",
+    alt: "Gestion des commandes et clients optimisée",
+  },
+  payment: {
+    src: "/images/smidjan-cms-interface-personnalisable.webp",
+    alt: "Interface de paiement et facturation personnalisable",
+  },
+  marketing: {
+    src: "/images/smidjan-cms-composants-modulaires.webp",
+    alt: "Composants marketing et promotions modulaires",
+  },
+  admin: {
+    src: "/images/smidjan-cms-dashboard-ecommerce.webp",
+    alt: "Tableau de bord d'administration SMIDJAN CMS",
+  },
+  security: {
+    src: "/images/smidjan-cms-experience-optimisee.webp",
+    alt: "Sécurité et performances optimisées",
+  },
+  design: {
+    src: "/images/smidjan-cms-interface-personnalisable.webp",
+    alt: "Design et personnalisation de l'interface",
+  },
+  automation: {
+    src: "/images/smidjan-cms-composants-modulaires.webp",
+    alt: "Automatisations et intégrations modulaires",
+  },
+};
 
 export function CMSFeaturesEnhanced() {
   const [mounted, setMounted] = useState(false);
@@ -258,6 +295,16 @@ export function CMSFeaturesEnhanced() {
       <div className="cms-features-grid">
         <div className="cms-feature-card" data-category="catalog">
           <div className="cms-accent-line cms-top"></div>
+          <div className="cms-card-image-wrapper">
+            <Image
+              src={categoryImages.catalog.src}
+              alt={categoryImages.catalog.alt}
+              width={400}
+              height={250}
+              className="cms-card-image"
+              loading="lazy"
+            />
+          </div>
           <div className="cms-card-number">01</div>
           <h3 className="cms-card-title">Catalogue & produits</h3>
           <div className="cms-card-separator"></div>
@@ -280,6 +327,16 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="orders">
           <div className="cms-accent-line cms-top"></div>
+          <div className="cms-card-image-wrapper">
+            <Image
+              src={categoryImages.orders.src}
+              alt={categoryImages.orders.alt}
+              width={400}
+              height={250}
+              className="cms-card-image"
+              loading="lazy"
+            />
+          </div>
           <div className="cms-card-number">02</div>
           <h3 className="cms-card-title">Commandes & clients</h3>
           <div className="cms-card-separator"></div>
@@ -302,6 +359,16 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="payment">
           <div className="cms-accent-line cms-top"></div>
+          <div className="cms-card-image-wrapper">
+            <Image
+              src={categoryImages.payment.src}
+              alt={categoryImages.payment.alt}
+              width={400}
+              height={250}
+              className="cms-card-image"
+              loading="lazy"
+            />
+          </div>
           <div className="cms-card-number">03</div>
           <h3 className="cms-card-title">Paiement & facturation</h3>
           <div className="cms-card-separator"></div>
@@ -323,6 +390,16 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="marketing">
           <div className="cms-accent-line cms-top"></div>
+          <div className="cms-card-image-wrapper">
+            <Image
+              src={categoryImages.marketing.src}
+              alt={categoryImages.marketing.alt}
+              width={400}
+              height={250}
+              className="cms-card-image"
+              loading="lazy"
+            />
+          </div>
           <div className="cms-card-number">04</div>
           <h3 className="cms-card-title">Marketing & promotion</h3>
           <div className="cms-card-separator"></div>
@@ -344,6 +421,16 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="admin">
           <div className="cms-accent-line cms-top"></div>
+          <div className="cms-card-image-wrapper">
+            <Image
+              src={categoryImages.admin.src}
+              alt={categoryImages.admin.alt}
+              width={400}
+              height={250}
+              className="cms-card-image"
+              loading="lazy"
+            />
+          </div>
           <div className="cms-card-number">05</div>
           <h3 className="cms-card-title">Administration & gestion</h3>
           <div className="cms-card-separator"></div>
@@ -366,6 +453,16 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="security">
           <div className="cms-accent-line cms-top"></div>
+          <div className="cms-card-image-wrapper">
+            <Image
+              src={categoryImages.security.src}
+              alt={categoryImages.security.alt}
+              width={400}
+              height={250}
+              className="cms-card-image"
+              loading="lazy"
+            />
+          </div>
           <div className="cms-card-number">06</div>
           <h3 className="cms-card-title">Sécurité & performances</h3>
           <div className="cms-card-separator"></div>
@@ -388,6 +485,16 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="design">
           <div className="cms-accent-line cms-top"></div>
+          <div className="cms-card-image-wrapper">
+            <Image
+              src={categoryImages.design.src}
+              alt={categoryImages.design.alt}
+              width={400}
+              height={250}
+              className="cms-card-image"
+              loading="lazy"
+            />
+          </div>
           <div className="cms-card-number">07</div>
           <h3 className="cms-card-title">Design & personnalisation</h3>
           <div className="cms-card-separator"></div>
@@ -410,6 +517,16 @@ export function CMSFeaturesEnhanced() {
 
         <div className="cms-feature-card" data-category="automation">
           <div className="cms-accent-line cms-top"></div>
+          <div className="cms-card-image-wrapper">
+            <Image
+              src={categoryImages.automation.src}
+              alt={categoryImages.automation.alt}
+              width={400}
+              height={250}
+              className="cms-card-image"
+              loading="lazy"
+            />
+          </div>
           <div className="cms-card-number">08</div>
           <h3 className="cms-card-title">Automatisations & intégrations</h3>
           <div className="cms-card-separator"></div>
