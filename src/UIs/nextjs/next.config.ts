@@ -22,20 +22,15 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
 
-  // CSS Optimization + Modern Browser Target (Next.js 16 built-in)
+  // CSS Optimization (Next.js 16 built-in)
+  // Simplified for Vercel stability
   experimental: {
-    optimizeCss: true, // Enable CSS minification and tree-shaking
-    cssChunking: "strict", // Better CSS chunking strategy (less chunks)
-    // Tree-shake large packages to reduce bundle size (~50-100KB savings)
+    optimizeCss: true, // Enable CSS minification
+    // Tree-shake large packages to reduce bundle size
     optimizePackageImports: [
       "lucide-react", // Icon library
       "react-bootstrap", // UI components
-      "marked", // Markdown parser
-      "@vercel/analytics", // Analytics
-      "@vercel/speed-insights", // Speed insights
     ],
-    // Inline critical CSS to reduce render-blocking
-    inlineCss: true,
   },
 
   images: {
@@ -84,67 +79,9 @@ const nextConfig: NextConfig = {
   },
 
   // Webpack optimization for production builds
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Set modern browser target to avoid polyfills
-      config.target = ["web", "es2020"];
-
-      // Better code splitting strategy
-      config.optimization = {
-        ...config.optimization,
-        splitChunks: {
-          chunks: "all",
-          cacheGroups: {
-            default: false,
-            vendors: false,
-            // Split framework code
-            framework: {
-              name: "framework",
-              test: /[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/,
-              priority: 40,
-              enforce: true,
-            },
-            // Split common libraries
-            lib: {
-              test(module: any) {
-                return module.size() > 160000;
-              },
-              name(module: any) {
-                const hash = require("crypto")
-                  .createHash("sha1")
-                  .update(module.identifier())
-                  .digest("hex")
-                  .substring(0, 8);
-                return hash;
-              },
-              priority: 30,
-              minChunks: 1,
-              reuseExistingChunk: true,
-            },
-            commons: {
-              name: "commons",
-              minChunks: 2,
-              priority: 20,
-            },
-            shared: {
-              name(module: any, chunks: any) {
-                return (
-                  chunks.map((chunk: any) => chunk.name).join("~") || "shared"
-                );
-              },
-              priority: 10,
-              minChunks: 2,
-              reuseExistingChunk: true,
-            },
-          },
-          maxInitialRequests: 25,
-          minSize: 20000,
-        },
-      };
-    } else {
-      // Server target
-      config.target = ["node", "es2020"];
-    }
+  // Simplified config for Vercel compatibility
+  webpack: (config) => {
+    // Let Next.js handle code splitting and optimization
     return config;
   },
 
