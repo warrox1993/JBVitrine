@@ -1970,6 +1970,10 @@
   text-decoration: none;
   transition: all var(--dur-2) var(--ease-standard);
   position: relative;
+  /* Override transparent text from gradient titles */
+  -webkit-text-fill-color: var(--color-accent-1);
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
 }
 
 .bagistoLink::after {
@@ -1989,6 +1993,7 @@
 
 .bagistoLink:hover {
   color: var(--color-accent-2);
+  -webkit-text-fill-color: var(--color-accent-2);
 }
 
 .logosContainer {
