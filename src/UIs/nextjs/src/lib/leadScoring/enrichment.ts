@@ -51,44 +51,56 @@ export class LeadEnrichmentService {
   ): Promise<EnrichedLeadData> {
     const resolvedDomain = domain || this.extractDomain(email);
 
-    // Exécuter tous les enrichissements en parallèle (uniquement APIs gratuites)
-    const [emailValidation, companyData, brandData, techStack] =
-      await Promise.allSettled([
-        this.validateEmail(email),
-        this.getCompanyDataFromHunter(resolvedDomain),
-        this.getBrandData(resolvedDomain),
-        this.getTechStack(resolvedDomain),
-      ]);
+    try {
+      // Call server-side API for all enrichment data
+      const response = await fetch("/api/leadScoring/enrich", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, domain: resolvedDomain, company }),
+      });
 
-    const enriched: EnrichedLeadData = {
-      email,
-      name: "",
-      company,
-      companyData:
-        companyData.status === "fulfilled"
-          ? companyData.value || undefined
-          : undefined,
-      brandData:
-        brandData.status === "fulfilled"
-          ? brandData.value || undefined
-          : undefined,
-      emailValidation:
-        emailValidation.status === "fulfilled"
-          ? emailValidation.value || undefined
-          : undefined,
-      techStack:
-        techStack.status === "fulfilled"
-          ? techStack.value || undefined
-          : undefined,
-      enrichmentScore: 0,
-      confidenceLevel: "low",
-    };
+      if (!response.ok) {
+        console.warn("Enrichment API failed, using fallback data");
+        // Fallback to basic local data
+        return {
+          email,
+          name: "",
+          company,
+          enrichmentScore: 0,
+          confidenceLevel: "low",
+        };
+      }
 
-    // Calculer le score d'enrichissement
-    enriched.enrichmentScore = this.calculateEnrichmentScore(enriched);
-    enriched.confidenceLevel = this.determineConfidence(enriched);
+      const result = await response.json();
+      const data = result.data || {};
 
-    return enriched;
+      const enriched: EnrichedLeadData = {
+        email,
+        name: "",
+        company,
+        companyData: data.companyData,
+        brandData: data.brandData,
+        emailValidation: data.emailValidation,
+        techStack: data.techStack,
+        enrichmentScore: 0,
+        confidenceLevel: "low",
+      };
+
+      // Calculate score locally based on returned data
+      enriched.enrichmentScore = this.calculateEnrichmentScore(enriched);
+      enriched.confidenceLevel = this.determineConfidence(enriched);
+
+      return enriched;
+    } catch (error) {
+      console.error("Enrichment error:", error);
+      return {
+        email,
+        name: "",
+        company,
+        enrichmentScore: 0,
+        confidenceLevel: "low",
+      };
+    }
   }
 
   // ============================================================================
