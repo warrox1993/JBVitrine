@@ -31,7 +31,7 @@ export const quoteLimiter = new Ratelimit({
   redis,
   limiter: Ratelimit.slidingWindow(3, "1 h"),
   analytics: true,
-  prefix: "smidjan_v3_quote",
+  prefix: "smidjan_v4_quote",
 });
 
 /**
