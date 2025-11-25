@@ -21,8 +21,8 @@ export interface RateLimitConfig {
 export async function checkRateLimit(
   ip: string,
   config: RateLimitConfig = {
-    limit: process.env.NODE_ENV === "development" ? 100 : 10,
-    windowMs: 10 * 60 * 1000,
+    limit: process.env.NODE_ENV === "development" ? 100 : 20,
+    windowMs: 60 * 60 * 1000, // 1 hour
   },
 ): Promise<{ allowed: boolean; remaining: number; resetTime: number }> {
   const now = Date.now();

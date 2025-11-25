@@ -185,10 +185,10 @@ export function Step5Contact({
       }
     }
 
-    // 3. Rate limiting - Max 3 submissions per hour (from ContactForm)
+    // 3. Rate limiting - Max 20 submissions per hour (from ContactForm)
     const rateLimitKey = 'quote_wizard_submissions';
     const rateLimitWindow = 60 * 60 * 1000; // 1 hour in ms
-    const maxSubmissions = 3;
+    const maxSubmissions = 20;
 
     try {
       const storedData = localStorage.getItem(rateLimitKey);

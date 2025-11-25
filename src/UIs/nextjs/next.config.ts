@@ -126,11 +126,11 @@ const nextConfig: NextConfig = {
       // Images: self + HTTPS externe + data URIs + blob
       "img-src 'self' https: data: blob:",
       // Connexions: Vercel Analytics + Speed Insights + reCAPTCHA + Google Maps
-      "connect-src 'self' https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com",
+      "connect-src 'self' https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com https://*.googleapis.com",
       // Fermeture sécurité object/frame
       "object-src 'none'",
       // Allow Google Maps + reCAPTCHA embeds on contact page
-      "frame-src https://www.google.com https://recaptcha.google.com https://www.recaptcha.net",
+      "frame-src https://www.google.com https://recaptcha.google.com https://www.recaptcha.net https://maps.googleapis.com",
       "frame-ancestors 'none'",
       // Base et form
       "base-uri 'self'",
@@ -148,7 +148,7 @@ const nextConfig: NextConfig = {
         x.startsWith("connect-src"),
       );
       baseCsp[connectIndex] =
-        "connect-src 'self' https://vercel.live wss://ws-us3.pusher.com https://sockjs-us3.pusher.com https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com";
+        "connect-src 'self' https://vercel.live wss://ws-us3.pusher.com https://sockjs-us3.pusher.com https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com https://*.googleapis.com";
     } else {
       // Production STRICT: Vercel Analytics + Speed Insights + reCAPTCHA + Google Maps
       baseCsp.push(

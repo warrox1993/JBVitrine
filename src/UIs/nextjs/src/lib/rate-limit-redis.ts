@@ -23,33 +23,33 @@ const redis = new Redis({
 
 /**
  * Rate limiter for quote submissions
- * Limit: 3 requests per hour per user
+ * Limit: 20 requests per hour per user (increased for testing)
  */
 export const quoteLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(3, '1 h'),
+  limiter: Ratelimit.slidingWindow(20, '1 h'),
   analytics: true,
   prefix: 'smidjan_quote',
 });
 
 /**
  * Rate limiter for contact form
- * Limit: 5 requests per hour per user
+ * Limit: 20 requests per hour per user (increased for testing)
  */
 export const contactLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(5, '1 h'),
+  limiter: Ratelimit.slidingWindow(20, '1 h'),
   analytics: true,
   prefix: 'smidjan_contact',
 });
 
 /**
  * Rate limiter for lead enrichment API
- * Limit: 10 requests per minute (external API calls)
+ * Limit: 60 requests per minute (external API calls)
  */
 export const enrichmentLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(10, '1 m'),
+  limiter: Ratelimit.slidingWindow(60, '1 m'),
   analytics: true,
   prefix: 'smidjan_enrichment',
 });
