@@ -12,7 +12,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     contactType: "Customer Service",
     telephone: "+32 475 20 55 62",
-    email: "contact.smidjan@outlook.com",
+    email: "smidjan.agency@outlook.com",
     availableLanguage: ["fr-BE", "French"],
     areaServed: ["BE", "Wallonie", "Liège"],
   },

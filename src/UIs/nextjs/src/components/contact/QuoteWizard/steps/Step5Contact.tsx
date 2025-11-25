@@ -200,7 +200,7 @@ export function Step5Contact({
 
       if (recentSubmissions.length >= maxSubmissions) {
         setGlobalError(
-          'Vous avez atteint la limite de soumissions. Veuillez réessayer dans une heure ou nous contacter directement à contact.smidjan@outlook.com'
+          'Vous avez atteint la limite de soumissions. Veuillez réessayer dans une heure ou nous contacter directement à smidjan.agency@outlook.com'
         );
         return;
       }

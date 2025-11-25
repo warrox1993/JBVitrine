@@ -90,7 +90,7 @@ export default function TermsPage() {
                                     <em>Marque en cours de création</em><br />
                                     Portée par Jean-Baptiste Dhondt<br />
                                     Adresse : Liège, Belgique<br />
-                                    <strong>Email :</strong> <a href="mailto:contact.smidjan@outlook.com">contact.smidjan@outlook.com</a><br />
+                                    <strong>Email :</strong> <a href="mailto:smidjan.agency@outlook.com">smidjan.agency@outlook.com</a><br />
                                     <strong>Téléphone :</strong> <a href="tel:+32475205562">+32 475 205 562</a></p>
                                     <p>Ci-après dénommée "le Prestataire" ou "SMIDJAN",</p>
                                     <p>Et toute personne physique ou morale souhaitant bénéficier des services proposés par SMIDJAN, ci-après dénommée "le Client".</p>
@@ -460,7 +460,7 @@ export default function TermsPage() {
                                     <p>
                                         <strong>Jean-Baptiste Dhondt</strong><br />
                                         SMIDJAN<br />
-                                        <strong>Email :</strong> <a href="mailto:contact.smidjan@outlook.com">contact.smidjan@outlook.com</a><br />
+                                        <strong>Email :</strong> <a href="mailto:smidjan.agency@outlook.com">smidjan.agency@outlook.com</a><br />
                                         <strong>Téléphone :</strong> <a href="tel:+32475205562">+32 475 205 562</a><br />
                                         <strong>Adresse :</strong> Liège, Belgique
                                     </p>

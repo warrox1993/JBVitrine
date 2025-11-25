@@ -420,7 +420,7 @@ async function sendQuoteConfirmationEmail(
     const { data, error } = await resend.emails.send({
       from: "Smidjan <contact@smidjan.be>",
       to: [email],
-      subject: `✅ Votre demande de devis - ${quoteId}`,
+      subject: `Votre demande de devis - ${quoteId}`,
       html: getQuoteConfirmationEmailHtml(name, quoteId, estimate),
     });
 
@@ -470,9 +470,9 @@ async function sendQuoteNotificationToTeam(
   try {
     const { data, error } = await resend.emails.send({
       from: "Smidjan Quote System <contact@smidjan.be>",
-      to: ["contact.smidjan@outlook.com"],
+      to: ["smidjan.agency@outlook.com"],
       replyTo: contactInfo.email as string,
-      subject: `${submission.leadScore.priority === "high" ? "🔥" : submission.leadScore.priority === "medium" ? "⚡" : "📋"} Nouveau devis : ${submission.quoteData.projectType} - Score ${submission.leadScore.score}/100`,
+      subject: `[${submission.leadScore.priority === "high" ? "URGENT" : submission.leadScore.priority === "medium" ? "MOYEN" : "STANDARD"}] Nouveau devis : ${submission.quoteData.projectType} - Score ${submission.leadScore.score}/100`,
       html: getQuoteTeamNotificationEmailHtml(submission, contactInfo, quoteId),
     });
 

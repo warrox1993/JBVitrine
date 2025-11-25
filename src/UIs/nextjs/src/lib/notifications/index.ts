@@ -337,8 +337,8 @@ export async function sendSalesEmailNotification(
     `;
 
     const { error } = await resend.emails.send({
-      from: "Smidjan Lead Scoring <contact.smidjan@outlook.com>",
-      to: ["contact.smidjan@outlook.com"],
+      from: "Smidjan Lead Scoring <contact@smidjan.be>",
+      to: ["smidjan.agency@outlook.com"],
       subject: `${emoji} Nouveau lead ${lead.grade} : ${lead.name} (Score ${lead.score}/100)`,
       html: html,
       replyTo: lead.email,

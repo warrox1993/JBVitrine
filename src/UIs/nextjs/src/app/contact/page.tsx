@@ -87,7 +87,7 @@ export default function ContactPage() {
                             '@type': 'Organization',
                             name: 'Smidjan',
                             url: 'https://smidjan.be',
-                            email: 'contact.smidjan@outlook.com',
+                            email: 'smidjan.agency@outlook.com',
                             address: {
                                 '@type': 'PostalAddress',
                                 addressLocality: 'Liège',
@@ -98,7 +98,7 @@ export default function ContactPage() {
                         contactPoint: {
                             '@type': 'ContactPoint',
                             contactType: 'sales',
-                            email: 'contact.smidjan@outlook.com',
+                            email: 'smidjan.agency@outlook.com',
                             availableLanguage: ['fr-BE', 'fr'],
                             areaServed: ['BE', 'Wallonie'],
                         },

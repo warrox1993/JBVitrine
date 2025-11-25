@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: "Smidjan",
   url: "https://smidjan.be",
-  email: "contact.smidjan@outlook.com",
+  email: "smidjan.agency@outlook.com",
   phone: "+32 475 20 55 62",
   description:
     "Studio web à Liège spécialisé en développement de sites, e-commerce, SEO et design digital",

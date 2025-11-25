@@ -147,7 +147,7 @@ export async function POST(request: NextRequest) {
         {
           ok: false,
           message:
-            "Trop de requêtes. Veuillez réessayer dans quelques instants ou nous contacter à contact.smidjan@outlook.com.",
+            "Trop de requêtes. Veuillez réessayer dans quelques instants ou nous contacter à smidjan.agency@outlook.com.",
         },
         {
           status: 429,

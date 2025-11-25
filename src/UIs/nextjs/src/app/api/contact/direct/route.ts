@@ -265,8 +265,8 @@ export async function POST(request: Request) {
     const requestTypeLabel =
       REQUEST_TYPE_LABELS[requestType] || "Autre demande";
     const { data, error } = await resend.emails.send({
-      from: "Smidjan Contact <contact.smidjan@outlook.com>",
-      to: ["contact.smidjan@outlook.com"],
+      from: "Smidjan Contact <contact@smidjan.be>",
+      to: ["smidjan.agency@outlook.com"],
       replyTo: email,
       subject: `[${requestTypeLabel.toUpperCase()}] Nouveau message de ${safeName}${safeCompany ? ` (${safeCompany})` : ""}`,
       html: `

@@ -60,10 +60,10 @@ export function Footer() {
           <ul className={styles.nav}>
             <li className={styles.navItem}>
               <a
-                href="mailto:contact.smidjan@outlook.com"
+                href="mailto:smidjan.agency@outlook.com"
                 aria-label="Envoyer un e-mail à Jean-Baptiste Dhondt"
               >
-                contact.smidjan@outlook.com
+                smidjan.agency@outlook.com
               </a>
             </li>
             <li className={styles.navItem}>
