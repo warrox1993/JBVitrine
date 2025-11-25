@@ -218,24 +218,52 @@ export function Step5Contact({
     }
 
     // 5. Generate reCAPTCHA Enterprise token
+    // ⚠️ CRITICAL FIX: Use Promise wrapper to properly await the callback
     let recaptchaToken = '';
     if (typeof window !== 'undefined' && (window as any).grecaptcha?.enterprise) {
       try {
         const { RECAPTCHA_SITE_KEY } = await import('@/config/recaptcha');
-        await (window as any).grecaptcha.enterprise.ready(async () => {
-          recaptchaToken = await (window as any).grecaptcha.enterprise.execute(
-            RECAPTCHA_SITE_KEY,
-            { action: 'quote_submission' }
-          );
-          console.log('✅ reCAPTCHA Enterprise token generated');
+        console.log('[Step5Contact] 🔐 Starting reCAPTCHA token generation...');
+
+        // Wrap in Promise to properly await the callback
+        recaptchaToken = await new Promise<string>((resolve, reject) => {
+          const timeout = setTimeout(() => {
+            console.error('[Step5Contact] ⏱️ reCAPTCHA timeout after 10s');
+            reject(new Error('reCAPTCHA timeout'));
+          }, 10000);
+
+          (window as any).grecaptcha.enterprise.ready(async () => {
+            try {
+              console.log('[Step5Contact] 🔄 grecaptcha.ready callback executing...');
+              const token = await (window as any).grecaptcha.enterprise.execute(
+                RECAPTCHA_SITE_KEY,
+                { action: 'quote_submission' }
+              );
+              clearTimeout(timeout);
+              console.log('[Step5Contact] ✅ reCAPTCHA token generated:', token ? `${token.length} chars` : 'EMPTY');
+              resolve(token || '');
+            } catch (error) {
+              clearTimeout(timeout);
+              console.error('[Step5Contact] ❌ grecaptcha.execute error:', error);
+              reject(error);
+            }
+          });
         });
       } catch (error) {
-        console.error('❌ reCAPTCHA Enterprise error:', error);
+        console.error('[Step5Contact] ❌ reCAPTCHA Enterprise error:', error);
         // Continue without reCAPTCHA if it fails (backend will handle)
       }
+    } else {
+      console.warn('[Step5Contact] ⚠️ grecaptcha.enterprise not available');
     }
 
-    // Prepare clean ContactInfo (with reCAPTCHA token)
+    console.log('[Step5Contact] 📋 Final token status:', {
+      hasRecaptchaToken: !!recaptchaToken,
+      tokenLength: recaptchaToken?.length || 0,
+      hasCsrfToken: !!formData.csrfToken,
+    });
+
+    // Prepare clean ContactInfo (with reCAPTCHA token AND CSRF token)
     const contactInfo: ContactInfo = {
       name: formData.name,
       email: formData.email,
@@ -244,6 +272,7 @@ export function Step5Contact({
       message: formData.message,
       consent: formData.consent,
       recaptchaToken: recaptchaToken || undefined,
+      csrfToken: formData.csrfToken || undefined, // ✅ FIX: Include CSRF token
     };
 
     // Call parent's onSubmit with clean ContactInfo

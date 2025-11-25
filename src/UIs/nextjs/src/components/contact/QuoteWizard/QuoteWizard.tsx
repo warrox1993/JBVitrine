@@ -267,25 +267,47 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
   };
 
   const handleSubmit = async (contactInfo: ContactInfo) => {
-    if (!estimate) return;
+    console.log('[QuoteWizard] ===== SUBMISSION START =====');
+    console.log('[QuoteWizard] ContactInfo received:', {
+      name: contactInfo.name,
+      email: contactInfo.email,
+      hasPhone: !!contactInfo.phone,
+      hasCompany: !!contactInfo.company,
+      hasMessage: !!contactInfo.message,
+      consent: contactInfo.consent,
+      hasRecaptchaToken: !!contactInfo.recaptchaToken,
+      recaptchaTokenLength: contactInfo.recaptchaToken?.length || 0,
+      hasCsrfToken: !!contactInfo.csrfToken,
+    });
+
+    if (!estimate) {
+      console.error('[QuoteWizard] ❌ No estimate - aborting');
+      return;
+    }
 
     setIsSubmitting(true);
     setSubmitError(null);
+    const submissionStartTime = Date.now();
 
     try {
       // Enrich lead data if not already done
       if (!enrichedData && contactInfo.email) {
+        console.log('[QuoteWizard] 🔍 Enriching lead data...');
         await enrichLead(contactInfo.email, contactInfo.company);
       }
 
       // Save to new lead scoring system
+      console.log('[QuoteWizard] 💾 Saving to new lead scoring system...');
       const savedToNewSystem = await saveCompleteLead(contactInfo, estimate);
       if (!savedToNewSystem) {
-        console.error('❌ Failed to save to new lead scoring system');
+        console.error('[QuoteWizard] ❌ Failed to save to new lead scoring system');
+      } else {
+        console.log('[QuoteWizard] ✅ Saved to new lead scoring system');
       }
 
       // Calculate old lead score for backward compatibility
       const oldLeadScore = calculateLeadScore(estimate, quoteData, contactInfo);
+      console.log('[QuoteWizard] 📊 Old lead score calculated:', oldLeadScore);
 
       // Get UTM parameters from URL (if available)
       const urlParams =
@@ -310,6 +332,16 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
         recaptchaToken: contactInfo.recaptchaToken,
       };
 
+      console.log('[QuoteWizard] 📤 Sending to /api/quote:', {
+        projectType: quoteData.projectType,
+        estimateRange: `${estimate.min}-${estimate.max}€`,
+        featuresCount: quoteData.features.length,
+        leadScore: oldLeadScore.score,
+        leadPriority: oldLeadScore.priority,
+        hasRecaptchaToken: !!submission.recaptchaToken,
+        formDuration: `${Date.now() - formStartTime}ms`,
+      });
+
       // Submit to old API for backward compatibility
       const response = await fetch('/api/quote', {
         method: 'POST',
@@ -317,6 +349,13 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(submission),
+      });
+
+      const fetchDuration = Date.now() - submissionStartTime;
+      console.log('[QuoteWizard] 📥 Response received:', {
+        status: response.status,
+        statusText: response.statusText,
+        fetchDuration: `${fetchDuration}ms`,
       });
 
       // Validate Content-Type BEFORE parsing to avoid JSON parse errors on HTML error pages

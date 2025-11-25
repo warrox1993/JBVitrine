@@ -13,11 +13,7 @@ import {
   getQuoteConfirmationEmailHtml,
   getQuoteTeamNotificationEmailHtml,
 } from "./email-templates";
-import {
-  validateEmail,
-  sanitizeString,
-  validatePhone,
-} from "@/lib/validation";
+import { validateEmail, sanitizeString, validatePhone } from "@/lib/validation";
 import {
   validateContentType,
   validateCSRF,
@@ -42,21 +38,33 @@ const validateProjectType = (type: string): boolean => {
 
 // Main POST handler
 export async function POST(request: NextRequest) {
+  const apiStartTime = Date.now();
+  console.log("[Quote API] ===== REQUEST START =====");
+
   try {
     // 🔍 Dev: Verify Redis configuration
-    if (process.env.NODE_ENV === 'development') {
-      console.log('🔍 Redis configured:', !!process.env.UPSTASH_REDIS_REST_URL);
+    if (process.env.NODE_ENV === "development") {
+      console.log(
+        "[Quote API] 🔍 Redis configured:",
+        !!process.env.UPSTASH_REDIS_REST_URL,
+      );
     }
 
     // Get client identifier for rate limiting
     const clientIdentifier = getClientIdentifier(request);
+    console.log(
+      "[Quote API] 📍 Client identifier:",
+      clientIdentifier.substring(0, 15) + "...",
+    );
 
     // ✅ Rate limiting with Redis: Check BEFORE validations (fail fast)
-    const { success, limit, remaining, reset } = await quoteLimiter.limit(clientIdentifier);
+    const { success, limit, remaining, reset } =
+      await quoteLimiter.limit(clientIdentifier);
 
     if (!success) {
-      console.warn('⚠️ Quote rate limit exceeded:', {
-        identifier: clientIdentifier,
+      console.warn("[Quote API] ⚠️ Rate limit exceeded:", {
+        identifier: clientIdentifier.substring(0, 15) + "...",
+        resetIn: Math.ceil((reset - Date.now()) / 1000) + "s",
       });
       return NextResponse.json(
         {
@@ -67,6 +75,7 @@ export async function POST(request: NextRequest) {
         {
           status: 429,
           headers: {
+            "Content-Type": "application/json",
             "X-RateLimit-Limit": limit.toString(),
             "X-RateLimit-Remaining": remaining.toString(),
             "X-RateLimit-Reset": reset.toString(),
@@ -74,21 +83,48 @@ export async function POST(request: NextRequest) {
         },
       );
     }
-    console.log('✅ Quote rate limit OK:', { remaining, limit });
+    console.log("[Quote API] ✅ Rate limit OK:", { remaining, limit });
 
     // ✅ Content-Type validation (middleware)
     const contentTypeCheck = validateContentType(request);
-    if (!contentTypeCheck.success) return contentTypeCheck.response;
+    if (!contentTypeCheck.success) {
+      console.warn("[Quote API] ❌ Content-Type validation failed");
+      return contentTypeCheck.response;
+    }
+    console.log("[Quote API] ✅ Content-Type OK");
 
     // ✅ CSRF Protection (middleware)
     const csrfCheck = validateCSRF(request);
-    if (!csrfCheck.success) return csrfCheck.response;
+    if (!csrfCheck.success) {
+      console.warn("[Quote API] ❌ CSRF validation failed");
+      return csrfCheck.response;
+    }
+    console.log("[Quote API] ✅ CSRF OK");
 
     const body: QuoteSubmission = await request.json();
+    console.log("[Quote API] 📦 Body received:", {
+      hasEstimate: !!body.estimate,
+      hasQuoteData: !!body.quoteData,
+      hasContactInfo: !!body.contactInfo,
+      hasLeadScore: !!body.leadScore,
+      hasRecaptchaToken: !!body.recaptchaToken,
+      recaptchaTokenLength: body.recaptchaToken?.length || 0,
+      projectType: body.quoteData?.projectType,
+      email: body.contactInfo?.email,
+    });
 
     // ✅ reCAPTCHA verification (middleware)
-    const recaptchaCheck = await validateRecaptcha(request, body.recaptchaToken, "quote_submission");
-    if (!recaptchaCheck.success) return recaptchaCheck.response;
+    console.log("[Quote API] 🔐 Verifying reCAPTCHA...");
+    const recaptchaCheck = await validateRecaptcha(
+      request,
+      body.recaptchaToken,
+      "quote_submission",
+    );
+    if (!recaptchaCheck.success) {
+      console.warn("[Quote API] ❌ reCAPTCHA validation failed");
+      return recaptchaCheck.response;
+    }
+    console.log("[Quote API] ✅ reCAPTCHA OK");
 
     // Timestamp validation - quote wizard should take at least 10 seconds
     if (body.formStartTime) {
@@ -96,34 +132,49 @@ export async function POST(request: NextRequest) {
       const minFillTime = 10000; // 10 seconds minimum
       const maxFillTime = 3600000; // 1 hour maximum
 
+      console.log("[Quote API] ⏱️ Timestamp validation:", {
+        fillTime: `${fillTime}ms`,
+        fillTimeSeconds: Math.round(fillTime / 1000),
+        minRequired: `${minFillTime}ms`,
+        maxAllowed: `${maxFillTime}ms`,
+      });
+
       if (fillTime < minFillTime) {
-        console.warn("Quote filled too quickly - bot detected", {
-          ip: clientIdentifier,
-          fillTime,
+        console.warn("[Quote API] 🤖 Bot detected - form filled too quickly:", {
+          ip: clientIdentifier.substring(0, 15) + "...",
+          fillTime: `${fillTime}ms`,
+          minRequired: `${minFillTime}ms`,
         });
+        // ✅ FIX: Return 400 with ok: false instead of 200 with ok: true
         return NextResponse.json(
           {
-            ok: true,
-            quoteId: "BOT-DETECTED-TIMING",
+            ok: false,
+            message:
+              "Formulaire soumis trop rapidement. Veuillez prendre votre temps.",
+            errorCode: "BOT_DETECTED",
           },
-          { status: 200 },
+          { status: 400 },
         );
       }
 
       if (fillTime > maxFillTime) {
-        console.warn("Quote session expired", {
-          ip: clientIdentifier,
-          fillTime,
+        console.warn("[Quote API] ⏰ Session expired:", {
+          ip: clientIdentifier.substring(0, 15) + "...",
+          fillTime: `${fillTime}ms`,
         });
         return NextResponse.json(
           {
             ok: false,
             message:
               "Votre session a expiré. Veuillez rafraîchir la page et soumettre à nouveau.",
+            errorCode: "SESSION_EXPIRED",
           },
           { status: 400 },
         );
       }
+      console.log("[Quote API] ✅ Timestamp OK");
+    } else {
+      console.warn("[Quote API] ⚠️ No formStartTime provided");
     }
 
     // Validate quote data structure
@@ -263,7 +314,6 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString(),
     });
 
-
     // ✅ Save to database (for backward compatibility)
     try {
       const { db } = await import("@/lib/db");
@@ -306,6 +356,10 @@ export async function POST(request: NextRequest) {
     }
 
     // Send emails
+    console.log(
+      "[Quote API] 📧 Sending confirmation email to:",
+      sanitizedContactInfo.email,
+    );
     await sendQuoteConfirmationEmail(
       sanitizedContactInfo.email,
       sanitizedContactInfo.name,
@@ -313,7 +367,15 @@ export async function POST(request: NextRequest) {
       body.estimate,
     );
 
+    console.log("[Quote API] 📧 Sending team notification email...");
     await sendQuoteNotificationToTeam(body, sanitizedContactInfo, quoteId);
+
+    const totalDuration = Date.now() - apiStartTime;
+    console.log("[Quote API] ===== REQUEST SUCCESS =====", {
+      quoteId,
+      totalDuration: `${totalDuration}ms`,
+      email: sanitizedContactInfo.email,
+    });
 
     return NextResponse.json(
       {
@@ -324,7 +386,12 @@ export async function POST(request: NextRequest) {
       { status: 200 },
     );
   } catch (error) {
-    console.error("Quote API error:", error);
+    const totalDuration = Date.now() - apiStartTime;
+    console.error("[Quote API] ===== REQUEST FAILED =====", {
+      error: error instanceof Error ? error.message : String(error),
+      errorType: error instanceof Error ? error.constructor.name : typeof error,
+      totalDuration: `${totalDuration}ms`,
+    });
 
     return NextResponse.json(
       {
@@ -343,6 +410,12 @@ async function sendQuoteConfirmationEmail(
   quoteId: string,
   estimate: QuoteSubmission["estimate"],
 ): Promise<void> {
+  const startTime = Date.now();
+  console.log("[Email] 📧 Sending confirmation email...", {
+    to: email,
+    quoteId,
+  });
+
   try {
     const { data, error } = await resend.emails.send({
       from: "Smidjan <contact@smidjan.be>",
@@ -351,19 +424,33 @@ async function sendQuoteConfirmationEmail(
       html: getQuoteConfirmationEmailHtml(name, quoteId, estimate),
     });
 
+    const duration = Date.now() - startTime;
+
     if (error) {
-      console.error("Error sending quote confirmation email:", error);
+      console.error("[Email] ❌ Resend API error (confirmation):", {
+        error: error.message,
+        to: email,
+        quoteId,
+        duration: `${duration}ms`,
+      });
       throw new Error(`Failed to send confirmation: ${error.message}`);
     }
 
-    console.log("Quote confirmation email sent:", {
+    console.log("[Email] ✅ Confirmation email sent:", {
       emailId: data?.id,
       to: email,
       quoteId,
+      duration: `${duration}ms`,
     });
   } catch (error) {
-    console.error("Failed to send quote confirmation:", error);
-    // Don't throw - non-critical
+    const duration = Date.now() - startTime;
+    console.error("[Email] ❌ Failed to send confirmation:", {
+      error: error instanceof Error ? error.message : String(error),
+      to: email,
+      quoteId,
+      duration: `${duration}ms`,
+    });
+    // Don't throw - non-critical (user still gets their quote saved)
   }
 }
 
@@ -374,6 +461,12 @@ async function sendQuoteNotificationToTeam(
     : never,
   quoteId: string,
 ): Promise<void> {
+  const startTime = Date.now();
+  console.log("[Email] 📧 Sending team notification...", {
+    quoteId,
+    priority: submission.leadScore.priority,
+  });
+
   try {
     const { data, error } = await resend.emails.send({
       from: "Smidjan Quote System <contact@smidjan.be>",
@@ -383,19 +476,30 @@ async function sendQuoteNotificationToTeam(
       html: getQuoteTeamNotificationEmailHtml(submission, contactInfo, quoteId),
     });
 
+    const duration = Date.now() - startTime;
+
     if (error) {
-      console.error("Error sending team notification:", error);
+      console.error("[Email] ❌ Resend API error (team notification):", {
+        error: error.message,
+        quoteId,
+        duration: `${duration}ms`,
+      });
       throw new Error(`Failed to send team notification: ${error.message}`);
     }
 
-    console.log("Quote team notification sent:", {
+    console.log("[Email] ✅ Team notification sent:", {
       emailId: data?.id,
       quoteId,
       priority: submission.leadScore.priority,
+      duration: `${duration}ms`,
     });
   } catch (error) {
-    console.error("Failed to send team notification:", error);
-    throw error; // This one should fail the request
+    const duration = Date.now() - startTime;
+    console.error("[Email] ❌ Failed to send team notification:", {
+      error: error instanceof Error ? error.message : String(error),
+      quoteId,
+      duration: `${duration}ms`,
+    });
+    throw error; // This one should fail the request - we need to know about quote requests
   }
 }
-

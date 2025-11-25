@@ -76,6 +76,7 @@ export interface ContactInfo {
   message?: string;
   consent: boolean;
   recaptchaToken?: string;
+  csrfToken?: string; // ✅ Added for CSRF protection
 }
 
 export interface LeadScore {
