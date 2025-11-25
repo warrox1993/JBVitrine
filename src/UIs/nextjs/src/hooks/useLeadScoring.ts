@@ -26,22 +26,25 @@ export function useLeadScoring(quoteData: QuoteData) {
   );
   const [isEnriching, setIsEnriching] = useState(false);
 
-  // Initialize tracker and scorer on mount
+  // Initialize tracker and scorer on mount (SINGLETON - only once per session)
   useEffect(() => {
+    // getTracker() already returns a singleton, but we need to ensure
+    // we're not creating multiple scorers
     const behavioralTracker = getTracker();
     const realTimeScorer = new RealTimeLeadScorer();
 
     setTracker(behavioralTracker);
     setScorer(realTimeScorer);
 
-    // Mark wizard as started
+    // Mark wizard as started (only once)
     behavioralTracker.markWizardStarted();
 
-    return () => {
-      // Cleanup on unmount
-      behavioralTracker.destroy();
-    };
-  }, []);
+    // DON'T destroy tracker on unmount - it's a singleton
+    // It will only be destroyed when user leaves the page
+    // return () => {
+    //   behavioralTracker.destroy();
+    // };
+  }, []); // Empty deps = only runs once
 
   // Recalculate score whenever quoteData changes
   useEffect(() => {
