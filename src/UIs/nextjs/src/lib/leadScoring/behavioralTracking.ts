@@ -102,9 +102,11 @@ export class BehavioralTracker {
     });
 
     // Periodic flush (every 30 seconds)
-    this.flushInterval = setInterval(() => {
-      this.flushEvents();
-    }, 30000);
+    // DISABLED: This was causing rate limit issues by making too many API calls
+    // The events will only be flushed on page unload via beforeunload
+    // this.flushInterval = setInterval(() => {
+    //   this.flushEvents();
+    // }, 30000);
   }
 
   // Track page view
