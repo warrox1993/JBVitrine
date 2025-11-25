@@ -319,17 +319,46 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
         body: JSON.stringify(submission),
       });
 
-      // Parse response first to check both status code and response body
-      const result = await response.json();
+      // Validate Content-Type BEFORE parsing to avoid JSON parse errors on HTML error pages
+      const contentType = response.headers.get('content-type');
 
-      // Check HTTP status code
       if (!response.ok) {
-        throw new Error(
-          result.message ||
-          result.error ||
-          'Erreur lors de l\'envoi de la demande'
-        );
+        // Check if response is HTML (error page from Vercel or rate limit)
+        if (contentType?.includes('text/html')) {
+          console.error('[QuoteWizard] API returned HTML instead of JSON:', {
+            status: response.status,
+            statusText: response.statusText,
+          });
+
+          if (response.status === 429) {
+            throw new Error('Trop de requêtes. Veuillez attendre quelques minutes et réessayer.');
+          }
+          throw new Error('Service temporairement indisponible. Veuillez réessayer dans quelques instants.');
+        }
+
+        // Try to parse JSON error response
+        try {
+          const errorResult = await response.json();
+          throw new Error(
+            errorResult.message ||
+            errorResult.error ||
+            'Erreur lors de l\'envoi de la demande'
+          );
+        } catch (parseError) {
+          if (parseError instanceof SyntaxError) {
+            throw new Error('Erreur de communication avec le serveur. Veuillez réessayer.');
+          }
+          throw parseError;
+        }
       }
+
+      // Validate Content-Type is JSON before parsing success response
+      if (!contentType?.includes('application/json')) {
+        console.error('[QuoteWizard] Invalid content-type:', contentType);
+        throw new Error('Réponse invalide du serveur. Veuillez réessayer.');
+      }
+
+      const result = await response.json();
 
       // Check response body ok field (backend might return 200 with ok: false)
       if (!result.ok) {
