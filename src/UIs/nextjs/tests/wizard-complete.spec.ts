@@ -27,9 +27,9 @@ test.describe("Quote Wizard Complete Flow", () => {
     test("should display all project type options", async ({ page }) => {
       await page.goto("/contact", { waitUntil: "networkidle" });
 
-      // Start wizard
-      const newProjectBtn = page.locator("button", {
-        hasText: "Nouveau projet",
+      // Start wizard - use more specific selector
+      const newProjectBtn = page.getByRole("button", {
+        name: /Nouveau projet.*Site web/i,
       });
       await expect(newProjectBtn).toBeVisible({ timeout: 10000 });
       await newProjectBtn.click();
@@ -37,12 +37,24 @@ test.describe("Quote Wizard Complete Flow", () => {
       // Wait for step 1
       await page.waitForTimeout(1000);
 
-      // Check project types are visible
-      const projectTypes = ["Site vitrine", "E-commerce", "Application web"];
-      for (const type of projectTypes) {
-        const btn = page.locator("button", { hasText: new RegExp(type, "i") });
-        await expect(btn).toBeVisible({ timeout: 5000 });
-      }
+      // Check project types are visible in the wizard step
+      // Use aria-pressed attribute to target the card buttons, not info buttons
+      const projectTypeCards = page.locator("button[aria-pressed]");
+      // Wait for at least 5 project type cards to be visible
+      await expect(projectTypeCards.first()).toBeVisible({ timeout: 5000 });
+      const count = await projectTypeCards.count();
+      expect(count).toBeGreaterThanOrEqual(5); // At least 5 project types
+
+      // Verify specific cards are visible (use first() to avoid matching info buttons)
+      await expect(
+        page.getByRole("button", { name: /Site Vitrine/i }).first(),
+      ).toBeVisible();
+      await expect(
+        page.getByRole("button", { name: /E-commerce.*Boutique/i }).first(),
+      ).toBeVisible();
+      await expect(
+        page.getByRole("button", { name: /Application.*web/i }).first(),
+      ).toBeVisible();
     });
 
     test("should auto-advance after selecting project type", async ({
@@ -50,8 +62,8 @@ test.describe("Quote Wizard Complete Flow", () => {
     }) => {
       await page.goto("/contact", { waitUntil: "networkidle" });
 
-      const newProjectBtn = page.locator("button", {
-        hasText: "Nouveau projet",
+      const newProjectBtn = page.getByRole("button", {
+        name: /Nouveau projet.*Site web/i,
       });
       await newProjectBtn.click();
       await page.waitForTimeout(1000);
@@ -372,8 +384,10 @@ test.describe("Quote Wizard Complete Flow", () => {
 
 // Helper function to navigate to contact step
 async function navigateToContactStep(page: import("@playwright/test").Page) {
-  // Start wizard
-  const newProjectBtn = page.locator("button", { hasText: "Nouveau projet" });
+  // Start wizard - use specific selector to avoid matching multiple buttons
+  const newProjectBtn = page.getByRole("button", {
+    name: /Nouveau projet.*Site web/i,
+  });
   if (await newProjectBtn.isVisible({ timeout: 5000 })) {
     await newProjectBtn.click();
     await page.waitForTimeout(1000);

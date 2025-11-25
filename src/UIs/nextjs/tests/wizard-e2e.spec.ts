@@ -1,19 +1,21 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test.describe('Full Quote Wizard E2E Test', () => {
+// Skip this test by default - it runs against production (smidjan.be)
+// Run manually with: npx playwright test wizard-e2e.spec.ts --project=chromium
+test.describe.skip("Full Quote Wizard E2E Test (Production)", () => {
   const errors: string[] = [];
   const apiErrors: { url: string; status: number; method: string }[] = [];
 
   test.beforeEach(async ({ page }) => {
     // Capture console errors
-    page.on('console', (msg) => {
-      if (msg.type() === 'error') {
+    page.on("console", (msg) => {
+      if (msg.type() === "error") {
         errors.push(msg.text());
       }
     });
 
     // Capture all API responses
-    page.on('response', (response) => {
+    page.on("response", (response) => {
       if (response.status() >= 400) {
         apiErrors.push({
           url: response.url(),
@@ -24,38 +26,44 @@ test.describe('Full Quote Wizard E2E Test', () => {
     });
   });
 
-  test('should complete full e-commerce wizard without 429 errors', async ({ page }) => {
-    console.log('🧙 Starting full e-commerce wizard test...\n');
+  test("should complete full e-commerce wizard without 429 errors", async ({
+    page,
+  }) => {
+    console.log("🧙 Starting full e-commerce wizard test...\n");
 
     // Navigate to contact page
-    await page.goto('https://smidjan.be/contact', {
-      waitUntil: 'networkidle',
+    await page.goto("https://smidjan.be/contact", {
+      waitUntil: "networkidle",
     });
 
-    console.log('✅ Page loaded');
+    console.log("✅ Page loaded");
     await page.waitForTimeout(2000);
 
     // Click "Nouveau projet" to start wizard
-    const newProjectBtn = page.locator('button', { hasText: 'Nouveau projet' });
+    const newProjectBtn = page.locator("button", { hasText: "Nouveau projet" });
     await expect(newProjectBtn).toBeVisible({ timeout: 10000 });
     await newProjectBtn.click();
     console.log('✅ Clicked "Nouveau projet"');
-    
+
     await page.waitForTimeout(1000);
 
     // Step 1: Select e-commerce project type
-    const ecommerceBtn = page.locator('button', { hasText: /e-commerce/i }).first();
+    const ecommerceBtn = page
+      .locator("button", { hasText: /e-commerce/i })
+      .first();
     await expect(ecommerceBtn).toBeVisible({ timeout: 10000 });
     await ecommerceBtn.click();
-    console.log('✅ Selected E-commerce project type');
-    
+    console.log("✅ Selected E-commerce project type");
+
     await page.waitForTimeout(1000);
 
     // Click next/continue
-    const nextBtn = page.locator('button', { hasText: /suivant|continuer/i }).first();
+    const nextBtn = page
+      .locator("button", { hasText: /suivant|continuer/i })
+      .first();
     if (await nextBtn.isVisible({ timeout: 2000 })) {
       await nextBtn.click();
-      console.log('✅ Clicked Next');
+      console.log("✅ Clicked Next");
       await page.waitForTimeout(1000);
     }
 
@@ -64,9 +72,11 @@ test.describe('Full Quote Wizard E2E Test', () => {
     const checkboxes = page.locator('input[type="checkbox"]').first();
     if (await checkboxes.isVisible({ timeout: 2000 })) {
       await checkboxes.check();
-      console.log('✅ Selected features');
-      
-      const nextBtn2 = page.locator('button', { hasText: /suivant|continuer/i }).first();
+      console.log("✅ Selected features");
+
+      const nextBtn2 = page
+        .locator("button", { hasText: /suivant|continuer/i })
+        .first();
       if (await nextBtn2.isVisible({ timeout: 2000 })) {
         await nextBtn2.click();
         await page.waitForTimeout(1000);
@@ -76,7 +86,9 @@ test.describe('Full Quote Wizard E2E Test', () => {
     // Step 3-4: Continue through other steps
     // Try to advance through multiple steps
     for (let i = 0; i < 3; i++) {
-      const continueBtn = page.locator('button', { hasText: /suivant|continuer/i }).first();
+      const continueBtn = page
+        .locator("button", { hasText: /suivant|continuer/i })
+        .first();
       if (await continueBtn.isVisible({ timeout: 2000 })) {
         await continueBtn.click();
         console.log(`✅ Advanced to next step (${i + 1})`);
@@ -85,31 +97,39 @@ test.describe('Full Quote Wizard E2E Test', () => {
     }
 
     // Final step: Fill contact form
-    console.log('📝 Filling contact information...');
-    
-    const nameInput = page.locator('input[name="name"], input[placeholder*="nom" i]').first();
+    console.log("📝 Filling contact information...");
+
+    const nameInput = page
+      .locator('input[name="name"], input[placeholder*="nom" i]')
+      .first();
     if (await nameInput.isVisible({ timeout: 2000 })) {
-      await nameInput.fill('Test User Playwright');
-      console.log('✅ Filled name');
+      await nameInput.fill("Test User Playwright");
+      console.log("✅ Filled name");
     }
 
-    const emailInput = page.locator('input[type="email"], input[name="email"]').first();
+    const emailInput = page
+      .locator('input[type="email"], input[name="email"]')
+      .first();
     if (await emailInput.isVisible({ timeout: 2000 })) {
-      await emailInput.fill('test-playwright@example.com');
-      console.log('✅ Filled email');
+      await emailInput.fill("test-playwright@example.com");
+      console.log("✅ Filled email");
       await page.waitForTimeout(500);
     }
 
-    const companyInput = page.locator('input[name="company"], input[placeholder*="entreprise" i]').first();
+    const companyInput = page
+      .locator('input[name="company"], input[placeholder*="entreprise" i]')
+      .first();
     if (await companyInput.isVisible({ timeout: 2000 })) {
-      await companyInput.fill('Test Company');
-      console.log('✅ Filled company');
+      await companyInput.fill("Test Company");
+      console.log("✅ Filled company");
     }
 
-    const phoneInput = page.locator('input[type="tel"], input[name="phone"]').first();
+    const phoneInput = page
+      .locator('input[type="tel"], input[name="phone"]')
+      .first();
     if (await phoneInput.isVisible({ timeout: 2000 })) {
-      await phoneInput.fill('+32471234567');
-      console.log('✅ Filled phone');
+      await phoneInput.fill("+32471234567");
+      console.log("✅ Filled phone");
     }
 
     // Wait for reCAPTCHA and other async operations
@@ -117,39 +137,47 @@ test.describe('Full Quote Wizard E2E Test', () => {
 
     // Check for 429 errors before submission
     const rateLimitsBefore = apiErrors.filter((e) => e.status === 429);
-    console.log(`\n📊 429 errors before submission: ${rateLimitsBefore.length}`);
+    console.log(
+      `\n📊 429 errors before submission: ${rateLimitsBefore.length}`,
+    );
     if (rateLimitsBefore.length > 0) {
-      console.log('❌ FAILED: Got 429 errors before even submitting:');
+      console.log("❌ FAILED: Got 429 errors before even submitting:");
       rateLimitsBefore.forEach((e) => {
         console.log(`  - [${e.method}] ${e.url}`);
       });
     }
 
     // Try to submit
-    const submitBtn = page.locator('button[type="submit"], button', { hasText: /envoyer|valider|soumettre/i }).first();
+    const submitBtn = page
+      .locator('button[type="submit"], button', {
+        hasText: /envoyer|valider|soumettre/i,
+      })
+      .first();
     if (await submitBtn.isVisible({ timeout: 2000 })) {
-      console.log('\n🚀 Submitting form...');
+      console.log("\n🚀 Submitting form...");
       await submitBtn.click();
-      
+
       // Wait for submission to complete
       await page.waitForTimeout(5000);
-      
-      console.log('✅ Form submitted');
+
+      console.log("✅ Form submitted");
     } else {
-      console.log('⚠️  Submit button not found or not visible');
+      console.log("⚠️  Submit button not found or not visible");
     }
 
     // Final check for 429 errors
     const rateLimitsAfter = apiErrors.filter((e) => e.status === 429);
-    console.log(`\n📊 Total 429 errors during entire flow: ${rateLimitsAfter.length}`);
-    
+    console.log(
+      `\n📊 Total 429 errors during entire flow: ${rateLimitsAfter.length}`,
+    );
+
     if (rateLimitsAfter.length > 0) {
-      console.log('\n❌ RATE LIMIT ERRORS DETECTED:');
+      console.log("\n❌ RATE LIMIT ERRORS DETECTED:");
       rateLimitsAfter.forEach((e, i) => {
         console.log(`  ${i + 1}. [${e.status}] [${e.method}] ${e.url}`);
       });
     } else {
-      console.log('\n✅ NO RATE LIMIT ERRORS - SUCCESS!');
+      console.log("\n✅ NO RATE LIMIT ERRORS - SUCCESS!");
     }
 
     // Check for other errors
@@ -158,10 +186,10 @@ test.describe('Full Quote Wizard E2E Test', () => {
 
     // Take final screenshot
     await page.screenshot({
-      path: 'wizard-submission-test.png',
+      path: "wizard-submission-test.png",
       fullPage: true,
     });
-    console.log('\n📸 Screenshot saved: wizard-submission-test.png');
+    console.log("\n📸 Screenshot saved: wizard-submission-test.png");
 
     // Generate report
     const report = {
@@ -179,14 +207,11 @@ test.describe('Full Quote Wizard E2E Test', () => {
       },
     };
 
-    const fs = require('fs');
-    fs.writeFileSync(
-      'wizard-e2e-report.json',
-      JSON.stringify(report, null, 2)
-    );
-    console.log('📄 Report saved: wizard-e2e-report.json');
+    const fs = require("fs");
+    fs.writeFileSync("wizard-e2e-report.json", JSON.stringify(report, null, 2));
+    console.log("📄 Report saved: wizard-e2e-report.json");
 
     // Assert no 429 errors
-    expect(rateLimitsAfter.length, '429 Rate Limit errors should be 0').toBe(0);
+    expect(rateLimitsAfter.length, "429 Rate Limit errors should be 0").toBe(0);
   });
 });

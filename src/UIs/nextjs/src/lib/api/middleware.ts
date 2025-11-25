@@ -1,6 +1,6 @@
 /**
  * API Middleware Utilities
- * 
+ *
  * DRY principle: Centralize common API route validations
  * Used for: CSRF protection, Content-Type validation, reCAPTCHA
  */
@@ -20,7 +20,7 @@ export interface MiddlewareResult {
  */
 export function validateContentType(request: NextRequest): MiddlewareResult {
   const contentType = request.headers.get("content-type");
-  
+
   if (!contentType || !contentType.includes("application/json")) {
     return {
       success: false,
@@ -29,11 +29,11 @@ export function validateContentType(request: NextRequest): MiddlewareResult {
           ok: false,
           message: "Content-Type must be application/json",
         },
-        { status: 415 }
+        { status: 415 },
       ),
     };
   }
-  
+
   return { success: true };
 }
 
@@ -46,18 +46,27 @@ export function validateCSRF(request: NextRequest): MiddlewareResult {
   const referer = request.headers.get("referer");
   const host = request.headers.get("host");
 
-  const isLocalhost = host?.includes("localhost") || host?.includes("127.0.0.1");
-  const isValidOrigin = isLocalhost || origin?.includes(host || "") || referer?.includes(host || "");
+  const isLocalhost =
+    host?.includes("localhost") || host?.includes("127.0.0.1");
+  const isValidOrigin =
+    isLocalhost ||
+    origin?.includes(host || "") ||
+    referer?.includes(host || "");
 
   if (!isValidOrigin) {
     const clientIdentifier = getClientIdentifier(request);
-    console.warn("CSRF attempt detected", { ip: clientIdentifier, origin, referer, host });
-    
+    console.warn("CSRF attempt detected", {
+      ip: clientIdentifier,
+      origin,
+      referer,
+      host,
+    });
+
     return {
       success: false,
       response: NextResponse.json(
         { ok: false, message: "Invalid request origin" },
-        { status: 403 }
+        { status: 403 },
       ),
     };
   }
@@ -74,22 +83,34 @@ export function validateCSRF(request: NextRequest): MiddlewareResult {
 export async function validateRecaptcha(
   request: NextRequest,
   token: string | undefined,
-  action: string
+  action: string,
 ): Promise<MiddlewareResult> {
   const clientIdentifier = getClientIdentifier(request);
 
+  // Skip reCAPTCHA in development/test mode
+  if (process.env.SKIP_RECAPTCHA === "true") {
+    console.log(`[DEV] Skipping reCAPTCHA for ${action}`);
+    return { success: true };
+  }
+
   if (!token) {
-    console.warn(`${action} submission without reCAPTCHA token`, { ip: clientIdentifier });
+    console.warn(`${action} submission without reCAPTCHA token`, {
+      ip: clientIdentifier,
+    });
     return {
       success: false,
       response: NextResponse.json(
         { ok: false, message: "Vérification de sécurité manquante" },
-        { status: 400 }
+        { status: 400 },
       ),
     };
   }
 
-  const recaptchaResult = await verifyRecaptchaEnterprise(token, action, clientIdentifier);
+  const recaptchaResult = await verifyRecaptchaEnterprise(
+    token,
+    action,
+    clientIdentifier,
+  );
 
   if (!recaptchaResult.success) {
     console.warn(`${action} failed reCAPTCHA verification`, {
@@ -100,8 +121,11 @@ export async function validateRecaptcha(
     return {
       success: false,
       response: NextResponse.json(
-        { ok: false, message: "Vérification anti-bot échouée. Veuillez réessayer." },
-        { status: 403 }
+        {
+          ok: false,
+          message: "Vérification anti-bot échouée. Veuillez réessayer.",
+        },
+        { status: 403 },
       ),
     };
   }
@@ -116,7 +140,9 @@ export async function validateRecaptcha(
  */
 export function runMiddleware(
   request: NextRequest,
-  checks: ((req: NextRequest) => MiddlewareResult | Promise<MiddlewareResult>)[]
+  checks: ((
+    req: NextRequest,
+  ) => MiddlewareResult | Promise<MiddlewareResult>)[],
 ): Promise<MiddlewareResult> {
   return checks.reduce<Promise<MiddlewareResult>>(
     async (promise, check) => {
@@ -126,6 +152,9 @@ export function runMiddleware(
       }
       return check(request);
     },
-    Promise.resolve({ success: true, clientIdentifier: getClientIdentifier(request) })
+    Promise.resolve({
+      success: true,
+      clientIdentifier: getClientIdentifier(request),
+    }),
   );
 }

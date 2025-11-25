@@ -30,8 +30,8 @@ test.describe("Wizard Fixes Verification", () => {
       await page.waitForTimeout(3000);
 
       // Click "Nouveau projet" to start wizard (loads Step5Contact eventually)
-      const newProjectBtn = page.locator("button", {
-        hasText: "Nouveau projet",
+      const newProjectBtn = page.getByRole("button", {
+        name: /Nouveau projet.*Site web/i,
       });
       if (await newProjectBtn.isVisible({ timeout: 5000 })) {
         await newProjectBtn.click();
@@ -40,9 +40,9 @@ test.describe("Wizard Fixes Verification", () => {
         // Navigate through wizard quickly
         await page.waitForTimeout(1000);
 
-        // Select a project type
+        // Select a project type - use specific text to avoid matching disabled buttons
         const projectTypeBtn = page
-          .locator("button", { hasText: /site/i })
+          .locator("button", { hasText: /site vitrine/i })
           .first();
         if (await projectTypeBtn.isVisible({ timeout: 3000 })) {
           await projectTypeBtn.click();
@@ -103,15 +103,15 @@ test.describe("Wizard Fixes Verification", () => {
       await page.goto("/contact", { waitUntil: "networkidle" });
 
       // Start wizard
-      const newProjectBtn = page.locator("button", {
-        hasText: "Nouveau projet",
+      const newProjectBtn = page.getByRole("button", {
+        name: /Nouveau projet.*Site web/i,
       });
       await newProjectBtn.click();
       await page.waitForTimeout(1000);
 
-      // Select project type
+      // Select project type - use specific text to avoid matching disabled buttons
       const projectTypeBtn = page
-        .locator("button", { hasText: /site/i })
+        .locator("button", { hasText: /site vitrine/i })
         .first();
       await projectTypeBtn.click();
       await page.waitForTimeout(1000);
@@ -208,15 +208,15 @@ test.describe("Wizard Fixes Verification", () => {
       // Navigate and interact
       await page.goto("/contact", { waitUntil: "networkidle" });
 
-      const newProjectBtn = page.locator("button", {
-        hasText: "Nouveau projet",
+      const newProjectBtn = page.getByRole("button", {
+        name: /Nouveau projet.*Site web/i,
       });
       if (await newProjectBtn.isVisible({ timeout: 5000 })) {
         await newProjectBtn.click();
         await page.waitForTimeout(1000);
 
         const projectTypeBtn = page
-          .locator("button", { hasText: /site/i })
+          .locator("button", { hasText: /site vitrine/i })
           .first();
         if (await projectTypeBtn.isVisible({ timeout: 3000 })) {
           await projectTypeBtn.click();
@@ -272,14 +272,14 @@ test.describe("Wizard Fixes Verification", () => {
       // Navigate through wizard
       await page.goto("/contact", { waitUntil: "networkidle" });
 
-      const newProjectBtn = page.locator("button", {
-        hasText: "Nouveau projet",
+      const newProjectBtn = page.getByRole("button", {
+        name: /Nouveau projet.*Site web/i,
       });
       if (await newProjectBtn.isVisible({ timeout: 5000 })) {
         await newProjectBtn.click();
 
         const projectTypeBtn = page
-          .locator("button", { hasText: /site/i })
+          .locator("button", { hasText: /site vitrine/i })
           .first();
         if (await projectTypeBtn.isVisible({ timeout: 3000 })) {
           await projectTypeBtn.click();
@@ -332,8 +332,8 @@ test.describe("Wizard Fixes Verification", () => {
       await page.waitForTimeout(2000);
 
       // Start wizard
-      const newProjectBtn = page.locator("button", {
-        hasText: "Nouveau projet",
+      const newProjectBtn = page.getByRole("button", {
+        name: /Nouveau projet.*Site web/i,
       });
       if (await newProjectBtn.isVisible({ timeout: 5000 })) {
         await newProjectBtn.click();
