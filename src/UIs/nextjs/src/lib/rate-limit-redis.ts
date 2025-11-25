@@ -1,10 +1,10 @@
 /**
  * Upstash Redis Configuration for Rate Limiting
- * 
+ *
  * Architecture:
  * - Neon Postgres: Persistent data (quotes, leads, orders)
  * - Upstash Redis: Fast operations (rate limiting, cache, counters)
- * 
+ *
  * Best Practices Next.js 16 (2025):
  * - Sliding window algorithm (more fair than fixed window)
  * - Separate limiters per endpoint (different limits)
@@ -12,8 +12,8 @@
  * - Graceful fallback on Redis errors
  */
 
-import { Ratelimit } from '@upstash/ratelimit';
-import { Redis } from '@upstash/redis';
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
 
 // Initialize Redis client
 const redis = new Redis({
@@ -27,9 +27,9 @@ const redis = new Redis({
  */
 export const quoteLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(20, '1 h'),
+  limiter: Ratelimit.slidingWindow(20, "1 h"),
   analytics: true,
-  prefix: 'smidjan_quote',
+  prefix: "smidjan_quote",
 });
 
 /**
@@ -38,9 +38,9 @@ export const quoteLimiter = new Ratelimit({
  */
 export const contactLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(20, '1 h'),
+  limiter: Ratelimit.slidingWindow(20, "1 h"),
   analytics: true,
-  prefix: 'smidjan_contact',
+  prefix: "smidjan_contact",
 });
 
 /**
@@ -49,52 +49,77 @@ export const contactLimiter = new Ratelimit({
  */
 export const enrichmentLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(60, '1 m'),
+  limiter: Ratelimit.slidingWindow(60, "1 m"),
   analytics: true,
-  prefix: 'smidjan_enrichment',
+  prefix: "smidjan_enrichment",
+});
+
+/**
+ * Rate limiter for CSRF token endpoint
+ * Limit: 30 requests per minute per user (generous for page navigations)
+ */
+export const csrfLimiter = new Ratelimit({
+  redis,
+  limiter: Ratelimit.slidingWindow(30, "1 m"),
+  analytics: true,
+  prefix: "smidjan_csrf",
+});
+
+/**
+ * Rate limiter for lead scoring session/events endpoints
+ * Limit: 100 requests per minute (internal tracking calls)
+ */
+export const leadScoringLimiter = new Ratelimit({
+  redis,
+  limiter: Ratelimit.slidingWindow(100, "1 m"),
+  analytics: true,
+  prefix: "smidjan_leadscore",
 });
 
 /**
  * Extract client identifier for rate limiting
- * 
+ *
  * Priority:
  * 1. Real IP from x-forwarded-for (Vercel passes client IP here)
  * 2. x-real-ip header (fallback)
  * 3. Fingerprint from user-agent + accept-language (last resort)
- * 
+ *
  * @param request - Next.js request object
  * @returns Unique identifier for the client
  */
 export function getClientIdentifier(request: Request): string {
   // Priority 1: x-forwarded-for (Vercel always sets this)
-  const forwardedFor = request.headers.get('x-forwarded-for');
+  const forwardedFor = request.headers.get("x-forwarded-for");
   if (forwardedFor) {
     // Take the first IP (client's real IP)
-    const clientIP = forwardedFor.split(',')[0].trim();
-    if (clientIP && clientIP !== '' && clientIP !== 'unknown') {
+    const clientIP = forwardedFor.split(",")[0].trim();
+    if (clientIP && clientIP !== "" && clientIP !== "unknown") {
       return clientIP;
     }
   }
 
   // Priority 2: x-real-ip
-  const realIP = request.headers.get('x-real-ip');
-  if (realIP && realIP !== '' && realIP !== 'unknown') {
+  const realIP = request.headers.get("x-real-ip");
+  if (realIP && realIP !== "" && realIP !== "unknown") {
     return realIP.trim();
   }
 
   // Priority 3: Fingerprint (fallback for development or edge cases)
-  const userAgent = request.headers.get('user-agent') || 'unknown';
-  const acceptLang = request.headers.get('accept-language') || 'unknown';
+  const userAgent = request.headers.get("user-agent") || "unknown";
+  const acceptLang = request.headers.get("accept-language") || "unknown";
   const fingerprint = `fallback_${userAgent.substring(0, 30)}_${acceptLang.substring(0, 10)}`;
 
-  console.warn('⚠️ Could not extract real IP, using fingerprint:', fingerprint.substring(0, 50));
+  console.warn(
+    "⚠️ Could not extract real IP, using fingerprint:",
+    fingerprint.substring(0, 50),
+  );
   return fingerprint;
 }
 
 /**
  * Helper to check rate limit and return formatted response
  * Usage example:
- * 
+ *
  * const rateLimitResult = await checkRateLimit(quoteLimiter, request);
  * if (!rateLimitResult.success) {
  *   return rateLimitResult.response;
@@ -110,7 +135,8 @@ export async function checkRateLimit(
 }> {
   try {
     const identifier = getClientIdentifier(request);
-    const { success, limit, remaining, reset } = await limiter.limit(identifier);
+    const { success, limit, remaining, reset } =
+      await limiter.limit(identifier);
 
     if (!success) {
       return {
@@ -118,7 +144,7 @@ export async function checkRateLimit(
         response: new Response(
           JSON.stringify({
             ok: false,
-            message: 'Trop de requêtes. Veuillez réessayer plus tard.',
+            message: "Trop de requêtes. Veuillez réessayer plus tard.",
             rateLimitInfo: {
               limit,
               remaining: 0,
@@ -128,10 +154,10 @@ export async function checkRateLimit(
           {
             status: 429,
             headers: {
-              'Content-Type': 'application/json',
-              'X-RateLimit-Limit': limit.toString(),
-              'X-RateLimit-Remaining': '0',
-              'X-RateLimit-Reset': new Date(reset).toISOString(),
+              "Content-Type": "application/json",
+              "X-RateLimit-Limit": limit.toString(),
+              "X-RateLimit-Remaining": "0",
+              "X-RateLimit-Reset": new Date(reset).toISOString(),
             },
           },
         ),
@@ -140,7 +166,7 @@ export async function checkRateLimit(
 
     return { success: true, remaining };
   } catch (error) {
-    console.error('❌ Rate limit check failed:', error);
+    console.error("❌ Rate limit check failed:", error);
     // Fail open: allow request if rate limiting service is down
     return { success: true, remaining: undefined };
   }

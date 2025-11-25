@@ -6,9 +6,34 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import {
+  leadScoringLimiter,
+  getClientIdentifier,
+} from "@/lib/rate-limit-redis";
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting check
+    const clientIdentifier = getClientIdentifier(request);
+    const { success, reset } = await leadScoringLimiter.limit(clientIdentifier);
+
+    if (!success) {
+      console.warn(
+        "[LeadScoring/events] Rate limit exceeded for:",
+        clientIdentifier,
+      );
+      return NextResponse.json(
+        { error: "Too many requests" },
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            "Retry-After": Math.ceil((reset - Date.now()) / 1000).toString(),
+          },
+        },
+      );
+    }
+
     const { sessionId, events } = await request.json();
 
     if (!sessionId || !events || !Array.isArray(events)) {

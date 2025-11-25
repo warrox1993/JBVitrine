@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { ArrowLeft, Send, CheckCircle, AlertCircle, Briefcase, Wrench, HelpCircle, Bug, Handshake, MoreHorizontal } from 'lucide-react';
+import { useCsrfToken } from '@/hooks/useCsrfToken';
 import cls from './SimpleContactForm.module.css';
 
 interface SimpleContactFormProps {
@@ -37,25 +38,21 @@ export function SimpleContactForm({ onBack, onSubmit }: SimpleContactFormProps) 
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
-  const [csrfToken, setCsrfToken] = useState<string | null>(null);
 
-  // Fetch CSRF token and load reCAPTCHA on mount
+  // Use shared CSRF token hook (singleton pattern - no duplicate API calls)
+  const { csrfToken, error: csrfError } = useCsrfToken();
+
+  // Log CSRF errors if any
   useEffect(() => {
-    const fetchCsrfToken = async () => {
-      try {
-        const response = await fetch('/api/csrf/token');
-        if (response.ok) {
-          const data = await response.json();
-          setCsrfToken(data.token);
-          console.log('✅ CSRF token fetched successfully');
-        }
-      } catch (error) {
-        console.error('❌ Failed to fetch CSRF token:', error);
-      }
-    };
+    if (csrfError) {
+      console.error('[SimpleContactForm] CSRF token error:', csrfError);
+    } else if (csrfToken) {
+      console.log('[SimpleContactForm] CSRF token synced from shared hook');
+    }
+  }, [csrfToken, csrfError]);
 
-    fetchCsrfToken();
-
+  // Load reCAPTCHA on mount
+  useEffect(() => {
     // Load reCAPTCHA Enterprise script
     const loadRecaptcha = async () => {
       const { RECAPTCHA_SITE_KEY } = await import('@/config/recaptcha');

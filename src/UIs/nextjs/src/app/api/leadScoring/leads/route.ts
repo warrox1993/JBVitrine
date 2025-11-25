@@ -6,12 +6,50 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import {
+  leadScoringLimiter,
+  getClientIdentifier,
+} from "@/lib/rate-limit-redis";
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting check
+    const clientIdentifier = getClientIdentifier(request);
+    const { success, limit, remaining, reset } =
+      await leadScoringLimiter.limit(clientIdentifier);
+
+    if (!success) {
+      console.warn(
+        "[LeadScoring/leads] Rate limit exceeded for:",
+        clientIdentifier,
+      );
+      return NextResponse.json(
+        {
+          error: "Too many requests. Please try again later.",
+          errorCode: "RATE_LIMIT_EXCEEDED",
+        },
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            "X-RateLimit-Limit": limit.toString(),
+            "X-RateLimit-Remaining": "0",
+            "X-RateLimit-Reset": reset.toString(),
+            "Retry-After": Math.ceil((reset - Date.now()) / 1000).toString(),
+          },
+        },
+      );
+    }
+
     // Log database connection status
-    console.log("🔍 DATABASE_URL loaded:", !!process.env.DATABASE_URL);
-    console.log("🔍 POSTGRES_URL loaded:", !!process.env.POSTGRES_URL);
+    console.log(
+      "[LeadScoring/leads] DATABASE_URL loaded:",
+      !!process.env.DATABASE_URL,
+    );
+    console.log(
+      "[LeadScoring/leads] POSTGRES_URL loaded:",
+      !!process.env.POSTGRES_URL,
+    );
 
     const {
       lead,
@@ -142,6 +180,27 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
+    // Rate limiting check
+    const clientIdentifier = getClientIdentifier(request);
+    const { success, reset } = await leadScoringLimiter.limit(clientIdentifier);
+
+    if (!success) {
+      console.warn(
+        "[LeadScoring/leads] GET rate limit exceeded for:",
+        clientIdentifier,
+      );
+      return NextResponse.json(
+        { error: "Too many requests" },
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            "Retry-After": Math.ceil((reset - Date.now()) / 1000).toString(),
+          },
+        },
+      );
+    }
+
     // Get query parameters for pagination
     const { searchParams } = new URL(request.url);
     const limit = parseInt(searchParams.get("limit") || "50");
@@ -163,7 +222,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ leads });
   } catch (error) {
-    console.error("❌ Error fetching leads:", error);
+    console.error("[LeadScoring/leads] Error fetching leads:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 },

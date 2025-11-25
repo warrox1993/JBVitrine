@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { generateCsrfToken, storeCsrfToken } from "@/lib/csrf";
+import { csrfLimiter, getClientIdentifier } from "@/lib/rate-limit-redis";
 
 // Get client IP
 function getClientIp(request: Request): string {
@@ -10,6 +11,31 @@ function getClientIp(request: Request): string {
 
 export async function GET(request: Request) {
   try {
+    // Rate limiting check
+    const clientIdentifier = getClientIdentifier(request);
+    const { success, limit, remaining, reset } =
+      await csrfLimiter.limit(clientIdentifier);
+
+    if (!success) {
+      console.warn("[CSRF] Rate limit exceeded for:", clientIdentifier);
+      return NextResponse.json(
+        {
+          error: "Too many requests. Please try again later.",
+          errorCode: "RATE_LIMIT_EXCEEDED",
+        },
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            "X-RateLimit-Limit": limit.toString(),
+            "X-RateLimit-Remaining": "0",
+            "X-RateLimit-Reset": reset.toString(),
+            "Retry-After": Math.ceil((reset - Date.now()) / 1000).toString(),
+          },
+        },
+      );
+    }
+
     const clientIp = getClientIp(request);
 
     // Generate CSRF token
@@ -18,15 +44,29 @@ export async function GET(request: Request) {
     // Store token in Redis (expires in 1 hour)
     await storeCsrfToken(token, clientIp);
 
-    return NextResponse.json({
-      token,
-      expiresIn: 3600, // 1 hour in seconds
-    });
+    console.log(
+      "[CSRF] Token generated for:",
+      clientIp.substring(0, 10) + "...",
+    );
+
+    return NextResponse.json(
+      {
+        token,
+        expiresIn: 3600, // 1 hour in seconds
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "X-RateLimit-Limit": limit.toString(),
+          "X-RateLimit-Remaining": remaining.toString(),
+        },
+      },
+    );
   } catch (error) {
-    console.error("CSRF token generation error:", error);
+    console.error("[CSRF] Token generation error:", error);
     return NextResponse.json(
       { error: "Failed to generate CSRF token" },
-      { status: 500 },
+      { status: 500, headers: { "Content-Type": "application/json" } },
     );
   }
 }

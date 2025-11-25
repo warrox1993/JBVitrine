@@ -26,6 +26,95 @@
 
 import { EnrichedLeadData } from "./types";
 
+// ============================================================================
+// SINGLETON & CACHE MANAGEMENT
+// Prevents multiple instances and duplicate API calls
+// ============================================================================
+
+// Singleton instance
+let enrichmentServiceInstance: LeadEnrichmentService | null = null;
+
+// Cache for enrichment results to avoid duplicate API calls
+const enrichmentCache = new Map<string, EnrichedLeadData>();
+
+// Track pending requests to prevent duplicate concurrent calls
+const pendingRequests = new Map<string, Promise<EnrichedLeadData>>();
+
+/**
+ * Get or create singleton instance of LeadEnrichmentService
+ */
+export function getEnrichmentService(): LeadEnrichmentService {
+  if (!enrichmentServiceInstance) {
+    enrichmentServiceInstance = new LeadEnrichmentService();
+    console.log("[LeadEnrichmentService] Singleton instance created");
+  }
+  return enrichmentServiceInstance;
+}
+
+/**
+ * Check if data for this email is already cached
+ */
+export function getCachedEnrichment(email: string): EnrichedLeadData | null {
+  const cached = enrichmentCache.get(email.toLowerCase());
+  if (cached) {
+    console.log("[LeadEnrichmentService] Cache HIT for:", email);
+  }
+  return cached || null;
+}
+
+/**
+ * Clear the enrichment cache (for testing or reset)
+ */
+export function clearEnrichmentCache(): void {
+  enrichmentCache.clear();
+  pendingRequests.clear();
+  console.log("[LeadEnrichmentService] Cache cleared");
+}
+
+/**
+ * Get enrichment with caching and deduplication
+ * This is the recommended way to enrich leads - it handles:
+ * 1. Cache lookup (returns immediately if cached)
+ * 2. Request deduplication (reuses pending requests)
+ * 3. Cache storage (caches successful results)
+ */
+export async function enrichLeadWithCache(
+  email: string,
+  company?: string,
+): Promise<EnrichedLeadData> {
+  const cacheKey = email.toLowerCase();
+
+  // 1. Check cache first
+  const cached = enrichmentCache.get(cacheKey);
+  if (cached) {
+    console.log("[LeadEnrichmentService] Using cached data for:", email);
+    return cached;
+  }
+
+  // 2. Check if there's already a pending request for this email
+  const pending = pendingRequests.get(cacheKey);
+  if (pending) {
+    console.log("[LeadEnrichmentService] Reusing pending request for:", email);
+    return pending;
+  }
+
+  // 3. Create new request and track it
+  const service = getEnrichmentService();
+  const request = service.enrichLead(email, company).then((result) => {
+    // Cache successful results (even fallback data to prevent retries)
+    enrichmentCache.set(cacheKey, result);
+    pendingRequests.delete(cacheKey);
+    return result;
+  });
+
+  pendingRequests.set(cacheKey, request);
+  return request;
+}
+
+// ============================================================================
+// MAIN SERVICE CLASS
+// ============================================================================
+
 export class LeadEnrichmentService {
   // No API keys on client-side anymore - all moved to server
   private hunterKey: string | undefined;
@@ -52,6 +141,8 @@ export class LeadEnrichmentService {
     const resolvedDomain = domain || this.extractDomain(email);
 
     try {
+      console.log("[LeadEnrichmentService] Starting enrichment for:", email);
+
       // Call server-side API for all enrichment data
       const response = await fetch("/api/leadScoring/enrich", {
         method: "POST",
@@ -59,16 +150,49 @@ export class LeadEnrichmentService {
         body: JSON.stringify({ email, domain: resolvedDomain, company }),
       });
 
+      // Validate Content-Type BEFORE parsing to avoid JSON parse errors
+      const contentType = response.headers.get("content-type");
+
       if (!response.ok) {
-        console.warn("Enrichment API failed, using fallback data");
-        // Fallback to basic local data
-        return {
-          email,
-          name: "",
-          company,
-          enrichmentScore: 0,
-          confidenceLevel: "low",
-        };
+        console.warn("[LeadEnrichmentService] API failed:", {
+          status: response.status,
+          statusText: response.statusText,
+          contentType,
+        });
+
+        // Check if response is HTML (error page or rate limit)
+        if (contentType?.includes("text/html")) {
+          console.error(
+            "[LeadEnrichmentService] API returned HTML instead of JSON (rate limit or error page)",
+          );
+          return this.createFallbackData(email, company);
+        }
+
+        // Try to parse JSON error for details
+        try {
+          const errorData = await response.json();
+          console.warn("[LeadEnrichmentService] API error details:", errorData);
+          if (response.status === 429) {
+            console.warn(
+              "[LeadEnrichmentService] Rate limit exceeded, using fallback",
+            );
+          }
+        } catch {
+          console.warn(
+            "[LeadEnrichmentService] Could not parse error response",
+          );
+        }
+
+        return this.createFallbackData(email, company);
+      }
+
+      // Validate Content-Type is JSON before parsing
+      if (!contentType?.includes("application/json")) {
+        console.error(
+          "[LeadEnrichmentService] Invalid content-type:",
+          contentType,
+        );
+        return this.createFallbackData(email, company);
       }
 
       const result = await response.json();
@@ -90,17 +214,33 @@ export class LeadEnrichmentService {
       enriched.enrichmentScore = this.calculateEnrichmentScore(enriched);
       enriched.confidenceLevel = this.determineConfidence(enriched);
 
+      console.log("[LeadEnrichmentService] Enrichment complete:", {
+        email,
+        score: enriched.enrichmentScore,
+        confidence: enriched.confidenceLevel,
+      });
+
       return enriched;
     } catch (error) {
-      console.error("Enrichment error:", error);
-      return {
-        email,
-        name: "",
-        company,
-        enrichmentScore: 0,
-        confidenceLevel: "low",
-      };
+      console.error("[LeadEnrichmentService] Enrichment error:", error);
+      return this.createFallbackData(email, company);
     }
+  }
+
+  /**
+   * Creates fallback data when enrichment fails
+   */
+  private createFallbackData(
+    email: string,
+    company?: string,
+  ): EnrichedLeadData {
+    return {
+      email,
+      name: "",
+      company,
+      enrichmentScore: 0,
+      confidenceLevel: "low",
+    };
   }
 
   // ============================================================================
@@ -227,109 +367,10 @@ export class LeadEnrichmentService {
   }
 
   // ============================================================================
-  // TECH STACK DETECTION (100% GRATUIT - Détection maison)
-  // Analyse headers HTTP uniquement (pas d'API externe payante)
+  // TECH STACK DETECTION
+  // Note: Tech stack is now returned by the main enrichLead() call via server API
+  // The methods below are DEPRECATED and kept only for reference
   // ============================================================================
-
-  private async getTechStack(
-    domain: string,
-  ): Promise<EnrichedLeadData["techStack"] | null> {
-    // Use server-side API to avoid CSP violations
-    try {
-      const response = await fetch("/api/leadScoring/enrich", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ domain }),
-      });
-
-      if (!response.ok) {
-        console.warn("⚠️ Tech stack API failed, using fallback");
-        return null;
-      }
-
-      const data = await response.json();
-      return data.data?.techStack || null;
-    } catch (error) {
-      console.warn("⚠️ Tech stack detection unavailable:", error);
-      return null;
-    }
-  }
-
-  /**
-   * Détection tech stack basique (100% gratuit, pas d'API externe)
-   * Analyse les headers HTTP pour détecter les technologies principales
-   */
-  private async detectTechStackBasic(
-    domain: string,
-  ): Promise<EnrichedLeadData["techStack"] | null> {
-    try {
-      const response = await fetch(`https://${domain}`, {
-        method: "HEAD",
-        redirect: "follow",
-      });
-
-      const headers = response.headers;
-      const techs: EnrichedLeadData["techStack"] = {
-        cms: [],
-        analytics: [],
-        ecommerce: [],
-        hosting: [],
-        cdn: [],
-      };
-
-      // Détection basée sur les headers HTTP
-      const server = headers.get("server")?.toLowerCase() || "";
-      const xPoweredBy = headers.get("x-powered-by")?.toLowerCase() || "";
-      const xFramework = headers.get("x-framework")?.toLowerCase() || "";
-      const via = headers.get("via")?.toLowerCase() || "";
-      const xGenerator = headers.get("x-generator")?.toLowerCase() || "";
-
-      // CMS Detection
-      if (xPoweredBy.includes("next.js") || xGenerator.includes("next.js")) {
-        techs.cms.push("Next.js");
-      }
-      if (
-        xFramework.includes("wordpress") ||
-        xGenerator.includes("wordpress")
-      ) {
-        techs.cms.push("WordPress");
-      }
-      if (server.includes("wix")) techs.cms.push("Wix");
-      if (server.includes("squarespace")) techs.cms.push("Squarespace");
-      if (xPoweredBy.includes("express")) techs.cms.push("Express.js");
-      if (xGenerator.includes("drupal")) techs.cms.push("Drupal");
-      if (xGenerator.includes("joomla")) techs.cms.push("Joomla");
-
-      // Hosting Detection
-      if (xPoweredBy.includes("vercel") || server.includes("vercel")) {
-        techs.hosting.push("Vercel");
-      }
-      if (server.includes("nginx")) techs.hosting.push("Nginx");
-      if (server.includes("apache")) techs.hosting.push("Apache");
-      if (xPoweredBy.includes("aws")) techs.hosting.push("AWS");
-      if (server.includes("netlify")) techs.hosting.push("Netlify");
-      if (server.includes("github")) techs.hosting.push("GitHub Pages");
-
-      // CDN Detection
-      if (server.includes("cloudflare") || via.includes("cloudflare")) {
-        techs.cdn.push("Cloudflare");
-      }
-      if (server.includes("akamai")) techs.cdn.push("Akamai");
-      if (server.includes("fastly")) techs.cdn.push("Fastly");
-      if (via.includes("varnish")) techs.cdn.push("Varnish");
-
-      // E-commerce Detection (basic)
-      if (xPoweredBy.includes("shopify")) techs.ecommerce.push("Shopify");
-      if (server.includes("woocommerce")) techs.ecommerce.push("WooCommerce");
-      if (xGenerator.includes("magento")) techs.ecommerce.push("Magento");
-      if (xPoweredBy.includes("prestashop")) techs.ecommerce.push("PrestaShop");
-
-      return techs;
-    } catch (error) {
-      console.error("Basic tech detection error:", error);
-      return null;
-    }
-  }
 
   // ============================================================================
   // SCORING

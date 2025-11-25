@@ -5,6 +5,7 @@ import { ContactInfo, QuoteEstimate, QuoteData, TimelineOption } from '../types'
 import { formatPriceRange } from '@/lib/pricing/calculator';
 import PhoneInput from 'react-phone-number-input';
 import { isValidPhoneNumber } from 'libphonenumber-js';
+import { useCsrfToken } from '@/hooks/useCsrfToken';
 import 'react-phone-number-input/style.css';
 import cls from './Step5Contact.module.css';
 
@@ -54,25 +55,23 @@ export function Step5Contact({
   );
   const [globalError, setGlobalError] = useState<string>('');
 
-  // Initialize form start time, CSRF token and reCAPTCHA on mount
+  // Use shared CSRF token hook (singleton pattern - no duplicate API calls)
+  const { csrfToken, isLoading: csrfLoading, error: csrfError } = useCsrfToken();
+
+  // Sync CSRF token to form data when it changes
+  useEffect(() => {
+    if (csrfToken) {
+      setFormData((prev) => ({ ...prev, csrfToken }));
+      console.log('[Step5Contact] CSRF token synced from shared hook');
+    }
+    if (csrfError) {
+      console.error('[Step5Contact] CSRF token error:', csrfError);
+    }
+  }, [csrfToken, csrfError]);
+
+  // Initialize form start time and reCAPTCHA on mount
   useEffect(() => {
     setFormData((prev) => ({ ...prev, formStartTime: Date.now() }));
-
-    // Fetch CSRF token
-    const fetchCsrfToken = async () => {
-      try {
-        const response = await fetch('/api/csrf/token');
-        if (response.ok) {
-          const data = await response.json();
-          setFormData((prev) => ({ ...prev, csrfToken: data.token }));
-          console.log('✅ CSRF token fetched successfully');
-        }
-      } catch (error) {
-        console.error('❌ Failed to fetch CSRF token:', error);
-      }
-    };
-
-    fetchCsrfToken();
 
     // Load reCAPTCHA Enterprise script
     const loadRecaptcha = async () => {

@@ -19,6 +19,10 @@ export {
 } from "./realTimeScorer";
 export {
   LeadEnrichmentService,
+  getEnrichmentService,
+  getCachedEnrichment,
+  clearEnrichmentCache,
+  enrichLeadWithCache,
   isValidEmail,
   extractDomain,
 } from "./enrichment";

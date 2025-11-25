@@ -11,7 +11,8 @@ import {
   BehavioralTracker,
   getTracker,
   RealTimeLeadScorer,
-  LeadEnrichmentService,
+  enrichLeadWithCache,
+  getCachedEnrichment,
   LeadScore,
   EnrichedLeadData,
 } from "@/lib/leadScoring";
@@ -73,15 +74,47 @@ export function useLeadScoring(quoteData: QuoteData) {
   );
 
   // Enrich lead data when email is provided
+  // Uses singleton service with caching to prevent duplicate API calls
   const enrichLead = useCallback(
     async (email: string, company?: string) => {
-      if (!email || isEnriching) return;
+      // Guard: skip if no email, already enriching, or already have enriched data
+      if (!email) {
+        console.log("[useLeadScoring] enrichLead skipped: no email");
+        return null;
+      }
+      if (isEnriching) {
+        console.log("[useLeadScoring] enrichLead skipped: already enriching");
+        return null;
+      }
+
+      // Check if we already have enriched data for this email (from cache or state)
+      const cached = getCachedEnrichment(email);
+      if (cached) {
+        console.log("[useLeadScoring] Using cached enrichment data");
+        if (!enrichedData) {
+          setEnrichedData(cached);
+          // Update scorer with cached data
+          if (scorer) {
+            scorer.setEnrichedData(cached);
+            if (tracker) {
+              const behavioral = tracker.getData();
+              const newScore = scorer.calculateTotalScore(
+                quoteData,
+                behavioral,
+              );
+              setLeadScore(newScore);
+            }
+          }
+        }
+        return cached;
+      }
 
       setIsEnriching(true);
+      console.log("[useLeadScoring] Starting enrichment for:", email);
 
       try {
-        const enrichmentService = new LeadEnrichmentService();
-        const enriched = await enrichmentService.enrichLead(email, company);
+        // Use the cached/deduplicated enrichment function
+        const enriched = await enrichLeadWithCache(email, company);
 
         setEnrichedData(enriched);
 
@@ -97,15 +130,21 @@ export function useLeadScoring(quoteData: QuoteData) {
           }
         }
 
+        console.log("[useLeadScoring] Enrichment complete:", {
+          email,
+          score: enriched.enrichmentScore,
+          confidence: enriched.confidenceLevel,
+        });
+
         return enriched;
       } catch (error) {
-        console.error("Failed to enrich lead:", error);
+        console.error("[useLeadScoring] Failed to enrich lead:", error);
         return null;
       } finally {
         setIsEnriching(false);
       }
     },
-    [isEnriching, scorer, tracker, quoteData],
+    [isEnriching, enrichedData, scorer, tracker, quoteData],
   );
 
   // Save complete lead to backend
