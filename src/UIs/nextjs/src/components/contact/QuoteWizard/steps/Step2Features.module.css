@@ -1,6 +1,6 @@
 .step {
   width: 100%;
-  padding: var(--space-6, 4rem) var(--space-4, 1.5rem);
+  padding: var(--space-4, 1.5rem);
 }
 
 .header {
@@ -266,6 +266,130 @@
 .btnSecondary:hover {
   border-color: var(--color-accent-1, #ff6a00);
   color: var(--color-accent-1, #ff6a00);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .step {
+    padding: var(--space-3, 1rem);
+  }
+
+  .content {
+    gap: var(--space-4, 1.5rem);
+  }
+
+  .category {
+    gap: var(--space-3, 1rem);
+  }
+
+  .featureCard {
+    padding: var(--space-3, 1rem);
+  }
+
+  .footer {
+    padding-top: var(--space-3, 1rem);
+    gap: var(--space-3, 1rem);
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    padding: var(--space-3, 1rem) var(--space-4, 1.5rem);
+  }
+
+  /* Augmenter zone tactile checkbox */
+  .checkbox {
+    width: 24px;
+    height: 24px;
+  }
+
+  .featureDescription,
+  .featurePrice,
+  .featurePriceIncluded {
+    padding-left: calc(24px + var(--space-2, 0.5rem));
+  }
+}
+
+/* Small mobile (320px-480px) */
+@media (max-width: 480px) {
+  .step {
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .title {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+  }
+
+  .subtitle {
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  .content {
+    gap: var(--space-3, 1rem);
+  }
+
+  .category {
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .categoryTitle {
+    font-size: var(--text-base, 1rem);
+  }
+
+  .featureCard {
+    padding: var(--space-2, 0.5rem);
+    gap: var(--space-1, 0.25rem);
+  }
+
+  .featureHeader {
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .featureName {
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  .featureDescription {
+    font-size: var(--text-xs, 0.75rem);
+    padding-left: calc(24px + var(--space-2, 0.5rem));
+    word-break: break-word;
+  }
+
+  .featurePrice,
+  .featurePriceIncluded {
+    font-size: var(--text-xs, 0.75rem);
+    padding-left: calc(24px + var(--space-2, 0.5rem));
+  }
+
+  .footer {
+    padding-top: var(--space-2, 0.5rem);
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .summary {
+    padding: var(--space-2, 0.5rem);
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .summaryLabel {
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  .summaryCount {
+    font-size: var(--text-lg, 1.125rem);
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    padding: 0.875rem 1rem;
+    font-size: var(--text-sm, 0.875rem);
+    min-height: 48px;
+  }
 }
 
 /* Accessibility */

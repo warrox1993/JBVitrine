@@ -336,32 +336,146 @@
 /* Responsive */
 @media (max-width: 768px) {
   .step {
-    padding: var(--space-5, 2.5rem) var(--space-3, 1rem);
+    padding: var(--space-3, 1rem);
+  }
+
+  .content {
+    gap: var(--space-4, 1.5rem);
   }
 
   .overview,
   .section,
   .timelineSection,
   .notice {
-    padding: var(--space-4, 1.5rem);
+    padding: var(--space-3, 1rem);
+  }
+
+  .overview {
+    gap: var(--space-3, 1rem);
   }
 
   .projectHeader {
     flex-direction: column;
     text-align: center;
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .projectIcon {
+    font-size: 2.5rem;
+  }
+
+  .priceCard {
+    padding: var(--space-3, 1rem);
   }
 
   .metaInfo {
     grid-template-columns: 1fr;
+    gap: var(--space-2, 0.5rem);
   }
 
   .footer {
     flex-direction: column-reverse;
+    padding-top: var(--space-3, 1rem);
   }
 
   .btnPrimary,
   .btnSecondary {
     width: 100%;
+  }
+}
+
+/* Small mobile (320px-480px) */
+@media (max-width: 480px) {
+  .step {
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .title {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+
+  .subtitle {
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  .content {
+    gap: var(--space-3, 1rem);
+  }
+
+  .overview,
+  .section,
+  .timelineSection,
+  .notice,
+  .priceCard {
+    padding: var(--space-2, 0.5rem);
+    border-radius: var(--radius-md, 0.75rem);
+  }
+
+  .overview {
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .projectIcon {
+    font-size: 2rem;
+  }
+
+  .projectTitle {
+    font-size: var(--text-lg, 1.125rem);
+  }
+
+  .priceValue {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .sectionTitle {
+    font-size: var(--text-base, 1rem);
+    margin-bottom: var(--space-2, 0.5rem);
+    padding-bottom: var(--space-2, 0.5rem);
+  }
+
+  .breakdownGroup {
+    margin-bottom: var(--space-3, 1rem);
+  }
+
+  .item {
+    flex-wrap: wrap;
+    gap: var(--space-1, 0.25rem);
+  }
+
+  .itemName {
+    flex-basis: 100%;
+  }
+
+  .itemPrice {
+    margin-left: auto;
+  }
+
+  .notice {
+    flex-direction: column;
+    gap: var(--space-2, 0.5rem);
+    text-align: center;
+  }
+
+  .footer {
+    gap: var(--space-2, 0.5rem);
+    padding-top: var(--space-2, 0.5rem);
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    padding: 0.875rem 1rem;
+    font-size: var(--text-sm, 0.875rem);
+    min-height: 48px;
+  }
+
+  .timelineCard {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .metaItem {
+    padding: var(--space-2, 0.5rem);
   }
 }
 

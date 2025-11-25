@@ -336,13 +336,129 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .step {
+    padding: var(--space-3, 1rem);
+  }
+
+  .header {
+    margin-bottom: var(--space-3, 1rem);
+    padding: 0;
+  }
+
   .infoBubble {
     width: 320px;
   }
 
+  /* Augmenter zone tactile pour mobile */
   .infoBtn {
-    width: 28px;
-    height: 28px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .card {
+    padding: var(--space-3, 1rem);
+  }
+
+  .footer {
+    padding: var(--space-3, 1rem);
+  }
+}
+
+/* Small mobile (320px-480px) */
+@media (max-width: 480px) {
+  .step {
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .header {
+    margin-bottom: var(--space-2, 0.5rem);
+  }
+
+  .title {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+  }
+
+  .subtitle {
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  .grid {
+    gap: var(--space-2, 0.5rem);
+    margin-bottom: var(--space-2, 0.5rem);
+  }
+
+  .card {
+    padding: var(--space-2, 0.5rem);
+    gap: var(--space-1, 0.25rem);
+    border-radius: var(--radius-md, 0.75rem);
+  }
+
+  .cardIcon {
+    font-size: 2rem;
+  }
+
+  .cardTitle {
+    font-size: var(--text-base, 1rem);
+  }
+
+  .cardDescription {
+    font-size: var(--text-xs, 0.75rem);
+    line-height: 1.4;
+  }
+
+  .cardFooter {
+    padding-top: var(--space-1, 0.25rem);
+  }
+
+  .price {
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  .timeline {
+    font-size: var(--text-xs, 0.75rem);
+  }
+
+  .infoBubble {
+    width: calc(100vw - 16px);
+    max-width: 300px;
+    padding: var(--space-3, 1rem);
+  }
+
+  .infoBubbleTitle {
+    font-size: var(--text-base, 1rem);
+  }
+
+  .infoBubbleText {
+    font-size: var(--text-xs, 0.75rem);
+  }
+
+  .infoBubbleDiff {
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .diffItem {
+    font-size: var(--text-xs, 0.75rem);
+  }
+
+  /* Augmenter zone tactile info button */
+  .infoBtn {
+    width: 44px;
+    height: 44px;
+    top: var(--space-1, 0.25rem);
+    left: var(--space-1, 0.25rem);
+  }
+
+  .selectedIndicator {
+    top: var(--space-1, 0.25rem);
+    right: var(--space-1, 0.25rem);
+  }
+
+  .footer {
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .footerNote {
+    font-size: var(--text-xs, 0.75rem);
   }
 }
 

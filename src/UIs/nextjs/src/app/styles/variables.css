@@ -319,6 +319,8 @@
 @media (max-width: 480px) {
   :root {
     /* Espacements encore plus compacts */
+    --space-4: 1rem; /* 16px au lieu de 24px */
+    --space-5: 1.5rem; /* 24px au lieu de 40px */
     --space-6: 1.5rem; /* 24px */
     --space-7: 2rem; /* 32px */
     --space-8: 2.5rem; /* 40px */

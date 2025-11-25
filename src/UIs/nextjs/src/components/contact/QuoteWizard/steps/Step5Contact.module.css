@@ -386,6 +386,84 @@
   .btnSecondary {
     width: 100%;
   }
+
+  /* Augmenter zones tactiles pour mobile */
+  .timelineBtn {
+    padding: 0.625rem 1rem;
+    min-height: 44px;
+  }
+
+  .checkbox {
+    width: 24px;
+    height: 24px;
+  }
+
+  .checkboxLabel {
+    font-size: var(--text-base, 1rem);
+    line-height: 1.5;
+  }
+}
+
+/* Small mobile (320px-480px) */
+@media (max-width: 480px) {
+  .step {
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .title {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+
+  .subtitle {
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  .form {
+    padding: var(--space-2, 0.5rem);
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .input,
+  .textarea {
+    padding: 0.875rem;
+    font-size: 16px; /* Prevent iOS zoom */
+  }
+
+  .textarea {
+    min-height: 100px;
+  }
+
+  .hint {
+    font-size: var(--text-sm, 0.875rem);
+    font-style: normal;
+    color: var(--color-text-2, #c8cdd6);
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    padding: 0.875rem 1rem;
+    font-size: var(--text-sm, 0.875rem);
+    min-height: 48px;
+  }
+
+  .footer {
+    gap: var(--space-2, 0.5rem);
+    padding-top: var(--space-2, 0.5rem);
+  }
+
+  .input:focus,
+  .textarea:focus {
+    box-shadow: 0 0 0 2px
+      color-mix(in srgb, var(--color-accent-1, #ff6a00) 20%, transparent);
+  }
+
+  .summaryCard {
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .guarantees {
+    padding: var(--space-2, 0.5rem);
+  }
 }
 
 /* Accessibility */

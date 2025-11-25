@@ -312,6 +312,65 @@
   }
 }
 
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .mobileBar {
+    min-height: 64px;
+  }
+
+  .mobileBarContent {
+    padding: var(--space-3, 1rem);
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .mobileBarLabel {
+    font-size: var(--text-xs, 0.75rem);
+  }
+
+  .mobileBarPrice {
+    font-size: var(--text-lg, 1.125rem);
+  }
+
+  .mobilePanel {
+    max-height: 60vh;
+  }
+
+  .mobilePanelContent {
+    padding: var(--space-3, 1rem);
+    gap: var(--space-3, 1rem);
+  }
+
+  .sticky {
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .price {
+    padding: var(--space-3, 1rem);
+  }
+
+  .priceValue {
+    font-size: var(--text-xl, 1.25rem);
+  }
+
+  .details {
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .detailRow {
+    flex-wrap: wrap;
+    gap: var(--space-1, 0.25rem);
+  }
+
+  .breakdownList {
+    max-height: 200px;
+  }
+
+  .note {
+    padding: var(--space-2, 0.5rem);
+    font-size: var(--text-xs, 0.75rem);
+  }
+}
+
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .mobilePanel {

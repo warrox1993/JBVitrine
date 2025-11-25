@@ -188,3 +188,127 @@
 .btnSecondary:hover {
   border-color: var(--color-accent-1, #ff6a00);
 }
+
+/* Tablet */
+@media (max-width: 768px) {
+  .step {
+    padding: var(--space-3, 1rem);
+  }
+
+  .sections {
+    gap: var(--space-3, 1rem);
+  }
+
+  .optionCard {
+    padding: var(--space-3, 1rem);
+  }
+
+  .optionHeader {
+    flex-wrap: wrap;
+    gap: var(--space-1, 0.25rem);
+  }
+
+  .optionPrice {
+    white-space: nowrap;
+  }
+
+  .checkbox {
+    padding: var(--space-2, 0.5rem) var(--space-3, 1rem);
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .checkbox input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+  }
+
+  .checkbox span {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .footer {
+    flex-direction: column;
+    padding-top: var(--space-3, 1rem);
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    padding: var(--space-3, 1rem) var(--space-4, 1.5rem);
+  }
+}
+
+/* Small mobile (320px-480px) */
+@media (max-width: 480px) {
+  .step {
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .title {
+    font-size: clamp(1.125rem, 4vw, 1.25rem);
+  }
+
+  .sections {
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .sectionTitle {
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  .options {
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .optionCard {
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .optionHeader h4 {
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  .optionPrice {
+    font-size: var(--text-xs, 0.75rem);
+  }
+
+  .optionDescription {
+    font-size: var(--text-xs, 0.75rem);
+  }
+
+  .checkboxes {
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .checkbox {
+    padding: var(--space-2, 0.5rem);
+    min-height: 48px;
+  }
+
+  .checkbox span {
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  .footer {
+    gap: var(--space-2, 0.5rem);
+    padding-top: var(--space-2, 0.5rem);
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    padding: 0.875rem 1rem;
+    font-size: var(--text-sm, 0.875rem);
+    min-height: 48px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .optionCard,
+  .checkbox,
+  .btnPrimary,
+  .btnSecondary {
+    transition: none;
+  }
+}
