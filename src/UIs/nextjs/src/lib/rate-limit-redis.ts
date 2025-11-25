@@ -23,55 +23,55 @@ const redis = new Redis({
 
 /**
  * Rate limiter for quote submissions
- * Limit: 20 requests per hour per user (increased for testing)
+ * Limit: 100 requests per hour per user (very generous)
  */
 export const quoteLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(20, "1 h"),
+  limiter: Ratelimit.slidingWindow(100, "1 h"),
   analytics: true,
   prefix: "smidjan_quote",
 });
 
 /**
  * Rate limiter for contact form
- * Limit: 20 requests per hour per user (increased for testing)
+ * Limit: 100 requests per hour per user (very generous)
  */
 export const contactLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(20, "1 h"),
+  limiter: Ratelimit.slidingWindow(100, "1 h"),
   analytics: true,
   prefix: "smidjan_contact",
 });
 
 /**
  * Rate limiter for lead enrichment API
- * Limit: 60 requests per minute (external API calls)
+ * Limit: 500 requests per minute (very generous)
  */
 export const enrichmentLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(60, "1 m"),
+  limiter: Ratelimit.slidingWindow(500, "1 m"),
   analytics: true,
   prefix: "smidjan_enrichment",
 });
 
 /**
  * Rate limiter for CSRF token endpoint
- * Limit: 30 requests per minute per user (generous for page navigations)
+ * Limit: 200 requests per minute per user (very generous)
  */
 export const csrfLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(30, "1 m"),
+  limiter: Ratelimit.slidingWindow(200, "1 m"),
   analytics: true,
   prefix: "smidjan_csrf",
 });
 
 /**
  * Rate limiter for lead scoring session/events endpoints
- * Limit: 100 requests per minute (internal tracking calls)
+ * Limit: 500 requests per minute (very generous)
  */
 export const leadScoringLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(100, "1 m"),
+  limiter: Ratelimit.slidingWindow(500, "1 m"),
   analytics: true,
   prefix: "smidjan_leadscore",
 });
