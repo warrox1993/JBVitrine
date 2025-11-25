@@ -11,10 +11,29 @@ function getClientIp(request: Request): string {
 
 export async function GET(request: Request) {
   try {
-    // Rate limiting check
+    // Rate limiting check with error handling
     const clientIdentifier = getClientIdentifier(request);
-    const { success, limit, remaining, reset } =
-      await csrfLimiter.limit(clientIdentifier);
+    let rateLimitResult: {
+      success: boolean;
+      limit: number;
+      remaining: number;
+      reset: number;
+    };
+
+    try {
+      rateLimitResult = await csrfLimiter.limit(clientIdentifier);
+    } catch (redisError) {
+      // If Redis fails, allow the request (fail open)
+      console.error("[CSRF] Redis rate limit error:", redisError);
+      rateLimitResult = {
+        success: true,
+        limit: 60,
+        remaining: 59,
+        reset: Date.now() + 60000,
+      };
+    }
+
+    const { success, limit, remaining, reset } = rateLimitResult;
 
     if (!success) {
       console.warn("[CSRF] Rate limit exceeded for:", clientIdentifier);
