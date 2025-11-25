@@ -87,10 +87,26 @@ export async function verifyRecaptchaEnterprise(
 
     const data = await response.json();
 
+    console.log("🔍 reCAPTCHA Full Response:", JSON.stringify(data, null, 2));
+
     // Check if token is valid and action matches
     const isValid =
       data.tokenProperties?.valid &&
       data.tokenProperties?.action === expectedAction;
+
+    if (!data.tokenProperties?.valid) {
+      console.warn(
+        "❌ reCAPTCHA token invalid:",
+        data.tokenProperties?.invalidReason,
+      );
+    }
+
+    if (data.tokenProperties?.action !== expectedAction) {
+      console.warn("❌ reCAPTCHA action mismatch:", {
+        expected: expectedAction,
+        got: data.tokenProperties?.action,
+      });
+    }
 
     // Get risk score (0.0 = bot, 1.0 = human)
     const score = data.riskAnalysis?.score || 0;
@@ -104,8 +120,8 @@ export async function verifyRecaptchaEnterprise(
       clientIp: clientIp,
     });
 
-    // Score threshold: 0.5
-    const SCORE_THRESHOLD = 0.5;
+    // Score threshold: 0.3 (lowered to reduce false positives)
+    const SCORE_THRESHOLD = 0.3;
 
     return {
       success: isValid && score >= SCORE_THRESHOLD,
