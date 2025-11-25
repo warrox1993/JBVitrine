@@ -470,7 +470,7 @@ async function sendQuoteNotificationToTeam(
   try {
     const { data, error } = await resend.emails.send({
       from: "Smidjan Quote System <contact@smidjan.be>",
-      to: ["contact@smidjan.be"],
+      to: ["contact.smidjan@outlook.com"],
       replyTo: contactInfo.email as string,
       subject: `${submission.leadScore.priority === "high" ? "🔥" : submission.leadScore.priority === "medium" ? "⚡" : "📋"} Nouveau devis : ${submission.quoteData.projectType} - Score ${submission.leadScore.score}/100`,
       html: getQuoteTeamNotificationEmailHtml(submission, contactInfo, quoteId),
