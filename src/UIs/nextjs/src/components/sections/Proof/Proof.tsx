@@ -16,7 +16,7 @@ export function Proof() {
         </h2>
 
         <p className={styles.lead}>
-          Nous lançons actuellement nos premiers projets clients — et nous cherchons des marques prêtes à co-construire cette nouvelle génération de sites : plus rapides, plus sûrs, plus intelligents.
+          Nous lançons actuellement nos premiers projets clients - et nous cherchons des marques prêtes à co-construire cette nouvelle génération de sites : plus rapides, plus sûrs, plus intelligents.
         </p>
 
         <p className={styles.conclusion}>

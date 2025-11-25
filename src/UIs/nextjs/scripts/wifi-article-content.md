@@ -350,4 +350,4 @@ Ancien militaire (cyberdéfense), diplômé en droit (ULiège), expert certifié
 
 Passionné de cybersécurité depuis l'âge de 12 ans.
 
-**Contact** : jeanbaptiste.dhondt1@gmail.com | +32 475 20 55 62
+**Contact** : contact.smidjan@outlook.com | +32 475 20 55 62

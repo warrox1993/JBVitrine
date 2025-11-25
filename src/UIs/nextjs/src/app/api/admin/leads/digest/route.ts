@@ -68,8 +68,8 @@ export async function POST(request: NextRequest) {
 
     // Send email
     const { data, error } = await resend.emails.send({
-      from: "Smidjan Lead Digest <contact@smidjan.be>",
-      to: ["jeanbaptiste.dhondt1@gmail.com"],
+      from: "Smidjan Lead Digest <contact.smidjan@outlook.com>",
+      to: ["contact.smidjan@outlook.com"],
       subject: `📊 Daily Lead Digest - ${stats.total} nouveaux leads (${stats.hot} HOT)`,
       html: emailHTML,
     });

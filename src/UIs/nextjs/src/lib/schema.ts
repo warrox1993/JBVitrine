@@ -12,7 +12,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     contactType: "Customer Service",
     telephone: "+32 475 20 55 62",
-    email: "jeanbaptiste.dhondt1@gmail.com",
+    email: "contact.smidjan@outlook.com",
     availableLanguage: ["fr-BE", "French"],
     areaServed: ["BE", "Wallonie", "Liège"],
   },
@@ -58,7 +58,7 @@ export const localBusinessSchema = {
     "Agence digitale à Liège spécialisée en développement web, design web et cybersécurité RGPD. Audit SEO gratuit. Services pour PME Belgique et Wallonie.",
   url: "https://smidjan.be",
   telephone: "+32 475 20 55 62",
-  email: "jeanbaptiste.dhondt1@gmail.com",
+  email: "contact.smidjan@outlook.com",
   address: {
     "@type": "PostalAddress",
     addressCountry: "BE",

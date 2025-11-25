@@ -7,22 +7,26 @@
 ## 1. META ÉLÉMENTS (À placer dans l'en-tête HTML)
 
 ### Title Tag (Optimal : 55-60 caractères)
+
 ```
 Services Développement Bagisto | E-commerce Scalable
 ```
 
 ### Meta Description (Optimal : 155-165 caractères)
+
 ```
 Développement Bagisto expert : marketplaces multi-vendeurs, migrations, headless commerce. Solutions Laravel hautes performances, sans vendor lock-in. Devis gratuit.
 ```
 
 ### Keywords Primaires (pour votre stratégie)
+
 ```
-Bagisto development, Laravel e-commerce, Bagisto marketplace, développement Bagisto, 
+Bagisto development, Laravel e-commerce, Bagisto marketplace, développement Bagisto,
 e-commerce scalable, migration Bagisto, Bagisto headless commerce
 ```
 
 ### Canonical URL
+
 ```
 https://smidjan.be/services/bagisto-development/
 ```
@@ -59,13 +63,20 @@ https://smidjan.be/services/bagisto-development/
     "@type": "Country",
     "name": "BE"
   },
-  "serviceType": ["Custom Development", "Marketplace Development", "E-commerce Migration", "Headless Commerce", "Performance Optimization"],
+  "serviceType": [
+    "Custom Development",
+    "Marketplace Development",
+    "E-commerce Migration",
+    "Headless Commerce",
+    "Performance Optimization"
+  ],
   "url": "https://smidjan.be/services/bagisto-development/",
   "image": "https://smidjan.be/bagisto-hero-image.jpg"
 }
 ```
 
 ### FAQ Schema (À ajouter séparé)
+
 ```json
 {
   "@context": "https://schema.org",
@@ -104,31 +115,36 @@ https://smidjan.be/services/bagisto-development/
 ## 3. SECTION HERO - Texte Principal
 
 ### H1 (Titre Unique - Ne pas répéter sur page)
+
 ```
-Services de Développement Bagisto — Plateforme e-commerce Modulaire pour Entreprises en Croissance
+Services de Développement Bagisto - Plateforme e-commerce Modulaire pour Entreprises en Croissance
 ```
 
 ### H2 Subtitle (Sous-titre)
+
 ```
 Solutions Laravel Bagisto Hautes Performances | Marketplaces Multi-Vendeurs | Headless Commerce
 ```
 
 ### Bloc Introduction (Intro Texte - 60-80 mots)
+
 ```
-En tant que partenaire certifié Bagisto, SMIDJAN offre un spectre complet de services 
-pour transformer votre vision e-commerce en réalité scalable. De la marketplace multi-vendeurs 
-au headless commerce avec Next.js, nous maîtrisons les technologies et patterns nécessaires 
+En tant que partenaire certifié Bagisto, SMIDJAN offre un spectre complet de services
+pour transformer votre vision e-commerce en réalité scalable. De la marketplace multi-vendeurs
+au headless commerce avec Next.js, nous maîtrisons les technologies et patterns nécessaires
 pour bâtir des plateformes hautes-performances sans compromise.
 
 Résultat : architecture évolutive, zero vendor lock-in, ownership code total.
 ```
 
 ### CTA Primaire
+
 ```
 Planifier une consultation gratuite
 ```
 
 ### CTA Secondaire
+
 ```
 Voir nos cas de succès Bagisto
 ```
@@ -138,47 +154,57 @@ Voir nos cas de succès Bagisto
 ## 4. SECTION "POURQUOI BAGISTO" (Sans H1 - Utiliser H2)
 
 ### H2 Title
+
 ```
 Pourquoi Bagisto pour votre e-commerce ?
 ```
 
 ### Texte Intro (40-60 mots)
+
 ```
-Bagisto combine la flexibilité de Laravel avec la puissance d'une plateforme 
-e-commerce production-ready. Conçu pour startups et entreprises en croissance, 
+Bagisto combine la flexibilité de Laravel avec la puissance d'une plateforme
+e-commerce production-ready. Conçu pour startups et entreprises en croissance,
 Bagisto offre scalabilité, modularité et zéro vendor lock-in.
 ```
 
 ### Avantage 1 - Flexibilité Modulaire
+
 **Titre**: Flexibilité Modulaire Sans Limite
+
 ```
-Architecture Laravel propre : code patterns PSR-12 compliant, système de modules 
-extensible sans toucher au noyau. Ajoutez features sans risque de regression. 
+Architecture Laravel propre : code patterns PSR-12 compliant, système de modules
+extensible sans toucher au noyau. Ajoutez features sans risque de regression.
 Upgrading trivial vs Shopify/Magento où modifications propriétaires = cauchemar.
 ```
 
 ### Avantage 2 - Performance Haute-Charge
+
 **Titre**: Performance Hautement Scalable
+
 ```
-Stack éprouvée en production : MySQL 8 avec indexation avancée, Redis caching 
-sub-milliseconde, Elasticsearch full-text search. Bagisto testé 10K+ vendeurs 
+Stack éprouvée en production : MySQL 8 avec indexation avancée, Redis caching
+sub-milliseconde, Elasticsearch full-text search. Bagisto testé 10K+ vendeurs
 simultanés, millions transactions/jour. Performance = feature, pas option.
 ```
 
 ### Avantage 3 - Open-Source
-**Titre**: Propriété Totale du Code — Zéro Vendor Lock-in
+
+**Titre**: Propriété Totale du Code - Zéro Vendor Lock-in
+
 ```
-Contrairement Shopify (propriétaire, coûts croissants) ou Magento (maintenance coûteuse), 
-Bagisto = Laravel open-source. Votre code, votre infrastructure, votre roadmap. 
-Portable anywhere : AWS, Azure, on-premise. Upgrade indépendant, contributeur 
+Contrairement Shopify (propriétaire, coûts croissants) ou Magento (maintenance coûteuse),
+Bagisto = Laravel open-source. Votre code, votre infrastructure, votre roadmap.
+Portable anywhere : AWS, Azure, on-premise. Upgrade indépendant, contributeur
 communauté optionnel. Liberté complète.
 ```
 
 ### Avantage 4 - Coûts Compétitifs
+
 **Titre**: Réduction Coûts vs Alternatives Propriétaires
+
 ```
-Shopify fees = 2.9% + $0.30/transaction. Magento = maintenance 100K€+/an. 
-Bagisto : développement one-time (5K-50K€) + infra cloud décent (100-500€/mois). 
+Shopify fees = 2.9% + $0.30/transaction. Magento = maintenance 100K€+/an.
+Bagisto : développement one-time (5K-50K€) + infra cloud décent (100-500€/mois).
 ROI < 6-12 mois. Pour volumes 50K+€/mois transactions = économies exponentielles.
 ```
 
@@ -187,15 +213,17 @@ ROI < 6-12 mois. Pour volumes 50K+€/mois transactions = économies exponentiel
 ## 5. SECTION SERVICES DÉTAILLÉS
 
 ### H2 Title
+
 ```
-Services de Développement Bagisto — Expertise Complète
+Services de Développement Bagisto - Expertise Complète
 ```
 
 ### Intro Texte (70-90 mots)
+
 ```
-SMIDJAN maîtrise l'écosystème Bagisto-Laravel pour livrer des stores e-commerce 
-production-ready dès jour 1. Chaque service est architecto selon modern Laravel patterns, 
-testé QA rigoreux, et supporté long-term. Que vous démarriez from scratch ou migriez 
+SMIDJAN maîtrise l'écosystème Bagisto-Laravel pour livrer des stores e-commerce
+production-ready dès jour 1. Chaque service est architecto selon modern Laravel patterns,
+testé QA rigoreux, et supporté long-term. Que vous démarriez from scratch ou migriez
 d'ancienne plateforme, nous scalez vos ambitions commerciales.
 ```
 
@@ -204,16 +232,16 @@ d'ancienne plateforme, nous scalez vos ambitions commerciales.
 ### SERVICE 1 - H3: Développement Bagisto Custom
 
 ```
-Nous développons des modules et extensions Bagisto qui amplifient votre proposition 
+Nous développons des modules et extensions Bagisto qui amplifient votre proposition
 de valeur unique.
 
 Capacités incluses :
-• Modules personnalisés PSR-12 compliant — aucune modification noyau Bagisto
-• APIs REST versionnées + GraphQL — intégrations seamless apps tierces
-• Paiement custom (Stripe, PayPal, Mollie EU) — checkout fluide multi-devise
-• CRM intégré, automation marketing, recommendations IA — engagement clients
+• Modules personnalisés PSR-12 compliant - aucune modification noyau Bagisto
+• APIs REST versionnées + GraphQL - intégrations seamless apps tierces
+• Paiement custom (Stripe, PayPal, Mollie EU) - checkout fluide multi-devise
+• CRM intégré, automation marketing, recommendations IA - engagement clients
 • SEO native : meta dynamiques, rich snippets, URLs canonicales custom
-• Dashboard admin intuitive — gestion produits, commandes, analytics temps-réel
+• Dashboard admin intuitive - gestion produits, commandes, analytics temps-réel
 
 Résultat : Store unique, évolutive, zéro technical debt, maintenance simple.
 
@@ -225,16 +253,16 @@ CTA local : "Développer mes modules Bagisto"
 ### SERVICE 2 - H3: Marketplaces Multi-Vendeurs
 
 ```
-Nous créons des marketplaces B2B/B2C scalables où centaines/milliers vendeurs 
+Nous créons des marketplaces B2B/B2C scalables où centaines/milliers vendeurs
 opèrent en parallèle.
 
 Capacités incluses :
 • Gestion vendeurs : onboarding, KYC, commissions automatiques, payouts versements
 • Catalogues produits multi-vendeurs avec sync inventory temps-réel
-• Règles commission flexible — % tiered, fees fixes, promotions vendeur
-• Dashboard vendeur — analytics ventes, tracking performance, support ticketing
-• Orchestration paiements Stripe Connect — commissions split automatique
-• Modération contenu — flagging produits douteux, validation avant publication
+• Règles commission flexible - % tiered, fees fixes, promotions vendeur
+• Dashboard vendeur - analytics ventes, tracking performance, support ticketing
+• Orchestration paiements Stripe Connect - commissions split automatique
+• Modération contenu - flagging produits douteux, validation avant publication
 
 Avantage clé : Scalabilité testée 10K+ vendeurs sans latence dégradation.
 
@@ -249,15 +277,15 @@ CTA local : "Lancer ma marketplace Bagisto"
 Migration zero-downtime depuis Shopify, Magisto, WooCommerce, Prestashop.
 
 Processus :
-1. Audit ancienne plateforme — extraction données, mapping schéma Bagisto
-2. ETL custom — transfert 100K+ produits, 50K+ clients, commandes historiques
-3. Data validation — vérifications intégrité, SKU duplicates, pricing consistence
-4. Blue-green deployment — nouvelle plateforme parallèle, switch DNS instant
-5. Regression testing — UAT complète checkout, paiements, Admin
+1. Audit ancienne plateforme - extraction données, mapping schéma Bagisto
+2. ETL custom - transfert 100K+ produits, 50K+ clients, commandes historiques
+3. Data validation - vérifications intégrité, SKU duplicates, pricing consistence
+4. Blue-green deployment - nouvelle plateforme parallèle, switch DNS instant
+5. Regression testing - UAT complète checkout, paiements, Admin
 
 Garantie : Intégrité données 100%, downtime < 2 heures, support 24/7 post-switch.
 
-Cas récent : 100K products + 50K customers Shopify → Bagisto en 4 semaines, 
+Cas récent : 100K products + 50K customers Shopify → Bagisto en 4 semaines,
 +35% performance vs ancien store.
 
 CTA local : "Planifier ma migration Bagisto"
@@ -271,12 +299,12 @@ CTA local : "Planifier ma migration Bagisto"
 Nous optimisons Bagisto pour sub-milliseconde response times même sous haute charge.
 
 Techniques avancées :
-• Database indexing — MySQL query plans tuned, partitioning large tables
-• Redis caching — session storage, shopping carts, product frequently-accessed
-• Elasticsearch — full-text search, faceted navigation, filters rapides 1M+ SKUs
-• Asset compression — Gzip/Brotli CSS/JS, lazy-loading images, CDN integration
-• PHP-FPM tuning — worker pools optimisés, memory allocation correct
-• Load testing pre-production — Artillery, Apache Bench simule 10K concurrent users
+• Database indexing - MySQL query plans tuned, partitioning large tables
+• Redis caching - session storage, shopping carts, product frequently-accessed
+• Elasticsearch - full-text search, faceted navigation, filters rapides 1M+ SKUs
+• Asset compression - Gzip/Brotli CSS/JS, lazy-loading images, CDN integration
+• PHP-FPM tuning - worker pools optimisés, memory allocation correct
+• Load testing pre-production - Artillery, Apache Bench simule 10K concurrent users
 
 Résultat : LCP < 2.5s, FID < 100ms, CLS < 0.1 (Core Web Vitals A).
 
@@ -338,31 +366,34 @@ CTA local : "Souscrire support maintenance Bagisto"
 ## 6. SECTION AVANTAGES TECHNIQUES
 
 ### H2 Title
+
 ```
 Pourquoi SMIDJAN + Bagisto = Succès E-commerce
 ```
 
 ### Tableau Comparatif (Markdown Format)
 
-| Avantage | Détail Technique |
-|----------|---------|
-| **Architecture Laravel Moderne** | Code patterns PSR-12, SOLID principles, pas workarounds. Extensibilité sans limite via modules system. |
-| **Scalabilité Éprouvée Production** | MySQL 8.0 avec partitioning, Redis sub-ms caching, Elasticsearch full-text. Testé 10K+ vendeurs, millions tx/jour. |
-| **Headless Commerce API-First** | GraphQL + REST endpoints versionnés. Découplage front/back complet. Frontend libre : Next.js, Vue.js, Flutter, custom. |
-| **Sécurité PCI DSS Level 1** | Tokenization paiements, encryption end-to-end, compliance audits réguliers. Protections CSRF/XSS/SQLi natives Laravel. |
-| **DevOps CI/CD Moderne** | GitHub Actions automation, Docker containerization, AWS CodeDeploy blue-green. Zéro-downtime releases, instant rollback. |
-| **Ownership Code Complet** | Bagisto = Laravel open-source pur. Code vous appartient. Portable anywhere. Zéro vendor lock-in contrairement Shopify/Magento. |
+| Avantage                            | Détail Technique                                                                                                               |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **Architecture Laravel Moderne**    | Code patterns PSR-12, SOLID principles, pas workarounds. Extensibilité sans limite via modules system.                         |
+| **Scalabilité Éprouvée Production** | MySQL 8.0 avec partitioning, Redis sub-ms caching, Elasticsearch full-text. Testé 10K+ vendeurs, millions tx/jour.             |
+| **Headless Commerce API-First**     | GraphQL + REST endpoints versionnés. Découplage front/back complet. Frontend libre : Next.js, Vue.js, Flutter, custom.         |
+| **Sécurité PCI DSS Level 1**        | Tokenization paiements, encryption end-to-end, compliance audits réguliers. Protections CSRF/XSS/SQLi natives Laravel.         |
+| **DevOps CI/CD Moderne**            | GitHub Actions automation, Docker containerization, AWS CodeDeploy blue-green. Zéro-downtime releases, instant rollback.       |
+| **Ownership Code Complet**          | Bagisto = Laravel open-source pur. Code vous appartient. Portable anywhere. Zéro vendor lock-in contrairement Shopify/Magento. |
 
 ---
 
 ## 7. SECTION CAS DE SUCCÈS / PORTFOLIO
 
 ### H2 Title
+
 ```
-Cas de Succès Bagisto — Platformes Production
+Cas de Succès Bagisto - Platformes Production
 ```
 
 ### Intro Texte (40 mots)
+
 ```
 Voici 3 exemples concrets d'architectures Bagisto que nous avons livrées :
 ```
@@ -372,7 +403,7 @@ Voici 3 exemples concrets d'architectures Bagisto que nous avons livrées :
 ### CAS 1 - H3: Marketplace B2B Multi-Vendeurs Fibre Optique
 
 ```
-Défi : Startup B2B voulait plateforme pour centraliser ~500 vendeurs fibre optique 
+Défi : Startup B2B voulait plateforme pour centraliser ~500 vendeurs fibre optique
 (distributeurs, installateurs, consultants) avec pricing tiers complexe.
 
 Solution :
@@ -394,7 +425,7 @@ Résultats :
 ### CAS 2 - H3: Migration Shopify → Bagisto (100K Produits)
 
 ```
-Défi : E-commerce retail établi (100K SKUs, 50K clients) voulait réduire coûts 
+Défi : E-commerce retail établi (100K SKUs, 50K clients) voulait réduire coûts
 Shopify (2.9% + fixed fees) et avoir contrôle architecture.
 
 Migration :
@@ -416,12 +447,12 @@ Résultats post-migration :
 ### CAS 3 - H3: Headless Commerce Next.js + Bagisto API
 
 ```
-Défi : Brand fashion voulait storefront ultra-moderne (Next.js, PWA, SSR) 
+Défi : Brand fashion voulait storefront ultra-moderne (Next.js, PWA, SSR)
 découplée backend Bagisto pour UX premium et performance.
 
 Architecture :
 • Backend Bagisto API (REST + GraphQL) pour produits, orders, customers
-• Frontend Next.js 14 avec app router, SSR, ISR (incremental static regen)
+• Frontend Next.js 16 avec app router, SSR, ISR (incremental static regen)
 • Storefront PWA : installable, offline-ready, 100 Lighthouse score mobile
 • Design system Shadcn/ui + Tailwind pour cohérence
 • Webhook triggers → image optimization, SEO meta generation, cache invalidation
@@ -440,14 +471,16 @@ CTA case : "Voir le storefront live" [link]
 ## 8. SECTION PROCESSUS ENGAGEMENT
 
 ### H2 Title
+
 ```
-Notre Approche Bagisto — 4 Phases Livrables
+Notre Approche Bagisto - 4 Phases Livrables
 ```
 
 ### Intro Texte (50 mots)
+
 ```
-SMIDJAN suis un processus discipliné, transparent, axé résultats. 
-Chaque phase scoped, dimensionné, validé avant avancer. 
+SMIDJAN suis un processus discipliné, transparent, axé résultats.
+Chaque phase scoped, dimensionné, validé avant avancer.
 Vous restez toujours informé, toujours contrôle.
 ```
 
@@ -527,8 +560,9 @@ Output : Live production store, monitoring dashboard, runbooks support
 ## 9. FAQ - Questions Fréquentes BAGISTO
 
 ### H2 Title
+
 ```
-Questions Fréquentes Bagisto — Clarifications
+Questions Fréquentes Bagisto - Clarifications
 ```
 
 ---
@@ -565,7 +599,7 @@ Architecture Bagisto testé en production :
 Limites = infrastructure cloud, pas Bagisto plateforme.
 Avec orchestration Kubernetes + Aurora DB auto-scaling, potentiel illimité.
 
-SMIDJAN dimension dès départ pour 10x growth. Database partitioning, 
+SMIDJAN dimension dès départ pour 10x growth. Database partitioning,
 Redis clustering, Elasticsearch sharding prêt à scaling.
 ```
 
@@ -679,7 +713,7 @@ Automation workflows n8n (Serverless) :
 - Lead nurture sequences purchase-triggered
 - Analytics dashboard custom Metabase/Looker
 
-Architecture : Bagisto API (REST + GraphQL) + webhooks + n8n workflows 
+Architecture : Bagisto API (REST + GraphQL) + webhooks + n8n workflows
 = integrations robustes, maintenables, scalables.
 
 Processus : Audit existant stack + architecture APIs → quote custom.
@@ -718,6 +752,7 @@ Conversion :
 ## 11. CONSEILS IMPLÉMENTATION FINALE
 
 ### Priorités Implémentation :
+
 1. ✅ Meta elements + Schema markup (Day 1)
 2. ✅ Hero section + H1/H2 structure (Day 1-2)
 3. ✅ Services détaillés (H2/H3 text) (Day 2-3)
@@ -726,6 +761,7 @@ Conversion :
 6. ✅ Processus engagement (Day 5)
 
 ### Validation SEO Post-Lancement :
+
 ```
 ☐ Lighthouse audit (target 90+ mobile)
 ☐ Mobile responsiveness test (20+ devices)

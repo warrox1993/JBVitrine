@@ -412,7 +412,7 @@ Chez Smidjan, nous accompagnons les entreprises belges dans le choix et la réal
 👉 **[Obtenez un devis personnalisé en 2 minutes](/contact#quote-wizard)**
 
 Ou contactez-nous directement pour un **audit gratuit** de vos besoins :
-📧 Email : [jeanbaptiste.dhondt1@gmail.com](mailto:jeanbaptiste.dhondt1@gmail.com)
+📧 Email : [contact.smidjan@outlook.com](mailto:contact.smidjan@outlook.com)
 
 ---
 

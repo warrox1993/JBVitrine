@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import HeroAbout from '@/components/about/HeroAbout';
 import Mission from './Mission';
 import ValuesCards from '@/components/about/ValuesCards';
@@ -11,9 +11,9 @@ import { SectionWithBackground } from '@/components/ui/SectionWithBackground/Sec
 import styles from './about.module.css';
 
 export const metadata: Metadata = {
-  title: 'À propos | Agence Web Liège & Wallonie | SMIDJAN',
+  title: 'À Propos - Smidjan | Agence Web & Cybersécurité',
   description:
-    "Découvrez SMIDJAN, agence web à Liège. Nous créons des expériences digitales sur mesure avec Next.js : sites performants, sécurisés et évolutifs.",
+    "Découvrez Smidjan, l'agence qui redéfinit le web en Belgique. Performance, sécurité et innovation - sans compromis.",
   alternates: { canonical: '/about' },
 };
 

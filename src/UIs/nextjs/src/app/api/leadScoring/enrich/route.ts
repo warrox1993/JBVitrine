@@ -6,7 +6,7 @@
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { checkRateLimit, getClientIP } from "@/app/api/contact/ratelimit";
+import { enrichmentLimiter, getClientIdentifier } from "@/lib/rate-limit-redis";
 
 // API keys are now server-side only (no NEXT_PUBLIC_ prefix)
 const HUNTER_API_KEY = process.env.HUNTER_API_KEY;
@@ -184,21 +184,32 @@ async function detectTechStack(domain: string) {
  * Enriches lead data with email validation, company info, and brand data
  */
 export async function POST(request: NextRequest) {
-  // Rate limiting (10 requests per minute)
-  const ip = getClientIP(request);
-  const isAllowed = checkRateLimit(ip, 10, 60000);
+  // ✅ Rate limiting with Redis (10 requests per minute) 
+  const clientIdentifier = getClientIdentifier(request);
+  const { success, limit, remaining, reset } = await enrichmentLimiter.limit(clientIdentifier);
 
-  if (!isAllowed) {
+  if (!success) {
+    console.warn('⚠️ Enrichment rate limit exceeded:', {
+      identifier: clientIdentifier,
+      limit,
+      reset: new Date(reset).toISOString(),
+    });
+    
     return NextResponse.json(
       { error: "Too many requests. Please try again later." },
       {
         status: 429,
         headers: {
-          "Retry-After": "60",
+          "X-RateLimit-Limit": limit.toString(),
+          "X-RateLimit-Remaining": "0",
+          "X-RateLimit-Reset": new Date(reset).toISOString(),
+          "Retry-After": Math.ceil((reset - Date.now()) / 1000).toString(),
         },
       },
     );
   }
+
+  console.log('✅ Enrichment rate limit OK:', { remaining, limit });
 
   try {
     const body = await request.json();

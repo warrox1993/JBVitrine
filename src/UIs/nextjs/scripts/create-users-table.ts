@@ -73,18 +73,18 @@ async function createUsersTable() {
     const passwordHash = await bcrypt.hash("admin123", 10);
 
     const existingUsers = await sql`
-      SELECT email FROM users WHERE email = 'admin@smidjan.be'
+      SELECT email FROM users WHERE email = 'contact.smidjan@outlook.com'
     `;
 
     if (existingUsers.length === 0) {
       await sql`
         INSERT INTO users (email, name, password_hash, role)
-        VALUES ('admin@smidjan.be', 'Admin', ${passwordHash}, 'admin')
+        VALUES ('contact.smidjan@outlook.com', 'Admin', ${passwordHash}, 'admin')
       `;
 
       console.log("✅ Default admin user created");
       console.log("");
-      console.log("📧 Email: admin@smidjan.be");
+      console.log("📧 Email: contact.smidjan@outlook.com");
       console.log("🔑 Password: admin123");
       console.log("⚠️  CHANGE THIS PASSWORD IN PRODUCTION!");
     } else {

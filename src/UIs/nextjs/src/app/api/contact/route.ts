@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { checkRateLimit, getClientIP, getRateLimitInfo } from "./ratelimit";
-import { isValidPhoneNumber } from "libphonenumber-js";
+import { contactLimiter, getClientIdentifier } from "@/lib/rate-limit-redis";
 import {
   isDisposableEmail,
   hasSuspiciousEmailPattern,
@@ -11,7 +10,16 @@ import {
   getConfirmationEmailHtml,
   getTeamNotificationEmailHtml,
 } from "./email-templates";
-import { verifyRecaptchaEnterprise } from "@/lib/recaptcha";
+import {
+  validateEmail,
+  sanitizeString,
+  validatePhone,
+} from "@/lib/validation";
+import {
+  validateContentType,
+  validateCSRF,
+  validateRecaptcha,
+} from "@/lib/api/middleware";
 
 // Initialize Resend with API key
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -37,32 +45,6 @@ type ContactFormData = {
 
 type FieldErrors = {
   [key: string]: string;
-};
-
-// Sanitization helper - prevent log injection and basic XSS
-const sanitizeString = (input: string): string => {
-  return input
-    .replace(/[\x00-\x1F\x7F]/g, "") // Remove control characters
-    .replace(/\n/g, " ") // Replace newlines with spaces for logs
-    .replace(/\r/g, "")
-    .trim();
-};
-
-// Validation helpers
-const validateEmail = (email: string): boolean => {
-  // Improved email regex (RFC 5322 simplified)
-  const emailRegex =
-    /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-  return emailRegex.test(email);
-};
-
-const validatePhone = (phone: string): boolean => {
-  // Use libphonenumber-js for accurate international validation
-  try {
-    return isValidPhoneNumber(phone);
-  } catch (error) {
-    return false;
-  }
 };
 
 const validateField = (name: string, value: unknown): string | null => {
@@ -145,120 +127,60 @@ const validateField = (name: string, value: unknown): string | null => {
 // Main POST handler
 export async function POST(request: NextRequest) {
   try {
-    // Get client IP
-    const clientIP = getClientIP(request);
+    // 🔍 Dev: Verify Redis configuration
+    if (process.env.NODE_ENV === 'development') {
+      console.log('🔍 Redis configured:', !!process.env.UPSTASH_REDIS_REST_URL);
+    }
 
-    // Rate limiting: 5 requests per minute
-    if (!checkRateLimit(clientIP, 5, 60000)) {
-      const rateLimitInfo = getRateLimitInfo(clientIP, 5);
+    // ✅ Rate limiting with Redis (5 requests per hour)
+    const clientIdentifier = getClientIdentifier(request);
+    const { success, limit, remaining, reset } = await contactLimiter.limit(clientIdentifier);
+    
+    if (!success) {
+      console.warn('⚠️ Contact rate limit exceeded:', {
+        identifier: clientIdentifier,
+        limit,
+        reset: new Date(reset).toISOString(),
+      });
+      
       return NextResponse.json(
         {
           ok: false,
           message:
-            "Trop de requêtes. Veuillez réessayer dans quelques instants ou nous contacter à jeanbaptiste.dhondt1@gmail.com.",
+            "Trop de requêtes. Veuillez réessayer dans quelques instants ou nous contacter à contact.smidjan@outlook.com.",
         },
         {
           status: 429,
           headers: {
-            "X-RateLimit-Limit": "5",
-            "X-RateLimit-Remaining": String(rateLimitInfo.remaining),
-            "X-RateLimit-Reset": String(
-              Math.floor(rateLimitInfo.resetTime / 1000),
-            ),
-            "Retry-After": String(
-              Math.ceil((rateLimitInfo.resetTime - Date.now()) / 1000),
-            ),
+            "X-RateLimit-Limit": limit.toString(),
+            "X-RateLimit-Remaining": "0",
+            "X-RateLimit-Reset": new Date(reset).toISOString(),
+            "Retry-After": Math.ceil((reset - Date.now()) / 1000).toString(),
           },
         },
       );
     }
 
-    // Validate Content-Type
-    const contentType = request.headers.get("content-type");
-    if (!contentType || !contentType.includes("application/json")) {
-      return NextResponse.json(
-        {
-          ok: false,
-          message: "Content-Type must be application/json",
-        },
-        { status: 415 },
-      );
-    }
+    console.log('✅ Contact rate limit OK:', { remaining, limit });
 
-    // CSRF Protection via Origin/Referer validation
-    const origin = request.headers.get("origin");
-    const referer = request.headers.get("referer");
-    const host = request.headers.get("host");
+    // ✅ Content-Type validation (middleware)
+    const contentTypeCheck = validateContentType(request);
+    if (!contentTypeCheck.success) return contentTypeCheck.response;
 
-    // Allow requests from same origin or localhost (development)
-    const isLocalhost =
-      host?.includes("localhost") || host?.includes("127.0.0.1");
-    const isValidOrigin =
-      isLocalhost ||
-      origin?.includes(host || "") ||
-      referer?.includes(host || "");
-
-    if (!isValidOrigin) {
-      console.warn("CSRF attempt detected", {
-        ip: clientIP,
-        origin,
-        referer,
-        host,
-      });
-      return NextResponse.json(
-        {
-          ok: false,
-          message: "Invalid request origin",
-        },
-        { status: 403 },
-      );
-    }
+    // ✅ CSRF Protection (middleware)
+    const csrfCheck = validateCSRF(request);
+    if (!csrfCheck.success) return csrfCheck.response;
 
     const body: ContactFormData = await request.json();
 
-    // reCAPTCHA verification (REQUIRED)
-    if (!body.recaptchaToken) {
-      console.warn("Contact form submission without reCAPTCHA token", {
-        ip: clientIP,
-      });
-      return NextResponse.json(
-        {
-          ok: false,
-          message: "Vérification de sécurité manquante",
-        },
-        { status: 400 },
-      );
-    }
-
-    const recaptchaResult = await verifyRecaptchaEnterprise(
-      body.recaptchaToken,
-      "contact_form",
-      clientIP,
-    );
-
-    if (!recaptchaResult.success) {
-      console.warn("Contact form failed reCAPTCHA verification", {
-        ip: clientIP,
-        score: recaptchaResult.score,
-        error: recaptchaResult.error,
-      });
-      return NextResponse.json(
-        {
-          ok: false,
-          message: "Vérification anti-bot échouée. Veuillez réessayer.",
-        },
-        { status: 403 },
-      );
-    }
-
-    console.log("Contact form reCAPTCHA verified", {
-      score: recaptchaResult.score,
-    });
+    // ✅ reCAPTCHA verification (middleware)
+    const recaptchaCheck = await validateRecaptcha(request, body.recaptchaToken, "contact_form");
+    if (!recaptchaCheck.success) return recaptchaCheck.response;
 
     // Honeypot validation - bots typically fill hidden fields
     if (body.honeypot) {
       console.warn("Bot detected via honeypot field", {
-        ip: clientIP,
+        ip: clientIdentifier,
         honeypot: body.honeypot,
       });
       // Return success to fool the bot (don't reveal detection)
@@ -279,7 +201,7 @@ export async function POST(request: NextRequest) {
 
       if (fillTime < minFillTime) {
         console.warn("Form filled too quickly - bot detected", {
-          ip: clientIP,
+          ip: clientIdentifier,
           fillTime,
         });
         // Return success to fool the bot (don't reveal detection)
@@ -294,7 +216,7 @@ export async function POST(request: NextRequest) {
 
       if (fillTime > maxFillTime) {
         console.warn("Form session expired", {
-          ip: clientIP,
+          ip: clientIdentifier,
           fillTime,
         });
         return NextResponse.json(
@@ -347,7 +269,7 @@ export async function POST(request: NextRequest) {
     // 1. Check for disposable/temporary email addresses
     if (isDisposableEmail(body.email)) {
       console.warn("Disposable email detected", {
-        ip: clientIP,
+        ip: clientIdentifier,
         email: body.email,
       });
       return NextResponse.json(
@@ -366,7 +288,7 @@ export async function POST(request: NextRequest) {
     // 2. Check for suspicious email patterns
     if (hasSuspiciousEmailPattern(body.email)) {
       console.warn("Suspicious email pattern detected", {
-        ip: clientIP,
+        ip: clientIdentifier,
         email: body.email,
       });
       return NextResponse.json(
@@ -385,7 +307,7 @@ export async function POST(request: NextRequest) {
     const spamCheck = checkForSpam(body.message);
     if (spamCheck.isSpam) {
       console.warn("Spam content detected", {
-        ip: clientIP,
+        ip: clientIdentifier,
         score: spamCheck.score,
         reasons: spamCheck.reasons,
         messagePreview: body.message.substring(0, 100),
@@ -408,7 +330,7 @@ export async function POST(request: NextRequest) {
       const validBudgets = ["<2000", "2-5k", "5-10k", "10-25k", ">25k"];
       if (!validBudgets.includes(body.budget)) {
         console.warn("Invalid budget value", {
-          ip: clientIP,
+          ip: clientIdentifier,
           budget: body.budget,
         });
         return NextResponse.json(
@@ -426,7 +348,7 @@ export async function POST(request: NextRequest) {
       const validTimelines = ["asap", "1m", "2-3m", ">3m"];
       if (!validTimelines.includes(body.timeline)) {
         console.warn("Invalid timeline value", {
-          ip: clientIP,
+          ip: clientIdentifier,
           timeline: body.timeline,
         });
         return NextResponse.json(
@@ -535,7 +457,7 @@ async function sendNotificationToTeam(
   try {
     const { data: emailData, error } = await resend.emails.send({
       from: "Smidjan Contact Form <contact@smidjan.be>",
-      to: ["jeanbaptiste.dhondt1@gmail.com"], // Your team email
+      to: ["contact@smidjan.be"], // Your team email
       replyTo: data.email, // Allow direct reply to client
       subject: `🎯 Nouveau contact : ${data.type} - ${data.name}`,
       html: getTeamNotificationEmailHtml(data, ticketId),
@@ -556,3 +478,4 @@ async function sendNotificationToTeam(
     throw error; // This one should fail the request if it doesn't work
   }
 }
+

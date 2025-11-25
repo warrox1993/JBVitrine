@@ -724,6 +724,6 @@ Passionné de cybersécurité depuis l'âge de 12 ans, quand j'ai contourné mon
 - TryHackMe Top 5% (2024-2025)
 - Formation militaire cyberdéfense (2014-2016)
 
-**Contact** : jeanbaptiste.dhondt1@gmail.com | +32 475 20 55 62
+**Contact** : contact.smidjan@outlook.com | +32 475 20 55 62
 
 **Consultation gratuite** : 30 minutes par téléphone pour discuter de votre situation familiale.

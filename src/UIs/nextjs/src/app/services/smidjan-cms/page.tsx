@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { CheckIcon } from "@/components/icons/CheckIcon";
+
 import { ShieldCheckIcon } from "@/components/icons/ShieldCheckIcon";
 import { SparklesIcon } from "@/components/icons/SparklesIcon";
 import { WorkflowIcon } from "@/components/icons/WorkflowIcon";
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         url: "https://smidjan.be/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "SMIDJAN CMS — La solution e-commerce tout-en-un",
+        alt: "SMIDJAN CMS - La solution e-commerce tout-en-un",
         type: "image/webp",
       },
     ],
@@ -107,85 +107,7 @@ const whySmidjanReasons = [
   },
 ] as const;
 
-const functionalModules = [
-  {
-    title: "Catalogue & produits",
-    items: [
-      "Produits simples, configurables, groupés ou téléchargeables",
-      "Gestion d'attributs, de variantes, d'options et de packs",
-      "Stock multi-entrepôts et inventaire en temps réel",
-      "Import/export via CSV ou API",
-      "Catégories hiérarchiques avec SEO intégré",
-    ],
-  },
-  {
-    title: "Commandes & clients",
-    items: [
-      "Panier intelligent et tunnel de commande fluide",
-      "Commandes, factures, avoirs et retours gérés de bout en bout",
-      "Comptes clients, multi-adresses, groupes B2B/B2C",
-      "Historique complet et notifications automatiques",
-      "Espace client personnalisable avec suivi d'état",
-    ],
-  },
-  {
-    title: "Paiement & facturation",
-    items: [
-      "Stripe, virement ou solution sur mesure",
-      "Factures conformes UE générées automatiquement",
-      "Taxes, devises et taux de change multiples",
-      "Emails de confirmation et relances automatiques",
-    ],
-  },
-  {
-    title: "Marketing & promotion",
-    items: [
-      "Coupons, remises progressives et packs promo",
-      "Bannières dynamiques et pages de campagne",
-      "Newsletter intégrée et ciblage par segment",
-      "Sitemap, meta et rich snippets inclus",
-    ],
-  },
-  {
-    title: "Administration & gestion",
-    items: [
-      "Tableau de bord ventes, commandes, clients, produits",
-      "Multi-utilisateurs et rôles ACL avancés",
-      "Journalisation des actions et logs d'audit",
-      "Configuration paiement, livraison, taxes, langues, emails",
-      "Système modulaire prêt pour extensions",
-    ],
-  },
-  {
-    title: "Sécurité & performances",
-    items: [
-      "Auth sécurisée et gestion fine des permissions",
-      "Headers de sécurité, protections CSRF, XSS, SQLi",
-      "Sauvegardes automatisées et restauration simple",
-      "Optimisations Core Web Vitals et cache intelligent",
-      "Monitoring intégré et alertes d'anomalies",
-    ],
-  },
-  {
-    title: "Design & personnalisation",
-    items: [
-      "Design 100 % modulable, compatible Tailwind, Bootstrap…",
-      "Templates éditables sans toucher au noyau",
-      "Gestion avancée thèmes, couleurs, polices, composants",
-      "Blocs réutilisables pour construire les pages",
-      "Responsive design optimisé nativement",
-    ],
-  },
-  {
-    title: "Automatisations & intégrations",
-    items: [
-      "Workflows n8n prêts : facturation, rappels, CRM, emailing",
-      "Connecteurs vers ERP, marketing, analytics",
-      "Webhooks et endpoints sécurisés",
-      "IA embarquée pour suggestions et analyses (option)",
-    ],
-  },
-] as const;
+
 
 const evolutionCards = [
   {
@@ -308,7 +230,7 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "SMIDJAN CMS — Solution e-commerce pour entreprises belges",
+    name: "SMIDJAN CMS - Solution e-commerce pour entreprises belges",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     applicationSubCategory: "E-commerce Platform",
@@ -516,37 +438,7 @@ function QuickProofsSection() {
   );
 }
 
-function FunctionalitySection() {
-  return (
-    <section id="cms-modules" className={styles.section} aria-labelledby="cms-modules-title">
-      <div className="container">
-        <div className={styles.sectionHeader}>
-          <Heading as="h2" id="cms-modules-title" className={styles.sectionTitle} accent>
-            Fonctionnalités natives
-          </Heading>
-          <p className={styles.sectionLead}>
-            Tu disposes dès l'installation d'un environnement professionnel prêt à l'emploi pour gérer catalogue, commandes, marketing, sécurité et automatisations.
-          </p>
-        </div>
-        <div className={styles.modulesGrid}>
-          {functionalModules.map((module) => (
-            <article key={module.title} className={styles.moduleCard}>
-              <h3 className={styles.cardTitle}>{module.title}</h3>
-              <ul className={styles.moduleList}>
-                {module.items.map((item) => (
-                  <li key={item} className={styles.moduleItem}>
-                    <CheckIcon aria-hidden="true" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+
 
 function ShowcaseSection() {
   return (

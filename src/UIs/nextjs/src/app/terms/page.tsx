@@ -6,13 +6,13 @@ import { SectionWithBackground } from '@/components/ui/SectionWithBackground/Sec
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-    title: 'Conditions Générales de Vente (CGV) — Smidjan',
+    title: 'Conditions Générales de Vente (CGV) - Smidjan',
     description: 'Conditions Générales de Vente de Smidjan : développement web, cybersécurité, automatisation IA. Prestations, tarifs, délais et garanties pour entreprises en Belgique.',
     alternates: {
         canonical: '/terms',
     },
     openGraph: {
-        title: 'CGV — Smidjan',
+        title: 'CGV - Smidjan',
         description: 'Conditions Générales de Vente : prestations web, cybersécurité et IA.',
         type: 'website',
         url: 'https://smidjan.be/terms',
@@ -90,7 +90,7 @@ export default function TermsPage() {
                                     <em>Marque en cours de création</em><br />
                                     Portée par Jean-Baptiste Dhondt<br />
                                     Adresse : Liège, Belgique<br />
-                                    <strong>Email :</strong> <a href="mailto:jeanbaptiste.dhondt1@gmail.com">jeanbaptiste.dhondt1@gmail.com</a><br />
+                                    <strong>Email :</strong> <a href="mailto:contact.smidjan@outlook.com">contact.smidjan@outlook.com</a><br />
                                     <strong>Téléphone :</strong> <a href="tel:+32475205562">+32 475 205 562</a></p>
                                     <p>Ci-après dénommée "le Prestataire" ou "SMIDJAN",</p>
                                     <p>Et toute personne physique ou morale souhaitant bénéficier des services proposés par SMIDJAN, ci-après dénommée "le Client".</p>
@@ -460,7 +460,7 @@ export default function TermsPage() {
                                     <p>
                                         <strong>Jean-Baptiste Dhondt</strong><br />
                                         SMIDJAN<br />
-                                        <strong>Email :</strong> <a href="mailto:jeanbaptiste.dhondt1@gmail.com">jeanbaptiste.dhondt1@gmail.com</a><br />
+                                        <strong>Email :</strong> <a href="mailto:contact.smidjan@outlook.com">contact.smidjan@outlook.com</a><br />
                                         <strong>Téléphone :</strong> <a href="tel:+32475205562">+32 475 205 562</a><br />
                                         <strong>Adresse :</strong> Liège, Belgique
                                     </p>
@@ -471,7 +471,7 @@ export default function TermsPage() {
                             {/* Version */}
                             <div className={styles.version}>
                                 <p>
-                                    <strong>Version 1.0</strong> — Applicable à compter du 1er novembre 2025<br />
+                                    <strong>Version 1.0</strong> - Applicable à compter du 1er novembre 2025<br />
                                     <strong>Dernière révision :</strong> 1er novembre 2025
                                 </p>
                             </div>

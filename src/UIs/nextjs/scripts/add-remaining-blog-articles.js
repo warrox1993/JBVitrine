@@ -343,9 +343,9 @@ export async function POST(request: NextRequest) {
 
 ### Exemples d'amendes belges
 
-- **2024** : E-commerce belge — 150 000€ (absence politique cookies)
-- **2023** : Plateforme SaaS — 85 000€ (fuite données non notifiée)
-- **2023** : Site vitrine PME — 5 000€ (pas de consentement cookies)
+- **2024** : E-commerce belge - 150 000€ (absence politique cookies)
+- **2023** : Plateforme SaaS - 85 000€ (fuite données non notifiée)
+- **2023** : Site vitrine PME - 5 000€ (pas de consentement cookies)
 
 ### Si contrôle de l'APD (Autorité Protection Données)
 

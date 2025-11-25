@@ -1,15 +1,16 @@
-﻿# Page “À propos” — SMIDJAN
-**Version finale — Contenu complet et structuré**
+﻿# Page “À propos” - SMIDJAN
+
+**Version finale - Contenu complet et structuré**
 
 ---
 
-## Héros — À propos de SMIDJAN
+## Héros - À propos de SMIDJAN
 
 **Titre :**  
 Des artisans du digital au service de la performance.
 
 **Sous-titre :**  
-SMIDJAN accompagne les entreprises à chaque étape de leur transformation numérique — de l’idée à la mise en production.  
+SMIDJAN accompagne les entreprises à chaque étape de leur transformation numérique - de l’idée à la mise en production.  
 Nous forgeons des solutions stables, sécurisées et évolutives, conçues pour produire des résultats mesurables.
 
 **CTA principal :**  
@@ -74,8 +75,9 @@ Derrière SMIDJAN, une équipe compacte et exigeante, composée de développeurs
 ### Membre principal
 
 **Jean-Baptiste D.**  
-*Consultant Full-Stack & Fondateur*
-> “Je conçois chaque projet comme un écosystème vivant — où la rigueur technique rencontre la clarté du design.”
+_Consultant Full-Stack & Fondateur_
+
+> “Je conçois chaque projet comme un écosystème vivant - où la rigueur technique rencontre la clarté du design.”
 
 ### Collaborateurs
 
@@ -92,7 +94,7 @@ Expert en architecture, sécurité et automatisation. Garant de la stabilité et
 
 ## Nos valeurs
 
-Les valeurs de SMIDJAN guident chacune de nos décisions — du choix d’une technologie à la livraison d’un projet client.
+Les valeurs de SMIDJAN guident chacune de nos décisions - du choix d’une technologie à la livraison d’un projet client.
 
 **Rigueur**  
 Chaque ligne de code est une promesse de fiabilité. Nous ne laissons rien au hasard.
@@ -107,13 +109,13 @@ Nos solutions sont pensées pour créer de la valeur mesurable : plus de perform
 
 ## Notre histoire
 
-**2017 — Les débuts.**  
+**2017 - Les débuts.**  
 Premiers projets indépendants, volonté de combiner design et ingénierie logicielle dans une approche sur mesure.
 
-**2020 — La méthode prend forme.**  
+**2020 - La méthode prend forme.**  
 Structuration autour d’une exigence : livrer des solutions stables, scalables et maintenables, sans compromis sur la qualité.
 
-**2024 — Naissance de SMIDJAN.**  
+**2024 - Naissance de SMIDJAN.**  
 Fusion entre expertise technique et sens du produit.  
 SMIDJAN devient la forge où les idées prennent forme, avec un objectif simple : allier exigence et impact.
 
@@ -132,6 +134,6 @@ Nous accompagnons les PME et décideurs techniques dans leurs projets les plus a
 ## Pied de page (optionnel pour cohérence globale)
 
 **Slogan :**  
-SMIDJAN — *Digital Craft. Where ideas are forged.*
+SMIDJAN - _Digital Craft. Where ideas are forged._
 
 ---

@@ -7,6 +7,7 @@ import {
   isIpBlocked,
 } from "@/lib/security-logger";
 import { validateCsrfToken } from "@/lib/csrf";
+import { validateEmail, sanitizeString } from "@/lib/validation";
 import { verifyRecaptchaEnterprise } from "@/lib/recaptcha";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -20,25 +21,12 @@ const REQUEST_TYPE_LABELS: Record<string, string> = {
   other: "Autre demande",
 };
 
-// Sanitize HTML to prevent XSS
-function sanitizeHtml(text: string): string {
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#x27;")
-    .replace(/\//g, "&#x2F;");
-}
-
-// Get client IP
+// Get client IP (local utility for this route)
 function getClientIp(request: Request): string {
   const forwarded = request.headers.get("x-forwarded-for");
   const real = request.headers.get("x-real-ip");
   return forwarded?.split(",")[0] || real || "unknown";
 }
-
-// Function removed - using centralized verifyRecaptchaEnterprise() from @/lib/recaptcha
 
 export async function POST(request: Request) {
   try {
@@ -188,14 +176,13 @@ export async function POST(request: Request) {
       );
     }
 
-    // Email validation - stricter
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(email) || email.length > 254) {
+    // ✅ Email validation using centralized helper
+    if (!validateEmail(email)) {
       await logSecurityEvent({
         type: SecurityEventType.INVALID_INPUT,
         ip: clientIp,
         userAgent,
-        details: { reason: "Invalid email format", emailLength: email.length },
+        details: { reason: "Invalid email format" },
         timestamp: Date.now(),
       });
       return NextResponse.json(
@@ -267,19 +254,19 @@ export async function POST(request: Request) {
       );
     }
 
-    // Sanitize all inputs before email
-    const safeName = sanitizeHtml(name.trim());
-    const safeEmail = sanitizeHtml(email.trim());
-    const safeCompany = company ? sanitizeHtml(company.trim()) : "";
-    const safePhone = phone ? sanitizeHtml(phone.trim()) : "";
-    const safeMessage = sanitizeHtml(message.trim());
+    // ✅ Sanitize all inputs using centralized helper
+    const safeName = sanitizeString(name.trim());
+    const safeEmail = sanitizeString(email.trim());
+    const safeCompany = company ? sanitizeString(company.trim()) : "";
+    const safePhone = phone ? sanitizeString(phone.trim()) : "";
+    const safeMessage = sanitizeString(message.trim());
 
     // Send email via Resend
     const requestTypeLabel =
       REQUEST_TYPE_LABELS[requestType] || "Autre demande";
     const { data, error } = await resend.emails.send({
-      from: "Smidjan Contact <contact@smidjan.be>",
-      to: ["jeanbaptiste.dhondt1@gmail.com"],
+      from: "Smidjan Contact <contact.smidjan@outlook.com>",
+      to: ["contact.smidjan@outlook.com"],
       replyTo: email,
       subject: `[${requestTypeLabel.toUpperCase()}] Nouveau message de ${safeName}${safeCompany ? ` (${safeCompany})` : ""}`,
       html: `

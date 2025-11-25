@@ -61,7 +61,7 @@ async function testDatabase() {
         score_total, score_grade, score_confidence,
         score_breakdown, quote_data, estimate, project_type
       ) VALUES (
-        'test@smidjan.be',
+        'contact.smidjan@outlook.com',
         'Test User',
         'Smidjan Test',
         '+32 123 456 789',

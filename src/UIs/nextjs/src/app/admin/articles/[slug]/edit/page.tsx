@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const article = await getArticleBySlug(slug);
 
   return {
-    title: `Modifier ${article?.title || "Article"} — Admin Smidjan`,
+    title: `Modifier ${article?.title || "Article"} - Admin Smidjan`,
     robots: {
       index: false,
       follow: false,

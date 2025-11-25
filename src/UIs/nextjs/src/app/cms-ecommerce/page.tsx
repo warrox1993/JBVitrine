@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { CheckIcon } from "@/components/icons/CheckIcon";
 import { ShieldCheckIcon } from "@/components/icons/ShieldCheckIcon";
@@ -306,24 +307,28 @@ function TrustedCompanies() {
           {/* Première série de logos */}
           <div className={styles.logosPart}>
             {companies.map((company, index) => (
-              <img
+              <Image
                 key={`company-1-${index}`}
                 src={company.logo}
                 alt={`${company.name} logo`}
                 className={styles.companyLogo}
-                loading="lazy"
+                width={150}
+                height={50}
+                style={{ objectFit: "contain" }}
               />
             ))}
           </div>
           {/* Duplication pour effet de défilement continu */}
           <div className={styles.logosPart}>
             {companies.map((company, index) => (
-              <img
+              <Image
                 key={`company-2-${index}`}
                 src={company.logo}
                 alt={`${company.name} logo`}
                 className={styles.companyLogo}
-                loading="lazy"
+                width={150}
+                height={50}
+                style={{ objectFit: "contain" }}
               />
             ))}
           </div>
@@ -449,11 +454,13 @@ function ServicesSection() {
         <div className={styles.servicesGrid}>
           {services.map((service, index) => (
             <article key={`service-${index}`} className={styles.serviceCard}>
-              <img
+              <Image
                 src={service.icon}
                 alt=""
                 className={styles.serviceIcon}
-                loading="lazy"
+                width={64}
+                height={64}
+                style={{ objectFit: "contain" }}
               />
               <div className={styles.serviceNumber}>{String(index + 1).padStart(2, "0")}</div>
 
@@ -524,12 +531,12 @@ function CaseStudies() {
       sector: "Fashion Premium",
       challenge: (
         <>
-          Storefront ultra-moderne Next.js 14 découplée de backend <BagistoLink>Bagisto</BagistoLink> pour UX premium mobile-first
+          Storefront ultra-moderne Next.js 16 découplée de backend <BagistoLink>Bagisto</BagistoLink> pour UX premium mobile-first
         </>
       ),
       solution: (
         <>
-          Backend <BagistoLink>Bagisto</BagistoLink> API (REST + GraphQL), Frontend Next.js 14 PWA par SMIDJAN, SSR + ISR, 100 Lighthouse mobile
+          Backend <BagistoLink>Bagisto</BagistoLink> API (REST + GraphQL), Frontend Next.js 16 PWA par SMIDJAN, SSR + ISR, 100 Lighthouse mobile
         </>
       ),
       metrics: [
@@ -551,7 +558,7 @@ function CaseStudies() {
       <div className="container">
         <div className={styles.sectionHeader}>
           <Heading as="h2" id="cases-title" className={styles.sectionTitle} accent>
-            Cas de Succès — <BagistoLink>Bagisto</BagistoLink> en Production
+            Cas de Succès - <BagistoLink>Bagisto</BagistoLink> en Production
           </Heading>
           <p className={styles.sectionLead}>
             3 exemples concrets de projets <BagistoLink>Bagisto</BagistoLink> livrés par SMIDJAN en production

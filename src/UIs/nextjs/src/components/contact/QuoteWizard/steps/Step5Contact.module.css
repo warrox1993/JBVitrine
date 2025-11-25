@@ -46,7 +46,7 @@
 
 @media (min-width: 1024px) {
   .layout {
-    grid-template-columns: 1fr 350px;
+    grid-template-columns: 1fr;
   }
 }
 

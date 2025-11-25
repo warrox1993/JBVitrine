@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
-import { Breadcrumb } from '@/components/Breadcrumb';
+
 import { Container } from '@/components/atoms/Container';
 import { AnimatedBackground } from '@/components/ui/AnimatedBackground/AnimatedBackground';
 import { ContactPageClient } from './ContactPageClient';
@@ -17,13 +17,13 @@ const Footer = dynamic(() => import('@/components/sections/Footer/Footer').then(
 });
 
 export const metadata: Metadata = {
-    title: 'Contact — Smidjan, agence web, cybersécurité & IA',
+    title: 'Contact - Smidjan, agence web, cybersécurité & IA',
     description: 'Contactez Smidjan pour un projet web (Next.js/TypeScript/CMS), un audit cybersécurité, ou une automatisation/IA. Réponse sous 24h ouvrées.',
     alternates: {
         canonical: '/contact',
     },
     openGraph: {
-        title: 'Contact — Smidjan',
+        title: 'Contact - Smidjan',
         description: 'Démarrez un projet ou posez vos questions.',
         type: 'website',
         url: 'https://smidjan.be/contact',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Contact — Smidjan',
+        title: 'Contact - Smidjan',
         description: 'Démarrez un projet ou posez vos questions.',
         images: ['/og/contact-og.webp'],
     },
@@ -81,13 +81,13 @@ export default function ContactPage() {
                     __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'ContactPage',
-                        name: 'Contact — Smidjan',
+                        name: 'Contact - Smidjan',
                         url: 'https://smidjan.be/contact',
                         about: {
                             '@type': 'Organization',
                             name: 'Smidjan',
                             url: 'https://smidjan.be',
-                            email: 'jeanbaptiste.dhondt1@gmail.com',
+                            email: 'contact.smidjan@outlook.com',
                             address: {
                                 '@type': 'PostalAddress',
                                 addressLocality: 'Liège',
@@ -98,7 +98,7 @@ export default function ContactPage() {
                         contactPoint: {
                             '@type': 'ContactPoint',
                             contactType: 'sales',
-                            email: 'jeanbaptiste.dhondt1@gmail.com',
+                            email: 'contact.smidjan@outlook.com',
                             availableLanguage: ['fr-BE', 'fr'],
                             areaServed: ['BE', 'Wallonie'],
                         },

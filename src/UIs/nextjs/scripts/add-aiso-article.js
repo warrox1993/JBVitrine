@@ -25,7 +25,7 @@ const aisoArticle = {
 
 **La recherche en ligne a radicalement changé.** ChatGPT Search, Perplexity, Claude, et Gemini génèrent désormais **40% du trafic web total**. En 2025, être bien référencé sur Google ne suffit plus. **Il faut être cité et recommandé par les intelligences artificielles.**
 
-Ce guide vous révèle les techniques d'**AI Search Optimization (AISO)** — le nouveau SEO — pour dominer les résultats des moteurs IA et multiplier votre visibilité par 5.
+Ce guide vous révèle les techniques d'**AI Search Optimization (AISO)** - le nouveau SEO - pour dominer les résultats des moteurs IA et multiplier votre visibilité par 5.
 
 ---
 

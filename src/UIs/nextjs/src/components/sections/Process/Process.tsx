@@ -52,7 +52,7 @@ export function Process() {
       <div className="container">
         <div className={styles.header}>
           <Heading as="h2" accent className={styles.title}>Notre Processus Créatif</Heading>
-          <p className={styles.desc}>Une méthodologie claire qui allie créativité et rigueur technique — de la stratégie à la mise en ligne.</p>
+          <p className={styles.desc}>Une méthodologie claire qui allie créativité et rigueur technique - de la stratégie à la mise en ligne.</p>
         </div>
         <section className={styles.processModule} aria-label="Processus créatif">
           {steps.map((s, i) => (

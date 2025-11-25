@@ -7,7 +7,7 @@ import { AnimatedBackground } from '@/components/ui/AnimatedBackground/AnimatedB
 import heroStyles from '@/components/sections/Hero/Hero.module.css';
 
 /*
-  FICHE TECHNIQUE — Hero About (parité Home)
+  FICHE TECHNIQUE - Hero About (parité Home)
   - Layout: réutilise Hero.module.css (Home) → classes: hero, gradientBg, decor, content, title, description, actions.
   - Fond: dégradé identique au Hero Home via <svg> linearGradient + overlay noise (via Hero.module.css) + lumière radiale top-left.
   - Typo: h1 utilise var(--font-display) + tailles de Home; paragraphe contrainte à ~70ch, line-height ≈ 1.7.
@@ -47,7 +47,7 @@ export default function HeroAbout() {
         <div className={heroStyles.content}>
           <h1 className={heroStyles.title}>Agence digitale basée à Liège, au service de votre performance</h1>
           <p className={heroStyles.description} style={{ maxWidth: '70ch', lineHeight: 1.7 }}>
-            Depuis Liège, SMIDJAN accompagne les entreprises de Wallonie et de Belgique à chaque étape de leur transformation numérique — de l'idée à la mise en production.
+            Depuis Liège, SMIDJAN accompagne les entreprises de Wallonie et de Belgique à chaque étape de leur transformation numérique - de l'idée à la mise en production.
             Nous forgeons des solutions web stables, sécurisées et évolutives, conçues pour produire des résultats mesurables.
           </p>
           <div className={heroStyles.actions}>

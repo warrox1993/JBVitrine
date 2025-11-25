@@ -3,7 +3,7 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { ArticleEditor } from "../ArticleEditor";
 
 export const metadata: Metadata = {
-  title: "Nouvel Article — Admin Smidjan",
+  title: "Nouvel Article - Admin Smidjan",
   robots: {
     index: false,
     follow: false,

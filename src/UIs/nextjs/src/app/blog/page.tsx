@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Blog Technique — Smidjan",
+    title: "Blog Technique - Smidjan",
     description:
       "Articles sur le développement web, la cybersécurité et l'IA pour entreprises.",
     url: "https://smidjan.be/blog",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: "https://smidjan.be/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Smidjan Blog — Articles techniques pour développeurs et entreprises",
+        alt: "Smidjan Blog - Articles techniques pour développeurs et entreprises",
         type: "image/webp",
       },
     ],
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog Technique — Smidjan",
+    title: "Blog Technique - Smidjan",
     description: "Articles sur le développement web, la cybersécurité et l'IA.",
     images: ["/og-image.webp"],
   },

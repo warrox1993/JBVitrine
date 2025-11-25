@@ -201,7 +201,7 @@ export function Step5Contact({
 
       if (recentSubmissions.length >= maxSubmissions) {
         setGlobalError(
-          'Vous avez atteint la limite de soumissions. Veuillez réessayer dans une heure ou nous contacter directement à contact@smidjan.be'
+          'Vous avez atteint la limite de soumissions. Veuillez réessayer dans une heure ou nous contacter directement à contact.smidjan@outlook.com'
         );
         return;
       }
@@ -522,43 +522,7 @@ export function Step5Contact({
           </div>
         </form>
 
-        {/* Sidebar Summary */}
-        <aside className={cls.sidebar}>
-          <div className={cls.summaryCard}>
-            <h3 className={cls.summaryTitle}>Votre demande</h3>
 
-            <div className={cls.summarySection}>
-              <div className={cls.summaryLabel}>Budget estimé</div>
-              <div className={cls.summaryValue}>
-                {formatPriceRange(estimate.min, estimate.max)}
-              </div>
-            </div>
-
-            <div className={cls.summarySection}>
-              <div className={cls.summaryLabel}>Délai</div>
-              <div className={cls.summaryValue}>{estimate.timeline}</div>
-            </div>
-
-            <div className={cls.summarySection}>
-              <div className={cls.summaryLabel}>Fonctionnalités</div>
-              <div className={cls.summaryValue}>
-                {estimate.totalFeatures} sélectionnées
-              </div>
-            </div>
-
-            <div className={cls.summaryDivider} />
-
-            <div className={cls.guarantees}>
-              <h4 className={cls.guaranteesTitle}>Nos garanties</h4>
-              <ul className={cls.guaranteesList}>
-                <li>Réponse sous 24h</li>
-                <li>Devis détaillé et gratuit</li>
-                <li>Pas d&apos;engagement</li>
-                <li>Données sécurisées (RGPD)</li>
-              </ul>
-            </div>
-          </div>
-        </aside>
       </div>
     </div>
   );

@@ -37,7 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Create a new page (Design System‑aware)
 
-Use the global design system and utilities — avoid raw px/hex in markup.
+Use the global design system and utilities - avoid raw px/hex in markup.
 
 1. Scaffold
    - Create an `app/your-page/page.tsx` and return a semantic layout using `container`, `stack` utilities.

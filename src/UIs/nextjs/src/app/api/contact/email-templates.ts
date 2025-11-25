@@ -79,7 +79,7 @@ export function getConfirmationEmailHtml(
                 Liège, Belgique
               </p>
               <p style="margin: 0 0 15px; color: #8b919e; font-size: 13px;">
-                Email: <a href="mailto:jeanbaptiste.dhondt1@gmail.com" style="color: #ff6a00; text-decoration: none;">jeanbaptiste.dhondt1@gmail.com</a><br>
+                Email: <a href="mailto:contact@smidjan.be" style="color: #ff6a00; text-decoration: none;">contact@smidjan.be</a><br>
                 Tel: <a href="tel:+32475205562" style="color: #ff6a00; text-decoration: none;">+32 475 20 55 62</a><br>
                 Web: <a href="https://smidjan.be" style="color: #ff6a00; text-decoration: none;">smidjan.be</a>
               </p>

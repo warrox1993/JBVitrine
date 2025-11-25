@@ -8,7 +8,7 @@ Les présentes Conditions Générales de Vente (ci-après "CGV") définissent le
 *Marque en cours de création*  
 Portée par Jean-Baptiste Dhondt  
 Adresse : Liège, Belgique  
-Email : jeanbaptiste.dhondt1@gmail.com  
+Email : contact.smidjan@outlook.com  
 Téléphone : +32 475 205 562
 
 Ci-après dénommée "le Prestataire" ou "SMIDJAN",
@@ -283,7 +283,7 @@ Pour toute question relative aux présentes Conditions Générales de Vente :
 
 **Jean-Baptiste Dhondt**  
 SMIDJAN  
-Email : jeanbaptiste.dhondt1@gmail.com  
+Email : contact.smidjan@outlook.com  
 Téléphone : +32 475 205 562  
 Adresse : Liège, Belgique
 

@@ -418,7 +418,7 @@ Chez Smidjan, nous accompagnons les entreprises belges dans le choix et la réal
 👉 **[Obtenez un devis personnalisé en 2 minutes](/contact#quote-wizard)**
 
 Ou contactez-nous directement pour un **audit gratuit** de vos besoins :
-📧 Email : [jeanbaptiste.dhondt1@gmail.com](mailto:jeanbaptiste.dhondt1@gmail.com)
+📧 Email : [contact.smidjan@outlook.com](mailto:contact.smidjan@outlook.com)
 
 ---
 
@@ -531,7 +531,7 @@ Simulation d'une attaque depuis **internet** sans aucune information préalable.
 - Vulnérabilités publiques (CVE)
 - Authentification faible
 
-**Durée** : 3-7 jours
+**Durée** : 3-7 days
 **Prix en Belgique** : 3 000 - 10 000 €
 
 ---
@@ -548,7 +548,7 @@ Simulation d'une attaque depuis **l'intérieur du réseau** (employé malveillan
 - Accès aux serveurs critiques
 - Vol de données sensibles
 
-**Durée** : 5-10 jours
+**Durée** : 5-10 days
 **Prix en Belgique** : 4 000 - 12 000 €
 
 ---
@@ -556,8 +556,6 @@ Simulation d'une attaque depuis **l'intérieur du réseau** (employé malveillan
 #### 3. **Pentest Web Application (OWASP Top 10)**
 
 Test de sécurité spécifique à vos **applications web** (sites, plateformes SaaS, APIs).
-
-**Ce qui est testé** :
 - Injection SQL
 - XSS (Cross-Site Scripting)
 - CSRF (Cross-Site Request Forgery)
@@ -895,7 +893,7 @@ Chez **Smidjan**, nous réalisons des **audits de sécurité professionnels** po
 
 👉 **[Demandez un devis d'audit sécurité](/contact#quote-wizard)**
 
-📧 Email : [jeanbaptiste.dhondt1@gmail.com](mailto:jeanbaptiste.dhondt1@gmail.com)
+📧 Email : [contact.smidjan@outlook.com](mailto:contact.smidjan@outlook.com)
 
 ---
 
@@ -907,7 +905,7 @@ Chez **Smidjan**, nous réalisons des **audits de sécurité professionnels** po
 const article3 = {
   slug: "automatisation-ia-chatbot-rpa-belgique",
   content: `---
-title: "Automatisation IA en 2025 : Chatbot, RPA, NLP — Guide Belgique"
+title: "Automatisation IA en 2025 : Chatbot, RPA, NLP - Guide Belgique"
 publishedAt: "2025-01-17"
 summary: "Découvrez comment l'automatisation IA (chatbots intelligents, RPA, traitement de documents) peut transformer votre entreprise belge. Guide complet avec cas d'usage, prix, et ROI pour PME et grandes entreprises."
 image: "/blog/automatisation-ia-chatbot-rpa-2025.webp"
@@ -1348,7 +1346,7 @@ Chez **Smidjan**, nous aidons les entreprises belges à **automatiser leurs proc
 
 👉 **[Demandez un devis d'automatisation IA](/contact#quote-wizard)**
 
-📧 Email : [jeanbaptiste.dhondt1@gmail.com](mailto:jeanbaptiste.dhondt1@gmail.com)
+📧 Email : [contact.smidjan@outlook.com](mailto:contact.smidjan@outlook.com)
 
 ---
 

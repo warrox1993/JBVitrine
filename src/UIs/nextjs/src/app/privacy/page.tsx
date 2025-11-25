@@ -6,13 +6,13 @@ import { SectionWithBackground } from '@/components/ui/SectionWithBackground/Sec
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-    title: 'Politique de Confidentialité RGPD — Smidjan',
+    title: 'Politique de Confidentialité RGPD - Smidjan',
     description: 'Politique de confidentialité et protection des données personnelles de Smidjan. Conformité RGPD, pas de cookies, transparence totale sur vos données.',
     alternates: {
         canonical: '/privacy',
     },
     openGraph: {
-        title: 'Politique de Confidentialité — Smidjan',
+        title: 'Politique de Confidentialité - Smidjan',
         description: 'Protection de vos données personnelles. Site sans cookies, conforme RGPD.',
         type: 'website',
         url: 'https://smidjan.be/privacy',
@@ -111,7 +111,7 @@ export default function PrivacyPage() {
                                     SMIDJAN (marque en cours de création)<br />
                                     Liège, Belgique</p>
                                     <p>
-                                        <strong>Email :</strong> <a href="mailto:jeanbaptiste.dhondt1@gmail.com">jeanbaptiste.dhondt1@gmail.com</a><br />
+                                        <strong>Email :</strong> <a href="mailto:contact.smidjan@outlook.com">contact.smidjan@outlook.com</a><br />
                                         <strong>Téléphone :</strong> <a href="tel:+32475205562">+32 475 205 562</a>
                                     </p>
                                 </div>
@@ -245,7 +245,7 @@ export default function PrivacyPage() {
 
                                 <div className={styles.contactBox}>
                                     <p><strong>Pour exercer vos droits :</strong></p>
-                                    <p>Contactez-nous à : <a href="mailto:jeanbaptiste.dhondt1@gmail.com">jeanbaptiste.dhondt1@gmail.com</a></p>
+                                    <p>Contactez-nous à : <a href="mailto:contact.smidjan@outlook.com">contact.smidjan@outlook.com</a></p>
                                     <p>Nous nous engageons à répondre dans un délai maximum d'un mois.</p>
                                 </div>
                             </section>
@@ -359,7 +359,7 @@ export default function PrivacyPage() {
                                     <p>
                                         <strong>Jean-Baptiste Dhondt</strong><br />
                                         SMIDJAN<br />
-                                        <strong>Email :</strong> <a href="mailto:jeanbaptiste.dhondt1@gmail.com">jeanbaptiste.dhondt1@gmail.com</a><br />
+                                        <strong>Email :</strong> <a href="mailto:contact.smidjan@outlook.com">contact.smidjan@outlook.com</a><br />
                                         <strong>Téléphone :</strong> <a href="tel:+32475205562">+32 475 205 562</a><br />
                                         <strong>Adresse :</strong> Liège, Belgique
                                     </p>
@@ -380,7 +380,7 @@ export default function PrivacyPage() {
                             {/* Version */}
                             <div className={styles.version}>
                                 <p>
-                                    <strong>Version : 1.0</strong> — Applicable à compter du 1er novembre 2025<br />
+                                    <strong>Version : 1.0</strong> - Applicable à compter du 1er novembre 2025<br />
                                     <strong>Dernière révision :</strong> 1er novembre 2025
                                 </p>
                             </div>

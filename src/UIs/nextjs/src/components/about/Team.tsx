@@ -16,7 +16,7 @@ export default function Team() {
       <div className="grid-3">
         {team.map((m) => (
           <article key={m.name} className="stack" aria-label={`${m.name}, ${m.role}`}>
-            <Image src={m.avatar} alt={`${m.name} — ${m.role}`} width={160} height={160} loading="lazy" />
+            <Image src={m.avatar} alt={`${m.name} - ${m.role}`} width={160} height={160} loading="lazy" />
             <strong>{m.name}</strong>
             <div className="muted">{m.role}</div>
             <p>{m.bio}</p>

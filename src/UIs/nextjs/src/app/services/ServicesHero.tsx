@@ -41,7 +41,7 @@ export function ServicesHero() {
             Des solutions digitales prêtes à performer.
           </h1>
           <p className={styles.heroLead}>
-            Smidjan conçoit et sécurise des systèmes web sur mesure : sites, plateformes et automatisations qui augmentent votre efficacité réelle — pas votre jargon.
+            Smidjan conçoit et sécurise des systèmes web sur mesure : sites, plateformes et automatisations qui augmentent votre efficacité réelle - pas votre jargon.
           </p>
           <div className={styles.heroActions}>
             <Button as="a" href="/contact" variant="solid" size="md" ariaLabel="Démarrer un projet avec SMIDJAN">

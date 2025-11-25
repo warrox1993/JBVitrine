@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Breadcrumb } from "@/components/Breadcrumb";
-import { Card, CardBody, CardHeader } from "@/components/atoms/Card";
+
 import { Button } from "@/components/ui/Button/Button";
 import { Heading } from "@/components/ui/Heading";
 import { Footer } from "@/components/sections/Footer/Footer";
@@ -10,7 +9,7 @@ import { ServicesHero } from "./ServicesHero";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Services — Développement Web, Cybersécurité & IA à Liège",
+  title: "Services - Développement Web, Cybersécurité & IA à Liège",
   description:
     "Agence digitale à Liège : développement web sur mesure avec Next.js/React, cybersécurité (OWASP, audits), automatisation IA et CMS e-commerce. Services pour toute la Belgique.",
   keywords: [
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Services Web & Cybersécurité — Smidjan Liège",
+    title: "Services Web & Cybersécurité - Smidjan Liège",
     description:
       "Développement web performant, cybersécurité avancée et automatisations IA pour entreprises en Belgique. CMS e-commerce, audits OWASP et solutions sur mesure.",
     url: "https://smidjan.be/services",
@@ -41,7 +40,7 @@ export const metadata: Metadata = {
         url: "https://smidjan.be/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Smidjan — Services de développement web et cybersécurité à Liège",
+        alt: "Smidjan - Services de développement web et cybersécurité à Liège",
         type: "image/webp",
       },
     ],
@@ -50,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Services Web & Cybersécurité — Smidjan",
+    title: "Services Web & Cybersécurité - Smidjan",
     description:
       "Développement web, cybersécurité et IA pour entreprises en Belgique.",
     images: ["/og-image.webp"],
@@ -323,7 +322,7 @@ export default function ServicesPage() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <Heading as="h2" accent className={styles.sectionTitle} id="services-cms-highlight">
-              Smidjan CMS — le socle produit que nous faisons évoluer en continu.
+              Smidjan CMS - le socle produit que nous faisons évoluer en continu.
             </Heading>
             <p className={styles.sectionLead}>
               Au cœur de notre savoir-faire, un CMS e-commerce modulaire et évolutif, conçu pour offrir la liberté du sur-mesure avec la stabilité d'une architecture éprouvée. Multi-store, sécurisé et rapide, Smidjan CMS propulse nos projets internes et ceux de nos clients pilotes.

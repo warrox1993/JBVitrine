@@ -1,15 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import {
-  checkRateLimit,
-  getClientIP,
-  getRateLimitInfo,
-} from "../contact/ratelimit";
+import { quoteLimiter, getClientIdentifier } from "@/lib/rate-limit-redis";
 import {
   isDisposableEmail,
   hasSuspiciousEmailPattern,
 } from "../contact/disposable-emails";
-import { isValidPhoneNumber } from "libphonenumber-js";
 import {
   QuoteSubmission,
   ProjectType,
@@ -18,35 +13,21 @@ import {
   getQuoteConfirmationEmailHtml,
   getQuoteTeamNotificationEmailHtml,
 } from "./email-templates";
-import { verifyRecaptchaEnterprise } from "@/lib/recaptcha";
+import {
+  validateEmail,
+  sanitizeString,
+  validatePhone,
+} from "@/lib/validation";
+import {
+  validateContentType,
+  validateCSRF,
+  validateRecaptcha,
+} from "@/lib/api/middleware";
 
 // Initialize Resend with API key
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Sanitization helper
-const sanitizeString = (input: string): string => {
-  return input
-    .replace(/[\x00-\x1F\x7F]/g, "") // Remove control characters
-    .replace(/\n/g, " ") // Replace newlines with spaces for logs
-    .replace(/\r/g, "")
-    .trim();
-};
-
-// Validation helpers
-const validateEmail = (email: string): boolean => {
-  const emailRegex =
-    /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-  return emailRegex.test(email);
-};
-
-const validatePhone = (phone: string): boolean => {
-  try {
-    return isValidPhoneNumber(phone);
-  } catch (error) {
-    return false;
-  }
-};
-
+// Project type validation helper
 const validateProjectType = (type: string): boolean => {
   const validTypes: ProjectType[] = [
     "siteVitrine",
@@ -62,50 +43,52 @@ const validateProjectType = (type: string): boolean => {
 // Main POST handler
 export async function POST(request: NextRequest) {
   try {
-    // Get client IP
-    const clientIP = getClientIP(request);
-
-    // Validate Content-Type
-    const contentType = request.headers.get("content-type");
-    if (!contentType || !contentType.includes("application/json")) {
-      return NextResponse.json(
-        {
-          ok: false,
-          message: "Content-Type must be application/json",
-        },
-        { status: 415 },
-      );
+    // 🔍 Dev: Verify Redis configuration
+    if (process.env.NODE_ENV === 'development') {
+      console.log('🔍 Redis configured:', !!process.env.UPSTASH_REDIS_REST_URL);
     }
 
-    // CSRF Protection
-    const origin = request.headers.get("origin");
-    const referer = request.headers.get("referer");
-    const host = request.headers.get("host");
+    // Get client identifier for rate limiting
+    const clientIdentifier = getClientIdentifier(request);
 
-    const isLocalhost =
-      host?.includes("localhost") || host?.includes("127.0.0.1");
-    const isValidOrigin =
-      isLocalhost ||
-      origin?.includes(host || "") ||
-      referer?.includes(host || "");
+    // ✅ Rate limiting with Redis: Check BEFORE validations (fail fast)
+    const { success, limit, remaining, reset } = await quoteLimiter.limit(clientIdentifier);
 
-    if (!isValidOrigin) {
-      console.warn("CSRF attempt detected on quote API", {
-        ip: clientIP,
-        origin,
-        referer,
-        host,
+    if (!success) {
+      console.warn('⚠️ Quote rate limit exceeded:', {
+        identifier: clientIdentifier,
       });
       return NextResponse.json(
         {
           ok: false,
-          message: "Invalid request origin",
+          message: "Trop de requêtes. Veuillez réessayer plus tard.",
+          errorCode: "RATE_LIMIT_EXCEEDED",
         },
-        { status: 403 },
+        {
+          status: 429,
+          headers: {
+            "X-RateLimit-Limit": limit.toString(),
+            "X-RateLimit-Remaining": remaining.toString(),
+            "X-RateLimit-Reset": reset.toString(),
+          },
+        },
       );
     }
+    console.log('✅ Quote rate limit OK:', { remaining, limit });
+
+    // ✅ Content-Type validation (middleware)
+    const contentTypeCheck = validateContentType(request);
+    if (!contentTypeCheck.success) return contentTypeCheck.response;
+
+    // ✅ CSRF Protection (middleware)
+    const csrfCheck = validateCSRF(request);
+    if (!csrfCheck.success) return csrfCheck.response;
 
     const body: QuoteSubmission = await request.json();
+
+    // ✅ reCAPTCHA verification (middleware)
+    const recaptchaCheck = await validateRecaptcha(request, body.recaptchaToken, "quote_submission");
+    if (!recaptchaCheck.success) return recaptchaCheck.response;
 
     // Timestamp validation - quote wizard should take at least 10 seconds
     if (body.formStartTime) {
@@ -115,7 +98,7 @@ export async function POST(request: NextRequest) {
 
       if (fillTime < minFillTime) {
         console.warn("Quote filled too quickly - bot detected", {
-          ip: clientIP,
+          ip: clientIdentifier,
           fillTime,
         });
         return NextResponse.json(
@@ -129,7 +112,7 @@ export async function POST(request: NextRequest) {
 
       if (fillTime > maxFillTime) {
         console.warn("Quote session expired", {
-          ip: clientIP,
+          ip: clientIdentifier,
           fillTime,
         });
         return NextResponse.json(
@@ -158,48 +141,6 @@ export async function POST(request: NextRequest) {
         { status: 400 },
       );
     }
-
-    // ✅ Verify reCAPTCHA Enterprise token (REQUIRED)
-    if (!body.recaptchaToken) {
-      console.warn("⚠️ Quote submission without reCAPTCHA token", {
-        ip: clientIP,
-      });
-      return NextResponse.json(
-        {
-          ok: false,
-          message: "Vérification de sécurité manquante",
-          errorCode: "RECAPTCHA_MISSING",
-        },
-        { status: 400 },
-      );
-    }
-
-    const recaptchaResult = await verifyRecaptchaEnterprise(
-      body.recaptchaToken,
-      "quote_submission",
-      clientIP,
-    );
-
-    if (!recaptchaResult.success) {
-      console.warn("⚠️ Quote submission failed reCAPTCHA verification", {
-        ip: clientIP,
-        score: recaptchaResult.score,
-        error: recaptchaResult.error,
-      });
-
-      return NextResponse.json(
-        {
-          ok: false,
-          message: "Vérification anti-bot échouée. Veuillez réessayer.",
-          errorCode: "RECAPTCHA_FAILED",
-        },
-        { status: 403 },
-      );
-    }
-
-    console.log("✅ Quote reCAPTCHA verified", {
-      score: recaptchaResult.score,
-    });
 
     // Validate contact info
     const { contactInfo } = body;
@@ -249,7 +190,7 @@ export async function POST(request: NextRequest) {
     // Check for disposable email
     if (isDisposableEmail(contactInfo.email)) {
       console.warn("Disposable email in quote submission", {
-        ip: clientIP,
+        ip: clientIdentifier,
         email: contactInfo.email,
       });
       return NextResponse.json(
@@ -267,7 +208,7 @@ export async function POST(request: NextRequest) {
     // Check for suspicious email patterns
     if (hasSuspiciousEmailPattern(contactInfo.email)) {
       console.warn("Suspicious email in quote submission", {
-        ip: clientIP,
+        ip: clientIdentifier,
         email: contactInfo.email,
       });
       return NextResponse.json(
@@ -285,7 +226,7 @@ export async function POST(request: NextRequest) {
     // Validate estimate amounts are reasonable (prevent manipulation)
     if (body.estimate.min < 0 || body.estimate.max < body.estimate.min) {
       console.warn("Invalid price manipulation detected", {
-        ip: clientIP,
+        ip: clientIdentifier,
         estimate: body.estimate,
       });
       return NextResponse.json(
@@ -322,31 +263,6 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString(),
     });
 
-    // Rate limiting: 3 successful quote submissions per hour (after all validations)
-    // This ensures only valid submissions count towards the limit
-    if (!checkRateLimit(clientIP, 3, 3600000)) {
-      const rateLimitInfo = getRateLimitInfo(clientIP, 3);
-      return NextResponse.json(
-        {
-          ok: false,
-          message:
-            "Trop de demandes de devis. Veuillez réessayer plus tard ou nous contacter directement.",
-        },
-        {
-          status: 429,
-          headers: {
-            "X-RateLimit-Limit": "3",
-            "X-RateLimit-Remaining": String(rateLimitInfo.remaining),
-            "X-RateLimit-Reset": String(
-              Math.floor(rateLimitInfo.resetTime / 1000),
-            ),
-            "Retry-After": String(
-              Math.ceil((rateLimitInfo.resetTime - Date.now()) / 1000),
-            ),
-          },
-        },
-      );
-    }
 
     // ✅ Save to database (for backward compatibility)
     try {
@@ -461,7 +377,7 @@ async function sendQuoteNotificationToTeam(
   try {
     const { data, error } = await resend.emails.send({
       from: "Smidjan Quote System <contact@smidjan.be>",
-      to: ["jeanbaptiste.dhondt1@gmail.com"],
+      to: ["contact@smidjan.be"],
       replyTo: contactInfo.email as string,
       subject: `${submission.leadScore.priority === "high" ? "🔥" : submission.leadScore.priority === "medium" ? "⚡" : "📋"} Nouveau devis : ${submission.quoteData.projectType} - Score ${submission.leadScore.score}/100`,
       html: getQuoteTeamNotificationEmailHtml(submission, contactInfo, quoteId),
@@ -482,3 +398,4 @@ async function sendQuoteNotificationToTeam(
     throw error; // This one should fail the request
   }
 }
+

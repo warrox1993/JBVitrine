@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { AdminMessagePage } from "@/components/admin/AdminMessagePage";
 
 export const metadata: Metadata = {
-  title: "Settings — Smidjan",
+  title: "Settings - Smidjan",
   robots: {
     index: false,
     follow: false,

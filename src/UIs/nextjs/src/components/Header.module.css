@@ -224,7 +224,7 @@
     text-shadow 0.3s ease;
 }
 
-/* Hover/focus — copper tint; keep subtle */
+/* Hover/focus - copper tint; keep subtle */
 .brand:hover,
 .headerLogo:hover .brand,
 .headerLogo:focus-visible .brand {

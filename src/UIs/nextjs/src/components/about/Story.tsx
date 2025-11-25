@@ -15,7 +15,7 @@ const ITEMS = [
   {
     year: "2023",
     title: "La méthode",
-    text: "Nous avons systématisé notre approche : un design system, des tokens, des composants réutilisables. Notre obsession : la cohérence. L’année 2023 fut celle de la formalisation — transformer l’artisanat en méthode.",
+    text: "Nous avons systématisé notre approche : un design system, des tokens, des composants réutilisables. Notre obsession : la cohérence. L’année 2023 fut celle de la formalisation - transformer l’artisanat en méthode.",
   },
   {
     year: "2024",

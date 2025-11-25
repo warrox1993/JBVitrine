@@ -23,7 +23,7 @@ const VALUES: readonly Value[] = [
   },
   {
     title: "Précision",
-    desc: "Chaque pixel, chaque ligne de code, chaque variable a une raison d'exister. Nous croyons que la précision est la forme la plus pure du respect — envers le client, l'utilisateur, et le produit. Notre architecture est pensée pour durer : modulaire, claire, scalable, et sans redite.",
+    desc: "Chaque pixel, chaque ligne de code, chaque variable a une raison d'exister. Nous croyons que la précision est la forme la plus pure du respect - envers le client, l'utilisateur, et le produit. Notre architecture est pensée pour durer : modulaire, claire, scalable, et sans redite.",
     credo: "Notre promesse : un code qui respire la rigueur et la cohérence.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -118,7 +118,7 @@ export default function ValuesCards() {
         </Heading>
         <p className={styles["values-intro"]}>
           Chez <strong>SMIDJAN</strong>, chaque projet est une pièce forgée avec patience, méthode et intention.
-          Nous ne cherchons pas à faire "plus", mais à faire <strong>mieux</strong> — plus clair, plus juste, plus durable.
+          Nous ne cherchons pas à faire "plus", mais à faire <strong>mieux</strong> - plus clair, plus juste, plus durable.
           Nos valeurs ne sont pas des mots-clés marketing : elles définissent notre manière d'écrire, de concevoir et de bâtir.
         </p>
       </header>

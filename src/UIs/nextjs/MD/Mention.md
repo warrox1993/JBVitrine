@@ -14,7 +14,7 @@ Le site internet présent à l'adresse [URL du site] (ci-après dénommé "le Si
 **Porteur du projet :** Jean-Baptiste Dhondt  
 **Adresse :** Liège, Belgique  
 **Téléphone :** +32 475 205 562  
-**Email :** jeanbaptiste.dhondt1@gmail.com
+**Email :** contact.smidjan@outlook.com
 
 **Slogan :** Digital Craft, Where Ideas Forged
 
@@ -95,7 +95,7 @@ Pour toute question relative aux présentes mentions légales, vous pouvez nous 
 
 **Jean-Baptiste Dhondt**  
 SMIDJAN  
-Email : jeanbaptiste.dhondt1@gmail.com  
+Email : contact.smidjan@outlook.com  
 Téléphone : +32 475 205 562  
 Adresse : Liège, Belgique
 

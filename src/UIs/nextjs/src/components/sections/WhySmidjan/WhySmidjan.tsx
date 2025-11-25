@@ -23,7 +23,7 @@ const features = [
   {
     title: "Performance Extrême",
     description:
-      "Next.js 15, images optimisées, CDN global. Vos pages chargent en < 1s. Un site rapide convertit 2,5× mieux et est favorisé par Google ET les IA.",
+      "Next.js 16, images optimisées, CDN global. Vos pages chargent en < 1s. Un site rapide convertit 2,5× mieux et est favorisé par Google ET les IA.",
     highlight: "Score 100/100 Lighthouse",
   },
   {

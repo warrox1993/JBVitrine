@@ -94,7 +94,7 @@ function LoginForm() {
               onChange={(e) => setEmail(e.target.value)}
               required
               className={cls.input}
-              placeholder="admin@smidjan.be"
+              placeholder="contact.smidjan@outlook.com"
               disabled={isLoading}
               autoComplete="email"
             />

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Link from "next/link";
+
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { getAllArticles } from "@/lib/blogActions";
 import { DeleteArticleButton } from "./DeleteArticleButton";
@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button/Button";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard — Smidjan",
+  title: "Admin Dashboard - Smidjan",
   robots: {
     index: false,
     follow: false,

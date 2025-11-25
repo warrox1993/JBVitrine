@@ -41,6 +41,30 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [formStartTime] = useState(Date.now());
+  const wizardRef = React.useRef<HTMLDivElement>(null);
+  const successRef = React.useRef<HTMLDivElement>(null);
+
+  // Scroll to success message on success
+  useEffect(() => {
+    if (submitSuccess && successRef.current) {
+      // Small delay to ensure DOM is updated
+      setTimeout(() => {
+        const element = successRef.current;
+        if (element) {
+          // Calculate absolute position to scroll to
+          const rect = element.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const yOffset = -150; // Offset for header
+          const targetY = rect.top + scrollTop + yOffset;
+          
+          window.scrollTo({ 
+            top: targetY, 
+            behavior: 'smooth' 
+          });
+        }
+      }, 100);
+    }
+  }, [submitSuccess]);
 
   const [quoteData, setQuoteData] = useState<QuoteData>({
     projectType: null,
@@ -145,15 +169,22 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
     setFeaturesByCategory(initialFeatures);
 
     // Auto-advance to next step immediately after selection
-    const scrollY = window.scrollY;
     const isEcommerce = projectType === 'ecommerce';
     // If ecommerce: go to step 2 (code ownership), otherwise: go to first category step
     const categories = getCategoriesForProjectType(projectType);
     const firstCategoryStep = isEcommerce ? 3 : 2;
     const nextStep = isEcommerce ? 2 : firstCategoryStep;
     setCurrentStep(nextStep);
+    
+    // Scroll to top of wizard
     requestAnimationFrame(() => {
-      window.scrollTo(0, scrollY);
+      if (wizardRef.current) {
+        const rect = wizardRef.current.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const yOffset = -100;
+        const targetY = rect.top + scrollTop + yOffset;
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+      }
     });
   };
 
@@ -180,12 +211,16 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
 
   const handleCodeOwnershipNext = () => {
     if (quoteData.codeOwnership !== null) {
-      // Save current scroll position before step change
-      const scrollY = window.scrollY;
       setCurrentStep(firstCategoryStepNumber);
-      // Restore scroll position after React renders
+      // Scroll to top of wizard
       requestAnimationFrame(() => {
-        window.scrollTo(0, scrollY);
+        if (wizardRef.current) {
+          const rect = wizardRef.current.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const yOffset = -100;
+          const targetY = rect.top + scrollTop + yOffset;
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+        }
       });
     }
   };
@@ -199,22 +234,30 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
   };
 
   const handleNext = () => {
-    // Save current scroll position before step change
-    const scrollY = window.scrollY;
     setCurrentStep((prev) => Math.min(prev + 1, totalSteps));
-    // Restore scroll position after React renders
+    // Scroll to top of wizard
     requestAnimationFrame(() => {
-      window.scrollTo(0, scrollY);
+      if (wizardRef.current) {
+        const rect = wizardRef.current.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const yOffset = -100;
+        const targetY = rect.top + scrollTop + yOffset;
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+      }
     });
   };
 
   const handleBack = () => {
-    // Save current scroll position before step change
-    const scrollY = window.scrollY;
     setCurrentStep((prev) => Math.max(prev - 1, 1));
-    // Restore scroll position after React renders
+    // Scroll to top of wizard
     requestAnimationFrame(() => {
-      window.scrollTo(0, scrollY);
+      if (wizardRef.current) {
+        const rect = wizardRef.current.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const yOffset = -100;
+        const targetY = rect.top + scrollTop + yOffset;
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+      }
     });
   };
 
@@ -336,8 +379,8 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
   // Success screen
   if (submitSuccess) {
     return (
-      <div className={cls.wizard}>
-        <div className={cls.success}>
+      <div ref={wizardRef} className={cls.wizard}>
+        <div ref={successRef} className={cls.success}>
           <div className={cls.successIcon}>
             <CheckCircle size={48} strokeWidth={2.5} />
           </div>
@@ -454,11 +497,10 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
     return null;
   };
 
-  // Show error if submission failed
   const showError = submitError && !isSubmitting;
 
   return (
-    <div className={cls.wizard}>
+    <div ref={wizardRef} className={cls.wizard}>
       {/* Progress Bar */}
       <div className={cls.progressBar}>
         <ProgressBar

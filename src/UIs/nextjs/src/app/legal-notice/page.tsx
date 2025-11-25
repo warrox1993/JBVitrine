@@ -6,13 +6,13 @@ import { SectionWithBackground } from '@/components/ui/SectionWithBackground/Sec
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-    title: 'Mentions Légales — Smidjan',
+    title: 'Mentions Légales - Smidjan',
     description: 'Mentions légales de Smidjan : identification du site, statut juridique, hébergement, propriété intellectuelle. Studio digital basé à Liège, Belgique.',
     alternates: {
         canonical: '/legal-notice',
     },
     openGraph: {
-        title: 'Mentions Légales — Smidjan',
+        title: 'Mentions Légales - Smidjan',
         description: 'Identification du site, statut juridique et informations légales de Smidjan.',
         type: 'website',
         url: 'https://smidjan.be/legal-notice',
@@ -64,7 +64,7 @@ export default function LegalNoticePage() {
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741zM1 11.105l4.708-2.897L1 5.383v5.722z"/>
                                 </svg>
-                                jeanbaptiste.dhondt1@gmail.com
+                                contact.smidjan@outlook.com
                             </span>
                             <span className={styles.badge}>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
@@ -123,7 +123,7 @@ export default function LegalNoticePage() {
                                         <div className={styles.identityItem}>
                                             <span className={styles.label}>Email :</span>
                                             <span className={styles.value}>
-                                                <a href="mailto:jeanbaptiste.dhondt1@gmail.com">jeanbaptiste.dhondt1@gmail.com</a>
+                                                <a href="mailto:contact.smidjan@outlook.com">contact.smidjan@outlook.com</a>
                                             </span>
                                         </div>
                                     </div>
@@ -360,7 +360,7 @@ export default function LegalNoticePage() {
                                     <p>
                                         <strong>Jean-Baptiste Dhondt</strong><br />
                                         SMIDJAN<br />
-                                        <strong>Email :</strong> <a href="mailto:jeanbaptiste.dhondt1@gmail.com">jeanbaptiste.dhondt1@gmail.com</a><br />
+                                        <strong>Email :</strong> <a href="mailto:contact.smidjan@outlook.com">contact.smidjan@outlook.com</a><br />
                                         <strong>Téléphone :</strong> <a href="tel:+32475205562">+32 475 205 562</a><br />
                                         <strong>Adresse :</strong> Liège, Belgique
                                     </p>
@@ -380,7 +380,7 @@ export default function LegalNoticePage() {
                             {/* Version */}
                             <div className={styles.version}>
                                 <p>
-                                    <strong>Version 1.0</strong> — Applicable à compter du 1er novembre 2025<br />
+                                    <strong>Version 1.0</strong> - Applicable à compter du 1er novembre 2025<br />
                                     <strong>Dernière révision :</strong> 1er novembre 2025
                                 </p>
                             </div>
