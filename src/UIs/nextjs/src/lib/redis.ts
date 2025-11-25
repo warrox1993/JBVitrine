@@ -24,9 +24,10 @@ export async function checkRateLimit(
     limit: process.env.NODE_ENV === "development" ? 100 : 20,
     windowMs: 60 * 60 * 1000, // 1 hour
   },
+  namespace: string = "default",
 ): Promise<{ allowed: boolean; remaining: number; resetTime: number }> {
   const now = Date.now();
-  const key = `rate_limit:${ip}`;
+  const key = `rate_limit:${namespace}:${ip}`;
 
   if (redis) {
     // Use Redis for production
@@ -74,8 +75,8 @@ export async function checkRateLimit(
 }
 
 // Clear rate limit for an IP (useful for testing)
-export async function clearRateLimit(ip: string): Promise<void> {
-  const key = `rate_limit:${ip}`;
+export async function clearRateLimit(ip: string, namespace: string = "default"): Promise<void> {
+  const key = `rate_limit:${namespace}:${ip}`;
 
   if (redis) {
     await redis.del(key);

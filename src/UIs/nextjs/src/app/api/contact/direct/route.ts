@@ -53,7 +53,7 @@ export async function POST(request: Request) {
     }
 
     // Rate limiting with Redis
-    const rateLimit = await checkRateLimit(clientIp);
+    const rateLimit = await checkRateLimit(clientIp, undefined, "contact_direct");
     if (!rateLimit.allowed) {
       await logSecurityEvent({
         type: SecurityEventType.RATE_LIMIT_EXCEEDED,

@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     const rateLimit = await checkRateLimit(clientIp, {
       limit: 10,
       windowMs: 5 * 60 * 1000,
-    });
+    }, "company_verify");
 
     if (!rateLimit.allowed) {
       await logSecurityEvent({
