@@ -142,11 +142,9 @@ export function Step5Contact({
       newErrors.company = 'Caractères non autorisés détectés';
     }
 
-    // Message validation - Min/Max (from ContactForm)
-    if (formData.message && formData.message.trim()) {
-      if (formData.message.length < 10 || formData.message.length > 1500) {
-        newErrors.message = 'Le message doit contenir entre 10 et 1 500 caractères';
-      }
+    // Message validation - Max only (no minimum required)
+    if (formData.message && formData.message.length > 1500) {
+      newErrors.message = 'Le message ne peut pas dépasser 1 500 caractères';
     }
 
     // Consent validation

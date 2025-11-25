@@ -292,18 +292,6 @@ export function getQuoteTeamNotificationEmailHtml(
               <div style="background-color: #161a22; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
                 <table role="presentation" style="width: 100%; border-collapse: collapse;">
                   <tr>
-                    <td style="padding: 5px 0; font-size: 13px; color: #c8cdd6;">Budget qualifié :</td>
-                    <td style="padding: 5px 0; text-align: right;">
-                      ${submission.leadScore.qualificationNotes.budgetQualified ? '<span style="color: #22c55e; font-weight: 600;">Oui</span>' : '<span style="color: #ef4444;">Non</span>'}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 5px 0; font-size: 13px; color: #c8cdd6;">Délai réaliste :</td>
-                    <td style="padding: 5px 0; text-align: right;">
-                      ${submission.leadScore.qualificationNotes.timelineRealistic ? '<span style="color: #22c55e; font-weight: 600;">Oui</span>' : '<span style="color: #ef4444;">Non</span>'}
-                    </td>
-                  </tr>
-                  <tr>
                     <td style="padding: 5px 0; font-size: 13px; color: #c8cdd6;">Email professionnel :</td>
                     <td style="padding: 5px 0; text-align: right;">
                       ${submission.leadScore.qualificationNotes.professionalEmail ? '<span style="color: #22c55e; font-weight: 600;">Oui</span>' : '<span style="color: #ef4444;">Non</span>'}
@@ -313,12 +301,6 @@ export function getQuoteTeamNotificationEmailHtml(
                     <td style="padding: 5px 0; font-size: 13px; color: #c8cdd6;">Entreprise renseignée :</td>
                     <td style="padding: 5px 0; text-align: right;">
                       ${submission.leadScore.qualificationNotes.companyProvided ? '<span style="color: #22c55e; font-weight: 600;">Oui</span>' : '<span style="color: #ef4444;">Non</span>'}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 5px 0; font-size: 13px; color: #c8cdd6;">Message détaillé :</td>
-                    <td style="padding: 5px 0; text-align: right;">
-                      ${submission.leadScore.qualificationNotes.detailedMessage ? '<span style="color: #22c55e; font-weight: 600;">Oui</span>' : '<span style="color: #ef4444;">Non</span>'}
                     </td>
                   </tr>
                   <tr>
