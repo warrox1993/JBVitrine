@@ -114,8 +114,7 @@ const nextConfig: NextConfig = {
   async headers() {
     // CSP conditionnelle: Vercel Live autorisé en dev et preview
     // Note: Turbopack ne set pas toujours NODE_ENV, donc on détecte aussi via VERCEL_ENV
-    const isPreview = process.env.VERCEL_ENV === "preview";
-    const isProduction = process.env.NODE_ENV === "production" && !isPreview;
+
 
     const baseCsp = [
       "default-src 'self'",
@@ -129,8 +128,8 @@ const nextConfig: NextConfig = {
       "connect-src 'self' https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com https://*.googleapis.com https://vercel.live wss://ws-us3.pusher.com https://sockjs-us3.pusher.com",
       // Fermeture sécurité object/frame
       "object-src 'none'",
-      // Allow Google Maps + reCAPTCHA embeds on contact page
-      "frame-src https://www.google.com https://recaptcha.google.com https://www.recaptcha.net https://maps.googleapis.com",
+      // Allow Google Maps + reCAPTCHA + Vercel Live embeds
+      "frame-src https://www.google.com https://recaptcha.google.com https://www.recaptcha.net https://maps.googleapis.com https://vercel.live",
       "frame-ancestors 'none'",
       // Base et form
       "base-uri 'self'",
