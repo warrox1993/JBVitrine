@@ -7,7 +7,8 @@ export const SITE_CONFIG = {
     "Studio web à Liège spécialisé en développement de sites, e-commerce, SEO et design digital",
   social: {
     linkedin: "https://www.linkedin.com/in/jean-baptistedhondt",
-    facebook: "https://www.facebook.com/jeanbaptiste.dhondt",
+    facebook: "https://www.facebook.com/profile.php?id=61583157825804",
+    instagram: "https://www.instagram.com/smidjan.dev/",
     github: "https://github.com/warrox1993",
   },
 } as const;

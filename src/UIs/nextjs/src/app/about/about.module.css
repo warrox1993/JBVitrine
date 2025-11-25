@@ -25,7 +25,6 @@
   border-top: 1px solid color-mix(in srgb, var(--color-border), transparent 25%);
   border-bottom: 1px solid
     color-mix(in srgb, var(--color-border), transparent 35%);
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.28) inset;
 }
 
 .sectionContainer {

@@ -19,6 +19,8 @@
 }
 .title {
   margin-bottom: var(--space-4);
+  max-width: 900px;
+  margin-inline: auto;
 }
 .desc {
   font-size: var(--text-lg);
