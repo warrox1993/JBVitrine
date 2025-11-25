@@ -15,7 +15,10 @@
       "Bash(npm audit:*)",
       "Bash(NUL)",
       "Bash(git check-ignore:*)",
-      "Bash(node replace-emails.js:*)"
+      "Bash(node replace-emails.js:*)",
+      "Bash(curl:*)",
+      "Bash(npx playwright test:*)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []

@@ -23,57 +23,59 @@ const redis = new Redis({
 
 /**
  * Rate limiter for quote submissions
- * Limit: 100 requests per hour per user (very generous)
+ * Limit: 3 requests per hour per user (anti-spam)
+ *
+ * Prefix v3: Reset all counters (previous limits were broken)
  */
 export const quoteLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(100, "1 h"),
+  limiter: Ratelimit.slidingWindow(3, "1 h"),
   analytics: true,
-  prefix: "smidjan_quote",
+  prefix: "smidjan_v3_quote",
 });
 
 /**
  * Rate limiter for contact form
- * Limit: 100 requests per hour per user (very generous)
+ * Limit: 3 requests per hour per user (anti-spam)
  */
 export const contactLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(100, "1 h"),
+  limiter: Ratelimit.slidingWindow(3, "1 h"),
   analytics: true,
-  prefix: "smidjan_contact",
+  prefix: "smidjan_v3_contact",
 });
 
 /**
  * Rate limiter for lead enrichment API
- * Limit: 500 requests per minute (very generous)
+ * Limit: 100 requests per minute per user
  */
 export const enrichmentLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(500, "1 m"),
+  limiter: Ratelimit.slidingWindow(100, "1 m"),
   analytics: true,
-  prefix: "smidjan_enrichment",
+  prefix: "smidjan_v3_enrichment",
 });
 
 /**
  * Rate limiter for CSRF token endpoint
- * Limit: 200 requests per minute per user (very generous)
+ * Limit: 60 requests per minute per user
  */
 export const csrfLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(200, "1 m"),
+  limiter: Ratelimit.slidingWindow(60, "1 m"),
   analytics: true,
-  prefix: "smidjan_csrf",
+  prefix: "smidjan_v3_csrf",
 });
 
 /**
  * Rate limiter for lead scoring session/events endpoints
- * Limit: 500 requests per minute (very generous)
+ * Limit: 100 requests per minute per user
  */
 export const leadScoringLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(500, "1 m"),
+  limiter: Ratelimit.slidingWindow(100, "1 m"),
   analytics: true,
-  prefix: "smidjan_leadscore",
+  prefix: "smidjan_v3_leadscore",
 });
 
 /**
