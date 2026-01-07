@@ -3,7 +3,7 @@ import {
   QuoteEstimate,
   PriceBreakdownItem,
   ProjectType,
-} from "@/components/contact/QuoteWizard/types";
+} from "@/components/features/contact/QuoteWizard/types";
 import { pricingMatrices } from "./matrices";
 
 /**

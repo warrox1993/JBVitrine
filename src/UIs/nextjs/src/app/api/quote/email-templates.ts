@@ -1,4 +1,4 @@
-import { QuoteSubmission } from "@/components/contact/QuoteWizard/types";
+import { QuoteSubmission } from "@/components/features/contact/QuoteWizard/types";
 import { formatPriceRange } from "@/lib/pricing/calculator";
 import { getProjectTypeConfig } from "@/lib/pricing/features";
 

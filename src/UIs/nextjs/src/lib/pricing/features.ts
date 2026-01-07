@@ -2,7 +2,7 @@ import {
   Feature,
   ProjectType,
   ProjectTypeConfig,
-} from "@/components/contact/QuoteWizard/types";
+} from "@/components/features/contact/QuoteWizard/types";
 
 /**
  * Complete feature definitions for all project types

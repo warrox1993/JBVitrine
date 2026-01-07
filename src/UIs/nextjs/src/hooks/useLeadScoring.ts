@@ -16,7 +16,7 @@ import {
   LeadScore,
   EnrichedLeadData,
 } from "@/lib/leadScoring";
-import { QuoteData } from "@/components/contact/QuoteWizard/types";
+import { QuoteData } from "@/components/features/contact/QuoteWizard/types";
 
 export function useLeadScoring(quoteData: QuoteData) {
   const [tracker, setTracker] = useState<BehavioralTracker | null>(null);

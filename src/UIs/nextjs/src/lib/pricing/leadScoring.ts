@@ -4,7 +4,7 @@ import {
   ContactInfo,
   LeadScore,
   LeadPriority,
-} from "@/components/contact/QuoteWizard/types";
+} from "@/components/features/contact/QuoteWizard/types";
 import { PRIORITY_COLORS } from "@/lib/constants/colors";
 
 /**

@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { toPercentage } from "@/utils/animations";
+import { toPercentage } from "@/lib/animations";
 import styles from "./ProgressBar.module.css";
 
 export type ProgressBarProps = {

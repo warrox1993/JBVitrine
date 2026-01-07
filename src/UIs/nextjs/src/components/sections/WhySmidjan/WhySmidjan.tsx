@@ -5,7 +5,7 @@ import { Heading } from "@/components/ui/Heading";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
 import { Button } from "@/components/ui/Button/Button";
 import Link from "next/link";
-import { getStaggerDelay } from "@/utils/animations";
+import { getStaggerDelay } from "@/lib/animations";
 import styles from "./WhySmidjan.module.css";
 
 const features = [

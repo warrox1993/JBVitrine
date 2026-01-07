@@ -3,7 +3,7 @@ import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedB
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { Button } from "@/components/ui/Button/Button";
 import { ArrowRightIcon } from "@/components/icons/ArrowRightIcon";
-import { getStaggerDelay } from "@/utils/animations";
+import { getStaggerDelay } from "@/lib/animations";
 import styles from "./Hero.module.css";
 
 const stats = [

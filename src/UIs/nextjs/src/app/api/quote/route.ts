@@ -8,7 +8,7 @@ import {
 import {
   QuoteSubmission,
   ProjectType,
-} from "@/components/contact/QuoteWizard/types";
+} from "@/components/features/contact/QuoteWizard/types";
 import {
   getQuoteConfirmationEmailHtml,
   getQuoteTeamNotificationEmailHtml,

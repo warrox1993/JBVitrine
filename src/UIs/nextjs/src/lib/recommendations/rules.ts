@@ -7,7 +7,7 @@
  * @see RECOMMENDATION_RULES_ENGINE.md pour la documentation complète
  */
 
-import { ProjectType, Feature } from "@/components/contact/QuoteWizard/types";
+import { ProjectType, Feature } from "@/components/features/contact/QuoteWizard/types";
 
 // ============================================================================
 // TYPES

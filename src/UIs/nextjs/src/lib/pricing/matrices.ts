@@ -1,7 +1,7 @@
 import {
   ProjectType,
   PricingMatrix,
-} from "@/components/contact/QuoteWizard/types";
+} from "@/components/features/contact/QuoteWizard/types";
 
 export const pricingMatrices: Record<ProjectType, PricingMatrix> = {
   siteVitrine: {

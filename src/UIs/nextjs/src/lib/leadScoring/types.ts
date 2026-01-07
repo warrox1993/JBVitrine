@@ -8,7 +8,7 @@ import {
   ProjectType,
   QuoteData,
   QuoteEstimate,
-} from "@/components/contact/QuoteWizard/types";
+} from "@/components/features/contact/QuoteWizard/types";
 
 // ============================================================================
 // LEAD SCORE

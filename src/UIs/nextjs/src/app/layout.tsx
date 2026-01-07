@@ -4,7 +4,6 @@ import './styles/variables.css';
 import './styles/breakpoints.css';
 import './styles/typography.css'; // Unified typography (mobile-first)
 import './globals.css';
-import layoutStyles from './layout.module.css';
 
 // Non-critical CSS loaded after (utilities, animations)
 // These are deferred to reduce render-blocking
@@ -16,11 +15,7 @@ import { Inter, Instrument_Sans } from 'next/font/google';
 import FXReady from './FXReady';
 import { RootEffects } from '@/components/Effects/RootEffects';
 import RouteProgressProvider from '@/app/RouteProgressProvider';
-import SidebarRouterBridge from '@/components/SidebarRouterBridge';
-import MainLayoutBridge from '@/components/MainLayoutBridge';
-import Header from '@/components/Header';
 import { SidebarMobileProvider } from '@/hooks/useSidebarMobile';
-import { organizationSchema, websiteSchema, localBusinessSchema } from '@/lib/schema';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -198,9 +193,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <SidebarMobileProvider>
                     <RootEffects>
                         <RouteProgressProvider />
-                        <SidebarRouterBridge />
-                        <Header />
-                        <MainLayoutBridge className={layoutStyles.main}>{children}</MainLayoutBridge>
+                        {children}
                     </RootEffects>
                 </SidebarMobileProvider>
                 <ToastContainer
