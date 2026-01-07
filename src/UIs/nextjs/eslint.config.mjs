@@ -6,6 +6,7 @@ const eslintConfig = [
   {
     ignores: [
       "**/scripts/**",
+      "**/tools/**",
       "audit-api-keys.js",
       ".next/**",
       "node_modules/**",

@@ -207,7 +207,7 @@ test.describe.skip("Full Quote Wizard E2E Test (Production)", () => {
       },
     };
 
-    const fs = require("fs");
+    const fs = await import("fs");
     fs.writeFileSync("wizard-e2e-report.json", JSON.stringify(report, null, 2));
     console.log("📄 Report saved: wizard-e2e-report.json");
 

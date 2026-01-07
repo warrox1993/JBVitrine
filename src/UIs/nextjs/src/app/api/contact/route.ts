@@ -10,11 +10,7 @@ import {
   getConfirmationEmailHtml,
   getTeamNotificationEmailHtml,
 } from "./email-templates";
-import {
-  validateEmail,
-  sanitizeString,
-  validatePhone,
-} from "@/lib/validation";
+import { validateEmail, sanitizeString, validatePhone } from "@/lib/validation";
 import {
   validateContentType,
   validateCSRF,
@@ -128,21 +124,22 @@ const validateField = (name: string, value: unknown): string | null => {
 export async function POST(request: NextRequest) {
   try {
     // 🔍 Dev: Verify Redis configuration
-    if (process.env.NODE_ENV === 'development') {
-      console.log('🔍 Redis configured:', !!process.env.UPSTASH_REDIS_REST_URL);
+    if (process.env.NODE_ENV === "development") {
+      console.log("🔍 Redis configured:", !!process.env.UPSTASH_REDIS_REST_URL);
     }
 
     // ✅ Rate limiting with Redis (5 requests per hour)
     const clientIdentifier = getClientIdentifier(request);
-    const { success, limit, remaining, reset } = await contactLimiter.limit(clientIdentifier);
-    
+    const { success, limit, remaining, reset } =
+      await contactLimiter.limit(clientIdentifier);
+
     if (!success) {
-      console.warn('⚠️ Contact rate limit exceeded:', {
+      console.warn("⚠️ Contact rate limit exceeded:", {
         identifier: clientIdentifier,
         limit,
         reset: new Date(reset).toISOString(),
       });
-      
+
       return NextResponse.json(
         {
           ok: false,
@@ -161,7 +158,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log('✅ Contact rate limit OK:', { remaining, limit });
+    console.log("✅ Contact rate limit OK:", { remaining, limit });
 
     // ✅ Content-Type validation (middleware)
     const contentTypeCheck = validateContentType(request);
@@ -174,7 +171,11 @@ export async function POST(request: NextRequest) {
     const body: ContactFormData = await request.json();
 
     // ✅ reCAPTCHA verification (middleware)
-    const recaptchaCheck = await validateRecaptcha(request, body.recaptchaToken, "contact_form");
+    const recaptchaCheck = await validateRecaptcha(
+      request,
+      body.recaptchaToken,
+      "contact_form",
+    );
     if (!recaptchaCheck.success) return recaptchaCheck.response;
 
     // Honeypot validation - bots typically fill hidden fields
@@ -478,4 +479,3 @@ async function sendNotificationToTeam(
     throw error; // This one should fail the request if it doesn't work
   }
 }
-

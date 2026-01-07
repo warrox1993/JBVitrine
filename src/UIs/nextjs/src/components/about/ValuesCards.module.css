@@ -41,16 +41,11 @@
   gap: var(--space-3);
   padding: var(--space-6);
   border-radius: var(--radius-xl);
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--color-bg-alt) 85%, transparent 15%),
-    color-mix(in srgb, var(--color-bg-alt) 90%, transparent 10%)
-  );
-  border: 1px solid color-mix(in srgb, var(--color-border), transparent 40%);
-  box-shadow: var(--shadow-sm);
+  background: transparent;
+  border: 1px solid transparent;
   transition:
     transform 0.3s var(--ease-standard),
-    border-color 0.3s var(--ease-standard),
+    background-color 0.3s var(--ease-standard),
     box-shadow 0.3s var(--ease-standard);
   overflow: hidden;
 }

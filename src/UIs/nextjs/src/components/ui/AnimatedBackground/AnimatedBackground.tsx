@@ -11,9 +11,10 @@ export function AnimatedBackground({ variant = "dark" }: AnimatedBackgroundProps
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const container = containerRef.current;
+
     // Create floating particles
     function createParticles() {
-      const container = containerRef.current;
       if (!container || (container as any).__particlesInitialized) return;
 
       const particleCount = 20;
@@ -35,7 +36,6 @@ export function AnimatedBackground({ variant = "dark" }: AnimatedBackgroundProps
 
     // Cleanup on unmount
     return () => {
-      const container = containerRef.current;
       if (container) {
         container.querySelectorAll('.animated-particle').forEach(p => p.remove());
         (container as any).__particlesInitialized = false;

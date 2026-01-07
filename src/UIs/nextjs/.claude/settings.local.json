@@ -18,7 +18,10 @@
       "Bash(node replace-emails.js:*)",
       "Bash(curl:*)",
       "Bash(npx playwright test:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "WebFetch(domain:smidjan.be)",
+      "Bash(git checkout:*)",
+      "Bash(npx sharp-cli:*)"
     ],
     "deny": [],
     "ask": []

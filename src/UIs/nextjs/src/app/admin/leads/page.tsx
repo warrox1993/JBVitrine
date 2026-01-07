@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import {
   TrendingUp,
@@ -60,31 +60,7 @@ export default function AdminLeadsPage() {
   const [filter, setFilter] = useState<'all' | 'HOT' | 'WARM' | 'COLD' | 'SPAM'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Fetch leads from API
-  useEffect(() => {
-    fetchLeads();
-  }, [filter]);
-
-  const fetchLeads = async () => {
-    setLoading(true);
-    try {
-      const url = filter === 'all'
-        ? '/api/leadScoring/leads'
-        : `/api/leadScoring/leads?grade=${filter}`;
-
-      const response = await fetch(url);
-      const data = await response.json();
-
-      setLeads(data.leads || []);
-      calculateStats(data.leads || []);
-    } catch (error) {
-      console.error('Failed to fetch leads:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const calculateStats = (leadsData: Lead[]) => {
+  const calculateStats = useCallback((leadsData: Lead[]) => {
     const today = new Date().toISOString().split('T')[0];
 
     const stats: LeadsStats = {
@@ -101,7 +77,31 @@ export default function AdminLeadsPage() {
     };
 
     setStats(stats);
-  };
+  }, []);
+
+  const fetchLeads = useCallback(async () => {
+    setLoading(true);
+    try {
+      const url = filter === 'all'
+        ? '/api/leadScoring/leads'
+        : `/api/leadScoring/leads?grade=${filter}`;
+
+      const response = await fetch(url);
+      const data = await response.json();
+
+      setLeads(data.leads || []);
+      calculateStats(data.leads || []);
+    } catch (error) {
+      console.error('Failed to fetch leads:', error);
+    } finally {
+      setLoading(false);
+    }
+  }, [filter, calculateStats]);
+
+  // Fetch leads from API
+  useEffect(() => {
+    fetchLeads();
+  }, [fetchLeads]);
 
   const filteredLeads = leads.filter(lead => {
     if (!searchQuery) return true;

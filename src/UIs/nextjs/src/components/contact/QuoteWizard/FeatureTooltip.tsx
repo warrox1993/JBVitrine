@@ -122,6 +122,7 @@ export function FeatureTooltip({ content }: FeatureTooltipProps) {
 
   // Check if we're in browser
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- Intentional mount detection
     setIsMounted(true);
   }, []);
 

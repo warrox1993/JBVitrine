@@ -164,6 +164,7 @@ export function Step1ProjectType({ selected, onChange, onNext }: Step1ProjectTyp
   }, [showInfo, calculateBubblePosition]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- Intentional mount detection
     setIsMounted(true);
     return () => {
       if (hoverTimeoutRef.current) {

@@ -144,6 +144,7 @@ export function useCsrfToken() {
         setError(token ? null : "Failed to get CSRF token");
       });
     } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- Sync global token
       setCsrfToken(globalCsrfToken);
       setIsLoading(false);
     }

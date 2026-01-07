@@ -1,24 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./CMSFeaturesEnhanced.css";
 
-export function CMSFeaturesEnhanced() {
+export const CMSFeaturesEnhanced = React.memo(function CMSFeaturesEnhanced() {
   const [mounted, setMounted] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-
-    // Détecter si on est sur mobile
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
@@ -125,8 +114,9 @@ export function CMSFeaturesEnhanced() {
     const cards = document.querySelectorAll('.cms-feature-card');
 
     // Event handler functions that we can reference for cleanup
-    const mouseEnterHandler = function (this: any) {
-      const typingElements = this.querySelectorAll('.cms-typing-text');
+    const mouseEnterHandler = (e: Event) => {
+      const card = e.currentTarget as HTMLElement;
+      const typingElements = card.querySelectorAll('.cms-typing-text');
       typingElements.forEach((el: any, index: number) => {
         setTimeout(() => {
           decodeText(el);
@@ -134,8 +124,9 @@ export function CMSFeaturesEnhanced() {
       });
     };
 
-    const cardMouseLeaveHandler = function (this: any) {
-      const typingElements = this.querySelectorAll('.cms-typing-text');
+    const cardMouseLeaveHandler = (e: Event) => {
+      const card = e.currentTarget as HTMLElement;
+      const typingElements = card.querySelectorAll('.cms-typing-text');
       typingElements.forEach((el: any) => {
         const originalText = el.getAttribute('data-original');
         el.textContent = generateMartianText(originalText!.length);
@@ -143,7 +134,7 @@ export function CMSFeaturesEnhanced() {
       });
     };
 
-    cards.forEach((card, cardIndex) => {
+    cards.forEach((card) => {
       const isMobileDevice = window.innerWidth < 768;
 
       // Only add listeners if not already added (check for a marker)
@@ -527,4 +518,4 @@ export function CMSFeaturesEnhanced() {
       </div>
     </section>
   );
-}
+});

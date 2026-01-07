@@ -1,13 +1,21 @@
 'use client';
 
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { MapPin } from 'lucide-react';
 import { Breadcrumb } from '@/components/Breadcrumb';
-import { QuoteWizard } from '@/components/contact/QuoteWizard/QuoteWizard';
+// Dynamic import for heavy component
+const QuoteWizard = dynamic(
+  () => import('@/components/contact/QuoteWizard/QuoteWizard').then((mod) => mod.QuoteWizard),
+  {
+    loading: () => <div className="h-96 w-full animate-pulse bg-gray-100 dark:bg-gray-800 rounded-xl" />,
+    ssr: false, // Client-side interaction mostly
+  }
+);
+
 import { SimpleContactForm, ContactFormData } from '@/components/contact/SimpleContactForm';
 import { ContactModeSelector, ContactMode } from '@/components/contact/ContactModeSelector';
 import { Accordion } from '@/components/contact/Accordion';
-import { Container } from '@/components/atoms/Container';
 import { SectionWithBackground } from '@/components/ui/SectionWithBackground/SectionWithBackground';
 import cls from './page.module.css';
 
@@ -155,7 +163,7 @@ export function UnifiedContactPage() {
           }}
         >
           <iframe
-            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_ID}&q=50.6446374,5.5664509&zoom=13&language=fr&region=BE`}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d40498.11305411652!2d5.531238914648437!3d50.62770649999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0fa1107f9c87d%3A0xc3f63e4142f1cf43!2zTGnDqGdl!5e0!3m2!1sfr!2sbe!4v1715694800000!5m2!1sfr!2sbe"
             width="100%"
             height="450"
             style={{ border: 0 }}

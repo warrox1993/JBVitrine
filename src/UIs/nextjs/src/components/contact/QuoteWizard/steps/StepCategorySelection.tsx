@@ -56,6 +56,7 @@ export function StepCategorySelection({
     if (initialFeatures.length === 0) {
       // Get default selected features for this category
       const defaultFeatures = categoryFeatures.filter((f) => f.selected);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedFeatures(defaultFeatures);
       onChange(defaultFeatures);
     } else {

@@ -12,6 +12,7 @@ export default function MobileMenu() {
 
   // Fermer le menu lors du changement de page
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- Close menu on route change is intentional
     setIsOpen(false);
   }, [pathname]);
 

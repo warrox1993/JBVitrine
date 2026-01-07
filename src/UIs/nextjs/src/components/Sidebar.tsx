@@ -25,6 +25,7 @@ export default function Sidebar({ items }: { items?: ReadonlyArray<Item> }) {
 
   // Set mounted state on client side only
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- Intentional mount detection
     setIsMounted(true);
   }, []);
 

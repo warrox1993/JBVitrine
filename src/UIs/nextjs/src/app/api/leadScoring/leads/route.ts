@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
   try {
     // Rate limiting check
     const clientIdentifier = getClientIdentifier(request);
-    const { success, limit, remaining, reset } =
+    const { success, limit, reset } =
       await leadScoringLimiter.limit(clientIdentifier);
 
     if (!success) {
@@ -57,8 +57,6 @@ export async function POST(request: NextRequest) {
       quoteData,
       estimate,
       behavioral,
-      prediction,
-      routing,
     } = await request.json();
 
     if (!lead || !score || !quoteData) {

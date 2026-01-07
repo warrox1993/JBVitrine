@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
-import { ArrowLeft, Send, CheckCircle, AlertCircle, Briefcase, Wrench, HelpCircle, Bug, Handshake, MoreHorizontal } from 'lucide-react';
+import { ArrowLeft, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { useCsrfToken } from '@/hooks/useCsrfToken';
 import cls from './SimpleContactForm.module.css';
 

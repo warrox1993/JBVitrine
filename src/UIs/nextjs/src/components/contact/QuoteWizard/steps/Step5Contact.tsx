@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { ContactInfo, QuoteEstimate, QuoteData, TimelineOption } from '../types';
-import { formatPriceRange } from '@/lib/pricing/calculator';
+import { ContactInfo, QuoteData, TimelineOption } from '../types';
 import PhoneInput from 'react-phone-number-input';
 import { isValidPhoneNumber } from 'libphonenumber-js';
 import { useCsrfToken } from '@/hooks/useCsrfToken';
@@ -10,7 +9,6 @@ import 'react-phone-number-input/style.css';
 import cls from './Step5Contact.module.css';
 
 interface Step5ContactProps {
-  estimate: QuoteEstimate;
   quoteData: QuoteData;
   onSubmit: (contactInfo: ContactInfo) => void;
   onBack: () => void;
@@ -28,7 +26,6 @@ interface SecureContactInfo extends ContactInfo {
 }
 
 export function Step5Contact({
-  estimate,
   quoteData,
   onSubmit,
   onBack,
@@ -56,7 +53,7 @@ export function Step5Contact({
   const [globalError, setGlobalError] = useState<string>('');
 
   // Use shared CSRF token hook (singleton pattern - no duplicate API calls)
-  const { csrfToken, isLoading: csrfLoading, error: csrfError } = useCsrfToken();
+  const { csrfToken, error: csrfError } = useCsrfToken();
 
   // Sync CSRF token to form data when it changes
   useEffect(() => {
@@ -130,7 +127,7 @@ export function Step5Contact({
         if (!isValidPhoneNumber(formData.phone)) {
           newErrors.phone = 'Numéro de téléphone invalide';
         }
-      } catch (error) {
+      } catch {
         newErrors.phone = 'Format de téléphone invalide';
       }
     }

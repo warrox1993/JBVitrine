@@ -9,6 +9,7 @@ import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { usePathname } from "next/navigation";
 import MobileMenu from "./MobileMenu";
 import SidebarToggleButton from "./SidebarToggleButton";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -109,8 +110,11 @@ export default function Header() {
         </Link>
       </nav>
 
-      {/* Menu mobile hamburger */}
-      <MobileMenu />
+      <div className={styles["header-right"]}>
+        <ThemeToggle />
+        {/* Menu mobile hamburger */}
+        <MobileMenu />
+      </div>
     </header>
   );
 }

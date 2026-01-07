@@ -4,6 +4,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { Heading } from "@/components/ui/Heading";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
 import { Button } from "@/components/ui/Button/Button";
+import Link from "next/link";
 import { getStaggerDelay } from "@/utils/animations";
 import styles from "./WhySmidjan.module.css";
 
@@ -133,9 +134,9 @@ export function WhySmidjan() {
             <Button as="a" href="/contact" variant="solid" size="md" ariaLabel="Demander un audit SEO gratuit Liège">
               Audit SEO Gratuit
             </Button>
-            <a href="/blog/ai-search-optimization-chatgpt-perplexity-2025" className={styles.ctaLink}>
+            <Link href="/blog/ai-search-optimization-chatgpt-perplexity-2025" className={styles.ctaLink}>
               → Guide complet AISO 2025
-            </a>
+            </Link>
           </div>
 
           <p className={styles.disclaimer}>

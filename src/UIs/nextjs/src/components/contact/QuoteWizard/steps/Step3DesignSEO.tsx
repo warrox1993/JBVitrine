@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { DesignLevel, SEOLevel, QuoteData, ProjectType } from '../types';
+import { SEOLevel, QuoteData, ProjectType } from '../types';
 import { getPricingMatrix } from '@/lib/pricing/matrices';
 import { formatPrice } from '@/lib/pricing/calculator';
 import cls from './Step3DesignSEO.module.css';
@@ -26,7 +26,7 @@ export function Step3DesignSEO({
   totalSteps,
 }: Step3DesignSEOProps) {
   const matrix = getPricingMatrix(projectType);
-  const { seo, animations, maintenance, training, hosting } = quoteData;
+  const { seo, animations, training } = quoteData;
 
   return (
     <div className={cls.step}>

@@ -52,7 +52,7 @@ export function BlogForm({ article, mode }: BlogFormProps) {
       } else {
         setError(result.error || "Une erreur est survenue");
       }
-    } catch (err) {
+    } catch {
       setError("Erreur lors de la sauvegarde de l'article");
     } finally {
       setIsSubmitting(false);

@@ -24,7 +24,7 @@ export function DeleteButton({ slug, title }: DeleteButtonProps) {
       } else {
         alert(`Erreur: ${result.error}`);
       }
-    } catch (error) {
+    } catch {
       alert("Erreur lors de la suppression de l'article");
     } finally {
       setIsDeleting(false);

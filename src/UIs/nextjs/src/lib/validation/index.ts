@@ -41,7 +41,7 @@ export function sanitizeString(input: string): string {
 export function validatePhone(phone: string): boolean {
   try {
     return isValidPhoneNumber(phone);
-  } catch (_error) {
+  } catch {
     return false;
   }
 }

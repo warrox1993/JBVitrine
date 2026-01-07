@@ -912,7 +912,7 @@ export const ALL_RULES: RecommendationRule[] = [
   ...consistencyRules,
 ];
 
-export default {
+const rules = {
   legalRules,
   technicalRules,
   bestPracticeRules,
@@ -920,3 +920,5 @@ export default {
   bundles,
   ALL_RULES,
 };
+
+export default rules;

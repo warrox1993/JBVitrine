@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { getAllArticles, deleteArticle } from "@/lib/blogActions";
+import { getAllArticles } from "@/lib/blogActions";
 import { Button } from "@/components/ui/Button/Button";
 import { DeleteButton } from "@/components/admin/DeleteButton";
 import styles from "./page.module.css";

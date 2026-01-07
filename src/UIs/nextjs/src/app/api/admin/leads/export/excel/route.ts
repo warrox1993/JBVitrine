@@ -4,10 +4,10 @@
  * Export leads as Excel file with detailed scoring breakdown
  */
 
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // Fetch all leads from database
     const leads = await db.leads.getAll({ limit: 10000 });

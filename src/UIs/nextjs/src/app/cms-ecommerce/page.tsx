@@ -154,22 +154,16 @@ function HeroSection() {
         </div>
 
         <div className={styles.heroContent}>
-          <div className={styles.heroBadge}>
-            <SparklesIcon aria-hidden="true" />
-            <span>SMIDJAN CMS × <BagistoLink>Bagisto</BagistoLink> Partnership</span>
-          </div>
-
           <Heading as="h1" className={styles.heroTitle} id="cms-hero-title">
             Solution E-commerce
-            <span className="gradient-title"> Propulsée par <BagistoLink>Bagisto</BagistoLink> </span>
+            <span className="gradient-title"> Haute Performance </span>
             Développée en Belgique
           </Heading>
 
           <p className={styles.heroSubtitle}>
-            SMIDJAN CMS s'appuie sur <BagistoLink>Bagisto</BagistoLink>, la plateforme Laravel open-source de référence,
-            pour vous livrer des solutions e-commerce sur mesure : marketplaces multi-vendeurs,
-            migrations, architectures headless. Expertise locale belge + puissance technologique
-            internationale.
+            SMIDJAN CMS livre des solutions e-commerce sur mesure pour les entreprises exigeantes : 
+            marketplaces multi-vendeurs, migrations complexes et architectures headless. 
+            Une expertise locale belge alliée à une puissance technologique de pointe.
           </p>
 
           <div className={styles.heroMetrics}>
@@ -220,14 +214,14 @@ function HeroSection() {
   );
 }
 
-function WhyPartnership() {
+function WhyChooseSmidjan() {
   const advantages = [
     {
       icon: <ShieldCheckIcon aria-hidden="true" />,
-      title: <>Puissance Technologique <BagistoLink>Bagisto</BagistoLink></>,
+      title: "Architecture Moderne & Scalable",
       description: (
         <>
-          Architecture Laravel moderne, scalable jusqu'à 10K+ vendeurs. <BagistoLink>Bagisto</BagistoLink> est utilisé par des milliers d'entreprises mondialement pour sa robustesse et sa flexibilité.
+          Nos solutions sont construites sur des bases technologiques robustes, capables de supporter 10K+ vendeurs sans compromis sur la vitesse.
         </>
       ),
     },
@@ -236,16 +230,16 @@ function WhyPartnership() {
       title: "Expertise Locale SMIDJAN",
       description: (
         <>
-          Développement, support et accompagnement en Belgique (Liège). Nous maîtrisons <BagistoLink>Bagisto</BagistoLink> de A à Z pour adapter la solution à vos besoins spécifiques belges.
+          Développement, support et accompagnement à Liège. Nous maîtrisons chaque aspect de votre plateforme pour l'adapter fidèlement à vos besoins.
         </>
       ),
     },
     {
       icon: <SparklesIcon aria-hidden="true" />,
-      title: "Open-Source + Personnalisation",
+      title: "Liberté & Personnalisation",
       description: (
         <>
-          Zéro vendor lock-in grâce à <BagistoLink>Bagisto</BagistoLink> open-source. SMIDJAN personnalise l'architecture pour votre identité unique : vous gardez le contrôle total.
+          Zéro vendor lock-in. Nous créons des architectures qui vous appartiennent totalement, personnalisées pour refléter votre identité unique.
         </>
       ),
     },
@@ -255,13 +249,10 @@ function WhyPartnership() {
     <div className="container">
       <div className={styles.sectionHeader}>
         <Heading as="h2" id="partnership-title" className={styles.sectionTitle} accent>
-          SMIDJAN × <BagistoLink>Bagisto</BagistoLink> : Le Meilleur des Deux Mondes
+          Pourquoi choisir SMIDJAN CMS ?
         </Heading>
         <p className={styles.sectionLead}>
-          Nous combinons la plateforme e-commerce{" "}
-          <BagistoLink>Bagisto</BagistoLink>{" "}
-          (Laravel) de renommée mondiale avec notre expertise technique belge pour livrer des
-          solutions sur mesure performantes.
+          Nous combinons les meilleurs outils modernes avec une approche artisanale du code pour des résultats exceptionnels.
         </p>
       </div>
 
@@ -278,7 +269,7 @@ function WhyPartnership() {
   );
 }
 
-function TrustedCompanies() {
+function TrustedByLeaders() {
   const companies = [
     { name: "ftNFT", logo: "https://innowise.com/wp-content/uploads/2025/05/ftNFT.png" },
     { name: "Sultan", logo: "https://innowise.com/wp-content/uploads/2025/05/Sultan.png" },
@@ -293,12 +284,11 @@ function TrustedCompanies() {
     <div className="container">
       <div className={styles.sectionHeader}>
         <Heading as="h2" id="trusted-companies-title" className={styles.sectionTitle} accent>
-          <BagistoLink>Bagisto</BagistoLink> powers 25,000+ companies
+          La confiance de leaders technologiques
         </Heading>
         <p className={styles.sectionLead}>
-          Des entreprises du monde entier font confiance à <BagistoLink>Bagisto</BagistoLink> pour leurs solutions
-          e-commerce. Rejoignez des milliers d'entreprises qui propulsent leur croissance avec
-          cette plateforme Laravel open-source.
+          Des entreprises exigeantes nous font confiance pour leurs solutions e-commerce critiques. 
+          Rejoignez ceux qui choisissent la performance et la sécurité.
         </p>
       </div>
 
@@ -819,7 +809,7 @@ export default function CmsEcommercePage() {
           variant="light"
           ariaLabel="Partenariat SMIDJAN Bagisto"
         >
-          <WhyPartnership />
+          <WhyChooseSmidjan />
         </SectionWithBackground>
 
         <SectionWithBackground
@@ -828,7 +818,7 @@ export default function CmsEcommercePage() {
           variant="dark"
           ariaLabel="Entreprises utilisant Bagisto"
         >
-          <TrustedCompanies />
+          <TrustedByLeaders />
         </SectionWithBackground>
 
         <SectionWithBackground

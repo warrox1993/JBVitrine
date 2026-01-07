@@ -515,7 +515,7 @@ export function formatRecommendationMessage(rec: Recommendation): string {
 // EXPORTS
 // ============================================================================
 
-export default {
+const engine = {
   RecommendationEngine,
   createRecommendationEngine,
   groupRecommendationsByPriority,
@@ -523,3 +523,5 @@ export default {
   countRecommendationsByType,
   formatRecommendationMessage,
 };
+
+export default engine;

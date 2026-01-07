@@ -12,7 +12,7 @@ interface QuotePreviewProps {
   quoteData: QuoteData;
 }
 
-export function QuotePreview({ estimate, quoteData }: QuotePreviewProps) {
+export const QuotePreview = React.memo(function QuotePreview({ estimate, quoteData }: QuotePreviewProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isMobileBarVisible, setIsMobileBarVisible] = useState(true);
   const mobileBarRef = useRef<HTMLDivElement>(null);
@@ -215,4 +215,4 @@ export function QuotePreview({ estimate, quoteData }: QuotePreviewProps) {
       <div className={cls.mobileOnly}>{mobileVersion}</div>
     </>
   );
-}
+});

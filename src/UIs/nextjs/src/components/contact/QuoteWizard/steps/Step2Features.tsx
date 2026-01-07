@@ -35,6 +35,7 @@ export function Step2Features({
     if (initialFeatures.length === 0) {
       // Get default selected features
       const defaultFeatures = config.features.filter((f) => f.selected);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedFeatures(defaultFeatures);
       onChange(defaultFeatures);
     } else {

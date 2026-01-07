@@ -1,5 +1,5 @@
 import { QuoteSubmission } from "@/components/contact/QuoteWizard/types";
-import { formatPriceRange, formatPrice } from "@/lib/pricing/calculator";
+import { formatPriceRange } from "@/lib/pricing/calculator";
 import { getProjectTypeConfig } from "@/lib/pricing/features";
 
 // Client confirmation email

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getSecurityStats } from "@/lib/security-logger";
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
     // TODO: Add authentication check here
     // For now, this endpoint should be protected by your admin authentication

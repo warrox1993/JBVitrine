@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 
 test.describe('Contact Page Audit', () => {
   const errors: string[] = [];
@@ -93,7 +93,7 @@ test.describe('Contact Page Audit', () => {
     };
 
     // Write report to file
-    const fs = require('fs');
+    const fs = await import('fs');
     fs.writeFileSync(
       'contact-audit-report.json',
       JSON.stringify(report, null, 2)

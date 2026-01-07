@@ -3,7 +3,7 @@
  * Provides authentication for admin routes
  */
 
-import type { NextAuthOptions, User as NextAuthUser } from "next-auth";
+import type { NextAuthOptions } from "next-auth";
 import { getServerSession } from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { neon } from "@neondatabase/serverless";

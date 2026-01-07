@@ -13,6 +13,29 @@ export default function Timeline() {
   const [direction, setDirection] = useState<'next' | 'prev' | null>(null);
   const [isPaused, setIsPaused] = useState(false);
 
+  // Navigation handlers (must be defined before keyboard navigation useEffect)
+  const handleNext = () => {
+    setDirection('next');
+    setActiveIndex(prev => {
+      // Loop back to start when reaching the end
+      if (prev >= TIMELINE_ITEMS.length - 1) {
+        return 0;
+      }
+      return prev + 1;
+    });
+  };
+
+  const handlePrev = () => {
+    setDirection('prev');
+    setActiveIndex(prev => {
+      // Loop to end when at the start
+      if (prev <= 0) {
+        return TIMELINE_ITEMS.length - 1;
+      }
+      return prev - 1;
+    });
+  };
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -26,7 +49,7 @@ export default function Timeline() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [activeIndex]);
+  }, []);
 
   // Touch/Swipe support for mobile
   const [touchStart, setTouchStart] = useState(0);
@@ -64,29 +87,6 @@ export default function Timeline() {
     window.addEventListener("resize", update, options);
     return () => window.removeEventListener("resize", update, options);
   }, []);
-
-  // Navigation handlers
-  const handleNext = () => {
-    setDirection('next');
-    setActiveIndex(prev => {
-      // Loop back to start when reaching the end
-      if (prev >= TIMELINE_ITEMS.length - 1) {
-        return 0;
-      }
-      return prev + 1;
-    });
-  };
-
-  const handlePrev = () => {
-    setDirection('prev');
-    setActiveIndex(prev => {
-      // Loop to end when at the start
-      if (prev <= 0) {
-        return TIMELINE_ITEMS.length - 1;
-      }
-      return prev - 1;
-    });
-  };
 
   // Reset direction after transition
   useEffect(() => {

@@ -116,8 +116,9 @@ export function TechStackEnhanced() {
     const cards = document.querySelectorAll('.tech-card');
 
     // Event handler functions that we can reference for cleanup
-    const mouseEnterHandler = function (this: any) {
-      const typingElements = this.querySelectorAll('.typing-text');
+    const mouseEnterHandler = (e: Event) => {
+      const card = e.currentTarget as HTMLElement;
+      const typingElements = card.querySelectorAll('.typing-text');
       typingElements.forEach((el: any, index: number) => {
         setTimeout(() => {
           decodeText(el);
@@ -125,8 +126,9 @@ export function TechStackEnhanced() {
       });
     };
 
-    const cardMouseLeaveHandler = function (this: any) {
-      const typingElements = this.querySelectorAll('.typing-text');
+    const cardMouseLeaveHandler = (e: Event) => {
+      const card = e.currentTarget as HTMLElement;
+      const typingElements = card.querySelectorAll('.typing-text');
       typingElements.forEach((el: any) => {
         const originalText = el.getAttribute('data-original');
         el.textContent = generateMartianText(originalText!.length);
@@ -134,7 +136,7 @@ export function TechStackEnhanced() {
       });
     };
 
-    cards.forEach((card, cardIndex) => {
+    cards.forEach((card) => {
       // Only add listeners if not already added (check for a marker)
       if (!(card as any).__techStackInitialized) {
         card.addEventListener('click', createRipple);

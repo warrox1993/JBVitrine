@@ -118,8 +118,8 @@ export default function ValuesCards() {
         </Heading>
         <p className={styles["values-intro"]}>
           Chez <strong>SMIDJAN</strong>, chaque projet est une pièce forgée avec patience, méthode et intention.
-          Nous ne cherchons pas à faire "plus", mais à faire <strong>mieux</strong> - plus clair, plus juste, plus durable.
-          Nos valeurs ne sont pas des mots-clés marketing : elles définissent notre manière d'écrire, de concevoir et de bâtir.
+          Nous ne cherchons pas à faire &laquo; plus &raquo;, mais à faire <strong>mieux</strong> : plus clair, plus juste et plus durable.
+          Nos valeurs ne sont pas de simples arguments marketing ; elles définissent en profondeur notre manière d&apos;écrire, de concevoir et de bâtir.
         </p>
       </header>
       <div className={styles["values-grid"]}>

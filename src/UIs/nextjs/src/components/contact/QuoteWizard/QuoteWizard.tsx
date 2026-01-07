@@ -8,9 +8,6 @@ import {
   ContactInfo,
   ProjectType,
   Feature,
-  DesignLevel,
-  SEOLevel,
-  TimelineOption,
   QuoteSubmission,
 } from './types';
 import { calculateEstimate } from '@/lib/pricing/calculator';
@@ -25,7 +22,6 @@ import { StepCategorySelection } from './steps/StepCategorySelection';
 import { Step4Summary } from './steps/Step4Summary';
 import { Step5Contact } from './steps/Step5Contact';
 import { QuotePreview } from './QuotePreview';
-import { LeadScoreIndicator } from './LeadScoreIndicator';
 import { EscapeBanner } from './EscapeBanner';
 import { useLeadScoring } from '@/hooks/useLeadScoring';
 import { ProgressBar } from '@/components/ui/ProgressBar/ProgressBar';
@@ -85,8 +81,6 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
   const {
     leadScore,
     enrichedData,
-    isEnriching,
-    trackInteraction,
     updateStep,
     enrichLead,
     saveCompleteLead,
@@ -98,7 +92,7 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
   >({});
 
   // Calculate categories and total steps dynamically
-  const categories = useMemo(() => {
+  const projectCategories = useMemo(() => {
     if (!quoteData.projectType) return [];
     return getCategoriesForProjectType(quoteData.projectType);
   }, [quoteData.projectType]);
@@ -115,12 +109,12 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
   const totalSteps = useMemo(() => {
     if (!quoteData.projectType) return 4; // Default 4 steps
     const codeOwnershipSteps = hasCodeOwnershipStep ? 1 : 0;
-    return 1 + codeOwnershipSteps + categories.length + 2; // 1 (project type) + code ownership (if ecommerce) + categories + 2 (summary + contact)
-  }, [categories, quoteData.projectType, hasCodeOwnershipStep]);
+    return 1 + codeOwnershipSteps + projectCategories.length + 2; // 1 (project type) + code ownership (if ecommerce) + categories + 2 (summary + contact)
+  }, [projectCategories, quoteData.projectType, hasCodeOwnershipStep]);
 
   const codeOwnershipStepNumber = hasCodeOwnershipStep ? 2 : 0;
   const firstCategoryStepNumber = hasCodeOwnershipStep ? 3 : 2;
-  const summaryStepNumber = firstCategoryStepNumber + categories.length;
+  const summaryStepNumber = firstCategoryStepNumber + projectCategories.length;
   const contactStepNumber = summaryStepNumber + 1;
 
   // Calculate estimate whenever quoteData changes
@@ -171,7 +165,6 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
     // Auto-advance to next step immediately after selection
     const isEcommerce = projectType === 'ecommerce';
     // If ecommerce: go to step 2 (code ownership), otherwise: go to first category step
-    const categories = getCategoriesForProjectType(projectType);
     const firstCategoryStep = isEcommerce ? 3 : 2;
     const nextStep = isEcommerce ? 2 : firstCategoryStep;
     setCurrentStep(nextStep);
@@ -262,9 +255,9 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
   };
 
   // Design & SEO Step
-  const handleDesignSEOUpdate = (updates: Partial<QuoteData>) => {
-    setQuoteData((prev) => ({ ...prev, ...updates }));
-  };
+  // const handleDesignSEOUpdate = (updates: Partial<QuoteData>) => {
+  //   setQuoteData((prev) => ({ ...prev, ...updates }));
+  // };
 
   const handleSubmit = async (contactInfo: ContactInfo) => {
     console.log('[QuoteWizard] ===== SUBMISSION START =====');
@@ -484,7 +477,7 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
       projectType: quoteData.projectType,
       hasCodeOwnershipStep,
       firstCategoryStepNumber,
-      categories: categories.length,
+      categories: projectCategories.length,
       summaryStepNumber,
       contactStepNumber,
     });
@@ -516,8 +509,8 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
 
     // Steps 2/3 to N: Category Steps
     const categoryStepIndex = currentStep - firstCategoryStepNumber; // 0-indexed category
-    if (categoryStepIndex >= 0 && categoryStepIndex < categories.length) {
-      const category = categories[categoryStepIndex];
+    if (categoryStepIndex >= 0 && categoryStepIndex < projectCategories.length) {
+      const category = projectCategories[categoryStepIndex];
       return (
         <StepCategorySelection
           key={`category-${category}`}
@@ -551,7 +544,6 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
     if (currentStep === contactStepNumber && estimate) {
       return (
         <Step5Contact
-          estimate={estimate}
           quoteData={quoteData}
           onSubmit={handleSubmit}
           onBack={handleBack}
