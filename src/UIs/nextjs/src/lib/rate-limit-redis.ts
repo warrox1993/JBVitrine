@@ -46,6 +46,17 @@ export const contactLimiter = new Ratelimit({
 });
 
 /**
+ * Rate limiter for admin login
+ * Limit: 5 attempts per 15 minutes per user
+ */
+export const loginLimiter = new Ratelimit({
+  redis,
+  limiter: Ratelimit.slidingWindow(5, "15 m"),
+  analytics: true,
+  prefix: "smidjan_v3_login",
+});
+
+/**
  * Rate limiter for lead enrichment API
  * Limit: 100 requests per minute per user
  */

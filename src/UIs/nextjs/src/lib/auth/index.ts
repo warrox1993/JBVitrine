@@ -8,6 +8,8 @@ import { getServerSession } from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { neon } from "@neondatabase/serverless";
 import * as bcrypt from "bcryptjs";
+import { loginLimiter } from "@/lib/rate-limit-redis";
+import { headers } from "next/headers";
 
 const sql = neon(process.env.DATABASE_URL!);
 
@@ -30,6 +32,23 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
           return null;
+        }
+
+        // Apply rate limiting
+        try {
+          const headersList = await headers();
+          const ip = headersList.get("x-forwarded-for")?.split(",")[0] || "unknown";
+          
+          const { success } = await loginLimiter.limit(`login_${ip}`);
+          
+          if (!success) {
+            throw new Error("Trop de tentatives de connexion. Veuillez patienter 15 minutes.");
+          }
+        } catch (rateError: any) {
+          if (rateError.message.includes("Trop de tentatives")) {
+            throw rateError; // Bubble up for NextAuth
+          }
+          console.error("Rate limit check non-critical failure:", rateError);
         }
 
         try {

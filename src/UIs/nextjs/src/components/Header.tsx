@@ -13,6 +13,12 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const pathname = usePathname();
+
+  // Do not render the public header on admin pages to avoid layout overlap
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   const trackedIds = useMemo(() => sections.map((section) => section.id), []);
   const activeId = useScrollSpy(trackedIds, 120);
   const navItems = useMemo(

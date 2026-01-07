@@ -3,7 +3,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { deleteArticle } from "@/lib/blogActions";
-import { Button } from "@/components/ui/Button/Button";
+import { Trash2, Loader2 } from "lucide-react";
+import { toast } from "react-toastify";
+import styles from "./page.module.css";
 
 interface DeleteArticleButtonProps {
   slug: string;
@@ -15,43 +17,53 @@ export function DeleteArticleButton({ slug, title }: DeleteArticleButtonProps) {
   const [isDeleting, setIsDeleting] = useState(false);
 
   const handleDelete = async () => {
-    const confirmed = window.confirm(
-      `Êtes-vous sûr de vouloir supprimer l'article "${title}" ? Cette action est irréversible.`
-    );
-
-    if (!confirmed) return;
+    if (!window.confirm(`Êtes-vous sûr de vouloir supprimer "${title}" ?`)) {
+      return;
+    }
 
     setIsDeleting(true);
+    const toastId = toast.loading("Suppression de l'article...");
 
     try {
       const result = await deleteArticle(slug);
 
       if (result.success) {
+        toast.update(toastId, {
+          render: "Article supprimé avec succès",
+          type: "success",
+          isLoading: false,
+          autoClose: 3000
+        });
         router.refresh();
       } else {
-        alert(`Erreur : ${result.error}`);
+        toast.update(toastId, {
+          render: `Erreur : ${result.error}`,
+          type: "error",
+          isLoading: false,
+          autoClose: 5000
+        });
         setIsDeleting(false);
       }
     } catch (error) {
       console.error("Error deleting article:", error);
-      alert("Une erreur est survenue lors de la suppression");
+      toast.update(toastId, {
+        render: "Une erreur inattendue est survenue",
+        type: "error",
+        isLoading: false,
+        autoClose: 5000
+      });
       setIsDeleting(false);
     }
   };
 
   return (
-    <Button
-      variant="outline"
-      size="sm"
+    <button
+      className={`${styles.actionButton} ${styles.delete}`}
       onClick={handleDelete}
       disabled={isDeleting}
-      ariaLabel={`Supprimer l'article ${title}`}
-      style={{
-        color: isDeleting ? "var(--color-text-tertiary)" : "var(--color-error, #dc2626)",
-        borderColor: isDeleting ? "var(--color-border)" : "var(--color-error, #dc2626)",
-      }}
+      title="Supprimer l'article"
     >
-      {isDeleting ? "Suppression..." : "Supprimer"}
-    </Button>
+      {isDeleting ? <Loader2 size={18} className={styles.spin} /> : <Trash2 size={18} />}
+    </button>
   );
 }

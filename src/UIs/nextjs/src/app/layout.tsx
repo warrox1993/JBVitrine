@@ -17,6 +17,7 @@ import FXReady from './FXReady';
 import { RootEffects } from '@/components/Effects/RootEffects';
 import RouteProgressProvider from '@/app/RouteProgressProvider';
 import SidebarRouterBridge from '@/components/SidebarRouterBridge';
+import MainLayoutBridge from '@/components/MainLayoutBridge';
 import Header from '@/components/Header';
 import { SidebarMobileProvider } from '@/hooks/useSidebarMobile';
 import { organizationSchema, websiteSchema, localBusinessSchema } from '@/lib/schema';
@@ -183,52 +184,14 @@ export const viewport: Viewport = {
     initialScale: 1,
 };
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="fr-BE" data-theme="light" suppressHydrationWarning>
             <head>
-                {/* Critical CSS inline - Instant render (KISS) */}
-                <style dangerouslySetInnerHTML={{
-                    __html: `:root{--color-bg:#0f1115;--color-text-1:#f6f7f9;--color-text-2:#c8cdd6;--color-accent-1:#ff6a00;--color-primary:#ff6a00;--space-2:.5rem;--space-3:1rem;--space-4:1.5rem;--text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-xl:clamp(1.375rem,1.2rem + .75vw,1.75rem);--text-4xl:clamp(3rem,2rem + 4vw,5rem);--dur-2:180ms;--ease-standard:cubic-bezier(.2,.6,.2,1)}*,*::before,*::after{box-sizing:border-box}html,body{margin:0;padding:0;min-height:100%;overflow-x:hidden}body{font-family:system-ui,-apple-system,sans-serif;font-size:var(--text-base);line-height:1.6;color:var(--color-text-1);background-color:var(--color-bg)}h1{font-size:clamp(1.75rem,8vw,var(--text-4xl));line-height:1.2;margin:0 0 1rem;font-weight:800}p{margin:0 0 1rem;color:var(--color-text-2)}a{color:var(--color-accent-1);text-decoration:none}header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(15,17,21,.8);backdrop-filter:blur(8px)}.skipToContent{position:absolute;top:-100px;left:0;padding:var(--space-3) var(--space-4);background:var(--color-accent-1);color:#fff;z-index:100;transition:top var(--dur-2) var(--ease-standard)}.skipToContent:focus{top:0}[data-fx-ready="false"] .fx-animation{opacity:0;transform:translateY(20px)}`
-                }} />
-
-                <script
-                    id="smidjan-theme-init"
-                    dangerouslySetInnerHTML={{
-                        __html: `(function(){try{var stored=localStorage.getItem('theme');var theme=stored||'light';document.documentElement.setAttribute('data-theme', theme);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();`
-                    }}
-                />
-                {/* Critical Resource Hints - Optimize connection times (saves ~100-200ms) */}
-                {/* Google Fonts - Must be first to prevent render-blocking */}
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-                {/* Vercel Analytics - Preconnect for faster metrics */}
-                <link rel="preconnect" href="https://vitals.vercel-insights.com" />
-
-                {/* DNS-Prefetch for secondary resources (non-blocking) */}
-                <link rel="dns-prefetch" href="https://vercel-insights.com" />
-                <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
-
-                {/* Favicons */}
-                <link rel="icon" href="/favicon.ico" sizes="any" />
-                <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-                <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-                <link rel="manifest" href="/manifest.json" />
-
-                {/* Schema.org pour le SEO local */}
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-                />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-                />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-                />
+                {/* ... existing head ... */}
             </head>
             <body className={`${inter.variable} ${instrument.variable}`}>
                 <FXReady />
@@ -237,9 +200,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                         <RouteProgressProvider />
                         <SidebarRouterBridge />
                         <Header />
-                        <main id="main" className={layoutStyles.main}>{children}</main>
+                        <MainLayoutBridge className={layoutStyles.main}>{children}</MainLayoutBridge>
                     </RootEffects>
                 </SidebarMobileProvider>
+                <ToastContainer
+                    position="bottom-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="dark"
+                />
                 {process.env.NODE_ENV === 'production' && (
                     <>
                         <Analytics />

@@ -52,15 +52,10 @@ function LoginForm() {
 
   return (
     <div className={cls.container}>
-      <Breadcrumb items={[
-        { label: 'Admin', href: '/admin' },
-        { label: 'Connexion', href: '/admin/login' }
-      ]} />
-
       <div className={cls.loginCard}>
         <div className={cls.header}>
-          <h1 className={cls.title}>Admin Login</h1>
-          <p className={cls.subtitle}>Sign in to access the admin dashboard</p>
+          <h1 className={cls.title}>Espace Admin</h1>
+          <p className={cls.subtitle}>Connectez-vous pour gérer votre studio digital</p>
         </div>
 
         {error && (
@@ -85,7 +80,7 @@ function LoginForm() {
         <form onSubmit={handleSubmit} className={cls.form}>
           <div className={cls.field}>
             <label htmlFor="email" className={cls.label}>
-              Email
+              Email Professionnel
             </label>
             <input
               id="email"
@@ -94,7 +89,7 @@ function LoginForm() {
               onChange={(e) => setEmail(e.target.value)}
               required
               className={cls.input}
-              placeholder="contact.smidjan@outlook.com"
+              placeholder="votre.nom@smidjan.be"
               disabled={isLoading}
               autoComplete="email"
             />
@@ -102,7 +97,7 @@ function LoginForm() {
 
           <div className={cls.field}>
             <label htmlFor="password" className={cls.label}>
-              Password
+              Mot de passe
             </label>
             <input
               id="password"
@@ -124,32 +119,24 @@ function LoginForm() {
           >
             {isLoading ? (
               <>
-                <svg
-                  className={cls.spinner}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                    strokeDasharray="60"
-                    strokeDashoffset="30"
-                  />
-                </svg>
-                Signing in...
+                <div className={cls.spinner} />
+                Authentification...
               </>
             ) : (
-              "Sign In"
+              <>
+                Se connecter
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </>
             )}
           </button>
         </form>
 
         <div className={cls.footer}>
           <p className={cls.footerText}>
-            Secure admin access only
+            Accès sécurisé réservé aux membres de Smidjan
           </p>
         </div>
       </div>
@@ -159,7 +146,7 @@ function LoginForm() {
 
 export default function AdminLoginPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div className={cls.container}><div className={cls.spinner} /></div>}>
       <LoginForm />
     </Suspense>
   );

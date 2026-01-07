@@ -13,7 +13,10 @@ import {
   Calendar,
   Star,
   Activity,
-  LogOut
+  LogOut,
+  Flame,
+  Zap,
+  Snowflake
 } from 'lucide-react';
 import { signOut } from 'next-auth/react';
 import { LEAD_COLORS, STATS_COLORS } from '@/lib/constants/colors';
@@ -262,21 +265,24 @@ export default function AdminLeadsPage() {
               className={filter === 'HOT' ? cls.filterActive : cls.filterBtn}
               style={{ borderColor: filter === 'HOT' ? LEAD_COLORS.HOT : undefined }}
             >
-              🔥 Hot ({stats?.hot || 0})
+              <Flame size={14} style={{ marginRight: '6px' }} />
+              Hot ({stats?.hot || 0})
             </button>
             <button
               onClick={() => setFilter('WARM')}
               className={filter === 'WARM' ? cls.filterActive : cls.filterBtn}
               style={{ borderColor: filter === 'WARM' ? LEAD_COLORS.WARM : undefined }}
             >
-              ⚡ Warm ({stats?.warm || 0})
+              <Zap size={14} style={{ marginRight: '6px' }} />
+              Warm ({stats?.warm || 0})
             </button>
             <button
               onClick={() => setFilter('COLD')}
               className={filter === 'COLD' ? cls.filterActive : cls.filterBtn}
               style={{ borderColor: filter === 'COLD' ? LEAD_COLORS.COLD : undefined }}
             >
-              ❄️ Cold ({stats?.cold || 0})
+              <Snowflake size={14} style={{ marginRight: '6px' }} />
+              Cold ({stats?.cold || 0})
             </button>
           </div>
 
@@ -322,9 +328,9 @@ export default function AdminLeadsPage() {
                 <tr key={lead.id} className={cls.tableRow}>
                   <td>
                     <span className={`${cls.badge} ${cls[`badge${lead.score_grade}`]}`}>
-                      {lead.score_grade === 'HOT' && '🔥'}
-                      {lead.score_grade === 'WARM' && '⚡'}
-                      {lead.score_grade === 'COLD' && '❄️'}
+                      {lead.score_grade === 'HOT' && <Flame size={12} style={{ marginRight: '4px' }} />}
+                      {lead.score_grade === 'WARM' && <Zap size={12} style={{ marginRight: '4px' }} />}
+                      {lead.score_grade === 'COLD' && <Snowflake size={12} style={{ marginRight: '4px' }} />}
                       {lead.score_grade}
                     </span>
                   </td>

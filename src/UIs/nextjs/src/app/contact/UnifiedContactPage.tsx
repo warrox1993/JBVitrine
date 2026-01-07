@@ -163,7 +163,7 @@ export function UnifiedContactPage() {
           }}
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80993.88219661108!2d5.5214958!3d50.6274472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0fa1107f9c87d%3A0xc3f63e4142f1cf43!2zTGnDqGdl!5e0!3m2!1sfr!2sbe!4v1715694800000!5m2!1sfr!2sbe"
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2530.0567398516864!2d5.56387597702214!3d50.644637371630104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDM4JzQwLjciTiA1wrAzMyc1OS4yIkU!5e0!3m2!1sfr!2sbe!4v1767805546542!5m2!1sfr!2sbe"
             width="100%"
             height="450"
             style={{ border: 0 }}
