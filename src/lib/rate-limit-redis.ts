@@ -92,41 +92,55 @@ export const leadScoringLimiter = new Ratelimit({
 /**
  * Extract client identifier for rate limiting
  *
+ * SECURITY (V-W6): The left-most segment of `x-forwarded-for` is fully
+ * client-controlled and therefore spoofable, so it must NOT be trusted as the
+ * rate-limit key. This app runs behind Vercel's proxy, which populates
+ * `x-real-ip` with the real, platform-observed client IP. We therefore treat
+ * `x-real-ip` as the trustworthy source of truth.
+ *
+ * ASSUMPTION: deployed behind Vercel's edge/proxy (or an equivalent trusted
+ * proxy) that sets `x-real-ip` to the true client IP and strips/overrides
+ * inbound spoofed values. This is true for the production deployment.
+ *
  * Priority:
- * 1. Real IP from x-forwarded-for (Vercel passes client IP here)
- * 2. x-real-ip header (fallback)
- * 3. Fingerprint from user-agent + accept-language (last resort)
+ * 1. x-real-ip (trusted platform-provided client IP)
+ * 2. x-forwarded-for FIRST entry — ONLY as a fallback when x-real-ip is absent
+ *    (e.g. local/self-hosted dev without the Vercel proxy)
+ * 3. A single constant bucket — we deliberately do NOT fall back to a
+ *    client-controlled fingerprint (user-agent / accept-language), because an
+ *    attacker could rotate those to evade the limit. A shared constant bucket
+ *    fails closed for rate-limiting purposes (it will throttle harder, never
+ *    weaker).
  *
  * @param request - Next.js request object
  * @returns Unique identifier for the client
  */
 export function getClientIdentifier(request: Request): string {
-  // Priority 1: x-forwarded-for (Vercel always sets this)
+  // Priority 1: x-real-ip — trusted client IP set by the Vercel proxy.
+  const realIP = request.headers.get("x-real-ip");
+  if (realIP && realIP.trim() !== "" && realIP.trim() !== "unknown") {
+    return realIP.trim();
+  }
+
+  // Priority 2: x-forwarded-for first entry — ONLY when x-real-ip is missing.
+  // Not trustworthy behind Vercel (spoofable), but useful for local/self-hosted
+  // dev where no trusted proxy sets x-real-ip.
   const forwardedFor = request.headers.get("x-forwarded-for");
   if (forwardedFor) {
-    // Take the first IP (client's real IP)
     const clientIP = forwardedFor.split(",")[0].trim();
     if (clientIP && clientIP !== "" && clientIP !== "unknown") {
       return clientIP;
     }
   }
 
-  // Priority 2: x-real-ip
-  const realIP = request.headers.get("x-real-ip");
-  if (realIP && realIP !== "" && realIP !== "unknown") {
-    return realIP.trim();
-  }
-
-  // Priority 3: Fingerprint (fallback for development or edge cases)
-  const userAgent = request.headers.get("user-agent") || "unknown";
-  const acceptLang = request.headers.get("accept-language") || "unknown";
-  const fingerprint = `fallback_${userAgent.substring(0, 30)}_${acceptLang.substring(0, 10)}`;
-
+  // Priority 3: constant bucket. Do NOT use a client-controlled fingerprint
+  // (would let attackers rotate headers to bypass rate limiting). A shared
+  // constant bucket fails closed (over-throttles) rather than open.
   console.warn(
-    "⚠️ Could not extract real IP, using fingerprint:",
-    fingerprint.substring(0, 50),
+    "⚠️ Could not extract a trusted client IP (no x-real-ip / x-forwarded-for); " +
+      "using shared constant rate-limit bucket.",
   );
-  return fingerprint;
+  return "shared_no_ip_bucket";
 }
 
 /**

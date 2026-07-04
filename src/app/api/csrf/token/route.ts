@@ -23,8 +23,16 @@ export async function GET(request: Request) {
     try {
       rateLimitResult = await csrfLimiter.limit(clientIdentifier);
     } catch (redisError) {
-      // If Redis fails, allow the request (fail open)
-      console.error("[CSRF] Redis rate limit error:", redisError);
+      // SECURITY (V-W6): CSRF-token issuance is low sensitivity — the token
+      // alone grants nothing (it must still pass Origin/Referer + session
+      // checks on the protected POST). Blocking issuance when Redis is down
+      // would break every legitimate form and the login flow, so we keep
+      // issuing tokens. We deliberately log this as a WARNING (not silently)
+      // so that the degraded, un-rate-limited state is visible in monitoring.
+      console.warn(
+        "[CSRF] Rate-limit backend unavailable — issuing token WITHOUT rate limiting (fail-open, low sensitivity):",
+        redisError,
+      );
       rateLimitResult = {
         success: true,
         limit: 60,

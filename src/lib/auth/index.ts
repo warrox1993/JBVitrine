@@ -29,6 +29,23 @@ export interface User {
   isActive: boolean;
 }
 
+/**
+ * SECURITY (V-W6): constant dummy bcrypt hash (of a random string) used to run
+ * an equivalent bcrypt.compare when the account does not exist, so that
+ * response timing does not reveal whether an email is registered (account
+ * enumeration via timing side-channel). This is a real bcrypt hash (cost 10)
+ * that no user password will ever match.
+ */
+const DUMMY_BCRYPT_HASH =
+  "$2a$10$k1wbIrmNyFAPwPVPSVa/zecw2BCEnBwVS2GbrmgzxFUOqW9dk4TCW";
+
+/**
+ * How often (ms) to re-validate the user's is_active/role against the DB inside
+ * the JWT callback. Guards against a DB hit on every request while still
+ * revoking access shortly after an account is deactivated/downgraded.
+ */
+const JWT_REVALIDATE_INTERVAL_MS = 5 * 60 * 1000; // 5 minutes
+
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
@@ -42,21 +59,34 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
-        // Apply rate limiting
+        // Apply rate limiting.
+        // SECURITY (V-W6): fail CLOSED. The "too many attempts" case must
+        // bubble up. Any OTHER failure (e.g. Redis unreachable) must ALSO stop
+        // authentication instead of silently proceeding — otherwise an attacker
+        // who can knock out Redis would disable brute-force protection.
         try {
           const headersList = await headers();
-          const ip = headersList.get("x-forwarded-for")?.split(",")[0] || "unknown";
-          
+          // Prefer the platform-trusted client IP (x-real-ip) over the
+          // spoofable left segment of x-forwarded-for.
+          const ip =
+            headersList.get("x-real-ip") ||
+            headersList.get("x-forwarded-for")?.split(",")[0] ||
+            "unknown";
+
           const { success } = await loginLimiter.limit(`login_${ip}`);
-          
+
           if (!success) {
             throw new Error("Trop de tentatives de connexion. Veuillez patienter 15 minutes.");
           }
         } catch (rateError: any) {
-          if (rateError.message.includes("Trop de tentatives")) {
-            throw rateError; // Bubble up for NextAuth
+          if (rateError?.message?.includes("Trop de tentatives")) {
+            throw rateError; // Bubble up for NextAuth (429-style)
           }
-          console.error("Rate limit check non-critical failure:", rateError);
+          // Non-rate-limit error (Redis down, etc.): FAIL CLOSED.
+          console.error("Rate limit check failed (failing closed):", rateError);
+          throw new Error(
+            "Service d'authentification temporairement indisponible. Veuillez réessayer.",
+          );
         }
 
         try {
@@ -69,6 +99,14 @@ export const authOptions: NextAuthOptions = {
 
           if (users.length === 0) {
             console.log("❌ User not found:", credentials.email);
+            // SECURITY (V-W6): run an equivalent bcrypt.compare against a
+            // constant dummy hash so the "user not found" path takes roughly
+            // the same time as the "wrong password" path. Prevents account
+            // enumeration via response-timing side-channel.
+            await bcrypt.compare(
+              credentials.password as string,
+              DUMMY_BCRYPT_HASH,
+            );
             return null;
           }
 
@@ -116,12 +154,43 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async jwt({ token, user }) {
-      // Add user info to JWT token
+      // On initial sign-in, seed the token from the authorized user.
       if (user) {
         token.id = user.id;
         token.role = (user as any).role;
         token.isActive = (user as any).isActive;
+        token.revalidatedAt = Date.now();
+        return token;
       }
+
+      // SECURITY (V-W6): periodically re-read is_active/role from the DB so
+      // that a deactivated or downgraded account loses access without waiting
+      // for the whole token to expire. Guarded by a timestamp so we do at most
+      // one DB hit per JWT_REVALIDATE_INTERVAL_MS, not one per request.
+      const lastCheck = (token.revalidatedAt as number) || 0;
+      if (token.id && Date.now() - lastCheck > JWT_REVALIDATE_INTERVAL_MS) {
+        try {
+          const rows = await getSql()`
+            SELECT role, is_active
+            FROM users
+            WHERE id = ${token.id as string}
+          `;
+          if (rows.length === 0) {
+            // Account no longer exists → mark inactive; requireAuth rejects.
+            token.isActive = false;
+          } else {
+            token.role = rows[0].role;
+            token.isActive = rows[0].is_active;
+          }
+          token.revalidatedAt = Date.now();
+        } catch (error) {
+          // DB transiently unavailable: keep existing claims and retry on the
+          // next request (do NOT advance the timestamp). Avoids logging
+          // everyone out on a blip; requireAuth still enforces role/isActive.
+          console.error("JWT revalidation failed (keeping prior claims):", error);
+        }
+      }
+
       return token;
     },
     async session({ session, token }) {
@@ -140,7 +209,10 @@ export const authOptions: NextAuthOptions = {
   },
   session: {
     strategy: "jwt",
-    maxAge: 24 * 60 * 60, // 24 hours
+    // SECURITY (V-W6): reduced from 24h to 2h to shrink the window in which a
+    // revoked/deactivated account could keep a valid session, complementing the
+    // periodic JWT revalidation above.
+    maxAge: 2 * 60 * 60, // 2 hours
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
@@ -176,6 +248,12 @@ export async function requireAuth(
 
   if (!user) {
     throw new Error("Unauthorized: No active session");
+  }
+
+  // SECURITY (V-W6): reject sessions whose backing account has been
+  // deactivated (kept fresh by the periodic JWT revalidation).
+  if (!user.isActive) {
+    throw new Error("Unauthorized: account inactive");
   }
 
   if (!hasRole(user.role, requiredRole)) {
