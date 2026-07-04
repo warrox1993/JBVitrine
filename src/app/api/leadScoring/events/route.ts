@@ -10,9 +10,24 @@ import {
   leadScoringLimiter,
   getClientIdentifier,
 } from "@/lib/rate-limit-redis";
+import { validateContentType, validateCSRF } from "@/lib/api/middleware";
+
+// Hard cap on request body size for this route.
+const MAX_EVENTS_BODY_BYTES = 100 * 1024; // 100 KB
+// Maximum number of events accepted in a single batch (bound the DB loop).
+const MAX_EVENTS_PER_BATCH = 50;
 
 export async function POST(request: NextRequest) {
   try {
+    // ✅ Payload size guard
+    const contentLength = Number(request.headers.get("content-length") || 0);
+    if (
+      Number.isFinite(contentLength) &&
+      contentLength > MAX_EVENTS_BODY_BYTES
+    ) {
+      return NextResponse.json({ error: "Payload too large" }, { status: 413 });
+    }
+
     // Rate limiting check
     const clientIdentifier = getClientIdentifier(request);
     const { success, reset } = await leadScoringLimiter.limit(clientIdentifier);
@@ -34,11 +49,35 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // ✅ Content-Type validation (middleware)
+    const contentTypeCheck = validateContentType(request);
+    if (!contentTypeCheck.success) return contentTypeCheck.response;
+
+    // ✅ CSRF Protection (middleware)
+    const csrfCheck = validateCSRF(request);
+    if (!csrfCheck.success) return csrfCheck.response;
+
     const { sessionId, events } = await request.json();
 
-    if (!sessionId || !events || !Array.isArray(events)) {
+    if (
+      !sessionId ||
+      typeof sessionId !== "string" ||
+      sessionId.length > 200 ||
+      !events ||
+      !Array.isArray(events)
+    ) {
       return NextResponse.json(
         { error: "Missing required fields: sessionId, events" },
+        { status: 400 },
+      );
+    }
+
+    // ✅ Bound batch size to avoid unbounded DB insert loops.
+    if (events.length > MAX_EVENTS_PER_BATCH) {
+      return NextResponse.json(
+        {
+          error: `Too many events in a single batch (max ${MAX_EVENTS_PER_BATCH})`,
+        },
         { status: 400 },
       );
     }
