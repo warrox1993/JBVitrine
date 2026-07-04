@@ -6,6 +6,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { requireAuth } from "@/lib/auth";
 import {
   leadScoringLimiter,
   getClientIdentifier,
@@ -178,6 +179,15 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
+    // 🔒 C1 : cet endpoint expose des données personnelles (PII) — réservé au staff
+    try {
+      await requireAuth("sales");
+    } catch (authError) {
+      const message = (authError as Error).message || "Unauthorized";
+      const status = message.startsWith("Forbidden") ? 403 : 401;
+      return NextResponse.json({ error: message }, { status });
+    }
+
     // Rate limiting check
     const clientIdentifier = getClientIdentifier(request);
     const { success, reset } = await leadScoringLimiter.limit(clientIdentifier);
