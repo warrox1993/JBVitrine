@@ -1,4 +1,5 @@
 import { marked, Tokens } from "marked";
+import DOMPurify from "isomorphic-dompurify";
 
 /**
  * Configure marked options
@@ -67,8 +68,11 @@ const renderer = {
   },
 
   link({ href, title, text }: Tokens.Link) {
+    // 🔒 E1 : n'autoriser que les schémas d'URL sûrs
+    const safe = /^(https?:|mailto:|\/|#)/i.test(href ?? "");
+    const finalHref = safe ? href : "#";
     const titleAttr = title ? ` title="${title}"` : "";
-    return `<a href="${href}"${titleAttr}>${text}</a>`;
+    return `<a href="${finalHref}"${titleAttr} rel="noopener noreferrer">${text}</a>`;
   },
 };
 
@@ -82,9 +86,14 @@ export function markdownToHtml(markdown: string): string {
 
   try {
     const html = marked.parse(markdown);
-    return typeof html === "string" ? html : "";
+    const raw = typeof html === "string" ? html : "";
+    // 🔒 E1 : neutraliser tout HTML dangereux (script, onerror, javascript:, …)
+    return DOMPurify.sanitize(raw, {
+      ADD_ATTR: ["id", "target", "rel"],
+      FORBID_TAGS: ["style", "iframe", "form", "input"],
+    });
   } catch (error) {
     console.error("Error parsing markdown:", error);
-    return markdown;
+    return "";
   }
 }
