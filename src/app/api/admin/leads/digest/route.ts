@@ -8,16 +8,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { db } from "@/lib/db";
+import { timingSafeEqual } from "crypto";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
-    // Verify authorization (simple token-based auth for cron jobs)
-    const authHeader = request.headers.get("authorization");
-    const cronSecret = process.env.CRON_SECRET || "your-secure-cron-secret";
+    // 🔒 C2 : aucun fallback en dur — refuser si le secret n'est pas configuré
+    const cronSecret = process.env.CRON_SECRET;
+    if (!cronSecret) {
+      console.error("CRON_SECRET manquant : endpoint digest désactivé");
+      return NextResponse.json({ error: "Service unavailable" }, { status: 503 });
+    }
 
-    if (authHeader !== `Bearer ${cronSecret}`) {
+    const authHeader = request.headers.get("authorization") || "";
+    const expected = `Bearer ${cronSecret}`;
+    const provided = Buffer.from(authHeader);
+    const reference = Buffer.from(expected);
+    const authorized =
+      provided.length === reference.length &&
+      timingSafeEqual(provided, reference);
+
+    if (!authorized) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
