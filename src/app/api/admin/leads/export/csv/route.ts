@@ -6,8 +6,11 @@
 
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { guardRoute } from "@/lib/auth/guard";
 
 export async function GET() {
+  const denied = await guardRoute("sales");
+  if (denied) return denied;
   try {
     // Fetch all leads from database
     const leads = await db.leads.getAll({ limit: 10000 });

@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server";
 import { createArticle } from "@/lib/blogActions";
 import type { BlogArticle } from "@/lib/blogActions";
+import { guardRoute } from "@/lib/auth/guard";
 
 export async function POST(request: Request) {
+  const denied = await guardRoute("sales");
+  if (denied) return denied;
   try {
     const body = await request.json();
 

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Redis } from "@upstash/redis";
+import { guardRoute } from "@/lib/auth/guard";
 
 const redis = new Redis({
   url: process.env.UPSTASH_REDIS_REST_URL!,
@@ -7,6 +8,8 @@ const redis = new Redis({
 });
 
 export async function POST(request: NextRequest) {
+  const denied = await guardRoute("admin");
+  if (denied) return denied;
   try {
     const body = await request.json();
     const { secret, ipToReset } = body;

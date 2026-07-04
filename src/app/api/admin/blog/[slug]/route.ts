@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
 import { updateArticle } from "@/lib/blogActions";
 import type { BlogArticle } from "@/lib/blogActions";
+import { guardRoute } from "@/lib/auth/guard";
 
 type Context = {
   params: Promise<{ slug: string }>;
 };
 
 export async function PUT(request: Request, context: Context) {
+  const denied = await guardRoute("sales");
+  if (denied) return denied;
   try {
     const { slug } = await context.params;
     const body = await request.json();
