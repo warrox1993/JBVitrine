@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Nav.module.css";
@@ -35,32 +35,12 @@ const combineClassNames = (...classNames: Array<string | undefined>): string =>
 /** Primary navigation bar for the application shell. */
 const Nav = () => {
   const pathname = usePathname() ?? "/";
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
-    if (typeof window === "undefined") {
-      return false;
-    }
-    try {
-      return window.localStorage.getItem("access_token") !== null;
-    } catch {
-      return false;
-    }
-  });
-
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    const handleStorage = (event: StorageEvent) => {
-      if (event.key === "access_token") {
-        setIsAuthenticated(event.newValue !== null);
-      }
-    };
-
-    window.addEventListener("storage", handleStorage);
-
-    return () => window.removeEventListener("storage", handleStorage);
-  }, []);
+  // TODO: authentication state is no longer sourced from localStorage
+  // (reading an access token from localStorage is XSS-prone and was a stale
+  // vestige of the old boilerplate). If auth-gated nav items are needed
+  // again, wire this up to the real session (e.g. next-auth `useSession()`)
+  // instead of client-side storage.
+  const isAuthenticated = false;
 
   const isActive = (item: NavItem): boolean => {
     if (pathname === item.href) {
