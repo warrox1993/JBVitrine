@@ -30,15 +30,15 @@ function isValidIp(value: unknown): value is string {
 // on large keyspaces). Cursor "0" returned by Upstash means the scan is done.
 async function scanAllKeys(pattern: string): Promise<string[]> {
   const found: string[] = [];
-  let cursor: string | number = 0;
+  let cursor: string = "0";
   do {
-    const [nextCursor, keys] = await redis.scan(cursor, {
+    const [nextCursor, keys] = (await redis.scan(cursor, {
       match: pattern,
       count: 100,
-    });
+    })) as [string, string[]];
     found.push(...keys);
     cursor = nextCursor;
-  } while (cursor !== 0 && cursor !== "0");
+  } while (cursor !== "0");
   return found;
 }
 
