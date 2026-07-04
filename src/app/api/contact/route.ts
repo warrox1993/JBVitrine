@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import { getResend } from "@/lib/email/resend-client";
 import { contactLimiter, getClientIdentifier } from "@/lib/rate-limit-redis";
 import {
   isDisposableEmail,
@@ -16,9 +16,6 @@ import {
   validateCSRF,
   validateRecaptcha,
 } from "@/lib/api/middleware";
-
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 type ContactFormData = {
   type: "projet" | "support" | "partenariat";
@@ -428,7 +425,7 @@ async function sendConfirmationEmail(
   ticketId: string,
 ): Promise<void> {
   try {
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: "Smidjan <contact@smidjan.be>",
       to: [email],
       subject: `✅ Demande reçue - ${ticketId}`,
@@ -456,7 +453,7 @@ async function sendNotificationToTeam(
   ticketId: string,
 ): Promise<void> {
   try {
-    const { data: emailData, error } = await resend.emails.send({
+    const { data: emailData, error } = await getResend().emails.send({
       from: "Smidjan Contact Form <contact@smidjan.be>",
       to: ["contact@smidjan.be"], // Your team email
       replyTo: data.email, // Allow direct reply to client

@@ -4,10 +4,8 @@
  * Sends notifications to Slack, Discord, and email when hot leads arrive
  */
 
-import { Resend } from "resend";
+import { getResend } from "@/lib/email/resend-client";
 import { getLeadColor } from "@/lib/constants/colors";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Types
 export interface LeadNotification {
@@ -336,7 +334,7 @@ export async function sendSalesEmailNotification(
 </html>
     `;
 
-    const { error } = await resend.emails.send({
+    const { error } = await getResend().emails.send({
       from: "Smidjan Lead Scoring <contact@smidjan.be>",
       to: ["smidjan.agency@outlook.com"],
       subject: `${emoji} Nouveau lead ${lead.grade} : ${lead.name} (Score ${lead.score}/100)`,

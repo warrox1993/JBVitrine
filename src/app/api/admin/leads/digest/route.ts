@@ -6,11 +6,9 @@
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import { getResend } from "@/lib/email/resend-client";
 import { db } from "@/lib/db";
 import { timingSafeEqual } from "crypto";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
@@ -79,7 +77,7 @@ export async function POST(request: NextRequest) {
     const emailHTML = generateDigestEmail(recentLeads, stats, yesterday, now);
 
     // Send email
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: "Smidjan Lead Digest <contact@smidjan.be>",
       to: ["smidjan.agency@outlook.com"],
       subject: `📊 Daily Lead Digest - ${stats.total} nouveaux leads (${stats.hot} HOT)`,

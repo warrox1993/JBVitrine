@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import { getResend } from "@/lib/email/resend-client";
 import { checkRateLimit } from "@/lib/redis";
 import {
   logSecurityEvent,
@@ -9,8 +9,6 @@ import {
 import { validateCsrfToken } from "@/lib/csrf";
 import { validateEmail, sanitizeString } from "@/lib/validation";
 import { verifyRecaptchaEnterprise } from "@/lib/recaptcha";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 const REQUEST_TYPE_LABELS: Record<string, string> = {
   cv: "Candidature (CV)",
@@ -268,7 +266,7 @@ export async function POST(request: Request) {
     // Send email via Resend
     const requestTypeLabel =
       REQUEST_TYPE_LABELS[requestType] || "Autre demande";
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: "Smidjan Contact <contact@smidjan.be>",
       to: ["smidjan.agency@outlook.com"],
       replyTo: email,

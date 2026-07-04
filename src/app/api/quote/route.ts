@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import { getResend } from "@/lib/email/resend-client";
 import { quoteLimiter, getClientIdentifier } from "@/lib/rate-limit-redis";
 import {
   isDisposableEmail,
@@ -19,9 +19,6 @@ import {
   validateCSRF,
   validateRecaptcha,
 } from "@/lib/api/middleware";
-
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Project type validation helper
 const validateProjectType = (type: string): boolean => {
@@ -417,7 +414,7 @@ async function sendQuoteConfirmationEmail(
   });
 
   try {
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: "Smidjan <contact@smidjan.be>",
       to: [email],
       subject: `Votre demande de devis - ${quoteId}`,
@@ -468,7 +465,7 @@ async function sendQuoteNotificationToTeam(
   });
 
   try {
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: "Smidjan Quote System <contact@smidjan.be>",
       to: ["smidjan.agency@outlook.com"],
       replyTo: contactInfo.email as string,
