@@ -1,0 +1,49 @@
+/* Bouton toggle sidebar - Touch target >= 44px */
+.sidebarToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  color: var(--color-text-1);
+  transition: var(--transition-base);
+  border-radius: var(--radius-md);
+}
+
+.sidebarToggle:hover {
+  background: color-mix(in srgb, var(--color-accent-1), transparent 85%);
+  transform: scale(1.1);
+}
+
+.sidebarToggle:focus-visible {
+  outline: 2px solid var(--color-accent-1);
+  outline-offset: 2px;
+}
+
+.sidebarToggle svg {
+  width: 24px;
+  height: 24px;
+  transition: transform var(--transition-smooth);
+}
+
+.sidebarToggle:hover svg {
+  transform: translateX(-2px);
+}
+
+/* Afficher uniquement sur mobile */
+@media (max-width: 768px) {
+  .sidebarToggle {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebarToggle,
+  .sidebarToggle svg {
+    transition: none;
+  }
+}

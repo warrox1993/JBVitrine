@@ -1,0 +1,46 @@
+/* Skip to content link for accessibility */
+.skipToContent {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.skipToContent:focus {
+  position: fixed;
+  left: 50%;
+  top: 1rem;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-accent-1, #ff6b35);
+  color: var(--color-bg-1, #0a0a0a);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  outline: 2px solid var(--color-accent-1, #ff6b35);
+  outline-offset: 2px;
+}
+
+/* Root layout spacing for sidebar/header shell */
+.main {
+  margin-left: var(--sidebar-collapsed);
+  padding-top: var(--header-h);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+:global(body.sidebar-open) .main {
+  margin-left: var(--sidebar-collapsed);
+}
+
+@media (max-width: 768px) {
+  .main {
+    margin-left: 0;
+  }
+}

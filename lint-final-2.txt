@@ -1,0 +1,53 @@
+[0m[0m
+[0m[4mC:\Users\jeanb\Desktop\Practical.CleanArchitecture\src\UIs\nextjs\src\components\contact\QuoteWizard\steps\Step2Features.tsx[24m[0m
+[0m  [2m38:7[22m  [31merror[39m  Error: Calling setState synchronously within an effect can trigger cascading renders[0m
+[0m[0m
+[0mEffects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:[0m
+[0m* Update external systems with the latest state from React.[0m
+[0m* Subscribe for updates from some external system, calling setState in a callback function when external state changes.[0m
+[0m[0m
+[0mCalling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).[0m
+[0m[0m
+[0mC:\Users\jeanb\Desktop\Practical.CleanArchitecture\src\UIs\nextjs\src\components\contact\QuoteWizard\steps\Step2Features.tsx:38:7[0m
+[0m  36 |       // Get default selected features[0m
+[0m  37 |       const defaultFeatures = config.features.filter((f) => f.selected);[0m
+[0m> 38 |       setSelectedFeatures(defaultFeatures);[0m
+[0m     |       ^^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect[0m
+[0m  39 |       onChange(defaultFeatures);[0m
+[0m  40 |     } else {[0m
+[0m  41 |       setSelectedFeatures(initialFeatures);  [2mreact-hooks/set-state-in-effect[22m[0m
+[0m[0m
+[0m[4mC:\Users\jeanb\Desktop\Practical.CleanArchitecture\src\UIs\nextjs\src\components\contact\QuoteWizard\steps\StepCategorySelection.tsx[24m[0m
+[0m  [2m59:7[22m  [31merror[39m  Error: Calling setState synchronously within an effect can trigger cascading renders[0m
+[0m[0m
+[0mEffects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:[0m
+[0m* Update external systems with the latest state from React.[0m
+[0m* Subscribe for updates from some external system, calling setState in a callback function when external state changes.[0m
+[0m[0m
+[0mCalling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).[0m
+[0m[0m
+[0mC:\Users\jeanb\Desktop\Practical.CleanArchitecture\src\UIs\nextjs\src\components\contact\QuoteWizard\steps\StepCategorySelection.tsx:59:7[0m
+[0m  57 |       // Get default selected features for this category[0m
+[0m  58 |       const defaultFeatures = categoryFeatures.filter((f) => f.selected);[0m
+[0m> 59 |       setSelectedFeatures(defaultFeatures);[0m
+[0m     |       ^^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect[0m
+[0m  60 |       onChange(defaultFeatures);[0m
+[0m  61 |     } else {[0m
+[0m  62 |       setSelectedFeatures(initialFeatures);  [2mreact-hooks/set-state-in-effect[22m[0m
+[0m[0m
+[0m[4mC:\Users\jeanb\Desktop\Practical.CleanArchitecture\src\UIs\nextjs\src\components\sections\TechStack\TechStackEnhanced.tsx[24m[0m
+[0m  [2m129:45[22m  [33mwarning[39m  Compilation Skipped: `this` is not supported syntax[0m
+[0m[0m
+[0mReact Compiler does not support compiling functions that use `this`.[0m
+[0m[0m
+[0mC:\Users\jeanb\Desktop\Practical.CleanArchitecture\src\UIs\nextjs\src\components\sections\TechStack\TechStackEnhanced.tsx:129:45[0m
+[0m  127 |     };[0m
+[0m  128 |[0m
+[0m> 129 |     const cardMouseLeaveHandler = function (this: any) {[0m
+[0m      |                                             ^^^^^^^^^ `this` was used here[0m
+[0m  130 |       const typingElements = this.querySelectorAll('.typing-text');[0m
+[0m  131 |       typingElements.forEach((el: any) => {[0m
+[0m  132 |         const originalText = el.getAttribute('data-original');  [2mreact-hooks/unsupported-syntax[22m[0m
+[0m[0m
+[0m[31m[1m✖ 3 problems (2 errors, 1 warning)[22m[39m[0m
+[0m[31m[1m[22m[39m[0m

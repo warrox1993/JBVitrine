@@ -1,0 +1,132 @@
+/* Layout and spacing utilities */
+
+.m0 {
+  margin: 0 !important;
+}
+.mt-1 {
+  margin-top: var(--space-1) !important;
+}
+.mb-1 {
+  margin-bottom: var(--space-1) !important;
+}
+.mt-2 {
+  margin-top: var(--space-2) !important;
+}
+.mb-2 {
+  margin-bottom: var(--space-2) !important;
+}
+.mt-3 {
+  margin-top: var(--space-3) !important;
+}
+.mb-3 {
+  margin-bottom: var(--space-3) !important;
+}
+.mt-4 {
+  margin-top: var(--space-4) !important;
+}
+.mb-4 {
+  margin-bottom: var(--space-4) !important;
+}
+.pt-3 {
+  padding-top: var(--space-3) !important;
+}
+.pb-3 {
+  padding-bottom: var(--space-3) !important;
+}
+.px-3 {
+  padding-left: var(--space-3) !important;
+  padding-right: var(--space-3) !important;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.stack {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.stack-lg {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+@media (max-width: var(--bp-md)) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lead {
+  font-size: var(--text-lg);
+  color: var(--color-text-2);
+}
+
+.muted {
+  color: var(--color-text-3);
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.mono {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+.is-active {
+  opacity: 1;
+}
+.is-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+.is-loading {
+  cursor: progress;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+}

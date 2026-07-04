@@ -1,0 +1,139 @@
+.form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.error {
+  padding: 1rem;
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+.input,
+.select,
+.textarea,
+.textareaLarge {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus,
+.textareaLarge:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.textareaLarge {
+  resize: vertical;
+  min-height: 400px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.slugGroup {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.hint {
+  display: block;
+  margin-top: 0.5rem;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.tocHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.tocItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.removeButton {
+  padding: 0.75rem 1rem;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  line-height: 1;
+}
+
+.removeButton:hover {
+  background: #dc2626;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e5e7eb;
+}
+
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .tocItem {
+    grid-template-columns: 1fr;
+  }
+
+  .formActions {
+    flex-direction: column;
+  }
+}

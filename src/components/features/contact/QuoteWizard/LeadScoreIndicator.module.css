@@ -1,0 +1,314 @@
+/* Lead Score Indicator Styles */
+
+/* ============================================================================
+   Main Container
+   ============================================================================ */
+
+.indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4, 1.5rem);
+  padding: var(--space-5, 2.5rem) var(--space-4, 1.5rem);
+  background: var(--color-surface, #1e2430);
+  border: 2px solid var(--color-border, #2b3342);
+  border-radius: var(--radius-lg, 1.25rem);
+  width: 100%;
+  max-width: 320px;
+}
+
+/* ============================================================================
+   Score Circle
+   ============================================================================ */
+
+.scoreCircle {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.progressRing {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progressCircle {
+  transition:
+    stroke-dasharray 0.6s ease,
+    stroke var(--transition-smooth);
+}
+
+.scoreValue {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.scoreNumber {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-text-1, #f6f7f9);
+  font-variant-numeric: tabular-nums;
+}
+
+.scoreLabel {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--color-text-2, #c8cdd6);
+  margin-top: 0.25rem;
+}
+
+/* ============================================================================
+   Score Info
+   ============================================================================ */
+
+.scoreInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 0.5rem);
+  width: 100%;
+  align-items: center;
+}
+
+.grade {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-base, 1rem);
+  font-weight: 700;
+  transition: var(--transition-base);
+}
+
+.confidence {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text-2, #c8cdd6);
+  padding: 0.25rem 0.75rem;
+  background: color-mix(in srgb, var(--color-text-2, #c8cdd6) 8%, transparent);
+  border-radius: var(--radius-md, 0.75rem);
+}
+
+.confidence svg {
+  color: var(--color-accent-2, #ffc43a);
+}
+
+/* ============================================================================
+   Breakdown Details
+   ============================================================================ */
+
+.toggleDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: color-mix(
+    in srgb,
+    var(--color-surface, #1e2430) 50%,
+    transparent
+  );
+  border: 1px solid var(--color-border, #2b3342);
+  border-radius: var(--radius-md, 0.75rem);
+  color: var(--color-text-1, #f6f7f9);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.toggleDetails:hover {
+  background: var(--color-surface, #1e2430);
+  border-color: var(--color-accent-1, #ff6a00);
+}
+
+.breakdown {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 1rem);
+  padding-top: var(--space-2, 0.5rem);
+}
+
+.breakdownList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 1rem);
+}
+
+.breakdownItem {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  align-items: center;
+  gap: var(--space-3, 1rem);
+}
+
+.breakdownLabel {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--color-text-2, #c8cdd6);
+}
+
+.breakdownBarContainer {
+  height: 8px;
+  background: var(--color-border, #2b3342);
+  border-radius: var(--radius-full, 9999px);
+  overflow: hidden;
+}
+
+.breakdownBar {
+  height: 100%;
+  border-radius: var(--radius-full, 9999px);
+  transition: width 0.6s ease;
+}
+
+.breakdownValue {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 700;
+  color: var(--color-text-1, #f6f7f9);
+  font-variant-numeric: tabular-nums;
+  min-width: 45px;
+  text-align: right;
+}
+
+.breakdownNote {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--color-text-3, #8e939f);
+  text-align: center;
+  padding: var(--space-2, 0.5rem);
+  background: color-mix(
+    in srgb,
+    var(--color-surface, #1e2430) 30%,
+    transparent
+  );
+  border-radius: var(--radius-sm, 0.5rem);
+  font-style: italic;
+}
+
+/* ============================================================================
+   Compact Version
+   ============================================================================ */
+
+.compactIndicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-surface, #1e2430);
+  border: 1px solid var(--color-border, #2b3342);
+  border-radius: var(--radius-md, 0.75rem);
+}
+
+.miniCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.miniScore {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 800;
+  color: var(--color-text-1, #f6f7f9);
+  font-variant-numeric: tabular-nums;
+}
+
+.miniText {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ============================================================================
+   Animations
+   ============================================================================ */
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.scoreCircle:hover .progressCircle {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ============================================================================
+   Responsive
+   ============================================================================ */
+
+@media (max-width: 480px) {
+  .indicator {
+    padding: var(--space-4, 1.5rem);
+  }
+
+  .scoreCircle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .scoreNumber {
+    font-size: 2.5rem;
+  }
+
+  .breakdownItem {
+    grid-template-columns: 90px 1fr auto;
+    gap: var(--space-2, 0.5rem);
+  }
+}
+
+/* ============================================================================
+   Accessibility
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .progressCircle,
+  .breakdownBar,
+  .toggleDetails,
+  .grade {
+    transition: none;
+  }
+
+  .scoreCircle:hover .progressCircle {
+    animation: none;
+  }
+}
+
+/* ============================================================================
+   Print
+   ============================================================================ */
+
+@media print {
+  .indicator {
+    border-color: #000;
+    background: #fff;
+    color: #000;
+  }
+
+  .toggleDetails {
+    display: none;
+  }
+
+  .breakdown {
+    display: block !important;
+  }
+}

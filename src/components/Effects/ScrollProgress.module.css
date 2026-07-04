@@ -1,0 +1,27 @@
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--progress-height);
+  background: var(--progress-bg);
+  z-index: var(--z-progress);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s linear;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--progress-color);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.08s linear;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progressFill {
+    transition: none;
+  }
+}
