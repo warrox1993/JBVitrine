@@ -7,6 +7,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { enrichmentLimiter, getClientIdentifier } from "@/lib/rate-limit-redis";
+import { assertPublicHost } from "@/lib/security/ssrf";
 
 // API keys are now server-side only (no NEXT_PUBLIC_ prefix)
 const HUNTER_API_KEY = process.env.HUNTER_API_KEY;
@@ -110,9 +111,12 @@ async function detectTechStack(domain: string) {
     // Ensure domain is clean (no protocol)
     const cleanDomain = domain.replace(/^https?:\/\//, "").split("/")[0];
 
+    // 🔒 E3 : empêcher les rebonds SSRF vers des IP internes / metadata cloud
+    await assertPublicHost(cleanDomain);
+
     const response = await fetch(`https://${cleanDomain}`, {
       method: "HEAD",
-      redirect: "follow",
+      redirect: "error", // ne pas suivre les redirections vers des cibles internes
       signal: AbortSignal.timeout(5000), // 5 second timeout
     });
 
