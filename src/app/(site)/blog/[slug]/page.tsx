@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/Footer/Footer";
 import { SectionWithBackground } from "@/components/ui/SectionWithBackground/SectionWithBackground";
 import { getAllArticles, getArticleBySlug } from "@/lib/blogActions";
 import { markdownToHtml } from "@/lib/markdown";
+import { jsonLdSafe } from "@/lib/security/escape";
 import styles from "./page.module.css";
 
 type Props = {
@@ -817,7 +818,7 @@ export default async function BlogArticlePage({ params }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: jsonLdSafe({
               "@context": "https://schema.org",
               "@type": "BlogPosting",
               headline: article.title,
@@ -850,7 +851,7 @@ export default async function BlogArticlePage({ params }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: jsonLdSafe({
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [

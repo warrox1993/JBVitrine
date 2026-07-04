@@ -9,6 +9,7 @@ import {
 import { validateCsrfToken } from "@/lib/csrf";
 import { validateEmail, sanitizeString } from "@/lib/validation";
 import { verifyRecaptchaEnterprise } from "@/lib/recaptcha";
+import { escapeHtml } from "@/lib/security/escape";
 
 const REQUEST_TYPE_LABELS: Record<string, string> = {
   cv: "Candidature (CV)",
@@ -229,33 +230,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // XSS prevention check
-    const xssPattern = /<script|javascript:|on\w+=/i;
-    if (
-      xssPattern.test(name) ||
-      xssPattern.test(message) ||
-      (company && xssPattern.test(company))
-    ) {
-      await logSecurityEvent({
-        type: SecurityEventType.XSS_ATTEMPT,
-        ip: clientIp,
-        userAgent,
-        details: {
-          reason: "XSS pattern detected",
-          fields: {
-            name: xssPattern.test(name),
-            message: xssPattern.test(message),
-            company: company ? xssPattern.test(company) : false,
-          },
-        },
-        timestamp: Date.now(),
-      });
-      return NextResponse.json(
-        { error: "Contenu invalide détecté" },
-        { status: 400 },
-      );
-    }
-
     // ✅ Sanitize all inputs using centralized helper
     const safeName = sanitizeString(name.trim());
     const safeEmail = sanitizeString(email.trim());
@@ -295,18 +269,18 @@ export async function POST(request: Request) {
                   </tr>
                   <tr>
                     <td style="padding: 8px 0; color: #6b7280; font-weight: 600; width: 120px;">Nom:</td>
-                    <td style="padding: 8px 0;"><strong>${safeName}</strong></td>
+                    <td style="padding: 8px 0;"><strong>${escapeHtml(safeName)}</strong></td>
                   </tr>
                   <tr>
                     <td style="padding: 8px 0; color: #6b7280; font-weight: 600;">Email:</td>
-                    <td style="padding: 8px 0;"><a href="mailto:${safeEmail}" style="color: #667eea; text-decoration: none;">${safeEmail}</a></td>
+                    <td style="padding: 8px 0;"><a href="mailto:${escapeHtml(safeEmail)}" style="color: #667eea; text-decoration: none;">${escapeHtml(safeEmail)}</a></td>
                   </tr>
                   ${
                     safeCompany
                       ? `
                   <tr>
                     <td style="padding: 8px 0; color: #6b7280; font-weight: 600;">Entreprise:</td>
-                    <td style="padding: 8px 0;">${safeCompany}</td>
+                    <td style="padding: 8px 0;">${escapeHtml(safeCompany)}</td>
                   </tr>
                   `
                       : ""
@@ -316,7 +290,7 @@ export async function POST(request: Request) {
                       ? `
                   <tr>
                     <td style="padding: 8px 0; color: #6b7280; font-weight: 600;">Téléphone:</td>
-                    <td style="padding: 8px 0;"><a href="tel:${safePhone}" style="color: #667eea; text-decoration: none;">${safePhone}</a></td>
+                    <td style="padding: 8px 0;"><a href="tel:${escapeHtml(safePhone)}" style="color: #667eea; text-decoration: none;">${escapeHtml(safePhone)}</a></td>
                   </tr>
                   `
                       : ""
@@ -326,7 +300,7 @@ export async function POST(request: Request) {
 
               <div style="background: white; padding: 20px; border-radius: 8px;">
                 <h2 style="color: #667eea; margin-top: 0; font-size: 18px;">Message</h2>
-                <p style="white-space: pre-wrap; margin: 0; line-height: 1.6;">${safeMessage}</p>
+                <p style="white-space: pre-wrap; margin: 0; line-height: 1.6;">${escapeHtml(safeMessage)}</p>
               </div>
 
               <div style="margin-top: 20px; padding: 15px; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 4px;">

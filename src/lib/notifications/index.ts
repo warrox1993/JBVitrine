@@ -6,6 +6,22 @@
 
 import { getResend } from "@/lib/email/resend-client";
 import { getLeadColor } from "@/lib/constants/colors";
+import { escapeHtml } from "@/lib/security/escape";
+
+/**
+ * Sanitize a value for plain-text chat webhooks (Slack/Discord).
+ * Strips control chars and neutralizes markdown/mention control characters
+ * (`<`, backticks, `@`) so injected content can't forge links or mentions.
+ */
+function sanitizeChatText(v: unknown): string {
+  if (v === null || v === undefined) return "";
+  return String(v)
+    // eslint-disable-next-line no-control-regex
+    .replace(/[\x00-\x1F]/g, " ")
+    .replace(/</g, "‹")
+    .replace(/`/g, "'")
+    .replace(/@/g, "﹫");
+}
 
 // Types
 export interface LeadNotification {
@@ -49,8 +65,14 @@ export async function sendSlackNotification(
       lead.grade === "HOT" ? "🔥" : lead.grade === "WARM" ? "⚡" : "📋";
     const color = getLeadColor(lead.grade as "HOT" | "WARM" | "COLD");
 
+    const safeName = sanitizeChatText(lead.name);
+    const safeEmail = sanitizeChatText(lead.email);
+    const safePhone = sanitizeChatText(lead.phone);
+    const safeCompany = sanitizeChatText(lead.company);
+    const safeProjectType = sanitizeChatText(lead.projectType);
+
     const message = {
-      text: `${emoji} Nouveau lead ${lead.grade} : ${lead.name}`,
+      text: `${emoji} Nouveau lead ${lead.grade} : ${safeName}`,
       attachments: [
         {
           color: color,
@@ -58,17 +80,17 @@ export async function sendSlackNotification(
           fields: [
             {
               title: "Contact",
-              value: `*${lead.name}*\n${lead.email}${lead.phone ? `\n📞 ${lead.phone}` : ""}`,
+              value: `*${safeName}*\n${safeEmail}${lead.phone ? `\n📞 ${safePhone}` : ""}`,
               short: true,
             },
             {
               title: "Entreprise",
-              value: lead.company || "Non renseigné",
+              value: safeCompany || "Non renseigné",
               short: true,
             },
             {
               title: "Projet",
-              value: lead.projectType,
+              value: safeProjectType,
               short: true,
             },
             {
@@ -135,23 +157,29 @@ export async function sendDiscordNotification(
     const hexColor = getLeadColor(lead.grade as "HOT" | "WARM" | "COLD");
     const color = parseInt(hexColor.replace("#", ""), 16);
 
+    const safeName = sanitizeChatText(lead.name);
+    const safeEmail = sanitizeChatText(lead.email);
+    const safePhone = sanitizeChatText(lead.phone);
+    const safeCompany = sanitizeChatText(lead.company);
+    const safeProjectType = sanitizeChatText(lead.projectType);
+
     const embed = {
-      title: `${emoji} Nouveau lead ${lead.grade} : ${lead.name}`,
+      title: `${emoji} Nouveau lead ${lead.grade} : ${safeName}`,
       color: color,
       fields: [
         {
           name: "Contact",
-          value: `**${lead.name}**\n${lead.email}${lead.phone ? `\n📞 ${lead.phone}` : ""}`,
+          value: `**${safeName}**\n${safeEmail}${lead.phone ? `\n📞 ${safePhone}` : ""}`,
           inline: true,
         },
         {
           name: "Entreprise",
-          value: lead.company || "Non renseigné",
+          value: safeCompany || "Non renseigné",
           inline: true,
         },
         {
           name: "Projet",
-          value: lead.projectType,
+          value: safeProjectType,
           inline: true,
         },
         {
@@ -248,23 +276,23 @@ export async function sendSalesEmailNotification(
       <div class="info-grid">
         <div class="info-item">
           <div class="info-label">Nom</div>
-          <div class="info-value">${lead.name}</div>
+          <div class="info-value">${escapeHtml(lead.name)}</div>
         </div>
         <div class="info-item">
           <div class="info-label">Email</div>
-          <div class="info-value">${lead.email}</div>
+          <div class="info-value">${escapeHtml(lead.email)}</div>
         </div>
         <div class="info-item">
           <div class="info-label">Entreprise</div>
-          <div class="info-value">${lead.company || "Non renseigné"}</div>
+          <div class="info-value">${escapeHtml(lead.company) || "Non renseigné"}</div>
         </div>
         <div class="info-item">
           <div class="info-label">Téléphone</div>
-          <div class="info-value">${lead.phone || "Non renseigné"}</div>
+          <div class="info-value">${escapeHtml(lead.phone) || "Non renseigné"}</div>
         </div>
         <div class="info-item">
           <div class="info-label">Type de projet</div>
-          <div class="info-value">${lead.projectType}</div>
+          <div class="info-value">${escapeHtml(lead.projectType)}</div>
         </div>
         <div class="info-item">
           <div class="info-label">Budget estimé</div>
@@ -322,7 +350,7 @@ export async function sendSalesEmailNotification(
           : ""
       }
 
-      <a href="mailto:${lead.email}" class="cta">Contacter ce lead</a>
+      <a href="mailto:${escapeHtml(lead.email)}" class="cta">Contacter ce lead</a>
 
       <div class="footer">
         Lead ID: ${lead.leadId}<br>

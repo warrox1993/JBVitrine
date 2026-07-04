@@ -7,6 +7,15 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { guardRoute } from "@/lib/auth/guard";
+import { escapeCsvCell } from "@/lib/security/escape";
+
+/**
+ * Neutralize CSV formula injection then wrap the value as a quoted CSV cell
+ * (internal double-quotes escaped per RFC 4180).
+ */
+function csvCell(v: unknown): string {
+  return `"${escapeCsvCell(v).replace(/"/g, '""')}"`;
+}
 
 export async function GET() {
   const denied = await guardRoute("sales");
@@ -51,9 +60,9 @@ export async function GET() {
         lead.score_grade,
         lead.score_total,
         lead.score_confidence,
-        `"${lead.name.replace(/"/g, '""')}"`, // Escape quotes
+        lead.name,
         lead.email,
-        lead.company ? `"${lead.company.replace(/"/g, '""')}"` : "",
+        lead.company || "",
         lead.phone || "",
         lead.project_type || "",
         estimate.min || 0,
@@ -63,11 +72,13 @@ export async function GET() {
         breakdown.completion || 0,
         breakdown.enrichment || 0,
         breakdown.behavioral || 0,
-      ].join(",");
+      ]
+        .map(csvCell)
+        .join(",");
     });
 
     // Combine headers and rows
-    const csv = [headers.join(","), ...rows].join("\n");
+    const csv = [headers.map(csvCell).join(","), ...rows].join("\n");
 
     // Return CSV file
     return new NextResponse(csv, {

@@ -9,6 +9,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getResend } from "@/lib/email/resend-client";
 import { db } from "@/lib/db";
 import { timingSafeEqual } from "crypto";
+import { escapeHtml } from "@/lib/security/escape";
 
 export async function POST(request: NextRequest) {
   try {
@@ -194,13 +195,13 @@ function generateDigestEmail(
             (lead: any) => `
         <div class="lead-card hot">
           <div class="lead-header">
-            <div class="lead-name">${lead.name}</div>
+            <div class="lead-name">${escapeHtml(lead.name)}</div>
             <span class="lead-badge badge-hot">HOT ${lead.score_total}/100</span>
           </div>
-          <div class="lead-info">📧 ${lead.email}</div>
-          ${lead.company ? `<div class="lead-info">🏢 ${lead.company}</div>` : ""}
-          ${lead.phone ? `<div class="lead-info">📞 ${lead.phone}</div>` : ""}
-          <div class="lead-info">💼 ${lead.project_type} | Budget: ${lead.estimate?.min?.toLocaleString()}-${lead.estimate?.max?.toLocaleString()} EUR</div>
+          <div class="lead-info">📧 ${escapeHtml(lead.email)}</div>
+          ${lead.company ? `<div class="lead-info">🏢 ${escapeHtml(lead.company)}</div>` : ""}
+          ${lead.phone ? `<div class="lead-info">📞 ${escapeHtml(lead.phone)}</div>` : ""}
+          <div class="lead-info">💼 ${escapeHtml(lead.project_type)} | Budget: ${lead.estimate?.min?.toLocaleString()}-${lead.estimate?.max?.toLocaleString()} EUR</div>
           <div class="lead-score">
             <div class="score-bar">
               <div class="score-fill" style="width: ${lead.score_total}%"></div>
@@ -227,11 +228,11 @@ function generateDigestEmail(
             (lead: any) => `
         <div class="lead-card warm">
           <div class="lead-header">
-            <div class="lead-name">${lead.name}</div>
+            <div class="lead-name">${escapeHtml(lead.name)}</div>
             <span class="lead-badge badge-warm">WARM ${lead.score_total}/100</span>
           </div>
-          <div class="lead-info">📧 ${lead.email}</div>
-          <div class="lead-info">💼 ${lead.project_type} | Budget: ${lead.estimate?.min?.toLocaleString()}-${lead.estimate?.max?.toLocaleString()} EUR</div>
+          <div class="lead-info">📧 ${escapeHtml(lead.email)}</div>
+          <div class="lead-info">💼 ${escapeHtml(lead.project_type)} | Budget: ${lead.estimate?.min?.toLocaleString()}-${lead.estimate?.max?.toLocaleString()} EUR</div>
         </div>
         `,
           )
