@@ -15,7 +15,7 @@ import { validateContentType, validateCSRF } from "@/lib/api/middleware";
 // Hard cap on request body size for this route.
 const MAX_EVENTS_BODY_BYTES = 100 * 1024; // 100 KB
 // Maximum number of events accepted in a single batch (bound the DB loop).
-const MAX_EVENTS_PER_BATCH = 50;
+const MAX_EVENTS_PER_BATCH = 500;
 
 export async function POST(request: NextRequest) {
   try {

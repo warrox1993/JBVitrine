@@ -10,7 +10,7 @@ import {
   leadScoringLimiter,
   getClientIdentifier,
 } from "@/lib/rate-limit-redis";
-import { validateContentType, validateCSRF } from "@/lib/api/middleware";
+import { validateCSRF } from "@/lib/api/middleware";
 
 // Hard cap on request body size for this route (session blobs can be large).
 const MAX_SESSION_BODY_BYTES = 200 * 1024; // 200 KB
@@ -61,9 +61,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // ✅ Content-Type validation (middleware)
-    const contentTypeCheck = validateContentType(request);
-    if (!contentTypeCheck.success) return contentTypeCheck.response;
+    // Note: this route is invoked via navigator.sendBeacon, which sends
+    // Content-Type: text/plain (not application/json). We therefore do NOT
+    // enforce validateContentType here; request.json() still parses the body.
 
     // ✅ CSRF Protection (middleware)
     const csrfCheck = validateCSRF(request);

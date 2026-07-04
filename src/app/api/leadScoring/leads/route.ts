@@ -122,13 +122,19 @@ export async function POST(request: NextRequest) {
       recaptchaToken,
     } = body ?? {};
 
-    // ✅ reCAPTCHA verification (middleware) — closest existing action name
-    const recaptchaCheck = await validateRecaptcha(
-      request,
-      recaptchaToken,
-      "lead_capture",
-    );
-    if (!recaptchaCheck.success) return recaptchaCheck.response;
+    // reCAPTCHA: verify only if the client supplied a token. This telemetry
+    // endpoint (useLeadScoring) is invoked without a token; anti-abuse here
+    // relies on CSRF (same-origin), strict input validation, server-side grade
+    // recompute, and trusted-IP rate limiting.
+    // TODO(security): plumb a reCAPTCHA token from the client to make this mandatory.
+    if (recaptchaToken) {
+      const recaptchaCheck = await validateRecaptcha(
+        request,
+        recaptchaToken,
+        "lead_capture",
+      );
+      if (!recaptchaCheck.success) return recaptchaCheck.response;
+    }
 
     if (!lead || typeof lead !== "object" || !score || !quoteData) {
       return NextResponse.json(

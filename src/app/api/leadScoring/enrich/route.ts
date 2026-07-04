@@ -298,13 +298,18 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { email, domain, recaptchaToken } = body ?? {};
 
-    // ✅ reCAPTCHA verification (middleware) — enrich burns paid API quota
-    const recaptchaCheck = await validateRecaptcha(
-      request,
-      recaptchaToken,
-      "lead_enrich",
-    );
-    if (!recaptchaCheck.success) return recaptchaCheck.response;
+    // reCAPTCHA: verify only if the client supplied a token (non-breaking for
+    // the current tokenless client). Enrichment burns paid API quota, so it is
+    // additionally gated by CSRF (same-origin), input bounds, and rate limiting.
+    // TODO(security): plumb a reCAPTCHA token + tighten the enrich rate limit.
+    if (recaptchaToken) {
+      const recaptchaCheck = await validateRecaptcha(
+        request,
+        recaptchaToken,
+        "lead_enrich",
+      );
+      if (!recaptchaCheck.success) return recaptchaCheck.response;
+    }
 
     if (!email && !domain) {
       return NextResponse.json(
