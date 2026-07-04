@@ -8,6 +8,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyRecaptchaEnterprise } from "@/lib/recaptcha";
 import { getClientIdentifier } from "@/lib/rate-limit-redis";
+import { isSameOrigin } from "@/lib/security/origin";
 
 export interface MiddlewareResult {
   success: boolean;
@@ -48,10 +49,7 @@ export function validateCSRF(request: NextRequest): MiddlewareResult {
 
   const isLocalhost =
     host?.includes("localhost") || host?.includes("127.0.0.1");
-  const isValidOrigin =
-    isLocalhost ||
-    origin?.includes(host || "") ||
-    referer?.includes(host || "");
+  const isValidOrigin = isLocalhost || isSameOrigin(origin, referer, host);
 
   if (!isValidOrigin) {
     const clientIdentifier = getClientIdentifier(request);
