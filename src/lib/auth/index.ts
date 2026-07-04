@@ -7,11 +7,19 @@ import type { NextAuthOptions } from "next-auth";
 import { getServerSession } from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { neon } from "@neondatabase/serverless";
+import type { NeonQueryFunction } from "@neondatabase/serverless";
 import * as bcrypt from "bcryptjs";
 import { loginLimiter } from "@/lib/rate-limit-redis";
 import { headers } from "next/headers";
 
-const sql = neon(process.env.DATABASE_URL!);
+let _sql: NeonQueryFunction<false, false> | null = null;
+function getSql() {
+  if (_sql) return _sql;
+  const url = process.env.DATABASE_URL || process.env.POSTGRES_URL;
+  if (!url) throw new Error("DATABASE_URL is not defined");
+  _sql = neon(url);
+  return _sql;
+}
 
 export interface User {
   id: string;
@@ -53,7 +61,7 @@ export const authOptions: NextAuthOptions = {
 
         try {
           // Fetch user from database
-          const users = await sql`
+          const users = await getSql()`
             SELECT id, email, name, password_hash, role, is_active
             FROM users
             WHERE email = ${credentials.email}
@@ -84,7 +92,7 @@ export const authOptions: NextAuthOptions = {
           }
 
           // Update last login
-          await sql`
+          await getSql()`
             UPDATE users
             SET last_login = NOW()
             WHERE id = ${user.id}
