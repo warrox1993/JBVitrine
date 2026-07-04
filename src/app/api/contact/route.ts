@@ -17,6 +17,24 @@ import {
   validateRecaptcha,
 } from "@/lib/api/middleware";
 
+// Logging helpers: never write raw email/IP to logs, since console.warn/error
+// survive the production removeConsole config (next.config.ts).
+function maskEmail(email: unknown): string {
+  if (!email || typeof email !== "string") return "***";
+  const atIndex = email.indexOf("@");
+  if (atIndex === -1) return "***";
+  return `***@${email.substring(atIndex + 1)}`;
+}
+
+function maskIp(ip: unknown): string {
+  if (!ip || typeof ip !== "string") return "unknown";
+  const parts = ip.split(".");
+  if (parts.length === 4) {
+    return `${parts[0]}.x.x.x`;
+  }
+  return ip.length > 8 ? `${ip.substring(0, 8)}***` : "***";
+}
+
 type ContactFormData = {
   type: "projet" | "support" | "partenariat";
   name: string;
@@ -132,7 +150,7 @@ export async function POST(request: NextRequest) {
 
     if (!success) {
       console.warn("⚠️ Contact rate limit exceeded:", {
-        identifier: clientIdentifier,
+        identifier: maskIp(clientIdentifier),
         limit,
         reset: new Date(reset).toISOString(),
       });
@@ -178,7 +196,7 @@ export async function POST(request: NextRequest) {
     // Honeypot validation - bots typically fill hidden fields
     if (body.honeypot) {
       console.warn("Bot detected via honeypot field", {
-        ip: clientIdentifier,
+        ip: maskIp(clientIdentifier),
         honeypot: body.honeypot,
       });
       // Return success to fool the bot (don't reveal detection)
@@ -199,7 +217,7 @@ export async function POST(request: NextRequest) {
 
       if (fillTime < minFillTime) {
         console.warn("Form filled too quickly - bot detected", {
-          ip: clientIdentifier,
+          ip: maskIp(clientIdentifier),
           fillTime,
         });
         // Return success to fool the bot (don't reveal detection)
@@ -214,7 +232,7 @@ export async function POST(request: NextRequest) {
 
       if (fillTime > maxFillTime) {
         console.warn("Form session expired", {
-          ip: clientIdentifier,
+          ip: maskIp(clientIdentifier),
           fillTime,
         });
         return NextResponse.json(
@@ -267,8 +285,8 @@ export async function POST(request: NextRequest) {
     // 1. Check for disposable/temporary email addresses
     if (isDisposableEmail(body.email)) {
       console.warn("Disposable email detected", {
-        ip: clientIdentifier,
-        email: body.email,
+        ip: maskIp(clientIdentifier),
+        email: maskEmail(body.email),
       });
       return NextResponse.json(
         {
@@ -286,8 +304,8 @@ export async function POST(request: NextRequest) {
     // 2. Check for suspicious email patterns
     if (hasSuspiciousEmailPattern(body.email)) {
       console.warn("Suspicious email pattern detected", {
-        ip: clientIdentifier,
-        email: body.email,
+        ip: maskIp(clientIdentifier),
+        email: maskEmail(body.email),
       });
       return NextResponse.json(
         {
@@ -305,10 +323,10 @@ export async function POST(request: NextRequest) {
     const spamCheck = checkForSpam(body.message);
     if (spamCheck.isSpam) {
       console.warn("Spam content detected", {
-        ip: clientIdentifier,
+        ip: maskIp(clientIdentifier),
         score: spamCheck.score,
         reasons: spamCheck.reasons,
-        messagePreview: body.message.substring(0, 100),
+        messageLength: body.message.length,
       });
       return NextResponse.json(
         {
@@ -328,7 +346,7 @@ export async function POST(request: NextRequest) {
       const validBudgets = ["<2000", "2-5k", "5-10k", "10-25k", ">25k"];
       if (!validBudgets.includes(body.budget)) {
         console.warn("Invalid budget value", {
-          ip: clientIdentifier,
+          ip: maskIp(clientIdentifier),
           budget: body.budget,
         });
         return NextResponse.json(
@@ -346,7 +364,7 @@ export async function POST(request: NextRequest) {
       const validTimelines = ["asap", "1m", "2-3m", ">3m"];
       if (!validTimelines.includes(body.timeline)) {
         console.warn("Invalid timeline value", {
-          ip: clientIdentifier,
+          ip: maskIp(clientIdentifier),
           timeline: body.timeline,
         });
         return NextResponse.json(
@@ -386,7 +404,10 @@ export async function POST(request: NextRequest) {
 
     console.log("Contact form submission:", {
       ticketId,
-      ...sanitizedData,
+      type: sanitizedData.type,
+      email: maskEmail(sanitizedData.email),
+      budget: sanitizedData.budget,
+      timeline: sanitizedData.timeline,
       timestamp: new Date().toISOString(),
     });
 
@@ -439,7 +460,7 @@ async function sendConfirmationEmail(
 
     console.log("Confirmation email sent successfully:", {
       emailId: data?.id,
-      to: email,
+      to: maskEmail(email),
       ticketId,
     });
   } catch (error) {
