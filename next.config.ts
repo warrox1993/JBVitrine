@@ -140,9 +140,18 @@ const nextConfig: NextConfig = {
 
     // Dev/Preview/Prod: autorise Vercel Live + reCAPTCHA + Google Maps
     // Vercel Live needs to be allowed even in prod if used for feedback/preview
-    baseCsp.push(
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://*.vercel.live https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com",
-    );
+    // script-src: 'unsafe-eval' and Vercel Live are DEV-only (HMR / preview
+    // toolbar); both are removed in production.
+    // TODO(security): migrate to per-request nonces to also drop 'unsafe-inline'
+    // — requires a preview-deploy smoke test of JSON-LD, Vercel Analytics,
+    // Google Maps and reCAPTCHA before promoting to production.
+    const scriptSrc =
+      "script-src 'self' 'unsafe-inline'" +
+      (process.env.NODE_ENV === "production"
+        ? ""
+        : " 'unsafe-eval' https://vercel.live https://*.vercel.live") +
+      " https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com";
+    baseCsp.push(scriptSrc);
 
     const csp = baseCsp.join("; ");
 
@@ -174,10 +183,6 @@ const nextConfig: NextConfig = {
             key: "Permissions-Policy",
             value:
               "camera=(), microphone=(), geolocation=(), interest-cohort=()",
-          },
-          {
-            key: "X-XSS-Protection",
-            value: "1; mode=block",
           },
           {
             key: "Content-Security-Policy",
