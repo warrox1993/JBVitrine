@@ -10,11 +10,12 @@ export function InsightTeaser() {
       <div className={styles.body}>
         <div className={styles.kick}>Guide gratuit</div>
         <h3>
-          NIS2 &amp; CyFun&nbsp;: le guide de mise en conformité pour les PME belges
+          NIS2 &amp; CyFun&nbsp;: le guide de mise en conformité pour les{" "}
+          <span className="accent">PME belges</span>
         </h3>
         <p>
-          Ce que dit la loi, qui est concerné, comment choisir votre niveau CyFun et par où commencer
-          maintenant que NIS2 est en vigueur — en langage clair, sans jargon.
+          Ce que dit la loi, qui est concerné, comment choisir votre niveau CyFun et par où
+          commencer. <b>En langage clair, sans jargon.</b>
         </p>
         <div className={styles.meta}>
           <span>

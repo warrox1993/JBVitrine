@@ -6,7 +6,7 @@ import styles from "./WhySmidjan.module.css";
 interface WhyItem {
   icon: React.ReactNode;
   title: string;
-  text: string;
+  text: React.ReactNode;
 }
 
 const SVG = {
@@ -27,7 +27,12 @@ const WHY_ITEMS: WhyItem[] = [
       </svg>
     ),
     title: "Local & réactif",
-    text: "Basés à Liège, nous intervenons vite en Wallonie et vos données restent hébergées en Belgique / UE.",
+    text: (
+      <>
+        Basés à Liège, nous intervenons vite en Wallonie et vos données restent{" "}
+        <b>hébergées en Belgique / UE</b>.
+      </>
+    ),
   },
   {
     icon: (
@@ -36,7 +41,12 @@ const WHY_ITEMS: WhyItem[] = [
       </svg>
     ),
     title: "Pragmatisme PME",
-    text: "Nous corrigeons ce qui compte vraiment pour votre budget — pas de sur-ingénierie, pas de dépenses inutiles.",
+    text: (
+      <>
+        <b>Nous corrigeons ce qui compte vraiment</b> pour votre budget — pas de sur-ingénierie,
+        pas de dépenses inutiles.
+      </>
+    ),
   },
   {
     icon: (
@@ -46,7 +56,12 @@ const WHY_ITEMS: WhyItem[] = [
       </svg>
     ),
     title: "Un seul partenaire",
-    text: "Construire, sécuriser et mettre en conformité : tout au même endroit, sans coordonner cinq prestataires.",
+    text: (
+      <>
+        Construire, sécuriser et mettre en conformité&nbsp;: <b>tout au même endroit</b>, sans
+        coordonner cinq prestataires.
+      </>
+    ),
   },
   {
     icon: (
@@ -56,7 +71,12 @@ const WHY_ITEMS: WhyItem[] = [
       </svg>
     ),
     title: "Accès direct à l'expert",
-    text: "Vous parlez à la personne qui fait le travail — jamais à un centre d'appel ni à un junior en sous-traitance.",
+    text: (
+      <>
+        <b>Vous parlez à la personne qui fait le travail</b> — jamais à un centre d&apos;appel ni
+        à un junior en sous-traitance.
+      </>
+    ),
   },
 ];
 
@@ -67,10 +87,11 @@ export function WhySmidjan() {
       <div>
         <Eyebrow>Pourquoi Smidjan</Eyebrow>
         <h2 className={styles.title}>
-          La rigueur d&apos;un grand cabinet, la proximité d&apos;un partenaire
+          La rigueur d&apos;un grand cabinet, la <span className="accent">proximité</span>{" "}
+          d&apos;un partenaire
         </h2>
         <p className={styles.lead}>
-          Nous sommes une structure à taille humaine, volontairement. Cela veut dire moins
+          Nous sommes une <b>structure à taille humaine</b>, volontairement. Cela veut dire moins
           d&apos;intermédiaires, plus de responsabilité, et un interlocuteur qui connaît réellement
           votre dossier.
         </p>

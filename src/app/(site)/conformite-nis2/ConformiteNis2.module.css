@@ -43,20 +43,24 @@
   letter-spacing: 0.02em;
 }
 .heroTitle {
-  font-size: clamp(32px, 4.2vw, 50px);
+  font-size: clamp(36px, 4.8vw, 56px);
   margin: 22px 0 0;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   color: var(--navy);
-  line-height: 1.2;
-  font-weight: 700;
+  line-height: 1.1;
+  font-weight: 800;
 }
-.heroTitle .accent {
-  color: var(--navy-3);
+/* Shared inline emphasis for key words in headings on this page.
+   Not the global orange utility on purpose: orange stays reserved for
+   CTA/accent elements per brand rule, so heading emphasis uses the
+   deeper navy-3 tint instead (same pattern as the rest of the site). */
+.accent {
+  color: var(--orange-d);
 }
 .heroLead {
   margin-top: 22px;
-  max-width: 42ch;
-  font-size: 19px;
+  max-width: 44ch;
+  font-size: 19.5px;
   color: var(--slate);
   line-height: 1.6;
 }
@@ -252,6 +256,12 @@
   padding: 28px 26px;
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow-s);
+  transition: box-shadow 0.16s ease, transform 0.16s ease;
+}
+.clairCard:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
 }
 .clairCard .ico {
   width: 50px;
@@ -432,6 +442,7 @@
   padding: 22px 16px;
   text-align: center;
   position: relative;
+  box-shadow: var(--shadow-s);
   transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
 }
 .fn:hover {
@@ -488,6 +499,33 @@
   padding: 22px 26px;
   margin: 40px auto 0;
   max-width: 760px;
+}
+.statBig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: none;
+  padding-right: 22px;
+  margin-right: 2px;
+  border-right: 1px solid #ffd9be;
+}
+.statBigNum {
+  font-family: var(--mono);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--orange-d);
+  line-height: 1;
+}
+.statBigLbl {
+  margin-top: 7px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #7a3d15;
+  text-align: center;
+  max-width: 92px;
+  line-height: 1.3;
 }
 .covGauge {
   width: 106px;
@@ -715,6 +753,14 @@
     flex-direction: column;
     text-align: center;
     gap: 10px;
+  }
+  .statBig {
+    border-right: none;
+    border-bottom: 1px solid #ffd9be;
+    padding-right: 0;
+    padding-bottom: 14px;
+    margin-right: 0;
+    margin-bottom: 2px;
   }
   .floatChip {
     left: 12px;

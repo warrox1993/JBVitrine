@@ -5,6 +5,7 @@ import OptimizedImage from "@/components/ui/OptimizedImage";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
+import { Button } from "@/components/ui/Button/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { StatsBand, CTABox } from "@/components/shared";
 import { QuiSommesNous } from "./QuiSommesNous";
@@ -70,16 +71,29 @@ export default function AgencePage() {
               </nav>
               <Eyebrow>L&rsquo;agence</Eyebrow>
               <h1 className={styles.h1}>
-                La cybersécurité des PME wallonnes,{" "}
-                <span className={styles.accent}>faite par un expert local</span>.
+                Un <span className="accent">expert cybersécurité local</span>,
+                pas une agence anonyme.
               </h1>
               <p className={styles.lead}>
-                Smidjan est une agence de cybersécurité basée à Liège, au service
-                des PME, des professions libérales et des collectivités de
-                Wallonie. Une structure à taille humaine, exigeante et joignable —
-                parce que la sécurité d&rsquo;une entreprise mérite un
-                interlocuteur qui connaît réellement son dossier.
+                Basé à Liège, Jean-Baptiste Dhondt sécurise lui-même votre
+                entreprise — pas un centre d&rsquo;appel, pas de
+                sous-traitance, pas de rapport qu&rsquo;on range dans un
+                tiroir.
               </p>
+              <div className={styles.heroCtas}>
+                <Button
+                  as="a"
+                  href="#contact"
+                  variant="primary"
+                  size="lg"
+                  trailingIcon={<Icon name="arrow-right" strokeWidth={2.2} />}
+                >
+                  Réserver un appel de cadrage
+                </Button>
+                <Button as="a" href="tel:+32475205562" variant="ghost" size="lg">
+                  Appeler le 0475 20 55 62
+                </Button>
+              </div>
               <ul className={styles.badges}>
                 <li>
                   <Icon name="map-pin" size={18} />
@@ -120,7 +134,13 @@ export default function AgencePage() {
           <SectionHeading
             center
             eyebrow="Nos engagements"
-            title="Ce que vous êtes en droit d'attendre de nous"
+            title={
+              <>
+                Ce que vous êtes{" "}
+                <span className="accent">en droit d&rsquo;attendre</span> de
+                nous
+              </>
+            }
             lead="Quatre principes qui guident chaque mission — et sur lesquels nous acceptons d'être jugés."
           />
           <div className={styles.engageGrid}>

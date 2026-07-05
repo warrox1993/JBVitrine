@@ -15,8 +15,16 @@ function VisualBox({ alt, children }: { alt?: boolean; children: ReactNode }) {
   return <div className={cn}>{children}</div>;
 }
 
-/** Real photo shown next to a pillar's SVG schematic. */
-function PillarPhoto({ src, alt }: { src: string; alt: string }) {
+/** Real photo shown above a pillar's SVG schematic, captioned with its one-line promise. */
+function PillarPhoto({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  caption: ReactNode;
+}) {
   return (
     <div className={styles.photoBox}>
       <Image
@@ -27,6 +35,7 @@ function PillarPhoto({ src, alt }: { src: string; alt: string }) {
         sizes="(max-width: 720px) 100vw, 560px"
         className={styles.photoImg}
       />
+      <p className={styles.photoCaption}>{caption}</p>
     </div>
   );
 }
@@ -35,6 +44,15 @@ function PillarPhoto({ src, alt }: { src: string; alt: string }) {
 export function SecureVisual({ alt }: { alt?: boolean }) {
   return (
     <>
+    <PillarPhoto
+      src="/images/pages/services/securiser-datacenter.jpg"
+      alt="Baies de serveurs dans un datacenter sécurisé, illustrant le durcissement de l'infrastructure réseau."
+      caption={
+        <>
+          <b>Bloquer les attaques</b> avant qu&apos;elles n&apos;atteignent vos données.
+        </>
+      }
+    />
     <VisualBox alt={alt}>
       <svg
         viewBox="0 0 480 250"
@@ -90,10 +108,6 @@ export function SecureVisual({ alt }: { alt?: boolean }) {
         <text x="432" y="232" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">Réseau interne</text>
       </svg>
     </VisualBox>
-    <PillarPhoto
-      src="/images/pages/services/securiser-datacenter.jpg"
-      alt="Baies de serveurs dans un datacenter sécurisé, illustrant le durcissement de l'infrastructure réseau."
-    />
     </>
   );
 }
@@ -102,6 +116,15 @@ export function SecureVisual({ alt }: { alt?: boolean }) {
 export function TestVisual({ alt }: { alt?: boolean }) {
   return (
     <>
+    <PillarPhoto
+      src="/images/pages/services/tester-ecrans.jpg"
+      alt="Analystes en sécurité examinant du code et des tableaux de bord sur plusieurs écrans lors d'un audit."
+      caption={
+        <>
+          <b>Révéler les failles</b> avant qu&apos;un vrai attaquant ne les exploite.
+        </>
+      }
+    />
     <VisualBox alt={alt}>
       <svg
         viewBox="0 0 480 250"
@@ -163,10 +186,6 @@ export function TestVisual({ alt }: { alt?: boolean }) {
         <text x="375" y="232" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">Rapport de pentest</text>
       </svg>
     </VisualBox>
-    <PillarPhoto
-      src="/images/pages/services/tester-ecrans.jpg"
-      alt="Analystes en sécurité examinant du code et des tableaux de bord sur plusieurs écrans lors d'un audit."
-    />
     </>
   );
 }
@@ -175,6 +194,15 @@ export function TestVisual({ alt }: { alt?: boolean }) {
 export function DevVisual({ alt }: { alt?: boolean }) {
   return (
     <>
+    <PillarPhoto
+      src="/images/pages/services/developper-architecture.jpg"
+      alt="Plan de circuit imprimé en gros plan, symbolisant une architecture applicative pensée secure by design."
+      caption={
+        <>
+          <b>La sécurité, dès la première ligne</b> de code — pas ajoutée après coup.
+        </>
+      }
+    />
     <VisualBox alt={alt}>
       <svg
         viewBox="0 0 480 250"
@@ -210,10 +238,6 @@ export function DevVisual({ alt }: { alt?: boolean }) {
         <text x="240" y="245" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">Sécurité intégrée dès la conception</text>
       </svg>
     </VisualBox>
-    <PillarPhoto
-      src="/images/pages/services/developper-architecture.jpg"
-      alt="Plan de circuit imprimé en gros plan, symbolisant une architecture applicative pensée secure by design."
-    />
     </>
   );
 }
@@ -222,6 +246,15 @@ export function DevVisual({ alt }: { alt?: boolean }) {
 export function ComplyVisual({ alt }: { alt?: boolean }) {
   return (
     <>
+    <PillarPhoto
+      src="/images/pages/services/conformer-audit.jpg"
+      alt="Équipe de professionnels examinant ensemble des documents et une checklist lors d'une réunion de conformité."
+      caption={
+        <>
+          <b>De l&apos;audit à la preuve</b> — jusqu&apos;à la conformité CyFun.
+        </>
+      }
+    />
     <VisualBox alt={alt}>
       <svg
         viewBox="0 0 480 226"
@@ -258,10 +291,6 @@ export function ComplyVisual({ alt }: { alt?: boolean }) {
         <text x="365" y="207" textAnchor="middle" fontSize="12" fill="var(--orange-d)" fontFamily="var(--sans)" style={{ fontWeight: 700 }}>Essential</text>
       </svg>
     </VisualBox>
-    <PillarPhoto
-      src="/images/pages/services/conformer-audit.jpg"
-      alt="Équipe de professionnels examinant ensemble des documents et une checklist lors d'une réunion de conformité."
-    />
     </>
   );
 }

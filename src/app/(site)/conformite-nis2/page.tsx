@@ -101,21 +101,19 @@ export default function ConformiteNis2Page() {
           <div>
             <span className={styles.heroBadge}>
               <span className={styles.tag}>NIS2</span>
-              En vigueur en Belgique&nbsp;: la conformité est déjà exigée
+              En vigueur depuis le 18 octobre 2024 en Belgique
             </span>
             <h1 className={styles.heroTitle}>
-              NIS2 &amp; CyFun&nbsp;:{" "}
+              NIS2 est en vigueur —{" "}
               <span className={styles.accent}>
-                mis en conformité, concrètement
-              </span>{" "}
-              — pas seulement audités.
+                vous devez déjà être conforme
+              </span>
+              .
             </h1>
             <p className={styles.heroLead}>
-              Smidjan vous prépare à atteindre votre niveau CyberFundamentals
-              (CCB) attendu par NIS2&nbsp;: diagnostic, analyse d&apos;écart, et
-              surtout <b>remédiation</b> — nous corrigeons ce que nous trouvons,
-              puis vous accompagnons jusqu&apos;à la vérification par un
-              organisme accrédité.
+              Audit, <b>remédiation</b>, préparation à la vérification&nbsp;:
+              Smidjan vous amène concrètement au niveau CyFun (CCB) attendu —
+              nous ne listons pas vos manques, nous les corrigeons.
             </p>
             <div className={styles.heroCta}>
               <Button
@@ -181,9 +179,10 @@ export default function ConformiteNis2Page() {
               <div className={styles.dcFoot}>
                 <Icon name="shield-check" size={17} />
                 <span>
-                  <b>Vous êtes déjà censé être conforme.</b> Si ce n&apos;est
-                  pas encore le cas, nous vous y amenons vite — en réduisant
-                  votre exposition aux sanctions et aux incidents.
+                  <b>Chaque mois sans mise en conformité augmente votre
+                  exposition.</b> Nous vous amenons rapidement au niveau
+                  attendu — en réduisant concrètement le risque de sanction
+                  et d&apos;incident.
                 </span>
               </div>
             </div>
@@ -206,7 +205,12 @@ export default function ConformiteNis2Page() {
           center
           as="h2"
           eyebrow="NIS2, en clair"
-          title="Ce que la directive change pour vous — sans jargon"
+          title={
+            <>
+              Ce que la directive change pour vous —{" "}
+              <span className={styles.accent}>sans jargon</span>
+            </>
+          }
           lead="NIS2 est une directive européenne qui relève le niveau minimal de cybersécurité exigé de milliers d'organisations. Trois questions suffisent à savoir où vous en êtes."
         />
 
@@ -357,7 +361,13 @@ export default function ConformiteNis2Page() {
             <SectionHeading
               as="h2"
               eyebrow="Le cadre officiel"
-              title="CyFun : la réponse belge à NIS2, publiée par le CCB"
+              title={
+                <>
+                  CyFun : la{" "}
+                  <span className={styles.accent}>réponse belge</span> à
+                  NIS2, publiée par le CCB
+                </>
+              }
             />
             <p className={styles.frameLead}>
               Le <b>CyberFundamentals Framework (CyFun)</b> est le référentiel
@@ -470,11 +480,20 @@ export default function ConformiteNis2Page() {
           center
           as="h2"
           eyebrow="Les 3 niveaux d'assurance"
-          title="Basic, Important, Essential : choisir le bon niveau"
+          title={
+            <>
+              Basic, Important, Essential : choisir le{" "}
+              <span className={styles.accent}>bon niveau</span>
+            </>
+          }
           lead="CyFun propose trois niveaux progressifs. Le bon choix dépend de votre catégorie NIS2, de votre exposition et de la sensibilité de vos données. Nous vous aidons à trancher."
         />
 
         <div className={styles.statHook}>
+          <div className={styles.statBig}>
+            <span className={styles.statBigNum}>3</span>
+            <span className={styles.statBigLbl}>Niveaux CyFun</span>
+          </div>
           <CoverageGauge className={styles.covGauge} />
           <div className={styles.txt}>
             <b>
@@ -506,7 +525,13 @@ export default function ConformiteNis2Page() {
         <SectionHeading
           as="h2"
           eyebrow="Notre accompagnement"
-          title="On ne se contente pas d'auditer — on corrige et on vous amène prêts"
+          title={
+            <>
+              On ne se contente pas d&apos;auditer —{" "}
+              <span className={styles.accent}>on corrige</span> et on vous
+              amène prêts
+            </>
+          }
           lead="C'est notre différence avec les pures maisons d'audit : nous ne repartons pas en vous laissant une liste de problèmes. Nous mettons les mains dans le cambouis et nous vous préparons à la vérification."
         />
 

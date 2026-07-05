@@ -39,6 +39,7 @@
   padding: 28px 26px;
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow);
 }
 .quoteIc {
   width: 30px;

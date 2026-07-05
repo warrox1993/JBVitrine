@@ -38,7 +38,15 @@ export function RoadmapIllustration() {
       </defs>
 
       {/* Node 1 : Diagnostic */}
-      <circle cx="130" cy="160" r="32" fill="#ffffff" stroke="#0b1f3a" strokeWidth="2" />
+      <circle
+        cx="130"
+        cy="160"
+        r="32"
+        fill="#ffffff"
+        stroke="#0b1f3a"
+        strokeWidth="2"
+        style={{ filter: "drop-shadow(0 6px 10px rgba(11,31,58,.16))" }}
+      />
       <g transform="translate(119,149)" stroke="#0b1f3a" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="11" cy="11" r="7" />
         <path d="m21 21-4.3-4.3" />
@@ -48,7 +56,15 @@ export function RoadmapIllustration() {
       </text>
 
       {/* Node 2 : Priorisation */}
-      <circle cx="430" cy="124" r="32" fill="#ffffff" stroke="#0b1f3a" strokeWidth="2" />
+      <circle
+        cx="430"
+        cy="124"
+        r="32"
+        fill="#ffffff"
+        stroke="#0b1f3a"
+        strokeWidth="2"
+        style={{ filter: "drop-shadow(0 6px 10px rgba(11,31,58,.16))" }}
+      />
       <g transform="translate(419,113)" stroke="#0b1f3a" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 4h18M3 11h13M3 18h8" />
       </g>
@@ -57,7 +73,15 @@ export function RoadmapIllustration() {
       </text>
 
       {/* Node 3 : Remédiation */}
-      <circle cx="730" cy="88" r="32" fill="#ffffff" stroke="#0b1f3a" strokeWidth="2" />
+      <circle
+        cx="730"
+        cy="88"
+        r="32"
+        fill="#ffffff"
+        stroke="#0b1f3a"
+        strokeWidth="2"
+        style={{ filter: "drop-shadow(0 6px 10px rgba(11,31,58,.16))" }}
+      />
       <g transform="translate(719,77)" stroke="#0b1f3a" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6a2 2 0 0 0 2.8 2.8l6-6a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.3-.5-.5-2.3 2.5-2.5Z" />
       </g>
@@ -66,7 +90,15 @@ export function RoadmapIllustration() {
       </text>
 
       {/* Node 4 : Supervision & suivi */}
-      <circle cx="1030" cy="52" r="32" fill="#ff6a00" stroke="#ff6a00" strokeWidth="2" />
+      <circle
+        cx="1030"
+        cy="52"
+        r="32"
+        fill="#ff6a00"
+        stroke="#ff6a00"
+        strokeWidth="2"
+        style={{ filter: "drop-shadow(0 8px 14px rgba(255,106,0,.35))" }}
+      />
       <g transform="translate(1019,41)" stroke="#ffffff" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z" />
         <circle cx="12" cy="12" r="3" />

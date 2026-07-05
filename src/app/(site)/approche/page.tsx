@@ -222,7 +222,7 @@ export default function ApprochePage() {
             <div>
               <Eyebrow>Notre méthode</Eyebrow>
               <h1 className={styles.h1}>
-                Une cybersécurité qui se <span className={styles.accent}>démontre</span>, pas qui se raconte.
+                Une cybersécurité qui se <span className="accent">démontre</span>, pas qui se raconte.
               </h1>
               <p className={styles.lead}>
                 Chez Smidjan, la sécurité n&rsquo;est pas un discours : c&rsquo;est une suite d&rsquo;actions mesurées
@@ -297,7 +297,11 @@ export default function ApprochePage() {
           <div>
             <SectionHeading
               eyebrow="Notre philosophie"
-              title="Des preuves, pas des promesses"
+              title={
+                <>
+                  Des <span className="accent">preuves</span>, pas des promesses
+                </>
+              }
               lead={
                 <>
                   Trop de prestataires vendent un sentiment de sécurité. Nous préférons vous donner de quoi la
@@ -384,7 +388,11 @@ export default function ApprochePage() {
         <SectionHeading
           center
           eyebrow="Notre méthode"
-          title="Quatre étapes, du premier constat au suivi durable"
+          title={
+            <>
+              Quatre <span className="accent">étapes</span>, du premier constat au suivi durable
+            </>
+          }
           lead="Un cheminement clair, le même pour chaque mission — que ce soit un audit, un pentest ou une mise en conformité NIS2 / CyFun. À chaque étape, vous savez ce qui se passe et ce que vous recevez."
         />
 
@@ -432,7 +440,7 @@ export default function ApprochePage() {
           {methodSteps.map((step, i) => (
             <article key={step.title} className={styles.mstep}>
               <div className={styles.idx}>
-                <div className={styles.num}>{i + 1}</div>
+                <div className={styles.num}>{String(i + 1).padStart(2, "0")}</div>
                 {i < methodSteps.length - 1 ? <div className={styles.ln} /> : null}
               </div>
               <div>
@@ -466,7 +474,12 @@ export default function ApprochePage() {
             <SectionHeading
               onDark
               eyebrow="Augmentés par l'IA"
-              title="L'IA travaille avec nous. Elle ne décide pas à notre place."
+              title={
+                <>
+                  L&rsquo;IA travaille avec nous. Elle ne{" "}
+                  <span className="accentOnDark">décide pas</span> à notre place.
+                </>
+              }
               lead="Nous utilisons l'intelligence artificielle comme un compagnon de travail : elle nous aide à surveiller plus large, à trier plus vite et à ne rien laisser passer. Mais l'analyse, le jugement et les décisions restent entre des mains humaines — les vôtres et les nôtres."
             />
             <div className={styles.aiHonest}>
@@ -514,7 +527,11 @@ export default function ApprochePage() {
         <SectionHeading
           center
           eyebrow="Pourquoi Smidjan"
-          title="La rigueur d'un cabinet, la proximité d'un partenaire"
+          title={
+            <>
+              La rigueur d&rsquo;un cabinet, la proximité d&rsquo;un <span className="accent">partenaire</span>
+            </>
+          }
           lead="Nous sommes une structure à taille humaine, volontairement. Moins d'intermédiaires, plus de responsabilité — et quatre raisons concrètes de nous confier votre sécurité."
         />
 
@@ -567,7 +584,11 @@ export default function ApprochePage() {
         <SectionHeading
           center
           eyebrow="Nos référentiels"
-          title="Une méthodologie alignée sur les cadres de référence"
+          title={
+            <>
+              Une méthodologie alignée sur les cadres de <span className="accent">référence</span>
+            </>
+          }
           lead="Nous ne travaillons pas au feeling. Nos audits, notre développement et nos mises en conformité s'appuient sur des référentiels reconnus — appliqués comme méthode de travail, pour que vos résultats soient comparables et défendables."
         />
         <div className={styles.refsGrid}>

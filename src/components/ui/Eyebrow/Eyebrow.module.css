@@ -1,17 +1,17 @@
 /* Eyebrow — orange uppercase kicker with a leading dash. */
 .eyebrow {
-  font: 600 12px/1.4 var(--sans);
-  letter-spacing: 0.12em;
+  font: 700 12.5px/1.4 var(--sans);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--orange-d);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 .eyebrow::before {
   content: "";
-  width: 22px;
-  height: 2px;
+  width: 26px;
+  height: 3px;
   background: currentColor;
   display: inline-block;
   border-radius: 2px;

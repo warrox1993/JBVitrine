@@ -18,9 +18,9 @@
   font-size: clamp(27px, 3.2vw, 36px);
   margin-top: 14px;
   color: var(--navy);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.2;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
 }
 .hook {
   margin-top: 26px;

@@ -11,7 +11,8 @@ export function CyfunIntro() {
       <div>
         <Eyebrow>Section phare · Conformité</Eyebrow>
         <h2 className={styles.title}>
-          NIS2 &amp; CyberFundamentals&nbsp;: se mettre en règle, concrètement
+          NIS2 &amp; CyberFundamentals&nbsp;: se mettre en règle,{" "}
+          <span className="accent">concrètement</span>
         </h2>
         <p className={styles.lead}>
           La directive européenne <b>NIS2</b> impose à des milliers d&apos;entreprises belges — y

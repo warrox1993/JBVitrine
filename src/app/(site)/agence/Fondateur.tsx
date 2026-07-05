@@ -84,7 +84,11 @@ export function Fondateur() {
       <Container>
         <div className={styles.secHead}>
           <Eyebrow>Le fondateur</Eyebrow>
-          <h2>Jean-Baptiste Dhondt — un parcours peu commun vers la cybersécurité</h2>
+          <h2>
+            Jean-Baptiste Dhondt —{" "}
+            <span className="accent">un parcours peu commun</span> vers la
+            cybersécurité
+          </h2>
           <p>
             Derrière Smidjan, un profil technique complet, forgé par la
             curiosité, la discipline militaire et une pratique concrète de la
@@ -165,7 +169,10 @@ export function Fondateur() {
           {/* Narrative + journey */}
           <div className={styles.narrative}>
             <Eyebrow>Le parcours</Eyebrow>
-            <h3>De la passion de l&rsquo;informatique à la défense d&rsquo;entreprises</h3>
+            <h3>
+              De la passion de l&rsquo;informatique à la{" "}
+              <span className="accent">défense d&rsquo;entreprises</span>
+            </h3>
             <p className={styles.intro}>
               Le parcours de Jean-Baptiste n&rsquo;est pas celui d&rsquo;un
               consultant standard. C&rsquo;est celui d&rsquo;un praticien :
