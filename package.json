@@ -17,7 +17,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.1.0",
     "@neondatabase/serverless": "^1.0.2",
     "@types/bcryptjs": "^2.4.6",
     "@upstash/ratelimit": "^2.0.7",
@@ -30,7 +29,7 @@
     "libphonenumber-js": "^1.12.25",
     "lucide-react": "^0.552.0",
     "marked": "^17.0.1",
-    "next": "16.1.1",
+    "next": "^16.2.10",
     "next-auth": "^4.24.13",
     "react": "19.2.3",
     "react-bootstrap": "^2.10.7",
@@ -51,7 +50,7 @@
     "baseline-browser-mapping": "^2.9.12",
     "dotenv": "^17.2.3",
     "eslint": "^9",
-    "eslint-config-next": "16.1.1",
+    "eslint-config-next": "^16.2.10",
     "husky": "^9.1.7",
     "next-sitemap": "^4.2.3",
     "pg": "^8.16.3",
