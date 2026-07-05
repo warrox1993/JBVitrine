@@ -72,8 +72,11 @@ export function validateName(name: string): string | null {
   if (/\d/.test(name)) {
     return "Le nom ne peut pas contenir de chiffres";
   }
-  // Reject names with excessive special characters
-  if (/[^a-zA-ZÀ-ÿ\s\-'.]/g.test(name)) {
+  // Reject names with disallowed characters. Accept any Unicode letter (\p{L})
+  // and combining mark (\p{M}, e.g. Vietnamese diacritics) so international
+  // names (Cyrillic, CJK, Arabic, "Nguyễn"…) are not rejected; still block
+  // digits (checked above) and symbols.
+  if (/[^\p{L}\p{M}\s\-'.]/u.test(name)) {
     return "Le nom contient des caractères non autorisés";
   }
   return null;
