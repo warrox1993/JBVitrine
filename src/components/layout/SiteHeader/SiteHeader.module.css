@@ -1,0 +1,170 @@
+.site {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 70px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-weight: 800;
+  color: var(--navy);
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.logo {
+  width: 34px;
+  height: 34px;
+  flex: none;
+}
+
+.brandText {
+  display: inline-block;
+  line-height: 1.1;
+}
+
+.brandText small {
+  display: block;
+  font-weight: 500;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 1px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.main a {
+  padding: 9px 14px;
+  border-radius: 7px;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--slate);
+}
+
+.main a:hover {
+  color: var(--navy);
+  background: var(--bg-2);
+}
+
+.main a.active {
+  color: var(--navy);
+  background: var(--bg-2);
+  font-weight: 600;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--navy);
+}
+
+.tel svg {
+  width: 16px;
+  height: 16px;
+  color: var(--orange-d);
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font: 600 15px/1 var(--sans);
+  padding: 13px 22px;
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  border: 1px solid var(--orange);
+  background: var(--orange);
+  color: #fff;
+  white-space: nowrap;
+  transition:
+    background 0.16s ease,
+    border-color 0.16s ease,
+    transform 0.05s ease;
+}
+
+.primary:hover {
+  background: var(--orange-d);
+  border-color: var(--orange-d);
+}
+
+.primary:active {
+  transform: translateY(1px);
+}
+
+.toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--navy);
+}
+
+.toggle svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .main,
+  .tel {
+    display: none;
+  }
+
+  .toggle {
+    display: inline-flex;
+  }
+
+  .main.open {
+    display: flex;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    padding: 12px 24px 20px;
+    gap: 2px;
+    box-shadow: var(--shadow);
+  }
+
+  .main.open a {
+    padding: 12px 10px;
+  }
+}

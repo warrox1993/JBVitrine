@@ -15,7 +15,6 @@ import { Inter, Instrument_Sans } from 'next/font/google';
 import FXReady from './FXReady';
 import { RootEffects } from '@/components/Effects/RootEffects';
 import RouteProgressProvider from '@/app/RouteProgressProvider';
-import { SidebarMobileProvider } from '@/hooks/useSidebarMobile';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -174,7 +173,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-    themeColor: '#000000',
+    themeColor: '#0b1f3a',
     width: 'device-width',
     initialScale: 1,
 };
@@ -190,12 +189,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </head>
             <body className={`${inter.variable} ${instrument.variable}`}>
                 <FXReady />
-                <SidebarMobileProvider>
-                    <RootEffects>
-                        <RouteProgressProvider />
-                        {children}
-                    </RootEffects>
-                </SidebarMobileProvider>
+                <RootEffects>
+                    <RouteProgressProvider />
+                    {children}
+                </RootEffects>
                 <ToastContainer
                     position="bottom-right"
                     autoClose={5000}
@@ -206,7 +203,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     pauseOnFocusLoss
                     draggable
                     pauseOnHover
-                    theme="dark"
+                    theme="light"
                 />
                 {process.env.NODE_ENV === 'production' && (
                     <>
