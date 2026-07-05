@@ -3,17 +3,17 @@
   grid-template-columns: 1fr 1fr;
   gap: 0;
   background: #fff;
-  border: 1px solid var(--line);
+  border-top: 3px solid var(--orange);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 34px 74px -30px rgba(0, 0, 0, 0.55);
 }
 .body {
   padding: 44px 46px;
 }
 .kick {
-  font: 700 12px/1 var(--sans);
-  letter-spacing: 0.1em;
+  font: 700 12px/1 var(--mono);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--orange-d);
 }

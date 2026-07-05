@@ -10,10 +10,13 @@ export function Hero() {
     <section className={styles.hero}>
       <Container className={styles.grid}>
         <div>
-          <span className={styles.badge}>
-            <span className={styles.tag}>NIS2</span>
-            En vigueur en Belgique&nbsp;: votre entreprise doit déjà être conforme
-          </span>
+          <div className={styles.kickerRow}>
+            <span className={styles.rule} aria-hidden="true" />
+            <span className={styles.badge}>
+              <span className={styles.tag}>NIS2</span>
+              En vigueur en Belgique&nbsp;: votre entreprise doit déjà être conforme
+            </span>
+          </div>
           <h1 className={styles.title}>
             Votre entreprise, <span className="accent">protégée et conforme</span> — sans jargon,
             sans sous-traitance.

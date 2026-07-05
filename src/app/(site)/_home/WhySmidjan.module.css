@@ -4,10 +4,14 @@
   gap: 56px;
   align-items: center;
 }
+.kickerMono {
+  font-family: var(--mono) !important;
+  letter-spacing: 0.06em !important;
+}
 .title {
   font-size: clamp(27px, 3.2vw, 36px);
   margin-top: 14px;
-  color: var(--navy);
+  color: #fff;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -15,11 +19,11 @@
 .lead {
   margin-top: 16px;
   font-size: 19px;
-  color: var(--slate);
+  color: var(--on-dark-muted);
   line-height: 1.6;
 }
 .lead b {
-  color: var(--navy);
+  color: #fff;
   font-weight: 700;
 }
 .list {
@@ -34,7 +38,7 @@
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 20px 22px;
-  box-shadow: var(--shadow-s);
+  box-shadow: var(--shadow);
 }
 .item .ic {
   width: 44px;
@@ -67,15 +71,18 @@
   font-weight: 700;
 }
 
-/* Founder card */
+/* Founder card — a lighter, keylined slab so it lifts off the full-navy section behind it */
 .founder {
-  background: var(--navy);
+  background: linear-gradient(160deg, var(--navy-3) 0%, var(--navy-2) 100%);
   border-radius: 16px;
   padding: 34px;
   color: var(--on-dark-text);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 24px 56px -26px rgba(11, 31, 58, 0.55);
+  border-top: 3px solid var(--orange);
+  box-shadow:
+    0 30px 64px -26px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.07) inset;
 }
 .gridBg {
   position: absolute;

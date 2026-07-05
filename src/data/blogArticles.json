@@ -503,6 +503,330 @@
           "id": "conclusion"
         }
       ]
+    },
+    {
+      "slug": "nis2-pme-belgique-suis-je-concerne",
+      "title": "NIS2 : votre PME est-elle concernée ? Le guide clair",
+      "excerpt": "Entités essentielles, entités importantes, sous-traitance : comment savoir concrètement si votre PME wallonne est concernée par la directive NIS2, et ce qui vous attend si c'est le cas.",
+      "publishedAt": "2026-07-01",
+      "category": "Cybersécurité",
+      "coverImage": "/images/blog/nis2-pme-belgique-suis-je-concerne.jpg",
+      "readTime": "5 min",
+      "content": "# NIS2 : votre PME est-elle concernée ? Le guide clair\n\nDepuis le **18 octobre 2024**, la directive européenne NIS2 est transposée en droit belge par la loi du 26 avril 2024. Le **Centre pour la Cybersécurité Belgique (CCB)** en est l'autorité de contrôle. Beaucoup de dirigeants de PME wallonnes pensent que ce texte ne concerne « que les grandes entreprises ou les hôpitaux ». C'est en partie faux, et c'est justement là que se cache le risque : NIS2 touche directement certaines PME, et indirectement beaucoup d'autres via leurs contrats avec des clients ou donneurs d'ordre soumis à la directive.\n\n## Qu'est-ce que NIS2 et pourquoi ça vous concerne {#quoi}\n\nNIS2 (Network and Information Security Directive 2) impose aux organisations qu'elle vise de mettre en place des mesures de gestion des risques cyber, de notifier les incidents significatifs, et de sécuriser leur chaîne d'approvisionnement — c'est-à-dire leurs fournisseurs et sous-traitants. Ce dernier point est celui qui fait le plus souvent basculer une PME dans le champ d'application de NIS2, même sans être elle-même « visée » par la loi.\n\n## Entités essentielles vs entités importantes : la différence {#essentiel-important}\n\nLa loi distingue deux catégories, avec des obligations proches mais un régime de contrôle différent :\n\n- **Entités essentielles** : secteurs jugés hautement critiques — énergie, transport, banques, infrastructures des marchés financiers, santé, eau potable, eaux usées, infrastructures numériques, gestion des services TIC (B2B), administration publique, espace. Elles font l'objet d'un contrôle proactif du CCB.\n- **Entités importantes** : secteurs critiques mais à impact jugé moindre — services postaux, gestion des déchets, fabrication et distribution de produits chimiques, industrie agroalimentaire, fabrication (dispositifs médicaux, électronique, machines, véhicules), fournisseurs numériques (places de marché en ligne, moteurs de recherche, réseaux sociaux), recherche. Elles sont contrôlées a posteriori, sur signalement ou incident.\n\nDans les deux cas, l'entité doit en principe dépasser les seuils de la PME de taille moyenne (à partir de 50 employés ou 10 millions d'euros de chiffre d'affaires/total de bilan) pour être automatiquement visée — sauf exceptions prévues par la loi (fournisseur unique dans un pays, entité critique identifiée spécifiquement, certains prestataires numériques, etc., qui peuvent être concernés quelle que soit leur taille).\n\n## Les secteurs couverts par NIS2 {#secteurs}\n\nConcrètement, si votre activité principale relève d'un des secteurs listés ci-dessus (annexes I et II de la loi), la première question à vous poser est votre taille. Si vous dépassez les seuils, vous êtes très probablement concerné. Si vous êtes en dessous, vérifiez s'il existe une exception sectorielle qui vous inclut malgré tout — c'est le cas par exemple pour certains fournisseurs de confiance qualifiés ou de registres de noms de domaine.\n\n## Et si vous n'êtes dans aucune liste ? Le risque de la sous-traitance {#sous-traitance}\n\nC'est le point le moins compris, et pourtant le plus important pour une PME de service ou de production wallonne : NIS2 oblige les entités essentielles et importantes à **sécuriser leur chaîne d'approvisionnement**. Concrètement, un client soumis à NIS2 va progressivement exiger de ses fournisseurs et sous-traitants — vous, peut-être — des garanties de sécurité : politique de mots de passe, gestion des accès, sauvegardes, plan de continuité, parfois même un questionnaire de sécurité ou une clause contractuelle spécifique.\n\nUne PME informatique, un intégrateur, un fabricant de composants, un prestataire de maintenance industrielle ou un cabinet comptable qui travaille pour une entité essentielle ou importante peut donc se retrouver à devoir démontrer un niveau de sécurité minimal **sans être elle-même « dans la loi »**. C'est une concernation indirecte, mais bien réelle et déjà observée sur le terrain.\n\n## Comment vérifier concrètement si vous êtes concerné {#verifier}\n\nTrois vérifications simples, dans l'ordre :\n\n1. **Votre secteur d'activité** figure-t-il dans les annexes I ou II de la loi NIS2 belge ? Le CCB (ccb.belgium.be) publie la liste des secteurs et un outil d'auto-évaluation permettant de clarifier votre statut.\n2. **Votre taille** (effectif, chiffre d'affaires, total de bilan) dépasse-t-elle les seuils PME moyenne, ou existe-t-il une exception qui vous inclut malgré une taille inférieure ?\n3. **Vos principaux clients** sont-ils eux-mêmes des entités essentielles ou importantes ? Si oui, attendez-vous à des exigences contractuelles de sécurité, même sans notification formelle du CCB.\n\nEn cas de doute, un audit de qualification reste la manière la plus fiable de trancher : il croise votre secteur, votre taille et vos relations contractuelles pour établir clairement votre statut réel.\n\n## Ce qui vous attend si vous êtes concerné {#obligations}\n\nSi vous êtes formellement visé par NIS2, les obligations principales sont :\n\n- Mettre en œuvre des mesures techniques et organisationnelles de gestion des risques cyber (gestion des accès, chiffrement, sauvegardes, gestion des vulnérabilités, formation, etc.).\n- Notifier au CCB tout incident significatif : une **alerte précoce sous 24 heures**, suivie d'une notification d'incident plus détaillée, puis d'un rapport final.\n- Assumer une responsabilité de gouvernance : la direction doit approuver et superviser les mesures de cybersécurité, et peut être tenue responsable en cas de manquement grave.\n- S'exposer, en cas de non-conformité constatée, à des sanctions administratives significatives : jusqu'à **10 millions d'euros ou 2 % du chiffre d'affaires mondial** pour les entités essentielles, et jusqu'à **7 millions d'euros ou 1,4 %** pour les entités importantes.\n\n## Que faire maintenant {#plan-action}\n\nNe partez pas du principe que « ça ne me concerne pas » sans l'avoir vérifié — ni du principe inverse que « c'est trop tard » si vous découvrez que vous êtes concerné. Dans les deux cas, la démarche est la même : clarifier votre statut, identifier les écarts entre votre sécurité actuelle et les attentes de NIS2, puis prioriser les actions selon le risque réel.\n\nChez Smidjan, nous accompagnons les PME wallonnes dans cette clarification : audit de qualification NIS2, analyse d'écart par rapport au référentiel CyFun du CCB, et plan de remédiation concret et priorisé. Nous ne sommes pas un organisme de certification — la vérification officielle CyFun reste délivrée par des organismes accrédités BELAC — mais nous vous aidons à savoir où vous en êtes et à vous y préparer sereinement.\n",
+      "tableOfContents": [
+        {
+          "title": "Qu'est-ce que NIS2 et pourquoi ça vous concerne",
+          "id": "quoi"
+        },
+        {
+          "title": "Entités essentielles vs entités importantes : la différence",
+          "id": "essentiel-important"
+        },
+        {
+          "title": "Les secteurs couverts par NIS2",
+          "id": "secteurs"
+        },
+        {
+          "title": "Et si vous n'êtes dans aucune liste ? Le risque de la sous-traitance",
+          "id": "sous-traitance"
+        },
+        {
+          "title": "Comment vérifier concrètement si vous êtes concerné",
+          "id": "verifier"
+        },
+        {
+          "title": "Ce qui vous attend si vous êtes concerné",
+          "id": "obligations"
+        },
+        {
+          "title": "Que faire maintenant",
+          "id": "plan-action"
+        }
+      ]
+    },
+    {
+      "slug": "cyfun-cyberfundamentals-basic-important-essential-quel-niveau",
+      "title": "CyFun (CyberFundamentals) : Basic, Important ou Essential — quel niveau pour votre PME ?",
+      "excerpt": "Small gratuit, Basic, Important, Essential : comment fonctionnent les niveaux du référentiel CyFun du CCB, lequel choisir selon votre statut NIS2, et comment progresser sans se disperser.",
+      "publishedAt": "2026-07-02",
+      "category": "Cybersécurité",
+      "coverImage": "/images/blog/cyfun-cyberfundamentals-basic-important-essential-quel-niveau.jpg",
+      "readTime": "4 min",
+      "content": "# CyFun (CyberFundamentals) : Basic, Important ou Essential — quel niveau pour votre PME ?\n\nUne fois qu'une PME a compris qu'elle est concernée par NIS2 (directement ou via ses clients), la question suivante est toujours la même : « concrètement, je dois faire quoi ? ». La réponse belge à cette question s'appelle **CyFun**, pour CyberFundamentals — le référentiel de cybersécurité développé par le Centre pour la Cybersécurité Belgique (CCB).\n\n## CyFun, c'est quoi exactement ? {#cyfun-definition}\n\nCyFun est un ensemble de mesures de sécurité concrètes, organisées par niveau de maturité, que le CCB met à disposition des organisations belges — publiques et privées — pour structurer leur cybersécurité. Il a été conçu pour être **aligné avec les normes ISO/IEC 27001 et le NIST Cybersecurity Framework**, ce qui signifie que les mesures que vous mettez en place dans le cadre de CyFun ne sont pas une norme isolée : elles se retrouvent, avec le même vocabulaire de fond, dans les référentiels internationaux les plus utilisés. C'est un atout pour une PME qui voudrait, plus tard, aller vers une certification ISO 27001.\n\n## Les 4 niveaux de CyFun {#niveaux}\n\nCyFun propose une progression en quatre niveaux, pensée pour s'adapter à la taille et à la criticité de l'organisation plutôt que d'imposer un standard unique à tout le monde :\n\n- **Small** — le socle gratuit, pensé pour les micro-entreprises et petites structures.\n- **Basic** — l'hygiène de sécurité de base, adaptée à la majorité des PME.\n- **Important** — un niveau renforcé, pour les organisations à risque plus élevé ou soumises à des exigences contractuelles/réglementaires plus strictes.\n- **Essential** — le niveau le plus complet, destiné aux organisations les plus critiques.\n\n## Small : le socle gratuit à 7 mesures {#small}\n\nLe niveau **Small** est gratuit et se limite à **7 mesures fondamentales**. Il a été pensé pour donner à n'importe quelle très petite structure un point de départ accessible, sans expertise technique poussée ni budget dédié : sauvegardes, mots de passe, mises à jour, antivirus, pare-feu de base, sensibilisation minimale et gestion des accès. Ce n'est pas suffisant pour répondre pleinement à NIS2 si vous êtes une entité essentielle ou importante, mais c'est un excellent point d'entrée pour une TPE qui n'a encore rien formalisé.\n\n## Basic, Important, Essential : jusqu'où aller ? {#basic-important-essential}\n\nLes trois niveaux suivants élargissent progressivement le périmètre des mesures couvertes — gouvernance, gestion des identités et des accès, protection des données, détection des incidents, continuité d'activité, gestion des fournisseurs, etc. — et le degré d'exigence attendu sur chacune (une mesure peut passer d'une simple bonne pratique documentée à un contrôle formalisé, testé et audité).\n\nPlutôt que de retenir des chiffres précis de mesures par niveau (qui évoluent avec les versions du référentiel), retenez le principe : **Basic** couvre l'hygiène de sécurité qu'on attend de toute PME sérieuse aujourd'hui ; **Important** ajoute une couche de robustesse et de formalisation pour les organisations dont l'activité ou les clients l'exigent ; **Essential** vise une maturité proche de ce qu'on attend des grandes infrastructures critiques.\n\n## Quel niveau choisir pour votre PME {#choisir}\n\nIl n'y a pas de « bon niveau » dans l'absolu — seulement le niveau adapté à votre situation :\n\n- Vous êtes une **TPE non concernée directement par NIS2**, sans exigence client particulière : commencez par **Small**, c'est gratuit et déjà structurant.\n- Vous êtes une **PME sous-traitante d'une entité essentielle ou importante**, ou vous visez des marchés publics/contrats exigeants : visez au minimum **Basic**, voire **Important** si le donneur d'ordre le demande explicitement.\n- Vous êtes vous-même une **entité importante** au sens de NIS2 : **Basic** est un minimum, **Important** est souvent le niveau réellement attendu.\n- Vous êtes une **entité essentielle**, ou votre activité est critique pour vos clients (santé, énergie, finance, infrastructures) : visez **Important**, voire **Essential** selon votre exposition au risque.\n\n## Le lien entre CyFun et NIS2 {#lien-nis2}\n\nCyFun n'est pas une obligation légale en tant que telle — NIS2 est la loi, CyFun est l'outil opérationnel recommandé par le CCB pour la mettre en œuvre concrètement. En pratique, s'appuyer sur CyFun est aujourd'hui la voie la plus balisée pour une PME belge qui veut démontrer, de façon crédible et reconnue, qu'elle gère ses risques cyber conformément aux attentes de NIS2. Une vérification officielle du niveau atteint peut ensuite être délivrée par un organisme de certification **accrédité BELAC** — une étape distincte de l'accompagnement à la mise en conformité.\n\n## Comment progresser sans tout bloquer {#progression}\n\nL'erreur la plus fréquente est de vouloir viser directement le niveau « Essential » par prudence, et de s'épuiser sur des mesures disproportionnées par rapport au risque réel de l'entreprise. L'approche qui fonctionne, sur le terrain, est progressive : un diagnostic honnête du niveau de départ, un choix de niveau cible réaliste compte tenu de votre statut NIS2 et de vos contraintes (budget, équipe, délais contractuels), puis un plan de remédiation qui traite d'abord les écarts les plus risqués.\n\nC'est exactement le rôle que joue Smidjan auprès des PME wallonnes : un audit d'écart par rapport au référentiel CyFun, un niveau cible argumenté, et un accompagnement à la remédiation — sans jamais se substituer à la vérification officielle, qui reste du ressort des organismes accrédités BELAC.\n",
+      "tableOfContents": [
+        {
+          "title": "CyFun, c'est quoi exactement ?",
+          "id": "cyfun-definition"
+        },
+        {
+          "title": "Les 4 niveaux de CyFun",
+          "id": "niveaux"
+        },
+        {
+          "title": "Small : le socle gratuit à 7 mesures",
+          "id": "small"
+        },
+        {
+          "title": "Basic, Important, Essential : jusqu'où aller ?",
+          "id": "basic-important-essential"
+        },
+        {
+          "title": "Quel niveau choisir pour votre PME",
+          "id": "choisir"
+        },
+        {
+          "title": "Le lien entre CyFun et NIS2",
+          "id": "lien-nis2"
+        },
+        {
+          "title": "Comment progresser sans tout bloquer",
+          "id": "progression"
+        }
+      ]
+    },
+    {
+      "slug": "cheque-cybersecurite-wallon-financer-conformite-nis2",
+      "title": "Financer sa conformité NIS2 : le chèque cybersécurité wallon (75 %)",
+      "excerpt": "75 % des honoraires pris en charge, jusqu'à 60 000 € sur 3 ans : comment fonctionne le chèque cybersécurité wallon, qui peut en bénéficier, et comment le combiner avec les outils gratuits du CCB.",
+      "publishedAt": "2026-07-03",
+      "category": "Cybersécurité",
+      "coverImage": "/images/blog/cheque-cybersecurite-wallon-financer-conformite-nis2.jpg",
+      "readTime": "4 min",
+      "content": "# Financer sa conformité NIS2 : le chèque cybersécurité wallon (75 %)\n\nLa mise en conformité NIS2/CyFun a un coût — audit, analyse d'écart, remédiation technique, formation. Beaucoup de dirigeants de PME wallonnes découvrent tard qu'il existe un dispositif public conçu précisément pour financer cette démarche : le **chèque cybersécurité** de la Région wallonne.\n\n## Le chèque cybersécurité, en bref {#en-bref}\n\nLe chèque cybersécurité fait partie du dispositif des **chèques-entreprises** de la Wallonie. Il prend en charge **75 % des honoraires** d'un prestataire pour des prestations de cybersécurité, dans la limite d'un **plafond de 60 000 € sur 3 ans**. Concrètement, une PME peut mobiliser un budget public conséquent pour financer un audit, un accompagnement ou une préparation à la labellisation, en ne supportant elle-même que 25 % du coût.\n\n## Qui peut en bénéficier {#eligibilite}\n\nLe dispositif cible les **PME au sens européen** : moins de **250 employés** et moins de **50 millions d'euros de chiffre d'affaires**. C'est une fourchette large qui couvre la grande majorité des entreprises wallonnes — d'une TPE de quelques personnes à une PME industrielle bien établie. L'éligibilité précise (secteur, siège d'exploitation en Wallonie, statut de l'entreprise) est à vérifier au moment de la demande sur la plateforme officielle, les conditions pouvant évoluer.\n\n## Ce que le chèque finance {#depenses-eligibles}\n\nLe chèque cybersécurité couvre typiquement trois grands types de prestations :\n\n- **L'audit** : diagnostic de votre niveau de sécurité actuel, identification des vulnérabilités et des écarts par rapport à un référentiel reconnu (comme CyFun).\n- **Le coaching / accompagnement** : mise en œuvre concrète des mesures identifiées, avec un prestataire qui vous guide dans la durée plutôt que de vous laisser seul avec un rapport.\n- **La préparation à la labellisation** : mise à niveau en vue d'une vérification ou d'une certification officielle (CyFun, ISO 27001…) par un organisme compétent.\n\n## Comment ça marche concrètement {#fonctionnement}\n\nLa demande se fait via la plateforme officielle **www.cheques-entreprises.be**, qui centralise l'ensemble des chèques-entreprises wallons (pas uniquement cybersécurité). Le principe général : vous introduisez une demande, vous faites appel à un prestataire pour les travaux, une partie des honoraires facturés vous est remboursée dans les limites du taux et du plafond du dispositif.\n\nUn point d'attention important : pour que le chèque s'applique, votre prestataire doit être **agréé/enregistré pour ce dispositif spécifique** sur la plateforme. Toutes les entreprises de cybersécurité ne le sont pas forcément — c'est une démarche d'agrément distincte de la compétence technique elle-même. Avant d'engager une prestation en comptant sur le chèque, vérifiez systématiquement le statut d'agrément de votre prestataire sur la plateforme officielle.\n\n## Le rôle de Smidjan dans cette démarche {#role-smidjan}\n\nSoyons clairs sur ce que nous sommes et ce que nous ne sommes pas. Smidjan accompagne les PME wallonnes sur le fond : audit NIS2/CyFun, analyse d'écart, plan de remédiation priorisé, préparation technique et organisationnelle à une future vérification. Nous ne sommes **ni un organisme de certification, ni accrédité BELAC** — nous ne délivrons donc aucune certification officielle CyFun, celle-ci relevant exclusivement d'organismes accrédités BELAC. De la même façon, nous ne prétendons pas être, par défaut, un prestataire labellisé pour le chèque cybersécurité : c'est une information à vérifier au cas par cas sur la plateforme officielle avant d'engager une mission en comptant sur ce financement.\n\nNotre valeur ajoutée est ailleurs : vous aider à savoir exactement où vous en êtes, quoi prioriser, et comment préparer sereinement l'étape de vérification — avec ou sans financement public associé.\n\n## Les outils gratuits du CCB à combiner {#outils-gratuits}\n\nLe chèque cybersécurité n'est pas le seul levier disponible. Le CCB met à disposition des PME belges plusieurs ressources gratuites qui complètent utilement une démarche financée :\n\n- Le **référentiel CyFun** et son niveau d'entrée **Small**, gratuit et accessible sans expertise poussée.\n- Des **guides pratiques et outils d'auto-évaluation** publiés sur ccb.belgium.be, pour situer votre organisation avant même d'engager un budget.\n- Les initiatives de sensibilisation type **Safeonweb**, utiles pour former vos équipes à moindre coût.\n\nCombiner ces ressources gratuites en amont avec le chèque cybersécurité pour la partie audit/remédiation est souvent la façon la plus efficace, pour une petite structure, d'avancer sans se ruiner.\n\n## Par où commencer {#par-ou-commencer}\n\nDans l'ordre : clarifiez d'abord votre exposition réelle à NIS2 (directe ou via vos clients), faites un premier point de situation — éventuellement avec les outils gratuits du CCB — puis, si un audit ou un accompagnement plus poussé s'impose, renseignez-vous sur votre éligibilité au chèque cybersécurité et sur l'agrément de votre prestataire avant de signer quoi que ce soit. C'est cette séquence, simple mais souvent négligée, qui évite de dépenser un budget au mauvais endroit.\n",
+      "tableOfContents": [
+        {
+          "title": "Le chèque cybersécurité, en bref",
+          "id": "en-bref"
+        },
+        {
+          "title": "Qui peut en bénéficier",
+          "id": "eligibilite"
+        },
+        {
+          "title": "Ce que le chèque finance",
+          "id": "depenses-eligibles"
+        },
+        {
+          "title": "Comment ça marche concrètement",
+          "id": "fonctionnement"
+        },
+        {
+          "title": "Le rôle de Smidjan dans cette démarche",
+          "id": "role-smidjan"
+        },
+        {
+          "title": "Les outils gratuits du CCB à combiner",
+          "id": "outils-gratuits"
+        },
+        {
+          "title": "Par où commencer",
+          "id": "par-ou-commencer"
+        }
+      ]
+    },
+    {
+      "slug": "cyfun-vs-iso-27001-nis2-que-choisir",
+      "title": "CyFun ou ISO/IEC 27001 : que choisir pour répondre à NIS2 ?",
+      "excerpt": "CyFun est aligné sur ISO/IEC 27001 et le NIST CSF : voici comment choisir entre les deux référentiels pour votre PME, et pourquoi ce n'est pas un choix exclusif.",
+      "publishedAt": "2026-07-04",
+      "category": "Cybersécurité",
+      "coverImage": "/images/blog/cyfun-vs-iso-27001-nis2-que-choisir.jpg",
+      "readTime": "4 min",
+      "content": "# CyFun ou ISO/IEC 27001 : que choisir pour répondre à NIS2 ?\n\nQuand une PME wallonne commence à s'intéresser sérieusement à sa conformité NIS2, elle tombe rapidement sur deux noms de référentiels : **CyFun**, le cadre belge du CCB, et **ISO/IEC 27001**, la norme internationale de management de la sécurité de l'information. La question revient presque systématiquement : lequel choisir ? La réponse honnête est qu'il ne s'agit pas vraiment d'un choix binaire, mais d'une question de point de départ et d'objectif.\n\n## Deux référentiels, un même objectif : la sécurité {#deux-referentiels}\n\nCyFun et ISO 27001 poursuivent le même but — réduire les risques cyber d'une organisation de façon structurée et démontrable — mais avec des philosophies et des publics différents. L'un est né dans un contexte réglementaire belge et pensé pour être accessible aux PME ; l'autre est un standard international générique, utilisé aussi bien par des multinationales que par des PME, mais avec un formalisme plus lourd.\n\n## ISO/IEC 27001 : la norme internationale de référence {#iso27001}\n\nISO/IEC 27001 impose la mise en place d'un **système de management de la sécurité de l'information (SMSI)** complet : politique de sécurité formalisée, gestion documentée des risques, amélioration continue, audits internes, revue de direction. La certification est délivrée par un **organisme de certification accrédité**, à l'issue d'un audit externe formel, et doit être renouvelée périodiquement.\n\nC'est un référentiel puissant et reconnu mondialement — souvent exigé dans des appels d'offres internationaux ou par de grands donneurs d'ordre — mais son coût et sa charge de gestion documentaire peuvent être disproportionnés pour une PME qui cherche avant tout à répondre, de façon proportionnée, à ses obligations NIS2 belges.\n\n## CyFun : le référentiel belge pensé pour NIS2 {#cyfun}\n\nCyFun (CyberFundamentals) a été développé par le CCB spécifiquement pour donner aux organisations belges — PME comprises — un chemin réaliste vers un bon niveau de cybersécurité, avec une entrée en matière progressive (niveaux Small, Basic, Important, Essential) et un niveau gratuit accessible même sans budget. C'est le référentiel opérationnel que le CCB recommande pour structurer la mise en conformité aux exigences de gestion des risques imposées par NIS2.\n\n## CyFun et ISO 27001 sont alignés — voici ce que ça change {#alignement}\n\nLe point clé, souvent méconnu, est que **CyFun a été construit en alignement avec ISO/IEC 27001 et le NIST Cybersecurity Framework**. En pratique, cela signifie que les mesures mises en œuvre dans le cadre de CyFun ne sont pas un travail « perdu » si votre organisation grandit et vise un jour une certification ISO 27001 : les contrôles, le vocabulaire et la logique de gestion des risques se retrouvent largement d'un référentiel à l'autre. Ce n'est pas un jeu à somme nulle entre les deux — c'est une base commune sur laquelle capitaliser.\n\n## Quel référentiel pour votre PME ? {#quel-choix}\n\nQuelques repères pour trancher, selon votre situation :\n\n- Votre priorité est de **répondre à NIS2 de façon proportionnée**, sans viser un marché international exigeant une certification ISO spécifique : **CyFun** est le point d'entrée logique, en particulier via ses niveaux Small ou Basic.\n- Vos **clients ou appels d'offres exigent explicitement une certification ISO 27001** (fréquent dans certains secteurs industriels, IT ou à l'export) : il faudra viser **ISO 27001**, quel que soit votre point de départ CyFun.\n- Vous êtes une **entité essentielle ou importante** avec une exposition forte : viser un **niveau CyFun élevé (Important/Essential)** peut suffire à démontrer une conformité NIS2 solide, sans nécessairement passer par une certification ISO complète — sauf exigence contractuelle spécifique.\n\n## La complémentarité : commencer par CyFun, garder ISO en ligne de mire {#complementarite}\n\nPour la grande majorité des PME wallonnes, la démarche la plus pragmatique est de **commencer par CyFun** : c'est gratuit ou peu coûteux à l'entrée, cela répond directement aux attentes belges de NIS2, et l'alignement avec ISO 27001 signifie que rien n'est perdu si l'entreprise a, plus tard, besoin d'une certification ISO pour des raisons commerciales. C'est une trajectoire raisonnable : maturité croissante d'abord, certification internationale ensuite si le besoin se confirme.\n\n## Notre recommandation {#recommandation}\n\nChez Smidjan, nous recommandons systématiquement à nos clients PME de démarrer par un audit d'écart CyFun : c'est le chemin le plus direct vers une conformité NIS2 crédible, avec un coût et une charge de gestion proportionnés à la taille de l'entreprise. Nous vous aidons à mener cet audit, à prioriser la remédiation, et à évaluer honnêtement si une démarche ISO 27001 complète se justifie dans votre cas. Nous ne délivrons pas nous-mêmes de certification CyFun ou ISO 27001 — ces vérifications officielles relèvent d'organismes accrédités BELAC ou de certificateurs ISO agréés — mais nous vous amenons dans les meilleures conditions possibles jusqu'à cette étape.\n",
+      "tableOfContents": [
+        {
+          "title": "Deux référentiels, un même objectif : la sécurité",
+          "id": "deux-referentiels"
+        },
+        {
+          "title": "ISO/IEC 27001 : la norme internationale de référence",
+          "id": "iso27001"
+        },
+        {
+          "title": "CyFun : le référentiel belge pensé pour NIS2",
+          "id": "cyfun"
+        },
+        {
+          "title": "CyFun et ISO 27001 sont alignés — voici ce que ça change",
+          "id": "alignement"
+        },
+        {
+          "title": "Quel référentiel pour votre PME ?",
+          "id": "quel-choix"
+        },
+        {
+          "title": "La complémentarité : commencer par CyFun, garder ISO en ligne de mire",
+          "id": "complementarite"
+        },
+        {
+          "title": "Notre recommandation",
+          "id": "recommandation"
+        }
+      ]
+    },
+    {
+      "slug": "nis2-echeance-18-avril-2026-verification-pme",
+      "title": "NIS2 : le 18 avril 2026 est passé — ce que la vérification change pour les PME belges",
+      "excerpt": "L'échéance clé du 18 avril 2026 pour NIS2 en Belgique est passée : place à la vérification. Ce que ce changement de posture du CCB change concrètement pour les PME, directement concernées ou via leurs clients.",
+      "publishedAt": "2026-04-24",
+      "category": "Cybersécurité",
+      "coverImage": "/images/blog/nis2-echeance-18-avril-2026-verification-pme.jpg",
+      "readTime": "5 min",
+      "content": "# NIS2 : le 18 avril 2026 est passé — ce que la vérification change pour les PME belges\n\nDeux ans après l'entrée en vigueur de la loi belge transposant NIS2, une échéance concrète est passée le 18 avril 2026 : la date à laquelle les entités essentielles devaient avoir transmis au Centre pour la Cybersécurité Belgique (CCB) leur auto-évaluation CyFun de niveau Basic ou Important, ou, pour celles qui avaient choisi cette voie, leur politique de sécurité de l'information, le périmètre de leur système de management et leur déclaration d'applicabilité ISO 27001. Ce n'était pas une formalité administrative de plus : c'est le moment où le CCB bascule d'une posture d'accompagnement vers une phase de vérification effective. Pour les PME wallonnes concernées, directement ou via leurs clients, la donne change.\n\n## Ce qui devait être fait pour le 18 avril 2026 {#echeance}\n\nConcrètement, les entités essentielles au sens de NIS2 devaient choisir entre deux voies de conformité et transmettre au CCB, au plus tard le 18 avril 2026, les documents correspondants : soit une auto-évaluation selon le référentiel CyFun (CyberFundamentals) au niveau Basic ou Important, soit — pour les organisations disposant déjà d'un système de management de la sécurité de l'information — leur politique ISO 27001, le périmètre couvert et leur déclaration d'applicabilité. Une échéance ultérieure, au 18 avril 2027, portera sur le rapport de progression vers la pleine conformité. Entre les deux, le CCB dispose désormais d'une base concrète pour engager des inspections sur site, des audits ad hoc et, le cas échéant, des instructions contraignantes assorties de délais.\n\n## Où en est la Belgique aujourd'hui {#chiffres}\n\nSelon les chiffres communiqués par le CCB et repris par plusieurs analyses spécialisées, environ 1 500 entités essentielles et 2 500 entités importantes sont aujourd'hui enregistrées dans le dispositif NIS2 belge, pour un total dépassant les 4 000 organisations tous secteurs confondus. Ce chiffre est appelé à augmenter : de nombreuses PME ne se savent pas encore concernées, notamment via leurs relations contractuelles avec des clients qui, eux, sont formellement visés par la loi.\n\n## Le changement de posture du CCB : de l'éducation à la vérification {#posture}\n\nDepuis l'entrée en vigueur de la loi, le CCB a clairement privilégié une approche pédagogique : sensibilisation, outils gratuits, auto-évaluation guidée. À la mi-2026, aucune sanction individuelle n'a encore été rendue publique par le CCB — une continuité assumée de cette posture coopérative des débuts. Mais la mécanique change structurellement après le 18 avril 2026 : les auto-évaluations et déclarations reçues deviennent la base d'un contrôle réel, et non plus seulement d'un accompagnement. Le CCB dispose désormais d'un ensemble d'outils gradués pour faire respecter les obligations, sans que le premier réflexe soit nécessairement l'amende.\n\n## Les outils de contrôle dont dispose le CCB {#outils-controle}\n\nAu-delà des sanctions financières, le CCB peut aujourd'hui : mener des inspections sur site et des contrôles à distance ; exiger des évaluations de conformité via des organismes d'évaluation accrédités ; émettre des instructions contraignantes assorties de délais (les administrations publiques, en particulier, reçoivent ce type d'instruction plutôt que des amendes) ; suspendre ou retirer une certification CyFun, ce qui peut disqualifier une entreprise de certains marchés publics ; et publier le nom d'une organisation ainsi que la nature du manquement constaté. Dans les cas de manquements graves et répétés, le CCB peut aussi demander à un tribunal la suspension temporaire des fonctions de direction responsables.\n\n## Sanctions : ce qui est réellement en jeu {#sanctions}\n\nLes plafonds prévus par la loi restent les mêmes depuis 2024 : jusqu'à 10 millions d'euros ou 2 % du chiffre d'affaires mondial annuel pour les entités essentielles, et jusqu'à 7 millions d'euros ou 1,4 % pour les entités importantes — le montant le plus élevé des deux étant retenu. Pour une PME de taille moyenne, l'exposition théorique reste souvent inférieure à ces plafonds emblématiques ; le risque réel, à ce stade, est moins l'amende spectaculaire que la suspension de certification, la publication du manquement, ou la perte de confiance de clients eux-mêmes soumis à NIS2.\n\n## Et si vous n'avez pas encore commencé {#retard}\n\nManquer une échéance ne signifie pas être immédiatement sanctionné, mais cela vous place en dehors du calendrier que le CCB a désormais pour référence. La priorité, dans ce cas, est de ne pas rester dans l'incertitude : clarifier votre statut exact (essentielle, importante, ou concernée indirectement via un client), documenter où vous en êtes réellement, et engager une trajectoire crédible plutôt que d'attendre un contrôle pour réagir.\n\n## Le rôle indirect : vos clients vont vous le demander {#sous-traitance}\n\nCe point mérite d'être répété : la bascule vers la vérification ne touche pas que les entités formellement enregistrées. Les entités essentielles et importantes doivent elles-mêmes sécuriser leur chaîne d'approvisionnement — et le font en répercutant des exigences contractuelles sur leurs fournisseurs et sous-traitants. Une PME informatique, un prestataire industriel ou un cabinet de services qui travaille pour un hôpital, une banque ou un opérateur d'infrastructure va de plus en plus se voir demander des garanties concrètes : politique de mots de passe, gestion des accès, procédure d'incident, parfois un questionnaire de sécurité formel. C'est souvent ainsi que la vérification NIS2 finit par toucher des PME qui pensaient ne pas être concernées.\n\n## Ce que Smidjan recommande maintenant {#recommandation}\n\nChez Smidjan, nous accompagnons les PME wallonnes dans cette clarification et cette mise en conformité : audit de qualification NIS2, analyse d'écart par rapport au référentiel CyFun, et plan de remédiation priorisé selon le risque réel. Nous ne sommes ni un organisme de certification, ni accrédité BELAC — la vérification officielle CyFun ou la certification ISO 27001 restent délivrées par des organismes accrédités BELAC. Notre rôle est de vous aider à savoir précisément où vous en êtes avant que ce soit un client, un partenaire ou le CCB qui vous pose la question.\n\n---\n\n**Sources**\n- [NIS2 | CCB Belgium](https://ccb.belgium.be/regulation/nis2)\n- [NIS2: 18 April 2026 deadline – What essential entities must have in place | CCB Belgium](https://ccb.belgium.be/news/nis2-18-april-2026-deadline-what-essential-entities-must-have-place)\n- [One year of NIS2 in Belgium: leading the way and moving forward | CCB Belgium](https://ccb.belgium.be/news/one-year-nis2-belgium-leading-way-and-moving-forward)\n- [NIS2 fines in Belgium: what enforcement actually looks like (2026) | Jimber](https://jimber.io/blog/nis2-fines-belgium-what-enforcement-actually-looks-like/)\n- [Belgium's NIS2 Audit Window Opens April 18, 2026 | Security Boulevard](https://securityboulevard.com/2026/04/belgiums-nis2-audit-window-opens-april-18-2026-the-rest-of-the-eu-is-right-behind/)\n",
+      "tableOfContents": [
+        {
+          "title": "Ce qui devait être fait pour le 18 avril 2026",
+          "id": "echeance"
+        },
+        {
+          "title": "Où en est la Belgique aujourd'hui",
+          "id": "chiffres"
+        },
+        {
+          "title": "Le changement de posture du CCB : de l'éducation à la vérification",
+          "id": "posture"
+        },
+        {
+          "title": "Les outils de contrôle dont dispose le CCB",
+          "id": "outils-controle"
+        },
+        {
+          "title": "Sanctions : ce qui est réellement en jeu",
+          "id": "sanctions"
+        },
+        {
+          "title": "Et si vous n'avez pas encore commencé",
+          "id": "retard"
+        },
+        {
+          "title": "Le rôle indirect : vos clients vont vous le demander",
+          "id": "sous-traitance"
+        },
+        {
+          "title": "Ce que Smidjan recommande maintenant",
+          "id": "recommandation"
+        }
+      ]
+    },
+    {
+      "slug": "deepfake-vishing-arnaque-president-ia-pme-belges",
+      "title": "Deepfakes et vishing : quand l'IA imite votre patron (ou le roi) pour arnaquer votre PME",
+      "excerpt": "Deepfakes, clonage vocal, fausses visioconférences : l'arnaque au président version IA a même touché des chefs d'entreprise belges via une usurpation du roi Philippe. Comment reconnaître et contrer ces attaques.",
+      "publishedAt": "2026-05-19",
+      "category": "Cybersécurité",
+      "coverImage": "/images/blog/deepfake-vishing-arnaque-president-ia-pme-belges.jpg",
+      "readTime": "5 min",
+      "content": "# Deepfakes et vishing : quand l'IA imite votre patron (ou le roi) pour arnaquer votre PME\n\nL'arnaque au président n'est pas nouvelle, mais sa version 2026 change de nature. Ce n'est plus seulement un e-mail bien écrit signé « le CEO » : c'est une voix clonée, parfois une visioconférence entièrement générée, capable de convaincre un comptable ou un assistant de direction qu'il parle réellement à son patron — ou, en Belgique, à des personnalités bien plus haut placées encore. Pour les PME belges, cette évolution technique change directement la nature du risque et les réflexes à adopter.\n\n## Le phishing belge en chiffres : près de 10 millions de signalements en 2025 {#phishing-chiffres}\n\nSelon le CCB, la plateforme suspicious@safeonweb.be a reçu près de 10 millions de signalements de messages suspects en 2025 (9 929 354 exactement) — un volume qui confirme que le phishing reste, de loin, la menace la plus fréquente à laquelle sont exposés les Belges et leurs entreprises. Un peu plus de quatre Belges sur dix transmettent aujourd'hui ces messages suspects, un réflexe qui alimente le système d'alerte BAPS et qui aurait permis d'éviter près de 200 millions de clics vers des sites malveillants sur la seule année 2025. C'est un dispositif unique en Europe — mais son efficacité dépend directement du nombre de personnes qui gardent ce réflexe de signalement.\n\n## Quand l'IA élimine les signaux d'alerte classiques {#ia-phishing}\n\nLe vrai changement de 2026 n'est pas le volume de phishing, mais sa qualité. Le CCB le constate directement : les nouveaux outils d'IA générative permettent aux cybercriminels d'écrire un français, un néerlandais ou un anglais irréprochables, et d'imiter le style de communication précis d'une entreprise ou d'une administration. Les fautes d'orthographe et les tournures maladroites, longtemps le premier réflexe de détection enseigné aux employés, disparaissent — et les filtres anti-spam classiques deviennent plus faciles à contourner. Selon l'ENISA (rapport Threat Landscape 2025), le phishing, le vishing, le spam et le malvertising représentent ensemble environ 60 % des incidents rapportés en Europe.\n\n## L'arnaque au président version 2026 : le cas du « roi Philippe » {#cas-roi-philippe}\n\nL'exemple belge le plus frappant de ce début d'année 2026 dépasse la fraude d'entreprise classique. Depuis le début de l'année 2025, des escrocs contactent des chefs d'entreprise, des dignitaires étrangers et des familles belges par téléphone, WhatsApp ou e-mail en se faisant passer pour le roi Philippe, son chef de cabinet Vincent Houssiau, ou le général-major Stéphane Dutron, chef du Service général du renseignement et de la sécurité. Certains dirigeants d'entreprise ont reçu de fausses invitations à un dîner de gala de la Fondation Roi Baudouin, accompagnées de demandes de contribution ou de sponsoring pour un événement qui n'existe pas. Le Parquet fédéral, la Federal Computer Crime Unit et le CCB ont ouvert une enquête conjointe : les fraudeurs utilisent l'IA pour générer de fausses visioconférences convaincantes. Cette affaire illustre à quel point l'usurpation d'identité par IA a quitté le registre de la démonstration technique pour devenir un outil de fraude opérationnel, y compris contre des cibles a priori bien informées.\n\n## Le vishing par clonage vocal : comment ça marche concrètement {#vishing-clonage}\n\nLe vishing (phishing vocal) assisté par IA repose sur un principe simple : cloner une voix à partir d'un échantillon audio public — un extrait de webinaire, une interview, une vidéo LinkedIn — puis l'utiliser en temps réel ou en message préenregistré pour se faire passer pour un dirigeant, un fournisseur ou un technicien support. Le coût d'entrée pour ce type d'attaque est devenu dérisoire : quelques dizaines d'euros par mois pour un abonnement de clonage vocal, quelques centimes pour usurper un numéro de téléphone via un service VoIP. Selon plusieurs études reprises par des acteurs spécialisés en détection de fraude, la fiabilité humaine pour distinguer une voix ou une vidéo générée par IA d'un contenu authentique reste très limitée — ce qui rend la vigilance procédurale plus importante que la seule vigilance perceptive.\n\n## Pourquoi les PME sont des cibles de choix {#pme-cibles}\n\nUne grande entreprise dispose généralement de procédures de validation à double contrôle pour tout virement significatif. Une PME de 20 à 100 personnes, elle, combine souvent des flux financiers réels avec des procédures moins formalisées : un seul comptable habilité, une confiance directe dans un appel du « patron », pas de protocole écrit de vérification des demandes urgentes. C'est précisément cette combinaison — argent réel, contrôle allégé — qui rend les PME particulièrement exposées à ce type de fraude, bien plus que leur taille ne le laisserait supposer.\n\n## Les bons réflexes pour se protéger {#protection}\n\nAucune technologie de détection ne remplace une procédure claire. Trois réflexes simples réduisent l'essentiel du risque : imposer une double validation humaine pour tout virement inhabituel ou urgent, indépendamment de qui semble le demander ; rappeler systématiquement sur un numéro connu à l'avance (jamais celui fourni par l'appelant) avant d'exécuter une demande sensible reçue par téléphone, message ou visioconférence ; et former les équipes financières et administratives spécifiquement à ce type de scénario, pas seulement au phishing par e-mail classique.\n\n## Ce que Smidjan recommande {#recommandation}\n\nChez Smidjan, la sensibilisation à ces nouveaux scénarios de fraude fait partie intégrante de nos accompagnements CyFun et NIS2 : les mesures de gestion des accès et de gouvernance qu'impose le référentiel couvrent aussi ce type de risque humain, souvent négligé au profit des seules mesures techniques. Une PME bien préparée sur le papier peut rester vulnérable si ses équipes n'ont jamais été confrontées, même en formation, à ce genre de scénario.\n\n---\n\n**Sources**\n- [Phishing messages surge: Safeonweb receives nearly 10 million suspicious alerts in 2025 | CCB Belgium](https://ccb.belgium.be/news/phishing-messages-surge-safeonweb-receives-nearly-10-million-suspicious-alerts-2025)\n- [44% of Belgians forward phishing messages to suspicious@safeonweb.be | CCB Belgium](https://ccb.belgium.be/news/44-belgians-forward-phishing-messages-suspicioussafeonwebbe)\n- [Deepfake royal : un roi Philippe généré par IA arnaque des chefs d'entreprise | Le Vif](https://www.levif.be/belgique/deepfake-royal-un-roi-philippe-genere-par-ia-arnaque-des-chefs-dentreprise/)\n- [ENISA Threat Landscape 2025](https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025)\n",
+      "tableOfContents": [
+        {
+          "title": "Le phishing belge en chiffres : près de 10 millions de signalements en 2025",
+          "id": "phishing-chiffres"
+        },
+        {
+          "title": "Quand l'IA élimine les signaux d'alerte classiques",
+          "id": "ia-phishing"
+        },
+        {
+          "title": "L'arnaque au président version 2026 : le cas du « roi Philippe »",
+          "id": "cas-roi-philippe"
+        },
+        {
+          "title": "Le vishing par clonage vocal : comment ça marche concrètement",
+          "id": "vishing-clonage"
+        },
+        {
+          "title": "Pourquoi les PME sont des cibles de choix",
+          "id": "pme-cibles"
+        },
+        {
+          "title": "Les bons réflexes pour se protéger",
+          "id": "protection"
+        },
+        {
+          "title": "Ce que Smidjan recommande",
+          "id": "recommandation"
+        }
+      ]
+    },
+    {
+      "slug": "rancongiciels-2026-lecons-az-monica-pme-belges",
+      "title": "Rançongiciels en 2026 : ce que l'attaque contre l'hôpital AZ Monica apprend aux PME belges",
+      "excerpt": "L'attaque contre l'hôpital AZ Monica en janvier 2026 illustre la réalité du rançongiciel aujourd'hui. Chiffres belges, mécanique de la double extorsion, et mesures concrètes pour les PME.",
+      "publishedAt": "2026-03-06",
+      "category": "Cybersécurité",
+      "coverImage": "/images/blog/rancongiciels-2026-lecons-az-monica-pme-belges.jpg",
+      "readTime": "5 min",
+      "content": "# Rançongiciels en 2026 : ce que l'attaque contre l'hôpital AZ Monica apprend aux PME belges\n\nLe 13 janvier 2026, à 6h32 du matin, les équipes informatiques de l'hôpital AZ Monica à Anvers détectent une activité de chiffrement inhabituelle sur leurs serveurs centraux. En quelques minutes, la direction prend une décision radicale : couper elle-même l'ensemble de son infrastructure sur les deux campus, Anvers et Deurne, avant même de savoir précisément ce qui se passe. Cette attaque, l'une des plus documentées de l'année en Belgique, illustre à la fois la réalité du risque rançongiciel en 2026 et les décisions difficiles qu'il impose — des décisions qui concernent aussi, à leur échelle, les PME belges.\n\n## L'attaque : que s'est-il passé le 13 janvier 2026 {#attaque-az-monica}\n\nDès la détection de l'incident, AZ Monica a suspendu l'accès aux dossiers patients électroniques, annulé l'ensemble des interventions chirurgicales prévues ce jour-là — plus de 70 opérations — et fait transférer sept patients en soins critiques vers d'autres établissements par la Croix-Rouge, certains dans un état sérieux. Les examens radiologiques, l'imagerie médicale et certains traitements de chimiothérapie ont dû être reportés ou pris en charge par des hôpitaux voisins, dont un centre universitaire à Amsterdam qui a accueilli en urgence des patients nécessitant une chimiothérapie. Le parquet a confirmé qu'il s'agissait d'une cyberattaque ; la presse locale (GVA) a rapporté que le réseau avait été infecté par un rançongiciel, sans qu'aucun groupe ne revendique publiquement l'attaque ni qu'une demande de rançon ne soit rendue publique. Le CEO de l'hôpital, Geert Smits, a justifié l'arrêt préventif des serveurs par la volonté d'éviter toute exfiltration ou compromission des données patients. Aucun décès n'a été attribué aux perturbations, et une réouverture progressive a débuté dès le 15 janvier.\n\n## Pourquoi l'arrêt volontaire des serveurs était la bonne décision {#arret-serveurs}\n\nCe réflexe — couper soi-même l'infrastructure avant d'avoir toutes les réponses — est souvent perçu comme disproportionné vu de l'extérieur. C'est pourtant, dans la plupart des cas documentés de rançongiciel, la décision qui limite le plus efficacement la casse : elle stoppe la propagation latérale du chiffrement et l'éventuelle exfiltration de données en cours, au prix d'une interruption d'activité immédiate et visible. Pour une PME, la même logique s'applique à plus petite échelle : savoir qui a l'autorité et la procédure pour couper un système en urgence, sans attendre une validation hiérarchique lente, fait souvent la différence entre un incident contenu et une crise généralisée.\n\n## Le rançongiciel en 2026 : une menace devenue « normale » {#etat-menace}\n\nLes rapports spécialisés parlent désormais d'un « nouveau normal » pour les rançongiciels : après le pic observé fin 2025, les volumes d'attaques sont restés élevés et stables au premier trimestre 2026, sans redescendre au niveau antérieur. Selon l'ENISA (Threat Landscape 2025, analyse de 4 875 incidents entre juillet 2024 et juin 2025), le rançongiciel représente à lui seul 81,1 % des incidents de cybercriminalité recensés dans l'Union européenne — une proportion écrasante qui confirme qu'il reste, de très loin, la première menace pour les organisations de toute taille.\n\n## Double et triple extorsion : le nouveau modèle économique {#double-extorsion}\n\nLe modèle du rançongiciel a changé de nature ces dernières années. Le chiffrement des fichiers n'est plus l'unique levier de pression : les groupes exfiltrent d'abord les données, puis menacent de les publier (double extorsion), voire de contacter directement les clients ou partenaires de la victime pour faire pression (triple extorsion). La démocratisation du Ransomware-as-a-Service, la publication d'outils de construction de rançongiciels et la multiplication des « courtiers en accès » (qui revendent des accès déjà compromis) ont considérablement abaissé la barrière à l'entrée pour de nouveaux groupes, rendant l'écosystème plus diversifié et plus résilient face aux actions de police.\n\n## Les chiffres belges : +70 % de notifications en un an {#chiffres-belgique}\n\nLe CCB a recensé 635 notifications d'incidents en 2025, soit une hausse de près de 70 % par rapport à 2024 ; parmi elles, 556 relevaient directement d'incidents cyber, en hausse de 58 % sur un an. Cette progression ne signifie pas nécessairement que la Belgique est plus attaquée que ses voisins européens — elle reflète aussi une meilleure culture de signalement, en partie portée par les obligations NIS2 elles-mêmes. Mais elle confirme que le rançongiciel reste, pour le CCB comme pour l'ENISA, la préoccupation numéro un.\n\n## Ce qu'une PME peut retenir de l'attaque d'un hôpital {#lecons-pme}\n\nUne PME n'a évidemment ni les enjeux ni les moyens d'un hôpital universitaire. Mais deux leçons se transposent directement : d'abord, la rapidité de détection compte davantage que la sophistication des outils — AZ Monica a réagi en quelques minutes grâce à une supervision active de ses serveurs ; ensuite, la continuité d'activité ne se décide pas dans l'urgence — elle se prépare, avec des procédures de repli et des contacts de secours identifiés à l'avance, pas au moment de la crise.\n\n## Les mesures qui font la différence {#mesures-protection}\n\nFace à un rançongiciel, un socle de mesures reste déterminant : des sauvegardes réellement isolées du réseau principal (donc inaccessibles au chiffrement en cas de compromission), un plan de réponse à incident testé au moins une fois par an, une segmentation réseau qui limite la propagation latérale, et une supervision active capable de détecter une activité de chiffrement anormale avant qu'elle ne s'étende. Ce sont précisément les mesures que couvre le référentiel CyFun du CCB, dès son niveau Basic.\n\n## Ce que Smidjan recommande {#recommandation}\n\nChez Smidjan, nous intégrons systématiquement un test de robustesse des sauvegardes et un exercice de simulation d'incident dans nos audits CyFun/NIS2 — car sur le terrain, c'est souvent là, plus que sur le papier, que se joue la différence entre un incident maîtrisé en quelques heures et une paralysie de plusieurs jours.\n\n---\n\n**Sources**\n- [Cyberattack forces Belgian hospital to transfer critical care patients | The Record from Recorded Future News](https://therecord.media/belgium-hospital-cyberattack-antwerp-az-monica)\n- [AZ Monica hospital in Belgium shuts down servers after cyberattack | Security Affairs](https://securityaffairs.com/186882/cyber-crime/az-monica-hospital-in-belgium-shuts-down-servers-after-cyberattack.html)\n- [More attacks, more reporting: Belgium's cyber reality in 2025 | CCB Belgium](https://ccb.belgium.be/news/more-attacks-more-reporting-belgiums-cyber-reality-2025)\n- [ENISA Threat Landscape 2025](https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025)\n",
+      "tableOfContents": [
+        {
+          "title": "L'attaque : que s'est-il passé le 13 janvier 2026",
+          "id": "attaque-az-monica"
+        },
+        {
+          "title": "Pourquoi l'arrêt volontaire des serveurs était la bonne décision",
+          "id": "arret-serveurs"
+        },
+        {
+          "title": "Le rançongiciel en 2026 : une menace devenue « normale »",
+          "id": "etat-menace"
+        },
+        {
+          "title": "Double et triple extorsion : le nouveau modèle économique",
+          "id": "double-extorsion"
+        },
+        {
+          "title": "Les chiffres belges : +70 % de notifications en un an",
+          "id": "chiffres-belgique"
+        },
+        {
+          "title": "Ce qu'une PME peut retenir de l'attaque d'un hôpital",
+          "id": "lecons-pme"
+        },
+        {
+          "title": "Les mesures qui font la différence",
+          "id": "mesures-protection"
+        },
+        {
+          "title": "Ce que Smidjan recommande",
+          "id": "recommandation"
+        }
+      ]
+    },
+    {
+      "slug": "attaques-chaine-approvisionnement-fournisseurs-pme-2026",
+      "title": "Fournisseurs compromis : ce que ChipSoft et le ver npm Shai-Hulud apprennent aux PME sur leur chaîne d'approvisionnement",
+      "excerpt": "L'incident ChipSoft et le ver npm Shai-Hulud montrent comment un seul fournisseur compromis peut paralyser des dizaines d'organisations. Ce que NIS2 attend des PME sur leur chaîne d'approvisionnement.",
+      "publishedAt": "2026-06-12",
+      "category": "Cybersécurité",
+      "coverImage": "/images/blog/attaques-chaine-approvisionnement-fournisseurs-pme-2026.jpg",
+      "readTime": "5 min",
+      "content": "# Fournisseurs compromis : ce que ChipSoft et le ver npm Shai-Hulud apprennent aux PME sur leur chaîne d'approvisionnement\n\nLe 7 avril 2026, un rançongiciel frappe ChipSoft, l'éditeur néerlandais du dossier patient électronique HiX, utilisé par environ 80 % des hôpitaux des Pays-Bas. En quelques heures, l'incident déborde largement les frontières néerlandaises : plusieurs hôpitaux belges, clients du même éditeur, voient leurs portails patients tomber en panne. Ce n'est pas un cas isolé : 2025 et 2026 ont vu la chaîne d'approvisionnement logicielle devenir, selon l'ENISA, l'un des trois principaux vecteurs d'attaque en Europe. Pour une PME belge, la question n'est plus seulement « suis-je bien protégé ? » mais « mes fournisseurs le sont-ils, et que se passe-t-il s'ils ne le sont pas ? ».\n\n## L'incident ChipSoft : un seul logiciel, plusieurs hôpitaux paralysés {#chipsoft}\n\nL'agence néerlandaise de cybersécurité pour le secteur de la santé, Z-CERT, a confirmé l'attaque le 8 avril 2026. ChipSoft a évoqué en interne un « incident de données » avec un possible accès non autorisé, et a désactivé par précaution les connexions à ses services (Zorgportaal, HiX Mobile, Zorgplatform) auprès de l'ensemble de ses clients — le temps de contenir les dégâts. Côté belge, plusieurs hôpitaux utilisant les solutions ChipSoft, dont le réseau ZAS (Ziekenhuis aan de Stroom), l'hôpital Oost-Limburg (ZOL) et l'hôpital Delta, ont vu leurs services numériques aux patients perturbés — sans qu'aucun de ces établissements n'ait été directement ciblé. C'est bien la dépendance à un fournisseur commun qui a propagé l'impact d'un seul incident à des organisations qui, individuellement, n'avaient rien à se reprocher sur le plan de leur propre sécurité.\n\n## Le ver npm Shai-Hulud : quand un simple paquet de code devient une arme {#shai-hulud}\n\nDans un tout autre registre, l'écosystème npm — le gestionnaire de paquets utilisé par la quasi-totalité des projets JavaScript et Node.js dans le monde, y compris par de nombreuses PME de développement web — a subi depuis septembre 2025 une série d'attaques particulièrement inventives. Le ver « Shai-Hulud » s'est propagé via des comptes de mainteneurs de paquets compromis par phishing (de faux messages invitant à « mettre à jour » l'authentification à deux facteurs sur npm), avant de publier automatiquement des versions malveillantes de tout paquet accessible dès qu'il détectait d'autres jetons npm dans l'environnement compromis — plus de 500 paquets touchés dans sa première vague, dont des bibliothèques largement utilisées. Le malware volait les identifiants, les clés cloud et les jetons CI/CD, et créait des dépôts GitHub publics contenant les secrets collectés. Une variante (« Mini Shai-Hulud », attribuée à un acteur nommé TeamPCP) a encore touché des paquets de l'écosystème TanStack début 2026, avec une technique d'accès initial ne nécessitant même plus d'identifiants volés.\n\n## Pourquoi la chaîne d'approvisionnement est devenue la cible n°1 {#pourquoi}\n\nLe raisonnement des attaquants est simple : compromettre un seul fournisseur, un seul paquet logiciel ou une seule intégration cloud permet d'atteindre d'un coup des centaines, voire des milliers d'organisations clientes. Ce raisonnement s'est vérifié aussi bien en 2025, avec la compromission de jetons OAuth de l'application Drift (intégrée à Salesforce), qui a permis d'accéder aux environnements Salesforce de plus de 700 organisations dans le monde en quelques jours, qu'à travers les multiples vagues touchant l'écosystème npm. Selon l'ENISA, cette bascule s'accompagne d'une évolution des cibles : les attaquants ne visent plus seulement des paquets logiciels isolés, mais l'ensemble du cycle de livraison — dépôts de code source, automatisations, pipelines de build.\n\n## Le lien avec NIS2 : sécuriser vos propres fournisseurs {#lien-nis2}\n\nC'est précisément ce risque que NIS2 cherche à adresser en imposant aux entités essentielles et importantes de sécuriser leur chaîne d'approvisionnement — ce qui inclut d'évaluer leurs propres fournisseurs, dont beaucoup sont des PME. Une PME qui développe un logiciel, héberge des données ou intègre des outils tiers pour le compte d'un client soumis à NIS2 doit s'attendre à des questions de plus en plus précises sur sa propre gestion des dépendances : quels paquets open source utilisez-vous, comment gérez-vous vos mises à jour, que se passe-t-il si l'un de vos propres fournisseurs est compromis ?\n\n## Ce qu'une PME peut faire concrètement {#mesures-pme}\n\nSans disposer des moyens d'un grand groupe, une PME peut réduire significativement son exposition avec quelques mesures ciblées : tenir un inventaire des dépendances logicielles critiques (un SBOM, même simple) ; limiter les jetons d'accès (npm, GitHub, cloud) au strict nécessaire et les faire expirer régulièrement ; activer une authentification forte sur tous les comptes de publication ou de gestion de paquets ; et, pour les logiciels métiers critiques fournis par un tiers (comme un éditeur de dossier patient ou un ERP), demander explicitement à ce fournisseur quelles garanties de sécurité et quel plan de continuité il propose en cas d'incident chez lui.\n\n## Ce que Smidjan recommande {#recommandation}\n\nDans nos audits NIS2/CyFun, la cartographie des fournisseurs critiques et des dépendances logicielles fait partie des points que nous examinons systématiquement — car un plan de sécurité qui s'arrête aux frontières de l'entreprise, sans regarder ses fournisseurs, laisse ouverte exactement la porte que les incidents ChipSoft et Shai-Hulud ont exploitée en 2025-2026.\n\n---\n\n**Sources**\n- [Ransomware attack on ChipSoft knocks EHR services offline across hospitals in the Netherlands and Belgium | Security Affairs](https://securityaffairs.com/190615/cyber-crime/ransomware-attack-on-chipsoft-knocks-ehr-services-offline-across-hospitals-in-the-netherlands-and-belgium.html)\n- [Ransomware knocks Dutch healthcare software vendor offline | The Register](https://www.theregister.com/2026/04/08/chipsoft_ransomware/)\n- [Shai-Hulud 2.0: Guidance for detecting, investigating, and defending against the supply chain attack | Microsoft Security Blog](https://www.microsoft.com/en-us/security/blog/2025/12/09/shai-hulud-2-0-guidance-for-detecting-investigating-and-defending-against-the-supply-chain-attack/)\n- [\"Shai-Hulud\" Worm Compromises npm Ecosystem in Supply Chain Attack | Unit 42](https://unit42.paloaltonetworks.com/npm-supply-chain-attack/)\n- [ENISA Threat Landscape 2025](https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025)\n- [Widespread Data Theft Targets Salesforce Instances via Salesloft Drift | Google Cloud Blog](https://cloud.google.com/blog/topics/threat-intelligence/data-theft-salesforce-instances-via-salesloft-drift)\n",
+      "tableOfContents": [
+        {
+          "title": "L'incident ChipSoft : un seul logiciel, plusieurs hôpitaux paralysés",
+          "id": "chipsoft"
+        },
+        {
+          "title": "Le ver npm Shai-Hulud : quand un simple paquet de code devient une arme",
+          "id": "shai-hulud"
+        },
+        {
+          "title": "Pourquoi la chaîne d'approvisionnement est devenue la cible n°1",
+          "id": "pourquoi"
+        },
+        {
+          "title": "Le lien avec NIS2 : sécuriser vos propres fournisseurs",
+          "id": "lien-nis2"
+        },
+        {
+          "title": "Ce qu'une PME peut faire concrètement",
+          "id": "mesures-pme"
+        },
+        {
+          "title": "Ce que Smidjan recommande",
+          "id": "recommandation"
+        }
+      ]
     }
   ]
 }

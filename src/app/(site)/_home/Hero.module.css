@@ -13,6 +13,19 @@
   padding-bottom: 76px;
 }
 
+.kickerRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.rule {
+  width: 34px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--orange);
+  flex: none;
+}
 .badge {
   display: inline-flex;
   align-items: center;
@@ -29,20 +42,22 @@
 .tag {
   background: var(--orange-t);
   color: var(--orange-d);
+  font-family: var(--mono);
   font-size: 11px;
   font-weight: 700;
   padding: 3px 8px;
   border-radius: var(--radius-pill);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
 }
 
 .title {
-  font-size: clamp(36px, 4.8vw, 56px);
-  margin: 22px 0 0;
-  letter-spacing: -0.03em;
-  line-height: 1.12;
+  font-size: clamp(38px, 5.4vw, 64px);
+  margin: 24px 0 0;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
   color: var(--navy);
   font-weight: 800;
+  text-wrap: balance;
 }
 .lead {
   margin-top: 22px;
@@ -87,13 +102,16 @@
   position: relative;
 }
 .shieldCard {
-  background: var(--navy);
+  background: linear-gradient(165deg, var(--navy-2) 0%, var(--navy) 62%, #081527 100%);
   border-radius: 18px;
   padding: 34px;
   color: var(--on-dark-text);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 24px 60px -20px rgba(11, 31, 58, 0.5);
+  border-top: 3px solid var(--orange);
+  box-shadow:
+    0 30px 70px -22px rgba(11, 31, 58, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
 }
 .gridBg {
   position: absolute;
@@ -180,7 +198,7 @@
 }
 .score {
   font-family: var(--mono);
-  font-size: 42px;
+  font-size: 46px;
   font-weight: 800;
   color: #fff;
   line-height: 1;

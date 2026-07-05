@@ -85,7 +85,7 @@ export function WhySmidjan() {
   return (
     <div className={styles.grid}>
       <div>
-        <Eyebrow>Pourquoi Smidjan</Eyebrow>
+        <Eyebrow onDark className={styles.kickerMono}>Pourquoi Smidjan</Eyebrow>
         <h2 className={styles.title}>
           La rigueur d&apos;un grand cabinet, la <span className="accent">proximité</span>{" "}
           d&apos;un partenaire

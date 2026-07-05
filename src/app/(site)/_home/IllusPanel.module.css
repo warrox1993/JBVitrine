@@ -13,6 +13,17 @@
 .panel.onTint {
   background: var(--bg-2);
 }
+.panel.onDark {
+  background: linear-gradient(160deg, var(--navy-3) 0%, var(--navy-2) 100%);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 26px 58px -28px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+}
+.kickerMono {
+  font-family: var(--mono) !important;
+  letter-spacing: 0.06em !important;
+}
 .txt h3 {
   font-size: 20px;
   margin-top: 12px;
@@ -29,6 +40,15 @@
 .txt p b {
   color: var(--navy);
   font-weight: 700;
+}
+.panel.onDark .txt h3 {
+  color: #fff;
+}
+.panel.onDark .txt p {
+  color: var(--on-dark-muted);
+}
+.panel.onDark .txt p b {
+  color: #fff;
 }
 .fig {
   margin: 0;

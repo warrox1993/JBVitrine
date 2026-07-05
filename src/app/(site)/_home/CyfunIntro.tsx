@@ -9,7 +9,7 @@ export function CyfunIntro() {
   return (
     <div className={styles.intro}>
       <div>
-        <Eyebrow>Section phare · Conformité</Eyebrow>
+        <Eyebrow className={styles.kickerMono}>Section phare · Conformité</Eyebrow>
         <h2 className={styles.title}>
           NIS2 &amp; CyberFundamentals&nbsp;: se mettre en règle,{" "}
           <span className="accent">concrètement</span>

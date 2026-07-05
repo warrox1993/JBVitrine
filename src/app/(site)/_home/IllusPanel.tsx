@@ -10,15 +10,21 @@ export interface IllusPanelProps {
   figure: React.ReactNode;
   /** Tint the panel background (var(--bg-2)). */
   onTint?: boolean;
+  /** Style for a full-navy Section backdrop (elevated dark slab, white text). */
+  onDark?: boolean;
 }
 
 /** Two-column text + inline-SVG illustration panel. */
-export function IllusPanel({ eyebrow, title, text, figure, onTint }: IllusPanelProps) {
-  const cn = [styles.panel, onTint ? styles.onTint : ""].filter(Boolean).join(" ");
+export function IllusPanel({ eyebrow, title, text, figure, onTint, onDark }: IllusPanelProps) {
+  const cn = [styles.panel, onTint ? styles.onTint : "", onDark ? styles.onDark : ""]
+    .filter(Boolean)
+    .join(" ");
   return (
     <div className={cn}>
       <div className={styles.txt}>
-        <Eyebrow>{eyebrow}</Eyebrow>
+        <Eyebrow onDark={onDark} className={styles.kickerMono}>
+          {eyebrow}
+        </Eyebrow>
         <h3>{title}</h3>
         <p>{text}</p>
       </div>
