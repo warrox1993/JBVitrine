@@ -7,8 +7,8 @@
   border: 1px solid var(--line);
   border-left: 3px solid var(--navy-3);
   border-radius: 10px;
-  padding: 22px 24px;
-  box-shadow: var(--shadow-s);
+  padding: 24px 26px;
+  box-shadow: var(--shadow);
 }
 .honesty svg {
   width: 26px;

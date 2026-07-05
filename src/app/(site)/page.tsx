@@ -248,10 +248,11 @@ export default function HomePage() {
         />
       </Section>
 
-      {/* ===== Why Smidjan ===== */}
-      <Section variant="tint" id="pourquoi">
+      {/* ===== Why Smidjan — full-bleed navy chapter ===== */}
+      <Section variant="navy" gridBg id="pourquoi">
         <WhySmidjan />
         <IllusPanel
+          onDark
           eyebrow="Souveraineté des données"
           title="Basés à Liège, vos données restent en Belgique"
           text={
@@ -296,8 +297,8 @@ export default function HomePage() {
         <Testimonials />
       </Section>
 
-      {/* ===== Insight teaser ===== */}
-      <Section variant="tint" id="insight">
+      {/* ===== Insight teaser — full-bleed navy chapter ===== */}
+      <Section variant="navy" gridBg id="insight">
         <InsightTeaser />
       </Section>
 

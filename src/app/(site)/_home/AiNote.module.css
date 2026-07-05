@@ -14,6 +14,7 @@
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: var(--shadow-s);
 }
 .note svg {
   width: 20px;

@@ -664,6 +664,361 @@ export default function ConformiteNis2Page() {
         </div>
       </Section>
 
+      {/* ===== Notre outil propriétaire d'audit CyFun ===== */}
+      <Section variant="tint3" id="methode-audit">
+        <SectionHeading
+          center
+          as="h2"
+          eyebrow="Notre outil propriétaire"
+          title={
+            <>
+              Smidjan mène l&apos;audit CyFun avec un outil{" "}
+              <span className={styles.accent}>
+                propriétaire, sûr par conception
+              </span>
+            </>
+          }
+          lead="Nous avons développé notre propre moteur d'audit, aligné sur le référentiel CyFun (CCB) et sur le NIST CSF 2.0, pour évaluer votre conformité de façon rapide, cohérente et fondée sur des preuves — puis nous corrigeons : remédiation et durcissement de votre infrastructure."
+        />
+
+        <div className={styles.auditPanel}>
+          <div className={`${styles.gridBg} grid-bg`} aria-hidden="true" />
+          <div className={styles.auditPanelHead}>
+            <Icon name="shield-check" size={26} strokeWidth={1.8} />
+            <h3>Sûr par conception</h3>
+          </div>
+          <p className={styles.auditPanelText}>
+            Un audit rigoureux et traçable, pensé pour ne jamais mettre vos
+            systèmes en danger — de la première connexion à la remise du
+            rapport.
+          </p>
+          <div className={styles.auditChips}>
+            <span className={styles.auditChip}>
+              <Icon name="layers" size={15} />
+              3 niveaux CyFun
+            </span>
+            <span className={styles.auditChip}>
+              <Icon name="globe" size={15} />
+              Aligné NIST CSF 2.0
+            </span>
+            <span className={styles.auditChip}>
+              <Icon name="download" size={15} />
+              Rapport PDF
+            </span>
+          </div>
+        </div>
+
+        <div className={styles.trustGrid}>
+          {(
+            [
+              {
+                icon: "book",
+                title: "Lecture seule",
+                text: "L'audit observe, il ne modifie jamais vos systèmes.",
+              },
+              {
+                icon: "target",
+                title: "Périmètre explicite",
+                text: "Nous auditons uniquement les hôtes que vous nous confiez : aucune découverte réseau sauvage, aucun scan non demandé.",
+              },
+              {
+                icon: "lock",
+                title: "Vos identifiants ne sont jamais stockés",
+                text: "Un compte de service en lecture seule fourni par vous, utilisé le temps de l'audit, jamais conservé ni exporté.",
+              },
+              {
+                icon: "file-check",
+                title: "Journal inaltérable",
+                text: "Chaque action est journalisée, de façon non désactivable : un audit traçable et probant.",
+              },
+              {
+                icon: "users",
+                title: "Remédiation validée par un humain",
+                text: "Les correctifs sont proposés pour validation, jamais appliqués automatiquement.",
+              },
+              {
+                icon: "check-circle",
+                title: "Aucune donnée conservée",
+                text: "Rien de vos données ne survit à la fin de l'audit : le rapport vous est remis, puis nos supports d'audit sont effacés.",
+              },
+            ] satisfies { icon: IconName; title: string; text: string }[]
+          ).map((c) => (
+            <article key={c.title} className={styles.trustCard}>
+              <div className={styles.trustIco}>
+                <Icon name={c.icon} size={22} strokeWidth={1.8} />
+              </div>
+              <h4>{c.title}</h4>
+              <p>{c.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className={styles.honesty}>
+          <Icon name="alert-circle" size={30} strokeWidth={1.8} />
+          <div>
+            <h4>Une auto-évaluation assistée, pas une certification</h4>
+            <p>
+              Notre outil facilite l&apos;<b>auto-évaluation CyFun</b> et la
+              préparation de votre dossier ; il ne remplace pas la{" "}
+              <b>vérification officielle</b>, réservée aux organismes
+              accrédités BELAC. Comme évoqué plus haut, notre rôle est de vous
+              auditer, de remédier aux écarts identifiés, puis de vous
+              préparer à cette vérification.
+            </p>
+          </div>
+        </div>
+
+        <div className={styles.process}>
+          <ProcessSteps
+            kicker="De l'audit au durcissement"
+            steps={[
+              {
+                title: "Audit outillé",
+                description:
+                  "Notre outil collecte des preuves et un score par mesure, sur le seul périmètre que vous nous confiez.",
+              },
+              {
+                title: "Rapport clair",
+                description:
+                  "Synthèse, écarts identifiés et priorités — un document lisible, pas un export brut.",
+              },
+              {
+                title: "Plan de remédiation priorisé",
+                description:
+                  "Les actions sont classées par risque et par effort, pour un déploiement réaliste.",
+              },
+              {
+                title: "Durcissement & suivi",
+                description:
+                  "Nous mettons en œuvre les correctifs validés, puis assurons un suivi dans la durée.",
+              },
+            ]}
+          />
+        </div>
+
+        <div className={styles.auditCtaWrap}>
+          <Button
+            as="a"
+            href="/contact"
+            variant="primary"
+            trailingIcon={<Icon name="arrow-right" strokeWidth={2.2} size={16} />}
+          >
+            Demander un audit
+          </Button>
+          <p>Auto-évaluation assistée, sans risque pour vos systèmes.</p>
+        </div>
+      </Section>
+
+      {/* ===== Financer votre conformité ===== */}
+      <Section variant="white" id="financement">
+        <SectionHeading
+          center
+          as="h2"
+          eyebrow="Financer votre conformité"
+          title={
+            <>
+              Se mettre en conformité coûte moins cher qu&apos;on ne le
+              croit —{" "}
+              <span className={styles.accent}>
+                une large partie peut être subsidiée
+              </span>
+            </>
+          }
+          lead="En Wallonie, le chèque « cybersécurité » de la plateforme chèques-entreprises.be finance une large partie du coût de votre audit et de votre remédiation. Et certains outils du CCB sont gratuits. Voici comment en profiter concrètement."
+        />
+
+        <div className={styles.fundingGrid}>
+          <article className={styles.fundingCard}>
+            <div className={styles.fundingIco}>
+              <Icon name="check-circle" size={24} strokeWidth={1.8} />
+            </div>
+            <div className={styles.fundingNum}>
+              75<span className={styles.fundingUnit}>%</span>
+            </div>
+            <div className={styles.fundingLbl}>Prise en charge</div>
+            <p className={styles.fundingDesc}>
+              des honoraires du prestataire pour l&apos;audit, le coaching et
+              la labellisation.
+            </p>
+          </article>
+          <article className={styles.fundingCard}>
+            <div className={styles.fundingIco}>
+              <Icon name="layers" size={24} strokeWidth={1.8} />
+            </div>
+            <div className={styles.fundingNum}>60 000&nbsp;€</div>
+            <div className={styles.fundingLbl}>Plafond sur 3 ans</div>
+            <p className={styles.fundingDesc}>
+              dans un portefeuille de chèques de 200 000&nbsp;€ sur 3 ans
+              (max 100 000&nbsp;€/an).
+            </p>
+          </article>
+          <article className={styles.fundingCard}>
+            <div className={styles.fundingIco}>
+              <Icon name="download" size={24} strokeWidth={1.8} />
+            </div>
+            <div className={styles.fundingNum}>Gratuit</div>
+            <div className={styles.fundingLbl}>Outils CCB CyberFundamentals</div>
+            <p className={styles.fundingDesc}>
+              le niveau « Small » (7 mesures) est gratuit ; le CCB recommande
+              au minimum le niveau Basic.
+            </p>
+          </article>
+        </div>
+
+        <div className={`${styles.frameIntro} ${styles.fundingDetails}`}>
+          <div>
+            <h3>Le chèque « cybersécurité » (chèques-entreprises.be)</h3>
+            <p className={styles.frameLead}>
+              Porté par la plateforme <b>chèques-entreprises.be</b> de la
+              Région wallonne, ce chèque prend en charge une large partie des
+              honoraires d&apos;un <b>prestataire certifié</b> pour trois
+              types de prestations&nbsp;: l&apos;<b>audit</b> (analyse de
+              risques, politique de sécurité, cahier des charges), le{" "}
+              <b>coaching</b> à la mise en œuvre, et la{" "}
+              <b>labellisation</b> « Keep It Secure ».
+            </p>
+            <p className={styles.frameNote}>
+              Il est réservé aux <b>PME</b> (moins de 250 employés et moins
+              de 50&nbsp;M€ de chiffre d&apos;affaires), s&apos;inscrit dans
+              un portefeuille global de <b>200 000&nbsp;€ sur 3 ans</b> (max
+              100 000&nbsp;€/an), et la démarche est <b>100&nbsp;% en
+              ligne</b>, avec une décision en environ <b>5 jours
+              ouvrés</b>.
+            </p>
+            <p className={styles.frameNote}>
+              D&apos;autres <b>chèques numériques wallons</b> existent en
+              complément — par exemple le chèque « maturité numérique »
+              (prise en charge d&apos;environ 50&nbsp;%, même plafond de
+              60 000&nbsp;€). Côté fédéral, le{" "}
+              <b>Centre pour la Cybersécurité Belgique (CCB)</b> met
+              gratuitement à disposition les outils{" "}
+              <b>CyberFundamentals</b> — le niveau « Small » (7 mesures) est
+              gratuit, et le CCB recommande au minimum le niveau{" "}
+              <b>Basic</b> pour l&apos;ensemble de la chaîne
+              d&apos;approvisionnement d&apos;une entité NIS2.
+            </p>
+          </div>
+          <div className={styles.frameMap}>
+            <div className={styles.mh}>
+              <Icon name="file-check" size={16} />
+              Chèque cybersécurité, en bref
+            </div>
+            <div className={styles.mapRow}>
+              <span className={styles.a}>Bénéficiaires</span>
+              <span className={styles.arr}>
+                <Icon name="arrow-right" size={15} />
+              </span>
+              <span className={styles.b}>
+                PME (&lt; 250 employés, &lt; 50&nbsp;M€ de CA)
+              </span>
+            </div>
+            <div className={styles.mapRow}>
+              <span className={styles.a}>Couvre</span>
+              <span className={styles.arr}>
+                <Icon name="arrow-right" size={15} />
+              </span>
+              <span className={styles.b}>Audit, coaching, labellisation</span>
+            </div>
+            <div className={styles.mapRow}>
+              <span className={styles.a}>Prise en charge</span>
+              <span className={styles.arr}>
+                <Icon name="arrow-right" size={15} />
+              </span>
+              <span className={styles.b}>75&nbsp;% des honoraires</span>
+            </div>
+            <div className={styles.mapRow}>
+              <span className={styles.a}>Plafond</span>
+              <span className={styles.arr}>
+                <Icon name="arrow-right" size={15} />
+              </span>
+              <span className={styles.b}>
+                60 000&nbsp;€ sur 3 ans (portefeuille 200 000&nbsp;€)
+              </span>
+            </div>
+            <div className={styles.mapRow}>
+              <span className={styles.a}>Démarche</span>
+              <span className={styles.arr}>
+                <Icon name="arrow-right" size={15} />
+              </span>
+              <span className={styles.b}>
+                100&nbsp;% en ligne, via un prestataire certifié
+              </span>
+            </div>
+            <div className={styles.mapRow}>
+              <span className={styles.a}>Décision</span>
+              <span className={styles.arr}>
+                <Icon name="arrow-right" size={15} />
+              </span>
+              <span className={styles.b}>Environ 5 jours ouvrés</span>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.process}>
+          <ProcessSteps
+            kicker="Comment en profiter — en 3 étapes"
+            steps={[
+              {
+                title: "S'inscrire sur la plateforme",
+                description:
+                  "Créez votre dossier d'entreprise sur www.cheques-entreprises.be et vérifiez votre éligibilité PME (effectifs, chiffre d'affaires, portefeuille de chèques restant).",
+              },
+              {
+                title: "Choisir la prestation éligible",
+                description:
+                  "Sélectionnez la prestation couverte — audit, coaching ou labellisation « Keep It Secure » — et un prestataire certifié pour la réaliser.",
+              },
+              {
+                title: "Réaliser l'audit ou la remédiation",
+                description:
+                  "Le prestataire certifié réalise la prestation ; le chèque prend en charge jusqu'à 75 % des honoraires, dans la limite du plafond disponible.",
+              },
+            ]}
+          />
+        </div>
+
+        <div className={styles.honesty}>
+          <Icon name="alert-circle" size={30} strokeWidth={1.8} />
+          <div>
+            <h4>Notre rôle&nbsp;: vous accompagner, pas délivrer l&apos;aide</h4>
+            <p>
+              Smidjan n&apos;est <b>pas nécessairement inscrit</b> comme
+              prestataire certifié ou labellisé sur la plateforme
+              chèques-entreprises.be. Notre rôle est de vous aider à{" "}
+              <b>identifier les aides mobilisables</b>, à{" "}
+              <b>cadrer la prestation éligible</b> (audit, coaching,
+              labellisation) et à <b>monter le dossier</b> avec vous.
+            </p>
+            <p>
+              L&apos;éligibilité de votre entreprise et le recours à un
+              prestataire agréé doivent être vérifiés directement sur la
+              plateforme officielle{" "}
+              <a
+                href="https://www.cheques-entreprises.be"
+                target="_blank"
+                rel="noopener"
+                className={styles.fundingLink}
+              >
+                cheques-entreprises.be
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+
+        <div className={styles.fundingCtaWrap}>
+          <Button
+            as="a"
+            href="/contact"
+            variant="primary"
+            trailingIcon={<Icon name="arrow-right" strokeWidth={2.2} size={16} />}
+          >
+            Parlons de votre dossier
+          </Button>
+          <p>Diagnostic gratuit, sans engagement.</p>
+        </div>
+      </Section>
+
       {/* ===== FAQ ===== */}
       <Section variant="white" id="faq">
         <SectionHeading
