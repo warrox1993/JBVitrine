@@ -1,12 +1,12 @@
 .panel {
-  margin-top: 56px;
+  margin-top: 64px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 38px 42px;
+  padding: 42px 46px;
   display: grid;
   grid-template-columns: 1fr 1.25fr;
-  gap: 44px;
+  gap: 48px;
   align-items: center;
   box-shadow: var(--shadow);
 }

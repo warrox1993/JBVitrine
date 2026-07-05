@@ -110,7 +110,7 @@
   font-weight: 700;
   color: var(--navy);
   line-height: 1.5;
-  margin-top: 16px;
+  margin-top: 20px;
   max-width: 52ch;
 }
 
@@ -122,7 +122,7 @@
   font-size: 16.5px;
   color: var(--slate);
   line-height: 1.6;
-  margin-top: 12px;
+  margin-top: 16px;
   max-width: 56ch;
 }
 
@@ -254,14 +254,14 @@
 /* ===== Right column ===== */
 .side {
   display: grid;
-  gap: 24px;
+  gap: 28px;
 }
 
 .infoCard {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 26px;
+  padding: 28px;
   box-shadow:
     0 1px 2px rgba(11, 31, 58, 0.04),
     0 18px 40px -22px rgba(11, 31, 58, 0.25);
@@ -341,7 +341,7 @@
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 16px;
+  gap: 18px;
 }
 
 .coord li {
@@ -431,7 +431,7 @@
 .emergBlock {
   background: linear-gradient(165deg, var(--navy-2) 0%, var(--navy) 62%, #081527 100%);
   border-radius: 14px;
-  padding: 28px;
+  padding: 30px;
   color: var(--on-dark-text);
   position: relative;
   overflow: hidden;
@@ -542,7 +542,7 @@
 .emergBlock p {
   font-size: 13.5px;
   color: #a9b8ce;
-  margin-top: 12px;
+  margin-top: 14px;
   position: relative;
   line-height: 1.6;
 }
@@ -575,7 +575,7 @@
 }
 
 .ebNote {
-  margin-top: 14px;
+  margin-top: 16px;
   font-size: 12.5px;
   color: #8496b0;
   display: flex;
@@ -846,7 +846,7 @@
 }
 
 .secHead p {
-  margin-top: 14px;
+  margin-top: 16px;
   font-size: 16.5px;
   color: var(--slate);
   line-height: 1.6;
@@ -912,12 +912,12 @@
 .step p {
   font-size: 14px;
   color: var(--slate);
-  margin-top: 9px;
+  margin-top: 11px;
   line-height: 1.6;
 }
 
 .expectNote {
-  margin: 44px auto 0;
+  margin: 48px auto 0;
   display: flex;
   align-items: center;
   gap: 14px;

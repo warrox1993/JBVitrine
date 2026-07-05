@@ -260,8 +260,7 @@ export function ContactForm() {
         <div>
           <h2>Envoyez-nous votre demande</h2>
           <p>
-            Décrivez votre besoin en quelques lignes. Plus vous êtes précis, plus notre
-            première réponse sera utile.
+            Quelques lignes suffisent. Plus c&apos;est précis, plus vite on avance.
           </p>
           <span className={cls.fcReassure}>
             <span className={cls.ic} aria-hidden="true">
@@ -405,7 +404,7 @@ export function ContactForm() {
           <textarea
             id="message"
             name="message"
-            placeholder="Décrivez votre contexte, votre secteur, l'échéance NIS2 qui vous concerne, ou l'incident que vous rencontrez…"
+            placeholder="Votre contexte, votre besoin ou l'incident en cours…"
             value={data.message}
             onChange={(e) => update('message', e.target.value)}
             className={errors.message ? cls.inputError : ''}

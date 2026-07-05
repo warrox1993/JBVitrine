@@ -115,9 +115,8 @@ export default function ConformiteNis2Page() {
               .
             </h1>
             <p className={styles.heroLead}>
-              Audit, <b>remédiation</b>, préparation à la vérification&nbsp;:
-              Smidjan vous amène concrètement au niveau CyFun (CCB) attendu —
-              nous ne listons pas vos manques, nous les corrigeons.
+              Audit, <b>remédiation</b>, mise au niveau CyFun (CCB)&nbsp;: on
+              ne liste pas vos manques, on les corrige.
             </p>
             <div className={styles.heroCta}>
               <Button
@@ -160,9 +159,8 @@ export default function ConformiteNis2Page() {
                 <div>
                   <h3>NIS2 est déjà en vigueur</h3>
                   <p>
-                    Applicable en Belgique depuis le 18 octobre 2024&nbsp;: la
-                    conformité n&apos;est plus une échéance à venir, c&apos;est
-                    une obligation actuelle.
+                    Depuis le 18 octobre 2024&nbsp;: ce n&apos;est plus une
+                    échéance, c&apos;est une obligation.
                   </p>
                 </div>
               </div>
@@ -183,10 +181,9 @@ export default function ConformiteNis2Page() {
               <div className={styles.dcFoot}>
                 <Icon name="shield-check" size={17} />
                 <span>
-                  <b>Chaque mois sans mise en conformité augmente votre
-                  exposition.</b> Nous vous amenons rapidement au niveau
-                  attendu — en réduisant concrètement le risque de sanction
-                  et d&apos;incident.
+                  <b>Chaque mois qui passe augmente votre exposition.</b> On
+                  vous amène rapidement au niveau attendu — et on réduit
+                  concrètement le risque de sanction.
                 </span>
               </div>
             </div>
@@ -216,7 +213,7 @@ export default function ConformiteNis2Page() {
                 <span className={styles.accent}>sans jargon</span>
               </>
             }
-            lead="NIS2 est une directive européenne qui relève le niveau minimal de cybersécurité exigé de milliers d'organisations. Trois questions suffisent à savoir où vous en êtes."
+            lead="NIS2 relève le niveau de cybersécurité exigé de milliers d'organisations. Trois questions pour savoir où vous en êtes."
           />
         </Reveal>
 
@@ -244,8 +241,7 @@ export default function ConformiteNis2Page() {
             </div>
             <h3>Qui est concerné&nbsp;?</h3>
             <p>
-              NIS2 distingue deux catégories, selon le secteur et la taille de
-              l&apos;entreprise&nbsp;:
+              Deux catégories, selon secteur et taille&nbsp;:
             </p>
             <ul>
               <li>
@@ -284,8 +280,7 @@ export default function ConformiteNis2Page() {
             </div>
             <h3>Quel est le risque&nbsp;?</h3>
             <p>
-              La non-conformité n&apos;est pas qu&apos;un enjeu technique&nbsp;:
-              c&apos;est un risque juridique et financier réel.
+              Un risque juridique et financier réel — pas seulement technique.
             </p>
             <ul>
               <li>
@@ -325,8 +320,8 @@ export default function ConformiteNis2Page() {
             </div>
             <h3>Pourquoi maintenant&nbsp;?</h3>
             <p>
-              La directive est transposée en droit belge et déjà applicable.
-              Chaque mois sans conformité, c&apos;est du risque en plus.
+              Déjà transposée en droit belge. Chaque mois d&apos;attente
+              ajoute du risque.
             </p>
             <ul>
               <li>
@@ -339,9 +334,8 @@ export default function ConformiteNis2Page() {
               <li>
                 {CHECK}
                 <span>
-                  La remédiation prend du temps&nbsp;: MFA, sauvegardes,
-                  journalisation, procédures… cela se déploie sur des mois, pas
-                  des jours.
+                  La remédiation prend <b>des mois, pas des jours</b>&nbsp;:
+                  MFA, sauvegardes, journalisation, procédures.
                 </span>
               </li>
               <li>
@@ -379,17 +373,15 @@ export default function ConformiteNis2Page() {
               }
             />
             <p className={styles.frameLead}>
-              Le <b>CyberFundamentals Framework (CyFun)</b> est le référentiel
-              élaboré par le <b>Centre pour la Cybersécurité Belgique (CCB)</b>.
-              C&apos;est le moyen concret, reconnu par l&apos;autorité, de
-              démontrer que votre organisation répond aux exigences de NIS2 —
-              sans réinventer la roue.
+              Le <b>CyberFundamentals Framework (CyFun)</b>, du{" "}
+              <b>Centre pour la Cybersécurité Belgique (CCB)</b>, est le moyen
+              reconnu de démontrer votre conformité NIS2 — sans réinventer la
+              roue.
             </p>
             <p className={styles.frameNote}>
-              Plutôt que de partir d&apos;une page blanche, CyFun s&apos;appuie
-              sur les grands standards internationaux et les traduit en un{" "}
-              <b>socle progressif de mesures</b>, adapté à la taille et au risque
-              de chaque organisation.
+              Basé sur les standards internationaux, traduit en{" "}
+              <b>mesures progressives</b>, adaptées à votre taille et à votre
+              risque.
             </p>
             <figure className={styles.frameInlinePhoto}>
               <OptimizedImage
@@ -480,10 +472,8 @@ export default function ConformiteNis2Page() {
         </Reveal>
         <Reveal>
           <p className={styles.fnNote}>
-            Les six fonctions du CyberFundamentals —{" "}
-            <b>Govern, Identify, Protect, Detect, Respond, Recover</b> — couvrent
-            l&apos;ensemble du cycle de vie du risque cyber, de l&apos;anticipation
-            à la reprise.
+            <b>Govern, Identify, Protect, Detect, Respond, Recover</b> — tout
+            le cycle de vie du risque cyber.
           </p>
         </Reveal>
       </Section>
@@ -502,7 +492,7 @@ export default function ConformiteNis2Page() {
                 <span className={styles.accent}>bon niveau</span>
               </>
             }
-            lead="CyFun propose trois niveaux progressifs. Le bon choix dépend de votre catégorie NIS2, de votre exposition et de la sensibilité de vos données. Nous vous aidons à trancher."
+            lead="Trois niveaux progressifs. Le bon choix dépend de votre catégorie NIS2 et de votre exposition — on vous aide à trancher."
           />
         </Reveal>
 
@@ -514,12 +504,9 @@ export default function ConformiteNis2Page() {
             </div>
             <CoverageGauge className={styles.covGauge} />
             <div className={styles.txt}>
-              <b>
-                Le niveau Basic couvre déjà environ 82&nbsp;% des attaques les plus
-                courantes.
-              </b>{" "}
-              Le niveau Important porte cette couverture à environ 94&nbsp;%, et le
-              niveau Essential vise une protection quasi complète.
+              <b>Basic couvre déjà ~82&nbsp;% des attaques courantes.</b>{" "}
+              Important monte à ~94&nbsp;%. Essential vise une protection
+              quasi complète.
             </div>
           </div>
         </Reveal>
@@ -556,7 +543,7 @@ export default function ConformiteNis2Page() {
                 amène prêts
               </>
             }
-            lead="C'est notre différence avec les pures maisons d'audit : nous ne repartons pas en vous laissant une liste de problèmes. Nous mettons les mains dans le cambouis et nous vous préparons à la vérification."
+            lead="Notre différence : pas de rapport qu'on vous laisse gérer seul. On corrige, on prépare, on vous amène prêts."
           />
         </Reveal>
 
@@ -583,18 +570,15 @@ export default function ConformiteNis2Page() {
           <div>
             <h4>En toute transparence&nbsp;: qui fait quoi</h4>
             <p>
-              Smidjan <b>n&apos;est pas un organisme de certification</b> et
-              n&apos;est pas accrédité BELAC. La{" "}
-              <b>certification / vérification officielle</b> CyFun est délivrée
-              par des <b>organismes accrédités par BELAC</b> (par exemple Brand
+              Smidjan <b>n&apos;est pas un organisme de certification</b>, ni
+              accrédité BELAC. La <b>certification CyFun officielle</b> est
+              délivrée par des <b>organismes accrédités BELAC</b> (Brand
               Compliance, Trust CHECK, Normec CertUp).
             </p>
             <p>
-              Notre rôle&nbsp;:{" "}
-              <b>audit, analyse d&apos;écart, remédiation et préparation</b> pour
-              atteindre le niveau CyFun visé — et vous accompagner jusqu&apos;à
-              la soumission. Nous ne délivrons pas le label&nbsp;; nous vous
-              rendons <b>prêts à l&apos;obtenir</b>.
+              Notre rôle&nbsp;: <b>auditer, remédier, préparer</b> votre
+              dossier jusqu&apos;à la soumission. Nous ne délivrons pas le
+              label — nous vous rendons <b>prêts à l&apos;obtenir</b>.
             </p>
             <Reveal stagger className={styles.roles}>
               <div className={`${styles.roleCol} ${styles.roleSmidjan}`}>
@@ -672,22 +656,22 @@ export default function ConformiteNis2Page() {
               {
                 title: "Cadrage & auto-évaluation",
                 description:
-                  "Nous délimitons le périmètre et réalisons l'auto-évaluation CyFun avec vos équipes : actifs critiques, niveau CyFun visé et confirmation de votre catégorie NIS2.",
+                  "Périmètre, actifs critiques, niveau CyFun visé, catégorie NIS2 confirmée — avec vos équipes.",
               },
               {
                 title: "Analyse d'écart & remédiation",
                 description:
-                  "Nous mesurons l'écart au niveau visé, puis corrigeons concrètement les manques — plan priorisé par risque et effort, mise en œuvre technique et organisationnelle.",
+                  "Écart mesuré, manques corrigés — plan priorisé par risque et par effort.",
               },
               {
                 title: "Support à la vérification CCB",
                 description:
-                  "Nous préparons le dossier de preuves et la documentation, puis assurons la liaison avec l'organisme accrédité jusqu'à la soumission / vérification.",
+                  "Dossier de preuves, documentation, liaison avec l'organisme accrédité jusqu'à la soumission.",
               },
               {
                 title: "Suivi continu",
                 description:
-                  "La conformité n'est pas un projet ponctuel : revue périodique, réévaluation et adaptation à chaque évolution pour maintenir votre posture.",
+                  "Revue périodique et réévaluation pour maintenir votre conformité dans la durée.",
               },
             ]}
           />
@@ -710,7 +694,7 @@ export default function ConformiteNis2Page() {
                 </span>
               </>
             }
-            lead="Nous avons développé notre propre moteur d'audit, aligné sur le référentiel CyFun (CCB) et sur le NIST CSF 2.0, pour évaluer votre conformité de façon rapide, cohérente et fondée sur des preuves — puis nous corrigeons : remédiation et durcissement de votre infrastructure."
+            lead="Notre moteur d'audit, aligné CyFun (CCB) et NIST CSF 2.0, évalue votre conformité vite et sur preuves. Puis on corrige : remédiation et durcissement."
           />
         </Reveal>
 
@@ -754,12 +738,12 @@ export default function ConformiteNis2Page() {
               {
                 icon: "target",
                 title: "Périmètre explicite",
-                text: "Nous auditons uniquement les hôtes que vous nous confiez : aucune découverte réseau sauvage, aucun scan non demandé.",
+                text: "Uniquement les hôtes que vous nous confiez. Aucun scan non demandé.",
               },
               {
                 icon: "lock",
                 title: "Vos identifiants ne sont jamais stockés",
-                text: "Un compte de service en lecture seule fourni par vous, utilisé le temps de l'audit, jamais conservé ni exporté.",
+                text: "Compte de service en lecture seule, fourni par vous, jamais conservé ni exporté.",
               },
               {
                 icon: "file-check",
@@ -774,7 +758,7 @@ export default function ConformiteNis2Page() {
               {
                 icon: "check-circle",
                 title: "Aucune donnée conservée",
-                text: "Rien de vos données ne survit à la fin de l'audit : le rapport vous est remis, puis nos supports d'audit sont effacés.",
+                text: "Rapport remis, puis supports d'audit effacés. Rien ne vous survit à l'audit.",
               },
             ] satisfies { icon: IconName; title: string; text: string }[]
           ).map((c) => (
@@ -794,12 +778,11 @@ export default function ConformiteNis2Page() {
           <div>
             <h4>Une auto-évaluation assistée, pas une certification</h4>
             <p>
-              Notre outil facilite l&apos;<b>auto-évaluation CyFun</b> et la
-              préparation de votre dossier ; il ne remplace pas la{" "}
+              Notre outil facilite l&apos;<b>auto-évaluation CyFun</b> et
+              prépare votre dossier&nbsp;; il ne remplace pas la{" "}
               <b>vérification officielle</b>, réservée aux organismes
-              accrédités BELAC. Comme évoqué plus haut, notre rôle est de vous
-              auditer, de remédier aux écarts identifiés, puis de vous
-              préparer à cette vérification.
+              accrédités BELAC. Notre rôle&nbsp;: auditer, remédier, préparer
+              — jusqu&apos;à cette vérification.
             </p>
           </div>
         </div>
@@ -866,7 +849,7 @@ export default function ConformiteNis2Page() {
                 </span>
               </>
             }
-            lead="En Wallonie, le chèque « cybersécurité » de la plateforme chèques-entreprises.be finance une large partie du coût de votre audit et de votre remédiation. Et certains outils du CCB sont gratuits. Voici comment en profiter concrètement."
+            lead="Le chèque « cybersécurité » wallon finance une large partie de votre audit et de votre remédiation. Certains outils du CCB sont gratuits. Voici comment en profiter."
           />
         </Reveal>
 
@@ -913,33 +896,24 @@ export default function ConformiteNis2Page() {
           <div>
             <h3>Le chèque « cybersécurité » (chèques-entreprises.be)</h3>
             <p className={styles.frameLead}>
-              Porté par la plateforme <b>chèques-entreprises.be</b> de la
-              Région wallonne, ce chèque prend en charge une large partie des
-              honoraires d&apos;un <b>prestataire certifié</b> pour trois
-              types de prestations&nbsp;: l&apos;<b>audit</b> (analyse de
-              risques, politique de sécurité, cahier des charges), le{" "}
-              <b>coaching</b> à la mise en œuvre, et la{" "}
-              <b>labellisation</b> « Keep It Secure ».
+              Porté par la Région wallonne (<b>chèques-entreprises.be</b>), il
+              couvre les honoraires d&apos;un <b>prestataire certifié</b> pour
+              trois prestations&nbsp;: <b>audit</b>, <b>coaching</b> à la mise
+              en œuvre, et <b>labellisation</b> « Keep It Secure ».
             </p>
             <p className={styles.frameNote}>
-              Il est réservé aux <b>PME</b> (moins de 250 employés et moins
-              de 50&nbsp;M€ de chiffre d&apos;affaires), s&apos;inscrit dans
-              un portefeuille global de <b>200 000&nbsp;€ sur 3 ans</b> (max
-              100 000&nbsp;€/an), et la démarche est <b>100&nbsp;% en
-              ligne</b>, avec une décision en environ <b>5 jours
-              ouvrés</b>.
+              Réservé aux <b>PME</b> (&lt; 250 employés, &lt; 50&nbsp;M€ de
+              CA). Portefeuille de <b>200 000&nbsp;€ sur 3 ans</b> (max
+              100 000&nbsp;€/an). Démarche <b>100&nbsp;% en ligne</b>,
+              décision en <b>~5 jours ouvrés</b>.
             </p>
             <p className={styles.frameNote}>
-              D&apos;autres <b>chèques numériques wallons</b> existent en
-              complément — par exemple le chèque « maturité numérique »
-              (prise en charge d&apos;environ 50&nbsp;%, même plafond de
-              60 000&nbsp;€). Côté fédéral, le{" "}
-              <b>Centre pour la Cybersécurité Belgique (CCB)</b> met
-              gratuitement à disposition les outils{" "}
-              <b>CyberFundamentals</b> — le niveau « Small » (7 mesures) est
-              gratuit, et le CCB recommande au minimum le niveau{" "}
-              <b>Basic</b> pour l&apos;ensemble de la chaîne
-              d&apos;approvisionnement d&apos;une entité NIS2.
+              En complément&nbsp;: le chèque « maturité numérique » (~50&nbsp;%,
+              même plafond de 60 000&nbsp;€). Côté fédéral, le{" "}
+              <b>CCB</b> met gratuitement à disposition{" "}
+              <b>CyberFundamentals</b> — niveau « Small » (7 mesures) gratuit,
+              niveau <b>Basic</b> recommandé au minimum pour toute la chaîne
+              d&apos;approvisionnement.
             </p>
           </div>
           <div className={styles.frameMap}>
@@ -1007,17 +981,17 @@ export default function ConformiteNis2Page() {
               {
                 title: "S'inscrire sur la plateforme",
                 description:
-                  "Créez votre dossier d'entreprise sur www.cheques-entreprises.be et vérifiez votre éligibilité PME (effectifs, chiffre d'affaires, portefeuille de chèques restant).",
+                  "Dossier d'entreprise sur cheques-entreprises.be, éligibilité PME vérifiée (effectifs, CA, portefeuille restant).",
               },
               {
                 title: "Choisir la prestation éligible",
                 description:
-                  "Sélectionnez la prestation couverte — audit, coaching ou labellisation « Keep It Secure » — et un prestataire certifié pour la réaliser.",
+                  "Audit, coaching ou labellisation « Keep It Secure », avec un prestataire certifié.",
               },
               {
                 title: "Réaliser l'audit ou la remédiation",
                 description:
-                  "Le prestataire certifié réalise la prestation ; le chèque prend en charge jusqu'à 75 % des honoraires, dans la limite du plafond disponible.",
+                  "Le prestataire réalise la prestation ; le chèque couvre jusqu'à 75 % des honoraires, dans la limite du plafond.",
               },
             ]}
           />
@@ -1031,16 +1005,14 @@ export default function ConformiteNis2Page() {
             <h4>Notre rôle&nbsp;: vous accompagner, pas délivrer l&apos;aide</h4>
             <p>
               Smidjan n&apos;est <b>pas nécessairement inscrit</b> comme
-              prestataire certifié ou labellisé sur la plateforme
-              chèques-entreprises.be. Notre rôle est de vous aider à{" "}
-              <b>identifier les aides mobilisables</b>, à{" "}
-              <b>cadrer la prestation éligible</b> (audit, coaching,
-              labellisation) et à <b>monter le dossier</b> avec vous.
+              prestataire certifié sur chèques-entreprises.be. Notre
+              rôle&nbsp;: <b>identifier les aides mobilisables</b>,{" "}
+              <b>cadrer la prestation éligible</b> et{" "}
+              <b>monter le dossier</b> avec vous.
             </p>
             <p>
-              L&apos;éligibilité de votre entreprise et le recours à un
-              prestataire agréé doivent être vérifiés directement sur la
-              plateforme officielle{" "}
+              Éligibilité et prestataire agréé&nbsp;: <b>à vérifier</b>{" "}
+              directement sur la plateforme officielle{" "}
               <a
                 href="https://www.cheques-entreprises.be"
                 target="_blank"
@@ -1078,7 +1050,7 @@ export default function ConformiteNis2Page() {
             as="h2"
             eyebrow={<span className={styles.kickerMono}>Questions fréquentes</span>}
             title="NIS2 & CyFun : vos questions, nos réponses"
-            lead="Les points sur lesquels nos clients nous interrogent le plus souvent. Une question ne figure pas ici ? Posez-la lors du diagnostic gratuit."
+            lead="Vos questions les plus fréquentes. Une autre en tête ? Posez-la lors du diagnostic gratuit."
           />
         </Reveal>
         <Reveal>
@@ -1090,20 +1062,16 @@ export default function ConformiteNis2Page() {
               answer: (
                 <>
                   <p>
-                    Cela dépend de votre secteur d&apos;activité et de la taille
-                    de votre entreprise. NIS2 vise deux catégories — les entités{" "}
-                    <b>essentielles</b> (énergie, santé, transport, finance,
-                    infrastructures numériques…) et les entités{" "}
+                    Ça dépend de votre secteur et de votre taille. NIS2 vise
+                    les entités <b>essentielles</b> (énergie, santé, transport,
+                    finance, infrastructures numériques…) et{" "}
                     <b>importantes</b> (fabrication, agroalimentaire, services
-                    numériques, chimie…). De nombreuses PME sont concernées, y
-                    compris <b>indirectement</b>, en tant que fournisseurs ou
-                    sous-traitants d&apos;entités elles-mêmes soumises à la
-                    directive.
+                    numériques, chimie…). Beaucoup de PME sont concernées{" "}
+                    <b>indirectement</b>, comme fournisseurs ou sous-traitants.
                   </p>
                   <p>
-                    En cas de doute, notre <b>diagnostic gratuit</b> clarifie
-                    votre situation en un échange&nbsp;: nous déterminons si — et
-                    à quel titre — vous êtes concerné.
+                    Un doute&nbsp;? Notre <b>diagnostic gratuit</b> clarifie
+                    votre situation en un échange.
                   </p>
                 </>
               ),
@@ -1113,19 +1081,16 @@ export default function ConformiteNis2Page() {
               answer: (
                 <>
                   <p>
-                    <b>ISO/IEC 27001</b> est une norme internationale de
-                    management de la sécurité de l&apos;information, exigeante et
-                    reconnue dans le monde entier. <b>CyFun</b> est le cadre
-                    belge du CCB, conçu spécifiquement pour répondre à NIS2 et{" "}
-                    <b>aligné sur ISO 27001</b> (ainsi que sur le NIST CSF).
+                    <b>ISO/IEC 27001</b> est la norme internationale de
+                    référence en sécurité de l&apos;information. <b>CyFun</b>{" "}
+                    est le cadre belge du CCB, conçu pour répondre à NIS2 et{" "}
+                    <b>aligné sur ISO 27001</b> et le NIST CSF.
                   </p>
                   <p>
-                    En pratique&nbsp;: CyFun est souvent un point d&apos;entrée
-                    plus <b>accessible et progressif</b> pour une PME, avec ses
-                    trois niveaux (Basic → Essential), tout en restant compatible
-                    avec une démarche ISO 27001 ultérieure. Les deux ne
-                    s&apos;opposent pas&nbsp;; CyFun peut être une première marche
-                    vers l&apos;ISO.
+                    En pratique&nbsp;: CyFun est un point d&apos;entrée plus{" "}
+                    <b>accessible</b> pour une PME, avec ses trois niveaux
+                    progressifs (Basic → Essential) — et une première marche
+                    vers l&apos;ISO 27001 si besoin.
                   </p>
                 </>
               ),
@@ -1135,21 +1100,17 @@ export default function ConformiteNis2Page() {
               answer: (
                 <>
                   <p>
-                    <b>Non — et nous tenons à être clairs là-dessus.</b> Smidjan
-                    n&apos;est pas un organisme de certification et n&apos;est pas
-                    accrédité BELAC. La{" "}
-                    <b>certification / vérification officielle</b> CyFun est
-                    délivrée par des <b>organismes accrédités par BELAC</b> (par
-                    exemple Brand Compliance, Trust CHECK ou Normec CertUp),
-                    indépendants de nous.
+                    <b>Non.</b> Smidjan n&apos;est pas un organisme de
+                    certification, ni accrédité BELAC. La{" "}
+                    <b>certification officielle</b> CyFun est délivrée par des{" "}
+                    <b>organismes accrédités BELAC</b> (Brand Compliance,
+                    Trust CHECK, Normec CertUp), indépendants de nous.
                   </p>
                   <p>
-                    Notre rôle est complémentaire&nbsp;: nous réalisons
-                    l&apos;<b>audit, l&apos;analyse d&apos;écart, la remédiation
-                    et la préparation</b> — et nous vous accompagnons jusqu&apos;à
-                    la soumission. Autrement dit, nous vous rendons{" "}
-                    <b>prêts et conformes</b> pour que l&apos;organisme accrédité
-                    puisse valider votre niveau.
+                    Notre rôle&nbsp;: <b>auditer, remédier, préparer</b> votre
+                    dossier jusqu&apos;à la soumission. Nous vous rendons{" "}
+                    <b>prêts</b> — l&apos;organisme accrédité valide votre
+                    niveau.
                   </p>
                 </>
               ),
@@ -1159,18 +1120,15 @@ export default function ConformiteNis2Page() {
               answer: (
                 <>
                   <p>
-                    Cela dépend du niveau visé, de votre maturité de départ et de
-                    la taille du périmètre. À titre indicatif&nbsp;: comptez de
-                    l&apos;ordre de <b>1 à 3 mois</b> pour Basic,{" "}
-                    <b>3 à 6 mois</b> pour Important et <b>6 à 12 mois</b> pour
+                    Ça dépend du niveau visé et de votre maturité de départ. À
+                    titre indicatif&nbsp;: <b>1 à 3 mois</b> pour Basic,{" "}
+                    <b>3 à 6 mois</b> pour Important, <b>6 à 12 mois</b> pour
                     Essential.
                   </p>
                   <p>
-                    Comme NIS2 est <b>déjà en vigueur</b>, il est urgent de
-                    lancer la démarche&nbsp;: la remédiation (MFA, sauvegardes,
-                    journalisation, procédures…) se déploie sur des mois. Plus
-                    on commence tôt, plus on étale l&apos;effort et le budget —
-                    tout en réduisant l&apos;exposition aux sanctions.
+                    NIS2 est <b>déjà en vigueur</b>&nbsp;: mieux vaut démarrer
+                    maintenant. Plus tôt vous commencez, plus vous étalez
+                    l&apos;effort et le budget — et réduisez votre exposition.
                   </p>
                 </>
               ),
@@ -1180,18 +1138,14 @@ export default function ConformiteNis2Page() {
               answer: (
                 <>
                   <p>
-                    La non-conformité expose à des{" "}
-                    <b>amendes administratives significatives</b> et engage la{" "}
-                    <b>responsabilité des organes de direction</b>. Au-delà du
-                    volet réglementaire, l&apos;absence de mesures augmente
-                    surtout votre exposition réelle&nbsp;: un incident
-                    (rançongiciel, fuite de données) coûte généralement bien plus
-                    cher qu&apos;une mise en conformité anticipée.
+                    <b>Amendes significatives</b>, <b>responsabilité de la
+                    direction</b> engagée. Et surtout&nbsp;: un incident
+                    (rançongiciel, fuite de données) coûte bien plus cher
+                    qu&apos;une mise en conformité anticipée.
                   </p>
                   <p>
-                    La bonne nouvelle&nbsp;: la démarche CyFun apporte une{" "}
-                    <b>valeur de sécurité concrète</b>, pas seulement une case
-                    cochée. Vous réduisez réellement votre risque.
+                    La démarche CyFun réduit un <b>risque réel</b> — pas
+                    seulement une case à cocher.
                   </p>
                 </>
               ),
@@ -1201,18 +1155,15 @@ export default function ConformiteNis2Page() {
               answer: (
                 <>
                   <p>
-                    Pour beaucoup de PME, le niveau <b>Important</b> constitue le
-                    bon équilibre entre exigence et effort — c&apos;est le plus
-                    courant. Le niveau <b>Basic</b> est un excellent point de
-                    départ pour couvrir rapidement l&apos;essentiel (~82&nbsp;%
-                    des attaques courantes), tandis que le niveau{" "}
-                    <b>Essential</b> s&apos;adresse aux entités « essentielles »
-                    NIS2 et aux organisations à forte exigence de sécurité.
+                    Pour la plupart des PME, <b>Important</b> est le meilleur
+                    équilibre — le plus courant. <b>Basic</b> couvre déjà
+                    l&apos;essentiel (~82&nbsp;% des attaques courantes).{" "}
+                    <b>Essential</b> vise les entités « essentielles » NIS2 et
+                    les exigences de sécurité fortes.
                   </p>
                   <p>
                     Le bon niveau dépend de votre catégorie NIS2 et de votre
-                    exposition. Lors du <b>cadrage</b>, nous vous recommandons le
-                    niveau le plus pertinent — ni surdimensionné, ni insuffisant.
+                    exposition. On vous le recommande dès le <b>cadrage</b>.
                   </p>
                 </>
               ),
@@ -1228,7 +1179,7 @@ export default function ConformiteNis2Page() {
           id="contact"
           tint
           title="Sachez où vous en êtes — avant qu'il ne soit trop tard"
-          text="30 minutes avec un expert pour identifier votre catégorie NIS2, cadrer le niveau CyFun pertinent et repartir avec des priorités claires. Sans engagement, sans jargon."
+          text="30 min avec un expert : catégorie NIS2, niveau CyFun, priorités claires. Sans engagement, sans jargon."
           actions={[
             { label: "Réserver mon diagnostic NIS2", href: "/contact", variant: "primary" },
             { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },

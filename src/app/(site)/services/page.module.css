@@ -34,8 +34,8 @@
   line-height: 1.2;
 }
 .heroLead {
-  margin-top: 18px;
-  max-width: 60ch;
+  margin-top: 20px;
+  max-width: 56ch;
   font-size: 19px;
   color: var(--slate);
   line-height: 1.6;
@@ -205,20 +205,20 @@
 
 /* ===== "Un seul partenaire" cross-cut band ===== */
 .partner {
-  padding: 70px 0;
+  padding: 84px 0;
 }
 .partnerBox {
   display: grid;
   grid-template-columns: 1fr 1.15fr;
-  gap: 44px;
+  gap: 48px;
   align-items: center;
 }
 .partnerBox h2 {
   font-size: clamp(24px, 2.9vw, 32px);
-  margin-top: 14px;
+  margin-top: 16px;
 }
 .partnerLead {
-  margin-top: 16px;
+  margin-top: 18px;
   color: var(--on-dark-muted);
 }
 .partnerLead em {
@@ -227,14 +227,14 @@
 .chain {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 20px;
 }
 /* White cards lift off the full-navy band behind them (matches home's IllusPanel/WhySmidjan pattern). */
 .node {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 20px 18px;
+  padding: 24px 20px;
   position: relative;
   box-shadow: var(--shadow);
 }
@@ -247,7 +247,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 .node b {
   font-size: 15px;
@@ -307,22 +307,22 @@
 /* ===== CyFun teaser (after pillar 04) ===== */
 .cyfunTeaser {
   max-width: 700px;
-  margin: 0 auto 8px;
+  margin: 0 auto 14px;
 }
 .cyfunLinkMore {
   margin-top: 10px;
   display: inline-flex;
 }
 .transparency {
-  margin-top: 36px;
+  margin-top: 44px;
   max-width: var(--maxw);
   display: flex;
-  gap: 14px;
+  gap: 16px;
   align-items: flex-start;
   background: #fff;
   border: 1px solid var(--line-2);
   border-radius: var(--radius, 12px);
-  padding: 20px 22px;
+  padding: 22px 26px;
 }
 .transparency svg {
   width: 22px;

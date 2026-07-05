@@ -77,10 +77,8 @@ export default function AgencePage() {
                 pas une agence anonyme.
               </h1>
               <p className={styles.lead}>
-                Basé à Liège, Jean-Baptiste Dhondt sécurise lui-même votre
-                entreprise — pas un centre d&rsquo;appel, pas de
-                sous-traitance, pas de rapport qu&rsquo;on range dans un
-                tiroir.
+                Jean-Baptiste Dhondt sécurise lui-même votre entreprise.
+                Pas de centre d&rsquo;appel. Pas de sous-traitance.
               </p>
               <div className={styles.heroCtas}>
                 <Button
@@ -144,7 +142,7 @@ export default function AgencePage() {
                 nous
               </>
             }
-            lead="Quatre principes qui guident chaque mission — et sur lesquels nous acceptons d'être jugés."
+            lead="Quatre principes. Sur lesquels vous pouvez nous juger."
           />
         </Reveal>
         <Reveal stagger className={styles.engageGrid}>
@@ -154,9 +152,8 @@ export default function AgencePage() {
             </div>
             <h3>Proximité</h3>
             <p>
-              Locaux et réactifs. Nous intervenons vite en Wallonie, et vous
-              avez un interlocuteur réellement joignable — au téléphone, pas
-              derrière un ticket.
+              Basés en Wallonie, on répond vite. Un interlocuteur direct,
+              au téléphone — jamais un ticket.
             </p>
           </article>
           <article className={styles.engageCard}>
@@ -165,9 +162,8 @@ export default function AgencePage() {
             </div>
             <h3>Franchise</h3>
             <p>
-              On vous dit ce qui compte, clairement et sans dramatiser. Pas
-              de vente de peur : des priorités honnêtes, adaptées à votre
-              réalité et à votre budget.
+              On dit ce qui compte, sans dramatiser. Des priorités
+              honnêtes, adaptées à votre budget.
             </p>
           </article>
           <article className={styles.engageCard}>
@@ -176,9 +172,8 @@ export default function AgencePage() {
             </div>
             <h3>On corrige</h3>
             <p>
-              Nous ne nous contentons pas d&rsquo;auditer : nous corrigeons
-              ce que nous trouvons. Un constat sans remédiation ne réduit
-              aucun risque.
+              On n&rsquo;audite pas pour auditer : on corrige. Un rapport
+              sans remédiation ne réduit aucun risque.
             </p>
           </article>
           <article className={styles.engageCard}>
@@ -187,9 +182,8 @@ export default function AgencePage() {
             </div>
             <h3>L&rsquo;humain augmenté par l&rsquo;IA</h3>
             <p>
-              Nous utilisons l&rsquo;IA pour aller plus vite et couvrir plus
-              large — mais l&rsquo;analyse et les décisions restent entre
-              des mains humaines et expertes.
+              L&rsquo;IA accélère l&rsquo;analyse et élargit la couverture.
+              Les décisions restent humaines.
             </p>
           </article>
         </Reveal>
@@ -202,7 +196,7 @@ export default function AgencePage() {
       */}
       <StatsBand
         title="Une agence à taille humaine, des standards élevés"
-        lead="Des indicateurs modestes mais réels — la mesure d'un partenaire qui privilégie la qualité à la promesse."
+        lead="Des chiffres modestes mais réels. La qualité plutôt que la promesse."
         stats={[
           { value: "12", accent: "+", label: "années d'expérience cumulée en informatique & sécurité" },
           { value: "50", accent: "+", label: "audits, tests & missions de sécurisation menés" },
@@ -214,7 +208,7 @@ export default function AgencePage() {
       <CTABox
         id="contact"
         title="Un échange de 30 minutes, directement avec le fondateur"
-        text="Pas de commercial intermédiaire : vous parlez à la personne qui réalisera le travail. On évalue votre exposition, on cadre votre conformité NIS2 et vous repartez avec des priorités claires. Sans engagement."
+        text="Vous parlez à la personne qui fera le travail. On évalue votre exposition, on cadre votre NIS2 — vous repartez avec des priorités claires."
         actions={[
           { label: "Réserver un appel de cadrage", href: "/contact" },
           { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },

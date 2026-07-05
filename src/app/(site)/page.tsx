@@ -103,7 +103,7 @@ export default function HomePage() {
                 <span className="accent">risque cyber</span>
               </>
             }
-            lead="De la protection de votre infrastructure à la conformité réglementaire, nous couvrons l'ensemble de la chaîne — et nous corrigeons ce que nous trouvons."
+            lead="De l'infrastructure à la conformité, on couvre tout — et on corrige ce qu'on trouve."
           />
         </Reveal>
         <Reveal stagger className={homeStyles.svcGrid}>
@@ -111,7 +111,7 @@ export default function HomePage() {
             icon="server"
             kicker="Sécuriser"
             title="Réseaux & infrastructure"
-            description="Nous durcissons votre socle technique pour bloquer les attaques avant qu'elles n'atteignent vos données."
+            description="On verrouille votre socle technique avant que l'attaque n'atteigne vos données."
             bullets={[
               "Pare-feu & segmentation réseau",
               "Supervision & détection",
@@ -123,7 +123,7 @@ export default function HomePage() {
             icon="search"
             kicker="Tester"
             title="Audits & pentest"
-            description="Nous pensons comme un attaquant pour révéler vos failles web et applicatives — avant qu'un vrai ne le fasse."
+            description="On pense comme un attaquant pour trouver vos failles — avant qu'un vrai ne le fasse."
             bullets={[
               "Tests d'intrusion (OWASP)",
               "Analyse d'écart de sécurité",
@@ -135,7 +135,7 @@ export default function HomePage() {
             icon="code"
             kicker="Développer"
             title="Développement web sécurisé"
-            description="Des applications et sites conçus « secure by design », où la sécurité est intégrée dès la première ligne de code."
+            description="« Secure by design » : la sécurité intégrée dès la première ligne de code."
             bullets={[
               "Sites & applications sur mesure",
               "Sécurité intégrée au cycle de dev",
@@ -147,7 +147,7 @@ export default function HomePage() {
             icon="file-check"
             kicker="Se conformer"
             title="Conformité NIS2 / CyFun"
-            description="Audit, analyse d'écart et remédiation pour atteindre le niveau CyberFundamentals attendu par le CCB."
+            description="Audit, analyse d'écart, remédiation : on vous amène au niveau CyFun attendu par le CCB."
             bullets={[
               "Diagnostic & analyse d'écart",
               "Remédiation concrète",
@@ -163,9 +163,9 @@ export default function HomePage() {
           title="Un périmètre défendu, pas un empilement d'outils"
           text={
             <>
-              Postes de travail, serveurs et bases de données regroupés derrière un pare-feu qui
-              filtre chaque connexion entrante, avec des segments internes chiffrés.{" "}
-              <b>Une architecture lisible</b>, que nous documentons et faisons évoluer avec vous.
+              Postes, serveurs, bases de données&nbsp;: tout protégé derrière un pare-feu qui
+              filtre chaque connexion. <b>Une architecture claire</b>, documentée, qui évolue avec
+              vous.
             </>
           }
           figure={
@@ -188,9 +188,8 @@ export default function HomePage() {
           title="La sécurité intégrée dès la conception"
           text={
             <>
-              Nos applications et sites sont pensés « secure by design »&nbsp;:{" "}
-              <b>chaque choix d&apos;architecture</b>, du code au déploiement, réduit la surface
-              d&apos;attaque avant même la mise en production.
+              « Secure by design »&nbsp;: <b>chaque choix d&apos;architecture</b> réduit la surface
+              d&apos;attaque, du code au déploiement.
             </>
           }
           figure={
@@ -219,9 +218,9 @@ export default function HomePage() {
           title="Un rapport d'écart clair, domaine par domaine"
           text={
             <>
-              <b>Chaque exigence CyFun est mesurée, pas devinée</b>&nbsp;: gouvernance, accès,
-              réseau, détection et continuité obtiennent chacun un niveau de maturité, agrégé en un
-              score global qui situe votre entreprise par rapport au niveau visé.
+              <b>Chaque exigence CyFun est mesurée, pas devinée.</b> Gouvernance, accès, réseau,
+              détection, continuité&nbsp;: un niveau de maturité par domaine, agrégé en un score
+              global.
             </>
           }
           figure={<AuditDashboardFigure />}
@@ -235,22 +234,22 @@ export default function HomePage() {
               {
                 title: "Cadrage & auto-évaluation",
                 description:
-                  "Nous délimitons le périmètre, identifions les actifs critiques et réalisons l'auto-évaluation CyFun avec vos équipes.",
+                  "Périmètre, actifs critiques, auto-évaluation CyFun — avec vos équipes.",
               },
               {
                 title: "Analyse d'écart & remédiation",
                 description:
-                  "Nous mesurons l'écart au niveau visé et corrigeons concrètement les manques, par ordre de priorité et de risque.",
+                  "On mesure l'écart au niveau visé et on corrige les manques, par priorité de risque.",
               },
               {
                 title: "Support à la vérification CCB",
                 description:
-                  "Nous préparons le dossier et vous accompagnons jusqu'à la soumission / vérification par l'organisme accrédité.",
+                  "On prépare le dossier et on vous accompagne jusqu'à la vérification par l'organisme accrédité.",
               },
               {
                 title: "Suivi continu",
                 description:
-                  "La conformité n'est pas un projet ponctuel : nous maintenons votre posture dans le temps et à chaque évolution.",
+                  "La conformité n'est pas ponctuelle : on maintient votre posture dans la durée.",
               },
             ]}
           />
@@ -266,10 +265,9 @@ export default function HomePage() {
           title="Basés à Liège, vos données restent en Belgique"
           text={
             <>
-              Pas de sous-traitance à distance ni d&apos;hébergement délocalisé&nbsp;:{" "}
-              <b>votre infrastructure, vos sauvegardes et vos échanges restent hébergés en
-              Belgique et dans l&apos;Union européenne</b>, avec un interlocuteur joignable sur
-              place.
+              Pas de sous-traitance à distance, pas d&apos;hébergement délocalisé.{" "}
+              <b>Infrastructure, sauvegardes, échanges&nbsp;: tout reste en Belgique et dans
+              l&apos;UE</b>, avec un interlocuteur sur place.
             </>
           }
           figure={<BelgiumMapFigure />}
@@ -284,7 +282,7 @@ export default function HomePage() {
               Des <span className="accentOnDark">résultats concrets</span>, une exigence constante
             </>
           }
-          lead="Des indicateurs modestes mais réels — la mesure d'un partenaire qui privilégie la qualité à la promesse."
+          lead="Peu de chiffres, mais réels — la qualité plutôt que la promesse."
           stats={[
             { value: "12", accent: "+", label: "années d'expertise cumulée en sécurité" },
             { value: "50", accent: "+", label: "audits & tests d'intrusion réalisés" },
@@ -325,7 +323,7 @@ export default function HomePage() {
               êtes
             </>
           }
-          text="30 minutes avec un expert pour évaluer votre exposition, cadrer votre conformité NIS2 et repartir avec des priorités claires. Sans engagement."
+          text="30 minutes avec un expert : votre exposition évaluée, votre conformité NIS2 cadrée, des priorités claires. Sans engagement."
           actions={[
             { label: "Réserver mon diagnostic gratuit", href: "/contact" },
             { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },

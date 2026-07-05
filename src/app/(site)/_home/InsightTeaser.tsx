@@ -15,8 +15,8 @@ export function InsightTeaser() {
           <span className="accent">PME belges</span>
         </h3>
         <p>
-          Ce que dit la loi, qui est concerné, comment choisir votre niveau CyFun et par où
-          commencer. <b>En langage clair, sans jargon.</b>
+          Ce que dit la loi, qui est concerné, quel niveau CyFun choisir.{" "}
+          <b>Clair, sans jargon.</b>
         </p>
         <div className={styles.meta}>
           <span>

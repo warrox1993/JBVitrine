@@ -9,8 +9,8 @@ export function AiNote() {
     <Reveal className={styles.note}>
       <Icon name="sparkles" strokeWidth={1.8} />
       <span>
-        Des <b>experts augmentés par l&apos;IA</b> pour aller plus vite et plus loin — mais
-        l&apos;analyse et les décisions restent entre des mains humaines.
+        Des <b>experts augmentés par l&apos;IA</b> pour aller plus vite — décisions et analyse
+        restent 100&nbsp;% humaines.
       </span>
     </Reveal>
   );

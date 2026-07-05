@@ -104,13 +104,12 @@ export default function ContactPage() {
               Un expert vous répond — <span className={cls.accent}>sous 24&nbsp;heures</span>.
             </h1>
             <p className={cls.directPromise}>
-              Vous décrivez votre besoin ci-dessous — <strong>un expert Smidjan vous rappelle sous
-              24&nbsp;h ouvrées</strong>, pas un centre d&apos;appels.
+              <strong>Un expert Smidjan vous rappelle sous 24&nbsp;h ouvrées</strong> — jamais un
+              centre d&apos;appels.
             </p>
             <p className={cls.lead}>
-              Diagnostic gratuit, question sur la conformité NIS2, projet de développement ou simple
-              prise de contact : écrivez-nous. Vous parlez directement à l&apos;expert qui traitera
-              votre demande.
+              Diagnostic, audit NIS2, pentest, incident : un seul interlocuteur,
+              du premier message à la solution.
             </p>
             <div className={cls.heroCtas}>
               <a href="#form" className={cls.ctaPrimary}>
@@ -198,9 +197,8 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <p>
-                  Rançongiciel, intrusion, fuite de données, e-mails frauduleux&nbsp;? N&apos;attendez pas
-                  et ne coupez rien avant de nous joindre. On vous guide immédiatement pour limiter les
-                  dégâts.
+                  Rançongiciel, intrusion, fuite de données&nbsp;? Ne coupez rien.
+                  Appelez — on limite les dégâts, tout de suite.
                 </p>
                 <a className={cls.ebTel} href="tel:+32475205562">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" /></svg>
@@ -208,7 +206,7 @@ export default function ContactPage() {
                 </a>
                 <div className={cls.ebNote}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
-                  Astreinte assurée par un intervenant Smidjan, jour et nuit.
+                  Un intervenant Smidjan, jour et nuit.
                 </div>
               </Reveal>
               </div>
@@ -219,7 +217,7 @@ export default function ContactPage() {
                   <span className={cls.hi}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M12 6v6l4 2" /><circle cx="12" cy="12" r="9" /></svg>
                   </span>
-                  Le parcours de votre demande
+                  Comment ça marche
                 </h3>
                 <div
                   className={cls.processStrip}
@@ -278,7 +276,7 @@ export default function ContactPage() {
                     <span className={cls.ic}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg></span>
                     <div>
                       <div className={cls.k}>Zone d&apos;intervention</div>
-                      <div className={cls.v}>Liège, Belgique<small>PME de Wallonie — sur site ou à distance, sur rendez-vous</small></div>
+                      <div className={cls.v}>Liège, Belgique<small>Sur site ou à distance, sur rendez-vous</small></div>
                     </div>
                   </li>
                   <li className={cls.coordPrimary}>
@@ -368,30 +366,30 @@ export default function ContactPage() {
           <div className={cls.secHead}>
             <span className={cls.eyebrow}>À quoi s&apos;attendre</span>
             <h2>De votre message au <span className="accent">diagnostic</span>, en trois temps</h2>
-            <p>Pas de tunnel commercial ni de rendez-vous imposé. Un échange direct, utile dès le premier contact.</p>
+            <p>Pas de tunnel commercial. Un échange direct, utile dès le premier message.</p>
           </div>
           <div className={cls.steps}>
             <div className={cls.step}>
               <div className={cls.num}>1</div>
               <h4>Vous nous écrivez</h4>
-              <p>Un formulaire, un e-mail ou un appel. Vous décrivez votre contexte et ce qui vous préoccupe — conformité, sécurité ou incident.</p>
+              <p>Formulaire, e-mail ou appel. Décrivez votre besoin en deux phrases.</p>
             </div>
             <div className={cls.step}>
               <div className={cls.num}>2</div>
               <h4>On vous rappelle sous 24&nbsp;h</h4>
-              <p>Un expert Smidjan (pas un commercial) revient vers vous sous 24&nbsp;h ouvrées pour cerner votre besoin et vos priorités.</p>
+              <p>Un expert Smidjan — pas un commercial — vous rappelle sous 24&nbsp;h ouvrées.</p>
             </div>
             <div className={cls.step}>
               <div className={cls.num}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /><path d="m9 12 2 2 4-4" /></svg>
               </div>
               <h4>Diagnostic gratuit</h4>
-              <p>30&nbsp;minutes pour évaluer votre exposition et repartir avec des priorités claires. Sans engagement, sans jargon.</p>
+              <p>30&nbsp;minutes pour cerner vos priorités. Sans engagement, sans jargon.</p>
             </div>
           </div>
           <div className={cls.expectNote}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /></svg>
-            <span><b>Un seul interlocuteur</b> du premier message à la remédiation — pas de sous-traitance.</span>
+            <span><b>Un seul interlocuteur</b>, du premier message à la remédiation.</span>
           </div>
         </div>
       </section>

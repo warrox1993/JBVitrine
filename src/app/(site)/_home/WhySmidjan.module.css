@@ -28,8 +28,8 @@
 }
 .list {
   display: grid;
-  gap: 14px;
-  margin-top: 36px;
+  gap: 16px;
+  margin-top: 40px;
 }
 .item {
   display: flex;
@@ -37,7 +37,7 @@
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 20px 22px;
+  padding: 22px 24px;
   box-shadow: var(--shadow);
 }
 .item .ic {
