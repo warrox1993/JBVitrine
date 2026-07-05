@@ -4,6 +4,7 @@ import { getAllArticles } from "@/lib/blogActions";
 import { BlogFilter } from "@/components/features/blog/BlogFilter";
 import { FeaturedArticle } from "@/components/features/blog/FeaturedArticle";
 import { CTABox } from "@/components/shared";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -153,33 +154,39 @@ export default async function BlogPage() {
           <circle cx="128" cy="264" r="7.5" fill="#fff" stroke="#12294a" strokeWidth="1.6" />
           <circle cx="246" cy="328" r="6" fill="#ff6a00" />
         </svg>
-        <div className="wrap">
-          <span className={styles.eyebrow}>Journal · Ressources</span>
-          <h1 className={styles.heroTitle}>
-            Des articles techniques pour sécuriser et mettre en conformité votre entreprise
-          </h1>
-          <p className={styles.heroLead}>
-            Cybersécurité, conformité NIS2 / CyFun et développement web sécurisé&nbsp;: des
-            articles écrits pour être appliqués, pas seulement lus — avec un regard pratique
-            sur les PME en Belgique.
-          </p>
-        </div>
+        <Reveal>
+          <div className="wrap">
+            <span className={styles.eyebrow}>Journal · Ressources</span>
+            <h1 className={styles.heroTitle}>
+              Des articles techniques pour sécuriser et mettre en conformité votre entreprise
+            </h1>
+            <p className={styles.heroLead}>
+              Cybersécurité, conformité NIS2 / CyFun et développement web sécurisé&nbsp;: des
+              articles écrits pour être appliqués, pas seulement lus — avec un regard pratique
+              sur les PME en Belgique.
+            </p>
+          </div>
+        </Reveal>
       </section>
 
       {featured && (
         <section className={styles.featuredSection}>
-          <div className="wrap">
-            <FeaturedArticle article={featured} />
-          </div>
+          <Reveal>
+            <div className="wrap">
+              <FeaturedArticle article={featured} />
+            </div>
+          </Reveal>
         </section>
       )}
 
       <section className={styles.articlesSection}>
         <div className="wrap">
-          <div className={styles.sectionHead}>
-            <span className={styles.eyebrow}>Tous les articles</span>
-            <h2 className={styles.sectionTitle}>Parcourir par thème</h2>
-          </div>
+          <Reveal>
+            <div className={styles.sectionHead}>
+              <span className={styles.eyebrow}>Tous les articles</span>
+              <h2 className={styles.sectionTitle}>Parcourir par thème</h2>
+            </div>
+          </Reveal>
 
           <BlogFilter articles={blogArticles} />
         </div>

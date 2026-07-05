@@ -1,5 +1,6 @@
 import React from "react";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./IllusPanel.module.css";
 
 export interface IllusPanelProps {
@@ -20,7 +21,7 @@ export function IllusPanel({ eyebrow, title, text, figure, onTint, onDark }: Ill
     .filter(Boolean)
     .join(" ");
   return (
-    <div className={cn}>
+    <Reveal className={cn}>
       <div className={styles.txt}>
         <Eyebrow onDark={onDark} className={styles.kickerMono}>
           {eyebrow}
@@ -29,7 +30,7 @@ export function IllusPanel({ eyebrow, title, text, figure, onTint, onDark }: Ill
         <p>{text}</p>
       </div>
       <figure className={styles.fig}>{figure}</figure>
-    </div>
+    </Reveal>
   );
 }
 

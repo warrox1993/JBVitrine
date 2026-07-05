@@ -7,6 +7,7 @@ import { Icon } from "@/components/ui/Icon/Icon";
 import { Section } from "@/components/ui/Section/Section";
 import { ArticleCard, CTABox } from "@/components/shared";
 import { ArticleCoverSvg } from "@/components/features/blog/ArticleCoverSvg";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { getAllArticles, getArticleBySlug, type BlogArticle } from "@/lib/blogActions";
 import { markdownToHtml } from "@/lib/markdown";
 import { jsonLdSafe } from "@/lib/security/escape";
@@ -195,121 +196,134 @@ export default async function BlogArticlePage({ params }: Props) {
       </div>
 
       <header className={styles.articleHead}>
-        <div className={`wrap ${styles.narrow}`}>
-          <span className={styles.catTag}>{article.category}</span>
-          <h1 className={styles.title}>{article.title}</h1>
-          <div className={styles.articleMeta}>
-            <div className={styles.who}>
-              <div className={styles.miniAvatar}>{authorInitials}</div>
-              <div>
-                <b>{authorSchema.name}</b>
-                <span>{authorSchema.jobTitle}</span>
+        <Reveal>
+          <div className={`wrap ${styles.narrow}`}>
+            <span className={styles.catTag}>{article.category}</span>
+            <h1 className={styles.title}>{article.title}</h1>
+            <div className={styles.articleMeta}>
+              <div className={styles.who}>
+                <div className={styles.miniAvatar}>{authorInitials}</div>
+                <div>
+                  <b>{authorSchema.name}</b>
+                  <span>{authorSchema.jobTitle}</span>
+                </div>
               </div>
+              <span className={styles.item}>
+                <Icon name="calendar" size={16} />
+                <time dateTime={article.publishedAt}>{formattedDate}</time>
+              </span>
+              <span className={styles.item}>
+                <Icon name="clock" size={16} />
+                {article.readTime} de lecture
+              </span>
             </div>
-            <span className={styles.item}>
-              <Icon name="calendar" size={16} />
-              <time dateTime={article.publishedAt}>{formattedDate}</time>
-            </span>
-            <span className={styles.item}>
-              <Icon name="clock" size={16} />
-              {article.readTime} de lecture
-            </span>
           </div>
-        </div>
+        </Reveal>
       </header>
 
-      <div className={`wrap ${styles.narrow}`}>
-        {article.coverImage ? (
-          <figure className={styles.heroPhoto}>
-            <Image
-              src={article.coverImage}
-              alt={article.title}
-              fill
-              sizes="(max-width: 760px) 100vw, 760px"
-              priority
-            />
-          </figure>
-        ) : (
-          <figure className={styles.heroArt} aria-hidden="true">
-            <ArticleCoverSvg category={article.category} size={120} tone="dark" />
-          </figure>
-        )}
-      </div>
+      <Reveal>
+        <div className={`wrap ${styles.narrow}`}>
+          {article.coverImage ? (
+            <figure className={styles.heroPhoto}>
+              <Image
+                src={article.coverImage}
+                alt={article.title}
+                fill
+                sizes="(max-width: 760px) 100vw, 760px"
+                priority
+              />
+              <div className={styles.heroPhotoOverlay} aria-hidden="true" />
+            </figure>
+          ) : (
+            <figure className={styles.heroArt} aria-hidden="true">
+              <ArticleCoverSvg category={article.category} size={120} tone="dark" />
+            </figure>
+          )}
+        </div>
+      </Reveal>
 
       <section className={styles.articleSection}>
-        <div className={`wrap ${styles.narrow}`}>
-          {article.tableOfContents && article.tableOfContents.length > 0 && (
-            <nav className={styles.toc} aria-label="Sommaire de l'article">
-              <div className={styles.tocLabel}>Sommaire</div>
-              <ol>
-                {article.tableOfContents.map((item) => (
-                  <li key={item.id}>
-                    <a href={`#${item.id}`}>{item.title}</a>
-                  </li>
-                ))}
-              </ol>
-            </nav>
-          )}
+        <Reveal>
+          <div className={`wrap ${styles.narrow}`}>
+            {article.tableOfContents && article.tableOfContents.length > 0 && (
+              <nav className={styles.toc} aria-label="Sommaire de l'article">
+                <div className={styles.tocLabel}>Sommaire</div>
+                <ol>
+                  {article.tableOfContents.map((item) => (
+                    <li key={item.id}>
+                      <a href={`#${item.id}`}>{item.title}</a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            )}
 
-          <div
-            className={styles.prose}
-            dangerouslySetInnerHTML={{
-              __html: markdownToHtml(article.content || ""),
-            }}
-          />
+            <div
+              className={styles.prose}
+              dangerouslySetInnerHTML={{
+                __html: markdownToHtml(article.content || ""),
+              }}
+            />
 
-          {/* Navigation between articles */}
-          {(previousArticle || nextArticle) && (
-            <nav className={styles.articleNavigation} aria-label="Navigation entre articles">
-              {previousArticle && (
-                <Link
-                  href={`/blog/${previousArticle.slug}`}
-                  className={`${styles.navLink} ${styles.navPrevious}`}
-                >
-                  <span className={styles.navLabel}>← Article précédent</span>
-                  <span className={styles.navTitle}>{previousArticle.title}</span>
-                </Link>
-              )}
-              {nextArticle && (
-                <Link
-                  href={`/blog/${nextArticle.slug}`}
-                  className={`${styles.navLink} ${styles.navNext}`}
-                >
-                  <span className={styles.navLabel}>Article suivant →</span>
-                  <span className={styles.navTitle}>{nextArticle.title}</span>
-                </Link>
-              )}
-            </nav>
-          )}
-        </div>
+            {/* Navigation between articles */}
+            {(previousArticle || nextArticle) && (
+              <nav className={styles.articleNavigation} aria-label="Navigation entre articles">
+                {previousArticle && (
+                  <Link
+                    href={`/blog/${previousArticle.slug}`}
+                    className={`${styles.navLink} ${styles.navPrevious}`}
+                  >
+                    <span className={styles.navLabel}>← Article précédent</span>
+                    <span className={styles.navTitle}>{previousArticle.title}</span>
+                  </Link>
+                )}
+                {nextArticle && (
+                  <Link
+                    href={`/blog/${nextArticle.slug}`}
+                    className={`${styles.navLink} ${styles.navNext}`}
+                  >
+                    <span className={styles.navLabel}>Article suivant →</span>
+                    <span className={styles.navTitle}>{nextArticle.title}</span>
+                  </Link>
+                )}
+              </nav>
+            )}
+          </div>
+        </Reveal>
       </section>
 
-      <CTABox
-        title="Besoin d'accompagnement ?"
-        text="Smidjan vous aide à mettre en place ces solutions pour votre entreprise en Belgique."
-        actions={[{ label: "Discutons de votre projet", href: "/contact" }]}
-        reassurances={["Sans engagement", "Réponse sous 24 h"]}
-      />
+      <Reveal>
+        <CTABox
+          title="Besoin d'accompagnement ?"
+          text="Smidjan vous aide à mettre en place ces solutions pour votre entreprise en Belgique."
+          actions={[{ label: "Discutons de votre projet", href: "/contact" }]}
+          reassurances={["Sans engagement", "Réponse sous 24 h"]}
+        />
+      </Reveal>
 
-      <div className={`wrap ${styles.narrow}`}>
-        <div className={styles.authorCard}>
-          <div className={styles.avatar}>{authorInitials}</div>
-          <div>
-            <h2 className={styles.authorKicker}>À propos de l&apos;auteur</h2>
-            <div className={styles.authorName}>{authorSchema.name}</div>
-            <div className={styles.authorRole}>{authorSchema.jobTitle}</div>
-            <p className={styles.authorBio}>{authorSchema.description}</p>
+      <Reveal>
+        <div className={`wrap ${styles.narrow}`}>
+          <div className={styles.authorCard}>
+            <div className={styles.avatar}>{authorInitials}</div>
+            <div>
+              <h2 className={styles.authorKicker}>À propos de l&apos;auteur</h2>
+              <div className={styles.authorName}>{authorSchema.name}</div>
+              <div className={styles.authorRole}>{authorSchema.jobTitle}</div>
+              <p className={styles.authorBio}>{authorSchema.description}</p>
+            </div>
           </div>
         </div>
-      </div>
+      </Reveal>
 
       {relatedArticles.length > 0 && (
         <Section variant="tint" className={styles.related}>
-          <div className={styles.relatedHead}>
-            <div className={styles.relatedKicker}>Pour aller plus loin</div>
-            <h2 className={styles.relatedTitle}>Articles liés</h2>
-          </div>
-          <div className={styles.relatedGrid}>
+          <Reveal>
+            <div className={styles.relatedHead}>
+              <div className={styles.relatedKicker}>Pour aller plus loin</div>
+              <h2 className={styles.relatedTitle}>Articles liés</h2>
+            </div>
+          </Reveal>
+          <Reveal stagger className={styles.relatedGrid}>
             {relatedArticles.map((related) => {
               const relatedDate = new Date(related.publishedAt).toLocaleDateString("fr-BE", {
                 year: "numeric",
@@ -329,7 +343,7 @@ export default async function BlogArticlePage({ params }: Props) {
                 />
               );
             })}
-          </div>
+          </Reveal>
         </Section>
       )}
     </article>

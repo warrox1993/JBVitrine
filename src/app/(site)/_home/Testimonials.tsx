@@ -1,5 +1,6 @@
 import React from "react";
 import OptimizedImage from "@/components/ui/OptimizedImage/OptimizedImage";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./Testimonials.module.css";
 
 interface Testimonial {
@@ -61,7 +62,7 @@ const TESTIMONIALS: Testimonial[] = [
 export function Testimonials() {
   return (
     <div>
-      <div className={styles.photoBand}>
+      <Reveal className={styles.photoBand}>
         <OptimizedImage
           src="/images/pages/home/collaboration-pme.jpg"
           alt="Deux professionnels collaborant sur un projet de cybersécurité, illustrant l'accompagnement de proximité de Smidjan auprès des PME wallonnes."
@@ -74,8 +75,8 @@ export function Testimonials() {
         <p className={styles.photoCaption}>
           Un accompagnement de proximité, pensé pour les PME wallonnes
         </p>
-      </div>
-      <div className={styles.grid}>
+      </Reveal>
+      <Reveal stagger className={styles.grid}>
         {TESTIMONIALS.map((t) => (
           <article key={t.role + t.sector} className={styles.card}>
             <svg className={styles.quoteIc} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -93,7 +94,7 @@ export function Testimonials() {
             </div>
           </article>
         ))}
-      </div>
+      </Reveal>
     </div>
   );
 }

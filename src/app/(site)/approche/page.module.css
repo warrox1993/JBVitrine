@@ -15,6 +15,23 @@
   align-items: center;
   margin-top: 34px;
 }
+.kickerRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.rule {
+  width: 34px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--orange);
+  flex: none;
+}
+.kickerMono {
+  font-family: var(--mono) !important;
+  letter-spacing: 0.06em !important;
+}
 .h1 {
   font-size: clamp(34px, 4.6vw, 52px);
   margin: 20px 0 0;
@@ -156,8 +173,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font: 700 11.5px/1 var(--sans);
-  letter-spacing: 0.08em;
+  font: 700 11.5px/1 var(--mono);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 16px;
 }
@@ -258,10 +275,24 @@
   margin: 0;
 }
 .methodPhotoFrame {
+  position: relative;
+  overflow: hidden;
   border-radius: 14px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 106, 0, 0.35);
   box-shadow: var(--shadow);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.methodPhotoFrame :global(img) {
+  filter: saturate(0.85) contrast(1.03);
+}
+.methodPhotoFrame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0) 45%, rgba(11, 31, 58, 0.55) 100%),
+    linear-gradient(135deg, rgba(11, 31, 58, 0.22), transparent 60%);
+  pointer-events: none;
 }
 .methodPhotoFrame:hover {
   box-shadow: 0 22px 48px -18px rgba(11, 31, 58, 0.4);
@@ -334,8 +365,8 @@
   min-height: 14px;
 }
 .kick {
-  font: 700 11.5px/1 var(--sans);
-  letter-spacing: 0.1em;
+  font: 700 11.5px/1 var(--mono);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--orange-d);
   margin-bottom: 9px;
@@ -365,8 +396,8 @@
   display: flex;
   align-items: center;
   gap: 9px;
-  font: 700 11px/1 var(--sans);
-  letter-spacing: 0.08em;
+  font: 700 11px/1 var(--mono);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--navy);
   margin-bottom: 14px;
@@ -503,10 +534,24 @@
   max-width: 860px;
 }
 .sectionPhotoFrame {
+  position: relative;
+  overflow: hidden;
   border-radius: 14px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 106, 0, 0.35);
   box-shadow: var(--shadow);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.sectionPhotoFrame :global(img) {
+  filter: saturate(0.85) contrast(1.03);
+}
+.sectionPhotoFrame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0) 45%, rgba(11, 31, 58, 0.55) 100%),
+    linear-gradient(135deg, rgba(11, 31, 58, 0.22), transparent 60%);
+  pointer-events: none;
 }
 .sectionPhotoFrame:hover {
   box-shadow: 0 22px 48px -18px rgba(11, 31, 58, 0.4);

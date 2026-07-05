@@ -1,11 +1,12 @@
 import React from "react";
 import { Icon } from "@/components/ui/Icon/Icon";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./Honesty.module.css";
 
 /** Transparency callout — we remediate, we don't claim to certify. */
 export function Honesty() {
   return (
-    <div className={styles.honesty}>
+    <Reveal className={styles.honesty}>
       <Icon name="shield-check" strokeWidth={1.8} />
       <div>
         <h4>En toute transparence</h4>
@@ -17,7 +18,7 @@ export function Honesty() {
           notre différence avec les pures maisons d&apos;audit.
         </p>
       </div>
-    </div>
+    </Reveal>
   );
 }
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import type { BlogArticle } from "@/lib/blogActions";
 import { ArticleCard } from "@/components/shared";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { ArticleCoverSvg } from "./ArticleCoverSvg";
 import cardStyles from "@/components/shared/ArticleCard/ArticleCard.module.css";
 import styles from "./BlogFilter.module.css";
@@ -86,7 +87,7 @@ export function BlogFilter({ articles }: BlogFilterProps) {
       </div>
 
       {/* Articles grid */}
-      <div className={styles.grid}>
+      <Reveal stagger className={styles.grid}>
         {filteredArticles.map((article) => (
           <ArticleCard
             key={article.slug}
@@ -99,7 +100,7 @@ export function BlogFilter({ articles }: BlogFilterProps) {
             cover={<ArticleCover article={article} />}
           />
         ))}
-      </div>
+      </Reveal>
 
       {filteredArticles.length === 0 && (
         <div className={styles.empty}>

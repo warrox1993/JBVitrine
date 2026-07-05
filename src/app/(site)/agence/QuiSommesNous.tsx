@@ -2,6 +2,7 @@ import OptimizedImage from "@/components/ui/OptimizedImage";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Icon } from "@/components/ui/Icon/Icon";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./QuiSommesNous.module.css";
 
 const VALUES = [
@@ -33,7 +34,7 @@ export function QuiSommesNous() {
     <section className={styles.about}>
       <Container>
         <div className={styles.grid}>
-          <div className={styles.copy}>
+          <Reveal as="div" className={styles.copy}>
             <SectionHeading
               eyebrow="Qui sommes-nous"
               title={
@@ -73,9 +74,9 @@ export function QuiSommesNous() {
                 </p>
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal as="div" variant="right">
             {/* Abstract "interlocking values" illustration: rigueur / proximité / franchise / pragmatisme */}
             <div className={styles.valuesIllus} aria-hidden="true">
               <svg viewBox="0 0 460 190">
@@ -112,7 +113,7 @@ export function QuiSommesNous() {
               </svg>
             </div>
 
-            <div className={styles.valList}>
+            <Reveal stagger className={styles.valList}>
               {VALUES.map((v) => (
                 <div className={styles.valItem} key={v.title}>
                   <div className={styles.ic}>
@@ -124,7 +125,7 @@ export function QuiSommesNous() {
                   </div>
                 </div>
               ))}
-            </div>
+            </Reveal>
 
             {/* Locality map illustration: Liège / Wallonie */}
             <div className={styles.localityCard}>
@@ -193,7 +194,7 @@ export function QuiSommesNous() {
                 <b>hébergées en Belgique et en Europe</b>.
               </figcaption>
             </figure>
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>

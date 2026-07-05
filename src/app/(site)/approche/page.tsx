@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon, type IconName } from "@/components/ui/Icon/Icon";
 import OptimizedImage from "@/components/ui/OptimizedImage/OptimizedImage";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { CTABox } from "@/components/shared/CTABox/CTABox";
@@ -218,9 +219,12 @@ export default function ApprochePage() {
       <section className={styles.hero}>
         <div className="container">
           <Breadcrumbs items={[{ label: "Accueil", href: "/" }, { label: "Approche · Notre méthode" }]} />
-          <div className={styles.heroGrid}>
+          <Reveal as="div" stagger className={styles.heroGrid}>
             <div>
-              <Eyebrow>Notre méthode</Eyebrow>
+              <div className={styles.kickerRow}>
+                <span className={styles.rule} aria-hidden="true" />
+                <Eyebrow className={styles.kickerMono}>Notre méthode</Eyebrow>
+              </div>
               <h1 className={styles.h1}>
                 Une cybersécurité qui se <span className="accent">démontre</span>, pas qui se raconte.
               </h1>
@@ -285,7 +289,7 @@ export default function ApprochePage() {
                 </li>
               </ul>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -293,7 +297,7 @@ export default function ApprochePage() {
 
       {/* ===== Philosophy ===== */}
       <Section variant="white">
-        <div className={styles.philoGrid}>
+        <Reveal as="div" stagger className={styles.philoGrid}>
           <div>
             <SectionHeading
               eyebrow="Notre philosophie"
@@ -380,25 +384,27 @@ export default function ApprochePage() {
               </p>
             </div>
           </div>
-        </div>
+        </Reveal>
       </Section>
 
       {/* ===== Method ===== */}
       <Section variant="tint" id="method">
-        <SectionHeading
-          center
-          eyebrow="Notre méthode"
-          title={
-            <>
-              Quatre <span className="accent">étapes</span>, du premier constat au suivi durable
-            </>
-          }
-          lead="Un cheminement clair, le même pour chaque mission — que ce soit un audit, un pentest ou une mise en conformité NIS2 / CyFun. À chaque étape, vous savez ce qui se passe et ce que vous recevez."
-        />
+        <Reveal>
+          <SectionHeading
+            center
+            eyebrow="Notre méthode"
+            title={
+              <>
+                Quatre <span className="accent">étapes</span>, du premier constat au suivi durable
+              </>
+            }
+            lead="Un cheminement clair, le même pour chaque mission — que ce soit un audit, un pentest ou une mise en conformité NIS2 / CyFun. À chaque étape, vous savez ce qui se passe et ce que vous recevez."
+          />
+        </Reveal>
 
-        <div className={styles.roadmap}>
+        <Reveal variant="scale" className={styles.roadmap}>
           <RoadmapIllustration />
-        </div>
+        </Reveal>
 
         <div className={styles.overview}>
           <ProcessSteps
@@ -407,7 +413,7 @@ export default function ApprochePage() {
           />
         </div>
 
-        <div className={styles.methodGallery}>
+        <Reveal as="div" stagger className={styles.methodGallery}>
           <figure className={styles.methodPhoto}>
             <OptimizedImage
               src="/images/pages/approche/methode-architecture.jpg"
@@ -434,9 +440,9 @@ export default function ApprochePage() {
               Une <b>feuille de route priorisée</b>, construite avec vous — pas imposée.
             </figcaption>
           </figure>
-        </div>
+        </Reveal>
 
-        <div className={styles.stepsDetail}>
+        <Reveal as="div" stagger className={styles.stepsDetail}>
           {methodSteps.map((step, i) => (
             <article key={step.title} className={styles.mstep}>
               <div className={styles.idx}>
@@ -464,12 +470,12 @@ export default function ApprochePage() {
               </div>
             </article>
           ))}
-        </div>
+        </Reveal>
       </Section>
 
       {/* ===== AI companion ===== */}
       <Section variant="navy" gridBg id="ia">
-        <div className={styles.aiGrid}>
+        <Reveal as="div" stagger className={styles.aiGrid}>
           <div>
             <SectionHeading
               onDark
@@ -491,7 +497,7 @@ export default function ApprochePage() {
               </p>
             </div>
           </div>
-          <div className={styles.aiCards}>
+          <Reveal as="div" stagger className={styles.aiCards}>
             {aiCards.map((card) => (
               <div key={card.title} className={styles.aiCard}>
                 <div className={styles.aiIcon}>
@@ -501,7 +507,7 @@ export default function ApprochePage() {
                 <p>{card.text}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
           <div className={styles.aiIllustration}>
             <AiIllustration />
             <div className={styles.legend}>
@@ -519,23 +525,25 @@ export default function ApprochePage() {
               </span>
             </div>
           </div>
-        </div>
+        </Reveal>
       </Section>
 
       {/* ===== Why Smidjan ===== */}
       <Section variant="white">
-        <SectionHeading
-          center
-          eyebrow="Pourquoi Smidjan"
-          title={
-            <>
-              La rigueur d&rsquo;un cabinet, la proximité d&rsquo;un <span className="accent">partenaire</span>
-            </>
-          }
-          lead="Nous sommes une structure à taille humaine, volontairement. Moins d'intermédiaires, plus de responsabilité — et quatre raisons concrètes de nous confier votre sécurité."
-        />
+        <Reveal>
+          <SectionHeading
+            center
+            eyebrow="Pourquoi Smidjan"
+            title={
+              <>
+                La rigueur d&rsquo;un cabinet, la proximité d&rsquo;un <span className="accent">partenaire</span>
+              </>
+            }
+            lead="Nous sommes une structure à taille humaine, volontairement. Moins d'intermédiaires, plus de responsabilité — et quatre raisons concrètes de nous confier votre sécurité."
+          />
+        </Reveal>
 
-        <figure className={styles.sectionPhoto}>
+        <Reveal variant="scale" as="figure" className={styles.sectionPhoto}>
           <OptimizedImage
             src="/images/pages/approche/collaboration-expert.jpg"
             alt="Un consultant et une dirigeante se félicitent d'un high five autour d'un bureau, illustrant la relation directe avec l'expert dédié à votre dossier, sans sous-traitance."
@@ -547,9 +555,9 @@ export default function ApprochePage() {
           <figcaption className={styles.sectionPhotoCap}>
             Un <b>expert dédié</b>, joignable directement — jamais un centre d&rsquo;appel ni un junior en sous-traitance.
           </figcaption>
-        </figure>
+        </Reveal>
 
-        <div className={styles.whyGrid}>
+        <Reveal as="div" stagger className={styles.whyGrid}>
           {whyItems.map((item) => (
             <div key={item.title} className={styles.whyItem}>
               <div className={styles.whyIcon}>
@@ -565,7 +573,7 @@ export default function ApprochePage() {
               </div>
             </div>
           ))}
-        </div>
+        </Reveal>
       </Section>
 
       <StatsBand
@@ -581,17 +589,19 @@ export default function ApprochePage() {
 
       {/* ===== Référentiels / quality ===== */}
       <Section variant="tint">
-        <SectionHeading
-          center
-          eyebrow="Nos référentiels"
-          title={
-            <>
-              Une méthodologie alignée sur les cadres de <span className="accent">référence</span>
-            </>
-          }
-          lead="Nous ne travaillons pas au feeling. Nos audits, notre développement et nos mises en conformité s'appuient sur des référentiels reconnus — appliqués comme méthode de travail, pour que vos résultats soient comparables et défendables."
-        />
-        <div className={styles.refsGrid}>
+        <Reveal>
+          <SectionHeading
+            center
+            eyebrow="Nos référentiels"
+            title={
+              <>
+                Une méthodologie alignée sur les cadres de <span className="accent">référence</span>
+              </>
+            }
+            lead="Nous ne travaillons pas au feeling. Nos audits, notre développement et nos mises en conformité s'appuient sur des référentiels reconnus — appliqués comme méthode de travail, pour que vos résultats soient comparables et défendables."
+          />
+        </Reveal>
+        <Reveal as="div" stagger className={styles.refsGrid}>
           {referentiels.map((ref) => (
             <article key={ref.code} className={styles.refCard}>
               <div className={styles.refIcon}>
@@ -602,8 +612,8 @@ export default function ApprochePage() {
               <p className={styles.refText}>{ref.text}</p>
             </article>
           ))}
-        </div>
-        <div className={styles.refsHonesty}>
+        </Reveal>
+        <Reveal className={styles.refsHonesty}>
           <Icon name="alert-circle" size={26} />
           <div>
             <h4>En toute transparence</h4>
@@ -614,7 +624,7 @@ export default function ApprochePage() {
               la soumission — pas de vous vendre un label que nous ne délivrons pas.
             </p>
           </div>
-        </div>
+        </Reveal>
       </Section>
 
       {/* ===== Final CTA ===== */}

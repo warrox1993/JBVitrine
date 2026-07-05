@@ -2,6 +2,7 @@ import OptimizedImage from "@/components/ui/OptimizedImage";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./Fondateur.module.css";
 
 const CREDENTIALS = [
@@ -82,8 +83,8 @@ export function Fondateur() {
   return (
     <section className={styles.founderSec}>
       <Container>
-        <div className={styles.secHead}>
-          <Eyebrow>Le fondateur</Eyebrow>
+        <Reveal className={styles.secHead}>
+          <Eyebrow className={styles.kickerMono}>Le fondateur</Eyebrow>
           <h2>
             Jean-Baptiste Dhondt —{" "}
             <span className="accent">un parcours peu commun</span> vers la
@@ -94,11 +95,11 @@ export function Fondateur() {
             curiosité, la discipline militaire et une pratique concrète de la
             sécurité offensive comme défensive.
           </p>
-        </div>
+        </Reveal>
 
         <div className={styles.grid}>
           {/* Profile card */}
-          <aside className={styles.profile}>
+          <Reveal as="aside" className={styles.profile}>
             <div className={`${styles.gridBg} grid-bg`} aria-hidden="true" />
 
             {/* Portrait placeholder illustration — to be replaced by a real photo */}
@@ -164,11 +165,11 @@ export function Fondateur() {
                 <span key={t}>{t}</span>
               ))}
             </div>
-          </aside>
+          </Reveal>
 
           {/* Narrative + journey */}
-          <div className={styles.narrative}>
-            <Eyebrow>Le parcours</Eyebrow>
+          <Reveal as="div" className={styles.narrative} variant="right">
+            <Eyebrow className={styles.kickerMono}>Le parcours</Eyebrow>
             <h3>
               De la passion de l&rsquo;informatique à la{" "}
               <span className="accent">défense d&rsquo;entreprises</span>
@@ -214,7 +215,7 @@ export function Fondateur() {
                 </li>
               ))}
             </ol>
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>

@@ -50,7 +50,7 @@ export function FeaturedArticle({ article }: FeaturedArticleProps) {
           Lire l&apos;article
         </Button>
       </div>
-      <div className={styles.visual}>
+      <div className={`${styles.visual} ${article.coverImage ? styles.visualPhoto : ""}`}>
         {article.coverImage ? (
           <>
             <Image
