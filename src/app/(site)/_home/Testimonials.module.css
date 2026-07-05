@@ -1,0 +1,68 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+}
+.quoteIc {
+  width: 30px;
+  height: 30px;
+  color: var(--orange);
+  opacity: 0.85;
+}
+.card blockquote {
+  margin: 16px 0 0;
+  font-size: 15.5px;
+  color: var(--ink);
+  line-height: 1.6;
+  flex: 1;
+}
+.who {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.who .badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--navy);
+  color: var(--orange-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.who .badge svg {
+  width: 20px;
+  height: 20px;
+}
+.who b {
+  display: block;
+  font-size: 14.5px;
+  color: var(--navy);
+}
+.who span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

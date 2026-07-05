@@ -1,26 +1,38 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
-import { Button } from "@/components/ui/Button/Button";
-import { Heading } from "@/components/ui/Heading";
-import { Footer } from "@/components/layout/Footer/Footer";
-import { TechStackEnhanced } from "@/components/sections/TechStack/TechStackEnhanced";
-import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
-import { ServicesHero } from "./ServicesHero";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
+import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
+import { Section } from "@/components/ui/Section/Section";
+import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
+import { Icon } from "@/components/ui/Icon/Icon";
+import { LinkMore } from "@/components/ui/LinkMore/LinkMore";
+import {
+  ServicePillar,
+  CyFunTiers,
+  CTABox,
+} from "@/components/shared";
+import {
+  SecureVisual,
+  TestVisual,
+  DevVisual,
+  ComplyVisual,
+} from "./PillarVisuals";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Services - Développement Web, Cybersécurité & IA à Liège",
+  title: "Nos expertises — Cybersécurité, pentest, développement & conformité | Smidjan Liège",
   description:
-    "Agence digitale à Liège : développement web sur mesure avec Next.js/React, cybersécurité (OWASP, audits), automatisation IA et CMS e-commerce. Services pour toute la Belgique.",
+    "Smidjan sécurise votre infrastructure, teste vos applications (pentest OWASP), développe en secure by design et vous accompagne vers la conformité NIS2 / CyFun. Un seul interlocuteur, à Liège.",
   keywords: [
-    "développement web Liège",
-    "cybersécurité Belgique",
-    "automatisation IA",
-    "agence web Wallonie",
-    "CMS e-commerce",
-    "Next.js React",
+    "cybersécurité PME Liège",
     "audit sécurité OWASP",
-    "n8n automatisation",
+    "test d'intrusion pentest Belgique",
+    "développement web sécurisé",
+    "secure by design",
+    "conformité NIS2 CyFun",
+    "durcissement infrastructure réseau",
+    "réponse à incident cyber",
   ],
   alternates: {
     canonical: "/services",
@@ -30,9 +42,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Services Web & Cybersécurité - Smidjan Liège",
+    title: "Nos expertises — Cybersécurité, pentest, développement & conformité",
     description:
-      "Développement web performant, cybersécurité avancée et automatisations IA pour entreprises en Belgique. CMS e-commerce, audits OWASP et solutions sur mesure.",
+      "Sécuriser, tester, développer, se conformer : quatre expertises Smidjan pour réduire concrètement le risque cyber des PME en Belgique.",
     url: "https://smidjan.be/services",
     siteName: "Smidjan",
     images: [
@@ -40,7 +52,7 @@ export const metadata: Metadata = {
         url: "https://smidjan.be/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Smidjan - Services de développement web et cybersécurité à Liège",
+        alt: "Smidjan — Cybersécurité, pentest, développement sécurisé & conformité NIS2 à Liège",
         type: "image/webp",
       },
     ],
@@ -49,9 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Services Web & Cybersécurité - Smidjan",
+    title: "Nos expertises — Smidjan Cybersécurité",
     description:
-      "Développement web, cybersécurité et IA pour entreprises en Belgique.",
+      "Sécuriser, tester, développer, se conformer : quatre expertises pour réduire le risque cyber des PME.",
     images: ["/og-image.webp"],
   },
   robots: {
@@ -67,313 +79,300 @@ export const metadata: Metadata = {
   },
 };
 
-const servicePillars = [
-  {
-    id: "developpement-web",
-    title: "Développement Web",
-    subtitle: "Des architectures web sur mesure, rapides et prêtes à évoluer.",
-    description:
-      "Nous créons des sites, applications et plateformes taillés pour la performance : rapides à charger, simples à maintenir et adaptés à votre croissance. De la vitrine à l'écosystème complet, chaque projet repose sur un code robuste et un design clair.",
-    technologies: "Next.js / React / Smidjan CMS / PostgreSQL / Stripe / API REST",
-    benefits: [
-      "Un site ou une application à haute performance (LCP < 2 s)",
-      "Une architecture évolutive et bien documentée",
-      "Un front-end optimisé SEO et accessible",
-      "Une intégration fluide avec vos outils internes",
-    ],
-    examples: [
-      "Site vitrine premium pour PME locale",
-      "Plateforme e-commerce connectée à Stripe et ERP",
-      "Application interne avec tableau de bord et gestion utilisateurs",
-    ],
-    cta: "Démarrer un projet web",
-  },
-  {
-    id: "cybersecurite",
-    title: "Cybersécurité Web",
-    subtitle: "Sécuriser vos sites et applications dès la conception.",
-    description:
-      "Nous intégrons la sécurité dans chaque ligne de code : analyse, test, surveillance et durcissement des environnements web. L'objectif : anticiper les failles avant qu'elles ne deviennent des menaces.",
-    technologies: "Audit OWASP / Pentest / Durcissement serveur / Monitoring IA / RGPD / DevSecOps",
-    benefits: [
-      "Un audit complet et priorisé",
-      "Un code auditable et un serveur durci",
-      "Une surveillance continue et alertes intelligentes",
-      "Une conformité RGPD documentée",
-    ],
-    examples: [
-      "Audit de sécurité avant levée de fonds",
-      "Protection d'une plateforme e-commerce",
-      "Sécurisation d'une API exposée",
-    ],
-    cta: "Sécuriser mon projet",
-  },
-  {
-    id: "automatisation-ia",
-    title: "Automatisation & IA",
-    subtitle: "Automatiser, connecter, accélérer.",
-    description:
-      "Nous mettons en place des workflows intelligents et des assistants IA capables de réduire la charge opérationnelle et d'améliorer vos processus quotidiens. Du simple déclencheur n8n au micro-service IA, tout est pensé pour fluidifier votre activité.",
-    technologies: "n8n / Python (FastAPI) / GPT / Zapier / Notion / CRM / API REST",
-    benefits: [
-      "Des tâches automatisées et synchronisées entre vos outils",
-      "Des rapports et dashboards automatiques",
-      "Des agents IA formés sur vos données internes",
-      "Moins de frictions et plus de productivité",
-    ],
-    examples: [
-      "Automatisation des factures et emails internes",
-      "Assistant IA pour support client ou marketing",
-      "Connexion CRM ↔ Stripe ↔ Notion",
-    ],
-    cta: "Automatiser mon business",
-  },
-] as const;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: [
+    {
+      "@type": "Service",
+      "@id": "https://smidjan.be/services#securiser",
+      name: "Sécuriser réseaux & infrastructure",
+      description:
+        "Segmentation réseau, VPN, EDR, supervision, sauvegardes et durcissement pour bloquer les attaques avant qu'elles n'atteignent vos données.",
+      provider: { "@type": "Organization", name: "Smidjan", url: "https://smidjan.be" },
+      areaServed: { "@type": "Country", name: "Belgique" },
+      serviceType: "Sécurité réseau & infrastructure",
+    },
+    {
+      "@type": "Service",
+      "@id": "https://smidjan.be/services#tester",
+      name: "Audits & tests d'intrusion",
+      description:
+        "Audits de sécurité et pentests web/applicatifs suivant une approche OWASP, avec plan de remédiation priorisé et contre-vérification.",
+      provider: { "@type": "Organization", name: "Smidjan", url: "https://smidjan.be" },
+      areaServed: { "@type": "Country", name: "Belgique" },
+      serviceType: "Audit & test d'intrusion",
+    },
+    {
+      "@type": "Service",
+      "@id": "https://smidjan.be/services#developper",
+      name: "Développement web sécurisé",
+      description:
+        "Sites et applications sur mesure conçus secure by design, ainsi que la remise à niveau d'applications existantes fragiles.",
+      provider: { "@type": "Organization", name: "Smidjan", url: "https://smidjan.be" },
+      areaServed: { "@type": "Country", name: "Belgique" },
+      serviceType: "Développement web sécurisé",
+    },
+    {
+      "@type": "Service",
+      "@id": "https://smidjan.be/services#conformer",
+      name: "Conformité NIS2 / CyFun",
+      description:
+        "Accompagnement à la conformité au référentiel CyberFundamentals (CyFun) du CCB, de l'audit à la préparation à la vérification.",
+      provider: { "@type": "Organization", name: "Smidjan", url: "https://smidjan.be" },
+      areaServed: { "@type": "Country", name: "Belgique" },
+      serviceType: "Conformité NIS2 / CyFun",
+    },
+  ],
+};
 
-const cmsFeatures = [
-  {
-    title: "Fonctionnalités clés",
-    items: [
-      "Gestion produits avancée (variantes, stocks, bundles)",
-      "Commandes, paiements sécurisés et facturation",
-      "Interface admin personnalisable et droits fins",
-      "API REST complète pour écosystème externe",
-      "Multi-langues, multi-devises, SEO intégré",
-    ],
-  },
-  {
-    title: "Avantages business",
-    items: [
-      "Déploiement en 1 à 4 semaines",
-      "Coûts maîtrisés vs développement from scratch",
-      "Évolutions continues incluses dans la maintenance",
-      "Support dédié et SLA contractuel",
-      "Mises à jour de sécurité automatisées",
-    ],
-  },
-  {
-    title: "Personnalisation",
-    items: [
-      "Adaptation complète à votre charte",
-      "Modules métier spécifiques",
-      "Intégrations CRM/ERP/marketing",
-      "Workflows automatisés sur mesure",
-      "Analytics et reporting dédiés",
-    ],
-  },
-] as const;
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: "https://smidjan.be" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://smidjan.be/services" },
+  ],
+};
 
 export default function ServicesPage() {
   return (
-    <div className={styles.page}>
-      {/* JSON-LD Structured Data - Service Catalog */}
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            itemListElement: [
-              {
-                "@type": "Service",
-                "@id": "https://smidjan.be/services#developpement-web",
-                name: "Développement Web sur Mesure",
-                description: "Création de sites web, applications et plateformes performantes avec Next.js, React et CMS e-commerce. Architecture évolutive et optimisée SEO.",
-                provider: {
-                  "@type": "Organization",
-                  name: "Smidjan",
-                  url: "https://smidjan.be",
-                },
-                areaServed: {
-                  "@type": "Country",
-                  name: "Belgique",
-                },
-                serviceType: "Développement Web",
-                category: "Web Development",
-              },
-              {
-                "@type": "Service",
-                "@id": "https://smidjan.be/services#cybersecurite",
-                name: "Cybersécurité Web",
-                description: "Audits de sécurité OWASP, tests de pénétration, durcissement serveur et conformité RGPD. Protection complète de vos applications web.",
-                provider: {
-                  "@type": "Organization",
-                  name: "Smidjan",
-                  url: "https://smidjan.be",
-                },
-                areaServed: {
-                  "@type": "Country",
-                  name: "Belgique",
-                },
-                serviceType: "Cybersécurité",
-                category: "Security Services",
-              },
-              {
-                "@type": "Service",
-                "@id": "https://smidjan.be/services#automatisation-ia",
-                name: "Automatisation & Intelligence Artificielle",
-                description: "Automatisations intelligentes avec n8n, intégration IA (GPT, Anthropic) et workflows personnalisés pour optimiser vos processus métier.",
-                provider: {
-                  "@type": "Organization",
-                  name: "Smidjan",
-                  url: "https://smidjan.be",
-                },
-                areaServed: {
-                  "@type": "Country",
-                  name: "Belgique",
-                },
-                serviceType: "Automatisation & IA",
-                category: "Business Automation",
-              },
-            ],
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* JSON-LD Structured Data - BreadcrumbList */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "Accueil",
-                item: "https://smidjan.be",
-              },
-              {
-                "@type": "ListItem",
-                position: 2,
-                name: "Services",
-                item: "https://smidjan.be/services",
-              },
-            ],
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <ServicesHero />
 
-      <section
-        id="services-pillars"
-        className={`${styles.section} ${styles.pillars} ${styles.sectionLight}`}
-        aria-labelledby="services-pillars-title"
-      >
-        <AnimatedBackground variant="light" />
+      {/* ===== Page hero ===== */}
+      <Section variant="white" className={styles.hero} contained={false}>
         <div className="container">
-          <div className={styles.sectionHeader}>
-            <Heading as="h2" accent className={styles.sectionTitle} id="services-pillars-title">
-              Nos services
-            </Heading>
-            <p className={styles.sectionLead}>
-              Chaque service Smidjan est pensé pour résoudre un problème réel : plus de lenteur, plus d'incertitude technique, plus de perte de temps. Nous livrons des solutions mesurables, documentées et évolutives.
+          <Breadcrumbs items={[{ label: "Accueil", href: "/" }, { label: "Services" }]} />
+          <Eyebrow>Nos expertises</Eyebrow>
+          <h1 className={styles.heroTitle}>
+            Sécuriser, tester, développer, <span className={styles.accent}>se conformer</span>.
+          </h1>
+          <p className={styles.heroLead}>
+            Quatre expertises, un même fil conducteur : réduire concrètement votre risque cyber.
+            Smidjan protège votre infrastructure, met vos applications à l&apos;épreuve, développe
+            en « secure by design » et vous accompagne vers la conformité NIS2 / CyFun — avec un
+            seul interlocuteur, expert, que vous avez au téléphone.
+          </p>
+          <ul className={styles.jump}>
+            <li><Link className={styles.jumpLink} href="#securiser"><span className={styles.jumpNum}>01</span>Sécuriser</Link></li>
+            <li><Link className={styles.jumpLink} href="#tester"><span className={styles.jumpNum}>02</span>Tester</Link></li>
+            <li><Link className={styles.jumpLink} href="#developper"><span className={styles.jumpNum}>03</span>Développer</Link></li>
+            <li><Link className={styles.jumpLink} href="#conformer"><span className={styles.jumpNum}>04</span>Se conformer</Link></li>
+          </ul>
+        </div>
+      </Section>
+
+      {/* ===== Pillar 01 — Sécuriser ===== */}
+      <ServicePillar
+        id="securiser"
+        index="01"
+        icon="server"
+        kicker="Sécuriser"
+        title="Réseaux & infrastructure"
+        intro="Nous durcissons le socle technique de votre entreprise pour bloquer les attaques avant qu'elles n'atteignent vos données. Segmentation, filtrage, accès distant maîtrisé, détection sur les postes, sauvegardes réellement testées : une défense en profondeur, pensée pour un budget et une équipe de PME — pas une usine à gaz."
+        visual={<SecureVisual />}
+        capabilities={[
+          { title: "Pare-feu & segmentation", description: "Cloisonnement du réseau, règles de filtrage, isolation des zones sensibles." },
+          { title: "VPN & accès distant", description: "Télétravail et accès prestataires sécurisés, avec authentification forte." },
+          { title: "EDR / antivirus nouvelle génération", description: "Détection et blocage des menaces sur les postes et serveurs." },
+          { title: "Supervision & journalisation", description: "Collecte des logs, alertes sur les comportements suspects, traçabilité." },
+          { title: "Sauvegardes & PRA", description: "Sauvegardes chiffrées, hors-ligne, et plan de reprise d'activité testé." },
+          { title: "Durcissement (hardening)", description: "Configuration sécurisée des serveurs, postes, comptes et services." },
+        ]}
+        audience={[
+          { label: "Pour qui", text: "PME sans équipe sécurité dédiée, qui veulent une base solide et maîtrisée.", icon: "users" },
+          { label: "Quand", text: "Refonte réseau, migration, après un incident, ou en préparation d'un audit.", icon: "clock" },
+        ]}
+        deliverables={[
+          "Architecture réseau documentée & segmentée",
+          "Politique de sauvegarde + PRA testé",
+          "Tableau de bord de supervision",
+          "Rapport de durcissement & recommandations",
+        ]}
+        ctaLabel="Sécuriser mon infrastructure"
+        ctaHref="/contact"
+      />
+
+      {/* ===== Pillar 02 — Tester ===== */}
+      <ServicePillar
+        id="tester"
+        index="02"
+        icon="target"
+        kicker="Tester"
+        title="Audits & pentest"
+        intro={
+          "Nous pensons comme un attaquant pour révéler vos failles avant qu'un vrai ne le fasse. Nos tests d'intrusion suivent une approche méthodique inspirée d'OWASP, avec des preuves d'exploitation concrètes et un plan de remédiation priorisé. Et surtout : nous ne nous arrêtons pas au constat — nous vous aidons à corriger ce que nous trouvons."
+        }
+        visual={<TestVisual alt />}
+        alt
+        capabilities={[
+          { title: "Audit de sécurité", description: "Évaluation organisationnelle et technique de votre exposition réelle." },
+          { title: "Test d'intrusion web & applicatif", description: "Approche OWASP sur vos sites, applications et API exposés." },
+          { title: "Revue de configuration", description: "Serveurs, cloud, Active Directory : chasse aux mauvaises configurations." },
+          { title: "Revue de code", description: "Analyse du code source pour détecter les vulnérabilités à la racine." },
+        ]}
+        audience={[
+          { label: "Pour qui", text: "Entreprises éditant un site ou une application, ou soumises à une exigence client / assureur.", icon: "users" },
+          { label: "Quand", text: "Avant une mise en production, à échéance annuelle, ou après un changement majeur.", icon: "clock" },
+        ]}
+        deliverables={[
+          "Rapport de pentest priorisé par criticité",
+          "Preuves d'exploitation reproductibles",
+          "Recommandations concrètes & plan de remédiation",
+          "Contre-vérification (retest) après correction",
+        ]}
+        ctaLabel="Planifier un pentest"
+        ctaHref="/contact"
+      />
+
+      {/* ===== Pillar 03 — Développer ===== */}
+      <ServicePillar
+        id="developper"
+        index="03"
+        icon="code"
+        kicker="Développer"
+        title="Développement web sécurisé"
+        intro="Nous concevons des sites et applications sur mesure où la sécurité est intégrée dès la première ligne de code — le principe « secure by design ». Plutôt que de sécuriser après coup, nous anticipons les menaces à la conception. Nous reprenons aussi les applications existantes fragiles pour les remettre à niveau et en conformité."
+        visual={<DevVisual />}
+        capabilities={[
+          { title: "Sites & applications sur mesure", description: "Développement adapté à vos processus métier, sans dette de sécurité." },
+          { title: "Secure by design", description: "Modélisation des menaces et bonnes pratiques OWASP dès la conception." },
+          { title: "Mise en conformité applicative", description: "RGPD, durcissement et remise à niveau d'un existant fragile." },
+          { title: "Revue de code & intégration continue", description: "Contrôles de sécurité automatisés tout au long du cycle de développement." },
+        ]}
+        audience={[
+          { label: "Pour qui", text: "PME lançant un nouveau projet web, ou reprenant une application existante à fiabiliser.", icon: "users" },
+          { label: "Quand", text: "Nouveau développement, refonte, ou besoin de mise en conformité applicative.", icon: "clock" },
+        ]}
+        deliverables={[
+          "Application livrée, documentée & maintenable",
+          "Couverture des points de contrôle OWASP",
+          "Tests de sécurité & documentation technique",
+          "Transfert de connaissances à vos équipes",
+        ]}
+        ctaLabel="Discuter de mon projet"
+        ctaHref="/contact"
+      />
+
+      {/* ===== "Un seul partenaire" cross-cut band ===== */}
+      <Section variant="white" className={styles.partner}>
+        <div className={styles.partnerBox}>
+          <div>
+            <Eyebrow>Un seul partenaire</Eyebrow>
+            <h2>Construire, sécuriser et mettre en conformité — au même endroit</h2>
+            <p className={styles.partnerLead}>
+              La plupart des prestataires font l&apos;un <em>ou</em> l&apos;autre. Nous couvrons la
+              chaîne complète : nous développons vos applications, nous les mettons à
+              l&apos;épreuve, nous sécurisons votre infrastructure et nous vous amenons à la
+              conformité. Un interlocuteur unique, une cohérence de bout en bout, et personne à
+              qui renvoyer la balle.
             </p>
           </div>
-          <div className={styles.servicesDetailed}>
-            {servicePillars.map((service) => (
-              <div key={service.id} id={service.id} className={styles.serviceBlock}>
-                <h3 className={styles.serviceTitle}>{service.title}</h3>
-                <p className={styles.serviceSubtitle}>{service.subtitle}</p>
-                <p className={styles.serviceDescription}>{service.description}</p>
-
-                <div className={styles.serviceTech}>
-                  <strong>Technologies :</strong>
-                  <p>{service.technologies}</p>
-                </div>
-
-                <div className={styles.serviceBenefits}>
-                  <strong>Ce que vous obtenez :</strong>
-                  <ul>
-                    {service.benefits.map((benefit) => (
-                      <li key={benefit}>{benefit}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className={styles.serviceExamples}>
-                  <strong>Exemples de projets :</strong>
-                  <ul>
-                    {service.examples.map((example) => (
-                      <li key={example}>{example}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <Button
-                  as="a"
-                  href="/contact"
-                  variant="solid"
-                  size="sm"
-                  ariaLabel={service.cta}
-                >
-                  {service.cta}
-                </Button>
-              </div>
-            ))}
+          <div className={styles.chain}>
+            <div className={styles.node}>
+              <div className={styles.nodeIcon}><Icon name="code" strokeWidth={1.8} /></div>
+              <b>Build</b>
+              <p>Développement web sécurisé, secure by design.</p>
+              <span className={styles.plus} aria-hidden="true">+</span>
+            </div>
+            <div className={styles.node}>
+              <div className={styles.nodeIcon}><Icon name="shield-check" strokeWidth={1.8} /></div>
+              <b>Secure</b>
+              <p>Infrastructure durcie, pentest & supervision.</p>
+              <span className={styles.plus} aria-hidden="true">+</span>
+            </div>
+            <div className={styles.node}>
+              <div className={styles.nodeIcon}><Icon name="file-check" strokeWidth={1.8} /></div>
+              <b>Comply</b>
+              <p>Conformité CyFun / NIS2, de l&apos;écart à la preuve.</p>
+            </div>
           </div>
         </div>
-      </section>
-
-      <TechStackEnhanced />
-
-      <section id="services-cms" className={`${styles.section} ${styles.sectionLight}`} aria-labelledby="services-cms-highlight">
-        <AnimatedBackground variant="light" />
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <Heading as="h2" accent className={styles.sectionTitle} id="services-cms-highlight">
-              Smidjan CMS - le socle produit que nous faisons évoluer en continu.
-            </Heading>
-            <p className={styles.sectionLead}>
-              Au cœur de notre savoir-faire, un CMS e-commerce modulaire et évolutif, conçu pour offrir la liberté du sur-mesure avec la stabilité d'une architecture éprouvée. Multi-store, sécurisé et rapide, Smidjan CMS propulse nos projets internes et ceux de nos clients pilotes.
-            </p>
-          </div>
-          <div className={`${styles.packagesGrid} ${styles.cmsPackages}`}>
-            {cmsFeatures.map((feature) => (
-              <div key={feature.title} className={styles.packageCard}>
-                <h3 className={styles.packageName}>{feature.title}</h3>
-                <ul className={styles.packageList}>
-                  {feature.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <div style={{ marginTop: "var(--space-4)", textAlign: "center" }}>
-            <Button as="a" href="/cms-ecommerce" variant="solid" size="md" ariaLabel="Découvrir Smidjan CMS">
-              Découvrir Smidjan CMS
-            </Button>
-          </div>
+        <div className={styles.aiNote}>
+          <Icon name="sparkles" strokeWidth={1.8} />
+          <span>
+            Des <b>experts augmentés par l&apos;IA</b> pour aller plus vite et couvrir plus de
+            terrain — mais l&apos;analyse et les décisions restent entre des mains humaines.
+          </span>
         </div>
-      </section>
+      </Section>
 
-      <section id="services-contact" className={`${styles.section} ${styles.sectionLight}`} aria-labelledby="services-final-cta">
-        <AnimatedBackground variant="light" />
-        <div className="container">
-          <div className={styles.finalCta}>
-            <h2 id="services-final-cta" className={styles.finalCtaTitle}>
-              Votre projet mérite une architecture solide.
-            </h2>
-            <p className={styles.finalCtaText}>
-              Discutons de vos objectifs, et voyons comment les traduire en code. Chez Smidjan, chaque collaboration repose sur un engagement simple : livrer des résultats mesurables, pas des promesses vagues.
-            </p>
-            <Button
-              as="a"
-              href="/contact"
-              variant="solid"
-              size="md"
-              className={styles.finalCtaButton}
-              ariaLabel="Démarrer un projet avec SMIDJAN"
-            >
-              Démarrer un projet
-            </Button>
-          </div>
+      {/* ===== Pillar 04 — Se conformer (CyFun / NIS2) ===== */}
+      <ServicePillar
+        id="conformer"
+        index="04"
+        icon="file-check"
+        kicker="Se conformer"
+        title="CyFun / NIS2"
+        intro="La directive NIS2 impose à des milliers d'entreprises belges — dont de nombreuses PME et leurs sous-traitants — un socle minimal de cybersécurité. En Belgique, la réponse officielle est le CyberFundamentals Framework (CyFun) du Centre pour la Cybersécurité Belgique (CCB). Nous vous accompagnons de l'audit à la préparation à la vérification."
+        visual={<ComplyVisual alt />}
+        alt
+        capabilities={[
+          { title: "Audit & auto-évaluation", description: "Évaluation du niveau visé (Basic, Important ou Essential) au regard de votre exposition." },
+          { title: "Analyse d'écart (gap analysis)", description: "Cartographie détaillée des mesures manquantes par rapport au référentiel CyFun." },
+          { title: "Remédiation concrète", description: "On corrige ce qu'on trouve — pas seulement un rapport, un plan d'action exécuté." },
+          { title: "Préparation à la vérification", description: "Dossier de preuves prêt pour l'auto-évaluation ou l'organisme certificateur." },
+        ]}
+        audience={[
+          { label: "Pour qui", text: "Entités « importantes » ou « essentielles » NIS2, et leurs sous-traitants soumis à une exigence contractuelle.", icon: "users" },
+          { label: "Quand", text: "Avant l'échéance réglementaire, sur demande d'un client/donneur d'ordre, ou en anticipation d'un audit.", icon: "clock" },
+        ]}
+        deliverables={[
+          "Rapport d'écart (gap analysis) documenté",
+          "Plan de remédiation priorisé",
+          "Dossier de preuves pour le niveau visé",
+          "Suivi jusqu'à la remédiation complète",
+        ]}
+        ctaLabel="Découvrir notre accompagnement CyFun"
+        ctaHref="/conformite-nis2"
+      />
+
+      {/* ===== CyFun teaser — 3 niveaux + transparency block ===== */}
+      <Section variant="tint">
+        <SectionHeading
+          center
+          eyebrow="Les 3 niveaux CyFun"
+          title="Un référentiel gradué, un accompagnement sur mesure"
+          lead="Aperçu des trois paliers du CyberFundamentals Framework. Le détail complet, le comparatif et le calendrier NIS2 se trouvent sur notre page dédiée."
+          className={styles.cyfunTeaser}
+        />
+        <div style={{ textAlign: "center" }}>
+          <LinkMore href="/conformite-nis2" className={styles.cyfunLinkMore}>
+            Voir le comparatif complet des niveaux CyFun
+          </LinkMore>
         </div>
-      </section>
+        <CyFunTiers showTable={false} />
+        <div className={styles.transparency}>
+          <Icon name="alert-circle" strokeWidth={2} />
+          <p>
+            <b>En toute transparence :</b> la certification CyFun est délivrée par des organismes
+            de certification accrédités par BELAC (l&apos;organisme belge d&apos;accréditation),
+            indépendants de Smidjan. Notre rôle : réaliser l&apos;audit et l&apos;analyse
+            d&apos;écart, mettre en œuvre la remédiation concrète, et vous préparer à la
+            vérification — une méthodologie alignée sur le référentiel CyFun, sans nous substituer
+            à l&apos;organisme certificateur.
+          </p>
+        </div>
+      </Section>
 
-      <Footer />
-    </div>
+      {/* ===== Final CTA ===== */}
+      <CTABox
+        title="Un diagnostic gratuit pour savoir par où commencer"
+        text="30 minutes avec un expert pour évaluer votre exposition, cadrer la mission la plus utile — sécuriser, tester, développer ou vous conformer — et repartir avec des priorités claires. Sans engagement."
+        actions={[
+          { label: "Réserver mon diagnostic gratuit", href: "/contact" },
+          { label: "Appeler le 04 268 00 00", href: "tel:+3242680000", variant: "ghostD" },
+        ]}
+        reassurances={["Réponse sous 24 h", "Expert dédié, pas de sous-traitance", "Données en Belgique"]}
+      />
+    </>
   );
 }
-

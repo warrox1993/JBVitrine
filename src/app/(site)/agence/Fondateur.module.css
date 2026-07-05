@@ -1,0 +1,252 @@
+/* "Le fondateur" section — agence page. */
+.founderSec {
+  background: var(--bg-2);
+  padding: var(--section-y) 0;
+}
+.secHead {
+  max-width: 660px;
+}
+.secHead h2 {
+  font-size: clamp(27px, 3.2vw, 36px);
+  margin-top: 14px;
+  color: var(--navy);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+.secHead p {
+  margin-top: 16px;
+  font-size: 17.5px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 48px;
+}
+
+/* Profile card (navy) */
+.profile {
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 34px;
+  color: var(--on-dark-text);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 56px -26px rgba(11, 31, 58, 0.55);
+  position: sticky;
+  top: 96px;
+}
+.gridBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.portrait {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #1c3a63, #0a1a30);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  margin-bottom: 22px;
+}
+.portrait svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.portraitTag {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 600 11px/1 var(--sans);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.portraitTag svg {
+  width: 12px;
+  height: 12px;
+  color: var(--orange-d);
+  flex: none;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+}
+.profile h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+.role {
+  font-size: 13.5px;
+  color: var(--on-dark-muted);
+  margin-top: 4px;
+}
+.quote {
+  margin: 24px 0 0;
+  font-size: 15.5px;
+  color: #e4ebf5;
+  line-height: 1.6;
+  position: relative;
+  font-style: normal;
+}
+.creds {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 11px;
+  position: relative;
+}
+.creds li {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  font-size: 14px;
+  color: #c3cfe0;
+}
+.creds svg {
+  width: 17px;
+  height: 17px;
+  color: var(--success);
+  flex: none;
+  margin-top: 2px;
+}
+.foot {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--on-dark-line);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.foot span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #cdd8e8;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 6px 11px;
+}
+
+/* Narrative + journey */
+.narrative h3 {
+  font-size: clamp(22px, 2.6vw, 28px);
+  color: var(--navy);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-top: 14px;
+}
+.intro {
+  margin-top: 16px;
+  font-size: 16.5px;
+  color: var(--slate);
+  line-height: 1.65;
+}
+.journey {
+  list-style: none;
+  margin: 34px 0 0;
+  padding: 0;
+  position: relative;
+}
+.journey::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--line-2), var(--line));
+  z-index: 0;
+}
+.journey li {
+  position: relative;
+  padding: 0 0 28px 62px;
+}
+.journey li:last-child {
+  padding-bottom: 0;
+}
+.dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  box-shadow: var(--shadow-s);
+}
+.dot svg {
+  width: 22px;
+  height: 22px;
+  color: var(--navy-3);
+}
+.key .dot {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+.key .dot svg {
+  color: var(--orange-on-dark);
+}
+.yr {
+  font: 700 11px/1 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange-d);
+  margin-bottom: 6px;
+}
+.journey h4 {
+  font-size: 16.5px;
+  color: var(--navy);
+  font-weight: 700;
+}
+.journey p {
+  font-size: 14.5px;
+  color: var(--slate);
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .profile {
+    position: static;
+    top: auto;
+  }
+}
+@media (max-width: 720px) {
+  .founderSec {
+    padding: 60px 0;
+  }
+  .journey li {
+    padding-left: 56px;
+  }
+}

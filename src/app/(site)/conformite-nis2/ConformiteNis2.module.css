@@ -1,0 +1,685 @@
+/* =========================================================================
+   Conformité NIS2 / CyFun — page-specific styles (scoped CSS Module).
+   Shared building blocks (Section, SectionHeading, CyFunTiers, ProcessSteps,
+   Faq, CTABox, StatHook, Icon) carry their own styles; this file only covers
+   sections unique to this page. Ported from the approved mockup.
+   ========================================================================= */
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, #fff 0%, var(--bg-2) 100%);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.heroWrap {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+  padding-top: 64px;
+  padding-bottom: 68px;
+}
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #fff;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px 6px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy-3);
+  box-shadow: var(--shadow-s);
+}
+.heroBadge .tag {
+  background: var(--orange-t);
+  color: var(--orange-d);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.02em;
+}
+.heroTitle {
+  font-size: clamp(32px, 4.2vw, 50px);
+  margin: 22px 0 0;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  line-height: 1.2;
+  font-weight: 700;
+}
+.heroTitle .accent {
+  color: var(--navy-3);
+}
+.heroLead {
+  margin-top: 22px;
+  max-width: 42ch;
+  font-size: 19px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+.heroLead b {
+  color: var(--navy);
+}
+.heroCta {
+  display: flex;
+  gap: 14px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.heroAssure {
+  display: flex;
+  gap: 22px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.heroAssure div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  color: var(--slate);
+  font-weight: 500;
+}
+.heroAssure svg {
+  color: var(--orange-d);
+  flex: none;
+}
+
+/* Hero deadline visual */
+.heroVisual {
+  position: relative;
+}
+.deadlineCard {
+  background: linear-gradient(180deg, var(--navy) 0%, #0a1a30 100%);
+  border-radius: 18px;
+  padding: 32px;
+  color: var(--on-dark-text);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -20px rgba(11, 31, 58, 0.5);
+}
+.deadlineCard .gridBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.dcTop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+.dcCal {
+  width: 62px;
+  height: 70px;
+  border-radius: 11px;
+  background: #fff;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+}
+.dcCal .m {
+  background: var(--orange);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 5px 0;
+  text-transform: uppercase;
+}
+.dcCal .d {
+  color: var(--navy);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+  padding-top: 8px;
+}
+.dcCal .y {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  padding-bottom: 6px;
+  margin-top: 2px;
+}
+.dcTop h3 {
+  color: #fff;
+  font-size: 19px;
+}
+.dcTop p {
+  font-size: 13px;
+  color: var(--on-dark-muted);
+  margin-top: 4px;
+}
+.dcCount {
+  display: flex;
+  gap: 10px;
+  margin-top: 26px;
+  position: relative;
+}
+.dcUnit {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 11px;
+  padding: 14px 8px;
+  text-align: center;
+}
+.dcUnit .num {
+  font-family: var(--mono);
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+.dcUnit .lbl {
+  font-size: 11px;
+  color: var(--on-dark-muted);
+  margin-top: 7px;
+  letter-spacing: 0.04em;
+}
+.dcFoot {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 13px;
+  color: #a9b8ce;
+}
+.dcFoot svg {
+  color: var(--success);
+  flex: none;
+  margin-top: 1px;
+}
+.dcFoot b {
+  color: #fff;
+  font-weight: 600;
+}
+.floatChip {
+  position: absolute;
+  left: -22px;
+  bottom: 34px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 13px 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.floatChip .ic {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: var(--orange-t);
+  color: var(--orange-d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.floatChip b {
+  color: var(--navy);
+  font-size: 14px;
+  display: block;
+}
+.floatChip small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ===== NIS2 en clair ===== */
+.clairGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.clairCard {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+}
+.clairCard .ico {
+  width: 50px;
+  height: 50px;
+  border-radius: 11px;
+  background: var(--navy);
+  color: var(--orange-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.clairCard h3 {
+  font-size: 18.5px;
+  color: var(--navy);
+  line-height: 1.2;
+  font-weight: 700;
+}
+.clairCard > p {
+  margin-top: 11px;
+  font-size: 14.5px;
+  color: var(--slate);
+}
+.clairCard ul {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+}
+.clairCard ul li {
+  font-size: 13.5px;
+  color: var(--slate);
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  line-height: 1.45;
+}
+.clairCard ul li svg {
+  color: var(--orange-d);
+  flex: none;
+  margin-top: 2px;
+}
+.clairCard ul li b {
+  color: var(--navy);
+}
+.tagline {
+  margin-top: auto;
+  padding-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 6px 13px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--navy);
+}
+.pillWarn {
+  background: var(--orange-t);
+  border-color: #ffd9be;
+  color: var(--orange-d);
+}
+.pill svg {
+  flex: none;
+}
+
+/* ===== CyFun framework ===== */
+.frameIntro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.frameIntro h2 {
+  font-size: clamp(27px, 3.2vw, 36px);
+  margin-top: 14px;
+  color: var(--navy);
+  line-height: 1.2;
+  font-weight: 700;
+}
+.frameLead {
+  margin-top: 16px;
+  font-size: 19px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+.frameLead b {
+  color: var(--navy);
+}
+.frameNote {
+  margin-top: 18px;
+  font-size: 15px;
+  color: var(--slate);
+}
+.frameNote b {
+  color: var(--navy);
+}
+.frameMap {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px 26px;
+  box-shadow: var(--shadow-s);
+}
+.frameMap .mh {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.frameMap .mh svg {
+  color: var(--orange-d);
+}
+.mapRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+.mapRow:first-of-type {
+  border-top: none;
+}
+.mapRow .a {
+  color: var(--navy);
+  font-weight: 600;
+}
+.mapRow .arr {
+  color: var(--muted);
+}
+.mapRow .arr svg {
+  display: block;
+}
+.mapRow .b {
+  color: var(--slate);
+  text-align: right;
+  font-size: 13.5px;
+}
+
+.ringWrap {
+  max-width: 470px;
+  margin: 46px auto 2px;
+}
+.ringCap {
+  max-width: 470px;
+  margin: 6px auto 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+.ringCap b {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.functions {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+  margin-top: 44px;
+}
+.fn {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px 16px;
+  text-align: center;
+  position: relative;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+.fn:hover {
+  border-color: var(--line-2);
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+.fn .n {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.fn .ic {
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+  background: var(--orange-t);
+  color: var(--orange-d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px auto 14px;
+}
+.fn h4 {
+  font-size: 15px;
+  color: var(--navy);
+  font-weight: 700;
+}
+.fn p {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.45;
+}
+.fnNote {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--slate);
+}
+.fnNote b {
+  color: var(--navy);
+}
+
+/* ===== Tiers intro (stat-hook with gauge) + level figure ===== */
+.statHook {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--orange-t);
+  border: 1px solid #ffd9be;
+  border-radius: 14px;
+  padding: 22px 26px;
+  margin: 40px auto 0;
+  max-width: 760px;
+}
+.covGauge {
+  width: 106px;
+  height: 106px;
+  flex: none;
+}
+.statHook .txt {
+  font-size: 14.5px;
+  color: #7a3d15;
+  line-height: 1.5;
+}
+.statHook .txt b {
+  color: #5c2e10;
+}
+
+.levelsFig {
+  max-width: 640px;
+  margin: 36px auto 0;
+}
+.levelsCap {
+  max-width: 600px;
+  margin: 12px auto 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+.levelsCap b {
+  color: var(--navy);
+  font-weight: 600;
+}
+.tiersBlock {
+  margin-top: 42px;
+}
+
+/* ===== Accompagnement / honesty ===== */
+.honesty {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background: var(--bg-3);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--navy-3);
+  border-radius: 12px;
+  padding: 26px 28px;
+  margin-top: 44px;
+}
+.honesty > svg {
+  width: 30px;
+  height: 30px;
+  color: var(--navy-3);
+  flex: none;
+}
+.honesty h4 {
+  font-size: 16.5px;
+  margin-bottom: 7px;
+  color: var(--navy);
+  font-weight: 700;
+}
+.honesty p {
+  font-size: 14.5px;
+  color: var(--slate);
+}
+.honesty p b {
+  color: var(--navy);
+}
+.honesty p + p {
+  margin-top: 10px;
+}
+.roles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 22px;
+}
+.roleCol {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px 24px;
+}
+.roleCol h5 {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.roleSmidjan h5 {
+  color: var(--orange-d);
+}
+.roleBelac h5 {
+  color: var(--navy-3);
+}
+.roleCol ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.roleCol ul li {
+  font-size: 13.5px;
+  color: var(--slate);
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  line-height: 1.45;
+}
+.roleCol ul li svg {
+  flex: none;
+  margin-top: 3px;
+}
+.roleCol ul li b {
+  color: var(--navy);
+}
+.roleSmidjan ul li svg {
+  color: var(--orange-d);
+}
+.roleBelac ul li svg {
+  color: var(--navy-3);
+}
+.roleCol .foot {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.roleCol .foot b {
+  color: var(--navy);
+}
+
+/* process wrapper */
+.process {
+  margin-top: 52px;
+}
+.roadmapFig {
+  max-width: 720px;
+  margin: 0 auto 30px;
+}
+
+/* footnote under comparison table */
+.tableNote {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 760px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1000px) {
+  .heroWrap {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+  .heroVisual {
+    max-width: 460px;
+  }
+  .clairGrid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+  .frameIntro {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .functions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .roles {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 720px) {
+  .functions {
+    grid-template-columns: 1fr 1fr;
+  }
+  .heroCta :global(.btn),
+  .heroCta a {
+    flex: 1 1 auto;
+  }
+  .statHook {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .floatChip {
+    left: 12px;
+  }
+}

@@ -1,0 +1,377 @@
+/* ============================================================
+   Contact form card — new navy/orange design (refonte-design)
+   Scoped CSS Module. Presentation only; wiring in ContactForm.tsx.
+   ============================================================ */
+
+.formCard {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.fcHead {
+  padding: 30px 34px 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-2);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.fcHead h2 {
+  font-size: 23px;
+  margin: 0;
+  color: var(--navy);
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.fcHead p {
+  margin: 8px 0 0;
+  font-size: 14.5px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+
+.fcReassure {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 7px 15px 7px 9px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.fcReassure .ic {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--orange-t);
+  color: var(--orange-d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.fcReassure .ic svg {
+  width: 13px;
+  height: 13px;
+}
+
+.fcIllus {
+  flex: none;
+  width: 84px;
+  height: 80px;
+}
+
+.fcIllus svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ===== Form ===== */
+.form {
+  padding: 30px 34px 34px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.field label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 7px;
+}
+
+.req {
+  color: var(--orange-d);
+  margin-left: 2px;
+}
+
+.hint {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 12.5px;
+  margin-left: 4px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  font: 400 15px/1.5 var(--sans);
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line-2);
+  border-radius: 9px;
+  padding: 11px 13px;
+  transition:
+    border-color 0.16s ease,
+    box-shadow 0.16s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 128px;
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: var(--muted);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px rgba(43, 108, 255, 0.14);
+  outline: none;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #9aa6ba;
+}
+
+.inputError,
+.field input.inputError,
+.field select.inputError,
+.field textarea.inputError {
+  border-color: #d64545;
+}
+
+.errorText {
+  display: block;
+  margin-top: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #c62f2f;
+}
+
+.selectWrap {
+  position: relative;
+}
+
+.selectWrap svg {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.field select {
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.consent {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 15px 16px;
+  margin-bottom: 24px;
+}
+
+.consent.inputError {
+  border-color: #d64545;
+}
+
+.consent input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  margin-top: 1px;
+  accent-color: var(--orange);
+  cursor: pointer;
+}
+
+.consent label {
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+}
+
+.consent label a {
+  color: var(--navy-3);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.formFoot {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.formFoot .note {
+  font-size: 12.5px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.formFoot .note svg {
+  width: 15px;
+  height: 15px;
+  color: var(--orange-d);
+  flex: none;
+}
+
+/* ===== Submit button ===== */
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font: 600 15.5px/1 var(--sans);
+  padding: 15px 26px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid var(--orange);
+  background: var(--orange);
+  color: #fff;
+  transition:
+    background 0.16s ease,
+    border-color 0.16s ease,
+    transform 0.05s ease;
+  white-space: nowrap;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--orange-d);
+  border-color: var(--orange-d);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submitBtn svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+/* ===== Error / success banners ===== */
+.errorBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #fdeaea;
+  border: 1px solid #f2c4c4;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  color: #8f2020;
+}
+
+.errorBanner svg {
+  flex: none;
+  color: #c62f2f;
+}
+
+.errorBanner strong {
+  display: block;
+  font-size: 14px;
+}
+
+.errorBanner p {
+  margin: 2px 0 0;
+  font-size: 13.5px;
+}
+
+.success {
+  padding: 48px 34px;
+  text-align: center;
+}
+
+.successIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--orange-t);
+  color: var(--orange-d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.successTitle {
+  font-size: 24px;
+  color: var(--navy);
+  margin: 0 0 10px;
+  letter-spacing: -0.015em;
+}
+
+.successText {
+  font-size: 15px;
+  color: var(--slate);
+  line-height: 1.6;
+  max-width: 42ch;
+  margin: 0 auto;
+}
+
+/* ===== Focus visibility ===== */
+.form input:focus-visible,
+.form select:focus-visible,
+.form textarea:focus-visible,
+.submitBtn:focus-visible,
+.consent input:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .fieldRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .form,
+  .fcHead {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+  .fcIllus {
+    display: none;
+  }
+}

@@ -1,0 +1,143 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.title {
+  font-size: clamp(27px, 3.2vw, 36px);
+  margin-top: 14px;
+  color: var(--navy);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+.lead {
+  margin-top: 16px;
+  font-size: 19px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+.list {
+  display: grid;
+  gap: 14px;
+  margin-top: 36px;
+}
+.item {
+  display: flex;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 22px;
+}
+.item .ic {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--orange-t);
+  color: var(--orange-d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.item .ic svg {
+  width: 22px;
+  height: 22px;
+}
+.item h4 {
+  font-size: 16.5px;
+  color: var(--navy);
+  font-weight: 700;
+}
+.item p {
+  font-size: 14px;
+  color: var(--slate);
+  margin-top: 5px;
+  line-height: 1.55;
+}
+
+/* Founder card */
+.founder {
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 34px;
+  color: var(--on-dark-text);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 56px -26px rgba(11, 31, 58, 0.55);
+}
+.gridBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  pointer-events: none;
+}
+.top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+}
+.avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 14px;
+  flex: none;
+  background: linear-gradient(145deg, #1c3a63, #0b1f3a);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--orange-on-dark);
+  font-family: var(--mono);
+}
+.founder h3 {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+}
+.role {
+  font-size: 13.5px;
+  color: var(--on-dark-muted);
+  margin-top: 3px;
+}
+.quote {
+  margin: 24px 0 0;
+  font-size: 16px;
+  color: #e4ebf5;
+  line-height: 1.6;
+  position: relative;
+  font-style: normal;
+}
+.creds {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 11px;
+  position: relative;
+}
+.creds li {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  font-size: 14px;
+  color: #c3cfe0;
+}
+.creds svg {
+  width: 17px;
+  height: 17px;
+  color: var(--success);
+  flex: none;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

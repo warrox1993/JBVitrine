@@ -32,6 +32,7 @@ const ROUTE_LABELS: Record<string, string> = {
   '/devis': 'Demande de Devis',
   '/mentions-legales': 'Mentions Légales',
   '/politique-confidentialite': 'Politique de Confidentialité',
+  '/confidentialite': 'Politique de Confidentialité',
   '/cgv': 'Conditions Générales de Vente',
   '/admin': 'Administration',
   '/admin/blog': 'Gestion Blog',
