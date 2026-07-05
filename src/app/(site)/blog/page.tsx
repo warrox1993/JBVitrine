@@ -9,15 +9,15 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Journal — Ressources techniques | Smidjan",
   description:
-    "Articles techniques sur le développement web, la cybersécurité et l'automatisation IA. Conseils d'experts pour PME en Belgique.",
+    "Articles techniques sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé. Conseils d'experts pour les PME en Belgique.",
   keywords: [
-    "blog développement web Belgique",
-    "cybersécurité Belgique",
-    "automatisation IA Wallonie",
-    "SEO technique Liège",
-    "Next.js Belgique",
-    "conseils web PME belges",
-    "développement Wallonie",
+    "blog cybersécurité Belgique",
+    "conformité NIS2 PME",
+    "CyberFundamentals CyFun",
+    "sécurité informatique Wallonie",
+    "tests d'intrusion pentest",
+    "développement web sécurisé",
+    "conseils cybersécurité PME belges",
   ],
   alternates: {
     canonical: "/blog",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Journal — Ressources techniques | Smidjan",
     description:
-      "Articles sur le développement web, la cybersécurité et l'IA pour entreprises.",
+      "Articles sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé pour les PME.",
     url: "https://smidjan.be/blog",
-    siteName: "Smidjan",
+    siteName: "Smidjan — Cybersécurité Liège",
     images: [
       {
         url: "https://smidjan.be/og-image.webp",
@@ -102,7 +102,7 @@ export default async function BlogPage() {
             "@type": "Blog",
             name: "Journal Smidjan",
             description:
-              "Articles techniques sur le développement web, la cybersécurité et l'automatisation IA.",
+              "Articles techniques sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé.",
             url: "https://smidjan.be/blog",
             publisher: {
               "@type": "Organization",
@@ -156,12 +156,12 @@ export default async function BlogPage() {
         <div className="wrap">
           <span className={styles.eyebrow}>Journal · Ressources</span>
           <h1 className={styles.heroTitle}>
-            Des articles techniques pour sécuriser, développer et faire grandir votre entreprise
+            Des articles techniques pour sécuriser et mettre en conformité votre entreprise
           </h1>
           <p className={styles.heroLead}>
-            Développement web, cybersécurité et automatisation IA&nbsp;: des articles écrits
-            pour être appliqués, pas seulement lus — avec un regard pratique sur les
-            entreprises en Belgique.
+            Cybersécurité, conformité NIS2 / CyFun et développement web sécurisé&nbsp;: des
+            articles écrits pour être appliqués, pas seulement lus — avec un regard pratique
+            sur les PME en Belgique.
           </p>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default async function BlogPage() {
 
       <CTABox
         title="Besoin d'un accompagnement sur mesure ?"
-        text="Discutons de votre projet de développement web, de votre sécurité ou de votre automatisation IA. Sans engagement."
+        text="Discutons de votre sécurité, de votre conformité NIS2 / CyFun ou de votre projet web sécurisé. Sans engagement."
         actions={[{ label: "Nous contacter", href: "/contact" }]}
         reassurances={["Réponse sous 24 h", "Sans engagement"]}
       />
