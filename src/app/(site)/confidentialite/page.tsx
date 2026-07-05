@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import {
   LegalLayout,
-  LegalBanner,
   LegalSection,
   LegalLink,
   LegalTable,
-  Placeholder,
 } from "@/components/shared/LegalLayout/LegalLayout";
 import { PrivacyVisual } from "@/components/shared/LegalLayout/LegalVisuals";
 
@@ -56,13 +54,6 @@ export default function ConfidentialitePage() {
         lead="Ce que nous collectons via le formulaire de contact, pourquoi, combien de temps, avec qui — et une réponse honnête sur les cookies et services tiers utilisés."
         visual={<PrivacyVisual />}
       >
-        <LegalBanner>
-          <b>Modèle — à faire valider juridiquement avant mise en ligne.</b> Cette politique décrit les traitements
-          effectivement mis en place par le site (formulaire de contact, protection anti-robot, mesure
-          d&apos;audience éventuelle). Les champs marqués <Placeholder>à préciser</Placeholder> doivent être
-          confirmés avant publication.
-        </LegalBanner>
-
         <p>
           Smidjan attache de l&apos;importance à la protection des données à caractère personnel des visiteurs et
           clients du site, conformément au Règlement (UE) 2016/679 du 27&nbsp;avril 2016 (« RGPD ») et à la loi belge
@@ -125,8 +116,8 @@ export default function ConfidentialitePage() {
         <LegalSection id="duree" num="5" title="Durée de conservation">
           <p>
             Les données transmises via le formulaire de contact sont conservées pendant une durée de{" "}
-            <Placeholder>durée à définir — ex. 3 ans à compter du dernier échange</Placeholder>, sauf obligation
-            légale de conservation plus longue ou relation contractuelle en cours.
+            <strong>3&nbsp;ans à compter du dernier échange</strong>, sauf obligation légale de conservation plus
+            longue (notamment comptable) ou relation contractuelle en cours.
           </p>
         </LegalSection>
 
@@ -162,15 +153,12 @@ export default function ConfidentialitePage() {
                 <td>Protection du formulaire de contact contre les robots et les abus</td>
                 <td>Intérêt légitime</td>
               </tr>
-              <tr>
-                <td>
-                  Mesure d&apos;audience (analytics)&nbsp;<Placeholder>outil à préciser</Placeholder>
-                </td>
-                <td>Statistiques de fréquentation, amélioration du site</td>
-                <td>Consentement, si non anonymisé</td>
-              </tr>
             </tbody>
           </LegalTable>
+          <p>
+            À ce jour, le site n&apos;utilise <strong>aucun outil de mesure d&apos;audience (analytics)</strong> ni
+            cookie publicitaire. Si un tel outil était mis en place, cette politique serait mise à jour en conséquence.
+          </p>
           <p>
             Certains de ces services, notamment Google reCAPTCHA, sont fournis par des tiers établis hors de
             l&apos;Union européenne (États-Unis) et peuvent impliquer un transfert de données correspondant. Ces
@@ -206,9 +194,9 @@ export default function ConfidentialitePage() {
 
         <LegalSection id="dpo" num="9" title="Contact délégué à la protection des données">
           <p>
-            Compte tenu de sa taille, Smidjan n&apos;a pas désigné de délégué à la protection des données (DPO) formel{" "}
-            <Placeholder>à valider selon obligation légale applicable</Placeholder>. Toute question relative au
-            traitement de vos données peut être adressée à{" "}
+            Compte tenu de sa taille et de la nature de ses traitements, Smidjan n&apos;a pas désigné de délégué à la
+            protection des données (DPO) formel, cette désignation n&apos;étant pas obligatoire dans son cas. Toute
+            question relative au traitement de vos données peut être adressée à{" "}
             <LegalLink href="mailto:contact@smidjan.be">contact@smidjan.be</LegalLink>.
           </p>
         </LegalSection>

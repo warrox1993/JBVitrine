@@ -558,7 +558,7 @@ export default function ApprochePage() {
         text="30 minutes avec un expert pour mesurer votre exposition, cadrer votre conformité NIS2 et repartir avec des priorités claires. Pas de discours : un premier constat, chiffré. Sans engagement."
         actions={[
           { label: "Réserver mon diagnostic gratuit", href: "/contact" },
-          { label: "Appeler le 04 268 00 00", href: "tel:+3242680000", variant: "ghostD" },
+          { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },
         ]}
         reassurances={["Réponse sous 24 h", "Expert dédié, pas de sous-traitance", "Données en Belgique"]}
       />

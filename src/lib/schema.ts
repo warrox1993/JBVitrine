@@ -11,7 +11,7 @@ export const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Service",
-    telephone: "+3242680000",
+    telephone: "+32475205562",
     email: "contact@smidjan.be",
     availableLanguage: ["fr-BE", "French"],
     areaServed: ["BE", "Wallonie", "Liège"],
@@ -57,7 +57,7 @@ export const localBusinessSchema = {
   description:
     "Prestataire cybersécurité à Liège : sécurisation des réseaux, de l'infrastructure et des applications, audit et remédiation, mise en conformité NIS2 / CyberFundamentals (CCB) pour les PME en Belgique et en Wallonie.",
   url: "https://smidjan.be",
-  telephone: "+3242680000",
+  telephone: "+32475205562",
   email: "contact@smidjan.be",
   address: {
     "@type": "PostalAddress",

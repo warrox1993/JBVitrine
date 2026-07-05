@@ -177,7 +177,7 @@ export default function AgencePage() {
         text="Pas de commercial intermédiaire : vous parlez à la personne qui réalisera le travail. On évalue votre exposition, on cadre votre conformité NIS2 et vous repartez avec des priorités claires. Sans engagement."
         actions={[
           { label: "Réserver un appel de cadrage", href: "/contact" },
-          { label: "Appeler le 04 268 00 00", href: "tel:+3242680000", variant: "ghostD" },
+          { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },
         ]}
         reassurances={[
           "Réponse sous 24 h",

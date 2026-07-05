@@ -749,7 +749,7 @@ export default function ConformiteNis2Page() {
         text="30 minutes avec un expert pour identifier votre catégorie NIS2, cadrer le niveau CyFun pertinent et repartir avec des priorités claires. Sans engagement, sans jargon."
         actions={[
           { label: "Réserver mon diagnostic NIS2", href: "/contact", variant: "primary" },
-          { label: "Appeler le 04 268 00 00", href: "tel:+3242680000", variant: "ghostD" },
+          { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },
         ]}
         reassurances={[
           "Réponse sous 24 h",

@@ -369,7 +369,7 @@ export default function ServicesPage() {
         text="30 minutes avec un expert pour évaluer votre exposition, cadrer la mission la plus utile — sécuriser, tester, développer ou vous conformer — et repartir avec des priorités claires. Sans engagement."
         actions={[
           { label: "Réserver mon diagnostic gratuit", href: "/contact" },
-          { label: "Appeler le 04 268 00 00", href: "tel:+3242680000", variant: "ghostD" },
+          { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },
         ]}
         reassurances={["Réponse sous 24 h", "Expert dédié, pas de sous-traitance", "Données en Belgique"]}
       />

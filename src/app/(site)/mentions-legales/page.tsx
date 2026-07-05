@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import {
   LegalLayout,
-  LegalBanner,
   LegalSection,
   LegalCallout,
   LegalLink,
-  Placeholder,
 } from "@/components/shared/LegalLayout/LegalLayout";
 import { MentionsVisual } from "@/components/shared/LegalLayout/LegalVisuals";
 
@@ -51,36 +49,27 @@ export default function MentionsLegalesPage() {
         lead="L'identité de l'éditeur du site, le responsable de sa publication, son hébergeur et les règles de propriété intellectuelle applicables."
         visual={<MentionsVisual />}
       >
-        <LegalBanner>
-          <b>Modèle — à faire valider juridiquement avant mise en ligne.</b> Le texte ci-dessous constitue une trame
-          standard pour une PME belge de services numériques. Les champs marqués{" "}
-          <Placeholder>à compléter</Placeholder> doivent être renseignés, et l&apos;ensemble doit être relu par un
-          juriste ou un conseil spécialisé avant publication définitive.
-        </LegalBanner>
-
         <LegalSection id="editeur" num="1" title="Éditeur du site">
           <p>Le présent site est édité par Smidjan, société active en cybersécurité établie à Liège, Belgique.</p>
           <ul>
             <li>
-              <strong>Dénomination&nbsp;:</strong> Smidjan (forme juridique <Placeholder>SRL — à confirmer</Placeholder>)
+              <strong>Dénomination&nbsp;:</strong> Smidjan — marque commerciale exploitée par Jean-Baptiste Dhondt (personne physique)
             </li>
             <li>
-              <strong>Siège&nbsp;:</strong> <Placeholder>Adresse complète — à préciser</Placeholder>, Liège, Belgique
+              <strong>Siège&nbsp;:</strong> Liège, Belgique
             </li>
             <li>
-              <strong>Numéro d&apos;entreprise (BCE)&nbsp;:</strong>{" "}
-              <Placeholder>Numéro BCE — à compléter</Placeholder>
+              <strong>Numéro d&apos;entreprise (BCE)&nbsp;:</strong> En cours d&apos;immatriculation
             </li>
             <li>
-              <strong>Numéro de TVA intracommunautaire&nbsp;:</strong>{" "}
-              <Placeholder>Numéro de TVA — à compléter</Placeholder>
+              <strong>Numéro de TVA intracommunautaire&nbsp;:</strong> En cours d&apos;immatriculation
             </li>
             <li>
               <strong>E-mail&nbsp;:</strong>{" "}
               <LegalLink href="mailto:contact@smidjan.be">contact@smidjan.be</LegalLink>
             </li>
             <li>
-              <strong>Téléphone&nbsp;:</strong> <LegalLink href="tel:+3242680000">+32 (0)4 268 00 00</LegalLink>
+              <strong>Téléphone&nbsp;:</strong> <LegalLink href="tel:+32475205562">+32 475 20 55 62</LegalLink>
             </li>
           </ul>
           <LegalCallout>

@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import {
   LegalLayout,
-  LegalBanner,
   LegalCallout,
   LegalSection,
   LegalLink,
-  Placeholder,
 } from "@/components/shared/LegalLayout/LegalLayout";
 import { TermsVisual } from "@/components/shared/LegalLayout/LegalVisuals";
 
@@ -51,11 +49,10 @@ export default function CgvPage() {
         lead="Le cadre applicable aux prestations de conseil, d'audit, de test d'intrusion, de développement sécurisé et d'accompagnement à la conformité fournies par Smidjan."
         visual={<TermsVisual />}
       >
-        <LegalBanner>
-          <b>Modèle — à faire valider juridiquement avant mise en ligne.</b> Cette page constitue une trame générique
-          de conditions générales de prestation de services, à adapter à chaque mission. Elle ne remplace pas un
-          contrat ou un devis signé, qui prévaut en cas de contradiction.
-        </LegalBanner>
+        <p>
+          Les présentes conditions générales encadrent les prestations fournies par Smidjan. Elles ne remplacent pas
+          le devis ou le contrat signé pour une mission donnée, qui prévaut en cas de contradiction.
+        </p>
 
         <LegalSection id="objet" num="1" title="Objet">
           <p>
@@ -81,8 +78,9 @@ export default function CgvPage() {
           </p>
           <h3>Prix et modalités de paiement</h3>
           <p>
-            Les prix sont établis en euros, hors ou toutes taxes comprises selon indication du devis{" "}
-            <Placeholder>modalités de facturation et d&apos;acompte à préciser par mission</Placeholder>. Toute somme
+            Les prix sont établis en euros, hors ou toutes taxes comprises selon indication du devis. Les modalités de
+            facturation (acompte éventuel, échéances et jalons) sont précisées dans le devis propre à chaque mission,
+            que le client accepte lors de sa signature ou de sa validation par e-mail. Toute somme
             non payée à l&apos;échéance peut donner lieu, après mise en demeure restée sans effet, aux intérêts et
             indemnités prévus par la loi belge du 2&nbsp;août 2002 concernant la lutte contre le retard de paiement
             dans les transactions commerciales, lorsque celle-ci s&apos;applique.
@@ -115,8 +113,8 @@ export default function CgvPage() {
           <p>
             Sauf stipulation contraire dans le devis, les rapports, analyses et recommandations remis au client lui
             sont concédés en usage pour ses besoins internes. Les méthodologies, outils et modèles propres à Smidjan
-            demeurent sa propriété{" "}
-            <Placeholder>à ajuster selon la nature de chaque mission — ex. développement sur mesure</Placeholder>.
+            demeurent sa propriété. Pour les prestations de développement sur mesure, l&apos;étendue de la cession des
+            droits sur le code livré est précisée dans le devis correspondant.
           </p>
         </LegalSection>
 
