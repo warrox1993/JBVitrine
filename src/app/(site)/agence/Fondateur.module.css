@@ -162,6 +162,26 @@
   color: var(--slate);
   line-height: 1.65;
 }
+/* Infrastructure photo — technical expertise (server racks) */
+.infraFigure {
+  margin: 28px 0 4px;
+}
+.infraImg {
+  border-radius: 14px !important;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.infraCap {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.infraCap b {
+  color: var(--navy);
+  font-weight: 600;
+}
+
 .journey {
   list-style: none;
   margin: 34px 0 0;

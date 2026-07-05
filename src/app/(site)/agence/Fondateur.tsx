@@ -1,3 +1,4 @@
+import OptimizedImage from "@/components/ui/OptimizedImage";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
@@ -174,6 +175,23 @@ export function Fondateur() {
               est précisément ce qui permet à Smidjan de parler autant aux
               dirigeants qu&rsquo;aux administrateurs système.
             </p>
+
+            {/* Real photo: server infrastructure — technical expertise */}
+            <figure className={styles.infraFigure}>
+              <OptimizedImage
+                src="/images/pages/agence/infrastructure.jpg"
+                alt="Baies de serveurs et câblage réseau dans une salle informatique, illustrant l'expertise en sécurisation d'infrastructures"
+                width={1200}
+                height={673}
+                sizePreset="card"
+                className={styles.infraImg}
+              />
+              <figcaption className={styles.infraCap}>
+                Réseaux, serveurs, durcissement d&rsquo;infrastructure — le
+                terrain d&rsquo;expertise quotidien qui nourrit chaque mission
+                Smidjan.
+              </figcaption>
+            </figure>
 
             <ol className={styles.journey}>
               {JOURNEY.map((step) => (

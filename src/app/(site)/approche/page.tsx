@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { Button } from "@/components/ui/Button/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon, type IconName } from "@/components/ui/Icon/Icon";
+import OptimizedImage from "@/components/ui/OptimizedImage/OptimizedImage";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { CTABox } from "@/components/shared/CTABox/CTABox";
@@ -398,6 +399,35 @@ export default function ApprochePage() {
           />
         </div>
 
+        <div className={styles.methodGallery}>
+          <figure className={styles.methodPhoto}>
+            <OptimizedImage
+              src="/images/pages/approche/methode-architecture.jpg"
+              alt="Gros plan sur un circuit imprimé rétroéclairé, symbole de la rigueur technique et de l'architecture qui structure notre méthode."
+              width={1200}
+              height={801}
+              sizePreset="card"
+              className={styles.methodPhotoFrame}
+            />
+            <figcaption className={styles.methodPhotoCap}>
+              Une méthode aussi <b>rigoureuse qu&rsquo;un plan d&rsquo;architecte</b>, du diagnostic au correctif.
+            </figcaption>
+          </figure>
+          <figure className={styles.methodPhoto}>
+            <OptimizedImage
+              src="/images/pages/approche/planification-roadmap.jpg"
+              alt="Un consultant classe des priorités par trimestre sur un tableau de planification, illustrant la construction d'une feuille de route priorisée avec le client."
+              width={1400}
+              height={933}
+              sizePreset="card"
+              className={styles.methodPhotoFrame}
+            />
+            <figcaption className={styles.methodPhotoCap}>
+              Une <b>feuille de route priorisée</b>, construite avec vous — pas imposée.
+            </figcaption>
+          </figure>
+        </div>
+
         <div className={styles.stepsDetail}>
           {methodSteps.map((step, i) => (
             <article key={step.title} className={styles.mstep}>
@@ -487,6 +517,21 @@ export default function ApprochePage() {
           title="La rigueur d'un cabinet, la proximité d'un partenaire"
           lead="Nous sommes une structure à taille humaine, volontairement. Moins d'intermédiaires, plus de responsabilité — et quatre raisons concrètes de nous confier votre sécurité."
         />
+
+        <figure className={styles.sectionPhoto}>
+          <OptimizedImage
+            src="/images/pages/approche/collaboration-expert.jpg"
+            alt="Un consultant et une dirigeante se félicitent d'un high five autour d'un bureau, illustrant la relation directe avec l'expert dédié à votre dossier, sans sous-traitance."
+            width={1200}
+            height={800}
+            sizePreset="hero"
+            className={styles.sectionPhotoFrame}
+          />
+          <figcaption className={styles.sectionPhotoCap}>
+            Un <b>expert dédié</b>, joignable directement — jamais un centre d&rsquo;appel ni un junior en sous-traitance.
+          </figcaption>
+        </figure>
+
         <div className={styles.whyGrid}>
           {whyItems.map((item) => (
             <div key={item.title} className={styles.whyItem}>

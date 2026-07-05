@@ -1,10 +1,29 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import type { BlogArticle } from "@/lib/blogActions";
 import { ArticleCard } from "@/components/shared";
 import { ArticleCoverSvg } from "./ArticleCoverSvg";
+import cardStyles from "@/components/shared/ArticleCard/ArticleCard.module.css";
 import styles from "./BlogFilter.module.css";
+
+/** Real photo cover when set on the article, else the themed SVG fallback. */
+function ArticleCover({ article }: { article: BlogArticle }) {
+  if (article.coverImage) {
+    return (
+      <div className={cardStyles.coverPhoto}>
+        <Image
+          src={article.coverImage}
+          alt={article.title}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+      </div>
+    );
+  }
+  return <ArticleCoverSvg category={article.category} />;
+}
 
 interface BlogFilterProps {
   articles: BlogArticle[];
@@ -77,7 +96,7 @@ export function BlogFilter({ articles }: BlogFilterProps) {
             excerpt={article.excerpt}
             date={formatDate(article.publishedAt)}
             readingTime={article.readTime}
-            cover={<ArticleCoverSvg category={article.category} />}
+            cover={<ArticleCover article={article} />}
           />
         ))}
       </div>

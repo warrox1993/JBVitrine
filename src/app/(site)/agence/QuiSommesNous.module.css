@@ -139,6 +139,27 @@
   line-height: 1.5;
 }
 
+/* Coverage photo (Earth at night — Belgium/EU hosting & reach) */
+.coverageFigure {
+  margin-top: 16px;
+}
+.coverageImg {
+  border-radius: 14px !important;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.coverageCap {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  text-align: center;
+}
+.coverageCap b {
+  color: var(--navy);
+  font-weight: 600;
+}
+
 @media (max-width: 1000px) {
   .grid {
     grid-template-columns: 1fr;

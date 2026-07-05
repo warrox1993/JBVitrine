@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import OptimizedImage from "@/components/ui/OptimizedImage";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button/Button";
 import { Icon, type IconName } from "@/components/ui/Icon/Icon";
@@ -208,6 +209,22 @@ export default function ConformiteNis2Page() {
           title="Ce que la directive change pour vous — sans jargon"
           lead="NIS2 est une directive européenne qui relève le niveau minimal de cybersécurité exigé de milliers d'organisations. Trois questions suffisent à savoir où vous en êtes."
         />
+
+        <figure className={styles.sectionPhoto}>
+          <OptimizedImage
+            src="/images/pages/conformite-nis2/gouvernance-comite.jpg"
+            alt="Comité de direction réuni en salle de réunion, discutant des risques cyber et des responsabilités de gouvernance liées à la conformité NIS2"
+            width={1400}
+            height={935}
+            sizePreset="hero"
+            className={styles.sectionPhotoFrame}
+          />
+          <figcaption className={styles.sectionPhotoCap}>
+            La conformité NIS2 engage la <b>responsabilité des organes de
+            direction</b> — un sujet de gouvernance, pas seulement d&apos;IT.
+          </figcaption>
+        </figure>
+
         <div className={styles.clairGrid}>
           <article className={styles.clairCard}>
             <div className={styles.ico}>
@@ -355,6 +372,20 @@ export default function ConformiteNis2Page() {
               <b>socle progressif de mesures</b>, adapté à la taille et au risque
               de chaque organisation.
             </p>
+            <figure className={styles.frameInlinePhoto}>
+              <OptimizedImage
+                src="/images/pages/conformite-nis2/audit-checklist.jpg"
+                alt="Consultant complétant une checklist de conformité CyFun sur tablette, mesure par mesure"
+                width={1400}
+                height={788}
+                sizePreset="card"
+                className={styles.sectionPhotoFrame}
+              />
+              <figcaption>
+                L&apos;auto-évaluation CyFun&nbsp;: un <b>socle de mesures</b>{" "}
+                vérifiées une à une, pas une simple déclaration d&apos;intention.
+              </figcaption>
+            </figure>
           </div>
           <div className={styles.frameMap}>
             <div className={styles.mh}>
@@ -478,6 +509,21 @@ export default function ConformiteNis2Page() {
           title="On ne se contente pas d'auditer — on corrige et on vous amène prêts"
           lead="C'est notre différence avec les pures maisons d'audit : nous ne repartons pas en vous laissant une liste de problèmes. Nous mettons les mains dans le cambouis et nous vous préparons à la vérification."
         />
+
+        <figure className={styles.sectionPhoto}>
+          <OptimizedImage
+            src="/images/pages/conformite-nis2/audit-collaboration.jpg"
+            alt="Deux experts Smidjan collaborant avec un client autour d'un ordinateur portable et de documents d'audit NIS2"
+            width={1200}
+            height={800}
+            sizePreset="hero"
+            className={styles.sectionPhotoFrame}
+          />
+          <figcaption className={styles.sectionPhotoCap}>
+            Un <b>accompagnement de terrain</b>&nbsp;: nous travaillons avec vos
+            équipes, pas seulement sur un rapport.
+          </figcaption>
+        </figure>
 
         <div className={styles.honesty}>
           <Icon name="shield" size={30} strokeWidth={1.8} />

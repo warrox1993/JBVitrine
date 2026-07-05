@@ -1,3 +1,4 @@
+import OptimizedImage from "@/components/ui/OptimizedImage";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Icon } from "@/components/ui/Icon/Icon";
@@ -170,6 +171,22 @@ export function QuiSommesNous() {
                 </p>
               </div>
             </div>
+
+            {/* Coverage photo: local action, data hosted Belgium/EU */}
+            <figure className={styles.coverageFigure}>
+              <OptimizedImage
+                src="/images/pages/agence/couverture-europe.jpg"
+                alt="Vue nocturne de la Terre depuis l'espace, lumières des villes d'Europe — symbole de notre zone de couverture Belgique / Europe"
+                width={1200}
+                height={798}
+                sizePreset="card"
+                className={styles.coverageImg}
+              />
+              <figcaption className={styles.coverageCap}>
+                Une intervention ancrée à Liège, des données{" "}
+                <b>hébergées en Belgique et en Europe</b>.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </Container>

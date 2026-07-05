@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { BlogArticle } from "@/lib/blogActions";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Button } from "@/components/ui/Button/Button";
@@ -50,10 +51,26 @@ export function FeaturedArticle({ article }: FeaturedArticleProps) {
         </Button>
       </div>
       <div className={styles.visual}>
-        <div className={`${styles.gridBg} grid-bg`} aria-hidden="true" />
-        <div className={styles.iconPlate} aria-hidden="true">
-          <ArticleCoverSvg category={article.category} size={104} tone="dark" />
-        </div>
+        {article.coverImage ? (
+          <>
+            <Image
+              src={article.coverImage}
+              alt={article.title}
+              fill
+              sizes="(max-width: 1000px) 100vw, 50vw"
+              priority
+              className={styles.photo}
+            />
+            <div className={styles.photoOverlay} aria-hidden="true" />
+          </>
+        ) : (
+          <>
+            <div className={`${styles.gridBg} grid-bg`} aria-hidden="true" />
+            <div className={styles.iconPlate} aria-hidden="true">
+              <ArticleCoverSvg category={article.category} size={104} tone="dark" />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

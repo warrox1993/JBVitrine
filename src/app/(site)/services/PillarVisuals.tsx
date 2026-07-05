@@ -1,10 +1,13 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import styles from "./page.module.css";
 
 /**
  * Inline SVG illustrations for the /services pillars, ported from the
  * approved mockup (page-services.html). Colors reference the shared
  * navy/orange design tokens so they stay in sync with theme changes.
+ * Each pillar also renders a real photo (PillarPhoto) alongside its
+ * schematic SVG for a more concrete, human illustration.
  */
 
 function VisualBox({ alt, children }: { alt?: boolean; children: ReactNode }) {
@@ -12,9 +15,26 @@ function VisualBox({ alt, children }: { alt?: boolean; children: ReactNode }) {
   return <div className={cn}>{children}</div>;
 }
 
+/** Real photo shown next to a pillar's SVG schematic. */
+function PillarPhoto({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className={styles.photoBox}>
+      <Image
+        src={src}
+        alt={alt}
+        width={1400}
+        height={933}
+        sizes="(max-width: 720px) 100vw, 560px"
+        className={styles.photoImg}
+      />
+    </div>
+  );
+}
+
 /** Pillar 01 — Sécuriser réseaux & infrastructure: firewall filtering traffic into a segmented network. */
 export function SecureVisual({ alt }: { alt?: boolean }) {
   return (
+    <>
     <VisualBox alt={alt}>
       <svg
         viewBox="0 0 480 250"
@@ -70,12 +90,18 @@ export function SecureVisual({ alt }: { alt?: boolean }) {
         <text x="432" y="232" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">Réseau interne</text>
       </svg>
     </VisualBox>
+    <PillarPhoto
+      src="/images/pages/services/securiser-datacenter.jpg"
+      alt="Baies de serveurs dans un datacenter sécurisé, illustrant le durcissement de l'infrastructure réseau."
+    />
+    </>
   );
 }
 
 /** Pillar 02 — Tester audits & pentest: an app being probed and consigned into a severity-ranked audit report. */
 export function TestVisual({ alt }: { alt?: boolean }) {
   return (
+    <>
     <VisualBox alt={alt}>
       <svg
         viewBox="0 0 480 250"
@@ -137,12 +163,18 @@ export function TestVisual({ alt }: { alt?: boolean }) {
         <text x="375" y="232" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">Rapport de pentest</text>
       </svg>
     </VisualBox>
+    <PillarPhoto
+      src="/images/pages/services/tester-ecrans.jpg"
+      alt="Analystes en sécurité examinant du code et des tableaux de bord sur plusieurs écrans lors d'un audit."
+    />
+    </>
   );
 }
 
 /** Pillar 03 — Développer secure by design: a code editor window with a validated security function. */
 export function DevVisual({ alt }: { alt?: boolean }) {
   return (
+    <>
     <VisualBox alt={alt}>
       <svg
         viewBox="0 0 480 250"
@@ -178,12 +210,18 @@ export function DevVisual({ alt }: { alt?: boolean }) {
         <text x="240" y="245" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">Sécurité intégrée dès la conception</text>
       </svg>
     </VisualBox>
+    <PillarPhoto
+      src="/images/pages/services/developper-architecture.jpg"
+      alt="Plan de circuit imprimé en gros plan, symbolisant une architecture applicative pensée secure by design."
+    />
+    </>
   );
 }
 
 /** Pillar 04 — Se conformer CyFun/NIS2: three ascending tiers (Basic/Important/Essential) reaching a validation mark. */
 export function ComplyVisual({ alt }: { alt?: boolean }) {
   return (
+    <>
     <VisualBox alt={alt}>
       <svg
         viewBox="0 0 480 226"
@@ -220,5 +258,10 @@ export function ComplyVisual({ alt }: { alt?: boolean }) {
         <text x="365" y="207" textAnchor="middle" fontSize="12" fill="var(--orange-d)" fontFamily="var(--sans)" style={{ fontWeight: 700 }}>Essential</text>
       </svg>
     </VisualBox>
+    <PillarPhoto
+      src="/images/pages/services/conformer-audit.jpg"
+      alt="Équipe de professionnels examinant ensemble des documents et une checklist lors d'une réunion de conformité."
+    />
+    </>
   );
 }

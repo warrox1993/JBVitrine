@@ -1,16 +1,35 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Section } from "@/components/ui/Section/Section";
 import { ArticleCard, CTABox } from "@/components/shared";
 import { ArticleCoverSvg } from "@/components/features/blog/ArticleCoverSvg";
-import { getAllArticles, getArticleBySlug } from "@/lib/blogActions";
+import { getAllArticles, getArticleBySlug, type BlogArticle } from "@/lib/blogActions";
 import { markdownToHtml } from "@/lib/markdown";
 import { jsonLdSafe } from "@/lib/security/escape";
 import { authorSchema } from "@/lib/author-schema";
+import cardStyles from "@/components/shared/ArticleCard/ArticleCard.module.css";
 import styles from "./page.module.css";
+
+/** Real photo cover when set on the article, else the themed SVG fallback. */
+function ArticleCover({ article }: { article: BlogArticle }) {
+  if (article.coverImage) {
+    return (
+      <div className={cardStyles.coverPhoto}>
+        <Image
+          src={article.coverImage}
+          alt={article.title}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+      </div>
+    );
+  }
+  return <ArticleCoverSvg category={article.category} />;
+}
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -200,9 +219,21 @@ export default async function BlogArticlePage({ params }: Props) {
       </header>
 
       <div className={`wrap ${styles.narrow}`}>
-        <figure className={styles.heroArt} aria-hidden="true">
-          <ArticleCoverSvg category={article.category} size={120} tone="dark" />
-        </figure>
+        {article.coverImage ? (
+          <figure className={styles.heroPhoto}>
+            <Image
+              src={article.coverImage}
+              alt={article.title}
+              fill
+              sizes="(max-width: 760px) 100vw, 760px"
+              priority
+            />
+          </figure>
+        ) : (
+          <figure className={styles.heroArt} aria-hidden="true">
+            <ArticleCoverSvg category={article.category} size={120} tone="dark" />
+          </figure>
+        )}
       </div>
 
       <section className={styles.articleSection}>
@@ -294,7 +325,7 @@ export default async function BlogArticlePage({ params }: Props) {
                   excerpt={related.excerpt}
                   date={relatedDate}
                   readingTime={related.readTime}
-                  cover={<ArticleCoverSvg category={related.category} />}
+                  cover={<ArticleCover article={related} />}
                 />
               );
             })}

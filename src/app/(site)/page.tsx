@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import OptimizedImage from "@/components/ui/OptimizedImage/OptimizedImage";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import {
@@ -151,7 +152,35 @@ export default function HomePage() {
           eyebrow="Architecture"
           title="Un périmètre défendu, pas un empilement d'outils"
           text="Postes de travail, serveurs et bases de données regroupés derrière un pare-feu qui filtre chaque connexion entrante, avec des segments internes chiffrés. Une architecture lisible, que nous documentons et faisons évoluer avec vous."
-          figure={<TopologyFigure />}
+          figure={
+            <div className={homeStyles.figWithPhoto}>
+              <TopologyFigure />
+              <OptimizedImage
+                src="/images/pages/home/infrastructure-datacenter.jpg"
+                alt="Baies de serveurs et câblage réseau dans un datacenter sécurisé, illustrant l'infrastructure des PME que nous durcissons."
+                fill
+                sizePreset="card"
+                aspectRatio="landscape"
+                className={homeStyles.figPhoto}
+              />
+            </div>
+          }
+        />
+
+        <IllusPanel
+          eyebrow="Développement"
+          title="La sécurité intégrée dès la conception"
+          text="Nos applications et sites sont pensés « secure by design » : chaque choix d'architecture, du code au déploiement, réduit la surface d'attaque avant même la mise en production."
+          figure={
+            <OptimizedImage
+              src="/images/pages/home/architecture-secure.jpg"
+              alt="Circuit imprimé lumineux symbolisant une architecture applicative sécurisée dès la conception."
+              fill
+              sizePreset="card"
+              aspectRatio="landscape"
+              className={homeStyles.figPhoto}
+            />
+          }
         />
 
         <AiNote />

@@ -13,6 +13,20 @@
   position: relative;
   z-index: 1;
 }
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+.heroMedia {
+  position: relative;
+}
+.heroImg {
+  border-radius: 14px !important;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 56px -26px rgba(11, 31, 58, 0.35);
+}
 .crumb {
   display: flex;
   align-items: center;
@@ -140,6 +154,15 @@
 @media (max-width: 1000px) {
   .engageGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 1000px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .heroMedia {
+    order: -1;
   }
 }
 @media (max-width: 720px) {

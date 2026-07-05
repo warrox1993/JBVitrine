@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import OptimizedImage from "@/components/ui/OptimizedImage";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
@@ -58,39 +59,55 @@ export default function AgencePage() {
       {/* ===== Page header ===== */}
       <section className={styles.pageHero}>
         <Container className={styles.heroInner}>
-          <nav className={styles.crumb} aria-label="Fil d'Ariane">
-            <Link href="/">Accueil</Link>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="m9 18 6-6-6-6" />
-            </svg>
-            <span className={styles.crumbHere}>L&rsquo;agence</span>
-          </nav>
-          <Eyebrow>L&rsquo;agence</Eyebrow>
-          <h1 className={styles.h1}>
-            La cybersécurité des PME wallonnes,{" "}
-            <span className={styles.accent}>faite par un expert local</span>.
-          </h1>
-          <p className={styles.lead}>
-            Smidjan est une agence de cybersécurité basée à Liège, au service
-            des PME, des professions libérales et des collectivités de
-            Wallonie. Une structure à taille humaine, exigeante et joignable —
-            parce que la sécurité d&rsquo;une entreprise mérite un
-            interlocuteur qui connaît réellement son dossier.
-          </p>
-          <ul className={styles.badges}>
-            <li>
-              <Icon name="map-pin" size={18} />
-              Basés à Liège, actifs en Wallonie
-            </li>
-            <li>
-              <Icon name="users" size={18} />
-              Accès direct à l&rsquo;expert
-            </li>
-            <li>
-              <Icon name="check" size={18} />
-              Données hébergées en Belgique / UE
-            </li>
-          </ul>
+          <div className={styles.heroGrid}>
+            <div className={styles.heroText}>
+              <nav className={styles.crumb} aria-label="Fil d'Ariane">
+                <Link href="/">Accueil</Link>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+                <span className={styles.crumbHere}>L&rsquo;agence</span>
+              </nav>
+              <Eyebrow>L&rsquo;agence</Eyebrow>
+              <h1 className={styles.h1}>
+                La cybersécurité des PME wallonnes,{" "}
+                <span className={styles.accent}>faite par un expert local</span>.
+              </h1>
+              <p className={styles.lead}>
+                Smidjan est une agence de cybersécurité basée à Liège, au service
+                des PME, des professions libérales et des collectivités de
+                Wallonie. Une structure à taille humaine, exigeante et joignable —
+                parce que la sécurité d&rsquo;une entreprise mérite un
+                interlocuteur qui connaît réellement son dossier.
+              </p>
+              <ul className={styles.badges}>
+                <li>
+                  <Icon name="map-pin" size={18} />
+                  Basés à Liège, actifs en Wallonie
+                </li>
+                <li>
+                  <Icon name="users" size={18} />
+                  Accès direct à l&rsquo;expert
+                </li>
+                <li>
+                  <Icon name="check" size={18} />
+                  Données hébergées en Belgique / UE
+                </li>
+              </ul>
+            </div>
+            <div className={styles.heroMedia}>
+              <OptimizedImage
+                src="/images/pages/agence/liege-nuit.jpg"
+                alt="Le pont de Fragnée illuminé la nuit au-dessus de la Meuse, à Liège"
+                width={1400}
+                height={788}
+                sizePreset="hero"
+                aspectRatio="landscape"
+                priority
+                className={styles.heroImg}
+              />
+            </div>
+          </div>
         </Container>
       </section>
 

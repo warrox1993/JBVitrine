@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import OptimizedImage from '@/components/ui/OptimizedImage/OptimizedImage';
 import { ContactForm } from './ContactForm';
 import cls from './page.module.css';
 
@@ -89,35 +90,49 @@ export default function ContactPage() {
       {/* ===== Page header band ===== */}
       <div className={cls.pageHead}>
         <div className={`wrap ${cls.pageHeadInner}`}>
-          <nav className={cls.crumbs} aria-label="Fil d'Ariane">
-            <a href="/">Accueil</a>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
-              <path d="m9 18 6-6-6-6" />
-            </svg>
-            <span>Contact</span>
-          </nav>
-          <span className={cls.eyebrow}>Parlons de votre sécurité</span>
-          <h1>
-            Un expert vous répond — <span className={cls.accent}>sous 24&nbsp;heures</span>.
-          </h1>
-          <p className={cls.lead}>
-            Diagnostic gratuit, question sur la conformité NIS2, projet de développement ou simple
-            prise de contact : écrivez-nous. Vous parlez directement à l&apos;expert qui traitera
-            votre demande, pas à un centre d&apos;appels.
-          </p>
-          <div className={cls.headAssure}>
-            <div>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
-              Réponse sous 24&nbsp;h ouvrées
+          <div className={cls.pageHeadText}>
+            <nav className={cls.crumbs} aria-label="Fil d'Ariane">
+              <a href="/">Accueil</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+              <span>Contact</span>
+            </nav>
+            <span className={cls.eyebrow}>Parlons de votre sécurité</span>
+            <h1>
+              Un expert vous répond — <span className={cls.accent}>sous 24&nbsp;heures</span>.
+            </h1>
+            <p className={cls.lead}>
+              Diagnostic gratuit, question sur la conformité NIS2, projet de développement ou simple
+              prise de contact : écrivez-nous. Vous parlez directement à l&apos;expert qui traitera
+              votre demande, pas à un centre d&apos;appels.
+            </p>
+            <div className={cls.headAssure}>
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                Réponse sous 24&nbsp;h ouvrées
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                Sans engagement
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                Basés à Liège
+              </div>
             </div>
-            <div>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
-              Sans engagement
-            </div>
-            <div>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
-              Basés à Liège
-            </div>
+          </div>
+          <div className={cls.pageHeadMedia}>
+            <OptimizedImage
+              src="/images/pages/contact/office-team.jpg"
+              alt="Équipe Smidjan réunie autour d'un ordinateur portable dans un bureau moderne et lumineux, échange convivial entre collègues."
+              width={640}
+              height={430}
+              sizePreset="hero"
+              aspectRatio="landscape"
+              className={cls.pageHeadImg}
+              priority
+            />
           </div>
         </div>
       </div>
@@ -134,6 +149,17 @@ export default function ContactPage() {
               {/* Emergency block */}
               <div className={cls.emergBlock} id="urgence">
                 <div className={`${cls.gridBg} grid-bg`} aria-hidden="true" />
+                <div className={cls.ebPhoto}>
+                  <OptimizedImage
+                    src="/images/pages/contact/incident-response.jpg"
+                    alt="Analyste cybersécurité de dos, face à plusieurs écrans de supervision dans une salle de contrôle, en pleine réponse à un incident."
+                    width={520}
+                    height={230}
+                    sizePreset="card"
+                    aspectRatio="landscape"
+                    className={cls.ebPhotoImg}
+                  />
+                </div>
                 <div className={cls.ebTop}>
                   <div className={cls.ebIc}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
@@ -203,6 +229,18 @@ export default function ContactPage() {
 
               {/* Contact details */}
               <div className={cls.infoCard}>
+                <div className={cls.coordPhoto}>
+                  <OptimizedImage
+                    src="/images/pages/contact/support-desk.jpg"
+                    alt="Membre de l'équipe Smidjan souriant, au téléphone à son bureau avec un ordinateur portable, prêt à répondre à votre demande."
+                    width={480}
+                    height={230}
+                    sizePreset="card"
+                    aspectRatio="landscape"
+                    className={cls.coordPhotoImg}
+                  />
+                  <span className={cls.coordPhotoTag}>On vous répond</span>
+                </div>
                 <h3>
                   <span className={cls.hi}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>

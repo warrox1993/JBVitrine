@@ -12,6 +12,8 @@ export interface BlogArticle {
   publishedAt: string;
   category: string;
   readTime: string;
+  /** Optional real photo cover (e.g. "/images/blog/<slug>.jpg"). Falls back to ArticleCoverSvg when unset. */
+  coverImage?: string;
   content: string;
   tableOfContents: { title: string; id: string }[];
 }
