@@ -7,6 +7,7 @@ import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Breadcrumb } from "@/components/Breadcrumb/Breadcrumb";
 import { CyFunTiers, ProcessSteps, Faq, CTABox } from "@/components/shared";
+import { faqPageSchema } from "@/lib/schema";
 import {
   FunctionsRing,
   CoverageGauge,
@@ -81,6 +82,11 @@ const CHECK = <Icon name="check" strokeWidth={2.4} size={16} />;
 export default function ConformiteNis2Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
+      />
+
       <Breadcrumb
         items={[
           { label: "Services", href: "/services" },
@@ -94,7 +100,7 @@ export default function ConformiteNis2Page() {
           <div>
             <span className={styles.heroBadge}>
               <span className={styles.tag}>NIS2</span>
-              Échéance de mise en conformité&nbsp;: 18 avril 2026
+              En vigueur en Belgique&nbsp;: la conformité est déjà exigée
             </span>
             <h1 className={styles.heroTitle}>
               NIS2 &amp; CyFun&nbsp;:{" "}
@@ -144,38 +150,39 @@ export default function ConformiteNis2Page() {
               <div className={`${styles.gridBg} grid-bg`} aria-hidden="true" />
               <div className={styles.dcTop}>
                 <div className={styles.dcCal}>
-                  <span className={styles.m}>Avr</span>
+                  <span className={styles.m}>Oct</span>
                   <span className={styles.d}>18</span>
-                  <span className={styles.y}>2026</span>
+                  <span className={styles.y}>2024</span>
                 </div>
                 <div>
-                  <h3>L&apos;échéance NIS2 approche</h3>
+                  <h3>NIS2 est déjà en vigueur</h3>
                   <p>
-                    Date visée de mise en conformité pour les entités concernées
-                    en Belgique.
+                    Applicable en Belgique depuis le 18 octobre 2024&nbsp;: la
+                    conformité n&apos;est plus une échéance à venir, c&apos;est
+                    une obligation actuelle.
                   </p>
                 </div>
               </div>
               <div className={styles.dcCount} aria-hidden="true">
                 <div className={styles.dcUnit}>
-                  <div className={styles.num}>287</div>
-                  <div className={styles.lbl}>JOURS</div>
+                  <div className={styles.num}>10M€</div>
+                  <div className={styles.lbl}>SANCTION MAX</div>
                 </div>
                 <div className={styles.dcUnit}>
-                  <div className={styles.num}>9</div>
-                  <div className={styles.lbl}>MOIS</div>
+                  <div className={styles.num}>2%</div>
+                  <div className={styles.lbl}>DU CA MONDIAL</div>
                 </div>
                 <div className={styles.dcUnit}>
-                  <div className={styles.num}>6</div>
-                  <div className={styles.lbl}>SPRINTS</div>
+                  <div className={styles.num}>24h</div>
+                  <div className={styles.lbl}>ALERTE INCIDENT</div>
                 </div>
               </div>
               <div className={styles.dcFoot}>
                 <Icon name="shield-check" size={17} />
                 <span>
-                  <b>Anticiper, c&apos;est se donner le temps</b> de corriger
-                  sereinement — plutôt que de subir la pression et le risque de
-                  sanction.
+                  <b>Vous êtes déjà censé être conforme.</b> Si ce n&apos;est
+                  pas encore le cas, nous vous y amenons vite — en réduisant
+                  votre exposition aux sanctions et aux incidents.
                 </span>
               </div>
             </div>
@@ -289,14 +296,15 @@ export default function ConformiteNis2Page() {
             </div>
             <h3>Pourquoi maintenant&nbsp;?</h3>
             <p>
-              La directive est transposée en droit belge et l&apos;échéance est
-              fixée. Le temps de préparation est votre principal allié.
+              La directive est transposée en droit belge et déjà applicable.
+              Chaque mois sans conformité, c&apos;est du risque en plus.
             </p>
             <ul>
               <li>
                 {CHECK}
                 <span>
-                  Échéance de mise en conformité&nbsp;: <b>18 avril 2026</b>.
+                  NIS2 est <b>en vigueur depuis le 18 octobre 2024</b> —
+                  vous êtes déjà tenu de vous y conformer.
                 </span>
               </li>
               <li>
@@ -678,11 +686,11 @@ export default function ConformiteNis2Page() {
                     Essential.
                   </p>
                   <p>
-                    C&apos;est précisément pourquoi il est prudent de commencer{" "}
-                    <b>bien avant l&apos;échéance du 18 avril 2026</b>&nbsp;: la
-                    remédiation (MFA, sauvegardes, journalisation, procédures…) se
-                    déploie sur des mois. Anticiper permet d&apos;étaler
-                    l&apos;effort et le budget.
+                    Comme NIS2 est <b>déjà en vigueur</b>, il est urgent de
+                    lancer la démarche&nbsp;: la remédiation (MFA, sauvegardes,
+                    journalisation, procédures…) se déploie sur des mois. Plus
+                    on commence tôt, plus on étale l&apos;effort et le budget —
+                    tout en réduisant l&apos;exposition aux sanctions.
                   </p>
                 </>
               ),

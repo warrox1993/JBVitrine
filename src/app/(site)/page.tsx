@@ -9,7 +9,7 @@ import {
   StatsBand,
   CTABox,
 } from "@/components/shared";
-import { faqPageSchema } from "@/lib/schema";
+import { organizationSchema, websiteSchema, localBusinessSchema } from "@/lib/schema";
 import { Hero } from "./_home/Hero";
 import { IllusPanel } from "./_home/IllusPanel";
 import { AiNote } from "./_home/AiNote";
@@ -72,7 +72,15 @@ export default function HomePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
 
       <Hero />

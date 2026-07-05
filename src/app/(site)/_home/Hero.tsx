@@ -12,7 +12,7 @@ export function Hero() {
         <div>
           <span className={styles.badge}>
             <span className={styles.tag}>NIS2</span>
-            Échéance de mise en conformité&nbsp;: 18 avril 2026
+            En vigueur en Belgique&nbsp;: votre entreprise doit déjà être conforme
           </span>
           <h1 className={styles.title}>
             Votre entreprise, <span className={styles.accent}>protégée et conforme</span> — sans

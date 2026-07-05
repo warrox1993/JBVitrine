@@ -14,7 +14,7 @@ export function InsightTeaser() {
         </h3>
         <p>
           Ce que dit la loi, qui est concerné, comment choisir votre niveau CyFun et par où commencer
-          avant l&apos;échéance du 18 avril 2026 — en langage clair, sans jargon.
+          maintenant que NIS2 est en vigueur — en langage clair, sans jargon.
         </p>
         <div className={styles.meta}>
           <span>

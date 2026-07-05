@@ -4,7 +4,7 @@ import { getAllArticles } from "@/lib/blogActions";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://smidjan.be";
 
-  // Static pages - SEO 2025
+  // Static pages — refonte cyber-first
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -13,10 +13,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/about`,
+      url: `${baseUrl}/conformite-nis2`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.9,
+      priority: 0.95,
     },
     {
       url: `${baseUrl}/services`,
@@ -25,7 +25,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/cms-ecommerce`,
+      url: `${baseUrl}/approche`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/agence`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
@@ -43,19 +49,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/legal-notice`,
+      url: `${baseUrl}/mentions-legales`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/privacy`,
+      url: `${baseUrl}/confidentialite`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/terms`,
+      url: `${baseUrl}/cgv`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.3,

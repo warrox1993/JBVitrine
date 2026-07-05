@@ -28,15 +28,15 @@ export function CyfunIntro() {
       <aside className={styles.deadline}>
         <div className={styles.row}>
           <div className={styles.cal}>
-            <span className={styles.m}>Avr</span>
+            <span className={styles.m}>Oct</span>
             <span className={styles.d}>18</span>
-            <span className={styles.y}>2026</span>
+            <span className={styles.y}>2024</span>
           </div>
           <div>
-            <h3>L&apos;échéance approche</h3>
+            <h3>NIS2 est déjà en vigueur</h3>
             <p>
-              Date de mise en conformité NIS2 pour les entités concernées. Anticiper évite la
-              pression — et le risque de sanction.
+              Applicable en Belgique depuis le 18 octobre 2024. La conformité est déjà exigée —
+              agir maintenant réduit la pression et le risque de sanction.
             </p>
           </div>
         </div>

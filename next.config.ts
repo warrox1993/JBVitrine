@@ -93,18 +93,52 @@ const nextConfig: NextConfig = {
     return config;
   },
 
-  // Redirections SEO 2025
+  // Redirections SEO 2025 — refonte (301, permanent)
   async redirects() {
     return [
-      // Redirection ancienne URL produits vers nouvelle structure
+      // Ancienne structure "produits/*"
       {
         source: "/produits/cms-ecommerce",
-        destination: "/cms-ecommerce",
-        permanent: true, // 301 redirect
+        destination: "/services",
+        permanent: true,
+      },
+      // Refonte : positionnement cyber-first — le CMS/e-commerce n'est plus un
+      // service. On renvoie vers l'offre développement web sécurisé.
+      {
+        source: "/cms-ecommerce",
+        destination: "/services",
+        permanent: true,
       },
       {
         source: "/produits/:slug*",
-        destination: "/:slug*",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/services/smidjan-cms",
+        destination: "/services",
+        permanent: true,
+      },
+      // "À propos" → nouvelle page Agence
+      {
+        source: "/about",
+        destination: "/agence",
+        permanent: true,
+      },
+      // Pages légales renommées (FR)
+      {
+        source: "/legal-notice",
+        destination: "/mentions-legales",
+        permanent: true,
+      },
+      {
+        source: "/privacy",
+        destination: "/confidentialite",
+        permanent: true,
+      },
+      {
+        source: "/terms",
+        destination: "/cgv",
         permanent: true,
       },
     ];
