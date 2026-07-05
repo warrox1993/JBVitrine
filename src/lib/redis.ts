@@ -2,13 +2,15 @@ import { Redis } from "@upstash/redis";
 
 // Initialize Redis client
 // For production, set UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN in .env
+// Support both the Vercel Marketplace Upstash integration vars (KV_REST_API_*)
+// and the legacy UPSTASH_REDIS_REST_* names (fallback).
+const redisUrl =
+  process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
+const redisToken =
+  process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+
 export const redis =
-  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
-    ? new Redis({
-        url: process.env.UPSTASH_REDIS_REST_URL,
-        token: process.env.UPSTASH_REDIS_REST_TOKEN,
-      })
-    : null;
+  redisUrl && redisToken ? new Redis({ url: redisUrl, token: redisToken }) : null;
 
 // Fallback in-memory store for development
 const memoryStore = new Map<string, { count: number; resetTime: number }>();
