@@ -45,8 +45,10 @@
   /* Type */
   --mono: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas,
     "Liberation Mono", monospace;
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
+  /* Use Inter (loaded via next/font as --font-base) so labels, eyebrows and
+     buttons match the body type instead of falling back to the OS font. */
+  --sans: var(--font-base), system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
   /* Layout / rhythm */
   --maxw: 1180px;
   --section-y: 88px; /* 60px under 720px */
