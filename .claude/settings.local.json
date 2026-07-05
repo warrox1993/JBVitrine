@@ -1,8 +1,27 @@
 {
   "permissions": {
     "allow": [
+      "Bash(git verify-commit:*)",
+      "Bash(git log:*)",
+      "Bash(cat:*)",
+      "Bash(git stash list:*)",
+      "Bash(find:*)",
       "Bash(npm run build:*)",
-      "Bash(npm run:*)"
+      "Bash(npm install:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm audit:*)",
+      "Bash(NUL)",
+      "Bash(git check-ignore:*)",
+      "Bash(node replace-emails.js:*)",
+      "Bash(curl:*)",
+      "Bash(npx playwright test:*)",
+      "Bash(taskkill:*)",
+      "WebFetch(domain:smidjan.be)",
+      "Bash(git checkout:*)",
+      "Bash(npx sharp-cli:*)"
     ],
     "deny": [],
     "ask": []

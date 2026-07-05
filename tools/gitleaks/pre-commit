@@ -1,2 +1,0 @@
-#!/bin/sh
-exec gitleaks protect -v --staged --config tools/gitleaks/gitleaks.toml

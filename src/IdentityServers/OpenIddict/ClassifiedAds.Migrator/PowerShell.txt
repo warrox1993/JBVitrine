@@ -1,9 +1,0 @@
-﻿https://docs.microsoft.com/en-us/ef/core/cli/powershell
-
-Add-Migration -Context OpenIddictDbContext Init -OutputDir Migrations/OpenIddictDb
-
-Update-Database -Context OpenIddictDbContext
-
-Script-DbContext -Context OpenIddictDbContext
-
-Script-Migration -Context OpenIddictDbContext
