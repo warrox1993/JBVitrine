@@ -1,0 +1,35 @@
+/* StatHook — big-number highlight on an orange tint. */
+.hook {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--orange-t);
+  border: 1px solid #ffd9be;
+  border-radius: 14px;
+  padding: 22px 26px;
+}
+.big {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--orange-d);
+  line-height: 1;
+  font-family: var(--sans);
+  letter-spacing: -0.02em;
+  flex: none;
+}
+.txt {
+  font-size: 14.5px;
+  color: #7a3d15;
+  line-height: 1.5;
+}
+.txt b {
+  color: #5c2e10;
+}
+
+@media (max-width: 720px) {
+  .hook {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}

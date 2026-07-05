@@ -177,6 +177,25 @@ body {
   animation: titleGlow 3s ease-in-out infinite;
 }
 
+/* ============================================================
+   Shared layout helpers (refonte-design Phase 2)
+   Global-only: content wrapper + the navy section grid overlay.
+   Everything else lives in scoped CSS Modules.
+   ============================================================ */
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Faint grid texture painted over navy section backgrounds. */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+
 /* Phone Input Global Dark Theme Styles */
 .PhoneInputCountrySelect {
   color-scheme: dark !important;

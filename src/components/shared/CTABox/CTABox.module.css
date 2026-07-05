@@ -1,0 +1,76 @@
+/* CTABox — navy final call-to-action box. */
+.final {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  padding: var(--section-y) 0;
+}
+.final.tint {
+  background: var(--bg-2);
+}
+.box {
+  background: linear-gradient(135deg, var(--navy) 0%, #0a1a30 100%);
+  border-radius: 20px;
+  padding: 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 70px -30px rgba(11, 31, 58, 0.6);
+}
+.gridBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.in {
+  position: relative;
+  max-width: 660px;
+  margin: 0 auto;
+}
+.in h2 {
+  color: #fff;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+.in p {
+  color: var(--on-dark-muted);
+  margin-top: 16px;
+  font-size: 17.5px;
+}
+.btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.sub {
+  margin-top: 22px;
+  font-size: 13.5px;
+  color: #8496b0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.sub span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.sub svg {
+  width: 15px;
+  height: 15px;
+  color: var(--success);
+}
+
+@media (max-width: 720px) {
+  .final {
+    padding: 60px 0;
+  }
+  .box {
+    padding: 34px 26px;
+  }
+}

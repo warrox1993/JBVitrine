@@ -1,0 +1,21 @@
+/* Eyebrow — orange uppercase kicker with a leading dash. */
+.eyebrow {
+  font: 600 12px/1.4 var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange-d);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  display: inline-block;
+  border-radius: 2px;
+}
+.onDark {
+  color: var(--orange-on-dark);
+}

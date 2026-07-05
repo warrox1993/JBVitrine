@@ -1,0 +1,66 @@
+/* Faq — accessible native <details> accordion. */
+.list {
+  max-width: 820px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+.qa {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    border-color 0.16s ease,
+    box-shadow 0.16s ease;
+}
+.qa[open] {
+  border-color: var(--line-2);
+  box-shadow: var(--shadow);
+}
+.summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 600;
+  font-size: 16.5px;
+  color: var(--navy);
+}
+.summary::-webkit-details-marker {
+  display: none;
+}
+.q {
+  flex: 1;
+}
+.chev {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  color: var(--orange-d);
+  transition: transform 0.2s ease;
+}
+.qa[open] .chev {
+  transform: rotate(180deg);
+}
+.ans {
+  padding: 0 24px 24px;
+  font-size: 14.5px;
+  color: var(--slate);
+  line-height: 1.65;
+}
+.ans b {
+  color: var(--navy);
+}
+.ans p + p {
+  margin-top: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qa,
+  .chev {
+    transition: none;
+  }
+}

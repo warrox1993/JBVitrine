@@ -1,0 +1,28 @@
+/* LinkMore — inline "En savoir plus →" link with hover-translate arrow. */
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--navy-3);
+  text-decoration: none;
+}
+.link svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  transition: transform 0.16s ease;
+}
+.link:hover {
+  color: var(--orange-d);
+}
+.link:hover svg {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link svg {
+    transition: none;
+  }
+}
