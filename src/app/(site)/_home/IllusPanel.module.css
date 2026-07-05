@@ -1,5 +1,5 @@
 .panel {
-  margin-top: 40px;
+  margin-top: 56px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -8,22 +8,27 @@
   grid-template-columns: 1fr 1.25fr;
   gap: 44px;
   align-items: center;
+  box-shadow: var(--shadow);
 }
 .panel.onTint {
   background: var(--bg-2);
 }
 .txt h3 {
-  font-size: 19px;
+  font-size: 20px;
   margin-top: 12px;
   color: var(--navy);
-  font-weight: 700;
-  line-height: 1.2;
+  font-weight: 800;
+  line-height: 1.25;
 }
 .txt p {
   margin-top: 10px;
   font-size: 14.5px;
   color: var(--slate);
   line-height: 1.6;
+}
+.txt p b {
+  color: var(--navy);
+  font-weight: 700;
 }
 .fig {
   margin: 0;

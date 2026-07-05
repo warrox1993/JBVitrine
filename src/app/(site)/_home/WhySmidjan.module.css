@@ -8,15 +8,19 @@
   font-size: clamp(27px, 3.2vw, 36px);
   margin-top: 14px;
   color: var(--navy);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.2;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
 }
 .lead {
   margin-top: 16px;
   font-size: 19px;
   color: var(--slate);
   line-height: 1.6;
+}
+.lead b {
+  color: var(--navy);
+  font-weight: 700;
 }
 .list {
   display: grid;
@@ -30,6 +34,7 @@
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 20px 22px;
+  box-shadow: var(--shadow-s);
 }
 .item .ic {
   width: 44px;
@@ -56,6 +61,10 @@
   color: var(--slate);
   margin-top: 5px;
   line-height: 1.55;
+}
+.item p b {
+  color: var(--navy);
+  font-weight: 700;
 }
 
 /* Founder card */

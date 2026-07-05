@@ -4,8 +4,8 @@ import styles from "./IllusPanel.module.css";
 
 export interface IllusPanelProps {
   eyebrow: string;
-  title: string;
-  text: string;
+  title: React.ReactNode;
+  text: React.ReactNode;
   /** Inline-SVG figure rendered on the right (or above on mobile). */
   figure: React.ReactNode;
   /** Tint the panel background (var(--bg-2)). */

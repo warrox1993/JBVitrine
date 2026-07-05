@@ -15,13 +15,12 @@ export function Hero() {
             En vigueur en Belgique&nbsp;: votre entreprise doit déjà être conforme
           </span>
           <h1 className={styles.title}>
-            Votre entreprise, <span className={styles.accent}>protégée et conforme</span> — sans
-            jargon, sans sous-traitance.
+            Votre entreprise, <span className="accent">protégée et conforme</span> — sans jargon,
+            sans sous-traitance.
           </h1>
           <p className={styles.lead}>
-            Smidjan sécurise les réseaux, l&apos;infrastructure et les applications des PME
-            wallonnes, et vous met en conformité NIS2&nbsp;/ CyFun. Un seul partenaire, un expert
-            que vous avez au téléphone.
+            Smidjan sécurise réseaux, infrastructure et applications des PME wallonnes, et vous met
+            en conformité NIS2&nbsp;/ CyFun. <b>Un seul partenaire, un expert au téléphone.</b>
           </p>
           <div className={styles.cta}>
             <Button

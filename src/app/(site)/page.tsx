@@ -93,7 +93,12 @@ export default function HomePage() {
         <SectionHeading
           center
           eyebrow="Nos services"
-          title="Quatre missions, un même objectif : réduire votre risque cyber"
+          title={
+            <>
+              Quatre missions, un même objectif&nbsp;: réduire votre{" "}
+              <span className="accent">risque cyber</span>
+            </>
+          }
           lead="De la protection de votre infrastructure à la conformité réglementaire, nous couvrons l'ensemble de la chaîne — et nous corrigeons ce que nous trouvons."
         />
         <div className={homeStyles.svcGrid}>
@@ -151,7 +156,13 @@ export default function HomePage() {
         <IllusPanel
           eyebrow="Architecture"
           title="Un périmètre défendu, pas un empilement d'outils"
-          text="Postes de travail, serveurs et bases de données regroupés derrière un pare-feu qui filtre chaque connexion entrante, avec des segments internes chiffrés. Une architecture lisible, que nous documentons et faisons évoluer avec vous."
+          text={
+            <>
+              Postes de travail, serveurs et bases de données regroupés derrière un pare-feu qui
+              filtre chaque connexion entrante, avec des segments internes chiffrés.{" "}
+              <b>Une architecture lisible</b>, que nous documentons et faisons évoluer avec vous.
+            </>
+          }
           figure={
             <div className={homeStyles.figWithPhoto}>
               <TopologyFigure />
@@ -170,7 +181,13 @@ export default function HomePage() {
         <IllusPanel
           eyebrow="Développement"
           title="La sécurité intégrée dès la conception"
-          text="Nos applications et sites sont pensés « secure by design » : chaque choix d'architecture, du code au déploiement, réduit la surface d'attaque avant même la mise en production."
+          text={
+            <>
+              Nos applications et sites sont pensés « secure by design »&nbsp;:{" "}
+              <b>chaque choix d&apos;architecture</b>, du code au déploiement, réduit la surface
+              d&apos;attaque avant même la mise en production.
+            </>
+          }
           figure={
             <OptimizedImage
               src="/images/pages/home/architecture-secure.jpg"
@@ -193,7 +210,13 @@ export default function HomePage() {
         <IllusPanel
           eyebrow="Diagnostic"
           title="Un rapport d'écart clair, domaine par domaine"
-          text="Chaque exigence CyFun est mesurée, pas devinée : gouvernance, accès, réseau, détection et continuité obtiennent chacun un niveau de maturité, agrégé en un score global qui situe votre entreprise par rapport au niveau visé."
+          text={
+            <>
+              <b>Chaque exigence CyFun est mesurée, pas devinée</b>&nbsp;: gouvernance, accès,
+              réseau, détection et continuité obtiennent chacun un niveau de maturité, agrégé en un
+              score global qui situe votre entreprise par rapport au niveau visé.
+            </>
+          }
           figure={<AuditDashboardFigure />}
           onTint
         />
@@ -231,14 +254,25 @@ export default function HomePage() {
         <IllusPanel
           eyebrow="Souveraineté des données"
           title="Basés à Liège, vos données restent en Belgique"
-          text="Pas de sous-traitance à distance ni d'hébergement délocalisé : votre infrastructure, vos sauvegardes et vos échanges restent hébergés en Belgique et dans l'Union européenne, avec un interlocuteur joignable sur place."
+          text={
+            <>
+              Pas de sous-traitance à distance ni d&apos;hébergement délocalisé&nbsp;:{" "}
+              <b>votre infrastructure, vos sauvegardes et vos échanges restent hébergés en
+              Belgique et dans l&apos;Union européenne</b>, avec un interlocuteur joignable sur
+              place.
+            </>
+          }
           figure={<BelgiumMapFigure />}
         />
       </Section>
 
       {/* ===== Stats band ===== */}
       <StatsBand
-        title="Des résultats concrets, une exigence constante"
+        title={
+          <>
+            Des <span className="accentOnDark">résultats concrets</span>, une exigence constante
+          </>
+        }
         lead="Des indicateurs modestes mais réels — la mesure d'un partenaire qui privilégie la qualité à la promesse."
         stats={[
           { value: "12", accent: "+", label: "années d'expertise cumulée en sécurité" },
@@ -253,7 +287,11 @@ export default function HomePage() {
         <SectionHeading
           center
           eyebrow="Ils nous font confiance"
-          title="Ce qu'en disent nos clients"
+          title={
+            <>
+              Ce qu&apos;en disent <span className="accent">nos clients</span>
+            </>
+          }
         />
         <Testimonials />
       </Section>
@@ -266,7 +304,12 @@ export default function HomePage() {
       {/* ===== Final CTA ===== */}
       <CTABox
         id="diagnostic"
-        title="Un diagnostic gratuit pour savoir où vous en êtes"
+        title={
+          <>
+            Un <span className="accentOnDark">diagnostic gratuit</span> pour savoir où vous en
+            êtes
+          </>
+        }
         text="30 minutes avec un expert pour évaluer votre exposition, cadrer votre conformité NIS2 et repartir avec des priorités claires. Sans engagement."
         actions={[
           { label: "Réserver mon diagnostic gratuit", href: "/contact" },

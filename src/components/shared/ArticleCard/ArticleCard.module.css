@@ -6,6 +6,7 @@
   padding: 26px 24px;
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow-s);
   transition:
     border-color 0.16s ease,
     box-shadow 0.16s ease,
@@ -13,7 +14,7 @@
 }
 .card:hover {
   border-color: var(--line-2);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lift);
   transform: translateY(-3px);
 }
 .card:hover .cover svg {

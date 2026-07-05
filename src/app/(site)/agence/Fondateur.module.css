@@ -101,6 +101,8 @@
 }
 .quote {
   margin: 24px 0 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--orange-on-dark);
   font-size: 15.5px;
   color: #e4ebf5;
   line-height: 1.6;

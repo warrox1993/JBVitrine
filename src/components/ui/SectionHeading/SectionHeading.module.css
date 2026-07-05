@@ -1,6 +1,6 @@
 /* SectionHeading — eyebrow + title + optional lead. */
 .head {
-  max-width: 660px;
+  max-width: 720px;
 }
 .center {
   margin-left: auto;
@@ -8,18 +8,24 @@
   text-align: center;
 }
 .title {
-  font-size: clamp(27px, 3.2vw, 36px);
+  font-size: clamp(30px, 3.8vw, 46px);
   margin-top: 14px;
   color: var(--navy);
-  line-height: 1.2;
-  letter-spacing: -0.015em;
-  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  text-wrap: balance;
 }
 .lead {
-  margin-top: 16px;
-  font-size: 17.5px;
+  margin-top: 18px;
+  font-size: 18.5px;
   color: var(--slate);
-  line-height: 1.6;
+  line-height: 1.65;
+  max-width: 60ch;
+}
+.center .lead {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* On-dark variant (navy section backgrounds) */

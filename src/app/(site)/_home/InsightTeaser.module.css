@@ -31,6 +31,10 @@
   font-size: 16px;
   line-height: 1.6;
 }
+.body p b {
+  color: var(--navy);
+  font-weight: 700;
+}
 .meta {
   margin-top: 20px;
   font-size: 13.5px;

@@ -15,21 +15,50 @@
   font-weight: 700;
   line-height: 1.2;
 }
-.accent {
-  color: var(--navy-3);
-}
 .heroLead {
-  margin-top: 20px;
-  max-width: 64ch;
+  margin-top: 18px;
+  max-width: 60ch;
   font-size: 19px;
   color: var(--slate);
   line-height: 1.6;
+}
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+  margin-top: 28px;
+}
+.heroPhone {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+}
+.heroPhone svg {
+  width: 18px;
+  height: 18px;
+  color: var(--orange-d);
+}
+.heroPhone:hover {
+  color: var(--orange-d);
+}
+.jumpLabel {
+  display: block;
+  font: 700 11px/1 var(--sans);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 38px;
+  margin-bottom: 12px;
 }
 .jump {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 30px;
+  margin-top: 0;
   list-style: none;
   padding: 0;
 }
@@ -66,7 +95,7 @@
 
 /* ===== Pillar visuals (ported inline SVG illustrations) ===== */
 .visualBox {
-  margin-top: 26px;
+  margin-top: 18px;
   background: var(--bg-2);
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -82,13 +111,13 @@
   height: auto;
 }
 
-/* ===== Pillar photos (real photography, paired with the SVG schematic) ===== */
+/* ===== Pillar photos (real photography, leads each pillar's visual with its one-line promise) ===== */
 .photoBox {
-  margin-top: 16px;
+  margin-top: 26px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--line-2);
-  box-shadow: var(--shadow-s);
+  box-shadow: var(--shadow);
   position: relative;
   isolation: isolate;
 }
@@ -96,13 +125,60 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(11, 31, 58, 0) 55%, rgba(11, 31, 58, 0.28) 100%);
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(11, 31, 58, 0) 48%, rgba(11, 31, 58, 0.72) 100%);
   pointer-events: none;
 }
 .photoImg {
   display: block;
   width: 100%;
   height: auto;
+}
+.photoCaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  margin: 0;
+  padding: 20px 22px 18px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+.photoCaption b {
+  color: var(--orange-on-dark);
+  font-weight: 700;
+}
+
+/* ===== Pillar relief: real separation between the 4 pillar blocks =====
+   ServicePillar is a shared component (out of scope to edit), but each
+   instance renders with a stable #id (securiser/tester/developper/conformer).
+   IDs aren't renamed by CSS Modules, so they're a safe, high-specificity
+   hook to give every pillar generous breathing room and a distinct top
+   edge — without touching the shared component's markup or class names. */
+#securiser,
+#tester,
+#developper,
+#conformer {
+  position: relative;
+  padding-top: 92px;
+  padding-bottom: 92px;
+}
+#securiser::before,
+#tester::before,
+#developper::before,
+#conformer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--orange);
 }
 
 /* ===== "Un seul partenaire" cross-cut band ===== */
@@ -256,5 +332,16 @@
     bottom: -11px;
     right: 50%;
     transform: translateX(50%);
+  }
+  #securiser,
+  #tester,
+  #developper,
+  #conformer {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+  .photoCaption {
+    font-size: 14.5px;
+    padding: 16px 18px 15px;
   }
 }

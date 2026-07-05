@@ -7,6 +7,7 @@ import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { LinkMore } from "@/components/ui/LinkMore/LinkMore";
+import { Button } from "@/components/ui/Button/Button";
 import {
   ServicePillar,
   CyFunTiers,
@@ -153,14 +154,29 @@ export default function ServicesPage() {
           <Breadcrumbs items={[{ label: "Accueil", href: "/" }, { label: "Services" }]} />
           <Eyebrow>Nos expertises</Eyebrow>
           <h1 className={styles.heroTitle}>
-            Sécuriser, tester, développer, <span className={styles.accent}>se conformer</span>.
+            Sécuriser, tester, développer, <span className="accent">se conformer</span>.
           </h1>
           <p className={styles.heroLead}>
-            Quatre expertises, un même fil conducteur : réduire concrètement votre risque cyber.
-            Smidjan protège votre infrastructure, met vos applications à l&apos;épreuve, développe
-            en « secure by design » et vous accompagne vers la conformité NIS2 / CyFun — avec un
-            seul interlocuteur, expert, que vous avez au téléphone.
+            Smidjan durcit votre infrastructure, teste vos applications, développe en secure by
+            design et vous mène à la conformité NIS2 / CyFun — un seul interlocuteur, du premier
+            appel à la remédiation.
           </p>
+          <div className={styles.heroActions}>
+            <Button
+              as="a"
+              href="/contact"
+              variant="primary"
+              size="lg"
+              trailingIcon={<Icon name="arrow-right" strokeWidth={2.2} />}
+            >
+              Réserver mon diagnostic gratuit
+            </Button>
+            <a className={styles.heroPhone} href="tel:+32475205562">
+              <Icon name="phone" strokeWidth={1.8} />
+              0475 20 55 62
+            </a>
+          </div>
+          <p className={styles.jumpLabel}>Aller directement à</p>
           <ul className={styles.jump}>
             <li><Link className={styles.jumpLink} href="#securiser"><span className={styles.jumpNum}>01</span>Sécuriser</Link></li>
             <li><Link className={styles.jumpLink} href="#tester"><span className={styles.jumpNum}>02</span>Tester</Link></li>
@@ -267,7 +283,10 @@ export default function ServicesPage() {
         <div className={styles.partnerBox}>
           <div>
             <Eyebrow>Un seul partenaire</Eyebrow>
-            <h2>Construire, sécuriser et mettre en conformité — au même endroit</h2>
+            <h2>
+              Construire, <span className="accent">sécuriser</span> et mettre en conformité — au
+              même endroit
+            </h2>
             <p className={styles.partnerLead}>
               La plupart des prestataires font l&apos;un <em>ou</em> l&apos;autre. Nous couvrons la
               chaîne complète : nous développons vos applications, nous les mettons à
@@ -340,7 +359,11 @@ export default function ServicesPage() {
         <SectionHeading
           center
           eyebrow="Les 3 niveaux CyFun"
-          title="Un référentiel gradué, un accompagnement sur mesure"
+          title={
+            <>
+              Un référentiel gradué, un accompagnement <span className="accent">sur mesure</span>
+            </>
+          }
           lead="Aperçu des trois paliers du CyberFundamentals Framework. Le détail complet, le comparatif et le calendrier NIS2 se trouvent sur notre page dédiée."
           className={styles.cyfunTeaser}
         />

@@ -36,7 +36,13 @@ export function QuiSommesNous() {
           <div className={styles.copy}>
             <SectionHeading
               eyebrow="Qui sommes-nous"
-              title="Une agence cyber de proximité, au service du tissu économique wallon"
+              title={
+                <>
+                  Une agence cyber de{" "}
+                  <span className="accent">proximité</span>, au service du
+                  tissu économique wallon
+                </>
+              }
               lead="Nous accompagnons les PME, les indépendants, les professions réglementées et les collectivités locales dans la protection de leurs réseaux, de leurs données et de leur activité — et dans leur mise en conformité NIS2 / CyFun."
             />
             <p>
