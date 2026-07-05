@@ -1,18 +1,31 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { verifyCompanyWithCBE, validateBCEFormat } from "@/lib/cbeapi";
 import { checkRateLimit } from "@/lib/redis";
 import { logSecurityEvent, SecurityEventType } from "@/lib/security-logger";
+import { getClientIdentifier } from "@/lib/rate-limit-redis";
+import { validateContentType, validateCSRF } from "@/lib/api/middleware";
 
-// Get client IP
-function getClientIp(request: Request): string {
-  const forwarded = request.headers.get("x-forwarded-for");
-  const real = request.headers.get("x-real-ip");
-  return forwarded?.split(",")[0] || real || "unknown";
-}
+// FOLLOW-UP (V-W7): no caller of this endpoint was found passing a
+// reCAPTCHA token (searched src/ for "bceNumber" usage), so `validateRecaptcha`
+// is NOT wired in here to avoid breaking the existing client flow. Before
+// enabling it, confirm the form component collects and forwards a
+// `recaptchaToken` field, then add:
+//   const recaptchaCheck = await validateRecaptcha(request, body.recaptchaToken, "company_verify");
+//   if (!recaptchaCheck.success) return recaptchaCheck.response;
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
-    const clientIp = getClientIp(request);
+    // SECURITY (V-W7): reject non-JSON bodies and cross-origin requests
+    // (defense-in-depth beyond SameSite cookies) before doing any work.
+    const contentTypeCheck = validateContentType(request);
+    if (!contentTypeCheck.success) return contentTypeCheck.response;
+
+    const csrfCheck = validateCSRF(request);
+    if (!csrfCheck.success) return csrfCheck.response;
+
+    // SECURITY (V-W7): use the shared, platform-trusted client identifier
+    // instead of a local x-forwarded-for[0] parse (spoofable duplicate).
+    const clientIp = getClientIdentifier(request);
     const userAgent = request.headers.get("user-agent") || undefined;
 
     // Rate limiting: 10 requests per 5 minutes (more lenient than contact form)

@@ -1,0 +1,182 @@
+/* Agence page — page header + engagements grid.
+   Local styles only; shared sections (StatsBand, CTABox) ship their own CSS. */
+
+.pageHero {
+  position: relative;
+  background: linear-gradient(180deg, #fff 0%, var(--bg-2) 100%);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.heroInner {
+  padding-top: 56px;
+  padding-bottom: 62px;
+  position: relative;
+  z-index: 1;
+}
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+.heroMedia {
+  position: relative;
+}
+.heroImg {
+  border-radius: 14px !important;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 56px -26px rgba(11, 31, 58, 0.35);
+}
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.crumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.crumb a:hover {
+  color: var(--navy);
+}
+.crumb svg {
+  width: 14px;
+  height: 14px;
+  color: var(--line-2);
+  flex: none;
+}
+.crumbHere {
+  color: var(--navy);
+  font-weight: 600;
+}
+.h1 {
+  font-size: clamp(32px, 4.2vw, 50px);
+  margin: 16px 0 0;
+  max-width: 16ch;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  line-height: 1.2;
+  font-weight: 700;
+}
+.accent {
+  color: var(--navy-3);
+}
+.lead {
+  margin-top: 22px;
+  max-width: 52ch;
+  font-size: 19px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+.badges {
+  display: flex;
+  gap: 22px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+.badges li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  color: var(--slate);
+  font-weight: 500;
+}
+.badges svg {
+  width: 18px;
+  height: 18px;
+  color: var(--orange-d);
+  flex: none;
+}
+
+/* ===== Engagements / valeurs ===== */
+.engage {
+  background: #fff;
+  padding: var(--section-y) 0;
+}
+.engageGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.engageCard {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease,
+    transform 0.16s ease;
+}
+.engageCard:hover {
+  border-color: var(--line-2);
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+.engageIco {
+  width: 50px;
+  height: 50px;
+  border-radius: 11px;
+  background: var(--navy);
+  color: var(--orange-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex: none;
+}
+.engageIco svg {
+  width: 26px;
+  height: 26px;
+}
+.engageCard h3 {
+  font-size: 18px;
+  color: var(--navy);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+.engageCard p {
+  margin-top: 10px;
+  font-size: 14.5px;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+  .engageGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 1000px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .heroMedia {
+    order: -1;
+  }
+}
+@media (max-width: 720px) {
+  .heroInner {
+    padding-top: 40px;
+    padding-bottom: 44px;
+  }
+  .engage {
+    padding: 60px 0;
+  }
+  .engageGrid {
+    grid-template-columns: 1fr;
+  }
+  .badges {
+    gap: 14px;
+  }
+}

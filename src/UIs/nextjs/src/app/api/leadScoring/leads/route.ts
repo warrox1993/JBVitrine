@@ -6,13 +6,66 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { requireAuth } from "@/lib/auth";
 import {
   leadScoringLimiter,
   getClientIdentifier,
 } from "@/lib/rate-limit-redis";
+import {
+  validateContentType,
+  validateCSRF,
+  validateRecaptcha,
+} from "@/lib/api/middleware";
+import { validateEmail, validateName } from "@/lib/validation";
+
+// Hard cap on request body size for this route (defense against blob spam).
+const MAX_LEADS_BODY_BYTES = 100 * 1024; // 100 KB
+
+const VALID_GRADES = ["HOT", "WARM", "COLD", "SPAM"] as const;
+type LeadGrade = (typeof VALID_GRADES)[number];
+
+/**
+ * Clamp an arbitrary client-provided numeric field into [0, 100].
+ * NaN / Infinity / non-numeric → 0 (never trusted blindly).
+ */
+function clampScore(value: unknown): number {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return 0;
+  return Math.min(100, Math.max(0, Math.round(n)));
+}
+
+/**
+ * Coerce a client numeric into a finite bounded number (for estimates).
+ */
+function boundedNumber(value: unknown, min: number, max: number): number {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return 0;
+  return Math.min(max, Math.max(min, n));
+}
+
+/**
+ * Authoritative server-side grade derived ONLY from the validated total score.
+ * The client-provided `grade` is never trusted to trigger notifications.
+ * Thresholds mirror RealTimeScorer.calculateTotalScore().
+ */
+function gradeFromScore(total: number): LeadGrade {
+  if (total >= 80) return "HOT";
+  if (total >= 60) return "WARM";
+  if (total >= 40) return "COLD";
+  return "SPAM";
+}
 
 export async function POST(request: NextRequest) {
   try {
+    // ✅ Payload size guard (reject oversized blobs before parsing)
+    const contentLength = Number(request.headers.get("content-length") || 0);
+    if (Number.isFinite(contentLength) && contentLength > MAX_LEADS_BODY_BYTES) {
+      return NextResponse.json(
+        { error: "Payload too large" },
+        { status: 413 },
+      );
+    }
+
     // Rate limiting check
     const clientIdentifier = getClientIdentifier(request);
     const { success, limit, reset } =
@@ -51,20 +104,99 @@ export async function POST(request: NextRequest) {
       !!process.env.POSTGRES_URL,
     );
 
+    // ✅ Content-Type validation (middleware)
+    const contentTypeCheck = validateContentType(request);
+    if (!contentTypeCheck.success) return contentTypeCheck.response;
+
+    // ✅ CSRF Protection (middleware)
+    const csrfCheck = validateCSRF(request);
+    if (!csrfCheck.success) return csrfCheck.response;
+
+    const body = await request.json();
     const {
       lead,
       score,
       quoteData,
       estimate,
       behavioral,
-    } = await request.json();
+      recaptchaToken,
+    } = body ?? {};
 
-    if (!lead || !score || !quoteData) {
+    // reCAPTCHA: verify only if the client supplied a token. This telemetry
+    // endpoint (useLeadScoring) is invoked without a token; anti-abuse here
+    // relies on CSRF (same-origin), strict input validation, server-side grade
+    // recompute, and trusted-IP rate limiting.
+    // TODO(security): plumb a reCAPTCHA token from the client to make this mandatory.
+    if (recaptchaToken) {
+      const recaptchaCheck = await validateRecaptcha(
+        request,
+        recaptchaToken,
+        "lead_capture",
+      );
+      if (!recaptchaCheck.success) return recaptchaCheck.response;
+    }
+
+    if (!lead || typeof lead !== "object" || !score || !quoteData) {
       return NextResponse.json(
         { error: "Missing required fields: lead, score, quoteData" },
         { status: 400 },
       );
     }
+
+    // ---- Strict input validation (never trust client scoring) ----
+
+    // Email is required and must be a valid address.
+    if (typeof lead.email !== "string" || !validateEmail(lead.email)) {
+      return NextResponse.json({ error: "Invalid email" }, { status: 400 });
+    }
+
+    // Name is optional but, when present, must pass shared validation.
+    if (lead.name !== undefined && lead.name !== null && lead.name !== "") {
+      const nameError = validateName(String(lead.name));
+      if (nameError) {
+        return NextResponse.json({ error: nameError }, { status: 400 });
+      }
+    }
+
+    // Company / phone length bounds (loose; stored as enrichment blob).
+    if (typeof lead.company === "string" && lead.company.length > 100) {
+      return NextResponse.json({ error: "Company too long" }, { status: 400 });
+    }
+    if (typeof lead.phone === "string" && lead.phone.length > 40) {
+      return NextResponse.json({ error: "Phone too long" }, { status: 400 });
+    }
+
+    // projectType must be a bounded string.
+    if (
+      quoteData.projectType !== undefined &&
+      (typeof quoteData.projectType !== "string" ||
+        quoteData.projectType.length > 100)
+    ) {
+      return NextResponse.json(
+        { error: "Invalid projectType" },
+        { status: 400 },
+      );
+    }
+
+    // The client-provided grade, if present, must be in the whitelist.
+    if (
+      score.grade !== undefined &&
+      !VALID_GRADES.includes(score.grade as LeadGrade)
+    ) {
+      return NextResponse.json({ error: "Invalid grade" }, { status: 400 });
+    }
+
+    // Clamp all numeric score fields; recompute grade server-side.
+    const safeTotal = clampScore(score.total);
+    const safeConfidence = clampScore(score.confidence);
+    const safeGrade = gradeFromScore(safeTotal);
+    const safeEstimateMin = boundedNumber(estimate?.min, 0, 100_000_000);
+    const safeEstimateMax = boundedNumber(estimate?.max, 0, 100_000_000);
+    // Only keep breakdown if it is a plain object.
+    const safeBreakdown =
+      score.breakdown && typeof score.breakdown === "object"
+        ? score.breakdown
+        : {};
 
     const timestamp = new Date().toISOString();
 
@@ -72,11 +204,11 @@ export async function POST(request: NextRequest) {
     console.log(`🎯 New lead captured:`, {
       email: lead.email,
       company: lead.company,
-      grade: score.grade,
-      total: score.total,
-      confidence: score.confidence,
+      grade: safeGrade,
+      total: safeTotal,
+      confidence: safeConfidence,
       projectType: quoteData.projectType,
-      budget: `${estimate?.min}-${estimate?.max}`,
+      budget: `${safeEstimateMin}-${safeEstimateMax}`,
       timestamp,
     });
 
@@ -108,10 +240,10 @@ export async function POST(request: NextRequest) {
       name: lead.name,
       company: lead.company,
       phone: lead.phone,
-      score_total: Math.round(score.total),
-      score_grade: score.grade,
-      score_confidence: Math.round(score.confidence),
-      score_breakdown: score.breakdown,
+      score_total: safeTotal,
+      score_grade: safeGrade,
+      score_confidence: safeConfidence,
+      score_breakdown: safeBreakdown,
       enrichment_data: lead,
       enrichment_score: lead.enrichmentScore || 0,
       confidence_level: lead.confidenceLevel || "low",
@@ -125,7 +257,9 @@ export async function POST(request: NextRequest) {
     console.log(`✅ Lead saved to database with ID: ${savedLead.id}`);
 
     // ✅ Automatic routing for HOT and WARM leads
-    if (score.grade === "HOT" || score.grade === "WARM") {
+    //    Uses the SERVER-recomputed grade — never the client-provided one —
+    //    so a forged `grade: "HOT"` cannot trigger email/Slack/Discord bombs.
+    if (safeGrade === "HOT" || safeGrade === "WARM") {
       // Import notification system dynamically to avoid blocking the response
       import("@/lib/notifications")
         .then(({ notifyNewLead }) => {
@@ -136,12 +270,12 @@ export async function POST(request: NextRequest) {
             company: lead.company,
             phone: lead.phone,
             projectType: quoteData.projectType,
-            estimateMin: estimate.min,
-            estimateMax: estimate.max,
-            score: score.total,
-            grade: score.grade,
-            confidence: score.confidence,
-            breakdown: score.breakdown,
+            estimateMin: safeEstimateMin,
+            estimateMax: safeEstimateMax,
+            score: safeTotal,
+            grade: safeGrade,
+            confidence: safeConfidence,
+            breakdown: safeBreakdown,
           });
         })
         .catch((error) => {
@@ -153,8 +287,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       leadId: savedLead.id,
-      score: score.total,
-      grade: score.grade,
+      score: safeTotal,
+      grade: safeGrade,
     });
   } catch (error) {
     console.error("❌ Error saving lead:", error);
@@ -178,6 +312,15 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
+    // 🔒 C1 : cet endpoint expose des données personnelles (PII) — réservé au staff
+    try {
+      await requireAuth("sales");
+    } catch (authError) {
+      const message = (authError as Error).message || "Unauthorized";
+      const status = message.startsWith("Forbidden") ? 403 : 401;
+      return NextResponse.json({ error: message }, { status });
+    }
+
     // Rate limiting check
     const clientIdentifier = getClientIdentifier(request);
     const { success, reset } = await leadScoringLimiter.limit(clientIdentifier);
@@ -199,10 +342,12 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Get query parameters for pagination
+    // Get query parameters for pagination (clamped; reject NaN abuse)
     const { searchParams } = new URL(request.url);
-    const limit = parseInt(searchParams.get("limit") || "50");
-    const offset = parseInt(searchParams.get("offset") || "0");
+    const rawLimit = parseInt(searchParams.get("limit") || "50", 10);
+    const rawOffset = parseInt(searchParams.get("offset") || "0", 10);
+    const limit = Math.min(Math.max(1, Number.isNaN(rawLimit) ? 50 : rawLimit), 100);
+    const offset = Math.max(0, Number.isNaN(rawOffset) ? 0 : rawOffset);
     const grade = searchParams.get("grade") as
       | "HOT"
       | "WARM"

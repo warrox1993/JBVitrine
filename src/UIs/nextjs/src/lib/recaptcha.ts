@@ -87,8 +87,6 @@ export async function verifyRecaptchaEnterprise(
 
     const data = await response.json();
 
-    console.log("🔍 reCAPTCHA Full Response:", JSON.stringify(data, null, 2));
-
     // Check if token is valid and action matches
     const isValid =
       data.tokenProperties?.valid &&
@@ -111,17 +109,10 @@ export async function verifyRecaptchaEnterprise(
     // Get risk score (0.0 = bot, 1.0 = human)
     const score = data.riskAnalysis?.score || 0;
 
-    console.log("✅ reCAPTCHA Enterprise verification:", {
-      valid: isValid,
-      score: score,
-      action: data.tokenProperties?.action,
-      expectedAction: expectedAction,
-      reasons: data.riskAnalysis?.reasons,
-      clientIp: clientIp,
-    });
+    console.log("✅ reCAPTCHA Enterprise verification:", { score: score });
 
-    // Score threshold: 0.3 (lowered to reduce false positives)
-    const SCORE_THRESHOLD = 0.3;
+    // Score threshold: 0.5
+    const SCORE_THRESHOLD = 0.5;
 
     return {
       success: isValid && score >= SCORE_THRESHOLD,

@@ -1,16 +1,17 @@
 import type { ReactNode } from "react";
-import Header from "@/components/layout/Header";
-import MainLayoutBridge from "@/components/layout/MainLayoutBridge";
-import SidebarRouterBridge from "@/components/layout/SidebarRouterBridge";
+import EmergencyBar from "@/components/layout/EmergencyBar/EmergencyBar";
+import SiteHeader from "@/components/layout/SiteHeader/SiteHeader";
+import SiteFooter from "@/components/layout/SiteFooter/SiteFooter";
 
 export default function SiteLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <SidebarRouterBridge />
-      <Header />
-      <MainLayoutBridge className="main-content-site">
+      <EmergencyBar />
+      <SiteHeader />
+      <main id="main" className="main-content-site">
         {children}
-      </MainLayoutBridge>
+      </main>
+      <SiteFooter />
     </>
   );
 }

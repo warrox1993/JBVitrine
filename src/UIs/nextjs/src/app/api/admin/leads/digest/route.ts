@@ -6,18 +6,29 @@
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import { getResend } from "@/lib/email/resend-client";
 import { db } from "@/lib/db";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { timingSafeEqual } from "crypto";
+import { escapeHtml } from "@/lib/security/escape";
 
 export async function POST(request: NextRequest) {
   try {
-    // Verify authorization (simple token-based auth for cron jobs)
-    const authHeader = request.headers.get("authorization");
-    const cronSecret = process.env.CRON_SECRET || "your-secure-cron-secret";
+    // 🔒 C2 : aucun fallback en dur — refuser si le secret n'est pas configuré
+    const cronSecret = process.env.CRON_SECRET;
+    if (!cronSecret) {
+      console.error("CRON_SECRET manquant : endpoint digest désactivé");
+      return NextResponse.json({ error: "Service unavailable" }, { status: 503 });
+    }
 
-    if (authHeader !== `Bearer ${cronSecret}`) {
+    const authHeader = request.headers.get("authorization") || "";
+    const expected = `Bearer ${cronSecret}`;
+    const provided = Buffer.from(authHeader);
+    const reference = Buffer.from(expected);
+    const authorized =
+      provided.length === reference.length &&
+      timingSafeEqual(provided, reference);
+
+    if (!authorized) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
@@ -67,7 +78,7 @@ export async function POST(request: NextRequest) {
     const emailHTML = generateDigestEmail(recentLeads, stats, yesterday, now);
 
     // Send email
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: "Smidjan Lead Digest <contact@smidjan.be>",
       to: ["smidjan.agency@outlook.com"],
       subject: `📊 Daily Lead Digest - ${stats.total} nouveaux leads (${stats.hot} HOT)`,
@@ -184,13 +195,13 @@ function generateDigestEmail(
             (lead: any) => `
         <div class="lead-card hot">
           <div class="lead-header">
-            <div class="lead-name">${lead.name}</div>
+            <div class="lead-name">${escapeHtml(lead.name)}</div>
             <span class="lead-badge badge-hot">HOT ${lead.score_total}/100</span>
           </div>
-          <div class="lead-info">📧 ${lead.email}</div>
-          ${lead.company ? `<div class="lead-info">🏢 ${lead.company}</div>` : ""}
-          ${lead.phone ? `<div class="lead-info">📞 ${lead.phone}</div>` : ""}
-          <div class="lead-info">💼 ${lead.project_type} | Budget: ${lead.estimate?.min?.toLocaleString()}-${lead.estimate?.max?.toLocaleString()} EUR</div>
+          <div class="lead-info">📧 ${escapeHtml(lead.email)}</div>
+          ${lead.company ? `<div class="lead-info">🏢 ${escapeHtml(lead.company)}</div>` : ""}
+          ${lead.phone ? `<div class="lead-info">📞 ${escapeHtml(lead.phone)}</div>` : ""}
+          <div class="lead-info">💼 ${escapeHtml(lead.project_type)} | Budget: ${lead.estimate?.min?.toLocaleString()}-${lead.estimate?.max?.toLocaleString()} EUR</div>
           <div class="lead-score">
             <div class="score-bar">
               <div class="score-fill" style="width: ${lead.score_total}%"></div>
@@ -217,11 +228,11 @@ function generateDigestEmail(
             (lead: any) => `
         <div class="lead-card warm">
           <div class="lead-header">
-            <div class="lead-name">${lead.name}</div>
+            <div class="lead-name">${escapeHtml(lead.name)}</div>
             <span class="lead-badge badge-warm">WARM ${lead.score_total}/100</span>
           </div>
-          <div class="lead-info">📧 ${lead.email}</div>
-          <div class="lead-info">💼 ${lead.project_type} | Budget: ${lead.estimate?.min?.toLocaleString()}-${lead.estimate?.max?.toLocaleString()} EUR</div>
+          <div class="lead-info">📧 ${escapeHtml(lead.email)}</div>
+          <div class="lead-info">💼 ${escapeHtml(lead.project_type)} | Budget: ${lead.estimate?.min?.toLocaleString()}-${lead.estimate?.max?.toLocaleString()} EUR</div>
         </div>
         `,
           )

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import { getResend } from "@/lib/email/resend-client";
 import { quoteLimiter, getClientIdentifier } from "@/lib/rate-limit-redis";
 import {
   isDisposableEmail,
@@ -20,8 +20,23 @@ import {
   validateRecaptcha,
 } from "@/lib/api/middleware";
 
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Logging helpers: never write raw email/IP to logs, since console.warn/error
+// survive the production removeConsole config (next.config.ts).
+function maskEmail(email: unknown): string {
+  if (!email || typeof email !== "string") return "***";
+  const atIndex = email.indexOf("@");
+  if (atIndex === -1) return "***";
+  return `***@${email.substring(atIndex + 1)}`;
+}
+
+function maskIp(ip: unknown): string {
+  if (!ip || typeof ip !== "string") return "unknown";
+  const parts = ip.split(".");
+  if (parts.length === 4) {
+    return `${parts[0]}.x.x.x`;
+  }
+  return ip.length > 8 ? `${ip.substring(0, 8)}***` : "***";
+}
 
 // Project type validation helper
 const validateProjectType = (type: string): boolean => {
@@ -54,7 +69,7 @@ export async function POST(request: NextRequest) {
     const clientIdentifier = getClientIdentifier(request);
     console.log(
       "[Quote API] 📍 Client identifier:",
-      clientIdentifier.substring(0, 15) + "...",
+      maskIp(clientIdentifier),
     );
 
     // ✅ Rate limiting with Redis: Check BEFORE validations (fail fast)
@@ -63,7 +78,7 @@ export async function POST(request: NextRequest) {
 
     if (!success) {
       console.warn("[Quote API] ⚠️ Rate limit exceeded:", {
-        identifier: clientIdentifier.substring(0, 15) + "...",
+        identifier: maskIp(clientIdentifier),
         resetIn: Math.ceil((reset - Date.now()) / 1000) + "s",
       });
       return NextResponse.json(
@@ -110,7 +125,7 @@ export async function POST(request: NextRequest) {
       hasRecaptchaToken: !!body.recaptchaToken,
       recaptchaTokenLength: body.recaptchaToken?.length || 0,
       projectType: body.quoteData?.projectType,
-      email: body.contactInfo?.email,
+      email: maskEmail(body.contactInfo?.email),
     });
 
     // ✅ reCAPTCHA verification (middleware)
@@ -141,7 +156,7 @@ export async function POST(request: NextRequest) {
 
       if (fillTime < minFillTime) {
         console.warn("[Quote API] 🤖 Bot detected - form filled too quickly:", {
-          ip: clientIdentifier.substring(0, 15) + "...",
+          ip: maskIp(clientIdentifier),
           fillTime: `${fillTime}ms`,
           minRequired: `${minFillTime}ms`,
         });
@@ -159,7 +174,7 @@ export async function POST(request: NextRequest) {
 
       if (fillTime > maxFillTime) {
         console.warn("[Quote API] ⏰ Session expired:", {
-          ip: clientIdentifier.substring(0, 15) + "...",
+          ip: maskIp(clientIdentifier),
           fillTime: `${fillTime}ms`,
         });
         return NextResponse.json(
@@ -241,8 +256,8 @@ export async function POST(request: NextRequest) {
     // Check for disposable email
     if (isDisposableEmail(contactInfo.email)) {
       console.warn("Disposable email in quote submission", {
-        ip: clientIdentifier,
-        email: contactInfo.email,
+        ip: maskIp(clientIdentifier),
+        email: maskEmail(contactInfo.email),
       });
       return NextResponse.json(
         {
@@ -259,8 +274,8 @@ export async function POST(request: NextRequest) {
     // Check for suspicious email patterns
     if (hasSuspiciousEmailPattern(contactInfo.email)) {
       console.warn("Suspicious email in quote submission", {
-        ip: clientIdentifier,
-        email: contactInfo.email,
+        ip: maskIp(clientIdentifier),
+        email: maskEmail(contactInfo.email),
       });
       return NextResponse.json(
         {
@@ -277,7 +292,7 @@ export async function POST(request: NextRequest) {
     // Validate estimate amounts are reasonable (prevent manipulation)
     if (body.estimate.min < 0 || body.estimate.max < body.estimate.min) {
       console.warn("Invalid price manipulation detected", {
-        ip: clientIdentifier,
+        ip: maskIp(clientIdentifier),
         estimate: body.estimate,
       });
       return NextResponse.json(
@@ -310,7 +325,7 @@ export async function POST(request: NextRequest) {
       estimateMax: body.estimate.max,
       leadScore: body.leadScore.score,
       leadPriority: body.leadScore.priority,
-      email: sanitizedContactInfo.email,
+      email: maskEmail(sanitizedContactInfo.email),
       timestamp: new Date().toISOString(),
     });
 
@@ -340,7 +355,7 @@ export async function POST(request: NextRequest) {
         error: dbError instanceof Error ? dbError.message : String(dbError),
         stack: dbError instanceof Error ? dbError.stack : undefined,
         quoteId,
-        email: sanitizedContactInfo.email,
+        email: maskEmail(sanitizedContactInfo.email),
         timestamp: new Date().toISOString(),
       });
 
@@ -358,7 +373,7 @@ export async function POST(request: NextRequest) {
     // Send emails
     console.log(
       "[Quote API] 📧 Sending confirmation email to:",
-      sanitizedContactInfo.email,
+      maskEmail(sanitizedContactInfo.email),
     );
     await sendQuoteConfirmationEmail(
       sanitizedContactInfo.email,
@@ -374,7 +389,7 @@ export async function POST(request: NextRequest) {
     console.log("[Quote API] ===== REQUEST SUCCESS =====", {
       quoteId,
       totalDuration: `${totalDuration}ms`,
-      email: sanitizedContactInfo.email,
+      email: maskEmail(sanitizedContactInfo.email),
     });
 
     return NextResponse.json(
@@ -412,12 +427,12 @@ async function sendQuoteConfirmationEmail(
 ): Promise<void> {
   const startTime = Date.now();
   console.log("[Email] 📧 Sending confirmation email...", {
-    to: email,
+    to: maskEmail(email),
     quoteId,
   });
 
   try {
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: "Smidjan <contact@smidjan.be>",
       to: [email],
       subject: `Votre demande de devis - ${quoteId}`,
@@ -429,7 +444,7 @@ async function sendQuoteConfirmationEmail(
     if (error) {
       console.error("[Email] ❌ Resend API error (confirmation):", {
         error: error.message,
-        to: email,
+        to: maskEmail(email),
         quoteId,
         duration: `${duration}ms`,
       });
@@ -438,7 +453,7 @@ async function sendQuoteConfirmationEmail(
 
     console.log("[Email] ✅ Confirmation email sent:", {
       emailId: data?.id,
-      to: email,
+      to: maskEmail(email),
       quoteId,
       duration: `${duration}ms`,
     });
@@ -446,7 +461,7 @@ async function sendQuoteConfirmationEmail(
     const duration = Date.now() - startTime;
     console.error("[Email] ❌ Failed to send confirmation:", {
       error: error instanceof Error ? error.message : String(error),
-      to: email,
+      to: maskEmail(email),
       quoteId,
       duration: `${duration}ms`,
     });
@@ -468,7 +483,7 @@ async function sendQuoteNotificationToTeam(
   });
 
   try {
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: "Smidjan Quote System <contact@smidjan.be>",
       to: ["smidjan.agency@outlook.com"],
       replyTo: contactInfo.email as string,

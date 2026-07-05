@@ -1,9 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Image from "next/image";
 import type { BlogArticle } from "@/lib/blogActions";
+import { ArticleCard } from "@/components/shared";
+import { ArticleCoverSvg } from "./ArticleCoverSvg";
+import cardStyles from "@/components/shared/ArticleCard/ArticleCard.module.css";
 import styles from "./BlogFilter.module.css";
+
+/** Real photo cover when set on the article, else the themed SVG fallback. */
+function ArticleCover({ article }: { article: BlogArticle }) {
+  if (article.coverImage) {
+    return (
+      <div className={cardStyles.coverPhoto}>
+        <Image
+          src={article.coverImage}
+          alt={article.title}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+      </div>
+    );
+  }
+  return <ArticleCoverSvg category={article.category} />;
+}
 
 interface BlogFilterProps {
   articles: BlogArticle[];
@@ -17,6 +37,14 @@ const categories = [
   "SEO & Marketing",
 ] as const;
 
+function formatDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("fr-BE", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
 export function BlogFilter({ articles }: BlogFilterProps) {
   const [activeCategory, setActiveCategory] = useState<string>("Tous");
 
@@ -27,8 +55,12 @@ export function BlogFilter({ articles }: BlogFilterProps) {
 
   return (
     <div className={styles.container}>
-      {/* Category Filter */}
-      <div className={styles.filterBar}>
+      {/* Category filter chips */}
+      <div
+        className={styles.filters}
+        role="group"
+        aria-label="Filtrer les articles par catégorie"
+      >
         {categories.map((category) => {
           const count =
             category === "Tous"
@@ -37,51 +69,40 @@ export function BlogFilter({ articles }: BlogFilterProps) {
 
           if (count === 0 && category !== "Tous") return null;
 
+          const isActive = activeCategory === category;
+
           return (
             <button
               key={category}
+              type="button"
               onClick={() => setActiveCategory(category)}
-              className={`${styles.filterButton} ${
-                activeCategory === category ? styles.active : ""
-              }`}
+              className={`${styles.chip} ${isActive ? styles.active : ""}`}
+              aria-pressed={isActive}
             >
               {category}
-              <span className={styles.count}>{count}</span>
             </button>
           );
         })}
       </div>
 
-      {/* Articles Grid */}
-      <div className={styles.articlesGrid}>
+      {/* Articles grid */}
+      <div className={styles.grid}>
         {filteredArticles.map((article) => (
-          <article key={article.slug} className={styles.articleCard}>
-            <div className={styles.articleMeta}>
-              <span className={styles.articleCategory}>{article.category}</span>
-              <span className={styles.articleDate}>
-                {new Date(article.publishedAt).toLocaleDateString("fr-BE", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </span>
-            </div>
-            <h2 className={styles.articleTitle}>
-              <Link href={`/blog/${article.slug}`}>{article.title}</Link>
-            </h2>
-            <p className={styles.articleExcerpt}>{article.excerpt}</p>
-            <div className={styles.articleFooter}>
-              <span className={styles.readTime}>{article.readTime} de lecture</span>
-              <Link href={`/blog/${article.slug}`} className={styles.readMore}>
-                Lire l'article →
-              </Link>
-            </div>
-          </article>
+          <ArticleCard
+            key={article.slug}
+            title={article.title}
+            href={`/blog/${article.slug}`}
+            category={article.category}
+            excerpt={article.excerpt}
+            date={formatDate(article.publishedAt)}
+            readingTime={article.readTime}
+            cover={<ArticleCover article={article} />}
+          />
         ))}
       </div>
 
       {filteredArticles.length === 0 && (
-        <div className={styles.emptyState}>
+        <div className={styles.empty}>
           <p>Aucun article dans cette catégorie pour le moment.</p>
         </div>
       )}

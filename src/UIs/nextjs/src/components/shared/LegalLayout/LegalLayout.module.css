@@ -1,0 +1,344 @@
+/* ============================================================
+   LegalLayout — shared reading layout for the legal pages
+   (/mentions-legales, /confidentialite, /cgv).
+   Ported from the approved page-legal.html mockup.
+   ============================================================ */
+
+/* ===== Page header ===== */
+.pageHero {
+  background: linear-gradient(180deg, #fff 0%, var(--bg-2) 100%);
+  border-bottom: 1px solid var(--line);
+}
+.heroInner {
+  padding-top: 56px;
+  padding-bottom: 44px;
+  max-width: 920px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.heroText {
+  flex: 1;
+  min-width: 0;
+}
+.heroTitle {
+  font-size: clamp(30px, 4vw, 42px);
+  margin: 16px 0 0;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.heroLead {
+  margin-top: 16px;
+  max-width: 62ch;
+  font-size: 19px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+.heroVisual {
+  flex: none;
+  width: 132px;
+  height: 132px;
+}
+.heroVisual svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+@media (max-width: 760px) {
+  .heroVisual {
+    display: none;
+  }
+}
+@media (max-width: 720px) {
+  .heroInner {
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+}
+
+/* ===== Content layout ===== */
+.contentSection {
+  padding: 56px 0 96px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.nav {
+  position: sticky;
+  top: 90px;
+}
+.navLabel {
+  display: block;
+  font: 700 11.5px/1 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+  border-left: 2px solid var(--line);
+}
+.navLink {
+  display: block;
+  padding: 9px 0 9px 16px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--slate);
+  border-left: 2px solid transparent;
+  margin-left: -2px;
+  transition: color 0.16s ease, border-color 0.16s ease;
+}
+.navLink:hover {
+  color: var(--navy);
+}
+.navLinkActive {
+  color: var(--orange-d);
+  border-left-color: var(--orange);
+}
+
+.content {
+  max-width: 72ch;
+}
+
+/* ===== Banner (model disclaimer) ===== */
+.banner {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--orange-t);
+  border: 1px solid #ffd9be;
+  border-left: 4px solid var(--orange);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 40px;
+}
+.banner svg {
+  width: 22px;
+  height: 22px;
+  color: var(--orange-d);
+  flex: none;
+  margin-top: 1px;
+}
+.banner p {
+  font-size: 14.5px;
+  color: #7a3d15;
+  line-height: 1.55;
+  margin: 0;
+}
+.banner p b {
+  color: #5c2e10;
+}
+
+/* ===== Sections ===== */
+.section {
+  padding-top: 8px;
+  margin-bottom: 56px;
+}
+.section:last-child {
+  margin-bottom: 0;
+}
+.num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--navy);
+  color: #ff9a4d;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.sectionTitle {
+  font-size: clamp(20px, 2.4vw, 24px);
+  color: var(--navy);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+.section h3 {
+  font-size: 16.5px;
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: var(--navy-3);
+  font-weight: 700;
+}
+.section p {
+  font-size: 15px;
+  color: var(--slate);
+  margin-top: 12px;
+  line-height: 1.65;
+}
+.section p:first-of-type {
+  margin-top: 16px;
+}
+.section ul,
+.section ol {
+  margin: 14px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+}
+.section li {
+  font-size: 15px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+.section li::marker {
+  color: var(--orange-d);
+  font-weight: 700;
+}
+.section strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+.inlineLink {
+  color: var(--navy-3);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.inlineLink:hover {
+  color: var(--orange-d);
+}
+
+.placeholder {
+  display: inline-block;
+  background: var(--bg-3);
+  border: 1px dashed var(--line-2);
+  border-radius: 5px;
+  padding: 1px 7px;
+  font-family: var(--mono);
+  font-size: 13.5px;
+  color: var(--navy-3);
+}
+
+/* ===== Callout (grey, informational) ===== */
+.callout {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--bg-3);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--navy-3);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-top: 22px;
+}
+.callout svg {
+  width: 22px;
+  height: 22px;
+  color: var(--navy-3);
+  flex: none;
+  margin-top: 1px;
+}
+.callout p {
+  margin-top: 0 !important;
+  font-size: 13.5px !important;
+  color: var(--slate);
+}
+.callout p b {
+  color: var(--navy);
+}
+
+/* ===== Table ===== */
+.tableWrap {
+  overflow-x: auto;
+  margin-top: 16px;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0;
+  font-size: 14px;
+}
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  color: var(--slate);
+}
+.table th {
+  background: var(--bg-2);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* ===== Section header w/ icon badge ===== */
+.sectionHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.iconBadge {
+  flex: none;
+  width: 60px;
+  height: 60px;
+  margin-top: 2px;
+}
+.iconBadge svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+@media (max-width: 640px) {
+  .iconBadge {
+    display: none;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .nav {
+    position: static;
+    order: -1;
+    margin-bottom: 36px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .navList {
+    border-left: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .navLink {
+    border: 1px solid var(--line-2);
+    border-radius: var(--radius-pill);
+    padding: 8px 16px;
+    margin-left: 0;
+    background: #fff;
+  }
+  .navLinkActive {
+    background: var(--orange-t);
+    border-color: var(--orange);
+  }
+  .content {
+    max-width: 72ch;
+  }
+}
+@media (max-width: 720px) {
+  .contentSection {
+    padding: 40px 0 64px;
+  }
+}

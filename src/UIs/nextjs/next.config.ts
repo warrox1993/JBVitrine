@@ -93,18 +93,52 @@ const nextConfig: NextConfig = {
     return config;
   },
 
-  // Redirections SEO 2025
+  // Redirections SEO 2025 — refonte (301, permanent)
   async redirects() {
     return [
-      // Redirection ancienne URL produits vers nouvelle structure
+      // Ancienne structure "produits/*"
       {
         source: "/produits/cms-ecommerce",
-        destination: "/cms-ecommerce",
-        permanent: true, // 301 redirect
+        destination: "/services",
+        permanent: true,
+      },
+      // Refonte : positionnement cyber-first — le CMS/e-commerce n'est plus un
+      // service. On renvoie vers l'offre développement web sécurisé.
+      {
+        source: "/cms-ecommerce",
+        destination: "/services",
+        permanent: true,
       },
       {
         source: "/produits/:slug*",
-        destination: "/:slug*",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/services/smidjan-cms",
+        destination: "/services",
+        permanent: true,
+      },
+      // "À propos" → nouvelle page Agence
+      {
+        source: "/about",
+        destination: "/agence",
+        permanent: true,
+      },
+      // Pages légales renommées (FR)
+      {
+        source: "/legal-notice",
+        destination: "/mentions-legales",
+        permanent: true,
+      },
+      {
+        source: "/privacy",
+        destination: "/confidentialite",
+        permanent: true,
+      },
+      {
+        source: "/terms",
+        destination: "/cgv",
         permanent: true,
       },
     ];
@@ -140,9 +174,18 @@ const nextConfig: NextConfig = {
 
     // Dev/Preview/Prod: autorise Vercel Live + reCAPTCHA + Google Maps
     // Vercel Live needs to be allowed even in prod if used for feedback/preview
-    baseCsp.push(
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://*.vercel.live https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com",
-    );
+    // script-src: 'unsafe-eval' and Vercel Live are DEV-only (HMR / preview
+    // toolbar); both are removed in production.
+    // TODO(security): migrate to per-request nonces to also drop 'unsafe-inline'
+    // — requires a preview-deploy smoke test of JSON-LD, Vercel Analytics,
+    // Google Maps and reCAPTCHA before promoting to production.
+    const scriptSrc =
+      "script-src 'self' 'unsafe-inline'" +
+      (process.env.NODE_ENV === "production"
+        ? ""
+        : " 'unsafe-eval' https://vercel.live https://*.vercel.live") +
+      " https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com";
+    baseCsp.push(scriptSrc);
 
     const csp = baseCsp.join("; ");
 
@@ -174,10 +217,6 @@ const nextConfig: NextConfig = {
             key: "Permissions-Policy",
             value:
               "camera=(), microphone=(), geolocation=(), interest-cohort=()",
-          },
-          {
-            key: "X-XSS-Protection",
-            value: "1; mode=block",
           },
           {
             key: "Content-Security-Policy",

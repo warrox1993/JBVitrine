@@ -1,0 +1,179 @@
+/* "Qui sommes-nous" section — agence page. */
+.about {
+  background: #fff;
+  padding: var(--section-y) 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: start;
+}
+.copy p + p {
+  margin-top: 16px;
+}
+
+.missionCard {
+  margin-top: 26px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--bg-3);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--orange);
+  border-radius: 10px;
+  padding: 22px 24px;
+}
+.missionCard svg {
+  width: 26px;
+  height: 26px;
+  color: var(--orange-d);
+  flex: none;
+}
+.missionCard h4 {
+  font-size: 15.5px;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.missionCard p {
+  font-size: 14.5px;
+  color: var(--slate);
+  line-height: 1.5;
+}
+.missionCard p b {
+  color: var(--navy);
+}
+
+/* Interlocking values illustration */
+.valuesIllus {
+  margin-top: 6px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 18px 10px;
+}
+.valuesIllus svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.valuesIllus svg text {
+  font-family: var(--sans);
+}
+
+.valList {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+.valItem {
+  display: flex;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 22px;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+.valItem:hover {
+  border-color: var(--line-2);
+  box-shadow: var(--shadow);
+}
+.ic {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--orange-t);
+  color: var(--orange-d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.ic svg {
+  width: 22px;
+  height: 22px;
+}
+.valItem h4 {
+  font-size: 16.5px;
+  color: var(--navy);
+  font-weight: 700;
+}
+.valItem p {
+  font-size: 14px;
+  color: var(--slate);
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+/* Locality / map card */
+.localityCard {
+  margin-top: 16px;
+  background: var(--bg-3);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.localityCard .map {
+  width: 118px;
+  flex: none;
+}
+.localityCard .map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.localityCard h4 {
+  font-size: 15px;
+  color: var(--navy);
+  font-weight: 700;
+}
+.localityCard p {
+  font-size: 13.5px;
+  color: var(--slate);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* Coverage photo (Earth at night — Belgium/EU hosting & reach) */
+.coverageFigure {
+  margin-top: 16px;
+}
+.coverageImg {
+  border-radius: 14px !important;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.coverageCap {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  text-align: center;
+}
+.coverageCap b {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 720px) {
+  .about {
+    padding: 60px 0;
+  }
+}
+@media (max-width: 560px) {
+  .localityCard {
+    flex-direction: column;
+    text-align: center;
+  }
+}

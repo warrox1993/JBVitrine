@@ -3,6 +3,55 @@
 /* Import centralized animations (DRY principle) */
 @import "../styles/animations.css";
 
+/* ============================================================
+   SMIDJAN DESIGN TOKENS — navy + orange, light-only system
+   (refonte-design Phase 1 — source of truth for the new shell)
+   Ported from the approved corporate mockup :root.
+   ============================================================ */
+:root {
+  /* Navy / ink */
+  --navy: #0b1f3a;
+  --navy-2: #12294a;
+  --navy-3: #1c3a63;
+  --ink: #152238;
+  /* Neutrals */
+  --slate: #42536b;
+  --muted: #657189;
+  --line: #e2e7ef;
+  --line-2: #d3dae6;
+  --bg: #ffffff;
+  --bg-2: #f5f7fa;
+  --bg-3: #eef2f7;
+  --white: #ffffff;
+  /* Brand orange — CTA only */
+  --orange: #ff6a00;
+  --orange-d: #e85f00;
+  --orange-t: #fff3ea;
+  --orange-on-dark: #ff9a4d; /* orange tint used on navy backgrounds */
+  /* On-dark neutrals (tokenised — mockups hardcode these) */
+  --on-dark-text: #dfe7f2;
+  --on-dark-muted: #9fb0c9;
+  --on-dark-line: rgba(255, 255, 255, 0.14);
+  --success: #7fe6b0; /* success green on dark */
+  /* Focus / shadow / radius */
+  --focus: #2b6cff;
+  --shadow: 0 1px 2px rgba(11, 31, 58, 0.06), 0 8px 24px rgba(11, 31, 58, 0.06);
+  --shadow-s: 0 1px 2px rgba(11, 31, 58, 0.05);
+  --radius: 12px;
+  --radius-s: 8px;
+  --radius-l: 16px;
+  --radius-pill: 100px;
+  /* Type */
+  --mono: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  /* Layout / rhythm */
+  --maxw: 1180px;
+  --section-y: 88px; /* 60px under 720px */
+  --header-height: 64px; /* new short top-nav; retires the 80–140px clamp */
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -126,6 +175,25 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: titleGlow 3s ease-in-out infinite;
+}
+
+/* ============================================================
+   Shared layout helpers (refonte-design Phase 2)
+   Global-only: content wrapper + the navy section grid overlay.
+   Everything else lives in scoped CSS Modules.
+   ============================================================ */
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Faint grid texture painted over navy section backgrounds. */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 38px 38px;
 }
 
 /* Phone Input Global Dark Theme Styles */

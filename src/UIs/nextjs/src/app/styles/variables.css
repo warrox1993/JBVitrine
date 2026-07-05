@@ -1,20 +1,21 @@
 :root {
-  /* Colors - Forge/Flame theme */
-  /* Semantic tokens */
-  --color-bg: #0f1115;
-  --color-bg-alt: #161a22;
-  --color-surface: #1e2430;
-  --color-surface-glass: rgba(30, 36, 48, 0.92);
-  --color-surface-solid: #1e2430;
-  --color-border: #2b3342;
-  --color-text: #f6f7f9;
-  --color-text-muted: #c8cdd6;
-  --color-primary: #ff6a00;
-  --color-primary-strong: #e45700;
-  --color-primary-contrast: #0f1115;
-  --color-secondary: #ffc43a;
-  --color-accent: #3a85ff;
-  --color-danger: #e5484d;
+  /* Colors — light-only (refonte-design): dark "Forge/Flame" default retired.
+     Semantic tokens now default to the light palette; the legacy
+     [data-theme="light"] override block below is kept for back-compat. */
+  --color-bg: #ffffff;
+  --color-bg-alt: #f5f7fb;
+  --color-surface: #f7f9fc;
+  --color-surface-glass: rgba(255, 255, 255, 0.82);
+  --color-surface-solid: #ffffff;
+  --color-border: rgba(12, 18, 27, 0.08);
+  --color-text: #0c121b;
+  --color-text-muted: #4a5565;
+  --color-primary: #e86e10;
+  --color-primary-strong: #c25a0d;
+  --color-primary-contrast: #ffffff;
+  --color-secondary: #f7a93e;
+  --color-accent: #2563eb;
+  --color-danger: #d92d20;
 
   /* Fonts */
   --font-base:
@@ -132,12 +133,7 @@
   --bp-lg: 1200px;
   --bp-xl: 1440px;
 
-  /* Sidebar tokens */
-  --sidebar-collapsed: 80px;
-  --sidebar-expanded: 240px;
-  --sidebar-shift: 160px;
-  --sidebar-w: var(--sidebar-collapsed);
-  --sidebar-w-open: var(--sidebar-expanded);
+  /* Sidebar tokens retired (refonte-design: no sidebar in the new top-nav shell) */
   --header-h: var(--header-height);
 
   /* Component tokens */
@@ -148,8 +144,8 @@
     var(--color-surface) 95%,
     transparent 5%
   );
-  /* Desktop: Header height optimal pour grande écrans */
-  --header-height: clamp(80px, 12vh, 140px);
+  /* New short top-nav header (refonte-design). Overridden by globals.css token. */
+  --header-height: 64px;
 
   --btn-bg: var(--color-primary);
   --btn-fg: var(--color-primary-contrast);

@@ -5,28 +5,28 @@
  */
 
 import { neon } from "@neondatabase/serverless";
+import type { NeonQueryFunction } from "@neondatabase/serverless";
 
-// Use DATABASE_URL or fallback to POSTGRES_URL (Vercel/Neon compatibility)
-const databaseUrl = process.env.DATABASE_URL || process.env.POSTGRES_URL;
+let _sql: NeonQueryFunction<false, false> | null = null;
 
-if (!databaseUrl) {
-  throw new Error(
-    "DATABASE_URL or POSTGRES_URL is not defined. Please add it to your environment variables.\n" +
-      "For local development: Add DATABASE_URL to .env.local\n" +
-      "For Vercel: Add DATABASE_URL in project settings",
-  );
+function getSql(): NeonQueryFunction<false, false> {
+  if (_sql) return _sql;
+
+  const databaseUrl = process.env.DATABASE_URL || process.env.POSTGRES_URL;
+  if (!databaseUrl) {
+    throw new Error(
+      "DATABASE_URL or POSTGRES_URL is not defined. Please add it to your environment variables.",
+    );
+  }
+  _sql = neon(databaseUrl);
+  return _sql;
 }
 
-console.log("✅ Database connection initialized", {
-  url: databaseUrl.substring(0, 30) + "...", // Log partial URL for security
-  source: process.env.DATABASE_URL ? "DATABASE_URL" : "POSTGRES_URL",
-});
-
 /**
- * SQL query executor
- * Uses Neon's serverless driver for optimal performance on serverless platforms
+ * SQL query executor (tagged template) — la connexion est ouverte au 1er appel.
  */
-export const sql = neon(databaseUrl);
+export const sql = ((strings: TemplateStringsArray, ...values: unknown[]) =>
+  getSql()(strings, ...values)) as NeonQueryFunction<false, false>;
 
 /**
  * Type-safe query helpers

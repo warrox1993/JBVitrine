@@ -1,15 +1,11 @@
 import { NextResponse } from "next/server";
 import { getSecurityStats } from "@/lib/security-logger";
+import { guardRoute } from "@/lib/auth/guard";
 
 export async function GET() {
+  const denied = await guardRoute("sales");
+  if (denied) return denied;
   try {
-    // TODO: Add authentication check here
-    // For now, this endpoint should be protected by your admin authentication
-    // const session = await getServerSession();
-    // if (!session?.user?.isAdmin) {
-    //   return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    // }
-
     const stats = await getSecurityStats();
 
     return NextResponse.json({

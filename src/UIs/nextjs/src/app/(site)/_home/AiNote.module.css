@@ -1,0 +1,26 @@
+.note {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+  text-align: center;
+  background: #fff;
+  border: 1px dashed var(--line-2);
+  border-radius: var(--radius-pill);
+  padding: 12px 24px;
+  font-size: 14.5px;
+  color: var(--slate);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.note svg {
+  width: 20px;
+  height: 20px;
+  color: var(--orange-d);
+  flex: none;
+}
+.note b {
+  color: var(--navy);
+}

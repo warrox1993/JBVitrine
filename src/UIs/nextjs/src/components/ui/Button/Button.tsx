@@ -7,7 +7,15 @@ import {
 } from "react";
 import styles from "./Button.module.css";
 
-type ButtonVariant = 'solid' | 'outline' | 'ghost' | 'primary' | 'secondary';
+type ButtonVariant =
+  | 'solid'
+  | 'outline'
+  | 'ghost'
+  | 'primary'
+  | 'secondary'
+  | 'navy'
+  | 'light'
+  | 'ghostD';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 type ButtonClickEvent = MouseEvent<HTMLButtonElement | HTMLAnchorElement>;
@@ -38,11 +46,14 @@ function classes(
   disabled?: boolean | null,
 ) {
   const variantClassMap: Record<ButtonVariant, keyof typeof styles> = {
-    solid: "solid",
-    outline: "outline",
+    solid: "primary",
+    outline: "ghost",
     ghost: "ghost",
-    primary: "solid",
-    secondary: "outline",
+    primary: "primary",
+    secondary: "navy",
+    navy: "navy",
+    light: "light",
+    ghostD: "ghostD",
   };
 
   const resolvedVariant = variantClassMap[variant];

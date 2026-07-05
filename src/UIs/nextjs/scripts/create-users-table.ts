@@ -10,6 +10,7 @@ config({ path: resolve(process.cwd(), ".env.local") });
 
 import { neon } from "@neondatabase/serverless";
 import * as bcrypt from "bcryptjs";
+import { randomBytes } from "crypto";
 
 if (!process.env.DATABASE_URL) {
   throw new Error("DATABASE_URL environment variable is not set");
@@ -69,8 +70,14 @@ async function createUsersTable() {
 
     console.log("✅ Trigger for updated_at created");
 
-    // Create default admin user (password: admin123 - CHANGE IN PRODUCTION!)
-    const passwordHash = await bcrypt.hash("admin123", 10);
+    // Create default admin user with a strong, random password.
+    // Prefer ADMIN_INITIAL_PASSWORD if provided (e.g. for reproducible/CI seeding),
+    // otherwise generate a fresh random password for this run.
+    const generatedPassword = randomBytes(24).toString("base64url");
+    const usedGeneratedPassword = !process.env.ADMIN_INITIAL_PASSWORD;
+    const plainPassword =
+      process.env.ADMIN_INITIAL_PASSWORD || generatedPassword;
+    const passwordHash = await bcrypt.hash(plainPassword, 12);
 
     const existingUsers = await sql`
       SELECT email FROM users WHERE email = 'contact.smidjan@outlook.com'
@@ -85,8 +92,16 @@ async function createUsersTable() {
       console.log("✅ Default admin user created");
       console.log("");
       console.log("📧 Email: contact.smidjan@outlook.com");
-      console.log("🔑 Password: admin123");
-      console.log("⚠️  CHANGE THIS PASSWORD IN PRODUCTION!");
+      if (usedGeneratedPassword) {
+        console.log(`🔑 Password (generated, shown once): ${plainPassword}`);
+        console.log(
+          "⚠️  Record this password now — it will not be shown again. Change it after first login.",
+        );
+      } else {
+        console.log(
+          "🔑 Password: set from ADMIN_INITIAL_PASSWORD env var (not printed).",
+        );
+      }
     } else {
       console.log("ℹ️  Admin user already exists, skipping...");
     }

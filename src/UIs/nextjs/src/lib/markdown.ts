@@ -1,4 +1,6 @@
 import { marked, Tokens } from "marked";
+import DOMPurify from "isomorphic-dompurify";
+import { escapeHtml } from "@/lib/security/escape";
 
 /**
  * Configure marked options
@@ -37,7 +39,7 @@ const renderer = {
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
 
-    return `<pre><code class="language-${language}">${escaped}</code></pre>\n`;
+    return `<pre><code class="language-${escapeHtml(language)}">${escaped}</code></pre>\n`;
   },
 
   paragraph({ text }: Tokens.Paragraph) {
@@ -67,8 +69,11 @@ const renderer = {
   },
 
   link({ href, title, text }: Tokens.Link) {
-    const titleAttr = title ? ` title="${title}"` : "";
-    return `<a href="${href}"${titleAttr}>${text}</a>`;
+    // 🔒 E1 : n'autoriser que les schémas d'URL sûrs
+    const safe = /^(https?:|mailto:|\/|#)/i.test(href ?? "");
+    const finalHref = safe ? href : "#";
+    const titleAttr = title ? ` title="${escapeHtml(title)}"` : "";
+    return `<a href="${escapeHtml(finalHref ?? "#")}"${titleAttr} rel="noopener noreferrer">${text}</a>`;
   },
 };
 
@@ -82,9 +87,14 @@ export function markdownToHtml(markdown: string): string {
 
   try {
     const html = marked.parse(markdown);
-    return typeof html === "string" ? html : "";
+    const raw = typeof html === "string" ? html : "";
+    // 🔒 E1 : neutraliser tout HTML dangereux (script, onerror, javascript:, …)
+    return DOMPurify.sanitize(raw, {
+      ADD_ATTR: ["id", "target", "rel"],
+      FORBID_TAGS: ["style", "iframe", "form", "input"],
+    });
   } catch (error) {
     console.error("Error parsing markdown:", error);
-    return markdown;
+    return "";
   }
 }

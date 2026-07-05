@@ -1,0 +1,41 @@
+/* TrustStrip — reference-frameworks & engagements row. */
+.trust {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.wrap {
+  padding: 26px 0;
+}
+.label {
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 18px;
+}
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 9px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--navy);
+}
+.item svg {
+  width: 17px;
+  height: 17px;
+  color: var(--orange-d);
+  flex: none;
+}

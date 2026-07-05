@@ -1,234 +1,817 @@
-/* Global overrides for contact page */
-:global(body.contact-page) :global(aside.sidebar) {
-  display: none !important;
+/* ============================================================
+   Contact page — new navy/orange design (refonte-design Phase 3/4)
+   Scoped CSS Module ported from page-contact.html mockup.
+   Header / EmergencyBar / Footer come from the (site) layout.
+   ============================================================ */
+
+/* ===== Page header band ===== */
+.pageHead {
+  background: linear-gradient(180deg, #fff 0%, var(--bg-2) 100%);
+  border-bottom: 1px solid var(--line);
 }
 
-:global(body.contact-page) :global(#main) {
-  margin-left: 0 !important;
-  width: 100vw !important;
+.pageHeadInner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  padding-top: 56px;
+  padding-bottom: 52px;
 }
 
-:global(body.contact-page) :global(header) {
-  left: 0 !important;
-  width: 100vw !important;
-  padding-left: var(--space-4, 1rem) !important;
-  padding-right: var(--space-4, 1rem) !important;
+.pageHeadText {
+  min-width: 0;
 }
 
-:global(body.contact-page) :global(header)::before,
-:global(body.contact-page) :global(header)::after {
-  left: 0 !important;
-  width: 100vw !important;
+.pageHeadMedia {
+  min-width: 0;
 }
 
-:global(body.contact-page) :global(header) :global(nav) {
-  padding-inline: 0 !important;
+.pageHeadImg {
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 
-/* Contact Page Wrapper */
-.contactPageWrapper {
-  width: 100%;
-  max-width: 100%;
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-}
-
-/* Contact Container - Override padding and add margin */
-.contactContainer {
-  padding-inline: var(--space-5);
-  max-width: 1440px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 10;
-}
-
-.contactContainer > section > *,
-.contactContainer > section > div {
-  position: relative;
-  z-index: 10;
-}
-
-/* Ensure all content is above background */
-.contactPageWrapper > *:not(.animated-bg-container) {
-  position: relative;
-  z-index: 1;
-}
-
-/* Background should be fixed and cover viewport */
-.contactPageWrapper :global(.animated-bg-container) {
-  position: fixed !important;
-  height: 100vh !important;
-  z-index: 0 !important;
-}
-
-/* Breadcrumb */
-.breadcrumb {
+.crumbs {
+  font-size: 13px;
+  color: var(--muted);
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  font-size: var(--text-sm);
-  color: var(--color-text-3);
-  margin-bottom: var(--space-6);
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
-.breadcrumb a {
-  color: var(--color-text-2);
-  text-decoration: none;
-  transition: color var(--dur-2) var(--ease-standard);
+.crumbs a:hover {
+  color: var(--navy-3);
 }
 
-.breadcrumb a:hover {
-  color: var(--color-accent-1);
+.crumbs svg {
+  width: 13px;
+  height: 13px;
+  color: var(--line-2);
 }
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: var(--space-3, 1rem) 0;
-  max-width: 900px;
-  margin: 0 auto var(--space-3, 1rem);
+.crumbs span {
+  color: var(--navy-3);
+  font-weight: 600;
 }
 
-.heroTitle {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 700;
-  color: var(--color-text-1);
-  margin: 0 0 var(--space-2, 0.5rem) 0;
+.eyebrow {
+  font: 600 12px/1.4 var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange-d);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.pageHead h1 {
+  font-size: clamp(30px, 4vw, 44px);
+  margin-top: 14px;
+  letter-spacing: -0.025em;
+  max-width: 20ch;
+  color: var(--navy);
   line-height: 1.2;
 }
 
-.heroSub {
-  font-size: var(--text-base, 1rem);
-  color: var(--color-text-2);
-  line-height: 1.5;
-  margin: 0 0 var(--space-3, 1rem) 0;
+.pageHead h1 .accent {
+  color: var(--navy-3);
 }
 
-.trust {
+.lead {
+  font-size: 19px;
+  color: var(--slate);
+  line-height: 1.6;
+  margin-top: 18px;
+  max-width: 56ch;
+}
+
+.headAssure {
   display: flex;
-  justify-content: center;
+  gap: 22px;
+  margin-top: 26px;
   flex-wrap: wrap;
-  gap: var(--space-4);
 }
 
-.trustItem {
+.headAssure div {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  font-size: var(--text-sm);
-  color: var(--color-text-2);
+  gap: 9px;
+  font-size: 14px;
+  color: var(--slate);
+  font-weight: 500;
 }
 
-.trustItem svg {
-  color: var(--color-accent-1);
-  flex-shrink: 0;
+.headAssure svg {
+  width: 18px;
+  height: 18px;
+  color: var(--orange-d);
+  flex: none;
 }
 
-/* Contact Pathways */
-.pathways {
-  margin: 0 0 var(--space-7) 0;
+/* ===== Contact layout ===== */
+.contact {
+  background: #fff;
+  padding: 80px 0;
 }
 
-.pathwaysGrid {
+.contactGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-4);
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: start;
 }
 
-.pathwayCard {
-  transition:
-    transform var(--dur-2) var(--ease-standard),
-    border-color var(--dur-2) var(--ease-standard);
+/* ===== Right column ===== */
+.side {
+  display: grid;
+  gap: 20px;
 }
 
-.pathwayCard:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-accent-1);
+.infoCard {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: var(--shadow-s);
 }
 
-.pathwayTitle {
-  font-size: var(--text-xl);
+.coordPhoto {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-s);
+}
+
+.coordPhoto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(0deg, rgba(11, 31, 58, 0.75) 0%, rgba(11, 31, 58, 0) 55%);
+  pointer-events: none;
+}
+
+.coordPhotoImg {
+  display: block;
+}
+
+.coordPhotoTag {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  z-index: 1;
+  background: var(--orange);
+  color: #fff;
+  font-size: 12px;
   font-weight: 700;
-  color: var(--color-text-1);
-  margin: 0 0 var(--space-2) 0;
+  letter-spacing: 0.02em;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
 }
 
-.pathwayText {
-  font-size: var(--text-base);
-  color: var(--color-text-2);
-  line-height: 1.6;
-  margin: 0 0 var(--space-3) 0;
+.infoCard h3 {
+  font-size: 17px;
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--navy);
+  letter-spacing: -0.015em;
 }
 
-.pathwayLink {
+.infoCard h3 .hi {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--navy);
+  color: var(--orange-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.infoCard h3 .hi svg {
+  width: 16px;
+  height: 16px;
+}
+
+.coord {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.coord li {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+}
+
+.coord .ic {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--orange-t);
+  color: var(--orange-d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.coord .ic svg {
+  width: 19px;
+  height: 19px;
+}
+
+.coord .k {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+
+.coord .v {
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.coord .v a {
+  color: var(--navy-3);
+  font-weight: 600;
+}
+
+.coord .v a:hover {
+  color: var(--orange-d);
+}
+
+.coord .v small {
+  display: block;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* ===== Emergency block ===== */
+.emergBlock {
+  background: linear-gradient(160deg, var(--navy) 0%, #0a1a30 100%);
+  border-radius: 14px;
+  padding: 28px;
+  color: var(--on-dark-text);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 44px -24px rgba(11, 31, 58, 0.6);
+  border: 1px solid var(--navy-3);
+}
+
+.emergBlock .gridBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+}
+
+.ebPhoto {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid var(--on-dark-line);
+}
+
+.ebPhoto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(11, 31, 58, 0.5) 0%, rgba(10, 26, 48, 0.68) 100%);
+  pointer-events: none;
+}
+
+.ebPhotoImg {
+  display: block;
+}
+
+.ebTop {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  position: relative;
+}
+
+.ebIc {
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+  background: rgba(255, 106, 0, 0.16);
+  border: 1px solid rgba(255, 106, 0, 0.4);
+  color: var(--orange-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.ebIc svg {
+  width: 24px;
+  height: 24px;
+}
+
+.ebBadge {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
-  color: var(--color-accent-1);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color var(--dur-2) var(--ease-standard);
-}
-
-.pathwayLink:hover {
-  color: var(--color-accent-3);
-}
-
-.pathwayLink::after {
-  content: "→";
-  transition: transform var(--dur-2) var(--ease-standard);
-}
-
-.pathwayLink:hover::after {
-  transform: translateX(4px);
-}
-
-/* Main Content Layout */
-.mainContent {
-  margin: 0 0 var(--space-7) 0;
-}
-
-.formWrapper {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.sectionTitle {
-  font-size: var(--text-3xl);
+  gap: 7px;
+  font-size: 11.5px;
   font-weight: 700;
-  color: var(--color-text-1);
-  margin: 0 0 var(--space-5) 0;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--orange-on-dark);
 }
 
-/* Service Area */
-.serviceArea {
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.6);
+  animation: contactPulse 2.4s infinite;
+}
+
+@keyframes contactPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(255, 106, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 106, 0, 0);
+  }
+}
+
+.emergBlock h3 {
+  color: #fff;
+  font-size: 19px;
+  margin: 4px 0 0;
+  letter-spacing: -0.015em;
+}
+
+.emergBlock p {
+  font-size: 13.5px;
+  color: #a9b8ce;
+  margin-top: 12px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.ebTel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  position: relative;
+  background: var(--orange);
+  color: #fff;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0.01em;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-family: var(--mono);
+}
+
+.ebTel:hover {
+  background: var(--orange-d);
+}
+
+.ebTel svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+.ebNote {
+  margin-top: 14px;
+  font-size: 12.5px;
+  color: #8496b0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.ebNote svg {
+  width: 15px;
+  height: 15px;
+  color: var(--success);
+  flex: none;
+}
+
+/* ===== Process mini-diagram ===== */
+.processStrip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: 2px;
+}
+
+.pStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: var(--space-5) 0;
-  margin: 0 0 var(--space-7) 0;
+  width: 80px;
+  flex: none;
 }
 
-.serviceText {
-  font-size: var(--text-base);
-  color: var(--color-text-2);
-  margin: 0;
+.pStep .pIc {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  color: var(--navy-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
 }
 
-/* FAQ Section */
-.faq {
-  margin: 0 auto var(--space-7);
-  max-width: 800px;
+.pStep:last-child .pIc {
+  background: var(--orange-t);
+  border-color: transparent;
+  color: var(--orange-d);
 }
 
-/* Screen reader only */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
+.pStep .pIc svg {
+  width: 20px;
+  height: 20px;
+}
+
+.pStep .pLbl {
+  margin-top: 9px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+.pArrow {
+  flex: 1;
+  min-width: 12px;
+  height: 42px;
+  color: var(--line-2);
+  margin-top: 19px;
+}
+
+.pArrow svg {
+  width: 100%;
+  height: 12px;
+  display: block;
+}
+
+/* ===== Map card ===== */
+.mapCard {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  box-shadow: var(--shadow-s);
+}
+
+.mapCanvas {
+  position: relative;
+  height: 210px;
+  background: var(--bg-3);
+}
+
+.mapCanvas svg.base {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mapPin {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -100%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mapPin .badge {
+  background: var(--navy);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 7px;
   white-space: nowrap;
-  border: 0;
+  box-shadow: var(--shadow);
+  margin-bottom: 6px;
+}
+
+.mapPin .drop {
+  width: 26px;
+  height: 26px;
+  color: var(--orange);
+  filter: drop-shadow(0 4px 6px rgba(11, 31, 58, 0.35));
+}
+
+.mapPin .drop svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+.mapFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 20px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.mapFoot .addr {
+  font-size: 13.5px;
+  color: var(--slate);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.mapFoot .addr svg {
+  width: 16px;
+  height: 16px;
+  color: var(--orange-d);
+  flex: none;
+}
+
+.linkMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--navy-3);
+}
+
+.linkMore svg {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.16s ease;
+}
+
+.linkMore:hover {
+  color: var(--orange-d);
+}
+
+.linkMore:hover svg {
+  transform: translateX(3px);
+}
+
+.mapPulse {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mapPulse svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mapPulse circle {
+  fill: none;
+  stroke: var(--orange);
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mapPulse 2.6s ease-out infinite;
+}
+
+.mapPulse circle:nth-child(2) {
+  animation-delay: 1.3s;
+}
+
+@keyframes mapPulse {
+  0% {
+    transform: scale(0.35);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.mapCompass {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  color: var(--navy-3);
+  opacity: 0.8;
+}
+
+.mapCompass svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ===== À quoi s'attendre ===== */
+.expect {
+  background: var(--bg-2);
+  border-top: 1px solid var(--line);
+  padding: 80px 0;
+}
+
+.secHead {
+  max-width: 660px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.secHead .eyebrow {
+  justify-content: center;
+}
+
+.secHead h2 {
+  font-size: clamp(25px, 3vw, 33px);
+  margin-top: 14px;
+  color: var(--navy);
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.secHead p {
+  margin-top: 14px;
+  font-size: 16.5px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 44px;
+}
+
+.step {
+  padding: 0 26px;
+  position: relative;
+}
+
+.step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--line-2), var(--line));
+  transform: translateX(50%);
+  z-index: 0;
+}
+
+.step .num {
+  width: 50px;
+  height: 50px;
+  border-radius: 13px;
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  position: relative;
+  z-index: 1;
+  font-family: var(--mono);
+}
+
+.step:last-child .num {
+  background: var(--orange);
+}
+
+.step .num svg {
+  width: 23px;
+  height: 23px;
+}
+
+.step h4 {
+  font-size: 17px;
+  margin: 20px 0 0;
+  color: var(--navy);
+  letter-spacing: -0.015em;
+}
+
+.step p {
+  font-size: 14px;
+  color: var(--slate);
+  margin-top: 9px;
+  line-height: 1.6;
+}
+
+.expectNote {
+  margin: 44px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+  text-align: center;
+  background: #fff;
+  border: 1px dashed var(--line-2);
+  border-radius: var(--radius-pill);
+  padding: 12px 24px;
+  font-size: 14.5px;
+  color: var(--slate);
+  max-width: 640px;
+}
+
+.expectNote svg {
+  width: 20px;
+  height: 20px;
+  color: var(--orange-d);
+  flex: none;
+}
+
+.expectNote b {
+  color: var(--navy);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1000px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .side {
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 860px) {
+  .pageHeadInner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .pageHeadMedia {
+    order: -1;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 720px) {
+  .contact,
+  .expect {
+    padding: 56px 0;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .step:not(:last-child)::after {
+    display: none;
+  }
+  .step {
+    padding: 0;
+  }
 }

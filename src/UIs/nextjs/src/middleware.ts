@@ -151,7 +151,16 @@ export async function middleware(request: NextRequest) {
   }
 
   // 6. Add security headers to response
-  const response = NextResponse.next();
+  // Forward the pathname to Server Components (e.g. the admin layout) so
+  // they can make routing decisions (like skipping the /admin/login route)
+  // without relying on usePathname(), which is client-only.
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-pathname", pathname);
+  const response = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
 
   // Add additional security headers not covered by next.config.ts
   response.headers.set("X-Request-ID", crypto.randomUUID());

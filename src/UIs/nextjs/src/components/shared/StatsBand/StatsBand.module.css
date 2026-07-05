@@ -1,0 +1,75 @@
+/* StatsBand — dark navy stats strip. */
+.stats {
+  background: var(--navy);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--navy-3);
+  padding: var(--section-y) 0;
+}
+.gridBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.inner {
+  position: relative;
+}
+.head {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 46px;
+}
+.head h2 {
+  color: #fff;
+  font-size: clamp(25px, 3vw, 33px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+.head p {
+  color: var(--on-dark-muted);
+  margin-top: 14px;
+  font-size: 16.5px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 4), 1fr);
+  gap: 24px;
+}
+.stat {
+  text-align: center;
+  padding: 28px 16px;
+  border: 1px solid var(--on-dark-line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+}
+.n {
+  font-size: 46px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.n em {
+  color: var(--orange-on-dark);
+  font-style: normal;
+}
+.l {
+  font-size: 14px;
+  color: var(--on-dark-muted);
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 720px) {
+  .stats {
+    padding: 60px 0;
+  }
+}

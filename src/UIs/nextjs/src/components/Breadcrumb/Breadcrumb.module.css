@@ -1,46 +1,47 @@
-/* Breadcrumb Navigation - Dark Theme */
-
+/* ============================================================
+   Breadcrumb — navy/orange light system (refonte-design Phase 2)
+   Restyled to the approved mockup .breadcrumb bar. Same markup/API.
+   ============================================================ */
 .breadcrumb {
-  margin-bottom: var(--space-6, 2rem);
-  padding: var(--space-3, 0.75rem) 0;
+  padding: 14px 0;
 }
 
 .breadcrumbList {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--space-2, 0.5rem);
+  gap: 8px;
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: var(--font-size-sm, 0.875rem);
+  font-size: 13.5px;
+  color: var(--muted);
 }
 
 .breadcrumbItem {
   display: flex;
   align-items: center;
-  color: var(--color-text-2, #c8cdd6);
-  transition: color var(--transition-fast);
+  color: var(--muted);
+  transition: color 0.16s ease;
 }
 
 .breadcrumbLink {
   display: flex;
   align-items: center;
-  gap: var(--space-1, 0.25rem);
-  color: var(--color-text-2, #c8cdd6);
+  gap: 6px;
+  color: var(--slate);
+  font-weight: 500;
   text-decoration: none;
-  padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
-  border-radius: var(--radius-sm, 4px);
-  transition: var(--transition-fast);
+  border-radius: var(--radius-s);
+  transition: color 0.16s ease;
 }
 
 .breadcrumbLink:hover {
-  color: var(--color-accent-1, #ff6a00);
-  background: rgba(255, 106, 0, 0.1);
+  color: var(--orange-d);
 }
 
 .breadcrumbLink:focus-visible {
-  outline: 2px solid var(--color-accent-1, #ff6a00);
+  outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
 
@@ -51,66 +52,44 @@
 .breadcrumbSeparator {
   display: flex;
   align-items: center;
-  color: var(--color-text-3, #6b7280);
+  color: var(--line-2);
   pointer-events: none;
 }
 
 .breadcrumbItemActive {
-  color: var(--color-text-1, #f6f7f9);
-  font-weight: 500;
+  color: var(--navy);
+  font-weight: 600;
 }
 
 .breadcrumbCurrent {
-  color: var(--color-text-1, #f6f7f9);
-  padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+  color: var(--navy);
+  font-weight: 600;
   cursor: default;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 46ch;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .breadcrumb {
-    margin-bottom: var(--space-4, 1rem);
-    padding: var(--space-2, 0.5rem) 0;
-  }
-
   .breadcrumbList {
-    font-size: var(--font-size-xs, 0.75rem);
-    gap: var(--space-1, 0.25rem);
+    font-size: 12.5px;
+    gap: 6px;
   }
-
-  .breadcrumbLink,
-  .breadcrumbCurrent {
-    padding: var(--space-1, 0.25rem);
-  }
-
-  .homeIcon {
-    width: 14px;
-    height: 14px;
-  }
-
+  .homeIcon,
   .breadcrumbSeparator svg {
     width: 14px;
     height: 14px;
   }
 }
 
-/* Animation on mount */
-@keyframes breadcrumbFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@media (prefers-reduced-motion: reduce) {
+  .breadcrumbItem,
+  .breadcrumbLink {
+    transition: none;
   }
 }
 
-.breadcrumb {
-  animation: breadcrumbFadeIn 0.3s ease;
-}
-
-/* Print styles */
 @media print {
   .breadcrumb {
     display: none;

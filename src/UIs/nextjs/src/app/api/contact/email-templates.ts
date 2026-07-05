@@ -1,5 +1,7 @@
 // Email templates for contact form
 
+import { escapeHtml } from "@/lib/security/escape";
+
 export function getConfirmationEmailHtml(
   name: string,
   ticketId: string,
@@ -33,7 +35,7 @@ export function getConfirmationEmailHtml(
           <tr>
             <td style="padding: 40px;">
               <h2 style="margin: 0 0 20px; color: #f6f7f9; font-size: 24px; font-weight: 700;">
-                Merci pour votre message, ${name}!
+                Merci pour votre message, ${escapeHtml(name)}!
               </h2>
 
               <p style="margin: 0 0 20px; color: #c8cdd6; font-size: 16px; line-height: 1.6;">
@@ -45,7 +47,7 @@ export function getConfirmationEmailHtml(
                   Numéro de ticket
                 </p>
                 <p style="margin: 8px 0 0; color: #ff6a00; font-size: 20px; font-weight: 700; font-family: 'Courier New', monospace;">
-                  ${ticketId}
+                  ${escapeHtml(ticketId)}
                 </p>
               </div>
 
@@ -156,7 +158,7 @@ export function getTeamNotificationEmailHtml(
                 NOUVELLE DEMANDE DE CONTACT
               </h1>
               <p style="margin: 10px 0 0; color: #ffffff; font-size: 14px; opacity: 0.95; text-transform: uppercase; letter-spacing: 0.05em;">
-                ${typeLabels[data.type] || data.type}
+                ${escapeHtml(typeLabels[data.type] || data.type)}
               </p>
             </td>
           </tr>
@@ -168,7 +170,7 @@ export function getTeamNotificationEmailHtml(
                 Ticket ID
               </p>
               <p style="margin: 5px 0 0; font-size: 18px; color: #ff6a00; font-weight: 700; font-family: 'Courier New', monospace;">
-                ${ticketId}
+                ${escapeHtml(ticketId)}
               </p>
             </td>
           </tr>
@@ -183,12 +185,12 @@ export function getTeamNotificationEmailHtml(
               <table width="100%" cellpadding="8" cellspacing="0" style="font-size: 15px;">
                 <tr>
                   <td style="color: #6b7280; font-weight: 600; width: 140px; vertical-align: top;">Nom :</td>
-                  <td style="color: #0c121b; font-weight: 600;">${data.name}</td>
+                  <td style="color: #0c121b; font-weight: 600;">${escapeHtml(data.name)}</td>
                 </tr>
                 <tr>
                   <td style="color: #6b7280; font-weight: 600; vertical-align: top;">Email :</td>
                   <td style="color: #0c121b;">
-                    <a href="mailto:${data.email}" style="color: #ff6a00; text-decoration: none;">${data.email}</a>
+                    <a href="mailto:${escapeHtml(data.email)}" style="color: #ff6a00; text-decoration: none;">${escapeHtml(data.email)}</a>
                   </td>
                 </tr>
                 ${
@@ -197,7 +199,7 @@ export function getTeamNotificationEmailHtml(
                 <tr>
                   <td style="color: #6b7280; font-weight: 600; vertical-align: top;">Téléphone :</td>
                   <td style="color: #0c121b;">
-                    <a href="tel:${data.phone}" style="color: #ff6a00; text-decoration: none;">${data.phone}</a>
+                    <a href="tel:${escapeHtml(data.phone)}" style="color: #ff6a00; text-decoration: none;">${escapeHtml(data.phone)}</a>
                   </td>
                 </tr>
                 `
@@ -208,7 +210,7 @@ export function getTeamNotificationEmailHtml(
                     ? `
                 <tr>
                   <td style="color: #6b7280; font-weight: 600; vertical-align: top;">Entreprise :</td>
-                  <td style="color: #0c121b;">${data.company}</td>
+                  <td style="color: #0c121b;">${escapeHtml(data.company)}</td>
                 </tr>
                 `
                     : ""
@@ -218,7 +220,7 @@ export function getTeamNotificationEmailHtml(
                     ? `
                 <tr>
                   <td style="color: #6b7280; font-weight: 600; vertical-align: top;">Budget :</td>
-                  <td style="color: #0c121b; font-weight: 600;">${budgetLabels[data.budget] || data.budget}</td>
+                  <td style="color: #0c121b; font-weight: 600;">${escapeHtml(budgetLabels[data.budget] || data.budget)}</td>
                 </tr>
                 `
                     : ""
@@ -228,7 +230,7 @@ export function getTeamNotificationEmailHtml(
                     ? `
                 <tr>
                   <td style="color: #6b7280; font-weight: 600; vertical-align: top;">Délai :</td>
-                  <td style="color: #0c121b;">${timelineLabels[data.timeline] || data.timeline}</td>
+                  <td style="color: #0c121b;">${escapeHtml(timelineLabels[data.timeline] || data.timeline)}</td>
                 </tr>
                 `
                     : ""
@@ -244,7 +246,7 @@ export function getTeamNotificationEmailHtml(
                 MESSAGE
               </h2>
               <div style="background-color: #f7f9fc; border-left: 4px solid #ff6a00; padding: 20px; border-radius: 6px;">
-                <p style="margin: 0; color: #0c121b; font-size: 15px; line-height: 1.7; white-space: pre-wrap;">${data.message}</p>
+                <p style="margin: 0; color: #0c121b; font-size: 15px; line-height: 1.7; white-space: pre-wrap;">${escapeHtml(data.message)}</p>
               </div>
             </td>
           </tr>
@@ -264,7 +266,7 @@ export function getTeamNotificationEmailHtml(
                     ? `
                 <tr>
                   <td style="color: #6b7280; font-weight: 600; width: 140px;">Source UTM :</td>
-                  <td style="color: #0c121b;">${data.utm.source}</td>
+                  <td style="color: #0c121b;">${escapeHtml(data.utm.source)}</td>
                 </tr>
                 `
                     : ""
@@ -274,7 +276,7 @@ export function getTeamNotificationEmailHtml(
                     ? `
                 <tr>
                   <td style="color: #6b7280; font-weight: 600;">Campagne UTM :</td>
-                  <td style="color: #0c121b;">${data.utm.campaign}</td>
+                  <td style="color: #0c121b;">${escapeHtml(data.utm.campaign)}</td>
                 </tr>
                 `
                     : ""
@@ -289,7 +291,7 @@ export function getTeamNotificationEmailHtml(
           <!-- CTA -->
           <tr>
             <td style="padding: 30px; background-color: #fff8f0; text-align: center;">
-              <a href="mailto:${data.email}?subject=Re: ${typeLabels[data.type]} - ${ticketId}" style="display: inline-block; background: linear-gradient(135deg, #ff6a00, #ffc43a); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 15px; box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3);">
+              <a href="mailto:${escapeHtml(data.email)}?subject=Re: ${escapeHtml(typeLabels[data.type] || data.type)} - ${escapeHtml(ticketId)}" style="display: inline-block; background: linear-gradient(135deg, #ff6a00, #ffc43a); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 15px; box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3);">
                 Répondre au client
               </a>
             </td>

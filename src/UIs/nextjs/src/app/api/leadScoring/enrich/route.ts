@@ -6,7 +6,69 @@
  */
 
 import { NextRequest, NextResponse } from "next/server";
+import { lookup as dnsLookup } from "node:dns";
+import { Agent } from "undici";
 import { enrichmentLimiter, getClientIdentifier } from "@/lib/rate-limit-redis";
+import { assertPublicHost, isBlockedIp } from "@/lib/security/ssrf";
+import { validateCSRF, validateRecaptcha } from "@/lib/api/middleware";
+
+// Hard cap on request body size for this route.
+const MAX_ENRICH_BODY_BYTES = 16 * 1024; // 16 KB (email + domain only)
+
+/**
+ * SSRF pin: a custom DNS lookup that re-validates the RESOLVED IP against
+ * isBlockedIp at connect time. undici invokes this lookup for the actual
+ * socket connection, so the IP we validate is the IP fetch connects to —
+ * closing the TOCTOU / DNS-rebinding gap between assertPublicHost() and fetch().
+ */
+function pinnedLookup(
+  hostname: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  options: any,
+  callback: (
+    err: NodeJS.ErrnoException | null,
+    address: string | { address: string; family: number }[],
+    family?: number,
+  ) => void,
+): void {
+  dnsLookup(
+    hostname,
+    options,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (err: any, address: any, family: any) => {
+    if (err) return callback(err, address, family);
+
+    if (Array.isArray(address)) {
+      for (const entry of address) {
+        if (isBlockedIp(entry.address)) {
+          return callback(
+            new Error("SSRF blocked: resolves to private range"),
+            [],
+          );
+        }
+      }
+      return callback(null, address, family);
+    }
+
+    if (isBlockedIp(address)) {
+      return callback(
+        new Error("SSRF blocked: resolves to private range"),
+        "",
+        family,
+      );
+    }
+    return callback(null, address, family);
+  });
+}
+
+// Dedicated dispatcher that pins the resolved IP for all outbound connections
+// made through it. Reused across requests (cheap, stateless validation).
+const pinnedDispatcher = new Agent({
+  connect: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    lookup: pinnedLookup as any,
+  },
+});
 
 // API keys are now server-side only (no NEXT_PUBLIC_ prefix)
 const HUNTER_API_KEY = process.env.HUNTER_API_KEY;
@@ -110,11 +172,19 @@ async function detectTechStack(domain: string) {
     // Ensure domain is clean (no protocol)
     const cleanDomain = domain.replace(/^https?:\/\//, "").split("/")[0];
 
+    // 🔒 E3 : empêcher les rebonds SSRF vers des IP internes / metadata cloud
+    //  1) pré-validation du host + résolution initiale (format + IP publique)
+    await assertPublicHost(cleanDomain);
+
+    //  2) pin de l'IP au moment de la connexion via un dispatcher undici :
+    //     la même résolution DNS qui sert à se connecter est re-vérifiée
+    //     contre isBlockedIp → ferme la fenêtre TOCTOU / DNS-rebinding.
     const response = await fetch(`https://${cleanDomain}`, {
       method: "HEAD",
-      redirect: "follow",
+      redirect: "error", // ne pas suivre les redirections vers des cibles internes
       signal: AbortSignal.timeout(5000), // 5 second timeout
-    });
+      dispatcher: pinnedDispatcher,
+    } as RequestInit & { dispatcher: Agent });
 
     const headers = response.headers;
     const techs = {
@@ -184,7 +254,16 @@ async function detectTechStack(domain: string) {
  * Enriches lead data with email validation, company info, and brand data
  */
 export async function POST(request: NextRequest) {
-  // ✅ Rate limiting with Redis (10 requests per minute) 
+  // ✅ Payload size guard
+  const contentLength = Number(request.headers.get("content-length") || 0);
+  if (Number.isFinite(contentLength) && contentLength > MAX_ENRICH_BODY_BYTES) {
+    return NextResponse.json({ error: "Payload too large" }, { status: 413 });
+  }
+
+  // NOTE (V-W2): the enrichmentLimiter definition lives in
+  // src/lib/rate-limit-redis.ts and is intended to be lowered to ~5/min there
+  // (out of scope for this file — do not edit the limiter definition here).
+  // ✅ Rate limiting with Redis
   const clientIdentifier = getClientIdentifier(request);
   const { success, limit, remaining, reset } = await enrichmentLimiter.limit(clientIdentifier);
 
@@ -211,13 +290,41 @@ export async function POST(request: NextRequest) {
 
   console.log('✅ Enrichment rate limit OK:', { remaining, limit });
 
+  // ✅ CSRF Protection (middleware)
+  const csrfCheck = validateCSRF(request);
+  if (!csrfCheck.success) return csrfCheck.response;
+
   try {
     const body = await request.json();
-    const { email, domain } = body;
+    const { email, domain, recaptchaToken } = body ?? {};
+
+    // reCAPTCHA: verify only if the client supplied a token (non-breaking for
+    // the current tokenless client). Enrichment burns paid API quota, so it is
+    // additionally gated by CSRF (same-origin), input bounds, and rate limiting.
+    // TODO(security): plumb a reCAPTCHA token + tighten the enrich rate limit.
+    if (recaptchaToken) {
+      const recaptchaCheck = await validateRecaptcha(
+        request,
+        recaptchaToken,
+        "lead_enrich",
+      );
+      if (!recaptchaCheck.success) return recaptchaCheck.response;
+    }
 
     if (!email && !domain) {
       return NextResponse.json(
         { error: "Either email or domain is required" },
+        { status: 400 },
+      );
+    }
+
+    // Bound input sizes before hitting external APIs.
+    if (
+      (typeof email === "string" && email.length > 254) ||
+      (typeof domain === "string" && domain.length > 253)
+    ) {
+      return NextResponse.json(
+        { error: "Invalid email or domain" },
         { status: 400 },
       );
     }

@@ -1,0 +1,251 @@
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, #fff 0%, var(--bg-2) 100%);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+  padding-top: 72px;
+  padding-bottom: 76px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #fff;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px 6px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy-3);
+  box-shadow: var(--shadow-s);
+}
+.tag {
+  background: var(--orange-t);
+  color: var(--orange-d);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.02em;
+}
+
+.title {
+  font-size: clamp(34px, 4.4vw, 52px);
+  margin: 22px 0 0;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: var(--navy);
+  font-weight: 700;
+}
+.accent {
+  color: var(--navy-3);
+}
+.lead {
+  margin-top: 22px;
+  max-width: 38ch;
+  font-size: 19px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+.cta {
+  display: flex;
+  gap: 14px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.assure {
+  display: flex;
+  gap: 22px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.assure div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  color: var(--slate);
+  font-weight: 500;
+}
+.assure svg {
+  width: 18px;
+  height: 18px;
+  color: var(--orange-d);
+  flex: none;
+}
+
+/* ===== Visual ===== */
+.visual {
+  position: relative;
+}
+.shieldCard {
+  background: var(--navy);
+  border-radius: 18px;
+  padding: 34px;
+  color: var(--on-dark-text);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -20px rgba(11, 31, 58, 0.5);
+}
+.gridBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.shieldHead {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+.shieldHead .ico {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  color: var(--orange-on-dark);
+}
+.shieldHead h3 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+.shieldSub {
+  font-size: 13px;
+  color: var(--on-dark-muted);
+}
+.list {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  position: relative;
+  display: grid;
+  gap: 2px;
+}
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  font-size: 14.5px;
+}
+.list li:first-child {
+  border-top: none;
+}
+.ck {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(255, 106, 0, 0.16);
+  color: var(--orange-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.ck svg {
+  width: 13px;
+  height: 13px;
+}
+.ckWarn {
+  background: rgba(255, 154, 77, 0.18);
+}
+.val {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--success);
+  font-weight: 600;
+}
+.valWarn {
+  color: #ffb877;
+}
+.foot {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.score {
+  font-family: var(--mono);
+  font-size: 34px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+.score em {
+  color: var(--orange-on-dark);
+  font-style: normal;
+}
+.lbl {
+  font-size: 12.5px;
+  color: var(--on-dark-muted);
+  line-height: 1.4;
+}
+.lbl b {
+  color: var(--orange-on-dark);
+}
+.floatChip {
+  position: absolute;
+  left: -22px;
+  bottom: 38px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 13px 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.floatChip .chipIc {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: var(--orange-t);
+  color: var(--orange-d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.floatChip b {
+  color: var(--navy);
+  font-size: 14px;
+  display: block;
+}
+.floatChip small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+  .visual {
+    max-width: 460px;
+  }
+}
+@media (max-width: 720px) {
+  .cta :global(a) {
+    flex: 1 1 auto;
+  }
+  .floatChip {
+    left: 12px;
+  }
+}

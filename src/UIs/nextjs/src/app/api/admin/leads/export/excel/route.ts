@@ -6,8 +6,12 @@
 
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { guardRoute } from "@/lib/auth/guard";
+import { escapeXml } from "@/lib/security/escape";
 
 export async function GET() {
+  const denied = await guardRoute("sales");
+  if (denied) return denied;
   try {
     // Fetch all leads from database
     const leads = await db.leads.getAll({ limit: 10000 });
@@ -56,14 +60,14 @@ function generateExcelXML(leads: any[]): string {
       <Cell><Data ss:Type="Number">${index + 1}</Data></Cell>
       <Cell><Data ss:Type="String">${new Date(lead.created_at).toLocaleDateString("fr-FR")}</Data></Cell>
       <Cell><Data ss:Type="String">${new Date(lead.created_at).toLocaleTimeString("fr-FR")}</Data></Cell>
-      <Cell ss:StyleID="grade${lead.score_grade}"><Data ss:Type="String">${lead.score_grade}</Data></Cell>
+      <Cell ss:StyleID="grade${escapeXml(lead.score_grade)}"><Data ss:Type="String">${escapeXml(lead.score_grade)}</Data></Cell>
       <Cell ss:StyleID="score"><Data ss:Type="Number">${lead.score_total}</Data></Cell>
       <Cell><Data ss:Type="Number">${lead.score_confidence}</Data></Cell>
-      <Cell><Data ss:Type="String">${escapeXML(lead.name)}</Data></Cell>
-      <Cell><Data ss:Type="String">${lead.email}</Data></Cell>
-      <Cell><Data ss:Type="String">${escapeXML(lead.company || "")}</Data></Cell>
-      <Cell><Data ss:Type="String">${lead.phone || ""}</Data></Cell>
-      <Cell><Data ss:Type="String">${lead.project_type || ""}</Data></Cell>
+      <Cell><Data ss:Type="String">${escapeXml(lead.name)}</Data></Cell>
+      <Cell><Data ss:Type="String">${escapeXml(lead.email)}</Data></Cell>
+      <Cell><Data ss:Type="String">${escapeXml(lead.company || "")}</Data></Cell>
+      <Cell><Data ss:Type="String">${escapeXml(lead.phone || "")}</Data></Cell>
+      <Cell><Data ss:Type="String">${escapeXml(lead.project_type || "")}</Data></Cell>
       <Cell ss:StyleID="currency"><Data ss:Type="Number">${estimate.min || 0}</Data></Cell>
       <Cell ss:StyleID="currency"><Data ss:Type="Number">${estimate.max || 0}</Data></Cell>
       <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${breakdown.project || 0}</Data></Cell>
@@ -71,9 +75,9 @@ function generateExcelXML(leads: any[]): string {
       <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${breakdown.completion || 0}</Data></Cell>
       <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${breakdown.enrichment || 0}</Data></Cell>
       <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${breakdown.behavioral || 0}</Data></Cell>
-      <Cell><Data ss:Type="String">${enrichment.company || ""}</Data></Cell>
+      <Cell><Data ss:Type="String">${escapeXml(enrichment.company || "")}</Data></Cell>
       <Cell><Data ss:Type="Number">${lead.enrichment_score || 0}</Data></Cell>
-      <Cell><Data ss:Type="String">${lead.confidence_level || ""}</Data></Cell>
+      <Cell><Data ss:Type="String">${escapeXml(lead.confidence_level || "")}</Data></Cell>
     </Row>`;
     })
     .join("");
@@ -184,14 +188,4 @@ function generateExcelXML(leads: any[]): string {
   </Table>
  </Worksheet>
 </Workbook>`;
-}
-
-function escapeXML(str: string): string {
-  if (!str) return "";
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
 }

@@ -13,8 +13,9 @@ function hashToken(token: string): string {
 
 // Store CSRF token (with expiration)
 export async function storeCsrfToken(token: string, ip: string): Promise<void> {
+  // Bug 429/mobile : la clé ne doit PAS dépendre de l'IP (elle change sur mobile)
   const hashedToken = hashToken(token);
-  const key = `csrf:${ip}:${hashedToken}`;
+  const key = `csrf:${hashedToken}`;
 
   if (redis) {
     // Store in Redis with 1 hour expiration
@@ -22,7 +23,7 @@ export async function storeCsrfToken(token: string, ip: string): Promise<void> {
   } else {
     // Fallback to in-memory (not ideal for production)
     // This is just for development
-    const memKey = `${ip}:${hashedToken}`;
+    const memKey = hashedToken;
     inMemoryCsrf.set(memKey, Date.now() + 60 * 60 * 1000);
   }
 }
@@ -35,7 +36,7 @@ export async function validateCsrfToken(
   if (!token) return false;
 
   const hashedToken = hashToken(token);
-  const key = `csrf:${ip}:${hashedToken}`;
+  const key = `csrf:${hashedToken}`;
 
   if (redis) {
     const exists = await redis.get(key);
@@ -47,7 +48,7 @@ export async function validateCsrfToken(
     return false;
   } else {
     // Fallback to in-memory
-    const memKey = `${ip}:${hashedToken}`;
+    const memKey = hashedToken;
     const expiry = inMemoryCsrf.get(memKey);
     if (expiry && Date.now() < expiry) {
       inMemoryCsrf.delete(memKey);
@@ -58,17 +59,7 @@ export async function validateCsrfToken(
 }
 
 // Fallback in-memory store for development
+// Note: no periodic cleanup here — this file runs in serverless invocations
+// where each invocation has its own memory, so a setInterval never fires
+// usefully. Redis (production) handles expiry via setex TTL.
 const inMemoryCsrf = new Map<string, number>();
-
-// Clean up expired tokens (run periodically)
-setInterval(
-  () => {
-    const now = Date.now();
-    for (const [key, expiry] of inMemoryCsrf.entries()) {
-      if (now > expiry) {
-        inMemoryCsrf.delete(key);
-      }
-    }
-  },
-  5 * 60 * 1000,
-); // Every 5 minutes

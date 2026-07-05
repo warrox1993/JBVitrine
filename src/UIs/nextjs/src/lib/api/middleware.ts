@@ -8,6 +8,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyRecaptchaEnterprise } from "@/lib/recaptcha";
 import { getClientIdentifier } from "@/lib/rate-limit-redis";
+import { isSameOrigin } from "@/lib/security/origin";
 
 export interface MiddlewareResult {
   success: boolean;
@@ -46,12 +47,18 @@ export function validateCSRF(request: NextRequest): MiddlewareResult {
   const referer = request.headers.get("referer");
   const host = request.headers.get("host");
 
+  // SECURITY (V-W6): the localhost bypass must be an EXACT host match and must
+  // only apply outside production. `host?.includes("localhost")` would match a
+  // hostile host like "localhost.attacker.com", defeating CSRF protection.
+  const isDev = process.env.NODE_ENV !== "production";
   const isLocalhost =
-    host?.includes("localhost") || host?.includes("127.0.0.1");
-  const isValidOrigin =
-    isLocalhost ||
-    origin?.includes(host || "") ||
-    referer?.includes(host || "");
+    isDev &&
+    !!host &&
+    (host === "localhost" ||
+      host === "127.0.0.1" ||
+      host.startsWith("localhost:") ||
+      host.startsWith("127.0.0.1:"));
+  const isValidOrigin = isLocalhost || isSameOrigin(origin, referer, host);
 
   if (!isValidOrigin) {
     const clientIdentifier = getClientIdentifier(request);
@@ -87,8 +94,13 @@ export async function validateRecaptcha(
 ): Promise<MiddlewareResult> {
   const clientIdentifier = getClientIdentifier(request);
 
-  // Skip reCAPTCHA in development/test mode
-  if (process.env.SKIP_RECAPTCHA === "true") {
+  // Skip reCAPTCHA in development/test mode ONLY.
+  // SECURITY (V-W6): SKIP_RECAPTCHA must NEVER take effect in production, even
+  // if the env var is accidentally set there.
+  if (
+    process.env.NODE_ENV !== "production" &&
+    process.env.SKIP_RECAPTCHA === "true"
+  ) {
     console.log(`[DEV] Skipping reCAPTCHA for ${action}`);
     return { success: true };
   }

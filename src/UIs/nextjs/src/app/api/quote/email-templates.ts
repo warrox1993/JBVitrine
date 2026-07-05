@@ -1,6 +1,7 @@
 import { QuoteSubmission } from "@/components/features/contact/QuoteWizard/types";
 import { formatPriceRange } from "@/lib/pricing/calculator";
 import { getProjectTypeConfig } from "@/lib/pricing/features";
+import { escapeHtml } from "@/lib/security/escape";
 
 // Client confirmation email
 export function getQuoteConfirmationEmailHtml(
@@ -32,7 +33,7 @@ export function getQuoteConfirmationEmailHtml(
           <tr>
             <td style="padding: 40px 30px;">
               <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.6; color: #333333;">
-                Bonjour <strong>${name}</strong>,
+                Bonjour <strong>${escapeHtml(name)}</strong>,
               </p>
 
               <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.6; color: #333333;">
@@ -48,15 +49,15 @@ export function getQuoteConfirmationEmailHtml(
                 <table role="presentation" style="width: 100%; border-collapse: collapse;">
                   <tr>
                     <td style="padding: 8px 0; font-size: 14px; color: #666666;">Référence :</td>
-                    <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #333333; text-align: right;">${quoteId}</td>
+                    <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #333333; text-align: right;">${escapeHtml(quoteId)}</td>
                   </tr>
                   <tr>
                     <td style="padding: 8px 0; font-size: 14px; color: #666666;">Budget estimé :</td>
-                    <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #ff6a00; text-align: right;">${formatPriceRange(estimate.min, estimate.max)}</td>
+                    <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #ff6a00; text-align: right;">${escapeHtml(formatPriceRange(estimate.min, estimate.max))}</td>
                   </tr>
                   <tr>
                     <td style="padding: 8px 0; font-size: 14px; color: #666666;">Délai :</td>
-                    <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #333333; text-align: right;">${estimate.timeline}</td>
+                    <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #333333; text-align: right;">${escapeHtml(estimate.timeline)}</td>
                   </tr>
                   <tr>
                     <td style="padding: 8px 0; font-size: 14px; color: #666666;">Fonctionnalités :</td>
@@ -174,12 +175,12 @@ export function getQuoteTeamNotificationEmailHtml(
               <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
                 <tr>
                   <td style="padding: 8px 0; font-size: 14px; color: #c8cdd6; width: 120px;">Nom :</td>
-                  <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">${contactInfo.name}</td>
+                  <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">${escapeHtml(contactInfo.name)}</td>
                 </tr>
                 <tr>
                   <td style="padding: 8px 0; font-size: 14px; color: #c8cdd6;">Email :</td>
                   <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">
-                    <a href="mailto:${contactInfo.email}" style="color: #ff6a00; text-decoration: none;">${contactInfo.email}</a>
+                    <a href="mailto:${escapeHtml(contactInfo.email)}" style="color: #ff6a00; text-decoration: none;">${escapeHtml(contactInfo.email)}</a>
                   </td>
                 </tr>
                 ${
@@ -187,7 +188,7 @@ export function getQuoteTeamNotificationEmailHtml(
                     ? `<tr>
                   <td style="padding: 8px 0; font-size: 14px; color: #c8cdd6;">Téléphone :</td>
                   <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">
-                    <a href="tel:${contactInfo.phone}" style="color: #ff6a00; text-decoration: none;">${contactInfo.phone}</a>
+                    <a href="tel:${escapeHtml(contactInfo.phone)}" style="color: #ff6a00; text-decoration: none;">${escapeHtml(contactInfo.phone)}</a>
                   </td>
                 </tr>`
                     : ""
@@ -196,7 +197,7 @@ export function getQuoteTeamNotificationEmailHtml(
                   contactInfo.company
                     ? `<tr>
                   <td style="padding: 8px 0; font-size: 14px; color: #c8cdd6;">Entreprise :</td>
-                  <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">${contactInfo.company}</td>
+                  <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">${escapeHtml(contactInfo.company)}</td>
                 </tr>`
                     : ""
                 }
@@ -210,21 +211,21 @@ export function getQuoteTeamNotificationEmailHtml(
               <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
                 <tr>
                   <td style="padding: 8px 0; font-size: 14px; color: #c8cdd6; width: 120px;">Type :</td>
-                  <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">${config?.name}</td>
+                  <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">${escapeHtml(config?.name)}</td>
                 </tr>
                 <tr>
                   <td style="padding: 8px 0; font-size: 14px; color: #c8cdd6;">Référence :</td>
-                  <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">${quoteId}</td>
+                  <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">${escapeHtml(quoteId)}</td>
                 </tr>
                 <tr>
                   <td style="padding: 8px 0; font-size: 14px; color: #c8cdd6;">Budget :</td>
                   <td style="padding: 8px 0; font-size: 16px; font-weight: 700; color: #ff6a00;">
-                    ${formatPriceRange(submission.estimate.min, submission.estimate.max)}
+                    ${escapeHtml(formatPriceRange(submission.estimate.min, submission.estimate.max))}
                   </td>
                 </tr>
                 <tr>
                   <td style="padding: 8px 0; font-size: 14px; color: #c8cdd6;">Délai :</td>
-                  <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">${submission.estimate.timeline}</td>
+                  <td style="padding: 8px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">${escapeHtml(submission.estimate.timeline)}</td>
                 </tr>
                 <tr>
                   <td style="padding: 8px 0; font-size: 14px; color: #c8cdd6;">Complexité :</td>
@@ -249,7 +250,7 @@ export function getQuoteTeamNotificationEmailHtml(
                 ${submission.quoteData.features
                   .map(
                     (f) =>
-                      `<li style="margin-bottom: 5px; font-size: 14px;">${f.name}</li>`,
+                      `<li style="margin-bottom: 5px; font-size: 14px;">${escapeHtml(f.name)}</li>`,
                   )
                   .join("")}
               </ul>
@@ -278,7 +279,7 @@ export function getQuoteTeamNotificationEmailHtml(
                 MESSAGE
               </h2>
               <div style="background-color: #161a22; border-left: 3px solid #ffc43a; padding: 15px; margin-bottom: 30px; border-radius: 4px;">
-                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #c8cdd6; white-space: pre-wrap;">${contactInfo.message}</p>
+                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #c8cdd6; white-space: pre-wrap;">${escapeHtml(contactInfo.message)}</p>
               </div>
               `
                   : ""
@@ -317,7 +318,7 @@ export function getQuoteTeamNotificationEmailHtml(
                 <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #2b3342;">
                   <h4 style="margin: 0 0 10px 0; font-size: 14px; font-weight: 600; color: #f6f7f9;">Raisons du score :</h4>
                   <ul style="margin: 0; padding-left: 20px; color: #c8cdd6; line-height: 1.6;">
-                    ${submission.leadScore.reasons.map((reason) => `<li style="font-size: 13px; margin-bottom: 5px;">${reason}</li>`).join("")}
+                    ${submission.leadScore.reasons.map((reason) => `<li style="font-size: 13px; margin-bottom: 5px;">${escapeHtml(reason)}</li>`).join("")}
                   </ul>
                 </div>
                 `
@@ -335,9 +336,9 @@ export function getQuoteTeamNotificationEmailHtml(
                 DONNEES MARKETING (UTM) :
               </h3>
               <ul style="margin: 0 0 30px 0; padding-left: 20px; color: #c8cdd6; line-height: 1.6;">
-                ${submission.utm.source ? `<li style="font-size: 14px;">Source : <strong style="color: #f6f7f9;">${submission.utm.source}</strong></li>` : ""}
-                ${submission.utm.campaign ? `<li style="font-size: 14px;">Campagne : <strong style="color: #f6f7f9;">${submission.utm.campaign}</strong></li>` : ""}
-                ${submission.utm.medium ? `<li style="font-size: 14px;">Medium : <strong style="color: #f6f7f9;">${submission.utm.medium}</strong></li>` : ""}
+                ${submission.utm.source ? `<li style="font-size: 14px;">Source : <strong style="color: #f6f7f9;">${escapeHtml(submission.utm.source)}</strong></li>` : ""}
+                ${submission.utm.campaign ? `<li style="font-size: 14px;">Campagne : <strong style="color: #f6f7f9;">${escapeHtml(submission.utm.campaign)}</strong></li>` : ""}
+                ${submission.utm.medium ? `<li style="font-size: 14px;">Medium : <strong style="color: #f6f7f9;">${escapeHtml(submission.utm.medium)}</strong></li>` : ""}
               </ul>
               `
                   : ""
@@ -345,7 +346,7 @@ export function getQuoteTeamNotificationEmailHtml(
 
               <!-- Action CTA -->
               <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 2px solid #2b3342;">
-                <a href="mailto:${contactInfo.email}" style="display: inline-block; background: linear-gradient(135deg, #ff6a00 0%, #ffc43a 100%); color: #ffffff; text-decoration: none; padding: 15px 40px; border-radius: 8px; font-weight: 600; font-size: 16px;">
+                <a href="mailto:${escapeHtml(contactInfo.email)}" style="display: inline-block; background: linear-gradient(135deg, #ff6a00 0%, #ffc43a 100%); color: #ffffff; text-decoration: none; padding: 15px 40px; border-radius: 8px; font-weight: 600; font-size: 16px;">
                   Répondre au client
                 </a>
               </div>

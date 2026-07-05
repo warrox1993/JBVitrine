@@ -15,7 +15,6 @@ import { Inter, Instrument_Sans } from 'next/font/google';
 import FXReady from './FXReady';
 import { RootEffects } from '@/components/Effects/RootEffects';
 import RouteProgressProvider from '@/app/RouteProgressProvider';
-import { SidebarMobileProvider } from '@/hooks/useSidebarMobile';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -42,63 +41,46 @@ const instrument = Instrument_Sans({
 
 export const metadata: Metadata = {
     title: {
-        default: 'Smidjan | Agence Web Liège - Développement, Cybersécurité & IA en Belgique',
-        template: '%s | Smidjan - Agence Digitale Liège',
+        default: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME — Liège, Wallonie',
+        // Les pages définissent des titres auto-brandés ("… | Smidjan — …"),
+        // donc pas de suffixe pour éviter de dupliquer "Smidjan".
+        template: '%s',
     },
     description:
-        'Agence digitale à Liège spécialisée en développement web sur mesure, cybersécurité et IA. Services pour toute la Belgique et la Wallonie. Sites performants, sécurisés et optimisés SEO.',
+        'Smidjan sécurise les réseaux, l\'infrastructure et les applications des PME wallonnes et les met en conformité NIS2 / CyberFundamentals (CCB). Audit, pentest, remédiation. Diagnostic gratuit à Liège.',
     keywords: [
-        // Localisation géographique (CRITIQUE pour le SEO local)
-        'agence web Liège',
-        'développement web Liège',
-        'agence digitale Liège',
-        'création site internet Liège',
-        'agence web Wallonie',
-        'développement web Belgique',
-        'agence digitale Belgique',
-        'web agency Liège',
-
-        // Services principaux
-        'développement web sur mesure',
-        'création site web professionnel',
-        'application web React',
-        'développement web',
-        'site e-commerce Belgique',
-
-        // Cybersécurité
+        // Cœur de métier — cybersécurité
+        'cybersécurité PME Liège',
+        'cybersécurité Wallonie',
         'cybersécurité Belgique',
-        'audit sécurité web',
-        'tests SAST DAST',
-        'sécurisation site web',
-        'protection données RGPD',
+        'sécurité des réseaux et infrastructure',
+        'audit de sécurité informatique',
+        'test d\'intrusion pentest Liège',
+        'sécurisation des systèmes PME',
 
-        // IA et automatisation
-        'automatisation IA',
-        'intelligence artificielle entreprise',
-        'automatisation n8n',
-        'intégration IA',
+        // Conformité NIS2 / CyFun — offre phare
+        'conformité NIS2 Belgique',
+        'NIS2 PME',
+        'CyberFundamentals CyFun CCB',
+        'analyse d\'écart NIS2',
+        'remédiation cybersécurité',
+        'niveaux CyFun Basic Important Essential',
+        'préparation vérification CyFun',
 
-        // Design et UX
-        'design UI/UX',
-        'refonte site web',
-        'optimisation expérience utilisateur',
+        // Accessoire — développement web sécurisé
+        'développement web sécurisé',
+        'application web sécurisée Next.js',
 
-        // SEO et performance
-        'SEO technique',
-        'optimisation performances web',
-        'référencement naturel',
-        'site web rapide',
-
-        // Villes et régions ciblées
+        // Localisation
+        'expert cybersécurité Liège',
         'Namur',
         'Charleroi',
         'Mons',
         'Verviers',
-        'Tournai',
         'Bruxelles',
     ],
     authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
-    creator: 'Smidjan - Agence Digitale Liège',
+    creator: 'Smidjan',
     publisher: 'Smidjan',
 
     // IMPORTANT: Remplace par ton vrai domaine dès que disponible
@@ -113,17 +95,17 @@ export const metadata: Metadata = {
     },
 
     openGraph: {
-        title: 'Smidjan | Agence Web à Liège - Développement, Cybersécurité & IA',
+        title: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME — Liège',
         description:
-            'Agence digitale basée à Liège, Belgique. Développement web sur mesure, cybersécurité, automatisation IA. Services pour toute la Wallonie et la Belgique.',
+            'On sécurise vos réseaux, votre infrastructure et vos applications, et on vous met en conformité NIS2 / CyFun — et on corrige ce qu\'on trouve. Diagnostic gratuit pour les PME de Wallonie.',
         url: 'https://smidjan.be',
-        siteName: 'Smidjan',
+        siteName: 'Smidjan — Cybersécurité Liège',
         images: [
             {
                 url: "https://smidjan.be/og-image.webp",
                 width: 1200,
                 height: 630,
-                alt: 'Smidjan - Agence Web à Liège | Développement Web, Cybersécurité et IA en Belgique',
+                alt: 'Smidjan — Cybersécurité & conformité NIS2 pour les PME à Liège',
                 type: 'image/webp',
             }
         ],
@@ -133,8 +115,8 @@ export const metadata: Metadata = {
 
     twitter: {
         card: 'summary_large_image',
-        title: 'Smidjan | Agence Web Liège - Développement & Cybersécurité',
-        description: 'Agence digitale à Liège. Sites web sur mesure, sécurisés et performants pour toute la Belgique.',
+        title: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME — Liège',
+        description: 'Sécurité des réseaux, pentest et conformité NIS2 / CyFun pour les PME wallonnes. Diagnostic gratuit à Liège.',
         images: ['/og-image.webp'],
         // Ajoute ton Twitter si tu en as un
         // creator: '@smidjan',
@@ -174,7 +156,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-    themeColor: '#000000',
+    themeColor: '#0b1f3a',
     width: 'device-width',
     initialScale: 1,
 };
@@ -190,12 +172,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </head>
             <body className={`${inter.variable} ${instrument.variable}`}>
                 <FXReady />
-                <SidebarMobileProvider>
-                    <RootEffects>
-                        <RouteProgressProvider />
-                        {children}
-                    </RootEffects>
-                </SidebarMobileProvider>
+                <RootEffects>
+                    <RouteProgressProvider />
+                    {children}
+                </RootEffects>
                 <ToastContainer
                     position="bottom-right"
                     autoClose={5000}
@@ -206,7 +186,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     pauseOnFocusLoss
                     draggable
                     pauseOnHover
-                    theme="dark"
+                    theme="light"
                 />
                 {process.env.NODE_ENV === 'production' && (
                     <>

@@ -3,6 +3,7 @@
 import fs from "fs/promises";
 import path from "path";
 import { revalidatePath } from "next/cache";
+import { requireAuth } from "@/lib/auth";
 
 export interface BlogArticle {
   slug: string;
@@ -11,6 +12,8 @@ export interface BlogArticle {
   publishedAt: string;
   category: string;
   readTime: string;
+  /** Optional real photo cover (e.g. "/images/blog/<slug>.jpg"). Falls back to ArticleCoverSvg when unset. */
+  coverImage?: string;
   content: string;
   tableOfContents: { title: string; id: string }[];
 }
@@ -85,6 +88,7 @@ export async function getArticleBySlug(
 export async function createArticle(
   article: BlogArticle,
 ): Promise<{ success: boolean; error?: string }> {
+  await requireAuth("sales");
   try {
     const articles = await getAllArticles();
 
@@ -113,6 +117,7 @@ export async function updateArticle(
   slug: string,
   updatedArticle: BlogArticle,
 ): Promise<{ success: boolean; error?: string }> {
+  await requireAuth("sales");
   try {
     const articles = await getAllArticles();
     const index = articles.findIndex((a) => a.slug === slug);
@@ -154,6 +159,7 @@ export async function updateArticle(
 export async function deleteArticle(
   slug: string,
 ): Promise<{ success: boolean; error?: string }> {
+  await requireAuth("sales");
   try {
     const articles = await getAllArticles();
     const filteredArticles = articles.filter((a) => a.slug !== slug);

@@ -2,17 +2,17 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Smidjan",
-  alternateName: "Smidjan Studio Web",
+  alternateName: "Smidjan Cybersécurité",
   url: "https://smidjan.be",
   logo: "https://smidjan.be/logo.png",
   description:
-    "Studio web à Liège spécialisé en développement de sites, e-commerce, SEO et design digital. Services pour toute la Belgique et la Wallonie.",
+    "Smidjan sécurise les réseaux, l'infrastructure et les applications des PME wallonnes, et les met en conformité NIS2 / CyberFundamentals (CCB). Audit, remédiation et accompagnement, en Belgique.",
   foundingDate: "2025",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Service",
-    telephone: "+32 475 20 55 62",
-    email: "smidjan.agency@outlook.com",
+    telephone: "+32475205562",
+    email: "contact@smidjan.be",
     availableLanguage: ["fr-BE", "French"],
     areaServed: ["BE", "Wallonie", "Liège"],
   },
@@ -35,7 +35,7 @@ export const websiteSchema = {
   name: "Smidjan",
   url: "https://smidjan.be",
   description:
-    "Studio web à Liège spécialisé en développement de sites, e-commerce, SEO et design digital.",
+    "Cybersécurité des réseaux, de l'infrastructure et des applications, et mise en conformité NIS2 / CyberFundamentals pour les PME en Belgique.",
   inLanguage: "fr-BE",
   publisher: {
     "@type": "Organization",
@@ -51,14 +51,14 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": "https://smidjan.be/#organization",
-  name: "Smidjan - Agence Web Liège",
-  alternateName: "Smidjan Studio Web",
+  name: "Smidjan — Cybersécurité & conformité NIS2, Liège",
+  alternateName: "Smidjan Cybersécurité",
   image: "https://smidjan.be/og-image.webp",
   description:
-    "Agence digitale à Liège spécialisée en développement web, design web et cybersécurité RGPD. Audit SEO gratuit. Services pour PME Belgique et Wallonie.",
+    "Prestataire cybersécurité à Liège : sécurisation des réseaux, de l'infrastructure et des applications, audit et remédiation, mise en conformité NIS2 / CyberFundamentals (CCB) pour les PME en Belgique et en Wallonie.",
   url: "https://smidjan.be",
-  telephone: "+32 475 20 55 62",
-  email: "contact.smidjan@outlook.com",
+  telephone: "+32475205562",
+  email: "contact@smidjan.be",
   address: {
     "@type": "PostalAddress",
     addressCountry: "BE",
@@ -99,47 +99,49 @@ export const localBusinessSchema = {
     "https://www.facebook.com/jeanbaptiste.dhondt",
     "https://github.com/warrox1993",
   ],
-  // Services offerts - SEO 2025
+  // Services offerts — positionnement cyber-first
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Services Agence Web Liège",
+    name: "Services de cybersécurité — Smidjan",
     itemListElement: [
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Développement Web Next.js",
+          name: "Conformité NIS2 & CyberFundamentals (CCB)",
           description:
-            "Création de sites web performants avec Next.js et React",
-          serviceType: "Développement web",
+            "Audit d'écart, remédiation et accompagnement jusqu'à la vérification, aux niveaux Basic, Important et Essential du référentiel CyberFundamentals.",
+          serviceType: "Conformité & audit cybersécurité",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Audit SEO Gratuit",
-          description: "Analyse SEO complète de votre site web",
-          serviceType: "SEO",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Cybersécurité & Audit RGPD",
+          name: "Sécurité des réseaux & de l'infrastructure",
           description:
-            "Sécurisation et mise en conformité RGPD de vos sites web",
-          serviceType: "Cybersécurité",
+            "Segmentation, pare-feu, durcissement, sauvegardes et supervision pour protéger vos systèmes.",
+          serviceType: "Sécurité infrastructure",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Design Web & UI/UX",
-          description: "Conception d'interfaces modernes et accessibles",
-          serviceType: "Design",
+          name: "Tests d'intrusion & audit de sécurité",
+          description:
+            "Pentests web et applicatifs suivant une approche inspirée d'OWASP, avec plan de remédiation priorisé.",
+          serviceType: "Test d'intrusion",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Développement web sécurisé",
+          description:
+            "Applications et sites conçus avec la sécurité intégrée dès la conception (secure by design).",
+          serviceType: "Développement web sécurisé",
         },
       },
     ],
@@ -152,57 +154,57 @@ export const localBusinessSchema = {
   // }
 };
 
-// FAQPage Schema - SEO 2025
+// FAQPage Schema — reflète la FAQ visible de /conformite-nis2 (NIS2 / CyFun)
 export const faqPageSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
     {
       "@type": "Question",
-      name: "Quels services propose Smidjan à Liège ?",
+      name: "Suis-je concerné par NIS2 ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Smidjan est une agence web à Liège spécialisée en développement web, design web, cybersécurité RGPD et automatisation IA. Nous proposons également des audits SEO gratuits pour les PME en Belgique et Wallonie.",
+        text: "Cela dépend de votre secteur et de la taille de votre entreprise. NIS2 vise les entités essentielles (énergie, santé, transport, finance, infrastructures numériques…) et les entités importantes (fabrication, agroalimentaire, services numériques, chimie…). De nombreuses PME sont concernées, y compris indirectement en tant que fournisseurs ou sous-traitants. En cas de doute, notre diagnostic gratuit clarifie votre situation.",
       },
     },
     {
       "@type": "Question",
-      name: "Pourquoi choisir Next.js pour mon site web ?",
+      name: "Quelle est la différence entre CyFun et ISO/IEC 27001 ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Next.js offre des performances exceptionnelles avec un SEO optimisé dès le départ, un chargement ultra-rapide grâce au SSR/SSG, et une expérience utilisateur fluide. C'est la technologie idéale pour les sites vitrines et e-commerce modernes.",
+        text: "ISO/IEC 27001 est une norme internationale de management de la sécurité de l'information. CyberFundamentals (CyFun) est le cadre belge du CCB, conçu pour répondre à NIS2 et aligné sur ISO 27001 et le NIST CSF. CyFun est souvent un point d'entrée plus accessible et progressif pour une PME, avec ses trois niveaux (Basic, Important, Essential), tout en restant compatible avec une démarche ISO 27001 ultérieure.",
       },
     },
     {
       "@type": "Question",
-      name: "Qu'est-ce qu'un audit SEO gratuit ?",
+      name: "Est-ce que Smidjan délivre la certification CyFun ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Notre audit SEO gratuit analyse les performances de votre site web : vitesse de chargement, optimisation mobile, structure des données, mots-clés, et accessibilité. Vous recevez un rapport détaillé avec des recommandations concrètes pour améliorer votre référencement.",
+        text: "Non. Smidjan n'est pas un organisme de certification et n'est pas accrédité BELAC. La certification / vérification officielle CyFun est délivrée par des organismes accrédités par BELAC, indépendants de nous. Notre rôle est complémentaire : audit, analyse d'écart, remédiation et préparation — nous vous rendons prêts et conformes pour que l'organisme accrédité valide votre niveau.",
       },
     },
     {
       "@type": "Question",
-      name: "Comment Smidjan assure la cybersécurité de mon site ?",
+      name: "Combien de temps faut-il pour se mettre en conformité ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Nous effectuons des audits de sécurité complets (SAST/DAST), mettons en place des protections RGPD, sécurisons vos données, et appliquons les meilleures pratiques de sécurité web (HTTPS, CSP, sanitisation des données, authentification sécurisée).",
+        text: "Cela dépend du niveau visé, de votre maturité de départ et de la taille du périmètre. À titre indicatif : de l'ordre de 1 à 3 mois pour Basic, 3 à 6 mois pour Important et 6 à 12 mois pour Essential. Comme NIS2 est déjà en vigueur, il est recommandé de lancer la démarche sans attendre.",
       },
     },
     {
       "@type": "Question",
-      name: "Quel est le délai de création d'un site web ?",
+      name: "Que se passe-t-il si je ne fais rien ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Le délai varie selon la complexité : 2-3 semaines pour un site vitrine simple, 4-6 semaines pour un site avec fonctionnalités avancées, et 8-12 semaines pour un e-commerce complet. Nous établissons un calendrier précis lors du devis.",
+        text: "La non-conformité expose à des amendes administratives significatives et engage la responsabilité des organes de direction. Surtout, l'absence de mesures augmente votre exposition réelle : un incident (rançongiciel, fuite de données) coûte généralement bien plus cher qu'une mise en conformité anticipée.",
       },
     },
     {
       "@type": "Question",
-      name: "Smidjan travaille-t-il avec des PME en Belgique ?",
+      name: "Quel niveau CyFun choisir pour ma PME ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Oui ! Nous sommes spécialisés dans l'accompagnement des PME belges, particulièrement en Wallonie (Liège, Namur, Charleroi, Mons). Nous proposons des solutions sur mesure adaptées aux budgets et besoins des petites et moyennes entreprises.",
+        text: "Pour beaucoup de PME, le niveau Important offre le bon équilibre entre exigence et effort. Le niveau Basic est un excellent point de départ (il couvre l'essentiel des attaques courantes), tandis qu'Essential s'adresse aux entités essentielles NIS2 et aux organisations à forte exigence de sécurité. Lors du cadrage, nous recommandons le niveau le plus pertinent — ni surdimensionné, ni insuffisant.",
       },
     },
   ],
@@ -238,7 +240,7 @@ export const createArticleSchema = ({
   author: {
     "@type": "Person",
     name: author,
-    url: "https://smidjan.be/about",
+    url: "https://smidjan.be/agence",
   },
   publisher: {
     "@type": "Organization",

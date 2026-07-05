@@ -1,0 +1,35 @@
+/* Section — standard vertical rhythm + background variants. */
+.section {
+  padding: var(--section-y) 0;
+  position: relative;
+}
+.white {
+  background: #fff;
+}
+.tint {
+  background: var(--bg-2);
+}
+.tint3 {
+  background: var(--bg-3);
+}
+.navy {
+  background: var(--navy);
+  color: #fff;
+  overflow: hidden;
+  border-top: 1px solid var(--navy-3);
+}
+.gridBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.inner {
+  position: relative;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 60px 0;
+  }
+}

@@ -1,112 +1,121 @@
-/* Unified Button styles (no color creation; tokens only) */
+/* ============================================================
+   Button — Smidjan navy/orange system (refonte-design Phase 2)
+   Ported from the approved mockup .btn / .btn-* classes.
+   Tokens only; no colour creation.
+   ============================================================ */
 .root {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
+  gap: 8px;
+  font: 600 15px/1 var(--sans);
   border: 1px solid transparent;
+  border-radius: var(--radius-s);
   text-decoration: none;
   white-space: nowrap;
+  cursor: pointer;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-
-  font-size: var(--text-base);
-  font-weight: 600;
-  border-radius: var(--radius-lg);
-  cursor: pointer;
-
   transition:
-    transform var(--btn-anim-t) var(--btn-anim-ease),
-    box-shadow var(--btn-anim-t) var(--btn-anim-ease),
-    filter var(--btn-anim-t) var(--btn-anim-ease),
-    background-position var(--btn-anim-t) var(--btn-anim-ease),
-    opacity var(--btn-anim-t) var(--btn-anim-ease);
-  will-change: transform, box-shadow, filter, background-position, opacity;
+    background 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease,
+    transform 0.05s ease;
 }
 
 .root:hover {
   text-decoration: none;
 }
+.root:active {
+  transform: translateY(1px);
+}
 
 /* Sizes */
 .sm {
-  height: 50px;
-  padding: 0 calc(1.1rem + 5px);
-  font-size: 0.9rem;
+  padding: 10px 16px;
+  font-size: 14px;
 }
 .md {
-  height: 58px;
-  padding: 0 calc(1.3rem + 5px);
-  font-size: 1rem;
+  padding: 13px 22px;
+  font-size: 15px;
 }
 .lg {
-  height: 66px;
-  padding: 0 calc(1.45rem + 5px);
-  font-size: 1.0625rem;
+  padding: 15px 28px;
+  font-size: 16px;
 }
 .fullWidth {
   width: 100%;
 }
 
 /* Variants */
-.solid {
-  background-color: var(--color-primary);
-  color: var(--color-primary-contrast);
-  box-shadow: var(--shadow-glow);
+.primary {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
 }
-.solid:hover {
-  background-color: var(--color-primary-strong);
-  color: var(--color-primary-contrast);
-  transform: translateY(-2px);
-}
-.solid:active {
-  background-color: color-mix(
-    in srgb,
-    var(--color-primary-strong) 85%,
-    #000 15%
-  );
-  color: var(--color-primary-contrast);
-  transform: scale(0.98);
+.primary:hover {
+  background: var(--orange-d);
+  border-color: var(--orange-d);
+  color: #fff;
 }
 
-.outline {
-  background: transparent;
-  color: var(--btn-outline-fg);
-  border-color: var(--btn-outline-border);
-  box-shadow: var(--shadow-md);
+.navy {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
 }
-.outline:hover {
-  background: var(--btn-outline-bg-hover);
-  color: var(--btn-outline-fg);
-}
-.outline:active {
-  transform: scale(0.98);
+.navy:hover {
+  background: var(--navy-2);
+  color: #fff;
 }
 
 .ghost {
   background: transparent;
-  color: var(--btn-ghost-fg);
-  border-color: transparent;
+  color: var(--navy);
+  border-color: var(--line-2);
 }
 .ghost:hover {
-  background: var(--btn-ghost-bg-hover);
-  color: var(--btn-ghost-fg);
+  border-color: var(--navy);
+  background: var(--bg-2);
+  color: var(--navy);
 }
-.ghost:active {
-  transform: scale(0.98);
+
+/* Light — white fill, navy text (for use on navy backgrounds) */
+.light {
+  background: #fff;
+  color: var(--navy);
+  border-color: #fff;
+}
+.light:hover {
+  background: var(--bg-2);
+  color: var(--navy);
+}
+
+/* Ghost on dark — transparent with light border (on navy backgrounds) */
+.ghostD {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+.ghostD:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
 }
 
 /* State */
 .root:focus-visible {
-  outline: none;
-  box-shadow: var(--btn-focus-ring);
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
 }
 .root:disabled,
 .disabled {
-  background: var(--btn-disabled-bg);
-  color: var(--btn-disabled-fg);
-  border-color: var(--btn-border-disabled);
+  opacity: 0.55;
   cursor: not-allowed;
+}
+.root:disabled:active,
+.disabled:active {
+  transform: none;
 }
 
 /* Icons */
@@ -115,31 +124,15 @@
   align-items: center;
 }
 .icon svg {
-  width: 1.1em;
-  height: 1.1em;
-}
-
-/* Augmenter légèrement les tailles sur mobile pour faciliter le toucher */
-@media (max-width: 768px) {
-  .sm {
-    height: 54px;
-    font-size: 0.95rem;
-  }
-  .md {
-    height: 62px;
-    font-size: 1.05rem;
-  }
-  .lg {
-    height: 70px;
-    font-size: 1.125rem;
-  }
+  width: 16px;
+  height: 16px;
+  flex: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .root {
     transition: none;
   }
-  .root:hover,
   .root:active {
     transform: none;
   }

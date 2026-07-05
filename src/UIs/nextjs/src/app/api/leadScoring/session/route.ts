@@ -10,9 +10,36 @@ import {
   leadScoringLimiter,
   getClientIdentifier,
 } from "@/lib/rate-limit-redis";
+import { validateCSRF } from "@/lib/api/middleware";
+
+// Hard cap on request body size for this route (session blobs can be large).
+const MAX_SESSION_BODY_BYTES = 200 * 1024; // 200 KB
+// Maximum number of entries accepted in the session arrays.
+const MAX_SESSION_ARRAY_LEN = 500;
+
+/** Safe array: only keep arrays, truncated to a bounded length. */
+function boundedArray(value: unknown): unknown[] {
+  return Array.isArray(value) ? value.slice(0, MAX_SESSION_ARRAY_LEN) : [];
+}
+
+/** Coerce a client numeric into a finite non-negative bounded number. */
+function boundedNumber(value: unknown, max: number): number {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return 0;
+  return Math.min(max, Math.max(0, n));
+}
 
 export async function POST(request: NextRequest) {
   try {
+    // ✅ Payload size guard
+    const contentLength = Number(request.headers.get("content-length") || 0);
+    if (
+      Number.isFinite(contentLength) &&
+      contentLength > MAX_SESSION_BODY_BYTES
+    ) {
+      return NextResponse.json({ error: "Payload too large" }, { status: 413 });
+    }
+
     // Rate limiting check
     const clientIdentifier = getClientIdentifier(request);
     const { success, reset } = await leadScoringLimiter.limit(clientIdentifier);
@@ -34,14 +61,32 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Note: this route is invoked via navigator.sendBeacon, which sends
+    // Content-Type: text/plain (not application/json). We therefore do NOT
+    // enforce validateContentType here; request.json() still parses the body.
+
+    // ✅ CSRF Protection (middleware)
+    const csrfCheck = validateCSRF(request);
+    if (!csrfCheck.success) return csrfCheck.response;
+
     const { sessionId, data } = await request.json();
 
-    if (!sessionId || !data) {
+    if (
+      !sessionId ||
+      typeof sessionId !== "string" ||
+      sessionId.length > 200 ||
+      !data ||
+      typeof data !== "object"
+    ) {
       return NextResponse.json(
         { error: "Missing required fields: sessionId, data" },
         { status: 400 },
       );
     }
+
+    // ✅ Loose schema validation: bound string lengths on stored scalar fields.
+    const boundStr = (v: unknown): string | undefined =>
+      typeof v === "string" ? v.slice(0, 500) : undefined;
 
     // Log for debugging
     console.log(`💾 Saving session ${sessionId}:`, {
@@ -54,25 +99,32 @@ export async function POST(request: NextRequest) {
     });
 
     // ✅ Save to database
+    const startedAt = new Date(data.sessionStart);
     const savedSession = await db.sessions.upsert({
       session_id: sessionId,
-      started_at: new Date(data.sessionStart),
-      duration_ms: data.sessionDuration || 0,
-      visited_pages: data.visitedPages || [],
-      landing_page: data.landingPage,
-      referrer: data.referrer,
-      utm_source: data.utm_source,
-      utm_medium: data.utm_medium,
-      utm_campaign: data.utm_campaign,
-      device: data.device,
-      browser: data.browser,
-      os: data.os,
-      wizard_started: data.wizardStarted || false,
-      wizard_step: data.wizardStep || 0,
-      wizard_back_clicks: data.wizardBackClicks || 0,
-      info_bubbles_opened: data.infoBubbleOpened || [],
-      engagement_score: data.engagementScore || 0,
-      intent_score: data.intentScore || 0,
+      started_at: Number.isNaN(startedAt.getTime()) ? new Date() : startedAt,
+      duration_ms: boundedNumber(data.sessionDuration, 30 * 24 * 3600 * 1000),
+      visited_pages: boundedArray(data.visitedPages),
+      landing_page: boundStr(data.landingPage),
+      referrer: boundStr(data.referrer),
+      utm_source: boundStr(data.utm_source),
+      utm_medium: boundStr(data.utm_medium),
+      utm_campaign: boundStr(data.utm_campaign),
+      device: (["mobile", "tablet", "desktop"] as const).includes(
+        data.device,
+      )
+        ? (data.device as "mobile" | "tablet" | "desktop")
+        : undefined,
+      browser: boundStr(data.browser),
+      os: boundStr(data.os),
+      wizard_started: data.wizardStarted === true,
+      wizard_step: boundedNumber(data.wizardStep, 1000),
+      wizard_back_clicks: boundedNumber(data.wizardBackClicks, 100000),
+      info_bubbles_opened: boundedArray(data.infoBubbleOpened).filter(
+        (x): x is string => typeof x === "string",
+      ),
+      engagement_score: boundedNumber(data.engagementScore, 100),
+      intent_score: boundedNumber(data.intentScore, 100),
     });
 
     console.log(`✅ Session saved to database: ${savedSession.id}`);
