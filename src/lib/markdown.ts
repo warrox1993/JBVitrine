@@ -73,7 +73,7 @@ const renderer = {
     const safe = /^(https?:|mailto:|\/|#)/i.test(href ?? "");
     const finalHref = safe ? href : "#";
     const titleAttr = title ? ` title="${escapeHtml(title)}"` : "";
-    return `<a href="${finalHref}"${titleAttr} rel="noopener noreferrer">${text}</a>`;
+    return `<a href="${escapeHtml(finalHref ?? "#")}"${titleAttr} rel="noopener noreferrer">${text}</a>`;
   },
 };
 

@@ -31,7 +31,9 @@ export function escapeHtml(v: unknown): string {
 export function escapeCsvCell(v: unknown): string {
   if (v === null || v === undefined) return "";
   const s = String(v);
-  if (/^[=+\-@\t\r]/.test(s)) {
+  // Prefix cells starting with whitespace or a formula trigger (= + - @),
+  // covering leading space/newline/tab/CR variants some spreadsheets evaluate.
+  if (/^[\s=+\-@]/.test(s)) {
     return `'${s}`;
   }
   return s;
