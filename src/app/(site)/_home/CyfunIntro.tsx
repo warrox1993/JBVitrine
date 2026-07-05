@@ -16,14 +16,14 @@ export function CyfunIntro() {
           <span className="accent">concrètement</span>
         </h2>
         <p className={styles.lead}>
-          La directive européenne <b>NIS2</b> impose à des milliers d&apos;entreprises belges — y
-          compris de nombreuses PME et leurs sous-traitants — un niveau minimal de cybersécurité. En
-          Belgique, la réponse officielle est le <b>CyberFundamentals Framework (CyFun)</b>, publié
-          par le <b>Centre pour la Cybersécurité Belgique (CCB)</b>.
+          La directive <b>NIS2</b> impose un niveau minimal de cybersécurité à des milliers
+          d&apos;entreprises belges — PME et sous-traitants inclus. En Belgique, la réponse
+          officielle s&apos;appelle <b>CyFun</b> (CyberFundamentals Framework), publiée par le{" "}
+          <b>CCB</b>.
         </p>
         <StatHook className={styles.hook} value="~82%">
-          <b>Le niveau Basic couvre déjà environ 82&nbsp;% des attaques courantes.</b> Pour la
-          plupart des PME, c&apos;est le point de départ le plus efficace vers la conformité.
+          <b>Le niveau Basic couvre déjà ~82&nbsp;% des attaques courantes.</b> Le point de départ
+          le plus rentable pour une PME.
         </StatHook>
       </div>
 
@@ -37,16 +37,15 @@ export function CyfunIntro() {
           <div>
             <h3>NIS2 est déjà en vigueur</h3>
             <p>
-              Applicable en Belgique depuis le 18 octobre 2024. La conformité est déjà exigée —
-              agir maintenant réduit la pression et le risque de sanction.
+              En vigueur depuis le 18 octobre 2024. Agir maintenant réduit le risque de sanction.
             </p>
           </div>
         </div>
         <div className={styles.fine}>
           <Icon name="alert-circle" />
           <span>
-            Le non-respect de NIS2 expose à des amendes administratives significatives et engage la
-            responsabilité de la direction.
+            Non-conformité&nbsp;: amendes administratives et responsabilité personnelle de la
+            direction.
           </span>
         </div>
       </aside>

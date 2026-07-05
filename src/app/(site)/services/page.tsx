@@ -162,9 +162,8 @@ export default function ServicesPage() {
               Sécuriser, tester, développer, <span className="accent">se conformer</span>.
             </h1>
             <p className={styles.heroLead}>
-              Smidjan durcit votre infrastructure, teste vos applications, développe en secure by
-              design et vous mène à la conformité NIS2 / CyFun — un seul interlocuteur, du premier
-              appel à la remédiation.
+              Infrastructure durcie. Applications testées. Code secure by design.
+              Conformité NIS2 / CyFun. Un seul interlocuteur, du premier appel à la remédiation.
             </p>
             <div className={styles.heroActions}>
               <Button
@@ -200,14 +199,14 @@ export default function ServicesPage() {
           icon="server"
           kicker="Sécuriser"
           title="Réseaux & infrastructure"
-          intro="Nous durcissons le socle technique de votre entreprise pour bloquer les attaques avant qu'elles n'atteignent vos données. Segmentation, filtrage, accès distant maîtrisé, détection sur les postes, sauvegardes réellement testées : une défense en profondeur, pensée pour un budget et une équipe de PME — pas une usine à gaz."
+          intro="Bloquez les attaques avant qu'elles n'atteignent vos données. Segmentation, accès distant maîtrisé, détection, sauvegardes testées — une défense en profondeur taillée pour une PME."
           visual={<SecureVisual />}
           capabilities={[
             { title: "Pare-feu & segmentation", description: "Cloisonnement du réseau, règles de filtrage, isolation des zones sensibles." },
-            { title: "VPN & accès distant", description: "Télétravail et accès prestataires sécurisés, avec authentification forte." },
+            { title: "VPN & accès distant", description: "Télétravail et accès prestataires sécurisés, authentification forte." },
             { title: "EDR / antivirus nouvelle génération", description: "Détection et blocage des menaces sur les postes et serveurs." },
             { title: "Supervision & journalisation", description: "Collecte des logs, alertes sur les comportements suspects, traçabilité." },
-            { title: "Sauvegardes & PRA", description: "Sauvegardes chiffrées, hors-ligne, et plan de reprise d'activité testé." },
+            { title: "Sauvegardes & PRA", description: "Sauvegardes chiffrées, hors-ligne, plan de reprise testé." },
             { title: "Durcissement (hardening)", description: "Configuration sécurisée des serveurs, postes, comptes et services." },
           ]}
           audience={[
@@ -234,7 +233,7 @@ export default function ServicesPage() {
           kicker="Tester"
           title="Audits & pentest"
           intro={
-            "Nous pensons comme un attaquant pour révéler vos failles avant qu'un vrai ne le fasse. Nos tests d'intrusion suivent une approche méthodique inspirée d'OWASP, avec des preuves d'exploitation concrètes et un plan de remédiation priorisé. Et surtout : nous ne nous arrêtons pas au constat — nous vous aidons à corriger ce que nous trouvons."
+            "On pense comme un attaquant pour trouver vos failles avant lui. Méthodologie OWASP, preuves d'exploitation concrètes, plan de remédiation priorisé — et on vous aide à corriger, pas juste à constater."
           }
           visual={<TestVisual alt />}
           alt
@@ -267,7 +266,7 @@ export default function ServicesPage() {
           icon="code"
           kicker="Développer"
           title="Développement web sécurisé"
-          intro="Nous concevons des sites et applications sur mesure où la sécurité est intégrée dès la première ligne de code — le principe « secure by design ». Plutôt que de sécuriser après coup, nous anticipons les menaces à la conception. Nous reprenons aussi les applications existantes fragiles pour les remettre à niveau et en conformité."
+          intro="La sécurité est intégrée dès la première ligne de code — pas ajoutée après coup. Secure by design pour vos nouveaux projets, remise à niveau pour vos applications existantes fragiles."
           visual={<DevVisual />}
           capabilities={[
             { title: "Sites & applications sur mesure", description: "Développement adapté à vos processus métier, sans dette de sécurité." },
@@ -301,10 +300,8 @@ export default function ServicesPage() {
             </h2>
             <p className={styles.partnerLead}>
               La plupart des prestataires font l&apos;un <em>ou</em> l&apos;autre. Nous couvrons la
-              chaîne complète : nous développons vos applications, nous les mettons à
-              l&apos;épreuve, nous sécurisons votre infrastructure et nous vous amenons à la
-              conformité. Un interlocuteur unique, une cohérence de bout en bout, et personne à
-              qui renvoyer la balle.
+              chaîne complète — développement, sécurisation, mise en conformité. Un seul
+              interlocuteur, aucune balle renvoyée.
             </p>
           </Reveal>
           <Reveal as="div" stagger className={styles.chain}>
@@ -331,8 +328,8 @@ export default function ServicesPage() {
           <div className={styles.aiNote}>
             <Icon name="sparkles" strokeWidth={1.8} />
             <span>
-              Des <b>experts augmentés par l&apos;IA</b> pour aller plus vite et couvrir plus de
-              terrain — mais l&apos;analyse et les décisions restent entre des mains humaines.
+              Des <b>experts augmentés par l&apos;IA</b> — plus rapides, plus de terrain couvert.
+              L&apos;analyse et les décisions restent humaines.
             </span>
           </div>
         </Reveal>
@@ -346,12 +343,12 @@ export default function ServicesPage() {
           icon="file-check"
           kicker="Se conformer"
           title="CyFun / NIS2"
-          intro="La directive NIS2 impose à des milliers d'entreprises belges — dont de nombreuses PME et leurs sous-traitants — un socle minimal de cybersécurité. En Belgique, la réponse officielle est le CyberFundamentals Framework (CyFun) du Centre pour la Cybersécurité Belgique (CCB). Nous vous accompagnons de l'audit à la préparation à la vérification."
+          intro="NIS2 impose un socle minimal de cybersécurité à des milliers d'entreprises belges — PME et sous-traitants inclus. En Belgique, la référence est le CyberFundamentals Framework (CyFun) du CCB. On vous accompagne de l'audit à la préparation de la vérification."
           visual={<ComplyVisual alt />}
           alt
           capabilities={[
             { title: "Audit & auto-évaluation", description: "Évaluation du niveau visé (Basic, Important ou Essential) au regard de votre exposition." },
-            { title: "Analyse d'écart (gap analysis)", description: "Cartographie détaillée des mesures manquantes par rapport au référentiel CyFun." },
+            { title: "Analyse d'écart (gap analysis)", description: "Cartographie des mesures manquantes par rapport au référentiel CyFun." },
             { title: "Remédiation concrète", description: "On corrige ce qu'on trouve — pas seulement un rapport, un plan d'action exécuté." },
             { title: "Préparation à la vérification", description: "Dossier de preuves prêt pour l'auto-évaluation ou l'organisme certificateur." },
           ]}
@@ -381,7 +378,7 @@ export default function ServicesPage() {
                 Un référentiel gradué, un accompagnement <span className="accent">sur mesure</span>
               </>
             }
-            lead="Aperçu des trois paliers du CyberFundamentals Framework. Le détail complet, le comparatif et le calendrier NIS2 se trouvent sur notre page dédiée."
+            lead="Les trois paliers du CyberFundamentals Framework, en bref. Comparatif complet et calendrier NIS2 sur la page dédiée."
             className={styles.cyfunTeaser}
           />
           <div style={{ textAlign: "center" }}>
@@ -398,11 +395,10 @@ export default function ServicesPage() {
             <Icon name="alert-circle" strokeWidth={2} />
             <p>
               <b>En toute transparence :</b> la certification CyFun est délivrée par des organismes
-              de certification accrédités par BELAC (l&apos;organisme belge d&apos;accréditation),
-              indépendants de Smidjan. Notre rôle : réaliser l&apos;audit et l&apos;analyse
-              d&apos;écart, mettre en œuvre la remédiation concrète, et vous préparer à la
-              vérification — une méthodologie alignée sur le référentiel CyFun, sans nous
-              substituer à l&apos;organisme certificateur.
+              accrédités BELAC, indépendants de Smidjan. Notre rôle : l&apos;audit, l&apos;analyse
+              d&apos;écart, la remédiation concrète et la préparation à la vérification — une
+              méthodologie alignée sur le référentiel CyFun, sans nous substituer au
+              certificateur.
             </p>
           </div>
         </Reveal>
@@ -411,7 +407,7 @@ export default function ServicesPage() {
       {/* ===== Final CTA ===== */}
       <CTABox
         title="Un diagnostic gratuit pour savoir par où commencer"
-        text="30 minutes avec un expert pour évaluer votre exposition, cadrer la mission la plus utile — sécuriser, tester, développer ou vous conformer — et repartir avec des priorités claires. Sans engagement."
+        text="30 minutes avec un expert pour cadrer la mission utile — sécuriser, tester, développer ou vous conformer. Priorités claires, sans engagement."
         actions={[
           { label: "Réserver mon diagnostic gratuit", href: "/contact" },
           { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },

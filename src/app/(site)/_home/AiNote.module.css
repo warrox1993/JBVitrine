@@ -1,5 +1,5 @@
 .note {
-  margin-top: 44px;
+  margin-top: 56px;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -8,7 +8,7 @@
   background: #fff;
   border: 1px dashed var(--line-2);
   border-radius: var(--radius-pill);
-  padding: 12px 24px;
+  padding: 14px 28px;
   font-size: 14.5px;
   color: var(--slate);
   max-width: 720px;

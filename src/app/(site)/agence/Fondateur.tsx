@@ -19,7 +19,7 @@ const JOURNEY = [
     key: false,
     label: "Le point de départ",
     title: "Une passion très précoce de l'informatique",
-    text: "Bien avant les études, un intérêt profond pour le fonctionnement des machines et des réseaux. Comprendre comment les choses marchent — et pourquoi elles cassent — devient rapidement un réflexe. C'est cette curiosité première qui structure tout le reste.",
+    text: "Bien avant les études : comprendre comment les machines marchent — et pourquoi elles cassent.",
     icon: (
       <>
         <path d="m13 2-3 7h4l-3 7" />
@@ -31,7 +31,7 @@ const JOURNEY = [
     key: false,
     label: "L'autodidaxie",
     title: "Découverte de Linux, de Kali et de la sécurité réseau",
-    text: "En autodidacte, exploration approfondie des systèmes Linux, des outils de sécurité offensive (Kali) et des mécanismes de sécurité réseau. Une pratique concrète, par l'expérimentation, qui pose les fondations d'une compréhension réelle — et non théorique — des menaces.",
+    text: "En autodidacte : Linux, outils offensifs (Kali), sécurité réseau. Une compréhension acquise par la pratique, pas la théorie.",
     icon: (
       <>
         <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -43,7 +43,7 @@ const JOURNEY = [
     key: false,
     label: "La formation",
     title: "Diplôme technique en informatique",
-    text: "Une formation technique vient structurer et valider les acquis : administration des systèmes, réseaux, développement. Le socle méthodologique qui transforme une passion en compétence professionnelle rigoureuse.",
+    text: "Une formation technique valide les acquis : administration systèmes, réseaux, développement.",
     icon: (
       <>
         <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
@@ -55,7 +55,7 @@ const JOURNEY = [
     key: true,
     label: "L'expérience opérationnelle",
     title: "Service au sein des télécommunications de l'Armée belge",
-    text: "Une expérience déterminante : la mise en œuvre et la protection de réseaux de communication en environnement exigeant. Sécurité des communications, rigueur opérationnelle et sensibilité à la cyberdéfense — des standards de fiabilité et de discipline que peu de parcours civils permettent d'acquérir, et que Smidjan applique aujourd'hui aux entreprises.",
+    text: "Protection de réseaux de communication en environnement exigeant. Une rigueur rare, appliquée aujourd'hui aux entreprises.",
     icon: (
       <>
         <path d="M12 2 4 5v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3Z" />
@@ -67,7 +67,7 @@ const JOURNEY = [
     key: false,
     label: "Aujourd'hui",
     title: "Expertise en sécurité offensive & défensive",
-    text: "Cette double culture — attaquer pour comprendre, défendre pour protéger — se prolonge dans une pratique experte : tests d'intrusion, durcissement d'infrastructure, réponse à incident et mise en conformité. C'est cette expertise, mise au service des PME wallonnes, qui a donné naissance à Smidjan.",
+    text: "Attaquer pour comprendre, défendre pour protéger : pentest, durcissement, réponse à incident, conformité. C'est Smidjan.",
     icon: (
       <>
         <path d="M11 3a8 8 0 1 0 8 8" />
@@ -91,9 +91,8 @@ export function Fondateur() {
             cybersécurité
           </h2>
           <p>
-            Derrière Smidjan, un profil technique complet, forgé par la
-            curiosité, la discipline militaire et une pratique concrète de la
-            sécurité offensive comme défensive.
+            Un profil technique complet : curiosité, discipline militaire,
+            pratique réelle de l&rsquo;attaque et de la défense.
           </p>
         </Reveal>
 
@@ -175,13 +174,8 @@ export function Fondateur() {
               <span className="accent">défense d&rsquo;entreprises</span>
             </h3>
             <p className={styles.intro}>
-              Le parcours de Jean-Baptiste n&rsquo;est pas celui d&rsquo;un
-              consultant standard. C&rsquo;est celui d&rsquo;un praticien :
-              quelqu&rsquo;un qui a d&rsquo;abord compris les systèmes de
-              l&rsquo;intérieur, avant de faire de leur protection un métier.
-              Cette trajectoire — technique, opérationnelle, puis experte —
-              est précisément ce qui permet à Smidjan de parler autant aux
-              dirigeants qu&rsquo;aux administrateurs système.
+              Pas un consultant standard : un praticien. Il a compris les
+              systèmes de l&rsquo;intérieur avant d&rsquo;en faire un métier.
             </p>
 
             {/* Real photo: server infrastructure — technical expertise */}
@@ -195,9 +189,8 @@ export function Fondateur() {
                 className={styles.infraImg}
               />
               <figcaption className={styles.infraCap}>
-                Réseaux, serveurs, durcissement d&rsquo;infrastructure — le
-                terrain d&rsquo;expertise quotidien qui nourrit chaque mission
-                Smidjan.
+                Réseaux, serveurs, durcissement d&rsquo;infrastructure : le
+                terrain de jeu quotidien.
               </figcaption>
             </figure>
 

@@ -14,7 +14,7 @@
 }
 
 .fcHead {
-  padding: 30px 34px 24px;
+  padding: 32px 34px 26px;
   border-bottom: 1px solid var(--line);
   background: var(--bg-2);
   display: flex;
@@ -32,7 +32,7 @@
 }
 
 .fcHead p {
-  margin: 8px 0 0;
+  margin: 10px 0 0;
   font-size: 14.5px;
   color: var(--slate);
   line-height: 1.6;
@@ -42,7 +42,7 @@
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  margin-top: 16px;
+  margin-top: 18px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius-pill);
@@ -83,11 +83,11 @@
 
 /* ===== Form ===== */
 .form {
-  padding: 30px 34px 34px;
+  padding: 32px 34px 36px;
 }
 
 .field {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .fieldRow {
@@ -200,7 +200,7 @@
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 15px 16px;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 }
 
 .consent.inputError {
@@ -234,7 +234,7 @@
 .formFoot {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 

@@ -1,18 +1,18 @@
 .svcGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 48px;
+  gap: 22px;
+  margin-top: 56px;
 }
 
 .tiers {
-  margin-top: 44px;
+  margin-top: 56px;
 }
 
 /* Real content photos (in addition to inline-SVG figures) */
 .figWithPhoto {
   display: grid;
-  gap: 18px;
+  gap: 20px;
 }
 .figPhoto {
   position: relative;

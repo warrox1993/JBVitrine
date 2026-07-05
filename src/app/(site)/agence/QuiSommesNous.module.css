@@ -10,19 +10,19 @@
   align-items: start;
 }
 .copy p + p {
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .missionCard {
-  margin-top: 26px;
+  margin-top: 32px;
   display: flex;
-  gap: 16px;
+  gap: 18px;
   align-items: flex-start;
   background: var(--bg-3);
   border: 1px solid var(--line);
   border-left: 3px solid var(--orange);
   border-radius: 10px;
-  padding: 22px 24px;
+  padding: 24px 26px;
   box-shadow: var(--shadow-s);
 }
 .missionCard svg {
@@ -66,8 +66,8 @@
 
 .valList {
   display: grid;
-  gap: 16px;
-  margin-top: 22px;
+  gap: 18px;
+  margin-top: 26px;
 }
 .valItem {
   display: flex;
@@ -75,7 +75,7 @@
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 22px 24px;
+  padding: 24px 26px;
   box-shadow: var(--shadow-s);
   transition: border-color 0.16s ease, box-shadow 0.16s ease,
     transform 0.16s ease;
@@ -115,13 +115,13 @@
 
 /* Locality / map card */
 .localityCard {
-  margin-top: 16px;
+  margin-top: 20px;
   background: var(--bg-3);
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 20px;
+  padding: 22px;
   display: flex;
-  gap: 20px;
+  gap: 22px;
   align-items: center;
   box-shadow: var(--shadow-s);
 }
@@ -148,7 +148,7 @@
 
 /* Coverage photo (Earth at night — Belgium/EU hosting & reach) */
 .coverageFigure {
-  margin-top: 16px;
+  margin-top: 20px;
 }
 .coverageImg {
   position: relative;

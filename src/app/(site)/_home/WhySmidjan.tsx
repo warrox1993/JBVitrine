@@ -92,9 +92,8 @@ export function WhySmidjan() {
           d&apos;un partenaire
         </h2>
         <p className={styles.lead}>
-          Nous sommes une <b>structure à taille humaine</b>, volontairement. Cela veut dire moins
-          d&apos;intermédiaires, plus de responsabilité, et un interlocuteur qui connaît réellement
-          votre dossier.
+          Une <b>structure à taille humaine</b>, par choix. Moins d&apos;intermédiaires, plus de
+          responsabilité, un interlocuteur qui connaît votre dossier.
         </p>
         <Reveal stagger className={styles.list}>
           {WHY_ITEMS.map((it) => (
@@ -123,9 +122,8 @@ export function WhySmidjan() {
           </div>
         </div>
         <blockquote className={styles.quote}>
-          « La cybersécurité d&apos;une PME ne se règle pas avec un rapport de 200 pages qu&apos;on
-          range dans un tiroir. Elle se règle en corrigeant, une à une, les failles qui comptent — et
-          en restant joignable quand ça compte le plus. »
+          « La cybersécurité d&apos;une PME ne tient pas dans un rapport de 200 pages qu&apos;on
+          range dans un tiroir. Elle se joue faille par faille — en restant joignable. »
         </blockquote>
         <ul className={styles.creds}>
           <li>

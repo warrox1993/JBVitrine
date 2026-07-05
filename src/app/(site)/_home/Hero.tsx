@@ -23,8 +23,8 @@ export function Hero() {
             sans sous-traitance.
           </h1>
           <p className={styles.lead}>
-            Smidjan sécurise réseaux, infrastructure et applications des PME wallonnes, et vous met
-            en conformité NIS2&nbsp;/ CyFun. <b>Un seul partenaire, un expert au téléphone.</b>
+            Réseaux, applications, conformité NIS2&nbsp;/ CyFun&nbsp;: on sécurise tout.{" "}
+            <b>Un seul partenaire, un expert au téléphone.</b>
           </p>
           <div className={styles.cta}>
             <Button

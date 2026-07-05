@@ -9,22 +9,22 @@ const VALUES = [
   {
     icon: "shield-check" as const,
     title: "Rigueur",
-    text: "Une méthode structurée, adossée à des référentiels reconnus (NIS2, CyFun, OWASP, ISO/IEC 27001). Ce que nous affirmons, nous pouvons le démontrer.",
+    text: "NIS2, CyFun, OWASP, ISO 27001 : une méthode qu'on démontre, pas qu'on affirme.",
   },
   {
     icon: "map-pin" as const,
     title: "Proximité",
-    text: "Basés à Liège, nous intervenons vite en Wallonie et restons joignables. Vous parlez à la personne qui fait le travail, pas à un centre d'appel.",
+    text: "Basés à Liège, joignables vite. Vous parlez à la personne qui fait le travail.",
   },
   {
     icon: "check-circle" as const,
     title: "Franchise",
-    text: "Nous disons ce qui compte, y compris ce qui dérange. Pas de vente de peur, pas de prestations inutiles : seulement ce qui réduit réellement votre risque.",
+    text: "On dit ce qui compte, même ce qui dérange. Pas de vente de peur.",
   },
   {
     icon: "target" as const,
     title: "Pragmatisme",
-    text: "Nous priorisons les corrections à fort impact pour un budget maîtrisé. La meilleure sécurité est celle qui est réellement mise en œuvre.",
+    text: "Priorité à l'impact, pas au superflu. La meilleure sécurité est celle qu'on applique.",
   },
 ];
 
@@ -44,33 +44,25 @@ export function QuiSommesNous() {
                   tissu économique wallon
                 </>
               }
-              lead="Nous accompagnons les PME, les indépendants, les professions réglementées et les collectivités locales dans la protection de leurs réseaux, de leurs données et de leur activité — et dans leur mise en conformité NIS2 / CyFun."
+              lead="PME, indépendants, professions réglementées, collectivités : on protège vos réseaux, vos données, votre activité — et on cadre votre NIS2 / CyFun."
             />
             <p>
-              Trop d&rsquo;entreprises pensent que la cybersécurité est réservée
-              aux grands groupes. C&rsquo;est faux : ce sont précisément les
-              structures de taille modeste qui sont visées, souvent parce
-              qu&rsquo;elles sont moins bien défendues. Notre conviction est
-              simple — une PME mérite le même niveau d&rsquo;exigence technique
-              qu&rsquo;un grand compte, mais servi avec la clarté, la
-              réactivité et le pragmatisme dont elle a réellement besoin.
+              Les PME sont des cibles de choix — moins bien défendues, pas
+              moins exposées. Notre conviction : la même exigence qu&rsquo;un
+              grand compte, sans la lourdeur.
             </p>
             <p>
-              Concrètement, cela veut dire un périmètre d&rsquo;action complet
-              — sécuriser, tester, développer, mettre en conformité — porté par
-              un interlocuteur unique. Pas de sous-traitance en cascade, pas de
-              rapport indéchiffrable : on identifie ce qui compte, on
-              l&rsquo;explique, et on le corrige.
+              Sécuriser, tester, mettre en conformité : un seul interlocuteur,
+              du début à la fin. Pas de sous-traitance, pas de jargon.
             </p>
             <div className={styles.missionCard}>
               <Icon name="target" strokeWidth={1.8} />
               <div>
                 <h4>Notre mission</h4>
                 <p>
-                  Rendre la cybersécurité et la conformité{" "}
-                  <b>accessibles, concrètes et durables</b> pour les
-                  organisations wallonnes — sans jargon, sans surdimensionnement,
-                  et sans jamais perdre de vue le budget d&rsquo;une PME.
+                  Rendre la cybersécurité{" "}
+                  <b>accessible, concrète et durable</b> pour les entreprises
+                  wallonnes — sans jargon, sans surfacturation.
                 </p>
               </div>
             </div>
@@ -171,10 +163,8 @@ export function QuiSommesNous() {
               <div>
                 <h4>Une implantation locale, un rayon d&rsquo;action régional</h4>
                 <p>
-                  Basés à Liège, nous intervenons dans toute la Wallonie :
-                  délais de déplacement courts, connaissance du tissu
-                  économique local et disponibilité réelle en cas
-                  d&rsquo;urgence.
+                  Basés à Liège, actifs dans toute la Wallonie. Délais
+                  courts, disponibilité réelle en urgence.
                 </p>
               </div>
             </div>
@@ -190,7 +180,7 @@ export function QuiSommesNous() {
                 className={styles.coverageImg}
               />
               <figcaption className={styles.coverageCap}>
-                Une intervention ancrée à Liège, des données{" "}
+                Ancrés à Liège. Données{" "}
                 <b>hébergées en Belgique et en Europe</b>.
               </figcaption>
             </figure>

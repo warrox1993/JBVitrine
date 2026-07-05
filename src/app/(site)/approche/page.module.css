@@ -98,17 +98,17 @@
 }
 .promiseList {
   list-style: none;
-  margin: 22px 0 0;
+  margin: 24px 0 0;
   padding: 0;
   position: relative;
   display: grid;
-  gap: 2px;
+  gap: 4px;
 }
 .promiseList li {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding: 13px 0;
+  padding: 16px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.09);
   font-size: 14px;
   color: #c9d5e6;
@@ -141,8 +141,8 @@
   align-items: center;
 }
 .quote {
-  margin: 26px 0 0;
-  padding: 18px 22px;
+  margin: 32px 0 0;
+  padding: 20px 24px;
   border-left: 3px solid var(--orange);
   background: var(--bg-2);
   border-radius: 0 10px 10px 0;
@@ -156,7 +156,7 @@
 .contrast {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  gap: 22px;
 }
 .col {
   border: 1px solid var(--line);
@@ -311,14 +311,14 @@
 }
 .stepsDetail {
   display: grid;
-  gap: 22px;
-  margin-top: 56px;
+  gap: 28px;
+  margin-top: 60px;
 }
 .mstep {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 32px 34px;
+  padding: 36px 38px;
   display: grid;
   grid-template-columns: auto 1fr 1.05fr;
   gap: 28px;
@@ -390,7 +390,7 @@
   background: var(--bg-2);
   border: 1px solid var(--line);
   border-radius: 11px;
-  padding: 20px 22px;
+  padding: 22px 24px;
 }
 .deliverHead {
   display: flex;
@@ -434,7 +434,7 @@
   align-items: center;
 }
 .aiHonest {
-  margin-top: 24px;
+  margin-top: 28px;
   display: flex;
   gap: 13px;
   align-items: flex-start;
@@ -442,7 +442,7 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-left: 3px solid var(--orange-on-dark);
   border-radius: 10px;
-  padding: 18px 20px;
+  padding: 20px 22px;
 }
 .aiHonest svg {
   color: var(--orange-on-dark);
@@ -459,13 +459,13 @@
 .aiCards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 18px;
 }
 .aiCard {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 13px;
-  padding: 24px 22px;
+  padding: 26px 24px;
 }
 .aiIcon {
   width: 44px;
@@ -572,7 +572,7 @@
 .whyGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 24px;
   margin-top: 52px;
 }
 .whyItem {
@@ -581,7 +581,7 @@
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 26px;
+  padding: 28px;
   box-shadow: var(--shadow-s);
   transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
 }
@@ -632,14 +632,14 @@
 .refsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
   margin-top: 52px;
 }
 .refCard {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 28px 26px;
+  padding: 30px 28px;
   box-shadow: var(--shadow-s);
   transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
 }
@@ -678,7 +678,7 @@
   color: var(--slate);
 }
 .refsHonesty {
-  margin-top: 34px;
+  margin-top: 38px;
   display: flex;
   gap: 16px;
   align-items: flex-start;
@@ -686,7 +686,7 @@
   border: 1px solid var(--line);
   border-left: 3px solid var(--navy-3);
   border-radius: 10px;
-  padding: 22px 24px;
+  padding: 24px 26px;
 }
 .refsHonesty svg {
   color: var(--navy-3);

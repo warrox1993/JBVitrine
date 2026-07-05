@@ -1,7 +1,7 @@
 .intro {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 48px;
+  gap: 56px;
   align-items: start;
 }
 .kickerMono {
@@ -9,7 +9,7 @@
   letter-spacing: 0.06em !important;
 }
 .intro .lead {
-  margin-top: 16px;
+  margin-top: 18px;
   font-size: 19px;
   color: var(--slate);
   line-height: 1.6;
@@ -27,7 +27,7 @@
   letter-spacing: -0.02em;
 }
 .hook {
-  margin-top: 26px;
+  margin-top: 32px;
 }
 
 /* Deadline card */
@@ -35,7 +35,7 @@
   margin-top: 26px;
   background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
   border-radius: 14px;
-  padding: 26px 28px;
+  padding: 28px 30px;
   color: var(--on-dark-text);
   border-top: 3px solid var(--orange);
   box-shadow:
@@ -95,8 +95,8 @@
   line-height: 1.5;
 }
 .fine {
-  margin-top: 18px;
-  padding-top: 16px;
+  margin-top: 22px;
+  padding-top: 18px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 13px;
   color: var(--on-dark-muted);
