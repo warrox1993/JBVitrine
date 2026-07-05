@@ -6,9 +6,27 @@
   border-bottom: 1px solid var(--line);
   padding: 48px 0 56px;
 }
+.heroKicker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+.heroRule {
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--orange);
+  flex: none;
+}
+/* Mono kicker — technical/cyber feel on eyebrows & kickers (matches home). */
+.kickerMono {
+  font-family: var(--mono) !important;
+  letter-spacing: 0.06em !important;
+}
 .heroTitle {
   font-size: clamp(31px, 4.2vw, 46px);
-  margin-top: 22px;
+  margin-top: 18px;
   max-width: 19ch;
   letter-spacing: -0.025em;
   color: var(--navy);
@@ -116,23 +134,27 @@
   margin-top: 26px;
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid var(--line-2);
+  border: 1px solid rgba(255, 106, 0, 0.35);
   box-shadow: var(--shadow);
   position: relative;
   isolation: isolate;
 }
+/* Branded navy grade — matches the home page's photo treatment. */
 .photoBox::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(11, 31, 58, 0) 48%, rgba(11, 31, 58, 0.72) 100%);
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0) 45%, rgba(11, 31, 58, 0.55) 100%),
+    linear-gradient(135deg, rgba(11, 31, 58, 0.22), transparent 60%);
   pointer-events: none;
 }
 .photoImg {
   display: block;
   width: 100%;
   height: auto;
+  filter: saturate(0.85) contrast(1.03);
 }
 .photoCaption {
   position: absolute;
@@ -147,7 +169,7 @@
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: -0.005em;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55), 0 2px 14px rgba(11, 31, 58, 0.9);
 }
 .photoCaption b {
   color: var(--orange-on-dark);
@@ -197,18 +219,24 @@
 }
 .partnerLead {
   margin-top: 16px;
+  color: var(--on-dark-muted);
+}
+.partnerLead em {
+  color: #fff;
 }
 .chain {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
+/* White cards lift off the full-navy band behind them (matches home's IllusPanel/WhySmidjan pattern). */
 .node {
-  background: var(--bg-2);
+  background: #fff;
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 20px 18px;
   position: relative;
+  box-shadow: var(--shadow);
 }
 .nodeIcon {
   width: 40px;
@@ -256,12 +284,12 @@
   gap: 14px;
   justify-content: center;
   text-align: center;
-  background: #fff;
-  border: 1px dashed var(--line-2);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px dashed var(--on-dark-line);
   border-radius: 100px;
   padding: 12px 24px;
   font-size: 14.5px;
-  color: var(--slate);
+  color: var(--on-dark-muted);
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
@@ -269,11 +297,11 @@
 .aiNote svg {
   width: 20px;
   height: 20px;
-  color: var(--orange-d);
+  color: var(--orange-on-dark);
   flex: none;
 }
 .aiNote b {
-  color: var(--navy);
+  color: #fff;
 }
 
 /* ===== CyFun teaser (after pillar 04) ===== */

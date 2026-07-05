@@ -1,6 +1,7 @@
 import React from "react";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./WhySmidjan.module.css";
 
 interface WhyItem {
@@ -84,7 +85,7 @@ const WHY_ITEMS: WhyItem[] = [
 export function WhySmidjan() {
   return (
     <div className={styles.grid}>
-      <div>
+      <Reveal variant="left">
         <Eyebrow onDark className={styles.kickerMono}>Pourquoi Smidjan</Eyebrow>
         <h2 className={styles.title}>
           La rigueur d&apos;un grand cabinet, la <span className="accent">proximité</span>{" "}
@@ -95,7 +96,7 @@ export function WhySmidjan() {
           d&apos;intermédiaires, plus de responsabilité, et un interlocuteur qui connaît réellement
           votre dossier.
         </p>
-        <div className={styles.list}>
+        <Reveal stagger className={styles.list}>
           {WHY_ITEMS.map((it) => (
             <div key={it.title} className={styles.item}>
               <div className={styles.ic} aria-hidden="true">
@@ -107,10 +108,10 @@ export function WhySmidjan() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
+        </Reveal>
+      </Reveal>
 
-      <div className={styles.founder}>
+      <Reveal variant="right" delay={100} className={styles.founder}>
         <div className={`${styles.gridBg} grid-bg`} aria-hidden="true" />
         <div className={styles.top}>
           <div className={styles.avatar} aria-hidden="true">
@@ -140,7 +141,7 @@ export function WhySmidjan() {
             Méthodologie OWASP &amp; ISO/IEC 27001
           </li>
         </ul>
-      </div>
+      </Reveal>
     </div>
   );
 }

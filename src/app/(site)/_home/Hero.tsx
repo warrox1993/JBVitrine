@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button/Button";
 import { Icon } from "@/components/ui/Icon/Icon";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./Hero.module.css";
 
 /** Home hero: NIS2 badge, result-led headline, dual CTA, assurances + shield visual. */
@@ -9,7 +10,7 @@ export function Hero() {
   return (
     <section className={styles.hero}>
       <Container className={styles.grid}>
-        <div>
+        <Reveal>
           <div className={styles.kickerRow}>
             <span className={styles.rule} aria-hidden="true" />
             <span className={styles.badge}>
@@ -50,10 +51,10 @@ export function Hero() {
               <Icon name="check" /> Données hébergées en Belgique
             </div>
           </div>
-        </div>
+        </Reveal>
 
         <div className={styles.visual}>
-          <div className={styles.shieldCard}>
+          <Reveal variant="scale" delay={120} className={styles.shieldCard}>
             <div className={`${styles.gridBg} grid-bg`} aria-hidden="true" />
             <div className={styles.shieldHead}>
               <Icon name="shield-check" className={styles.ico} size={52} strokeWidth={1.6} />
@@ -102,7 +103,7 @@ export function Hero() {
                 atteinte au niveau <b>Basic</b>
               </div>
             </div>
-          </div>
+          </Reveal>
           <div className={styles.floatChip} aria-hidden="true">
             <div className={styles.chipIc}>
               <Icon name="shield" size={20} />

@@ -48,8 +48,8 @@
 }
 
 .eyebrow {
-  font: 600 12px/1.4 var(--sans);
-  letter-spacing: 0.12em;
+  font: 600 12px/1.4 var(--mono);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--orange-d);
   display: inline-flex;

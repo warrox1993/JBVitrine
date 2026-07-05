@@ -151,9 +151,22 @@
   margin-top: 16px;
 }
 .coverageImg {
+  position: relative;
   border-radius: 14px !important;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 106, 0, 0.35);
   box-shadow: var(--shadow);
+}
+.coverageImg :global(img) {
+  filter: saturate(0.85) contrast(1.03);
+}
+.coverageImg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0) 45%, rgba(11, 31, 58, 0.55) 100%),
+    linear-gradient(135deg, rgba(11, 31, 58, 0.22), transparent 60%);
+  pointer-events: none;
 }
 .coverageCap {
   margin-top: 10px;

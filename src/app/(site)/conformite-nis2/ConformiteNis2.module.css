@@ -20,6 +20,19 @@
   padding-top: 64px;
   padding-bottom: 68px;
 }
+.kickerRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.rule {
+  width: 34px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--orange);
+  flex: none;
+}
 .heroBadge {
   display: inline-flex;
   align-items: center;
@@ -36,11 +49,17 @@
 .heroBadge .tag {
   background: var(--orange-t);
   color: var(--orange-d);
+  font-family: var(--mono);
   font-size: 11px;
   font-weight: 700;
   padding: 3px 8px;
   border-radius: var(--radius-pill);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+}
+/* Mono kicker override for SectionHeading eyebrows + small map headers on this page */
+.kickerMono {
+  font-family: var(--mono) !important;
+  letter-spacing: 0.06em !important;
 }
 .heroTitle {
   font-size: clamp(36px, 4.8vw, 56px);
@@ -103,7 +122,10 @@
   color: var(--on-dark-text);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 24px 60px -20px rgba(11, 31, 58, 0.5);
+  border-top: 3px solid var(--orange);
+  box-shadow:
+    0 30px 70px -22px rgba(11, 31, 58, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
 }
 .deadlineCard .gridBg {
   position: absolute;
@@ -372,6 +394,7 @@
   box-shadow: var(--shadow-s);
 }
 .frameMap .mh {
+  font-family: var(--mono);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -558,6 +581,20 @@
 }
 .tiersBlock {
   margin-top: 42px;
+}
+
+/* "Les 3 niveaux" — full-bleed navy chapter (matches home cadence).
+   statHook / levelsFig / CyFunTiers keep their own opaque backgrounds and
+   need no change; only the plain caption text sitting directly on the
+   section background needs an on-dark treatment. */
+.niveauxNavy .statHook {
+  box-shadow: 0 20px 44px -22px rgba(0, 0, 0, 0.5);
+}
+.niveauxNavy .levelsCap {
+  color: var(--on-dark-muted);
+}
+.niveauxNavy .levelsCap b {
+  color: #fff;
 }
 
 /* ===== Accompagnement / honesty ===== */
@@ -817,6 +854,7 @@
   margin-left: 2px;
 }
 .fundingLbl {
+  font-family: var(--mono);
   margin-top: 12px;
   font-size: 12.5px;
   font-weight: 700;
@@ -884,9 +922,23 @@
   max-width: 860px;
 }
 .sectionPhotoFrame {
+  position: relative;
+  overflow: hidden;
   border-radius: 14px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 106, 0, 0.35);
   box-shadow: var(--shadow);
+}
+.sectionPhotoFrame :global(img) {
+  filter: saturate(0.85) contrast(1.03);
+}
+.sectionPhotoFrame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0) 45%, rgba(11, 31, 58, 0.55) 100%),
+    linear-gradient(135deg, rgba(11, 31, 58, 0.22), transparent 60%);
+  pointer-events: none;
 }
 .sectionPhotoCap {
   margin-top: 12px;

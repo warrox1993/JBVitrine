@@ -29,10 +29,24 @@
 
 .pageHeadImg {
   border-radius: 14px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 106, 0, 0.35);
   box-shadow:
     0 1px 2px rgba(11, 31, 58, 0.05),
     0 26px 52px -24px rgba(11, 31, 58, 0.32);
+}
+
+.pageHeadImg :global(img) {
+  filter: saturate(0.85) contrast(1.03);
+}
+
+.pageHeadImg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0) 45%, rgba(11, 31, 58, 0.55) 100%),
+    linear-gradient(135deg, rgba(11, 31, 58, 0.22), transparent 60%);
+  pointer-events: none;
 }
 
 .crumbs {
@@ -60,7 +74,7 @@
 }
 
 .eyebrow {
-  font: 600 12px/1.4 var(--sans);
+  font: 600 12px/1.4 var(--mono);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--orange-d);
@@ -229,7 +243,7 @@
   z-index: 2;
   background: var(--navy);
   color: var(--orange-on-dark);
-  font: 700 11px/1 var(--sans);
+  font: 700 11px/1 var(--mono);
   letter-spacing: 0.07em;
   text-transform: uppercase;
   padding: 7px 14px;
@@ -258,7 +272,7 @@
   border-radius: 14px;
   overflow: hidden;
   margin-bottom: 20px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 106, 0, 0.35);
   box-shadow: 0 10px 24px -14px rgba(11, 31, 58, 0.3);
 }
 
@@ -267,12 +281,18 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: linear-gradient(0deg, rgba(11, 31, 58, 0.75) 0%, rgba(11, 31, 58, 0) 55%);
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0) 45%, rgba(11, 31, 58, 0.55) 100%),
+    linear-gradient(135deg, rgba(11, 31, 58, 0.22), transparent 60%);
   pointer-events: none;
 }
 
 .coordPhotoImg {
   display: block;
+}
+
+.coordPhotoImg :global(img) {
+  filter: saturate(0.85) contrast(1.03);
 }
 
 .coordPhotoTag {
@@ -404,18 +424,21 @@
   margin-top: 2px;
 }
 
-/* ===== Emergency block ===== */
+/* ===== Emergency block =====
+   Aligned to the home hero shield card: graded navy gradient, a single
+   orange top keyline (no full border) and a layered shadow with a faint
+   inset ring. */
 .emergBlock {
-  background: linear-gradient(160deg, var(--navy) 0%, #0a1a30 100%);
+  background: linear-gradient(165deg, var(--navy-2) 0%, var(--navy) 62%, #081527 100%);
   border-radius: 14px;
   padding: 28px;
   color: var(--on-dark-text);
   position: relative;
   overflow: hidden;
+  border-top: 3px solid var(--orange);
   box-shadow:
     0 24px 52px -22px rgba(11, 31, 58, 0.65),
-    0 0 0 1px rgba(255, 106, 0, 0.14);
-  border: 1px solid var(--navy-3);
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
 }
 
 .emergBlock .gridBg {
@@ -429,7 +452,7 @@
   border-radius: 14px;
   overflow: hidden;
   margin-bottom: 20px;
-  border: 1px solid var(--on-dark-line);
+  border: 1px solid rgba(255, 106, 0, 0.35);
   box-shadow: 0 10px 24px -12px rgba(0, 0, 0, 0.5);
 }
 
@@ -437,12 +460,18 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(11, 31, 58, 0.5) 0%, rgba(10, 26, 48, 0.68) 100%);
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0) 45%, rgba(11, 31, 58, 0.55) 100%),
+    linear-gradient(135deg, rgba(11, 31, 58, 0.22), transparent 60%);
   pointer-events: none;
 }
 
 .ebPhotoImg {
   display: block;
+}
+
+.ebPhotoImg :global(img) {
+  filter: saturate(0.85) contrast(1.03);
 }
 
 .ebTop {
@@ -474,6 +503,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
+  font-family: var(--mono);
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.04em;

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import OptimizedImage from '@/components/ui/OptimizedImage/OptimizedImage';
+import { Reveal } from '@/components/ui/Reveal/Reveal';
 import { ContactForm } from './ContactForm';
 import cls from './page.module.css';
 
@@ -90,7 +91,7 @@ export default function ContactPage() {
       {/* ===== Page header band ===== */}
       <div className={cls.pageHead}>
         <div className={`wrap ${cls.pageHeadInner}`}>
-          <div className={cls.pageHeadText}>
+          <Reveal as="div" className={cls.pageHeadText}>
             <nav className={cls.crumbs} aria-label="Fil d'Ariane">
               <a href="/">Accueil</a>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
@@ -139,7 +140,7 @@ export default function ContactPage() {
                 Basés à Liège
               </div>
             </div>
-          </div>
+          </Reveal>
           <div className={cls.pageHeadMedia}>
             <OptimizedImage
               src="/images/pages/contact/office-team.jpg"
@@ -162,13 +163,16 @@ export default function ContactPage() {
             {/* LEFT: secured form — primary action */}
             <div className={cls.formPrimary}>
               <span className={cls.formBadge}>Le plus direct</span>
-              <ContactForm />
+              <Reveal>
+                <ContactForm />
+              </Reveal>
             </div>
 
             {/* RIGHT: coordinates */}
             <aside className={cls.side} aria-label="Nos coordonnées">
               {/* Emergency block */}
-              <div className={cls.emergBlock} id="urgence">
+              <div id="urgence">
+              <Reveal className={cls.emergBlock}>
                 <div className={`${cls.gridBg} grid-bg`} aria-hidden="true" />
                 <div className={cls.ebPhoto}>
                   <OptimizedImage
@@ -206,10 +210,11 @@ export default function ContactPage() {
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
                   Astreinte assurée par un intervenant Smidjan, jour et nuit.
                 </div>
+              </Reveal>
               </div>
 
               {/* Process mini-diagram */}
-              <div className={cls.infoCard}>
+              <Reveal as="div" className={cls.infoCard}>
                 <h3>
                   <span className={cls.hi}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M12 6v6l4 2" /><circle cx="12" cy="12" r="9" /></svg>
@@ -246,10 +251,10 @@ export default function ContactPage() {
                     <span className={cls.pLbl}>Diagnostic gratuit</span>
                   </div>
                 </div>
-              </div>
+              </Reveal>
 
               {/* Contact details */}
-              <div className={cls.infoCard}>
+              <Reveal as="div" className={cls.infoCard}>
                 <div className={cls.coordPhoto}>
                   <OptimizedImage
                     src="/images/pages/contact/support-desk.jpg"
@@ -268,7 +273,7 @@ export default function ContactPage() {
                   </span>
                   Nos coordonnées
                 </h3>
-                <ul className={cls.coord}>
+                <Reveal stagger as="ul" className={cls.coord}>
                   <li>
                     <span className={cls.ic}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg></span>
                     <div>
@@ -297,8 +302,8 @@ export default function ContactPage() {
                       <div className={cls.v}>Lun&nbsp;–&nbsp;Ven, 8h30&nbsp;–&nbsp;18h00<small>Réponse à incident : 24&nbsp;h/24, 7&nbsp;j/7</small></div>
                     </div>
                   </li>
-                </ul>
-              </div>
+                </Reveal>
+              </Reveal>
 
               {/* Stylised map */}
               <div className={cls.mapCard}>

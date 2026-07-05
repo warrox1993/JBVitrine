@@ -8,6 +8,7 @@ import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Breadcrumb } from "@/components/Breadcrumb/Breadcrumb";
 import { CyFunTiers, ProcessSteps, Faq, CTABox } from "@/components/shared";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { faqPageSchema } from "@/lib/schema";
 import {
   FunctionsRing,
@@ -99,10 +100,13 @@ export default function ConformiteNis2Page() {
       <section className={styles.hero} id="top">
         <Container className={styles.heroWrap}>
           <div>
-            <span className={styles.heroBadge}>
-              <span className={styles.tag}>NIS2</span>
-              En vigueur depuis le 18 octobre 2024 en Belgique
-            </span>
+            <div className={styles.kickerRow}>
+              <span className={styles.rule} aria-hidden="true" />
+              <span className={styles.heroBadge}>
+                <span className={styles.tag}>NIS2</span>
+                En vigueur depuis le 18 octobre 2024 en Belgique
+              </span>
+            </div>
             <h1 className={styles.heroTitle}>
               NIS2 est en vigueur —{" "}
               <span className={styles.accent}>
@@ -201,35 +205,39 @@ export default function ConformiteNis2Page() {
 
       {/* ===== NIS2 en clair ===== */}
       <Section variant="white">
-        <SectionHeading
-          center
-          as="h2"
-          eyebrow="NIS2, en clair"
-          title={
-            <>
-              Ce que la directive change pour vous —{" "}
-              <span className={styles.accent}>sans jargon</span>
-            </>
-          }
-          lead="NIS2 est une directive européenne qui relève le niveau minimal de cybersécurité exigé de milliers d'organisations. Trois questions suffisent à savoir où vous en êtes."
-        />
-
-        <figure className={styles.sectionPhoto}>
-          <OptimizedImage
-            src="/images/pages/conformite-nis2/gouvernance-comite.jpg"
-            alt="Comité de direction réuni en salle de réunion, discutant des risques cyber et des responsabilités de gouvernance liées à la conformité NIS2"
-            width={1400}
-            height={935}
-            sizePreset="hero"
-            className={styles.sectionPhotoFrame}
+        <Reveal>
+          <SectionHeading
+            center
+            as="h2"
+            eyebrow={<span className={styles.kickerMono}>NIS2, en clair</span>}
+            title={
+              <>
+                Ce que la directive change pour vous —{" "}
+                <span className={styles.accent}>sans jargon</span>
+              </>
+            }
+            lead="NIS2 est une directive européenne qui relève le niveau minimal de cybersécurité exigé de milliers d'organisations. Trois questions suffisent à savoir où vous en êtes."
           />
-          <figcaption className={styles.sectionPhotoCap}>
-            La conformité NIS2 engage la <b>responsabilité des organes de
-            direction</b> — un sujet de gouvernance, pas seulement d&apos;IT.
-          </figcaption>
-        </figure>
+        </Reveal>
 
-        <div className={styles.clairGrid}>
+        <Reveal>
+          <figure className={styles.sectionPhoto}>
+            <OptimizedImage
+              src="/images/pages/conformite-nis2/gouvernance-comite.jpg"
+              alt="Comité de direction réuni en salle de réunion, discutant des risques cyber et des responsabilités de gouvernance liées à la conformité NIS2"
+              width={1400}
+              height={935}
+              sizePreset="hero"
+              className={styles.sectionPhotoFrame}
+            />
+            <figcaption className={styles.sectionPhotoCap}>
+              La conformité NIS2 engage la <b>responsabilité des organes de
+              direction</b> — un sujet de gouvernance, pas seulement d&apos;IT.
+            </figcaption>
+          </figure>
+        </Reveal>
+
+        <Reveal stagger className={styles.clairGrid}>
           <article className={styles.clairCard}>
             <div className={styles.ico}>
               <Icon name="users" size={26} strokeWidth={1.7} />
@@ -351,16 +359,17 @@ export default function ConformiteNis2Page() {
               </span>
             </div>
           </article>
-        </div>
+        </Reveal>
       </Section>
 
       {/* ===== CyFun framework ===== */}
       <Section variant="tint">
+        <Reveal>
         <div className={styles.frameIntro}>
           <div>
             <SectionHeading
               as="h2"
-              eyebrow="Le cadre officiel"
+              eyebrow={<span className={styles.kickerMono}>Le cadre officiel</span>}
               title={
                 <>
                   CyFun : la{" "}
@@ -432,20 +441,23 @@ export default function ConformiteNis2Page() {
             </div>
           </div>
         </div>
+        </Reveal>
 
-        <figure
-          className={styles.ringWrap}
-          role="img"
-          aria-label="Diagramme : les six fonctions du CyberFundamentals disposées en cycle continu — Govern, Identify, Protect, Detect, Respond, Recover — alignées sur le NIST CSF."
-        >
-          <FunctionsRing />
-        </figure>
-        <p className={styles.ringCap}>
-          Un <b>cycle continu</b>&nbsp;: chaque fonction alimente la suivante, de
-          la gouvernance à la reprise.
-        </p>
+        <Reveal>
+          <figure
+            className={styles.ringWrap}
+            role="img"
+            aria-label="Diagramme : les six fonctions du CyberFundamentals disposées en cycle continu — Govern, Identify, Protect, Detect, Respond, Recover — alignées sur le NIST CSF."
+          >
+            <FunctionsRing />
+          </figure>
+          <p className={styles.ringCap}>
+            Un <b>cycle continu</b>&nbsp;: chaque fonction alimente la suivante, de
+            la gouvernance à la reprise.
+          </p>
+        </Reveal>
 
-        <div className={styles.functions}>
+        <Reveal stagger className={styles.functions}>
           {(
             [
               { n: "01", icon: "shield", title: "Govern", text: "Gouvernance, rôles et gestion du risque cyber." },
@@ -465,91 +477,107 @@ export default function ConformiteNis2Page() {
               <p>{f.text}</p>
             </div>
           ))}
-        </div>
-        <p className={styles.fnNote}>
-          Les six fonctions du CyberFundamentals —{" "}
-          <b>Govern, Identify, Protect, Detect, Respond, Recover</b> — couvrent
-          l&apos;ensemble du cycle de vie du risque cyber, de l&apos;anticipation
-          à la reprise.
-        </p>
+        </Reveal>
+        <Reveal>
+          <p className={styles.fnNote}>
+            Les six fonctions du CyberFundamentals —{" "}
+            <b>Govern, Identify, Protect, Detect, Respond, Recover</b> — couvrent
+            l&apos;ensemble du cycle de vie du risque cyber, de l&apos;anticipation
+            à la reprise.
+          </p>
+        </Reveal>
       </Section>
 
-      {/* ===== Les 3 niveaux ===== */}
-      <Section variant="white" id="niveaux">
-        <SectionHeading
-          center
-          as="h2"
-          eyebrow="Les 3 niveaux d'assurance"
-          title={
-            <>
-              Basic, Important, Essential : choisir le{" "}
-              <span className={styles.accent}>bon niveau</span>
-            </>
-          }
-          lead="CyFun propose trois niveaux progressifs. Le bon choix dépend de votre catégorie NIS2, de votre exposition et de la sensibilité de vos données. Nous vous aidons à trancher."
-        />
+      {/* ===== Les 3 niveaux — full-bleed navy chapter (rhythm, matches home) ===== */}
+      <Section variant="navy" gridBg id="niveaux" className={styles.niveauxNavy}>
+        <Reveal>
+          <SectionHeading
+            center
+            as="h2"
+            onDark
+            eyebrow={<span className={styles.kickerMono}>Les 3 niveaux d&apos;assurance</span>}
+            title={
+              <>
+                Basic, Important, Essential : choisir le{" "}
+                <span className={styles.accent}>bon niveau</span>
+              </>
+            }
+            lead="CyFun propose trois niveaux progressifs. Le bon choix dépend de votre catégorie NIS2, de votre exposition et de la sensibilité de vos données. Nous vous aidons à trancher."
+          />
+        </Reveal>
 
-        <div className={styles.statHook}>
-          <div className={styles.statBig}>
-            <span className={styles.statBigNum}>3</span>
-            <span className={styles.statBigLbl}>Niveaux CyFun</span>
+        <Reveal>
+          <div className={styles.statHook}>
+            <div className={styles.statBig}>
+              <span className={styles.statBigNum}>3</span>
+              <span className={styles.statBigLbl}>Niveaux CyFun</span>
+            </div>
+            <CoverageGauge className={styles.covGauge} />
+            <div className={styles.txt}>
+              <b>
+                Le niveau Basic couvre déjà environ 82&nbsp;% des attaques les plus
+                courantes.
+              </b>{" "}
+              Le niveau Important porte cette couverture à environ 94&nbsp;%, et le
+              niveau Essential vise une protection quasi complète.
+            </div>
           </div>
-          <CoverageGauge className={styles.covGauge} />
-          <div className={styles.txt}>
-            <b>
-              Le niveau Basic couvre déjà environ 82&nbsp;% des attaques les plus
-              courantes.
-            </b>{" "}
-            Le niveau Important porte cette couverture à environ 94&nbsp;%, et le
-            niveau Essential vise une protection quasi complète.
-          </div>
-        </div>
+        </Reveal>
 
-        <figure
-          className={styles.levelsFig}
-          role="img"
-          aria-label="Diagramme en escalier : la couverture face aux attaques croît avec le niveau — Basic environ 82 pour cent, Important environ 94 pour cent, Essential protection quasi complète."
-        >
-          <LevelsStepChart />
-        </figure>
-        <p className={styles.levelsCap}>
-          Une échelle progressive&nbsp;: plus le niveau visé est élevé, plus la{" "}
-          <b>couverture</b> et l&apos;<b>exigence</b> augmentent.
-        </p>
+        <Reveal>
+          <figure
+            className={styles.levelsFig}
+            role="img"
+            aria-label="Diagramme en escalier : la couverture face aux attaques croît avec le niveau — Basic environ 82 pour cent, Important environ 94 pour cent, Essential protection quasi complète."
+          >
+            <LevelsStepChart />
+          </figure>
+          <p className={styles.levelsCap}>
+            Une échelle progressive&nbsp;: plus le niveau visé est élevé, plus la{" "}
+            <b>couverture</b> et l&apos;<b>exigence</b> augmentent.
+          </p>
+        </Reveal>
 
-        <CyFunTiers className={styles.tiersBlock} />
+        <Reveal>
+          <CyFunTiers className={styles.tiersBlock} />
+        </Reveal>
       </Section>
 
       {/* ===== Accompagnement + honnêteté ===== */}
       <Section variant="tint" id="accompagnement">
-        <SectionHeading
-          as="h2"
-          eyebrow="Notre accompagnement"
-          title={
-            <>
-              On ne se contente pas d&apos;auditer —{" "}
-              <span className={styles.accent}>on corrige</span> et on vous
-              amène prêts
-            </>
-          }
-          lead="C'est notre différence avec les pures maisons d'audit : nous ne repartons pas en vous laissant une liste de problèmes. Nous mettons les mains dans le cambouis et nous vous préparons à la vérification."
-        />
-
-        <figure className={styles.sectionPhoto}>
-          <OptimizedImage
-            src="/images/pages/conformite-nis2/audit-collaboration.jpg"
-            alt="Deux experts Smidjan collaborant avec un client autour d'un ordinateur portable et de documents d'audit NIS2"
-            width={1200}
-            height={800}
-            sizePreset="hero"
-            className={styles.sectionPhotoFrame}
+        <Reveal>
+          <SectionHeading
+            as="h2"
+            eyebrow={<span className={styles.kickerMono}>Notre accompagnement</span>}
+            title={
+              <>
+                On ne se contente pas d&apos;auditer —{" "}
+                <span className={styles.accent}>on corrige</span> et on vous
+                amène prêts
+              </>
+            }
+            lead="C'est notre différence avec les pures maisons d'audit : nous ne repartons pas en vous laissant une liste de problèmes. Nous mettons les mains dans le cambouis et nous vous préparons à la vérification."
           />
-          <figcaption className={styles.sectionPhotoCap}>
-            Un <b>accompagnement de terrain</b>&nbsp;: nous travaillons avec vos
-            équipes, pas seulement sur un rapport.
-          </figcaption>
-        </figure>
+        </Reveal>
 
+        <Reveal>
+          <figure className={styles.sectionPhoto}>
+            <OptimizedImage
+              src="/images/pages/conformite-nis2/audit-collaboration.jpg"
+              alt="Deux experts Smidjan collaborant avec un client autour d'un ordinateur portable et de documents d'audit NIS2"
+              width={1200}
+              height={800}
+              sizePreset="hero"
+              className={styles.sectionPhotoFrame}
+            />
+            <figcaption className={styles.sectionPhotoCap}>
+              Un <b>accompagnement de terrain</b>&nbsp;: nous travaillons avec vos
+              équipes, pas seulement sur un rapport.
+            </figcaption>
+          </figure>
+        </Reveal>
+
+        <Reveal>
         <div className={styles.honesty}>
           <Icon name="shield" size={30} strokeWidth={1.8} />
           <div>
@@ -568,7 +596,7 @@ export default function ConformiteNis2Page() {
               la soumission. Nous ne délivrons pas le label&nbsp;; nous vous
               rendons <b>prêts à l&apos;obtenir</b>.
             </p>
-            <div className={styles.roles}>
+            <Reveal stagger className={styles.roles}>
               <div className={`${styles.roleCol} ${styles.roleSmidjan}`}>
                 <h5>
                   <Icon name="lock" size={17} />
@@ -624,10 +652,12 @@ export default function ConformiteNis2Page() {
                   indépendants de nous.
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
+        </Reveal>
 
+        <Reveal>
         <div className={styles.process}>
           <figure
             className={styles.roadmapFig}
@@ -662,25 +692,29 @@ export default function ConformiteNis2Page() {
             ]}
           />
         </div>
+        </Reveal>
       </Section>
 
       {/* ===== Notre outil propriétaire d'audit CyFun ===== */}
       <Section variant="tint3" id="methode-audit">
-        <SectionHeading
-          center
-          as="h2"
-          eyebrow="Notre outil propriétaire"
-          title={
-            <>
-              Smidjan mène l&apos;audit CyFun avec un outil{" "}
-              <span className={styles.accent}>
-                propriétaire, sûr par conception
-              </span>
-            </>
-          }
-          lead="Nous avons développé notre propre moteur d'audit, aligné sur le référentiel CyFun (CCB) et sur le NIST CSF 2.0, pour évaluer votre conformité de façon rapide, cohérente et fondée sur des preuves — puis nous corrigeons : remédiation et durcissement de votre infrastructure."
-        />
+        <Reveal>
+          <SectionHeading
+            center
+            as="h2"
+            eyebrow={<span className={styles.kickerMono}>Notre outil propriétaire</span>}
+            title={
+              <>
+                Smidjan mène l&apos;audit CyFun avec un outil{" "}
+                <span className={styles.accent}>
+                  propriétaire, sûr par conception
+                </span>
+              </>
+            }
+            lead="Nous avons développé notre propre moteur d'audit, aligné sur le référentiel CyFun (CCB) et sur le NIST CSF 2.0, pour évaluer votre conformité de façon rapide, cohérente et fondée sur des preuves — puis nous corrigeons : remédiation et durcissement de votre infrastructure."
+          />
+        </Reveal>
 
+        <Reveal>
         <div className={styles.auditPanel}>
           <div className={`${styles.gridBg} grid-bg`} aria-hidden="true" />
           <div className={styles.auditPanelHead}>
@@ -707,8 +741,9 @@ export default function ConformiteNis2Page() {
             </span>
           </div>
         </div>
+        </Reveal>
 
-        <div className={styles.trustGrid}>
+        <Reveal stagger className={styles.trustGrid}>
           {(
             [
               {
@@ -751,8 +786,9 @@ export default function ConformiteNis2Page() {
               <p>{c.text}</p>
             </article>
           ))}
-        </div>
+        </Reveal>
 
+        <Reveal>
         <div className={styles.honesty}>
           <Icon name="alert-circle" size={30} strokeWidth={1.8} />
           <div>
@@ -767,7 +803,9 @@ export default function ConformiteNis2Page() {
             </p>
           </div>
         </div>
+        </Reveal>
 
+        <Reveal>
         <div className={styles.process}>
           <ProcessSteps
             kicker="De l'audit au durcissement"
@@ -795,7 +833,9 @@ export default function ConformiteNis2Page() {
             ]}
           />
         </div>
+        </Reveal>
 
+        <Reveal>
         <div className={styles.auditCtaWrap}>
           <Button
             as="a"
@@ -807,27 +847,30 @@ export default function ConformiteNis2Page() {
           </Button>
           <p>Auto-évaluation assistée, sans risque pour vos systèmes.</p>
         </div>
+        </Reveal>
       </Section>
 
       {/* ===== Financer votre conformité ===== */}
       <Section variant="white" id="financement">
-        <SectionHeading
-          center
-          as="h2"
-          eyebrow="Financer votre conformité"
-          title={
-            <>
-              Se mettre en conformité coûte moins cher qu&apos;on ne le
-              croit —{" "}
-              <span className={styles.accent}>
-                une large partie peut être subsidiée
-              </span>
-            </>
-          }
-          lead="En Wallonie, le chèque « cybersécurité » de la plateforme chèques-entreprises.be finance une large partie du coût de votre audit et de votre remédiation. Et certains outils du CCB sont gratuits. Voici comment en profiter concrètement."
-        />
+        <Reveal>
+          <SectionHeading
+            center
+            as="h2"
+            eyebrow={<span className={styles.kickerMono}>Financer votre conformité</span>}
+            title={
+              <>
+                Se mettre en conformité coûte moins cher qu&apos;on ne le
+                croit —{" "}
+                <span className={styles.accent}>
+                  une large partie peut être subsidiée
+                </span>
+              </>
+            }
+            lead="En Wallonie, le chèque « cybersécurité » de la plateforme chèques-entreprises.be finance une large partie du coût de votre audit et de votre remédiation. Et certains outils du CCB sont gratuits. Voici comment en profiter concrètement."
+          />
+        </Reveal>
 
-        <div className={styles.fundingGrid}>
+        <Reveal stagger className={styles.fundingGrid}>
           <article className={styles.fundingCard}>
             <div className={styles.fundingIco}>
               <Icon name="check-circle" size={24} strokeWidth={1.8} />
@@ -863,8 +906,9 @@ export default function ConformiteNis2Page() {
               au minimum le niveau Basic.
             </p>
           </article>
-        </div>
+        </Reveal>
 
+        <Reveal>
         <div className={`${styles.frameIntro} ${styles.fundingDetails}`}>
           <div>
             <h3>Le chèque « cybersécurité » (chèques-entreprises.be)</h3>
@@ -953,7 +997,9 @@ export default function ConformiteNis2Page() {
             </div>
           </div>
         </div>
+        </Reveal>
 
+        <Reveal>
         <div className={styles.process}>
           <ProcessSteps
             kicker="Comment en profiter — en 3 étapes"
@@ -976,7 +1022,9 @@ export default function ConformiteNis2Page() {
             ]}
           />
         </div>
+        </Reveal>
 
+        <Reveal>
         <div className={styles.honesty}>
           <Icon name="alert-circle" size={30} strokeWidth={1.8} />
           <div>
@@ -1005,7 +1053,9 @@ export default function ConformiteNis2Page() {
             </p>
           </div>
         </div>
+        </Reveal>
 
+        <Reveal>
         <div className={styles.fundingCtaWrap}>
           <Button
             as="a"
@@ -1017,17 +1067,21 @@ export default function ConformiteNis2Page() {
           </Button>
           <p>Diagnostic gratuit, sans engagement.</p>
         </div>
+        </Reveal>
       </Section>
 
       {/* ===== FAQ ===== */}
       <Section variant="white" id="faq">
-        <SectionHeading
-          center
-          as="h2"
-          eyebrow="Questions fréquentes"
-          title="NIS2 & CyFun : vos questions, nos réponses"
-          lead="Les points sur lesquels nos clients nous interrogent le plus souvent. Une question ne figure pas ici ? Posez-la lors du diagnostic gratuit."
-        />
+        <Reveal>
+          <SectionHeading
+            center
+            as="h2"
+            eyebrow={<span className={styles.kickerMono}>Questions fréquentes</span>}
+            title="NIS2 & CyFun : vos questions, nos réponses"
+            lead="Les points sur lesquels nos clients nous interrogent le plus souvent. Une question ne figure pas ici ? Posez-la lors du diagnostic gratuit."
+          />
+        </Reveal>
+        <Reveal>
         <Faq
           defaultOpenFirst
           items={[
@@ -1165,24 +1219,27 @@ export default function ConformiteNis2Page() {
             },
           ]}
         />
+        </Reveal>
       </Section>
 
       {/* ===== Final CTA ===== */}
-      <CTABox
-        id="contact"
-        tint
-        title="Sachez où vous en êtes — avant qu'il ne soit trop tard"
-        text="30 minutes avec un expert pour identifier votre catégorie NIS2, cadrer le niveau CyFun pertinent et repartir avec des priorités claires. Sans engagement, sans jargon."
-        actions={[
-          { label: "Réserver mon diagnostic NIS2", href: "/contact", variant: "primary" },
-          { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },
-        ]}
-        reassurances={[
-          "Réponse sous 24 h",
-          "Expert dédié, pas de sous-traitance",
-          "Données en Belgique",
-        ]}
-      />
+      <Reveal>
+        <CTABox
+          id="contact"
+          tint
+          title="Sachez où vous en êtes — avant qu'il ne soit trop tard"
+          text="30 minutes avec un expert pour identifier votre catégorie NIS2, cadrer le niveau CyFun pertinent et repartir avec des priorités claires. Sans engagement, sans jargon."
+          actions={[
+            { label: "Réserver mon diagnostic NIS2", href: "/contact", variant: "primary" },
+            { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },
+          ]}
+          reassurances={[
+            "Réponse sous 24 h",
+            "Expert dédié, pas de sous-traitance",
+            "Données en Belgique",
+          ]}
+        />
+      </Reveal>
     </>
   );
 }

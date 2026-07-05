@@ -6,7 +6,9 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Button } from "@/components/ui/Button/Button";
+import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { StatsBand, CTABox } from "@/components/shared";
 import { QuiSommesNous } from "./QuiSommesNous";
 import { Fondateur } from "./Fondateur";
@@ -61,7 +63,7 @@ export default function AgencePage() {
       <section className={styles.pageHero}>
         <Container className={styles.heroInner}>
           <div className={styles.heroGrid}>
-            <div className={styles.heroText}>
+            <Reveal as="div" className={styles.heroText}>
               <nav className={styles.crumb} aria-label="Fil d'Ariane">
                 <Link href="/">Accueil</Link>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -69,7 +71,7 @@ export default function AgencePage() {
                 </svg>
                 <span className={styles.crumbHere}>L&rsquo;agence</span>
               </nav>
-              <Eyebrow>L&rsquo;agence</Eyebrow>
+              <Eyebrow className={styles.kickerMono}>L&rsquo;agence</Eyebrow>
               <h1 className={styles.h1}>
                 Un <span className="accent">expert cybersécurité local</span>,
                 pas une agence anonyme.
@@ -108,8 +110,8 @@ export default function AgencePage() {
                   Données hébergées en Belgique / UE
                 </li>
               </ul>
-            </div>
-            <div className={styles.heroMedia}>
+            </Reveal>
+            <Reveal as="div" className={styles.heroMedia} variant="right" delay={100}>
               <OptimizedImage
                 src="/images/pages/agence/liege-nuit.jpg"
                 alt="Le pont de Fragnée illuminé la nuit au-dessus de la Meuse, à Liège"
@@ -120,7 +122,7 @@ export default function AgencePage() {
                 priority
                 className={styles.heroImg}
               />
-            </div>
+            </Reveal>
           </div>
         </Container>
       </section>
@@ -128,69 +130,70 @@ export default function AgencePage() {
       <QuiSommesNous />
       <Fondateur />
 
-      {/* ===== Engagements / valeurs ===== */}
-      <section className={styles.engage}>
-        <Container>
+      {/* ===== Engagements / valeurs — full-bleed navy chapter ===== */}
+      <Section variant="navy" gridBg id="engagements">
+        <Reveal>
           <SectionHeading
             center
+            onDark
             eyebrow="Nos engagements"
             title={
               <>
                 Ce que vous êtes{" "}
-                <span className="accent">en droit d&rsquo;attendre</span> de
+                <span className="accentOnDark">en droit d&rsquo;attendre</span> de
                 nous
               </>
             }
             lead="Quatre principes qui guident chaque mission — et sur lesquels nous acceptons d'être jugés."
           />
-          <div className={styles.engageGrid}>
-            <article className={styles.engageCard}>
-              <div className={styles.engageIco}>
-                <Icon name="map-pin" strokeWidth={1.7} />
-              </div>
-              <h3>Proximité</h3>
-              <p>
-                Locaux et réactifs. Nous intervenons vite en Wallonie, et vous
-                avez un interlocuteur réellement joignable — au téléphone, pas
-                derrière un ticket.
-              </p>
-            </article>
-            <article className={styles.engageCard}>
-              <div className={styles.engageIco}>
-                <Icon name="check-circle" strokeWidth={1.7} />
-              </div>
-              <h3>Franchise</h3>
-              <p>
-                On vous dit ce qui compte, clairement et sans dramatiser. Pas
-                de vente de peur : des priorités honnêtes, adaptées à votre
-                réalité et à votre budget.
-              </p>
-            </article>
-            <article className={styles.engageCard}>
-              <div className={styles.engageIco}>
-                <Icon name="file-check" strokeWidth={1.7} />
-              </div>
-              <h3>On corrige</h3>
-              <p>
-                Nous ne nous contentons pas d&rsquo;auditer : nous corrigeons
-                ce que nous trouvons. Un constat sans remédiation ne réduit
-                aucun risque.
-              </p>
-            </article>
-            <article className={styles.engageCard}>
-              <div className={styles.engageIco}>
-                <Icon name="sparkles" strokeWidth={1.7} />
-              </div>
-              <h3>L&rsquo;humain augmenté par l&rsquo;IA</h3>
-              <p>
-                Nous utilisons l&rsquo;IA pour aller plus vite et couvrir plus
-                large — mais l&rsquo;analyse et les décisions restent entre
-                des mains humaines et expertes.
-              </p>
-            </article>
-          </div>
-        </Container>
-      </section>
+        </Reveal>
+        <Reveal stagger className={styles.engageGrid}>
+          <article className={styles.engageCard}>
+            <div className={styles.engageIco}>
+              <Icon name="map-pin" strokeWidth={1.7} />
+            </div>
+            <h3>Proximité</h3>
+            <p>
+              Locaux et réactifs. Nous intervenons vite en Wallonie, et vous
+              avez un interlocuteur réellement joignable — au téléphone, pas
+              derrière un ticket.
+            </p>
+          </article>
+          <article className={styles.engageCard}>
+            <div className={styles.engageIco}>
+              <Icon name="check-circle" strokeWidth={1.7} />
+            </div>
+            <h3>Franchise</h3>
+            <p>
+              On vous dit ce qui compte, clairement et sans dramatiser. Pas
+              de vente de peur : des priorités honnêtes, adaptées à votre
+              réalité et à votre budget.
+            </p>
+          </article>
+          <article className={styles.engageCard}>
+            <div className={styles.engageIco}>
+              <Icon name="file-check" strokeWidth={1.7} />
+            </div>
+            <h3>On corrige</h3>
+            <p>
+              Nous ne nous contentons pas d&rsquo;auditer : nous corrigeons
+              ce que nous trouvons. Un constat sans remédiation ne réduit
+              aucun risque.
+            </p>
+          </article>
+          <article className={styles.engageCard}>
+            <div className={styles.engageIco}>
+              <Icon name="sparkles" strokeWidth={1.7} />
+            </div>
+            <h3>L&rsquo;humain augmenté par l&rsquo;IA</h3>
+            <p>
+              Nous utilisons l&rsquo;IA pour aller plus vite et couvrir plus
+              large — mais l&rsquo;analyse et les décisions restent entre
+              des mains humaines et expertes.
+            </p>
+          </article>
+        </Reveal>
+      </Section>
 
       {/*
         NOTE (flag for human): the figures below (12+ / 50+ / 6+ / <24h) are

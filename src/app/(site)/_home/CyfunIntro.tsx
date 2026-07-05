@@ -1,13 +1,14 @@
 import React from "react";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { StatHook } from "@/components/shared";
 import styles from "./CyfunIntro.module.css";
 
 /** CyFun flagship intro: explainer + attack-coverage hook + NIS2 deadline card. */
 export function CyfunIntro() {
   return (
-    <div className={styles.intro}>
+    <Reveal className={styles.intro}>
       <div>
         <Eyebrow className={styles.kickerMono}>Section phare · Conformité</Eyebrow>
         <h2 className={styles.title}>
@@ -49,7 +50,7 @@ export function CyfunIntro() {
           </span>
         </div>
       </aside>
-    </div>
+    </Reveal>
   );
 }
 

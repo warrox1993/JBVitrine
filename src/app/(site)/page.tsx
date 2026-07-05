@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import OptimizedImage from "@/components/ui/OptimizedImage/OptimizedImage";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
+import { Reveal } from "@/components/ui/Reveal/Reveal";
 import {
   TrustStrip,
   ServiceCard,
@@ -86,22 +87,26 @@ export default function HomePage() {
 
       <Hero />
 
-      <TrustStrip />
+      <Reveal>
+        <TrustStrip />
+      </Reveal>
 
       {/* ===== Services ===== */}
       <Section variant="tint" id="services">
-        <SectionHeading
-          center
-          eyebrow="Nos services"
-          title={
-            <>
-              Quatre missions, un même objectif&nbsp;: réduire votre{" "}
-              <span className="accent">risque cyber</span>
-            </>
-          }
-          lead="De la protection de votre infrastructure à la conformité réglementaire, nous couvrons l'ensemble de la chaîne — et nous corrigeons ce que nous trouvons."
-        />
-        <div className={homeStyles.svcGrid}>
+        <Reveal>
+          <SectionHeading
+            center
+            eyebrow="Nos services"
+            title={
+              <>
+                Quatre missions, un même objectif&nbsp;: réduire votre{" "}
+                <span className="accent">risque cyber</span>
+              </>
+            }
+            lead="De la protection de votre infrastructure à la conformité réglementaire, nous couvrons l'ensemble de la chaîne — et nous corrigeons ce que nous trouvons."
+          />
+        </Reveal>
+        <Reveal stagger className={homeStyles.svcGrid}>
           <ServiceCard
             icon="server"
             kicker="Sécuriser"
@@ -151,7 +156,7 @@ export default function HomePage() {
             href="/conformite-nis2"
             linkLabel="Voir la section dédiée"
           />
-        </div>
+        </Reveal>
 
         <IllusPanel
           eyebrow="Architecture"
@@ -206,7 +211,9 @@ export default function HomePage() {
       {/* ===== CyFun flagship ===== */}
       <Section variant="white" id="cyfun">
         <CyfunIntro />
-        <CyFunTiers showTable={false} className={homeStyles.tiers} />
+        <Reveal>
+          <CyFunTiers showTable={false} className={homeStyles.tiers} />
+        </Reveal>
         <IllusPanel
           eyebrow="Diagnostic"
           title="Un rapport d'écart clair, domaine par domaine"
@@ -221,31 +228,33 @@ export default function HomePage() {
           onTint
         />
         <Honesty />
-        <ProcessSteps
-          kicker="Notre méthode en 4 étapes"
-          steps={[
-            {
-              title: "Cadrage & auto-évaluation",
-              description:
-                "Nous délimitons le périmètre, identifions les actifs critiques et réalisons l'auto-évaluation CyFun avec vos équipes.",
-            },
-            {
-              title: "Analyse d'écart & remédiation",
-              description:
-                "Nous mesurons l'écart au niveau visé et corrigeons concrètement les manques, par ordre de priorité et de risque.",
-            },
-            {
-              title: "Support à la vérification CCB",
-              description:
-                "Nous préparons le dossier et vous accompagnons jusqu'à la soumission / vérification par l'organisme accrédité.",
-            },
-            {
-              title: "Suivi continu",
-              description:
-                "La conformité n'est pas un projet ponctuel : nous maintenons votre posture dans le temps et à chaque évolution.",
-            },
-          ]}
-        />
+        <Reveal>
+          <ProcessSteps
+            kicker="Notre méthode en 4 étapes"
+            steps={[
+              {
+                title: "Cadrage & auto-évaluation",
+                description:
+                  "Nous délimitons le périmètre, identifions les actifs critiques et réalisons l'auto-évaluation CyFun avec vos équipes.",
+              },
+              {
+                title: "Analyse d'écart & remédiation",
+                description:
+                  "Nous mesurons l'écart au niveau visé et corrigeons concrètement les manques, par ordre de priorité et de risque.",
+              },
+              {
+                title: "Support à la vérification CCB",
+                description:
+                  "Nous préparons le dossier et vous accompagnons jusqu'à la soumission / vérification par l'organisme accrédité.",
+              },
+              {
+                title: "Suivi continu",
+                description:
+                  "La conformité n'est pas un projet ponctuel : nous maintenons votre posture dans le temps et à chaque évolution.",
+              },
+            ]}
+          />
+        </Reveal>
       </Section>
 
       {/* ===== Why Smidjan — full-bleed navy chapter ===== */}
@@ -268,32 +277,36 @@ export default function HomePage() {
       </Section>
 
       {/* ===== Stats band ===== */}
-      <StatsBand
-        title={
-          <>
-            Des <span className="accentOnDark">résultats concrets</span>, une exigence constante
-          </>
-        }
-        lead="Des indicateurs modestes mais réels — la mesure d'un partenaire qui privilégie la qualité à la promesse."
-        stats={[
-          { value: "12", accent: "+", label: "années d'expertise cumulée en sécurité" },
-          { value: "50", accent: "+", label: "audits & tests d'intrusion réalisés" },
-          { value: "<24", accent: "h", label: "délai de réponse à toute sollicitation" },
-          { value: "100", accent: "%", label: "des données hébergées en Belgique / UE" },
-        ]}
-      />
+      <Reveal>
+        <StatsBand
+          title={
+            <>
+              Des <span className="accentOnDark">résultats concrets</span>, une exigence constante
+            </>
+          }
+          lead="Des indicateurs modestes mais réels — la mesure d'un partenaire qui privilégie la qualité à la promesse."
+          stats={[
+            { value: "12", accent: "+", label: "années d'expertise cumulée en sécurité" },
+            { value: "50", accent: "+", label: "audits & tests d'intrusion réalisés" },
+            { value: "<24", accent: "h", label: "délai de réponse à toute sollicitation" },
+            { value: "100", accent: "%", label: "des données hébergées en Belgique / UE" },
+          ]}
+        />
+      </Reveal>
 
       {/* ===== Testimonials ===== */}
       <Section variant="white">
-        <SectionHeading
-          center
-          eyebrow="Ils nous font confiance"
-          title={
-            <>
-              Ce qu&apos;en disent <span className="accent">nos clients</span>
-            </>
-          }
-        />
+        <Reveal>
+          <SectionHeading
+            center
+            eyebrow="Ils nous font confiance"
+            title={
+              <>
+                Ce qu&apos;en disent <span className="accent">nos clients</span>
+              </>
+            }
+          />
+        </Reveal>
         <Testimonials />
       </Section>
 
@@ -303,25 +316,27 @@ export default function HomePage() {
       </Section>
 
       {/* ===== Final CTA ===== */}
-      <CTABox
-        id="diagnostic"
-        title={
-          <>
-            Un <span className="accentOnDark">diagnostic gratuit</span> pour savoir où vous en
-            êtes
-          </>
-        }
-        text="30 minutes avec un expert pour évaluer votre exposition, cadrer votre conformité NIS2 et repartir avec des priorités claires. Sans engagement."
-        actions={[
-          { label: "Réserver mon diagnostic gratuit", href: "/contact" },
-          { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },
-        ]}
-        reassurances={[
-          "Réponse sous 24 h",
-          "Expert dédié, pas de sous-traitance",
-          "Données en Belgique",
-        ]}
-      />
+      <Reveal>
+        <CTABox
+          id="diagnostic"
+          title={
+            <>
+              Un <span className="accentOnDark">diagnostic gratuit</span> pour savoir où vous en
+              êtes
+            </>
+          }
+          text="30 minutes avec un expert pour évaluer votre exposition, cadrer votre conformité NIS2 et repartir avec des priorités claires. Sans engagement."
+          actions={[
+            { label: "Réserver mon diagnostic gratuit", href: "/contact" },
+            { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },
+          ]}
+          reassurances={[
+            "Réponse sous 24 h",
+            "Expert dédié, pas de sous-traitance",
+            "Données en Belgique",
+          ]}
+        />
+      </Reveal>
     </>
   );
 }
