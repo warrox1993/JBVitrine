@@ -1,6 +1,12 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { getToken } from "next-auth/jwt";
+import createMiddleware from "next-intl/middleware";
+import { routing } from "./i18n/routing";
+
+// next-intl locale routing (FR at "/", NL/EN prefixed). Applied only to the
+// localized site routes below — /api and /admin keep their own handling.
+const handleI18nRouting = createMiddleware(routing);
 
 // List of suspicious user agents (common bots, scanners)
 const SUSPICIOUS_USER_AGENTS = [
@@ -156,11 +162,18 @@ export async function middleware(request: NextRequest) {
   // without relying on usePathname(), which is client-only.
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-pathname", pathname);
-  const response = NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  });
+
+  // /api and /admin are NOT localized: keep the plain header-forwarding
+  // response. Everything else is a localized site route → hand off to
+  // next-intl for locale detection and prefixing.
+  const isNonLocalized =
+    pathname.startsWith("/api") || pathname.startsWith("/admin");
+
+  const response = isNonLocalized
+    ? NextResponse.next({ request: { headers: requestHeaders } })
+    : handleI18nRouting(request);
+
+  response.headers.set("x-pathname", pathname);
 
   // Add additional security headers not covered by next.config.ts
   response.headers.set("X-Request-ID", crypto.randomUUID());

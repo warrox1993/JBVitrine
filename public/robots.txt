@@ -38,6 +38,3 @@ Allow: /
 
 # Host
 Host: https://smidjan.be
-
-# Sitemaps
-Sitemap: https://smidjan.be/sitemap.xml

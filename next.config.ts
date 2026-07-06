@@ -1,9 +1,13 @@
 import type { NextConfig } from "next";
 import bundleAnalyzer from "@next/bundle-analyzer";
+import createNextIntlPlugin from "next-intl/plugin";
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
+
+// Wires next-intl to src/i18n/request.ts for locale-aware Server Components.
+const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   // Modern browsers only - No unnecessary polyfills (saves ~14KB)
@@ -228,4 +232,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withBundleAnalyzer(nextConfig);
+export default withNextIntl(withBundleAnalyzer(nextConfig));

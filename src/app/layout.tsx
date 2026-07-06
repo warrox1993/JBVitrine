@@ -17,6 +17,8 @@ import { RootEffects } from '@/components/Effects/RootEffects';
 import RouteProgressProvider from '@/app/RouteProgressProvider';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 
 // Optimized font loading with swap and subset for faster FCP/LCP
 const inter = Inter({
@@ -164,9 +166,10 @@ export const viewport: Viewport = {
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+    const locale = await getLocale();
     return (
-        <html lang="fr-BE" data-theme="light" suppressHydrationWarning>
+        <html lang={locale} data-theme="light" suppressHydrationWarning>
             <head>
                 <meta name="color-scheme" content="dark light" />
                 {/* No-flash theme init: apply the user's explicit stored choice
@@ -183,10 +186,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </head>
             <body className={`${inter.variable} ${instrument.variable}`}>
                 <FXReady />
-                <RootEffects>
-                    <RouteProgressProvider />
-                    {children}
-                </RootEffects>
+                <NextIntlClientProvider>
+                    <RootEffects>
+                        <RouteProgressProvider />
+                        {children}
+                    </RootEffects>
+                </NextIntlClientProvider>
                 <ToastContainer
                     position="bottom-right"
                     autoClose={5000}
