@@ -6,8 +6,9 @@
 }
 
 .breadcrumbBar {
-  background: var(--bg-2);
-  border-bottom: 1px solid var(--line);
+  /* Le fil d'Ariane est masqué (voir globals.css) ; on retire aussi la barre
+     dédiée pour ne pas laisser un bandeau vide avec fond + bordure. */
+  display: none;
 }
 
 /* ===== Page header ===== */

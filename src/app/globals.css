@@ -223,4 +223,14 @@ body {
   background-color: #1a1a1a !important;
   color: #e0e0e0 !important;
 }
+
+/* Masquer tous les fils d'Ariane visibles sur le site public.
+   Cible chaque variante (composants Breadcrumbs/Breadcrumb + navs inline)
+   via leur aria-label commun, scopé au layout public (n'affecte pas l'admin).
+   Le balisage JSON-LD BreadcrumbList (SEO) est conservé : c'est un <script>,
+   pas un <nav>, donc non concerné par cette règle. */
+.main-content-site nav[aria-label="Fil d'Ariane"] {
+  display: none;
+}
+
 /* Force Vercel rebuild - $(date +%s) */
