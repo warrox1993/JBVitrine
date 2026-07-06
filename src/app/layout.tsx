@@ -168,7 +168,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="fr-BE" data-theme="light" suppressHydrationWarning>
             <head>
-                {/* ... existing head ... */}
+                <meta name="color-scheme" content="dark light" />
+                {/* No-flash theme init: set data-theme before first paint from the
+                    stored choice, else from the OS preference. Zero-dependency. */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html:
+                            "(function(){try{var s=localStorage.getItem('smidjan-theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',(s==='dark'||s==='light')?s:(m?'dark':'light'));}catch(e){}})();",
+                    }}
+                />
             </head>
             <body className={`${inter.variable} ${instrument.variable}`}>
                 <FXReady />

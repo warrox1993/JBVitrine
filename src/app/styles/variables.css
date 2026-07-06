@@ -277,6 +277,114 @@
 }
 
 /* ============================================
+   DARK THEME (refonte-design — deep navy-graphite)
+   Base bg #081525 sits one step below brand navy so the
+   existing navy panels become valid elevated surfaces.
+   Orange stays CTA/accent only. Layer B (corporate tokens)
+   is redeclared in globals.css. Light mode is untouched.
+   ============================================ */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Base surfaces — elevation = lighter */
+  --color-bg: #081525;
+  --color-bg-alt: #0b1c30;
+  --color-surface: #10223a;
+  --color-surface-solid: #12243d;
+  --color-surface-glass: rgba(12, 26, 46, 0.72);
+
+  /* Borders — light hairlines */
+  --color-border: rgba(223, 231, 242, 0.12);
+  --color-border-hover: rgba(223, 231, 242, 0.22);
+  --color-shadow: rgba(0, 0, 0, 0.55);
+
+  /* Text — WCAG AA on #081525 */
+  --color-text: #eaf1fb;
+  --color-text-muted: #9fb0c9;
+
+  /* Accent — orange stays CTA-only, brightened for dark */
+  --color-primary: #ff7a1a;
+  --color-primary-strong: #ff6a00;
+  --color-primary-contrast: #0a1120;
+  --color-secondary: #f7a93e;
+  --color-accent: #4d8dff;
+  --color-danger: #ff6b5e;
+
+  /* Legacy scale mappings */
+  --color-bg-1: var(--color-bg);
+  --color-bg-2: var(--color-bg-alt);
+  --color-bg-3: var(--color-surface);
+  --color-text-1: var(--color-text);
+  --color-text-2: var(--color-text-muted);
+  --color-text-3: color-mix(in srgb, var(--color-text-muted), #000 22%);
+  --color-accent-1: var(--color-primary);
+  --color-accent-2: var(--color-secondary);
+  --color-accent-3: var(--color-primary-strong);
+
+  /* Glow — softer on dark */
+  --shadow-glow-outer: 0 0 28px rgba(255, 106, 0, 0.2);
+  --shadow-glow-inner: 0 0 14px rgba(255, 150, 60, 0.14);
+  --color-glow: rgba(255, 106, 0, 0.22);
+
+  /* Primary opacities (orange base) */
+  --color-primary-5: rgba(255, 106, 0, 0.06);
+  --color-primary-8: rgba(255, 106, 0, 0.1);
+  --color-primary-12: rgba(255, 106, 0, 0.14);
+  --color-primary-15: rgba(255, 106, 0, 0.18);
+  --color-primary-20: rgba(255, 106, 0, 0.24);
+  --color-primary-24: rgba(255, 106, 0, 0.28);
+  --color-primary-30: rgba(255, 106, 0, 0.34);
+  --color-primary-40: rgba(255, 106, 0, 0.44);
+
+  /* Status */
+  --color-success: #34d399;
+  --color-success-bg: rgba(6, 78, 59, 0.35);
+  --color-success-border: #065f46;
+  --color-warning: #fbbf24;
+  --color-warning-bg: rgba(120, 53, 15, 0.35);
+  --color-warning-border: #92400e;
+  --color-error: #f87171;
+  --color-error-bg: rgba(127, 29, 29, 0.35);
+  --color-error-border: #991b1b;
+  --color-info: #60a5fa;
+  --color-info-bg: rgba(30, 58, 138, 0.35);
+  --color-info-border: #1e40af;
+
+  /* Shadows — deeper on dark */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm-strong: 0 2px 4px rgba(0, 0, 0, 0.45);
+  --shadow-md-strong: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg-strong: 0 8px 24px rgba(0, 0, 0, 0.55);
+  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.6);
+  --shadow-2xl: 0 24px 60px rgba(0, 0, 0, 0.65);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
+  --shadow-glow: var(--shadow-glow-outer), var(--shadow-glow-inner);
+
+  /* Component tokens */
+  --card-bg: var(--color-surface);
+  --card-border: var(--color-border);
+  --color-bg-header: rgba(8, 21, 37, 0.8);
+
+  /* Buttons — orange fill, dark ink for AA on light orange */
+  --btn-bg: var(--color-primary);
+  --btn-fg: var(--color-primary-contrast);
+  --btn-border: transparent;
+  --btn-shadow: 0 10px 28px rgba(255, 106, 0, 0.28);
+  --btn-bg-hover: color-mix(in srgb, var(--color-primary) 90%, #fff 10%);
+  --btn-fg-hover: var(--color-primary-contrast);
+  --btn-bg-active: color-mix(in srgb, var(--color-primary-strong) 92%, #000 8%);
+  --btn-fg-active: var(--color-primary-contrast);
+  --btn-bg-disabled: color-mix(in srgb, var(--color-primary) 18%, var(--color-bg) 82%);
+  --btn-fg-disabled: color-mix(in srgb, #fff 45%, transparent);
+  --btn-border-disabled: transparent;
+
+  --progress-color: var(--color-accent);
+  --progress-bg: color-mix(in srgb, var(--color-border), transparent 60%);
+}
+
+/* ============================================
    MOBILE OPTIMIZATIONS
    ============================================ */
 

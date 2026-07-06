@@ -139,6 +139,16 @@
   display: block;
 }
 
+/* Theme toggle: shown in the header row on desktop, moved into the mobile
+   dropdown on small screens so it never crowds the compact header. */
+.themeDesktop {
+  display: inline-flex;
+  align-items: center;
+}
+.themeMobile {
+  display: none;
+}
+
 @media (max-width: 720px) {
   .nav {
     padding: 0 16px;
@@ -158,6 +168,17 @@
     min-height: 44px;
   }
 
+  .themeDesktop {
+    display: none;
+  }
+  .main.open .themeMobile {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+
   /* Shrink the CTA so brand + CTA + hamburger fit narrow screens. */
   .primary {
     padding: 11px 16px;
@@ -172,7 +193,7 @@
     right: 0;
     flex-direction: column;
     align-items: stretch;
-    background: #fff;
+    background: var(--color-surface-solid);
     border-bottom: 1px solid var(--line);
     padding: 12px 24px 20px;
     gap: 2px;

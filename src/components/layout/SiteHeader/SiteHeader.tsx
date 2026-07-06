@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./SiteHeader.module.css";
+import { ThemeToggle } from "@/components/ui/ThemeToggle/ThemeToggle";
 
 const NAV_LINKS = [
   { href: "/services", label: "Services" },
@@ -86,9 +87,15 @@ export default function SiteHeader() {
               {link.label}
             </Link>
           ))}
+          <span className={styles.themeMobile}>
+            <ThemeToggle />
+          </span>
         </nav>
 
         <div className={styles.cta}>
+          <span className={styles.themeDesktop}>
+            <ThemeToggle />
+          </span>
           <a className={styles.tel} href="tel:+32475205562">
             <svg
               viewBox="0 0 24 24"

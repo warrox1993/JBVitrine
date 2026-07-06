@@ -55,6 +55,55 @@
   --header-height: 64px; /* new short top-nav; retires the 80–140px clamp */
 }
 
+/* ============================================================
+   DARK THEME — Layer B (corporate refonte tokens)
+   Navy scale shifts UP one step to become elevated surfaces
+   above the darker page bg (#081525). Neutrals/lines flip;
+   orange base kept. Semantic Layer A lives in variables.css.
+   Light mode is untouched (this only applies under [data-theme=dark]).
+   ============================================================ */
+:root[data-theme="dark"] {
+  /* Navy scale — now elevated surfaces (lighter than page bg) */
+  --navy: #10223a;
+  --navy-2: #16304f;
+  --navy-3: #1e3d66;
+  --ink: #0c1a2e;
+
+  /* Neutrals — lightened for legibility on dark */
+  --slate: #a9b7cc;
+  --muted: #8595ac;
+
+  /* Lines — light hairlines */
+  --line: rgba(255, 255, 255, 0.1);
+  --line-2: rgba(255, 255, 255, 0.16);
+
+  /* Page / well backgrounds */
+  --bg: #081525;
+  --bg-2: #0b1c30;
+  --bg-3: #10223a;
+  /* --white stays #ffffff: only correct for text-on-navy; card fills that used
+     #fff must be re-pointed to a surface token in the per-component pass. */
+
+  /* Orange — base kept; hover brightened; light peach tint → translucent glow */
+  --orange: #ff6a00;
+  --orange-d: #ff7a1a;
+  --orange-t: rgba(255, 106, 0, 0.14);
+  --orange-on-dark: #ff9a4d;
+
+  /* On-dark neutrals — already dark-native; become the defaults */
+  --on-dark-text: #eaf1fb;
+  --on-dark-muted: #9fb0c9;
+  --on-dark-line: rgba(255, 255, 255, 0.14);
+
+  --success: #7fe6b0;
+  --focus: #4d8dff;
+
+  /* Shadows — deeper on dark */
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 12px 32px rgba(0, 0, 0, 0.55);
+  --shadow-s: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.5), 0 18px 44px rgba(0, 0, 0, 0.6);
+}
+
 html {
   scroll-behavior: smooth;
 }
