@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import OptimizedImage from "@/components/ui/OptimizedImage/OptimizedImage";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
@@ -20,7 +19,7 @@ import { Honesty } from "./_home/Honesty";
 import { WhySmidjan } from "./_home/WhySmidjan";
 import { Testimonials } from "./_home/Testimonials";
 import { InsightTeaser } from "./_home/InsightTeaser";
-import { TopologyFigure, AuditDashboardFigure, BelgiumMapFigure } from "./_home/figures";
+import { AuditDashboardFigure, BelgiumMapFigure } from "./_home/figures";
 import homeStyles from "./_home/Home.module.css";
 
 export const metadata: Metadata = {
@@ -157,51 +156,6 @@ export default function HomePage() {
             linkLabel="Voir la section dédiée"
           />
         </Reveal>
-
-        <IllusPanel
-          eyebrow="Architecture"
-          title="Un périmètre défendu, pas un empilement d'outils"
-          text={
-            <>
-              Postes, serveurs, bases de données&nbsp;: tout protégé derrière un pare-feu qui
-              filtre chaque connexion. <b>Une architecture claire</b>, qui évolue avec vous.
-            </>
-          }
-          figure={
-            <div className={homeStyles.figWithPhoto}>
-              <TopologyFigure />
-              <OptimizedImage
-                src="/images/pages/home/infrastructure-datacenter.jpg"
-                alt="Baies de serveurs et câblage réseau dans un datacenter sécurisé, illustrant l'infrastructure des PME que nous durcissons."
-                fill
-                sizePreset="card"
-                aspectRatio="landscape"
-                className={homeStyles.figPhoto}
-              />
-            </div>
-          }
-        />
-
-        <IllusPanel
-          eyebrow="Développement"
-          title="La sécurité intégrée dès la conception"
-          text={
-            <>
-              « Secure by design »&nbsp;: <b>chaque choix d&apos;architecture</b> réduit la surface
-              d&apos;attaque, du code au déploiement.
-            </>
-          }
-          figure={
-            <OptimizedImage
-              src="/images/pages/home/architecture-secure.jpg"
-              alt="Circuit imprimé lumineux symbolisant une architecture applicative sécurisée dès la conception."
-              fill
-              sizePreset="card"
-              aspectRatio="landscape"
-              className={homeStyles.figPhoto}
-            />
-          }
-        />
 
         <AiNote />
       </Section>

@@ -4,7 +4,7 @@ import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./InsightTeaser.module.css";
 
-/** Journal / guide teaser: NIS2 & CyFun PME guide download. */
+/** Journal / guide teaser: NIS2 & CyFun — links to the on-site guide page. */
 export function InsightTeaser() {
   return (
     <div className={styles.card}>
@@ -18,24 +18,14 @@ export function InsightTeaser() {
           Ce que dit la loi, qui est concerné, quel niveau CyFun choisir.{" "}
           <b>Clair, sans jargon.</b>
         </p>
-        <div className={styles.meta}>
-          <span>
-            <Icon name="book" />
-            18 pages
-          </span>
-          <span>
-            <Icon name="clock" />
-            Lecture 12 min
-          </span>
-        </div>
         <Button
           as="a"
-          href="/contact"
+          href="/conformite-nis2"
           variant="navy"
           className={styles.cta}
-          trailingIcon={<Icon name="download" strokeWidth={2.2} />}
+          trailingIcon={<Icon name="arrow-right" strokeWidth={2.2} />}
         >
-          Télécharger le guide
+          Lire le guide
         </Button>
       </Reveal>
       <Reveal variant="right" delay={100} className={styles.visual}>
