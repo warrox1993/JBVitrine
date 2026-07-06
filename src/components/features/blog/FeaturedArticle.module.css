@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-top: 3px solid var(--orange);
   border-radius: var(--radius-l);
@@ -49,7 +49,7 @@
   font-size: 28px;
   letter-spacing: -0.02em;
   line-height: 1.2;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 .title a {
@@ -127,6 +127,13 @@
   background:
     linear-gradient(180deg, rgba(11, 31, 58, 0) 45%, rgba(11, 31, 58, 0.55)),
     linear-gradient(135deg, rgba(11, 31, 58, 0.22) 0%, rgba(11, 31, 58, 0) 60%);
+}
+
+/* Dark mode: the "à la une" flag uses --navy-3 text on --bg-3 fill; both are
+   dark navy in dark mode, so the label is unreadable. Lift to primary text
+   color (scoped to dark; light mode is unaffected). */
+:root[data-theme="dark"] .flag {
+  color: var(--color-text);
 }
 
 @media (max-width: 1000px) {

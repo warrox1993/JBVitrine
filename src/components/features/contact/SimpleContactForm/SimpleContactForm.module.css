@@ -221,7 +221,7 @@
     var(--color-accent-1, #ff6a00),
     var(--color-accent-2, #ffc43a)
   );
-  color: white;
+  color: var(--white);
   font-size: var(--font-size-base, 1rem);
   font-weight: 600;
   border: none;
@@ -269,7 +269,7 @@
     var(--color-accent-2, #ffc43a)
   );
   border-radius: 50%;
-  color: white;
+  color: var(--white);
 }
 
 .successTitle {

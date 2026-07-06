@@ -15,13 +15,13 @@
   line-height: 1.6;
 }
 .intro .lead b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 .title {
   font-size: clamp(27px, 3.2vw, 36px);
   margin-top: 14px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -84,7 +84,7 @@
   margin-top: 2px;
 }
 .deadline h3 {
-  color: #fff;
+  color: var(--white);
   font-size: 19px;
   font-weight: 700;
 }

@@ -4,7 +4,7 @@
   position: relative;
 }
 .white {
-  background: #fff;
+  background: var(--color-surface-solid);
 }
 .tint {
   background: var(--bg-2);
@@ -14,7 +14,7 @@
 }
 .navy {
   background: var(--navy);
-  color: #fff;
+  color: var(--white);
   overflow: hidden;
   border-top: 1px solid var(--navy-3);
 }

@@ -1,6 +1,6 @@
 /* "Qui sommes-nous" section — agence page. */
 .about {
-  background: #fff;
+  background: var(--color-surface-solid);
   padding: var(--section-y) 0;
 }
 .grid {
@@ -33,7 +33,7 @@
 }
 .missionCard h4 {
   font-size: 15.5px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -43,13 +43,13 @@
   line-height: 1.5;
 }
 .missionCard p b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 
 /* Interlocking values illustration */
 .valuesIllus {
   margin-top: 6px;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 20px 18px 10px;
@@ -72,7 +72,7 @@
 .valItem {
   display: flex;
   gap: 18px;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 24px 26px;
@@ -102,7 +102,7 @@
 }
 .valItem h4 {
   font-size: 18px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 800;
   letter-spacing: -0.01em;
 }
@@ -136,7 +136,7 @@
 }
 .localityCard h4 {
   font-size: 15px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 .localityCard p {
@@ -176,7 +176,7 @@
   text-align: center;
 }
 .coverageCap b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 

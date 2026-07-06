@@ -50,34 +50,34 @@
 /* Variants */
 .primary {
   background: var(--orange);
-  color: #fff;
+  color: var(--white);
   border-color: var(--orange);
 }
 .primary:hover {
   background: var(--orange-d);
   border-color: var(--orange-d);
-  color: #fff;
+  color: var(--white);
 }
 
 .navy {
   background: var(--navy);
-  color: #fff;
+  color: var(--white);
   border-color: var(--navy);
 }
 .navy:hover {
   background: var(--navy-2);
-  color: #fff;
+  color: var(--white);
 }
 
 .ghost {
   background: transparent;
-  color: var(--navy);
+  color: var(--color-text);
   border-color: var(--line-2);
 }
 .ghost:hover {
   border-color: var(--navy);
   background: var(--bg-2);
-  color: var(--navy);
+  color: var(--color-text);
 }
 
 /* Light — white fill, navy text (for use on navy backgrounds) */
@@ -94,13 +94,13 @@
 /* Ghost on dark — transparent with light border (on navy backgrounds) */
 .ghostD {
   background: transparent;
-  color: #fff;
+  color: var(--white);
   border-color: rgba(255, 255, 255, 0.28);
 }
 .ghostD:hover {
-  border-color: #fff;
+  border-color: var(--white);
   background: rgba(255, 255, 255, 0.08);
-  color: #fff;
+  color: var(--white);
 }
 
 /* State */

@@ -8,7 +8,7 @@
 /* ===== Hero ===== */
 .hero {
   position: relative;
-  background: linear-gradient(180deg, #fff 0%, var(--bg-2) 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
   border-bottom: 1px solid var(--line);
   overflow: hidden;
 }
@@ -37,7 +37,7 @@
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line-2);
   border-radius: var(--radius-pill);
   padding: 6px 14px 6px 8px;
@@ -65,7 +65,7 @@
   font-size: clamp(36px, 4.8vw, 56px);
   margin: 22px 0 0;
   letter-spacing: -0.03em;
-  color: var(--navy);
+  color: var(--color-text);
   line-height: 1.1;
   font-weight: 800;
 }
@@ -84,7 +84,7 @@
   line-height: 1.6;
 }
 .heroLead b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 .heroCta {
   display: flex;
@@ -143,7 +143,7 @@
   width: 62px;
   height: 70px;
   border-radius: 11px;
-  background: #fff;
+  background: var(--white);
   flex: none;
   display: flex;
   flex-direction: column;
@@ -153,7 +153,7 @@
 }
 .dcCal .m {
   background: var(--orange);
-  color: #fff;
+  color: var(--white);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -175,7 +175,7 @@
   margin-top: 2px;
 }
 .dcTop h3 {
-  color: #fff;
+  color: var(--white);
   font-size: 19px;
 }
 .dcTop p {
@@ -201,7 +201,7 @@
   font-family: var(--mono);
   font-size: 26px;
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
   line-height: 1;
 }
 .dcUnit .lbl {
@@ -227,14 +227,14 @@
   margin-top: 1px;
 }
 .dcFoot b {
-  color: #fff;
+  color: var(--white);
   font-weight: 600;
 }
 .floatChip {
   position: absolute;
   left: -22px;
   bottom: 34px;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 13px 16px;
@@ -255,7 +255,7 @@
   flex: none;
 }
 .floatChip b {
-  color: var(--navy);
+  color: var(--color-text);
   font-size: 14px;
   display: block;
 }
@@ -272,7 +272,7 @@
   margin-top: 56px;
 }
 .clairCard {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 32px 28px;
@@ -298,7 +298,7 @@
 }
 .clairCard h3 {
   font-size: 18.5px;
-  color: var(--navy);
+  color: var(--color-text);
   line-height: 1.2;
   font-weight: 700;
 }
@@ -328,7 +328,7 @@
   margin-top: 2px;
 }
 .clairCard ul li b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 .tagline {
   margin-top: auto;
@@ -344,7 +344,7 @@
   padding: 6px 13px;
   font-size: 12.5px;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--color-text);
 }
 .pillWarn {
   background: var(--orange-t);
@@ -365,7 +365,7 @@
 .frameIntro h2 {
   font-size: clamp(27px, 3.2vw, 36px);
   margin-top: 14px;
-  color: var(--navy);
+  color: var(--color-text);
   line-height: 1.2;
   font-weight: 700;
 }
@@ -376,7 +376,7 @@
   line-height: 1.6;
 }
 .frameLead b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 .frameNote {
   margin-top: 18px;
@@ -384,10 +384,10 @@
   color: var(--slate);
 }
 .frameNote b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 .frameMap {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 24px 26px;
@@ -421,7 +421,7 @@
   border-top: none;
 }
 .mapRow .a {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 .mapRow .arr {
@@ -448,7 +448,7 @@
   color: var(--muted);
 }
 .ringCap b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 
@@ -459,7 +459,7 @@
   margin-top: 52px;
 }
 .fn {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 22px 16px;
@@ -492,7 +492,7 @@
 }
 .fn h4 {
   font-size: 15px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 .fn p {
@@ -508,7 +508,7 @@
   color: var(--slate);
 }
 .fnNote b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 
 /* ===== Tiers intro (stat-hook with gauge) + level figure ===== */
@@ -576,7 +576,7 @@
   color: var(--muted);
 }
 .levelsCap b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 .tiersBlock {
@@ -594,7 +594,7 @@
   color: var(--on-dark-muted);
 }
 .niveauxNavy .levelsCap b {
-  color: #fff;
+  color: var(--white);
 }
 
 /* ===== Accompagnement / honesty ===== */
@@ -618,7 +618,7 @@
 .honesty h4 {
   font-size: 16.5px;
   margin-bottom: 7px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 .honesty p {
@@ -626,7 +626,7 @@
   color: var(--slate);
 }
 .honesty p b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 .honesty p + p {
   margin-top: 12px;
@@ -638,7 +638,7 @@
   margin-top: 26px;
 }
 .roleCol {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 24px 26px;
@@ -679,7 +679,7 @@
   margin-top: 3px;
 }
 .roleCol ul li b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 .roleSmidjan ul li svg {
   color: var(--orange-d);
@@ -695,7 +695,7 @@
   color: var(--muted);
 }
 .roleCol .foot b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 
 /* ===== Notre outil propriétaire d'audit CyFun ===== */
@@ -762,7 +762,7 @@
   margin-top: 48px;
 }
 .trustCard {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 26px 24px;
@@ -786,7 +786,7 @@
 }
 .trustCard h4 {
   font-size: 15.5px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   line-height: 1.3;
 }
@@ -817,7 +817,7 @@
   margin-top: 52px;
 }
 .fundingCard {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 32px 26px;
@@ -860,7 +860,7 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--color-text);
 }
 .fundingDesc {
   margin-top: 10px;
@@ -873,7 +873,7 @@
 }
 .fundingDetails h3 {
   font-size: clamp(21px, 2.4vw, 25px);
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   line-height: 1.25;
 }
@@ -896,7 +896,7 @@
   text-underline-offset: 2px;
 }
 .fundingLink:hover {
-  color: var(--navy);
+  color: var(--color-text);
 }
 
 /* process wrapper */
@@ -948,7 +948,7 @@
   line-height: 1.5;
 }
 .sectionPhotoCap b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 
@@ -963,7 +963,7 @@
   line-height: 1.5;
 }
 .frameInlinePhoto figcaption b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 
@@ -1043,6 +1043,20 @@
   .clairCard {
     padding: 26px 22px;
   }
+}
+
+/* Dark mode: the stat-hook dark-brown text literals (#7a3d15 / #5c2e10) sit
+   on the orange tint and go unreadable on dark. Remap the label and body text
+   to the readable primary token and the bold emphasis to the on-dark orange
+   accent. Light mode is untouched. */
+:root[data-theme="dark"] .statBigLbl {
+  color: var(--color-text);
+}
+:root[data-theme="dark"] .statHook .txt {
+  color: var(--color-text);
+}
+:root[data-theme="dark"] .statHook .txt b {
+  color: var(--orange-on-dark);
 }
 
 @media (max-width: 480px) {

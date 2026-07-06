@@ -19,7 +19,7 @@
 .honesty h4 {
   font-size: 15.5px;
   margin-bottom: 5px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 .honesty p {
@@ -28,7 +28,7 @@
   line-height: 1.6;
 }
 .honesty p b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 
 @media (max-width: 480px) {
@@ -37,4 +37,13 @@
     gap: 14px;
     padding: 22px 20px;
   }
+}
+
+/* Dark mode: the band fill (--bg-3) and navy-3 accent both go dark, so the
+   left-border accent and the info icon would vanish — keep them visible. */
+:root[data-theme="dark"] .honesty {
+  border-left-color: var(--on-dark-line);
+}
+:root[data-theme="dark"] .honesty svg {
+  color: var(--slate);
 }

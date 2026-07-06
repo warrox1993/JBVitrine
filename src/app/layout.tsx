@@ -41,15 +41,15 @@ const instrument = Instrument_Sans({
 
 export const metadata: Metadata = {
     title: {
-        default: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME — Liège, Wallonie',
-        // Les pages définissent des titres auto-brandés ("… | Smidjan — …"),
+        default: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME (Liège, Wallonie)',
+        // Les pages définissent des titres auto-brandés ("… | Smidjan : …"),
         // donc pas de suffixe pour éviter de dupliquer "Smidjan".
         template: '%s',
     },
     description:
         'Smidjan sécurise les réseaux, l\'infrastructure et les applications des PME wallonnes et les met en conformité NIS2 / CyberFundamentals (CCB). Audit, pentest, remédiation. Diagnostic gratuit à Liège.',
     keywords: [
-        // Cœur de métier — cybersécurité
+        // Cœur de métier : cybersécurité
         'cybersécurité PME Liège',
         'cybersécurité Wallonie',
         'cybersécurité Belgique',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
         'test d\'intrusion pentest Liège',
         'sécurisation des systèmes PME',
 
-        // Conformité NIS2 / CyFun — offre phare
+        // Conformité NIS2 / CyFun : offre phare
         'conformité NIS2 Belgique',
         'NIS2 PME',
         'CyberFundamentals CyFun CCB',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
         'niveaux CyFun Basic Important Essential',
         'préparation vérification CyFun',
 
-        // Accessoire — développement web sécurisé
+        // Accessoire : développement web sécurisé
         'développement web sécurisé',
         'application web sécurisée Next.js',
 
@@ -95,17 +95,17 @@ export const metadata: Metadata = {
     },
 
     openGraph: {
-        title: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME — Liège',
+        title: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME (Liège)',
         description:
-            'On sécurise vos réseaux, votre infrastructure et vos applications, et on vous met en conformité NIS2 / CyFun — et on corrige ce qu\'on trouve. Diagnostic gratuit pour les PME de Wallonie.',
+            'On sécurise vos réseaux, votre infrastructure et vos applications, et on vous met en conformité NIS2 / CyFun, et on corrige ce qu\'on trouve. Diagnostic gratuit pour les PME de Wallonie.',
         url: 'https://smidjan.be',
-        siteName: 'Smidjan — Cybersécurité Liège',
+        siteName: 'Smidjan, Cybersécurité Liège',
         images: [
             {
                 url: "https://smidjan.be/og-image.webp",
                 width: 1200,
                 height: 630,
-                alt: 'Smidjan — Cybersécurité & conformité NIS2 pour les PME à Liège',
+                alt: 'Smidjan, Cybersécurité & conformité NIS2 pour les PME à Liège',
                 type: 'image/webp',
             }
         ],
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
 
     twitter: {
         card: 'summary_large_image',
-        title: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME — Liège',
+        title: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME (Liège)',
         description: 'Sécurité des réseaux, pentest et conformité NIS2 / CyFun pour les PME wallonnes. Diagnostic gratuit à Liège.',
         images: ['/og-image.webp'],
         // Ajoute ton Twitter si tu en as un
@@ -169,12 +169,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <html lang="fr-BE" data-theme="light" suppressHydrationWarning>
             <head>
                 <meta name="color-scheme" content="dark light" />
-                {/* No-flash theme init: set data-theme before first paint from the
-                    stored choice, else from the OS preference. Zero-dependency. */}
+                {/* No-flash theme init: apply the user's explicit stored choice
+                    before first paint; default to light otherwise. Dark is
+                    opt-in via the header toggle for now (not OS-auto) until the
+                    dark theme is visually signed off. To follow the OS instead,
+                    swap the fallback to: (m?'dark':'light'). Zero-dependency. */}
                 <script
                     dangerouslySetInnerHTML={{
                         __html:
-                            "(function(){try{var s=localStorage.getItem('smidjan-theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',(s==='dark'||s==='light')?s:(m?'dark':'light'));}catch(e){}})();",
+                            "(function(){try{var s=localStorage.getItem('smidjan-theme');document.documentElement.setAttribute('data-theme',(s==='dark'||s==='light')?s:'light');}catch(e){}})();",
                     }}
                 />
             </head>

@@ -11,7 +11,7 @@
 }
 
 .chip {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line-2);
   color: var(--slate);
   font: 600 13.5px/1 var(--sans);
@@ -26,13 +26,13 @@
 
 .chip:hover {
   border-color: var(--navy-3);
-  color: var(--navy);
+  color: var(--color-text);
 }
 
 .chip.active {
   background: var(--navy);
   border-color: var(--navy);
-  color: #fff;
+  color: var(--white);
 }
 
 .grid {

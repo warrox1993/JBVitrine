@@ -321,7 +321,7 @@
     var(--color-accent-1, #ff6a00),
     var(--color-accent-2, #ffc43a)
   );
-  color: white;
+  color: var(--white);
   font-size: var(--text-sm, 0.875rem);
   font-weight: 600;
   border-radius: var(--radius-md, 0.75rem);

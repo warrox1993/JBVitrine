@@ -39,7 +39,7 @@
   font-size: clamp(30px, 4.2vw, 44px);
   margin-top: 20px;
   letter-spacing: -0.02em;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -75,7 +75,7 @@
   flex: none;
 }
 .who b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
   display: block;
   font-size: 14px;
@@ -180,7 +180,7 @@
   font-size: 26px;
   margin-top: 52px;
   scroll-margin-top: 90px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.2;
@@ -192,7 +192,7 @@
   font-size: 19px;
   margin-top: 32px;
   scroll-margin-top: 90px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.2;
@@ -201,7 +201,7 @@
   margin-top: 16px;
   font-size: 17px;
   line-height: 1.75;
-  color: var(--ink);
+  color: var(--color-text);
 }
 .prose :global(ul),
 .prose :global(ol) {
@@ -219,7 +219,7 @@
 }
 .prose :global(li b),
 .prose :global(li strong) {
-  color: var(--navy);
+  color: var(--color-text);
 }
 .prose :global(a) {
   color: var(--navy-3);
@@ -231,7 +231,7 @@
   color: var(--orange-d);
 }
 .prose :global(strong) {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 .prose :global(blockquote) {
@@ -269,7 +269,7 @@
   background: none;
   border: none;
   padding: 0;
-  color: #dfe7f2;
+  color: var(--on-dark-text);
 }
 .prose :global(table) {
   width: 100%;
@@ -284,7 +284,7 @@
 }
 .prose :global(thead th) {
   background: var(--bg-2);
-  color: var(--navy);
+  color: var(--color-text);
   font-size: 11.5px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -336,7 +336,7 @@
 }
 .navLink:hover {
   border-color: var(--navy-3);
-  background: #fff;
+  background: var(--color-surface-solid);
 }
 .navLabel {
   font-size: 12.5px;
@@ -348,7 +348,7 @@
 .navTitle {
   font-size: 15px;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--color-text);
   line-height: 1.4;
 }
 .navPrevious {
@@ -396,7 +396,7 @@
 }
 .authorName {
   font-size: 17px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   margin-top: 8px;
 }
@@ -430,7 +430,7 @@
 .relatedTitle {
   font-size: 22px;
   margin-top: 6px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -476,4 +476,14 @@
   .navLink {
     transition: none;
   }
+}
+
+/* Dark mode: these elements use --navy-3, which remains a dark blue in dark
+   mode and loses contrast on dark surfaces. Lift them to primary text color.
+   Light mode is unaffected (scoped to [data-theme="dark"]). */
+:root[data-theme="dark"] .toc a,
+:root[data-theme="dark"] .prose :global(a),
+:root[data-theme="dark"] .prose :global(blockquote p),
+:root[data-theme="dark"] .prose :global(code) {
+  color: var(--color-text);
 }

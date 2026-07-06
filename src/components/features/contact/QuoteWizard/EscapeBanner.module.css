@@ -59,6 +59,16 @@
   color: var(--color-primary-dark, #2563eb);
 }
 
+/* ===== Dark-mode residual fixes (override only; light untouched) ===== */
+:root[data-theme="dark"] .banner {
+  background: var(--color-info-bg);
+  border-bottom-color: var(--color-info-border);
+}
+
+:root[data-theme="dark"] .text {
+  color: var(--color-text);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .banner {

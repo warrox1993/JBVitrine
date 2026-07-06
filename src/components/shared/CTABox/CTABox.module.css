@@ -1,6 +1,6 @@
 /* CTABox — navy final call-to-action box. */
 .final {
-  background: #fff;
+  background: var(--color-bg);
   border-top: 1px solid var(--line);
   padding: var(--section-y) 0;
 }
@@ -28,7 +28,7 @@
   margin: 0 auto;
 }
 .in h2 {
-  color: #fff;
+  color: var(--white);
   font-size: clamp(26px, 3vw, 36px);
   font-weight: 700;
   letter-spacing: -0.015em;
@@ -73,4 +73,10 @@
   .box {
     padding: 34px 26px;
   }
+}
+
+/* Dark-mode residual fix: gradient lower edge (#0a1a30) merges into the dark
+   page bg; add a hairline border to delineate the box. */
+:root[data-theme="dark"] .box {
+  border: 1px solid var(--on-dark-line);
 }

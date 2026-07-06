@@ -6,7 +6,7 @@
 
 /* ===== Page header ===== */
 .pageHero {
-  background: linear-gradient(180deg, #fff 0%, var(--bg-2) 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
   border-bottom: 1px solid var(--line);
 }
 .heroInner {
@@ -25,7 +25,7 @@
   font-size: clamp(30px, 4vw, 42px);
   margin: 16px 0 0;
   letter-spacing: -0.025em;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -100,7 +100,7 @@
   transition: color 0.16s ease, border-color 0.16s ease;
 }
 .navLink:hover {
-  color: var(--navy);
+  color: var(--color-text);
 }
 .navLinkActive {
   color: var(--orange-d);
@@ -164,7 +164,7 @@
 }
 .sectionTitle {
   font-size: clamp(20px, 2.4vw, 24px);
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.25;
@@ -202,7 +202,7 @@
   font-weight: 700;
 }
 .section strong {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 .inlineLink {
@@ -251,7 +251,7 @@
   color: var(--slate);
 }
 .callout p b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 
 /* ===== Table ===== */
@@ -274,7 +274,7 @@
 }
 .table th {
   background: var(--bg-2);
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   font-size: 13px;
 }
@@ -330,7 +330,7 @@
     border-radius: var(--radius-pill);
     padding: 8px 16px;
     margin-left: 0;
-    background: #fff;
+    background: var(--color-surface-solid);
   }
   .navLinkActive {
     background: var(--orange-t);
@@ -344,4 +344,24 @@
   .contentSection {
     padding: 40px 0 64px;
   }
+}
+
+/* ===== Dark-mode legibility overrides (added; light mode untouched) ===== */
+:root[data-theme="dark"] .banner p {
+  color: var(--color-text);
+}
+:root[data-theme="dark"] .banner p b {
+  color: var(--orange-on-dark);
+}
+:root[data-theme="dark"] .section h3 {
+  color: var(--color-text);
+}
+:root[data-theme="dark"] .inlineLink {
+  color: var(--color-text);
+}
+:root[data-theme="dark"] .placeholder {
+  color: var(--on-dark-muted);
+}
+:root[data-theme="dark"] .callout svg {
+  color: var(--orange-d);
 }

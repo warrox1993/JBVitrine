@@ -5,7 +5,7 @@
   gap: 14px;
   justify-content: center;
   text-align: center;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px dashed var(--line-2);
   border-radius: var(--radius-pill);
   padding: 14px 28px;
@@ -23,7 +23,7 @@
   flex: none;
 }
 .note b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 
 @media (max-width: 480px) {

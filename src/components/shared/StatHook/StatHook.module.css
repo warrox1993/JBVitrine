@@ -33,3 +33,14 @@
     gap: 10px;
   }
 }
+
+/* Dark mode: the dark-brown text literals (#7a3d15 / #5c2e10) sit on the
+   orange tint and go unreadable on dark. Remap body text to the readable
+   primary token and the bold emphasis to the on-dark orange accent.
+   Light mode is untouched. */
+:root[data-theme="dark"] .txt {
+  color: var(--color-text);
+}
+:root[data-theme="dark"] .txt b {
+  color: var(--orange-on-dark);
+}

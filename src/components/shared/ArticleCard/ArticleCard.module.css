@@ -1,6 +1,6 @@
 /* ArticleCard — journal / related-articles card (.svc-derived). */
 .card {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 26px 24px;
@@ -60,7 +60,7 @@
 }
 .title {
   font-size: 18px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.25;
@@ -115,4 +115,13 @@
   .card:hover .coverPhoto img {
     transform: none;
   }
+}
+
+/* Dark-mode residual fix: light gradient (#e6ebf2) placeholder shows a light
+   patch on dark; use a dark surface fill instead. */
+:root[data-theme="dark"] .cover {
+  background: var(--color-surface);
+  /* navy-3 placeholder icon is navy-on-navy on the new dark surface; lift it to
+     a legible muted tone. */
+  color: var(--muted);
 }

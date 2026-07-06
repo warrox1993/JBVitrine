@@ -7,6 +7,12 @@
   border-bottom: 1px solid var(--line);
 }
 
+/* Dark: the light 0.92 white glass would stay white; repoint to the themed
+   translucent surface. Light keeps the exact rgba above (pixel-identical). */
+:root[data-theme="dark"] .site {
+  background: var(--color-surface-glass);
+}
+
 .nav {
   max-width: var(--maxw);
   margin: 0 auto;
@@ -23,7 +29,7 @@
   align-items: center;
   gap: 11px;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--color-text);
   font-size: 20px;
   letter-spacing: -0.02em;
 }
@@ -64,12 +70,12 @@
 }
 
 .main a:hover {
-  color: var(--navy);
+  color: var(--color-text);
   background: var(--bg-2);
 }
 
 .main a.active {
-  color: var(--navy);
+  color: var(--color-text);
   background: var(--bg-2);
   font-weight: 600;
 }
@@ -86,7 +92,7 @@
   gap: 8px;
   font-weight: 600;
   font-size: 14.5px;
-  color: var(--navy);
+  color: var(--color-text);
 }
 
 .tel svg {
@@ -106,7 +112,7 @@
   cursor: pointer;
   border: 1px solid var(--orange);
   background: var(--orange);
-  color: #fff;
+  color: var(--white);
   white-space: nowrap;
   transition:
     background 0.16s ease,
@@ -130,7 +136,7 @@
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
-  color: var(--navy);
+  color: var(--color-text);
 }
 
 .toggle svg {

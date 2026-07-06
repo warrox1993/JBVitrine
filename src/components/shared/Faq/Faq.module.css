@@ -6,7 +6,7 @@
   gap: 14px;
 }
 .qa {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
@@ -27,7 +27,7 @@
   gap: 16px;
   font-weight: 600;
   font-size: 16.5px;
-  color: var(--navy);
+  color: var(--color-text);
 }
 .summary::-webkit-details-marker {
   display: none;
@@ -52,7 +52,7 @@
   line-height: 1.65;
 }
 .ans b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 .ans p + p {
   margin-top: 12px;

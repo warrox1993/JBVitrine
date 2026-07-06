@@ -307,7 +307,7 @@
 
 .btnPrimary {
   background: var(--color-accent-1, #ff6a00);
-  color: white;
+  color: var(--white);
   flex: 1;
 }
 

@@ -44,7 +44,7 @@
 }
 
 .meta a:hover {
-  color: #fff;
+  color: var(--white);
 }
 
 .meta svg {
@@ -57,7 +57,7 @@
   align-items: center;
   gap: 8px;
   font-weight: 600;
-  color: #fff;
+  color: var(--white);
   background: rgba(255, 106, 0, 0.16);
   border: 1px solid rgba(255, 106, 0, 0.45);
   padding: 5px 12px;

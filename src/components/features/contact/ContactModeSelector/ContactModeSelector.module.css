@@ -41,7 +41,7 @@
   align-items: center;
   text-align: center;
   padding: var(--space-6, 3rem) var(--space-5, 2.5rem);
-  background: white;
+  background: var(--color-surface-solid);
   border: 2px solid var(--color-border, #e5e5e5);
   border-radius: var(--radius-xl, 16px);
   cursor: pointer;
@@ -107,7 +107,7 @@
     var(--color-primary-dark, #2563eb) 100%
   );
   border-radius: 50%;
-  color: white;
+  color: var(--white);
   margin-bottom: var(--space-4, 2rem);
   transition: all 0.5s ease;
   flex-shrink: 0;
@@ -168,7 +168,7 @@
   right: var(--space-4, 1rem);
   padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
   background: var(--color-primary, #3b82f6);
-  color: white;
+  color: var(--white);
   font-size: var(--font-size-sm, 0.875rem);
   font-weight: 600;
   border-radius: var(--radius-full, 9999px);
@@ -246,4 +246,18 @@
   .modeBadge {
     transition: none;
   }
+}
+
+/* Dark mode: the card fill is now a dark surface, but the title/description
+   use generic tokens that are not defined for dark (they fall back to their
+   light literals). Remap them to themed text tokens so the card stays legible.
+   Light mode is unaffected (this block only applies under [data-theme="dark"]). */
+:root[data-theme="dark"] .modeTitle {
+  color: var(--color-text);
+}
+
+:root[data-theme="dark"] .modeDescription,
+:root[data-theme="dark"] .contactInfo,
+:root[data-theme="dark"] .backButton {
+  color: var(--color-text-muted);
 }

@@ -9,7 +9,7 @@
 .secHead h2 {
   font-size: clamp(27px, 3.2vw, 36px);
   margin-top: 14px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.2;
@@ -94,7 +94,7 @@
   position: relative;
 }
 .profile h3 {
-  color: #fff;
+  color: var(--white);
   font-size: 20px;
   font-weight: 700;
 }
@@ -157,7 +157,7 @@
 /* Narrative + journey */
 .narrative h3 {
   font-size: clamp(22px, 2.6vw, 28px);
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   letter-spacing: -0.015em;
   margin-top: 14px;
@@ -197,7 +197,7 @@
   line-height: 1.5;
 }
 .infraCap b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 
@@ -231,9 +231,9 @@
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
-  color: var(--navy);
+  color: var(--color-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -261,7 +261,7 @@
 }
 .journey h4 {
   font-size: 16.5px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 .journey p {
@@ -296,4 +296,9 @@
   .quote {
     font-size: 15px;
   }
+}
+
+/* ===== Dark-mode legibility overrides (added; light mode untouched) ===== */
+:root[data-theme="dark"] .dot svg {
+  color: var(--orange-d);
 }

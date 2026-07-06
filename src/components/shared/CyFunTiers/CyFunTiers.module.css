@@ -10,7 +10,7 @@
   align-items: stretch;
 }
 .tier {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 28px 24px 26px;
@@ -29,7 +29,7 @@
   left: 50%;
   transform: translateX(-50%);
   background: var(--orange);
-  color: #fff;
+  color: var(--white);
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -73,7 +73,7 @@
 .name {
   font-size: 22px;
   letter-spacing: -0.01em;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   margin-top: 12px;
 }
@@ -84,7 +84,7 @@
   min-height: 38px;
 }
 .for b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 .covers {
@@ -131,7 +131,7 @@
   color: var(--slate);
 }
 .deliver b {
-  color: var(--navy);
+  color: var(--color-text);
   display: block;
   font-size: 11px;
   letter-spacing: 0.06em;
@@ -150,7 +150,7 @@
   overflow-x: auto;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: #fff;
+  background: var(--color-surface-solid);
   box-shadow: var(--shadow-s);
 }
 .cmp {
@@ -177,7 +177,7 @@
 }
 .cmp thead th {
   background: var(--bg-2);
-  color: var(--navy);
+  color: var(--color-text);
   font-size: 15px;
   font-weight: 700;
   border-bottom: 1px solid var(--line-2);
@@ -205,7 +205,7 @@
   text-align: left;
   font-weight: 600;
   color: var(--slate);
-  background: #fff;
+  background: var(--color-surface-solid);
   font-size: 13.5px;
   white-space: nowrap;
 }
@@ -213,7 +213,7 @@
   color: var(--slate);
 }
 .cmp td b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 .cmp tr:last-child th,
@@ -223,7 +223,7 @@
 .recTag {
   display: inline-block;
   background: var(--orange);
-  color: #fff;
+  color: var(--white);
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -259,4 +259,21 @@
     text-align: center;
     line-height: 1.25;
   }
+}
+
+/* Dark mode: --navy remaps to a dark surface, so the "essential" active dots
+   (navy fill) would vanish on the dark tier card. Same for the "basic" active
+   dot (--navy-3 fill, ~1.4:1 on the dark card). Light mode is untouched. */
+:root[data-theme="dark"] .essential .dots i:nth-child(-n + 3) {
+  background: var(--color-text);
+}
+:root[data-theme="dark"] .basic .dots i:nth-child(-n + 1) {
+  background: var(--color-text);
+}
+
+/* Dark mode: the mid-column subheading (#a25518) sits on the orange tint of
+   th.mid and drops below AA on dark. Lift it to the on-dark orange accent.
+   Light mode is untouched. */
+:root[data-theme="dark"] .cmp thead th.mid .sub {
+  color: var(--orange-on-dark);
 }

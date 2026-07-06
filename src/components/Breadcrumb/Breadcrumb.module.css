@@ -57,12 +57,12 @@
 }
 
 .breadcrumbItemActive {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 
 .breadcrumbCurrent {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
   cursor: default;
   overflow: hidden;

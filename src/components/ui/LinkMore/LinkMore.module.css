@@ -34,3 +34,8 @@
     transition: none;
   }
 }
+
+/* Dark-mode residual fix: navy-3 default color is invisible on dark. */
+:root[data-theme="dark"] .link {
+  color: var(--color-text);
+}

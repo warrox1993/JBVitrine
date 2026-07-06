@@ -3,7 +3,7 @@
 /* ===== Page header / hero ===== */
 .hero {
   position: relative;
-  background: linear-gradient(180deg, #fff 0%, var(--bg-2) 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
   border-bottom: 1px solid var(--line);
   overflow: hidden;
   padding: 34px 0 70px;
@@ -36,7 +36,7 @@
   font-size: clamp(34px, 4.6vw, 52px);
   margin: 20px 0 0;
   letter-spacing: -0.03em;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 800;
   line-height: 1.15;
 }
@@ -88,7 +88,7 @@
   justify-content: center;
 }
 .promiseTitle {
-  color: #fff;
+  color: var(--white);
   font-size: 16px;
   font-weight: 700;
 }
@@ -117,7 +117,7 @@
   border-top: none;
 }
 .promiseList li b {
-  color: #fff;
+  color: var(--white);
   font-weight: 600;
 }
 .ck {
@@ -147,11 +147,11 @@
   background: var(--bg-2);
   border-radius: 0 10px 10px 0;
   font-size: 15px;
-  color: var(--ink);
+  color: var(--color-text);
   font-style: normal;
 }
 .quote b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 .contrast {
   display: grid;
@@ -165,7 +165,7 @@
   background: var(--bg-2);
 }
 .col.good {
-  background: #fff;
+  background: var(--color-surface-solid);
   border-color: var(--line-2);
   box-shadow: var(--shadow);
 }
@@ -229,7 +229,7 @@
 .proofVisual {
   grid-column: 1 / -1;
   margin-top: 4px;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 22px 24px 18px;
@@ -248,6 +248,11 @@
 }
 .proofCaption b {
   color: var(--navy-3);
+}
+/* Dark: --navy-3 stays a deep blue and would sink into the now-dark
+   proofVisual card. Lift the emphasised text to primary ink in dark only. */
+:root[data-theme="dark"] .proofCaption b {
+  color: var(--color-text);
 }
 
 /* ===== Method ===== */
@@ -306,7 +311,7 @@
   text-align: center;
 }
 .methodPhotoCap b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 .stepsDetail {
@@ -315,7 +320,7 @@
   margin-top: 60px;
 }
 .mstep {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 36px 38px;
@@ -342,7 +347,7 @@
   height: 62px;
   border-radius: 14px;
   background: var(--navy);
-  color: #fff;
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -373,7 +378,7 @@
 }
 .stepTitle {
   font-size: 23px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 800;
   letter-spacing: -0.01em;
 }
@@ -384,7 +389,7 @@
   line-height: 1.55;
 }
 .stepText b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 .deliverCol {
   background: var(--bg-2);
@@ -399,7 +404,7 @@
   font: 700 11px/1 var(--mono);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--color-text);
   margin-bottom: 14px;
 }
 .deliverHead svg {
@@ -454,7 +459,7 @@
   color: #c3cfe0;
 }
 .aiHonest b {
-  color: #fff;
+  color: var(--white);
 }
 .aiCards {
   display: grid;
@@ -479,7 +484,7 @@
   margin-bottom: 16px;
 }
 .aiCard h4 {
-  color: #fff;
+  color: var(--white);
   font-size: 16px;
   font-weight: 700;
 }
@@ -565,7 +570,7 @@
   line-height: 1.5;
 }
 .sectionPhotoCap b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 
@@ -578,7 +583,7 @@
 .whyItem {
   display: flex;
   gap: 16px;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 28px;
@@ -603,7 +608,7 @@
 }
 .whyTitle {
   font-size: 17px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 .whyText {
@@ -636,7 +641,7 @@
   margin-top: 52px;
 }
 .refCard {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 30px 28px;
@@ -669,7 +674,7 @@
 }
 .refTitle {
   font-size: 18px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 .refText {
@@ -694,7 +699,7 @@
 }
 .refsHonesty h4 {
   font-size: 15.5px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -703,7 +708,16 @@
   color: var(--slate);
 }
 .refsHonesty p b {
-  color: var(--navy);
+  color: var(--color-text);
+}
+
+/* Dark-mode residual fix: navy-3 border/icon are nearly invisible on the dark
+   callout; use the orange accent instead. */
+:root[data-theme="dark"] .refsHonesty {
+  border-left-color: var(--orange-d);
+}
+:root[data-theme="dark"] .refsHonesty svg {
+  color: var(--orange-d);
 }
 
 /* ===== Responsive ===== */

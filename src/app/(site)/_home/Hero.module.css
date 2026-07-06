@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  background: linear-gradient(180deg, #fff 0%, var(--bg-2) 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
   border-bottom: 1px solid var(--line);
   overflow: hidden;
 }
@@ -30,7 +30,7 @@
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line-2);
   border-radius: var(--radius-pill);
   padding: 6px 14px 6px 8px;
@@ -55,7 +55,7 @@
   margin: 24px 0 0;
   letter-spacing: -0.035em;
   line-height: 1.05;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 800;
   text-wrap: balance;
 }
@@ -67,7 +67,7 @@
   line-height: 1.6;
 }
 .lead b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 .cta {
@@ -132,7 +132,7 @@
   color: var(--orange-on-dark);
 }
 .shieldHead h3 {
-  color: #fff;
+  color: var(--white);
   font-size: 16px;
   margin-bottom: 2px;
 }
@@ -200,7 +200,7 @@
   font-family: var(--mono);
   font-size: 46px;
   font-weight: 800;
-  color: #fff;
+  color: var(--white);
   line-height: 1;
 }
 .score em {
@@ -219,7 +219,7 @@
   position: absolute;
   left: -22px;
   bottom: 38px;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 13px 16px;
@@ -240,7 +240,7 @@
   flex: none;
 }
 .floatChip b {
-  color: var(--navy);
+  color: var(--color-text);
   font-size: 14px;
   display: block;
 }
@@ -291,4 +291,15 @@
     padding: 12px 14px;
     max-width: calc(100% - 16px);
   }
+}
+
+/* Dark mode: keep the navy shield card from merging with the dark page,
+   and give the (now dark) badge surface readable text. */
+:root[data-theme="dark"] .shieldCard {
+  border-right: 1px solid var(--on-dark-line);
+  border-bottom: 1px solid var(--on-dark-line);
+  border-left: 1px solid var(--on-dark-line);
+}
+:root[data-theme="dark"] .badge {
+  color: var(--color-text);
 }

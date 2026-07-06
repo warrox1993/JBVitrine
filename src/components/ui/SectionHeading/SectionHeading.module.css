@@ -10,7 +10,7 @@
 .title {
   font-size: clamp(30px, 3.8vw, 46px);
   margin-top: 14px;
-  color: var(--navy);
+  color: var(--color-text);
   line-height: 1.1;
   letter-spacing: -0.025em;
   font-weight: 800;
@@ -30,7 +30,7 @@
 
 /* On-dark variant (navy section backgrounds) */
 .onDark .title {
-  color: #fff;
+  color: var(--white);
 }
 .onDark .lead {
   color: var(--on-dark-muted);

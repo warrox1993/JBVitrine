@@ -1,6 +1,6 @@
 /* TrustStrip — reference-frameworks & engagements row. */
 .trust {
-  background: #fff;
+  background: var(--color-surface-solid);
   border-bottom: 1px solid var(--line);
 }
 .wrap {
@@ -31,7 +31,7 @@
   padding: 9px 18px;
   font-weight: 600;
   font-size: 14px;
-  color: var(--navy);
+  color: var(--color-text);
 }
 .item svg {
   width: 17px;

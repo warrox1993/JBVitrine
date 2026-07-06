@@ -5,7 +5,7 @@
   z-index: var(--z-overlay);
   padding: var(--space-3) var(--space-4);
   background: var(--color-accent-1);
-  color: white;
+  color: var(--white);
   font-weight: 600;
   text-decoration: none;
   border-radius: var(--radius-md);

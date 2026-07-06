@@ -6,7 +6,7 @@
 
 /* ===== Page header band ===== */
 .pageHead {
-  background: linear-gradient(180deg, #fff 0%, var(--bg-2) 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
   border-bottom: 1px solid var(--line);
 }
 
@@ -97,7 +97,7 @@
   margin-top: 14px;
   letter-spacing: -0.025em;
   max-width: 20ch;
-  color: var(--navy);
+  color: var(--color-text);
   line-height: 1.2;
 }
 
@@ -108,7 +108,7 @@
 .directPromise {
   font-size: 18px;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--color-text);
   line-height: 1.5;
   margin-top: 20px;
   max-width: 52ch;
@@ -139,7 +139,7 @@
   align-items: center;
   gap: 10px;
   background: var(--orange);
-  color: #fff;
+  color: var(--white);
   font: 700 15.5px/1 var(--sans);
   padding: 15px 24px;
   border-radius: 10px;
@@ -169,8 +169,8 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #fff;
-  color: var(--navy);
+  background: var(--color-surface-solid);
+  color: var(--color-text);
   font: 700 15.5px/1 var(--mono);
   padding: 14px 22px;
   border-radius: 10px;
@@ -219,7 +219,7 @@
 
 /* ===== Contact layout ===== */
 .contact {
-  background: #fff;
+  background: var(--color-surface-solid);
   padding: 80px 0;
 }
 
@@ -258,7 +258,7 @@
 }
 
 .infoCard {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 28px;
@@ -301,7 +301,7 @@
   bottom: 12px;
   z-index: 1;
   background: var(--orange);
-  color: #fff;
+  color: var(--white);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -315,7 +315,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--navy);
+  color: var(--color-text);
   letter-spacing: -0.015em;
 }
 
@@ -367,7 +367,7 @@
 .coord .v a.telLink {
   font-size: 17px;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--color-text);
   font-family: var(--mono);
 }
 
@@ -403,7 +403,7 @@
 
 .coord .v {
   font-size: 14.5px;
-  color: var(--ink);
+  color: var(--color-text);
   line-height: 1.5;
 }
 
@@ -533,7 +533,7 @@
 }
 
 .emergBlock h3 {
-  color: #fff;
+  color: var(--white);
   font-size: 19px;
   margin: 4px 0 0;
   letter-spacing: -0.015em;
@@ -555,7 +555,7 @@
   margin-top: 20px;
   position: relative;
   background: var(--orange);
-  color: #fff;
+  color: var(--white);
   font-weight: 700;
   font-size: 19px;
   letter-spacing: 0.01em;
@@ -636,7 +636,7 @@
   margin-top: 9px;
   font-size: 11.5px;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--color-text);
   line-height: 1.3;
 }
 
@@ -656,7 +656,7 @@
 
 /* ===== Map card ===== */
 .mapCard {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 14px;
   overflow: hidden;
@@ -692,7 +692,7 @@
 
 .mapPin .badge {
   background: var(--navy);
-  color: #fff;
+  color: var(--white);
   font-size: 12px;
   font-weight: 600;
   padding: 5px 11px;
@@ -840,7 +840,7 @@
 .secHead h2 {
   font-size: clamp(25px, 3vw, 33px);
   margin-top: 14px;
-  color: var(--navy);
+  color: var(--color-text);
   letter-spacing: -0.015em;
   line-height: 1.2;
 }
@@ -882,7 +882,7 @@
   height: 50px;
   border-radius: 13px;
   background: var(--navy);
-  color: #fff;
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -905,7 +905,7 @@
 .step h4 {
   font-size: 17px;
   margin: 20px 0 0;
-  color: var(--navy);
+  color: var(--color-text);
   letter-spacing: -0.015em;
 }
 
@@ -923,7 +923,7 @@
   gap: 14px;
   justify-content: center;
   text-align: center;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px dashed var(--line-2);
   border-radius: var(--radius-pill);
   padding: 12px 24px;
@@ -940,7 +940,7 @@
 }
 
 .expectNote b {
-  color: var(--navy);
+  color: var(--color-text);
 }
 
 /* ===== Responsive ===== */
@@ -980,6 +980,31 @@
   .step {
     padding: 0;
   }
+}
+
+/* ===== Dark-mode residual fixes (override only; light untouched) ===== */
+:root[data-theme="dark"] .coord .v a {
+  color: var(--color-text);
+}
+
+:root[data-theme="dark"] .pStep .pIc {
+  color: var(--orange-d);
+}
+
+:root[data-theme="dark"] .linkMore {
+  color: var(--color-text);
+}
+
+:root[data-theme="dark"] .mapCompass {
+  color: var(--color-text);
+}
+
+:root[data-theme="dark"] .crumbs span {
+  color: var(--color-text);
+}
+
+:root[data-theme="dark"] .crumbs a:hover {
+  color: var(--orange-d);
 }
 
 @media (max-width: 480px) {

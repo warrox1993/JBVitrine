@@ -3,7 +3,7 @@
 
 .pageHero {
   position: relative;
-  background: linear-gradient(180deg, #fff 0%, var(--bg-2) 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
   border-bottom: 1px solid var(--line);
   overflow: hidden;
 }
@@ -57,7 +57,7 @@
   text-decoration: none;
 }
 .crumb a:hover {
-  color: var(--navy);
+  color: var(--color-text);
 }
 .crumb svg {
   width: 14px;
@@ -66,7 +66,7 @@
   flex: none;
 }
 .crumbHere {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
 }
 .h1 {
@@ -74,7 +74,7 @@
   margin: 16px 0 0;
   max-width: 16ch;
   letter-spacing: -0.025em;
-  color: var(--navy);
+  color: var(--color-text);
   line-height: 1.2;
   font-weight: 700;
 }
@@ -124,7 +124,7 @@
   margin-top: 52px;
 }
 .engageCard {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 32px 26px;
@@ -157,7 +157,7 @@
 }
 .engageCard h3 {
   font-size: 18px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.2;

@@ -1,6 +1,6 @@
 .panel {
   margin-top: 64px;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 42px 46px;
@@ -27,7 +27,7 @@
 .txt h3 {
   font-size: 20px;
   margin-top: 12px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 800;
   line-height: 1.25;
 }
@@ -38,17 +38,17 @@
   line-height: 1.6;
 }
 .txt p b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 .panel.onDark .txt h3 {
-  color: #fff;
+  color: var(--white);
 }
 .panel.onDark .txt p {
   color: var(--on-dark-muted);
 }
 .panel.onDark .txt p b {
-  color: #fff;
+  color: var(--white);
 }
 .fig {
   margin: 0;

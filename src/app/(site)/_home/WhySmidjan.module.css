@@ -11,7 +11,7 @@
 .title {
   font-size: clamp(27px, 3.2vw, 36px);
   margin-top: 14px;
-  color: #fff;
+  color: var(--white);
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -23,7 +23,7 @@
   line-height: 1.6;
 }
 .lead b {
-  color: #fff;
+  color: var(--white);
   font-weight: 700;
 }
 .list {
@@ -34,7 +34,7 @@
 .item {
   display: flex;
   gap: 16px;
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 22px 24px;
@@ -57,7 +57,7 @@
 }
 .item h4 {
   font-size: 16.5px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 .item p {
@@ -67,7 +67,7 @@
   line-height: 1.55;
 }
 .item p b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 
@@ -112,7 +112,7 @@
   font-family: var(--mono);
 }
 .founder h3 {
-  color: #fff;
+  color: var(--white);
   font-size: 19px;
   font-weight: 700;
 }

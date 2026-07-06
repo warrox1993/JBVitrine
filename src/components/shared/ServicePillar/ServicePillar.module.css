@@ -44,7 +44,7 @@
 }
 .title {
   font-size: clamp(23px, 2.9vw, 31px);
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.2;
@@ -93,7 +93,7 @@
   padding: 13px 15px;
 }
 .pillar.alt .cap {
-  background: #fff;
+  background: var(--color-surface-solid);
 }
 .cap svg {
   width: 18px;
@@ -105,7 +105,7 @@
 .cap b {
   display: block;
   font-size: 14px;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 600;
   line-height: 1.35;
 }
@@ -119,7 +119,7 @@
 
 /* Right-hand panel: who / when + deliverables + CTA */
 .panel {
-  background: #fff;
+  background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 26px 24px;
@@ -175,7 +175,7 @@
   font: 700 11px/1 var(--sans);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--color-text);
   margin-bottom: 14px;
   display: flex;
   align-items: center;

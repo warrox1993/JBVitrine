@@ -149,7 +149,7 @@
 .featureCard.selected .checkbox {
   background: var(--color-accent-1, #ff6a00);
   border-color: var(--color-accent-1, #ff6a00);
-  color: white;
+  color: var(--white);
 }
 
 .featureCard.exclusive .checkbox {
@@ -250,7 +250,7 @@
 
 .btnPrimary {
   background: var(--color-accent-1, #ff6a00);
-  color: white;
+  color: var(--white);
 }
 
 .btnPrimary:hover:not(:disabled) {

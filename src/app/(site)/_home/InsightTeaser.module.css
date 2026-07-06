@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
-  background: #fff;
+  background: var(--color-surface-solid);
   border-top: 3px solid var(--orange);
   border-radius: 16px;
   overflow: hidden;
@@ -21,7 +21,7 @@
   font-size: 26px;
   margin-top: 16px;
   letter-spacing: -0.02em;
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -32,7 +32,7 @@
   line-height: 1.6;
 }
 .body p b {
-  color: var(--navy);
+  color: var(--color-text);
   font-weight: 700;
 }
 .meta {
