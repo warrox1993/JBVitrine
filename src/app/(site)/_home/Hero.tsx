@@ -15,16 +15,15 @@ export function Hero() {
             <span className={styles.rule} aria-hidden="true" />
             <span className={styles.badge}>
               <span className={styles.tag}>NIS2</span>
-              En vigueur en Belgique&nbsp;: votre entreprise doit déjà être conforme
+              En vigueur en Belgique&nbsp;: votre PME est concernée
             </span>
           </div>
           <h1 className={styles.title}>
-            Votre entreprise, <span className="accent">protégée et conforme</span> — sans jargon,
-            sans sous-traitance.
+            Sécurisez votre infrastructure. <span className="accent">Préparez NIS2.</span>
           </h1>
           <p className={styles.lead}>
-            Réseaux, applications, conformité NIS2&nbsp;/ CyFun&nbsp;: on sécurise tout.{" "}
-            <b>Un seul partenaire, un expert au téléphone.</b>
+            Réseaux, applications et conformité CyFun&nbsp;: un seul partenaire wallon,{" "}
+            <b>un expert au téléphone.</b>
           </p>
           <div className={styles.cta}>
             <Button

@@ -12,18 +12,16 @@ export function CyfunIntro() {
       <div>
         <Eyebrow className={styles.kickerMono}>Section phare · Conformité</Eyebrow>
         <h2 className={styles.title}>
-          NIS2 &amp; CyberFundamentals&nbsp;: se mettre en règle,{" "}
-          <span className="accent">concrètement</span>
+          NIS2 &amp; CyFun&nbsp;: <span className="accent">êtes-vous concerné&nbsp;?</span>
         </h2>
         <p className={styles.lead}>
-          La directive <b>NIS2</b> impose un niveau minimal de cybersécurité à des milliers
-          d&apos;entreprises belges — PME et sous-traitants inclus. En Belgique, la réponse
-          officielle s&apos;appelle <b>CyFun</b> (CyberFundamentals Framework), publiée par le{" "}
+          La directive <b>NIS2</b> vise des milliers d&apos;entreprises belges, PME et
+          sous-traitants inclus. En Belgique, le cadre officiel est <b>CyFun</b>, publié par le{" "}
           <b>CCB</b>.
         </p>
         <StatHook className={styles.hook} value="~82%">
-          <b>Le niveau Basic couvre déjà ~82&nbsp;% des attaques courantes.</b> Le point de départ
-          le plus rentable pour une PME.
+          <b>Le niveau Basic couvre déjà ~82&nbsp;% des attaques courantes.</b> Le meilleur point
+          de départ pour une PME.
         </StatHook>
       </div>
 
@@ -36,9 +34,7 @@ export function CyfunIntro() {
           </div>
           <div>
             <h3>NIS2 est déjà en vigueur</h3>
-            <p>
-              En vigueur depuis le 18 octobre 2024. Agir maintenant réduit le risque de sanction.
-            </p>
+            <p>En vigueur depuis le 18 octobre 2024. Anticiper réduit le risque.</p>
           </div>
         </div>
         <div className={styles.fine}>

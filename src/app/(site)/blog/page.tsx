@@ -158,12 +158,11 @@ export default async function BlogPage() {
           <div className="wrap">
             <span className={styles.eyebrow}>Journal · Ressources</span>
             <h1 className={styles.heroTitle}>
-              Des articles techniques pour sécuriser et mettre en conformité votre entreprise
+              Sécurisez et mettez en conformité votre entreprise
             </h1>
             <p className={styles.heroLead}>
               Cybersécurité, conformité NIS2 / CyFun et développement web sécurisé&nbsp;: des
-              articles écrits pour être appliqués, pas seulement lus — avec un regard pratique
-              sur les PME en Belgique.
+              articles pratiques, pensés pour les PME belges.
             </p>
           </div>
         </Reveal>
@@ -194,7 +193,7 @@ export default async function BlogPage() {
 
       <CTABox
         title="Besoin d'un accompagnement sur mesure ?"
-        text="Discutons de votre sécurité, de votre conformité NIS2 / CyFun ou de votre projet web sécurisé. Sans engagement."
+        text="Parlons de votre sécurité, de votre conformité NIS2 / CyFun ou de votre projet web sécurisé."
         actions={[{ label: "Nous contacter", href: "/contact" }]}
         reassurances={["Réponse sous 24 h", "Sans engagement"]}
       />

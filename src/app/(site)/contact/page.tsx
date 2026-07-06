@@ -104,12 +104,10 @@ export default function ContactPage() {
               Un expert vous répond — <span className={cls.accent}>sous 24&nbsp;heures</span>.
             </h1>
             <p className={cls.directPromise}>
-              <strong>Un expert Smidjan vous rappelle sous 24&nbsp;h ouvrées</strong> — jamais un
-              centre d&apos;appels.
+              <strong>Un expert Smidjan</strong> — jamais un centre d&apos;appels.
             </p>
             <p className={cls.lead}>
-              Diagnostic, audit NIS2, pentest, incident : un seul interlocuteur,
-              du premier message à la solution.
+              Diagnostic, audit NIS2, pentest ou incident : un seul interlocuteur.
             </p>
             <div className={cls.heroCtas}>
               <a href="#form" className={cls.ctaPrimary}>
@@ -366,7 +364,7 @@ export default function ContactPage() {
           <div className={cls.secHead}>
             <span className={cls.eyebrow}>À quoi s&apos;attendre</span>
             <h2>De votre message au <span className="accent">diagnostic</span>, en trois temps</h2>
-            <p>Pas de tunnel commercial. Un échange direct, utile dès le premier message.</p>
+            <p>Pas de tunnel commercial — un échange utile dès le premier message.</p>
           </div>
           <div className={cls.steps}>
             <div className={cls.step}>
@@ -377,7 +375,7 @@ export default function ContactPage() {
             <div className={cls.step}>
               <div className={cls.num}>2</div>
               <h4>On vous rappelle sous 24&nbsp;h</h4>
-              <p>Un expert Smidjan — pas un commercial — vous rappelle sous 24&nbsp;h ouvrées.</p>
+              <p>Un expert Smidjan, pas un commercial. Sous 24&nbsp;h ouvrées.</p>
             </div>
             <div className={cls.step}>
               <div className={cls.num}>

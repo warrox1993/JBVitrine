@@ -86,11 +86,11 @@ const methodSteps: MethodStep[] = [
   {
     kick: "On mesure",
     title: "Diagnostic",
-    text: "On mesure votre exposition réelle — infrastructure, réseaux, applications, pratiques. Un état des lieux chiffré, pas une opinion.",
+    text: "On mesure votre exposition réelle : infrastructure, réseaux, applications. Un état des lieux chiffré, pas une opinion.",
     deliverables: [
-      "Rapport de diagnostic clair, avec score de départ.",
-      "Cartographie de vos actifs et de vos risques.",
-      "Analyse d'écart vis-à-vis du niveau visé.",
+      "Rapport clair, avec score de départ.",
+      "Cartographie de vos actifs et risques.",
+      "Analyse d'écart avec le niveau visé.",
     ],
   },
   {
@@ -98,12 +98,12 @@ const methodSteps: MethodStep[] = [
     title: "Priorisation",
     text: (
       <>
-        Toutes les failles ne se valent pas. On les classe par risque et par effort, pour une feuille de route
-        pensée pour un <b>budget de PME</b>. Vous décidez, en connaissance de cause.
+        On classe les failles par risque et par effort — une feuille de route pensée pour un{" "}
+        <b>budget de PME</b>. Vous décidez, en connaissance de cause.
       </>
     ),
     deliverables: [
-      "Plan de remédiation priorisé par risque et coût.",
+      "Plan priorisé par risque et coût.",
       "Recommandations chiffrées, sans sur-ingénierie.",
       "Calendrier réaliste, validé avec vous.",
     ],
@@ -113,14 +113,14 @@ const methodSteps: MethodStep[] = [
     title: "Remédiation",
     text: (
       <>
-        Notre différence : on ne liste pas les failles, <b>on les corrige</b>. Durcissement, correctifs, MFA,
-        sauvegardes, segmentation — chaque action appliquée, puis re-testée.
+        Notre différence : on ne liste pas les failles, <b>on les corrige</b>. Durcissement, MFA, sauvegardes,
+        segmentation — chaque action appliquée, puis re-testée.
       </>
     ),
     deliverables: [
-      "Correctifs réellement appliqués, pas seulement conseillés.",
-      "Re-vérification qui prouve l'effet de chaque action.",
-      "Comparatif avant / après du score de posture.",
+      "Correctifs appliqués, pas seulement conseillés.",
+      "Re-test qui prouve l'effet de chaque action.",
+      "Comparatif avant / après du score.",
     ],
   },
   {
@@ -129,8 +129,8 @@ const methodSteps: MethodStep[] = [
     text: "La sécurité n'est pas un projet ponctuel. On surveille, on ajuste, on reste en veille — avec un interlocuteur unique, joignable directement.",
     deliverables: [
       "Supervision continue et alertes utiles.",
-      "Points de suivi et tableau de bord de posture.",
-      "Contact direct avec l'expert, sans centre d'appel.",
+      "Points de suivi et tableau de bord.",
+      "Contact direct avec l'expert.",
     ],
   },
 ];
@@ -139,22 +139,22 @@ const aiCards: { icon: IconName; title: string; text: string }[] = [
   {
     icon: "search",
     title: "Veille accélérée",
-    text: "On suit les nouvelles menaces pour anticiper ce qui vous concerne vraiment.",
+    text: "On anticipe les menaces qui vous concernent vraiment.",
   },
   {
     icon: "alert-triangle",
     title: "Détection élargie",
-    text: "Plus de journaux, plus de signaux analysés — l'anomalie repérée plus tôt.",
+    text: "Plus de signaux analysés, l'anomalie repérée plus tôt.",
   },
   {
     icon: "layers",
     title: "Rien ne passe entre les mailles",
-    text: "Un second regard automatisé sur configs et correctifs. Rien n'est oublié.",
+    text: "Un second regard automatisé sur configs et correctifs.",
   },
   {
     icon: "check",
     title: "Décision humaine",
-    text: "Chaque constat IA est vérifié et validé par l'expert avant toute action.",
+    text: "Chaque constat IA validé par l'expert avant toute action.",
   },
 ];
 
@@ -162,28 +162,28 @@ const whyItems: { icon: IconName; title: string; text: string; pin: string; pinI
   {
     icon: "map-pin",
     title: "Local & réactif",
-    text: "Basés à Liège, on intervient vite en Wallonie. Vos données restent en Belgique / UE. Vous appelez, on décroche.",
+    text: "Basés à Liège, on intervient vite en Wallonie. Vos données restent en Belgique / UE.",
     pin: "On répond au téléphone",
     pinIcon: "phone",
   },
   {
     icon: "users",
     title: "Accès direct à l'expert",
-    text: "Vous parlez à la personne qui fait le travail sur votre dossier. Jamais un centre d'appel, jamais un junior en sous-traitance.",
+    text: "Vous parlez à la personne qui traite votre dossier. Jamais un centre d'appel, jamais un junior.",
     pin: "Zéro sous-traitance",
     pinIcon: "check",
   },
   {
     icon: "target",
     title: "Pragmatisme PME",
-    text: "On corrige ce qui compte pour votre budget — pas de sur-ingénierie. Chaque euro cible un risque réel, expliqué.",
+    text: "On corrige ce qui compte pour votre budget. Chaque euro cible un risque réel, expliqué.",
     pin: "Adapté au budget PME",
     pinIcon: "check",
   },
   {
     icon: "layers",
     title: "Un seul partenaire",
-    text: "Build, secure, comply : tout au même endroit. Fini les cinq prestataires qui se renvoient la responsabilité.",
+    text: "Build, secure, comply : tout au même endroit. Fini les prestataires qui se renvoient la balle.",
     pin: "Un interlocuteur, bout en bout",
     pinIcon: "check",
   },
@@ -194,19 +194,19 @@ const referentiels: { icon: IconName; code: string; title: string; text: string 
     icon: "code",
     code: "OWASP",
     title: "Tests & sécurité applicative",
-    text: "Nos audits web et tests d'intrusion suivent la méthodologie OWASP — les mêmes critères que l'industrie.",
+    text: "Audits web et tests d'intrusion selon la méthodologie OWASP — les critères de l'industrie.",
   },
   {
     icon: "shield-check",
     code: "ISO/IEC 27001",
-    title: "Gestion de la sécurité de l'information",
-    text: "Gouvernance et gestion des risques structurées selon ISO/IEC 27001 — posture cohérente, documentée.",
+    title: "Gestion de la sécurité",
+    text: "Gouvernance et gestion des risques alignées ISO/IEC 27001 — une posture cohérente, documentée.",
   },
   {
     icon: "layers",
     code: "CyFun · NIS2 (CCB)",
     title: "Conformité belge & européenne",
-    text: "Nos mises en conformité suivent le CyberFundamentals Framework du CCB et la directive NIS2 — le référentiel officiel en Belgique.",
+    text: "Mises en conformité alignées sur le CyberFundamentals du CCB et la directive NIS2 — le référentiel officiel belge.",
   },
 ];
 
@@ -227,8 +227,8 @@ export default function ApprochePage() {
                 Une cybersécurité qui se <span className="accent">démontre</span>, pas qui se raconte.
               </h1>
               <p className={styles.lead}>
-                La sécurité, pas le discours : des actions mesurées, des livrables que vous vérifiez vous-même.
-                Voici notre méthode, du diagnostic au suivi.
+                Des actions mesurées, des livrables que vous vérifiez vous-même. Notre méthode, du diagnostic au
+                suivi.
               </p>
               <div className={styles.heroCta}>
                 <Button as="a" href="/contact" variant="primary" size="lg" trailingIcon={<Icon name="arrow-right" />}>
@@ -256,7 +256,7 @@ export default function ApprochePage() {
                     <Icon name="check" size={13} strokeWidth={3} />
                   </span>
                   <span>
-                    Un <b>diagnostic mesuré</b>, chiffré et documenté — pas une impression.
+                    Un <b>diagnostic chiffré</b> et documenté — pas une impression.
                   </span>
                 </li>
                 <li>
@@ -305,13 +305,13 @@ export default function ApprochePage() {
               lead={
                 <>
                   Trop de prestataires vendent un sentiment de sécurité. Nous, on vous donne de quoi la vérifier
-                  vous-même : <b>diagnostic mesuré</b>, livrables <b>clairs et actionnables</b>, résultat prouvé.
+                  vous-même : <b>diagnostic mesuré</b>, livrables <b>actionnables</b>, résultat prouvé.
                 </>
               }
             />
             <blockquote className={styles.quote}>
-              « Ne nous croyez pas sur parole. On vous montre l&rsquo;écart de départ, les correctifs appliqués, le
-              résultat mesuré. » <b>— Notre règle, à chaque mission.</b>
+              « Ne nous croyez pas sur parole : l&rsquo;écart de départ, les correctifs appliqués, le résultat
+              mesuré. » <b>— Notre règle, à chaque mission.</b>
             </blockquote>
           </div>
           <div className={styles.contrast}>
@@ -391,7 +391,7 @@ export default function ApprochePage() {
                 Quatre <span className="accent">étapes</span>, du premier constat au suivi durable
               </>
             }
-            lead="Audit, pentest, mise en conformité NIS2 / CyFun : même méthode à chaque fois. Vous savez ce qui se passe, et ce que vous recevez."
+            lead="Audit, pentest, conformité NIS2 / CyFun : même méthode à chaque fois. Vous savez ce qui se passe et ce que vous recevez."
           />
         </Reveal>
 
@@ -417,7 +417,7 @@ export default function ApprochePage() {
               className={styles.methodPhotoFrame}
             />
             <figcaption className={styles.methodPhotoCap}>
-              Une méthode aussi <b>rigoureuse qu&rsquo;un plan d&rsquo;architecte</b>, du diagnostic au correctif.
+              Une méthode <b>rigoureuse</b>, du diagnostic au correctif.
             </figcaption>
           </figure>
           <figure className={styles.methodPhoto}>
@@ -430,7 +430,7 @@ export default function ApprochePage() {
               className={styles.methodPhotoFrame}
             />
             <figcaption className={styles.methodPhotoCap}>
-              Une <b>feuille de route priorisée</b>, construite avec vous — pas imposée.
+              Une <b>feuille de route priorisée</b>, construite avec vous.
             </figcaption>
           </figure>
         </Reveal>
@@ -479,7 +479,7 @@ export default function ApprochePage() {
                   <span className="accentOnDark">décide pas</span> à notre place.
                 </>
               }
-              lead="L'IA nous aide à surveiller plus large, trier plus vite, ne rien laisser passer. L'analyse et la décision restent humaines — les vôtres et les nôtres."
+              lead="L'IA nous aide à surveiller plus large et trier plus vite. L'analyse et la décision restent humaines — les vôtres et les nôtres."
             />
             <div className={styles.aiHonest}>
               <Icon name="alert-circle" size={22} />
@@ -545,7 +545,7 @@ export default function ApprochePage() {
             className={styles.sectionPhotoFrame}
           />
           <figcaption className={styles.sectionPhotoCap}>
-            Un <b>expert dédié</b>, joignable directement — jamais un centre d&rsquo;appel ni un junior en sous-traitance.
+            Un <b>expert dédié</b>, joignable directement — jamais un centre d&rsquo;appel ni un junior.
           </figcaption>
         </Reveal>
 
@@ -590,7 +590,7 @@ export default function ApprochePage() {
                 Une méthodologie alignée sur les cadres de <span className="accent">référence</span>
               </>
             }
-            lead="Pas de feeling. Nos audits et mises en conformité s'appuient sur des référentiels reconnus — pour des résultats comparables et défendables."
+            lead="Nos audits et mises en conformité s'appuient sur des référentiels reconnus — pour des résultats comparables et défendables."
           />
         </Reveal>
         <Reveal as="div" stagger className={styles.refsGrid}>
@@ -610,9 +610,9 @@ export default function ApprochePage() {
           <div>
             <h4>En toute transparence</h4>
             <p>
-              Nous appliquons ces référentiels comme <b>méthode de travail</b> et préparons votre organisation à la
-              vérification. La <b>certification</b> officielle CyFun est délivrée par des organismes accrédités
-              BELAC — pas par nous. Notre rôle : auditer, corriger, vous amener prêts à la soumission.
+              Ces référentiels sont notre <b>méthode de travail</b>. La <b>certification</b> officielle CyFun est
+              délivrée par des organismes accrédités BELAC — pas par nous. Notre rôle : auditer, corriger, vous
+              amener prêts à la soumission.
             </p>
           </div>
         </Reveal>

@@ -30,8 +30,8 @@ const WHY_ITEMS: WhyItem[] = [
     title: "Local & réactif",
     text: (
       <>
-        Basés à Liège, nous intervenons vite en Wallonie et vos données restent{" "}
-        <b>hébergées en Belgique / UE</b>.
+        Basés à Liège, nous intervenons vite en Wallonie. Vos données restent{" "}
+        <b>en Belgique / UE</b>.
       </>
     ),
   },
@@ -44,8 +44,8 @@ const WHY_ITEMS: WhyItem[] = [
     title: "Pragmatisme PME",
     text: (
       <>
-        <b>Nous corrigeons ce qui compte vraiment</b> pour votre budget — pas de sur-ingénierie,
-        pas de dépenses inutiles.
+        <b>Nous corrigeons ce qui compte vraiment</b> — pas de sur-ingénierie, pas de dépenses
+        inutiles.
       </>
     ),
   },
@@ -59,8 +59,7 @@ const WHY_ITEMS: WhyItem[] = [
     title: "Un seul partenaire",
     text: (
       <>
-        Construire, sécuriser et mettre en conformité&nbsp;: <b>tout au même endroit</b>, sans
-        coordonner cinq prestataires.
+        Construire, sécuriser, mettre en conformité&nbsp;: <b>tout au même endroit</b>.
       </>
     ),
   },
@@ -74,8 +73,7 @@ const WHY_ITEMS: WhyItem[] = [
     title: "Accès direct à l'expert",
     text: (
       <>
-        <b>Vous parlez à la personne qui fait le travail</b> — jamais à un centre d&apos;appel ni
-        à un junior en sous-traitance.
+        <b>Vous parlez à la personne qui fait le travail</b> — jamais à un centre d&apos;appel.
       </>
     ),
   },
@@ -92,8 +90,8 @@ export function WhySmidjan() {
           d&apos;un partenaire
         </h2>
         <p className={styles.lead}>
-          Une <b>structure à taille humaine</b>, par choix. Moins d&apos;intermédiaires, plus de
-          responsabilité, un interlocuteur qui connaît votre dossier.
+          Une <b>structure à taille humaine</b>, par choix. Moins d&apos;intermédiaires, un
+          interlocuteur qui connaît votre dossier.
         </p>
         <Reveal stagger className={styles.list}>
           {WHY_ITEMS.map((it) => (

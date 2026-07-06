@@ -11,11 +11,9 @@ export function Honesty() {
       <div>
         <h4>En toute transparence</h4>
         <p>
-          La <b>certification officielle</b> CyFun est délivrée par des organismes accrédités
-          BELAC — pas par Smidjan. Notre rôle&nbsp;:{" "}
-          <b>audit, analyse d&apos;écart, remédiation</b>, préparation à la vérification. On ne se
-          contente pas de constater les manques — <b>on les corrige</b>. C&apos;est notre
-          différence avec les pures maisons d&apos;audit.
+          La certification CyFun est délivrée par des organismes accrédités BELAC — pas par
+          Smidjan. Notre rôle&nbsp;: <b>audit, analyse d&apos;écart, remédiation</b> et préparation
+          à la vérification. On ne constate pas les manques — <b>on les corrige</b>.
         </p>
       </div>
     </Reveal>

@@ -20,8 +20,8 @@ export default function Mission() {
         </h2>
 
         <p className={styles["mission-intro"]}>
-          Chez SMIDJAN, nous croyons que la technologie n'a de valeur que lorsqu'elle sert des objectifs clairs : gagner du temps, renforcer la sécurité et améliorer les performances.
-          Nous concevons des systèmes sur mesure, pensés pour durer, intégrés avec précision dans la réalité de chaque entreprise.
+          Sécuriser vos réseaux, vos infrastructures et vos applications — sans jargon, sans surcoût.
+          Une sécurité concrète, taillée pour la réalité de chaque entreprise.
         </p>
 
         <div className={styles["mission-grid"]} role="list">
@@ -42,10 +42,9 @@ export default function Mission() {
                 />
               </svg>
             </div>
-            <h3 className={styles["mission-cardTitle"]}>Performance technique</h3>
+            <h3 className={styles["mission-cardTitle"]}>Infrastructures durcies</h3>
             <p className={styles["mission-cardText"]}>
-              Nous bâtissons des fondations solides : code propre, architecture claire et maintenance facilitée.
-              Chaque ligne est pensée pour la scalabilité.
+              Réseaux, serveurs, applications : des fondations solides, durcies et maintenables dans le temps.
             </p>
           </article>
 
@@ -68,7 +67,7 @@ export default function Mission() {
             </div>
             <h3 className={styles["mission-cardTitle"]}>Sécurité intégrée</h3>
             <p className={styles["mission-cardText"]}>
-              Nous anticipons les risques dès la conception. Tests automatisés, conformité, chiffrement et supervision sont intégrés au cœur de nos solutions.
+              Le risque anticipé dès la conception : audit, remédiation, chiffrement et supervision.
             </p>
           </article>
 
@@ -91,7 +90,7 @@ export default function Mission() {
             </div>
             <h3 className={styles["mission-cardTitle"]}>Résultats mesurables</h3>
             <p className={styles["mission-cardText"]}>
-              Nos projets se jugent aux chiffres. Nous mettons en place des indicateurs précis pour suivre l'impact réel sur votre activité.
+              Un risque réduit, une conformité tenue : des indicateurs clairs, pas des promesses.
             </p>
           </article>
         </div>

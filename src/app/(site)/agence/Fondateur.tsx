@@ -18,8 +18,8 @@ const JOURNEY = [
   {
     key: false,
     label: "Le point de départ",
-    title: "Une passion très précoce de l'informatique",
-    text: "Bien avant les études : comprendre comment les machines marchent — et pourquoi elles cassent.",
+    title: "Une passion précoce de l'informatique",
+    text: "Comprendre comment les machines marchent — et pourquoi elles cassent.",
     icon: (
       <>
         <path d="m13 2-3 7h4l-3 7" />
@@ -30,8 +30,8 @@ const JOURNEY = [
   {
     key: false,
     label: "L'autodidaxie",
-    title: "Découverte de Linux, de Kali et de la sécurité réseau",
-    text: "En autodidacte : Linux, outils offensifs (Kali), sécurité réseau. Une compréhension acquise par la pratique, pas la théorie.",
+    title: "Linux, Kali et sécurité réseau",
+    text: "En autodidacte, outils offensifs à l'appui. Une expertise acquise par la pratique.",
     icon: (
       <>
         <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -43,7 +43,7 @@ const JOURNEY = [
     key: false,
     label: "La formation",
     title: "Diplôme technique en informatique",
-    text: "Une formation technique valide les acquis : administration systèmes, réseaux, développement.",
+    text: "Les acquis validés : administration systèmes, réseaux, développement.",
     icon: (
       <>
         <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
@@ -54,8 +54,8 @@ const JOURNEY = [
   {
     key: true,
     label: "L'expérience opérationnelle",
-    title: "Service au sein des télécommunications de l'Armée belge",
-    text: "Protection de réseaux de communication en environnement exigeant. Une rigueur rare, appliquée aujourd'hui aux entreprises.",
+    title: "Télécommunications de l'Armée belge",
+    text: "Protéger des réseaux critiques en environnement exigeant. Cette rigueur, appliquée aujourd'hui aux entreprises.",
     icon: (
       <>
         <path d="M12 2 4 5v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3Z" />
@@ -66,8 +66,8 @@ const JOURNEY = [
   {
     key: false,
     label: "Aujourd'hui",
-    title: "Expertise en sécurité offensive & défensive",
-    text: "Attaquer pour comprendre, défendre pour protéger : pentest, durcissement, réponse à incident, conformité. C'est Smidjan.",
+    title: "Sécurité offensive & défensive",
+    text: "Attaquer pour comprendre, défendre pour protéger. C'est Smidjan.",
     icon: (
       <>
         <path d="M11 3a8 8 0 1 0 8 8" />
@@ -91,8 +91,8 @@ export function Fondateur() {
             cybersécurité
           </h2>
           <p>
-            Un profil technique complet : curiosité, discipline militaire,
-            pratique réelle de l&rsquo;attaque et de la défense.
+            Curiosité, discipline militaire, pratique réelle de
+            l&rsquo;attaque et de la défense.
           </p>
         </Reveal>
 
@@ -146,10 +146,9 @@ export function Fondateur() {
               </div>
             </div>
             <blockquote className={styles.quote}>
-              « La cybersécurité d&rsquo;une PME ne se règle pas avec un
-              rapport de 200 pages qu&rsquo;on range dans un tiroir. Elle se
-              règle en corrigeant, une à une, les failles qui comptent — et en
-              restant joignable quand ça compte le plus. »
+              « La sécurité d&rsquo;une PME ne se règle pas avec un rapport
+              qu&rsquo;on range dans un tiroir. Elle se règle en corrigeant,
+              une à une, les failles qui comptent. »
             </blockquote>
             <ul className={styles.creds}>
               {CREDENTIALS.map((c) => (

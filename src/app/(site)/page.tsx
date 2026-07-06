@@ -99,11 +99,11 @@ export default function HomePage() {
             eyebrow="Nos services"
             title={
               <>
-                Quatre missions, un même objectif&nbsp;: réduire votre{" "}
+                Quatre missions, un objectif&nbsp;: réduire votre{" "}
                 <span className="accent">risque cyber</span>
               </>
             }
-            lead="De l'infrastructure à la conformité, on couvre tout — et on corrige ce qu'on trouve."
+            lead="De l'infrastructure à la conformité — et on corrige ce qu'on trouve."
           />
         </Reveal>
         <Reveal stagger className={homeStyles.svcGrid}>
@@ -164,8 +164,7 @@ export default function HomePage() {
           text={
             <>
               Postes, serveurs, bases de données&nbsp;: tout protégé derrière un pare-feu qui
-              filtre chaque connexion. <b>Une architecture claire</b>, documentée, qui évolue avec
-              vous.
+              filtre chaque connexion. <b>Une architecture claire</b>, qui évolue avec vous.
             </>
           }
           figure={
@@ -218,8 +217,8 @@ export default function HomePage() {
           title="Un rapport d'écart clair, domaine par domaine"
           text={
             <>
-              <b>Chaque exigence CyFun est mesurée, pas devinée.</b> Gouvernance, accès, réseau,
-              détection, continuité&nbsp;: un niveau de maturité par domaine, agrégé en un score
+              <b>Chaque exigence CyFun est mesurée, pas devinée.</b> Un niveau de maturité par
+              domaine — gouvernance, accès, réseau, détection, continuité — agrégé en un score
               global.
             </>
           }
@@ -239,17 +238,16 @@ export default function HomePage() {
               {
                 title: "Analyse d'écart & remédiation",
                 description:
-                  "On mesure l'écart au niveau visé et on corrige les manques, par priorité de risque.",
+                  "On mesure l'écart au niveau visé et on corrige, par priorité de risque.",
               },
               {
                 title: "Support à la vérification CCB",
                 description:
-                  "On prépare le dossier et on vous accompagne jusqu'à la vérification par l'organisme accrédité.",
+                  "On prépare le dossier jusqu'à la vérification par l'organisme accrédité.",
               },
               {
                 title: "Suivi continu",
-                description:
-                  "La conformité n'est pas ponctuelle : on maintient votre posture dans la durée.",
+                description: "On maintient votre posture dans la durée, pas seulement le jour J.",
               },
             ]}
           />
@@ -265,7 +263,7 @@ export default function HomePage() {
           title="Basés à Liège, vos données restent en Belgique"
           text={
             <>
-              Pas de sous-traitance à distance, pas d&apos;hébergement délocalisé.{" "}
+              Pas d&apos;hébergement délocalisé.{" "}
               <b>Infrastructure, sauvegardes, échanges&nbsp;: tout reste en Belgique et dans
               l&apos;UE</b>, avec un interlocuteur sur place.
             </>
@@ -323,7 +321,7 @@ export default function HomePage() {
               êtes
             </>
           }
-          text="30 minutes avec un expert : votre exposition évaluée, votre conformité NIS2 cadrée, des priorités claires. Sans engagement."
+          text="30 minutes avec un expert : votre exposition évaluée, votre conformité NIS2 cadrée, des priorités claires."
           actions={[
             { label: "Réserver mon diagnostic gratuit", href: "/contact" },
             { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },

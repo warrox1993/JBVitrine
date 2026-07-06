@@ -215,8 +215,7 @@ export default function Team() {
             Notre Équipe
           </Heading>
           <p className={styles["team-subtitle"]}>
-            Une équipe en construction, avec l'excellence au cœur de notre ADN et
-            l'ambition de créer des expériences digitales mesurables.
+            Une équipe en construction, l'exigence au cœur de notre ADN.
           </p>
         </div>
 
@@ -232,8 +231,7 @@ export default function Team() {
               <div className={styles["team-mobile-ceo-name"]}>Jean-Baptiste D.</div>
               <div className={styles["team-mobile-ceo-title"]}>CEO & Designer Produit</div>
               <div className={styles["team-mobile-ceo-description"]}>
-                Conçoit des systèmes clairs où chaque détail sert le parcours.
-                Esthétique utile, mesurable, durable.
+                Conçoit des systèmes clairs et sécurisés, où chaque détail compte.
               </div>
             </a>
           </div>
@@ -268,8 +266,7 @@ export default function Team() {
           Notre Équipe
         </Heading>
         <p className={styles["team-subtitle"]}>
-          Une équipe en construction, avec l'excellence au cœur de notre ADN et
-          l'ambition de créer des expériences digitales mesurables.
+          Une équipe en construction, l'exigence au cœur de notre ADN.
         </p>
       </div>
 
@@ -290,8 +287,7 @@ export default function Team() {
             <div className={styles["center-name"]}>Jean-Baptiste D.</div>
             <div className={styles["center-title"]}>CEO & Designer Produit</div>
             <div className={styles["center-description"]}>
-              Conçoit des systèmes clairs où chaque détail sert le parcours.
-              Esthétique utile, mesurable, durable.
+              Conçoit des systèmes clairs et sécurisés, où chaque détail compte.
             </div>
           </a>
         </div>

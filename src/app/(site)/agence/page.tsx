@@ -152,8 +152,7 @@ export default function AgencePage() {
             </div>
             <h3>Proximité</h3>
             <p>
-              Basés en Wallonie, on répond vite. Un interlocuteur direct,
-              au téléphone — jamais un ticket.
+              Un interlocuteur direct, au téléphone — jamais un ticket.
             </p>
           </article>
           <article className={styles.engageCard}>
@@ -162,8 +161,8 @@ export default function AgencePage() {
             </div>
             <h3>Franchise</h3>
             <p>
-              On dit ce qui compte, sans dramatiser. Des priorités
-              honnêtes, adaptées à votre budget.
+              Des priorités honnêtes, adaptées à votre budget. Sans
+              dramatiser.
             </p>
           </article>
           <article className={styles.engageCard}>
@@ -172,8 +171,8 @@ export default function AgencePage() {
             </div>
             <h3>On corrige</h3>
             <p>
-              On n&rsquo;audite pas pour auditer : on corrige. Un rapport
-              sans remédiation ne réduit aucun risque.
+              On audite pour corriger. Un rapport sans remédiation ne
+              réduit aucun risque.
             </p>
           </article>
           <article className={styles.engageCard}>
@@ -182,8 +181,8 @@ export default function AgencePage() {
             </div>
             <h3>L&rsquo;humain augmenté par l&rsquo;IA</h3>
             <p>
-              L&rsquo;IA accélère l&rsquo;analyse et élargit la couverture.
-              Les décisions restent humaines.
+              L&rsquo;IA accélère l&rsquo;analyse. Les décisions restent
+              humaines.
             </p>
           </article>
         </Reveal>

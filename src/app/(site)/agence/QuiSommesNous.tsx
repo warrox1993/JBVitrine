@@ -47,13 +47,13 @@ export function QuiSommesNous() {
               lead="PME, indépendants, professions réglementées, collectivités : on protège vos réseaux, vos données, votre activité — et on cadre votre NIS2 / CyFun."
             />
             <p>
-              Les PME sont des cibles de choix — moins bien défendues, pas
-              moins exposées. Notre conviction : la même exigence qu&rsquo;un
+              Les PME sont des cibles de choix : moins bien défendues, pas
+              moins exposées. On leur applique l&rsquo;exigence d&rsquo;un
               grand compte, sans la lourdeur.
             </p>
             <p>
-              Sécuriser, tester, mettre en conformité : un seul interlocuteur,
-              du début à la fin. Pas de sous-traitance, pas de jargon.
+              Sécuriser, tester, mettre en conformité : un seul
+              interlocuteur, du début à la fin.
             </p>
             <div className={styles.missionCard}>
               <Icon name="target" strokeWidth={1.8} />
@@ -62,7 +62,7 @@ export function QuiSommesNous() {
                 <p>
                   Rendre la cybersécurité{" "}
                   <b>accessible, concrète et durable</b> pour les entreprises
-                  wallonnes — sans jargon, sans surfacturation.
+                  wallonnes.
                 </p>
               </div>
             </div>
@@ -161,10 +161,9 @@ export function QuiSommesNous() {
                 </svg>
               </div>
               <div>
-                <h4>Une implantation locale, un rayon d&rsquo;action régional</h4>
+                <h4>Ancrés à Liège, actifs en Wallonie</h4>
                 <p>
-                  Basés à Liège, actifs dans toute la Wallonie. Délais
-                  courts, disponibilité réelle en urgence.
+                  Délais courts, disponibilité réelle en urgence.
                 </p>
               </div>
             </div>

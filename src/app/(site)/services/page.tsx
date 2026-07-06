@@ -163,7 +163,7 @@ export default function ServicesPage() {
             </h1>
             <p className={styles.heroLead}>
               Infrastructure durcie. Applications testées. Code secure by design.
-              Conformité NIS2 / CyFun. Un seul interlocuteur, du premier appel à la remédiation.
+              Conformité NIS2 / CyFun. Un seul interlocuteur, de l&apos;audit à la remédiation.
             </p>
             <div className={styles.heroActions}>
               <Button
@@ -199,7 +199,7 @@ export default function ServicesPage() {
           icon="server"
           kicker="Sécuriser"
           title="Réseaux & infrastructure"
-          intro="Bloquez les attaques avant qu'elles n'atteignent vos données. Segmentation, accès distant maîtrisé, détection, sauvegardes testées — une défense en profondeur taillée pour une PME."
+          intro="Bloquez les attaques avant qu'elles n'atteignent vos données. Une défense en profondeur taillée pour une PME, sans équipe sécurité dédiée."
           visual={<SecureVisual />}
           capabilities={[
             { title: "Pare-feu & segmentation", description: "Cloisonnement du réseau, règles de filtrage, isolation des zones sensibles." },
@@ -210,8 +210,8 @@ export default function ServicesPage() {
             { title: "Durcissement (hardening)", description: "Configuration sécurisée des serveurs, postes, comptes et services." },
           ]}
           audience={[
-            { label: "Pour qui", text: "PME sans équipe sécurité dédiée, qui veulent une base solide et maîtrisée.", icon: "users" },
-            { label: "Quand", text: "Refonte réseau, migration, après un incident, ou en préparation d'un audit.", icon: "clock" },
+            { label: "Pour qui", text: "PME sans équipe sécurité dédiée, en quête d'une base solide.", icon: "users" },
+            { label: "Quand", text: "Refonte réseau, migration, après un incident ou avant un audit.", icon: "clock" },
           ]}
           deliverables={[
             "Architecture réseau documentée & segmentée",
@@ -233,7 +233,7 @@ export default function ServicesPage() {
           kicker="Tester"
           title="Audits & pentest"
           intro={
-            "On pense comme un attaquant pour trouver vos failles avant lui. Méthodologie OWASP, preuves d'exploitation concrètes, plan de remédiation priorisé — et on vous aide à corriger, pas juste à constater."
+            "On pense comme un attaquant pour trouver vos failles avant lui. Méthodologie OWASP, remédiation priorisée — on vous aide à corriger, pas juste à constater."
           }
           visual={<TestVisual alt />}
           alt
@@ -244,8 +244,8 @@ export default function ServicesPage() {
             { title: "Revue de code", description: "Analyse du code source pour détecter les vulnérabilités à la racine." },
           ]}
           audience={[
-            { label: "Pour qui", text: "Entreprises éditant un site ou une application, ou soumises à une exigence client / assureur.", icon: "users" },
-            { label: "Quand", text: "Avant une mise en production, à échéance annuelle, ou après un changement majeur.", icon: "clock" },
+            { label: "Pour qui", text: "Éditeurs d'un site ou d'une appli, ou soumis à une exigence client / assureur.", icon: "users" },
+            { label: "Quand", text: "Avant une mise en production, chaque année, ou après un changement majeur.", icon: "clock" },
           ]}
           deliverables={[
             "Rapport de pentest priorisé par criticité",
@@ -266,7 +266,7 @@ export default function ServicesPage() {
           icon="code"
           kicker="Développer"
           title="Développement web sécurisé"
-          intro="La sécurité est intégrée dès la première ligne de code — pas ajoutée après coup. Secure by design pour vos nouveaux projets, remise à niveau pour vos applications existantes fragiles."
+          intro="La sécurité intégrée dès la première ligne de code, pas ajoutée après coup. Nouveaux projets ou remise à niveau d'un existant fragile."
           visual={<DevVisual />}
           capabilities={[
             { title: "Sites & applications sur mesure", description: "Développement adapté à vos processus métier, sans dette de sécurité." },
@@ -275,8 +275,8 @@ export default function ServicesPage() {
             { title: "Revue de code & intégration continue", description: "Contrôles de sécurité automatisés tout au long du cycle de développement." },
           ]}
           audience={[
-            { label: "Pour qui", text: "PME lançant un nouveau projet web, ou reprenant une application existante à fiabiliser.", icon: "users" },
-            { label: "Quand", text: "Nouveau développement, refonte, ou besoin de mise en conformité applicative.", icon: "clock" },
+            { label: "Pour qui", text: "PME lançant un projet web, ou reprenant une appli existante à fiabiliser.", icon: "users" },
+            { label: "Quand", text: "Nouveau développement, refonte ou mise en conformité applicative.", icon: "clock" },
           ]}
           deliverables={[
             "Application livrée, documentée & maintenable",
@@ -299,9 +299,9 @@ export default function ServicesPage() {
               au même endroit
             </h2>
             <p className={styles.partnerLead}>
-              La plupart des prestataires font l&apos;un <em>ou</em> l&apos;autre. Nous couvrons la
-              chaîne complète — développement, sécurisation, mise en conformité. Un seul
-              interlocuteur, aucune balle renvoyée.
+              La plupart des prestataires font l&apos;un <em>ou</em> l&apos;autre. Nous couvrons
+              toute la chaîne — construire, sécuriser, conformer. Un seul interlocuteur, aucune
+              balle renvoyée.
             </p>
           </Reveal>
           <Reveal as="div" stagger className={styles.chain}>
@@ -343,7 +343,7 @@ export default function ServicesPage() {
           icon="file-check"
           kicker="Se conformer"
           title="CyFun / NIS2"
-          intro="NIS2 impose un socle minimal de cybersécurité à des milliers d'entreprises belges — PME et sous-traitants inclus. En Belgique, la référence est le CyberFundamentals Framework (CyFun) du CCB. On vous accompagne de l'audit à la préparation de la vérification."
+          intro="Êtes-vous concerné par NIS2 ? Le règlement impose un socle cyber à des milliers d'entreprises belges, sous-traitants inclus. On vous accompagne de l'audit à la préparation de la vérification, sur le référentiel CyFun du CCB."
           visual={<ComplyVisual alt />}
           alt
           capabilities={[
@@ -353,8 +353,8 @@ export default function ServicesPage() {
             { title: "Préparation à la vérification", description: "Dossier de preuves prêt pour l'auto-évaluation ou l'organisme certificateur." },
           ]}
           audience={[
-            { label: "Pour qui", text: "Entités « importantes » ou « essentielles » NIS2, et leurs sous-traitants soumis à une exigence contractuelle.", icon: "users" },
-            { label: "Quand", text: "Avant l'échéance réglementaire, sur demande d'un client/donneur d'ordre, ou en anticipation d'un audit.", icon: "clock" },
+            { label: "Pour qui", text: "Entités « importantes » ou « essentielles » NIS2, et leurs sous-traitants.", icon: "users" },
+            { label: "Quand", text: "Avant l'échéance réglementaire, sur demande d'un donneur d'ordre, ou avant un audit.", icon: "clock" },
           ]}
           deliverables={[
             "Rapport d'écart (gap analysis) documenté",
@@ -395,10 +395,9 @@ export default function ServicesPage() {
             <Icon name="alert-circle" strokeWidth={2} />
             <p>
               <b>En toute transparence :</b> la certification CyFun est délivrée par des organismes
-              accrédités BELAC, indépendants de Smidjan. Notre rôle : l&apos;audit, l&apos;analyse
-              d&apos;écart, la remédiation concrète et la préparation à la vérification — une
-              méthodologie alignée sur le référentiel CyFun, sans nous substituer au
-              certificateur.
+              accrédités BELAC, indépendants de Smidjan. Notre rôle : audit, analyse d&apos;écart,
+              remédiation concrète et préparation à la vérification — une méthodologie alignée sur
+              le référentiel CyFun, sans nous substituer au certificateur.
             </p>
           </div>
         </Reveal>
@@ -407,7 +406,7 @@ export default function ServicesPage() {
       {/* ===== Final CTA ===== */}
       <CTABox
         title="Un diagnostic gratuit pour savoir par où commencer"
-        text="30 minutes avec un expert pour cadrer la mission utile — sécuriser, tester, développer ou vous conformer. Priorités claires, sans engagement."
+        text="30 minutes avec un expert pour cadrer la mission utile. Priorités claires, sans engagement."
         actions={[
           { label: "Réserver mon diagnostic gratuit", href: "/contact" },
           { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },

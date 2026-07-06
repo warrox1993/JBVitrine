@@ -181,9 +181,8 @@ export default function ConformiteNis2Page() {
               <div className={styles.dcFoot}>
                 <Icon name="shield-check" size={17} />
                 <span>
-                  <b>Chaque mois qui passe augmente votre exposition.</b> On
-                  vous amène rapidement au niveau attendu — et on réduit
-                  concrètement le risque de sanction.
+                  <b>Chaque mois compte.</b> On vous amène au niveau attendu et
+                  on réduit le risque de sanction.
                 </span>
               </div>
             </div>
@@ -240,29 +239,26 @@ export default function ConformiteNis2Page() {
               <Icon name="users" size={26} strokeWidth={1.7} />
             </div>
             <h3>Qui est concerné&nbsp;?</h3>
-            <p>
-              Deux catégories, selon secteur et taille&nbsp;:
-            </p>
+            <p>Deux catégories, selon secteur et taille&nbsp;:</p>
             <ul>
               <li>
                 {CHECK}
                 <span>
                   Entités <b>essentielles</b>&nbsp;: énergie, transport, santé,
-                  eau, finance, infrastructures numériques…
+                  finance, infrastructures numériques…
                 </span>
               </li>
               <li>
                 {CHECK}
                 <span>
-                  Entités <b>importantes</b>&nbsp;: agroalimentaire, fabrication,
-                  services numériques, chimie, poste…
+                  Entités <b>importantes</b>&nbsp;: fabrication, agroalimentaire,
+                  services numériques, chimie…
                 </span>
               </li>
               <li>
                 {CHECK}
                 <span>
-                  Et par ricochet, <b>leurs sous-traitants et fournisseurs</b>,
-                  via les exigences de la chaîne d&apos;approvisionnement.
+                  Par ricochet, <b>leurs sous-traitants et fournisseurs</b>.
                 </span>
               </li>
             </ul>
@@ -279,30 +275,25 @@ export default function ConformiteNis2Page() {
               <Icon name="alert-triangle" size={26} strokeWidth={1.7} />
             </div>
             <h3>Quel est le risque&nbsp;?</h3>
-            <p>
-              Un risque juridique et financier réel — pas seulement technique.
-            </p>
+            <p>Juridique et financier — pas seulement technique.</p>
             <ul>
               <li>
                 {CHECK}
                 <span>
-                  <b>Amendes administratives significatives</b> — pouvant
-                  atteindre plusieurs millions d&apos;euros pour les entités
-                  essentielles.
+                  <b>Amendes significatives</b> — plusieurs millions d&apos;euros
+                  pour les entités essentielles.
                 </span>
               </li>
               <li>
                 {CHECK}
                 <span>
-                  <b>Responsabilité de la direction</b> engagée&nbsp;: les
-                  organes de gestion doivent superviser les mesures.
+                  <b>Responsabilité de la direction</b> engagée.
                 </span>
               </li>
               <li>
                 {CHECK}
                 <span>
-                  <b>Obligation de notifier</b> les incidents importants au CCB
-                  dans des délais courts.
+                  <b>Notification</b> des incidents au CCB sous délais courts.
                 </span>
               </li>
             </ul>
@@ -319,30 +310,24 @@ export default function ConformiteNis2Page() {
               <Icon name="clock" size={26} strokeWidth={1.7} />
             </div>
             <h3>Pourquoi maintenant&nbsp;?</h3>
-            <p>
-              Déjà transposée en droit belge. Chaque mois d&apos;attente
-              ajoute du risque.
-            </p>
+            <p>Déjà transposée en droit belge. Chaque mois compte.</p>
             <ul>
               <li>
                 {CHECK}
                 <span>
-                  NIS2 est <b>en vigueur depuis le 18 octobre 2024</b> —
-                  vous êtes déjà tenu de vous y conformer.
+                  <b>En vigueur depuis le 18 octobre 2024.</b>
                 </span>
               </li>
               <li>
                 {CHECK}
                 <span>
-                  La remédiation prend <b>des mois, pas des jours</b>&nbsp;:
-                  MFA, sauvegardes, journalisation, procédures.
+                  La remédiation prend <b>des mois, pas des jours</b>.
                 </span>
               </li>
               <li>
                 {CHECK}
                 <span>
-                  Commencer tôt, c&apos;est étaler l&apos;effort et le budget —
-                  sereinement.
+                  Démarrer tôt&nbsp;: étaler l&apos;effort et le budget.
                 </span>
               </li>
             </ul>
@@ -375,12 +360,11 @@ export default function ConformiteNis2Page() {
             <p className={styles.frameLead}>
               Le <b>CyberFundamentals Framework (CyFun)</b>, du{" "}
               <b>Centre pour la Cybersécurité Belgique (CCB)</b>, est le moyen
-              reconnu de démontrer votre conformité NIS2 — sans réinventer la
-              roue.
+              reconnu de démontrer votre conformité NIS2.
             </p>
             <p className={styles.frameNote}>
               Basé sur les standards internationaux, traduit en{" "}
-              <b>mesures progressives</b>, adaptées à votre taille et à votre
+              <b>mesures progressives</b> adaptées à votre taille et à votre
               risque.
             </p>
             <figure className={styles.frameInlinePhoto}>
@@ -394,7 +378,7 @@ export default function ConformiteNis2Page() {
               />
               <figcaption>
                 L&apos;auto-évaluation CyFun&nbsp;: un <b>socle de mesures</b>{" "}
-                vérifiées une à une, pas une simple déclaration d&apos;intention.
+                vérifiées une à une, pas une déclaration d&apos;intention.
               </figcaption>
             </figure>
           </div>
@@ -543,7 +527,7 @@ export default function ConformiteNis2Page() {
                 amène prêts
               </>
             }
-            lead="Notre différence : pas de rapport qu'on vous laisse gérer seul. On corrige, on prépare, on vous amène prêts."
+            lead="Pas de rapport qu'on vous laisse gérer seul. On corrige, on prépare, on vous amène prêts."
           />
         </Reveal>
 
@@ -571,14 +555,13 @@ export default function ConformiteNis2Page() {
             <h4>En toute transparence&nbsp;: qui fait quoi</h4>
             <p>
               Smidjan <b>n&apos;est pas un organisme de certification</b>, ni
-              accrédité BELAC. La <b>certification CyFun officielle</b> est
-              délivrée par des <b>organismes accrédités BELAC</b> (Brand
-              Compliance, Trust CHECK, Normec CertUp).
+              accrédité BELAC. Le <b>label CyFun officiel</b> est délivré par des{" "}
+              <b>organismes accrédités BELAC</b> (Brand Compliance, Trust CHECK,
+              Normec CertUp).
             </p>
             <p>
-              Notre rôle&nbsp;: <b>auditer, remédier, préparer</b> votre
-              dossier jusqu&apos;à la soumission. Nous ne délivrons pas le
-              label — nous vous rendons <b>prêts à l&apos;obtenir</b>.
+              Notre rôle&nbsp;: <b>auditer, remédier, préparer</b> votre dossier
+              jusqu&apos;à la soumission — vous rendre <b>prêts à l&apos;obtenir</b>.
             </p>
             <Reveal stagger className={styles.roles}>
               <div className={`${styles.roleCol} ${styles.roleSmidjan}`}>
@@ -707,8 +690,7 @@ export default function ConformiteNis2Page() {
           </div>
           <p className={styles.auditPanelText}>
             Un audit rigoureux et traçable, pensé pour ne jamais mettre vos
-            systèmes en danger — de la première connexion à la remise du
-            rapport.
+            systèmes en danger.
           </p>
           <div className={styles.auditChips}>
             <span className={styles.auditChip}>
@@ -748,7 +730,7 @@ export default function ConformiteNis2Page() {
               {
                 icon: "file-check",
                 title: "Journal inaltérable",
-                text: "Chaque action est journalisée, de façon non désactivable : un audit traçable et probant.",
+                text: "Chaque action est journalisée : un audit traçable et probant.",
               },
               {
                 icon: "users",
@@ -758,7 +740,7 @@ export default function ConformiteNis2Page() {
               {
                 icon: "check-circle",
                 title: "Aucune donnée conservée",
-                text: "Rapport remis, puis supports d'audit effacés. Rien ne vous survit à l'audit.",
+                text: "Rapport remis, puis supports d'audit effacés.",
               },
             ] satisfies { icon: IconName; title: string; text: string }[]
           ).map((c) => (
@@ -778,11 +760,10 @@ export default function ConformiteNis2Page() {
           <div>
             <h4>Une auto-évaluation assistée, pas une certification</h4>
             <p>
-              Notre outil facilite l&apos;<b>auto-évaluation CyFun</b> et
-              prépare votre dossier&nbsp;; il ne remplace pas la{" "}
-              <b>vérification officielle</b>, réservée aux organismes
-              accrédités BELAC. Notre rôle&nbsp;: auditer, remédier, préparer
-              — jusqu&apos;à cette vérification.
+              Notre outil facilite l&apos;<b>auto-évaluation CyFun</b> et prépare
+              votre dossier. Il ne remplace pas la{" "}
+              <b>vérification officielle</b>, réservée aux organismes accrédités
+              BELAC.
             </p>
           </div>
         </div>
@@ -842,14 +823,13 @@ export default function ConformiteNis2Page() {
             eyebrow={<span className={styles.kickerMono}>Financer votre conformité</span>}
             title={
               <>
-                Se mettre en conformité coûte moins cher qu&apos;on ne le
-                croit —{" "}
+                La conformité coûte moins cher qu&apos;on ne le croit —{" "}
                 <span className={styles.accent}>
-                  une large partie peut être subsidiée
+                  une large partie est subsidiée
                 </span>
               </>
             }
-            lead="Le chèque « cybersécurité » wallon finance une large partie de votre audit et de votre remédiation. Certains outils du CCB sont gratuits. Voici comment en profiter."
+            lead="Le chèque « cybersécurité » wallon finance une large partie de votre audit et de votre remédiation. Voici comment en profiter."
           />
         </Reveal>
 
@@ -896,24 +876,21 @@ export default function ConformiteNis2Page() {
           <div>
             <h3>Le chèque « cybersécurité » (chèques-entreprises.be)</h3>
             <p className={styles.frameLead}>
-              Porté par la Région wallonne (<b>chèques-entreprises.be</b>), il
-              couvre les honoraires d&apos;un <b>prestataire certifié</b> pour
-              trois prestations&nbsp;: <b>audit</b>, <b>coaching</b> à la mise
-              en œuvre, et <b>labellisation</b> « Keep It Secure ».
+              Porté par la Région wallonne, il couvre les honoraires d&apos;un{" "}
+              <b>prestataire certifié</b> pour trois prestations&nbsp;:{" "}
+              <b>audit</b>, <b>coaching</b> et <b>labellisation</b> « Keep It
+              Secure ».
             </p>
             <p className={styles.frameNote}>
-              Réservé aux <b>PME</b> (&lt; 250 employés, &lt; 50&nbsp;M€ de
-              CA). Portefeuille de <b>200 000&nbsp;€ sur 3 ans</b> (max
-              100 000&nbsp;€/an). Démarche <b>100&nbsp;% en ligne</b>,
-              décision en <b>~5 jours ouvrés</b>.
+              Réservé aux <b>PME</b> (&lt; 250 employés, &lt; 50&nbsp;M€ de CA).
+              Démarche <b>100&nbsp;% en ligne</b>, décision en{" "}
+              <b>~5 jours ouvrés</b>.
             </p>
             <p className={styles.frameNote}>
-              En complément&nbsp;: le chèque « maturité numérique » (~50&nbsp;%,
-              même plafond de 60 000&nbsp;€). Côté fédéral, le{" "}
-              <b>CCB</b> met gratuitement à disposition{" "}
-              <b>CyberFundamentals</b> — niveau « Small » (7 mesures) gratuit,
-              niveau <b>Basic</b> recommandé au minimum pour toute la chaîne
-              d&apos;approvisionnement.
+              En complément&nbsp;: le chèque « maturité numérique » (~50&nbsp;%).
+              Côté fédéral, le <b>CCB</b> propose gratuitement{" "}
+              <b>CyberFundamentals</b> — niveau « Small » (7 mesures) gratuit,{" "}
+              <b>Basic</b> recommandé au minimum.
             </p>
           </div>
           <div className={styles.frameMap}>
@@ -1006,13 +983,12 @@ export default function ConformiteNis2Page() {
             <p>
               Smidjan n&apos;est <b>pas nécessairement inscrit</b> comme
               prestataire certifié sur chèques-entreprises.be. Notre
-              rôle&nbsp;: <b>identifier les aides mobilisables</b>,{" "}
-              <b>cadrer la prestation éligible</b> et{" "}
-              <b>monter le dossier</b> avec vous.
+              rôle&nbsp;: <b>identifier les aides</b>, <b>cadrer la prestation
+              éligible</b> et <b>monter le dossier</b> avec vous.
             </p>
             <p>
-              Éligibilité et prestataire agréé&nbsp;: <b>à vérifier</b>{" "}
-              directement sur la plateforme officielle{" "}
+              Éligibilité et prestataire agréé&nbsp;: <b>à vérifier</b> sur la
+              plateforme officielle{" "}
               <a
                 href="https://www.cheques-entreprises.be"
                 target="_blank"
@@ -1062,11 +1038,10 @@ export default function ConformiteNis2Page() {
               answer: (
                 <>
                   <p>
-                    Ça dépend de votre secteur et de votre taille. NIS2 vise
-                    les entités <b>essentielles</b> (énergie, santé, transport,
-                    finance, infrastructures numériques…) et{" "}
+                    Selon votre secteur et votre taille. NIS2 vise les entités{" "}
+                    <b>essentielles</b> (énergie, santé, transport, finance…) et{" "}
                     <b>importantes</b> (fabrication, agroalimentaire, services
-                    numériques, chimie…). Beaucoup de PME sont concernées{" "}
+                    numériques…). Beaucoup de PME sont concernées{" "}
                     <b>indirectement</b>, comme fournisseurs ou sous-traitants.
                   </p>
                   <p>
