@@ -20,4 +20,16 @@
   display: flex;
   gap: var(--space-2);
   justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* On narrow screens let multiple footer actions stack full-width instead of
+   overflowing horizontally past the card edge. */
+@media (max-width: 480px) {
+  .footer {
+    justify-content: stretch;
+  }
+  .footer > * {
+    flex: 1 1 auto;
+  }
 }

@@ -157,3 +157,26 @@
     gap: 40px;
   }
 }
+@media (max-width: 480px) {
+  .lead {
+    font-size: 17px;
+  }
+  .list {
+    margin-top: 28px;
+  }
+  .item {
+    padding: 18px 18px;
+    gap: 14px;
+  }
+  .founder {
+    padding: 26px 22px;
+  }
+  .avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+  }
+  .top {
+    gap: 14px;
+  }
+}

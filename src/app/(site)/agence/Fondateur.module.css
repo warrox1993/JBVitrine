@@ -289,3 +289,11 @@
     padding-left: 56px;
   }
 }
+@media (max-width: 480px) {
+  .profile {
+    padding: 22px;
+  }
+  .quote {
+    font-size: 15px;
+  }
+}

@@ -18,3 +18,11 @@
     display: none;
   }
 }
+
+/* No cursor to follow on touch devices — hide the 600px glow so it can
+   never contribute to horizontal overflow on mobile. */
+@media (hover: none), (pointer: coarse) {
+  .cursorGlow {
+    display: none;
+  }
+}

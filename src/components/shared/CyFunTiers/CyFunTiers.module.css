@@ -247,3 +247,16 @@
     order: -1;
   }
 }
+
+@media (max-width: 480px) {
+  .tier {
+    padding: 24px 20px 22px;
+  }
+  /* Long flag label must not poke past the card edge on narrow screens. */
+  .flag {
+    white-space: normal;
+    max-width: calc(100% - 24px);
+    text-align: center;
+    line-height: 1.25;
+  }
+}

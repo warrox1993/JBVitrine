@@ -275,6 +275,57 @@
   color: var(--color-accent-1, #ff6a00);
 }
 
+/* Tablet */
+@media (max-width: 768px) {
+  .actions {
+    flex-direction: column;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    padding: var(--space-3, 1rem) var(--space-4, 1.5rem);
+  }
+
+  /* Larger tap target for the selection indicator */
+  .checkbox {
+    width: 24px;
+    height: 24px;
+  }
+
+  .featureDescription,
+  .featurePrice,
+  .featurePriceIncluded {
+    padding-left: calc(24px + var(--space-2, 0.5rem));
+  }
+}
+
+/* Small mobile (320px-480px) */
+@media (max-width: 480px) {
+  .footer {
+    padding-top: var(--space-3, 1rem);
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .featureName {
+    font-size: var(--text-sm, 0.875rem);
+  }
+
+  .featureDescription,
+  .featurePrice,
+  .featurePriceIncluded {
+    font-size: var(--text-xs, 0.75rem);
+    word-break: break-word;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    padding: 0.875rem 1rem;
+    font-size: var(--text-sm, 0.875rem);
+    min-height: 48px;
+  }
+}
+
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .featureCard,

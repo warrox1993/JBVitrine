@@ -81,6 +81,10 @@
     width: 14px;
     height: 14px;
   }
+  /* Cap the truncated current crumb so it never pushes past the viewport. */
+  .breadcrumbCurrent {
+    max-width: 60vw;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

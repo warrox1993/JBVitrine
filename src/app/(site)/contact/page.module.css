@@ -981,3 +981,27 @@
     padding: 0;
   }
 }
+
+@media (max-width: 480px) {
+  .pageHeadInner {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  /* Trim oversized card paddings on very narrow screens */
+  .infoCard {
+    padding: 20px;
+  }
+  .emergBlock {
+    padding: 22px;
+  }
+  /* Keep the 3-step process strip (3×80px + arrows) inside narrow cards */
+  .pStep {
+    width: 64px;
+  }
+  .pStep .pLbl {
+    font-size: 11px;
+  }
+  .pArrow {
+    min-width: 6px;
+  }
+}

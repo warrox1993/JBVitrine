@@ -349,6 +349,9 @@
   }
 }
 @media (max-width: 720px) {
+  .hero {
+    padding: 32px 0 40px;
+  }
   .visualBox {
     padding: 14px 16px;
   }
@@ -371,5 +374,41 @@
   .photoCaption {
     font-size: 14.5px;
     padding: 16px 18px 15px;
+  }
+  /* Enlarge jump pills to a comfortable touch target. */
+  .jumpLink {
+    min-height: 44px;
+  }
+  .aiNote {
+    padding: 12px 18px;
+    gap: 10px;
+  }
+  .transparency {
+    padding: 18px 18px;
+    gap: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .partner {
+    padding: 56px 0;
+  }
+  .aiNote {
+    /* Pill radius reads oddly on wrapped multi-line text at narrow widths. */
+    border-radius: 16px;
+  }
+  /* Hero CTA: the long "lg" label can't shrink (white-space:nowrap) and
+     overruns the container at ~320px. Stack the actions and let the primary
+     button span the full width (its label wraps via Button's mobile rule). */
+  .heroActions {
+    gap: 14px;
+  }
+  .heroActions > a:not(.heroPhone) {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+  }
+  /* Comfortable tap target for the adjacent phone link. */
+  .heroPhone {
+    min-height: 44px;
   }
 }

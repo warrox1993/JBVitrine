@@ -390,6 +390,59 @@
   color: var(--color-accent-1, #ff6a00);
 }
 
+/* Tablet */
+@media (max-width: 768px) {
+  .step {
+    padding: var(--space-3, 1rem);
+  }
+
+  .optionCard {
+    min-height: 0;
+    padding: var(--space-4, 1.5rem) var(--space-3, 1rem);
+  }
+
+  .footer {
+    padding-top: var(--space-4, 1.5rem);
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    padding: var(--space-3, 1rem) var(--space-4, 1.5rem);
+  }
+}
+
+/* Small mobile (320px-480px) */
+@media (max-width: 480px) {
+  .step {
+    padding: var(--space-2, 0.5rem);
+  }
+
+  .title {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+  }
+
+  .optionCard {
+    padding: var(--space-3, 1rem);
+  }
+
+  .footer {
+    padding-top: var(--space-3, 1rem);
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    padding: 0.875rem 1rem;
+    font-size: var(--text-sm, 0.875rem);
+    min-height: 48px;
+  }
+}
+
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .optionCard,

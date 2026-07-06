@@ -191,5 +191,23 @@
 @media (max-width: 720px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: 32px;
+    padding-bottom: 36px;
+  }
+
+  .site {
+    padding-top: 44px;
+  }
+
+  .inner {
+    padding: 0 16px;
+  }
+
+  /* Comfortable tap targets for the language switch on touch. */
+  .lang a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 14px;
   }
 }

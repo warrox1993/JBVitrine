@@ -129,6 +129,19 @@
   flex: none;
 }
 
+/* Touch: guarantee a >=44px tap target for the sm/md sizes on small screens.
+   Desktop (>=1024px) is untouched — .lg is already 46px and this only raises
+   the floor for touch-sized viewports. */
+@media (max-width: 768px) {
+  .root {
+    min-height: 44px;
+    /* A long label on a full-width button must wrap instead of forcing the
+       page to scroll sideways at 320-375px. */
+    white-space: normal;
+    text-align: center;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .root {
     transition: none;

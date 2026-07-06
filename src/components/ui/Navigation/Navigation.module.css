@@ -59,7 +59,11 @@
 
 @media (max-width: 768px) {
   .menuButton {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
   }
   .links {
     display: none;

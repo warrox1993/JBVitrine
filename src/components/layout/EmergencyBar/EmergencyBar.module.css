@@ -95,6 +95,21 @@
   }
   .inner {
     justify-content: center;
+    flex-wrap: wrap;
+    padding: 6px 16px;
+    row-gap: 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .emerg {
+    font-size: 12.5px;
+  }
+  .left {
+    gap: 8px;
+  }
+  .cta {
+    padding: 6px 10px;
   }
 }
 

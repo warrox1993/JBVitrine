@@ -742,6 +742,9 @@
   }
 }
 @media (max-width: 720px) {
+  .hero {
+    padding: 28px 0 48px;
+  }
   .contrast {
     grid-template-columns: 1fr;
   }
@@ -751,6 +754,7 @@
   .mstep {
     grid-template-columns: 1fr;
     gap: 18px;
+    padding: 26px 22px;
   }
   .idx {
     flex-direction: row;
@@ -759,7 +763,44 @@
   .ln {
     display: none;
   }
-  .heroCta .btnFull {
-    flex: 1 1 auto;
+  /* Stack the two "lg" hero buttons full-width on mobile. Target the anchors
+     Button renders (its own class is hashed, so a `.btnFull` hook never
+     matched). Full width lets the long labels wrap instead of overflowing
+     the container at ~320px. */
+  .heroCta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .heroCta > a {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+  }
+  /* Trim oversized card paddings so content keeps room at 320–390px. */
+  .promiseCard {
+    padding: 26px 22px 24px;
+  }
+  .refCard {
+    padding: 26px 22px;
+  }
+  .whyItem {
+    padding: 22px;
+  }
+  .aiIllustration {
+    padding: 24px 18px 20px;
+  }
+}
+@media (max-width: 480px) {
+  .promiseIcon {
+    width: 42px;
+    height: 42px;
+  }
+  .num {
+    width: 52px;
+    height: 52px;
+    font-size: 18px;
+  }
+  .quote {
+    padding: 18px 18px;
   }
 }

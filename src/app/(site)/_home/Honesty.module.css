@@ -30,3 +30,11 @@
 .honesty p b {
   color: var(--navy);
 }
+
+@media (max-width: 480px) {
+  .honesty {
+    margin-top: 40px;
+    gap: 14px;
+    padding: 22px 20px;
+  }
+}

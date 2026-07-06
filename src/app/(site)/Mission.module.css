@@ -279,3 +279,16 @@
     padding: 56px 0;
   }
 }
+
+/* Prevent the 260px min track from overflowing very narrow phones (≤480px),
+   where the container inner width can drop below the minmax floor. */
+@media (max-width: 480px) {
+  .mission-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mission-cardIcon {
+    width: 52px;
+    height: 52px;
+  }
+}

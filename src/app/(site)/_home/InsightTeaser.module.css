@@ -131,3 +131,19 @@
     padding: 34px 26px;
   }
 }
+@media (max-width: 480px) {
+  .body {
+    padding: 28px 22px;
+  }
+  .body h3 {
+    font-size: 22px;
+  }
+  .visual {
+    min-height: 220px;
+    padding: 32px;
+  }
+  .meta {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

@@ -166,6 +166,14 @@
 /* ===== Prose (sanitized markdown body) ===== */
 .prose {
   padding-bottom: 8px;
+  /* Prevent long URLs / tokens from forcing horizontal page scroll on mobile. */
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+/* Keep markdown images fluid so they never overflow the reading column. */
+.prose :global(img) {
+  max-width: 100%;
+  height: auto;
 }
 .prose :global(h2) {
   font-size: 26px;
@@ -245,6 +253,9 @@
   font-family: var(--mono);
   font-size: 0.9em;
   color: var(--navy-3);
+  /* Long inline tokens (paths, hashes) wrap instead of overflowing on mobile. */
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .prose :global(pre) {
   background: var(--navy);
@@ -263,7 +274,8 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 14.5px;
-  min-width: 480px;
+  /* Scroll container: keep min-width OFF this box or it forces page overflow
+     below 480px. Wide tables still scroll horizontally via overflow-x. */
   display: block;
   overflow-x: auto;
   border: 1px solid var(--line);
@@ -451,6 +463,11 @@
   }
   .relatedGrid {
     grid-template-columns: 1fr;
+  }
+  /* Stacked prev/next cards read left-aligned on mobile. */
+  .navNext {
+    text-align: left;
+    margin-left: 0;
   }
 }
 

@@ -100,3 +100,18 @@
     margin-right: auto;
   }
 }
+@media (max-width: 480px) {
+  .photoCaption {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    font-size: 14px;
+  }
+  .grid {
+    gap: 16px;
+    margin-top: 36px;
+  }
+  .card {
+    padding: 24px 22px;
+  }
+}

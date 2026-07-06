@@ -118,3 +118,17 @@
     gap: 32px;
   }
 }
+@media (max-width: 480px) {
+  .intro .lead {
+    font-size: 17px;
+  }
+  .deadline {
+    padding: 22px 20px;
+  }
+  .deadline .row {
+    gap: 14px;
+  }
+  .deadline h3 {
+    font-size: 17px;
+  }
+}
