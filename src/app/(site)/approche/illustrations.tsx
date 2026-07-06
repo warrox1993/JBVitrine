@@ -1,7 +1,7 @@
 /**
  * Decorative inline SVG illustrations for the /approche page.
  * Ported from the approved corporate mockup (page-approche.html).
- * All are purely decorative — aria-hidden, no semantic content.
+ * All are purely decorative - aria-hidden, no semantic content.
  */
 
 /** Method roadmap: 4 milestone nodes connected by a dashed path. */
@@ -110,7 +110,7 @@ export function RoadmapIllustration() {
   );
 }
 
-/** Audit report checklist + verification seal — "proof, not promises". */
+/** Audit report checklist + verification seal - "proof, not promises". */
 export function ProofVisual() {
   return (
     <svg viewBox="0 0 560 232" fill="none" aria-hidden="true">

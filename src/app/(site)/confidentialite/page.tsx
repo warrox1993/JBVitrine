@@ -8,14 +8,14 @@ import {
 import { PrivacyVisual } from "@/components/shared/LegalLayout/LegalVisuals";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité (RGPD) — Smidjan",
+  title: "Politique de confidentialité (RGPD) | Smidjan",
   description:
     "Politique de confidentialité de Smidjan : données collectées via le formulaire de contact, finalités, durée de conservation, cookies & services tiers, et vos droits RGPD.",
   alternates: {
     canonical: "/confidentialite",
   },
   openGraph: {
-    title: "Politique de confidentialité (RGPD) — Smidjan",
+    title: "Politique de confidentialité (RGPD) | Smidjan",
     description: "Comment Smidjan traite vos données personnelles, en toute transparence sur les cookies et services tiers.",
     type: "website",
     url: "https://smidjan.be/confidentialite",
@@ -51,7 +51,7 @@ export default function ConfidentialitePage() {
         active="confidentialite"
         eyebrow="Protection des données"
         title="Politique de confidentialité (RGPD)"
-        lead="Ce que nous collectons via le formulaire de contact, pourquoi, combien de temps, avec qui — et une réponse honnête sur les cookies et services tiers utilisés."
+        lead="Ce que nous collectons via le formulaire de contact, pourquoi, combien de temps, avec qui, et une réponse honnête sur les cookies et services tiers utilisés."
         visual={<PrivacyVisual />}
       >
         <p>
@@ -63,7 +63,7 @@ export default function ConfidentialitePage() {
 
         <LegalSection id="responsable" num="1" title="Responsable de traitement">
           <p>
-            Le responsable du traitement des données collectées via ce site est Smidjan, Liège, Belgique —{" "}
+            Le responsable du traitement des données collectées via ce site est Smidjan, Liège, Belgique :{" "}
             <LegalLink href="mailto:contact@smidjan.be">contact@smidjan.be</LegalLink>.
           </p>
         </LegalSection>
@@ -76,7 +76,7 @@ export default function ConfidentialitePage() {
             </li>
             <li>
               <strong>Données de navigation&nbsp;:</strong> adresse IP, type de navigateur et d&apos;appareil, pages
-              consultées — collectées à des fins de sécurité et, le cas échéant, de mesure d&apos;audience.
+              consultées, collectées à des fins de sécurité et, le cas échéant, de mesure d&apos;audience.
             </li>
             <li>
               <strong>Données issues de Google reCAPTCHA&nbsp;:</strong> signaux techniques utilisés pour distinguer
@@ -184,7 +184,7 @@ export default function ConfidentialitePage() {
           <p>
             Vous disposez également du droit d&apos;introduire une réclamation auprès de l&apos;autorité de contrôle
             belge&nbsp;: <strong>Autorité de protection des données (APD)</strong>, Rue de la Presse 35, 1000
-            Bruxelles —{" "}
+            Bruxelles :{" "}
             <LegalLink href="https://www.autoriteprotectiondonnees.be" target="_blank" rel="noopener">
               www.autoriteprotectiondonnees.be
             </LegalLink>

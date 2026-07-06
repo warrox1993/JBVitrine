@@ -41,7 +41,7 @@ function PillarPhoto({
   );
 }
 
-/** Pillar 01 — Sécuriser réseaux & infrastructure: firewall filtering traffic into a segmented network. */
+/** Pillar 01 - Sécuriser réseaux & infrastructure: firewall filtering traffic into a segmented network. */
 export function SecureVisual({ alt }: { alt?: boolean }) {
   return (
     <Reveal variant="up">
@@ -113,7 +113,7 @@ export function SecureVisual({ alt }: { alt?: boolean }) {
   );
 }
 
-/** Pillar 02 — Tester audits & pentest: an app being probed and consigned into a severity-ranked audit report. */
+/** Pillar 02 - Tester audits & pentest: an app being probed and consigned into a severity-ranked audit report. */
 export function TestVisual({ alt }: { alt?: boolean }) {
   return (
     <Reveal variant="up">
@@ -165,17 +165,17 @@ export function TestVisual({ alt }: { alt?: boolean }) {
         <line x1="305" y1="64" x2="445" y2="64" stroke="var(--line)" strokeWidth="1.2" />
 
         <path d="M307 79 311 83 318 75" fill="none" stroke="#2f9e6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="326" y="83" fontSize="10.5" fill="var(--slate)" fontFamily="var(--sans)">En-têtes de sécurité — OK</text>
+        <text x="326" y="83" fontSize="10.5" fill="var(--slate)" fontFamily="var(--sans)">En-têtes de sécurité : OK</text>
 
         <path d="M307 107 311 111 318 103" fill="none" stroke="#2f9e6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="326" y="111" fontSize="10.5" fill="var(--slate)" fontFamily="var(--sans)">Authentification — OK</text>
+        <text x="326" y="111" fontSize="10.5" fill="var(--slate)" fontFamily="var(--sans)">Authentification : OK</text>
 
         <path d="M312 128 322 145 302 145Z" fill="none" stroke="var(--orange)" strokeWidth="1.6" strokeLinejoin="round" />
         <line x1="312" y1="134" x2="312" y2="139" stroke="var(--orange)" strokeWidth="1.6" strokeLinecap="round" />
-        <text x="326" y="139" fontSize="10.5" fill="var(--orange-d)" fontFamily="var(--sans)" style={{ fontWeight: 700 }}>Injection SQL — Critique</text>
+        <text x="326" y="139" fontSize="10.5" fill="var(--orange-d)" fontFamily="var(--sans)" style={{ fontWeight: 700 }}>Injection SQL : Critique</text>
 
         <path d="M307 163 311 167 318 159" fill="none" stroke="#2f9e6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="326" y="167" fontSize="10.5" fill="var(--slate)" fontFamily="var(--sans)">Chiffrement TLS — OK</text>
+        <text x="326" y="167" fontSize="10.5" fill="var(--slate)" fontFamily="var(--sans)">Chiffrement TLS : OK</text>
 
         <circle cx="308" cy="200" r="4" fill="none" stroke="var(--line-2)" strokeWidth="1.3" />
         <text x="316" y="203" fontSize="9" fill="var(--muted)" fontFamily="var(--sans)">Faible</text>
@@ -191,7 +191,7 @@ export function TestVisual({ alt }: { alt?: boolean }) {
   );
 }
 
-/** Pillar 03 — Développer secure by design: a code editor window with a validated security function. */
+/** Pillar 03 - Développer secure by design: a code editor window with a validated security function. */
 export function DevVisual({ alt }: { alt?: boolean }) {
   return (
     <Reveal variant="up">
@@ -200,7 +200,7 @@ export function DevVisual({ alt }: { alt?: boolean }) {
       alt="Plan de circuit imprimé en gros plan, symbolisant une architecture applicative pensée secure by design."
       caption={
         <>
-          <b>La sécurité, dès la première ligne</b> de code — pas ajoutée après coup.
+          <b>La sécurité, dès la première ligne</b> de code, pas ajoutée après coup.
         </>
       }
     />
@@ -243,7 +243,7 @@ export function DevVisual({ alt }: { alt?: boolean }) {
   );
 }
 
-/** Pillar 04 — Se conformer CyFun/NIS2: three ascending tiers (Basic/Important/Essential) reaching a validation mark. */
+/** Pillar 04 - Se conformer CyFun/NIS2: three ascending tiers (Basic/Important/Essential) reaching a validation mark. */
 export function ComplyVisual({ alt }: { alt?: boolean }) {
   return (
     <Reveal variant="up">
@@ -252,7 +252,7 @@ export function ComplyVisual({ alt }: { alt?: boolean }) {
       alt="Équipe de professionnels examinant ensemble des documents et une checklist lors d'une réunion de conformité."
       caption={
         <>
-          <b>De l&apos;audit à la preuve</b> — jusqu&apos;à la conformité CyFun.
+          <b>De l&apos;audit à la preuve</b>, jusqu&apos;à la conformité CyFun.
         </>
       }
     />
@@ -260,7 +260,7 @@ export function ComplyVisual({ alt }: { alt?: boolean }) {
       <svg
         viewBox="0 0 480 226"
         role="img"
-        aria-label="Illustration : trois paliers ascendants du référentiel CyFun — Basic, Important et Essential — reliés par un parcours de mise en conformité aboutissant à une validation."
+        aria-label="Illustration : trois paliers ascendants du référentiel CyFun (Basic, Important et Essential) reliés par un parcours de mise en conformité aboutissant à une validation."
       >
         <rect x="40" y="140" width="110" height="50" rx="8" fill="var(--bg-2)" stroke="var(--line-2)" strokeWidth="1.5" />
         <rect x="175" y="95" width="110" height="95" rx="8" fill="var(--bg-3)" stroke="var(--line-2)" strokeWidth="1.5" />

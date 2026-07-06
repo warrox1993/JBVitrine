@@ -16,14 +16,14 @@ export interface TrustStripProps {
 
 /**
  * Honest reference-frameworks & engagements row.
- * NO certification claims — alignment / expertise wording only.
+ * NO certification claims - alignment / expertise wording only.
  */
 export const DEFAULT_TRUST_ITEMS: TrustItem[] = [
   { icon: "shield", label: "Aligné ISO/IEC 27001" },
   { icon: "check-circle", label: "Expertise NIS2 & CyFun" },
   { icon: "code", label: "Approche OWASP" },
   { icon: "layers", label: "CyberFundamentals (CCB)" },
-  { icon: "map-pin", label: "Local & réactif — Liège" },
+  { icon: "map-pin", label: "Local & réactif à Liège" },
   { icon: "users", label: "Accès direct à l'expert" },
 ];
 

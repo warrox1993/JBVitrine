@@ -3,10 +3,10 @@ import React from "react";
 /**
  * Discreet decorative legal illustrations, ported from the approved
  * `page-legal.html` mockup (inline stroke SVGs, navy/orange palette).
- * Purely decorative — always rendered with aria-hidden by the caller.
+ * Purely decorative - always rendered with aria-hidden by the caller.
  */
 
-/** Document + shield-check — used on the Mentions légales hero. */
+/** Document + shield-check - used on the Mentions légales hero. */
 export function MentionsVisual() {
   return (
     <svg viewBox="0 0 140 140" fill="none" focusable="false">
@@ -26,7 +26,7 @@ export function MentionsVisual() {
   );
 }
 
-/** Network dots + padlock — used on the Confidentialité (RGPD) hero. */
+/** Network dots + padlock - used on the Confidentialité (RGPD) hero. */
 export function PrivacyVisual() {
   return (
     <svg viewBox="0 0 140 140" fill="none" focusable="false">
@@ -48,7 +48,7 @@ export function PrivacyVisual() {
   );
 }
 
-/** Signed document / scales-style contract mark — used on the CGV hero. */
+/** Signed document / scales-style contract mark - used on the CGV hero. */
 export function TermsVisual() {
   return (
     <svg viewBox="0 0 140 140" fill="none" focusable="false">

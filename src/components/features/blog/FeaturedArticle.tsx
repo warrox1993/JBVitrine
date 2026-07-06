@@ -10,7 +10,7 @@ export interface FeaturedArticleProps {
   article: BlogArticle;
 }
 
-/** "Article à la une" — highlighted first article on the Journal index. */
+/** "Article à la une": highlighted first article on the Journal index. */
 export function FeaturedArticle({ article }: FeaturedArticleProps) {
   const date = new Date(article.publishedAt).toLocaleDateString("fr-BE", {
     year: "numeric",

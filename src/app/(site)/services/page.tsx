@@ -23,7 +23,7 @@ import {
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Nos expertises — Cybersécurité, pentest, développement & conformité | Smidjan Liège",
+  title: "Nos expertises : Cybersécurité, pentest, développement & conformité | Smidjan Liège",
   description:
     "Smidjan sécurise votre infrastructure, teste vos applications (pentest OWASP), développe en secure by design et vous accompagne vers la conformité NIS2 / CyFun. Un seul interlocuteur, à Liège.",
   keywords: [
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Nos expertises — Cybersécurité, pentest, développement & conformité",
+    title: "Nos expertises : Cybersécurité, pentest, développement & conformité",
     description:
       "Sécuriser, tester, développer, se conformer : quatre expertises Smidjan pour réduire concrètement le risque cyber des PME en Belgique.",
     url: "https://smidjan.be/services",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         url: "https://smidjan.be/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Smidjan — Cybersécurité, pentest, développement sécurisé & conformité NIS2 à Liège",
+        alt: "Smidjan : Cybersécurité, pentest, développement sécurisé & conformité NIS2 à Liège",
         type: "image/webp",
       },
     ],
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nos expertises — Smidjan Cybersécurité",
+    title: "Nos expertises : Smidjan Cybersécurité",
     description:
       "Sécuriser, tester, développer, se conformer : quatre expertises pour réduire le risque cyber des PME.",
     images: ["/og-image.webp"],
@@ -191,7 +191,7 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      {/* ===== Pillar 01 — Sécuriser ===== */}
+      {/* ===== Pillar 01 - Sécuriser ===== */}
       <Reveal variant="up">
         <ServicePillar
           id="securiser"
@@ -224,7 +224,7 @@ export default function ServicesPage() {
         />
       </Reveal>
 
-      {/* ===== Pillar 02 — Tester ===== */}
+      {/* ===== Pillar 02 - Tester ===== */}
       <Reveal variant="up">
         <ServicePillar
           id="tester"
@@ -233,7 +233,7 @@ export default function ServicesPage() {
           kicker="Tester"
           title="Audits & pentest"
           intro={
-            "On pense comme un attaquant pour trouver vos failles avant lui. Méthodologie OWASP, remédiation priorisée — on vous aide à corriger, pas juste à constater."
+            "On pense comme un attaquant pour trouver vos failles avant lui. Méthodologie OWASP, remédiation priorisée. On vous aide à corriger, pas juste à constater."
           }
           visual={<TestVisual alt />}
           alt
@@ -258,7 +258,7 @@ export default function ServicesPage() {
         />
       </Reveal>
 
-      {/* ===== Pillar 03 — Développer ===== */}
+      {/* ===== Pillar 03 - Développer ===== */}
       <Reveal variant="up">
         <ServicePillar
           id="developper"
@@ -289,18 +289,18 @@ export default function ServicesPage() {
         />
       </Reveal>
 
-      {/* ===== "Un seul partenaire" cross-cut band — full-bleed navy chapter ===== */}
+      {/* ===== "Un seul partenaire" cross-cut band - full-bleed navy chapter ===== */}
       <Section variant="navy" gridBg className={styles.partner}>
         <div className={styles.partnerBox}>
           <Reveal variant="left">
             <Eyebrow onDark className={styles.kickerMono}>Un seul partenaire</Eyebrow>
             <h2>
-              Construire, <span className="accentOnDark">sécuriser</span> et mettre en conformité —
+              Construire, <span className="accentOnDark">sécuriser</span> et mettre en conformité,
               au même endroit
             </h2>
             <p className={styles.partnerLead}>
               La plupart des prestataires font l&apos;un <em>ou</em> l&apos;autre. Nous couvrons
-              toute la chaîne — construire, sécuriser, conformer. Un seul interlocuteur, aucune
+              toute la chaîne : construire, sécuriser, conformer. Un seul interlocuteur, aucune
               balle renvoyée.
             </p>
           </Reveal>
@@ -328,14 +328,14 @@ export default function ServicesPage() {
           <div className={styles.aiNote}>
             <Icon name="sparkles" strokeWidth={1.8} />
             <span>
-              Des <b>experts augmentés par l&apos;IA</b> — plus rapides, plus de terrain couvert.
+              Des <b>experts augmentés par l&apos;IA</b>, plus rapides, plus de terrain couvert.
               L&apos;analyse et les décisions restent humaines.
             </span>
           </div>
         </Reveal>
       </Section>
 
-      {/* ===== Pillar 04 — Se conformer (CyFun / NIS2) ===== */}
+      {/* ===== Pillar 04 - Se conformer (CyFun / NIS2) ===== */}
       <Reveal variant="up">
         <ServicePillar
           id="conformer"
@@ -349,7 +349,7 @@ export default function ServicesPage() {
           capabilities={[
             { title: "Audit & auto-évaluation", description: "Évaluation du niveau visé (Basic, Important ou Essential) au regard de votre exposition." },
             { title: "Analyse d'écart (gap analysis)", description: "Cartographie des mesures manquantes par rapport au référentiel CyFun." },
-            { title: "Remédiation concrète", description: "On corrige ce qu'on trouve — pas seulement un rapport, un plan d'action exécuté." },
+            { title: "Remédiation concrète", description: "On corrige ce qu'on trouve : pas seulement un rapport, un plan d'action exécuté." },
             { title: "Préparation à la vérification", description: "Dossier de preuves prêt pour l'auto-évaluation ou l'organisme certificateur." },
           ]}
           audience={[
@@ -367,7 +367,7 @@ export default function ServicesPage() {
         />
       </Reveal>
 
-      {/* ===== CyFun teaser — 3 niveaux + transparency block ===== */}
+      {/* ===== CyFun teaser - 3 niveaux + transparency block ===== */}
       <Section variant="tint">
         <Reveal variant="up">
           <SectionHeading
@@ -396,7 +396,7 @@ export default function ServicesPage() {
             <p>
               <b>En toute transparence :</b> la certification CyFun est délivrée par des organismes
               accrédités BELAC, indépendants de Smidjan. Notre rôle : audit, analyse d&apos;écart,
-              remédiation concrète et préparation à la vérification — une méthodologie alignée sur
+              remédiation concrète et préparation à la vérification, une méthodologie alignée sur
               le référentiel CyFun, sans nous substituer au certificateur.
             </p>
           </div>

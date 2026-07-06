@@ -5,7 +5,7 @@ import { useCsrfToken } from '@/hooks/useCsrfToken';
 import cls from './ContactForm.module.css';
 
 /**
- * Contact form — new navy/orange design (refonte-design).
+ * Contact form: new navy/orange design (refonte-design).
  *
  * SECURED SUBMIT WIRING PRESERVED VERBATIM from SimpleContactForm:
  *  - useCsrfToken() singleton hook; submit blocked while token missing.
@@ -21,7 +21,7 @@ import cls from './ContactForm.module.css';
  * NOT modified.
  */
 
-// Accepted server whitelist values (do not change — see /api/contact/direct).
+// Accepted server whitelist values (do not change, see /api/contact/direct).
 type ApiRequestType =
   | 'cv'
   | 'technical'
@@ -72,7 +72,7 @@ export function ContactForm() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
 
-  // Shared CSRF token hook (singleton — no duplicate API calls). Same as SimpleContactForm.
+  // Shared CSRF token hook (singleton, no duplicate API calls). Same as SimpleContactForm.
   const { csrfToken, error: csrfError } = useCsrfToken();
 
   useEffect(() => {
@@ -181,7 +181,7 @@ export function ContactForm() {
           });
         } catch (error) {
           console.error('reCAPTCHA Enterprise error:', error);
-          // Continue — backend enforces reCAPTCHA presence/score.
+          // Continue, backend enforces reCAPTCHA presence/score.
         }
       }
 

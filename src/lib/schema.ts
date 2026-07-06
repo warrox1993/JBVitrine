@@ -51,7 +51,7 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": "https://smidjan.be/#organization",
-  name: "Smidjan — Cybersécurité & conformité NIS2, Liège",
+  name: "Smidjan, Cybersécurité & conformité NIS2, Liège",
   alternateName: "Smidjan Cybersécurité",
   image: "https://smidjan.be/og-image.webp",
   description:
@@ -99,10 +99,10 @@ export const localBusinessSchema = {
     "https://www.facebook.com/jeanbaptiste.dhondt",
     "https://github.com/warrox1993",
   ],
-  // Services offerts — positionnement cyber-first
+  // Services offerts : positionnement cyber-first
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Services de cybersécurité — Smidjan",
+    name: "Services de cybersécurité Smidjan",
     itemListElement: [
       {
         "@type": "Offer",
@@ -154,7 +154,7 @@ export const localBusinessSchema = {
   // }
 };
 
-// FAQPage Schema — reflète la FAQ visible de /conformite-nis2 (NIS2 / CyFun)
+// FAQPage Schema : reflète la FAQ visible de /conformite-nis2 (NIS2 / CyFun)
 export const faqPageSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -180,7 +180,7 @@ export const faqPageSchema = {
       name: "Est-ce que Smidjan délivre la certification CyFun ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Non. Smidjan n'est pas un organisme de certification et n'est pas accrédité BELAC. La certification / vérification officielle CyFun est délivrée par des organismes accrédités par BELAC, indépendants de nous. Notre rôle est complémentaire : audit, analyse d'écart, remédiation et préparation — nous vous rendons prêts et conformes pour que l'organisme accrédité valide votre niveau.",
+        text: "Non. Smidjan n'est pas un organisme de certification et n'est pas accrédité BELAC. La certification / vérification officielle CyFun est délivrée par des organismes accrédités par BELAC, indépendants de nous. Notre rôle est complémentaire : audit, analyse d'écart, remédiation et préparation. Nous vous rendons prêts et conformes pour que l'organisme accrédité valide votre niveau.",
       },
     },
     {
@@ -204,7 +204,7 @@ export const faqPageSchema = {
       name: "Quel niveau CyFun choisir pour ma PME ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Pour beaucoup de PME, le niveau Important offre le bon équilibre entre exigence et effort. Le niveau Basic est un excellent point de départ (il couvre l'essentiel des attaques courantes), tandis qu'Essential s'adresse aux entités essentielles NIS2 et aux organisations à forte exigence de sécurité. Lors du cadrage, nous recommandons le niveau le plus pertinent — ni surdimensionné, ni insuffisant.",
+        text: "Pour beaucoup de PME, le niveau Important offre le bon équilibre entre exigence et effort. Le niveau Basic est un excellent point de départ (il couvre l'essentiel des attaques courantes), tandis qu'Essential s'adresse aux entités essentielles NIS2 et aux organisations à forte exigence de sécurité. Lors du cadrage, nous recommandons le niveau le plus pertinent, ni surdimensionné, ni insuffisant.",
       },
     },
   ],

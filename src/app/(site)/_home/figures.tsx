@@ -79,7 +79,7 @@ export function AuditDashboardFigure() {
     <svg
       viewBox="0 0 720 320"
       role="img"
-      aria-label="Tableau de bord d'audit de conformité CyFun montrant le niveau de maturité par domaine — gouvernance, gestion des accès, réseau, détection et sauvegarde — ainsi qu'un score global de 82 pourcents."
+      aria-label="Tableau de bord d'audit de conformité CyFun montrant le niveau de maturité par domaine (gouvernance, gestion des accès, réseau, détection et sauvegarde) ainsi qu'un score global de 82 pourcents."
     >
       <text x="30" y="34" fontSize="13" fontWeight="600" fill="#152238" fontFamily={SANS}>Gouvernance &amp; pilotage</text>
       <rect x="30" y="42" width="320" height="10" rx="5" fill="#eef2f7" />

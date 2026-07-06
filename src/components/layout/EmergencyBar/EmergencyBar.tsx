@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./EmergencyBar.module.css";
 
 /**
- * Emergency top bar — navy-2 incident line.
+ * Emergency top bar: navy-2 incident line.
  * Static server component. Ported from the approved corporate mockup.
  */
 export default function EmergencyBar() {

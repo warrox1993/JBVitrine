@@ -19,7 +19,7 @@ const JOURNEY = [
     key: false,
     label: "Le point de départ",
     title: "Une passion précoce de l'informatique",
-    text: "Comprendre comment les machines marchent — et pourquoi elles cassent.",
+    text: "Comprendre comment les machines marchent, et pourquoi elles cassent.",
     icon: (
       <>
         <path d="m13 2-3 7h4l-3 7" />
@@ -78,7 +78,7 @@ const JOURNEY = [
   },
 ];
 
-/** "Le fondateur" — Jean-Baptiste Dhondt profile + professional journey. */
+/** "Le fondateur" - Jean-Baptiste Dhondt profile + professional journey. */
 export function Fondateur() {
   return (
     <section className={styles.founderSec}>
@@ -86,7 +86,7 @@ export function Fondateur() {
         <Reveal className={styles.secHead}>
           <Eyebrow className={styles.kickerMono}>Le fondateur</Eyebrow>
           <h2>
-            Jean-Baptiste Dhondt —{" "}
+            Jean-Baptiste Dhondt :{" "}
             <span className="accent">un parcours peu commun</span> vers la
             cybersécurité
           </h2>
@@ -101,11 +101,11 @@ export function Fondateur() {
           <Reveal as="aside" className={styles.profile}>
             <div className={`${styles.gridBg} grid-bg`} aria-hidden="true" />
 
-            {/* Portrait placeholder illustration — to be replaced by a real photo */}
+            {/* Portrait placeholder illustration - to be replaced by a real photo */}
             <div
               className={styles.portrait}
               role="img"
-              aria-label="Portrait du fondateur — emplacement réservé, photo à venir"
+              aria-label="Portrait du fondateur, emplacement réservé, photo à venir"
             >
               <svg viewBox="0 0 300 210" fill="none" aria-hidden="true">
                 <circle cx="26" cy="26" r="1.4" fill="#fff" opacity=".14" />
@@ -177,7 +177,7 @@ export function Fondateur() {
               systèmes de l&rsquo;intérieur avant d&rsquo;en faire un métier.
             </p>
 
-            {/* Real photo: server infrastructure — technical expertise */}
+            {/* Real photo: server infrastructure - technical expertise */}
             <figure className={styles.infraFigure}>
               <OptimizedImage
                 src="/images/pages/agence/infrastructure.jpg"

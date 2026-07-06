@@ -3,7 +3,7 @@ import React from "react";
 /**
  * Inline SVG figures for the Conformité NIS2 / CyFun page.
  * Ported verbatim from the approved mockup (page-cyfun.html).
- * Pure presentational server components — no client JS.
+ * Pure presentational server components, no client JS.
  */
 
 const SANS = "system-ui,-apple-system,Segoe UI,Roboto,sans-serif";

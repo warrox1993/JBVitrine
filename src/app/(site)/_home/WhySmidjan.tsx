@@ -44,7 +44,7 @@ const WHY_ITEMS: WhyItem[] = [
     title: "Pragmatisme PME",
     text: (
       <>
-        <b>Nous corrigeons ce qui compte vraiment</b> — pas de sur-ingénierie, pas de dépenses
+        <b>Nous corrigeons ce qui compte vraiment</b>, pas de sur-ingénierie, pas de dépenses
         inutiles.
       </>
     ),
@@ -73,7 +73,7 @@ const WHY_ITEMS: WhyItem[] = [
     title: "Accès direct à l'expert",
     text: (
       <>
-        <b>Vous parlez à la personne qui fait le travail</b> — jamais à un centre d&apos;appel.
+        <b>Vous parlez à la personne qui fait le travail</b>, jamais à un centre d&apos;appel.
       </>
     ),
   },
@@ -121,7 +121,7 @@ export function WhySmidjan() {
         </div>
         <blockquote className={styles.quote}>
           « La cybersécurité d&apos;une PME ne tient pas dans un rapport de 200 pages qu&apos;on
-          range dans un tiroir. Elle se joue faille par faille — en restant joignable. »
+          range dans un tiroir. Elle se joue faille par faille, en restant joignable. »
         </blockquote>
         <ul className={styles.creds}>
           <li>

@@ -23,7 +23,7 @@ import { AuditDashboardFigure, BelgiumMapFigure } from "./_home/figures";
 import homeStyles from "./_home/Home.module.css";
 
 export const metadata: Metadata = {
-  title: "Cybersécurité & conformité NIS2 pour les PME | Smidjan — Liège, Wallonie",
+  title: "Cybersécurité & conformité NIS2 pour les PME | Smidjan, Liège, Wallonie",
   description:
     "Smidjan sécurise réseaux, infrastructure et applications des PME wallonnes et vous met en conformité NIS2 / CyFun (CyberFundamentals, CCB). Audit, pentest, remédiation. Diagnostic gratuit à Liège.",
   keywords: [
@@ -42,17 +42,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Cybersécurité & conformité NIS2 pour les PME | Smidjan — Liège",
+    title: "Cybersécurité & conformité NIS2 pour les PME | Smidjan, Liège",
     description:
-      "On sécurise, on teste, on développe, on met en règle NIS2 / CyFun — et on corrige ce qu'on trouve. Diagnostic gratuit pour les PME de Wallonie.",
+      "On sécurise, on teste, on développe, on met en règle NIS2 / CyFun, et on corrige ce qu'on trouve. Diagnostic gratuit pour les PME de Wallonie.",
     url: "https://smidjan.be",
-    siteName: "Smidjan — Cybersécurité Liège",
+    siteName: "Smidjan, Cybersécurité Liège",
     images: [
       {
         url: "https://smidjan.be/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Smidjan — Cybersécurité & conformité NIS2 pour les PME à Liège",
+        alt: "Smidjan, Cybersécurité & conformité NIS2 pour les PME à Liège",
         type: "image/webp",
       },
     ],
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cybersécurité & conformité NIS2 pour les PME | Smidjan — Liège",
+    title: "Cybersécurité & conformité NIS2 pour les PME | Smidjan, Liège",
     description:
       "Sécurité, pentest, conformité NIS2 / CyFun pour les PME wallonnes. Diagnostic gratuit à Liège.",
     images: ["/og-image.webp"],
@@ -102,7 +102,7 @@ export default function HomePage() {
                 <span className="accent">risque cyber</span>
               </>
             }
-            lead="De l'infrastructure à la conformité — et on corrige ce qu'on trouve."
+            lead="De l'infrastructure à la conformité, et on corrige ce qu'on trouve."
           />
         </Reveal>
         <Reveal stagger className={homeStyles.svcGrid}>
@@ -122,7 +122,7 @@ export default function HomePage() {
             icon="search"
             kicker="Tester"
             title="Audits & pentest"
-            description="On pense comme un attaquant pour trouver vos failles — avant qu'un vrai ne le fasse."
+            description="On pense comme un attaquant pour trouver vos failles, avant qu'un vrai ne le fasse."
             bullets={[
               "Tests d'intrusion (OWASP)",
               "Analyse d'écart de sécurité",
@@ -172,7 +172,7 @@ export default function HomePage() {
           text={
             <>
               <b>Chaque exigence CyFun est mesurée, pas devinée.</b> Un niveau de maturité par
-              domaine — gouvernance, accès, réseau, détection, continuité — agrégé en un score
+              domaine (gouvernance, accès, réseau, détection, continuité) agrégé en un score
               global.
             </>
           }
@@ -187,7 +187,7 @@ export default function HomePage() {
               {
                 title: "Cadrage & auto-évaluation",
                 description:
-                  "Périmètre, actifs critiques, auto-évaluation CyFun — avec vos équipes.",
+                  "Périmètre, actifs critiques, auto-évaluation CyFun, avec vos équipes.",
               },
               {
                 title: "Analyse d'écart & remédiation",
@@ -208,7 +208,7 @@ export default function HomePage() {
         </Reveal>
       </Section>
 
-      {/* ===== Why Smidjan — full-bleed navy chapter ===== */}
+      {/* ===== Why Smidjan - full-bleed navy chapter ===== */}
       <Section variant="navy" gridBg id="pourquoi">
         <WhySmidjan />
         <IllusPanel
@@ -234,7 +234,7 @@ export default function HomePage() {
               Des <span className="accentOnDark">résultats concrets</span>, une exigence constante
             </>
           }
-          lead="Peu de chiffres, mais réels — la qualité plutôt que la promesse."
+          lead="Peu de chiffres, mais réels : la qualité plutôt que la promesse."
           stats={[
             { value: "12", accent: "+", label: "années d'expertise cumulée en sécurité" },
             { value: "50", accent: "+", label: "audits & tests d'intrusion réalisés" },
@@ -260,7 +260,7 @@ export default function HomePage() {
         <Testimonials />
       </Section>
 
-      {/* ===== Insight teaser — full-bleed navy chapter ===== */}
+      {/* ===== Insight teaser - full-bleed navy chapter ===== */}
       <Section variant="navy" gridBg id="insight">
         <InsightTeaser />
       </Section>

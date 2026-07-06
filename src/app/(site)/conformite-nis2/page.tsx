@@ -19,7 +19,7 @@ import {
 import styles from "./ConformiteNis2.module.css";
 
 export const metadata: Metadata = {
-  title: "Conformité NIS2 & CyFun (CCB) pour PME — Audit, remédiation & préparation | Smidjan Liège",
+  title: "Conformité NIS2 & CyFun (CCB) pour PME : audit, remédiation & préparation | Smidjan Liège",
   description:
     "Préparez votre conformité NIS2 avec le référentiel CyFun (CyberFundamentals) du CCB. Smidjan réalise l'audit, l'analyse d'écart, la remédiation et la préparation à la vérification pour les 3 niveaux Basic, Important et Essential. Diagnostic gratuit à Liège.",
   keywords: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Conformité NIS2 & CyFun (CCB) pour les PME — Smidjan Liège",
+    title: "Conformité NIS2 & CyFun (CCB) pour les PME | Smidjan Liège",
     description:
       "Audit, analyse d'écart, remédiation et préparation à la vérification CyFun (CCB) pour atteindre votre niveau NIS2. Basic, Important, Essential. Diagnostic gratuit.",
     url: "https://smidjan.be/conformite-nis2",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
         url: "https://smidjan.be/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Conformité NIS2 & CyFun — Smidjan, cybersécurité à Liège",
+        alt: "Conformité NIS2 & CyFun, Smidjan, cybersécurité à Liège",
         type: "image/webp",
       },
     ],
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Conformité NIS2 & CyFun (CCB) — Smidjan",
+    title: "Conformité NIS2 & CyFun (CCB) | Smidjan",
     description:
       "Audit, remédiation et préparation à la vérification CyFun pour votre conformité NIS2.",
     images: ["/og-image.webp"],
@@ -108,7 +108,7 @@ export default function ConformiteNis2Page() {
               </span>
             </div>
             <h1 className={styles.heroTitle}>
-              NIS2 est en vigueur —{" "}
+              NIS2 est en vigueur&nbsp;:{" "}
               <span className={styles.accent}>
                 vous devez déjà être conforme
               </span>
@@ -208,7 +208,7 @@ export default function ConformiteNis2Page() {
             eyebrow={<span className={styles.kickerMono}>NIS2, en clair</span>}
             title={
               <>
-                Ce que la directive change pour vous —{" "}
+                Ce que la directive change pour vous,{" "}
                 <span className={styles.accent}>sans jargon</span>
               </>
             }
@@ -228,7 +228,7 @@ export default function ConformiteNis2Page() {
             />
             <figcaption className={styles.sectionPhotoCap}>
               La conformité NIS2 engage la <b>responsabilité des organes de
-              direction</b> — un sujet de gouvernance, pas seulement d&apos;IT.
+              direction</b>, un sujet de gouvernance, pas seulement d&apos;IT.
             </figcaption>
           </figure>
         </Reveal>
@@ -275,12 +275,12 @@ export default function ConformiteNis2Page() {
               <Icon name="alert-triangle" size={26} strokeWidth={1.7} />
             </div>
             <h3>Quel est le risque&nbsp;?</h3>
-            <p>Juridique et financier — pas seulement technique.</p>
+            <p>Juridique et financier&nbsp;: pas seulement technique.</p>
             <ul>
               <li>
                 {CHECK}
                 <span>
-                  <b>Amendes significatives</b> — plusieurs millions d&apos;euros
+                  <b>Amendes significatives</b>, plusieurs millions d&apos;euros
                   pour les entités essentielles.
                 </span>
               </li>
@@ -423,7 +423,7 @@ export default function ConformiteNis2Page() {
           <figure
             className={styles.ringWrap}
             role="img"
-            aria-label="Diagramme : les six fonctions du CyberFundamentals disposées en cycle continu — Govern, Identify, Protect, Detect, Respond, Recover — alignées sur le NIST CSF."
+            aria-label="Diagramme : les six fonctions du CyberFundamentals disposées en cycle continu (Govern, Identify, Protect, Detect, Respond, Recover), alignées sur le NIST CSF."
           >
             <FunctionsRing />
           </figure>
@@ -456,13 +456,13 @@ export default function ConformiteNis2Page() {
         </Reveal>
         <Reveal>
           <p className={styles.fnNote}>
-            <b>Govern, Identify, Protect, Detect, Respond, Recover</b> — tout
+            <b>Govern, Identify, Protect, Detect, Respond, Recover</b>&nbsp;: tout
             le cycle de vie du risque cyber.
           </p>
         </Reveal>
       </Section>
 
-      {/* ===== Les 3 niveaux — full-bleed navy chapter (rhythm, matches home) ===== */}
+      {/* ===== Les 3 niveaux - full-bleed navy chapter (rhythm, matches home) ===== */}
       <Section variant="navy" gridBg id="niveaux" className={styles.niveauxNavy}>
         <Reveal>
           <SectionHeading
@@ -476,7 +476,7 @@ export default function ConformiteNis2Page() {
                 <span className={styles.accent}>bon niveau</span>
               </>
             }
-            lead="Trois niveaux progressifs. Le bon choix dépend de votre catégorie NIS2 et de votre exposition — on vous aide à trancher."
+            lead="Trois niveaux progressifs. Le bon choix dépend de votre catégorie NIS2 et de votre exposition. On vous aide à trancher."
           />
         </Reveal>
 
@@ -499,7 +499,7 @@ export default function ConformiteNis2Page() {
           <figure
             className={styles.levelsFig}
             role="img"
-            aria-label="Diagramme en escalier : la couverture face aux attaques croît avec le niveau — Basic environ 82 pour cent, Important environ 94 pour cent, Essential protection quasi complète."
+            aria-label="Diagramme en escalier : la couverture face aux attaques croît avec le niveau. Basic environ 82 pour cent, Important environ 94 pour cent, Essential protection quasi complète."
           >
             <LevelsStepChart />
           </figure>
@@ -522,7 +522,7 @@ export default function ConformiteNis2Page() {
             eyebrow={<span className={styles.kickerMono}>Notre accompagnement</span>}
             title={
               <>
-                On ne se contente pas d&apos;auditer —{" "}
+                On ne se contente pas d&apos;auditer&nbsp;:{" "}
                 <span className={styles.accent}>on corrige</span> et on vous
                 amène prêts
               </>
@@ -561,7 +561,7 @@ export default function ConformiteNis2Page() {
             </p>
             <p>
               Notre rôle&nbsp;: <b>auditer, remédier, préparer</b> votre dossier
-              jusqu&apos;à la soumission — vous rendre <b>prêts à l&apos;obtenir</b>.
+              jusqu&apos;à la soumission&nbsp;: vous rendre <b>prêts à l&apos;obtenir</b>.
             </p>
             <Reveal stagger className={styles.roles}>
               <div className={`${styles.roleCol} ${styles.roleSmidjan}`}>
@@ -615,7 +615,7 @@ export default function ConformiteNis2Page() {
                   </li>
                 </ul>
                 <div className={styles.foot}>
-                  Ex. <b>Brand Compliance, Trust CHECK, Normec CertUp</b> —
+                  Ex. <b>Brand Compliance, Trust CHECK, Normec CertUp</b>,
                   indépendants de nous.
                 </div>
               </div>
@@ -639,12 +639,12 @@ export default function ConformiteNis2Page() {
               {
                 title: "Cadrage & auto-évaluation",
                 description:
-                  "Périmètre, actifs critiques, niveau CyFun visé, catégorie NIS2 confirmée — avec vos équipes.",
+                  "Périmètre, actifs critiques, niveau CyFun visé, catégorie NIS2 confirmée, avec vos équipes.",
               },
               {
                 title: "Analyse d'écart & remédiation",
                 description:
-                  "Écart mesuré, manques corrigés — plan priorisé par risque et par effort.",
+                  "Écart mesuré, manques corrigés : plan priorisé par risque et par effort.",
               },
               {
                 title: "Support à la vérification CCB",
@@ -782,7 +782,7 @@ export default function ConformiteNis2Page() {
               {
                 title: "Rapport clair",
                 description:
-                  "Synthèse, écarts identifiés et priorités — un document lisible, pas un export brut.",
+                  "Synthèse, écarts identifiés et priorités : un document lisible, pas un export brut.",
               },
               {
                 title: "Plan de remédiation priorisé",
@@ -823,7 +823,7 @@ export default function ConformiteNis2Page() {
             eyebrow={<span className={styles.kickerMono}>Financer votre conformité</span>}
             title={
               <>
-                La conformité coûte moins cher qu&apos;on ne le croit —{" "}
+                La conformité coûte moins cher qu&apos;on ne le croit&nbsp;:{" "}
                 <span className={styles.accent}>
                   une large partie est subsidiée
                 </span>
@@ -889,7 +889,7 @@ export default function ConformiteNis2Page() {
             <p className={styles.frameNote}>
               En complément&nbsp;: le chèque « maturité numérique » (~50&nbsp;%).
               Côté fédéral, le <b>CCB</b> propose gratuitement{" "}
-              <b>CyberFundamentals</b> — niveau « Small » (7 mesures) gratuit,{" "}
+              <b>CyberFundamentals</b>&nbsp;: niveau « Small » (7 mesures) gratuit,{" "}
               <b>Basic</b> recommandé au minimum.
             </p>
           </div>
@@ -953,7 +953,7 @@ export default function ConformiteNis2Page() {
         <Reveal>
         <div className={styles.process}>
           <ProcessSteps
-            kicker="Comment en profiter — en 3 étapes"
+            kicker="Comment en profiter, en 3 étapes"
             steps={[
               {
                 title: "S'inscrire sur la plateforme",
@@ -1064,7 +1064,7 @@ export default function ConformiteNis2Page() {
                   <p>
                     En pratique&nbsp;: CyFun est un point d&apos;entrée plus{" "}
                     <b>accessible</b> pour une PME, avec ses trois niveaux
-                    progressifs (Basic → Essential) — et une première marche
+                    progressifs (Basic → Essential), et une première marche
                     vers l&apos;ISO 27001 si besoin.
                   </p>
                 </>
@@ -1084,7 +1084,7 @@ export default function ConformiteNis2Page() {
                   <p>
                     Notre rôle&nbsp;: <b>auditer, remédier, préparer</b> votre
                     dossier jusqu&apos;à la soumission. Nous vous rendons{" "}
-                    <b>prêts</b> — l&apos;organisme accrédité valide votre
+                    <b>prêts</b>&nbsp;: l&apos;organisme accrédité valide votre
                     niveau.
                   </p>
                 </>
@@ -1103,7 +1103,7 @@ export default function ConformiteNis2Page() {
                   <p>
                     NIS2 est <b>déjà en vigueur</b>&nbsp;: mieux vaut démarrer
                     maintenant. Plus tôt vous commencez, plus vous étalez
-                    l&apos;effort et le budget — et réduisez votre exposition.
+                    l&apos;effort et le budget, et réduisez votre exposition.
                   </p>
                 </>
               ),
@@ -1119,7 +1119,7 @@ export default function ConformiteNis2Page() {
                     qu&apos;une mise en conformité anticipée.
                   </p>
                   <p>
-                    La démarche CyFun réduit un <b>risque réel</b> — pas
+                    La démarche CyFun réduit un <b>risque réel</b>, pas
                     seulement une case à cocher.
                   </p>
                 </>
@@ -1131,7 +1131,7 @@ export default function ConformiteNis2Page() {
                 <>
                   <p>
                     Pour la plupart des PME, <b>Important</b> est le meilleur
-                    équilibre — le plus courant. <b>Basic</b> couvre déjà
+                    équilibre, le plus courant. <b>Basic</b> couvre déjà
                     l&apos;essentiel (~82&nbsp;% des attaques courantes).{" "}
                     <b>Essential</b> vise les entités « essentielles » NIS2 et
                     les exigences de sécurité fortes.
@@ -1153,7 +1153,7 @@ export default function ConformiteNis2Page() {
         <CTABox
           id="contact"
           tint
-          title="Sachez où vous en êtes — avant qu'il ne soit trop tard"
+          title="Sachez où vous en êtes, avant qu'il ne soit trop tard"
           text="30 min avec un expert : catégorie NIS2, niveau CyFun, priorités claires. Sans engagement, sans jargon."
           actions={[
             { label: "Réserver mon diagnostic NIS2", href: "/contact", variant: "primary" },

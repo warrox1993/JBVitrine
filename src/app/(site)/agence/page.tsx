@@ -15,7 +15,7 @@ import { Fondateur } from "./Fondateur";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "L'agence — Smidjan | Cybersécurité des PME wallonnes, par un expert local · Liège",
+  title: "L'agence · Smidjan | Cybersécurité des PME wallonnes, par un expert local · Liège",
   description:
     "Smidjan est une agence de cybersécurité basée à Liège, au service des PME, indépendants et collectivités de Wallonie. Découvrez l'agence et son fondateur, Jean-Baptiste Dhondt.",
   keywords: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     canonical: "/agence",
   },
   openGraph: {
-    title: "L'agence — Smidjan | Cybersécurité des PME wallonnes",
+    title: "L'agence · Smidjan | Cybersécurité des PME wallonnes",
     description:
       "Une agence de cybersécurité à taille humaine, basée à Liège, au service des PME et collectivités de Wallonie.",
     url: "https://smidjan.be/agence",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "L'agence — Smidjan | Cybersécurité des PME wallonnes",
+    title: "L'agence · Smidjan | Cybersécurité des PME wallonnes",
     description:
       "Une agence de cybersécurité à taille humaine, basée à Liège, au service des PME et collectivités de Wallonie.",
     images: ["/og-image.webp"],
@@ -128,7 +128,7 @@ export default function AgencePage() {
       <QuiSommesNous />
       <Fondateur />
 
-      {/* ===== Engagements / valeurs — full-bleed navy chapter ===== */}
+      {/* ===== Engagements / valeurs - full-bleed navy chapter ===== */}
       <Section variant="navy" gridBg id="engagements">
         <Reveal>
           <SectionHeading
@@ -152,7 +152,7 @@ export default function AgencePage() {
             </div>
             <h3>Proximité</h3>
             <p>
-              Un interlocuteur direct, au téléphone — jamais un ticket.
+              Un interlocuteur direct, au téléphone, jamais un ticket.
             </p>
           </article>
           <article className={styles.engageCard}>
@@ -207,7 +207,7 @@ export default function AgencePage() {
       <CTABox
         id="contact"
         title="Un échange de 30 minutes, directement avec le fondateur"
-        text="Vous parlez à la personne qui fera le travail. On évalue votre exposition, on cadre votre NIS2 — vous repartez avec des priorités claires."
+        text="Vous parlez à la personne qui fera le travail. On évalue votre exposition, on cadre votre NIS2 : vous repartez avec des priorités claires."
         actions={[
           { label: "Réserver un appel de cadrage", href: "/contact" },
           { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },

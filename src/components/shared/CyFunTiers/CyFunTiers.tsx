@@ -18,7 +18,7 @@ export interface CyFunTier {
   deliverable: string;
   ctaHref: string;
   ctaLabel?: string;
-  /** Middle tier — flagged as recommended. */
+  /** Middle tier - flagged as recommended. */
   featured?: boolean;
   flag?: string;
 }
@@ -106,7 +106,7 @@ export const DEFAULT_CYFUN_TABLE: CyFunTableRow[] = [
     criterion: "Couverture des attaques",
     basic: <><b>~82 %</b> des attaques courantes.</>,
     important: <><b>~94 %</b> des attaques courantes.</>,
-    essential: <><b>Quasi complète</b> — protection maximale.</>,
+    essential: <><b>Quasi complète</b>&nbsp;: protection maximale.</>,
   },
   {
     criterion: "Profondeur des mesures",
@@ -138,7 +138,7 @@ const DEFAULT_NOTE =
   "*Durées indicatives, variables selon votre maturité de départ, la taille du périmètre et vos ressources internes. Elles sont précisées lors du cadrage.";
 
 /**
- * CyFun three-tier comparison — cards + optional comparison table.
+ * CyFun three-tier comparison - cards + optional comparison table.
  * "Important" is flagged as the recommended tier. Reusable across
  * the home, services and conformité NIS2 pages.
  */

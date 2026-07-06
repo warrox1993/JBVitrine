@@ -18,7 +18,7 @@ export interface ArticleCoverSvgProps {
 /**
  * Small themed line-art cover illustration keyed by blog category, ported
  * from the "Journal" mockup's per-category `.art-cover` icons. Purely
- * decorative — used as the `cover` slot of `ArticleCard` / `FeaturedArticle`.
+ * decorative - used as the `cover` slot of `ArticleCard` / `FeaturedArticle`.
  * Does not touch or replace any real article data.
  */
 export function ArticleCoverSvg({
@@ -71,7 +71,7 @@ function getContent(category: string | undefined, p: Palette): React.ReactNode {
   const key = (category || "").toLowerCase();
 
   if (key.includes("cyber")) {
-    // Shield with a check — cybersécurité.
+    // Shield with a check - cybersécurité.
     return (
       <>
         <path
@@ -88,7 +88,7 @@ function getContent(category: string | undefined, p: Palette): React.ReactNode {
   }
 
   if (key.includes("automatisation") || key.includes(" ia") || key.startsWith("ia") || key.includes("intelligence")) {
-    // Connected nodes — automatisation & IA.
+    // Connected nodes - automatisation & IA.
     return (
       <>
         <circle cx="32" cy="14" r="5" fill={p.fillPlate} stroke={p.stroke} strokeWidth="1.6" />
@@ -107,7 +107,7 @@ function getContent(category: string | undefined, p: Palette): React.ReactNode {
   }
 
   if (key.includes("seo") || key.includes("marketing")) {
-    // Magnifier over a growth curve — SEO & marketing.
+    // Magnifier over a growth curve - SEO & marketing.
     return (
       <>
         <path
@@ -125,7 +125,7 @@ function getContent(category: string | undefined, p: Palette): React.ReactNode {
   }
 
   if (key.includes("developpement") || key.includes("développement") || key.includes("dev") || key.includes("web")) {
-    // Code brackets — développement web.
+    // Code brackets - développement web.
     return (
       <>
         <path
@@ -142,7 +142,7 @@ function getContent(category: string | undefined, p: Palette): React.ReactNode {
     );
   }
 
-  // Fallback — generic document/checklist.
+  // Fallback - generic document/checklist.
   return (
     <>
       <rect x="16" y="9" width="32" height="46" rx="4" fill={p.fillPlate} stroke={p.stroke} strokeWidth="1.6" />

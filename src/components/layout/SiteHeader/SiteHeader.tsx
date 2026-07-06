@@ -15,7 +15,7 @@ const NAV_LINKS = [
 ] as const;
 
 /**
- * Sticky top-nav header — brand, nav links, phone, orange CTA + mobile menu.
+ * Sticky top-nav header: brand, nav links, phone, orange CTA + mobile menu.
  * Client component: active link via usePathname, hamburger toggle via state.
  * Ported from the approved corporate mockup.
  */

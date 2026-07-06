@@ -6,14 +6,14 @@ import { ContactForm } from './ContactForm';
 import cls from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Contact — Smidjan | Cybersécurité & conformité NIS2 à Liège',
+  title: 'Contact · Smidjan | Cybersécurité & conformité NIS2 à Liège',
   description:
     "Diagnostic gratuit, audit CyFun/NIS2, pentest ou réponse à incident : écrivez à Smidjan. Un expert vous répond sous 24 h ouvrées. Basés à Liège, Wallonie.",
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
-    title: 'Contact — Smidjan',
+    title: 'Contact · Smidjan',
     description: 'Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées.',
     type: 'website',
     url: 'https://smidjan.be/contact',
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
         url: 'https://smidjan.be/og/contact-og.webp',
         width: 1200,
         height: 630,
-        alt: 'Contactez Smidjan — cybersécurité et conformité NIS2 à Liège',
+        alt: 'Contactez Smidjan, cybersécurité et conformité NIS2 à Liège',
         type: 'image/webp',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact — Smidjan',
+    title: 'Contact · Smidjan',
     description: 'Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées.',
     images: ['/og/contact-og.webp'],
   },
@@ -42,14 +42,14 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      {/* JSON-LD — ContactPage */}
+      {/* JSON-LD: ContactPage */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'ContactPage',
-            name: 'Contact — Smidjan',
+            name: 'Contact · Smidjan',
             url: 'https://smidjan.be/contact',
             about: {
               '@type': 'Organization',
@@ -73,7 +73,7 @@ export default function ContactPage() {
           }),
         }}
       />
-      {/* JSON-LD — BreadcrumbList */}
+      {/* JSON-LD: BreadcrumbList */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -101,10 +101,10 @@ export default function ContactPage() {
             </nav>
             <span className={cls.eyebrow}>Parlons de votre sécurité</span>
             <h1>
-              Un expert vous répond — <span className={cls.accent}>sous 24&nbsp;heures</span>.
+              Un expert vous répond : <span className={cls.accent}>sous 24&nbsp;heures</span>.
             </h1>
             <p className={cls.directPromise}>
-              <strong>Un expert Smidjan</strong> — jamais un centre d&apos;appels.
+              <strong>Un expert Smidjan</strong>, jamais un centre d&apos;appels.
             </p>
             <p className={cls.lead}>
               Diagnostic, audit NIS2, pentest ou incident : un seul interlocuteur.
@@ -157,7 +157,7 @@ export default function ContactPage() {
       <section className={cls.contact} id="form">
         <div className="wrap">
           <div className={cls.contactGrid}>
-            {/* LEFT: secured form — primary action */}
+            {/* LEFT: secured form (primary action) */}
             <div className={cls.formPrimary}>
               <span className={cls.formBadge}>Le plus direct</span>
               <Reveal>
@@ -196,7 +196,7 @@ export default function ContactPage() {
                 </div>
                 <p>
                   Rançongiciel, intrusion, fuite de données&nbsp;? Ne coupez rien.
-                  Appelez — on limite les dégâts, tout de suite.
+                  Appelez. On limite les dégâts, tout de suite.
                 </p>
                 <a className={cls.ebTel} href="tel:+32475205562">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" /></svg>
@@ -281,7 +281,7 @@ export default function ContactPage() {
                     <span className={cls.ic}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" /></svg></span>
                     <div>
                       <div className={cls.k}>Téléphone</div>
-                      <div className={cls.v}><a className={cls.telLink} href="tel:+32475205562">+32 475 20 55 62</a><small>Standard — demandes générales</small></div>
+                      <div className={cls.v}><a className={cls.telLink} href="tel:+32475205562">+32 475 20 55 62</a><small>Standard : demandes générales</small></div>
                     </div>
                   </li>
                   <li>
@@ -295,7 +295,7 @@ export default function ContactPage() {
                     <span className={cls.ic}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></span>
                     <div>
                       <div className={cls.k}>Horaires</div>
-                      <div className={cls.v}>Lun&nbsp;–&nbsp;Ven, 8h30&nbsp;–&nbsp;18h00<small>Réponse à incident : 24&nbsp;h/24, 7&nbsp;j/7</small></div>
+                      <div className={cls.v}>Lun. au ven., 8h30 à 18h00<small>Réponse à incident : 24&nbsp;h/24, 7&nbsp;j/7</small></div>
                     </div>
                   </li>
                 </Reveal>
@@ -364,7 +364,7 @@ export default function ContactPage() {
           <div className={cls.secHead}>
             <span className={cls.eyebrow}>À quoi s&apos;attendre</span>
             <h2>De votre message au <span className="accent">diagnostic</span>, en trois temps</h2>
-            <p>Pas de tunnel commercial — un échange utile dès le premier message.</p>
+            <p>Pas de tunnel commercial, un échange utile dès le premier message.</p>
           </div>
           <div className={cls.steps}>
             <div className={cls.step}>

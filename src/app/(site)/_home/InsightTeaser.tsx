@@ -4,7 +4,7 @@ import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./InsightTeaser.module.css";
 
-/** Journal / guide teaser: NIS2 & CyFun — links to the on-site guide page. */
+/** Journal / guide teaser: NIS2 & CyFun, links to the on-site guide page. */
 export function InsightTeaser() {
   return (
     <div className={styles.card}>

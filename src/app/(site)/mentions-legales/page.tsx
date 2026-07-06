@@ -8,14 +8,14 @@ import {
 import { MentionsVisual } from "@/components/shared/LegalLayout/LegalVisuals";
 
 export const metadata: Metadata = {
-  title: "Mentions légales — Smidjan | Cybersécurité Liège",
+  title: "Mentions légales | Smidjan, Cybersécurité Liège",
   description:
     "Mentions légales de Smidjan : identification de l'éditeur, responsable de publication, hébergement (Vercel) et propriété intellectuelle du site.",
   alternates: {
     canonical: "/mentions-legales",
   },
   openGraph: {
-    title: "Mentions légales — Smidjan",
+    title: "Mentions légales | Smidjan",
     description: "Identification de l'éditeur, hébergement et propriété intellectuelle du site Smidjan.",
     type: "website",
     url: "https://smidjan.be/mentions-legales",
@@ -53,7 +53,7 @@ export default function MentionsLegalesPage() {
           <p>Le présent site est édité par Smidjan, société active en cybersécurité établie à Liège, Belgique.</p>
           <ul>
             <li>
-              <strong>Dénomination&nbsp;:</strong> Smidjan — marque commerciale exploitée par Jean-Baptiste Dhondt (personne physique)
+              <strong>Dénomination&nbsp;:</strong> Smidjan, marque commerciale exploitée par Jean-Baptiste Dhondt (personne physique)
             </li>
             <li>
               <strong>Siège&nbsp;:</strong> Liège, Belgique
@@ -90,7 +90,7 @@ export default function MentionsLegalesPage() {
         <LegalSection id="hebergement" num="3" title="Hébergement">
           <p>
             Le site est hébergé par&nbsp;: <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789,
-            États-Unis — <LegalLink href="https://vercel.com" target="_blank" rel="noopener">vercel.com</LegalLink>.
+            États-Unis : <LegalLink href="https://vercel.com" target="_blank" rel="noopener">vercel.com</LegalLink>.
           </p>
           <p>
             L&apos;hébergement peut impliquer un traitement de données techniques sur une infrastructure distribuée

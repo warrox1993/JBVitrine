@@ -14,7 +14,7 @@ const NAV_ITEMS: { key: LegalPageKey; href: string; label: string }[] = [
 ];
 
 export interface LegalLayoutProps {
-  /** Which of the three legal pages is rendering — drives the nav + breadcrumb. */
+  /** Which of the three legal pages is rendering - drives the nav + breadcrumb. */
   active: LegalPageKey;
   eyebrow: string;
   title: string;
@@ -28,7 +28,7 @@ export interface LegalLayoutProps {
  * Shared reading layout for the three legal pages. Provides the page
  * header (eyebrow/title/lead/visual), the sticky cross-page nav (becomes
  * a horizontal chip row on tablet/mobile) and the ~72ch reading column.
- * Server component — no client JS needed (active state comes from the
+ * Server component - no client JS needed (active state comes from the
  * page itself, not from route matching).
  */
 export function LegalLayout({ active, eyebrow, title, lead, visual, children }: LegalLayoutProps) {
@@ -80,7 +80,7 @@ export function LegalLayout({ active, eyebrow, title, lead, visual, children }: 
   );
 }
 
-/** Orange "model — needs legal validation" disclaimer banner. */
+/** Orange "model - needs legal validation" disclaimer banner. */
 export function LegalBanner({ children }: { children: React.ReactNode }) {
   return (
     <div className={styles.banner} role="note">
@@ -142,7 +142,7 @@ export function LegalCallout({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** Dashed "[à compléter]"-style placeholder token — never a real value. */
+/** Dashed "[à compléter]"-style placeholder token - never a real value. */
 export function Placeholder({ children }: { children: React.ReactNode }) {
   return <span className={styles.placeholder}>{children}</span>;
 }

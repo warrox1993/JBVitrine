@@ -59,7 +59,7 @@ export function Hero() {
               <Icon name="shield-check" className={styles.ico} size={52} strokeWidth={1.6} />
               <div>
                 <h3>Posture de sécurité</h3>
-                <div className={styles.shieldSub}>Évaluation CyFun — aperçu du diagnostic</div>
+                <div className={styles.shieldSub}>Évaluation CyFun : aperçu du diagnostic</div>
               </div>
             </div>
             <ul className={styles.list}>

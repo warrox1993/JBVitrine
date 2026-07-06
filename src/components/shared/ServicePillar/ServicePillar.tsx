@@ -35,7 +35,7 @@ export interface ServicePillarProps {
   ctaHref: string;
   /** Optional inline SVG figure rendered under the intro. */
   visual?: React.ReactNode;
-  /** Alternate (tinted) background — for zebra striping pillars. */
+  /** Alternate (tinted) background - for zebra striping pillars. */
   alt?: boolean;
   className?: string;
 }

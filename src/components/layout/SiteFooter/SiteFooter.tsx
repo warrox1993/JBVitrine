@@ -4,7 +4,7 @@ import styles from "./SiteFooter.module.css";
 /**
  * Rich navy footer with a 3px orange top border.
  * Static server component. Ported from the approved corporate mockup.
- * NOTE: no VAT/BCE line is rendered — the real number must come from the
+ * NOTE: no VAT/BCE line is rendered: the real number must come from the
  * client before it can be shown (never ship the mockup placeholder).
  */
 export default function SiteFooter() {
@@ -42,7 +42,7 @@ export default function SiteFooter() {
             </Link>
             <p className={styles.blurb}>
               Cybersécurité et conformité NIS2 pour les PME de Wallonie. On
-              sécurise, on teste, on développe, on met en règle — et on corrige
+              sécurise, on teste, on développe, on met en règle, et on corrige
               ce qu&apos;on trouve.
             </p>
             <ul className={styles.contact}>

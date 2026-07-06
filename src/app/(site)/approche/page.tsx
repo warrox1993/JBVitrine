@@ -18,7 +18,7 @@ import { AiIllustration, ProofVisual, RoadmapIllustration } from "./illustration
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Notre méthode — Approche cybersécurité Smidjan | Des preuves, pas des promesses",
+  title: "Notre méthode : Approche cybersécurité Smidjan | Des preuves, pas des promesses",
   description:
     "Diagnostic mesuré, priorisation par risque, remédiation réelle, supervision continue : découvrez la méthode de Smidjan, cabinet de cybersécurité à Liège, et pourquoi une PME wallonne a intérêt à travailler avec une structure à taille humaine.",
   keywords: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Notre méthode — Approche cybersécurité Smidjan",
+    title: "Notre méthode : Approche cybersécurité Smidjan",
     description:
       "Des preuves, pas des promesses : diagnostic mesuré, priorisation, remédiation réelle et supervision continue. La méthode Smidjan, cybersécurité pour PME à Liège.",
     url: "https://smidjan.be/approche",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Notre méthode — Approche cybersécurité Smidjan",
+    title: "Notre méthode : Approche cybersécurité Smidjan",
     description:
       "Diagnostic mesuré, priorisation, remédiation réelle, supervision continue. Des preuves, pas des promesses.",
     images: ["/og-image.webp"],
@@ -98,7 +98,7 @@ const methodSteps: MethodStep[] = [
     title: "Priorisation",
     text: (
       <>
-        On classe les failles par risque et par effort — une feuille de route pensée pour un{" "}
+        On classe les failles par risque et par effort, une feuille de route pensée pour un{" "}
         <b>budget de PME</b>. Vous décidez, en connaissance de cause.
       </>
     ),
@@ -114,7 +114,7 @@ const methodSteps: MethodStep[] = [
     text: (
       <>
         Notre différence : on ne liste pas les failles, <b>on les corrige</b>. Durcissement, MFA, sauvegardes,
-        segmentation — chaque action appliquée, puis re-testée.
+        segmentation : chaque action appliquée, puis re-testée.
       </>
     ),
     deliverables: [
@@ -126,7 +126,7 @@ const methodSteps: MethodStep[] = [
   {
     kick: "On maintient",
     title: "Supervision & suivi",
-    text: "La sécurité n'est pas un projet ponctuel. On surveille, on ajuste, on reste en veille — avec un interlocuteur unique, joignable directement.",
+    text: "La sécurité n'est pas un projet ponctuel. On surveille, on ajuste, on reste en veille, avec un interlocuteur unique, joignable directement.",
     deliverables: [
       "Supervision continue et alertes utiles.",
       "Points de suivi et tableau de bord.",
@@ -194,19 +194,19 @@ const referentiels: { icon: IconName; code: string; title: string; text: string 
     icon: "code",
     code: "OWASP",
     title: "Tests & sécurité applicative",
-    text: "Audits web et tests d'intrusion selon la méthodologie OWASP — les critères de l'industrie.",
+    text: "Audits web et tests d'intrusion selon la méthodologie OWASP, les critères de l'industrie.",
   },
   {
     icon: "shield-check",
     code: "ISO/IEC 27001",
     title: "Gestion de la sécurité",
-    text: "Gouvernance et gestion des risques alignées ISO/IEC 27001 — une posture cohérente, documentée.",
+    text: "Gouvernance et gestion des risques alignées ISO/IEC 27001, une posture cohérente, documentée.",
   },
   {
     icon: "layers",
     code: "CyFun · NIS2 (CCB)",
     title: "Conformité belge & européenne",
-    text: "Mises en conformité alignées sur le CyberFundamentals du CCB et la directive NIS2 — le référentiel officiel belge.",
+    text: "Mises en conformité alignées sur le CyberFundamentals du CCB et la directive NIS2, le référentiel officiel belge.",
   },
 ];
 
@@ -256,7 +256,7 @@ export default function ApprochePage() {
                     <Icon name="check" size={13} strokeWidth={3} />
                   </span>
                   <span>
-                    Un <b>diagnostic chiffré</b> et documenté — pas une impression.
+                    Un <b>diagnostic chiffré</b> et documenté, pas une impression.
                   </span>
                 </li>
                 <li>
@@ -272,7 +272,7 @@ export default function ApprochePage() {
                     <Icon name="check" size={13} strokeWidth={3} />
                   </span>
                   <span>
-                    Une <b>remédiation réelle</b> — on corrige ce qu&rsquo;on trouve.
+                    Une <b>remédiation réelle</b>, on corrige ce qu&rsquo;on trouve.
                   </span>
                 </li>
                 <li>
@@ -311,7 +311,7 @@ export default function ApprochePage() {
             />
             <blockquote className={styles.quote}>
               « Ne nous croyez pas sur parole : l&rsquo;écart de départ, les correctifs appliqués, le résultat
-              mesuré. » <b>— Notre règle, à chaque mission.</b>
+              mesuré. » <b>Notre règle, à chaque mission.</b>
             </blockquote>
           </div>
           <div className={styles.contrast}>
@@ -373,7 +373,7 @@ export default function ApprochePage() {
             >
               <ProofVisual />
               <p className={styles.proofCaption}>
-                <b>Chaque constat, coché et vérifié</b> — la preuve, pas le discours.
+                <b>Chaque constat, coché et vérifié</b> : la preuve, pas le discours.
               </p>
             </div>
           </div>
@@ -479,7 +479,7 @@ export default function ApprochePage() {
                   <span className="accentOnDark">décide pas</span> à notre place.
                 </>
               }
-              lead="L'IA nous aide à surveiller plus large et trier plus vite. L'analyse et la décision restent humaines — les vôtres et les nôtres."
+              lead="L'IA nous aide à surveiller plus large et trier plus vite. L'analyse et la décision restent humaines, les vôtres et les nôtres."
             />
             <div className={styles.aiHonest}>
               <Icon name="alert-circle" size={22} />
@@ -545,7 +545,7 @@ export default function ApprochePage() {
             className={styles.sectionPhotoFrame}
           />
           <figcaption className={styles.sectionPhotoCap}>
-            Un <b>expert dédié</b>, joignable directement — jamais un centre d&rsquo;appel ni un junior.
+            Un <b>expert dédié</b>, joignable directement, jamais un centre d&rsquo;appel ni un junior.
           </figcaption>
         </Reveal>
 
@@ -590,7 +590,7 @@ export default function ApprochePage() {
                 Une méthodologie alignée sur les cadres de <span className="accent">référence</span>
               </>
             }
-            lead="Nos audits et mises en conformité s'appuient sur des référentiels reconnus — pour des résultats comparables et défendables."
+            lead="Nos audits et mises en conformité s'appuient sur des référentiels reconnus, pour des résultats comparables et défendables."
           />
         </Reveal>
         <Reveal as="div" stagger className={styles.refsGrid}>
@@ -611,7 +611,7 @@ export default function ApprochePage() {
             <h4>En toute transparence</h4>
             <p>
               Ces référentiels sont notre <b>méthode de travail</b>. La <b>certification</b> officielle CyFun est
-              délivrée par des organismes accrédités BELAC — pas par nous. Notre rôle : auditer, corriger, vous
+              délivrée par des organismes accrédités BELAC, pas par nous. Notre rôle : auditer, corriger, vous
               amener prêts à la soumission.
             </p>
           </div>

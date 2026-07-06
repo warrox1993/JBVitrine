@@ -20,7 +20,7 @@ export default function Mission() {
         </h2>
 
         <p className={styles["mission-intro"]}>
-          Sécuriser vos réseaux, vos infrastructures et vos applications — sans jargon, sans surcoût.
+          Sécuriser vos réseaux, vos infrastructures et vos applications, sans jargon, sans surcoût.
           Une sécurité concrète, taillée pour la réalité de chaque entreprise.
         </p>
 

@@ -4,7 +4,7 @@ import styles from "./Faq.module.css";
 
 export interface FaqItem {
   question: string;
-  /** Answer — plain string, or rich nodes (e.g. multiple <p>). */
+  /** Answer - plain string, or rich nodes (e.g. multiple <p>). */
   answer: React.ReactNode;
 }
 
@@ -17,7 +17,7 @@ export interface FaqProps {
 
 /**
  * Accessible FAQ accordion built on native <details>/<summary>.
- * No JavaScript required — server component by default.
+ * No JavaScript required - server component by default.
  */
 export function Faq({ items, defaultOpenFirst = false, className }: FaqProps) {
   const cn = [styles.list, className].filter(Boolean).join(" ");

@@ -8,14 +8,14 @@ import {
 import { TermsVisual } from "@/components/shared/LegalLayout/LegalVisuals";
 
 export const metadata: Metadata = {
-  title: "Conditions générales — Smidjan",
+  title: "Conditions générales | Smidjan",
   description:
     "Conditions générales de prestation de Smidjan : objet, devis, exécution, responsabilité, confidentialité et droit belge applicable aux missions de cybersécurité.",
   alternates: {
     canonical: "/cgv",
   },
   openGraph: {
-    title: "Conditions générales — Smidjan",
+    title: "Conditions générales | Smidjan",
     description: "Cadre contractuel des prestations de conseil, d'audit et de développement sécurisé de Smidjan.",
     type: "website",
     url: "https://smidjan.be/cgv",

@@ -28,7 +28,7 @@ const VALUES = [
   },
 ];
 
-/** "Qui sommes-nous" — agence positioning, mission and core values. */
+/** "Qui sommes-nous" - agence positioning, mission and core values. */
 export function QuiSommesNous() {
   return (
     <section className={styles.about}>
@@ -44,7 +44,7 @@ export function QuiSommesNous() {
                   tissu économique wallon
                 </>
               }
-              lead="PME, indépendants, professions réglementées, collectivités : on protège vos réseaux, vos données, votre activité — et on cadre votre NIS2 / CyFun."
+              lead="PME, indépendants, professions réglementées, collectivités : on protège vos réseaux, vos données, votre activité, et on cadre votre NIS2 / CyFun."
             />
             <p>
               Les PME sont des cibles de choix : moins bien défendues, pas
@@ -172,7 +172,7 @@ export function QuiSommesNous() {
             <figure className={styles.coverageFigure}>
               <OptimizedImage
                 src="/images/pages/agence/couverture-europe.jpg"
-                alt="Vue nocturne de la Terre depuis l'espace, lumières des villes d'Europe — symbole de notre zone de couverture Belgique / Europe"
+                alt="Vue nocturne de la Terre depuis l'espace, lumières des villes d'Europe, symbole de notre zone de couverture Belgique / Europe"
                 width={1200}
                 height={798}
                 sizePreset="card"

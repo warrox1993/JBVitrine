@@ -8,7 +8,7 @@ import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Journal — Ressources techniques | Smidjan",
+  title: "Journal : ressources techniques | Smidjan",
   description:
     "Articles techniques sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé. Conseils d'experts pour les PME en Belgique.",
   keywords: [
@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Journal — Ressources techniques | Smidjan",
+    title: "Journal : ressources techniques | Smidjan",
     description:
       "Articles sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé pour les PME.",
     url: "https://smidjan.be/blog",
-    siteName: "Smidjan — Cybersécurité Liège",
+    siteName: "Smidjan, Cybersécurité Liège",
     images: [
       {
         url: "https://smidjan.be/og-image.webp",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Journal — Ressources techniques | Smidjan",
+    title: "Journal : ressources techniques | Smidjan",
     description: "Articles sur le développement web, la cybersécurité et l'IA.",
     images: ["/og-image.webp"],
   },
