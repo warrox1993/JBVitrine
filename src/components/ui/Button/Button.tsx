@@ -5,6 +5,7 @@ import {
   MouseEvent,
   MouseEventHandler,
 } from "react";
+import { Link } from "@/i18n/navigation";
 import styles from "./Button.module.css";
 
 type ButtonVariant =
@@ -97,6 +98,28 @@ export function Button({
       }
       onClick?.(e);
     };
+    const inner = (
+      <>
+        {leadingIcon && <span className={styles.icon}>{leadingIcon}</span>}
+        {children}
+        {trailingIcon && <span className={styles.icon}>{trailingIcon}</span>}
+      </>
+    );
+    // Internal routes ("/...") use the locale-aware Link so the /nl, /en prefix
+    // is kept. External / tel: / mailto: / #anchor hrefs stay a plain <a>.
+    if (href.startsWith("/")) {
+      return (
+        <Link
+          href={href}
+          className={cls}
+          aria-label={ariaLabel}
+          aria-disabled={disabled || loading || undefined}
+          onClick={handleClick}
+        >
+          {inner}
+        </Link>
+      );
+    }
     return (
       <a
         href={href}
@@ -107,9 +130,7 @@ export function Button({
         aria-disabled={disabled || loading || undefined}
         onClick={handleClick}
       >
-        {leadingIcon && <span className={styles.icon}>{leadingIcon}</span>}
-        {children}
-        {trailingIcon && <span className={styles.icon}>{trailingIcon}</span>}
+        {inner}
       </a>
     );
   }
