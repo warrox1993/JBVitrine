@@ -1174,29 +1174,29 @@
       "title": "NIS2 & CyFun: your questions, answered",
       "lead": "The questions we get most often. Another one in mind? Ask it during the free assessment.",
       "q1": {
-        "question": "Am I concerned by NIS2?",
-        "a1": "Depending on your sector and your size. NIS2 targets <b>essential</b> entities (energy, healthcare, transport, finance…) and <b>important</b> ones (manufacturing, food industry, digital services…). Many SMEs are concerned <b>indirectly</b>, as suppliers or subcontractors.",
-        "a2": "In doubt? Our <b>free diagnostic</b> clarifies your situation in a single conversation."
+        "question": "Does NIS2 apply to me?",
+        "a1": "NIS2 targets <b>essential</b> and <b>important</b> entities; many SMEs are covered <b>indirectly</b>, as subcontractors or suppliers.",
+        "a2": "Not sure? The free assessment settles your case in one conversation."
       },
       "q2": {
-        "question": "What is the difference between CyFun and ISO/IEC 27001?",
-        "a1": "<b>ISO/IEC 27001</b> is the international reference standard for information security. <b>CyFun</b> is the CCB's Belgian framework, designed to meet NIS2 and <b>aligned with ISO 27001</b> and the NIST CSF.",
-        "a2": "In practice: CyFun is a more <b>accessible</b> entry point for an SME, with its three progressive levels (Basic → Essential), and a first step towards ISO 27001 if needed."
+        "question": "CyFun or ISO 27001: which one?",
+        "a1": "<b>CyFun</b> (CCB) is the Belgian framework built for NIS2, aligned with <b>ISO 27001</b>: more accessible to start, with three progressive levels.",
+        "a2": "It stays a first step toward ISO 27001 if you aim further."
       },
       "q3": {
-        "question": "How long does it take to become compliant?",
-        "a1": "It depends on the targeted level and your starting maturity. As an indication: <b>1 to 3 months</b> for Basic, <b>3 to 6 months</b> for Important, <b>6 to 12 months</b> for Essential.",
-        "a2": "NIS2 is <b>already in force</b>: better to start now. The earlier you begin, the more you spread out the effort and the budget, and reduce your exposure."
+        "question": "How long does compliance take?",
+        "a1": "As a guide: <b>1 to 3 months</b> for Basic, <b>3 to 6</b> for Important, <b>6 to 12</b> for Essential, depending on your starting maturity.",
+        "a2": "NIS2 is already in force: starting early spreads the effort and budget."
       },
       "q4": {
-        "question": "What happens if I do nothing?",
-        "a1": "<b>Significant fines</b>, <b>management liability</b> engaged. And above all: an incident (ransomware, data breach) costs far more than early compliance.",
-        "a2": "The CyFun approach reduces a <b>real risk</b>, not just a box to tick."
+        "question": "What if I do nothing?",
+        "a1": "Administrative fines and <b>management liability</b>, and above all an incident risk far costlier than getting compliant early.",
+        "a2": "The process reduces a <b>real risk</b>, not just a checkbox."
       },
       "q5": {
-        "question": "Does Smidjan deliver the CyFun certification?",
-        "a1": "<b>No.</b> Smidjan is not a certification body, nor BELAC-accredited. The <b>official CyFun certification</b> is issued by <b>BELAC-accredited bodies</b> (Brand Compliance, Trust CHECK, Normec CertUp), independent of us.",
-        "a2": "Our role: <b>audit, remediate, prepare</b> your file up to submission. We get you <b>ready</b>: the accredited body validates your level."
+        "question": "Does Smidjan issue the CyFun certificate?",
+        "a1": "<b>No.</b> CyFun certification is granted by <b>BELAC-accredited bodies</b>, independent from us.",
+        "a2": "Our role: audit, remediate and get you ready for the verification."
       }
     }
   },

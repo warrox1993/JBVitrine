@@ -131,7 +131,7 @@
   flex: none;
   color: var(--orange-on-dark);
 }
-.shieldHead h3 {
+.shieldHead .shieldTitle {
   color: var(--white);
   font-size: 16px;
   margin-bottom: 2px;

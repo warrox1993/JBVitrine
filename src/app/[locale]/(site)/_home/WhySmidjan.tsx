@@ -66,7 +66,7 @@ export async function WhySmidjan() {
                 {WHY_ICONS[key]}
               </div>
               <div>
-                <h4>{t(`why.items.${key}.title`)}</h4>
+                <h3>{t(`why.items.${key}.title`)}</h3>
                 <p>
                   {t.rich(`why.items.${key}.text`, {
                     b: (c) => <b>{c}</b>,

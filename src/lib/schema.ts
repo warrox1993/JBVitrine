@@ -150,6 +150,22 @@ export const localBusinessSchema = {
   // }
 };
 
+// WebPage Schema : la home elle-même, avec date de dernière révision (signal de fraîcheur).
+export const homeWebPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://smidjan.be/#webpage",
+  url: "https://smidjan.be/",
+  name: "Cybersécurité & conformité NIS2 pour les PME | Smidjan, Liège",
+  description:
+    "Sécurité des réseaux, de l'infrastructure et des applications, et mise en conformité NIS2 / CyberFundamentals pour les PME wallonnes.",
+  inLanguage: "fr-BE",
+  isPartOf: { "@id": "https://smidjan.be/#organization" },
+  about: { "@id": "https://smidjan.be/#organization" },
+  primaryImageOfPage: "https://smidjan.be/og-image.webp",
+  dateModified: "2026-07-07",
+};
+
 // Person Schema : le fondateur, à partir des faits déjà publiés sur la home et /agence.
 export const personSchema = {
   "@context": "https://schema.org",

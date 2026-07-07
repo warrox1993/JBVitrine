@@ -13,7 +13,13 @@ import {
   Faq,
   CTABox,
 } from "@/components/shared";
-import { organizationSchema, websiteSchema, localBusinessSchema, personSchema } from "@/lib/schema";
+import {
+  organizationSchema,
+  websiteSchema,
+  localBusinessSchema,
+  personSchema,
+  homeWebPageSchema,
+} from "@/lib/schema";
 import { Hero } from "./_home/Hero";
 import { IllusPanel } from "./_home/IllusPanel";
 import { CyfunIntro } from "./_home/CyfunIntro";
@@ -114,6 +120,10 @@ export default async function HomePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeWebPageSchema) }}
       />
       <script
         type="application/ld+json"

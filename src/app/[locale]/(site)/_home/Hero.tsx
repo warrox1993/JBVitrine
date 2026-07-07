@@ -63,7 +63,7 @@ export async function Hero() {
             <div className={styles.shieldHead}>
               <Icon name="shield-check" className={styles.ico} size={52} strokeWidth={1.6} />
               <div>
-                <h3>{t("hero.shieldTitle")}</h3>
+                <p className={styles.shieldTitle}>{t("hero.shieldTitle")}</p>
                 <div className={styles.shieldSub}>{t("hero.shieldSub")}</div>
               </div>
             </div>

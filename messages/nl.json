@@ -1174,29 +1174,29 @@
       "title": "NIS2 & CyFun: uw vragen, onze antwoorden",
       "lead": "De vragen die we het vaakst krijgen. Nog een andere? Stel ze tijdens de gratis diagnose.",
       "q1": {
-        "question": "Ben ik betrokken bij NIS2?",
-        "a1": "Naargelang uw sector en uw omvang. NIS2 richt zich op <b>essentiële</b> entiteiten (energie, gezondheidszorg, transport, financiën…) en <b>belangrijke</b> entiteiten (productie, voedingsindustrie, digitale diensten…). Veel kmo's zijn <b>onrechtstreeks</b> betrokken, als leverancier of onderaannemer.",
-        "a2": "Twijfel? Onze <b>gratis diagnose</b> verheldert uw situatie in één gesprek."
+        "question": "Valt mijn kmo onder NIS2?",
+        "a1": "NIS2 richt zich op <b>essentiële</b> en <b>belangrijke</b> entiteiten; veel kmo's vallen er <b>onrechtstreeks</b> onder, als onderaannemer of leverancier.",
+        "a2": "Twijfel? De gratis diagnose beslist uw geval in één gesprek."
       },
       "q2": {
-        "question": "Wat is het verschil tussen CyFun en ISO/IEC 27001?",
-        "a1": "<b>ISO/IEC 27001</b> is de internationale referentienorm voor informatiebeveiliging. <b>CyFun</b> is het Belgische kader van het CCB, opgezet om te beantwoorden aan NIS2 en <b>afgestemd op ISO 27001</b> en het NIST CSF.",
-        "a2": "In de praktijk: CyFun is een meer <b>toegankelijk</b> startpunt voor een kmo, met zijn drie progressieve niveaus (Basic → Essential), en een eerste opstap naar ISO 27001 indien nodig."
+        "question": "CyFun of ISO 27001: wat kiezen?",
+        "a1": "<b>CyFun</b> (CCB) is het Belgische raamwerk voor NIS2, afgestemd op <b>ISO 27001</b>: toegankelijker om te starten, met drie progressieve niveaus.",
+        "a2": "Het blijft een eerste stap naar ISO 27001 als u verder wilt gaan."
       },
       "q3": {
-        "question": "Hoelang duurt het om conform te worden?",
-        "a1": "Dat hangt af van het beoogde niveau en uw uitgangsmaturiteit. Ter indicatie: <b>1 tot 3 maanden</b> voor Basic, <b>3 tot 6 maanden</b> voor Important, <b>6 tot 12 maanden</b> voor Essential.",
-        "a2": "NIS2 is <b>al van kracht</b>: u start beter nu. Hoe vroeger u begint, hoe meer u de inspanning en het budget spreidt, en uw blootstelling vermindert."
+        "question": "Hoelang duurt de conformiteit?",
+        "a1": "Ter indicatie: <b>1 tot 3 maanden</b> voor Basic, <b>3 tot 6</b> voor Important, <b>6 tot 12</b> voor Essential, afhankelijk van uw beginmaturiteit.",
+        "a2": "NIS2 is al van kracht: vroeg starten spreidt de inspanning en het budget."
       },
       "q4": {
-        "question": "Wat gebeurt er als ik niets doe?",
-        "a1": "<b>Aanzienlijke boetes</b>, <b>verantwoordelijkheid van de directie</b> in het geding. En vooral: een incident (ransomware, datalek) kost veel meer dan een tijdige conformering.",
-        "a2": "De CyFun-aanpak vermindert een <b>reëel risico</b>, niet enkel een vakje om aan te vinken."
+        "question": "En als ik niets doe?",
+        "a1": "Administratieve boetes en <b>aansprakelijkheid van de directie</b>, en vooral een incidentrisico dat veel duurder uitvalt dan tijdige conformiteit.",
+        "a2": "De aanpak vermindert een <b>reëel risico</b>, niet zomaar een vinkje."
       },
       "q5": {
-        "question": "Reikt Smidjan de CyFun-certificering uit?",
-        "a1": "<b>Neen.</b> Smidjan is geen certificeringsinstantie en is niet BELAC-geaccrediteerd. De <b>officiële CyFun-certificering</b> wordt uitgereikt door <b>BELAC-geaccrediteerde instanties</b> (Brand Compliance, Trust CHECK, Normec CertUp), onafhankelijk van ons.",
-        "a2": "Onze rol: uw dossier <b>auditeren, remediëren, voorbereiden</b> tot aan de indiening. Wij maken u <b>klaar</b>: de geaccrediteerde instantie valideert uw niveau."
+        "question": "Levert Smidjan het CyFun-certificaat af?",
+        "a1": "<b>Nee.</b> De CyFun-certificering komt toe aan <b>BELAC-geaccrediteerde instellingen</b>, onafhankelijk van ons.",
+        "a2": "Onze rol: auditen, remediëren en u voorbereiden tot de verificatie."
       }
     }
   },
