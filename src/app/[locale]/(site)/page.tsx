@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
@@ -23,7 +24,12 @@ import { InsightTeaser } from "./_home/InsightTeaser";
 import { AuditDashboardFigure, BelgiumMapFigure } from "./_home/figures";
 import homeStyles from "./_home/Home.module.css";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations("home.meta");
   return {
     title: t("title"),
@@ -40,9 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "développement web sécurisé",
       "expert cybersécurité Liège",
     ],
-    alternates: {
-      canonical: "/",
-    },
+    alternates: buildAlternates(locale, "/"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),

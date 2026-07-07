@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/i18n/metadata";
 import Link from "next/link";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -43,13 +44,7 @@ export async function generateMetadata({
     "durcissement infrastructure réseau",
     "réponse à incident cyber",
   ],
-  alternates: {
-    canonical: "/services",
-    languages: {
-      "fr-BE": "/services",
-      fr: "/services",
-    },
-  },
+  alternates: buildAlternates(locale, "/services"),
   openGraph: {
     title: t("ogTitle"),
     description: t("ogDescription"),

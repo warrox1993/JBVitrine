@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/i18n/metadata";
 import type { ReactNode } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -37,13 +38,7 @@ export async function generateMetadata({
       "cabinet cybersécurité Liège",
       "remédiation sécurité informatique",
     ],
-    alternates: {
-      canonical: "/approche",
-      languages: {
-        "fr-BE": "/approche",
-        fr: "/approche",
-      },
-    },
+    alternates: buildAlternates(locale, "/approche"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),

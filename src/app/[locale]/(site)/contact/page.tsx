@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import OptimizedImage from '@/components/ui/OptimizedImage/OptimizedImage';
@@ -16,9 +17,7 @@ export async function generateMetadata({
   return {
     title: t('title'),
     description: t('description'),
-    alternates: {
-      canonical: '/contact',
-    },
+    alternates: buildAlternates(locale, "/contact"),
     openGraph: {
       title: t('ogTitle'),
       description: t('ogDescription'),

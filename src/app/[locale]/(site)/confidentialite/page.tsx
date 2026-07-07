@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/i18n/metadata";
 import type { ReactNode } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
@@ -19,9 +20,7 @@ export async function generateMetadata({
   return {
     title: t("confidentialite.title"),
     description: t("confidentialite.description"),
-    alternates: {
-      canonical: "/confidentialite",
-    },
+    alternates: buildAlternates(locale, "/confidentialite"),
     openGraph: {
       title: t("confidentialite.ogTitle"),
       description: t("confidentialite.ogDescription"),

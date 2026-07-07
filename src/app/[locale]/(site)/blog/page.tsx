@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { getAllArticles } from "@/lib/blogActions";
@@ -28,13 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       "développement web sécurisé",
       "conseils cybersécurité PME belges",
     ],
-    alternates: {
-      canonical: "/blog",
-      languages: {
-        "fr-BE": "/blog",
-        fr: "/blog",
-      },
-    },
+    alternates: buildAlternates(locale, "/blog"),
     openGraph: {
       title: t("meta.ogTitle"),
       description: t("meta.ogDescription"),

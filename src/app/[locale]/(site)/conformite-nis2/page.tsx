@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/i18n/metadata";
 import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 
@@ -20,7 +21,12 @@ import {
 } from "./diagrams";
 import styles from "./ConformiteNis2.module.css";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations("conformite.meta");
   return {
     title: t("title"),
@@ -37,13 +43,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "Liège",
       "Wallonie",
     ],
-    alternates: {
-      canonical: "/conformite-nis2",
-      languages: {
-        "fr-BE": "/conformite-nis2",
-        fr: "/conformite-nis2",
-      },
-    },
+    alternates: buildAlternates(locale, "/conformite-nis2"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),

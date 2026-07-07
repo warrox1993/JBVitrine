@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/i18n/metadata";
 import Link from "next/link";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -15,7 +16,12 @@ import { QuiSommesNous } from "./QuiSommesNous";
 import { Fondateur } from "./Fondateur";
 import styles from "./page.module.css";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations("agence.meta");
   return {
     title: t("title"),
@@ -28,9 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "audit sécurité pentest Liège",
       "Jean-Baptiste Dhondt",
     ],
-    alternates: {
-      canonical: "/agence",
-    },
+    alternates: buildAlternates(locale, "/agence"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),

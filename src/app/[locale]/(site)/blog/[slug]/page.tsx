@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/i18n/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -65,9 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "développement web",
       "guide technique",
     ],
-    alternates: {
-      canonical: `/blog/${slug}`,
-    },
+    alternates: buildAlternates(locale, `/blog/${slug}`),
     openGraph: {
       title: article.title,
       description: article.excerpt,

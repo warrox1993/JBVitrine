@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/i18n/metadata";
 import type { ReactNode } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
@@ -19,9 +20,7 @@ export async function generateMetadata({
   return {
     title: t("mentions.title"),
     description: t("mentions.description"),
-    alternates: {
-      canonical: "/mentions-legales",
-    },
+    alternates: buildAlternates(locale, "/mentions-legales"),
     openGraph: {
       title: t("mentions.ogTitle"),
       description: t("mentions.ogDescription"),
