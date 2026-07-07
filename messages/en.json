@@ -1056,9 +1056,9 @@
       "calYear": "2024",
       "deadlineTitle": "NIS2 is already in force",
       "deadlineText": "In force since 18 October 2024. Anticipating reduces the risk.",
-      "fine": "Non-compliance: administrative fines and personal liability of management.",
+      "fine": "Non-compliance: fines reaching several million euros for essential entities, and personal liability of management.",
       "sourcesLabel": "Official sources:",
-      "verified": "Information verified in July 2026."
+      "verified": "Information verified in {date}."
     },
     "illus": {
       "diagnostic": {
@@ -1128,7 +1128,7 @@
     "insight": {
       "kick": "Free guide",
       "title": "NIS2 & CyFun: the compliance guide for <accent>Belgian SMEs</accent>",
-      "text": "What the law says, who is affected, which CyFun level to choose. <b>Clear, no jargon.</b> Updated in July 2026.",
+      "text": "What the law says, who is affected, which CyFun level to choose. <b>Clear, no jargon.</b> Updated in {date}.",
       "cta": "Read the guide",
       "mockTag": "Guide · Compliance",
       "mockTitle": "NIS2 & CyFun for SMEs"

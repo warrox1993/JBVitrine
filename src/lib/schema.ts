@@ -150,6 +150,10 @@ export const localBusinessSchema = {
   // }
 };
 
+// Date de dernière révision du contenu de la home. Source UNIQUE, réutilisée par le
+// schema WebPage et les mentions de fraîcheur visibles, pour éviter toute divergence.
+export const CONTENT_LAST_VERIFIED = "2026-07-07";
+
 // WebPage Schema : la home elle-même, avec date de dernière révision (signal de fraîcheur).
 export const homeWebPageSchema = {
   "@context": "https://schema.org",
@@ -163,7 +167,9 @@ export const homeWebPageSchema = {
   isPartOf: { "@id": "https://smidjan.be/#organization" },
   about: { "@id": "https://smidjan.be/#organization" },
   primaryImageOfPage: "https://smidjan.be/og-image.webp",
-  dateModified: "2026-07-07",
+  dateModified: CONTENT_LAST_VERIFIED,
+  author: { "@id": "https://smidjan.be/#founder" },
+  reviewedBy: { "@id": "https://smidjan.be/#founder" },
 };
 
 // Person Schema : le fondateur, à partir des faits déjà publiés sur la home et /agence.

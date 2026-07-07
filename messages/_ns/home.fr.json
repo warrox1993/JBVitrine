@@ -82,9 +82,9 @@
     "calYear": "2024",
     "deadlineTitle": "NIS2 est déjà en vigueur",
     "deadlineText": "En vigueur depuis le 18 octobre 2024. Anticiper réduit le risque.",
-    "fine": "Non-conformité : amendes administratives et responsabilité personnelle de la direction.",
+    "fine": "Non-conformité : amendes pouvant atteindre plusieurs millions d'euros pour les entités essentielles, et responsabilité personnelle de la direction engagée.",
     "sourcesLabel": "Sources officielles :",
-    "verified": "Informations vérifiées en juillet 2026."
+    "verified": "Informations vérifiées en {date}."
   },
   "illus": {
     "diagnostic": {
@@ -154,7 +154,7 @@
   "insight": {
     "kick": "Guide gratuit",
     "title": "NIS2 & CyFun : le guide de mise en conformité pour les <accent>PME belges</accent>",
-    "text": "Ce que dit la loi, qui est concerné, quel niveau CyFun choisir. <b>Clair, sans jargon.</b> Mis à jour en juillet 2026.",
+    "text": "Ce que dit la loi, qui est concerné, quel niveau CyFun choisir. <b>Clair, sans jargon.</b> Mis à jour en {date}.",
     "cta": "Lire le guide",
     "mockTag": "Guide · Conformité",
     "mockTitle": "NIS2 & CyFun pour les PME"

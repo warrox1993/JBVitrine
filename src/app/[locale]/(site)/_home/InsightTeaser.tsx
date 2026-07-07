@@ -1,13 +1,19 @@
 import React from "react";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Button } from "@/components/ui/Button/Button";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { CONTENT_LAST_VERIFIED } from "@/lib/schema";
 import styles from "./InsightTeaser.module.css";
 
 /** Journal / guide teaser: NIS2 & CyFun, links to the on-site guide page. */
 export async function InsightTeaser() {
   const t = await getTranslations("home");
+  const locale = await getLocale();
+  const verifiedDate = new Intl.DateTimeFormat(locale, {
+    month: "long",
+    year: "numeric",
+  }).format(new Date(CONTENT_LAST_VERIFIED));
   return (
     <div className={styles.card}>
       <Reveal variant="left" className={styles.body}>
@@ -20,6 +26,7 @@ export async function InsightTeaser() {
         <p>
           {t.rich("insight.text", {
             b: (c) => <b>{c}</b>,
+            date: verifiedDate,
           })}
         </p>
         <Button

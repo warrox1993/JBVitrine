@@ -82,9 +82,9 @@
     "calYear": "2024",
     "deadlineTitle": "NIS2 is al van kracht",
     "deadlineText": "Van kracht sinds 18 oktober 2024. Anticiperen verlaagt het risico.",
-    "fine": "Niet-conformiteit : administratieve boetes en persoonlijke aansprakelijkheid van de directie.",
+    "fine": "Niet-naleving: boetes die kunnen oplopen tot meerdere miljoenen euro voor essentiële entiteiten, en persoonlijke aansprakelijkheid van de directie.",
     "sourcesLabel": "Officiële bronnen:",
-    "verified": "Informatie geverifieerd in juli 2026."
+    "verified": "Informatie geverifieerd in {date}."
   },
   "illus": {
     "diagnostic": {
@@ -154,7 +154,7 @@
   "insight": {
     "kick": "Gratis gids",
     "title": "NIS2 & CyFun : de conformiteitsgids voor <accent>Belgische kmo's</accent>",
-    "text": "Wat de wet zegt, wie betrokken is, welk CyFun-niveau kiezen. <b>Duidelijk, zonder jargon.</b> Bijgewerkt in juli 2026.",
+    "text": "Wat de wet zegt, wie betrokken is, welk CyFun-niveau kiezen. <b>Duidelijk, zonder jargon.</b> Bijgewerkt in {date}.",
     "cta": "Lees de gids",
     "mockTag": "Gids · Conformiteit",
     "mockTitle": "NIS2 & CyFun voor kmo's"

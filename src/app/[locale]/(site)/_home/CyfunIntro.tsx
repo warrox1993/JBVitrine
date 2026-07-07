@@ -1,14 +1,20 @@
 import React from "react";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { StatHook } from "@/components/shared";
+import { CONTENT_LAST_VERIFIED } from "@/lib/schema";
 import styles from "./CyfunIntro.module.css";
 
 /** CyFun flagship intro: explainer + attack-coverage hook + NIS2 deadline card. */
 export async function CyfunIntro() {
   const t = await getTranslations("home");
+  const locale = await getLocale();
+  const verifiedDate = new Intl.DateTimeFormat(locale, {
+    month: "long",
+    year: "numeric",
+  }).format(new Date(CONTENT_LAST_VERIFIED));
   return (
     <Reveal className={styles.intro}>
       <div>
@@ -29,7 +35,7 @@ export async function CyfunIntro() {
           })}
         </StatHook>
         <p className={styles.sources}>
-          {t("cyfun.verified")} {t("cyfun.sourcesLabel")}{" "}
+          {t("cyfun.verified", { date: verifiedDate })} {t("cyfun.sourcesLabel")}{" "}
           <a
             href="https://ccb.belgium.be/fr/cyberfundamentals-framework"
             target="_blank"
