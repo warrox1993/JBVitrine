@@ -429,7 +429,7 @@ export function ContactForm() {
           <label htmlFor="rgpd">
             J&apos;accepte que Smidjan traite les informations transmises pour répondre à ma
             demande, conformément à sa{' '}
-            <a href="/mentions-legales#confidentialite">politique de confidentialité</a>. Aucune
+            <a href="/confidentialite">politique de confidentialité</a>. Aucune
             donnée n&apos;est cédée à des tiers.{' '}
             <span className={cls.req} aria-hidden="true">*</span>
           </label>

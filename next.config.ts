@@ -97,7 +97,8 @@ const nextConfig: NextConfig = {
     return config;
   },
 
-  // Redirections SEO 2025 — refonte (301, permanent)
+  // Redirections SEO refonte. Next émet un 308 (permanent, préserve la méthode)
+  // pour `permanent: true` — l'équivalent moderne du 301.
   async redirects() {
     return [
       // Ancienne structure "produits/*"
@@ -143,6 +144,28 @@ const nextConfig: NextConfig = {
       {
         source: "/terms",
         destination: "/cgv",
+        permanent: true,
+      },
+      // Legacy legal/about paths under a locale prefix (nl/en), so external
+      // inbound links like /nl/legal-notice don't 404.
+      {
+        source: "/:locale(nl|en)/legal-notice",
+        destination: "/:locale/mentions-legales",
+        permanent: true,
+      },
+      {
+        source: "/:locale(nl|en)/privacy",
+        destination: "/:locale/confidentialite",
+        permanent: true,
+      },
+      {
+        source: "/:locale(nl|en)/terms",
+        destination: "/:locale/cgv",
+        permanent: true,
+      },
+      {
+        source: "/:locale(nl|en)/about",
+        destination: "/:locale/agence",
         permanent: true,
       },
     ];

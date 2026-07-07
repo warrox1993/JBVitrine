@@ -476,7 +476,7 @@ export function Step5Contact({
                 {t.rich('step5.consent', {
                   privacy: (c) => (
                     <a
-                      href="/privacy"
+                      href="/confidentialite"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={cls.link}
@@ -486,7 +486,7 @@ export function Step5Contact({
                   ),
                   rgpd: (c) => (
                     <a
-                      href="/legal-notice"
+                      href="/mentions-legales"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={cls.link}

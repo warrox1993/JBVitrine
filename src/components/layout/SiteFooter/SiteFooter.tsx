@@ -159,9 +159,9 @@ export default async function SiteFooter() {
               real BCE number is provided by the client. */}
           <div>{t("footer.copyright")}</div>
           <div className={styles.bottomLinks}>
-            <Link href="/legal-notice">{t("footer.legal.mentions")}</Link>
-            <Link href="/privacy">{t("footer.legal.privacy")}</Link>
-            <Link href="/terms">{t("footer.legal.cgv")}</Link>
+            <Link href="/mentions-legales">{t("footer.legal.mentions")}</Link>
+            <Link href="/confidentialite">{t("footer.legal.privacy")}</Link>
+            <Link href="/cgv">{t("footer.legal.cgv")}</Link>
           </div>
         </div>
       </div>
