@@ -47,16 +47,6 @@ export function validatePhone(phone: string): boolean {
 }
 
 /**
- * Validate that request has JSON Content-Type
- * @param request - Next.js request object
- * @returns true if Content-Type is application/json
- */
-export function isValidContentType(request: Request): boolean {
-  const contentType = request.headers.get("content-type");
-  return !!contentType && contentType.includes("application/json");
-}
-
-/**
  * Validate name field (no numbers, valid characters)
  * @param name - Name to validate
  * @returns Error message or null if valid
@@ -82,39 +72,3 @@ export function validateName(name: string): string | null {
   return null;
 }
 
-/**
- * Validate company name
- * @param company - Company name to validate
- * @returns Error message or null if valid
- */
-export function validateCompany(company: string): string | null {
-  if (company.length > 100) {
-    return "Le nom de l'entreprise est trop long (max 100 caractères)";
-  }
-  // Reject if contains suspicious patterns
-  if (/<script|javascript:|onerror=/i.test(company)) {
-    return "Caractères non autorisés détectés";
-  }
-  return null;
-}
-
-/**
- * Validate message field
- * @param message - Message to validate
- * @param minLength - Minimum length (default 30)
- * @param maxLength - Maximum length (default 1500)
- * @returns Error message or null if valid
- */
-export function validateMessage(
-  message: string,
-  minLength: number = 30,
-  maxLength: number = 1500
-): string | null {
-  if (!message || typeof message !== "string") {
-    return "La description est requise";
-  }
-  if (message.length < minLength || message.length > maxLength) {
-    return `La description doit contenir entre ${minLength} et ${maxLength} caractères`;
-  }
-  return null;
-}
