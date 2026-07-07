@@ -47,13 +47,13 @@ export const DEFAULT_CYFUN_TIERS: CyFunTier[] = [
   {
     level: "basic",
     name: "Basic",
-    coverage: "~82%",
+    coverage: "Socle essentiel",
     audience:
       "PME qui veulent une base solide et couvrir l'essentiel des menaces courantes.",
     covered: [
       "Mesures de cyberhygiène essentielles",
       "Sauvegardes, MFA, mises à jour",
-      "~82 % des attaques courantes couvertes",
+      "Couvre l'essentiel des attaques courantes",
     ],
     deliverable:
       "Rapport d'écart + plan de remédiation priorisé, prêt pour l'auto-évaluation CyFun.",
@@ -63,7 +63,7 @@ export const DEFAULT_CYFUN_TIERS: CyFunTier[] = [
   {
     level: "important",
     name: "Important",
-    coverage: "~94%",
+    coverage: "Renforcé",
     featured: true,
     flag: "Recommandé pour la plupart des PME",
     audience:
@@ -105,8 +105,8 @@ export const DEFAULT_CYFUN_TABLE: CyFunTableRow[] = [
   },
   {
     criterion: "Couverture des attaques",
-    basic: <><b>~82 %</b> des attaques courantes.</>,
-    important: <><b>~94 %</b> des attaques courantes.</>,
+    basic: <><b>L'essentiel</b> des attaques courantes.</>,
+    important: <><b>Large</b> couverture, gouvernance incluse.</>,
     essential: <><b>Quasi complète</b>&nbsp;: protection maximale.</>,
   },
   {

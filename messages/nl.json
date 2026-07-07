@@ -1045,7 +1045,6 @@
         "linkLabel": "Bekijk de gewijde sectie"
       }
     },
-    "aiNote": "<b>Experts versterkt door AI</b> om sneller te gaan : beslissingen en analyse blijven 100 % menselijk.",
     "cyfun": {
       "eyebrow": "Kernsectie · Conformiteit",
       "title": "NIS2 & CyFun : <accent>valt u eronder ?</accent>",
@@ -1057,7 +1056,9 @@
       "calYear": "2024",
       "deadlineTitle": "NIS2 is al van kracht",
       "deadlineText": "Van kracht sinds 18 oktober 2024. Anticiperen verlaagt het risico.",
-      "fine": "Niet-conformiteit : administratieve boetes en persoonlijke aansprakelijkheid van de directie."
+      "fine": "Niet-conformiteit : administratieve boetes en persoonlijke aansprakelijkheid van de directie.",
+      "sourcesLabel": "Officiële bronnen:",
+      "verified": "Informatie geverifieerd in juli 2026."
     },
     "illus": {
       "diagnostic": {
@@ -1127,7 +1128,7 @@
     "insight": {
       "kick": "Gratis gids",
       "title": "NIS2 & CyFun : de conformiteitsgids voor <accent>Belgische kmo's</accent>",
-      "text": "Wat de wet zegt, wie betrokken is, welk CyFun-niveau kiezen. <b>Duidelijk, zonder jargon.</b> Bijgewerkt in 2026.",
+      "text": "Wat de wet zegt, wie betrokken is, welk CyFun-niveau kiezen. <b>Duidelijk, zonder jargon.</b> Bijgewerkt in juli 2026.",
       "cta": "Lees de gids",
       "mockTag": "Gids · Conformiteit",
       "mockTitle": "NIS2 & CyFun voor kmo's"
@@ -1665,17 +1666,17 @@
         "ctaDefault": "Een diagnose aanvragen",
         "basic": {
           "name": "Basic",
-          "coverage": "~82%",
+          "coverage": "Essentiële basis",
           "audience": "Kmo's die een solide basis willen en de belangrijkste courante dreigingen willen afdekken.",
           "covered1": "Essentiële maatregelen voor cyberhygiëne",
           "covered2": "Back-ups, MFA, updates",
-          "covered3": "~82 % van de courante aanvallen afgedekt",
+          "covered3": "Dekt het merendeel van de courante aanvallen",
           "deliverable": "Gap-analyse + geprioriteerd remediëringsplan, klaar voor de CyFun-zelfevaluatie.",
           "ctaLabel": "Een diagnose aanvragen"
         },
         "important": {
           "name": "Important",
-          "coverage": "~94%",
+          "coverage": "Versterkt",
           "flag": "Aanbevolen voor de meeste kmo's",
           "audience": "« Belangrijke » NIS2-entiteiten en kmo's die gevoelige of kritieke gegevens verwerken.",
           "covered1": "Het volledige niveau Basic, versterkt",
@@ -1716,8 +1717,8 @@
           },
           "couverture": {
             "criterion": "Dekking van aanvallen",
-            "basic": "<b>~82 %</b> van de courante aanvallen.",
-            "important": "<b>~94 %</b> van de courante aanvallen.",
+            "basic": "<b>Het merendeel</b> van de courante aanvallen.",
+            "important": "<b>Brede</b> dekking, governance inbegrepen.",
             "essential": "<b>Nagenoeg volledig</b> : maximale bescherming."
           },
           "profondeur": {

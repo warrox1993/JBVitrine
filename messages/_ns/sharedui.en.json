@@ -7,17 +7,17 @@
       "ctaDefault": "Request a diagnostic",
       "basic": {
         "name": "Basic",
-        "coverage": "~82%",
+        "coverage": "Essential baseline",
         "audience": "SMEs that want a solid foundation and coverage of the most common threats.",
         "covered1": "Essential cyber-hygiene measures",
         "covered2": "Backups, MFA, updates",
-        "covered3": "~82% of common attacks covered",
+        "covered3": "Covers the bulk of common attacks",
         "deliverable": "Gap report + prioritised remediation plan, ready for the CyFun self-assessment.",
         "ctaLabel": "Request a diagnostic"
       },
       "important": {
         "name": "Important",
-        "coverage": "~94%",
+        "coverage": "Reinforced",
         "flag": "Recommended for most SMEs",
         "audience": "NIS2 “important” entities and SMEs handling sensitive or critical data.",
         "covered1": "The entire Basic level, reinforced",
@@ -58,8 +58,8 @@
         },
         "couverture": {
           "criterion": "Attack coverage",
-          "basic": "<b>~82%</b> of common attacks.",
-          "important": "<b>~94%</b> of common attacks.",
+          "basic": "<b>The bulk</b> of common attacks.",
+          "important": "<b>Broad</b> coverage, governance included.",
           "essential": "<b>Near-complete</b>: maximum protection."
         },
         "profondeur": {

@@ -1045,7 +1045,6 @@
         "linkLabel": "See the dedicated section"
       }
     },
-    "aiNote": "<b>Experts augmented by AI</b> to move faster: decisions and analysis remain 100 % human.",
     "cyfun": {
       "eyebrow": "Flagship section · Compliance",
       "title": "NIS2 & CyFun: <accent>are you concerned?</accent>",
@@ -1057,7 +1056,9 @@
       "calYear": "2024",
       "deadlineTitle": "NIS2 is already in force",
       "deadlineText": "In force since 18 October 2024. Anticipating reduces the risk.",
-      "fine": "Non-compliance: administrative fines and personal liability of management."
+      "fine": "Non-compliance: administrative fines and personal liability of management.",
+      "sourcesLabel": "Official sources:",
+      "verified": "Information verified in July 2026."
     },
     "illus": {
       "diagnostic": {
@@ -1127,7 +1128,7 @@
     "insight": {
       "kick": "Free guide",
       "title": "NIS2 & CyFun: the compliance guide for <accent>Belgian SMEs</accent>",
-      "text": "What the law says, who is affected, which CyFun level to choose. <b>Clear, no jargon.</b> Updated in 2026.",
+      "text": "What the law says, who is affected, which CyFun level to choose. <b>Clear, no jargon.</b> Updated in July 2026.",
       "cta": "Read the guide",
       "mockTag": "Guide · Compliance",
       "mockTitle": "NIS2 & CyFun for SMEs"
@@ -1665,17 +1666,17 @@
         "ctaDefault": "Request a diagnostic",
         "basic": {
           "name": "Basic",
-          "coverage": "~82%",
+          "coverage": "Essential baseline",
           "audience": "SMEs that want a solid foundation and coverage of the most common threats.",
           "covered1": "Essential cyber-hygiene measures",
           "covered2": "Backups, MFA, updates",
-          "covered3": "~82% of common attacks covered",
+          "covered3": "Covers the bulk of common attacks",
           "deliverable": "Gap report + prioritised remediation plan, ready for the CyFun self-assessment.",
           "ctaLabel": "Request a diagnostic"
         },
         "important": {
           "name": "Important",
-          "coverage": "~94%",
+          "coverage": "Reinforced",
           "flag": "Recommended for most SMEs",
           "audience": "NIS2 “important” entities and SMEs handling sensitive or critical data.",
           "covered1": "The entire Basic level, reinforced",
@@ -1716,8 +1717,8 @@
           },
           "couverture": {
             "criterion": "Attack coverage",
-            "basic": "<b>~82%</b> of common attacks.",
-            "important": "<b>~94%</b> of common attacks.",
+            "basic": "<b>The bulk</b> of common attacks.",
+            "important": "<b>Broad</b> coverage, governance included.",
             "essential": "<b>Near-complete</b>: maximum protection."
           },
           "profondeur": {

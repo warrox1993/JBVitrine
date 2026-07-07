@@ -11,7 +11,7 @@ export async function Honesty() {
     <Reveal className={styles.honesty}>
       <Icon name="shield-check" strokeWidth={1.8} />
       <div>
-        <h4>{t("honesty.title")}</h4>
+        <h2>{t("honesty.title")}</h2>
         <p>
           {t.rich("honesty.text", {
             b: (c) => <b>{c}</b>,

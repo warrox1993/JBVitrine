@@ -12,11 +12,11 @@ export async function InsightTeaser() {
     <div className={styles.card}>
       <Reveal variant="left" className={styles.body}>
         <div className={styles.kick}>{t("insight.kick")}</div>
-        <h3>
+        <h2>
           {t.rich("insight.title", {
             accent: (c) => <span className="accent">{c}</span>,
           })}
-        </h3>
+        </h2>
         <p>
           {t.rich("insight.text", {
             b: (c) => <b>{c}</b>,

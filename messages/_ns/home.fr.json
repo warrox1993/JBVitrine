@@ -71,7 +71,6 @@
       "linkLabel": "Voir la section dédiée"
     }
   },
-  "aiNote": "Des <b>experts augmentés par l'IA</b> pour aller plus vite : décisions et analyse restent 100 % humaines.",
   "cyfun": {
     "eyebrow": "Section phare · Conformité",
     "title": "NIS2 & CyFun : <accent>êtes-vous concerné ?</accent>",
@@ -83,7 +82,9 @@
     "calYear": "2024",
     "deadlineTitle": "NIS2 est déjà en vigueur",
     "deadlineText": "En vigueur depuis le 18 octobre 2024. Anticiper réduit le risque.",
-    "fine": "Non-conformité : amendes administratives et responsabilité personnelle de la direction."
+    "fine": "Non-conformité : amendes administratives et responsabilité personnelle de la direction.",
+    "sourcesLabel": "Sources officielles :",
+    "verified": "Informations vérifiées en juillet 2026."
   },
   "illus": {
     "diagnostic": {
@@ -153,7 +154,7 @@
   "insight": {
     "kick": "Guide gratuit",
     "title": "NIS2 & CyFun : le guide de mise en conformité pour les <accent>PME belges</accent>",
-    "text": "Ce que dit la loi, qui est concerné, quel niveau CyFun choisir. <b>Clair, sans jargon.</b> Mis à jour en 2026.",
+    "text": "Ce que dit la loi, qui est concerné, quel niveau CyFun choisir. <b>Clair, sans jargon.</b> Mis à jour en juillet 2026.",
     "cta": "Lire le guide",
     "mockTag": "Guide · Conformité",
     "mockTitle": "NIS2 & CyFun pour les PME"

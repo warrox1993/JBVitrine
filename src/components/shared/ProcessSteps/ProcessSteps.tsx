@@ -28,7 +28,7 @@ export function ProcessSteps({ steps, kicker, className }: ProcessStepsProps) {
         {steps.map((step, i) => (
           <li key={step.title} className={styles.step}>
             <div className={styles.num}>{step.label ?? String(i + 1).padStart(2, "0")}</div>
-            <h4 className={styles.stepTitle}>{step.title}</h4>
+            <h3 className={styles.stepTitle}>{step.title}</h3>
             <p className={styles.stepDesc}>{step.description}</p>
           </li>
         ))}

@@ -13,7 +13,7 @@ import {
   Faq,
   CTABox,
 } from "@/components/shared";
-import { organizationSchema, websiteSchema, localBusinessSchema } from "@/lib/schema";
+import { organizationSchema, websiteSchema, localBusinessSchema, personSchema } from "@/lib/schema";
 import { Hero } from "./_home/Hero";
 import { IllusPanel } from "./_home/IllusPanel";
 import { CyfunIntro } from "./_home/CyfunIntro";
@@ -113,6 +113,10 @@ export default async function HomePage({
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
@@ -205,8 +209,10 @@ export default async function HomePage({
       {/* ===== Method — placed near the offer to lower first-contact risk ===== */}
       <Section variant="white" id="methode">
         <Reveal>
+          <SectionHeading center as="h2" title={t("process.kicker")} />
+        </Reveal>
+        <Reveal>
           <ProcessSteps
-            kicker={t("process.kicker")}
             steps={[
               {
                 title: t("process.step1.title"),

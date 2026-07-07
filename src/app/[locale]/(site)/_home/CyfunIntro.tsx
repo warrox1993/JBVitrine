@@ -28,6 +28,24 @@ export async function CyfunIntro() {
             b: (c) => <b>{c}</b>,
           })}
         </StatHook>
+        <p className={styles.sources}>
+          {t("cyfun.verified")} {t("cyfun.sourcesLabel")}{" "}
+          <a
+            href="https://ccb.belgium.be/fr/cyberfundamentals-framework"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CyberFundamentals (CCB)
+          </a>
+          {" · "}
+          <a
+            href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Directive NIS2 (EUR-Lex)
+          </a>
+        </p>
       </div>
 
       <aside className={styles.deadline}>

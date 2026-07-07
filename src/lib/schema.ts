@@ -150,6 +150,29 @@ export const localBusinessSchema = {
   // }
 };
 
+// Person Schema : le fondateur, à partir des faits déjà publiés sur la home et /agence.
+export const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://smidjan.be/#founder",
+  name: "Jean-Baptiste Dhondt",
+  jobTitle: "Fondateur & expert en cybersécurité",
+  worksFor: { "@id": "https://smidjan.be/#organization" },
+  url: "https://smidjan.be/agence",
+  knowsAbout: [
+    "Cybersécurité",
+    "NIS2",
+    "CyberFundamentals (CCB)",
+    "Tests d'intrusion",
+    "ISO/IEC 27001",
+    "Sécurité des réseaux",
+  ],
+  sameAs: [
+    "https://www.linkedin.com/in/jean-baptistedhondt",
+    "https://github.com/warrox1993",
+  ],
+};
+
 // FAQPage Schema : reflète la FAQ visible de /conformite-nis2 (NIS2 / CyFun)
 export const faqPageSchema = {
   "@context": "https://schema.org",

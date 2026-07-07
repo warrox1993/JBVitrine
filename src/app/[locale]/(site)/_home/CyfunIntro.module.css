@@ -8,6 +8,20 @@
   font-family: var(--mono) !important;
   letter-spacing: 0.06em !important;
 }
+.sources {
+  margin-top: 18px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-text-muted, #657189);
+}
+.sources a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.sources a:hover {
+  color: var(--color-accent, #ff6a00);
+}
 .intro .lead {
   margin-top: 18px;
   font-size: 19px;
