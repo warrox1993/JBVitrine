@@ -34,17 +34,7 @@ export async function generateMetadata({
   return {
   title: t("title"),
   description: t("description"),
-  keywords: [
-    "cybersécurité PME Liège",
-    "audit sécurité OWASP",
-    "test d'intrusion pentest Belgique",
-    "développement web sécurisé",
-    "secure by design",
-    "conformité NIS2 CyFun",
-    "durcissement infrastructure réseau",
-    "réponse à incident cyber",
-  ],
-  alternates: buildAlternates(locale, "/services"),
+alternates: buildAlternates(locale, "/services"),
   openGraph: {
     title: t("ogTitle"),
     description: t("ogDescription"),

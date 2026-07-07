@@ -32,19 +32,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    keywords: [
-      "cybersécurité PME Liège",
-      "conformité NIS2 Belgique",
-      "CyberFundamentals CyFun CCB",
-      "audit sécurité informatique Wallonie",
-      "test d'intrusion pentest Liège",
-      "analyse d'écart NIS2",
-      "remédiation cybersécurité PME",
-      "sécurité réseau infrastructure",
-      "développement web sécurisé",
-      "expert cybersécurité Liège",
-    ],
-    alternates: buildAlternates(locale, "/"),
+alternates: buildAlternates(locale, "/"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),

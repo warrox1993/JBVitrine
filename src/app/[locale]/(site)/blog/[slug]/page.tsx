@@ -59,14 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t("article.metaTitle", { title: article.title }),
     description: article.excerpt,
-    keywords: [
-      article.category,
-      "Belgique",
-      "Liège",
-      "développement web",
-      "guide technique",
-    ],
-    alternates: buildAlternates(locale, `/blog/${slug}`),
+alternates: buildAlternates(locale, `/blog/${slug}`),
     openGraph: {
       title: article.title,
       description: article.excerpt,

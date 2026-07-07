@@ -1,6 +1,7 @@
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://smidjan.be/#organization",
   name: "Smidjan",
   alternateName: "Smidjan Cybersécurité",
   url: "https://smidjan.be",
@@ -38,12 +39,7 @@ export const websiteSchema = {
     "Cybersécurité des réseaux, de l'infrastructure et des applications, et mise en conformité NIS2 / CyberFundamentals pour les PME en Belgique.",
   inLanguage: "fr-BE",
   publisher: {
-    "@type": "Organization",
-    name: "Smidjan",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://smidjan.be/logo.png",
-    },
+    "@id": "https://smidjan.be/#organization",
   },
 };
 

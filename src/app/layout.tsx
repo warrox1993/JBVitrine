@@ -50,38 +50,7 @@ export const metadata: Metadata = {
     },
     description:
         'Smidjan sécurise les réseaux, l\'infrastructure et les applications des PME wallonnes et les met en conformité NIS2 / CyberFundamentals (CCB). Audit, pentest, remédiation. Diagnostic gratuit à Liège.',
-    keywords: [
-        // Cœur de métier : cybersécurité
-        'cybersécurité PME Liège',
-        'cybersécurité Wallonie',
-        'cybersécurité Belgique',
-        'sécurité des réseaux et infrastructure',
-        'audit de sécurité informatique',
-        'test d\'intrusion pentest Liège',
-        'sécurisation des systèmes PME',
-
-        // Conformité NIS2 / CyFun : offre phare
-        'conformité NIS2 Belgique',
-        'NIS2 PME',
-        'CyberFundamentals CyFun CCB',
-        'analyse d\'écart NIS2',
-        'remédiation cybersécurité',
-        'niveaux CyFun Basic Important Essential',
-        'préparation vérification CyFun',
-
-        // Accessoire : développement web sécurisé
-        'développement web sécurisé',
-        'application web sécurisée Next.js',
-
-        // Localisation
-        'expert cybersécurité Liège',
-        'Namur',
-        'Charleroi',
-        'Mons',
-        'Verviers',
-        'Bruxelles',
-    ],
-    authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
+authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
     creator: 'Smidjan',
     publisher: 'Smidjan',
 

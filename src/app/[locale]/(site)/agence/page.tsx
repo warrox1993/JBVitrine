@@ -26,15 +26,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    keywords: [
-      "agence cybersécurité Liège",
-      "cybersécurité PME Wallonie",
-      "expert cybersécurité Belgique",
-      "conformité NIS2 CyFun",
-      "audit sécurité pentest Liège",
-      "Jean-Baptiste Dhondt",
-    ],
-    alternates: buildAlternates(locale, "/agence"),
+alternates: buildAlternates(locale, "/agence"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),

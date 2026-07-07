@@ -20,16 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: t("meta.title"),
     description: t("meta.description"),
-    keywords: [
-      "blog cybersécurité Belgique",
-      "conformité NIS2 PME",
-      "CyberFundamentals CyFun",
-      "sécurité informatique Wallonie",
-      "tests d'intrusion pentest",
-      "développement web sécurisé",
-      "conseils cybersécurité PME belges",
-    ],
-    alternates: buildAlternates(locale, "/blog"),
+alternates: buildAlternates(locale, "/blog"),
     openGraph: {
       title: t("meta.ogTitle"),
       description: t("meta.ogDescription"),

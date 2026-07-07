@@ -31,19 +31,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    keywords: [
-      "NIS2",
-      "CyFun",
-      "CyberFundamentals",
-      "CCB",
-      "conformité NIS2 Belgique",
-      "audit sécurité PME",
-      "remédiation cybersécurité",
-      "ISO 27001",
-      "Liège",
-      "Wallonie",
-    ],
-    alternates: buildAlternates(locale, "/conformite-nis2"),
+alternates: buildAlternates(locale, "/conformite-nis2"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),

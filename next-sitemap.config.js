@@ -19,19 +19,16 @@ module.exports = {
         disallow: ["/api/", "/admin/", "/_next/", "/static/"],
         crawlDelay: 0,
       },
-      // SEO 2025: Support crawlers IA
-      {
-        userAgent: "GPTBot",
-        allow: ["/", "/blog/", "/about", "/services", "/contact"],
-      },
-      {
-        userAgent: "ChatGPT-User",
-        allow: ["/", "/blog/", "/about", "/services"],
-      },
-      {
-        userAgent: "anthropic-ai",
-        allow: ["/", "/blog/", "/about", "/services"],
-      },
+      // AI / LLM crawlers — full public site (all pages incl.
+      // /conformite-nis2, /agence, /approche), API/admin blocked.
+      { userAgent: "GPTBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "ChatGPT-User", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "OAI-SearchBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "anthropic-ai", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "ClaudeBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "Google-Extended", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "PerplexityBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "CCBot", allow: "/", disallow: ["/api/", "/admin/"] },
       {
         userAgent: "Googlebot",
         allow: "/",
