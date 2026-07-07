@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo, useRef, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
+import { useTranslations } from 'next-intl';
 import { Info } from 'lucide-react';
 import cls from './FeatureTooltip.module.css';
 
@@ -17,6 +18,7 @@ function parseMarkdown(text: string): string {
 }
 
 export function FeatureTooltip({ content }: FeatureTooltipProps) {
+  const t = useTranslations('wizard');
   const [isVisible, setIsVisible] = useState(false);
   const [position, setPosition] = useState({ top: 0, left: 0, placement: 'bottom' });
   const [isMounted, setIsMounted] = useState(false);
@@ -167,7 +169,7 @@ export function FeatureTooltip({ content }: FeatureTooltipProps) {
           onClick={handleClick}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          aria-label="Plus d'informations"
+          aria-label={t('tooltip.moreInfo')}
           aria-expanded={isVisible}
         >
           <Info size={16} />

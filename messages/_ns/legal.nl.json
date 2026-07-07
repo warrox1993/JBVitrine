@@ -2,19 +2,19 @@
   "meta": {
     "mentions": {
       "title": "Wettelijke vermeldingen | Smidjan, Cyberbeveiliging Luik",
-      "description": "Wettelijke vermeldingen van Smidjan : identificatie van de uitgever, verantwoordelijke voor de publicatie, hosting (Vercel) en intellectuele eigendom van de website.",
+      "description": "Wettelijke vermeldingen van Smidjan: identificatie van de uitgever, verantwoordelijke voor de publicatie, hosting (Vercel) en intellectuele eigendom van de website.",
       "ogTitle": "Wettelijke vermeldingen | Smidjan",
       "ogDescription": "Identificatie van de uitgever, hosting en intellectuele eigendom van de website van Smidjan."
     },
     "cgv": {
       "title": "Algemene voorwaarden | Smidjan",
-      "description": "Algemene dienstverleningsvoorwaarden van Smidjan : voorwerp, offerte, uitvoering, aansprakelijkheid, vertrouwelijkheid en Belgisch recht van toepassing op cyberbeveiligingsopdrachten.",
+      "description": "Algemene dienstverleningsvoorwaarden van Smidjan: voorwerp, offerte, uitvoering, aansprakelijkheid, vertrouwelijkheid en Belgisch recht van toepassing op cyberbeveiligingsopdrachten.",
       "ogTitle": "Algemene voorwaarden | Smidjan",
       "ogDescription": "Contractueel kader voor de advies-, audit- en beveiligde ontwikkelingsdiensten van Smidjan."
     },
     "confidentialite": {
       "title": "Privacybeleid (AVG) | Smidjan",
-      "description": "Privacybeleid van Smidjan : gegevens verzameld via het contactformulier, doeleinden, bewaartermijn, cookies & diensten van derden, en uw AVG-rechten.",
+      "description": "Privacybeleid van Smidjan: gegevens verzameld via het contactformulier, doeleinden, bewaartermijn, cookies & diensten van derden, en uw AVG-rechten.",
       "ogTitle": "Privacybeleid (AVG) | Smidjan",
       "ogDescription": "Hoe Smidjan uw persoonsgegevens verwerkt, volledig transparant over cookies en diensten van derden."
     }
@@ -40,13 +40,13 @@
     "editeur": {
       "title": "Uitgever van de website",
       "intro": "Deze website wordt uitgegeven door Smidjan, een onderneming actief in cyberbeveiliging, gevestigd te Luik, België.",
-      "denomination": "<strong>Benaming :</strong> Smidjan, handelsmerk uitgebaat door Jean-Baptiste Dhondt (natuurlijke persoon)",
-      "siege": "<strong>Maatschappelijke zetel :</strong> Luik, België",
-      "bce": "<strong>Ondernemingsnummer (KBO) :</strong> Inschrijving in behandeling",
-      "tva": "<strong>Intracommunautair btw-nummer :</strong> Inschrijving in behandeling",
-      "emailLabel": "<strong>E-mail :</strong>",
-      "telephoneLabel": "<strong>Telefoon :</strong>",
-      "callout": "In alle transparantie : op het moment waarop deze pagina werd opgesteld, had Smidjan haar inschrijving (KBO/btw) nog niet afgerond. <b>Er mag geen enkel ondernemingsnummer worden gepubliceerd zolang het niet officieel is toegekend.</b> Deze informatie wordt aangevuld zodra ze beschikbaar is, en vóór elke definitieve onlineplaatsing van de website."
+      "denomination": "<strong>Benaming:</strong> Smidjan, handelsmerk uitgebaat door Jean-Baptiste Dhondt (natuurlijke persoon)",
+      "siege": "<strong>Maatschappelijke zetel:</strong> Luik, België",
+      "bce": "<strong>Ondernemingsnummer (KBO):</strong> Inschrijving in behandeling",
+      "tva": "<strong>Intracommunautair btw-nummer:</strong> Inschrijving in behandeling",
+      "emailLabel": "<strong>E-mail:</strong>",
+      "telephoneLabel": "<strong>Telefoon:</strong>",
+      "callout": "In alle transparantie: op het moment waarop deze pagina werd opgesteld, had Smidjan haar inschrijving (KBO/btw) nog niet afgerond. <b>Er mag geen enkel ondernemingsnummer worden gepubliceerd zolang het niet officieel is toegekend.</b> Deze informatie wordt aangevuld zodra ze beschikbaar is, en vóór elke definitieve onlineplaatsing van de website."
     },
     "responsable": {
       "title": "Verantwoordelijke voor de publicatie",
@@ -54,8 +54,8 @@
     },
     "hebergement": {
       "title": "Hosting",
-      "p1": "De website wordt gehost door : <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, Verenigde Staten : <link>vercel.com</link>.",
-      "p2": "De hosting kan een verwerking van technische gegevens op een gedistribueerde infrastructuur (« edge network ») met zich meebrengen, waarvan bepaalde knooppunten zich buiten de Europese Unie bevinden ; zie de rubriek « Cookies & diensten van derden » van het <link>privacybeleid</link> voor de details van deze doorgiften."
+      "p1": "De website wordt gehost door: <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, Verenigde Staten: <link>vercel.com</link>.",
+      "p2": "De hosting kan een verwerking van technische gegevens op een gedistribueerde infrastructuur (\"edge network\") met zich meebrengen, waarvan bepaalde knooppunten zich buiten de Europese Unie bevinden; zie de rubriek \"Cookies & diensten van derden\" van het <link>privacybeleid</link> voor de details van deze doorgiften."
     },
     "propriete": {
       "title": "Intellectuele eigendom",
@@ -65,7 +65,7 @@
     },
     "contact": {
       "title": "Contact",
-      "body": "Voor elke vraag over de website of de inhoud ervan : <link>contact@smidjan.be</link>."
+      "body": "Voor elke vraag over de website of de inhoud ervan: <link>contact@smidjan.be</link>."
     }
   },
   "cgv": {
@@ -109,7 +109,7 @@
     "droit": {
       "title": "Toepasselijk recht en bevoegde rechtbank",
       "body": "Deze algemene voorwaarden worden beheerst door het <strong>Belgische recht</strong>. Elk geschil betreffende de geldigheid, de interpretatie of de uitvoering ervan behoort tot de uitsluitende bevoegdheid van de rechtbanken van het gerechtelijk arrondissement <strong>Luik</strong>, onder voorbehoud van de dwingende bepalingen die van toepassing zijn inzake consumentenbescherming.",
-      "callout": "Dit document is een <b>model</b> : het moet aan elke opdracht worden aangepast en door een jurist worden gevalideerd vóór elk contractueel gebruik. In geval van tegenstrijdigheid heeft de door beide partijen ondertekende offerte of overeenkomst steeds voorrang op dit generieke sjabloon."
+      "callout": "Dit document is een <b>model</b>: het moet aan elke opdracht worden aangepast en door een jurist worden gevalideerd vóór elk contractueel gebruik. In geval van tegenstrijdigheid heeft de door beide partijen ondertekende offerte of overeenkomst steeds voorrang op dit generieke sjabloon."
     }
   },
   "conf": {
@@ -118,27 +118,27 @@
       "title": "Privacybeleid (AVG)",
       "lead": "Wat wij verzamelen via het contactformulier, waarom, hoe lang, met wie, en een eerlijk antwoord over de gebruikte cookies en diensten van derden."
     },
-    "intro": "Smidjan hecht belang aan de bescherming van de persoonsgegevens van de bezoekers en klanten van de website, in overeenstemming met Verordening (EU) 2016/679 van 27 april 2016 (« AVG ») en de Belgische wet van 30 juli 2018 betreffende de bescherming van natuurlijke personen met betrekking tot de verwerking van persoonsgegevens.",
+    "intro": "Smidjan hecht belang aan de bescherming van de persoonsgegevens van de bezoekers en klanten van de website, in overeenstemming met Verordening (EU) 2016/679 van 27 april 2016 (\"AVG\") en de Belgische wet van 30 juli 2018 betreffende de bescherming van natuurlijke personen met betrekking tot de verwerking van persoonsgegevens.",
     "responsable": {
       "title": "Verwerkingsverantwoordelijke",
-      "body": "De verwerkingsverantwoordelijke voor de via deze website verzamelde gegevens is Smidjan, Luik, België : <link>contact@smidjan.be</link>."
+      "body": "De verwerkingsverantwoordelijke voor de via deze website verzamelde gegevens is Smidjan, Luik, België: <link>contact@smidjan.be</link>."
     },
     "donnees": {
       "title": "Verzamelde gegevens",
-      "formulaire": "<strong>Contactformulier / aanvraag van een diagnose :</strong> naam, voornaam, onderneming (facultatief), e-mailadres, telefoonnummer (facultatief), inhoud van het bericht.",
-      "navigation": "<strong>Navigatiegegevens :</strong> IP-adres, type browser en apparaat, geraadpleegde pagina's, verzameld met het oog op veiligheid en, in voorkomend geval, publieksmeting.",
-      "recaptcha": "<strong>Gegevens afkomstig van Google reCAPTCHA :</strong> technische signalen die worden gebruikt om een menselijke gebruiker van een robot te onderscheiden bij het verzenden van het contactformulier."
+      "formulaire": "<strong>Contactformulier / aanvraag van een diagnose:</strong> naam, voornaam, onderneming (facultatief), e-mailadres, telefoonnummer (facultatief), inhoud van het bericht.",
+      "navigation": "<strong>Navigatiegegevens:</strong> IP-adres, type browser en apparaat, geraadpleegde pagina's, verzameld met het oog op veiligheid en, in voorkomend geval, publieksmeting.",
+      "recaptcha": "<strong>Gegevens afkomstig van Google reCAPTCHA:</strong> technische signalen die worden gebruikt om een menselijke gebruiker van een robot te onderscheiden bij het verzenden van het contactformulier."
     },
     "finalites": {
       "title": "Doeleinden van de verwerking",
-      "item1": "Beantwoorden van aanvragen tot contact, offerte of gratis diagnose ;",
-      "item2": "Waarborgen van de veiligheid en de integriteit van het contactformulier (bescherming tegen spam en robots) ;",
+      "item1": "Beantwoorden van aanvragen tot contact, offerte of gratis diagnose;",
+      "item2": "Waarborgen van de veiligheid en de integriteit van het contactformulier (bescherming tegen spam en robots);",
       "item3": "Meten en verbeteren van het gebruik van de website, in voorkomend geval, met behulp van statistische tools."
     },
     "baseLegale": {
       "title": "Rechtsgrond",
-      "item1": "De <strong>uitvoering van precontractuele maatregelen</strong> genomen op verzoek van de betrokkene, voor de verwerking van contactaanvragen ;",
-      "item2": "Het <strong>gerechtvaardigd belang</strong> van Smidjan om haar formulier en haar website te beveiligen tegen misbruik (reCAPTCHA) ;",
+      "item1": "De <strong>uitvoering van precontractuele maatregelen</strong> genomen op verzoek van de betrokkene, voor de verwerking van contactaanvragen;",
+      "item2": "Het <strong>gerechtvaardigd belang</strong> van Smidjan om haar formulier en haar website te beveiligen tegen misbruik (reCAPTCHA);",
       "item3": "De <strong>toestemming</strong> van de gebruiker, wanneer deze vereist is voor niet-essentiële cookies voor publieksmeting."
     },
     "duree": {
@@ -151,7 +151,7 @@
     },
     "cookies": {
       "title": "Cookies & diensten van derden",
-      "p1": "Deze website is niet vrij van cookies of trackers : wij beweren niet te functioneren « zonder enige cookie ». De volgende categorieën kunnen worden gebruikt :",
+      "p1": "Deze website is niet vrij van cookies of trackers: wij beweren niet te functioneren \"zonder enige cookie\". De volgende categorieën kunnen worden gebruikt:",
       "table": {
         "type": "Type",
         "finalite": "Doeleinde",
@@ -168,13 +168,13 @@
         }
       },
       "p2": "Tot op heden gebruikt de website <strong>geen enkele tool voor publieksmeting (analytics)</strong> noch reclamecookies. Indien een dergelijke tool zou worden ingevoerd, zou dit beleid dienovereenkomstig worden bijgewerkt.",
-      "p3": "Sommige van deze diensten, met name Google reCAPTCHA, worden geleverd door derden gevestigd buiten de Europese Unie (Verenigde Staten) en kunnen een overeenkomstige doorgifte van gegevens met zich meebrengen. Deze doorgiften steunen op de door de AVG voorziene waarborgen, zoals de standaardcontractbepalingen van de Europese Commissie. U kunt op elk moment uw browser configureren om niet-essentiële cookies te blokkeren of te verwijderen ; dit kan echter bepaalde functies van de website beperken (bijvoorbeeld het verzenden van het contactformulier)."
+      "p3": "Sommige van deze diensten, met name Google reCAPTCHA, worden geleverd door derden gevestigd buiten de Europese Unie (Verenigde Staten) en kunnen een overeenkomstige doorgifte van gegevens met zich meebrengen. Deze doorgiften steunen op de door de AVG voorziene waarborgen, zoals de standaardcontractbepalingen van de Europese Commissie. U kunt op elk moment uw browser configureren om niet-essentiële cookies te blokkeren of te verwijderen; dit kan echter bepaalde functies van de website beperken (bijvoorbeeld het verzenden van het contactformulier)."
     },
     "droits": {
       "title": "Uw rechten",
-      "p1": "In overeenstemming met de artikelen 15 tot 22 van de AVG beschikt u over de volgende rechten met betrekking tot uw gegevens : recht op inzage, op rectificatie, op wissing, op beperking van de verwerking, op overdraagbaarheid, op bezwaar, evenals het recht om uw toestemming op elk moment in te trekken wanneer de verwerking daarvan afhankelijk is.",
+      "p1": "In overeenstemming met de artikelen 15 tot 22 van de AVG beschikt u over de volgende rechten met betrekking tot uw gegevens: recht op inzage, op rectificatie, op wissing, op beperking van de verwerking, op overdraagbaarheid, op bezwaar, evenals het recht om uw toestemming op elk moment in te trekken wanneer de verwerking daarvan afhankelijk is.",
       "p2": "Om deze rechten uit te oefenen, kunt u ons contacteren op het adres <link>contact@smidjan.be</link>. U ontvangt een antwoord binnen de door de AVG voorziene termijnen.",
-      "p3": "U beschikt eveneens over het recht om een klacht in te dienen bij de Belgische toezichthoudende autoriteit : <strong>Gegevensbeschermingsautoriteit (GBA)</strong>, Drukpersstraat 35, 1000 Brussel : <link>www.autoriteprotectiondonnees.be</link>."
+      "p3": "U beschikt eveneens over het recht om een klacht in te dienen bij de Belgische toezichthoudende autoriteit: <strong>Gegevensbeschermingsautoriteit (GBA)</strong>, Drukpersstraat 35, 1000 Brussel: <link>www.autoriteprotectiondonnees.be</link>."
     },
     "dpo": {
       "title": "Contact functionaris voor gegevensbescherming",

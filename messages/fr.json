@@ -1754,5 +1754,249 @@
       },
       "note": "*Durées indicatives, variables selon votre maturité de départ, la taille du périmètre et vos ressources internes. Elles sont précisées lors du cadrage."
     }
+  },
+  "wizard": {
+    "common": {
+      "back": "← Retour",
+      "next": "Étape suivante →",
+      "included": "Inclus",
+      "budgetLabel": "Budget estimé",
+      "delai": "Délai",
+      "complexityLabel": "Complexité",
+      "featuresLabel": "Fonctionnalités",
+      "complexitySimple": "Simple",
+      "complexityMedium": "Moyen",
+      "complexityComplex": "Complexe",
+      "learnMore": "En savoir plus",
+      "stepSlash": "Étape {step}/{total}",
+      "stepSur": "Étape {step} sur {total}"
+    },
+    "shell": {
+      "successTitle": "Demande envoyée avec succès",
+      "successText": "Merci pour votre confiance. Nous avons bien reçu votre demande et vous enverrons un devis détaillé par email dans les 24 heures.",
+      "successInfoTitle": "Et maintenant ?",
+      "successItem1": "Vous recevrez un email de confirmation",
+      "successItem2": "Notre équipe analysera votre projet",
+      "successItem3": "Nous vous contacterons pour affiner les détails",
+      "successItem4": "Vous recevrez un devis personnalisé",
+      "successBackHome": "Retour à l'accueil",
+      "progressAria": "Étape {step} sur {total}",
+      "sidebarAria": "Aperçu du devis",
+      "errorLabel": "Erreur",
+      "errorRateLimit": "Trop de requêtes. Veuillez attendre quelques minutes et réessayer.",
+      "errorUnavailable": "Service temporairement indisponible. Veuillez réessayer dans quelques instants.",
+      "errorSend": "Erreur lors de l'envoi de la demande",
+      "errorComm": "Erreur de communication avec le serveur. Veuillez réessayer.",
+      "errorInvalidResponse": "Réponse invalide du serveur. Veuillez réessayer.",
+      "errorSaveFailed": "La sauvegarde a échoué. Veuillez réessayer.",
+      "errorGeneric": "Une erreur est survenue. Veuillez réessayer."
+    },
+    "preview": {
+      "title": "Votre estimation",
+      "note": "Cette estimation sera affinée lors de notre échange",
+      "breakdownTitle": "Détail du budget",
+      "mobileToggleAria": "Voir le détail du devis",
+      "mobileBarAria": "Aperçu du devis",
+      "mobilePanelAria": "Détails du devis"
+    },
+    "leadScore": {
+      "gradeHot": "Lead Chaud",
+      "gradeWarm": "Lead Qualifié",
+      "gradeCold": "Lead Froid",
+      "gradeSpam": "À Vérifier",
+      "confidence": "Confiance : {value}%",
+      "toggleDetails": "Détail du score",
+      "catProject": "Projet",
+      "catEngagement": "Engagement",
+      "catCompletion": "Complétion",
+      "catEnrichment": "Enrichissement",
+      "catBehavioral": "Comportement",
+      "note": "Score calculé en temps réel selon vos réponses et votre navigation"
+    },
+    "tooltip": {
+      "moreInfo": "Plus d'informations"
+    },
+    "escape": {
+      "text": "Problème technique, CV ou autre demande (hors nouveau projet) ? <link>Contactez-nous directement</link>"
+    },
+    "step1": {
+      "title": "Sélectionnez le type de projet qui correspond le mieux à votre besoin",
+      "footerNote": "<b>Pas sûr de votre choix ?</b> Sélectionnez le type qui se rapproche le plus. Nous affinerons ensemble lors de notre échange.",
+      "infoBtnAria": "En savoir plus sur {name}",
+      "infoBubbleLink": "En savoir plus →",
+      "info": {
+        "siteVitrine": {
+          "title": "C'est quoi un site vitrine ?",
+          "explanation": "Un site vitrine est un site web informatif qui présente votre entreprise, vos services et vos produits sans permettre de vente en ligne. C'est comme une brochure digitale professionnelle accessible 24/7."
+        },
+        "ecommerce": {
+          "title": "C'est quoi un site e-commerce ?",
+          "explanation": "Un site e-commerce est une boutique en ligne permettant de vendre vos produits/services directement sur internet avec paiement sécurisé, gestion de stock, et suivi de commandes."
+        },
+        "appWeb": {
+          "title": "C'est quoi une application web ?",
+          "explanation": "Une application web est un logiciel métier accessible via navigateur (SaaS, CRM, ERP, plateforme). Elle permet d'automatiser des processus complexes avec gestion utilisateurs, workflows, et données."
+        },
+        "auditCyber": {
+          "title": "C'est quoi un audit cybersécurité ?",
+          "explanation": "Un audit cybersécurité est une analyse professionnelle de la sécurité de votre infrastructure IT, applications et sites web pour identifier les vulnérabilités avant qu'elles ne soient exploitées par des pirates."
+        },
+        "aiAutomation": {
+          "title": "C'est quoi l'automatisation IA ?",
+          "explanation": "L'automatisation IA utilise l'intelligence artificielle (chatbots, traitement de documents, analyse de données) pour automatiser des tâches répétitives et gagner du temps dans vos processus métier."
+        },
+        "cmsBlog": {
+          "title": "CMS / Blog",
+          "explanation": "Système de gestion de contenu"
+        }
+      }
+    },
+    "step2": {
+      "stepNumber": "Étape 2/5",
+      "title": "{name} : De quoi avez-vous besoin ?",
+      "subtitle": "Sélectionnez les fonctionnalités qui correspondent à votre projet",
+      "summaryLabel": "Fonctionnalités sélectionnées :"
+    },
+    "step3": {
+      "title": "SEO et services additionnels",
+      "subtitle": "Choisissez votre niveau de référencement et les services complémentaires",
+      "seoSectionTitle": "SEO (Référencement)",
+      "seoNoneName": "Aucun",
+      "seoBasicName": "SEO de base",
+      "seoAdvancedName": "SEO avancé",
+      "seoNoneDesc": "Pas d'optimisation SEO",
+      "seoBasicDesc": "Meta tags, sitemap, schema.org, optimisation technique",
+      "seoAdvancedDesc": "Stratégie complète, mots-clés, contenu optimisé, backlinks",
+      "free": "Gratuit",
+      "servicesSectionTitle": "Services additionnels",
+      "animationsLabel": "Animations avancées (+600€)",
+      "trainingLabel": "Formation équipe (+{price})",
+      "next": "Voir le récapitulatif →"
+    },
+    "step4": {
+      "title": "Récapitulatif de votre projet",
+      "subtitle": "Vérifiez les détails avant de nous transmettre votre demande",
+      "priceNote": "Prix indicatif, sera affiné lors de notre échange",
+      "metaDelai": "Délai estimé",
+      "featuresValue": "{count} sélectionnées",
+      "sectionIncluded": "Ce qui est inclus",
+      "catBase": "Base",
+      "catFeatures": "Fonctionnalités",
+      "catDesign": "Design & Optimisation",
+      "catServices": "Services additionnels",
+      "animationsItem": "Animations avancées",
+      "timelineSectionTitle": "Votre délai souhaité",
+      "noticeTitle": "Prochaine étape",
+      "noticeText": "Cette estimation sera affinée lors d'un entretien personnalisé pour s'assurer qu'elle correspond parfaitement à vos besoins. Vous recevrez un devis détaillé par email.",
+      "back": "← Modifier",
+      "next": "Continuer vers le formulaire",
+      "designTemplate": "Design template",
+      "designSemiCustom": "Design semi-personnalisé",
+      "designCustom": "Design sur mesure",
+      "designUndefined": "Non défini",
+      "seoNone": "Aucun",
+      "seoBasic": "SEO de base",
+      "seoAdvanced": "SEO avancé",
+      "seoUndefined": "Non défini",
+      "timelineAsap": "Dès que possible",
+      "timeline1m": "1 mois",
+      "timeline23m": "2-3 mois",
+      "timelineGt3m": "Plus de 3 mois",
+      "timelineFlexible": "Flexible",
+      "timelineUndefined": "Non défini"
+    },
+    "step5": {
+      "title": "Recevez votre devis détaillé",
+      "subtitle": "Partagez vos coordonnées pour recevoir votre estimation personnalisée",
+      "labelName": "Nom complet",
+      "labelEmail": "Email professionnel",
+      "labelPhone": "Téléphone",
+      "labelCompany": "Entreprise",
+      "labelMessage": "Détails supplémentaires",
+      "placeholderName": "Jean Dupont",
+      "placeholderEmail": "jean@entreprise.be",
+      "placeholderCompany": "Nom de votre entreprise",
+      "placeholderMessage": "Décrivez votre projet en quelques mots, posez vos questions...",
+      "timelineQuestion": "Quand souhaitez-vous démarrer ?",
+      "timelineAsap": "Dès que possible",
+      "timeline1m": "Dans 1 mois",
+      "timeline23m": "Dans 2-3 mois",
+      "timelineGt3m": "Plus de 3 mois",
+      "timelineFlexible": "Je suis flexible",
+      "messageHint": "Plus vous nous en dites, plus notre devis sera précis (entre 10 et 1 500 caractères)",
+      "consent": "J'accepte que Smidjan traite mes données pour me recontacter au sujet de ma demande conformément à la <privacy>politique de confidentialité</privacy> et au <rgpd>RGPD</rgpd>",
+      "recaptcha": "Ce site est protégé par reCAPTCHA et soumis à la <privacy>politique de confidentialité</privacy> et aux <terms>conditions d'utilisation</terms> de Google.",
+      "submit": "Envoyer ma demande",
+      "submitting": "Envoi en cours...",
+      "errors": {
+        "nameRequired": "Le nom est requis",
+        "nameLength": "Le nom doit contenir entre 2 et 80 caractères",
+        "nameNoDigits": "Le nom ne peut pas contenir de chiffres",
+        "nameInvalidChars": "Le nom contient des caractères non autorisés",
+        "emailRequired": "L'email est requis",
+        "emailInvalid": "Email invalide",
+        "phoneInvalid": "Numéro de téléphone invalide",
+        "phoneFormat": "Format de téléphone invalide",
+        "companyTooLong": "Le nom de l'entreprise est trop long (max 100 caractères)",
+        "companyInvalidChars": "Caractères non autorisés détectés",
+        "messageTooLong": "Le message ne peut pas dépasser 1 500 caractères",
+        "consentRequired": "Vous devez accepter la politique de confidentialité"
+      },
+      "globalSlowDown": "Veuillez ralentir. Prenez le temps de remplir le formulaire correctement.",
+      "globalRateLimit": "Vous avez atteint la limite de soumissions. Veuillez réessayer dans une heure ou nous contacter directement à smidjan.agency@outlook.com"
+    },
+    "category": {
+      "summaryExclusive": "Option sélectionnée",
+      "summaryMultiple": "Options sélectionnées"
+    },
+    "codeOwnership": {
+      "stepNumber": "Étape 2",
+      "title": "Souhaitez-vous être propriétaire du code ?",
+      "subtitle": "Cette question détermine l'approche technique de votre projet e-commerce",
+      "learnMore": "En savoir plus",
+      "back": "Retour",
+      "next": "Continuer",
+      "ownership": {
+        "title": "Oui, je veux le code",
+        "description": "Développement sur mesure. Vous êtes propriétaire à 100% du code source",
+        "feat1": "Code 100% personnalisé",
+        "feat2": "Liberté totale, aucune dépendance",
+        "feat3": "Performances optimales",
+        "feat4": "Évolutivité illimitée",
+        "infoTitle": "Développement sur mesure",
+        "infoText": "Nous développons votre e-commerce avec les technologies modernes (Next.js, React, TypeScript). Vous recevez le code source complet et en êtes l'unique propriétaire.",
+        "infoList1": "Aucun abonnement mensuel CMS",
+        "infoList2": "Aucune limite technique",
+        "infoList3": "Hébergement chez le prestataire de votre choix",
+        "infoList4": "Code maintenable par n'importe quel développeur",
+        "infoList5": "Intégrations API illimitées",
+        "infoNote": "<b>Idéal pour :</b> Projets évolutifs, besoins spécifiques, volumes importants"
+      },
+      "cms": {
+        "title": "Non, je préfère un CMS",
+        "description": "CMS Smidjan. Solution professionnelle complète avec backend e-commerce",
+        "feat1": "Backend e-commerce 100% complet",
+        "feat2": "Installation : 2 500 EUR",
+        "feat3": "40h personnalisation front : GRATUIT",
+        "feat4": "Après 40h : 50 EUR/heure HT",
+        "feat5": "Hébergement : 500 EUR/mois HT",
+        "infoTitle": "CMS Smidjan, solution e-commerce complète",
+        "infoText": "Le CMS Smidjan est une solution e-commerce professionnelle développée en interne avec un backend complet comprenant toutes les fonctionnalités nécessaires pour gérer votre boutique en ligne.",
+        "infoList1": "Backend e-commerce 100% complet et optimisé",
+        "infoList2": "Gestion des produits, stock, commandes, clients",
+        "infoList3": "Paiements sécurisés intégrés (Stripe, Mollie, PayPal)",
+        "infoList4": "Tableau de bord analytique en temps réel",
+        "infoList5": "Interface d'administration intuitive",
+        "infoList6": "Support technique Smidjan inclus",
+        "infoList7": "Mises à jour et sécurité gérées",
+        "pricingTitle": "Tarification CMS Smidjan :",
+        "pricingInstall": "<b>Installation complète :</b> 2 500 EUR (configuration, backend, connexions paiement)",
+        "pricingHours": "<b>40 premières heures :</b> GRATUITES (personnalisation front-end, design, logo, couleurs)",
+        "pricingAfter": "<b>Après 40h :</b> 50 EUR/heure HT (fonctionnalités supplémentaires)",
+        "pricingHosting": "<b>Hébergement :</b> 500 EUR/mois HT (serveurs optimisés, backup quotidien, monitoring 24/7)",
+        "infoNote": "<b>Idéal pour :</b> Boutiques sérieuses, évolution rapide, support professionnel, tranquillité d'esprit",
+        "cmsLink": "Découvrir le CMS Smidjan en détail"
+      }
+    }
   }
 }

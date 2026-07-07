@@ -78,7 +78,7 @@
       "row2b": "Gemapt op het NIST CSF",
       "row3a": "Controles & goede praktijken",
       "row3b": "Afgestemd op ISO/IEC 27001",
-      "row4a": "Drie assurantieniveaus",
+      "row4a": "Drie assuranceniveaus",
       "row4b": "Basic · Important · Essential"
     },
     "ringAria": "Diagram: de zes functies van CyberFundamentals in een doorlopende cyclus (Govern, Identify, Protect, Detect, Respond, Recover), afgestemd op het NIST CSF.",
@@ -94,7 +94,7 @@
     "fnNote": "<b>Govern, Identify, Protect, Detect, Respond, Recover</b>: de volledige levenscyclus van het cyberrisico."
   },
   "niveaux": {
-    "eyebrow": "De 3 assurantieniveaus",
+    "eyebrow": "De 3 assuranceniveaus",
     "title": "Basic, Important, Essential: het <accent>juiste niveau</accent> kiezen",
     "lead": "Drie progressieve niveaus. De juiste keuze hangt af van uw NIS2-categorie en uw blootstelling. Wij helpen u beslissen.",
     "statBigLbl": "CyFun-niveaus",

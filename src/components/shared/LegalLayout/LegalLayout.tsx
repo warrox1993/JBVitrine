@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { Breadcrumb } from "@/components/Breadcrumb/Breadcrumb";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
@@ -7,10 +8,10 @@ import styles from "./LegalLayout.module.css";
 
 export type LegalPageKey = "mentions" | "confidentialite" | "cgv";
 
-const NAV_ITEMS: { key: LegalPageKey; href: string; label: string }[] = [
-  { key: "mentions", href: "/mentions-legales", label: "Mentions légales" },
-  { key: "confidentialite", href: "/confidentialite", label: "Politique de confidentialité" },
-  { key: "cgv", href: "/cgv", label: "Conditions générales" },
+const NAV_ITEMS: { key: LegalPageKey; href: string }[] = [
+  { key: "mentions", href: "/mentions-legales" },
+  { key: "confidentialite", href: "/confidentialite" },
+  { key: "cgv", href: "/cgv" },
 ];
 
 export interface LegalLayoutProps {
@@ -31,14 +32,16 @@ export interface LegalLayoutProps {
  * Server component - no client JS needed (active state comes from the
  * page itself, not from route matching).
  */
-export function LegalLayout({ active, eyebrow, title, lead, visual, children }: LegalLayoutProps) {
+export async function LegalLayout({ active, eyebrow, title, lead, visual, children }: LegalLayoutProps) {
+  const t = await getTranslations("legal");
+  const navLabelFor = (key: LegalPageKey) => t(`nav.items.${key}`);
   const activeItem = NAV_ITEMS.find((item) => item.key === active);
 
   return (
     <div>
       <section className={styles.pageHero}>
         <div className="wrap">
-          <Breadcrumb items={activeItem ? [{ label: activeItem.label, href: activeItem.href }] : undefined} />
+          <Breadcrumb items={activeItem ? [{ label: navLabelFor(activeItem.key), href: activeItem.href }] : undefined} />
           <div className={styles.heroInner}>
             <div className={styles.heroText}>
               <Eyebrow>{eyebrow}</Eyebrow>
@@ -56,8 +59,8 @@ export function LegalLayout({ active, eyebrow, title, lead, visual, children }: 
 
       <section className={styles.contentSection}>
         <div className={`wrap ${styles.grid}`}>
-          <nav className={styles.nav} aria-label="Sommaire des pages légales">
-            <span className={styles.navLabel}>Pages légales</span>
+          <nav className={styles.nav} aria-label={t("nav.aria")}>
+            <span className={styles.navLabel}>{t("nav.label")}</span>
             <ul className={styles.navList}>
               {NAV_ITEMS.map((item) => (
                 <li key={item.key}>
@@ -66,7 +69,7 @@ export function LegalLayout({ active, eyebrow, title, lead, visual, children }: 
                     className={item.key === active ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink}
                     aria-current={item.key === active ? "page" : undefined}
                   >
-                    {item.label}
+                    {navLabelFor(item.key)}
                   </Link>
                 </li>
               ))}

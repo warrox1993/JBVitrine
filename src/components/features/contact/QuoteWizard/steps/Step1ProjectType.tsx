@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
+import { useTranslations } from 'next-intl';
 import { Globe, ShoppingCart, Monitor, Shield, Bot, Info } from 'lucide-react';
 import { ProjectType } from '../types';
 import { projectTypeConfigs } from '@/lib/pricing/features';
@@ -14,6 +15,7 @@ interface Step1ProjectTypeProps {
 }
 
 export function Step1ProjectType({ selected, onChange, onNext }: Step1ProjectTypeProps) {
+  const t = useTranslations('wizard');
   const [showInfo, setShowInfo] = useState<ProjectType | null>(null);
   const [bubblePosition, setBubblePosition] = useState({ top: 0, left: 0, placement: 'bottom' });
   const [isMounted, setIsMounted] = useState(false);
@@ -38,33 +40,33 @@ export function Step1ProjectType({ selected, onChange, onNext }: Step1ProjectTyp
     blogUrl: string;
   }> = {
     siteVitrine: {
-      title: "C'est quoi un site vitrine ?",
-      explanation: "Un site vitrine est un site web informatif qui présente votre entreprise, vos services et vos produits sans permettre de vente en ligne. C'est comme une brochure digitale professionnelle accessible 24/7.",
+      title: t('step1.info.siteVitrine.title'),
+      explanation: t('step1.info.siteVitrine.explanation'),
       blogUrl: "/blog/difference-site-vitrine-ecommerce-application-web"
     },
     ecommerce: {
-      title: "C'est quoi un site e-commerce ?",
-      explanation: "Un site e-commerce est une boutique en ligne permettant de vendre vos produits/services directement sur internet avec paiement sécurisé, gestion de stock, et suivi de commandes.",
+      title: t('step1.info.ecommerce.title'),
+      explanation: t('step1.info.ecommerce.explanation'),
       blogUrl: "/blog/difference-site-vitrine-ecommerce-application-web"
     },
     appWeb: {
-      title: "C'est quoi une application web ?",
-      explanation: "Une application web est un logiciel métier accessible via navigateur (SaaS, CRM, ERP, plateforme). Elle permet d'automatiser des processus complexes avec gestion utilisateurs, workflows, et données.",
+      title: t('step1.info.appWeb.title'),
+      explanation: t('step1.info.appWeb.explanation'),
       blogUrl: "/blog/difference-site-vitrine-ecommerce-application-web"
     },
     auditCyber: {
-      title: "C'est quoi un audit cybersécurité ?",
-      explanation: "Un audit cybersécurité est une analyse professionnelle de la sécurité de votre infrastructure IT, applications et sites web pour identifier les vulnérabilités avant qu'elles ne soient exploitées par des pirates.",
+      title: t('step1.info.auditCyber.title'),
+      explanation: t('step1.info.auditCyber.explanation'),
       blogUrl: "/blog/audit-securite-pentest-difference-belgique"
     },
     aiAutomation: {
-      title: "C'est quoi l'automatisation IA ?",
-      explanation: "L'automatisation IA utilise l'intelligence artificielle (chatbots, traitement de documents, analyse de données) pour automatiser des tâches répétitives et gagner du temps dans vos processus métier.",
+      title: t('step1.info.aiAutomation.title'),
+      explanation: t('step1.info.aiAutomation.explanation'),
       blogUrl: "/blog/automatisation-ia-chatbot-rpa-belgique"
     },
     cmsBlog: {
-      title: "CMS / Blog",
-      explanation: "Système de gestion de contenu",
+      title: t('step1.info.cmsBlog.title'),
+      explanation: t('step1.info.cmsBlog.explanation'),
       blogUrl: "/blog"
     }
   };
@@ -179,7 +181,7 @@ export function Step1ProjectType({ selected, onChange, onNext }: Step1ProjectTyp
     <>
     <div className={cls.step}>
       <header className={cls.header}>
-        <h2 className={cls.title}>Sélectionnez le type de projet qui correspond le mieux à votre besoin</h2>
+        <h2 className={cls.title}>{t('step1.title')}</h2>
       </header>
 
       <div className={cls.grid}>
@@ -226,7 +228,7 @@ export function Step1ProjectType({ selected, onChange, onNext }: Step1ProjectTyp
                 onClick={handleClick}
                 onFocus={handleFocus(type)}
                 onBlur={handleBlur}
-                aria-label={`En savoir plus sur ${config.name}`}
+                aria-label={t('step1.infoBtnAria', { name: config.name })}
                 aria-expanded={showInfo === type}
               >
                 <Info size={18} />
@@ -238,8 +240,7 @@ export function Step1ProjectType({ selected, onChange, onNext }: Step1ProjectTyp
 
       <footer className={cls.footer}>
         <p className={cls.footerNote}>
-          <strong>Pas sûr de votre choix ?</strong> Sélectionnez le type qui
-          se rapproche le plus. Nous affinerons ensemble lors de notre échange.
+          {t.rich('step1.footerNote', { b: (c) => <strong>{c}</strong> })}
         </p>
       </footer>
     </div>
@@ -264,7 +265,7 @@ export function Step1ProjectType({ selected, onChange, onNext }: Step1ProjectTyp
           rel="noopener noreferrer"
           className={cls.infoBubbleLink}
         >
-          En savoir plus →
+          {t('step1.infoBubbleLink')}
         </a>
       </div>,
       document.body

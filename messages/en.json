@@ -1208,184 +1208,184 @@
   "legal": {
     "meta": {
       "mentions": {
-        "title": "Mentions légales | Smidjan, Cybersécurité Liège",
-        "description": "Mentions légales de Smidjan : identification de l'éditeur, responsable de publication, hébergement (Vercel) et propriété intellectuelle du site.",
-        "ogTitle": "Mentions légales | Smidjan",
-        "ogDescription": "Identification de l'éditeur, hébergement et propriété intellectuelle du site Smidjan."
+        "title": "Legal notice | Smidjan, Cybersecurity Liège",
+        "description": "Legal notice for Smidjan: identification of the publisher, person responsible for publication, hosting (Vercel) and intellectual property of the website.",
+        "ogTitle": "Legal notice | Smidjan",
+        "ogDescription": "Identification of the publisher, hosting and intellectual property of the Smidjan website."
       },
       "cgv": {
-        "title": "Conditions générales | Smidjan",
-        "description": "Conditions générales de prestation de Smidjan : objet, devis, exécution, responsabilité, confidentialité et droit belge applicable aux missions de cybersécurité.",
-        "ogTitle": "Conditions générales | Smidjan",
-        "ogDescription": "Cadre contractuel des prestations de conseil, d'audit et de développement sécurisé de Smidjan."
+        "title": "Terms and conditions | Smidjan",
+        "description": "Smidjan's general service terms: purpose, quotation, performance, liability, confidentiality and Belgian law applicable to cybersecurity engagements.",
+        "ogTitle": "Terms and conditions | Smidjan",
+        "ogDescription": "Contractual framework for Smidjan's consulting, audit and secure development services."
       },
       "confidentialite": {
-        "title": "Politique de confidentialité (RGPD) | Smidjan",
-        "description": "Politique de confidentialité de Smidjan : données collectées via le formulaire de contact, finalités, durée de conservation, cookies & services tiers, et vos droits RGPD.",
-        "ogTitle": "Politique de confidentialité (RGPD) | Smidjan",
-        "ogDescription": "Comment Smidjan traite vos données personnelles, en toute transparence sur les cookies et services tiers."
+        "title": "Privacy policy (GDPR) | Smidjan",
+        "description": "Smidjan's privacy policy: data collected via the contact form, purposes, retention period, cookies & third-party services, and your GDPR rights.",
+        "ogTitle": "Privacy policy (GDPR) | Smidjan",
+        "ogDescription": "How Smidjan processes your personal data, with full transparency about cookies and third-party services."
       }
     },
     "breadcrumb": {
-      "home": "Accueil"
+      "home": "Home"
     },
     "nav": {
-      "label": "Pages légales",
-      "aria": "Sommaire des pages légales",
+      "label": "Legal pages",
+      "aria": "Legal pages summary",
       "items": {
-        "mentions": "Mentions légales",
-        "confidentialite": "Politique de confidentialité",
-        "cgv": "Conditions générales"
+        "mentions": "Legal notice",
+        "confidentialite": "Privacy policy",
+        "cgv": "Terms and conditions"
       }
     },
     "mentions": {
       "hero": {
-        "eyebrow": "Informations légales",
-        "title": "Mentions légales",
-        "lead": "L'identité de l'éditeur du site, le responsable de sa publication, son hébergeur et les règles de propriété intellectuelle applicables."
+        "eyebrow": "Legal information",
+        "title": "Legal notice",
+        "lead": "The identity of the website's publisher, the person responsible for its publication, its host and the applicable intellectual property rules."
       },
       "editeur": {
-        "title": "Éditeur du site",
-        "intro": "Le présent site est édité par Smidjan, société active en cybersécurité établie à Liège, Belgique.",
-        "denomination": "<strong>Dénomination :</strong> Smidjan, marque commerciale exploitée par Jean-Baptiste Dhondt (personne physique)",
-        "siege": "<strong>Siège :</strong> Liège, Belgique",
-        "bce": "<strong>Numéro d'entreprise (BCE) :</strong> En cours d'immatriculation",
-        "tva": "<strong>Numéro de TVA intracommunautaire :</strong> En cours d'immatriculation",
-        "emailLabel": "<strong>E-mail :</strong>",
-        "telephoneLabel": "<strong>Téléphone :</strong>",
-        "callout": "En toute transparence : à la date de rédaction de cette page, Smidjan n'a pas encore finalisé son immatriculation (BCE/TVA). <b>Aucun numéro d'entreprise ne doit être publié tant qu'il n'est pas officiellement attribué.</b> Ces informations seront complétées dès leur obtention, et avant toute mise en ligne définitive du site."
+        "title": "Website publisher",
+        "intro": "This website is published by Smidjan, a company active in cybersecurity based in Liège, Belgium.",
+        "denomination": "<strong>Name:</strong> Smidjan, a trade name operated by Jean-Baptiste Dhondt (natural person)",
+        "siege": "<strong>Registered office:</strong> Liège, Belgium",
+        "bce": "<strong>Company number (CBE):</strong> Registration in progress",
+        "tva": "<strong>Intra-community VAT number:</strong> Registration in progress",
+        "emailLabel": "<strong>E-mail:</strong>",
+        "telephoneLabel": "<strong>Telephone:</strong>",
+        "callout": "In full transparency: at the time this page was drafted, Smidjan had not yet completed its registration (CBE/VAT). <b>No company number may be published as long as it has not been officially assigned.</b> This information will be added as soon as it is obtained, and before any final publication of the website online."
       },
       "responsable": {
-        "title": "Responsable de la publication",
-        "body": "Jean-Baptiste Dhondt, fondateur de Smidjan, agit en qualité de responsable de la publication du présent site."
+        "title": "Person responsible for publication",
+        "body": "Jean-Baptiste Dhondt, founder of Smidjan, acts as the person responsible for the publication of this website."
       },
       "hebergement": {
-        "title": "Hébergement",
-        "p1": "Le site est hébergé par : <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis : <link>vercel.com</link>.",
-        "p2": "L'hébergement peut impliquer un traitement de données techniques sur une infrastructure distribuée (« edge network ») dont certains nœuds sont situés hors de l'Union européenne ; voir la section « Cookies & services tiers » de la <link>politique de confidentialité</link> pour le détail de ces transferts."
+        "title": "Hosting",
+        "p1": "The website is hosted by: <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, United States: <link>vercel.com</link>.",
+        "p2": "Hosting may involve the processing of technical data on a distributed infrastructure (\"edge network\"), some of whose nodes are located outside the European Union; see the \"Cookies & third-party services\" section of the <link>privacy policy</link> for details of these transfers."
       },
       "propriete": {
-        "title": "Propriété intellectuelle",
-        "p1": "L'ensemble des éléments du présent site (textes, structure, graphismes, logo, code source) est protégé par le droit belge et international de la propriété intellectuelle et demeure la propriété de Smidjan, sauf mention contraire. Toute reproduction, représentation, modification ou exploitation, totale ou partielle, sans autorisation écrite préalable, est interdite.",
-        "h3": "Limitation de responsabilité",
-        "p2": "Malgré le soin apporté à la rédaction de ce site, Smidjan ne peut garantir l'exactitude, la complétude ou l'actualité permanente des informations qui y sont diffusées, et ne saurait être tenue responsable des conséquences d'une utilisation de ces informations, ni des interruptions ou dysfonctionnements techniques indépendants de sa volonté."
+        "title": "Intellectual property",
+        "p1": "All the elements of this website (texts, structure, graphics, logo, source code) are protected by Belgian and international intellectual property law and remain the property of Smidjan, unless otherwise stated. Any reproduction, representation, modification or exploitation, in whole or in part, without prior written authorisation, is prohibited.",
+        "h3": "Limitation of liability",
+        "p2": "Despite the care taken in drafting this website, Smidjan cannot guarantee the accuracy, completeness or permanent currency of the information published on it, and cannot be held liable for the consequences of any use of this information, nor for interruptions or technical malfunctions beyond its control."
       },
       "contact": {
         "title": "Contact",
-        "body": "Pour toute question relative au site ou à son contenu : <link>contact@smidjan.be</link>."
+        "body": "For any question relating to the website or its content: <link>contact@smidjan.be</link>."
       }
     },
     "cgv": {
       "hero": {
-        "eyebrow": "Cadre contractuel",
-        "title": "Conditions générales",
-        "lead": "Le cadre applicable aux prestations de conseil, d'audit, de test d'intrusion, de développement sécurisé et d'accompagnement à la conformité fournies par Smidjan."
+        "eyebrow": "Contractual framework",
+        "title": "Terms and conditions",
+        "lead": "The framework applicable to the consulting, audit, penetration testing, secure development and compliance support services provided by Smidjan."
       },
-      "intro": "Les présentes conditions générales encadrent les prestations fournies par Smidjan. Elles ne remplacent pas le devis ou le contrat signé pour une mission donnée, qui prévaut en cas de contradiction.",
+      "intro": "These terms and conditions govern the services provided by Smidjan. They do not replace the quotation or the contract signed for a given engagement, which prevails in the event of any contradiction.",
       "objet": {
-        "title": "Objet",
-        "body": "Les présentes conditions générales régissent les prestations de conseil, d'audit, de test d'intrusion, de développement sécurisé et d'accompagnement à la conformité (NIS2 / CyberFundamentals) fournies par Smidjan à ses clients professionnels."
+        "title": "Purpose",
+        "body": "These terms and conditions govern the consulting, audit, penetration testing, secure development and compliance support (NIS2 / CyberFundamentals) services provided by Smidjan to its professional clients."
       },
       "devis": {
-        "title": "Devis et commande",
-        "body": "Toute prestation fait l'objet d'un devis préalable détaillant le périmètre, les livrables, le calendrier indicatif et le prix. La prestation est réputée acceptée à la signature du devis, à sa confirmation écrite (y compris par e-mail), ou au versement d'un éventuel acompte."
+        "title": "Quotation and order",
+        "body": "Every service is the subject of a prior quotation detailing the scope, the deliverables, the indicative schedule and the price. The service is deemed accepted upon signature of the quotation, upon its written confirmation (including by e-mail), or upon payment of any deposit."
       },
       "execution": {
-        "title": "Exécution des prestations",
-        "p1": "Smidjan s'engage à exécuter les prestations avec diligence, selon les règles de l'art de la profession et les référentiels applicables (notamment OWASP, ISO/IEC 27001, CyberFundamentals). Les délais communiqués sont donnés à titre indicatif, sauf engagement contraire explicite dans le devis.",
-        "h3": "Prix et modalités de paiement",
-        "p2": "Les prix sont établis en euros, hors ou toutes taxes comprises selon indication du devis. Les modalités de facturation (acompte éventuel, échéances et jalons) sont précisées dans le devis propre à chaque mission, que le client accepte lors de sa signature ou de sa validation par e-mail. Toute somme non payée à l'échéance peut donner lieu, après mise en demeure restée sans effet, aux intérêts et indemnités prévus par la loi belge du 2 août 2002 concernant la lutte contre le retard de paiement dans les transactions commerciales, lorsque celle-ci s'applique."
+        "title": "Performance of the services",
+        "p1": "Smidjan undertakes to perform the services diligently, in accordance with the professional standards of the trade and the applicable frameworks (in particular OWASP, ISO/IEC 27001, CyberFundamentals). The communicated timeframes are given for indicative purposes only, unless an explicit contrary commitment is made in the quotation.",
+        "h3": "Price and terms of payment",
+        "p2": "Prices are set in euros, exclusive or inclusive of all taxes as indicated in the quotation. The invoicing terms (any deposit, due dates and milestones) are specified in the quotation specific to each engagement, which the client accepts upon signature or upon validation by e-mail. Any sum not paid by its due date may give rise, after a formal notice that has remained without effect, to the interest and compensation provided for by the Belgian Act of 2 August 2002 on combating late payment in commercial transactions, where it applies."
       },
       "responsabilite": {
-        "title": "Responsabilité",
-        "body": "La responsabilité de Smidjan ne peut être engagée qu'en cas de faute prouvée dans l'exécution de ses prestations. Elle est limitée aux dommages directs et prévisibles et, sauf faute lourde ou intentionnelle, plafonnée au montant total facturé pour la mission concernée. Smidjan ne saurait être tenue responsable des conséquences d'une vulnérabilité non détectée lors d'un audit ou d'un test d'intrusion, ces prestations constituant une obligation de moyens et non de résultat."
+        "title": "Liability",
+        "body": "Smidjan's liability may only be engaged in the event of a proven fault in the performance of its services. It is limited to direct and foreseeable damage and, except in the event of gross or intentional fault, capped at the total amount invoiced for the engagement concerned. Smidjan cannot be held liable for the consequences of a vulnerability not detected during an audit or a penetration test, as these services constitute an obligation of means and not of result."
       },
       "confidentialite": {
-        "title": "Confidentialité",
-        "p1": "Chaque partie s'engage à conserver strictement confidentielles les informations techniques, commerciales ou organisationnelles échangées dans le cadre de la mission, pendant toute sa durée et après son terme, sauf accord écrit contraire ou obligation légale de divulgation.",
-        "p2": "Les données à caractère personnel traitées à cette occasion le sont conformément à notre <link>politique de confidentialité</link>."
+        "title": "Confidentiality",
+        "p1": "Each party undertakes to keep strictly confidential the technical, commercial or organisational information exchanged in the context of the engagement, throughout its duration and after its end, unless otherwise agreed in writing or subject to a legal obligation of disclosure.",
+        "p2": "The personal data processed on this occasion is processed in accordance with our <link>privacy policy</link>."
       },
       "propriete": {
-        "title": "Propriété intellectuelle des livrables",
-        "body": "Sauf stipulation contraire dans le devis, les rapports, analyses et recommandations remis au client lui sont concédés en usage pour ses besoins internes. Les méthodologies, outils et modèles propres à Smidjan demeurent sa propriété. Pour les prestations de développement sur mesure, l'étendue de la cession des droits sur le code livré est précisée dans le devis correspondant."
+        "title": "Intellectual property of the deliverables",
+        "body": "Unless otherwise stipulated in the quotation, the reports, analyses and recommendations delivered to the client are granted to it for use for its internal needs. The methodologies, tools and templates specific to Smidjan remain its property. For custom development services, the scope of the transfer of rights to the delivered code is specified in the corresponding quotation."
       },
       "resiliation": {
-        "title": "Résiliation",
-        "body": "En cas de manquement grave d'une partie à ses obligations, non corrigé dans un délai raisonnable après mise en demeure écrite, l'autre partie peut résilier la mission en cours, sans préjudice des sommes déjà dues pour les travaux réalisés."
+        "title": "Termination",
+        "body": "In the event of a serious breach by one party of its obligations, not remedied within a reasonable time after a written formal notice, the other party may terminate the ongoing engagement, without prejudice to the sums already due for the work carried out."
       },
       "droit": {
-        "title": "Droit applicable et juridiction compétente",
-        "body": "Les présentes conditions générales sont régies par le <strong>droit belge</strong>. Tout litige relatif à leur validité, leur interprétation ou leur exécution relève de la compétence exclusive des tribunaux de l'arrondissement judiciaire de <strong>Liège</strong>, sous réserve des dispositions impératives applicables en matière de protection du consommateur.",
-        "callout": "Ce document est un <b>gabarit</b> : il doit être adapté à chaque mission et validé par un juriste avant toute utilisation contractuelle. En cas de contradiction, le devis ou contrat signé par les deux parties prévaut toujours sur cette trame générique."
+        "title": "Applicable law and competent jurisdiction",
+        "body": "These terms and conditions are governed by <strong>Belgian law</strong>. Any dispute relating to their validity, their interpretation or their performance falls within the exclusive jurisdiction of the courts of the judicial district of <strong>Liège</strong>, subject to the mandatory provisions applicable in matters of consumer protection.",
+        "callout": "This document is a <b>template</b>: it must be adapted to each engagement and validated by a lawyer before any contractual use. In the event of any contradiction, the quotation or contract signed by both parties always prevails over this generic outline."
       }
     },
     "conf": {
       "hero": {
-        "eyebrow": "Protection des données",
-        "title": "Politique de confidentialité (RGPD)",
-        "lead": "Ce que nous collectons via le formulaire de contact, pourquoi, combien de temps, avec qui, et une réponse honnête sur les cookies et services tiers utilisés."
+        "eyebrow": "Data protection",
+        "title": "Privacy policy (GDPR)",
+        "lead": "What we collect via the contact form, why, for how long, with whom, and an honest answer about the cookies and third-party services used."
       },
-      "intro": "Smidjan attache de l'importance à la protection des données à caractère personnel des visiteurs et clients du site, conformément au Règlement (UE) 2016/679 du 27 avril 2016 (« RGPD ») et à la loi belge du 30 juillet 2018 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel.",
+      "intro": "Smidjan attaches importance to the protection of the personal data of the website's visitors and clients, in accordance with Regulation (EU) 2016/679 of 27 April 2016 (\"GDPR\") and the Belgian Act of 30 July 2018 on the protection of natural persons with regard to the processing of personal data.",
       "responsable": {
-        "title": "Responsable de traitement",
-        "body": "Le responsable du traitement des données collectées via ce site est Smidjan, Liège, Belgique : <link>contact@smidjan.be</link>."
+        "title": "Data controller",
+        "body": "The controller of the data collected via this website is Smidjan, Liège, Belgium: <link>contact@smidjan.be</link>."
       },
       "donnees": {
-        "title": "Données collectées",
-        "formulaire": "<strong>Formulaire de contact / demande de diagnostic :</strong> nom, prénom, société (facultatif), adresse e-mail, numéro de téléphone (facultatif), contenu du message.",
-        "navigation": "<strong>Données de navigation :</strong> adresse IP, type de navigateur et d'appareil, pages consultées, collectées à des fins de sécurité et, le cas échéant, de mesure d'audience.",
-        "recaptcha": "<strong>Données issues de Google reCAPTCHA :</strong> signaux techniques utilisés pour distinguer un utilisateur humain d'un robot lors de l'envoi du formulaire de contact."
+        "title": "Data collected",
+        "formulaire": "<strong>Contact form / diagnosis request:</strong> surname, first name, company (optional), e-mail address, telephone number (optional), content of the message.",
+        "navigation": "<strong>Browsing data:</strong> IP address, browser and device type, pages viewed, collected for security purposes and, where applicable, for audience measurement.",
+        "recaptcha": "<strong>Data from Google reCAPTCHA:</strong> technical signals used to distinguish a human user from a robot when submitting the contact form."
       },
       "finalites": {
-        "title": "Finalités du traitement",
-        "item1": "Répondre aux demandes de contact, de devis ou de diagnostic gratuit ;",
-        "item2": "Assurer la sécurité et l'intégrité du formulaire de contact (protection anti-spam et anti-robot) ;",
-        "item3": "Mesurer et améliorer l'usage du site, le cas échéant, au moyen d'outils de statistiques."
+        "title": "Purposes of the processing",
+        "item1": "Respond to requests for contact, quotation or free diagnosis;",
+        "item2": "Ensure the security and integrity of the contact form (anti-spam and anti-robot protection);",
+        "item3": "Measure and improve the use of the website, where applicable, by means of statistical tools."
       },
       "baseLegale": {
-        "title": "Base légale",
-        "item1": "L'<strong>exécution de mesures précontractuelles</strong> prises à la demande de la personne concernée, pour le traitement des demandes de contact ;",
-        "item2": "L'<strong>intérêt légitime</strong> de Smidjan à sécuriser son formulaire et son site contre les abus (reCAPTCHA) ;",
-        "item3": "Le <strong>consentement</strong> de l'utilisateur, lorsqu'il est requis pour des cookies de mesure d'audience non essentiels."
+        "title": "Legal basis",
+        "item1": "The <strong>performance of pre-contractual measures</strong> taken at the request of the data subject, for the handling of contact requests;",
+        "item2": "The <strong>legitimate interest</strong> of Smidjan in securing its form and its website against abuse (reCAPTCHA);",
+        "item3": "The <strong>consent</strong> of the user, where it is required for non-essential audience measurement cookies."
       },
       "duree": {
-        "title": "Durée de conservation",
-        "body": "Les données transmises via le formulaire de contact sont conservées pendant une durée de <strong>3 ans à compter du dernier échange</strong>, sauf obligation légale de conservation plus longue (notamment comptable) ou relation contractuelle en cours."
+        "title": "Retention period",
+        "body": "The data submitted via the contact form is kept for a period of <strong>3 years from the last exchange</strong>, unless a longer legal retention obligation applies (in particular accounting) or an ongoing contractual relationship exists."
       },
       "destinataires": {
-        "title": "Destinataires des données",
-        "body": "Les données sont traitées par le personnel habilité de Smidjan et, le cas échéant, par ses sous-traitants techniques (hébergement, messagerie, outils anti-spam et de mesure d'audience). Elles ne sont ni vendues, ni louées, ni cédées à des tiers à des fins commerciales."
+        "title": "Recipients of the data",
+        "body": "The data is processed by Smidjan's authorised staff and, where applicable, by its technical subprocessors (hosting, e-mail, anti-spam and audience measurement tools). It is neither sold, nor rented, nor transferred to third parties for commercial purposes."
       },
       "cookies": {
-        "title": "Cookies & services tiers",
-        "p1": "Ce site n'est pas exempt de cookies ni de traceurs : nous ne prétendons pas fonctionner « sans aucun cookie ». Les catégories suivantes peuvent être utilisées :",
+        "title": "Cookies & third-party services",
+        "p1": "This website is not free of cookies or trackers: we do not claim to operate \"without any cookie\". The following categories may be used:",
         "table": {
           "type": "Type",
-          "finalite": "Finalité",
-          "baseLegale": "Base légale",
+          "finalite": "Purpose",
+          "baseLegale": "Legal basis",
           "row1": {
-            "type": "Cookies techniques essentiels",
-            "finalite": "Fonctionnement de base du site",
-            "base": "Intérêt légitime / nécessaire au service"
+            "type": "Essential technical cookies",
+            "finalite": "Basic operation of the website",
+            "base": "Legitimate interest / necessary for the service"
           },
           "row2": {
             "type": "Google reCAPTCHA (Google LLC)",
-            "finalite": "Protection du formulaire de contact contre les robots et les abus",
-            "base": "Intérêt légitime"
+            "finalite": "Protection of the contact form against robots and abuse",
+            "base": "Legitimate interest"
           }
         },
-        "p2": "À ce jour, le site n'utilise <strong>aucun outil de mesure d'audience (analytics)</strong> ni cookie publicitaire. Si un tel outil était mis en place, cette politique serait mise à jour en conséquence.",
-        "p3": "Certains de ces services, notamment Google reCAPTCHA, sont fournis par des tiers établis hors de l'Union européenne (États-Unis) et peuvent impliquer un transfert de données correspondant. Ces transferts s'appuient sur les garanties prévues par le RGPD, telles que les clauses contractuelles types de la Commission européenne. Vous pouvez à tout moment configurer votre navigateur pour bloquer ou supprimer les cookies non essentiels ; cela peut toutefois limiter certaines fonctionnalités du site (par exemple l'envoi du formulaire de contact)."
+        "p2": "To date, the website uses <strong>no audience measurement (analytics) tool</strong> nor any advertising cookie. If such a tool were to be put in place, this policy would be updated accordingly.",
+        "p3": "Some of these services, in particular Google reCAPTCHA, are provided by third parties established outside the European Union (United States) and may involve a corresponding transfer of data. These transfers rely on the safeguards provided for by the GDPR, such as the European Commission's standard contractual clauses. You may at any time configure your browser to block or delete non-essential cookies; this may however limit certain features of the website (for example the submission of the contact form)."
       },
       "droits": {
-        "title": "Vos droits",
-        "p1": "Conformément aux articles 15 à 22 du RGPD, vous disposez des droits suivants sur vos données : droit d'accès, de rectification, d'effacement, de limitation du traitement, de portabilité, d'opposition, ainsi que le droit de retirer votre consentement à tout moment lorsque le traitement en dépend.",
-        "p2": "Pour exercer ces droits, contactez-nous à l'adresse <link>contact@smidjan.be</link>. Une réponse vous sera apportée dans les délais prévus par le RGPD.",
-        "p3": "Vous disposez également du droit d'introduire une réclamation auprès de l'autorité de contrôle belge : <strong>Autorité de protection des données (APD)</strong>, Rue de la Presse 35, 1000 Bruxelles : <link>www.autoriteprotectiondonnees.be</link>."
+        "title": "Your rights",
+        "p1": "In accordance with Articles 15 to 22 of the GDPR, you have the following rights over your data: the right of access, of rectification, of erasure, of restriction of processing, of portability, of objection, as well as the right to withdraw your consent at any time where the processing depends on it.",
+        "p2": "To exercise these rights, contact us at <link>contact@smidjan.be</link>. A reply will be provided within the timeframes laid down by the GDPR.",
+        "p3": "You also have the right to lodge a complaint with the Belgian supervisory authority: <strong>Data Protection Authority (DPA)</strong>, Rue de la Presse 35, 1000 Brussels: <link>www.autoriteprotectiondonnees.be</link>."
       },
       "dpo": {
-        "title": "Contact délégué à la protection des données",
-        "body": "Compte tenu de sa taille et de la nature de ses traitements, Smidjan n'a pas désigné de délégué à la protection des données (DPO) formel, cette désignation n'étant pas obligatoire dans son cas. Toute question relative au traitement de vos données peut être adressée à <link>contact@smidjan.be</link>."
+        "title": "Data protection officer contact",
+        "body": "Given its size and the nature of its processing activities, Smidjan has not appointed a formal data protection officer (DPO), as this appointment is not mandatory in its case. Any question relating to the processing of your data may be sent to <link>contact@smidjan.be</link>."
       }
     }
   },
@@ -1753,6 +1753,250 @@
         }
       },
       "note": "*Indicative durations, varying with your starting maturity, the size of the scope and your internal resources. They are confirmed during scoping."
+    }
+  },
+  "wizard": {
+    "common": {
+      "back": "← Back",
+      "next": "Next step →",
+      "included": "Included",
+      "budgetLabel": "Estimated budget",
+      "delai": "Timeline",
+      "complexityLabel": "Complexity",
+      "featuresLabel": "Features",
+      "complexitySimple": "Simple",
+      "complexityMedium": "Medium",
+      "complexityComplex": "Complex",
+      "learnMore": "Learn more",
+      "stepSlash": "Step {step}/{total}",
+      "stepSur": "Step {step} of {total}"
+    },
+    "shell": {
+      "successTitle": "Request sent successfully",
+      "successText": "Thank you for your trust. We have received your request and will send you a detailed quote by email within 24 hours.",
+      "successInfoTitle": "What happens next?",
+      "successItem1": "You will receive a confirmation email",
+      "successItem2": "Our team will review your project",
+      "successItem3": "We will contact you to refine the details",
+      "successItem4": "You will receive a personalised quote",
+      "successBackHome": "Back to home",
+      "progressAria": "Step {step} of {total}",
+      "sidebarAria": "Quote preview",
+      "errorLabel": "Error",
+      "errorRateLimit": "Too many requests. Please wait a few minutes and try again.",
+      "errorUnavailable": "Service temporarily unavailable. Please try again in a few moments.",
+      "errorSend": "Error while sending the request",
+      "errorComm": "Communication error with the server. Please try again.",
+      "errorInvalidResponse": "Invalid server response. Please try again.",
+      "errorSaveFailed": "Saving failed. Please try again.",
+      "errorGeneric": "An error occurred. Please try again."
+    },
+    "preview": {
+      "title": "Your estimate",
+      "note": "This estimate will be refined during our conversation",
+      "breakdownTitle": "Budget breakdown",
+      "mobileToggleAria": "View quote details",
+      "mobileBarAria": "Quote preview",
+      "mobilePanelAria": "Quote details"
+    },
+    "leadScore": {
+      "gradeHot": "Hot lead",
+      "gradeWarm": "Qualified lead",
+      "gradeCold": "Cold lead",
+      "gradeSpam": "To verify",
+      "confidence": "Confidence: {value}%",
+      "toggleDetails": "Score details",
+      "catProject": "Project",
+      "catEngagement": "Engagement",
+      "catCompletion": "Completion",
+      "catEnrichment": "Enrichment",
+      "catBehavioral": "Behaviour",
+      "note": "Score calculated in real time based on your answers and your browsing"
+    },
+    "tooltip": {
+      "moreInfo": "More information"
+    },
+    "escape": {
+      "text": "Technical issue, CV or other request (not a new project)? <link>Contact us directly</link>"
+    },
+    "step1": {
+      "title": "Select the project type that best matches your needs",
+      "footerNote": "<b>Not sure of your choice?</b> Select the type that comes closest. We will refine it together during our conversation.",
+      "infoBtnAria": "Learn more about {name}",
+      "infoBubbleLink": "Learn more →",
+      "info": {
+        "siteVitrine": {
+          "title": "What is a showcase website?",
+          "explanation": "A showcase website is an informative site that presents your company, services and products without online sales. It is like a professional digital brochure available 24/7."
+        },
+        "ecommerce": {
+          "title": "What is an e-commerce site?",
+          "explanation": "An e-commerce site is an online shop that lets you sell your products/services directly online with secure payment, stock management and order tracking."
+        },
+        "appWeb": {
+          "title": "What is a web application?",
+          "explanation": "A web application is business software accessible through a browser (SaaS, CRM, ERP, platform). It automates complex processes with user management, workflows and data."
+        },
+        "auditCyber": {
+          "title": "What is a cybersecurity audit?",
+          "explanation": "A cybersecurity audit is a professional analysis of the security of your IT infrastructure, applications and websites to identify vulnerabilities before they are exploited by attackers."
+        },
+        "aiAutomation": {
+          "title": "What is AI automation?",
+          "explanation": "AI automation uses artificial intelligence (chatbots, document processing, data analysis) to automate repetitive tasks and save time in your business processes."
+        },
+        "cmsBlog": {
+          "title": "CMS / Blog",
+          "explanation": "Content management system"
+        }
+      }
+    },
+    "step2": {
+      "stepNumber": "Step 2/5",
+      "title": "{name}: What do you need?",
+      "subtitle": "Select the features that match your project",
+      "summaryLabel": "Selected features:"
+    },
+    "step3": {
+      "title": "SEO and additional services",
+      "subtitle": "Choose your search optimisation level and complementary services",
+      "seoSectionTitle": "SEO (search optimisation)",
+      "seoNoneName": "None",
+      "seoBasicName": "Basic SEO",
+      "seoAdvancedName": "Advanced SEO",
+      "seoNoneDesc": "No SEO optimisation",
+      "seoBasicDesc": "Meta tags, sitemap, schema.org, technical optimisation",
+      "seoAdvancedDesc": "Full strategy, keywords, optimised content, backlinks",
+      "free": "Free",
+      "servicesSectionTitle": "Additional services",
+      "animationsLabel": "Advanced animations (+600€)",
+      "trainingLabel": "Team training (+{price})",
+      "next": "View summary →"
+    },
+    "step4": {
+      "title": "Summary of your project",
+      "subtitle": "Check the details before sending us your request",
+      "priceNote": "Indicative price, will be refined during our conversation",
+      "metaDelai": "Estimated timeline",
+      "featuresValue": "{count} selected",
+      "sectionIncluded": "What is included",
+      "catBase": "Base",
+      "catFeatures": "Features",
+      "catDesign": "Design & optimisation",
+      "catServices": "Additional services",
+      "animationsItem": "Advanced animations",
+      "timelineSectionTitle": "Your preferred timeline",
+      "noticeTitle": "Next step",
+      "noticeText": "This estimate will be refined during a personalised discussion to make sure it fits your needs perfectly. You will receive a detailed quote by email.",
+      "back": "← Edit",
+      "next": "Continue to the form",
+      "designTemplate": "Template design",
+      "designSemiCustom": "Semi-custom design",
+      "designCustom": "Custom design",
+      "designUndefined": "Not defined",
+      "seoNone": "None",
+      "seoBasic": "Basic SEO",
+      "seoAdvanced": "Advanced SEO",
+      "seoUndefined": "Not defined",
+      "timelineAsap": "As soon as possible",
+      "timeline1m": "1 month",
+      "timeline23m": "2-3 months",
+      "timelineGt3m": "More than 3 months",
+      "timelineFlexible": "Flexible",
+      "timelineUndefined": "Not defined"
+    },
+    "step5": {
+      "title": "Receive your detailed quote",
+      "subtitle": "Share your contact details to receive your personalised estimate",
+      "labelName": "Full name",
+      "labelEmail": "Professional email",
+      "labelPhone": "Phone",
+      "labelCompany": "Company",
+      "labelMessage": "Additional details",
+      "placeholderName": "John Smith",
+      "placeholderEmail": "john@company.be",
+      "placeholderCompany": "Your company name",
+      "placeholderMessage": "Describe your project in a few words, ask your questions...",
+      "timelineQuestion": "When would you like to start?",
+      "timelineAsap": "As soon as possible",
+      "timeline1m": "In 1 month",
+      "timeline23m": "In 2-3 months",
+      "timelineGt3m": "More than 3 months",
+      "timelineFlexible": "I am flexible",
+      "messageHint": "The more you tell us, the more accurate our quote will be (between 10 and 1,500 characters)",
+      "consent": "I agree that Smidjan may process my data to contact me about my request in accordance with the <privacy>privacy policy</privacy> and the <rgpd>GDPR</rgpd>",
+      "recaptcha": "This site is protected by reCAPTCHA and subject to Google's <privacy>privacy policy</privacy> and <terms>terms of service</terms>.",
+      "submit": "Send my request",
+      "submitting": "Sending...",
+      "errors": {
+        "nameRequired": "Name is required",
+        "nameLength": "Name must be between 2 and 80 characters",
+        "nameNoDigits": "Name cannot contain digits",
+        "nameInvalidChars": "Name contains characters that are not allowed",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email",
+        "phoneInvalid": "Invalid phone number",
+        "phoneFormat": "Invalid phone format",
+        "companyTooLong": "Company name is too long (max 100 characters)",
+        "companyInvalidChars": "Characters not allowed detected",
+        "messageTooLong": "The message cannot exceed 1,500 characters",
+        "consentRequired": "You must accept the privacy policy"
+      },
+      "globalSlowDown": "Please slow down. Take the time to fill in the form correctly.",
+      "globalRateLimit": "You have reached the submission limit. Please try again in an hour or contact us directly at smidjan.agency@outlook.com"
+    },
+    "category": {
+      "summaryExclusive": "Selected option",
+      "summaryMultiple": "Selected options"
+    },
+    "codeOwnership": {
+      "stepNumber": "Step 2",
+      "title": "Do you want to own the code?",
+      "subtitle": "This question determines the technical approach for your e-commerce project",
+      "learnMore": "Learn more",
+      "back": "Back",
+      "next": "Continue",
+      "ownership": {
+        "title": "Yes, I want the code",
+        "description": "Custom development. You own 100% of the source code",
+        "feat1": "100% custom code",
+        "feat2": "Total freedom, no dependency",
+        "feat3": "Optimal performance",
+        "feat4": "Unlimited scalability",
+        "infoTitle": "Custom development",
+        "infoText": "We develop your e-commerce with modern technologies (Next.js, React, TypeScript). You receive the complete source code and are its sole owner.",
+        "infoList1": "No monthly CMS subscription",
+        "infoList2": "No technical limits",
+        "infoList3": "Hosting with the provider of your choice",
+        "infoList4": "Code maintainable by any developer",
+        "infoList5": "Unlimited API integrations",
+        "infoNote": "<b>Ideal for:</b> scalable projects, specific needs, high volumes"
+      },
+      "cms": {
+        "title": "No, I prefer a CMS",
+        "description": "Smidjan CMS. Complete professional solution with an e-commerce backend",
+        "feat1": "100% complete e-commerce backend",
+        "feat2": "Installation: 2,500 EUR",
+        "feat3": "40h of front-end customisation: FREE",
+        "feat4": "After 40h: 50 EUR/hour excl. VAT",
+        "feat5": "Hosting: 500 EUR/month excl. VAT",
+        "infoTitle": "Smidjan CMS, complete e-commerce solution",
+        "infoText": "Smidjan CMS is a professional e-commerce solution developed in-house with a complete backend that includes all the features needed to manage your online shop.",
+        "infoList1": "100% complete and optimised e-commerce backend",
+        "infoList2": "Management of products, stock, orders, customers",
+        "infoList3": "Integrated secure payments (Stripe, Mollie, PayPal)",
+        "infoList4": "Real-time analytics dashboard",
+        "infoList5": "Intuitive administration interface",
+        "infoList6": "Smidjan technical support included",
+        "infoList7": "Updates and security managed",
+        "pricingTitle": "Smidjan CMS pricing:",
+        "pricingInstall": "<b>Complete installation:</b> 2,500 EUR (configuration, backend, payment connections)",
+        "pricingHours": "<b>First 40 hours:</b> FREE (front-end customisation, design, logo, colours)",
+        "pricingAfter": "<b>After 40h:</b> 50 EUR/hour excl. VAT (additional features)",
+        "pricingHosting": "<b>Hosting:</b> 500 EUR/month excl. VAT (optimised servers, daily backup, 24/7 monitoring)",
+        "infoNote": "<b>Ideal for:</b> serious shops, rapid growth, professional support, peace of mind",
+        "cmsLink": "Discover Smidjan CMS in detail"
+      }
     }
   }
 }

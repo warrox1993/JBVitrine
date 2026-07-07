@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
+import { useTranslations } from 'next-intl';
 import { CheckCircle, AlertCircle } from 'lucide-react';
 import {
   QuoteData,
@@ -32,6 +33,7 @@ interface QuoteWizardProps {
 }
 
 export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) {
+  const t = useTranslations('wizard');
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -363,9 +365,9 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
           });
 
           if (response.status === 429) {
-            throw new Error('Trop de requêtes. Veuillez attendre quelques minutes et réessayer.');
+            throw new Error(t('shell.errorRateLimit'));
           }
-          throw new Error('Service temporairement indisponible. Veuillez réessayer dans quelques instants.');
+          throw new Error(t('shell.errorUnavailable'));
         }
 
         // Try to parse JSON error response
@@ -374,11 +376,11 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
           throw new Error(
             errorResult.message ||
             errorResult.error ||
-            'Erreur lors de l\'envoi de la demande'
+            t('shell.errorSend')
           );
         } catch (parseError) {
           if (parseError instanceof SyntaxError) {
-            throw new Error('Erreur de communication avec le serveur. Veuillez réessayer.');
+            throw new Error(t('shell.errorComm'));
           }
           throw parseError;
         }
@@ -387,7 +389,7 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
       // Validate Content-Type is JSON before parsing success response
       if (!contentType?.includes('application/json')) {
         console.error('[QuoteWizard] Invalid content-type:', contentType);
-        throw new Error('Réponse invalide du serveur. Veuillez réessayer.');
+        throw new Error(t('shell.errorInvalidResponse'));
       }
 
       const result = await response.json();
@@ -396,7 +398,7 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
       if (!result.ok) {
         throw new Error(
           result.message ||
-          'La sauvegarde a échoué. Veuillez réessayer.'
+          t('shell.errorSaveFailed')
         );
       }
 
@@ -424,7 +426,7 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
       setSubmitError(
         error instanceof Error
           ? error.message
-          : 'Une erreur est survenue. Veuillez réessayer.'
+          : t('shell.errorGeneric')
       );
       setIsSubmitting(false);
     }
@@ -445,25 +447,24 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
           <div className={cls.successIcon}>
             <CheckCircle size={48} strokeWidth={2.5} />
           </div>
-          <h2 className={cls.successTitle}>Demande envoyée avec succès</h2>
+          <h2 className={cls.successTitle}>{t('shell.successTitle')}</h2>
           <p className={cls.successText}>
-            Merci pour votre confiance. Nous avons bien reçu votre demande et vous
-            enverrons un devis détaillé par email dans les 24 heures.
+            {t('shell.successText')}
           </p>
           <div className={cls.successInfo}>
-            <h3 className={cls.successInfoTitle}>Et maintenant ?</h3>
+            <h3 className={cls.successInfoTitle}>{t('shell.successInfoTitle')}</h3>
             <ul className={cls.successList}>
-              <li>Vous recevrez un email de confirmation</li>
-              <li>Notre équipe analysera votre projet</li>
-              <li>Nous vous contacterons pour affiner les détails</li>
-              <li>Vous recevrez un devis personnalisé</li>
+              <li>{t('shell.successItem1')}</li>
+              <li>{t('shell.successItem2')}</li>
+              <li>{t('shell.successItem3')}</li>
+              <li>{t('shell.successItem4')}</li>
             </ul>
           </div>
           <button
             onClick={() => (window.location.href = '/')}
             className={cls.btnPrimary}
           >
-            Retour à l&apos;accueil
+            {t('shell.successBackHome')}
           </button>
         </div>
       </div>
@@ -566,7 +567,7 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
         <ProgressBar
           value={currentStep}
           max={totalSteps}
-          ariaLabel={`Étape ${currentStep} sur ${totalSteps}`}
+          ariaLabel={t('shell.progressAria', { step: currentStep, total: totalSteps })}
         />
       </div>
 
@@ -582,7 +583,7 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
             <div className={cls.errorBanner}>
               <AlertCircle size={24} className={cls.errorIcon} />
               <div>
-                <strong>Erreur</strong>
+                <strong>{t('shell.errorLabel')}</strong>
                 <p>{submitError}</p>
               </div>
             </div>
@@ -593,7 +594,7 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
 
         {/* Sidebar Container for Desktop Layout (visible from step 2+) */}
         {currentStep >= 2 && estimate && quoteData.projectType && (
-          <aside className={cls.sidebar} aria-label="Aperçu du devis">
+          <aside className={cls.sidebar} aria-label={t('shell.sidebarAria')}>
             {/* Empty on mobile - QuotePreview renders outside on mobile */}
           </aside>
         )}

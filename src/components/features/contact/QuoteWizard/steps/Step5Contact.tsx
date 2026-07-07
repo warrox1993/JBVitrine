@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { ContactInfo, QuoteData, TimelineOption } from '../types';
 import PhoneInput from 'react-phone-number-input';
 import { isValidPhoneNumber } from 'libphonenumber-js';
@@ -33,6 +34,7 @@ export function Step5Contact({
   stepNumber,
   totalSteps,
 }: Step5ContactProps) {
+  const t = useTranslations('wizard');
   const [formData, setFormData] = useState<SecureContactInfo>({
     name: '',
     email: '',
@@ -104,49 +106,49 @@ export function Step5Contact({
 
     // Name validation - STRICT (from ContactForm)
     if (!formData.name.trim()) {
-      newErrors.name = 'Le nom est requis';
+      newErrors.name = t('step5.errors.nameRequired');
     } else if (formData.name.trim().length < 2 || formData.name.trim().length > 80) {
-      newErrors.name = 'Le nom doit contenir entre 2 et 80 caractères';
+      newErrors.name = t('step5.errors.nameLength');
     } else if (/\d/.test(formData.name)) {
-      newErrors.name = 'Le nom ne peut pas contenir de chiffres';
+      newErrors.name = t('step5.errors.nameNoDigits');
     } else if (/[^a-zA-ZÀ-ÿ\s\-'.]/g.test(formData.name)) {
-      newErrors.name = 'Le nom contient des caractères non autorisés';
+      newErrors.name = t('step5.errors.nameInvalidChars');
     }
 
     // Email validation - RFC 5322 simplified (from ContactForm)
     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     if (!formData.email.trim()) {
-      newErrors.email = "L'email est requis";
+      newErrors.email = t('step5.errors.emailRequired');
     } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = 'Email invalide';
+      newErrors.email = t('step5.errors.emailInvalid');
     }
 
     // Phone validation (optional but validated if provided)
     if (formData.phone.trim()) {
       try {
         if (!isValidPhoneNumber(formData.phone)) {
-          newErrors.phone = 'Numéro de téléphone invalide';
+          newErrors.phone = t('step5.errors.phoneInvalid');
         }
       } catch {
-        newErrors.phone = 'Format de téléphone invalide';
+        newErrors.phone = t('step5.errors.phoneFormat');
       }
     }
 
     // Company validation - XSS protection (from ContactForm)
     if (formData.company && formData.company.length > 100) {
-      newErrors.company = "Le nom de l'entreprise est trop long (max 100 caractères)";
+      newErrors.company = t('step5.errors.companyTooLong');
     } else if (formData.company && /<script|javascript:|onerror=/i.test(formData.company)) {
-      newErrors.company = 'Caractères non autorisés détectés';
+      newErrors.company = t('step5.errors.companyInvalidChars');
     }
 
     // Message validation - Max only (no minimum required)
     if (formData.message && formData.message.length > 1500) {
-      newErrors.message = 'Le message ne peut pas dépasser 1 500 caractères';
+      newErrors.message = t('step5.errors.messageTooLong');
     }
 
     // Consent validation
     if (!formData.consent) {
-      newErrors.consent = 'Vous devez accepter la politique de confidentialité';
+      newErrors.consent = t('step5.errors.consentRequired');
     }
 
     setErrors(newErrors);
@@ -174,7 +176,7 @@ export function Step5Contact({
 
       if (fillTime < minFillTime) {
         console.warn('⚡ Form filled too quickly - possible bot');
-        setGlobalError('Veuillez ralentir. Prenez le temps de remplir le formulaire correctement.');
+        setGlobalError(t('step5.globalSlowDown'));
         return;
       }
     }
@@ -194,9 +196,7 @@ export function Step5Contact({
       );
 
       if (recentSubmissions.length >= maxSubmissions) {
-        setGlobalError(
-          'Vous avez atteint la limite de soumissions. Veuillez réessayer dans une heure ou nous contacter directement à smidjan.agency@outlook.com'
-        );
+        setGlobalError(t('step5.globalRateLimit'));
         return;
       }
 
@@ -299,11 +299,11 @@ export function Step5Contact({
     <div className={cls.step}>
       <div className={cls.header}>
         <div className={cls.stepNumber}>
-          Étape {stepNumber || 5} sur {totalSteps || 5}
+          {t('common.stepSur', { step: stepNumber || 5, total: totalSteps || 5 })}
         </div>
-        <h2 className={cls.title}>Recevez votre devis détaillé</h2>
+        <h2 className={cls.title}>{t('step5.title')}</h2>
         <p className={cls.subtitle}>
-          Partagez vos coordonnées pour recevoir votre estimation personnalisée
+          {t('step5.subtitle')}
         </p>
       </div>
 
@@ -338,7 +338,7 @@ export function Step5Contact({
           {/* Name */}
           <div className={cls.field}>
             <label htmlFor="name" className={cls.label}>
-              Nom complet <span className={cls.required}>*</span>
+              {t('step5.labelName')} <span className={cls.required}>*</span>
             </label>
             <input
               type="text"
@@ -347,7 +347,7 @@ export function Step5Contact({
               value={formData.name}
               onChange={handleChange}
               className={`${cls.input} ${errors.name ? cls.inputError : ''}`}
-              placeholder="Jean Dupont"
+              placeholder={t('step5.placeholderName')}
               disabled={isSubmitting}
             />
             {errors.name && <span className={cls.error}>{errors.name}</span>}
@@ -356,7 +356,7 @@ export function Step5Contact({
           {/* Email */}
           <div className={cls.field}>
             <label htmlFor="email" className={cls.label}>
-              Email professionnel <span className={cls.required}>*</span>
+              {t('step5.labelEmail')} <span className={cls.required}>*</span>
             </label>
             <input
               type="email"
@@ -365,7 +365,7 @@ export function Step5Contact({
               value={formData.email}
               onChange={handleChange}
               className={`${cls.input} ${errors.email ? cls.inputError : ''}`}
-              placeholder="jean@entreprise.be"
+              placeholder={t('step5.placeholderEmail')}
               disabled={isSubmitting}
             />
             {errors.email && <span className={cls.error}>{errors.email}</span>}
@@ -374,7 +374,7 @@ export function Step5Contact({
           {/* Phone */}
           <div className={cls.field}>
             <label htmlFor="phone" className={cls.label}>
-              Téléphone
+              {t('step5.labelPhone')}
             </label>
             <PhoneInput
               id="phone"
@@ -397,7 +397,7 @@ export function Step5Contact({
           {/* Company */}
           <div className={cls.field}>
             <label htmlFor="company" className={cls.label}>
-              Entreprise
+              {t('step5.labelCompany')}
             </label>
             <input
               type="text"
@@ -406,7 +406,7 @@ export function Step5Contact({
               value={formData.company}
               onChange={handleChange}
               className={`${cls.input} ${errors.company ? cls.inputError : ''}`}
-              placeholder="Nom de votre entreprise"
+              placeholder={t('step5.placeholderCompany')}
               disabled={isSubmitting}
             />
             {errors.company && <span className={cls.error}>{errors.company}</span>}
@@ -415,14 +415,14 @@ export function Step5Contact({
           {/* Timeline (if not already selected) */}
           {!quoteData.timeline && (
             <div className={cls.field}>
-              <label className={cls.label}>Quand souhaitez-vous démarrer ?</label>
+              <label className={cls.label}>{t('step5.timelineQuestion')}</label>
               <div className={cls.timelineOptions}>
                 {[
-                  { value: 'asap', label: 'Dès que possible' },
-                  { value: '1m', label: 'Dans 1 mois' },
-                  { value: '2-3m', label: 'Dans 2-3 mois' },
-                  { value: '>3m', label: 'Plus de 3 mois' },
-                  { value: 'flexible', label: 'Je suis flexible' },
+                  { value: 'asap', label: t('step5.timelineAsap') },
+                  { value: '1m', label: t('step5.timeline1m') },
+                  { value: '2-3m', label: t('step5.timeline23m') },
+                  { value: '>3m', label: t('step5.timelineGt3m') },
+                  { value: 'flexible', label: t('step5.timelineFlexible') },
                 ].map((option) => (
                   <button
                     key={option.value}
@@ -443,7 +443,7 @@ export function Step5Contact({
           {/* Message */}
           <div className={cls.field}>
             <label htmlFor="message" className={cls.label}>
-              Détails supplémentaires
+              {t('step5.labelMessage')}
             </label>
             <textarea
               id="message"
@@ -451,13 +451,13 @@ export function Step5Contact({
               value={formData.message}
               onChange={handleChange}
               className={`${cls.textarea} ${errors.message ? cls.inputError : ''}`}
-              placeholder="Décrivez votre projet en quelques mots, posez vos questions..."
+              placeholder={t('step5.placeholderMessage')}
               rows={4}
               disabled={isSubmitting}
             />
             {errors.message && <span className={cls.error}>{errors.message}</span>}
             <span className={cls.hint}>
-              Plus vous nous en dites, plus notre devis sera précis (entre 10 et 1 500 caractères)
+              {t('step5.messageHint')}
             </span>
           </div>
 
@@ -473,25 +473,28 @@ export function Step5Contact({
                 disabled={isSubmitting}
               />
               <span className={errors.consent ? cls.checkboxTextError : ''}>
-                J&apos;accepte que Smidjan traite mes données pour me recontacter
-                au sujet de ma demande conformément à la{' '}
-                <a
-                  href="/privacy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cls.link}
-                >
-                  politique de confidentialité
-                </a>
-                {' '}et au{' '}
-                <a
-                  href="/legal-notice"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cls.link}
-                >
-                  RGPD
-                </a>
+                {t.rich('step5.consent', {
+                  privacy: (c) => (
+                    <a
+                      href="/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cls.link}
+                    >
+                      {c}
+                    </a>
+                  ),
+                  rgpd: (c) => (
+                    <a
+                      href="/legal-notice"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cls.link}
+                    >
+                      {c}
+                    </a>
+                  ),
+                })}
                 <span className={cls.required}> *</span>
               </span>
             </label>
@@ -507,15 +510,18 @@ export function Step5Contact({
             marginTop: 'var(--space-2)',
             fontStyle: 'italic'
           }}>
-            Ce site est protégé par reCAPTCHA et soumis à la{' '}
-            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent-1)' }}>
-              politique de confidentialité
-            </a>{' '}
-            et aux{' '}
-            <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent-1)' }}>
-              conditions d&apos;utilisation
-            </a>{' '}
-            de Google.
+            {t.rich('step5.recaptcha', {
+              privacy: (c) => (
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent-1)' }}>
+                  {c}
+                </a>
+              ),
+              terms: (c) => (
+                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent-1)' }}>
+                  {c}
+                </a>
+              ),
+            })}
           </div>
 
           {/* Footer */}
@@ -526,7 +532,7 @@ export function Step5Contact({
               className={cls.btnSecondary}
               disabled={isSubmitting}
             >
-              ← Retour
+              {t('common.back')}
             </button>
             <button
               type="submit"
@@ -536,10 +542,10 @@ export function Step5Contact({
               {isSubmitting ? (
                 <>
                   <span className={cls.spinner} />
-                  Envoi en cours...
+                  {t('step5.submitting')}
                 </>
               ) : (
-                <>Envoyer ma demande</>
+                <>{t('step5.submit')}</>
               )}
             </button>
           </div>

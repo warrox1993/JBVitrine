@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { ProjectType, Feature } from '../types';
 import {
   getCategoryName,
@@ -34,6 +35,7 @@ export function StepCategorySelection({
   stepNumber,
   totalSteps,
 }: StepCategorySelectionProps) {
+  const t = useTranslations('wizard');
   const [selectedFeatures, setSelectedFeatures] = useState<Feature[]>(initialFeatures);
   const config = getProjectTypeConfig(projectType);
   const categoryFeatures = config.features.filter((f) => f.category === category);
@@ -101,7 +103,7 @@ export function StepCategorySelection({
     <div className={cls.step}>
       <header className={cls.header}>
         <span className={cls.stepNumber}>
-          Étape {stepNumber}/{totalSteps}
+          {t('common.stepSlash', { step: stepNumber, total: totalSteps })}
         </span>
         <h2 className={cls.title}>{categoryTitle}</h2>
         <p className={cls.subtitle}>{categoryDesc}</p>
@@ -164,7 +166,7 @@ export function StepCategorySelection({
                   </div>
                 )}
                 {pricing && pricing.min === 0 && (
-                  <div className={cls.featurePriceIncluded}>Inclus</div>
+                  <div className={cls.featurePriceIncluded}>{t('common.included')}</div>
                 )}
               </div>
             );
@@ -175,14 +177,14 @@ export function StepCategorySelection({
       <footer className={cls.footer}>
         <div className={cls.summary}>
           <span className={cls.summaryLabel}>
-            {isMutuallyExclusive ? 'Option sélectionnée' : 'Options sélectionnées'} :
+            {isMutuallyExclusive ? t('category.summaryExclusive') : t('category.summaryMultiple')} :
           </span>
           <span className={cls.summaryCount}>{selectedFeatures.length}</span>
         </div>
 
         <div className={cls.actions}>
           <button type="button" className={cls.btnSecondary} onClick={onBack}>
-            ← Retour
+            {t('common.back')}
           </button>
           <button
             type="button"
@@ -190,7 +192,7 @@ export function StepCategorySelection({
             onClick={onNext}
             disabled={!canProceed}
           >
-            Étape suivante →
+            {t('common.next')}
           </button>
         </div>
       </footer>

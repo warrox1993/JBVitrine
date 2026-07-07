@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import cls from './StepCodeOwnership.module.css';
 
 interface StepCodeOwnershipProps {
@@ -16,6 +17,7 @@ export function StepCodeOwnership({
   onNext,
   onBack,
 }: StepCodeOwnershipProps) {
+  const t = useTranslations('wizard');
   const [showInfo, setShowInfo] = useState<'ownership' | 'cms' | null>(null);
 
   const handleSelection = (wantsOwnership: boolean) => {
@@ -27,10 +29,10 @@ export function StepCodeOwnership({
   return (
     <div className={cls.step}>
       <div className={cls.header}>
-        <span className={cls.stepNumber}>Etape 2</span>
-        <h2 className={cls.title}>Souhaitez-vous etre proprietaire du code ?</h2>
+        <span className={cls.stepNumber}>{t('codeOwnership.stepNumber')}</span>
+        <h2 className={cls.title}>{t('codeOwnership.title')}</h2>
         <p className={cls.subtitle}>
-          Cette question determine l'approche technique de votre projet e-commerce
+          {t('codeOwnership.subtitle')}
         </p>
       </div>
 
@@ -62,10 +64,10 @@ export function StepCodeOwnership({
                   </svg>
                 )}
               </div>
-              <h3 className={cls.optionTitle}>Oui, je veux le code</h3>
+              <h3 className={cls.optionTitle}>{t('codeOwnership.ownership.title')}</h3>
             </div>
             <p className={cls.optionDescription}>
-              Developpement sur mesure - Vous etes proprietaire a 100% du code source
+              {t('codeOwnership.ownership.description')}
             </p>
             <div className={cls.optionFeatures}>
               <div className={cls.featureItem}>
@@ -84,7 +86,7 @@ export function StepCodeOwnership({
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span>Code 100% personnalise</span>
+                <span>{t('codeOwnership.ownership.feat1')}</span>
               </div>
               <div className={cls.featureItem}>
                 <svg
@@ -102,7 +104,7 @@ export function StepCodeOwnership({
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span>Liberte totale - aucune dependance</span>
+                <span>{t('codeOwnership.ownership.feat2')}</span>
               </div>
               <div className={cls.featureItem}>
                 <svg
@@ -120,7 +122,7 @@ export function StepCodeOwnership({
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span>Performances optimales</span>
+                <span>{t('codeOwnership.ownership.feat3')}</span>
               </div>
               <div className={cls.featureItem}>
                 <svg
@@ -138,7 +140,7 @@ export function StepCodeOwnership({
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span>Evolutivite illimitee</span>
+                <span>{t('codeOwnership.ownership.feat4')}</span>
               </div>
             </div>
             <button
@@ -170,25 +172,24 @@ export function StepCodeOwnership({
                   strokeLinecap="round"
                 />
               </svg>
-              En savoir plus
+              {t('codeOwnership.learnMore')}
             </button>
 
             {showInfo === 'ownership' && (
               <div className={cls.infoBox} onClick={(e) => e.stopPropagation()}>
-                <h4 className={cls.infoTitle}>Developpement sur mesure</h4>
+                <h4 className={cls.infoTitle}>{t('codeOwnership.ownership.infoTitle')}</h4>
                 <p className={cls.infoText}>
-                  Nous developpons votre e-commerce avec les technologies modernes (Next.js, React, TypeScript).
-                  Vous recevez le code source complet et en etes l'unique proprietaire.
+                  {t('codeOwnership.ownership.infoText')}
                 </p>
                 <ul className={cls.infoList}>
-                  <li>Aucun abonnement mensuel CMS</li>
-                  <li>Aucune limite technique</li>
-                  <li>Hebergement chez le prestataire de votre choix</li>
-                  <li>Code maintenable par n'importe quel developpeur</li>
-                  <li>Integrations API illimitees</li>
+                  <li>{t('codeOwnership.ownership.infoList1')}</li>
+                  <li>{t('codeOwnership.ownership.infoList2')}</li>
+                  <li>{t('codeOwnership.ownership.infoList3')}</li>
+                  <li>{t('codeOwnership.ownership.infoList4')}</li>
+                  <li>{t('codeOwnership.ownership.infoList5')}</li>
                 </ul>
                 <p className={cls.infoNote}>
-                  <strong>Ideal pour:</strong> Projets evolutifs, besoins specifiques, volumes importants
+                  {t.rich('codeOwnership.ownership.infoNote', { b: (c) => <strong>{c}</strong> })}
                 </p>
               </div>
             )}
@@ -220,10 +221,10 @@ export function StepCodeOwnership({
                   </svg>
                 )}
               </div>
-              <h3 className={cls.optionTitle}>Non, je prefere un CMS</h3>
+              <h3 className={cls.optionTitle}>{t('codeOwnership.cms.title')}</h3>
             </div>
             <p className={cls.optionDescription}>
-              CMS Smidjan - Solution professionnelle complete avec backend e-commerce
+              {t('codeOwnership.cms.description')}
             </p>
             <div className={cls.optionFeatures}>
               <div className={cls.featureItem}>
@@ -242,7 +243,7 @@ export function StepCodeOwnership({
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span>Backend e-commerce 100% complet</span>
+                <span>{t('codeOwnership.cms.feat1')}</span>
               </div>
               <div className={cls.featureItem}>
                 <svg
@@ -260,7 +261,7 @@ export function StepCodeOwnership({
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span>Installation: 2 500 EUR</span>
+                <span>{t('codeOwnership.cms.feat2')}</span>
               </div>
               <div className={cls.featureItem}>
                 <svg
@@ -278,7 +279,7 @@ export function StepCodeOwnership({
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span>40h personnalisation front: GRATUIT</span>
+                <span>{t('codeOwnership.cms.feat3')}</span>
               </div>
               <div className={cls.featureItem}>
                 <svg
@@ -296,7 +297,7 @@ export function StepCodeOwnership({
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span>Apres 40h: 50 EUR/heure HT</span>
+                <span>{t('codeOwnership.cms.feat4')}</span>
               </div>
               <div className={cls.featureItem}>
                 <svg
@@ -314,7 +315,7 @@ export function StepCodeOwnership({
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span>Hebergement: 500 EUR/mois HT</span>
+                <span>{t('codeOwnership.cms.feat5')}</span>
               </div>
             </div>
             <button
@@ -346,45 +347,43 @@ export function StepCodeOwnership({
                   strokeLinecap="round"
                 />
               </svg>
-              En savoir plus
+              {t('codeOwnership.learnMore')}
             </button>
 
             {showInfo === 'cms' && (
               <div className={cls.infoBox} onClick={(e) => e.stopPropagation()}>
-                <h4 className={cls.infoTitle}>CMS Smidjan - Solution E-commerce Complete</h4>
+                <h4 className={cls.infoTitle}>{t('codeOwnership.cms.infoTitle')}</h4>
                 <p className={cls.infoText}>
-                  Le CMS Smidjan est une solution e-commerce professionnelle developpee en interne
-                  avec un backend complet comprenant toutes les fonctionnalites necessaires pour gerer
-                  votre boutique en ligne.
+                  {t('codeOwnership.cms.infoText')}
                 </p>
                 <ul className={cls.infoList}>
-                  <li>Backend e-commerce 100% complet et optimise</li>
-                  <li>Gestion des produits, stock, commandes, clients</li>
-                  <li>Paiements securises integres (Stripe, Mollie, PayPal)</li>
-                  <li>Tableau de bord analytique en temps reel</li>
-                  <li>Interface d'administration intuitive</li>
-                  <li>Support technique Smidjan inclus</li>
-                  <li>Mises a jour et securite gerees</li>
+                  <li>{t('codeOwnership.cms.infoList1')}</li>
+                  <li>{t('codeOwnership.cms.infoList2')}</li>
+                  <li>{t('codeOwnership.cms.infoList3')}</li>
+                  <li>{t('codeOwnership.cms.infoList4')}</li>
+                  <li>{t('codeOwnership.cms.infoList5')}</li>
+                  <li>{t('codeOwnership.cms.infoList6')}</li>
+                  <li>{t('codeOwnership.cms.infoList7')}</li>
                 </ul>
                 <div className={cls.pricingBox}>
-                  <h5 className={cls.pricingTitle}>Tarification CMS Smidjan:</h5>
+                  <h5 className={cls.pricingTitle}>{t('codeOwnership.cms.pricingTitle')}</h5>
                   <ul className={cls.pricingList}>
                     <li>
-                      <strong>Installation complete:</strong> 2 500 EUR (configuration, backend, connexions paiement)
+                      {t.rich('codeOwnership.cms.pricingInstall', { b: (c) => <strong>{c}</strong> })}
                     </li>
                     <li>
-                      <strong>40 premieres heures:</strong> GRATUITES (personnalisation front-end, design, logo, couleurs)
+                      {t.rich('codeOwnership.cms.pricingHours', { b: (c) => <strong>{c}</strong> })}
                     </li>
                     <li>
-                      <strong>Apres 40h:</strong> 50 EUR/heure HT (fonctionnalites supplementaires)
+                      {t.rich('codeOwnership.cms.pricingAfter', { b: (c) => <strong>{c}</strong> })}
                     </li>
                     <li>
-                      <strong>Hebergement:</strong> 500 EUR/mois HT (serveurs optimises, backup quotidien, monitoring 24/7)
+                      {t.rich('codeOwnership.cms.pricingHosting', { b: (c) => <strong>{c}</strong> })}
                     </li>
                   </ul>
                 </div>
                 <p className={cls.infoNote}>
-                  <strong>Ideal pour:</strong> Boutiques serieuses, evolution rapide, support professionnel, tranquillite d'esprit
+                  {t.rich('codeOwnership.cms.infoNote', { b: (c) => <strong>{c}</strong> })}
                 </p>
                 <a
                   href="/cms-ecommerce"
@@ -415,7 +414,7 @@ export function StepCodeOwnership({
                       strokeLinejoin="round"
                     />
                   </svg>
-                  Decouvrir le CMS Smidjan en detail
+                  {t('codeOwnership.cms.cmsLink')}
                 </a>
               </div>
             )}
@@ -426,7 +425,7 @@ export function StepCodeOwnership({
       <div className={cls.footer}>
         <div className={cls.actions}>
           <button type="button" onClick={onBack} className={cls.btnSecondary}>
-            Retour
+            {t('codeOwnership.back')}
           </button>
           <button
             type="button"
@@ -434,7 +433,7 @@ export function StepCodeOwnership({
             disabled={!canProceed}
             className={cls.btnPrimary}
           >
-            Continuer
+            {t('codeOwnership.next')}
           </button>
         </div>
       </div>

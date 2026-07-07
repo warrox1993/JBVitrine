@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { ProjectType, Feature } from '../types';
 import {
   getFeaturesByCategory,
@@ -26,6 +27,7 @@ export function Step2Features({
   onNext,
   onBack,
 }: Step2FeaturesProps) {
+  const t = useTranslations('wizard');
   const [selectedFeatures, setSelectedFeatures] = useState<Feature[]>(initialFeatures);
   const featuresByCategory = getFeaturesByCategory(projectType);
   const config = getProjectTypeConfig(projectType);
@@ -80,12 +82,12 @@ export function Step2Features({
   return (
     <div className={cls.step}>
       <header className={cls.header}>
-        <span className={cls.stepNumber}>Étape 2/5</span>
+        <span className={cls.stepNumber}>{t('step2.stepNumber')}</span>
         <h2 className={cls.title}>
-          {config.name} : De quoi avez-vous besoin ?
+          {t('step2.title', { name: config.name })}
         </h2>
         <p className={cls.subtitle}>
-          Sélectionnez les fonctionnalités qui correspondent à votre projet
+          {t('step2.subtitle')}
         </p>
       </header>
 
@@ -144,7 +146,7 @@ export function Step2Features({
                       </div>
                     )}
                     {pricing && pricing.min === 0 && (
-                      <div className={cls.featurePriceIncluded}>Inclus</div>
+                      <div className={cls.featurePriceIncluded}>{t('common.included')}</div>
                     )}
                   </button>
                 );
@@ -156,13 +158,13 @@ export function Step2Features({
 
       <footer className={cls.footer}>
         <div className={cls.summary}>
-          <span className={cls.summaryLabel}>Fonctionnalités sélectionnées :</span>
+          <span className={cls.summaryLabel}>{t('step2.summaryLabel')}</span>
           <span className={cls.summaryCount}>{selectedFeatures.length}</span>
         </div>
 
         <div className={cls.actions}>
           <button type="button" className={cls.btnSecondary} onClick={onBack}>
-            ← Retour
+            {t('common.back')}
           </button>
           <button
             type="button"
@@ -170,7 +172,7 @@ export function Step2Features({
             onClick={onNext}
             disabled={!canProceed}
           >
-            Étape suivante →
+            {t('common.next')}
           </button>
         </div>
       </footer>

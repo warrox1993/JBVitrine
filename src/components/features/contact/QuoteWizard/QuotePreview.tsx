@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { QuoteEstimate, QuoteData } from './types';
 import { formatPriceRange, formatPrice } from '@/lib/pricing/calculator';
@@ -13,6 +14,7 @@ interface QuotePreviewProps {
 }
 
 export const QuotePreview = React.memo(function QuotePreview({ estimate, quoteData }: QuotePreviewProps) {
+  const t = useTranslations('wizard');
   const [isExpanded, setIsExpanded] = useState(false);
   const [isMobileBarVisible, setIsMobileBarVisible] = useState(true);
   const mobileBarRef = useRef<HTMLDivElement>(null);
@@ -55,18 +57,25 @@ export const QuotePreview = React.memo(function QuotePreview({ estimate, quoteDa
 
   if (!config) return null;
 
+  const complexityLabel =
+    estimate.complexity === 'simple'
+      ? t('common.complexitySimple')
+      : estimate.complexity === 'medium'
+        ? t('common.complexityMedium')
+        : t('common.complexityComplex');
+
   // Desktop version (full detail)
   const desktopVersion = (
     <div className={cls.preview}>
       <div className={cls.sticky}>
-        <h3 className={cls.title}>Votre estimation</h3>
+        <h3 className={cls.title}>{t('preview.title')}</h3>
 
         <div className={cls.projectType}>
           <span className={cls.name}>{config.name}</span>
         </div>
 
         <div className={cls.price}>
-          <div className={cls.priceLabel}>Budget estimé</div>
+          <div className={cls.priceLabel}>{t('common.budgetLabel')}</div>
           <div className={cls.priceValue}>
             {formatPriceRange(estimate.min, estimate.max)}
           </div>
@@ -74,34 +83,30 @@ export const QuotePreview = React.memo(function QuotePreview({ estimate, quoteDa
 
         <div className={cls.details}>
           <div className={cls.detailRow}>
-            <span className={cls.detailLabel}>Délai</span>
+            <span className={cls.detailLabel}>{t('common.delai')}</span>
             <span className={cls.detailValue}>{estimate.timeline}</span>
           </div>
           <div className={cls.detailRow}>
-            <span className={cls.detailLabel}>Complexité</span>
+            <span className={cls.detailLabel}>{t('common.complexityLabel')}</span>
             <span className={cls.detailValue}>
-              {estimate.complexity === 'simple'
-                ? 'Simple'
-                : estimate.complexity === 'medium'
-                  ? 'Moyen'
-                  : 'Complexe'}
+              {complexityLabel}
             </span>
           </div>
           <div className={cls.detailRow}>
-            <span className={cls.detailLabel}>Fonctionnalités</span>
+            <span className={cls.detailLabel}>{t('common.featuresLabel')}</span>
             <span className={cls.detailValue}>{estimate.totalFeatures}</span>
           </div>
         </div>
 
         <div className={cls.breakdown}>
-          <h4 className={cls.breakdownTitle}>Détail du budget</h4>
+          <h4 className={cls.breakdownTitle}>{t('preview.breakdownTitle')}</h4>
           <div className={cls.breakdownList}>
             {/* Show ALL items on desktop */}
             {estimate.breakdown.map((item, index) => (
               <div key={index} className={cls.breakdownItem}>
                 <span className={cls.breakdownName}>{item.item}</span>
                 <span className={cls.breakdownPrice}>
-                  {item.price === 0 ? 'Inclus' : formatPrice(item.price)}
+                  {item.price === 0 ? t('common.included') : formatPrice(item.price)}
                 </span>
               </div>
             ))}
@@ -109,7 +114,7 @@ export const QuotePreview = React.memo(function QuotePreview({ estimate, quoteDa
         </div>
 
         <div className={cls.note}>
-          Cette estimation sera affinée lors de notre échange
+          {t('preview.note')}
         </div>
       </div>
     </div>
@@ -128,19 +133,19 @@ export const QuotePreview = React.memo(function QuotePreview({ estimate, quoteDa
           transition: 'opacity 0.3s ease, transform 0.3s ease',
         }}
         role="complementary"
-        aria-label="Aperçu du devis"
+        aria-label={t('preview.mobileBarAria')}
       >
         <button
           type="button"
           className={cls.mobileToggle}
           onClick={() => setIsExpanded(!isExpanded)}
           aria-expanded={isExpanded}
-          aria-label="Voir le détail du devis"
+          aria-label={t('preview.mobileToggleAria')}
           aria-controls="mobile-quote-panel"
         >
           <div className={cls.mobileBarContent}>
             <div className={cls.mobileBarLeft}>
-              <span className={cls.mobileBarLabel}>Budget estimé</span>
+              <span className={cls.mobileBarLabel}>{t('common.budgetLabel')}</span>
               <span className={cls.mobileBarPrice}>
                 {formatPriceRange(estimate.min, estimate.max)}
               </span>
@@ -157,7 +162,7 @@ export const QuotePreview = React.memo(function QuotePreview({ estimate, quoteDa
             id="mobile-quote-panel"
             className={cls.mobilePanel}
             role="region"
-            aria-label="Détails du devis"
+            aria-label={t('preview.mobilePanelAria')}
           >
             <div className={cls.mobilePanelContent}>
               <div className={cls.projectType}>
@@ -166,33 +171,29 @@ export const QuotePreview = React.memo(function QuotePreview({ estimate, quoteDa
 
               <div className={cls.details}>
                 <div className={cls.detailRow}>
-                  <span className={cls.detailLabel}>Délai</span>
+                  <span className={cls.detailLabel}>{t('common.delai')}</span>
                   <span className={cls.detailValue}>{estimate.timeline}</span>
                 </div>
                 <div className={cls.detailRow}>
-                  <span className={cls.detailLabel}>Complexité</span>
+                  <span className={cls.detailLabel}>{t('common.complexityLabel')}</span>
                   <span className={cls.detailValue}>
-                    {estimate.complexity === 'simple'
-                      ? 'Simple'
-                      : estimate.complexity === 'medium'
-                        ? 'Moyen'
-                        : 'Complexe'}
+                    {complexityLabel}
                   </span>
                 </div>
                 <div className={cls.detailRow}>
-                  <span className={cls.detailLabel}>Fonctionnalités</span>
+                  <span className={cls.detailLabel}>{t('common.featuresLabel')}</span>
                   <span className={cls.detailValue}>{estimate.totalFeatures}</span>
                 </div>
               </div>
 
               <div className={cls.breakdown}>
-                <h4 className={cls.breakdownTitle}>Détail du budget</h4>
+                <h4 className={cls.breakdownTitle}>{t('preview.breakdownTitle')}</h4>
                 <div className={cls.breakdownList}>
                   {estimate.breakdown.map((item, index) => (
                     <div key={index} className={cls.breakdownItem}>
                       <span className={cls.breakdownName}>{item.item}</span>
                       <span className={cls.breakdownPrice}>
-                        {item.price === 0 ? 'Inclus' : formatPrice(item.price)}
+                        {item.price === 0 ? t('common.included') : formatPrice(item.price)}
                       </span>
                     </div>
                   ))}
@@ -200,7 +201,7 @@ export const QuotePreview = React.memo(function QuotePreview({ estimate, quoteDa
               </div>
 
               <div className={cls.note}>
-                Cette estimation sera affinée lors de notre échange
+                {t('preview.note')}
               </div>
             </div>
           </div>

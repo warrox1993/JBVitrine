@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   LegalLayout,
   LegalSection,
@@ -7,120 +9,119 @@ import {
 } from "@/components/shared/LegalLayout/LegalLayout";
 import { MentionsVisual } from "@/components/shared/LegalLayout/LegalVisuals";
 
-export const metadata: Metadata = {
-  title: "Mentions légales | Smidjan, Cybersécurité Liège",
-  description:
-    "Mentions légales de Smidjan : identification de l'éditeur, responsable de publication, hébergement (Vercel) et propriété intellectuelle du site.",
-  alternates: {
-    canonical: "/mentions-legales",
-  },
-  openGraph: {
-    title: "Mentions légales | Smidjan",
-    description: "Identification de l'éditeur, hébergement et propriété intellectuelle du site Smidjan.",
-    type: "website",
-    url: "https://smidjan.be/mentions-legales",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "legal.meta" });
+  return {
+    title: t("mentions.title"),
+    description: t("mentions.description"),
+    alternates: {
+      canonical: "/mentions-legales",
+    },
+    openGraph: {
+      title: t("mentions.ogTitle"),
+      description: t("mentions.ogDescription"),
+      type: "website",
+      url: "https://smidjan.be/mentions-legales",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
-function BreadcrumbJsonLd() {
+async function BreadcrumbJsonLd() {
+  const t = await getTranslations("legal");
   const json = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://smidjan.be/" },
-      { "@type": "ListItem", position: 2, name: "Mentions légales", item: "https://smidjan.be/mentions-legales" },
+      { "@type": "ListItem", position: 1, name: t("breadcrumb.home"), item: "https://smidjan.be/" },
+      { "@type": "ListItem", position: 2, name: t("nav.items.mentions"), item: "https://smidjan.be/mentions-legales" },
     ],
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }} />;
 }
 
-export default function MentionsLegalesPage() {
+export default async function MentionsLegalesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("legal");
+
+  const strong = (chunks: ReactNode) => <strong>{chunks}</strong>;
+  const b = (chunks: ReactNode) => <b>{chunks}</b>;
+
   return (
     <>
       <BreadcrumbJsonLd />
       <LegalLayout
         active="mentions"
-        eyebrow="Informations légales"
-        title="Mentions légales"
-        lead="L'identité de l'éditeur du site, le responsable de sa publication, son hébergeur et les règles de propriété intellectuelle applicables."
+        eyebrow={t("mentions.hero.eyebrow")}
+        title={t("mentions.hero.title")}
+        lead={t("mentions.hero.lead")}
         visual={<MentionsVisual />}
       >
-        <LegalSection id="editeur" num="1" title="Éditeur du site">
-          <p>Le présent site est édité par Smidjan, société active en cybersécurité établie à Liège, Belgique.</p>
+        <LegalSection id="editeur" num="1" title={t("mentions.editeur.title")}>
+          <p>{t("mentions.editeur.intro")}</p>
           <ul>
+            <li>{t.rich("mentions.editeur.denomination", { strong })}</li>
+            <li>{t.rich("mentions.editeur.siege", { strong })}</li>
+            <li>{t.rich("mentions.editeur.bce", { strong })}</li>
+            <li>{t.rich("mentions.editeur.tva", { strong })}</li>
             <li>
-              <strong>Dénomination&nbsp;:</strong> Smidjan, marque commerciale exploitée par Jean-Baptiste Dhondt (personne physique)
-            </li>
-            <li>
-              <strong>Siège&nbsp;:</strong> Liège, Belgique
-            </li>
-            <li>
-              <strong>Numéro d&apos;entreprise (BCE)&nbsp;:</strong> En cours d&apos;immatriculation
-            </li>
-            <li>
-              <strong>Numéro de TVA intracommunautaire&nbsp;:</strong> En cours d&apos;immatriculation
-            </li>
-            <li>
-              <strong>E-mail&nbsp;:</strong>{" "}
+              {t.rich("mentions.editeur.emailLabel", { strong })}{" "}
               <LegalLink href="mailto:contact@smidjan.be">contact@smidjan.be</LegalLink>
             </li>
             <li>
-              <strong>Téléphone&nbsp;:</strong> <LegalLink href="tel:+32475205562">+32 475 20 55 62</LegalLink>
+              {t.rich("mentions.editeur.telephoneLabel", { strong })}{" "}
+              <LegalLink href="tel:+32475205562">+32 475 20 55 62</LegalLink>
             </li>
           </ul>
-          <LegalCallout>
-            En toute transparence&nbsp;: à la date de rédaction de cette page, Smidjan n&apos;a pas encore finalisé
-            son immatriculation (BCE/TVA). <b>Aucun numéro d&apos;entreprise ne doit être publié tant qu&apos;il
-            n&apos;est pas officiellement attribué.</b> Ces informations seront complétées dès leur obtention, et
-            avant toute mise en ligne définitive du site.
-          </LegalCallout>
+          <LegalCallout>{t.rich("mentions.editeur.callout", { b })}</LegalCallout>
         </LegalSection>
 
-        <LegalSection id="responsable-publication" num="2" title="Responsable de la publication">
-          <p>
-            Jean-Baptiste Dhondt, fondateur de Smidjan, agit en qualité de responsable de la publication du présent
-            site.
-          </p>
+        <LegalSection id="responsable-publication" num="2" title={t("mentions.responsable.title")}>
+          <p>{t("mentions.responsable.body")}</p>
         </LegalSection>
 
-        <LegalSection id="hebergement" num="3" title="Hébergement">
+        <LegalSection id="hebergement" num="3" title={t("mentions.hebergement.title")}>
           <p>
-            Le site est hébergé par&nbsp;: <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789,
-            États-Unis : <LegalLink href="https://vercel.com" target="_blank" rel="noopener">vercel.com</LegalLink>.
+            {t.rich("mentions.hebergement.p1", {
+              strong,
+              link: (chunks) => (
+                <LegalLink href="https://vercel.com" target="_blank" rel="noopener">
+                  {chunks}
+                </LegalLink>
+              ),
+            })}
           </p>
           <p>
-            L&apos;hébergement peut impliquer un traitement de données techniques sur une infrastructure distribuée
-            (« edge network ») dont certains nœuds sont situés hors de l&apos;Union européenne&nbsp;; voir la section
-            « Cookies &amp; services tiers » de la{" "}
-            <LegalLink href="/confidentialite#cookies">politique de confidentialité</LegalLink> pour le détail de ces
-            transferts.
+            {t.rich("mentions.hebergement.p2", {
+              link: (chunks) => <LegalLink href="/confidentialite#cookies">{chunks}</LegalLink>,
+            })}
           </p>
         </LegalSection>
 
-        <LegalSection id="propriete-intellectuelle" num="4" title="Propriété intellectuelle">
-          <p>
-            L&apos;ensemble des éléments du présent site (textes, structure, graphismes, logo, code source) est
-            protégé par le droit belge et international de la propriété intellectuelle et demeure la propriété de
-            Smidjan, sauf mention contraire. Toute reproduction, représentation, modification ou exploitation, totale
-            ou partielle, sans autorisation écrite préalable, est interdite.
-          </p>
-          <h3>Limitation de responsabilité</h3>
-          <p>
-            Malgré le soin apporté à la rédaction de ce site, Smidjan ne peut garantir l&apos;exactitude, la
-            complétude ou l&apos;actualité permanente des informations qui y sont diffusées, et ne saurait être tenue
-            responsable des conséquences d&apos;une utilisation de ces informations, ni des interruptions ou
-            dysfonctionnements techniques indépendants de sa volonté.
-          </p>
+        <LegalSection id="propriete-intellectuelle" num="4" title={t("mentions.propriete.title")}>
+          <p>{t("mentions.propriete.p1")}</p>
+          <h3>{t("mentions.propriete.h3")}</h3>
+          <p>{t("mentions.propriete.p2")}</p>
         </LegalSection>
 
-        <LegalSection id="contact" num="5" title="Contact">
+        <LegalSection id="contact" num="5" title={t("mentions.contact.title")}>
           <p>
-            Pour toute question relative au site ou à son contenu&nbsp;:{" "}
-            <LegalLink href="mailto:contact@smidjan.be">contact@smidjan.be</LegalLink>.
+            {t.rich("mentions.contact.body", {
+              link: (chunks) => <LegalLink href="mailto:contact@smidjan.be">{chunks}</LegalLink>,
+            })}
           </p>
         </LegalSection>
       </LegalLayout>

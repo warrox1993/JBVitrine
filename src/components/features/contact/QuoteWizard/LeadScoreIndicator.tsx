@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Target, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
 import { LeadScore } from '@/lib/leadScoring/types';
 import cls from './LeadScoreIndicator.module.css';
@@ -16,6 +17,7 @@ export function LeadScoreIndicator({
   showDetails = false,
   compact = false
 }: LeadScoreIndicatorProps) {
+  const t = useTranslations('wizard');
   const [detailsExpanded, setDetailsExpanded] = useState(false);
 
   if (!score) return null;
@@ -23,25 +25,25 @@ export function LeadScoreIndicator({
   const gradeColors = {
     HOT: {
       bg: '#ff3b30',
-      text: 'Lead Chaud',
+      text: t('leadScore.gradeHot'),
       icon: '🔥',
       gradient: 'linear-gradient(135deg, #ff3b30, #ff6b00)'
     },
     WARM: {
       bg: '#ff9500',
-      text: 'Lead Qualifié',
+      text: t('leadScore.gradeWarm'),
       icon: '⚡',
       gradient: 'linear-gradient(135deg, #ff9500, #ffb800)'
     },
     COLD: {
       bg: '#5856d6',
-      text: 'Lead Froid',
+      text: t('leadScore.gradeCold'),
       icon: '❄️',
       gradient: 'linear-gradient(135deg, #5856d6, #7b7aff)'
     },
     SPAM: {
       bg: '#8e8e93',
-      text: 'À Vérifier',
+      text: t('leadScore.gradeSpam'),
       icon: '⚠️',
       gradient: 'linear-gradient(135deg, #8e8e93, #aeaeb2)'
     },
@@ -115,7 +117,7 @@ export function LeadScoreIndicator({
         </div>
         <div className={cls.confidence}>
           <TrendingUp size={14} />
-          <span>Confiance: {score.confidence}%</span>
+          <span>{t('leadScore.confidence', { value: score.confidence })}</span>
         </div>
       </div>
 
@@ -128,7 +130,7 @@ export function LeadScoreIndicator({
             onClick={() => setDetailsExpanded(!detailsExpanded)}
             aria-expanded={detailsExpanded}
           >
-            <span>Détail du score</span>
+            <span>{t('leadScore.toggleDetails')}</span>
             {detailsExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
           </button>
 
@@ -136,7 +138,7 @@ export function LeadScoreIndicator({
             <div className={cls.breakdown}>
               <div className={cls.breakdownList}>
                 <div className={cls.breakdownItem}>
-                  <span className={cls.breakdownLabel}>Projet</span>
+                  <span className={cls.breakdownLabel}>{t('leadScore.catProject')}</span>
                   <div className={cls.breakdownBarContainer}>
                     <div
                       className={cls.breakdownBar}
@@ -150,7 +152,7 @@ export function LeadScoreIndicator({
                 </div>
 
                 <div className={cls.breakdownItem}>
-                  <span className={cls.breakdownLabel}>Engagement</span>
+                  <span className={cls.breakdownLabel}>{t('leadScore.catEngagement')}</span>
                   <div className={cls.breakdownBarContainer}>
                     <div
                       className={cls.breakdownBar}
@@ -164,7 +166,7 @@ export function LeadScoreIndicator({
                 </div>
 
                 <div className={cls.breakdownItem}>
-                  <span className={cls.breakdownLabel}>Complétion</span>
+                  <span className={cls.breakdownLabel}>{t('leadScore.catCompletion')}</span>
                   <div className={cls.breakdownBarContainer}>
                     <div
                       className={cls.breakdownBar}
@@ -178,7 +180,7 @@ export function LeadScoreIndicator({
                 </div>
 
                 <div className={cls.breakdownItem}>
-                  <span className={cls.breakdownLabel}>Enrichissement</span>
+                  <span className={cls.breakdownLabel}>{t('leadScore.catEnrichment')}</span>
                   <div className={cls.breakdownBarContainer}>
                     <div
                       className={cls.breakdownBar}
@@ -192,7 +194,7 @@ export function LeadScoreIndicator({
                 </div>
 
                 <div className={cls.breakdownItem}>
-                  <span className={cls.breakdownLabel}>Comportement</span>
+                  <span className={cls.breakdownLabel}>{t('leadScore.catBehavioral')}</span>
                   <div className={cls.breakdownBarContainer}>
                     <div
                       className={cls.breakdownBar}
@@ -207,7 +209,7 @@ export function LeadScoreIndicator({
               </div>
 
               <div className={cls.breakdownNote}>
-                Score calculé en temps réel selon vos réponses et votre navigation
+                {t('leadScore.note')}
               </div>
             </div>
           )}

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { Clock, Globe, ShoppingCart, Monitor, Shield, Bot } from 'lucide-react';
 import { QuoteEstimate, QuoteData, ProjectType } from '../types';
 import { formatPriceRange, formatPrice } from '@/lib/pricing/calculator';
@@ -24,6 +25,7 @@ export function Step4Summary({
   stepNumber,
   totalSteps,
 }: Step4SummaryProps) {
+  const t = useTranslations('wizard');
   const config = quoteData.projectType
     ? getProjectTypeConfig(quoteData.projectType)
     : null;
@@ -50,37 +52,37 @@ export function Step4Summary({
   };
 
   const getDesignLabel = () => {
-    if (quoteData.design === 'template') return 'Design template';
-    if (quoteData.design === 'semi-custom') return 'Design semi-personnalisé';
-    if (quoteData.design === 'custom') return 'Design sur mesure';
-    return 'Non défini';
+    if (quoteData.design === 'template') return t('step4.designTemplate');
+    if (quoteData.design === 'semi-custom') return t('step4.designSemiCustom');
+    if (quoteData.design === 'custom') return t('step4.designCustom');
+    return t('step4.designUndefined');
   };
 
   const getSEOLabel = () => {
-    if (quoteData.seo === 'none') return 'Aucun';
-    if (quoteData.seo === 'basic') return 'SEO de base';
-    if (quoteData.seo === 'advanced') return 'SEO avancé';
-    return 'Non défini';
+    if (quoteData.seo === 'none') return t('step4.seoNone');
+    if (quoteData.seo === 'basic') return t('step4.seoBasic');
+    if (quoteData.seo === 'advanced') return t('step4.seoAdvanced');
+    return t('step4.seoUndefined');
   };
 
   const getTimelineLabel = () => {
-    if (quoteData.timeline === 'asap') return 'Dès que possible';
-    if (quoteData.timeline === '1m') return '1 mois';
-    if (quoteData.timeline === '2-3m') return '2-3 mois';
-    if (quoteData.timeline === '>3m') return 'Plus de 3 mois';
-    if (quoteData.timeline === 'flexible') return 'Flexible';
-    return 'Non défini';
+    if (quoteData.timeline === 'asap') return t('step4.timelineAsap');
+    if (quoteData.timeline === '1m') return t('step4.timeline1m');
+    if (quoteData.timeline === '2-3m') return t('step4.timeline23m');
+    if (quoteData.timeline === '>3m') return t('step4.timelineGt3m');
+    if (quoteData.timeline === 'flexible') return t('step4.timelineFlexible');
+    return t('step4.timelineUndefined');
   };
 
   return (
     <div className={cls.step}>
       <div className={cls.header}>
         <div className={cls.stepNumber}>
-          Étape {stepNumber || 4} sur {totalSteps || 5}
+          {t('common.stepSur', { step: stepNumber || 4, total: totalSteps || 5 })}
         </div>
-        <h2 className={cls.title}>Récapitulatif de votre projet</h2>
+        <h2 className={cls.title}>{t('step4.title')}</h2>
         <p className={cls.subtitle}>
-          Vérifiez les détails avant de nous transmettre votre demande
+          {t('step4.subtitle')}
         </p>
       </div>
 
@@ -98,32 +100,32 @@ export function Step4Summary({
           </div>
 
           <div className={cls.priceCard}>
-            <div className={cls.priceLabel}>Budget estimé</div>
+            <div className={cls.priceLabel}>{t('common.budgetLabel')}</div>
             <div className={cls.priceValue}>
               {formatPriceRange(estimate.min, estimate.max)}
             </div>
             <div className={cls.priceNote}>
-              Prix indicatif - sera affiné lors de notre échange
+              {t('step4.priceNote')}
             </div>
           </div>
 
           <div className={cls.metaInfo}>
             <div className={cls.metaItem}>
-              <span className={cls.metaLabel}>Délai estimé</span>
+              <span className={cls.metaLabel}>{t('step4.metaDelai')}</span>
               <span className={cls.metaValue}>{estimate.timeline}</span>
             </div>
             <div className={cls.metaItem}>
-              <span className={cls.metaLabel}>Complexité</span>
+              <span className={cls.metaLabel}>{t('common.complexityLabel')}</span>
               <span className={cls.metaValue}>
-                {estimate.complexity === 'simple' && 'Simple'}
-                {estimate.complexity === 'medium' && 'Moyen'}
-                {estimate.complexity === 'complex' && 'Complexe'}
+                {estimate.complexity === 'simple' && t('common.complexitySimple')}
+                {estimate.complexity === 'medium' && t('common.complexityMedium')}
+                {estimate.complexity === 'complex' && t('common.complexityComplex')}
               </span>
             </div>
             <div className={cls.metaItem}>
-              <span className={cls.metaLabel}>Fonctionnalités</span>
+              <span className={cls.metaLabel}>{t('common.featuresLabel')}</span>
               <span className={cls.metaValue}>
-                {estimate.totalFeatures} sélectionnées
+                {t('step4.featuresValue', { count: estimate.totalFeatures })}
               </span>
             </div>
           </div>
@@ -131,18 +133,18 @@ export function Step4Summary({
 
         {/* What's Included */}
         <section className={cls.section}>
-          <h3 className={cls.sectionTitle}>Ce qui est inclus</h3>
+          <h3 className={cls.sectionTitle}>{t('step4.sectionIncluded')}</h3>
 
           {/* Base */}
           {breakdownByCategory.base.length > 0 && (
             <div className={cls.breakdownGroup}>
-              <h4 className={cls.categoryTitle}>Base</h4>
+              <h4 className={cls.categoryTitle}>{t('step4.catBase')}</h4>
               <ul className={cls.itemList}>
                 {breakdownByCategory.base.map((item, index) => (
                   <li key={index} className={cls.item}>
                     <span className={cls.itemName}>{item.item}</span>
                     <span className={cls.itemPrice}>
-                      {item.price === 0 ? 'Inclus' : formatPrice(item.price)}
+                      {item.price === 0 ? t('common.included') : formatPrice(item.price)}
                     </span>
                   </li>
                 ))}
@@ -153,13 +155,13 @@ export function Step4Summary({
           {/* Features */}
           {breakdownByCategory.features.length > 0 && (
             <div className={cls.breakdownGroup}>
-              <h4 className={cls.categoryTitle}>Fonctionnalités</h4>
+              <h4 className={cls.categoryTitle}>{t('step4.catFeatures')}</h4>
               <ul className={cls.itemList}>
                 {breakdownByCategory.features.map((item, index) => (
                   <li key={index} className={cls.item}>
                     <span className={cls.itemName}>• {item.item}</span>
                     <span className={cls.itemPrice}>
-                      {item.price === 0 ? 'Inclus' : `+${formatPrice(item.price)}`}
+                      {item.price === 0 ? t('common.included') : `+${formatPrice(item.price)}`}
                     </span>
                   </li>
                 ))}
@@ -169,31 +171,31 @@ export function Step4Summary({
 
           {/* Design & SEO */}
           <div className={cls.breakdownGroup}>
-            <h4 className={cls.categoryTitle}>Design & Optimisation</h4>
+            <h4 className={cls.categoryTitle}>{t('step4.catDesign')}</h4>
             <ul className={cls.itemList}>
               <li className={cls.item}>
                 <span className={cls.itemName}>• {getDesignLabel()}</span>
                 <span className={cls.itemPrice}>
                   {breakdownByCategory.design[0]?.price === 0
-                    ? 'Inclus'
+                    ? t('common.included')
                     : breakdownByCategory.design[0]
                       ? `+${formatPrice(breakdownByCategory.design[0].price)}`
-                      : 'Inclus'}
+                      : t('common.included')}
                 </span>
               </li>
               <li className={cls.item}>
                 <span className={cls.itemName}>• {getSEOLabel()}</span>
                 <span className={cls.itemPrice}>
                   {breakdownByCategory.seo[0]?.price === 0
-                    ? 'Inclus'
+                    ? t('common.included')
                     : breakdownByCategory.seo[0]
                       ? `+${formatPrice(breakdownByCategory.seo[0].price)}`
-                      : 'Inclus'}
+                      : t('common.included')}
                 </span>
               </li>
               {quoteData.animations && (
                 <li className={cls.item}>
-                  <span className={cls.itemName}>• Animations avancées</span>
+                  <span className={cls.itemName}>• {t('step4.animationsItem')}</span>
                   <span className={cls.itemPrice}>+600 €</span>
                 </li>
               )}
@@ -203,13 +205,13 @@ export function Step4Summary({
           {/* Services */}
           {(quoteData.maintenance || quoteData.training || quoteData.hosting) && (
             <div className={cls.breakdownGroup}>
-              <h4 className={cls.categoryTitle}>Services additionnels</h4>
+              <h4 className={cls.categoryTitle}>{t('step4.catServices')}</h4>
               <ul className={cls.itemList}>
                 {breakdownByCategory.services.map((item, index) => (
                   <li key={index} className={cls.item}>
                     <span className={cls.itemName}>• {item.item}</span>
                     <span className={cls.itemPrice}>
-                      {item.price === 0 ? 'Inclus' : formatPrice(item.price)}
+                      {item.price === 0 ? t('common.included') : formatPrice(item.price)}
                     </span>
                   </li>
                 ))}
@@ -221,7 +223,7 @@ export function Step4Summary({
         {/* Timeline Preference */}
         {quoteData.timeline && (
           <section className={cls.timelineSection}>
-            <h3 className={cls.sectionTitle}>Votre délai souhaité</h3>
+            <h3 className={cls.sectionTitle}>{t('step4.timelineSectionTitle')}</h3>
             <div className={cls.timelineCard}>
               <Clock size={20} className={cls.timelineIcon} />
               <span className={cls.timelineText}>{getTimelineLabel()}</span>
@@ -232,11 +234,9 @@ export function Step4Summary({
         {/* Important Note */}
         <div className={cls.notice}>
           <div className={cls.noticeContent}>
-            <h4 className={cls.noticeTitle}>Prochaine étape</h4>
+            <h4 className={cls.noticeTitle}>{t('step4.noticeTitle')}</h4>
             <p className={cls.noticeText}>
-              Cette estimation sera affinée lors d&apos;un entretien personnalisé
-              pour s&apos;assurer qu&apos;elle correspond parfaitement à vos
-              besoins. Vous recevrez un devis détaillé par email.
+              {t('step4.noticeText')}
             </p>
           </div>
         </div>
@@ -244,10 +244,10 @@ export function Step4Summary({
 
       <div className={cls.footer}>
         <button type="button" onClick={onBack} className={cls.btnSecondary}>
-          ← Modifier
+          {t('step4.back')}
         </button>
         <button type="button" onClick={onNext} className={cls.btnPrimary}>
-          Continuer vers le formulaire
+          {t('step4.next')}
         </button>
       </div>
     </div>

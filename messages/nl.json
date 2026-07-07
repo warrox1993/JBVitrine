@@ -578,7 +578,7 @@
         "row2b": "Gemapt op het NIST CSF",
         "row3a": "Controles & goede praktijken",
         "row3b": "Afgestemd op ISO/IEC 27001",
-        "row4a": "Drie assurantieniveaus",
+        "row4a": "Drie assuranceniveaus",
         "row4b": "Basic · Important · Essential"
       },
       "ringAria": "Diagram: de zes functies van CyberFundamentals in een doorlopende cyclus (Govern, Identify, Protect, Detect, Respond, Recover), afgestemd op het NIST CSF.",
@@ -594,7 +594,7 @@
       "fnNote": "<b>Govern, Identify, Protect, Detect, Respond, Recover</b>: de volledige levenscyclus van het cyberrisico."
     },
     "niveaux": {
-      "eyebrow": "De 3 assurantieniveaus",
+      "eyebrow": "De 3 assuranceniveaus",
       "title": "Basic, Important, Essential: het <accent>juiste niveau</accent> kiezen",
       "lead": "Drie progressieve niveaus. De juiste keuze hangt af van uw NIS2-categorie en uw blootstelling. Wij helpen u beslissen.",
       "statBigLbl": "CyFun-niveaus",
@@ -1209,19 +1209,19 @@
     "meta": {
       "mentions": {
         "title": "Wettelijke vermeldingen | Smidjan, Cyberbeveiliging Luik",
-        "description": "Wettelijke vermeldingen van Smidjan : identificatie van de uitgever, verantwoordelijke voor de publicatie, hosting (Vercel) en intellectuele eigendom van de website.",
+        "description": "Wettelijke vermeldingen van Smidjan: identificatie van de uitgever, verantwoordelijke voor de publicatie, hosting (Vercel) en intellectuele eigendom van de website.",
         "ogTitle": "Wettelijke vermeldingen | Smidjan",
         "ogDescription": "Identificatie van de uitgever, hosting en intellectuele eigendom van de website van Smidjan."
       },
       "cgv": {
         "title": "Algemene voorwaarden | Smidjan",
-        "description": "Algemene dienstverleningsvoorwaarden van Smidjan : voorwerp, offerte, uitvoering, aansprakelijkheid, vertrouwelijkheid en Belgisch recht van toepassing op cyberbeveiligingsopdrachten.",
+        "description": "Algemene dienstverleningsvoorwaarden van Smidjan: voorwerp, offerte, uitvoering, aansprakelijkheid, vertrouwelijkheid en Belgisch recht van toepassing op cyberbeveiligingsopdrachten.",
         "ogTitle": "Algemene voorwaarden | Smidjan",
         "ogDescription": "Contractueel kader voor de advies-, audit- en beveiligde ontwikkelingsdiensten van Smidjan."
       },
       "confidentialite": {
         "title": "Privacybeleid (AVG) | Smidjan",
-        "description": "Privacybeleid van Smidjan : gegevens verzameld via het contactformulier, doeleinden, bewaartermijn, cookies & diensten van derden, en uw AVG-rechten.",
+        "description": "Privacybeleid van Smidjan: gegevens verzameld via het contactformulier, doeleinden, bewaartermijn, cookies & diensten van derden, en uw AVG-rechten.",
         "ogTitle": "Privacybeleid (AVG) | Smidjan",
         "ogDescription": "Hoe Smidjan uw persoonsgegevens verwerkt, volledig transparant over cookies en diensten van derden."
       }
@@ -1247,13 +1247,13 @@
       "editeur": {
         "title": "Uitgever van de website",
         "intro": "Deze website wordt uitgegeven door Smidjan, een onderneming actief in cyberbeveiliging, gevestigd te Luik, België.",
-        "denomination": "<strong>Benaming :</strong> Smidjan, handelsmerk uitgebaat door Jean-Baptiste Dhondt (natuurlijke persoon)",
-        "siege": "<strong>Maatschappelijke zetel :</strong> Luik, België",
-        "bce": "<strong>Ondernemingsnummer (KBO) :</strong> Inschrijving in behandeling",
-        "tva": "<strong>Intracommunautair btw-nummer :</strong> Inschrijving in behandeling",
-        "emailLabel": "<strong>E-mail :</strong>",
-        "telephoneLabel": "<strong>Telefoon :</strong>",
-        "callout": "In alle transparantie : op het moment waarop deze pagina werd opgesteld, had Smidjan haar inschrijving (KBO/btw) nog niet afgerond. <b>Er mag geen enkel ondernemingsnummer worden gepubliceerd zolang het niet officieel is toegekend.</b> Deze informatie wordt aangevuld zodra ze beschikbaar is, en vóór elke definitieve onlineplaatsing van de website."
+        "denomination": "<strong>Benaming:</strong> Smidjan, handelsmerk uitgebaat door Jean-Baptiste Dhondt (natuurlijke persoon)",
+        "siege": "<strong>Maatschappelijke zetel:</strong> Luik, België",
+        "bce": "<strong>Ondernemingsnummer (KBO):</strong> Inschrijving in behandeling",
+        "tva": "<strong>Intracommunautair btw-nummer:</strong> Inschrijving in behandeling",
+        "emailLabel": "<strong>E-mail:</strong>",
+        "telephoneLabel": "<strong>Telefoon:</strong>",
+        "callout": "In alle transparantie: op het moment waarop deze pagina werd opgesteld, had Smidjan haar inschrijving (KBO/btw) nog niet afgerond. <b>Er mag geen enkel ondernemingsnummer worden gepubliceerd zolang het niet officieel is toegekend.</b> Deze informatie wordt aangevuld zodra ze beschikbaar is, en vóór elke definitieve onlineplaatsing van de website."
       },
       "responsable": {
         "title": "Verantwoordelijke voor de publicatie",
@@ -1261,8 +1261,8 @@
       },
       "hebergement": {
         "title": "Hosting",
-        "p1": "De website wordt gehost door : <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, Verenigde Staten : <link>vercel.com</link>.",
-        "p2": "De hosting kan een verwerking van technische gegevens op een gedistribueerde infrastructuur (« edge network ») met zich meebrengen, waarvan bepaalde knooppunten zich buiten de Europese Unie bevinden ; zie de rubriek « Cookies & diensten van derden » van het <link>privacybeleid</link> voor de details van deze doorgiften."
+        "p1": "De website wordt gehost door: <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, Verenigde Staten: <link>vercel.com</link>.",
+        "p2": "De hosting kan een verwerking van technische gegevens op een gedistribueerde infrastructuur (\"edge network\") met zich meebrengen, waarvan bepaalde knooppunten zich buiten de Europese Unie bevinden; zie de rubriek \"Cookies & diensten van derden\" van het <link>privacybeleid</link> voor de details van deze doorgiften."
       },
       "propriete": {
         "title": "Intellectuele eigendom",
@@ -1272,7 +1272,7 @@
       },
       "contact": {
         "title": "Contact",
-        "body": "Voor elke vraag over de website of de inhoud ervan : <link>contact@smidjan.be</link>."
+        "body": "Voor elke vraag over de website of de inhoud ervan: <link>contact@smidjan.be</link>."
       }
     },
     "cgv": {
@@ -1316,7 +1316,7 @@
       "droit": {
         "title": "Toepasselijk recht en bevoegde rechtbank",
         "body": "Deze algemene voorwaarden worden beheerst door het <strong>Belgische recht</strong>. Elk geschil betreffende de geldigheid, de interpretatie of de uitvoering ervan behoort tot de uitsluitende bevoegdheid van de rechtbanken van het gerechtelijk arrondissement <strong>Luik</strong>, onder voorbehoud van de dwingende bepalingen die van toepassing zijn inzake consumentenbescherming.",
-        "callout": "Dit document is een <b>model</b> : het moet aan elke opdracht worden aangepast en door een jurist worden gevalideerd vóór elk contractueel gebruik. In geval van tegenstrijdigheid heeft de door beide partijen ondertekende offerte of overeenkomst steeds voorrang op dit generieke sjabloon."
+        "callout": "Dit document is een <b>model</b>: het moet aan elke opdracht worden aangepast en door een jurist worden gevalideerd vóór elk contractueel gebruik. In geval van tegenstrijdigheid heeft de door beide partijen ondertekende offerte of overeenkomst steeds voorrang op dit generieke sjabloon."
       }
     },
     "conf": {
@@ -1325,27 +1325,27 @@
         "title": "Privacybeleid (AVG)",
         "lead": "Wat wij verzamelen via het contactformulier, waarom, hoe lang, met wie, en een eerlijk antwoord over de gebruikte cookies en diensten van derden."
       },
-      "intro": "Smidjan hecht belang aan de bescherming van de persoonsgegevens van de bezoekers en klanten van de website, in overeenstemming met Verordening (EU) 2016/679 van 27 april 2016 (« AVG ») en de Belgische wet van 30 juli 2018 betreffende de bescherming van natuurlijke personen met betrekking tot de verwerking van persoonsgegevens.",
+      "intro": "Smidjan hecht belang aan de bescherming van de persoonsgegevens van de bezoekers en klanten van de website, in overeenstemming met Verordening (EU) 2016/679 van 27 april 2016 (\"AVG\") en de Belgische wet van 30 juli 2018 betreffende de bescherming van natuurlijke personen met betrekking tot de verwerking van persoonsgegevens.",
       "responsable": {
         "title": "Verwerkingsverantwoordelijke",
-        "body": "De verwerkingsverantwoordelijke voor de via deze website verzamelde gegevens is Smidjan, Luik, België : <link>contact@smidjan.be</link>."
+        "body": "De verwerkingsverantwoordelijke voor de via deze website verzamelde gegevens is Smidjan, Luik, België: <link>contact@smidjan.be</link>."
       },
       "donnees": {
         "title": "Verzamelde gegevens",
-        "formulaire": "<strong>Contactformulier / aanvraag van een diagnose :</strong> naam, voornaam, onderneming (facultatief), e-mailadres, telefoonnummer (facultatief), inhoud van het bericht.",
-        "navigation": "<strong>Navigatiegegevens :</strong> IP-adres, type browser en apparaat, geraadpleegde pagina's, verzameld met het oog op veiligheid en, in voorkomend geval, publieksmeting.",
-        "recaptcha": "<strong>Gegevens afkomstig van Google reCAPTCHA :</strong> technische signalen die worden gebruikt om een menselijke gebruiker van een robot te onderscheiden bij het verzenden van het contactformulier."
+        "formulaire": "<strong>Contactformulier / aanvraag van een diagnose:</strong> naam, voornaam, onderneming (facultatief), e-mailadres, telefoonnummer (facultatief), inhoud van het bericht.",
+        "navigation": "<strong>Navigatiegegevens:</strong> IP-adres, type browser en apparaat, geraadpleegde pagina's, verzameld met het oog op veiligheid en, in voorkomend geval, publieksmeting.",
+        "recaptcha": "<strong>Gegevens afkomstig van Google reCAPTCHA:</strong> technische signalen die worden gebruikt om een menselijke gebruiker van een robot te onderscheiden bij het verzenden van het contactformulier."
       },
       "finalites": {
         "title": "Doeleinden van de verwerking",
-        "item1": "Beantwoorden van aanvragen tot contact, offerte of gratis diagnose ;",
-        "item2": "Waarborgen van de veiligheid en de integriteit van het contactformulier (bescherming tegen spam en robots) ;",
+        "item1": "Beantwoorden van aanvragen tot contact, offerte of gratis diagnose;",
+        "item2": "Waarborgen van de veiligheid en de integriteit van het contactformulier (bescherming tegen spam en robots);",
         "item3": "Meten en verbeteren van het gebruik van de website, in voorkomend geval, met behulp van statistische tools."
       },
       "baseLegale": {
         "title": "Rechtsgrond",
-        "item1": "De <strong>uitvoering van precontractuele maatregelen</strong> genomen op verzoek van de betrokkene, voor de verwerking van contactaanvragen ;",
-        "item2": "Het <strong>gerechtvaardigd belang</strong> van Smidjan om haar formulier en haar website te beveiligen tegen misbruik (reCAPTCHA) ;",
+        "item1": "De <strong>uitvoering van precontractuele maatregelen</strong> genomen op verzoek van de betrokkene, voor de verwerking van contactaanvragen;",
+        "item2": "Het <strong>gerechtvaardigd belang</strong> van Smidjan om haar formulier en haar website te beveiligen tegen misbruik (reCAPTCHA);",
         "item3": "De <strong>toestemming</strong> van de gebruiker, wanneer deze vereist is voor niet-essentiële cookies voor publieksmeting."
       },
       "duree": {
@@ -1358,7 +1358,7 @@
       },
       "cookies": {
         "title": "Cookies & diensten van derden",
-        "p1": "Deze website is niet vrij van cookies of trackers : wij beweren niet te functioneren « zonder enige cookie ». De volgende categorieën kunnen worden gebruikt :",
+        "p1": "Deze website is niet vrij van cookies of trackers: wij beweren niet te functioneren \"zonder enige cookie\". De volgende categorieën kunnen worden gebruikt:",
         "table": {
           "type": "Type",
           "finalite": "Doeleinde",
@@ -1375,13 +1375,13 @@
           }
         },
         "p2": "Tot op heden gebruikt de website <strong>geen enkele tool voor publieksmeting (analytics)</strong> noch reclamecookies. Indien een dergelijke tool zou worden ingevoerd, zou dit beleid dienovereenkomstig worden bijgewerkt.",
-        "p3": "Sommige van deze diensten, met name Google reCAPTCHA, worden geleverd door derden gevestigd buiten de Europese Unie (Verenigde Staten) en kunnen een overeenkomstige doorgifte van gegevens met zich meebrengen. Deze doorgiften steunen op de door de AVG voorziene waarborgen, zoals de standaardcontractbepalingen van de Europese Commissie. U kunt op elk moment uw browser configureren om niet-essentiële cookies te blokkeren of te verwijderen ; dit kan echter bepaalde functies van de website beperken (bijvoorbeeld het verzenden van het contactformulier)."
+        "p3": "Sommige van deze diensten, met name Google reCAPTCHA, worden geleverd door derden gevestigd buiten de Europese Unie (Verenigde Staten) en kunnen een overeenkomstige doorgifte van gegevens met zich meebrengen. Deze doorgiften steunen op de door de AVG voorziene waarborgen, zoals de standaardcontractbepalingen van de Europese Commissie. U kunt op elk moment uw browser configureren om niet-essentiële cookies te blokkeren of te verwijderen; dit kan echter bepaalde functies van de website beperken (bijvoorbeeld het verzenden van het contactformulier)."
       },
       "droits": {
         "title": "Uw rechten",
-        "p1": "In overeenstemming met de artikelen 15 tot 22 van de AVG beschikt u over de volgende rechten met betrekking tot uw gegevens : recht op inzage, op rectificatie, op wissing, op beperking van de verwerking, op overdraagbaarheid, op bezwaar, evenals het recht om uw toestemming op elk moment in te trekken wanneer de verwerking daarvan afhankelijk is.",
+        "p1": "In overeenstemming met de artikelen 15 tot 22 van de AVG beschikt u over de volgende rechten met betrekking tot uw gegevens: recht op inzage, op rectificatie, op wissing, op beperking van de verwerking, op overdraagbaarheid, op bezwaar, evenals het recht om uw toestemming op elk moment in te trekken wanneer de verwerking daarvan afhankelijk is.",
         "p2": "Om deze rechten uit te oefenen, kunt u ons contacteren op het adres <link>contact@smidjan.be</link>. U ontvangt een antwoord binnen de door de AVG voorziene termijnen.",
-        "p3": "U beschikt eveneens over het recht om een klacht in te dienen bij de Belgische toezichthoudende autoriteit : <strong>Gegevensbeschermingsautoriteit (GBA)</strong>, Drukpersstraat 35, 1000 Brussel : <link>www.autoriteprotectiondonnees.be</link>."
+        "p3": "U beschikt eveneens over het recht om een klacht in te dienen bij de Belgische toezichthoudende autoriteit: <strong>Gegevensbeschermingsautoriteit (GBA)</strong>, Drukpersstraat 35, 1000 Brussel: <link>www.autoriteprotectiondonnees.be</link>."
       },
       "dpo": {
         "title": "Contact functionaris voor gegevensbescherming",
@@ -1753,6 +1753,250 @@
         }
       },
       "note": "*Indicatieve doorlooptijden, afhankelijk van uw beginmaturiteit, de omvang van de scope en uw interne middelen. Ze worden gepreciseerd tijdens de scoping."
+    }
+  },
+  "wizard": {
+    "common": {
+      "back": "← Terug",
+      "next": "Volgende stap →",
+      "included": "Inbegrepen",
+      "budgetLabel": "Geschat budget",
+      "delai": "Termijn",
+      "complexityLabel": "Complexiteit",
+      "featuresLabel": "Functies",
+      "complexitySimple": "Eenvoudig",
+      "complexityMedium": "Gemiddeld",
+      "complexityComplex": "Complex",
+      "learnMore": "Meer weten",
+      "stepSlash": "Stap {step}/{total}",
+      "stepSur": "Stap {step} van {total}"
+    },
+    "shell": {
+      "successTitle": "Aanvraag succesvol verzonden",
+      "successText": "Bedankt voor uw vertrouwen. We hebben uw aanvraag goed ontvangen en sturen u binnen 24 uur een gedetailleerde offerte per e-mail.",
+      "successInfoTitle": "En nu?",
+      "successItem1": "U ontvangt een bevestigingsmail",
+      "successItem2": "Ons team analyseert uw project",
+      "successItem3": "We nemen contact met u op om de details te verfijnen",
+      "successItem4": "U ontvangt een gepersonaliseerde offerte",
+      "successBackHome": "Terug naar de startpagina",
+      "progressAria": "Stap {step} van {total}",
+      "sidebarAria": "Overzicht van de offerte",
+      "errorLabel": "Fout",
+      "errorRateLimit": "Te veel aanvragen. Wacht enkele minuten en probeer opnieuw.",
+      "errorUnavailable": "Dienst tijdelijk niet beschikbaar. Probeer het over enkele ogenblikken opnieuw.",
+      "errorSend": "Fout bij het verzenden van de aanvraag",
+      "errorComm": "Communicatiefout met de server. Probeer opnieuw.",
+      "errorInvalidResponse": "Ongeldig antwoord van de server. Probeer opnieuw.",
+      "errorSaveFailed": "Opslaan is mislukt. Probeer opnieuw.",
+      "errorGeneric": "Er is een fout opgetreden. Probeer opnieuw."
+    },
+    "preview": {
+      "title": "Uw raming",
+      "note": "Deze raming wordt verfijnd tijdens ons gesprek",
+      "breakdownTitle": "Budgetdetail",
+      "mobileToggleAria": "Details van de offerte bekijken",
+      "mobileBarAria": "Overzicht van de offerte",
+      "mobilePanelAria": "Details van de offerte"
+    },
+    "leadScore": {
+      "gradeHot": "Hot lead",
+      "gradeWarm": "Gekwalificeerde lead",
+      "gradeCold": "Koude lead",
+      "gradeSpam": "Te controleren",
+      "confidence": "Betrouwbaarheid: {value}%",
+      "toggleDetails": "Scoredetail",
+      "catProject": "Project",
+      "catEngagement": "Betrokkenheid",
+      "catCompletion": "Voltooiing",
+      "catEnrichment": "Verrijking",
+      "catBehavioral": "Gedrag",
+      "note": "Score in realtime berekend op basis van uw antwoorden en uw navigatie"
+    },
+    "tooltip": {
+      "moreInfo": "Meer informatie"
+    },
+    "escape": {
+      "text": "Technisch probleem, cv of andere aanvraag (geen nieuw project)? <link>Neem rechtstreeks contact met ons op</link>"
+    },
+    "step1": {
+      "title": "Selecteer het projecttype dat het best bij uw behoefte past",
+      "footerNote": "<b>Niet zeker van uw keuze?</b> Selecteer het type dat er het dichtst bij komt. We verfijnen het samen tijdens ons gesprek.",
+      "infoBtnAria": "Meer weten over {name}",
+      "infoBubbleLink": "Meer weten →",
+      "info": {
+        "siteVitrine": {
+          "title": "Wat is een vitrinesite?",
+          "explanation": "Een vitrinesite is een informatieve website die uw bedrijf, uw diensten en uw producten voorstelt zonder online verkoop. Het is als een professionele digitale brochure die 24/7 beschikbaar is."
+        },
+        "ecommerce": {
+          "title": "Wat is een e-commercesite?",
+          "explanation": "Een e-commercesite is een onlinewinkel waarmee u uw producten/diensten rechtstreeks online verkoopt met beveiligde betaling, voorraadbeheer en orderopvolging."
+        },
+        "appWeb": {
+          "title": "Wat is een webapplicatie?",
+          "explanation": "Een webapplicatie is bedrijfssoftware die toegankelijk is via een browser (SaaS, CRM, ERP, platform). Ze automatiseert complexe processen met gebruikersbeheer, workflows en gegevens."
+        },
+        "auditCyber": {
+          "title": "Wat is een cyberbeveiligingsaudit?",
+          "explanation": "Een cyberbeveiligingsaudit is een professionele analyse van de beveiliging van uw IT-infrastructuur, applicaties en websites om kwetsbaarheden te identificeren voordat ze door aanvallers worden misbruikt."
+        },
+        "aiAutomation": {
+          "title": "Wat is AI-automatisering?",
+          "explanation": "AI-automatisering gebruikt kunstmatige intelligentie (chatbots, documentverwerking, gegevensanalyse) om repetitieve taken te automatiseren en tijd te winnen in uw bedrijfsprocessen."
+        },
+        "cmsBlog": {
+          "title": "CMS / Blog",
+          "explanation": "Contentbeheersysteem"
+        }
+      }
+    },
+    "step2": {
+      "stepNumber": "Stap 2/5",
+      "title": "{name}: Wat hebt u nodig?",
+      "subtitle": "Selecteer de functies die bij uw project passen",
+      "summaryLabel": "Geselecteerde functies:"
+    },
+    "step3": {
+      "title": "SEO en aanvullende diensten",
+      "subtitle": "Kies uw niveau van zoekmachineoptimalisatie en de aanvullende diensten",
+      "seoSectionTitle": "SEO (zoekmachineoptimalisatie)",
+      "seoNoneName": "Geen",
+      "seoBasicName": "Basis-SEO",
+      "seoAdvancedName": "Geavanceerde SEO",
+      "seoNoneDesc": "Geen SEO-optimalisatie",
+      "seoBasicDesc": "Metatags, sitemap, schema.org, technische optimalisatie",
+      "seoAdvancedDesc": "Volledige strategie, zoekwoorden, geoptimaliseerde content, backlinks",
+      "free": "Gratis",
+      "servicesSectionTitle": "Aanvullende diensten",
+      "animationsLabel": "Geavanceerde animaties (+600€)",
+      "trainingLabel": "Teamopleiding (+{price})",
+      "next": "Overzicht bekijken →"
+    },
+    "step4": {
+      "title": "Overzicht van uw project",
+      "subtitle": "Controleer de details voordat u ons uw aanvraag bezorgt",
+      "priceNote": "Indicatieve prijs, wordt verfijnd tijdens ons gesprek",
+      "metaDelai": "Geschatte termijn",
+      "featuresValue": "{count} geselecteerd",
+      "sectionIncluded": "Wat is inbegrepen",
+      "catBase": "Basis",
+      "catFeatures": "Functies",
+      "catDesign": "Design & optimalisatie",
+      "catServices": "Aanvullende diensten",
+      "animationsItem": "Geavanceerde animaties",
+      "timelineSectionTitle": "Uw gewenste termijn",
+      "noticeTitle": "Volgende stap",
+      "noticeText": "Deze raming wordt verfijnd tijdens een persoonlijk gesprek om er zeker van te zijn dat ze perfect aan uw behoeften voldoet. U ontvangt een gedetailleerde offerte per e-mail.",
+      "back": "← Wijzigen",
+      "next": "Doorgaan naar het formulier",
+      "designTemplate": "Templatedesign",
+      "designSemiCustom": "Semi-gepersonaliseerd design",
+      "designCustom": "Design op maat",
+      "designUndefined": "Niet bepaald",
+      "seoNone": "Geen",
+      "seoBasic": "Basis-SEO",
+      "seoAdvanced": "Geavanceerde SEO",
+      "seoUndefined": "Niet bepaald",
+      "timelineAsap": "Zo snel mogelijk",
+      "timeline1m": "1 maand",
+      "timeline23m": "2-3 maanden",
+      "timelineGt3m": "Meer dan 3 maanden",
+      "timelineFlexible": "Flexibel",
+      "timelineUndefined": "Niet bepaald"
+    },
+    "step5": {
+      "title": "Ontvang uw gedetailleerde offerte",
+      "subtitle": "Deel uw gegevens om uw gepersonaliseerde raming te ontvangen",
+      "labelName": "Volledige naam",
+      "labelEmail": "Professioneel e-mailadres",
+      "labelPhone": "Telefoon",
+      "labelCompany": "Bedrijf",
+      "labelMessage": "Aanvullende details",
+      "placeholderName": "Jan Janssens",
+      "placeholderEmail": "jan@bedrijf.be",
+      "placeholderCompany": "Naam van uw bedrijf",
+      "placeholderMessage": "Beschrijf uw project in enkele woorden, stel uw vragen...",
+      "timelineQuestion": "Wanneer wilt u starten?",
+      "timelineAsap": "Zo snel mogelijk",
+      "timeline1m": "Binnen 1 maand",
+      "timeline23m": "Binnen 2-3 maanden",
+      "timelineGt3m": "Meer dan 3 maanden",
+      "timelineFlexible": "Ik ben flexibel",
+      "messageHint": "Hoe meer u ons vertelt, hoe nauwkeuriger onze offerte wordt (tussen 10 en 1 500 tekens)",
+      "consent": "Ik ga ermee akkoord dat Smidjan mijn gegevens verwerkt om contact met mij op te nemen over mijn aanvraag, conform het <privacy>privacybeleid</privacy> en de <rgpd>AVG</rgpd>",
+      "recaptcha": "Deze site wordt beschermd door reCAPTCHA en valt onder het <privacy>privacybeleid</privacy> en de <terms>gebruiksvoorwaarden</terms> van Google.",
+      "submit": "Mijn aanvraag verzenden",
+      "submitting": "Bezig met verzenden...",
+      "errors": {
+        "nameRequired": "De naam is verplicht",
+        "nameLength": "De naam moet tussen 2 en 80 tekens bevatten",
+        "nameNoDigits": "De naam mag geen cijfers bevatten",
+        "nameInvalidChars": "De naam bevat niet-toegestane tekens",
+        "emailRequired": "Het e-mailadres is verplicht",
+        "emailInvalid": "Ongeldig e-mailadres",
+        "phoneInvalid": "Ongeldig telefoonnummer",
+        "phoneFormat": "Ongeldig telefoonformaat",
+        "companyTooLong": "De bedrijfsnaam is te lang (max. 100 tekens)",
+        "companyInvalidChars": "Niet-toegestane tekens gedetecteerd",
+        "messageTooLong": "Het bericht mag niet langer zijn dan 1 500 tekens",
+        "consentRequired": "U moet het privacybeleid aanvaarden"
+      },
+      "globalSlowDown": "Neem het rustiger aan. Neem de tijd om het formulier correct in te vullen.",
+      "globalRateLimit": "U hebt de inzendlimiet bereikt. Probeer het over een uur opnieuw of neem rechtstreeks contact met ons op via smidjan.agency@outlook.com"
+    },
+    "category": {
+      "summaryExclusive": "Geselecteerde optie",
+      "summaryMultiple": "Geselecteerde opties"
+    },
+    "codeOwnership": {
+      "stepNumber": "Stap 2",
+      "title": "Wilt u eigenaar zijn van de code?",
+      "subtitle": "Deze vraag bepaalt de technische aanpak van uw e-commerceproject",
+      "learnMore": "Meer weten",
+      "back": "Terug",
+      "next": "Doorgaan",
+      "ownership": {
+        "title": "Ja, ik wil de code",
+        "description": "Ontwikkeling op maat. U bent voor 100% eigenaar van de broncode",
+        "feat1": "100% code op maat",
+        "feat2": "Totale vrijheid, geen enkele afhankelijkheid",
+        "feat3": "Optimale prestaties",
+        "feat4": "Onbeperkte schaalbaarheid",
+        "infoTitle": "Ontwikkeling op maat",
+        "infoText": "We ontwikkelen uw e-commerce met moderne technologieën (Next.js, React, TypeScript). U ontvangt de volledige broncode en bent er de enige eigenaar van.",
+        "infoList1": "Geen maandelijks CMS-abonnement",
+        "infoList2": "Geen technische beperkingen",
+        "infoList3": "Hosting bij de provider van uw keuze",
+        "infoList4": "Code onderhoudbaar door elke ontwikkelaar",
+        "infoList5": "Onbeperkte API-integraties",
+        "infoNote": "<b>Ideaal voor:</b> schaalbare projecten, specifieke behoeften, grote volumes"
+      },
+      "cms": {
+        "title": "Nee, ik verkies een CMS",
+        "description": "Smidjan CMS. Volledige professionele oplossing met e-commerce-backend",
+        "feat1": "100% volledige e-commerce-backend",
+        "feat2": "Installatie: 2.500 EUR",
+        "feat3": "40 u front-endpersonalisatie: GRATIS",
+        "feat4": "Na 40 u: 50 EUR/uur excl. btw",
+        "feat5": "Hosting: 500 EUR/maand excl. btw",
+        "infoTitle": "Smidjan CMS, volledige e-commerceoplossing",
+        "infoText": "Smidjan CMS is een professionele e-commerceoplossing die intern is ontwikkeld met een volledige backend die alle functies bevat die nodig zijn om uw onlinewinkel te beheren.",
+        "infoList1": "100% volledige en geoptimaliseerde e-commerce-backend",
+        "infoList2": "Beheer van producten, voorraad, bestellingen, klanten",
+        "infoList3": "Geïntegreerde beveiligde betalingen (Stripe, Mollie, PayPal)",
+        "infoList4": "Realtime analytisch dashboard",
+        "infoList5": "Intuïtieve beheerinterface",
+        "infoList6": "Technische ondersteuning van Smidjan inbegrepen",
+        "infoList7": "Updates en beveiliging beheerd",
+        "pricingTitle": "Tarieven Smidjan CMS:",
+        "pricingInstall": "<b>Volledige installatie:</b> 2.500 EUR (configuratie, backend, betalingskoppelingen)",
+        "pricingHours": "<b>Eerste 40 uur:</b> GRATIS (front-endpersonalisatie, design, logo, kleuren)",
+        "pricingAfter": "<b>Na 40 u:</b> 50 EUR/uur excl. btw (bijkomende functies)",
+        "pricingHosting": "<b>Hosting:</b> 500 EUR/maand excl. btw (geoptimaliseerde servers, dagelijkse back-up, 24/7-monitoring)",
+        "infoNote": "<b>Ideaal voor:</b> serieuze winkels, snelle groei, professionele ondersteuning, gemoedsrust",
+        "cmsLink": "Ontdek Smidjan CMS in detail"
+      }
     }
   }
 }

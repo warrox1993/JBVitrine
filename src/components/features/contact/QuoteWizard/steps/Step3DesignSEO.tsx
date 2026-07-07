@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { SEOLevel, QuoteData, ProjectType } from '../types';
 import { getPricingMatrix } from '@/lib/pricing/matrices';
 import { formatPrice } from '@/lib/pricing/calculator';
@@ -25,6 +26,7 @@ export function Step3DesignSEO({
   stepNumber,
   totalSteps,
 }: Step3DesignSEOProps) {
+  const t = useTranslations('wizard');
   const matrix = getPricingMatrix(projectType);
   const { seo, animations, training } = quoteData;
 
@@ -32,30 +34,30 @@ export function Step3DesignSEO({
     <div className={cls.step}>
       <header className={cls.header}>
         <span className={cls.stepNumber}>
-          Étape {stepNumber || 3}/{totalSteps || 5}
+          {t('common.stepSlash', { step: stepNumber || 3, total: totalSteps || 5 })}
         </span>
-        <h2 className={cls.title}>SEO et services additionnels</h2>
+        <h2 className={cls.title}>{t('step3.title')}</h2>
         <p className={cls.subtitle}>
-          Choisissez votre niveau de référencement et les services complémentaires
+          {t('step3.subtitle')}
         </p>
       </header>
 
       <div className={cls.sections}>
         {/* SEO Section */}
         <section className={cls.section}>
-          <h3 className={cls.sectionTitle}>SEO (Référencement)</h3>
+          <h3 className={cls.sectionTitle}>{t('step3.seoSectionTitle')}</h3>
           <div className={cls.options}>
             {(['none', 'basic', 'advanced'] as SEOLevel[]).map((level) => {
               const price = matrix.seo[level];
               const names = {
-                none: 'Aucun',
-                basic: 'SEO de base',
-                advanced: 'SEO avancé',
+                none: t('step3.seoNoneName'),
+                basic: t('step3.seoBasicName'),
+                advanced: t('step3.seoAdvancedName'),
               };
               const descriptions = {
-                none: 'Pas d\'optimisation SEO',
-                basic: 'Meta tags, sitemap, schema.org, optimisation technique',
-                advanced: 'Stratégie complète, mots-clés, contenu optimisé, backlinks',
+                none: t('step3.seoNoneDesc'),
+                basic: t('step3.seoBasicDesc'),
+                advanced: t('step3.seoAdvancedDesc'),
               };
 
               return (
@@ -68,7 +70,7 @@ export function Step3DesignSEO({
                   <div className={cls.optionHeader}>
                     <h4>{names[level]}</h4>
                     <span className={cls.optionPrice}>
-                      {price === 0 ? 'Gratuit' : `+${formatPrice(price)}`}
+                      {price === 0 ? t('step3.free') : `+${formatPrice(price)}`}
                     </span>
                   </div>
                   <p className={cls.optionDescription}>{descriptions[level]}</p>
@@ -80,7 +82,7 @@ export function Step3DesignSEO({
 
         {/* Additional Services */}
         <section className={cls.section}>
-          <h3 className={cls.sectionTitle}>Services additionnels</h3>
+          <h3 className={cls.sectionTitle}>{t('step3.servicesSectionTitle')}</h3>
           <div className={cls.checkboxes}>
             <label className={cls.checkbox}>
               <input
@@ -88,7 +90,7 @@ export function Step3DesignSEO({
                 checked={animations}
                 onChange={(e) => onUpdate({ animations: e.target.checked })}
               />
-              <span>Animations avancées (+600€)</span>
+              <span>{t('step3.animationsLabel')}</span>
             </label>
             <label className={cls.checkbox}>
               <input
@@ -96,7 +98,7 @@ export function Step3DesignSEO({
                 checked={training}
                 onChange={(e) => onUpdate({ training: e.target.checked })}
               />
-              <span>Formation équipe (+{formatPrice(matrix.services.training)})</span>
+              <span>{t('step3.trainingLabel', { price: formatPrice(matrix.services.training) })}</span>
             </label>
           </div>
         </section>
@@ -104,7 +106,7 @@ export function Step3DesignSEO({
 
       <footer className={cls.footer}>
         <button type="button" className={cls.btnSecondary} onClick={onBack}>
-          ← Retour
+          {t('common.back')}
         </button>
         <button
           type="button"
@@ -112,7 +114,7 @@ export function Step3DesignSEO({
           onClick={onNext}
           disabled={!seo}
         >
-          Voir le récapitulatif →
+          {t('step3.next')}
         </button>
       </footer>
     </div>

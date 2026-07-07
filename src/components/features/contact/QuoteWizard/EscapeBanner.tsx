@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { MessageSquare } from 'lucide-react';
 import cls from './EscapeBanner.module.css';
 
@@ -9,6 +10,7 @@ interface EscapeBannerProps {
 }
 
 export function EscapeBanner({ onSwitch }: EscapeBannerProps) {
+  const t = useTranslations('wizard');
   return (
     <div className={cls.banner}>
       <div className={cls.content}>
@@ -16,10 +18,13 @@ export function EscapeBanner({ onSwitch }: EscapeBannerProps) {
           <MessageSquare size={18} />
         </div>
         <p className={cls.text}>
-          Problème technique, CV ou autre demande (hors nouveau projet) ?{' '}
-          <button type="button" onClick={onSwitch} className={cls.link}>
-            Contactez-nous directement
-          </button>
+          {t.rich('escape.text', {
+            link: (c) => (
+              <button type="button" onClick={onSwitch} className={cls.link}>
+                {c}
+              </button>
+            ),
+          })}
         </p>
       </div>
     </div>

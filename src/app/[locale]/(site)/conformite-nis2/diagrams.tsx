@@ -83,7 +83,7 @@ export async function FunctionsRing() {
         fill="#9fb0c9"
         letterSpacing=".02em"
       >
-        aligné NIST CSF
+        {t("diagram.ringHubSub")}
       </text>
       <rect x="248" y="234" width="24" height="2.4" rx="1.2" fill="#ff6a00" />
       {/* nodes */}
@@ -142,7 +142,8 @@ export async function FunctionsRing() {
 }
 
 /** Circular gauge: Basic already covers ~82% of common attacks. */
-export function CoverageGauge({ className }: { className?: string }) {
+export async function CoverageGauge({ className }: { className?: string }) {
+  const t = await getTranslations("conformite");
   return (
     <svg
       className={className}
@@ -150,7 +151,7 @@ export function CoverageGauge({ className }: { className?: string }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="Jauge de couverture : le niveau Basic couvre déjà environ 82 pour cent des attaques les plus courantes."
+      aria-label={t("diagram.coverageAria")}
     >
       <circle cx="60" cy="60" r="46" stroke="#f1e3d6" strokeWidth="12" />
       <circle
@@ -185,14 +186,15 @@ export function CoverageGauge({ className }: { className?: string }) {
         fill="#a25518"
         letterSpacing=".1em"
       >
-        COUVERT
+        {t("diagram.coverageCovered")}
       </text>
     </svg>
   );
 }
 
 /** Ascending step chart: coverage grows with the CyFun level. */
-export function LevelsStepChart() {
+export async function LevelsStepChart() {
+  const t = await getTranslations("conformite");
   return (
     <svg
       viewBox="0 0 660 330"
@@ -206,7 +208,7 @@ export function LevelsStepChart() {
       {/* quasi-complete guide */}
       <line x1="60" y1="62" x2="600" y2="62" stroke="#d3dae6" strokeWidth="1.5" strokeDasharray="4 6" />
       <text x="600" y="57" textAnchor="end" fontSize="11" fontWeight="600" fill="#657189">
-        Protection quasi complète
+        {t("diagram.levelsQuasiComplete")}
       </text>
       {/* baseline */}
       <line x1="52" y1="252" x2="608" y2="252" stroke="#d3dae6" strokeWidth="1.5" />
@@ -237,7 +239,7 @@ export function LevelsStepChart() {
         ≈100%
       </text>
       <text x="520" y="116" textAnchor="middle" fontSize="10.5" fontWeight="600" fill="#9fb0c9">
-        quasi complet
+        {t("diagram.levelsQuasiShort")}
       </text>
       {/* names */}
       <text x="140" y="279" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0b1f3a">
@@ -247,7 +249,7 @@ export function LevelsStepChart() {
         Important
       </text>
       <text x="330" y="295" textAnchor="middle" fontSize="10.5" fontWeight="700" fill="#e85f00" letterSpacing=".02em">
-        Recommandé PME
+        {t("diagram.levelsRecommended")}
       </text>
       <text x="520" y="279" textAnchor="middle" fontSize="15" fontWeight="700" fill="#0b1f3a">
         Essential
@@ -269,7 +271,8 @@ export function LevelsStepChart() {
 }
 
 /** Four-milestone roadmap from Cadrage to Suivi continu. */
-export function Roadmap() {
+export async function Roadmap() {
+  const t = await getTranslations("conformite");
   return (
     <svg
       viewBox="0 0 720 148"
@@ -291,10 +294,10 @@ export function Roadmap() {
           1
         </text>
         <text x="90" y="96" fontSize="12.5" fontWeight="700" fill="#0b1f3a">
-          Cadrage
+          {t("diagram.roadmap1Title")}
         </text>
         <text x="90" y="113" fontSize="11" fill="#657189">
-          &amp; auto-évaluation
+          {t("diagram.roadmap1Sub")}
         </text>
         {/* 2 */}
         <circle cx="277" cy="52" r="22" fill="#0b1f3a" />
@@ -302,10 +305,10 @@ export function Roadmap() {
           2
         </text>
         <text x="277" y="96" fontSize="12.5" fontWeight="700" fill="#0b1f3a">
-          Remédiation
+          {t("diagram.roadmap2Title")}
         </text>
         <text x="277" y="113" fontSize="11" fill="#657189">
-          analyse d&apos;écart &amp; correctifs
+          {t("diagram.roadmap2Sub")}
         </text>
         {/* 3 */}
         <circle cx="463" cy="52" r="22" fill="#0b1f3a" />
@@ -313,10 +316,10 @@ export function Roadmap() {
           3
         </text>
         <text x="463" y="96" fontSize="12.5" fontWeight="700" fill="#0b1f3a">
-          Vérification
+          {t("diagram.roadmap3Title")}
         </text>
         <text x="463" y="113" fontSize="11" fill="#657189">
-          support à la soumission
+          {t("diagram.roadmap3Sub")}
         </text>
         {/* 4 (goal) */}
         <circle cx="630" cy="52" r="22" fill="#ff6a00" />
@@ -328,10 +331,10 @@ export function Roadmap() {
           strokeLinejoin="round"
         />
         <text x="630" y="96" fontSize="12.5" fontWeight="700" fill="#0b1f3a">
-          Suivi continu
+          {t("diagram.roadmap4Title")}
         </text>
         <text x="630" y="113" fontSize="11" fill="#657189">
-          prêt &amp; maintenu
+          {t("diagram.roadmap4Sub")}
         </text>
       </g>
     </svg>
