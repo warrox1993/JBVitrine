@@ -287,19 +287,6 @@ export default async function ApprochePage({
         <Reveal as="div" stagger className={styles.methodGallery}>
           <figure className={styles.methodPhoto}>
             <OptimizedImage
-              src="/images/pages/approche/methode-architecture.jpg"
-              alt={t("method.photo1Alt")}
-              width={1200}
-              height={801}
-              sizePreset="card"
-              className={styles.methodPhotoFrame}
-            />
-            <figcaption className={styles.methodPhotoCap}>
-              {t.rich("method.photo1Caption", { b })}
-            </figcaption>
-          </figure>
-          <figure className={styles.methodPhoto}>
-            <OptimizedImage
               src="/images/pages/approche/planification-roadmap.jpg"
               alt={t("method.photo2Alt")}
               width={1400}

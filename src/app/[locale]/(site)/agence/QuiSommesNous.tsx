@@ -142,22 +142,6 @@ export async function QuiSommesNous() {
               </div>
             </div>
 
-            {/* Coverage photo: local action, data hosted Belgium/EU */}
-            <figure className={styles.coverageFigure}>
-              <OptimizedImage
-                src="/images/pages/agence/couverture-europe.jpg"
-                alt={t("about.coverageAlt")}
-                width={1200}
-                height={798}
-                sizePreset="card"
-                className={styles.coverageImg}
-              />
-              <figcaption className={styles.coverageCap}>
-                {t.rich("about.coverageCaption", {
-                  b: (c) => <b>{c}</b>,
-                })}
-              </figcaption>
-            </figure>
           </Reveal>
         </div>
       </Container>

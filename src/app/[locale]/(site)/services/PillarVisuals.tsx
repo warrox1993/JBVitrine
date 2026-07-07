@@ -47,11 +47,6 @@ export async function SecureVisual({ alt }: { alt?: boolean }) {
   const t = await getTranslations("services.visuals.secure");
   return (
     <Reveal variant="up">
-    <PillarPhoto
-      src="/images/pages/services/securiser-datacenter.jpg"
-      alt={t("photoAlt")}
-      caption={t.rich("caption", { b: (c) => <b>{c}</b> })}
-    />
     <VisualBox alt={alt}>
       <svg
         viewBox="0 0 480 250"
@@ -236,23 +231,20 @@ export async function DevVisual({ alt }: { alt?: boolean }) {
 }
 
 /** Pillar 04 - Se conformer CyFun/NIS2: three ascending tiers (Basic/Important/Essential) reaching a validation mark. */
-export function ComplyVisual({ alt }: { alt?: boolean }) {
+export async function ComplyVisual({ alt }: { alt?: boolean }) {
+  const t = await getTranslations("services.visuals.comply");
   return (
     <Reveal variant="up">
     <PillarPhoto
       src="/images/pages/services/conformer-audit.jpg"
-      alt="Équipe de professionnels examinant ensemble des documents et une checklist lors d'une réunion de conformité."
-      caption={
-        <>
-          <b>De l&apos;audit à la preuve</b>, jusqu&apos;à la conformité CyFun.
-        </>
-      }
+      alt={t("photoAlt")}
+      caption={t.rich("caption", { b: (c) => <b>{c}</b> })}
     />
     <VisualBox alt={alt}>
       <svg
         viewBox="0 0 480 226"
         role="img"
-        aria-label="Illustration : trois paliers ascendants du référentiel CyFun (Basic, Important et Essential) reliés par un parcours de mise en conformité aboutissant à une validation."
+        aria-label={t("aria")}
       >
         <rect x="40" y="140" width="110" height="50" rx="8" fill="var(--bg-2)" stroke="var(--line-2)" strokeWidth="1.5" />
         <rect x="175" y="95" width="110" height="95" rx="8" fill="var(--bg-3)" stroke="var(--line-2)" strokeWidth="1.5" />
