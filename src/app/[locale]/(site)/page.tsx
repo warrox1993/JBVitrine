@@ -9,7 +9,6 @@ import {
   ServiceCard,
   CyFunTiers,
   ProcessSteps,
-  StatsBand,
   CTABox,
 } from "@/components/shared";
 import { organizationSchema, websiteSchema, localBusinessSchema } from "@/lib/schema";
@@ -19,7 +18,6 @@ import { AiNote } from "./_home/AiNote";
 import { CyfunIntro } from "./_home/CyfunIntro";
 import { Honesty } from "./_home/Honesty";
 import { WhySmidjan } from "./_home/WhySmidjan";
-import { Testimonials } from "./_home/Testimonials";
 import { InsightTeaser } from "./_home/InsightTeaser";
 import { AuditDashboardFigure, BelgiumMapFigure } from "./_home/figures";
 import homeStyles from "./_home/Home.module.css";
@@ -225,35 +223,6 @@ export default async function HomePage({
         />
       </Section>
 
-      {/* ===== Stats band ===== */}
-      <Reveal>
-        <StatsBand
-          title={t.rich("stats.title", {
-            accent: (c) => <span className="accentOnDark">{c}</span>,
-          })}
-          lead={t("stats.lead")}
-          stats={[
-            { value: "12", accent: "+", label: t("stats.stat1Label") },
-            { value: "50", accent: "+", label: t("stats.stat2Label") },
-            { value: "<24", accent: "h", label: t("stats.stat3Label") },
-            { value: "100", accent: "%", label: t("stats.stat4Label") },
-          ]}
-        />
-      </Reveal>
-
-      {/* ===== Testimonials ===== */}
-      <Section variant="white">
-        <Reveal>
-          <SectionHeading
-            center
-            eyebrow={t("testimonials.eyebrow")}
-            title={t.rich("testimonials.title", {
-              accent: (c) => <span className="accent">{c}</span>,
-            })}
-          />
-        </Reveal>
-        <Testimonials />
-      </Section>
 
       {/* ===== Insight teaser - full-bleed navy chapter ===== */}
       <Section variant="navy" gridBg id="insight">

@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/Button/Button";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
-import { StatsBand, CTABox } from "@/components/shared";
+import { CTABox } from "@/components/shared";
 import { QuiSommesNous } from "./QuiSommesNous";
 import { Fondateur } from "./Fondateur";
 import styles from "./page.module.css";
@@ -182,22 +182,6 @@ export default async function AgencePage({
           </article>
         </Reveal>
       </Section>
-
-      {/*
-        NOTE (flag for human): the figures below (12+ / 50+ / 6+ / <24h) are
-        placeholders ported from the approved mockup. Confirm the real numbers
-        with the client before this page goes live.
-      */}
-      <StatsBand
-        title={t("stats.title")}
-        lead={t("stats.lead")}
-        stats={[
-          { value: "12", accent: "+", label: t("stats.experienceLabel") },
-          { value: "50", accent: "+", label: t("stats.auditsLabel") },
-          { value: "6", accent: "+", label: t("stats.secteursLabel") },
-          { value: "<24", accent: "h", label: t("stats.reponseLabel") },
-        ]}
-      />
 
       <CTABox
         id="contact"

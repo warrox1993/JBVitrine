@@ -690,7 +690,7 @@
         "card1Lbl": "Tegemoetkoming",
         "card1Desc": "van het ereloon van de dienstverlener voor de audit, de coaching en de labelling.",
         "card2Lbl": "Plafond over 3 jaar",
-        "card2Desc": "binnen een chequeportefeuille van 200 000 € over 3 jaar (max. 100 000 €/jaar).",
+        "card2Desc": "per begunstigde, binnen het de-minimisplafond van 200 000 € over 3 jaar (max. 100 000 €/jaar).",
         "card3Num": "Gratis",
         "card3Lbl": "CCB CyberFundamentals-tools",
         "card3Desc": "het niveau « Small » (7 maatregelen) is gratis; het CCB beveelt minstens het niveau Basic aan."
@@ -698,7 +698,7 @@
       "details": {
         "title": "De cyberbeveiligingscheque (chèques-entreprises.be)",
         "lead": "Gedragen door het Waalse Gewest, dekt hij het ereloon van een <b>gecertificeerde dienstverlener</b> voor drie prestaties: <b>audit</b>, <b>coaching</b> en <b>labelling</b> « Keep It Secure ».",
-        "note1": "Voorbehouden aan <b>kmo's</b> (< 250 werknemers, < 50 M€ omzet). Aanvraag <b>100 % online</b>, beslissing binnen <b>~5 werkdagen</b>.",
+        "note1": "Voorbehouden aan <b>kmo's</b> (< 250 werknemers, < 50 M€ omzet). Aanvraag <b>100 % online</b>, ontvankelijkheid binnen <b>~5 werkdagen</b> (de eindbeslissing duurt langer).",
         "note2": "Aanvullend: de cheque « digitale maturiteit » (~50 %). Op federaal niveau biedt het <b>CCB</b> gratis <b>CyberFundamentals</b> aan: niveau « Small » (7 maatregelen) gratis, <b>Basic</b> minstens aanbevolen."
       },
       "map": {
@@ -710,11 +710,11 @@
         "row3a": "Tegemoetkoming",
         "row3b": "75 % van het ereloon",
         "row4a": "Plafond",
-        "row4b": "60 000 € over 3 jaar (portefeuille 200 000 €)",
+        "row4b": "50 000 € excl. btw over 3 jaar (de-minimisplafond 200 000 €)",
         "row5a": "Aanvraag",
         "row5b": "100 % online, via een gecertificeerde dienstverlener",
         "row6a": "Beslissing",
-        "row6b": "Ongeveer 5 werkdagen"
+        "row6b": "Ontvankelijkheid binnen ~5 werkdagen"
       },
       "process": {
         "kicker": "Hoe ervan gebruikmaken, in 3 stappen",

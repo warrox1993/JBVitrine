@@ -690,7 +690,7 @@
         "card1Lbl": "Prise en charge",
         "card1Desc": "des honoraires du prestataire pour l'audit, le coaching et la labellisation.",
         "card2Lbl": "Plafond sur 3 ans",
-        "card2Desc": "dans un portefeuille de chèques de 200 000 € sur 3 ans (max 100 000 €/an).",
+        "card2Desc": "par bénéficiaire, dans la limite de minimis de 200 000 € sur 3 ans (max 100 000 €/an).",
         "card3Num": "Gratuit",
         "card3Lbl": "Outils CCB CyberFundamentals",
         "card3Desc": "le niveau « Small » (7 mesures) est gratuit ; le CCB recommande au minimum le niveau Basic."
@@ -698,7 +698,7 @@
       "details": {
         "title": "Le chèque « cybersécurité » (chèques-entreprises.be)",
         "lead": "Porté par la Région wallonne, il couvre les honoraires d'un <b>prestataire certifié</b> pour trois prestations : <b>audit</b>, <b>coaching</b> et <b>labellisation</b> « Keep It Secure ».",
-        "note1": "Réservé aux <b>PME</b> (< 250 employés, < 50 M€ de CA). Démarche <b>100 % en ligne</b>, décision en <b>~5 jours ouvrés</b>.",
+        "note1": "Réservé aux <b>PME</b> (< 250 employés, < 50 M€ de CA). Démarche <b>100 % en ligne</b>, recevabilité en <b>~5 jours ouvrés</b> (la décision finale est plus longue).",
         "note2": "En complément : le chèque « maturité numérique » (~50 %). Côté fédéral, le <b>CCB</b> propose gratuitement <b>CyberFundamentals</b> : niveau « Small » (7 mesures) gratuit, <b>Basic</b> recommandé au minimum."
       },
       "map": {
@@ -710,11 +710,11 @@
         "row3a": "Prise en charge",
         "row3b": "75 % des honoraires",
         "row4a": "Plafond",
-        "row4b": "60 000 € sur 3 ans (portefeuille 200 000 €)",
+        "row4b": "50 000 € HTVA sur 3 ans (plafond de minimis 200 000 €)",
         "row5a": "Démarche",
         "row5b": "100 % en ligne, via un prestataire certifié",
         "row6a": "Décision",
-        "row6b": "Environ 5 jours ouvrés"
+        "row6b": "Recevabilité en ~5 jours ouvrés"
       },
       "process": {
         "kicker": "Comment en profiter, en 3 étapes",

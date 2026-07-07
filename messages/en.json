@@ -690,7 +690,7 @@
         "card1Lbl": "Coverage",
         "card1Desc": "of the provider's fees for the audit, the coaching and the labelling.",
         "card2Lbl": "Cap over 3 years",
-        "card2Desc": "within a voucher portfolio of 200,000 € over 3 years (max 100,000 €/year).",
+        "card2Desc": "per beneficiary, within the de minimis ceiling of 200,000 € over 3 years (max 100,000 €/year).",
         "card3Num": "Free",
         "card3Lbl": "CCB CyberFundamentals tools",
         "card3Desc": "the « Small » level (7 measures) is free; the CCB recommends at least the Basic level."
@@ -698,7 +698,7 @@
       "details": {
         "title": "The cybersecurity voucher (chèques-entreprises.be)",
         "lead": "Run by the Walloon Region, it covers the fees of a <b>certified provider</b> for three services: <b>audit</b>, <b>coaching</b> and <b>labelling</b> « Keep It Secure ».",
-        "note1": "Reserved for <b>SMEs</b> (< 250 employees, < 50 M€ turnover). Application <b>100 % online</b>, decision within <b>~5 working days</b>.",
+        "note1": "Reserved for <b>SMEs</b> (< 250 employees, < 50 M€ turnover). Application <b>100 % online</b>, eligibility check within <b>~5 working days</b> (the final decision takes longer).",
         "note2": "In addition: the « digital maturity » voucher (~50 %). At federal level, the <b>CCB</b> offers <b>CyberFundamentals</b> free of charge: « Small » level (7 measures) free, <b>Basic</b> recommended at least."
       },
       "map": {
@@ -710,11 +710,11 @@
         "row3a": "Coverage",
         "row3b": "75 % of the fees",
         "row4a": "Cap",
-        "row4b": "60,000 € over 3 years (portfolio 200,000 €)",
+        "row4b": "50,000 € excl. VAT over 3 years (de minimis ceiling 200,000 €)",
         "row5a": "Application",
         "row5b": "100 % online, via a certified provider",
         "row6a": "Decision",
-        "row6b": "About 5 working days"
+        "row6b": "Eligibility check within ~5 working days"
       },
       "process": {
         "kicker": "How to make use of it, in 3 steps",

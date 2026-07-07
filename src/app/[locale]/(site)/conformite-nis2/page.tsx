@@ -757,7 +757,7 @@ export default async function ConformiteNis2Page() {
             <div className={styles.fundingIco}>
               <Icon name="layers" size={24} strokeWidth={1.8} />
             </div>
-            <div className={styles.fundingNum}>60 000&nbsp;€</div>
+            <div className={styles.fundingNum}>50 000&nbsp;€</div>
             <div className={styles.fundingLbl}>{t("financement.cards.card2Lbl")}</div>
             <p className={styles.fundingDesc}>
               {t("financement.cards.card2Desc")}
