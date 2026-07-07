@@ -264,7 +264,7 @@
     },
     "q6": {
       "question": "Which CyFun level should I choose for my SME?",
-      "a1": "For most SMEs, <b>Important</b> is the best balance, the most common. <b>Basic</b> already covers the essentials (~82 % of common attacks). <b>Essential</b> targets « essential » NIS2 entities and strong security requirements.",
+      "a1": "For most SMEs, <b>Important</b> is the best balance, the most common. <b>Basic</b> already covers the essentials. <b>Essential</b> targets « essential » NIS2 entities and strong security requirements.",
       "a2": "The right level depends on your NIS2 category and your exposure. We recommend it to you from the <b>scoping</b> stage."
     }
   },

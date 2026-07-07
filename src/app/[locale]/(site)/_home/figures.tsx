@@ -111,7 +111,7 @@ export async function AuditDashboardFigure() {
 
       <circle cx="560" cy="150" r="90" fill="none" stroke="#eef2f7" strokeWidth="18" />
       <circle cx="560" cy="150" r="90" fill="none" stroke="#ff6a00" strokeWidth="18" strokeLinecap="round" strokeDasharray="463.7 565.5" transform="rotate(-90 560 150)" />
-      <text x="560" y="142" textAnchor="middle" fontSize="40" fontWeight="800" fill="#0b1f3a" fontFamily={MONO}>82%</text>
+      <text x="560" y="144" textAnchor="middle" fontSize="24" fontWeight="800" fill="#0b1f3a" fontFamily={MONO}>Basic</text>
       <text x="560" y="164" textAnchor="middle" fontSize="12" fill="#657189" fontFamily={SANS}>{t("fig.audit.scoreLabel")}</text>
       <text x="560" y="270" textAnchor="middle" fontSize="11" fill="#657189" fontFamily={SANS}>{t("fig.audit.scoreBasis")}</text>
     </svg>

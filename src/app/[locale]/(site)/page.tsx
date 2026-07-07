@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Section } from "@/components/ui/Section/Section";
@@ -9,12 +10,12 @@ import {
   ServiceCard,
   CyFunTiers,
   ProcessSteps,
+  Faq,
   CTABox,
 } from "@/components/shared";
 import { organizationSchema, websiteSchema, localBusinessSchema } from "@/lib/schema";
 import { Hero } from "./_home/Hero";
 import { IllusPanel } from "./_home/IllusPanel";
-import { AiNote } from "./_home/AiNote";
 import { CyfunIntro } from "./_home/CyfunIntro";
 import { Honesty } from "./_home/Honesty";
 import { WhySmidjan } from "./_home/WhySmidjan";
@@ -32,7 +33,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-alternates: buildAlternates(locale, "/"),
+    alternates: buildAlternates(locale, "/"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
@@ -59,6 +60,9 @@ alternates: buildAlternates(locale, "/"),
   };
 }
 
+const FAQ_KEYS = ["q1", "q2", "q3", "q4", "q5"] as const;
+const stripTags = (s: string) => s.replace(/<[^>]+>/g, "");
+
 export default async function HomePage({
   params,
 }: {
@@ -67,6 +71,31 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
+  const b = (chunks: ReactNode) => <b>{chunks}</b>;
+
+  const faqItems = FAQ_KEYS.map((q) => ({
+    question: t(`faq.${q}.question`),
+    answer: (
+      <>
+        <p>{t.rich(`faq.${q}.a1`, { b })}</p>
+        <p>{t.rich(`faq.${q}.a2`, { b })}</p>
+      </>
+    ),
+  }));
+
+  // FAQPage structured data — boosts eligibility for rich results and AI citations.
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQ_KEYS.map((q) => ({
+      "@type": "Question",
+      name: t(`faq.${q}.question`),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: `${stripTags(t(`faq.${q}.a1`))} ${stripTags(t(`faq.${q}.a2`))}`,
+      },
+    })),
+  };
 
   return (
     <>
@@ -82,12 +111,31 @@ export default async function HomePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       <Hero />
 
       <Reveal>
         <TrustStrip />
       </Reveal>
+
+      {/* ===== CyFun flagship — the NIS2 proof the hero promises, moved up front ===== */}
+      <Section variant="white" id="cyfun">
+        <CyfunIntro />
+        <Reveal>
+          <CyFunTiers showTable={false} className={homeStyles.tiers} />
+        </Reveal>
+        <IllusPanel
+          eyebrow={t("illus.diagnostic.eyebrow")}
+          title={t("illus.diagnostic.title")}
+          text={t.rich("illus.diagnostic.text", { b })}
+          figure={<AuditDashboardFigure />}
+          onTint
+        />
+      </Section>
 
       {/* ===== Services ===== */}
       <Section variant="tint" id="services">
@@ -152,26 +200,10 @@ export default async function HomePage({
             linkLabel={t("cards.conformer.linkLabel")}
           />
         </Reveal>
-
-        <AiNote />
       </Section>
 
-      {/* ===== CyFun flagship ===== */}
-      <Section variant="white" id="cyfun">
-        <CyfunIntro />
-        <Reveal>
-          <CyFunTiers showTable={false} className={homeStyles.tiers} />
-        </Reveal>
-        <IllusPanel
-          eyebrow={t("illus.diagnostic.eyebrow")}
-          title={t("illus.diagnostic.title")}
-          text={t.rich("illus.diagnostic.text", {
-            b: (c) => <b>{c}</b>,
-          })}
-          figure={<AuditDashboardFigure />}
-          onTint
-        />
-        <Honesty />
+      {/* ===== Method — placed near the offer to lower first-contact risk ===== */}
+      <Section variant="white" id="methode">
         <Reveal>
           <ProcessSteps
             kicker={t("process.kicker")}
@@ -197,22 +229,40 @@ export default async function HomePage({
         </Reveal>
       </Section>
 
-      {/* ===== Why Smidjan - full-bleed navy chapter ===== */}
+      {/* ===== Why Smidjan — full-bleed navy chapter ===== */}
       <Section variant="navy" gridBg id="pourquoi">
         <WhySmidjan />
         <IllusPanel
           onDark
           eyebrow={t("illus.data.eyebrow")}
           title={t("illus.data.title")}
-          text={t.rich("illus.data.text", {
-            b: (c) => <b>{c}</b>,
-          })}
+          text={t.rich("illus.data.text", { b })}
           figure={<BelgiumMapFigure />}
         />
       </Section>
 
+      {/* ===== Transparency — single merged trust block (AI + no false certification) ===== */}
+      <Section variant="tint" id="transparence">
+        <Honesty />
+      </Section>
 
-      {/* ===== Insight teaser - full-bleed navy chapter ===== */}
+      {/* ===== FAQ — answers the search intent the hero opens ===== */}
+      <Section variant="white" id="faq">
+        <Reveal>
+          <SectionHeading
+            center
+            as="h2"
+            eyebrow={t("faq.eyebrow")}
+            title={t("faq.title")}
+            lead={t("faq.lead")}
+          />
+        </Reveal>
+        <Reveal>
+          <Faq defaultOpenFirst items={faqItems} />
+        </Reveal>
+      </Section>
+
+      {/* ===== Insight teaser — full-bleed navy chapter (separated from the Why navy block) ===== */}
       <Section variant="navy" gridBg id="insight">
         <InsightTeaser />
       </Section>

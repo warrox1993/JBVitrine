@@ -264,7 +264,7 @@
     },
     "q6": {
       "question": "Welk CyFun-niveau kiezen voor mijn kmo?",
-      "a1": "Voor de meeste kmo's is <b>Important</b> het beste evenwicht, het meest voorkomend. <b>Basic</b> dekt al het essentiële (~82 % van de courante aanvallen). <b>Essential</b> richt zich op de « essentiële » NIS2-entiteiten en de strenge beveiligingsvereisten.",
+      "a1": "Voor de meeste kmo's is <b>Important</b> het beste evenwicht, het meest voorkomend. <b>Basic</b> dekt al het essentiële. <b>Essential</b> richt zich op de « essentiële » NIS2-entiteiten en de strenge beveiligingsvereisten.",
       "a2": "Het juiste niveau hangt af van uw NIS2-categorie en uw blootstelling. Wij bevelen het u aan vanaf de <b>kadering</b>."
     }
   },

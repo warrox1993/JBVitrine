@@ -264,7 +264,7 @@
     },
     "q6": {
       "question": "Quel niveau CyFun choisir pour ma PME ?",
-      "a1": "Pour la plupart des PME, <b>Important</b> est le meilleur équilibre, le plus courant. <b>Basic</b> couvre déjà l'essentiel (~82 % des attaques courantes). <b>Essential</b> vise les entités « essentielles » NIS2 et les exigences de sécurité fortes.",
+      "a1": "Pour la plupart des PME, <b>Important</b> est le meilleur équilibre, le plus courant. <b>Basic</b> couvre déjà l'essentiel. <b>Essential</b> vise les entités « essentielles » NIS2 et les exigences de sécurité fortes.",
       "a2": "Le bon niveau dépend de votre catégorie NIS2 et de votre exposition. On vous le recommande dès le <b>cadrage</b>."
     }
   },

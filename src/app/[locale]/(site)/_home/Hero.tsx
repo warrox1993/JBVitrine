@@ -40,7 +40,7 @@ export async function Hero() {
             >
               {t("hero.ctaPrimary")}
             </Button>
-            <Button as="a" href="/services" variant="ghost" size="lg">
+            <Button as="a" href="#cyfun" variant="ghost" size="lg">
               {t("hero.ctaSecondary")}
             </Button>
           </div>
@@ -98,13 +98,9 @@ export async function Hero() {
               </li>
             </ul>
             <div className={styles.foot}>
-              <div className={styles.score}>
-                82<em>%</em>
-              </div>
               <div className={styles.lbl}>
                 {t.rich("hero.footLbl", {
                   b: (c) => <b>{c}</b>,
-                  br: () => <br />,
                 })}
               </div>
             </div>

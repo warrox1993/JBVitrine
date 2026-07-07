@@ -17,6 +17,11 @@ export async function Honesty() {
             b: (c) => <b>{c}</b>,
           })}
         </p>
+        <p>
+          {t.rich("honesty.ai", {
+            b: (c) => <b>{c}</b>,
+          })}
+        </p>
       </div>
     </Reveal>
   );
