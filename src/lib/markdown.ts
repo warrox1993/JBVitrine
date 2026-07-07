@@ -1,5 +1,5 @@
 import { marked, Tokens } from "marked";
-import DOMPurify from "isomorphic-dompurify";
+import sanitizeHtml from "sanitize-html";
 import { escapeHtml } from "@/lib/security/escape";
 
 /**
@@ -88,10 +88,30 @@ export function markdownToHtml(markdown: string): string {
   try {
     const html = marked.parse(markdown);
     const raw = typeof html === "string" ? html : "";
-    // 🔒 E1 : neutraliser tout HTML dangereux (script, onerror, javascript:, …)
-    return DOMPurify.sanitize(raw, {
-      ADD_ATTR: ["id", "target", "rel"],
-      FORBID_TAGS: ["style", "iframe", "form", "input"],
+    // 🔒 E1 : neutraliser tout HTML dangereux (script, onerror, javascript:, …).
+    // sanitize-html est pur-JS (pas de jsdom) → fonctionne dans le runtime
+    // serverless. style/iframe/form/input/script sont absents de allowedTags
+    // donc retirés ; seuls http/https/mailto sont autorisés sur les liens.
+    return sanitizeHtml(raw, {
+      allowedTags: [
+        "h1", "h2", "h3", "h4", "h5", "h6",
+        "p", "a", "ul", "ol", "li", "strong", "em", "b", "i",
+        "code", "pre", "blockquote", "br", "hr", "span", "del", "ins", "sup", "sub",
+        "table", "thead", "tbody", "tfoot", "tr", "th", "td", "img",
+      ],
+      allowedAttributes: {
+        a: ["href", "title", "target", "rel"],
+        code: ["class"],
+        img: ["src", "alt", "title"],
+        th: ["colspan", "rowspan", "scope"],
+        td: ["colspan", "rowspan"],
+        "*": ["id"],
+      },
+      allowedSchemes: ["http", "https", "mailto"],
+      allowedSchemesByTag: {
+        a: ["http", "https", "mailto"],
+        img: ["http", "https", "data"],
+      },
     });
   } catch (error) {
     console.error("Error parsing markdown:", error);
