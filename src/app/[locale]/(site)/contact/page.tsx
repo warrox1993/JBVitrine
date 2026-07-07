@@ -1,45 +1,61 @@
 import type { Metadata } from 'next';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import OptimizedImage from '@/components/ui/OptimizedImage/OptimizedImage';
 import { Reveal } from '@/components/ui/Reveal/Reveal';
 import { ContactForm } from './ContactForm';
 import cls from './page.module.css';
 
-export const metadata: Metadata = {
-  title: 'Contact · Smidjan | Cybersécurité & conformité NIS2 à Liège',
-  description:
-    "Diagnostic gratuit, audit CyFun/NIS2, pentest ou réponse à incident : écrivez à Smidjan. Un expert vous répond sous 24 h ouvrées. Basés à Liège, Wallonie.",
-  alternates: {
-    canonical: '/contact',
-  },
-  openGraph: {
-    title: 'Contact · Smidjan',
-    description: 'Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées.',
-    type: 'website',
-    url: 'https://smidjan.be/contact',
-    images: [
-      {
-        url: 'https://smidjan.be/og/contact-og.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Contactez Smidjan, cybersécurité et conformité NIS2 à Liège',
-        type: 'image/webp',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Contact · Smidjan',
-    description: 'Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées.',
-    images: ['/og/contact-og.webp'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'contact.meta' });
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: {
+      canonical: '/contact',
+    },
+    openGraph: {
+      title: t('ogTitle'),
+      description: t('ogDescription'),
+      type: 'website',
+      url: 'https://smidjan.be/contact',
+      images: [
+        {
+          url: 'https://smidjan.be/og/contact-og.webp',
+          width: 1200,
+          height: 630,
+          alt: t('ogImageAlt'),
+          type: 'image/webp',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('twitterTitle'),
+      description: t('twitterDescription'),
+      images: ['/og/contact-og.webp'],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
-export default function ContactPage() {
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations('contact');
+
   return (
     <>
       {/* JSON-LD: ContactPage */}
@@ -92,26 +108,26 @@ export default function ContactPage() {
       <div className={cls.pageHead}>
         <div className={`wrap ${cls.pageHeadInner}`}>
           <Reveal as="div" className={cls.pageHeadText}>
-            <nav className={cls.crumbs} aria-label="Fil d'Ariane">
-              <a href="/">Accueil</a>
+            <nav className={cls.crumbs} aria-label={t('hero.crumbAria')}>
+              <a href="/">{t('hero.crumbHome')}</a>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
                 <path d="m9 18 6-6-6-6" />
               </svg>
-              <span>Contact</span>
+              <span>{t('hero.crumbContact')}</span>
             </nav>
-            <span className={cls.eyebrow}>Parlons de votre sécurité</span>
+            <span className={cls.eyebrow}>{t('hero.eyebrow')}</span>
             <h1>
-              Un expert vous répond : <span className={cls.accent}>sous 24&nbsp;heures</span>.
+              {t.rich('hero.title', { accent: (c) => <span className={cls.accent}>{c}</span> })}
             </h1>
             <p className={cls.directPromise}>
-              <strong>Un expert Smidjan</strong>, jamais un centre d&apos;appels.
+              {t.rich('hero.directPromise', { strong: (c) => <strong>{c}</strong> })}
             </p>
             <p className={cls.lead}>
-              Diagnostic, audit NIS2, pentest ou incident : un seul interlocuteur.
+              {t('hero.lead')}
             </p>
             <div className={cls.heroCtas}>
               <a href="#form" className={cls.ctaPrimary}>
-                Décrire mon besoin
+                {t('hero.ctaPrimary')}
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 6l6 6-6 6" />
                 </svg>
@@ -126,22 +142,22 @@ export default function ContactPage() {
             <div className={cls.headAssure}>
               <div>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
-                Réponse sous 24&nbsp;h ouvrées
+                {t('hero.assure1')}
               </div>
               <div>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
-                Sans engagement
+                {t('hero.assure2')}
               </div>
               <div>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
-                Basés à Liège
+                {t('hero.assure3')}
               </div>
             </div>
           </Reveal>
           <div className={cls.pageHeadMedia}>
             <OptimizedImage
               src="/images/pages/contact/office-team.jpg"
-              alt="Équipe Smidjan réunie autour d'un ordinateur portable dans un bureau moderne et lumineux, échange convivial entre collègues."
+              alt={t('hero.imageAlt')}
               width={640}
               height={430}
               sizePreset="hero"
@@ -159,14 +175,14 @@ export default function ContactPage() {
           <div className={cls.contactGrid}>
             {/* LEFT: secured form (primary action) */}
             <div className={cls.formPrimary}>
-              <span className={cls.formBadge}>Le plus direct</span>
+              <span className={cls.formBadge}>{t('form.badge')}</span>
               <Reveal>
                 <ContactForm />
               </Reveal>
             </div>
 
             {/* RIGHT: coordinates */}
-            <aside className={cls.side} aria-label="Nos coordonnées">
+            <aside className={cls.side} aria-label={t('side.aria')}>
               {/* Emergency block */}
               <div id="urgence">
               <Reveal className={cls.emergBlock}>
@@ -174,7 +190,7 @@ export default function ContactPage() {
                 <div className={cls.ebPhoto}>
                   <OptimizedImage
                     src="/images/pages/contact/incident-response.jpg"
-                    alt="Analyste cybersécurité de dos, face à plusieurs écrans de supervision dans une salle de contrôle, en pleine réponse à un incident."
+                    alt={t('side.incidentImageAlt')}
                     width={520}
                     height={230}
                     sizePreset="card"
@@ -190,13 +206,12 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <span className={cls.ebBadge}><span className={cls.dot} />Ligne incident 24/7</span>
-                    <h3>Victime d&apos;une <span className="accentOnDark">attaque</span>&nbsp;?</h3>
+                    <span className={cls.ebBadge}><span className={cls.dot} />{t('side.incidentBadge')}</span>
+                    <h3>{t.rich('side.incidentTitle', { accent: (c) => <span className="accentOnDark">{c}</span> })}</h3>
                   </div>
                 </div>
                 <p>
-                  Rançongiciel, intrusion, fuite de données&nbsp;? Ne coupez rien.
-                  Appelez. On limite les dégâts, tout de suite.
+                  {t('side.incidentText')}
                 </p>
                 <a className={cls.ebTel} href="tel:+32475205562">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" /></svg>
@@ -204,7 +219,7 @@ export default function ContactPage() {
                 </a>
                 <div className={cls.ebNote}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
-                  Un intervenant Smidjan, jour et nuit.
+                  {t('side.incidentNote')}
                 </div>
               </Reveal>
               </div>
@@ -215,18 +230,18 @@ export default function ContactPage() {
                   <span className={cls.hi}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M12 6v6l4 2" /><circle cx="12" cy="12" r="9" /></svg>
                   </span>
-                  Comment ça marche
+                  {t('side.processTitle')}
                 </h3>
                 <div
                   className={cls.processStrip}
                   role="img"
-                  aria-label="Schéma en trois étapes : vous écrivez votre demande, un expert vous rappelle sous 24 heures ouvrées, puis diagnostic gratuit."
+                  aria-label={t('side.processAria')}
                 >
                   <div className={cls.pStep} aria-hidden="true">
                     <span className={cls.pIc}>
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
                     </span>
-                    <span className={cls.pLbl}>Vous écrivez</span>
+                    <span className={cls.pLbl}>{t('side.processStep1')}</span>
                   </div>
                   <span className={cls.pArrow} aria-hidden="true">
                     <svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32" stroke="currentColor" strokeWidth={1.6} strokeDasharray="1 5" strokeLinecap="round" /><path d="M28 1.5 36 6l-8 4.5" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -235,7 +250,7 @@ export default function ContactPage() {
                     <span className={cls.pIc}>
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
                     </span>
-                    <span className={cls.pLbl}>Rappel sous 24&nbsp;h</span>
+                    <span className={cls.pLbl}>{t('side.processStep2')}</span>
                   </div>
                   <span className={cls.pArrow} aria-hidden="true">
                     <svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32" stroke="currentColor" strokeWidth={1.6} strokeDasharray="1 5" strokeLinecap="round" /><path d="M28 1.5 36 6l-8 4.5" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -244,7 +259,7 @@ export default function ContactPage() {
                     <span className={cls.pIc}>
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /><path d="m9 12 2 2 4-4" /></svg>
                     </span>
-                    <span className={cls.pLbl}>Diagnostic gratuit</span>
+                    <span className={cls.pLbl}>{t('side.processStep3')}</span>
                   </div>
                 </div>
               </Reveal>
@@ -254,48 +269,48 @@ export default function ContactPage() {
                 <div className={cls.coordPhoto}>
                   <OptimizedImage
                     src="/images/pages/contact/support-desk.jpg"
-                    alt="Membre de l'équipe Smidjan souriant, au téléphone à son bureau avec un ordinateur portable, prêt à répondre à votre demande."
+                    alt={t('side.coordImageAlt')}
                     width={480}
                     height={230}
                     sizePreset="card"
                     aspectRatio="landscape"
                     className={cls.coordPhotoImg}
                   />
-                  <span className={cls.coordPhotoTag}>On vous répond</span>
+                  <span className={cls.coordPhotoTag}>{t('side.coordTag')}</span>
                 </div>
                 <h3>
                   <span className={cls.hi}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
                   </span>
-                  Nos coordonnées
+                  {t('side.coordTitle')}
                 </h3>
                 <Reveal stagger as="ul" className={cls.coord}>
                   <li>
                     <span className={cls.ic}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg></span>
                     <div>
-                      <div className={cls.k}>Zone d&apos;intervention</div>
-                      <div className={cls.v}>Liège, Belgique<small>Sur site ou à distance, sur rendez-vous</small></div>
+                      <div className={cls.k}>{t('side.coordZoneK')}</div>
+                      <div className={cls.v}>{t('side.coordZoneV')}<small>{t('side.coordZoneSmall')}</small></div>
                     </div>
                   </li>
                   <li className={cls.coordPrimary}>
                     <span className={cls.ic}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" /></svg></span>
                     <div>
-                      <div className={cls.k}>Téléphone</div>
-                      <div className={cls.v}><a className={cls.telLink} href="tel:+32475205562">+32 475 20 55 62</a><small>Standard : demandes générales</small></div>
+                      <div className={cls.k}>{t('side.coordPhoneK')}</div>
+                      <div className={cls.v}><a className={cls.telLink} href="tel:+32475205562">+32 475 20 55 62</a><small>{t('side.coordPhoneSmall')}</small></div>
                     </div>
                   </li>
                   <li>
                     <span className={cls.ic}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg></span>
                     <div>
-                      <div className={cls.k}>E-mail</div>
-                      <div className={cls.v}><a href="mailto:contact@smidjan.be">contact@smidjan.be</a><small>Réponse sous 24&nbsp;h ouvrées</small></div>
+                      <div className={cls.k}>{t('side.coordEmailK')}</div>
+                      <div className={cls.v}><a href="mailto:contact@smidjan.be">contact@smidjan.be</a><small>{t('side.coordEmailSmall')}</small></div>
                     </div>
                   </li>
                   <li>
                     <span className={cls.ic}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></span>
                     <div>
-                      <div className={cls.k}>Horaires</div>
-                      <div className={cls.v}>Lun. au ven., 8h30 à 18h00<small>Réponse à incident : 24&nbsp;h/24, 7&nbsp;j/7</small></div>
+                      <div className={cls.k}>{t('side.coordHoursK')}</div>
+                      <div className={cls.v}>{t('side.coordHoursV')}<small>{t('side.coordHoursSmall')}</small></div>
                     </div>
                   </li>
                 </Reveal>
@@ -303,7 +318,7 @@ export default function ContactPage() {
 
               {/* Stylised map */}
               <div className={cls.mapCard}>
-                <div className={cls.mapCanvas} role="img" aria-label="Carte stylisée indiquant l'implantation de Smidjan à Liège">
+                <div className={cls.mapCanvas} role="img" aria-label={t('side.mapAria')}>
                   <svg className={cls.base} viewBox="0 0 400 210" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                     <rect width="400" height="210" fill="#eef2f7" />
                     <path d="M-10 40 C 80 70, 120 120, 200 130 S 340 190, 420 160" fill="none" stroke="#c9d8ee" strokeWidth="16" strokeLinecap="round" />
@@ -342,14 +357,14 @@ export default function ContactPage() {
                     <svg viewBox="0 0 58 58"><circle cx="29" cy="29" r="21" /><circle cx="29" cy="29" r="21" /></svg>
                   </div>
                   <div className={cls.mapPin}>
-                    <span className={cls.badge}>Smidjan · Liège</span>
+                    <span className={cls.badge}>{t('side.mapBadge')}</span>
                     <span className={cls.drop}><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" /></svg></span>
                   </div>
                 </div>
                 <div className={cls.mapFoot}>
-                  <span className={cls.addr}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>Centre de Liège, Wallonie</span>
+                  <span className={cls.addr}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>{t('side.mapAddr')}</span>
                   <a className={cls.linkMore} href="https://www.google.com/maps/search/?api=1&query=Li%C3%A8ge+Belgique" target="_blank" rel="noopener noreferrer">
-                    Itinéraire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.3} strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                    {t('side.mapMore')} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.3} strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
                   </a>
                 </div>
               </div>
@@ -362,32 +377,32 @@ export default function ContactPage() {
       <section className={cls.expect}>
         <div className="wrap">
           <div className={cls.secHead}>
-            <span className={cls.eyebrow}>À quoi s&apos;attendre</span>
-            <h2>De votre message au <span className="accent">diagnostic</span>, en trois temps</h2>
-            <p>Pas de tunnel commercial, un échange utile dès le premier message.</p>
+            <span className={cls.eyebrow}>{t('expect.eyebrow')}</span>
+            <h2>{t.rich('expect.title', { accent: (c) => <span className="accent">{c}</span> })}</h2>
+            <p>{t('expect.intro')}</p>
           </div>
           <div className={cls.steps}>
             <div className={cls.step}>
               <div className={cls.num}>1</div>
-              <h4>Vous nous écrivez</h4>
-              <p>Formulaire, e-mail ou appel. Décrivez votre besoin en deux phrases.</p>
+              <h4>{t('expect.step1Title')}</h4>
+              <p>{t('expect.step1Text')}</p>
             </div>
             <div className={cls.step}>
               <div className={cls.num}>2</div>
-              <h4>On vous rappelle sous 24&nbsp;h</h4>
-              <p>Un expert Smidjan, pas un commercial. Sous 24&nbsp;h ouvrées.</p>
+              <h4>{t('expect.step2Title')}</h4>
+              <p>{t('expect.step2Text')}</p>
             </div>
             <div className={cls.step}>
               <div className={cls.num}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /><path d="m9 12 2 2 4-4" /></svg>
               </div>
-              <h4>Diagnostic gratuit</h4>
-              <p>30&nbsp;minutes pour cerner vos priorités. Sans engagement, sans jargon.</p>
+              <h4>{t('expect.step3Title')}</h4>
+              <p>{t('expect.step3Text')}</p>
             </div>
           </div>
           <div className={cls.expectNote}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /></svg>
-            <span><b>Un seul interlocuteur</b>, du premier message à la remédiation.</span>
+            <span>{t.rich('expect.note', { b: (c) => <b>{c}</b> })}</span>
           </div>
         </div>
       </section>

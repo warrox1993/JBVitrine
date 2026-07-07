@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "services": "Diensten",
+    "conformite": "NIS2-conformiteit",
+    "approche": "Aanpak",
+    "agence": "Bureau",
+    "journal": "Blog"
+  },
+  "brand": {
+    "ariaHome": "Smidjan, startpagina",
+    "tagline": "Cybersecurity · Luik"
+  },
+  "header": {
+    "navAria": "Hoofdnavigatie",
+    "cta": "Gratis diagnose",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten"
+  },
+  "footer": {
+    "blurb": "Cybersecurity en NIS2-conformiteit voor kmo's in Wallonië. Wij beveiligen, testen, ontwikkelen, brengen in orde en remediëren wat we vinden.",
+    "location": "Luik, België",
+    "servicesHeading": "Diensten",
+    "agenceHeading": "Bureau",
+    "certsHeading": "Kaders & certificeringen",
+    "langHeading": "Taal",
+    "copyright": "© 2026 Smidjan · Alle rechten voorbehouden.",
+    "links": {
+      "reseaux": "Netwerken & infrastructuur",
+      "audits": "Audits & pentests",
+      "devWeb": "Beveiligde webontwikkeling",
+      "conformite": "NIS2- / CyFun-conformiteit",
+      "incident": "Incidentrespons",
+      "apropos": "Over ons",
+      "approche": "Onze aanpak",
+      "ressources": "Bronnen & gidsen",
+      "contact": "Contact",
+      "diagnostic": "Gratis diagnose"
+    },
+    "legal": {
+      "mentions": "Wettelijke vermeldingen",
+      "privacy": "Privacybeleid",
+      "cgv": "Algemene voorwaarden"
+    }
+  },
+  "emergency": {
+    "message": "Beveiligingsincident aan de gang? Elke minuut telt.",
+    "cta": "Slachtoffer van een aanval?"
+  },
+  "breadcrumb": {
+    "aria": "Kruimelpad",
+    "home": "Home",
+    "routes": {
+      "about": "Over ons",
+      "services": "Diensten",
+      "conformite": "NIS2-conformiteit",
+      "approche": "Aanpak",
+      "agence": "Bureau",
+      "portfolio": "Portfolio",
+      "journal": "Blog",
+      "contact": "Contact",
+      "cmsEcommerce": "CMS E-commerce",
+      "devis": "Offerteaanvraag",
+      "mentionsLegales": "Wettelijke Vermeldingen",
+      "confidentialite": "Privacybeleid",
+      "cgv": "Algemene Voorwaarden",
+      "admin": "Beheer",
+      "adminBlog": "Blogbeheer",
+      "adminArticleNew": "Nieuw Artikel",
+      "adminLeads": "Leadbeheer",
+      "adminLogin": "Admin-login"
+    }
+  },
+  "trust": {
+    "label": "Expertise, referentiekaders & engagementen",
+    "items": {
+      "iso": "Afgestemd op ISO/IEC 27001",
+      "nis2": "Expertise NIS2 & CyFun",
+      "owasp": "OWASP-aanpak",
+      "cyfun": "CyberFundamentals (CCB)",
+      "local": "Lokaal & reactief in Luik",
+      "expert": "Rechtstreeks contact met de expert"
+    }
+  }
+}

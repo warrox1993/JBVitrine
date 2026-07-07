@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
@@ -22,10 +23,16 @@ import {
 } from "./PillarVisuals";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "Nos expertises : Cybersécurité, pentest, développement & conformité | Smidjan Liège",
-  description:
-    "Smidjan sécurise votre infrastructure, teste vos applications (pentest OWASP), développe en secure by design et vous accompagne vers la conformité NIS2 / CyFun. Un seul interlocuteur, à Liège.",
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "services.meta" });
+  return {
+  title: t("title"),
+  description: t("description"),
   keywords: [
     "cybersécurité PME Liège",
     "audit sécurité OWASP",
@@ -44,9 +51,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Nos expertises : Cybersécurité, pentest, développement & conformité",
-    description:
-      "Sécuriser, tester, développer, se conformer : quatre expertises Smidjan pour réduire concrètement le risque cyber des PME en Belgique.",
+    title: t("ogTitle"),
+    description: t("ogDescription"),
     url: "https://smidjan.be/services",
     siteName: "Smidjan",
     images: [
@@ -54,7 +60,7 @@ export const metadata: Metadata = {
         url: "https://smidjan.be/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Smidjan : Cybersécurité, pentest, développement sécurisé & conformité NIS2 à Liège",
+        alt: t("ogImageAlt"),
         type: "image/webp",
       },
     ],
@@ -63,9 +69,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nos expertises : Smidjan Cybersécurité",
-    description:
-      "Sécuriser, tester, développer, se conformer : quatre expertises pour réduire le risque cyber des PME.",
+    title: t("twitterTitle"),
+    description: t("twitterDescription"),
     images: ["/og-image.webp"],
   },
   robots: {
@@ -79,7 +84,8 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-};
+  };
+}
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -137,7 +143,14 @@ const breadcrumbJsonLd = {
   ],
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("services");
   return (
     <>
       <script
@@ -152,18 +165,17 @@ export default function ServicesPage() {
       {/* ===== Page hero ===== */}
       <Section variant="white" className={styles.hero} contained={false}>
         <div className="container">
-          <Breadcrumbs items={[{ label: "Accueil", href: "/" }, { label: "Services" }]} />
+          <Breadcrumbs items={[{ label: t("breadcrumb.home"), href: "/" }, { label: t("breadcrumb.services") }]} />
           <Reveal>
             <div className={styles.heroKicker}>
               <span className={styles.heroRule} aria-hidden="true" />
-              <Eyebrow className={styles.kickerMono}>Nos expertises</Eyebrow>
+              <Eyebrow className={styles.kickerMono}>{t("hero.kicker")}</Eyebrow>
             </div>
             <h1 className={styles.heroTitle}>
-              Sécuriser, tester, développer, <span className="accent">se conformer</span>.
+              {t.rich("hero.title", { accent: (c) => <span className="accent">{c}</span> })}
             </h1>
             <p className={styles.heroLead}>
-              Infrastructure durcie. Applications testées. Code secure by design.
-              Conformité NIS2 / CyFun. Un seul interlocuteur, de l&apos;audit à la remédiation.
+              {t("hero.lead")}
             </p>
             <div className={styles.heroActions}>
               <Button
@@ -173,20 +185,20 @@ export default function ServicesPage() {
                 size="lg"
                 trailingIcon={<Icon name="arrow-right" strokeWidth={2.2} />}
               >
-                Réserver mon diagnostic gratuit
+                {t("hero.ctaPrimary")}
               </Button>
               <a className={styles.heroPhone} href="tel:+32475205562">
                 <Icon name="phone" strokeWidth={1.8} />
                 0475 20 55 62
               </a>
             </div>
-            <p className={styles.jumpLabel}>Aller directement à</p>
+            <p className={styles.jumpLabel}>{t("hero.jumpLabel")}</p>
           </Reveal>
           <Reveal as="ul" stagger className={styles.jump}>
-            <li><Link className={styles.jumpLink} href="#securiser"><span className={styles.jumpNum}>01</span>Sécuriser</Link></li>
-            <li><Link className={styles.jumpLink} href="#tester"><span className={styles.jumpNum}>02</span>Tester</Link></li>
-            <li><Link className={styles.jumpLink} href="#developper"><span className={styles.jumpNum}>03</span>Développer</Link></li>
-            <li><Link className={styles.jumpLink} href="#conformer"><span className={styles.jumpNum}>04</span>Se conformer</Link></li>
+            <li><Link className={styles.jumpLink} href="#securiser"><span className={styles.jumpNum}>01</span>{t("jump.securiser")}</Link></li>
+            <li><Link className={styles.jumpLink} href="#tester"><span className={styles.jumpNum}>02</span>{t("jump.tester")}</Link></li>
+            <li><Link className={styles.jumpLink} href="#developper"><span className={styles.jumpNum}>03</span>{t("jump.developper")}</Link></li>
+            <li><Link className={styles.jumpLink} href="#conformer"><span className={styles.jumpNum}>04</span>{t("jump.conformer")}</Link></li>
           </Reveal>
         </div>
       </Section>
@@ -197,29 +209,17 @@ export default function ServicesPage() {
           id="securiser"
           index="01"
           icon="server"
-          kicker="Sécuriser"
-          title="Réseaux & infrastructure"
-          intro="Bloquez les attaques avant qu'elles n'atteignent vos données. Une défense en profondeur taillée pour une PME, sans équipe sécurité dédiée."
+          kicker={t("pillars.securiser.kicker")}
+          title={t("pillars.securiser.title")}
+          intro={t("pillars.securiser.intro")}
           visual={<SecureVisual />}
-          capabilities={[
-            { title: "Pare-feu & segmentation", description: "Cloisonnement du réseau, règles de filtrage, isolation des zones sensibles." },
-            { title: "VPN & accès distant", description: "Télétravail et accès prestataires sécurisés, authentification forte." },
-            { title: "EDR / antivirus nouvelle génération", description: "Détection et blocage des menaces sur les postes et serveurs." },
-            { title: "Supervision & journalisation", description: "Collecte des logs, alertes sur les comportements suspects, traçabilité." },
-            { title: "Sauvegardes & PRA", description: "Sauvegardes chiffrées, hors-ligne, plan de reprise testé." },
-            { title: "Durcissement (hardening)", description: "Configuration sécurisée des serveurs, postes, comptes et services." },
-          ]}
+          capabilities={t.raw("pillars.securiser.capabilities")}
           audience={[
-            { label: "Pour qui", text: "PME sans équipe sécurité dédiée, en quête d'une base solide.", icon: "users" },
-            { label: "Quand", text: "Refonte réseau, migration, après un incident ou avant un audit.", icon: "clock" },
+            { label: t("pillars.securiser.audience.forWho.label"), text: t("pillars.securiser.audience.forWho.text"), icon: "users" },
+            { label: t("pillars.securiser.audience.when.label"), text: t("pillars.securiser.audience.when.text"), icon: "clock" },
           ]}
-          deliverables={[
-            "Architecture réseau documentée & segmentée",
-            "Politique de sauvegarde + PRA testé",
-            "Tableau de bord de supervision",
-            "Rapport de durcissement & recommandations",
-          ]}
-          ctaLabel="Sécuriser mon infrastructure"
+          deliverables={t.raw("pillars.securiser.deliverables")}
+          ctaLabel={t("pillars.securiser.ctaLabel")}
           ctaHref="/contact"
         />
       </Reveal>
@@ -230,30 +230,18 @@ export default function ServicesPage() {
           id="tester"
           index="02"
           icon="target"
-          kicker="Tester"
-          title="Audits & pentest"
-          intro={
-            "On pense comme un attaquant pour trouver vos failles avant lui. Méthodologie OWASP, remédiation priorisée. On vous aide à corriger, pas juste à constater."
-          }
+          kicker={t("pillars.tester.kicker")}
+          title={t("pillars.tester.title")}
+          intro={t("pillars.tester.intro")}
           visual={<TestVisual alt />}
           alt
-          capabilities={[
-            { title: "Audit de sécurité", description: "Évaluation organisationnelle et technique de votre exposition réelle." },
-            { title: "Test d'intrusion web & applicatif", description: "Approche OWASP sur vos sites, applications et API exposés." },
-            { title: "Revue de configuration", description: "Serveurs, cloud, Active Directory : chasse aux mauvaises configurations." },
-            { title: "Revue de code", description: "Analyse du code source pour détecter les vulnérabilités à la racine." },
-          ]}
+          capabilities={t.raw("pillars.tester.capabilities")}
           audience={[
-            { label: "Pour qui", text: "Éditeurs d'un site ou d'une appli, ou soumis à une exigence client / assureur.", icon: "users" },
-            { label: "Quand", text: "Avant une mise en production, chaque année, ou après un changement majeur.", icon: "clock" },
+            { label: t("pillars.tester.audience.forWho.label"), text: t("pillars.tester.audience.forWho.text"), icon: "users" },
+            { label: t("pillars.tester.audience.when.label"), text: t("pillars.tester.audience.when.text"), icon: "clock" },
           ]}
-          deliverables={[
-            "Rapport de pentest priorisé par criticité",
-            "Preuves d'exploitation reproductibles",
-            "Recommandations concrètes & plan de remédiation",
-            "Contre-vérification (retest) après correction",
-          ]}
-          ctaLabel="Planifier un pentest"
+          deliverables={t.raw("pillars.tester.deliverables")}
+          ctaLabel={t("pillars.tester.ctaLabel")}
           ctaHref="/contact"
         />
       </Reveal>
@@ -264,27 +252,17 @@ export default function ServicesPage() {
           id="developper"
           index="03"
           icon="code"
-          kicker="Développer"
-          title="Développement web sécurisé"
-          intro="La sécurité intégrée dès la première ligne de code, pas ajoutée après coup. Nouveaux projets ou remise à niveau d'un existant fragile."
+          kicker={t("pillars.developper.kicker")}
+          title={t("pillars.developper.title")}
+          intro={t("pillars.developper.intro")}
           visual={<DevVisual />}
-          capabilities={[
-            { title: "Sites & applications sur mesure", description: "Développement adapté à vos processus métier, sans dette de sécurité." },
-            { title: "Secure by design", description: "Modélisation des menaces et bonnes pratiques OWASP dès la conception." },
-            { title: "Mise en conformité applicative", description: "RGPD, durcissement et remise à niveau d'un existant fragile." },
-            { title: "Revue de code & intégration continue", description: "Contrôles de sécurité automatisés tout au long du cycle de développement." },
-          ]}
+          capabilities={t.raw("pillars.developper.capabilities")}
           audience={[
-            { label: "Pour qui", text: "PME lançant un projet web, ou reprenant une appli existante à fiabiliser.", icon: "users" },
-            { label: "Quand", text: "Nouveau développement, refonte ou mise en conformité applicative.", icon: "clock" },
+            { label: t("pillars.developper.audience.forWho.label"), text: t("pillars.developper.audience.forWho.text"), icon: "users" },
+            { label: t("pillars.developper.audience.when.label"), text: t("pillars.developper.audience.when.text"), icon: "clock" },
           ]}
-          deliverables={[
-            "Application livrée, documentée & maintenable",
-            "Couverture des points de contrôle OWASP",
-            "Tests de sécurité & documentation technique",
-            "Transfert de connaissances à vos équipes",
-          ]}
-          ctaLabel="Discuter de mon projet"
+          deliverables={t.raw("pillars.developper.deliverables")}
+          ctaLabel={t("pillars.developper.ctaLabel")}
           ctaHref="/contact"
         />
       </Reveal>
@@ -293,34 +271,31 @@ export default function ServicesPage() {
       <Section variant="navy" gridBg className={styles.partner}>
         <div className={styles.partnerBox}>
           <Reveal variant="left">
-            <Eyebrow onDark className={styles.kickerMono}>Un seul partenaire</Eyebrow>
+            <Eyebrow onDark className={styles.kickerMono}>{t("partner.kicker")}</Eyebrow>
             <h2>
-              Construire, <span className="accentOnDark">sécuriser</span> et mettre en conformité,
-              au même endroit
+              {t.rich("partner.title", { accent: (c) => <span className="accentOnDark">{c}</span> })}
             </h2>
             <p className={styles.partnerLead}>
-              La plupart des prestataires font l&apos;un <em>ou</em> l&apos;autre. Nous couvrons
-              toute la chaîne : construire, sécuriser, conformer. Un seul interlocuteur, aucune
-              balle renvoyée.
+              {t.rich("partner.lead", { em: (c) => <em>{c}</em> })}
             </p>
           </Reveal>
           <Reveal as="div" stagger className={styles.chain}>
             <div className={styles.node}>
               <div className={styles.nodeIcon}><Icon name="code" strokeWidth={1.8} /></div>
-              <b>Build</b>
-              <p>Développement web sécurisé, secure by design.</p>
+              <b>{t("partner.build.label")}</b>
+              <p>{t("partner.build.text")}</p>
               <span className={styles.plus} aria-hidden="true">+</span>
             </div>
             <div className={styles.node}>
               <div className={styles.nodeIcon}><Icon name="shield-check" strokeWidth={1.8} /></div>
-              <b>Secure</b>
-              <p>Infrastructure durcie, pentest & supervision.</p>
+              <b>{t("partner.secure.label")}</b>
+              <p>{t("partner.secure.text")}</p>
               <span className={styles.plus} aria-hidden="true">+</span>
             </div>
             <div className={styles.node}>
               <div className={styles.nodeIcon}><Icon name="file-check" strokeWidth={1.8} /></div>
-              <b>Comply</b>
-              <p>Conformité CyFun / NIS2, de l&apos;écart à la preuve.</p>
+              <b>{t("partner.comply.label")}</b>
+              <p>{t("partner.comply.text")}</p>
             </div>
           </Reveal>
         </div>
@@ -328,8 +303,7 @@ export default function ServicesPage() {
           <div className={styles.aiNote}>
             <Icon name="sparkles" strokeWidth={1.8} />
             <span>
-              Des <b>experts augmentés par l&apos;IA</b>, plus rapides, plus de terrain couvert.
-              L&apos;analyse et les décisions restent humaines.
+              {t.rich("partner.aiNote", { b: (c) => <b>{c}</b> })}
             </span>
           </div>
         </Reveal>
@@ -341,28 +315,18 @@ export default function ServicesPage() {
           id="conformer"
           index="04"
           icon="file-check"
-          kicker="Se conformer"
-          title="CyFun / NIS2"
-          intro="Êtes-vous concerné par NIS2 ? Le règlement impose un socle cyber à des milliers d'entreprises belges, sous-traitants inclus. On vous accompagne de l'audit à la préparation de la vérification, sur le référentiel CyFun du CCB."
+          kicker={t("pillars.conformer.kicker")}
+          title={t("pillars.conformer.title")}
+          intro={t("pillars.conformer.intro")}
           visual={<ComplyVisual alt />}
           alt
-          capabilities={[
-            { title: "Audit & auto-évaluation", description: "Évaluation du niveau visé (Basic, Important ou Essential) au regard de votre exposition." },
-            { title: "Analyse d'écart (gap analysis)", description: "Cartographie des mesures manquantes par rapport au référentiel CyFun." },
-            { title: "Remédiation concrète", description: "On corrige ce qu'on trouve : pas seulement un rapport, un plan d'action exécuté." },
-            { title: "Préparation à la vérification", description: "Dossier de preuves prêt pour l'auto-évaluation ou l'organisme certificateur." },
-          ]}
+          capabilities={t.raw("pillars.conformer.capabilities")}
           audience={[
-            { label: "Pour qui", text: "Entités « importantes » ou « essentielles » NIS2, et leurs sous-traitants.", icon: "users" },
-            { label: "Quand", text: "Avant l'échéance réglementaire, sur demande d'un donneur d'ordre, ou avant un audit.", icon: "clock" },
+            { label: t("pillars.conformer.audience.forWho.label"), text: t("pillars.conformer.audience.forWho.text"), icon: "users" },
+            { label: t("pillars.conformer.audience.when.label"), text: t("pillars.conformer.audience.when.text"), icon: "clock" },
           ]}
-          deliverables={[
-            "Rapport d'écart (gap analysis) documenté",
-            "Plan de remédiation priorisé",
-            "Dossier de preuves pour le niveau visé",
-            "Suivi jusqu'à la remédiation complète",
-          ]}
-          ctaLabel="Découvrir notre accompagnement CyFun"
+          deliverables={t.raw("pillars.conformer.deliverables")}
+          ctaLabel={t("pillars.conformer.ctaLabel")}
           ctaHref="/conformite-nis2"
         />
       </Reveal>
@@ -372,18 +336,14 @@ export default function ServicesPage() {
         <Reveal variant="up">
           <SectionHeading
             center
-            eyebrow="Les 3 niveaux CyFun"
-            title={
-              <>
-                Un référentiel gradué, un accompagnement <span className="accent">sur mesure</span>
-              </>
-            }
-            lead="Les trois paliers du CyberFundamentals Framework, en bref. Comparatif complet et calendrier NIS2 sur la page dédiée."
+            eyebrow={t("cyfun.eyebrow")}
+            title={t.rich("cyfun.title", { accent: (c) => <span className="accent">{c}</span> })}
+            lead={t("cyfun.lead")}
             className={styles.cyfunTeaser}
           />
           <div style={{ textAlign: "center" }}>
             <LinkMore href="/conformite-nis2" className={styles.cyfunLinkMore}>
-              Voir le comparatif complet des niveaux CyFun
+              {t("cyfun.linkMore")}
             </LinkMore>
           </div>
         </Reveal>
@@ -394,10 +354,7 @@ export default function ServicesPage() {
           <div className={styles.transparency}>
             <Icon name="alert-circle" strokeWidth={2} />
             <p>
-              <b>En toute transparence :</b> la certification CyFun est délivrée par des organismes
-              accrédités BELAC, indépendants de Smidjan. Notre rôle : audit, analyse d&apos;écart,
-              remédiation concrète et préparation à la vérification, une méthodologie alignée sur
-              le référentiel CyFun, sans nous substituer au certificateur.
+              {t.rich("cyfun.transparency", { b: (c) => <b>{c}</b> })}
             </p>
           </div>
         </Reveal>
@@ -405,13 +362,13 @@ export default function ServicesPage() {
 
       {/* ===== Final CTA ===== */}
       <CTABox
-        title="Un diagnostic gratuit pour savoir par où commencer"
-        text="30 minutes avec un expert pour cadrer la mission utile. Priorités claires, sans engagement."
+        title={t("finalCta.title")}
+        text={t("finalCta.text")}
         actions={[
-          { label: "Réserver mon diagnostic gratuit", href: "/contact" },
-          { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },
+          { label: t("finalCta.actionPrimary"), href: "/contact" },
+          { label: t("finalCta.actionCall"), href: "tel:+32475205562", variant: "ghostD" },
         ]}
-        reassurances={["Réponse sous 24 h", "Expert dédié, pas de sous-traitance", "Données en Belgique"]}
+        reassurances={t.raw("finalCta.reassurances")}
       />
     </>
   );

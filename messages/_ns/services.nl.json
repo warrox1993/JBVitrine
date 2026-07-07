@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "title": "Onze expertise : Cyberbeveiliging, pentest, ontwikkeling & conformiteit | Smidjan Luik",
+    "description": "Smidjan beveiligt uw infrastructuur, test uw applicaties (OWASP-pentest), ontwikkelt secure by design en begeleidt u naar NIS2- / CyFun-conformiteit. Eén aanspreekpunt, in Luik.",
+    "ogTitle": "Onze expertise : Cyberbeveiliging, pentest, ontwikkeling & conformiteit",
+    "ogDescription": "Beveiligen, testen, ontwikkelen, conform worden : vier expertisedomeinen van Smidjan om het cyberrisico van kmo's in België concreet te verlagen.",
+    "ogImageAlt": "Smidjan : Cyberbeveiliging, pentest, beveiligde ontwikkeling & NIS2-conformiteit in Luik",
+    "twitterTitle": "Onze expertise : Smidjan Cyberbeveiliging",
+    "twitterDescription": "Beveiligen, testen, ontwikkelen, conform worden : vier expertisedomeinen om het cyberrisico van kmo's te verlagen."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "services": "Diensten"
+  },
+  "hero": {
+    "kicker": "Onze expertise",
+    "title": "Beveiligen, testen, ontwikkelen, <accent>conform worden</accent>.",
+    "lead": "Verstevigde infrastructuur. Geteste applicaties. Code secure by design. NIS2- / CyFun-conformiteit. Eén aanspreekpunt, van audit tot remediëring.",
+    "ctaPrimary": "Mijn gratis diagnose boeken",
+    "jumpLabel": "Ga rechtstreeks naar"
+  },
+  "jump": {
+    "securiser": "Beveiligen",
+    "tester": "Testen",
+    "developper": "Ontwikkelen",
+    "conformer": "Conform worden"
+  },
+  "pillars": {
+    "securiser": {
+      "kicker": "Beveiligen",
+      "title": "Netwerken & infrastructuur",
+      "intro": "Blokkeer aanvallen voordat ze uw gegevens bereiken. Een diepgaande verdediging op maat van een kmo, zonder een eigen beveiligingsteam.",
+      "capabilities": [
+        { "title": "Firewall & segmentatie", "description": "Opdeling van het netwerk, filterregels, isolatie van gevoelige zones." },
+        { "title": "VPN & externe toegang", "description": "Beveiligde toegang voor thuiswerk en dienstverleners, sterke authenticatie." },
+        { "title": "EDR / nieuwe generatie antivirus", "description": "Detectie en blokkering van dreigingen op werkposten en servers." },
+        { "title": "Monitoring & logging", "description": "Verzameling van logs, waarschuwingen bij verdacht gedrag, traceerbaarheid." },
+        { "title": "Back-ups & uitwijkplan", "description": "Versleutelde, offline back-ups en een getest herstelplan." },
+        { "title": "Hardening", "description": "Veilige configuratie van servers, werkposten, accounts en diensten." }
+      ],
+      "audience": {
+        "forWho": { "label": "Voor wie", "text": "Kmo's zonder eigen beveiligingsteam, op zoek naar een solide basis." },
+        "when": { "label": "Wanneer", "text": "Netwerkherziening, migratie, na een incident of vóór een audit." }
+      },
+      "deliverables": [
+        "Gedocumenteerde & gesegmenteerde netwerkarchitectuur",
+        "Back-upbeleid + getest uitwijkplan",
+        "Monitoringdashboard",
+        "Hardeningrapport & aanbevelingen"
+      ],
+      "ctaLabel": "Mijn infrastructuur beveiligen"
+    },
+    "tester": {
+      "kicker": "Testen",
+      "title": "Audits & pentest",
+      "intro": "We denken als een aanvaller om uw zwakke plekken te vinden vóór hij dat doet. OWASP-methodologie, geprioriteerde remediëring. We helpen u corrigeren, niet enkel vaststellen.",
+      "capabilities": [
+        { "title": "Beveiligingsaudit", "description": "Organisatorische en technische evaluatie van uw werkelijke blootstelling." },
+        { "title": "Web- & applicatiepentest", "description": "OWASP-aanpak op uw sites, applicaties en blootgestelde API's." },
+        { "title": "Configuratiereview", "description": "Servers, cloud, Active Directory : opsporen van foutieve configuraties." },
+        { "title": "Codereview", "description": "Analyse van de broncode om kwetsbaarheden bij de wortel te detecteren." }
+      ],
+      "audience": {
+        "forWho": { "label": "Voor wie", "text": "Uitbaters van een site of applicatie, of onderworpen aan een eis van klant / verzekeraar." },
+        "when": { "label": "Wanneer", "text": "Vóór een indienststelling, jaarlijks, of na een belangrijke wijziging." }
+      },
+      "deliverables": [
+        "Pentestrapport geprioriteerd op ernst",
+        "Reproduceerbaar exploitatiebewijs",
+        "Concrete aanbevelingen & remediëringsplan",
+        "Hercontrole (retest) na correctie"
+      ],
+      "ctaLabel": "Een pentest plannen"
+    },
+    "developper": {
+      "kicker": "Ontwikkelen",
+      "title": "Beveiligde webontwikkeling",
+      "intro": "Beveiliging geïntegreerd vanaf de eerste regel code, niet achteraf toegevoegd. Nieuwe projecten of het bijwerken van een kwetsbaar bestaand geheel.",
+      "capabilities": [
+        { "title": "Sites & applicaties op maat", "description": "Ontwikkeling afgestemd op uw bedrijfsprocessen, zonder beveiligingsschuld." },
+        { "title": "Secure by design", "description": "Dreigingsmodellering en OWASP-praktijken vanaf het ontwerp." },
+        { "title": "Conformiteit van applicaties", "description": "GDPR, hardening en het bijwerken van een kwetsbaar bestaand geheel." },
+        { "title": "Codereview & continue integratie", "description": "Geautomatiseerde beveiligingscontroles doorheen de hele ontwikkelcyclus." }
+      ],
+      "audience": {
+        "forWho": { "label": "Voor wie", "text": "Kmo's die een webproject starten, of een bestaande applicatie betrouwbaarder willen maken." },
+        "when": { "label": "Wanneer", "text": "Nieuwe ontwikkeling, herziening of conform maken van applicaties." }
+      },
+      "deliverables": [
+        "Opgeleverde, gedocumenteerde & onderhoudbare applicatie",
+        "Dekking van de OWASP-controlepunten",
+        "Beveiligingstests & technische documentatie",
+        "Kennisoverdracht aan uw teams"
+      ],
+      "ctaLabel": "Mijn project bespreken"
+    },
+    "conformer": {
+      "kicker": "Conform worden",
+      "title": "CyFun / NIS2",
+      "intro": "Bent u onderworpen aan NIS2 ? De regelgeving legt een cyberbasis op aan duizenden Belgische ondernemingen, onderaannemers inbegrepen. Wij begeleiden u van de audit tot de voorbereiding op de verificatie, op basis van het CyFun-referentiekader van het CCB.",
+      "capabilities": [
+        { "title": "Audit & zelfevaluatie", "description": "Evaluatie van het beoogde niveau (Basic, Important of Essential) in verhouding tot uw blootstelling." },
+        { "title": "Gap-analyse", "description": "Overzicht van de ontbrekende maatregelen ten opzichte van het CyFun-referentiekader." },
+        { "title": "Concrete remediëring", "description": "We verbeteren wat we vinden : niet enkel een rapport, maar een uitgevoerd actieplan." },
+        { "title": "Voorbereiding op de verificatie", "description": "Bewijsdossier klaar voor de zelfevaluatie of het certificeringsorganisme." }
+      ],
+      "audience": {
+        "forWho": { "label": "Voor wie", "text": "« Belangrijke » of « essentiële » NIS2-entiteiten, en hun onderaannemers." },
+        "when": { "label": "Wanneer", "text": "Vóór de reglementaire deadline, op vraag van een opdrachtgever, of vóór een audit." }
+      },
+      "deliverables": [
+        "Gedocumenteerd gap-analyserapport",
+        "Geprioriteerd remediëringsplan",
+        "Bewijsdossier voor het beoogde niveau",
+        "Opvolging tot de volledige remediëring"
+      ],
+      "ctaLabel": "Onze CyFun-begeleiding ontdekken"
+    }
+  },
+  "partner": {
+    "kicker": "Eén enkele partner",
+    "title": "Bouwen, <accent>beveiligen</accent> en conform maken, op één plek",
+    "lead": "De meeste dienstverleners doen het een <em>of</em> het ander. Wij dekken de hele keten : bouwen, beveiligen, conform maken. Eén aanspreekpunt, geen doorverwijzingen.",
+    "build": { "label": "Build", "text": "Beveiligde webontwikkeling, secure by design." },
+    "secure": { "label": "Secure", "text": "Verstevigde infrastructuur, pentest & monitoring." },
+    "comply": { "label": "Comply", "text": "CyFun- / NIS2-conformiteit, van kloof tot bewijs." },
+    "aiNote": "<b>Experts versterkt door AI</b>, sneller, meer terrein gedekt. De analyse en de beslissingen blijven menselijk."
+  },
+  "cyfun": {
+    "eyebrow": "De 3 CyFun-niveaus",
+    "title": "Een gegradeerd referentiekader, een begeleiding <accent>op maat</accent>",
+    "lead": "De drie niveaus van het CyberFundamentals Framework, in het kort. Volledige vergelijking en NIS2-tijdlijn op de gewijde pagina.",
+    "linkMore": "De volledige vergelijking van de CyFun-niveaus bekijken",
+    "transparency": "<b>In alle transparantie :</b> de CyFun-certificering wordt uitgereikt door BELAC-geaccrediteerde organismen, onafhankelijk van Smidjan. Onze rol : audit, gap-analyse, concrete remediëring en voorbereiding op de verificatie, een methodologie afgestemd op het CyFun-referentiekader, zonder in de plaats te treden van de certificeerder."
+  },
+  "finalCta": {
+    "title": "Een gratis diagnose om te weten waar te beginnen",
+    "text": "30 minuten met een expert om de nuttige opdracht af te bakenen. Duidelijke prioriteiten, vrijblijvend.",
+    "actionPrimary": "Mijn gratis diagnose boeken",
+    "actionCall": "Bel 0475 20 55 62",
+    "reassurances": ["Antwoord binnen 24 u", "Toegewijde expert, geen onderaanneming", "Gegevens in België"]
+  },
+  "visuals": {
+    "secure": {
+      "photoAlt": "Serverrekken in een beveiligd datacenter, ter illustratie van de hardening van de netwerkinfrastructuur.",
+      "caption": "<b>Aanvallen blokkeren</b> voordat ze uw gegevens bereiken.",
+      "aria": "Schema van een firewall die het inkomende verkeer filtert : een verbindingspoging vanuit het internet wordt geblokkeerd voordat ze het gesegmenteerde interne netwerk bereikt, bestaande uit een server, een werkpost en een opslagruimte.",
+      "internet": "Internet",
+      "firewall": "Firewall",
+      "internalNetwork": "Intern netwerk"
+    },
+    "test": {
+      "photoAlt": "Beveiligingsanalisten die code en dashboards op meerdere schermen onderzoeken tijdens een audit.",
+      "caption": "<b>Zwakke plekken onthullen</b> voordat een echte aanvaller ze uitbuit.",
+      "aria": "Illustratie : een pentest detecteert een kwetsbare applicatiemodule via een gerichte analyse en legt die vervolgens vast in een rapport met resultaten geordend op ernst, met een kritieke kwetsbaarheid gemarkeerd.",
+      "appTested": "Geteste applicatie",
+      "auditResults": "Auditresultaten",
+      "headers": "Beveiligingsheaders : OK",
+      "auth": "Authenticatie : OK",
+      "sqlInjection": "SQL-injectie : Kritiek",
+      "tls": "TLS-versleuteling : OK",
+      "low": "Laag",
+      "medium": "Middel",
+      "critical": "Kritiek",
+      "pentestReport": "Pentestrapport"
+    },
+    "dev": {
+      "photoAlt": "Close-up van een printplaat, symbool voor een applicatiearchitectuur ontworpen secure by design.",
+      "caption": "<b>Beveiliging, vanaf de eerste regel</b> code, niet achteraf toegevoegd.",
+      "aria": "Illustratie : een codevenster met een gemarkeerde beveiligingsfunctie, gekoppeld aan een validatieschild dat de secure by design-ontwikkeling symboliseert.",
+      "securityByDesign": "Beveiliging geïntegreerd vanaf het ontwerp"
+    },
+    "comply": {
+      "photoAlt": "Team van professionals dat samen documenten en een checklist onderzoekt tijdens een conformiteitsvergadering.",
+      "caption": "<b>Van audit tot bewijs</b>, tot de CyFun-conformiteit.",
+      "aria": "Illustratie : drie oplopende niveaus van het CyFun-referentiekader (Basic, Important en Essential) verbonden door een conformiteitstraject dat uitmondt in een validatie.",
+      "basic": "Basic",
+      "important": "Important",
+      "essential": "Essential"
+    }
+  }
+}

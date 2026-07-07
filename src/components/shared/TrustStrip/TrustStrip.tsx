@@ -1,4 +1,5 @@
 import React from "react";
+import { getTranslations } from "next-intl/server";
 import { Container } from "../../ui/Container";
 import { Icon, IconName } from "../../ui/Icon/Icon";
 import styles from "./TrustStrip.module.css";
@@ -14,31 +15,46 @@ export interface TrustStripProps {
   className?: string;
 }
 
+interface TrustItemDef {
+  icon: IconName;
+  key: string;
+}
+
 /**
  * Honest reference-frameworks & engagements row.
  * NO certification claims - alignment / expertise wording only.
+ * Labels are resolved from the "common" namespace at render time; callers
+ * can still override with fully-formed `items` (display strings).
  */
-export const DEFAULT_TRUST_ITEMS: TrustItem[] = [
-  { icon: "shield", label: "Aligné ISO/IEC 27001" },
-  { icon: "check-circle", label: "Expertise NIS2 & CyFun" },
-  { icon: "code", label: "Approche OWASP" },
-  { icon: "layers", label: "CyberFundamentals (CCB)" },
-  { icon: "map-pin", label: "Local & réactif à Liège" },
-  { icon: "users", label: "Accès direct à l'expert" },
+export const DEFAULT_TRUST_ITEMS: TrustItemDef[] = [
+  { icon: "shield", key: "trust.items.iso" },
+  { icon: "check-circle", key: "trust.items.nis2" },
+  { icon: "code", key: "trust.items.owasp" },
+  { icon: "layers", key: "trust.items.cyfun" },
+  { icon: "map-pin", key: "trust.items.local" },
+  { icon: "users", key: "trust.items.expert" },
 ];
 
-export function TrustStrip({
-  label = "Expertise, cadres de référence & engagements",
-  items = DEFAULT_TRUST_ITEMS,
+export async function TrustStrip({
+  label,
+  items,
   className,
 }: TrustStripProps) {
+  const t = await getTranslations("common");
+  const resolvedLabel = label ?? t("trust.label");
+  const resolvedItems: TrustItem[] =
+    items ??
+    DEFAULT_TRUST_ITEMS.map((def) => ({
+      icon: def.icon,
+      label: t(def.key),
+    }));
   const cn = [styles.trust, className].filter(Boolean).join(" ");
   return (
     <div className={cn}>
       <Container className={styles.wrap}>
-        <div className={styles.label}>{label}</div>
+        <div className={styles.label}>{resolvedLabel}</div>
         <div className={styles.row}>
-          {items.map((item) => (
+          {resolvedItems.map((item) => (
             <span key={item.label} className={styles.item}>
               <Icon name={item.icon} />
               {item.label}

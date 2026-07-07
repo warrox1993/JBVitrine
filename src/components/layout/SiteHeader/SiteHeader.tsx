@@ -3,15 +3,16 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import styles from "./SiteHeader.module.css";
 import { ThemeToggle } from "@/components/ui/ThemeToggle/ThemeToggle";
 
 const NAV_LINKS = [
-  { href: "/services", label: "Services" },
-  { href: "/conformite-nis2", label: "Conformité NIS2" },
-  { href: "/approche", label: "Approche" },
-  { href: "/agence", label: "Agence" },
-  { href: "/blog", label: "Journal" },
+  { href: "/services", labelKey: "nav.services" },
+  { href: "/conformite-nis2", labelKey: "nav.conformite" },
+  { href: "/approche", labelKey: "nav.approche" },
+  { href: "/agence", labelKey: "nav.agence" },
+  { href: "/blog", labelKey: "nav.journal" },
 ] as const;
 
 /**
@@ -20,6 +21,7 @@ const NAV_LINKS = [
  * Ported from the approved corporate mockup.
  */
 export default function SiteHeader() {
+  const t = useTranslations("common");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -44,7 +46,7 @@ export default function SiteHeader() {
   return (
     <header className={styles.site}>
       <div className={styles.nav}>
-        <Link className={styles.brand} href="/" aria-label="Smidjan, accueil">
+        <Link className={styles.brand} href="/" aria-label={t("brand.ariaHome")}>
           <svg
             className={styles.logo}
             viewBox="0 0 40 40"
@@ -68,14 +70,14 @@ export default function SiteHeader() {
           </svg>
           <span className={styles.brandText}>
             Smidjan
-            <small>Cybersécurité · Liège</small>
+            <small>{t("brand.tagline")}</small>
           </span>
         </Link>
 
         <nav
           id="site-nav"
           className={`${styles.main} ${open ? styles.open : ""}`}
-          aria-label="Navigation principale"
+          aria-label={t("header.navAria")}
         >
           {NAV_LINKS.map((link) => (
             <Link
@@ -84,7 +86,7 @@ export default function SiteHeader() {
               className={isActive(link.href) ? styles.active : undefined}
               aria-current={isActive(link.href) ? "page" : undefined}
             >
-              {link.label}
+              {t(link.labelKey)}
             </Link>
           ))}
           <span className={styles.themeMobile}>
@@ -111,12 +113,12 @@ export default function SiteHeader() {
             0475 20 55 62
           </a>
           <Link className={styles.primary} href="/contact">
-            Diagnostic gratuit
+            {t("header.cta")}
           </Link>
           <button
             type="button"
             className={styles.toggle}
-            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-label={open ? t("header.closeMenu") : t("header.openMenu")}
             aria-expanded={open}
             aria-controls="site-nav"
             onClick={() => setOpen((v) => !v)}

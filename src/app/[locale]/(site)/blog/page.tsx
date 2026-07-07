@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { getAllArticles } from "@/lib/blogActions";
 import { BlogFilter } from "@/components/features/blog/BlogFilter";
@@ -7,63 +8,73 @@ import { CTABox } from "@/components/shared";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "Journal : ressources techniques | Smidjan",
-  description:
-    "Articles techniques sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé. Conseils d'experts pour les PME en Belgique.",
-  keywords: [
-    "blog cybersécurité Belgique",
-    "conformité NIS2 PME",
-    "CyberFundamentals CyFun",
-    "sécurité informatique Wallonie",
-    "tests d'intrusion pentest",
-    "développement web sécurisé",
-    "conseils cybersécurité PME belges",
-  ],
-  alternates: {
-    canonical: "/blog",
-    languages: {
-      "fr-BE": "/blog",
-      fr: "/blog",
-    },
-  },
-  openGraph: {
-    title: "Journal : ressources techniques | Smidjan",
-    description:
-      "Articles sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé pour les PME.",
-    url: "https://smidjan.be/blog",
-    siteName: "Smidjan, Cybersécurité Liège",
-    images: [
-      {
-        url: "https://smidjan.be/og-image.webp",
-        width: 1200,
-        height: 630,
-        alt: "Smidjan Blog - Articles techniques pour développeurs et entreprises",
-        type: "image/webp",
-      },
-    ],
-    locale: "fr_BE",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Journal : ressources techniques | Smidjan",
-    description: "Articles sur le développement web, la cybersécurité et l'IA.",
-    images: ["/og-image.webp"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+type PageProps = {
+  params: Promise<{ locale: string }>;
 };
 
-export default async function BlogPage() {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog" });
+
+  return {
+    title: t("meta.title"),
+    description: t("meta.description"),
+    keywords: [
+      "blog cybersécurité Belgique",
+      "conformité NIS2 PME",
+      "CyberFundamentals CyFun",
+      "sécurité informatique Wallonie",
+      "tests d'intrusion pentest",
+      "développement web sécurisé",
+      "conseils cybersécurité PME belges",
+    ],
+    alternates: {
+      canonical: "/blog",
+      languages: {
+        "fr-BE": "/blog",
+        fr: "/blog",
+      },
+    },
+    openGraph: {
+      title: t("meta.ogTitle"),
+      description: t("meta.ogDescription"),
+      url: "https://smidjan.be/blog",
+      siteName: "Smidjan, Cybersécurité Liège",
+      images: [
+        {
+          url: "https://smidjan.be/og-image.webp",
+          width: 1200,
+          height: 630,
+          alt: t("meta.ogImageAlt"),
+          type: "image/webp",
+        },
+      ],
+      locale: "fr_BE",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("meta.twitterTitle"),
+      description: t("meta.twitterDescription"),
+      images: ["/og-image.webp"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+  };
+}
+
+export default async function BlogPage({ params }: PageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("blog");
   const blogArticles = await getAllArticles();
   const [featured] = blogArticles;
 
@@ -80,13 +91,13 @@ export default async function BlogPage() {
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "Accueil",
+                name: t("breadcrumb.home"),
                 item: "https://smidjan.be",
               },
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "Journal",
+                name: t("breadcrumb.journal"),
                 item: "https://smidjan.be/blog",
               },
             ],
@@ -101,9 +112,8 @@ export default async function BlogPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Blog",
-            name: "Journal Smidjan",
-            description:
-              "Articles techniques sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé.",
+            name: t("jsonLd.blogName"),
+            description: t("jsonLd.blogDescription"),
             url: "https://smidjan.be/blog",
             publisher: {
               "@type": "Organization",
@@ -156,14 +166,9 @@ export default async function BlogPage() {
         </svg>
         <Reveal>
           <div className="wrap">
-            <span className={styles.eyebrow}>Journal · Ressources</span>
-            <h1 className={styles.heroTitle}>
-              Sécurisez et mettez en conformité votre entreprise
-            </h1>
-            <p className={styles.heroLead}>
-              Cybersécurité, conformité NIS2 / CyFun et développement web sécurisé&nbsp;: des
-              articles pratiques, pensés pour les PME belges.
-            </p>
+            <span className={styles.eyebrow}>{t("hero.eyebrow")}</span>
+            <h1 className={styles.heroTitle}>{t("hero.title")}</h1>
+            <p className={styles.heroLead}>{t("hero.lead")}</p>
           </div>
         </Reveal>
       </section>
@@ -182,8 +187,8 @@ export default async function BlogPage() {
         <div className="wrap">
           <Reveal>
             <div className={styles.sectionHead}>
-              <span className={styles.eyebrow}>Tous les articles</span>
-              <h2 className={styles.sectionTitle}>Parcourir par thème</h2>
+              <span className={styles.eyebrow}>{t("articles.eyebrow")}</span>
+              <h2 className={styles.sectionTitle}>{t("articles.title")}</h2>
             </div>
           </Reveal>
 
@@ -192,10 +197,10 @@ export default async function BlogPage() {
       </section>
 
       <CTABox
-        title="Besoin d'un accompagnement sur mesure ?"
-        text="Parlons de votre sécurité, de votre conformité NIS2 / CyFun ou de votre projet web sécurisé."
-        actions={[{ label: "Nous contacter", href: "/contact" }]}
-        reassurances={["Réponse sous 24 h", "Sans engagement"]}
+        title={t("cta.title")}
+        text={t("cta.text")}
+        actions={[{ label: t("cta.action"), href: "/contact" }]}
+        reassurances={[t("cta.reassurance24h"), t("cta.reassuranceNoCommitment")]}
       />
     </div>
   );

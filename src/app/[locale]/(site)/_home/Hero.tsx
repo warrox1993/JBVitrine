@@ -1,4 +1,5 @@
 import React from "react";
+import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button/Button";
 import { Icon } from "@/components/ui/Icon/Icon";
@@ -6,7 +7,8 @@ import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./Hero.module.css";
 
 /** Home hero: NIS2 badge, result-led headline, dual CTA, assurances + shield visual. */
-export function Hero() {
+export async function Hero() {
+  const t = await getTranslations("home");
   return (
     <section className={styles.hero}>
       <Container className={styles.grid}>
@@ -14,16 +16,19 @@ export function Hero() {
           <div className={styles.kickerRow}>
             <span className={styles.rule} aria-hidden="true" />
             <span className={styles.badge}>
-              <span className={styles.tag}>NIS2</span>
-              En vigueur en Belgique&nbsp;: votre PME est concernée
+              <span className={styles.tag}>{t("hero.badgeTag")}</span>
+              {t("hero.badgeText")}
             </span>
           </div>
           <h1 className={styles.title}>
-            Sécurisez votre infrastructure. <span className="accent">Préparez NIS2.</span>
+            {t.rich("hero.title", {
+              accent: (c) => <span className="accent">{c}</span>,
+            })}
           </h1>
           <p className={styles.lead}>
-            Réseaux, applications et conformité CyFun&nbsp;: un seul partenaire wallon,{" "}
-            <b>un expert au téléphone.</b>
+            {t.rich("hero.lead", {
+              b: (c) => <b>{c}</b>,
+            })}
           </p>
           <div className={styles.cta}>
             <Button
@@ -33,21 +38,21 @@ export function Hero() {
               size="lg"
               trailingIcon={<Icon name="arrow-right" strokeWidth={2.2} />}
             >
-              Diagnostic NIS2 gratuit
+              {t("hero.ctaPrimary")}
             </Button>
             <Button as="a" href="/services" variant="ghost" size="lg">
-              Découvrir nos services
+              {t("hero.ctaSecondary")}
             </Button>
           </div>
           <div className={styles.assure}>
             <div>
-              <Icon name="check" /> Sans engagement
+              <Icon name="check" /> {t("hero.assure1")}
             </div>
             <div>
-              <Icon name="check" /> Réponse sous 24&nbsp;h
+              <Icon name="check" /> {t("hero.assure2")}
             </div>
             <div>
-              <Icon name="check" /> Données hébergées en Belgique
+              <Icon name="check" /> {t("hero.assure3")}
             </div>
           </div>
         </Reveal>
@@ -58,8 +63,8 @@ export function Hero() {
             <div className={styles.shieldHead}>
               <Icon name="shield-check" className={styles.ico} size={52} strokeWidth={1.6} />
               <div>
-                <h3>Posture de sécurité</h3>
-                <div className={styles.shieldSub}>Évaluation CyFun : aperçu du diagnostic</div>
+                <h3>{t("hero.shieldTitle")}</h3>
+                <div className={styles.shieldSub}>{t("hero.shieldSub")}</div>
               </div>
             </div>
             <ul className={styles.list}>
@@ -67,29 +72,29 @@ export function Hero() {
                 <span className={styles.ck}>
                   <Icon name="check" strokeWidth={3} />
                 </span>
-                Segmentation réseau &amp; pare-feu
-                <span className={styles.val}>OK</span>
+                {t("hero.item1")}
+                <span className={styles.val}>{t("hero.statusOk")}</span>
               </li>
               <li>
                 <span className={styles.ck}>
                   <Icon name="check" strokeWidth={3} />
                 </span>
-                Sauvegardes &amp; plan de reprise
-                <span className={styles.val}>OK</span>
+                {t("hero.item2")}
+                <span className={styles.val}>{t("hero.statusOk")}</span>
               </li>
               <li>
                 <span className={`${styles.ck} ${styles.ckWarn}`}>
                   <Icon name="alert-circle" strokeWidth={3} />
                 </span>
-                Authentification multifacteur
-                <span className={`${styles.val} ${styles.valWarn}`}>À corriger</span>
+                {t("hero.item3")}
+                <span className={`${styles.val} ${styles.valWarn}`}>{t("hero.statusFix")}</span>
               </li>
               <li>
                 <span className={styles.ck}>
                   <Icon name="check" strokeWidth={3} />
                 </span>
-                Supervision &amp; journalisation
-                <span className={styles.val}>OK</span>
+                {t("hero.item4")}
+                <span className={styles.val}>{t("hero.statusOk")}</span>
               </li>
             </ul>
             <div className={styles.foot}>
@@ -97,9 +102,10 @@ export function Hero() {
                 82<em>%</em>
               </div>
               <div className={styles.lbl}>
-                de couverture des attaques courantes
-                <br />
-                atteinte au niveau <b>Basic</b>
+                {t.rich("hero.footLbl", {
+                  b: (c) => <b>{c}</b>,
+                  br: () => <br />,
+                })}
               </div>
             </div>
           </Reveal>
@@ -108,8 +114,8 @@ export function Hero() {
               <Icon name="shield" size={20} />
             </div>
             <div>
-              <b>CCB · CyberFundamentals</b>
-              <small>Cadre officiel belge</small>
+              <b>{t("hero.chipTitle")}</b>
+              <small>{t("hero.chipSub")}</small>
             </div>
           </div>
         </div>

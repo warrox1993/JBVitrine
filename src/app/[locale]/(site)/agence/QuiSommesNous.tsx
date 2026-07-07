@@ -1,3 +1,5 @@
+import { getTranslations } from "next-intl/server";
+
 import OptimizedImage from "@/components/ui/OptimizedImage";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
@@ -6,63 +8,37 @@ import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./QuiSommesNous.module.css";
 
 const VALUES = [
-  {
-    icon: "shield-check" as const,
-    title: "Rigueur",
-    text: "NIS2, CyFun, OWASP, ISO 27001 : une méthode qu'on démontre, pas qu'on affirme.",
-  },
-  {
-    icon: "map-pin" as const,
-    title: "Proximité",
-    text: "Basés à Liège, joignables vite. Vous parlez à la personne qui fait le travail.",
-  },
-  {
-    icon: "check-circle" as const,
-    title: "Franchise",
-    text: "On dit ce qui compte, même ce qui dérange. Pas de vente de peur.",
-  },
-  {
-    icon: "target" as const,
-    title: "Pragmatisme",
-    text: "Priorité à l'impact, pas au superflu. La meilleure sécurité est celle qu'on applique.",
-  },
+  { icon: "shield-check" as const, key: "Rigueur" },
+  { icon: "map-pin" as const, key: "Proximite" },
+  { icon: "check-circle" as const, key: "Franchise" },
+  { icon: "target" as const, key: "Pragmatisme" },
 ];
 
 /** "Qui sommes-nous" - agence positioning, mission and core values. */
-export function QuiSommesNous() {
+export async function QuiSommesNous() {
+  const t = await getTranslations("agence");
   return (
     <section className={styles.about}>
       <Container>
         <div className={styles.grid}>
           <Reveal as="div" className={styles.copy}>
             <SectionHeading
-              eyebrow="Qui sommes-nous"
-              title={
-                <>
-                  Une agence cyber de{" "}
-                  <span className="accent">proximité</span>, au service du
-                  tissu économique wallon
-                </>
-              }
-              lead="PME, indépendants, professions réglementées, collectivités : on protège vos réseaux, vos données, votre activité, et on cadre votre NIS2 / CyFun."
+              eyebrow={t("about.eyebrow")}
+              title={t.rich("about.title", {
+                accent: (c) => <span className="accent">{c}</span>,
+              })}
+              lead={t("about.lead")}
             />
-            <p>
-              Les PME sont des cibles de choix : moins bien défendues, pas
-              moins exposées. On leur applique l&rsquo;exigence d&rsquo;un
-              grand compte, sans la lourdeur.
-            </p>
-            <p>
-              Sécuriser, tester, mettre en conformité : un seul
-              interlocuteur, du début à la fin.
-            </p>
+            <p>{t("about.p1")}</p>
+            <p>{t("about.p2")}</p>
             <div className={styles.missionCard}>
               <Icon name="target" strokeWidth={1.8} />
               <div>
-                <h4>Notre mission</h4>
+                <h4>{t("about.missionTitle")}</h4>
                 <p>
-                  Rendre la cybersécurité{" "}
-                  <b>accessible, concrète et durable</b> pour les entreprises
-                  wallonnes.
+                  {t.rich("about.missionText", {
+                    b: (c) => <b>{c}</b>,
+                  })}
                 </p>
               </div>
             </div>
@@ -98,22 +74,22 @@ export function QuiSommesNous() {
                 <g transform="translate(384,57)" stroke="var(--navy-3)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none">
                   <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6a2 2 0 0 0 2.8 2.8l6-6a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.3-.5-.5-2.3 2.5-2.5Z" />
                 </g>
-                <text x="70" y="178" textAnchor="middle" fontSize="12" fontWeight="700" fill="var(--navy)">Rigueur</text>
-                <text x="179" y="178" textAnchor="middle" fontSize="12" fontWeight="700" fill="var(--navy)">Proximité</text>
-                <text x="287" y="178" textAnchor="middle" fontSize="12" fontWeight="700" fill="var(--navy)">Franchise</text>
-                <text x="395" y="178" textAnchor="middle" fontSize="12" fontWeight="700" fill="var(--navy)">Pragmatisme</text>
+                <text x="70" y="178" textAnchor="middle" fontSize="12" fontWeight="700" fill="var(--navy)">{t("about.valueRigueurTitle")}</text>
+                <text x="179" y="178" textAnchor="middle" fontSize="12" fontWeight="700" fill="var(--navy)">{t("about.valueProximiteTitle")}</text>
+                <text x="287" y="178" textAnchor="middle" fontSize="12" fontWeight="700" fill="var(--navy)">{t("about.valueFranchiseTitle")}</text>
+                <text x="395" y="178" textAnchor="middle" fontSize="12" fontWeight="700" fill="var(--navy)">{t("about.valuePragmatismeTitle")}</text>
               </svg>
             </div>
 
             <Reveal stagger className={styles.valList}>
               {VALUES.map((v) => (
-                <div className={styles.valItem} key={v.title}>
+                <div className={styles.valItem} key={v.key}>
                   <div className={styles.ic}>
                     <Icon name={v.icon} strokeWidth={1.8} />
                   </div>
                   <div>
-                    <h4>{v.title}</h4>
-                    <p>{v.text}</p>
+                    <h4>{t(`about.value${v.key}Title`)}</h4>
+                    <p>{t(`about.value${v.key}Text`)}</p>
                   </div>
                 </div>
               ))}
@@ -125,7 +101,7 @@ export function QuiSommesNous() {
                 <svg
                   viewBox="0 0 200 220"
                   role="img"
-                  aria-label="Carte simplifiée de la Belgique, avec un repère sur Liège et la zone d'action en Wallonie"
+                  aria-label={t("about.mapAriaLabel")}
                 >
                   <path
                     d="M60 18 L120 10 L150 30 L168 55 L180 90 L165 125 L178 155 L150 190 L100 205 L60 195 L35 165 L45 120 L30 85 L45 50 Z"
@@ -146,7 +122,7 @@ export function QuiSommesNous() {
                     fill="rgba(11,31,58,.05)"
                   />
                   <circle cx="95" cy="60" r="3" fill="var(--muted)" />
-                  <text x="102" y="63" fontSize="9" fill="var(--muted)">Bruxelles</text>
+                  <text x="102" y="63" fontSize="9" fill="var(--muted)">{t("about.mapBruxelles")}</text>
                   <circle cx="130" cy="138" r="28" fill="none" stroke="var(--line-2)" strokeWidth="1.3" strokeDasharray="2 4" />
                   <g transform="translate(112,116) scale(1.5)">
                     <path
@@ -157,14 +133,12 @@ export function QuiSommesNous() {
                     />
                     <circle cx="12" cy="10" r="3" fill="#fff" />
                   </g>
-                  <text x="130" y="168" textAnchor="middle" fontSize="11" fontWeight="700" fill="var(--navy)">Liège</text>
+                  <text x="130" y="168" textAnchor="middle" fontSize="11" fontWeight="700" fill="var(--navy)">{t("about.mapLiege")}</text>
                 </svg>
               </div>
               <div>
-                <h4>Ancrés à Liège, actifs en Wallonie</h4>
-                <p>
-                  Délais courts, disponibilité réelle en urgence.
-                </p>
+                <h4>{t("about.localityTitle")}</h4>
+                <p>{t("about.localityText")}</p>
               </div>
             </div>
 
@@ -172,15 +146,16 @@ export function QuiSommesNous() {
             <figure className={styles.coverageFigure}>
               <OptimizedImage
                 src="/images/pages/agence/couverture-europe.jpg"
-                alt="Vue nocturne de la Terre depuis l'espace, lumières des villes d'Europe, symbole de notre zone de couverture Belgique / Europe"
+                alt={t("about.coverageAlt")}
                 width={1200}
                 height={798}
                 sizePreset="card"
                 className={styles.coverageImg}
               />
               <figcaption className={styles.coverageCap}>
-                Ancrés à Liège. Données{" "}
-                <b>hébergées en Belgique et en Europe</b>.
+                {t.rich("about.coverageCaption", {
+                  b: (c) => <b>{c}</b>,
+                })}
               </figcaption>
             </figure>
           </Reveal>

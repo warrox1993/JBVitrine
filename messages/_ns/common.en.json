@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "services": "Services",
+    "conformite": "NIS2 Compliance",
+    "approche": "Approach",
+    "agence": "Agency",
+    "journal": "Journal"
+  },
+  "brand": {
+    "ariaHome": "Smidjan, home",
+    "tagline": "Cybersecurity · Liège"
+  },
+  "header": {
+    "navAria": "Main navigation",
+    "cta": "Free assessment",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "blurb": "Cybersecurity and NIS2 compliance for SMEs in Wallonia. We secure, we test, we develop, we bring you into compliance, and we remediate what we find.",
+    "location": "Liège, Belgium",
+    "servicesHeading": "Services",
+    "agenceHeading": "Agency",
+    "certsHeading": "Frameworks & certifications",
+    "langHeading": "Language",
+    "copyright": "© 2026 Smidjan · All rights reserved.",
+    "links": {
+      "reseaux": "Networks & infrastructure",
+      "audits": "Audits & pentesting",
+      "devWeb": "Secure web development",
+      "conformite": "NIS2 / CyFun compliance",
+      "incident": "Incident response",
+      "apropos": "About",
+      "approche": "Our approach",
+      "ressources": "Resources & guides",
+      "contact": "Contact",
+      "diagnostic": "Free assessment"
+    },
+    "legal": {
+      "mentions": "Legal notice",
+      "privacy": "Privacy policy",
+      "cgv": "Terms of sale"
+    }
+  },
+  "emergency": {
+    "message": "Security incident in progress? Every minute counts.",
+    "cta": "Under attack?"
+  },
+  "breadcrumb": {
+    "aria": "Breadcrumb",
+    "home": "Home",
+    "routes": {
+      "about": "About",
+      "services": "Services",
+      "conformite": "NIS2 Compliance",
+      "approche": "Approach",
+      "agence": "Agency",
+      "portfolio": "Portfolio",
+      "journal": "Journal",
+      "contact": "Contact",
+      "cmsEcommerce": "CMS E-commerce",
+      "devis": "Quote Request",
+      "mentionsLegales": "Legal Notice",
+      "confidentialite": "Privacy Policy",
+      "cgv": "Terms of Sale",
+      "admin": "Administration",
+      "adminBlog": "Blog Management",
+      "adminArticleNew": "New Article",
+      "adminLeads": "Lead Management",
+      "adminLogin": "Admin Login"
+    }
+  },
+  "trust": {
+    "label": "Expertise, reference frameworks & commitments",
+    "items": {
+      "iso": "Aligned with ISO/IEC 27001",
+      "nis2": "NIS2 & CyFun expertise",
+      "owasp": "OWASP approach",
+      "cyfun": "CyberFundamentals (CCB)",
+      "local": "Local & responsive in Liège",
+      "expert": "Direct access to the expert"
+    }
+  }
+}

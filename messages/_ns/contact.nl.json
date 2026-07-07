@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "Contact · Smidjan | Cyberbeveiliging & NIS2-conformiteit in Luik",
+    "description": "Gratis diagnose, CyFun/NIS2-audit, pentest of incidentrespons : schrijf naar Smidjan. Een expert antwoordt u binnen 24 werkuren. Gevestigd in Luik, Wallonië.",
+    "ogTitle": "Contact · Smidjan",
+    "ogDescription": "Laten we het over uw beveiliging hebben. Een expert antwoordt u binnen 24 werkuren.",
+    "ogImageAlt": "Contacteer Smidjan, cyberbeveiliging en NIS2-conformiteit in Luik",
+    "twitterTitle": "Contact · Smidjan",
+    "twitterDescription": "Laten we het over uw beveiliging hebben. Een expert antwoordt u binnen 24 werkuren."
+  },
+  "hero": {
+    "crumbAria": "Broodkruimelpad",
+    "crumbHome": "Home",
+    "crumbContact": "Contact",
+    "eyebrow": "Laten we het over uw beveiliging hebben",
+    "title": "Een expert antwoordt u : <accent>binnen 24 uur</accent>.",
+    "directPromise": "<strong>Een Smidjan-expert</strong>, nooit een callcenter.",
+    "lead": "Diagnose, NIS2-audit, pentest of incident : één aanspreekpunt.",
+    "ctaPrimary": "Mijn behoefte omschrijven",
+    "imageAlt": "Smidjan-team samen rond een laptop in een modern en licht kantoor, gemoedelijk overleg tussen collega's.",
+    "assure1": "Antwoord binnen 24 werkuren",
+    "assure2": "Vrijblijvend",
+    "assure3": "Gevestigd in Luik"
+  },
+  "form": {
+    "badge": "Het meest directe",
+    "title": "Stuur ons uw aanvraag",
+    "subtitle": "Een paar regels volstaan. Hoe preciezer, hoe sneller we vooruitgaan.",
+    "reassure": "Antwoord van een expert binnen 24 werkuren",
+    "errorLabel": "Fout",
+    "options": {
+      "diagnostic": "Gratis diagnose",
+      "cyfun": "CyFun / NIS2-audit",
+      "pentest": "Pentest / penetratietest",
+      "dev": "Beveiligde webontwikkeling",
+      "autre": "Andere aanvraag"
+    },
+    "messagePrefix": "Type aanvraag :",
+    "labels": {
+      "demande": "Type aanvraag",
+      "name": "Volledige naam",
+      "company": "Onderneming",
+      "email": "Professioneel e-mailadres",
+      "phone": "Telefoon",
+      "phoneHint": "(optioneel)",
+      "message": "Uw bericht"
+    },
+    "placeholders": {
+      "name": "Marie Dupont",
+      "company": "Uw bedrijf",
+      "email": "marie@entreprise.be",
+      "phone": "+32 4XX XX XX XX",
+      "message": "Uw context, uw behoefte of het lopende incident…"
+    },
+    "consent": "Ik ga ermee akkoord dat Smidjan de verstrekte informatie verwerkt om mijn aanvraag te beantwoorden, overeenkomstig haar <link>privacybeleid</link>. Geen enkel gegeven wordt aan derden doorgegeven.",
+    "submit": "Mijn aanvraag versturen",
+    "submitting": "Bezig met verzenden…",
+    "note": "Uw gegevens blijven vertrouwelijk",
+    "success": {
+      "title": "Bericht verzonden !",
+      "text": "Bedankt voor uw bericht. Een Smidjan-expert antwoordt u binnen 24 werkuren."
+    },
+    "errors": {
+      "demande": "Type aanvraag vereist",
+      "emailRequired": "E-mailadres vereist",
+      "emailInvalid": "Ongeldig e-mailadres",
+      "emailTooLong": "E-mailadres te lang",
+      "nameRequired": "Naam vereist (minimum 2 tekens)",
+      "nameTooLong": "Naam te lang (maximum 100 tekens)",
+      "invalidChars": "Ongeldige tekens gedetecteerd",
+      "companyTooLong": "Bedrijfsnaam te lang",
+      "messageRequired": "Bericht vereist (minimum 10 tekens)",
+      "messageTooLong": "Bericht te lang (maximum 5000 tekens)",
+      "rgpd": "Uw toestemming is vereist om de aanvraag te verwerken",
+      "csrf": "Beveiligingstoken ontbreekt. Herlaad de pagina.",
+      "submit": "Verzenden mislukt. Probeer het opnieuw.",
+      "generic": "Er is een fout opgetreden. Probeer het opnieuw."
+    }
+  },
+  "side": {
+    "aria": "Onze contactgegevens",
+    "incidentImageAlt": "Cyberbeveiligingsanalist op de rug gezien, voor meerdere bewakingsschermen in een controlekamer, volop bezig met incidentrespons.",
+    "incidentBadge": "Incidentlijn 24/7",
+    "incidentTitle": "Slachtoffer van een <accent>aanval</accent> ?",
+    "incidentText": "Ransomware, inbraak, datalek ? Zet niets uit. Bel ons. Wij beperken de schade, meteen.",
+    "incidentNote": "Een Smidjan-specialist, dag en nacht.",
+    "processTitle": "Hoe het werkt",
+    "processAria": "Schema in drie stappen : u schrijft uw aanvraag, een expert belt u terug binnen 24 werkuren, daarna een gratis diagnose.",
+    "processStep1": "U schrijft",
+    "processStep2": "Terugbellen binnen 24 u",
+    "processStep3": "Gratis diagnose",
+    "coordImageAlt": "Glimlachend Smidjan-teamlid aan de telefoon aan zijn bureau met een laptop, klaar om uw aanvraag te beantwoorden.",
+    "coordTag": "Wij antwoorden u",
+    "coordTitle": "Onze contactgegevens",
+    "coordZoneK": "Interventiezone",
+    "coordZoneV": "Luik, België",
+    "coordZoneSmall": "Op locatie of op afstand, op afspraak",
+    "coordPhoneK": "Telefoon",
+    "coordPhoneSmall": "Algemeen nummer : algemene aanvragen",
+    "coordEmailK": "E-mail",
+    "coordEmailSmall": "Antwoord binnen 24 werkuren",
+    "coordHoursK": "Openingsuren",
+    "coordHoursV": "Ma. tot vr., 8.30 tot 18.00 uur",
+    "coordHoursSmall": "Incidentrespons : 24 u/24, 7 d/7",
+    "mapAria": "Gestileerde kaart die de vestiging van Smidjan in Luik aangeeft",
+    "mapBadge": "Smidjan · Luik",
+    "mapAddr": "Centrum van Luik, Wallonië",
+    "mapMore": "Route"
+  },
+  "expect": {
+    "eyebrow": "Wat u mag verwachten",
+    "title": "Van uw bericht tot de <accent>diagnose</accent>, in drie stappen",
+    "intro": "Geen verkooptunnel, een nuttig gesprek vanaf het eerste bericht.",
+    "step1Title": "U schrijft ons",
+    "step1Text": "Formulier, e-mail of telefoon. Beschrijf uw behoefte in twee zinnen.",
+    "step2Title": "Wij bellen u terug binnen 24 u",
+    "step2Text": "Een Smidjan-expert, geen verkoper. Binnen 24 werkuren.",
+    "step3Title": "Gratis diagnose",
+    "step3Text": "30 minuten om uw prioriteiten in kaart te brengen. Vrijblijvend, zonder jargon.",
+    "note": "<b>Eén aanspreekpunt</b>, van het eerste bericht tot de remediëring."
+  },
+  "simpleForm": {
+    "back": "Terug naar de keuze",
+    "title": "Stuur ons uw aanvraag",
+    "subtitle": "Kies het type aanvraag en beschrijf uw behoefte. Wij nemen snel opnieuw contact met u op.",
+    "errorLabel": "Fout",
+    "labels": {
+      "requestType": "Type aanvraag",
+      "email": "Professioneel e-mailadres",
+      "name": "Naam en voornaam",
+      "company": "Onderneming",
+      "companyOptional": "(optioneel)",
+      "phone": "Telefoon",
+      "phoneOptional": "(optioneel)",
+      "message": "Uw bericht"
+    },
+    "options": {
+      "placeholder": "Selecteer het type aanvraag",
+      "cv": "Sollicitatie (cv)",
+      "technical": "Technisch probleem (bestaande site/project)",
+      "assistance": "Ondersteuningsaanvraag",
+      "bug": "Een bug op de site melden",
+      "partnership": "Voorstel tot samenwerking",
+      "other": "Andere aanvraag"
+    },
+    "placeholders": {
+      "email": "u@onderneming.be",
+      "name": "Jan Janssens",
+      "company": "Naam van uw onderneming",
+      "phone": "+32 XXX XX XX XX",
+      "message": "Beschrijf uw aanvraag in detail..."
+    },
+    "submit": "Mijn aanvraag versturen",
+    "submitting": "Bezig met verzenden...",
+    "privacy": "Door dit formulier te versturen, gaat u ermee akkoord dat wij uw gegevens gebruiken om opnieuw contact met u op te nemen over uw project.",
+    "success": {
+      "title": "Bericht verzonden !",
+      "text": "Bedankt voor uw bericht. Ons team neemt binnen 24 uur contact met u op.",
+      "back": "Terug naar de startpagina"
+    },
+    "errors": {
+      "requestType": "Type aanvraag vereist",
+      "emailRequired": "E-mailadres vereist",
+      "emailInvalid": "Ongeldig e-mailadres",
+      "emailTooLong": "E-mailadres te lang",
+      "nameRequired": "Naam vereist (minimum 2 tekens)",
+      "nameTooLong": "Naam te lang (maximum 100 tekens)",
+      "invalidChars": "Ongeldige tekens gedetecteerd",
+      "companyTooLong": "Bedrijfsnaam te lang",
+      "phoneInvalid": "Ongeldig telefoonnummer",
+      "messageRequired": "Bericht vereist (minimum 10 tekens)",
+      "messageTooLong": "Bericht te lang (maximum 5000 tekens)",
+      "csrf": "Beveiligingstoken ontbreekt. Herlaad de pagina.",
+      "generic": "Er is een fout opgetreden. Probeer het opnieuw."
+    }
+  },
+  "modeSelector": {
+    "back": "Terug",
+    "wizardTitle": "Nieuw project",
+    "wizardDescription": "Website, e-commerce, applicatie, cyberaudit, AI : stel uw project samen en ontvang een onmiddellijke offerte",
+    "wizardBadge": "Voor projecten",
+    "directTitle": "Andere aanvraag",
+    "directDescription": "Cv, technische ondersteuning, bug, samenwerking of elke andere aanvraag die niet met een nieuw project verband houdt",
+    "directBadge": "Buiten projecten"
+  }
+}

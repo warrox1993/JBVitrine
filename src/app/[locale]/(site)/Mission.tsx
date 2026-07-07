@@ -1,10 +1,13 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { Button } from "@/components/ui/Button/Button";
 import { AnimatedBackground } from "@/components/ui/AnimatedBackground/AnimatedBackground";
 import styles from "./Mission.module.css";
 
 export default function Mission() {
+  const t = useTranslations("agence");
   return (
     <div id="mission" className={styles["mission-root"]} aria-labelledby="mission-title">
       <AnimatedBackground variant="light" />
@@ -16,13 +19,10 @@ export default function Mission() {
 
       <div className={styles["mission-wrapper"]}>
         <h2 id="mission-title" className={styles["mission-heading"]}>
-          Notre mission
+          {t("mission.title")}
         </h2>
 
-        <p className={styles["mission-intro"]}>
-          Sécuriser vos réseaux, vos infrastructures et vos applications, sans jargon, sans surcoût.
-          Une sécurité concrète, taillée pour la réalité de chaque entreprise.
-        </p>
+        <p className={styles["mission-intro"]}>{t("mission.intro")}</p>
 
         <div className={styles["mission-grid"]} role="list">
           <article className={styles["mission-card"]} role="listitem">
@@ -42,10 +42,8 @@ export default function Mission() {
                 />
               </svg>
             </div>
-            <h3 className={styles["mission-cardTitle"]}>Infrastructures durcies</h3>
-            <p className={styles["mission-cardText"]}>
-              Réseaux, serveurs, applications : des fondations solides, durcies et maintenables dans le temps.
-            </p>
+            <h3 className={styles["mission-cardTitle"]}>{t("mission.cardInfraTitle")}</h3>
+            <p className={styles["mission-cardText"]}>{t("mission.cardInfraText")}</p>
           </article>
 
           <article className={styles["mission-card"]} role="listitem">

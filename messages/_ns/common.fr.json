@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "services": "Services",
+    "conformite": "Conformité NIS2",
+    "approche": "Approche",
+    "agence": "Agence",
+    "journal": "Journal"
+  },
+  "brand": {
+    "ariaHome": "Smidjan, accueil",
+    "tagline": "Cybersécurité · Liège"
+  },
+  "header": {
+    "navAria": "Navigation principale",
+    "cta": "Diagnostic gratuit",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "footer": {
+    "blurb": "Cybersécurité et conformité NIS2 pour les PME de Wallonie. On sécurise, on teste, on développe, on met en règle, et on corrige ce qu'on trouve.",
+    "location": "Liège, Belgique",
+    "servicesHeading": "Services",
+    "agenceHeading": "Agence",
+    "certsHeading": "Cadres & certifications",
+    "langHeading": "Langue",
+    "copyright": "© 2026 Smidjan · Tous droits réservés.",
+    "links": {
+      "reseaux": "Réseaux & infrastructure",
+      "audits": "Audits & pentest",
+      "devWeb": "Développement web sécurisé",
+      "conformite": "Conformité NIS2 / CyFun",
+      "incident": "Réponse à incident",
+      "apropos": "À propos",
+      "approche": "Notre approche",
+      "ressources": "Ressources & guides",
+      "contact": "Contact",
+      "diagnostic": "Diagnostic gratuit"
+    },
+    "legal": {
+      "mentions": "Mentions légales",
+      "privacy": "Politique de confidentialité",
+      "cgv": "CGV"
+    }
+  },
+  "emergency": {
+    "message": "Incident de sécurité en cours ? Chaque minute compte.",
+    "cta": "Victime d'une attaque ?"
+  },
+  "breadcrumb": {
+    "aria": "Fil d'Ariane",
+    "home": "Accueil",
+    "routes": {
+      "about": "À Propos",
+      "services": "Services",
+      "conformite": "Conformité NIS2",
+      "approche": "Approche",
+      "agence": "Agence",
+      "portfolio": "Portfolio",
+      "journal": "Journal",
+      "contact": "Contact",
+      "cmsEcommerce": "CMS E-commerce",
+      "devis": "Demande de Devis",
+      "mentionsLegales": "Mentions Légales",
+      "confidentialite": "Politique de Confidentialité",
+      "cgv": "Conditions Générales de Vente",
+      "admin": "Administration",
+      "adminBlog": "Gestion Blog",
+      "adminArticleNew": "Nouvel Article",
+      "adminLeads": "Gestion Leads",
+      "adminLogin": "Connexion Admin"
+    }
+  },
+  "trust": {
+    "label": "Expertise, cadres de référence & engagements",
+    "items": {
+      "iso": "Aligné ISO/IEC 27001",
+      "nis2": "Expertise NIS2 & CyFun",
+      "owasp": "Approche OWASP",
+      "cyfun": "CyberFundamentals (CCB)",
+      "local": "Local & réactif à Liège",
+      "expert": "Accès direct à l'expert"
+    }
+  }
+}

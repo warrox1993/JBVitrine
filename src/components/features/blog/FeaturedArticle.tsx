@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import type { BlogArticle } from "@/lib/blogActions";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Button } from "@/components/ui/Button/Button";
@@ -12,6 +13,7 @@ export interface FeaturedArticleProps {
 
 /** "Article à la une": highlighted first article on the Journal index. */
 export function FeaturedArticle({ article }: FeaturedArticleProps) {
+  const t = useTranslations("blog");
   const date = new Date(article.publishedAt).toLocaleDateString("fr-BE", {
     year: "numeric",
     month: "long",
@@ -24,7 +26,7 @@ export function FeaturedArticle({ article }: FeaturedArticleProps) {
       <div className={styles.body}>
         <span className={styles.flag}>
           <Icon name="book" size={14} />
-          Article à la une
+          {t("featured.flag")}
         </span>
         <div className={styles.kick}>{article.category}</div>
         <h2 className={styles.title}>
@@ -38,7 +40,7 @@ export function FeaturedArticle({ article }: FeaturedArticleProps) {
           </span>
           <span>
             <Icon name="clock" size={15} />
-            {article.readTime} de lecture
+            {t("article.readTimeSuffix", { time: article.readTime })}
           </span>
         </div>
         <Button
@@ -47,7 +49,7 @@ export function FeaturedArticle({ article }: FeaturedArticleProps) {
           variant="navy"
           trailingIcon={<Icon name="arrow-right" size={16} strokeWidth={2.2} />}
         >
-          Lire l&apos;article
+          {t("featured.readArticle")}
         </Button>
       </div>
       <div className={`${styles.visual} ${article.coverImage ? styles.visualPhoto : ""}`}>

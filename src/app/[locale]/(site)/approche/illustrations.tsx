@@ -3,9 +3,11 @@
  * Ported from the approved corporate mockup (page-approche.html).
  * All are purely decorative - aria-hidden, no semantic content.
  */
+import { getTranslations } from "next-intl/server";
 
 /** Method roadmap: 4 milestone nodes connected by a dashed path. */
-export function RoadmapIllustration() {
+export async function RoadmapIllustration() {
+  const t = await getTranslations("approche.roadmap");
   return (
     <svg viewBox="0 0 1160 232" fill="none" aria-hidden="true">
       <path
@@ -52,7 +54,7 @@ export function RoadmapIllustration() {
         <path d="m21 21-4.3-4.3" />
       </g>
       <text x="130" y="218" textAnchor="middle" fontFamily="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" fontSize="14.5" fontWeight="700" fill="#0b1f3a">
-        Diagnostic
+        {t("diagnostic")}
       </text>
 
       {/* Node 2 : Priorisation */}
@@ -69,7 +71,7 @@ export function RoadmapIllustration() {
         <path d="M3 4h18M3 11h13M3 18h8" />
       </g>
       <text x="430" y="182" textAnchor="middle" fontFamily="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" fontSize="14.5" fontWeight="700" fill="#0b1f3a">
-        Priorisation
+        {t("priorisation")}
       </text>
 
       {/* Node 3 : Remédiation */}
@@ -86,7 +88,7 @@ export function RoadmapIllustration() {
         <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6a2 2 0 0 0 2.8 2.8l6-6a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.3-.5-.5-2.3 2.5-2.5Z" />
       </g>
       <text x="730" y="146" textAnchor="middle" fontFamily="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" fontSize="14.5" fontWeight="700" fill="#0b1f3a">
-        Remédiation
+        {t("remediation")}
       </text>
 
       {/* Node 4 : Supervision & suivi */}
@@ -104,7 +106,7 @@ export function RoadmapIllustration() {
         <circle cx="12" cy="12" r="3" />
       </g>
       <text x="1030" y="110" textAnchor="middle" fontFamily="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" fontSize="14.5" fontWeight="700" fill="#0b1f3a">
-        Supervision
+        {t("supervision")}
       </text>
     </svg>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { getTranslations } from "next-intl/server";
 
 /**
  * Inline SVG figures for the Conformité NIS2 / CyFun page.
@@ -10,7 +11,8 @@ const SANS = "system-ui,-apple-system,Segoe UI,Roboto,sans-serif";
 const MONO = "ui-monospace,Menlo,monospace";
 
 /** The six CyFun functions arranged as a continuous clockwise cycle. */
-export function FunctionsRing() {
+export async function FunctionsRing() {
+  const t = await getTranslations("conformite");
   return (
     <svg
       viewBox="0 0 520 460"

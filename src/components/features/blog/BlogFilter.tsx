@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import type { BlogArticle } from "@/lib/blogActions";
 import { ArticleCard } from "@/components/shared";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
@@ -47,6 +48,7 @@ function formatDate(iso: string): string {
 }
 
 export function BlogFilter({ articles }: BlogFilterProps) {
+  const t = useTranslations("blog");
   const [activeCategory, setActiveCategory] = useState<string>("Tous");
 
   const filteredArticles =
@@ -60,7 +62,7 @@ export function BlogFilter({ articles }: BlogFilterProps) {
       <div
         className={styles.filters}
         role="group"
-        aria-label="Filtrer les articles par catégorie"
+        aria-label={t("filter.ariaLabel")}
       >
         {categories.map((category) => {
           const count =
@@ -80,7 +82,7 @@ export function BlogFilter({ articles }: BlogFilterProps) {
               className={`${styles.chip} ${isActive ? styles.active : ""}`}
               aria-pressed={isActive}
             >
-              {category}
+              {category === "Tous" ? t("filter.all") : category}
             </button>
           );
         })}
@@ -104,7 +106,7 @@ export function BlogFilter({ articles }: BlogFilterProps) {
 
       {filteredArticles.length === 0 && (
         <div className={styles.empty}>
-          <p>Aucun article dans cette catégorie pour le moment.</p>
+          <p>{t("filter.empty")}</p>
         </div>
       )}
     </div>

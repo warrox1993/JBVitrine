@@ -1,11 +1,13 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import styles from "./EmergencyBar.module.css";
 
 /**
  * Emergency top bar: navy-2 incident line.
  * Static server component. Ported from the approved corporate mockup.
  */
-export default function EmergencyBar() {
+export default async function EmergencyBar() {
+  const t = await getTranslations("common");
   return (
     <div className={styles.emerg}>
       <div className={styles.inner}>
@@ -23,7 +25,7 @@ export default function EmergencyBar() {
             <path d="M12 17h.01" />
             <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
           </svg>
-          <span>Incident de sécurité en cours&nbsp;? Chaque minute compte.</span>
+          <span>{t("emergency.message")}</span>
         </div>
         <div className={styles.meta}>
           <a href="tel:+32475205562">
@@ -58,7 +60,7 @@ export default function EmergencyBar() {
         </div>
         <Link className={styles.cta} href="/contact">
           <span className={styles.dot} />
-          Victime d&apos;une attaque&nbsp;?
+          {t("emergency.cta")}
         </Link>
       </div>
     </div>

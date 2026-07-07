@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher/LocaleSwitcher";
 import styles from "./SiteFooter.module.css";
 
 /**
@@ -7,13 +9,14 @@ import styles from "./SiteFooter.module.css";
  * NOTE: no VAT/BCE line is rendered: the real number must come from the
  * client before it can be shown (never ship the mockup placeholder).
  */
-export default function SiteFooter() {
+export default async function SiteFooter() {
+  const t = await getTranslations("common");
   return (
     <footer className={styles.site}>
       <div className={styles.inner}>
         <div className={styles.grid}>
           <div className={styles.brandCol}>
-            <Link className={styles.brand} href="/" aria-label="Smidjan, accueil">
+            <Link className={styles.brand} href="/" aria-label={t("brand.ariaHome")}>
               <svg
                 className={styles.logo}
                 viewBox="0 0 40 40"
@@ -37,14 +40,10 @@ export default function SiteFooter() {
               </svg>
               <span className={styles.brandText}>
                 Smidjan
-                <small>Cybersécurité · Liège</small>
+                <small>{t("brand.tagline")}</small>
               </span>
             </Link>
-            <p className={styles.blurb}>
-              Cybersécurité et conformité NIS2 pour les PME de Wallonie. On
-              sécurise, on teste, on développe, on met en règle, et on corrige
-              ce qu&apos;on trouve.
-            </p>
+            <p className={styles.blurb}>{t("footer.blurb")}</p>
             <ul className={styles.contact}>
               <li>
                 <svg
@@ -59,7 +58,7 @@ export default function SiteFooter() {
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                <span>Liège, Belgique</span>
+                <span>{t("footer.location")}</span>
               </li>
               <li>
                 <svg
@@ -94,49 +93,51 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <h2 className={styles.heading}>Services</h2>
+            <h2 className={styles.heading}>{t("footer.servicesHeading")}</h2>
             <ul className={styles.links}>
               <li>
-                <Link href="/services">Réseaux &amp; infrastructure</Link>
+                <Link href="/services">{t("footer.links.reseaux")}</Link>
               </li>
               <li>
-                <Link href="/services">Audits &amp; pentest</Link>
+                <Link href="/services">{t("footer.links.audits")}</Link>
               </li>
               <li>
-                <Link href="/services">Développement web sécurisé</Link>
+                <Link href="/services">{t("footer.links.devWeb")}</Link>
               </li>
               <li>
-                <Link href="/conformite-nis2">Conformité NIS2 / CyFun</Link>
+                <Link href="/conformite-nis2">
+                  {t("footer.links.conformite")}
+                </Link>
               </li>
               <li>
-                <Link href="/contact">Réponse à incident</Link>
+                <Link href="/contact">{t("footer.links.incident")}</Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h2 className={styles.heading}>Agence</h2>
+            <h2 className={styles.heading}>{t("footer.agenceHeading")}</h2>
             <ul className={styles.links}>
               <li>
-                <Link href="/agence">À propos</Link>
+                <Link href="/agence">{t("footer.links.apropos")}</Link>
               </li>
               <li>
-                <Link href="/approche">Notre approche</Link>
+                <Link href="/approche">{t("footer.links.approche")}</Link>
               </li>
               <li>
-                <Link href="/blog">Ressources &amp; guides</Link>
+                <Link href="/blog">{t("footer.links.ressources")}</Link>
               </li>
               <li>
-                <Link href="/contact">Contact</Link>
+                <Link href="/contact">{t("footer.links.contact")}</Link>
               </li>
               <li>
-                <Link href="/contact">Diagnostic gratuit</Link>
+                <Link href="/contact">{t("footer.links.diagnostic")}</Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h2 className={styles.heading}>Cadres &amp; certifications</h2>
+            <h2 className={styles.heading}>{t("footer.certsHeading")}</h2>
             <div className={styles.certs}>
               <span>ISO/IEC 27001</span>
               <span>NIS2</span>
@@ -144,26 +145,23 @@ export default function SiteFooter() {
               <span>OWASP</span>
             </div>
             <h2 className={`${styles.heading} ${styles.headingSpaced}`}>
-              Langue
+              {t("footer.langHeading")}
             </h2>
-            <div className={styles.lang}>
-              <a href="#" className={styles.langActive} aria-current="true">
-                FR
-              </a>
-              <a href="#">NL</a>
-              <a href="#">EN</a>
-            </div>
+            <LocaleSwitcher
+              className={styles.lang}
+              activeClassName={styles.langActive}
+            />
           </div>
         </div>
 
         <div className={styles.bottom}>
           {/* Placeholder: TVA/BCE number intentionally omitted until the
               real BCE number is provided by the client. */}
-          <div>© 2026 Smidjan · Tous droits réservés.</div>
+          <div>{t("footer.copyright")}</div>
           <div className={styles.bottomLinks}>
-            <Link href="/legal-notice">Mentions légales</Link>
-            <Link href="/privacy">Politique de confidentialité</Link>
-            <Link href="/terms">CGV</Link>
+            <Link href="/legal-notice">{t("footer.legal.mentions")}</Link>
+            <Link href="/privacy">{t("footer.legal.privacy")}</Link>
+            <Link href="/terms">{t("footer.legal.cgv")}</Link>
           </div>
         </div>
       </div>

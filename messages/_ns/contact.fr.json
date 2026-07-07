@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "Contact · Smidjan | Cybersécurité & conformité NIS2 à Liège",
+    "description": "Diagnostic gratuit, audit CyFun/NIS2, pentest ou réponse à incident : écrivez à Smidjan. Un expert vous répond sous 24 h ouvrées. Basés à Liège, Wallonie.",
+    "ogTitle": "Contact · Smidjan",
+    "ogDescription": "Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées.",
+    "ogImageAlt": "Contactez Smidjan, cybersécurité et conformité NIS2 à Liège",
+    "twitterTitle": "Contact · Smidjan",
+    "twitterDescription": "Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées."
+  },
+  "hero": {
+    "crumbAria": "Fil d'Ariane",
+    "crumbHome": "Accueil",
+    "crumbContact": "Contact",
+    "eyebrow": "Parlons de votre sécurité",
+    "title": "Un expert vous répond : <accent>sous 24 heures</accent>.",
+    "directPromise": "<strong>Un expert Smidjan</strong>, jamais un centre d'appels.",
+    "lead": "Diagnostic, audit NIS2, pentest ou incident : un seul interlocuteur.",
+    "ctaPrimary": "Décrire mon besoin",
+    "imageAlt": "Équipe Smidjan réunie autour d'un ordinateur portable dans un bureau moderne et lumineux, échange convivial entre collègues.",
+    "assure1": "Réponse sous 24 h ouvrées",
+    "assure2": "Sans engagement",
+    "assure3": "Basés à Liège"
+  },
+  "form": {
+    "badge": "Le plus direct",
+    "title": "Envoyez-nous votre demande",
+    "subtitle": "Quelques lignes suffisent. Plus c'est précis, plus vite on avance.",
+    "reassure": "Réponse d'un expert sous 24 h ouvrées",
+    "errorLabel": "Erreur",
+    "options": {
+      "diagnostic": "Diagnostic gratuit",
+      "cyfun": "Audit CyFun / NIS2",
+      "pentest": "Pentest / test d'intrusion",
+      "dev": "Développement web sécurisé",
+      "autre": "Autre demande"
+    },
+    "messagePrefix": "Type de demande :",
+    "labels": {
+      "demande": "Type de demande",
+      "name": "Nom complet",
+      "company": "Entreprise",
+      "email": "E-mail professionnel",
+      "phone": "Téléphone",
+      "phoneHint": "(facultatif)",
+      "message": "Votre message"
+    },
+    "placeholders": {
+      "name": "Marie Dupont",
+      "company": "Votre société",
+      "email": "marie@entreprise.be",
+      "phone": "+32 4XX XX XX XX",
+      "message": "Votre contexte, votre besoin ou l'incident en cours…"
+    },
+    "consent": "J'accepte que Smidjan traite les informations transmises pour répondre à ma demande, conformément à sa <link>politique de confidentialité</link>. Aucune donnée n'est cédée à des tiers.",
+    "submit": "Envoyer ma demande",
+    "submitting": "Envoi en cours…",
+    "note": "Vos informations restent confidentielles",
+    "success": {
+      "title": "Message envoyé !",
+      "text": "Merci pour votre message. Un expert Smidjan vous répond sous 24 h ouvrées."
+    },
+    "errors": {
+      "demande": "Type de demande requis",
+      "emailRequired": "Email requis",
+      "emailInvalid": "Email invalide",
+      "emailTooLong": "Email trop long",
+      "nameRequired": "Nom requis (minimum 2 caractères)",
+      "nameTooLong": "Nom trop long (maximum 100 caractères)",
+      "invalidChars": "Caractères invalides détectés",
+      "companyTooLong": "Nom d'entreprise trop long",
+      "messageRequired": "Message requis (minimum 10 caractères)",
+      "messageTooLong": "Message trop long (maximum 5000 caractères)",
+      "rgpd": "Votre consentement est requis pour traiter la demande",
+      "csrf": "Token de sécurité manquant. Veuillez recharger la page.",
+      "submit": "Échec de l'envoi. Veuillez réessayer.",
+      "generic": "Une erreur est survenue. Veuillez réessayer."
+    }
+  },
+  "side": {
+    "aria": "Nos coordonnées",
+    "incidentImageAlt": "Analyste cybersécurité de dos, face à plusieurs écrans de supervision dans une salle de contrôle, en pleine réponse à un incident.",
+    "incidentBadge": "Ligne incident 24/7",
+    "incidentTitle": "Victime d'une <accent>attaque</accent> ?",
+    "incidentText": "Rançongiciel, intrusion, fuite de données ? Ne coupez rien. Appelez. On limite les dégâts, tout de suite.",
+    "incidentNote": "Un intervenant Smidjan, jour et nuit.",
+    "processTitle": "Comment ça marche",
+    "processAria": "Schéma en trois étapes : vous écrivez votre demande, un expert vous rappelle sous 24 heures ouvrées, puis diagnostic gratuit.",
+    "processStep1": "Vous écrivez",
+    "processStep2": "Rappel sous 24 h",
+    "processStep3": "Diagnostic gratuit",
+    "coordImageAlt": "Membre de l'équipe Smidjan souriant, au téléphone à son bureau avec un ordinateur portable, prêt à répondre à votre demande.",
+    "coordTag": "On vous répond",
+    "coordTitle": "Nos coordonnées",
+    "coordZoneK": "Zone d'intervention",
+    "coordZoneV": "Liège, Belgique",
+    "coordZoneSmall": "Sur site ou à distance, sur rendez-vous",
+    "coordPhoneK": "Téléphone",
+    "coordPhoneSmall": "Standard : demandes générales",
+    "coordEmailK": "E-mail",
+    "coordEmailSmall": "Réponse sous 24 h ouvrées",
+    "coordHoursK": "Horaires",
+    "coordHoursV": "Lun. au ven., 8h30 à 18h00",
+    "coordHoursSmall": "Réponse à incident : 24 h/24, 7 j/7",
+    "mapAria": "Carte stylisée indiquant l'implantation de Smidjan à Liège",
+    "mapBadge": "Smidjan · Liège",
+    "mapAddr": "Centre de Liège, Wallonie",
+    "mapMore": "Itinéraire"
+  },
+  "expect": {
+    "eyebrow": "À quoi s'attendre",
+    "title": "De votre message au <accent>diagnostic</accent>, en trois temps",
+    "intro": "Pas de tunnel commercial, un échange utile dès le premier message.",
+    "step1Title": "Vous nous écrivez",
+    "step1Text": "Formulaire, e-mail ou appel. Décrivez votre besoin en deux phrases.",
+    "step2Title": "On vous rappelle sous 24 h",
+    "step2Text": "Un expert Smidjan, pas un commercial. Sous 24 h ouvrées.",
+    "step3Title": "Diagnostic gratuit",
+    "step3Text": "30 minutes pour cerner vos priorités. Sans engagement, sans jargon.",
+    "note": "<b>Un seul interlocuteur</b>, du premier message à la remédiation."
+  },
+  "simpleForm": {
+    "back": "Retour au choix",
+    "title": "Envoyez-nous votre demande",
+    "subtitle": "Choisissez le type de demande et décrivez-nous votre besoin. Nous vous recontacterons rapidement.",
+    "errorLabel": "Erreur",
+    "labels": {
+      "requestType": "Type de demande",
+      "email": "Email professionnel",
+      "name": "Nom et prénom",
+      "company": "Entreprise",
+      "companyOptional": "(optionnel)",
+      "phone": "Téléphone",
+      "phoneOptional": "(optionnel)",
+      "message": "Votre message"
+    },
+    "options": {
+      "placeholder": "Sélectionnez le type de demande",
+      "cv": "Candidature (CV)",
+      "technical": "Problème technique (site/projet existant)",
+      "assistance": "Demande d'assistance",
+      "bug": "Signaler un bug sur le site",
+      "partnership": "Proposition de partenariat",
+      "other": "Autre demande"
+    },
+    "placeholders": {
+      "email": "vous@entreprise.be",
+      "name": "Jean Dupont",
+      "company": "Nom de votre entreprise",
+      "phone": "+32 XXX XX XX XX",
+      "message": "Décrivez votre demande en détail..."
+    },
+    "submit": "Envoyer ma demande",
+    "submitting": "Envoi en cours...",
+    "privacy": "En soumettant ce formulaire, vous acceptez que nous utilisions vos données pour vous recontacter au sujet de votre projet.",
+    "success": {
+      "title": "Message envoyé !",
+      "text": "Merci pour votre message. Notre équipe vous contactera dans les 24 heures.",
+      "back": "Retour à l'accueil"
+    },
+    "errors": {
+      "requestType": "Type de demande requis",
+      "emailRequired": "Email requis",
+      "emailInvalid": "Email invalide",
+      "emailTooLong": "Email trop long",
+      "nameRequired": "Nom requis (minimum 2 caractères)",
+      "nameTooLong": "Nom trop long (maximum 100 caractères)",
+      "invalidChars": "Caractères invalides détectés",
+      "companyTooLong": "Nom d'entreprise trop long",
+      "phoneInvalid": "Numéro de téléphone invalide",
+      "messageRequired": "Message requis (minimum 10 caractères)",
+      "messageTooLong": "Message trop long (maximum 5000 caractères)",
+      "csrf": "Token de sécurité manquant. Veuillez recharger la page.",
+      "generic": "Une erreur est survenue. Veuillez réessayer."
+    }
+  },
+  "modeSelector": {
+    "back": "Retour",
+    "wizardTitle": "Nouveau projet",
+    "wizardDescription": "Site web, e-commerce, application, audit cyber, IA : configurez votre projet et obtenez un devis instantané",
+    "wizardBadge": "Pour les projets",
+    "directTitle": "Autre demande",
+    "directDescription": "CV, assistance technique, bug, partenariat ou toute autre demande non liée à un nouveau projet",
+    "directBadge": "Hors projets"
+  }
+}

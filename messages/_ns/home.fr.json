@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "title": "Cybersécurité & conformité NIS2 pour les PME | Smidjan, Liège, Wallonie",
+    "description": "Smidjan sécurise réseaux, infrastructure et applications des PME wallonnes et vous met en conformité NIS2 / CyFun (CyberFundamentals, CCB). Audit, pentest, remédiation. Diagnostic gratuit à Liège.",
+    "ogTitle": "Cybersécurité & conformité NIS2 pour les PME | Smidjan, Liège",
+    "ogDescription": "On sécurise, on teste, on développe, on met en règle NIS2 / CyFun, et on corrige ce qu'on trouve. Diagnostic gratuit pour les PME de Wallonie.",
+    "ogImageAlt": "Smidjan, Cybersécurité & conformité NIS2 pour les PME à Liège",
+    "ogSiteName": "Smidjan, Cybersécurité Liège",
+    "twitterTitle": "Cybersécurité & conformité NIS2 pour les PME | Smidjan, Liège",
+    "twitterDescription": "Sécurité, pentest, conformité NIS2 / CyFun pour les PME wallonnes. Diagnostic gratuit à Liège."
+  },
+  "hero": {
+    "badgeTag": "NIS2",
+    "badgeText": "En vigueur en Belgique : votre PME est concernée",
+    "title": "Sécurisez votre infrastructure. <accent>Préparez NIS2.</accent>",
+    "lead": "Réseaux, applications et conformité CyFun : un seul partenaire wallon, <b>un expert au téléphone.</b>",
+    "ctaPrimary": "Diagnostic NIS2 gratuit",
+    "ctaSecondary": "Découvrir nos services",
+    "assure1": "Sans engagement",
+    "assure2": "Réponse sous 24 h",
+    "assure3": "Données hébergées en Belgique",
+    "shieldTitle": "Posture de sécurité",
+    "shieldSub": "Évaluation CyFun : aperçu du diagnostic",
+    "item1": "Segmentation réseau & pare-feu",
+    "item2": "Sauvegardes & plan de reprise",
+    "item3": "Authentification multifacteur",
+    "item4": "Supervision & journalisation",
+    "statusOk": "OK",
+    "statusFix": "À corriger",
+    "footLbl": "de couverture des attaques courantes<br></br>atteinte au niveau <b>Basic</b>",
+    "chipTitle": "CCB · CyberFundamentals",
+    "chipSub": "Cadre officiel belge"
+  },
+  "services": {
+    "eyebrow": "Nos services",
+    "title": "Quatre missions, un objectif : réduire votre <accent>risque cyber</accent>",
+    "lead": "De l'infrastructure à la conformité, et on corrige ce qu'on trouve."
+  },
+  "cards": {
+    "securiser": {
+      "kicker": "Sécuriser",
+      "title": "Réseaux & infrastructure",
+      "description": "On verrouille votre socle technique avant que l'attaque n'atteigne vos données.",
+      "bullet1": "Pare-feu & segmentation réseau",
+      "bullet2": "Supervision & détection",
+      "bullet3": "Sauvegardes & plan de reprise (PRA)"
+    },
+    "tester": {
+      "kicker": "Tester",
+      "title": "Audits & pentest",
+      "description": "On pense comme un attaquant pour trouver vos failles, avant qu'un vrai ne le fasse.",
+      "bullet1": "Tests d'intrusion (OWASP)",
+      "bullet2": "Analyse d'écart de sécurité",
+      "bullet3": "Sécurité des applications"
+    },
+    "developper": {
+      "kicker": "Développer",
+      "title": "Développement web sécurisé",
+      "description": "« Secure by design » : la sécurité intégrée dès la première ligne de code.",
+      "bullet1": "Sites & applications sur mesure",
+      "bullet2": "Sécurité intégrée au cycle de dev",
+      "bullet3": "Revue de code & durcissement"
+    },
+    "conformer": {
+      "kicker": "Se conformer",
+      "title": "Conformité NIS2 / CyFun",
+      "description": "Audit, analyse d'écart, remédiation : on vous amène au niveau CyFun attendu par le CCB.",
+      "bullet1": "Diagnostic & analyse d'écart",
+      "bullet2": "Remédiation concrète",
+      "bullet3": "Préparation à la vérification CCB",
+      "linkLabel": "Voir la section dédiée"
+    }
+  },
+  "aiNote": "Des <b>experts augmentés par l'IA</b> pour aller plus vite : décisions et analyse restent 100 % humaines.",
+  "cyfun": {
+    "eyebrow": "Section phare · Conformité",
+    "title": "NIS2 & CyFun : <accent>êtes-vous concerné ?</accent>",
+    "lead": "La directive <b>NIS2</b> vise des milliers d'entreprises belges, PME et sous-traitants inclus. En Belgique, le cadre officiel est <b>CyFun</b>, publié par le <b>CCB</b>.",
+    "hookValue": "~82%",
+    "hook": "<b>Le niveau Basic couvre déjà ~82 % des attaques courantes.</b> Le meilleur point de départ pour une PME.",
+    "calMonth": "Oct",
+    "calDay": "18",
+    "calYear": "2024",
+    "deadlineTitle": "NIS2 est déjà en vigueur",
+    "deadlineText": "En vigueur depuis le 18 octobre 2024. Anticiper réduit le risque.",
+    "fine": "Non-conformité : amendes administratives et responsabilité personnelle de la direction."
+  },
+  "illus": {
+    "diagnostic": {
+      "eyebrow": "Diagnostic",
+      "title": "Un rapport d'écart clair, domaine par domaine",
+      "text": "<b>Chaque exigence CyFun est mesurée, pas devinée.</b> Un niveau de maturité par domaine (gouvernance, accès, réseau, détection, continuité) agrégé en un score global."
+    },
+    "data": {
+      "eyebrow": "Souveraineté des données",
+      "title": "Basés à Liège, vos données restent en Belgique",
+      "text": "Pas d'hébergement délocalisé. <b>Infrastructure, sauvegardes, échanges : tout reste en Belgique et dans l'UE</b>, avec un interlocuteur sur place."
+    }
+  },
+  "honesty": {
+    "title": "En toute transparence",
+    "text": "La certification CyFun est délivrée par des organismes accrédités BELAC, pas par Smidjan. Notre rôle : <b>audit, analyse d'écart, remédiation</b> et préparation à la vérification. On ne constate pas les manques : <b>on les corrige</b>."
+  },
+  "process": {
+    "kicker": "Notre méthode en 4 étapes",
+    "step1": {
+      "title": "Cadrage & auto-évaluation",
+      "description": "Périmètre, actifs critiques, auto-évaluation CyFun, avec vos équipes."
+    },
+    "step2": {
+      "title": "Analyse d'écart & remédiation",
+      "description": "On mesure l'écart au niveau visé et on corrige, par priorité de risque."
+    },
+    "step3": {
+      "title": "Support à la vérification CCB",
+      "description": "On prépare le dossier jusqu'à la vérification par l'organisme accrédité."
+    },
+    "step4": {
+      "title": "Suivi continu",
+      "description": "On maintient votre posture dans la durée, pas seulement le jour J."
+    }
+  },
+  "why": {
+    "eyebrow": "Pourquoi Smidjan",
+    "title": "La rigueur d'un grand cabinet, la <accent>proximité</accent> d'un partenaire",
+    "lead": "Une <b>structure à taille humaine</b>, par choix. Moins d'intermédiaires, un interlocuteur qui connaît votre dossier.",
+    "items": {
+      "local": {
+        "title": "Local & réactif",
+        "text": "Basés à Liège, nous intervenons vite en Wallonie. Vos données restent <b>en Belgique / UE</b>."
+      },
+      "pragmatism": {
+        "title": "Pragmatisme PME",
+        "text": "<b>Nous corrigeons ce qui compte vraiment</b>, pas de sur-ingénierie, pas de dépenses inutiles."
+      },
+      "partner": {
+        "title": "Un seul partenaire",
+        "text": "Construire, sécuriser, mettre en conformité : <b>tout au même endroit</b>."
+      },
+      "expert": {
+        "title": "Accès direct à l'expert",
+        "text": "<b>Vous parlez à la personne qui fait le travail</b>, jamais à un centre d'appel."
+      }
+    },
+    "founderName": "Jean-Baptiste Dhondt",
+    "founderRole": "Fondateur · Expert en cybersécurité",
+    "quote": "« La cybersécurité d'une PME ne tient pas dans un rapport de 200 pages qu'on range dans un tiroir. Elle se joue faille par faille, en restant joignable. »",
+    "cred1": "Parcours approfondi en sécurité offensive & défensive",
+    "cred2": "Spécialiste des référentiels NIS2 & CyFun (CCB)",
+    "cred3": "Méthodologie OWASP & ISO/IEC 27001"
+  },
+  "stats": {
+    "title": "Des <accent>résultats concrets</accent>, une exigence constante",
+    "lead": "Peu de chiffres, mais réels : la qualité plutôt que la promesse.",
+    "stat1Label": "années d'expertise cumulée en sécurité",
+    "stat2Label": "audits & tests d'intrusion réalisés",
+    "stat3Label": "délai de réponse à toute sollicitation",
+    "stat4Label": "des données hébergées en Belgique / UE"
+  },
+  "testimonials": {
+    "eyebrow": "Ils nous font confiance",
+    "title": "Ce qu'en disent <accent>nos clients</accent>",
+    "photoAlt": "Deux professionnels collaborant sur un projet de cybersécurité, illustrant l'accompagnement de proximité de Smidjan auprès des PME wallonnes.",
+    "photoCaption": "Un accompagnement de proximité, pensé pour les PME wallonnes",
+    "item1": {
+      "quote": "« En six semaines, ils avaient identifié et corrigé des failles que notre ancien prestataire n'avait jamais vues. Un accompagnement clair, sans jargon inutile. »",
+      "role": "Directeur des opérations",
+      "sector": "Industrie manufacturière · Liège"
+    },
+    "item2": {
+      "quote": "« La conformité NIS2 nous paraissait insurmontable. Smidjan a transformé une obligation anxiogène en une feuille de route claire, étape par étape. »",
+      "role": "Directrice générale",
+      "sector": "Services B2B · Namur"
+    },
+    "item3": {
+      "quote": "« Ce que j'apprécie : je téléphone, et j'ai l'expert au bout du fil. Pas de ticket, pas d'attente. Pour une PME comme la nôtre, ça change tout. »",
+      "role": "Gérant",
+      "sector": "Cabinet comptable · Verviers"
+    }
+  },
+  "insight": {
+    "kick": "Guide gratuit",
+    "title": "NIS2 & CyFun : le guide de mise en conformité pour les <accent>PME belges</accent>",
+    "text": "Ce que dit la loi, qui est concerné, quel niveau CyFun choisir. <b>Clair, sans jargon.</b>",
+    "cta": "Lire le guide",
+    "mockTag": "Guide · Conformité",
+    "mockTitle": "NIS2 & CyFun pour les PME"
+  },
+  "cta": {
+    "title": "Un <accent>diagnostic gratuit</accent> pour savoir où vous en êtes",
+    "text": "30 minutes avec un expert : votre exposition évaluée, votre conformité NIS2 cadrée, des priorités claires.",
+    "actionPrimary": "Réserver mon diagnostic gratuit",
+    "actionCall": "Appeler le 0475 20 55 62",
+    "reassure1": "Réponse sous 24 h",
+    "reassure2": "Expert dédié, pas de sous-traitance",
+    "reassure3": "Données en Belgique"
+  },
+  "fig": {
+    "topology": {
+      "aria": "Schéma d'une architecture réseau protégée : postes de travail, serveur central et base de données regroupés à l'intérieur d'un périmètre sécurisé, la connexion internet étant filtrée par un pare-feu en périphérie, avec des segments internes chiffrés.",
+      "perimeter": "PÉRIMÈTRE SÉCURISÉ",
+      "external": "RÉSEAU EXTERNE",
+      "firewall": "PARE-FEU",
+      "internal": "INFRASTRUCTURE INTERNE"
+    },
+    "audit": {
+      "aria": "Tableau de bord d'audit de conformité CyFun montrant le niveau de maturité par domaine (gouvernance, gestion des accès, réseau, détection et sauvegarde) ainsi qu'un score global de 82 pourcents.",
+      "governance": "Gouvernance & pilotage",
+      "access": "Gestion des accès (MFA)",
+      "network": "Réseau & segmentation",
+      "detection": "Détection & supervision",
+      "backup": "Sauvegarde & continuité",
+      "scoreLabel": "Score global CyFun",
+      "scoreBasis": "Basé sur l'auto-évaluation Basic"
+    },
+    "belgium": {
+      "aria": "Illustration de la Belgique avec Liège localisée, reliée à une infrastructure de données protégée par un bouclier, symbolisant l'hébergement à cent pourcents des données en Belgique et dans l'Union européenne.",
+      "country": "BELGIQUE",
+      "city": "Liège",
+      "citySub": "Siège & interventions",
+      "hosted": "Données hébergées",
+      "hostedSub": "100% en Belgique / UE"
+    }
+  }
+}

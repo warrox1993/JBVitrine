@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./page.module.css";
 
@@ -42,30 +43,27 @@ function PillarPhoto({
 }
 
 /** Pillar 01 - Sécuriser réseaux & infrastructure: firewall filtering traffic into a segmented network. */
-export function SecureVisual({ alt }: { alt?: boolean }) {
+export async function SecureVisual({ alt }: { alt?: boolean }) {
+  const t = await getTranslations("services.visuals.secure");
   return (
     <Reveal variant="up">
     <PillarPhoto
       src="/images/pages/services/securiser-datacenter.jpg"
-      alt="Baies de serveurs dans un datacenter sécurisé, illustrant le durcissement de l'infrastructure réseau."
-      caption={
-        <>
-          <b>Bloquer les attaques</b> avant qu&apos;elles n&apos;atteignent vos données.
-        </>
-      }
+      alt={t("photoAlt")}
+      caption={t.rich("caption", { b: (c) => <b>{c}</b> })}
     />
     <VisualBox alt={alt}>
       <svg
         viewBox="0 0 480 250"
         role="img"
-        aria-label="Schéma d'un pare-feu filtrant le trafic entrant : une tentative de connexion venue d'Internet est bloquée avant d'atteindre le réseau interne segmenté, composé d'un serveur, d'un poste de travail et d'un espace de stockage."
+        aria-label={t("aria")}
       >
         <rect x="12" y="14" width="456" height="222" rx="16" fill="none" stroke="var(--line-2)" strokeWidth="1.5" strokeDasharray="3 6" />
         <circle cx="58" cy="125" r="30" fill="none" stroke="var(--navy-3)" strokeWidth="1.8" />
         <ellipse cx="58" cy="125" rx="30" ry="12" fill="none" stroke="var(--navy-3)" strokeWidth="1.3" />
         <line x1="58" y1="95" x2="58" y2="155" stroke="var(--navy-3)" strokeWidth="1.3" />
         <line x1="28" y1="125" x2="88" y2="125" stroke="var(--navy-3)" strokeWidth="1.3" />
-        <text x="58" y="172" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">Internet</text>
+        <text x="58" y="172" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">{t("internet")}</text>
 
         <line x1="92" y1="125" x2="196" y2="125" stroke="var(--slate)" strokeWidth="1.6" strokeDasharray="5 5" />
         <line x1="150" y1="125" x2="150" y2="111" stroke="var(--slate)" strokeWidth="1.4" strokeDasharray="3 4" />
@@ -83,7 +81,7 @@ export function SecureVisual({ alt }: { alt?: boolean }) {
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
           <path d="m9 12 2 2 4-4" />
         </g>
-        <text x="220" y="228" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">Pare-feu</text>
+        <text x="220" y="228" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">{t("firewall")}</text>
 
         <circle cx="300" cy="125" r="7" fill="var(--navy-3)" />
         <line x1="235" y1="125" x2="293" y2="125" stroke="var(--navy-3)" strokeWidth="2" />
@@ -106,7 +104,7 @@ export function SecureVisual({ alt }: { alt?: boolean }) {
         <line x1="457" y1="178" x2="457" y2="202" stroke="var(--line-2)" strokeWidth="1.3" />
         <ellipse cx="432" cy="202" rx="25" ry="7" fill="#fff" stroke="var(--line-2)" strokeWidth="1.3" />
 
-        <text x="432" y="232" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">Réseau interne</text>
+        <text x="432" y="232" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">{t("internalNetwork")}</text>
       </svg>
     </VisualBox>
     </Reveal>
@@ -114,23 +112,20 @@ export function SecureVisual({ alt }: { alt?: boolean }) {
 }
 
 /** Pillar 02 - Tester audits & pentest: an app being probed and consigned into a severity-ranked audit report. */
-export function TestVisual({ alt }: { alt?: boolean }) {
+export async function TestVisual({ alt }: { alt?: boolean }) {
+  const t = await getTranslations("services.visuals.test");
   return (
     <Reveal variant="up">
     <PillarPhoto
       src="/images/pages/services/tester-ecrans.jpg"
-      alt="Analystes en sécurité examinant du code et des tableaux de bord sur plusieurs écrans lors d'un audit."
-      caption={
-        <>
-          <b>Révéler les failles</b> avant qu&apos;un vrai attaquant ne les exploite.
-        </>
-      }
+      alt={t("photoAlt")}
+      caption={t.rich("caption", { b: (c) => <b>{c}</b> })}
     />
     <VisualBox alt={alt}>
       <svg
         viewBox="0 0 480 250"
         role="img"
-        aria-label="Illustration : un test d'intrusion détecte un module applicatif vulnérable à l'aide d'une analyse ciblée, puis le consigne dans un rapport de résultats classés par criticité, avec une faille critique signalée."
+        aria-label={t("aria")}
       >
         <rect x="20" y="30" width="250" height="190" rx="10" fill="var(--bg-2)" stroke="var(--line-2)" strokeWidth="1.5" />
         <rect x="35" y="45" width="220" height="20" rx="4" fill="#fff" stroke="var(--navy-3)" strokeWidth="1.4" />
@@ -154,37 +149,37 @@ export function TestVisual({ alt }: { alt?: boolean }) {
         <circle cx="200" cy="108" r="34" fill="var(--bg-2)" fillOpacity="0.55" stroke="var(--navy)" strokeWidth="2.4" />
         <line x1="224" y1="132" x2="252" y2="160" stroke="var(--navy)" strokeWidth="6" strokeLinecap="round" />
 
-        <text x="145" y="232" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">Application testée</text>
+        <text x="145" y="232" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">{t("appTested")}</text>
 
         <rect x="290" y="30" width="170" height="190" rx="10" fill="#fff" stroke="var(--line-2)" strokeWidth="1.5" />
         <g transform="translate(305,42) scale(0.7)" fill="none" stroke="var(--navy)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
           <path d="M14 2v6h6M9 15l2 2 4-4" />
         </g>
-        <text x="322" y="52" fontSize="12" fill="var(--navy)" fontFamily="var(--sans)" style={{ fontWeight: 700 }}>Résultats d&apos;audit</text>
+        <text x="322" y="52" fontSize="12" fill="var(--navy)" fontFamily="var(--sans)" style={{ fontWeight: 700 }}>{t("auditResults")}</text>
         <line x1="305" y1="64" x2="445" y2="64" stroke="var(--line)" strokeWidth="1.2" />
 
         <path d="M307 79 311 83 318 75" fill="none" stroke="#2f9e6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="326" y="83" fontSize="10.5" fill="var(--slate)" fontFamily="var(--sans)">En-têtes de sécurité : OK</text>
+        <text x="326" y="83" fontSize="10.5" fill="var(--slate)" fontFamily="var(--sans)">{t("headers")}</text>
 
         <path d="M307 107 311 111 318 103" fill="none" stroke="#2f9e6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="326" y="111" fontSize="10.5" fill="var(--slate)" fontFamily="var(--sans)">Authentification : OK</text>
+        <text x="326" y="111" fontSize="10.5" fill="var(--slate)" fontFamily="var(--sans)">{t("auth")}</text>
 
         <path d="M312 128 322 145 302 145Z" fill="none" stroke="var(--orange)" strokeWidth="1.6" strokeLinejoin="round" />
         <line x1="312" y1="134" x2="312" y2="139" stroke="var(--orange)" strokeWidth="1.6" strokeLinecap="round" />
-        <text x="326" y="139" fontSize="10.5" fill="var(--orange-d)" fontFamily="var(--sans)" style={{ fontWeight: 700 }}>Injection SQL : Critique</text>
+        <text x="326" y="139" fontSize="10.5" fill="var(--orange-d)" fontFamily="var(--sans)" style={{ fontWeight: 700 }}>{t("sqlInjection")}</text>
 
         <path d="M307 163 311 167 318 159" fill="none" stroke="#2f9e6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="326" y="167" fontSize="10.5" fill="var(--slate)" fontFamily="var(--sans)">Chiffrement TLS : OK</text>
+        <text x="326" y="167" fontSize="10.5" fill="var(--slate)" fontFamily="var(--sans)">{t("tls")}</text>
 
         <circle cx="308" cy="200" r="4" fill="none" stroke="var(--line-2)" strokeWidth="1.3" />
-        <text x="316" y="203" fontSize="9" fill="var(--muted)" fontFamily="var(--sans)">Faible</text>
+        <text x="316" y="203" fontSize="9" fill="var(--muted)" fontFamily="var(--sans)">{t("low")}</text>
         <circle cx="356" cy="200" r="4" fill="none" stroke="var(--line-2)" strokeWidth="1.3" />
-        <text x="364" y="203" fontSize="9" fill="var(--muted)" fontFamily="var(--sans)">Moyen</text>
+        <text x="364" y="203" fontSize="9" fill="var(--muted)" fontFamily="var(--sans)">{t("medium")}</text>
         <circle cx="403" cy="200" r="4" fill="var(--orange)" stroke="var(--orange)" strokeWidth="1.3" />
-        <text x="411" y="203" fontSize="9" fill="var(--muted)" fontFamily="var(--sans)">Critique</text>
+        <text x="411" y="203" fontSize="9" fill="var(--muted)" fontFamily="var(--sans)">{t("critical")}</text>
 
-        <text x="375" y="232" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">Rapport de pentest</text>
+        <text x="375" y="232" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">{t("pentestReport")}</text>
       </svg>
     </VisualBox>
     </Reveal>
@@ -192,23 +187,20 @@ export function TestVisual({ alt }: { alt?: boolean }) {
 }
 
 /** Pillar 03 - Développer secure by design: a code editor window with a validated security function. */
-export function DevVisual({ alt }: { alt?: boolean }) {
+export async function DevVisual({ alt }: { alt?: boolean }) {
+  const t = await getTranslations("services.visuals.dev");
   return (
     <Reveal variant="up">
     <PillarPhoto
       src="/images/pages/services/developper-architecture.jpg"
-      alt="Plan de circuit imprimé en gros plan, symbolisant une architecture applicative pensée secure by design."
-      caption={
-        <>
-          <b>La sécurité, dès la première ligne</b> de code, pas ajoutée après coup.
-        </>
-      }
+      alt={t("photoAlt")}
+      caption={t.rich("caption", { b: (c) => <b>{c}</b> })}
     />
     <VisualBox alt={alt}>
       <svg
         viewBox="0 0 480 250"
         role="img"
-        aria-label="Illustration : une fenêtre de code avec une fonction de sécurité mise en évidence, associée à un bouclier de validation symbolisant le développement secure by design."
+        aria-label={t("aria")}
       >
         <rect x="40" y="30" width="340" height="190" rx="12" fill="#fff" stroke="var(--navy-3)" strokeWidth="2" />
         <line x1="40" y1="64" x2="380" y2="64" stroke="var(--line)" strokeWidth="1.3" />
@@ -236,7 +228,7 @@ export function DevVisual({ alt }: { alt?: boolean }) {
           <path d="m9 12 2 2 4-4" />
         </g>
 
-        <text x="240" y="245" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">Sécurité intégrée dès la conception</text>
+        <text x="240" y="245" textAnchor="middle" fontSize="11" fill="var(--muted)" fontFamily="var(--sans)">{t("securityByDesign")}</text>
       </svg>
     </VisualBox>
     </Reveal>

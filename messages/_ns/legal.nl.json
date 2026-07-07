@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "mentions": {
+      "title": "Wettelijke vermeldingen | Smidjan, Cyberbeveiliging Luik",
+      "description": "Wettelijke vermeldingen van Smidjan : identificatie van de uitgever, verantwoordelijke voor de publicatie, hosting (Vercel) en intellectuele eigendom van de website.",
+      "ogTitle": "Wettelijke vermeldingen | Smidjan",
+      "ogDescription": "Identificatie van de uitgever, hosting en intellectuele eigendom van de website van Smidjan."
+    },
+    "cgv": {
+      "title": "Algemene voorwaarden | Smidjan",
+      "description": "Algemene dienstverleningsvoorwaarden van Smidjan : voorwerp, offerte, uitvoering, aansprakelijkheid, vertrouwelijkheid en Belgisch recht van toepassing op cyberbeveiligingsopdrachten.",
+      "ogTitle": "Algemene voorwaarden | Smidjan",
+      "ogDescription": "Contractueel kader voor de advies-, audit- en beveiligde ontwikkelingsdiensten van Smidjan."
+    },
+    "confidentialite": {
+      "title": "Privacybeleid (AVG) | Smidjan",
+      "description": "Privacybeleid van Smidjan : gegevens verzameld via het contactformulier, doeleinden, bewaartermijn, cookies & diensten van derden, en uw AVG-rechten.",
+      "ogTitle": "Privacybeleid (AVG) | Smidjan",
+      "ogDescription": "Hoe Smidjan uw persoonsgegevens verwerkt, volledig transparant over cookies en diensten van derden."
+    }
+  },
+  "breadcrumb": {
+    "home": "Home"
+  },
+  "nav": {
+    "label": "Juridische pagina's",
+    "aria": "Overzicht van de juridische pagina's",
+    "items": {
+      "mentions": "Wettelijke vermeldingen",
+      "confidentialite": "Privacybeleid",
+      "cgv": "Algemene voorwaarden"
+    }
+  },
+  "mentions": {
+    "hero": {
+      "eyebrow": "Juridische informatie",
+      "title": "Wettelijke vermeldingen",
+      "lead": "De identiteit van de uitgever van de website, de verantwoordelijke voor de publicatie, de hostingprovider en de toepasselijke regels inzake intellectuele eigendom."
+    },
+    "editeur": {
+      "title": "Uitgever van de website",
+      "intro": "Deze website wordt uitgegeven door Smidjan, een onderneming actief in cyberbeveiliging, gevestigd te Luik, België.",
+      "denomination": "<strong>Benaming :</strong> Smidjan, handelsmerk uitgebaat door Jean-Baptiste Dhondt (natuurlijke persoon)",
+      "siege": "<strong>Maatschappelijke zetel :</strong> Luik, België",
+      "bce": "<strong>Ondernemingsnummer (KBO) :</strong> Inschrijving in behandeling",
+      "tva": "<strong>Intracommunautair btw-nummer :</strong> Inschrijving in behandeling",
+      "emailLabel": "<strong>E-mail :</strong>",
+      "telephoneLabel": "<strong>Telefoon :</strong>",
+      "callout": "In alle transparantie : op het moment waarop deze pagina werd opgesteld, had Smidjan haar inschrijving (KBO/btw) nog niet afgerond. <b>Er mag geen enkel ondernemingsnummer worden gepubliceerd zolang het niet officieel is toegekend.</b> Deze informatie wordt aangevuld zodra ze beschikbaar is, en vóór elke definitieve onlineplaatsing van de website."
+    },
+    "responsable": {
+      "title": "Verantwoordelijke voor de publicatie",
+      "body": "Jean-Baptiste Dhondt, oprichter van Smidjan, treedt op als verantwoordelijke voor de publicatie van deze website."
+    },
+    "hebergement": {
+      "title": "Hosting",
+      "p1": "De website wordt gehost door : <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, Verenigde Staten : <link>vercel.com</link>.",
+      "p2": "De hosting kan een verwerking van technische gegevens op een gedistribueerde infrastructuur (« edge network ») met zich meebrengen, waarvan bepaalde knooppunten zich buiten de Europese Unie bevinden ; zie de rubriek « Cookies & diensten van derden » van het <link>privacybeleid</link> voor de details van deze doorgiften."
+    },
+    "propriete": {
+      "title": "Intellectuele eigendom",
+      "p1": "Alle elementen van deze website (teksten, structuur, grafische elementen, logo, broncode) worden beschermd door het Belgische en internationale recht inzake intellectuele eigendom en blijven eigendom van Smidjan, behoudens andersluidende vermelding. Elke reproductie, weergave, wijziging of exploitatie, geheel of gedeeltelijk, zonder voorafgaande schriftelijke toestemming, is verboden.",
+      "h3": "Beperking van aansprakelijkheid",
+      "p2": "Ondanks de zorg besteed aan het opstellen van deze website kan Smidjan de juistheid, volledigheid of permanente actualiteit van de verspreide informatie niet waarborgen, en kan zij niet aansprakelijk worden gesteld voor de gevolgen van het gebruik van deze informatie, noch voor onderbrekingen of technische storingen buiten haar wil."
+    },
+    "contact": {
+      "title": "Contact",
+      "body": "Voor elke vraag over de website of de inhoud ervan : <link>contact@smidjan.be</link>."
+    }
+  },
+  "cgv": {
+    "hero": {
+      "eyebrow": "Contractueel kader",
+      "title": "Algemene voorwaarden",
+      "lead": "Het kader dat van toepassing is op de diensten inzake advies, audit, penetratietesten, beveiligde ontwikkeling en begeleiding bij conformiteit die door Smidjan worden geleverd."
+    },
+    "intro": "Deze algemene voorwaarden regelen de diensten die door Smidjan worden geleverd. Zij vervangen niet de offerte of het ondertekende contract voor een bepaalde opdracht, dat voorrang heeft in geval van tegenstrijdigheid.",
+    "objet": {
+      "title": "Voorwerp",
+      "body": "Deze algemene voorwaarden regelen de diensten inzake advies, audit, penetratietesten, beveiligde ontwikkeling en begeleiding bij conformiteit (NIS2 / CyberFundamentals) die door Smidjan aan haar professionele klanten worden geleverd."
+    },
+    "devis": {
+      "title": "Offerte en bestelling",
+      "body": "Elke dienst maakt het voorwerp uit van een voorafgaande offerte waarin het toepassingsgebied, de op te leveren resultaten, de indicatieve planning en de prijs worden vermeld. De dienst wordt geacht te zijn aanvaard bij ondertekening van de offerte, bij de schriftelijke bevestiging ervan (met inbegrip van per e-mail), of bij de betaling van een eventueel voorschot."
+    },
+    "execution": {
+      "title": "Uitvoering van de diensten",
+      "p1": "Smidjan verbindt zich ertoe de diensten met zorg uit te voeren, volgens de regels van de kunst van het beroep en de toepasselijke referentiekaders (met name OWASP, ISO/IEC 27001, CyberFundamentals). De meegedeelde termijnen worden ter indicatie gegeven, behoudens uitdrukkelijke andersluidende verbintenis in de offerte.",
+      "h3": "Prijs en betalingsvoorwaarden",
+      "p2": "De prijzen worden vastgesteld in euro, exclusief of inclusief alle belastingen volgens de vermelding in de offerte. De facturatievoorwaarden (eventueel voorschot, vervaldagen en mijlpalen) worden gepreciseerd in de offerte die eigen is aan elke opdracht, die de klant aanvaardt bij ondertekening of bij validatie per e-mail. Elk bedrag dat op de vervaldag niet is betaald, kan, na een ingebrekestelling die zonder gevolg is gebleven, aanleiding geven tot de intresten en vergoedingen voorzien door de Belgische wet van 2 augustus 2002 betreffende de bestrijding van de betalingsachterstand bij handelstransacties, wanneer deze van toepassing is."
+    },
+    "responsabilite": {
+      "title": "Aansprakelijkheid",
+      "body": "De aansprakelijkheid van Smidjan kan enkel worden ingeroepen in geval van bewezen fout bij de uitvoering van haar diensten. Zij is beperkt tot de directe en voorzienbare schade en, behoudens zware of opzettelijke fout, begrensd tot het totale gefactureerde bedrag voor de betrokken opdracht. Smidjan kan niet aansprakelijk worden gesteld voor de gevolgen van een kwetsbaarheid die niet werd opgespoord tijdens een audit of een penetratietest, aangezien deze diensten een inspanningsverbintenis vormen en geen resultaatsverbintenis."
+    },
+    "confidentialite": {
+      "title": "Vertrouwelijkheid",
+      "p1": "Elke partij verbindt zich ertoe de technische, commerciële of organisatorische informatie die in het kader van de opdracht wordt uitgewisseld strikt vertrouwelijk te houden, gedurende de volledige duur ervan en na afloop ervan, behoudens andersluidend schriftelijk akkoord of wettelijke openbaarmakingsplicht.",
+      "p2": "De persoonsgegevens die bij deze gelegenheid worden verwerkt, worden verwerkt in overeenstemming met ons <link>privacybeleid</link>."
+    },
+    "propriete": {
+      "title": "Intellectuele eigendom van de opgeleverde resultaten",
+      "body": "Behoudens andersluidende bepaling in de offerte worden de rapporten, analyses en aanbevelingen die aan de klant worden overhandigd, aan hem in gebruik gegeven voor zijn interne behoeften. De methodologieën, tools en modellen eigen aan Smidjan blijven haar eigendom. Voor diensten van ontwikkeling op maat wordt de omvang van de overdracht van de rechten op de opgeleverde code gepreciseerd in de overeenkomstige offerte."
+    },
+    "resiliation": {
+      "title": "Beëindiging",
+      "body": "In geval van een ernstige tekortkoming van een partij aan haar verplichtingen, die niet binnen een redelijke termijn na schriftelijke ingebrekestelling wordt rechtgezet, kan de andere partij de lopende opdracht beëindigen, onverminderd de bedragen die reeds verschuldigd zijn voor de uitgevoerde werkzaamheden."
+    },
+    "droit": {
+      "title": "Toepasselijk recht en bevoegde rechtbank",
+      "body": "Deze algemene voorwaarden worden beheerst door het <strong>Belgische recht</strong>. Elk geschil betreffende de geldigheid, de interpretatie of de uitvoering ervan behoort tot de uitsluitende bevoegdheid van de rechtbanken van het gerechtelijk arrondissement <strong>Luik</strong>, onder voorbehoud van de dwingende bepalingen die van toepassing zijn inzake consumentenbescherming.",
+      "callout": "Dit document is een <b>model</b> : het moet aan elke opdracht worden aangepast en door een jurist worden gevalideerd vóór elk contractueel gebruik. In geval van tegenstrijdigheid heeft de door beide partijen ondertekende offerte of overeenkomst steeds voorrang op dit generieke sjabloon."
+    }
+  },
+  "conf": {
+    "hero": {
+      "eyebrow": "Gegevensbescherming",
+      "title": "Privacybeleid (AVG)",
+      "lead": "Wat wij verzamelen via het contactformulier, waarom, hoe lang, met wie, en een eerlijk antwoord over de gebruikte cookies en diensten van derden."
+    },
+    "intro": "Smidjan hecht belang aan de bescherming van de persoonsgegevens van de bezoekers en klanten van de website, in overeenstemming met Verordening (EU) 2016/679 van 27 april 2016 (« AVG ») en de Belgische wet van 30 juli 2018 betreffende de bescherming van natuurlijke personen met betrekking tot de verwerking van persoonsgegevens.",
+    "responsable": {
+      "title": "Verwerkingsverantwoordelijke",
+      "body": "De verwerkingsverantwoordelijke voor de via deze website verzamelde gegevens is Smidjan, Luik, België : <link>contact@smidjan.be</link>."
+    },
+    "donnees": {
+      "title": "Verzamelde gegevens",
+      "formulaire": "<strong>Contactformulier / aanvraag van een diagnose :</strong> naam, voornaam, onderneming (facultatief), e-mailadres, telefoonnummer (facultatief), inhoud van het bericht.",
+      "navigation": "<strong>Navigatiegegevens :</strong> IP-adres, type browser en apparaat, geraadpleegde pagina's, verzameld met het oog op veiligheid en, in voorkomend geval, publieksmeting.",
+      "recaptcha": "<strong>Gegevens afkomstig van Google reCAPTCHA :</strong> technische signalen die worden gebruikt om een menselijke gebruiker van een robot te onderscheiden bij het verzenden van het contactformulier."
+    },
+    "finalites": {
+      "title": "Doeleinden van de verwerking",
+      "item1": "Beantwoorden van aanvragen tot contact, offerte of gratis diagnose ;",
+      "item2": "Waarborgen van de veiligheid en de integriteit van het contactformulier (bescherming tegen spam en robots) ;",
+      "item3": "Meten en verbeteren van het gebruik van de website, in voorkomend geval, met behulp van statistische tools."
+    },
+    "baseLegale": {
+      "title": "Rechtsgrond",
+      "item1": "De <strong>uitvoering van precontractuele maatregelen</strong> genomen op verzoek van de betrokkene, voor de verwerking van contactaanvragen ;",
+      "item2": "Het <strong>gerechtvaardigd belang</strong> van Smidjan om haar formulier en haar website te beveiligen tegen misbruik (reCAPTCHA) ;",
+      "item3": "De <strong>toestemming</strong> van de gebruiker, wanneer deze vereist is voor niet-essentiële cookies voor publieksmeting."
+    },
+    "duree": {
+      "title": "Bewaartermijn",
+      "body": "De via het contactformulier doorgegeven gegevens worden bewaard gedurende een termijn van <strong>3 jaar vanaf het laatste contact</strong>, behoudens een wettelijke verplichting tot langere bewaring (met name boekhoudkundig) of een lopende contractuele relatie."
+    },
+    "destinataires": {
+      "title": "Ontvangers van de gegevens",
+      "body": "De gegevens worden verwerkt door het gemachtigde personeel van Smidjan en, in voorkomend geval, door haar technische verwerkers (hosting, e-mail, tools tegen spam en voor publieksmeting). Zij worden noch verkocht, noch verhuurd, noch aan derden overgedragen voor commerciële doeleinden."
+    },
+    "cookies": {
+      "title": "Cookies & diensten van derden",
+      "p1": "Deze website is niet vrij van cookies of trackers : wij beweren niet te functioneren « zonder enige cookie ». De volgende categorieën kunnen worden gebruikt :",
+      "table": {
+        "type": "Type",
+        "finalite": "Doeleinde",
+        "baseLegale": "Rechtsgrond",
+        "row1": {
+          "type": "Essentiële technische cookies",
+          "finalite": "Basiswerking van de website",
+          "base": "Gerechtvaardigd belang / noodzakelijk voor de dienst"
+        },
+        "row2": {
+          "type": "Google reCAPTCHA (Google LLC)",
+          "finalite": "Bescherming van het contactformulier tegen robots en misbruik",
+          "base": "Gerechtvaardigd belang"
+        }
+      },
+      "p2": "Tot op heden gebruikt de website <strong>geen enkele tool voor publieksmeting (analytics)</strong> noch reclamecookies. Indien een dergelijke tool zou worden ingevoerd, zou dit beleid dienovereenkomstig worden bijgewerkt.",
+      "p3": "Sommige van deze diensten, met name Google reCAPTCHA, worden geleverd door derden gevestigd buiten de Europese Unie (Verenigde Staten) en kunnen een overeenkomstige doorgifte van gegevens met zich meebrengen. Deze doorgiften steunen op de door de AVG voorziene waarborgen, zoals de standaardcontractbepalingen van de Europese Commissie. U kunt op elk moment uw browser configureren om niet-essentiële cookies te blokkeren of te verwijderen ; dit kan echter bepaalde functies van de website beperken (bijvoorbeeld het verzenden van het contactformulier)."
+    },
+    "droits": {
+      "title": "Uw rechten",
+      "p1": "In overeenstemming met de artikelen 15 tot 22 van de AVG beschikt u over de volgende rechten met betrekking tot uw gegevens : recht op inzage, op rectificatie, op wissing, op beperking van de verwerking, op overdraagbaarheid, op bezwaar, evenals het recht om uw toestemming op elk moment in te trekken wanneer de verwerking daarvan afhankelijk is.",
+      "p2": "Om deze rechten uit te oefenen, kunt u ons contacteren op het adres <link>contact@smidjan.be</link>. U ontvangt een antwoord binnen de door de AVG voorziene termijnen.",
+      "p3": "U beschikt eveneens over het recht om een klacht in te dienen bij de Belgische toezichthoudende autoriteit : <strong>Gegevensbeschermingsautoriteit (GBA)</strong>, Drukpersstraat 35, 1000 Brussel : <link>www.autoriteprotectiondonnees.be</link>."
+    },
+    "dpo": {
+      "title": "Contact functionaris voor gegevensbescherming",
+      "body": "Gelet op haar omvang en de aard van haar verwerkingen heeft Smidjan geen formele functionaris voor gegevensbescherming (DPO) aangesteld, aangezien deze aanstelling in haar geval niet verplicht is. Elke vraag over de verwerking van uw gegevens kan worden gericht aan <link>contact@smidjan.be</link>."
+    }
+  }
+}

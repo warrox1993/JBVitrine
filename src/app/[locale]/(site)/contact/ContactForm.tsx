@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { useCsrfToken } from '@/hooks/useCsrfToken';
 import cls from './ContactForm.module.css';
 
@@ -32,17 +33,17 @@ type ApiRequestType =
 
 interface DemandeOption {
   value: string;
-  label: string;
+  labelKey: string;
   apiType: ApiRequestType;
 }
 
 // Mockup (cyber) labels → API whitelist value. Label is preserved in message.
 const DEMANDE_OPTIONS: DemandeOption[] = [
-  { value: 'diagnostic', label: 'Diagnostic gratuit', apiType: 'assistance' },
-  { value: 'cyfun', label: 'Audit CyFun / NIS2', apiType: 'assistance' },
-  { value: 'pentest', label: "Pentest / test d'intrusion", apiType: 'technical' },
-  { value: 'dev', label: 'Développement web sécurisé', apiType: 'partnership' },
-  { value: 'autre', label: 'Autre demande', apiType: 'other' },
+  { value: 'diagnostic', labelKey: 'form.options.diagnostic', apiType: 'assistance' },
+  { value: 'cyfun', labelKey: 'form.options.cyfun', apiType: 'assistance' },
+  { value: 'pentest', labelKey: 'form.options.pentest', apiType: 'technical' },
+  { value: 'dev', labelKey: 'form.options.dev', apiType: 'partnership' },
+  { value: 'autre', labelKey: 'form.options.autre', apiType: 'other' },
 ];
 
 interface FormState {
@@ -66,6 +67,7 @@ const INITIAL: FormState = {
 };
 
 export function ContactForm() {
+  const t = useTranslations('contact');
   const [data, setData] = useState<FormState>(INITIAL);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -113,39 +115,39 @@ export function ContactForm() {
     const newErrors: Partial<Record<keyof FormState, string>> = {};
 
     if (!DEMANDE_OPTIONS.some((o) => o.value === data.demande)) {
-      newErrors.demande = 'Type de demande requis';
+      newErrors.demande = t('form.errors.demande');
     }
 
     if (!data.email) {
-      newErrors.email = 'Email requis';
+      newErrors.email = t('form.errors.emailRequired');
     } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(data.email)) {
-      newErrors.email = 'Email invalide';
+      newErrors.email = t('form.errors.emailInvalid');
     } else if (data.email.length > 254) {
-      newErrors.email = 'Email trop long';
+      newErrors.email = t('form.errors.emailTooLong');
     }
 
     if (!data.name || data.name.trim().length < 2) {
-      newErrors.name = 'Nom requis (minimum 2 caractères)';
+      newErrors.name = t('form.errors.nameRequired');
     } else if (data.name.length > 100) {
-      newErrors.name = 'Nom trop long (maximum 100 caractères)';
+      newErrors.name = t('form.errors.nameTooLong');
     } else if (/<|>|&lt;|&gt;/.test(data.name)) {
-      newErrors.name = 'Caractères invalides détectés';
+      newErrors.name = t('form.errors.invalidChars');
     }
 
     if (data.company && data.company.length > 100) {
-      newErrors.company = "Nom d'entreprise trop long";
+      newErrors.company = t('form.errors.companyTooLong');
     } else if (data.company && /<|>|&lt;|&gt;/.test(data.company)) {
-      newErrors.company = 'Caractères invalides détectés';
+      newErrors.company = t('form.errors.invalidChars');
     }
 
     if (!data.message || data.message.trim().length < 10) {
-      newErrors.message = 'Message requis (minimum 10 caractères)';
+      newErrors.message = t('form.errors.messageRequired');
     } else if (data.message.length > 5000) {
-      newErrors.message = 'Message trop long (maximum 5000 caractères)';
+      newErrors.message = t('form.errors.messageTooLong');
     }
 
     if (!data.rgpd) {
-      newErrors.rgpd = 'Votre consentement est requis pour traiter la demande';
+      newErrors.rgpd = t('form.errors.rgpd');
     }
 
     setErrors(newErrors);
@@ -160,7 +162,7 @@ export function ContactForm() {
     }
 
     if (!csrfToken) {
-      setSubmitError('Token de sécurité manquant. Veuillez recharger la page.');
+      setSubmitError(t('form.errors.csrf'));
       return;
     }
 
@@ -190,7 +192,7 @@ export function ContactForm() {
 
       // Preserve the real (cyber) demande label inside the message body so the
       // mapping to the API whitelist value doesn't lose information.
-      const message = `Type de demande : ${selected.label}\n\n${data.message.trim()}`;
+      const message = `${t('form.messagePrefix')} ${t(selected.labelKey)}\n\n${data.message.trim()}`;
 
       // Exact payload shape expected by /api/contact/direct.
       const payload = {
@@ -212,7 +214,7 @@ export function ContactForm() {
 
       if (!response.ok) {
         const err = await response.json().catch(() => ({}));
-        throw new Error(err?.error || "Échec de l'envoi. Veuillez réessayer.");
+        throw new Error(err?.error || t('form.errors.submit'));
       }
 
       await response.json().catch(() => ({}));
@@ -221,7 +223,7 @@ export function ContactForm() {
       setSubmitError(
         error instanceof Error
           ? error.message
-          : 'Une erreur est survenue. Veuillez réessayer.'
+          : t('form.errors.generic')
       );
     } finally {
       setIsSubmitting(false);
@@ -245,9 +247,9 @@ export function ContactForm() {
               <path d="m9 12 2 2 4-4" />
             </svg>
           </div>
-          <h2 className={cls.successTitle}>Message envoyé&nbsp;!</h2>
+          <h2 className={cls.successTitle}>{t('form.success.title')}</h2>
           <p className={cls.successText}>
-            Merci pour votre message. Un expert Smidjan vous répond sous 24&nbsp;h ouvrées.
+            {t('form.success.text')}
           </p>
         </div>
       </div>
@@ -258,9 +260,9 @@ export function ContactForm() {
     <div className={cls.formCard}>
       <div className={cls.fcHead}>
         <div>
-          <h2>Envoyez-nous votre demande</h2>
+          <h2>{t('form.title')}</h2>
           <p>
-            Quelques lignes suffisent. Plus c&apos;est précis, plus vite on avance.
+            {t('form.subtitle')}
           </p>
           <span className={cls.fcReassure}>
             <span className={cls.ic} aria-hidden="true">
@@ -269,7 +271,7 @@ export function ContactForm() {
                 <circle cx="12" cy="12" r="9" />
               </svg>
             </span>
-            Réponse d&apos;un expert sous 24&nbsp;h ouvrées
+            {t('form.reassure')}
           </span>
         </div>
         <div className={cls.fcIllus} aria-hidden="true">
@@ -291,7 +293,7 @@ export function ContactForm() {
             <path d="M12 8v4M12 16h.01" />
           </svg>
           <div>
-            <strong>Erreur</strong>
+            <strong>{t('form.errorLabel')}</strong>
             <p>{submitError}</p>
           </div>
         </div>
@@ -300,7 +302,7 @@ export function ContactForm() {
       <form className={cls.form} onSubmit={handleSubmit} noValidate>
         <div className={cls.field}>
           <label htmlFor="demande">
-            Type de demande <span className={cls.req} aria-hidden="true">*</span>
+            {t('form.labels.demande')} <span className={cls.req} aria-hidden="true">*</span>
           </label>
           <div className={cls.selectWrap}>
             <select
@@ -314,7 +316,7 @@ export function ContactForm() {
             >
               {DEMANDE_OPTIONS.map((o) => (
                 <option key={o.value} value={o.value}>
-                  {o.label}
+                  {t(o.labelKey)}
                 </option>
               ))}
             </select>
@@ -328,14 +330,14 @@ export function ContactForm() {
         <div className={cls.fieldRow}>
           <div className={cls.field}>
             <label htmlFor="name">
-              Nom complet <span className={cls.req} aria-hidden="true">*</span>
+              {t('form.labels.name')} <span className={cls.req} aria-hidden="true">*</span>
             </label>
             <input
               type="text"
               id="name"
               name="name"
               autoComplete="name"
-              placeholder="Marie Dupont"
+              placeholder={t('form.placeholders.name')}
               value={data.name}
               onChange={(e) => update('name', e.target.value)}
               className={errors.name ? cls.inputError : ''}
@@ -345,13 +347,13 @@ export function ContactForm() {
             {errors.name && <span className={cls.errorText}>{errors.name}</span>}
           </div>
           <div className={cls.field}>
-            <label htmlFor="company">Entreprise</label>
+            <label htmlFor="company">{t('form.labels.company')}</label>
             <input
               type="text"
               id="company"
               name="company"
               autoComplete="organization"
-              placeholder="Votre société"
+              placeholder={t('form.placeholders.company')}
               value={data.company}
               onChange={(e) => update('company', e.target.value)}
               className={errors.company ? cls.inputError : ''}
@@ -364,14 +366,14 @@ export function ContactForm() {
         <div className={cls.fieldRow}>
           <div className={cls.field}>
             <label htmlFor="email">
-              E-mail professionnel <span className={cls.req} aria-hidden="true">*</span>
+              {t('form.labels.email')} <span className={cls.req} aria-hidden="true">*</span>
             </label>
             <input
               type="email"
               id="email"
               name="email"
               autoComplete="email"
-              placeholder="marie@entreprise.be"
+              placeholder={t('form.placeholders.email')}
               value={data.email}
               onChange={(e) => update('email', e.target.value)}
               className={errors.email ? cls.inputError : ''}
@@ -382,14 +384,14 @@ export function ContactForm() {
           </div>
           <div className={cls.field}>
             <label htmlFor="phone">
-              Téléphone <span className={cls.hint}>(facultatif)</span>
+              {t('form.labels.phone')} <span className={cls.hint}>{t('form.labels.phoneHint')}</span>
             </label>
             <input
               type="tel"
               id="phone"
               name="phone"
               autoComplete="tel"
-              placeholder="+32 4XX XX XX XX"
+              placeholder={t('form.placeholders.phone')}
               value={data.phone}
               onChange={(e) => update('phone', e.target.value)}
               disabled={isSubmitting}
@@ -399,12 +401,12 @@ export function ContactForm() {
 
         <div className={cls.field}>
           <label htmlFor="message">
-            Votre message <span className={cls.req} aria-hidden="true">*</span>
+            {t('form.labels.message')} <span className={cls.req} aria-hidden="true">*</span>
           </label>
           <textarea
             id="message"
             name="message"
-            placeholder="Votre contexte, votre besoin ou l'incident en cours…"
+            placeholder={t('form.placeholders.message')}
             value={data.message}
             onChange={(e) => update('message', e.target.value)}
             className={errors.message ? cls.inputError : ''}

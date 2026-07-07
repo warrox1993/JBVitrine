@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "title": "Our method: Smidjan's cybersecurity approach | Proof, not promises",
+    "description": "Measured diagnosis, risk-based prioritisation, real remediation, continuous monitoring: discover Smidjan's method, a cybersecurity firm in Liège, and why a Walloon SME benefits from working with a human-scale structure.",
+    "ogTitle": "Our method: Smidjan's cybersecurity approach",
+    "ogDescription": "Proof, not promises: measured diagnosis, prioritisation, real remediation and continuous monitoring. The Smidjan method, cybersecurity for SMEs in Liège.",
+    "ogImageAlt": "Smidjan - Our cybersecurity method",
+    "twitterTitle": "Our method: Smidjan's cybersecurity approach",
+    "twitterDescription": "Measured diagnosis, prioritisation, real remediation, continuous monitoring. Proof, not promises."
+  },
+  "hero": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "Approach · Our method",
+    "eyebrow": "Our method",
+    "title": "Cybersecurity that <accent>proves itself</accent>, not one that tells stories.",
+    "lead": "Measured actions, deliverables you verify yourself. Our method, from diagnosis to follow-up.",
+    "ctaPrimary": "Book a free diagnosis",
+    "ctaSecondary": "See the 4 steps",
+    "promiseTitle": "Our commitment",
+    "promiseSub": "What you get, on every engagement",
+    "promiseItem1": "A <b>quantified and documented diagnosis</b>, not an impression.",
+    "promiseItem2": "<b>Clear priorities</b> by risk and by SME budget.",
+    "promiseItem3": "Real <b>remediation</b>: we fix what we find.",
+    "promiseItem4": "<b>Verifiable proof</b> of the before and after, without jargon."
+  },
+  "philosophy": {
+    "eyebrow": "Our philosophy",
+    "title": "<accent>Proof</accent>, not promises",
+    "lead": "Too many providers sell a feeling of security. We give you the means to verify it yourself: <b>measured diagnosis</b>, <b>actionable</b> deliverables, proven result.",
+    "quote": "\"Don't take our word for it: the starting gap, the fixes applied, the measured result.\" <b>Our rule, on every engagement.</b>",
+    "badCap": "Promises",
+    "badItem1": "\"You are protected\", without proving it.",
+    "badItem2": "A 200-page report that ends up in a drawer.",
+    "badItem3": "Vulnerabilities identified… but never fixed.",
+    "badItem4": "Jargon that hides the lack of results.",
+    "goodCap": "Proof",
+    "goodItem1": "A starting score, measured and explained.",
+    "goodItem2": "A prioritised plan, readable by a non-technical director.",
+    "goodItem3": "Fixes actually applied and tested.",
+    "goodItem4": "A before and after comparison you can verify.",
+    "proofAriaLabel": "Illustration of an audit report: a list of findings ticked off one by one, validated by a verification seal.",
+    "proofCaption": "<b>Every finding, ticked and verified</b>: the proof, not the talk."
+  },
+  "method": {
+    "eyebrow": "Our method",
+    "title": "Four <accent>steps</accent>, from the first finding to lasting follow-up",
+    "lead": "Audit, pentest, NIS2 / CyFun compliance: the same method every time. You know what is happening and what you receive.",
+    "overviewKicker": "Quick overview",
+    "photo1Alt": "Close-up of a backlit circuit board, symbol of the technical rigour and the architecture that structures our method.",
+    "photo1Caption": "A <b>rigorous</b> method, from diagnosis to fix.",
+    "photo2Alt": "A consultant sorts priorities by quarter on a planning board, illustrating the construction of a prioritised roadmap with the client.",
+    "photo2Caption": "A <b>prioritised roadmap</b>, built with you.",
+    "deliverHead": "What you receive"
+  },
+  "steps": {
+    "diagnostic": {
+      "kick": "We measure",
+      "title": "Diagnosis",
+      "text": "We measure your real exposure: infrastructure, networks, applications. A quantified state of play, not an opinion.",
+      "d1": "Clear report, with a starting score.",
+      "d2": "Mapping of your assets and risks.",
+      "d3": "Gap analysis against the target level."
+    },
+    "priorisation": {
+      "kick": "We decide",
+      "title": "Prioritisation",
+      "text": "We rank the vulnerabilities by risk and by effort, a roadmap designed for an <b>SME budget</b>. You decide, with full knowledge of the facts.",
+      "d1": "Plan prioritised by risk and cost.",
+      "d2": "Quantified recommendations, without over-engineering.",
+      "d3": "Realistic schedule, validated with you."
+    },
+    "remediation": {
+      "kick": "We fix",
+      "title": "Remediation",
+      "text": "Our difference: we don't just list the vulnerabilities, <b>we fix them</b>. Hardening, MFA, backups, segmentation: every action applied, then re-tested.",
+      "d1": "Fixes applied, not merely advised.",
+      "d2": "Re-test that proves the effect of each action.",
+      "d3": "Before and after comparison of the score."
+    },
+    "supervision": {
+      "kick": "We maintain",
+      "title": "Monitoring & follow-up",
+      "text": "Security is not a one-off project. We watch, we adjust, we stay alert, with a single point of contact, directly reachable.",
+      "d1": "Continuous monitoring and useful alerts.",
+      "d2": "Follow-up reviews and dashboard.",
+      "d3": "Direct contact with the expert."
+    }
+  },
+  "ai": {
+    "eyebrow": "Augmented by AI",
+    "title": "AI works with us. It does <accentOnDark>not decide</accentOnDark> in our place.",
+    "lead": "AI helps us monitor more broadly and sort faster. The analysis and the decision remain human, yours and ours.",
+    "honest": "In full transparency: AI is a <b>support tool</b>, not a product we sell you. It never replaces the expertise or your validation.",
+    "legendHuman": "Human expert",
+    "legendVerified": "Verified finding",
+    "legendAi": "AI analysis",
+    "cards": {
+      "veille": {
+        "title": "Accelerated watch",
+        "text": "We anticipate the threats that genuinely concern you."
+      },
+      "detection": {
+        "title": "Broader detection",
+        "text": "More signals analysed, the anomaly spotted earlier."
+      },
+      "mailles": {
+        "title": "Nothing slips through the cracks",
+        "text": "A second, automated look at configurations and fixes."
+      },
+      "decision": {
+        "title": "Human decision",
+        "text": "Every AI finding validated by the expert before any action."
+      }
+    }
+  },
+  "why": {
+    "eyebrow": "Why Smidjan",
+    "title": "The rigour of a firm, the closeness of a <accent>partner</accent>",
+    "lead": "A human-scale structure, by choice. Fewer intermediaries, more accountability.",
+    "photoAlt": "A consultant and a company director share a high five around a desk, illustrating the direct relationship with the expert dedicated to your case, without subcontracting.",
+    "photoCaption": "A <b>dedicated expert</b>, directly reachable, never a call centre or a junior.",
+    "items": {
+      "local": {
+        "title": "Local & responsive",
+        "text": "Based in Liège, we intervene quickly across Wallonia. Your data stays in Belgium / the EU.",
+        "pin": "We answer the phone"
+      },
+      "acces": {
+        "title": "Direct access to the expert",
+        "text": "You speak to the person handling your case. Never a call centre, never a junior.",
+        "pin": "Zero subcontracting"
+      },
+      "pragmatisme": {
+        "title": "SME pragmatism",
+        "text": "We fix what matters for your budget. Every euro targets a real, explained risk.",
+        "pin": "Tailored to the SME budget"
+      },
+      "partenaire": {
+        "title": "A single partner",
+        "text": "Build, secure, comply: everything in one place. No more providers passing the buck.",
+        "pin": "One point of contact, end to end"
+      }
+    }
+  },
+  "stats": {
+    "title": "A method, not a pitch",
+    "lead": "Four figures that sum up our way of working.",
+    "label1": "steps, from diagnosis to continuous monitoring",
+    "label2": "target time for a first response to your request",
+    "label3": "of the applied fixes re-tested before closing",
+    "label4": "subcontracting: a single point of contact, end to end"
+  },
+  "refs": {
+    "eyebrow": "Our frameworks",
+    "title": "A methodology aligned with the <accent>reference</accent> frameworks",
+    "lead": "Our audits and compliance work rely on recognised frameworks, for comparable and defensible results.",
+    "honestyTitle": "In full transparency",
+    "honestyText": "These frameworks are our <b>working method</b>. Official CyFun <b>certification</b> is issued by BELAC-accredited bodies, not by us. Our role: to audit, to fix, to bring you ready for submission.",
+    "items": {
+      "owasp": {
+        "title": "Testing & application security",
+        "text": "Web audits and penetration tests following the OWASP methodology, the industry criteria."
+      },
+      "iso": {
+        "title": "Security management",
+        "text": "Governance and risk management aligned with ISO/IEC 27001, a coherent, documented posture."
+      },
+      "cyfun": {
+        "title": "Belgian & European compliance",
+        "text": "Compliance work aligned with the CCB's CyberFundamentals and the NIS2 directive, the official Belgian framework."
+      }
+    }
+  },
+  "cta": {
+    "title": "A free diagnosis to know where you really stand",
+    "text": "30 minutes with an expert. You leave with a first quantified finding and clear priorities. No commitment.",
+    "action1": "Book my free diagnosis",
+    "action2": "Call 0475 20 55 62",
+    "reassurance1": "Response within 24 h",
+    "reassurance2": "Dedicated expert, no subcontracting",
+    "reassurance3": "Data in Belgium"
+  },
+  "roadmap": {
+    "diagnostic": "Diagnosis",
+    "priorisation": "Prioritisation",
+    "remediation": "Remediation",
+    "supervision": "Monitoring"
+  }
+}

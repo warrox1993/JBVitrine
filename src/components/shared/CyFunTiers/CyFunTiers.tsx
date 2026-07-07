@@ -1,4 +1,5 @@
 import React from "react";
+import { getTranslations } from "next-intl/server";
 import { Button } from "../../ui/Button/Button";
 import { Icon } from "../../ui/Icon/Icon";
 import styles from "./CyFunTiers.module.css";
@@ -134,27 +135,126 @@ export const DEFAULT_CYFUN_TABLE: CyFunTableRow[] = [
   },
 ];
 
-const DEFAULT_NOTE =
-  "*Durées indicatives, variables selon votre maturité de départ, la taille du périmètre et vos ressources internes. Elles sont précisées lors du cadrage.";
+type Translator = Awaited<ReturnType<typeof getTranslations>>;
+
+/** Build the localized default tier cards from the "sharedui" namespace. */
+function buildDefaultTiers(t: Translator): CyFunTier[] {
+  return [
+    {
+      level: "basic",
+      name: t("cyfun.cards.basic.name"),
+      coverage: t("cyfun.cards.basic.coverage"),
+      audience: t("cyfun.cards.basic.audience"),
+      covered: [
+        t("cyfun.cards.basic.covered1"),
+        t("cyfun.cards.basic.covered2"),
+        t("cyfun.cards.basic.covered3"),
+      ],
+      deliverable: t("cyfun.cards.basic.deliverable"),
+      ctaHref: "/contact",
+      ctaLabel: t("cyfun.cards.basic.ctaLabel"),
+    },
+    {
+      level: "important",
+      name: t("cyfun.cards.important.name"),
+      coverage: t("cyfun.cards.important.coverage"),
+      featured: true,
+      flag: t("cyfun.cards.important.flag"),
+      audience: t("cyfun.cards.important.audience"),
+      covered: [
+        t("cyfun.cards.important.covered1"),
+        t("cyfun.cards.important.covered2"),
+        t("cyfun.cards.important.covered3"),
+      ],
+      deliverable: t("cyfun.cards.important.deliverable"),
+      ctaHref: "/contact",
+      ctaLabel: t("cyfun.cards.important.ctaLabel"),
+    },
+    {
+      level: "essential",
+      name: t("cyfun.cards.essential.name"),
+      coverage: t("cyfun.cards.essential.coverage"),
+      audience: t("cyfun.cards.essential.audience"),
+      covered: [
+        t("cyfun.cards.essential.covered1"),
+        t("cyfun.cards.essential.covered2"),
+        t("cyfun.cards.essential.covered3"),
+      ],
+      deliverable: t("cyfun.cards.essential.deliverable"),
+      ctaHref: "/contact",
+      ctaLabel: t("cyfun.cards.essential.ctaLabel"),
+    },
+  ];
+}
+
+/** Build the localized default comparison rows from the "sharedui" namespace. */
+function buildDefaultTable(t: Translator): CyFunTableRow[] {
+  const b = { b: (chunks: React.ReactNode) => <b>{chunks}</b> };
+  return [
+    {
+      criterion: t("cyfun.table.rows.pourQui.criterion"),
+      basic: t("cyfun.table.rows.pourQui.basic"),
+      important: t("cyfun.table.rows.pourQui.important"),
+      essential: t("cyfun.table.rows.pourQui.essential"),
+    },
+    {
+      criterion: t("cyfun.table.rows.couverture.criterion"),
+      basic: t.rich("cyfun.table.rows.couverture.basic", b),
+      important: t.rich("cyfun.table.rows.couverture.important", b),
+      essential: t.rich("cyfun.table.rows.couverture.essential", b),
+    },
+    {
+      criterion: t("cyfun.table.rows.profondeur.criterion"),
+      basic: t("cyfun.table.rows.profondeur.basic"),
+      important: t("cyfun.table.rows.profondeur.important"),
+      essential: t("cyfun.table.rows.profondeur.essential"),
+    },
+    {
+      criterion: t("cyfun.table.rows.livrable.criterion"),
+      basic: t("cyfun.table.rows.livrable.basic"),
+      important: t("cyfun.table.rows.livrable.important"),
+      essential: t("cyfun.table.rows.livrable.essential"),
+    },
+    {
+      criterion: t("cyfun.table.rows.duree.criterion"),
+      basic: t("cyfun.table.rows.duree.basic"),
+      important: t("cyfun.table.rows.duree.important"),
+      essential: t("cyfun.table.rows.duree.essential"),
+    },
+    {
+      criterion: t("cyfun.table.rows.verification.criterion"),
+      basic: t("cyfun.table.rows.verification.basic"),
+      important: t("cyfun.table.rows.verification.important"),
+      essential: t("cyfun.table.rows.verification.essential"),
+    },
+  ];
+}
 
 /**
  * CyFun three-tier comparison - cards + optional comparison table.
  * "Important" is flagged as the recommended tier. Reusable across
  * the home, services and conformité NIS2 pages.
  */
-export function CyFunTiers({
-  tiers = DEFAULT_CYFUN_TIERS,
+export async function CyFunTiers({
+  tiers,
   showTable = true,
-  tableRows = DEFAULT_CYFUN_TABLE,
-  tableCaption = "Comparatif des trois niveaux CyFun",
-  note = DEFAULT_NOTE,
+  tableRows,
+  tableCaption,
+  note,
   className,
 }: CyFunTiersProps) {
+  const t = await getTranslations("sharedui");
+  const resolvedTiers = tiers === undefined ? buildDefaultTiers(t) : tiers;
+  const resolvedRows = tableRows === undefined ? buildDefaultTable(t) : tableRows;
+  const resolvedCaption =
+    tableCaption === undefined ? t("cyfun.table.caption") : tableCaption;
+  const resolvedNote = note === undefined ? t("cyfun.note") : note;
+
   const cn = [styles.wrapRoot, className].filter(Boolean).join(" ");
   return (
     <div className={cn || undefined}>
       <div className={styles.tiers}>
-        {tiers.map((tier) => (
+        {resolvedTiers.map((tier) => (
           <article
             key={tier.level}
             className={`${styles.tier} ${styles[tier.level]} ${
@@ -172,10 +272,10 @@ export function CyFunTiers({
             </div>
             <h3 className={styles.name}>{tier.name}</h3>
             <p className={styles.for}>
-              <b>Pour qui :</b> {tier.audience}
+              <b>{t("cyfun.cards.forWho")}</b> {tier.audience}
             </p>
             <div className={styles.covers}>
-              <div className={styles.coversHead}>Ce qui est couvert</div>
+              <div className={styles.coversHead}>{t("cyfun.cards.coveredHead")}</div>
               <ul>
                 {tier.covered.map((c) => (
                   <li key={c}>
@@ -186,7 +286,7 @@ export function CyFunTiers({
               </ul>
             </div>
             <div className={styles.deliver}>
-              <b>Livrable</b>
+              <b>{t("cyfun.cards.deliverableLabel")}</b>
               {tier.deliverable}
             </div>
             <Button
@@ -195,7 +295,7 @@ export function CyFunTiers({
               variant={tier.featured ? "primary" : "ghost"}
               className={styles.tierCta}
             >
-              {tier.ctaLabel ?? "Demander un diagnostic"}
+              {tier.ctaLabel ?? t("cyfun.cards.ctaDefault")}
             </Button>
           </article>
         ))}
@@ -205,25 +305,35 @@ export function CyFunTiers({
         <>
           <div className={styles.cmpWrap}>
             <table className={styles.cmp}>
-              <caption>{tableCaption}</caption>
+              <caption>{resolvedCaption}</caption>
               <thead>
                 <tr>
-                  <th scope="col">Critère</th>
+                  <th scope="col">{t("cyfun.table.critereHead")}</th>
                   <th scope="col">
-                    Basic<span className={styles.sub}>Le point de départ</span>
+                    {t("cyfun.table.head.basic")}
+                    <span className={styles.sub}>
+                      {t("cyfun.table.head.basicSub")}
+                    </span>
                   </th>
                   <th scope="col" className={styles.mid}>
-                    Important
-                    <span className={styles.sub}>Recommandé PME</span>
-                    <span className={styles.recTag}>Le plus courant</span>
+                    {t("cyfun.table.head.important")}
+                    <span className={styles.sub}>
+                      {t("cyfun.table.head.importantSub")}
+                    </span>
+                    <span className={styles.recTag}>
+                      {t("cyfun.table.head.importantTag")}
+                    </span>
                   </th>
                   <th scope="col">
-                    Essential<span className={styles.sub}>Le plus exigeant</span>
+                    {t("cyfun.table.head.essential")}
+                    <span className={styles.sub}>
+                      {t("cyfun.table.head.essentialSub")}
+                    </span>
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {tableRows.map((row) => (
+                {resolvedRows.map((row) => (
                   <tr key={row.criterion}>
                     <th scope="row">{row.criterion}</th>
                     <td>{row.basic}</td>
@@ -234,7 +344,7 @@ export function CyFunTiers({
               </tbody>
             </table>
           </div>
-          {note ? <p className={styles.note}>{note}</p> : null}
+          {resolvedNote ? <p className={styles.note}>{resolvedNote}</p> : null}
         </>
       ) : null}
     </div>

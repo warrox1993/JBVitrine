@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Section } from "@/components/ui/Section/Section";
@@ -33,7 +34,7 @@ function ArticleCover({ article }: { article: BlogArticle }) {
 }
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 };
 
 export async function generateStaticParams() {
@@ -44,17 +45,18 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  const t = await getTranslations({ locale, namespace: "blog" });
   const article = await getArticleBySlug(slug);
 
   if (!article) {
     return {
-      title: "Article non trouvé",
+      title: t("article.metaNotFound"),
     };
   }
 
   return {
-    title: `${article.title} | Blog Smidjan`,
+    title: t("article.metaTitle", { title: article.title }),
     description: article.excerpt,
     keywords: [
       article.category,
@@ -92,7 +94,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogArticlePage({ params }: Props) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("blog");
   const article = await getArticleBySlug(slug);
 
   if (!article) {
@@ -164,13 +168,13 @@ export default async function BlogArticlePage({ params }: Props) {
               {
                 "@type": "ListItem",
                 position: 1,
-                name: "Accueil",
+                name: t("breadcrumb.home"),
                 item: "https://smidjan.be",
               },
               {
                 "@type": "ListItem",
                 position: 2,
-                name: "Journal",
+                name: t("breadcrumb.journal"),
                 item: "https://smidjan.be/blog",
               },
               {
@@ -188,7 +192,7 @@ export default async function BlogArticlePage({ params }: Props) {
         <div className="wrap">
           <Breadcrumb
             items={[
-              { label: "Journal", href: "/blog" },
+              { label: t("breadcrumb.journal"), href: "/blog" },
               { label: article.title, href: `/blog/${slug}` },
             ]}
           />
@@ -214,7 +218,7 @@ export default async function BlogArticlePage({ params }: Props) {
               </span>
               <span className={styles.item}>
                 <Icon name="clock" size={16} />
-                {article.readTime} de lecture
+                {t("article.readTimeSuffix", { time: article.readTime })}
               </span>
             </div>
           </div>
@@ -246,8 +250,8 @@ export default async function BlogArticlePage({ params }: Props) {
         <Reveal>
           <div className={`wrap ${styles.narrow}`}>
             {article.tableOfContents && article.tableOfContents.length > 0 && (
-              <nav className={styles.toc} aria-label="Sommaire de l'article">
-                <div className={styles.tocLabel}>Sommaire</div>
+              <nav className={styles.toc} aria-label={t("article.tocAriaLabel")}>
+                <div className={styles.tocLabel}>{t("article.tocLabel")}</div>
                 <ol>
                   {article.tableOfContents.map((item) => (
                     <li key={item.id}>
@@ -267,13 +271,13 @@ export default async function BlogArticlePage({ params }: Props) {
 
             {/* Navigation between articles */}
             {(previousArticle || nextArticle) && (
-              <nav className={styles.articleNavigation} aria-label="Navigation entre articles">
+              <nav className={styles.articleNavigation} aria-label={t("article.navAriaLabel")}>
                 {previousArticle && (
                   <Link
                     href={`/blog/${previousArticle.slug}`}
                     className={`${styles.navLink} ${styles.navPrevious}`}
                   >
-                    <span className={styles.navLabel}>← Article précédent</span>
+                    <span className={styles.navLabel}>← {t("article.navPrevious")}</span>
                     <span className={styles.navTitle}>{previousArticle.title}</span>
                   </Link>
                 )}
@@ -282,7 +286,7 @@ export default async function BlogArticlePage({ params }: Props) {
                     href={`/blog/${nextArticle.slug}`}
                     className={`${styles.navLink} ${styles.navNext}`}
                   >
-                    <span className={styles.navLabel}>Article suivant →</span>
+                    <span className={styles.navLabel}>{t("article.navNext")} →</span>
                     <span className={styles.navTitle}>{nextArticle.title}</span>
                   </Link>
                 )}
@@ -294,10 +298,10 @@ export default async function BlogArticlePage({ params }: Props) {
 
       <Reveal>
         <CTABox
-          title="Besoin d'accompagnement ?"
-          text="Smidjan vous aide à mettre en place ces solutions pour votre entreprise en Belgique."
-          actions={[{ label: "Discutons de votre projet", href: "/contact" }]}
-          reassurances={["Sans engagement", "Réponse sous 24 h"]}
+          title={t("article.cta.title")}
+          text={t("article.cta.text")}
+          actions={[{ label: t("article.cta.action"), href: "/contact" }]}
+          reassurances={[t("cta.reassuranceNoCommitment"), t("cta.reassurance24h")]}
         />
       </Reveal>
 
@@ -306,7 +310,7 @@ export default async function BlogArticlePage({ params }: Props) {
           <div className={styles.authorCard}>
             <div className={styles.avatar}>{authorInitials}</div>
             <div>
-              <h2 className={styles.authorKicker}>À propos de l&apos;auteur</h2>
+              <h2 className={styles.authorKicker}>{t("article.authorKicker")}</h2>
               <div className={styles.authorName}>{authorSchema.name}</div>
               <div className={styles.authorRole}>{authorSchema.jobTitle}</div>
               <p className={styles.authorBio}>{authorSchema.description}</p>
@@ -319,8 +323,8 @@ export default async function BlogArticlePage({ params }: Props) {
         <Section variant="tint" className={styles.related}>
           <Reveal>
             <div className={styles.relatedHead}>
-              <div className={styles.relatedKicker}>Pour aller plus loin</div>
-              <h2 className={styles.relatedTitle}>Articles liés</h2>
+              <div className={styles.relatedKicker}>{t("article.relatedKicker")}</div>
+              <h2 className={styles.relatedTitle}>{t("article.relatedTitle")}</h2>
             </div>
           </Reveal>
           <Reveal stagger className={styles.relatedGrid}>

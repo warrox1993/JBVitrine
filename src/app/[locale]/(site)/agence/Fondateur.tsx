@@ -1,3 +1,5 @@
+import { getTranslations } from "next-intl/server";
+
 import OptimizedImage from "@/components/ui/OptimizedImage";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
@@ -6,20 +8,24 @@ import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./Fondateur.module.css";
 
 const CREDENTIALS = [
-  "Diplôme technique en informatique",
-  "Ancien des télécommunications de l'Armée belge",
-  "Expertise en sécurité offensive & défensive",
-  "Référentiels NIS2 / CyFun (CCB), OWASP, ISO 27001",
-];
+  "credDiploma",
+  "credArmy",
+  "credExpertise",
+  "credReferentials",
+] as const;
 
-const SKILL_TAGS = ["Réseaux", "Pentest", "Linux / Kali", "Cyberdéfense", "Conformité"];
+const SKILL_TAGS = [
+  "skillReseaux",
+  "skillPentest",
+  "skillLinux",
+  "skillCyberdefense",
+  "skillConformite",
+] as const;
 
 const JOURNEY = [
   {
     key: false,
-    label: "Le point de départ",
-    title: "Une passion précoce de l'informatique",
-    text: "Comprendre comment les machines marchent, et pourquoi elles cassent.",
+    tkey: "Start",
     icon: (
       <>
         <path d="m13 2-3 7h4l-3 7" />
@@ -29,9 +35,7 @@ const JOURNEY = [
   },
   {
     key: false,
-    label: "L'autodidaxie",
-    title: "Linux, Kali et sécurité réseau",
-    text: "En autodidacte, outils offensifs à l'appui. Une expertise acquise par la pratique.",
+    tkey: "Selftaught",
     icon: (
       <>
         <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -41,9 +45,7 @@ const JOURNEY = [
   },
   {
     key: false,
-    label: "La formation",
-    title: "Diplôme technique en informatique",
-    text: "Les acquis validés : administration systèmes, réseaux, développement.",
+    tkey: "Training",
     icon: (
       <>
         <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
@@ -53,9 +55,7 @@ const JOURNEY = [
   },
   {
     key: true,
-    label: "L'expérience opérationnelle",
-    title: "Télécommunications de l'Armée belge",
-    text: "Protéger des réseaux critiques en environnement exigeant. Cette rigueur, appliquée aujourd'hui aux entreprises.",
+    tkey: "Army",
     icon: (
       <>
         <path d="M12 2 4 5v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3Z" />
@@ -65,9 +65,7 @@ const JOURNEY = [
   },
   {
     key: false,
-    label: "Aujourd'hui",
-    title: "Sécurité offensive & défensive",
-    text: "Attaquer pour comprendre, défendre pour protéger. C'est Smidjan.",
+    tkey: "Today",
     icon: (
       <>
         <path d="M11 3a8 8 0 1 0 8 8" />
@@ -79,21 +77,19 @@ const JOURNEY = [
 ];
 
 /** "Le fondateur" - Jean-Baptiste Dhondt profile + professional journey. */
-export function Fondateur() {
+export async function Fondateur() {
+  const t = await getTranslations("agence");
   return (
     <section className={styles.founderSec}>
       <Container>
         <Reveal className={styles.secHead}>
-          <Eyebrow className={styles.kickerMono}>Le fondateur</Eyebrow>
+          <Eyebrow className={styles.kickerMono}>{t("founder.eyebrow")}</Eyebrow>
           <h2>
-            Jean-Baptiste Dhondt :{" "}
-            <span className="accent">un parcours peu commun</span> vers la
-            cybersécurité
+            {t.rich("founder.title", {
+              accent: (c) => <span className="accent">{c}</span>,
+            })}
           </h2>
-          <p>
-            Curiosité, discipline militaire, pratique réelle de
-            l&rsquo;attaque et de la défense.
-          </p>
+          <p>{t("founder.lead")}</p>
         </Reveal>
 
         <div className={styles.grid}>
@@ -105,7 +101,7 @@ export function Fondateur() {
             <div
               className={styles.portrait}
               role="img"
-              aria-label="Portrait du fondateur, emplacement réservé, photo à venir"
+              aria-label={t("founder.portraitAria")}
             >
               <svg viewBox="0 0 300 210" fill="none" aria-hidden="true">
                 <circle cx="26" cy="26" r="1.4" fill="#fff" opacity=".14" />
@@ -135,75 +131,66 @@ export function Fondateur() {
                   <rect x="3" y="3" width="18" height="18" rx="2" />
                   <circle cx="8.5" cy="8.5" r="1.5" />
                 </svg>
-                Photo à venir
+                {t("founder.photoSoon")}
               </span>
             </div>
 
             <div className={styles.top}>
               <div>
-                <h3>Jean-Baptiste Dhondt</h3>
-                <div className={styles.role}>Fondateur · Expert en cybersécurité</div>
+                <h3>{t("founder.name")}</h3>
+                <div className={styles.role}>{t("founder.role")}</div>
               </div>
             </div>
-            <blockquote className={styles.quote}>
-              « La sécurité d&rsquo;une PME ne se règle pas avec un rapport
-              qu&rsquo;on range dans un tiroir. Elle se règle en corrigeant,
-              une à une, les failles qui comptent. »
-            </blockquote>
+            <blockquote className={styles.quote}>{t("founder.quote")}</blockquote>
             <ul className={styles.creds}>
               {CREDENTIALS.map((c) => (
                 <li key={c}>
                   <Icon name="check" strokeWidth={2.2} />
-                  {c}
+                  {t(`founder.${c}`)}
                 </li>
               ))}
             </ul>
             <div className={styles.foot}>
-              {SKILL_TAGS.map((t) => (
-                <span key={t}>{t}</span>
+              {SKILL_TAGS.map((s) => (
+                <span key={s}>{t(`founder.${s}`)}</span>
               ))}
             </div>
           </Reveal>
 
           {/* Narrative + journey */}
           <Reveal as="div" className={styles.narrative} variant="right">
-            <Eyebrow className={styles.kickerMono}>Le parcours</Eyebrow>
+            <Eyebrow className={styles.kickerMono}>{t("founder.journeyEyebrow")}</Eyebrow>
             <h3>
-              De la passion de l&rsquo;informatique à la{" "}
-              <span className="accent">défense d&rsquo;entreprises</span>
+              {t.rich("founder.narrativeTitle", {
+                accent: (c) => <span className="accent">{c}</span>,
+              })}
             </h3>
-            <p className={styles.intro}>
-              Pas un consultant standard : un praticien. Il a compris les
-              systèmes de l&rsquo;intérieur avant d&rsquo;en faire un métier.
-            </p>
+            <p className={styles.intro}>{t("founder.intro")}</p>
 
             {/* Real photo: server infrastructure - technical expertise */}
             <figure className={styles.infraFigure}>
               <OptimizedImage
                 src="/images/pages/agence/infrastructure.jpg"
-                alt="Baies de serveurs et câblage réseau dans une salle informatique, illustrant l'expertise en sécurisation d'infrastructures"
+                alt={t("founder.infraAlt")}
                 width={1200}
                 height={673}
                 sizePreset="card"
                 className={styles.infraImg}
               />
-              <figcaption className={styles.infraCap}>
-                Réseaux, serveurs, durcissement d&rsquo;infrastructure : le
-                terrain de jeu quotidien.
-              </figcaption>
+              <figcaption className={styles.infraCap}>{t("founder.infraCaption")}</figcaption>
             </figure>
 
             <ol className={styles.journey}>
               {JOURNEY.map((step) => (
-                <li key={step.title} className={step.key ? styles.key : undefined}>
+                <li key={step.tkey} className={step.key ? styles.key : undefined}>
                   <div className={styles.dot}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       {step.icon}
                     </svg>
                   </div>
-                  <div className={styles.yr}>{step.label}</div>
-                  <h4>{step.title}</h4>
-                  <p>{step.text}</p>
+                  <div className={styles.yr}>{t(`founder.step${step.tkey}Label`)}</div>
+                  <h4>{t(`founder.step${step.tkey}Title`)}</h4>
+                  <p>{t(`founder.step${step.tkey}Text`)}</p>
                 </li>
               ))}
             </ol>

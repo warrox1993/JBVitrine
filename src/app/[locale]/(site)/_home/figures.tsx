@@ -1,21 +1,23 @@
 import React from "react";
+import { getTranslations } from "next-intl/server";
 
 const SANS = "system-ui,sans-serif";
 const MONO = "ui-monospace,monospace";
 
 /** Network architecture / defended-perimeter diagram. */
-export function TopologyFigure() {
+export async function TopologyFigure() {
+  const t = await getTranslations("home");
   return (
     <svg
       viewBox="0 0 760 360"
       role="img"
-      aria-label="Schéma d'une architecture réseau protégée : postes de travail, serveur central et base de données regroupés à l'intérieur d'un périmètre sécurisé, la connexion internet étant filtrée par un pare-feu en périphérie, avec des segments internes chiffrés."
+      aria-label={t("fig.topology.aria")}
     >
       <rect x="230" y="20" width="500" height="320" rx="24" fill="#f5f7fa" stroke="#1c3a63" strokeWidth="1.6" strokeDasharray="3 7" />
-      <text x="252" y="50" fontSize="11" fontWeight="700" letterSpacing="1.5" fill="#1c3a63" fontFamily={SANS}>PÉRIMÈTRE SÉCURISÉ</text>
+      <text x="252" y="50" fontSize="11" fontWeight="700" letterSpacing="1.5" fill="#1c3a63" fontFamily={SANS}>{t("fig.topology.perimeter")}</text>
 
       <path d="M60 195c-19 0-34-14-34-32 0-16 12-29 28-32 4-21 23-37 46-37 22 0 41 14 47 34 17 2 30 16 30 33 0 18-16 34-36 34Z" fill="#ffffff" stroke="#657189" strokeWidth="1.6" strokeLinejoin="round" />
-      <text x="30" y="250" fontSize="11" fontWeight="700" letterSpacing="1.5" fill="#657189" fontFamily={SANS}>RÉSEAU EXTERNE</text>
+      <text x="30" y="250" fontSize="11" fontWeight="700" letterSpacing="1.5" fill="#657189" fontFamily={SANS}>{t("fig.topology.external")}</text>
 
       <path d="M490 180 L340 80" stroke="#1c3a63" strokeWidth="2" />
       <path d="M490 180 L640 80" stroke="#1c3a63" strokeWidth="2" />
@@ -28,11 +30,11 @@ export function TopologyFigure() {
       <path d="M230,143 L258,155 L258,183 C258,205 230,219 230,219 C230,219 202,205 202,183 L202,155 Z" fill="#fff3ea" stroke="#ff6a00" strokeWidth="1.8" />
       <rect x="222" y="178" width="16" height="13" rx="2" fill="none" stroke="#e85f00" strokeWidth="1.8" />
       <path d="M226 178v-6a4 4 0 0 1 8 0v6" fill="none" stroke="#e85f00" strokeWidth="1.8" strokeLinecap="round" />
-      <text x="230" y="240" textAnchor="middle" fontSize="10.5" fontWeight="700" letterSpacing="1.2" fill="#e85f00" fontFamily={SANS}>PARE-FEU</text>
+      <text x="230" y="240" textAnchor="middle" fontSize="10.5" fontWeight="700" letterSpacing="1.2" fill="#e85f00" fontFamily={SANS}>{t("fig.topology.firewall")}</text>
 
       <rect x="430" y="145" width="120" height="70" rx="12" fill="#0b1f3a" />
       <path d="M448 165h86M448 183h86M448 201h64" stroke="#9fb0c9" strokeWidth="1.6" strokeLinecap="round" />
-      <text x="490" y="238" textAnchor="middle" fontSize="10.5" fontWeight="700" letterSpacing="1" fill="#1c3a63" fontFamily={SANS}>INFRASTRUCTURE INTERNE</text>
+      <text x="490" y="238" textAnchor="middle" fontSize="10.5" fontWeight="700" letterSpacing="1" fill="#1c3a63" fontFamily={SANS}>{t("fig.topology.internal")}</text>
 
       <g transform="translate(415,130)">
         <circle r="10" fill="#0b1f3a" />
@@ -74,34 +76,35 @@ export function TopologyFigure() {
 }
 
 /** CyFun audit dashboard: per-domain maturity bars + global score ring. */
-export function AuditDashboardFigure() {
+export async function AuditDashboardFigure() {
+  const t = await getTranslations("home");
   return (
     <svg
       viewBox="0 0 720 320"
       role="img"
-      aria-label="Tableau de bord d'audit de conformité CyFun montrant le niveau de maturité par domaine (gouvernance, gestion des accès, réseau, détection et sauvegarde) ainsi qu'un score global de 82 pourcents."
+      aria-label={t("fig.audit.aria")}
     >
-      <text x="30" y="34" fontSize="13" fontWeight="600" fill="#152238" fontFamily={SANS}>Gouvernance &amp; pilotage</text>
+      <text x="30" y="34" fontSize="13" fontWeight="600" fill="#152238" fontFamily={SANS}>{t("fig.audit.governance")}</text>
       <rect x="30" y="42" width="320" height="10" rx="5" fill="#eef2f7" />
       <rect x="30" y="42" width="224" height="10" rx="5" fill="#1c3a63" />
       <text x="360" y="51" fontSize="12" fontWeight="700" fill="#42536b" fontFamily={MONO}>70%</text>
 
-      <text x="30" y="88" fontSize="13" fontWeight="600" fill="#152238" fontFamily={SANS}>Gestion des accès (MFA)</text>
+      <text x="30" y="88" fontSize="13" fontWeight="600" fill="#152238" fontFamily={SANS}>{t("fig.audit.access")}</text>
       <rect x="30" y="96" width="320" height="10" rx="5" fill="#eef2f7" />
       <rect x="30" y="96" width="144" height="10" rx="5" fill="#1c3a63" />
       <text x="360" y="105" fontSize="12" fontWeight="700" fill="#42536b" fontFamily={MONO}>45%</text>
 
-      <text x="30" y="142" fontSize="13" fontWeight="600" fill="#152238" fontFamily={SANS}>Réseau &amp; segmentation</text>
+      <text x="30" y="142" fontSize="13" fontWeight="600" fill="#152238" fontFamily={SANS}>{t("fig.audit.network")}</text>
       <rect x="30" y="150" width="320" height="10" rx="5" fill="#eef2f7" />
       <rect x="30" y="150" width="288" height="10" rx="5" fill="#1c3a63" />
       <text x="360" y="159" fontSize="12" fontWeight="700" fill="#42536b" fontFamily={MONO}>90%</text>
 
-      <text x="30" y="196" fontSize="13" fontWeight="600" fill="#152238" fontFamily={SANS}>Détection &amp; supervision</text>
+      <text x="30" y="196" fontSize="13" fontWeight="600" fill="#152238" fontFamily={SANS}>{t("fig.audit.detection")}</text>
       <rect x="30" y="204" width="320" height="10" rx="5" fill="#eef2f7" />
       <rect x="30" y="204" width="208" height="10" rx="5" fill="#1c3a63" />
       <text x="360" y="213" fontSize="12" fontWeight="700" fill="#42536b" fontFamily={MONO}>65%</text>
 
-      <text x="30" y="250" fontSize="13" fontWeight="600" fill="#152238" fontFamily={SANS}>Sauvegarde &amp; continuité</text>
+      <text x="30" y="250" fontSize="13" fontWeight="600" fill="#152238" fontFamily={SANS}>{t("fig.audit.backup")}</text>
       <rect x="30" y="258" width="320" height="10" rx="5" fill="#eef2f7" />
       <rect x="30" y="258" width="272" height="10" rx="5" fill="#1c3a63" />
       <text x="360" y="267" fontSize="12" fontWeight="700" fill="#42536b" fontFamily={MONO}>85%</text>
@@ -109,28 +112,29 @@ export function AuditDashboardFigure() {
       <circle cx="560" cy="150" r="90" fill="none" stroke="#eef2f7" strokeWidth="18" />
       <circle cx="560" cy="150" r="90" fill="none" stroke="#ff6a00" strokeWidth="18" strokeLinecap="round" strokeDasharray="463.7 565.5" transform="rotate(-90 560 150)" />
       <text x="560" y="142" textAnchor="middle" fontSize="40" fontWeight="800" fill="#0b1f3a" fontFamily={MONO}>82%</text>
-      <text x="560" y="164" textAnchor="middle" fontSize="12" fill="#657189" fontFamily={SANS}>Score global CyFun</text>
-      <text x="560" y="270" textAnchor="middle" fontSize="11" fill="#657189" fontFamily={SANS}>Basé sur l&apos;auto-évaluation Basic</text>
+      <text x="560" y="164" textAnchor="middle" fontSize="12" fill="#657189" fontFamily={SANS}>{t("fig.audit.scoreLabel")}</text>
+      <text x="560" y="270" textAnchor="middle" fontSize="11" fill="#657189" fontFamily={SANS}>{t("fig.audit.scoreBasis")}</text>
     </svg>
   );
 }
 
 /** Belgium map with Liège located and data hosted in-country. */
-export function BelgiumMapFigure() {
+export async function BelgiumMapFigure() {
+  const t = await getTranslations("home");
   return (
     <svg
       viewBox="0 0 640 360"
       role="img"
-      aria-label="Illustration de la Belgique avec Liège localisée, reliée à une infrastructure de données protégée par un bouclier, symbolisant l'hébergement à cent pourcents des données en Belgique et dans l'Union européenne."
+      aria-label={t("fig.belgium.aria")}
     >
       <path d="M180,40 L260,35 L300,70 L330,60 L350,110 L320,150 L340,190 L310,230 L330,270 L290,300 L240,285 L210,310 L160,290 L140,250 L100,255 L90,200 L120,170 L100,130 L140,110 L130,70 Z" fill="#eef2f7" stroke="#1c3a63" strokeWidth="1.6" strokeLinejoin="round" />
-      <text x="150" y="70" fontSize="11" fontWeight="700" letterSpacing="1.5" fill="#657189" fontFamily={SANS}>BELGIQUE</text>
+      <text x="150" y="70" fontSize="11" fontWeight="700" letterSpacing="1.5" fill="#657189" fontFamily={SANS}>{t("fig.belgium.country")}</text>
 
       <path d="M292 182 L330 150" stroke="#1c3a63" strokeWidth="1.3" />
       <circle cx="280" cy="190" r="14" fill="none" stroke="#ff6a00" strokeWidth="1.6" opacity=".55" />
       <circle cx="280" cy="190" r="7" fill="#ff6a00" />
-      <text x="336" y="148" fontSize="14" fontWeight="700" fill="#0b1f3a" fontFamily={SANS}>Liège</text>
-      <text x="336" y="165" fontSize="10.5" fill="#657189" fontFamily={SANS}>Siège &amp; interventions</text>
+      <text x="336" y="148" fontSize="14" fontWeight="700" fill="#0b1f3a" fontFamily={SANS}>{t("fig.belgium.city")}</text>
+      <text x="336" y="165" fontSize="10.5" fill="#657189" fontFamily={SANS}>{t("fig.belgium.citySub")}</text>
 
       <path d="M300 195 C355 195 380 195 435 195" fill="none" stroke="#1c3a63" strokeWidth="1.4" strokeDasharray="2 7" strokeLinecap="round" />
 
@@ -145,8 +149,8 @@ export function BelgiumMapFigure() {
         <path d="M-4.5 -1.5v-2.5a4.5 4.5 0 0 1 9 0v2.5" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
         <rect x="-5" y="-1.5" width="10" height="8" rx="1.3" fill="#fff" />
       </g>
-      <text x="500" y="285" textAnchor="middle" fontSize="12.5" fontWeight="600" fill="#0b1f3a" fontFamily={SANS}>Données hébergées</text>
-      <text x="500" y="302" textAnchor="middle" fontSize="11" fill="#657189" fontFamily={SANS}>100% en Belgique / UE</text>
+      <text x="500" y="285" textAnchor="middle" fontSize="12.5" fontWeight="600" fill="#0b1f3a" fontFamily={SANS}>{t("fig.belgium.hosted")}</text>
+      <text x="500" y="302" textAnchor="middle" fontSize="11" fill="#657189" fontFamily={SANS}>{t("fig.belgium.hostedSub")}</text>
     </svg>
   );
 }

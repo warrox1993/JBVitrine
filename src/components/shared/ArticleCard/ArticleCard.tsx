@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Icon } from "../../ui/Icon/Icon";
 import { LinkMore } from "../../ui/LinkMore/LinkMore";
 import styles from "./ArticleCard.module.css";
@@ -29,9 +30,11 @@ export function ArticleCard({
   date,
   readingTime,
   cover,
-  linkLabel = "Lire",
+  linkLabel,
   className,
 }: ArticleCardProps) {
+  const t = useTranslations("blog");
+  const label = linkLabel ?? t("card.readMore");
   const cn = [styles.card, className].filter(Boolean).join(" ");
   return (
     <article className={cn}>
@@ -58,7 +61,7 @@ export function ArticleCard({
         </div>
       ) : null}
       <LinkMore href={href} className={styles.more}>
-        {linkLabel}
+        {label}
       </LinkMore>
     </article>
   );

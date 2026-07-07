@@ -1,22 +1,26 @@
 import React from "react";
+import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/Button/Button";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./InsightTeaser.module.css";
 
 /** Journal / guide teaser: NIS2 & CyFun, links to the on-site guide page. */
-export function InsightTeaser() {
+export async function InsightTeaser() {
+  const t = await getTranslations("home");
   return (
     <div className={styles.card}>
       <Reveal variant="left" className={styles.body}>
-        <div className={styles.kick}>Guide gratuit</div>
+        <div className={styles.kick}>{t("insight.kick")}</div>
         <h3>
-          NIS2 &amp; CyFun&nbsp;: le guide de mise en conformité pour les{" "}
-          <span className="accent">PME belges</span>
+          {t.rich("insight.title", {
+            accent: (c) => <span className="accent">{c}</span>,
+          })}
         </h3>
         <p>
-          Ce que dit la loi, qui est concerné, quel niveau CyFun choisir.{" "}
-          <b>Clair, sans jargon.</b>
+          {t.rich("insight.text", {
+            b: (c) => <b>{c}</b>,
+          })}
         </p>
         <Button
           as="a"
@@ -25,15 +29,15 @@ export function InsightTeaser() {
           className={styles.cta}
           trailingIcon={<Icon name="arrow-right" strokeWidth={2.2} />}
         >
-          Lire le guide
+          {t("insight.cta")}
         </Button>
       </Reveal>
       <Reveal variant="right" delay={100} className={styles.visual}>
         <div className={`${styles.gridBg} grid-bg`} aria-hidden="true" />
         <div className={styles.mock} aria-hidden="true">
           <div className={styles.hd}>
-            <div className={styles.tag}>Guide · Conformité</div>
-            <h5>NIS2 &amp; CyFun pour les PME</h5>
+            <div className={styles.tag}>{t("insight.mockTag")}</div>
+            <h5>{t("insight.mockTitle")}</h5>
           </div>
           <div className={styles.bd}>
             <div className={styles.bar} />

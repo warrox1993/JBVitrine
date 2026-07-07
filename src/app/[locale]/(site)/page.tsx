@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
@@ -22,53 +23,61 @@ import { InsightTeaser } from "./_home/InsightTeaser";
 import { AuditDashboardFigure, BelgiumMapFigure } from "./_home/figures";
 import homeStyles from "./_home/Home.module.css";
 
-export const metadata: Metadata = {
-  title: "Cybersécurité & conformité NIS2 pour les PME | Smidjan, Liège, Wallonie",
-  description:
-    "Smidjan sécurise réseaux, infrastructure et applications des PME wallonnes et vous met en conformité NIS2 / CyFun (CyberFundamentals, CCB). Audit, pentest, remédiation. Diagnostic gratuit à Liège.",
-  keywords: [
-    "cybersécurité PME Liège",
-    "conformité NIS2 Belgique",
-    "CyberFundamentals CyFun CCB",
-    "audit sécurité informatique Wallonie",
-    "test d'intrusion pentest Liège",
-    "analyse d'écart NIS2",
-    "remédiation cybersécurité PME",
-    "sécurité réseau infrastructure",
-    "développement web sécurisé",
-    "expert cybersécurité Liège",
-  ],
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Cybersécurité & conformité NIS2 pour les PME | Smidjan, Liège",
-    description:
-      "On sécurise, on teste, on développe, on met en règle NIS2 / CyFun, et on corrige ce qu'on trouve. Diagnostic gratuit pour les PME de Wallonie.",
-    url: "https://smidjan.be",
-    siteName: "Smidjan, Cybersécurité Liège",
-    images: [
-      {
-        url: "https://smidjan.be/og-image.webp",
-        width: 1200,
-        height: 630,
-        alt: "Smidjan, Cybersécurité & conformité NIS2 pour les PME à Liège",
-        type: "image/webp",
-      },
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("home.meta");
+  return {
+    title: t("title"),
+    description: t("description"),
+    keywords: [
+      "cybersécurité PME Liège",
+      "conformité NIS2 Belgique",
+      "CyberFundamentals CyFun CCB",
+      "audit sécurité informatique Wallonie",
+      "test d'intrusion pentest Liège",
+      "analyse d'écart NIS2",
+      "remédiation cybersécurité PME",
+      "sécurité réseau infrastructure",
+      "développement web sécurisé",
+      "expert cybersécurité Liège",
     ],
-    locale: "fr_BE",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Cybersécurité & conformité NIS2 pour les PME | Smidjan, Liège",
-    description:
-      "Sécurité, pentest, conformité NIS2 / CyFun pour les PME wallonnes. Diagnostic gratuit à Liège.",
-    images: ["/og-image.webp"],
-  },
-};
+    alternates: {
+      canonical: "/",
+    },
+    openGraph: {
+      title: t("ogTitle"),
+      description: t("ogDescription"),
+      url: "https://smidjan.be",
+      siteName: t("ogSiteName"),
+      images: [
+        {
+          url: "https://smidjan.be/og-image.webp",
+          width: 1200,
+          height: 630,
+          alt: t("ogImageAlt"),
+          type: "image/webp",
+        },
+      ],
+      locale: "fr_BE",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("twitterTitle"),
+      description: t("twitterDescription"),
+      images: ["/og-image.webp"],
+    },
+  };
+}
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("home");
+
   return (
     <>
       <script
@@ -95,65 +104,62 @@ export default function HomePage() {
         <Reveal>
           <SectionHeading
             center
-            eyebrow="Nos services"
-            title={
-              <>
-                Quatre missions, un objectif&nbsp;: réduire votre{" "}
-                <span className="accent">risque cyber</span>
-              </>
-            }
-            lead="De l'infrastructure à la conformité, et on corrige ce qu'on trouve."
+            eyebrow={t("services.eyebrow")}
+            title={t.rich("services.title", {
+              accent: (c) => <span className="accent">{c}</span>,
+            })}
+            lead={t("services.lead")}
           />
         </Reveal>
         <Reveal stagger className={homeStyles.svcGrid}>
           <ServiceCard
             icon="server"
-            kicker="Sécuriser"
-            title="Réseaux & infrastructure"
-            description="On verrouille votre socle technique avant que l'attaque n'atteigne vos données."
+            kicker={t("cards.securiser.kicker")}
+            title={t("cards.securiser.title")}
+            description={t("cards.securiser.description")}
             bullets={[
-              "Pare-feu & segmentation réseau",
-              "Supervision & détection",
-              "Sauvegardes & plan de reprise (PRA)",
+              t("cards.securiser.bullet1"),
+              t("cards.securiser.bullet2"),
+              t("cards.securiser.bullet3"),
             ]}
             href="/services#securiser"
           />
           <ServiceCard
             icon="search"
-            kicker="Tester"
-            title="Audits & pentest"
-            description="On pense comme un attaquant pour trouver vos failles, avant qu'un vrai ne le fasse."
+            kicker={t("cards.tester.kicker")}
+            title={t("cards.tester.title")}
+            description={t("cards.tester.description")}
             bullets={[
-              "Tests d'intrusion (OWASP)",
-              "Analyse d'écart de sécurité",
-              "Sécurité des applications",
+              t("cards.tester.bullet1"),
+              t("cards.tester.bullet2"),
+              t("cards.tester.bullet3"),
             ]}
             href="/services#tester"
           />
           <ServiceCard
             icon="code"
-            kicker="Développer"
-            title="Développement web sécurisé"
-            description="« Secure by design » : la sécurité intégrée dès la première ligne de code."
+            kicker={t("cards.developper.kicker")}
+            title={t("cards.developper.title")}
+            description={t("cards.developper.description")}
             bullets={[
-              "Sites & applications sur mesure",
-              "Sécurité intégrée au cycle de dev",
-              "Revue de code & durcissement",
+              t("cards.developper.bullet1"),
+              t("cards.developper.bullet2"),
+              t("cards.developper.bullet3"),
             ]}
             href="/services#developper"
           />
           <ServiceCard
             icon="file-check"
-            kicker="Se conformer"
-            title="Conformité NIS2 / CyFun"
-            description="Audit, analyse d'écart, remédiation : on vous amène au niveau CyFun attendu par le CCB."
+            kicker={t("cards.conformer.kicker")}
+            title={t("cards.conformer.title")}
+            description={t("cards.conformer.description")}
             bullets={[
-              "Diagnostic & analyse d'écart",
-              "Remédiation concrète",
-              "Préparation à la vérification CCB",
+              t("cards.conformer.bullet1"),
+              t("cards.conformer.bullet2"),
+              t("cards.conformer.bullet3"),
             ]}
             href="/conformite-nis2"
-            linkLabel="Voir la section dédiée"
+            linkLabel={t("cards.conformer.linkLabel")}
           />
         </Reveal>
 
@@ -167,41 +173,34 @@ export default function HomePage() {
           <CyFunTiers showTable={false} className={homeStyles.tiers} />
         </Reveal>
         <IllusPanel
-          eyebrow="Diagnostic"
-          title="Un rapport d'écart clair, domaine par domaine"
-          text={
-            <>
-              <b>Chaque exigence CyFun est mesurée, pas devinée.</b> Un niveau de maturité par
-              domaine (gouvernance, accès, réseau, détection, continuité) agrégé en un score
-              global.
-            </>
-          }
+          eyebrow={t("illus.diagnostic.eyebrow")}
+          title={t("illus.diagnostic.title")}
+          text={t.rich("illus.diagnostic.text", {
+            b: (c) => <b>{c}</b>,
+          })}
           figure={<AuditDashboardFigure />}
           onTint
         />
         <Honesty />
         <Reveal>
           <ProcessSteps
-            kicker="Notre méthode en 4 étapes"
+            kicker={t("process.kicker")}
             steps={[
               {
-                title: "Cadrage & auto-évaluation",
-                description:
-                  "Périmètre, actifs critiques, auto-évaluation CyFun, avec vos équipes.",
+                title: t("process.step1.title"),
+                description: t("process.step1.description"),
               },
               {
-                title: "Analyse d'écart & remédiation",
-                description:
-                  "On mesure l'écart au niveau visé et on corrige, par priorité de risque.",
+                title: t("process.step2.title"),
+                description: t("process.step2.description"),
               },
               {
-                title: "Support à la vérification CCB",
-                description:
-                  "On prépare le dossier jusqu'à la vérification par l'organisme accrédité.",
+                title: t("process.step3.title"),
+                description: t("process.step3.description"),
               },
               {
-                title: "Suivi continu",
-                description: "On maintient votre posture dans la durée, pas seulement le jour J.",
+                title: t("process.step4.title"),
+                description: t("process.step4.description"),
               },
             ]}
           />
@@ -213,15 +212,11 @@ export default function HomePage() {
         <WhySmidjan />
         <IllusPanel
           onDark
-          eyebrow="Souveraineté des données"
-          title="Basés à Liège, vos données restent en Belgique"
-          text={
-            <>
-              Pas d&apos;hébergement délocalisé.{" "}
-              <b>Infrastructure, sauvegardes, échanges&nbsp;: tout reste en Belgique et dans
-              l&apos;UE</b>, avec un interlocuteur sur place.
-            </>
-          }
+          eyebrow={t("illus.data.eyebrow")}
+          title={t("illus.data.title")}
+          text={t.rich("illus.data.text", {
+            b: (c) => <b>{c}</b>,
+          })}
           figure={<BelgiumMapFigure />}
         />
       </Section>
@@ -229,17 +224,15 @@ export default function HomePage() {
       {/* ===== Stats band ===== */}
       <Reveal>
         <StatsBand
-          title={
-            <>
-              Des <span className="accentOnDark">résultats concrets</span>, une exigence constante
-            </>
-          }
-          lead="Peu de chiffres, mais réels : la qualité plutôt que la promesse."
+          title={t.rich("stats.title", {
+            accent: (c) => <span className="accentOnDark">{c}</span>,
+          })}
+          lead={t("stats.lead")}
           stats={[
-            { value: "12", accent: "+", label: "années d'expertise cumulée en sécurité" },
-            { value: "50", accent: "+", label: "audits & tests d'intrusion réalisés" },
-            { value: "<24", accent: "h", label: "délai de réponse à toute sollicitation" },
-            { value: "100", accent: "%", label: "des données hébergées en Belgique / UE" },
+            { value: "12", accent: "+", label: t("stats.stat1Label") },
+            { value: "50", accent: "+", label: t("stats.stat2Label") },
+            { value: "<24", accent: "h", label: t("stats.stat3Label") },
+            { value: "100", accent: "%", label: t("stats.stat4Label") },
           ]}
         />
       </Reveal>
@@ -249,12 +242,10 @@ export default function HomePage() {
         <Reveal>
           <SectionHeading
             center
-            eyebrow="Ils nous font confiance"
-            title={
-              <>
-                Ce qu&apos;en disent <span className="accent">nos clients</span>
-              </>
-            }
+            eyebrow={t("testimonials.eyebrow")}
+            title={t.rich("testimonials.title", {
+              accent: (c) => <span className="accent">{c}</span>,
+            })}
           />
         </Reveal>
         <Testimonials />
@@ -269,21 +260,18 @@ export default function HomePage() {
       <Reveal>
         <CTABox
           id="diagnostic"
-          title={
-            <>
-              Un <span className="accentOnDark">diagnostic gratuit</span> pour savoir où vous en
-              êtes
-            </>
-          }
-          text="30 minutes avec un expert : votre exposition évaluée, votre conformité NIS2 cadrée, des priorités claires."
+          title={t.rich("cta.title", {
+            accent: (c) => <span className="accentOnDark">{c}</span>,
+          })}
+          text={t("cta.text")}
           actions={[
-            { label: "Réserver mon diagnostic gratuit", href: "/contact" },
-            { label: "Appeler le 0475 20 55 62", href: "tel:+32475205562", variant: "ghostD" },
+            { label: t("cta.actionPrimary"), href: "/contact" },
+            { label: t("cta.actionCall"), href: "tel:+32475205562", variant: "ghostD" },
           ]}
           reassurances={[
-            "Réponse sous 24 h",
-            "Expert dédié, pas de sous-traitance",
-            "Données en Belgique",
+            t("cta.reassure1"),
+            t("cta.reassure2"),
+            t("cta.reassure3"),
           ]}
         />
       </Reveal>

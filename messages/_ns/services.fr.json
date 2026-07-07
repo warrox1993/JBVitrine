@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "title": "Nos expertises : Cybersécurité, pentest, développement & conformité | Smidjan Liège",
+    "description": "Smidjan sécurise votre infrastructure, teste vos applications (pentest OWASP), développe en secure by design et vous accompagne vers la conformité NIS2 / CyFun. Un seul interlocuteur, à Liège.",
+    "ogTitle": "Nos expertises : Cybersécurité, pentest, développement & conformité",
+    "ogDescription": "Sécuriser, tester, développer, se conformer : quatre expertises Smidjan pour réduire concrètement le risque cyber des PME en Belgique.",
+    "ogImageAlt": "Smidjan : Cybersécurité, pentest, développement sécurisé & conformité NIS2 à Liège",
+    "twitterTitle": "Nos expertises : Smidjan Cybersécurité",
+    "twitterDescription": "Sécuriser, tester, développer, se conformer : quatre expertises pour réduire le risque cyber des PME."
+  },
+  "breadcrumb": {
+    "home": "Accueil",
+    "services": "Services"
+  },
+  "hero": {
+    "kicker": "Nos expertises",
+    "title": "Sécuriser, tester, développer, <accent>se conformer</accent>.",
+    "lead": "Infrastructure durcie. Applications testées. Code secure by design. Conformité NIS2 / CyFun. Un seul interlocuteur, de l'audit à la remédiation.",
+    "ctaPrimary": "Réserver mon diagnostic gratuit",
+    "jumpLabel": "Aller directement à"
+  },
+  "jump": {
+    "securiser": "Sécuriser",
+    "tester": "Tester",
+    "developper": "Développer",
+    "conformer": "Se conformer"
+  },
+  "pillars": {
+    "securiser": {
+      "kicker": "Sécuriser",
+      "title": "Réseaux & infrastructure",
+      "intro": "Bloquez les attaques avant qu'elles n'atteignent vos données. Une défense en profondeur taillée pour une PME, sans équipe sécurité dédiée.",
+      "capabilities": [
+        { "title": "Pare-feu & segmentation", "description": "Cloisonnement du réseau, règles de filtrage, isolation des zones sensibles." },
+        { "title": "VPN & accès distant", "description": "Télétravail et accès prestataires sécurisés, authentification forte." },
+        { "title": "EDR / antivirus nouvelle génération", "description": "Détection et blocage des menaces sur les postes et serveurs." },
+        { "title": "Supervision & journalisation", "description": "Collecte des logs, alertes sur les comportements suspects, traçabilité." },
+        { "title": "Sauvegardes & PRA", "description": "Sauvegardes chiffrées, hors-ligne, plan de reprise testé." },
+        { "title": "Durcissement (hardening)", "description": "Configuration sécurisée des serveurs, postes, comptes et services." }
+      ],
+      "audience": {
+        "forWho": { "label": "Pour qui", "text": "PME sans équipe sécurité dédiée, en quête d'une base solide." },
+        "when": { "label": "Quand", "text": "Refonte réseau, migration, après un incident ou avant un audit." }
+      },
+      "deliverables": [
+        "Architecture réseau documentée & segmentée",
+        "Politique de sauvegarde + PRA testé",
+        "Tableau de bord de supervision",
+        "Rapport de durcissement & recommandations"
+      ],
+      "ctaLabel": "Sécuriser mon infrastructure"
+    },
+    "tester": {
+      "kicker": "Tester",
+      "title": "Audits & pentest",
+      "intro": "On pense comme un attaquant pour trouver vos failles avant lui. Méthodologie OWASP, remédiation priorisée. On vous aide à corriger, pas juste à constater.",
+      "capabilities": [
+        { "title": "Audit de sécurité", "description": "Évaluation organisationnelle et technique de votre exposition réelle." },
+        { "title": "Test d'intrusion web & applicatif", "description": "Approche OWASP sur vos sites, applications et API exposés." },
+        { "title": "Revue de configuration", "description": "Serveurs, cloud, Active Directory : chasse aux mauvaises configurations." },
+        { "title": "Revue de code", "description": "Analyse du code source pour détecter les vulnérabilités à la racine." }
+      ],
+      "audience": {
+        "forWho": { "label": "Pour qui", "text": "Éditeurs d'un site ou d'une appli, ou soumis à une exigence client / assureur." },
+        "when": { "label": "Quand", "text": "Avant une mise en production, chaque année, ou après un changement majeur." }
+      },
+      "deliverables": [
+        "Rapport de pentest priorisé par criticité",
+        "Preuves d'exploitation reproductibles",
+        "Recommandations concrètes & plan de remédiation",
+        "Contre-vérification (retest) après correction"
+      ],
+      "ctaLabel": "Planifier un pentest"
+    },
+    "developper": {
+      "kicker": "Développer",
+      "title": "Développement web sécurisé",
+      "intro": "La sécurité intégrée dès la première ligne de code, pas ajoutée après coup. Nouveaux projets ou remise à niveau d'un existant fragile.",
+      "capabilities": [
+        { "title": "Sites & applications sur mesure", "description": "Développement adapté à vos processus métier, sans dette de sécurité." },
+        { "title": "Secure by design", "description": "Modélisation des menaces et bonnes pratiques OWASP dès la conception." },
+        { "title": "Mise en conformité applicative", "description": "RGPD, durcissement et remise à niveau d'un existant fragile." },
+        { "title": "Revue de code & intégration continue", "description": "Contrôles de sécurité automatisés tout au long du cycle de développement." }
+      ],
+      "audience": {
+        "forWho": { "label": "Pour qui", "text": "PME lançant un projet web, ou reprenant une appli existante à fiabiliser." },
+        "when": { "label": "Quand", "text": "Nouveau développement, refonte ou mise en conformité applicative." }
+      },
+      "deliverables": [
+        "Application livrée, documentée & maintenable",
+        "Couverture des points de contrôle OWASP",
+        "Tests de sécurité & documentation technique",
+        "Transfert de connaissances à vos équipes"
+      ],
+      "ctaLabel": "Discuter de mon projet"
+    },
+    "conformer": {
+      "kicker": "Se conformer",
+      "title": "CyFun / NIS2",
+      "intro": "Êtes-vous concerné par NIS2 ? Le règlement impose un socle cyber à des milliers d'entreprises belges, sous-traitants inclus. On vous accompagne de l'audit à la préparation de la vérification, sur le référentiel CyFun du CCB.",
+      "capabilities": [
+        { "title": "Audit & auto-évaluation", "description": "Évaluation du niveau visé (Basic, Important ou Essential) au regard de votre exposition." },
+        { "title": "Analyse d'écart (gap analysis)", "description": "Cartographie des mesures manquantes par rapport au référentiel CyFun." },
+        { "title": "Remédiation concrète", "description": "On corrige ce qu'on trouve : pas seulement un rapport, un plan d'action exécuté." },
+        { "title": "Préparation à la vérification", "description": "Dossier de preuves prêt pour l'auto-évaluation ou l'organisme certificateur." }
+      ],
+      "audience": {
+        "forWho": { "label": "Pour qui", "text": "Entités « importantes » ou « essentielles » NIS2, et leurs sous-traitants." },
+        "when": { "label": "Quand", "text": "Avant l'échéance réglementaire, sur demande d'un donneur d'ordre, ou avant un audit." }
+      },
+      "deliverables": [
+        "Rapport d'écart (gap analysis) documenté",
+        "Plan de remédiation priorisé",
+        "Dossier de preuves pour le niveau visé",
+        "Suivi jusqu'à la remédiation complète"
+      ],
+      "ctaLabel": "Découvrir notre accompagnement CyFun"
+    }
+  },
+  "partner": {
+    "kicker": "Un seul partenaire",
+    "title": "Construire, <accent>sécuriser</accent> et mettre en conformité, au même endroit",
+    "lead": "La plupart des prestataires font l'un <em>ou</em> l'autre. Nous couvrons toute la chaîne : construire, sécuriser, conformer. Un seul interlocuteur, aucune balle renvoyée.",
+    "build": { "label": "Build", "text": "Développement web sécurisé, secure by design." },
+    "secure": { "label": "Secure", "text": "Infrastructure durcie, pentest & supervision." },
+    "comply": { "label": "Comply", "text": "Conformité CyFun / NIS2, de l'écart à la preuve." },
+    "aiNote": "Des <b>experts augmentés par l'IA</b>, plus rapides, plus de terrain couvert. L'analyse et les décisions restent humaines."
+  },
+  "cyfun": {
+    "eyebrow": "Les 3 niveaux CyFun",
+    "title": "Un référentiel gradué, un accompagnement <accent>sur mesure</accent>",
+    "lead": "Les trois paliers du CyberFundamentals Framework, en bref. Comparatif complet et calendrier NIS2 sur la page dédiée.",
+    "linkMore": "Voir le comparatif complet des niveaux CyFun",
+    "transparency": "<b>En toute transparence :</b> la certification CyFun est délivrée par des organismes accrédités BELAC, indépendants de Smidjan. Notre rôle : audit, analyse d'écart, remédiation concrète et préparation à la vérification, une méthodologie alignée sur le référentiel CyFun, sans nous substituer au certificateur."
+  },
+  "finalCta": {
+    "title": "Un diagnostic gratuit pour savoir par où commencer",
+    "text": "30 minutes avec un expert pour cadrer la mission utile. Priorités claires, sans engagement.",
+    "actionPrimary": "Réserver mon diagnostic gratuit",
+    "actionCall": "Appeler le 0475 20 55 62",
+    "reassurances": ["Réponse sous 24 h", "Expert dédié, pas de sous-traitance", "Données en Belgique"]
+  },
+  "visuals": {
+    "secure": {
+      "photoAlt": "Baies de serveurs dans un datacenter sécurisé, illustrant le durcissement de l'infrastructure réseau.",
+      "caption": "<b>Bloquer les attaques</b> avant qu'elles n'atteignent vos données.",
+      "aria": "Schéma d'un pare-feu filtrant le trafic entrant : une tentative de connexion venue d'Internet est bloquée avant d'atteindre le réseau interne segmenté, composé d'un serveur, d'un poste de travail et d'un espace de stockage.",
+      "internet": "Internet",
+      "firewall": "Pare-feu",
+      "internalNetwork": "Réseau interne"
+    },
+    "test": {
+      "photoAlt": "Analystes en sécurité examinant du code et des tableaux de bord sur plusieurs écrans lors d'un audit.",
+      "caption": "<b>Révéler les failles</b> avant qu'un vrai attaquant ne les exploite.",
+      "aria": "Illustration : un test d'intrusion détecte un module applicatif vulnérable à l'aide d'une analyse ciblée, puis le consigne dans un rapport de résultats classés par criticité, avec une faille critique signalée.",
+      "appTested": "Application testée",
+      "auditResults": "Résultats d'audit",
+      "headers": "En-têtes de sécurité : OK",
+      "auth": "Authentification : OK",
+      "sqlInjection": "Injection SQL : Critique",
+      "tls": "Chiffrement TLS : OK",
+      "low": "Faible",
+      "medium": "Moyen",
+      "critical": "Critique",
+      "pentestReport": "Rapport de pentest"
+    },
+    "dev": {
+      "photoAlt": "Plan de circuit imprimé en gros plan, symbolisant une architecture applicative pensée secure by design.",
+      "caption": "<b>La sécurité, dès la première ligne</b> de code, pas ajoutée après coup.",
+      "aria": "Illustration : une fenêtre de code avec une fonction de sécurité mise en évidence, associée à un bouclier de validation symbolisant le développement secure by design.",
+      "securityByDesign": "Sécurité intégrée dès la conception"
+    },
+    "comply": {
+      "photoAlt": "Équipe de professionnels examinant ensemble des documents et une checklist lors d'une réunion de conformité.",
+      "caption": "<b>De l'audit à la preuve</b>, jusqu'à la conformité CyFun.",
+      "aria": "Illustration : trois paliers ascendants du référentiel CyFun (Basic, Important et Essential) reliés par un parcours de mise en conformité aboutissant à une validation.",
+      "basic": "Basic",
+      "important": "Important",
+      "essential": "Essential"
+    }
+  }
+}

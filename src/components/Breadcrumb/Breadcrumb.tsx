@@ -3,8 +3,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { ChevronRight, Home } from 'lucide-react';
 import cls from './Breadcrumb.module.css';
+
+// Translation function shape (next-intl): resolves a message key to a string.
+type Translator = (key: string) => string;
 
 export interface BreadcrumbItem {
   label: string;
@@ -16,33 +20,34 @@ interface BreadcrumbProps {
   className?: string;
 }
 
-// Configuration des labels personnalisés pour les routes
-const ROUTE_LABELS: Record<string, string> = {
-  '/': 'Accueil',
-  '/about': 'À Propos',
-  '/services': 'Services',
-  '/conformite-nis2': 'Conformité NIS2',
-  '/approche': 'Approche',
-  '/agence': 'Agence',
-  '/portfolio': 'Portfolio',
-  '/blog': 'Journal',
-  '/journal': 'Journal',
-  '/contact': 'Contact',
-  '/cms-ecommerce': 'CMS E-commerce',
-  '/devis': 'Demande de Devis',
-  '/mentions-legales': 'Mentions Légales',
-  '/politique-confidentialite': 'Politique de Confidentialité',
-  '/confidentialite': 'Politique de Confidentialité',
-  '/cgv': 'Conditions Générales de Vente',
-  '/admin': 'Administration',
-  '/admin/blog': 'Gestion Blog',
-  '/admin/blog/new': 'Nouvel Article',
-  '/admin/leads': 'Gestion Leads',
-  '/admin/articles/new': 'Nouvel Article',
-  '/admin/login': 'Connexion Admin',
-  '/privacy': 'Politique de Confidentialité',
-  '/terms': 'Conditions Générales de Vente',
-  '/legal-notice': 'Mentions Légales',
+// Configuration des labels personnalisés pour les routes.
+// Chaque chemin pointe vers une clé de traduction (namespace "common").
+const ROUTE_LABEL_KEYS: Record<string, string> = {
+  '/': 'breadcrumb.home',
+  '/about': 'breadcrumb.routes.about',
+  '/services': 'breadcrumb.routes.services',
+  '/conformite-nis2': 'breadcrumb.routes.conformite',
+  '/approche': 'breadcrumb.routes.approche',
+  '/agence': 'breadcrumb.routes.agence',
+  '/portfolio': 'breadcrumb.routes.portfolio',
+  '/blog': 'breadcrumb.routes.journal',
+  '/journal': 'breadcrumb.routes.journal',
+  '/contact': 'breadcrumb.routes.contact',
+  '/cms-ecommerce': 'breadcrumb.routes.cmsEcommerce',
+  '/devis': 'breadcrumb.routes.devis',
+  '/mentions-legales': 'breadcrumb.routes.mentionsLegales',
+  '/politique-confidentialite': 'breadcrumb.routes.confidentialite',
+  '/confidentialite': 'breadcrumb.routes.confidentialite',
+  '/cgv': 'breadcrumb.routes.cgv',
+  '/admin': 'breadcrumb.routes.admin',
+  '/admin/blog': 'breadcrumb.routes.adminBlog',
+  '/admin/blog/new': 'breadcrumb.routes.adminArticleNew',
+  '/admin/leads': 'breadcrumb.routes.adminLeads',
+  '/admin/articles/new': 'breadcrumb.routes.adminArticleNew',
+  '/admin/login': 'breadcrumb.routes.adminLogin',
+  '/privacy': 'breadcrumb.routes.confidentialite',
+  '/terms': 'breadcrumb.routes.cgv',
+  '/legal-notice': 'breadcrumb.routes.mentionsLegales',
 };
 
 /**
@@ -52,10 +57,11 @@ const ROUTE_LABELS: Record<string, string> = {
  * Génère automatiquement les breadcrumbs basés sur l'URL si items n'est pas fourni
  */
 export function Breadcrumb({ items, className }: BreadcrumbProps) {
+  const t = useTranslations('common');
   const pathname = usePathname();
 
   // Générer les breadcrumbs automatiquement si non fournis
-  const breadcrumbItems = items || generateBreadcrumbs(pathname);
+  const breadcrumbItems = items || generateBreadcrumbs(pathname, t);
 
   // Ne pas afficher sur la page d'accueil
   if (pathname === '/') {
@@ -64,7 +70,7 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
 
   return (
     <nav
-      aria-label="Fil d'Ariane"
+      aria-label={t('breadcrumb.aria')}
       className={`${cls.breadcrumb} ${className || ''}`}
     >
       <ol className={cls.breadcrumbList} itemScope itemType="https://schema.org/BreadcrumbList">
@@ -77,7 +83,7 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
         >
           <Link href="/" className={cls.breadcrumbLink} itemProp="item">
             <Home size={16} className={cls.homeIcon} />
-            <span itemProp="name">Accueil</span>
+            <span itemProp="name">{t('breadcrumb.home')}</span>
           </Link>
           <meta itemProp="position" content="1" />
         </li>
@@ -120,7 +126,7 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
 /**
  * Génère automatiquement les breadcrumbs basés sur le pathname
  */
-function generateBreadcrumbs(pathname: string): BreadcrumbItem[] {
+function generateBreadcrumbs(pathname: string, t: Translator): BreadcrumbItem[] {
   // Nettoyer le pathname
   const paths = pathname.split('/').filter(Boolean);
 
@@ -135,8 +141,9 @@ function generateBreadcrumbs(pathname: string): BreadcrumbItem[] {
   paths.forEach((path, index) => {
     currentPath += `/${path}`;
 
-    // Obtenir le label depuis la config ou générer depuis le path
-    let label = ROUTE_LABELS[currentPath];
+    // Obtenir le label depuis la config (traduit) ou générer depuis le path
+    const labelKey = ROUTE_LABEL_KEYS[currentPath];
+    let label = labelKey ? t(labelKey) : '';
 
     if (!label) {
       // Formatter le path en label lisible
@@ -167,6 +174,7 @@ function generateBreadcrumbs(pathname: string): BreadcrumbItem[] {
  * Hook pour générer les breadcrumbs personnalisés
  */
 export function useBreadcrumbs(customItems?: BreadcrumbItem[]): BreadcrumbItem[] {
+  const t = useTranslations('common');
   const pathname = usePathname();
-  return customItems || generateBreadcrumbs(pathname);
+  return customItems || generateBreadcrumbs(pathname, t);
 }
