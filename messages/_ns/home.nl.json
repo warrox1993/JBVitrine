@@ -149,35 +149,6 @@
     "cred2": "Specialist in de NIS2- & CyFun-referentiekaders (CCB)",
     "cred3": "OWASP- & ISO/IEC 27001-methodologie"
   },
-  "stats": {
-    "title": "<accent>Concrete resultaten</accent>, een constante lat",
-    "lead": "Weinig cijfers, maar echt : kwaliteit boven belofte.",
-    "stat1Label": "jaar gebundelde expertise in beveiliging",
-    "stat2Label": "audits & pentests uitgevoerd",
-    "stat3Label": "reactietermijn op elke aanvraag",
-    "stat4Label": "van de gegevens gehost in België / EU"
-  },
-  "testimonials": {
-    "eyebrow": "Zij vertrouwen ons",
-    "title": "Wat <accent>onze klanten</accent> zeggen",
-    "photoAlt": "Twee professionals die samenwerken aan een cyberbeveiligingsproject, ter illustratie van de nabije begeleiding van Smidjan voor Waalse kmo's.",
-    "photoCaption": "Een nabije begeleiding, ontworpen voor Waalse kmo's",
-    "item1": {
-      "quote": "« In zes weken hadden ze kwetsbaarheden geïdentificeerd en verholpen die onze vorige leverancier nooit had gezien. Een duidelijke begeleiding, zonder nutteloos jargon. »",
-      "role": "Operationeel directeur",
-      "sector": "Maakindustrie · Luik"
-    },
-    "item2": {
-      "quote": "« NIS2-conformiteit leek ons onoverkomelijk. Smidjan heeft een beklemmende verplichting omgezet in een duidelijk stappenplan, stap voor stap. »",
-      "role": "Algemeen directrice",
-      "sector": "B2B-diensten · Namen"
-    },
-    "item3": {
-      "quote": "« Wat ik waardeer : ik bel, en ik heb de expert aan de lijn. Geen ticket, geen wachttijd. Voor een kmo als de onze verandert dat alles. »",
-      "role": "Zaakvoerder",
-      "sector": "Boekhoudkantoor · Verviers"
-    }
-  },
   "insight": {
     "kick": "Gratis gids",
     "title": "NIS2 & CyFun : de conformiteitsgids voor <accent>Belgische kmo's</accent>",

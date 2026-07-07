@@ -34,14 +34,6 @@
       "iaTitle": "L'humain augmenté par l'IA",
       "iaText": "L'IA accélère l'analyse. Les décisions restent humaines."
     },
-    "stats": {
-      "title": "Une agence à taille humaine, des standards élevés",
-      "lead": "Des chiffres modestes mais réels. La qualité plutôt que la promesse.",
-      "experienceLabel": "années d'expérience cumulée en informatique & sécurité",
-      "auditsLabel": "audits, tests & missions de sécurisation menés",
-      "secteursLabel": "secteurs d'activité accompagnés en Wallonie",
-      "reponseLabel": "délai de réponse à toute sollicitation"
-    },
     "cta": {
       "title": "Un échange de 30 minutes, directement avec le fondateur",
       "text": "Vous parlez à la personne qui fera le travail. On évalue votre exposition, on cadre votre NIS2 : vous repartez avec des priorités claires.",
@@ -1130,35 +1122,6 @@
       "cred1": "Parcours approfondi en sécurité offensive & défensive",
       "cred2": "Spécialiste des référentiels NIS2 & CyFun (CCB)",
       "cred3": "Méthodologie OWASP & ISO/IEC 27001"
-    },
-    "stats": {
-      "title": "Des <accent>résultats concrets</accent>, une exigence constante",
-      "lead": "Peu de chiffres, mais réels : la qualité plutôt que la promesse.",
-      "stat1Label": "années d'expertise cumulée en sécurité",
-      "stat2Label": "audits & tests d'intrusion réalisés",
-      "stat3Label": "délai de réponse à toute sollicitation",
-      "stat4Label": "des données hébergées en Belgique / UE"
-    },
-    "testimonials": {
-      "eyebrow": "Ils nous font confiance",
-      "title": "Ce qu'en disent <accent>nos clients</accent>",
-      "photoAlt": "Deux professionnels collaborant sur un projet de cybersécurité, illustrant l'accompagnement de proximité de Smidjan auprès des PME wallonnes.",
-      "photoCaption": "Un accompagnement de proximité, pensé pour les PME wallonnes",
-      "item1": {
-        "quote": "« En six semaines, ils avaient identifié et corrigé des failles que notre ancien prestataire n'avait jamais vues. Un accompagnement clair, sans jargon inutile. »",
-        "role": "Directeur des opérations",
-        "sector": "Industrie manufacturière · Liège"
-      },
-      "item2": {
-        "quote": "« La conformité NIS2 nous paraissait insurmontable. Smidjan a transformé une obligation anxiogène en une feuille de route claire, étape par étape. »",
-        "role": "Directrice générale",
-        "sector": "Services B2B · Namur"
-      },
-      "item3": {
-        "quote": "« Ce que j'apprécie : je téléphone, et j'ai l'expert au bout du fil. Pas de ticket, pas d'attente. Pour une PME comme la nôtre, ça change tout. »",
-        "role": "Gérant",
-        "sector": "Cabinet comptable · Verviers"
-      }
     },
     "insight": {
       "kick": "Guide gratuit",

@@ -149,35 +149,6 @@
     "cred2": "Specialist in the NIS2 & CyFun frameworks (CCB)",
     "cred3": "OWASP & ISO/IEC 27001 methodology"
   },
-  "stats": {
-    "title": "<accent>Concrete results</accent>, a constant standard",
-    "lead": "Few figures, but real ones: quality over promise.",
-    "stat1Label": "years of combined security expertise",
-    "stat2Label": "audits & penetration tests carried out",
-    "stat3Label": "response time to any request",
-    "stat4Label": "of data hosted in Belgium / EU"
-  },
-  "testimonials": {
-    "eyebrow": "They trust us",
-    "title": "What <accent>our clients</accent> say",
-    "photoAlt": "Two professionals collaborating on a cybersecurity project, illustrating Smidjan's close support for Walloon SMEs.",
-    "photoCaption": "Close support, designed for Walloon SMEs",
-    "item1": {
-      "quote": "«In six weeks, they had identified and fixed weaknesses our previous provider had never seen. Clear support, without needless jargon.»",
-      "role": "Operations director",
-      "sector": "Manufacturing industry · Liège"
-    },
-    "item2": {
-      "quote": "«NIS2 compliance seemed insurmountable to us. Smidjan turned a stressful obligation into a clear roadmap, step by step.»",
-      "role": "Managing director",
-      "sector": "B2B services · Namur"
-    },
-    "item3": {
-      "quote": "«What I appreciate: I call, and I have the expert on the line. No ticket, no waiting. For an SME like ours, that changes everything.»",
-      "role": "Manager",
-      "sector": "Accounting firm · Verviers"
-    }
-  },
   "insight": {
     "kick": "Free guide",
     "title": "NIS2 & CyFun: the compliance guide for <accent>Belgian SMEs</accent>",
