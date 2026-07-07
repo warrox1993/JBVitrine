@@ -11,7 +11,10 @@ import { db } from "@/lib/db";
 import { timingSafeEqual } from "crypto";
 import { escapeHtml } from "@/lib/security/escape";
 
-export async function POST(request: NextRequest) {
+// Shared handler. Vercel Cron invokes the path with GET (+ Authorization:
+// Bearer CRON_SECRET), so we export BOTH GET and POST — otherwise the daily
+// digest 405s and never runs.
+async function handleDigest(request: NextRequest) {
   try {
     // 🔒 C2 : aucun fallback en dur — refuser si le secret n'est pas configuré
     const cronSecret = process.env.CRON_SECRET;
@@ -271,3 +274,7 @@ function generateDigestEmail(
 </html>
   `;
 }
+
+// Vercel Cron uses GET; keep POST for manual/external triggers.
+export const GET = handleDigest;
+export const POST = handleDigest;

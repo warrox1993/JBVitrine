@@ -94,12 +94,25 @@ export async function POST(request: NextRequest) {
     // ✅ Save events to database (batch insert for performance)
     let savedCount = 0;
 
+    const ALLOWED_EVENT_TYPES = ["click", "scroll", "hover", "form_focus"];
+
     for (const event of events) {
+      // Validate each event's shape before insert (nothing enforces the
+      // TypeScript types at runtime, so untrusted input could persist garbage).
+      if (
+        !event ||
+        typeof event !== "object" ||
+        !ALLOWED_EVENT_TYPES.includes(event.type) ||
+        (event.element != null && typeof event.element !== "string") ||
+        !Number.isFinite(event.timestamp)
+      ) {
+        continue; // skip malformed events
+      }
       try {
         await db.events.create({
           session_id: sessionId,
           type: event.type,
-          element: event.element,
+          element: typeof event.element === "string" ? event.element : "",
           timestamp: event.timestamp,
         });
         savedCount++;

@@ -34,21 +34,8 @@ const BLOG_DATA_PATH = path.join(
  * SEO 2025: Indexation automatique des nouveaux articles
  */
 async function notifyGoogleSearchConsole(): Promise<void> {
-  try {
-    const sitemapUrl = "https://smidjan.be/sitemap.xml";
-    const pingUrl = `https://www.google.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`;
-
-    const response = await fetch(pingUrl, { method: "GET" });
-
-    if (response.ok) {
-      console.log("✅ Google Search Console notifié avec succès");
-    } else {
-      console.warn("⚠️ Échec notification Google:", response.status);
-    }
-  } catch (error) {
-    // Ne pas bloquer l'opération si la notification échoue
-    console.warn("⚠️ Erreur notification Google Search Console:", error);
-  }
+  // No-op: Google removed the sitemap "ping" endpoint (google.com/ping) in 2023
+  // — it now 404s. Sitemaps are discovered via robots.txt / Search Console.
 }
 
 /**
@@ -73,8 +60,16 @@ export async function getAllArticles(): Promise<BlogArticle[]> {
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
     );
   } catch (error) {
+    // File missing = legitimately empty blog.
+    if ((error as NodeJS.ErrnoException)?.code === "ENOENT") {
+      return [];
+    }
+    // Read/parse failed on an EXISTING file: throw instead of returning [], so
+    // writers (createArticle/update/delete) don't overwrite the whole blog file
+    // with a single article on a transient read failure. Also surfaces a corrupt
+    // file instead of silently showing an empty blog.
     console.error("Error reading blog articles:", error);
-    return [];
+    throw new Error("Impossible de lire les articles du blog");
   }
 }
 

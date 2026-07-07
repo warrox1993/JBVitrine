@@ -110,7 +110,15 @@ export function markdownToHtml(markdown: string): string {
       allowedSchemes: ["http", "https", "mailto"],
       allowedSchemesByTag: {
         a: ["http", "https", "mailto"],
-        img: ["http", "https", "data"],
+        img: ["http", "https"],
+      },
+      // Force rel=noopener noreferrer on any link (defense in depth; the marked
+      // renderer already sets it) so target=_blank links can't tabnab.
+      transformTags: {
+        a: (tagName, attribs) => ({
+          tagName,
+          attribs: { ...attribs, rel: "noopener noreferrer" },
+        }),
       },
     });
   } catch (error) {

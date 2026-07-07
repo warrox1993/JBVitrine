@@ -383,7 +383,17 @@ export async function POST(request: NextRequest) {
     );
 
     console.log("[Quote API] 📧 Sending team notification email...");
-    await sendQuoteNotificationToTeam(body, sanitizedContactInfo, quoteId);
+    // The quote is already persisted and the user confirmation sent, so a team
+    // notification failure must NOT return 500 (that made users resubmit and
+    // create duplicate quotes). Log it and continue with success.
+    try {
+      await sendQuoteNotificationToTeam(body, sanitizedContactInfo, quoteId);
+    } catch (notifyError) {
+      console.error(
+        "[Quote API] ⚠️ Team notification failed (non-fatal):",
+        notifyError instanceof Error ? notifyError.message : String(notifyError),
+      );
+    }
 
     const totalDuration = Date.now() - apiStartTime;
     console.log("[Quote API] ===== REQUEST SUCCESS =====", {

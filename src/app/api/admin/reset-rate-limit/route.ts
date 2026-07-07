@@ -1,6 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
+import { timingSafeEqual } from "crypto";
 import { Redis } from "@upstash/redis";
 import { guardRoute } from "@/lib/auth/guard";
+
+/** Constant-time string comparison (returns false on length mismatch). */
+function secretsMatch(a: string, b: string): boolean {
+  const ab = Buffer.from(a);
+  const bb = Buffer.from(b);
+  if (ab.length !== bb.length) return false;
+  return timingSafeEqual(ab, bb);
+}
 
 const redis = new Redis({
   url: process.env.UPSTASH_REDIS_REST_URL!,
@@ -49,8 +58,17 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { secret, ipToReset } = body;
 
-    // Verify secret
-    if (secret !== process.env.ADMIN_SECRET) {
+    // Verify the secondary ADMIN_SECRET gate. Fail CLOSED if it isn't
+    // configured (never grant access when the secret is unset), and compare
+    // in constant time to avoid timing leaks.
+    const adminSecret = process.env.ADMIN_SECRET;
+    if (!adminSecret) {
+      return NextResponse.json(
+        { error: "Server misconfigured: ADMIN_SECRET not set" },
+        { status: 500 }
+      );
+    }
+    if (typeof secret !== "string" || !secretsMatch(secret, adminSecret)) {
       return NextResponse.json(
         { error: "Unauthorized" },
         { status: 401 }

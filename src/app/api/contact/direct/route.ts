@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getResend } from "@/lib/email/resend-client";
-import { checkRateLimit } from "@/lib/redis";
+import { contactLimiter, getClientIdentifier } from "@/lib/rate-limit-redis";
 import {
   logSecurityEvent,
   SecurityEventType,
@@ -20,17 +20,13 @@ const REQUEST_TYPE_LABELS: Record<string, string> = {
   other: "Autre demande",
 };
 
-// Get client IP (local utility for this route)
-function getClientIp(request: Request): string {
-  const forwarded = request.headers.get("x-forwarded-for");
-  const real = request.headers.get("x-real-ip");
-  return forwarded?.split(",")[0] || real || "unknown";
-}
-
 export async function POST(request: Request) {
   try {
-    // Get client info for security logging
-    const clientIp = getClientIp(request);
+    // Get client info for security logging. Use the trusted identifier
+    // (x-real-ip set by the Vercel proxy) — NOT the spoofable left-most
+    // x-forwarded-for — so the rate-limit key, IP-block lookup and security
+    // event attribution can't be forged (no bypass / no victim-IP poisoning).
+    const clientIp = getClientIdentifier(request);
     const userAgent = request.headers.get("user-agent") || undefined;
 
     // Check if IP is blocked
@@ -51,19 +47,15 @@ export async function POST(request: Request) {
       );
     }
 
-    // Rate limiting with Redis
-    const rateLimit = await checkRateLimit(
-      clientIp,
-      undefined,
-      "contact_direct",
-    );
-    if (!rateLimit.allowed) {
+    // Rate limiting: same 3-per-hour anti-spam policy as /api/contact.
+    const rateLimit = await contactLimiter.limit(clientIp);
+    if (!rateLimit.success) {
       await logSecurityEvent({
         type: SecurityEventType.RATE_LIMIT_EXCEEDED,
         ip: clientIp,
         userAgent,
         details: {
-          resetTime: new Date(rateLimit.resetTime).toISOString(),
+          resetTime: new Date(rateLimit.reset).toISOString(),
           remaining: rateLimit.remaining,
         },
         timestamp: Date.now(),
@@ -71,7 +63,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           error: "Trop de requêtes. Veuillez réessayer dans 10 minutes.",
-          resetTime: rateLimit.resetTime,
+          resetTime: rateLimit.reset,
         },
         { status: 429 },
       );

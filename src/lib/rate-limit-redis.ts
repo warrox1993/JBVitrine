@@ -61,9 +61,11 @@ export const loginLimiter = new Ratelimit({
  * Rate limiter for lead enrichment API
  * Limit: 100 requests per minute per user
  */
+// 5/min per IP — the enrichment endpoint fans out to metered/paid third-party
+// APIs (Hunter, Brandfetch), so keep the ceiling low to cap cost-exhaustion.
 export const enrichmentLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(100, "1 m"),
+  limiter: Ratelimit.slidingWindow(5, "1 m"),
   analytics: true,
   prefix: "smidjan_v3_enrichment",
 });

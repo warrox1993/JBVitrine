@@ -86,12 +86,14 @@ export async function assertPublicHost(host: string): Promise<void> {
     return; // public IPv6 literal → allowed
   }
 
+  // FQDN only (bare IPv4 literals are rejected here — the last label must be
+  // alphabetic — which is conservative and safe for SSRF).
   if (!/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(host)) {
     throw new Error("SSRF blocked: invalid host");
   }
-  if (isBlockedIp(host)) {
-    throw new Error("SSRF blocked: IP literal"); // host est une IP interdite
-  }
+  // NOTE: do NOT run isBlockedIp() on the hostname itself — a non-IP string
+  // has != 4 octets so isBlockedIp returns true and would reject EVERY real
+  // domain. The real protection is resolving the host and checking the IP.
   const { address } = await lookup(host);
   if (isBlockedIp(address)) {
     throw new Error("SSRF blocked: resolves to private range");

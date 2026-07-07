@@ -261,7 +261,10 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
   //   setQuoteData((prev) => ({ ...prev, ...updates }));
   // };
 
-  const handleSubmit = async (contactInfo: ContactInfo) => {
+  const handleSubmit = async (
+    contactInfo: ContactInfo,
+    timeline?: QuoteData['timeline'],
+  ) => {
     console.log('[QuoteWizard] ===== SUBMISSION START =====');
     console.log('[QuoteWizard] ContactInfo received:', {
       name: contactInfo.name,
@@ -300,8 +303,13 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
         console.log('[QuoteWizard] ✅ Saved to new lead scoring system');
       }
 
+      // Merge the timeline chosen on Step5 (it lives in Step5's local state and
+      // would otherwise be dropped from the submission).
+      const effectiveQuoteData =
+        timeline != null ? { ...quoteData, timeline } : quoteData;
+
       // Calculate old lead score for backward compatibility
-      const oldLeadScore = calculateLeadScore(estimate, quoteData, contactInfo);
+      const oldLeadScore = calculateLeadScore(estimate, effectiveQuoteData, contactInfo);
       console.log('[QuoteWizard] 📊 Old lead score calculated:', oldLeadScore);
 
       // Get UTM parameters from URL (if available)
@@ -312,7 +320,7 @@ export function QuoteWizard({ onSwitchToDirectContact }: QuoteWizardProps = {}) 
 
       const submission: QuoteSubmission = {
         estimate,
-        quoteData,
+        quoteData: effectiveQuoteData,
         contactInfo,
         leadScore: oldLeadScore,
         utm: urlParams

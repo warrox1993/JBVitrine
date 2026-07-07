@@ -6,6 +6,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { redis } from "@/lib/redis";
 import { requireAuth } from "@/lib/auth";
 import {
   leadScoringLimiter,
@@ -259,7 +260,23 @@ export async function POST(request: NextRequest) {
     // ✅ Automatic routing for HOT and WARM leads
     //    Uses the SERVER-recomputed grade — never the client-provided one —
     //    so a forged `grade: "HOT"` cannot trigger email/Slack/Discord bombs.
-    if (safeGrade === "HOT" || safeGrade === "WARM") {
+    // Anti-flood: dedup team notifications to at most one per email per hour.
+    // The grade is derived from the CLIENT-supplied total, so a scripted client
+    // could forge a HOT score; the limiter bounds volume and this dedup stops
+    // repeated bombing of the same target. (A full server-side score recompute
+    // is the deeper fix — tracked separately.)
+    let shouldNotify = true;
+    try {
+      if (redis && lead.email) {
+        const notifyKey = `lead_notified:${String(lead.email).toLowerCase().slice(0, 200)}`;
+        const first = await redis.set(notifyKey, "1", { nx: true, ex: 3600 });
+        shouldNotify = first === "OK";
+      }
+    } catch {
+      shouldNotify = true; // dedup is best-effort; never drop a legit notification
+    }
+
+    if (shouldNotify && (safeGrade === "HOT" || safeGrade === "WARM")) {
       // Import notification system dynamically to avoid blocking the response
       import("@/lib/notifications")
         .then(({ notifyNewLead }) => {

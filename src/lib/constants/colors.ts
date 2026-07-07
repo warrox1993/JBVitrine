@@ -69,8 +69,10 @@ export type ThemeColor = (typeof THEME_COLORS)[keyof typeof THEME_COLORS];
 /**
  * Mapper une catégorie de lead vers sa couleur
  */
-export const getLeadColor = (category: "HOT" | "WARM" | "COLD"): string => {
-  return LEAD_COLORS[category];
+export const getLeadColor = (category: string): string => {
+  // Fall back to the COLD colour for any unmapped grade (e.g. "SPAM") so the
+  // Discord/Slack embed never receives an undefined colour.
+  return LEAD_COLORS[category as keyof typeof LEAD_COLORS] ?? LEAD_COLORS.COLD;
 };
 
 /**

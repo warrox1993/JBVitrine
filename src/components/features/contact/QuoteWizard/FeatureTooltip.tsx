@@ -10,9 +10,15 @@ interface FeatureTooltipProps {
   content: string;
 }
 
-// Parse simple markdown to HTML
+// Parse simple markdown to HTML. Escape any HTML in the input FIRST so raw
+// tags can't be injected (defense in depth — content comes from our own
+// translation messages), then re-introduce only the intended **bold** / line
+// breaks.
 function parseMarkdown(text: string): string {
   return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     .replace(/\n/g, '<br/>');
 }

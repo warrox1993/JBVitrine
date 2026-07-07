@@ -11,7 +11,7 @@ import cls from './Step5Contact.module.css';
 
 interface Step5ContactProps {
   quoteData: QuoteData;
-  onSubmit: (contactInfo: ContactInfo) => void;
+  onSubmit: (contactInfo: ContactInfo, timeline?: TimelineOption | null) => void;
   onBack: () => void;
   isSubmitting: boolean;
   stepNumber?: number;
@@ -200,9 +200,9 @@ export function Step5Contact({
         return;
       }
 
-      // Store this submission timestamp
-      recentSubmissions.push(now);
-      localStorage.setItem(rateLimitKey, JSON.stringify(recentSubmissions));
+      // The submission slot is recorded later (just before onSubmit), only
+      // after all validation passes — so a validation failure doesn't burn a
+      // slot and lock out a legitimate user.
     } catch (error) {
       console.warn('Rate limiting unavailable:', error);
     }
@@ -270,8 +270,22 @@ export function Step5Contact({
       csrfToken: formData.csrfToken || undefined, // ✅ FIX: Include CSRF token
     };
 
-    // Call parent's onSubmit with clean ContactInfo
-    onSubmit(contactInfo);
+    // Record the rate-limit slot now that every check has passed.
+    try {
+      const stored = localStorage.getItem(rateLimitKey);
+      const subs: number[] = stored ? JSON.parse(stored) : [];
+      subs.push(Date.now());
+      localStorage.setItem(
+        rateLimitKey,
+        JSON.stringify(subs.filter((ts) => Date.now() - ts < rateLimitWindow)),
+      );
+    } catch {
+      /* localStorage unavailable — ignore */
+    }
+
+    // Call parent's onSubmit with clean ContactInfo + the timeline chosen here
+    // (otherwise the Step5 timeline selection would be silently discarded).
+    onSubmit(contactInfo, selectedTimeline);
   };
 
   const handleChange = (
