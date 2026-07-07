@@ -78,7 +78,7 @@ export default async function MentionsLegalesPage({
             <li>{t.rich("mentions.editeur.tva", { strong })}</li>
             <li>
               {t.rich("mentions.editeur.emailLabel", { strong })}{" "}
-              <LegalLink href="mailto:contact@smidjan.be">contact@smidjan.be</LegalLink>
+              <LegalLink href="mailto:smidjan.agency@outlook.com">smidjan.agency@outlook.com</LegalLink>
             </li>
             <li>
               {t.rich("mentions.editeur.telephoneLabel", { strong })}{" "}
@@ -119,7 +119,7 @@ export default async function MentionsLegalesPage({
         <LegalSection id="contact" num="5" title={t("mentions.contact.title")}>
           <p>
             {t.rich("mentions.contact.body", {
-              link: (chunks) => <LegalLink href="mailto:contact@smidjan.be">{chunks}</LegalLink>,
+              link: (chunks) => <LegalLink href="mailto:smidjan.agency@outlook.com">{chunks}</LegalLink>,
             })}
           </p>
         </LegalSection>

@@ -13,7 +13,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     contactType: "Customer Service",
     telephone: "+32475205562",
-    email: "contact@smidjan.be",
+    email: "smidjan.agency@outlook.com",
     availableLanguage: ["fr-BE", "French"],
     areaServed: ["BE", "Wallonie", "Liège"],
   },
@@ -54,7 +54,7 @@ export const localBusinessSchema = {
     "Prestataire cybersécurité à Liège : sécurisation des réseaux, de l'infrastructure et des applications, audit et remédiation, mise en conformité NIS2 / CyberFundamentals (CCB) pour les PME en Belgique et en Wallonie.",
   url: "https://smidjan.be",
   telephone: "+32475205562",
-  email: "contact@smidjan.be",
+  email: "smidjan.agency@outlook.com",
   address: {
     "@type": "PostalAddress",
     addressCountry: "BE",

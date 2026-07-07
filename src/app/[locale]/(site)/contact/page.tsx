@@ -70,7 +70,7 @@ export default async function ContactPage({
               '@type': 'Organization',
               name: 'Smidjan',
               url: 'https://smidjan.be',
-              email: 'contact@smidjan.be',
+              email: 'smidjan.agency@outlook.com',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Liège',
@@ -81,7 +81,7 @@ export default async function ContactPage({
             contactPoint: {
               '@type': 'ContactPoint',
               contactType: 'sales',
-              email: 'contact@smidjan.be',
+              email: 'smidjan.agency@outlook.com',
               availableLanguage: ['fr-BE', 'fr'],
               areaServed: ['BE', 'Wallonie'],
             },
@@ -302,7 +302,7 @@ export default async function ContactPage({
                     <span className={cls.ic}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg></span>
                     <div>
                       <div className={cls.k}>{t('side.coordEmailK')}</div>
-                      <div className={cls.v}><a href="mailto:contact@smidjan.be">contact@smidjan.be</a><small>{t('side.coordEmailSmall')}</small></div>
+                      <div className={cls.v}><a href="mailto:smidjan.agency@outlook.com">smidjan.agency@outlook.com</a><small>{t('side.coordEmailSmall')}</small></div>
                     </div>
                   </li>
                   <li>

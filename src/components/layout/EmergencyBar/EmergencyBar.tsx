@@ -42,7 +42,7 @@ export default async function EmergencyBar() {
             </svg>
             +32 475 20 55 62
           </a>
-          <a href="mailto:contact@smidjan.be">
+          <a href="mailto:smidjan.agency@outlook.com">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -55,7 +55,7 @@ export default async function EmergencyBar() {
               <rect x="2" y="4" width="20" height="16" rx="2" />
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
-            contact@smidjan.be
+            smidjan.agency@outlook.com
           </a>
         </div>
         <Link className={styles.cta} href="/contact">
