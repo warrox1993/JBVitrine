@@ -39,21 +39,27 @@
   "result": {
     "essential": {
       "title": "Likely an essential entity",
-      "text": "Your sector and size place you among the entities most tightly regulated by NIS2. Requirements are high and management bears personal liability."
+      "text": "Your sector and size place you among the entities most tightly regulated by NIS2. Requirements are high and management bears personal liability.",
+      "level": "Essential (or Important depending on scope)"
     },
     "important": {
       "title": "Likely an important entity",
-      "text": "Your profile falls directly within NIS2's scope as an important entity. You need to structure your compliance at a level matched to your risk."
+      "text": "Your profile falls directly within NIS2's scope as an important entity. You need to structure your compliance at a level matched to your risk.",
+      "level": "Important"
     },
     "ricochet": {
       "title": "Concerned via the supply chain",
-      "text": "Even without being targeted directly, a client subject to NIS2 can require a security level from you by contract. Better to anticipate."
+      "text": "Even without being targeted directly, a client subject to NIS2 can require a security level from you by contract. Better to anticipate.",
+      "level": "Basic (often enough as a supplier)"
     },
     "notdirect": {
       "title": "Likely not directly concerned",
-      "text": "On these criteria, NIS2 probably does not target you directly today. Note however: a client subject to NIS2 may impose it, and securing your systems remains worthwhile."
+      "text": "On these criteria, NIS2 probably does not target you directly today. Note however: a client subject to NIS2 may impose it, and securing your systems remains worthwhile.",
+      "level": "Small, free, to get started"
     },
     "cta": "Let's discuss your roadmap",
-    "disclaimer": "Indicative estimate, not legal advice. The free assessment confirms your exact situation."
+    "disclaimer": "Indicative estimate, not legal advice. The free assessment confirms your exact situation.",
+    "levelLabel": "Recommended CyFun starting point",
+    "recapLabel": "Based on your answers"
   }
 }

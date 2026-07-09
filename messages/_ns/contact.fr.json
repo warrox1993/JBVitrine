@@ -76,7 +76,8 @@
       "submit": "Échec de l'envoi. Veuillez réessayer.",
       "generic": "Une erreur est survenue. Veuillez réessayer."
     },
-    "recaptcha": "Protégé par reCAPTCHA : les <privacy>règles de confidentialité</privacy> et <terms>conditions</terms> de Google s'appliquent."
+    "recaptcha": "Protégé par reCAPTCHA : les <privacy>règles de confidentialité</privacy> et <terms>conditions</terms> de Google s'appliquent.",
+    "nis2Intro": "Suite au test « Suis-je concerné par NIS2 ? », je souhaite faire le point sur ma situation et connaître mes prochaines étapes."
   },
   "side": {
     "aria": "Nos coordonnées",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import styles from "./NIS2Checker.module.css";
@@ -50,6 +50,12 @@ export function NIS2Checker() {
   const [sector, setSector] = useState<Sector | null>(null);
   const [size, setSize] = useState<Size | null>(null);
   const [supplier, setSupplier] = useState<Supplier | null>(null);
+  const resultRef = useRef<HTMLHeadingElement>(null);
+
+  // Move focus to the verdict when it appears (keyboard + screen-reader users).
+  useEffect(() => {
+    if (step === 3) resultRef.current?.focus();
+  }, [step]);
 
   function pickSector(s: Sector) { setSector(s); setStep(1); }
   function pickSize(s: Size) { setSize(s); setStep(2); }
@@ -60,6 +66,11 @@ export function NIS2Checker() {
     step === 3 && sector && size && supplier
       ? computeVerdict(sector, size, supplier)
       : null;
+
+  const recap =
+    step === 3 && sector && size && supplier
+      ? `${t(`q1.opt.${sector}`)} · ${t(`q2.opt.${size}`)} · ${t(`q3.opt.${supplier}`)}`
+      : "";
 
   return (
     <div className={styles.checker}>
@@ -122,10 +133,19 @@ export function NIS2Checker() {
       {step === 3 && verdict && (
         <div className={`${styles.result} ${VERDICT_TONE[verdict]}`} role="status" aria-live="polite">
           <span className={styles.verdictLabel}>{t("verdictLabel")}</span>
-          <h3 className={styles.verdictTitle}>{t(`result.${verdict}.title`)}</h3>
+          <h3 className={styles.verdictTitle} ref={resultRef} tabIndex={-1}>
+            {t(`result.${verdict}.title`)}
+          </h3>
           <p className={styles.verdictText}>{t(`result.${verdict}.text`)}</p>
+          <div className={styles.reco}>
+            <span className={styles.recoLabel}>{t("result.levelLabel")}</span>
+            <span className={styles.recoLevel}>{t(`result.${verdict}.level`)}</span>
+          </div>
+          <p className={styles.recap}>
+            {t("result.recapLabel")} : {recap}
+          </p>
           <div className={styles.actions}>
-            <Link className={styles.cta} href="/contact">{t("result.cta")}</Link>
+            <Link className={styles.cta} href={`/contact?nis2=${verdict}`}>{t("result.cta")}</Link>
             <button type="button" className={styles.restart} onClick={restart}>
               {t("restart")}
             </button>

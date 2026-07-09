@@ -39,21 +39,27 @@
   "result": {
     "essential": {
       "title": "Wellicht een essentiële entiteit",
-      "text": "Uw sector en grootte plaatsen u bij de entiteiten met de strengste NIS2-eisen. De vereisten zijn hoog en de directie draagt persoonlijke aansprakelijkheid."
+      "text": "Uw sector en grootte plaatsen u bij de entiteiten met de strengste NIS2-eisen. De vereisten zijn hoog en de directie draagt persoonlijke aansprakelijkheid.",
+      "level": "Essential (of Important naargelang de scope)"
     },
     "important": {
       "title": "Wellicht een belangrijke entiteit",
-      "text": "Uw profiel valt rechtstreeks onder NIS2 als belangrijke entiteit. U moet uw conformiteit structureren, op een niveau aangepast aan uw risico."
+      "text": "Uw profiel valt rechtstreeks onder NIS2 als belangrijke entiteit. U moet uw conformiteit structureren, op een niveau aangepast aan uw risico.",
+      "level": "Important"
     },
     "ricochet": {
       "title": "Betrokken via de keten (toeleveringsketen)",
-      "text": "Ook zonder rechtstreeks geviseerd te zijn, kan een klant die onder NIS2 valt u contractueel een beveiligingsniveau opleggen. Anticiperen is beter."
+      "text": "Ook zonder rechtstreeks geviseerd te zijn, kan een klant die onder NIS2 valt u contractueel een beveiligingsniveau opleggen. Anticiperen is beter.",
+      "level": "Basic (vaak voldoende als leverancier)"
     },
     "notdirect": {
       "title": "In principe niet rechtstreeks betrokken",
-      "text": "Op deze criteria viseert NIS2 u vandaag wellicht niet rechtstreeks. Toch opgelet: een klant onder NIS2 kan het u opleggen, en uw systemen beveiligen blijft nuttig."
+      "text": "Op deze criteria viseert NIS2 u vandaag wellicht niet rechtstreeks. Toch opgelet: een klant onder NIS2 kan het u opleggen, en uw systemen beveiligen blijft nuttig.",
+      "level": "Small, gratis, om te starten"
     },
     "cta": "Laten we uw stappenplan bespreken",
-    "disclaimer": "Indicatieve inschatting, geen juridisch advies. De gratis diagnose bevestigt uw exacte situatie."
+    "disclaimer": "Indicatieve inschatting, geen juridisch advies. De gratis diagnose bevestigt uw exacte situatie.",
+    "levelLabel": "Aanbevolen CyFun-startpunt",
+    "recapLabel": "Op basis van uw antwoorden"
   }
 }

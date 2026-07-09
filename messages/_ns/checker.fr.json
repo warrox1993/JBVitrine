@@ -39,21 +39,27 @@
   "result": {
     "essential": {
       "title": "Probablement une entité essentielle",
-      "text": "Votre secteur et votre taille vous placent parmi les entités les plus encadrées par NIS2. Les exigences sont élevées et la responsabilité de la direction est engagée."
+      "text": "Votre secteur et votre taille vous placent parmi les entités les plus encadrées par NIS2. Les exigences sont élevées et la responsabilité de la direction est engagée.",
+      "level": "Essential (ou Important selon le périmètre)"
     },
     "important": {
       "title": "Probablement une entité importante",
-      "text": "Votre profil entre dans le champ direct de NIS2 comme entité importante. Il faut structurer votre conformité, à un niveau adapté à votre risque."
+      "text": "Votre profil entre dans le champ direct de NIS2 comme entité importante. Il faut structurer votre conformité, à un niveau adapté à votre risque.",
+      "level": "Important"
     },
     "ricochet": {
       "title": "Concerné par ricochet (chaîne d'approvisionnement)",
-      "text": "Même sans être visé directement, un client soumis à NIS2 peut vous imposer un niveau de sécurité par contrat. Mieux vaut anticiper."
+      "text": "Même sans être visé directement, un client soumis à NIS2 peut vous imposer un niveau de sécurité par contrat. Mieux vaut anticiper.",
+      "level": "Basic (souvent suffisant comme fournisseur)"
     },
     "notdirect": {
       "title": "A priori pas directement concerné",
-      "text": "Sur ces critères, NIS2 ne vous vise probablement pas directement aujourd'hui. Attention toutefois : un client soumis à NIS2 peut vous l'imposer, et sécuriser vos systèmes reste utile."
+      "text": "Sur ces critères, NIS2 ne vous vise probablement pas directement aujourd'hui. Attention toutefois : un client soumis à NIS2 peut vous l'imposer, et sécuriser vos systèmes reste utile.",
+      "level": "Small, gratuit, pour démarrer"
     },
     "cta": "Parlons de votre feuille de route",
-    "disclaimer": "Estimation indicative, pas un avis juridique. Le diagnostic gratuit confirme votre situation exacte."
+    "disclaimer": "Estimation indicative, pas un avis juridique. Le diagnostic gratuit confirme votre situation exacte.",
+    "levelLabel": "Point de départ CyFun conseillé",
+    "recapLabel": "Basé sur vos réponses"
   }
 }

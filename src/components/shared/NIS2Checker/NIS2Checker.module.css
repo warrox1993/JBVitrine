@@ -159,6 +159,34 @@
 .restart:hover { color: var(--color-accent, #ff6a00); }
 .restart:focus-visible { outline: 2px solid var(--color-accent, #ff6a00); outline-offset: 2px; border-radius: 4px; }
 
+.reco {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  padding: 12px 14px;
+  margin: 0 0 16px;
+  border-radius: 10px;
+  background: var(--color-bg-subtle, #f6f8fc);
+  border: 1px solid var(--color-border, #d7dfeb);
+}
+.recoLabel {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted, #657189);
+}
+.recoLevel {
+  font-weight: 800;
+  font-size: 0.98rem;
+  color: var(--color-accent, #ff6a00);
+}
+.recap {
+  margin: 0 0 4px;
+  font-size: 0.82rem;
+  color: var(--color-text-muted, #657189);
+}
 .disclaimer {
   margin: 16px 0 0;
   font-size: 0.8rem;

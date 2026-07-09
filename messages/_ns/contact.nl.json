@@ -76,7 +76,8 @@
       "submit": "Verzenden mislukt. Probeer het opnieuw.",
       "generic": "Er is een fout opgetreden. Probeer het opnieuw."
     },
-    "recaptcha": "Beschermd door reCAPTCHA: het <privacy>privacybeleid</privacy> en de <terms>voorwaarden</terms> van Google zijn van toepassing."
+    "recaptcha": "Beschermd door reCAPTCHA: het <privacy>privacybeleid</privacy> en de <terms>voorwaarden</terms> van Google zijn van toepassing.",
+    "nis2Intro": "Naar aanleiding van de test « Valt mijn kmo onder NIS2? » wil ik mijn situatie bespreken en mijn volgende stappen kennen."
   },
   "side": {
     "aria": "Onze contactgegevens",

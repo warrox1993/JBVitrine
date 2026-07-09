@@ -117,6 +117,18 @@ export function ContactForm() {
     loadRecaptcha();
   }, []);
 
+  // Pre-fill the form when the visitor arrives from the NIS2 self-check ("?nis2=...").
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('nis2')) {
+      setData((prev) => ({
+        ...prev,
+        demande: 'diagnostic',
+        message: prev.message || t('form.nis2Intro'),
+      }));
+    }
+  }, [t]);
+
   const validateForm = (): boolean => {
     const newErrors: Partial<Record<keyof FormState, string>> = {};
 
