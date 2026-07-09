@@ -343,7 +343,7 @@ export default async function ApprochePage({
                 <div className={styles.aiIcon}>
                   <Icon name={card.icon} size={22} />
                 </div>
-                <h4>{t(`ai.cards.${card.key}.title`)}</h4>
+                <h3>{t(`ai.cards.${card.key}.title`)}</h3>
                 <p>{t(`ai.cards.${card.key}.text`)}</p>
               </div>
             ))}
@@ -400,7 +400,7 @@ export default async function ApprochePage({
                 <Icon name={item.icon} size={24} />
               </div>
               <div>
-                <h4 className={styles.whyTitle}>{t(`why.items.${item.key}.title`)}</h4>
+                <h3 className={styles.whyTitle}>{t(`why.items.${item.key}.title`)}</h3>
                 <p className={styles.whyText}>{t(`why.items.${item.key}.text`)}</p>
                 <span className={styles.whyPin}>
                   <Icon name={item.pinIcon} size={14} strokeWidth={2.4} />

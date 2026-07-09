@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { buildAlternates } from "@/i18n/metadata";
+import { authorSchema } from "@/lib/author-schema";
 import Link from "next/link";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -63,6 +64,12 @@ export default async function AgencePage({
   const t = await getTranslations("agence");
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({ "@context": "https://schema.org", ...authorSchema }),
+        }}
+      />
       {/* ===== Page header ===== */}
       <section className={styles.pageHero}>
         <Container className={styles.heroInner}>

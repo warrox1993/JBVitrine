@@ -12,7 +12,7 @@
     "breadcrumbHere": "Het agentschap",
     "eyebrow": "Het agentschap",
     "title": "Een <accent>lokale cyberbeveiligingsexpert</accent>, geen anoniem agentschap.",
-    "lead": "Jean-Baptiste Dhondt beveiligt uw onderneming zelf. Geen callcenter. Geen onderaanneming.",
+    "lead": "Jean-Baptiste Dhondt beveiligt zelf uw kmo. Geen callcenter. Geen onderaanneming.",
     "ctaPrimary": "Een kaderingsgesprek inplannen",
     "ctaCall": "Bel 0475 20 55 62",
     "badgeLocation": "Gevestigd in Luik, actief in Wallonië",
@@ -69,7 +69,7 @@
   "founder": {
     "eyebrow": "De oprichter",
     "title": "Jean-Baptiste Dhondt : <accent>een ongewoon parcours</accent> naar cyberbeveiliging",
-    "lead": "Nieuwsgierigheid, militaire discipline, echte praktijk van aanval en verdediging.",
+    "lead": "Nieuwsgierigheid, militaire discipline en echte praktijk van aanval én verdediging: een ongewoon parcours naar cyberbeveiliging.",
     "portraitAria": "Portret van de oprichter, gereserveerde plaats, foto volgt",
     "photoSoon": "Foto volgt",
     "name": "Jean-Baptiste Dhondt",
@@ -103,51 +103,8 @@
     "stepArmyText": "Kritieke netwerken beschermen in een veeleisende omgeving. Die grondigheid, vandaag toegepast op ondernemingen.",
     "stepTodayLabel": "Vandaag",
     "stepTodayTitle": "Offensieve & defensieve beveiliging",
-    "stepTodayText": "Aanvallen om te begrijpen, verdedigen om te beschermen. Dat is Smidjan."
-  },
-  "mission": {
-    "title": "Onze missie",
-    "intro": "Uw netwerken, uw infrastructuur en uw applicaties beveiligen, zonder jargon, zonder meerkosten. Concrete beveiliging, op maat van de realiteit van elke onderneming.",
-    "cardInfraTitle": "Verharde infrastructuur",
-    "cardInfraText": "Netwerken, servers, applicaties : solide fundamenten, verhard en onderhoudbaar in de tijd.",
-    "cardSecurityTitle": "Geïntegreerde beveiliging",
-    "cardSecurityText": "Risico vanaf het ontwerp geanticipeerd : audit, remediëring, versleuteling en toezicht.",
-    "cardResultsTitle": "Meetbare resultaten",
-    "cardResultsText": "Een verlaagd risico, een nagekomen compliance : duidelijke indicatoren, geen beloften.",
-    "cta": "Ontdek onze diensten",
-    "ctaAria": "Ontdek onze diensten"
-  },
-  "team": {
-    "title": "Ons Team",
-    "subtitle": "Een team in opbouw, met veeleisendheid in het hart van ons DNA.",
-    "ceoName": "Jean-Baptiste D.",
-    "ceoTitle": "CEO & Productdesigner",
-    "ceoDescription": "Ontwerpt heldere en beveiligde systemen, waarin elk detail telt.",
-    "recruiting": "Wij Werven Aan",
-    "apply": "Solliciteren →",
-    "recruitingMarquee": "WIJ WERVEN AAN • WIJ WERVEN AAN •",
-    "posFrontendRole": "Frontend Developer",
-    "posFrontendType": "React/Next.js",
-    "posBackendRole": "Backend Developer",
-    "posBackendType": "Node.js/Python",
-    "posDesignerRole": "UI/UX Designer",
-    "posDesignerType": "Product Design",
-    "posDevopsRole": "DevOps Engineer",
-    "posDevopsType": "Cloud/CI-CD",
-    "posDataRole": "Data Analyst",
-    "posDataType": "Analytics/BI",
-    "posPmRole": "Product Manager",
-    "posPmType": "Strategy/Vision"
-  },
-  "timeline": {
-    "title": "Onze Geschiedenis",
-    "subtitle": "Het traject van Smidjan",
-    "step": "Stap",
-    "progressAria": "Voortgang: {current} van {total}",
-    "goToYear": "Ga naar het jaar {year}",
-    "stepAria": "Stap {current} van {total}",
-    "prev": "Vorige sectie",
-    "next": "Volgende sectie",
-    "keyboardHint": "Gebruik de pijlen ↑ ↓ om te navigeren"
+    "stepTodayText": "Aanvallen om te begrijpen, verdedigen om te beschermen. Dat is Smidjan.",
+    "linkedinLabel": "Bekijk het LinkedIn-profiel",
+    "linkedinUrl": "https://www.linkedin.com/in/jean-baptistedhondt"
   }
 }

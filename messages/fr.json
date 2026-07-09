@@ -13,7 +13,7 @@
       "breadcrumbHere": "L'agence",
       "eyebrow": "L'agence",
       "title": "Un <accent>expert cybersécurité local</accent>, pas une agence anonyme.",
-      "lead": "Jean-Baptiste Dhondt sécurise lui-même votre entreprise. Pas de centre d'appel. Pas de sous-traitance.",
+      "lead": "Jean-Baptiste Dhondt sécurise lui-même votre PME. Pas de centre d'appel. Pas de sous-traitance.",
       "ctaPrimary": "Réserver un appel de cadrage",
       "ctaCall": "Appeler le 0475 20 55 62",
       "badgeLocation": "Basés à Liège, actifs en Wallonie",
@@ -70,7 +70,7 @@
     "founder": {
       "eyebrow": "Le fondateur",
       "title": "Jean-Baptiste Dhondt : <accent>un parcours peu commun</accent> vers la cybersécurité",
-      "lead": "Curiosité, discipline militaire, pratique réelle de l'attaque et de la défense.",
+      "lead": "Curiosité, discipline militaire et pratique réelle de l'attaque comme de la défense : un parcours peu commun vers la cybersécurité.",
       "portraitAria": "Portrait du fondateur, emplacement réservé, photo à venir",
       "photoSoon": "Photo à venir",
       "name": "Jean-Baptiste Dhondt",
@@ -104,57 +104,14 @@
       "stepArmyText": "Protéger des réseaux critiques en environnement exigeant. Cette rigueur, appliquée aujourd'hui aux entreprises.",
       "stepTodayLabel": "Aujourd'hui",
       "stepTodayTitle": "Sécurité offensive & défensive",
-      "stepTodayText": "Attaquer pour comprendre, défendre pour protéger. C'est Smidjan."
-    },
-    "mission": {
-      "title": "Notre mission",
-      "intro": "Sécuriser vos réseaux, vos infrastructures et vos applications, sans jargon, sans surcoût. Une sécurité concrète, taillée pour la réalité de chaque entreprise.",
-      "cardInfraTitle": "Infrastructures durcies",
-      "cardInfraText": "Réseaux, serveurs, applications : des fondations solides, durcies et maintenables dans le temps.",
-      "cardSecurityTitle": "Sécurité intégrée",
-      "cardSecurityText": "Le risque anticipé dès la conception : audit, remédiation, chiffrement et supervision.",
-      "cardResultsTitle": "Résultats mesurables",
-      "cardResultsText": "Un risque réduit, une conformité tenue : des indicateurs clairs, pas des promesses.",
-      "cta": "Découvrir nos services",
-      "ctaAria": "Découvrir nos services"
-    },
-    "team": {
-      "title": "Notre Équipe",
-      "subtitle": "Une équipe en construction, l'exigence au cœur de notre ADN.",
-      "ceoName": "Jean-Baptiste D.",
-      "ceoTitle": "CEO & Designer Produit",
-      "ceoDescription": "Conçoit des systèmes clairs et sécurisés, où chaque détail compte.",
-      "recruiting": "Nous Recrutons",
-      "apply": "Postuler →",
-      "recruitingMarquee": "NOUS RECRUTONS • NOUS RECRUTONS •",
-      "posFrontendRole": "Frontend Developer",
-      "posFrontendType": "React/Next.js",
-      "posBackendRole": "Backend Developer",
-      "posBackendType": "Node.js/Python",
-      "posDesignerRole": "UI/UX Designer",
-      "posDesignerType": "Product Design",
-      "posDevopsRole": "DevOps Engineer",
-      "posDevopsType": "Cloud/CI-CD",
-      "posDataRole": "Data Analyst",
-      "posDataType": "Analytics/BI",
-      "posPmRole": "Product Manager",
-      "posPmType": "Strategy/Vision"
-    },
-    "timeline": {
-      "title": "Notre Histoire",
-      "subtitle": "Parcours Smidjan",
-      "step": "Étape",
-      "progressAria": "Progression: {current} sur {total}",
-      "goToYear": "Aller à l'année {year}",
-      "stepAria": "Étape {current} sur {total}",
-      "prev": "Section précédente",
-      "next": "Section suivante",
-      "keyboardHint": "Utilisez les flèches ↑ ↓ pour naviguer"
+      "stepTodayText": "Attaquer pour comprendre, défendre pour protéger. C'est Smidjan.",
+      "linkedinLabel": "Voir le profil LinkedIn",
+      "linkedinUrl": "https://www.linkedin.com/in/jean-baptistedhondt"
     }
   },
   "approche": {
     "meta": {
-      "title": "Notre méthode : Approche cybersécurité Smidjan | Des preuves, pas des promesses",
+      "title": "Notre méthode cybersécurité PME | Smidjan Liège",
       "description": "Diagnostic mesuré, priorisation par risque, remédiation réelle, supervision continue : découvrez la méthode de Smidjan, cabinet de cybersécurité à Liège, et pourquoi une PME wallonne a intérêt à travailler avec une structure à taille humaine.",
       "ogTitle": "Notre méthode : Approche cybersécurité Smidjan",
       "ogDescription": "Des preuves, pas des promesses : diagnostic mesuré, priorisation, remédiation réelle et supervision continue. La méthode Smidjan, cybersécurité pour PME à Liège.",
@@ -167,7 +124,7 @@
       "breadcrumbCurrent": "Approche · Notre méthode",
       "eyebrow": "Notre méthode",
       "title": "Une cybersécurité qui se <accent>démontre</accent>, pas qui se raconte.",
-      "lead": "Des actions mesurées, des livrables que vous vérifiez vous-même. Notre méthode, du diagnostic au suivi.",
+      "lead": "Pour les PME de Wallonie : des actions mesurées, des livrables que vous vérifiez vous-même. Notre méthode, du diagnostic au suivi.",
       "ctaPrimary": "Réserver un diagnostic gratuit",
       "ctaSecondary": "Voir les 4 étapes",
       "promiseTitle": "Notre engagement",
@@ -196,12 +153,10 @@
       "proofCaption": "<b>Chaque constat, coché et vérifié</b> : la preuve, pas le discours."
     },
     "method": {
-      "eyebrow": "Notre méthode",
+      "eyebrow": "Étape par étape",
       "title": "Quatre <accent>étapes</accent>, du premier constat au suivi durable",
       "lead": "Audit, pentest, conformité NIS2 / CyFun : même méthode à chaque fois. Vous savez ce qui se passe et ce que vous recevez.",
       "overviewKicker": "Aperçu rapide",
-      "photo1Alt": "Gros plan sur un circuit imprimé rétroéclairé, symbole de la rigueur technique et de l'architecture qui structure notre méthode.",
-      "photo1Caption": "Une méthode <b>rigoureuse</b>, du diagnostic au correctif.",
       "photo2Alt": "Un consultant classe des priorités par trimestre sur un tableau de planification, illustrant la construction d'une feuille de route priorisée avec le client.",
       "photo2Caption": "Une <b>feuille de route priorisée</b>, construite avec vous.",
       "deliverHead": "Ce que vous recevez"

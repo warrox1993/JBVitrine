@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Our method: Smidjan's cybersecurity approach | Proof, not promises",
+    "title": "Our SME cybersecurity method | Smidjan Liège",
     "description": "Measured diagnosis, risk-based prioritisation, real remediation, continuous monitoring: discover Smidjan's method, a cybersecurity firm in Liège, and why a Walloon SME benefits from working with a human-scale structure.",
     "ogTitle": "Our method: Smidjan's cybersecurity approach",
     "ogDescription": "Proof, not promises: measured diagnosis, prioritisation, real remediation and continuous monitoring. The Smidjan method, cybersecurity for SMEs in Liège.",
@@ -13,7 +13,7 @@
     "breadcrumbCurrent": "Approach · Our method",
     "eyebrow": "Our method",
     "title": "Cybersecurity that <accent>proves itself</accent>, not one that tells stories.",
-    "lead": "Measured actions, deliverables you verify yourself. Our method, from diagnosis to follow-up.",
+    "lead": "For SMEs in Wallonia: measured actions, deliverables you verify yourself. Our method, from assessment to follow-up.",
     "ctaPrimary": "Book a free diagnosis",
     "ctaSecondary": "See the 4 steps",
     "promiseTitle": "Our commitment",
@@ -42,12 +42,10 @@
     "proofCaption": "<b>Every finding, ticked and verified</b>: the proof, not the talk."
   },
   "method": {
-    "eyebrow": "Our method",
+    "eyebrow": "Step by step",
     "title": "Four <accent>steps</accent>, from the first finding to lasting follow-up",
     "lead": "Audit, pentest, NIS2 / CyFun compliance: the same method every time. You know what is happening and what you receive.",
     "overviewKicker": "Quick overview",
-    "photo1Alt": "Close-up of a backlit circuit board, symbol of the technical rigour and the architecture that structures our method.",
-    "photo1Caption": "A <b>rigorous</b> method, from diagnosis to fix.",
     "photo2Alt": "A consultant sorts priorities by quarter on a planning board, illustrating the construction of a prioritised roadmap with the client.",
     "photo2Caption": "A <b>prioritised roadmap</b>, built with you.",
     "deliverHead": "What you receive"

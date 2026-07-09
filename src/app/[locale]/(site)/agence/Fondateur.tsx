@@ -155,6 +155,22 @@ export async function Fondateur() {
                 <span key={s}>{t(`founder.${s}`)}</span>
               ))}
             </div>
+            <a
+              href={t("founder.linkedinUrl")}
+              target="_blank"
+              rel="me noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                marginTop: "16px",
+                fontWeight: 600,
+                fontSize: "0.9rem",
+                color: "var(--color-accent, #ff6a00)",
+                textDecoration: "underline",
+                textUnderlineOffset: "2px",
+              }}
+            >
+              {t("founder.linkedinLabel")}
+            </a>
           </Reveal>
 
           {/* Narrative + journey */}

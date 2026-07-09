@@ -12,7 +12,7 @@
     "breadcrumbHere": "The agency",
     "eyebrow": "The agency",
     "title": "A <accent>local cybersecurity expert</accent>, not an anonymous agency.",
-    "lead": "Jean-Baptiste Dhondt secures your business himself. No call centre. No subcontracting.",
+    "lead": "Jean-Baptiste Dhondt secures your SME himself. No call centre. No subcontracting.",
     "ctaPrimary": "Book a scoping call",
     "ctaCall": "Call 0475 20 55 62",
     "badgeLocation": "Based in Liège, active across Wallonia",
@@ -69,7 +69,7 @@
   "founder": {
     "eyebrow": "The founder",
     "title": "Jean-Baptiste Dhondt: <accent>an uncommon path</accent> into cybersecurity",
-    "lead": "Curiosity, military discipline, real hands-on practice of attack and defence.",
+    "lead": "Curiosity, military discipline and real hands-on practice of both attack and defence: an uncommon path into cybersecurity.",
     "portraitAria": "Portrait of the founder, reserved placeholder, photo to come",
     "photoSoon": "Photo to come",
     "name": "Jean-Baptiste Dhondt",
@@ -103,51 +103,8 @@
     "stepArmyText": "Protecting critical networks in a demanding environment. That rigour, applied today to businesses.",
     "stepTodayLabel": "Today",
     "stepTodayTitle": "Offensive & defensive security",
-    "stepTodayText": "Attack to understand, defend to protect. That is Smidjan."
-  },
-  "mission": {
-    "title": "Our mission",
-    "intro": "Securing your networks, your infrastructure and your applications, without jargon, without extra cost. Concrete security, tailored to the reality of each business.",
-    "cardInfraTitle": "Hardened infrastructure",
-    "cardInfraText": "Networks, servers, applications: solid foundations, hardened and maintainable over time.",
-    "cardSecurityTitle": "Built-in security",
-    "cardSecurityText": "Risk anticipated from the design stage: audit, remediation, encryption and monitoring.",
-    "cardResultsTitle": "Measurable results",
-    "cardResultsText": "Reduced risk, compliance upheld: clear indicators, not promises.",
-    "cta": "Discover our services",
-    "ctaAria": "Discover our services"
-  },
-  "team": {
-    "title": "Our Team",
-    "subtitle": "A team in the making, with high standards at the heart of our DNA.",
-    "ceoName": "Jean-Baptiste D.",
-    "ceoTitle": "CEO & Product Designer",
-    "ceoDescription": "Designs clear and secure systems, where every detail counts.",
-    "recruiting": "We're Hiring",
-    "apply": "Apply →",
-    "recruitingMarquee": "WE'RE HIRING • WE'RE HIRING •",
-    "posFrontendRole": "Frontend Developer",
-    "posFrontendType": "React/Next.js",
-    "posBackendRole": "Backend Developer",
-    "posBackendType": "Node.js/Python",
-    "posDesignerRole": "UI/UX Designer",
-    "posDesignerType": "Product Design",
-    "posDevopsRole": "DevOps Engineer",
-    "posDevopsType": "Cloud/CI-CD",
-    "posDataRole": "Data Analyst",
-    "posDataType": "Analytics/BI",
-    "posPmRole": "Product Manager",
-    "posPmType": "Strategy/Vision"
-  },
-  "timeline": {
-    "title": "Our Story",
-    "subtitle": "The Smidjan journey",
-    "step": "Step",
-    "progressAria": "Progress: {current} of {total}",
-    "goToYear": "Go to the year {year}",
-    "stepAria": "Step {current} of {total}",
-    "prev": "Previous section",
-    "next": "Next section",
-    "keyboardHint": "Use the arrows ↑ ↓ to navigate"
+    "stepTodayText": "Attack to understand, defend to protect. That is Smidjan.",
+    "linkedinLabel": "View the LinkedIn profile",
+    "linkedinUrl": "https://www.linkedin.com/in/jean-baptistedhondt"
   }
 }

@@ -13,7 +13,7 @@
       "breadcrumbHere": "Het agentschap",
       "eyebrow": "Het agentschap",
       "title": "Een <accent>lokale cyberbeveiligingsexpert</accent>, geen anoniem agentschap.",
-      "lead": "Jean-Baptiste Dhondt beveiligt uw onderneming zelf. Geen callcenter. Geen onderaanneming.",
+      "lead": "Jean-Baptiste Dhondt beveiligt zelf uw kmo. Geen callcenter. Geen onderaanneming.",
       "ctaPrimary": "Een kaderingsgesprek inplannen",
       "ctaCall": "Bel 0475 20 55 62",
       "badgeLocation": "Gevestigd in Luik, actief in Wallonië",
@@ -70,7 +70,7 @@
     "founder": {
       "eyebrow": "De oprichter",
       "title": "Jean-Baptiste Dhondt : <accent>een ongewoon parcours</accent> naar cyberbeveiliging",
-      "lead": "Nieuwsgierigheid, militaire discipline, echte praktijk van aanval en verdediging.",
+      "lead": "Nieuwsgierigheid, militaire discipline en echte praktijk van aanval én verdediging: een ongewoon parcours naar cyberbeveiliging.",
       "portraitAria": "Portret van de oprichter, gereserveerde plaats, foto volgt",
       "photoSoon": "Foto volgt",
       "name": "Jean-Baptiste Dhondt",
@@ -104,57 +104,14 @@
       "stepArmyText": "Kritieke netwerken beschermen in een veeleisende omgeving. Die grondigheid, vandaag toegepast op ondernemingen.",
       "stepTodayLabel": "Vandaag",
       "stepTodayTitle": "Offensieve & defensieve beveiliging",
-      "stepTodayText": "Aanvallen om te begrijpen, verdedigen om te beschermen. Dat is Smidjan."
-    },
-    "mission": {
-      "title": "Onze missie",
-      "intro": "Uw netwerken, uw infrastructuur en uw applicaties beveiligen, zonder jargon, zonder meerkosten. Concrete beveiliging, op maat van de realiteit van elke onderneming.",
-      "cardInfraTitle": "Verharde infrastructuur",
-      "cardInfraText": "Netwerken, servers, applicaties : solide fundamenten, verhard en onderhoudbaar in de tijd.",
-      "cardSecurityTitle": "Geïntegreerde beveiliging",
-      "cardSecurityText": "Risico vanaf het ontwerp geanticipeerd : audit, remediëring, versleuteling en toezicht.",
-      "cardResultsTitle": "Meetbare resultaten",
-      "cardResultsText": "Een verlaagd risico, een nagekomen compliance : duidelijke indicatoren, geen beloften.",
-      "cta": "Ontdek onze diensten",
-      "ctaAria": "Ontdek onze diensten"
-    },
-    "team": {
-      "title": "Ons Team",
-      "subtitle": "Een team in opbouw, met veeleisendheid in het hart van ons DNA.",
-      "ceoName": "Jean-Baptiste D.",
-      "ceoTitle": "CEO & Productdesigner",
-      "ceoDescription": "Ontwerpt heldere en beveiligde systemen, waarin elk detail telt.",
-      "recruiting": "Wij Werven Aan",
-      "apply": "Solliciteren →",
-      "recruitingMarquee": "WIJ WERVEN AAN • WIJ WERVEN AAN •",
-      "posFrontendRole": "Frontend Developer",
-      "posFrontendType": "React/Next.js",
-      "posBackendRole": "Backend Developer",
-      "posBackendType": "Node.js/Python",
-      "posDesignerRole": "UI/UX Designer",
-      "posDesignerType": "Product Design",
-      "posDevopsRole": "DevOps Engineer",
-      "posDevopsType": "Cloud/CI-CD",
-      "posDataRole": "Data Analyst",
-      "posDataType": "Analytics/BI",
-      "posPmRole": "Product Manager",
-      "posPmType": "Strategy/Vision"
-    },
-    "timeline": {
-      "title": "Onze Geschiedenis",
-      "subtitle": "Het traject van Smidjan",
-      "step": "Stap",
-      "progressAria": "Voortgang: {current} van {total}",
-      "goToYear": "Ga naar het jaar {year}",
-      "stepAria": "Stap {current} van {total}",
-      "prev": "Vorige sectie",
-      "next": "Volgende sectie",
-      "keyboardHint": "Gebruik de pijlen ↑ ↓ om te navigeren"
+      "stepTodayText": "Aanvallen om te begrijpen, verdedigen om te beschermen. Dat is Smidjan.",
+      "linkedinLabel": "Bekijk het LinkedIn-profiel",
+      "linkedinUrl": "https://www.linkedin.com/in/jean-baptistedhondt"
     }
   },
   "approche": {
     "meta": {
-      "title": "Onze methode : cybersecurity-aanpak van Smidjan | Bewijs, geen beloftes",
+      "title": "Onze cybersecurity-methode voor kmo's | Smidjan Luik",
       "description": "Gemeten diagnose, prioritering op risico, echte remediëring, continue monitoring : ontdek de methode van Smidjan, cybersecuritykantoor in Luik, en waarom een kmo er baat bij heeft om samen te werken met een structuur op mensenmaat.",
       "ogTitle": "Onze methode : cybersecurity-aanpak van Smidjan",
       "ogDescription": "Bewijs, geen beloftes : gemeten diagnose, prioritering, echte remediëring en continue monitoring. De methode van Smidjan, cybersecurity voor kmo's in Luik.",
@@ -167,7 +124,7 @@
       "breadcrumbCurrent": "Aanpak · Onze methode",
       "eyebrow": "Onze methode",
       "title": "Cybersecurity die zich <accent>bewijst</accent>, niet die zich laat vertellen.",
-      "lead": "Gemeten acties, resultaten die u zelf controleert. Onze methode, van diagnose tot opvolging.",
+      "lead": "Voor kmo's in Wallonië: gemeten acties, resultaten die u zelf verifieert. Onze methode, van diagnose tot opvolging.",
       "ctaPrimary": "Een gratis diagnose boeken",
       "ctaSecondary": "Bekijk de 4 stappen",
       "promiseTitle": "Onze belofte",
@@ -196,12 +153,10 @@
       "proofCaption": "<b>Elke vaststelling, afgevinkt en geverifieerd</b> : het bewijs, niet het verhaal."
     },
     "method": {
-      "eyebrow": "Onze methode",
+      "eyebrow": "Stap voor stap",
       "title": "Vier <accent>stappen</accent>, van de eerste vaststelling tot duurzame opvolging",
       "lead": "Audit, pentest, NIS2- / CyFun-conformiteit : telkens dezelfde methode. U weet wat er gebeurt en wat u ontvangt.",
       "overviewKicker": "Snel overzicht",
-      "photo1Alt": "Close-up van een verlichte printplaat, symbool van de technische striktheid en de architectuur die onze methode structureert.",
-      "photo1Caption": "Een <b>strikte</b> methode, van diagnose tot correctie.",
       "photo2Alt": "Een consultant rangschikt prioriteiten per kwartaal op een planningsbord, wat de opbouw van een geprioriteerde roadmap samen met de klant illustreert.",
       "photo2Caption": "Een <b>geprioriteerde roadmap</b>, samen met u opgebouwd.",
       "deliverHead": "Wat u ontvangt"
