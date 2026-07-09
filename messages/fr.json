@@ -1619,6 +1619,27 @@
         "important": "Important",
         "essential": "Essential"
       }
+    },
+    "faq": {
+      "eyebrow": "Questions fréquentes",
+      "title": "Vos questions sur nos services",
+      "lead": "Les questions qu'on nous pose le plus. Une autre ? Posez-la lors du diagnostic gratuit.",
+      "q1": {
+        "question": "Suis-je concerné par NIS2 ?",
+        "answer": "NIS2 vise les entités essentielles et importantes, et beaucoup de PME le sont indirectement, comme sous-traitants. En cas de doute, notre test « Suis-je concerné ? » et le diagnostic gratuit tranchent votre cas."
+      },
+      "q2": {
+        "question": "Faites-vous le développement ET la sécurité ?",
+        "answer": "Oui. Réseaux, applications, code sécurisé et conformité : un seul interlocuteur, de l'audit à la remédiation. C'est notre différence, sans intermédiaires."
+      },
+      "q3": {
+        "question": "Délivrez-vous la certification CyFun ?",
+        "answer": "Non. La certification est délivrée par des organismes accrédités BELAC, indépendants de nous. Notre rôle : auditer, remédier et vous préparer jusqu'à la vérification."
+      },
+      "q4": {
+        "question": "Combien coûte ou dure un audit ?",
+        "answer": "Cela dépend du périmètre et de votre maturité. Le diagnostic initial est gratuit et sans engagement ; il cadre le périmètre, la durée et le budget avant tout devis."
+      }
     }
   },
   "sharedui": {
@@ -1712,6 +1733,10 @@
         }
       },
       "note": "*Durées indicatives, variables selon votre maturité de départ, la taille du périmètre et vos ressources internes. Elles sont précisées lors du cadrage."
+    },
+    "pillar": {
+      "capabilitiesHead": "Ce que nous mettons en place",
+      "deliverablesHead": "Livrables"
     }
   },
   "wizard": {

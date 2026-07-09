@@ -1619,6 +1619,27 @@
         "important": "Important",
         "essential": "Essential"
       }
+    },
+    "faq": {
+      "eyebrow": "Veelgestelde vragen",
+      "title": "Uw vragen over onze diensten",
+      "lead": "De vragen die we het vaakst krijgen. Een andere? Stel ze tijdens de gratis diagnose.",
+      "q1": {
+        "question": "Valt mijn kmo onder NIS2?",
+        "answer": "NIS2 richt zich op essentiële en belangrijke entiteiten, en veel kmo's vallen er onrechtstreeks onder, als onderaannemer. Bij twijfel beslissen onze test « Valt mijn kmo onder NIS2? » en de gratis diagnose uw geval."
+      },
+      "q2": {
+        "question": "Doen jullie de ontwikkeling ÉN de beveiliging?",
+        "answer": "Ja. Netwerken, applicaties, veilige code en conformiteit: één aanspreekpunt, van audit tot remediatie. Dat is ons verschil, zonder tussenpersonen."
+      },
+      "q3": {
+        "question": "Leveren jullie het CyFun-certificaat af?",
+        "answer": "Nee. De certificering komt toe aan BELAC-geaccrediteerde instellingen, onafhankelijk van ons. Onze rol: auditen, remediëren en u voorbereiden tot de verificatie."
+      },
+      "q4": {
+        "question": "Wat kost of hoelang duurt een audit?",
+        "answer": "Dat hangt af van de scope en uw maturiteit. De eerste diagnose is gratis en vrijblijvend; ze bepaalt scope, duur en budget vóór elke offerte."
+      }
     }
   },
   "sharedui": {
@@ -1712,6 +1733,10 @@
         }
       },
       "note": "*Indicatieve doorlooptijden, afhankelijk van uw beginmaturiteit, de omvang van de scope en uw interne middelen. Ze worden gepreciseerd tijdens de scoping."
+    },
+    "pillar": {
+      "capabilitiesHead": "Wat we opzetten",
+      "deliverablesHead": "Opleveringen"
     }
   },
   "wizard": {

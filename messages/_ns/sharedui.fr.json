@@ -89,5 +89,9 @@
       }
     },
     "note": "*Durées indicatives, variables selon votre maturité de départ, la taille du périmètre et vos ressources internes. Elles sont précisées lors du cadrage."
+  },
+  "pillar": {
+    "capabilitiesHead": "Ce que nous mettons en place",
+    "deliverablesHead": "Livrables"
   }
 }

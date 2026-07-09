@@ -89,5 +89,9 @@
       }
     },
     "note": "*Indicative durations, varying with your starting maturity, the size of the scope and your internal resources. They are confirmed during scoping."
+  },
+  "pillar": {
+    "capabilitiesHead": "What we put in place",
+    "deliverablesHead": "Deliverables"
   }
 }

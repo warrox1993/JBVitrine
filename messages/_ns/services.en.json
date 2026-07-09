@@ -269,5 +269,26 @@
       "important": "Important",
       "essential": "Essential"
     }
+  },
+  "faq": {
+    "eyebrow": "Frequently asked questions",
+    "title": "Your questions about our services",
+    "lead": "The questions we get most often. Another one? Ask it during the free assessment.",
+    "q1": {
+      "question": "Does NIS2 apply to me?",
+      "answer": "NIS2 targets essential and important entities, and many SMEs are covered indirectly, as subcontractors. If in doubt, our 'Does NIS2 apply to me?' check and the free assessment settle your case."
+    },
+    "q2": {
+      "question": "Do you do development AND security?",
+      "answer": "Yes. Networks, applications, secure code and compliance: one point of contact, from audit to remediation. That is our difference, no middlemen."
+    },
+    "q3": {
+      "question": "Do you issue the CyFun certificate?",
+      "answer": "No. Certification is granted by BELAC-accredited bodies, independent from us. Our role: audit, remediate and get you ready for the verification."
+    },
+    "q4": {
+      "question": "How much does an audit cost or how long does it take?",
+      "answer": "It depends on the scope and your maturity. The initial assessment is free and no-commitment; it frames scope, duration and budget before any quote."
+    }
   }
 }

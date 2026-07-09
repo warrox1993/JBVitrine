@@ -15,6 +15,7 @@ import {
   ServicePillar,
   CyFunTiers,
   TrustStrip,
+  Faq,
   CTABox,
 } from "@/components/shared";
 import {
@@ -137,6 +138,20 @@ export default async function ServicesPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("services");
+  const FAQ_KEYS = ["q1", "q2", "q3", "q4"] as const;
+  const faqItems = FAQ_KEYS.map((q) => ({
+    question: t(`faq.${q}.question`),
+    answer: <p>{t(`faq.${q}.answer`)}</p>,
+  }));
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQ_KEYS.map((q) => ({
+      "@type": "Question",
+      name: t(`faq.${q}.question`),
+      acceptedAnswer: { "@type": "Answer", text: t(`faq.${q}.answer`) },
+    })),
+  };
   return (
     <>
       <script
@@ -146,6 +161,10 @@ export default async function ServicesPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* ===== Page hero ===== */}
@@ -347,6 +366,22 @@ export default async function ServicesPage({
               {t.rich("cyfun.transparency", { b: (c) => <b>{c}</b> })}
             </p>
           </div>
+        </Reveal>
+      </Section>
+
+      {/* ===== FAQ ===== */}
+      <Section variant="tint" id="faq">
+        <Reveal>
+          <SectionHeading
+            center
+            as="h2"
+            eyebrow={t("faq.eyebrow")}
+            title={t("faq.title")}
+            lead={t("faq.lead")}
+          />
+        </Reveal>
+        <Reveal>
+          <Faq defaultOpenFirst items={faqItems} />
         </Reveal>
       </Section>
 

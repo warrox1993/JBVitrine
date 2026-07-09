@@ -1,4 +1,5 @@
 import React from "react";
+import { getTranslations } from "next-intl/server";
 import { Container } from "../../ui/Container";
 import { Button } from "../../ui/Button/Button";
 import { Icon, IconName } from "../../ui/Icon/Icon";
@@ -45,7 +46,7 @@ function isIconName(v: ServicePillarProps["icon"]): v is IconName {
 }
 
 /** Full-width service pillar with capabilities, audience, deliverables and CTA. */
-export function ServicePillar({
+export async function ServicePillar({
   id,
   index,
   icon,
@@ -62,6 +63,7 @@ export function ServicePillar({
   className,
 }: ServicePillarProps) {
   const cn = [styles.pillar, alt ? styles.alt : "", className].filter(Boolean).join(" ");
+  const t = await getTranslations("sharedui");
   return (
     <section id={id} className={cn}>
       <Container>
@@ -83,7 +85,7 @@ export function ServicePillar({
           <div>
             <p className={styles.intro}>{intro}</p>
             {visual ? <div>{visual}</div> : null}
-            <div className={styles.subH}>Ce que nous mettons en place</div>
+            <h3 className={styles.subH}>{t("pillar.capabilitiesHead")}</h3>
             <div className={styles.capGrid}>
               {capabilities.map((c) => (
                 <div key={c.title} className={styles.cap}>
@@ -115,10 +117,10 @@ export function ServicePillar({
             ) : null}
 
             <div className={styles.deliver}>
-              <div className={styles.deliverHead}>
+              <h3 className={styles.deliverHead}>
                 <Icon name="file-check" />
-                Livrables
-              </div>
+                {t("pillar.deliverablesHead")}
+              </h3>
               <ul>
                 {deliverables.map((d) => (
                   <li key={d}>
