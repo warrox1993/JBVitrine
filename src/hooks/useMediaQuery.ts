@@ -2,18 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-const resolveMatch = (query: string): boolean => {
-  if (
-    typeof window === "undefined" ||
-    typeof window.matchMedia !== "function"
-  ) {
-    return false;
-  }
-  return window.matchMedia(query).matches;
-};
-
 export function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = useState(() => resolveMatch(query));
+  // Deterministic `false` on the server AND the first client render, so SSR and
+  // hydration match. The effect below sets the real value on mount.
+  const [matches, setMatches] = useState(false);
 
   useEffect(() => {
     if (
