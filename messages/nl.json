@@ -824,7 +824,8 @@
         "csrf": "Beveiligingstoken ontbreekt. Herlaad de pagina.",
         "submit": "Verzenden mislukt. Probeer het opnieuw.",
         "generic": "Er is een fout opgetreden. Probeer het opnieuw."
-      }
+      },
+      "recaptcha": "Beschermd door reCAPTCHA: het <privacy>privacybeleid</privacy> en de <terms>voorwaarden</terms> van Google zijn van toepassing."
     },
     "side": {
       "aria": "Onze contactgegevens",

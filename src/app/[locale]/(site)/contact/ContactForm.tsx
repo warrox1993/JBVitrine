@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { useCsrfToken } from '@/hooks/useCsrfToken';
 import cls from './ContactForm.module.css';
@@ -73,6 +73,7 @@ export function ContactForm() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
+  const successRef = useRef<HTMLDivElement>(null);
 
   // Shared CSRF token hook (singleton, no duplicate API calls). Same as SimpleContactForm.
   const { csrfToken, error: csrfError } = useCsrfToken();
@@ -82,6 +83,11 @@ export function ContactForm() {
       console.error('[ContactForm] CSRF token error:', csrfError);
     }
   }, [csrfError]);
+
+  // Move focus to the success message so screen readers announce the outcome.
+  useEffect(() => {
+    if (submitSuccess) successRef.current?.focus();
+  }, [submitSuccess]);
 
   // Load reCAPTCHA Enterprise on mount (identical to SimpleContactForm).
   useEffect(() => {
@@ -240,7 +246,7 @@ export function ContactForm() {
   if (submitSuccess) {
     return (
       <div className={cls.formCard}>
-        <div className={cls.success}>
+        <div className={cls.success} ref={successRef} tabIndex={-1} role="status" aria-live="polite">
           <div className={cls.successIcon} aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
@@ -311,6 +317,8 @@ export function ContactForm() {
               value={data.demande}
               onChange={(e) => update('demande', e.target.value)}
               className={errors.demande ? cls.inputError : ''}
+              aria-invalid={errors.demande ? true : undefined}
+              aria-describedby={errors.demande ? 'demande-error' : undefined}
               disabled={isSubmitting}
               required
             >
@@ -324,7 +332,7 @@ export function ContactForm() {
               <path d="m6 9 6 6 6-6" />
             </svg>
           </div>
-          {errors.demande && <span className={cls.errorText}>{errors.demande}</span>}
+          {errors.demande && <span id="demande-error" role="alert" className={cls.errorText}>{errors.demande}</span>}
         </div>
 
         <div className={cls.fieldRow}>
@@ -341,10 +349,12 @@ export function ContactForm() {
               value={data.name}
               onChange={(e) => update('name', e.target.value)}
               className={errors.name ? cls.inputError : ''}
+              aria-invalid={errors.name ? true : undefined}
+              aria-describedby={errors.name ? 'name-error' : undefined}
               disabled={isSubmitting}
               required
             />
-            {errors.name && <span className={cls.errorText}>{errors.name}</span>}
+            {errors.name && <span id="name-error" role="alert" className={cls.errorText}>{errors.name}</span>}
           </div>
           <div className={cls.field}>
             <label htmlFor="company">{t('form.labels.company')}</label>
@@ -377,10 +387,12 @@ export function ContactForm() {
               value={data.email}
               onChange={(e) => update('email', e.target.value)}
               className={errors.email ? cls.inputError : ''}
+              aria-invalid={errors.email ? true : undefined}
+              aria-describedby={errors.email ? 'email-error' : undefined}
               disabled={isSubmitting}
               required
             />
-            {errors.email && <span className={cls.errorText}>{errors.email}</span>}
+            {errors.email && <span id="email-error" role="alert" className={cls.errorText}>{errors.email}</span>}
           </div>
           <div className={cls.field}>
             <label htmlFor="phone">
@@ -410,10 +422,12 @@ export function ContactForm() {
             value={data.message}
             onChange={(e) => update('message', e.target.value)}
             className={errors.message ? cls.inputError : ''}
+            aria-invalid={errors.message ? true : undefined}
+            aria-describedby={errors.message ? 'message-error' : undefined}
             disabled={isSubmitting}
             required
           />
-          {errors.message && <span className={cls.errorText}>{errors.message}</span>}
+          {errors.message && <span id="message-error" role="alert" className={cls.errorText}>{errors.message}</span>}
         </div>
 
         <div className={`${cls.consent} ${errors.rgpd ? cls.inputError : ''}`}>
@@ -427,10 +441,9 @@ export function ContactForm() {
             required
           />
           <label htmlFor="rgpd">
-            J&apos;accepte que Smidjan traite les informations transmises pour répondre à ma
-            demande, conformément à sa{' '}
-            <a href="/confidentialite">politique de confidentialité</a>. Aucune
-            donnée n&apos;est cédée à des tiers.{' '}
+            {t.rich('form.consent', {
+              link: (c) => <a href="/confidentialite">{c}</a>,
+            })}{' '}
             <span className={cls.req} aria-hidden="true">*</span>
           </label>
         </div>
@@ -447,10 +460,10 @@ export function ContactForm() {
             disabled={isSubmitting || !csrfToken}
           >
             {isSubmitting ? (
-              'Envoi en cours…'
+              t('form.submitting')
             ) : (
               <>
-                Envoyer ma demande
+                {t('form.submit')}
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z" />
                 </svg>
@@ -461,9 +474,20 @@ export function ContactForm() {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
             </svg>
-            Vos informations restent confidentielles
+            {t('form.note')}
           </span>
         </div>
+
+        <p style={{ margin: '14px 34px 4px', fontSize: '0.72rem', lineHeight: 1.5, color: 'var(--color-text-muted, #657189)' }}>
+          {t.rich('form.recaptcha', {
+            privacy: (c) => (
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">{c}</a>
+            ),
+            terms: (c) => (
+              <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">{c}</a>
+            ),
+          })}
+        </p>
       </form>
     </div>
   );

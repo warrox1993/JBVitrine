@@ -75,7 +75,8 @@
       "csrf": "Token de sécurité manquant. Veuillez recharger la page.",
       "submit": "Échec de l'envoi. Veuillez réessayer.",
       "generic": "Une erreur est survenue. Veuillez réessayer."
-    }
+    },
+    "recaptcha": "Protégé par reCAPTCHA : les <privacy>règles de confidentialité</privacy> et <terms>conditions</terms> de Google s'appliquent."
   },
   "side": {
     "aria": "Nos coordonnées",
