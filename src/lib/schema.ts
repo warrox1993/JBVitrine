@@ -5,7 +5,7 @@ export const organizationSchema = {
   name: "Smidjan",
   alternateName: "Smidjan Cybersécurité",
   url: "https://smidjan.be",
-  logo: "https://smidjan.be/logo.png",
+  logo: "https://smidjan.be/images/logoheader/logo-200.png",
   description:
     "Smidjan sécurise les réseaux, l'infrastructure et les applications des PME wallonnes, et les met en conformité NIS2 / CyberFundamentals (CCB). Audit, remédiation et accompagnement, en Belgique.",
   foundingDate: "2025",
@@ -46,7 +46,7 @@ export const websiteSchema = {
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://smidjan.be/#organization",
+  "@id": "https://smidjan.be/#localbusiness",
   name: "Smidjan, Cybersécurité & conformité NIS2, Liège",
   alternateName: "Smidjan Cybersécurité",
   image: "https://smidjan.be/og-image.webp",
@@ -288,7 +288,7 @@ export const createArticleSchema = ({
     name: "Smidjan",
     logo: {
       "@type": "ImageObject",
-      url: "https://smidjan.be/logo.png",
+      url: "https://smidjan.be/images/logoheader/logo-200.png",
     },
   },
   mainEntityOfPage: {

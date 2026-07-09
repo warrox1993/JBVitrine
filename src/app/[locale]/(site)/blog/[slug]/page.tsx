@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { buildAlternates } from "@/i18n/metadata";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -138,7 +138,7 @@ export default async function BlogArticlePage({ params }: Props) {
               name: "Smidjan",
               logo: {
                 "@type": "ImageObject",
-                url: "https://smidjan.be/logo.png",
+                url: "https://smidjan.be/images/logoheader/logo-200.png",
               },
             },
             mainEntityOfPage: {

@@ -106,7 +106,7 @@ export default async function BlogPage({ params }: PageProps) {
               name: "Smidjan",
               logo: {
                 "@type": "ImageObject",
-                url: "https://smidjan.be/logo.png",
+                url: "https://smidjan.be/images/logoheader/logo-200.png",
               },
             },
             blogPost: blogArticles.map((article) => ({

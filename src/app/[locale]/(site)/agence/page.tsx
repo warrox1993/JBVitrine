@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { buildAlternates } from "@/i18n/metadata";
 import { authorSchema } from "@/lib/author-schema";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import OptimizedImage from "@/components/ui/OptimizedImage";

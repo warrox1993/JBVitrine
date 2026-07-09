@@ -42,27 +42,27 @@ export function Step1ProjectType({ selected, onChange, onNext }: Step1ProjectTyp
     siteVitrine: {
       title: t('step1.info.siteVitrine.title'),
       explanation: t('step1.info.siteVitrine.explanation'),
-      blogUrl: "/blog/difference-site-vitrine-ecommerce-application-web"
+      blogUrl: "/blog/creer-boutique-en-ligne-nextjs-belgique"
     },
     ecommerce: {
       title: t('step1.info.ecommerce.title'),
       explanation: t('step1.info.ecommerce.explanation'),
-      blogUrl: "/blog/difference-site-vitrine-ecommerce-application-web"
+      blogUrl: "/blog/creer-boutique-en-ligne-nextjs-belgique"
     },
     appWeb: {
       title: t('step1.info.appWeb.title'),
       explanation: t('step1.info.appWeb.explanation'),
-      blogUrl: "/blog/difference-site-vitrine-ecommerce-application-web"
+      blogUrl: "/blog/creer-boutique-en-ligne-nextjs-belgique"
     },
     auditCyber: {
       title: t('step1.info.auditCyber.title'),
       explanation: t('step1.info.auditCyber.explanation'),
-      blogUrl: "/blog/audit-securite-pentest-difference-belgique"
+      blogUrl: "/blog/securiser-application-web-owasp-belgique"
     },
     aiAutomation: {
       title: t('step1.info.aiAutomation.title'),
       explanation: t('step1.info.aiAutomation.explanation'),
-      blogUrl: "/blog/automatisation-ia-chatbot-rpa-belgique"
+      blogUrl: "/blog/automatiser-workflows-n8n-ia-entreprise"
     },
     cmsBlog: {
       title: t('step1.info.cmsBlog.title'),

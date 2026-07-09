@@ -386,7 +386,7 @@ export function StepCodeOwnership({
                   {t.rich('codeOwnership.cms.infoNote', { b: (c) => <strong>{c}</strong> })}
                 </p>
                 <a
-                  href="/cms-ecommerce"
+                  href="/services"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cls.cmsLink}
