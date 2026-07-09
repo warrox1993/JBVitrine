@@ -90,6 +90,7 @@ export async function WhySmidjan() {
           </div>
         </div>
         <blockquote className={styles.quote}>{t("why.quote")}</blockquote>
+        <p className={styles.mission}>{t("why.mission")}</p>
         <ul className={styles.creds}>
           <li>
             <Icon name="check" strokeWidth={2.2} />

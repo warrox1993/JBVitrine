@@ -1,0 +1,59 @@
+{
+  "eyebrow": "Snelle test",
+  "title": "NIS2: valt u eronder?",
+  "lead": "3 vragen, 2 minuten, zonder e-mail. Meteen resultaat op het scherm.",
+  "progress": "Vraag {current} / {total}",
+  "q1": {
+    "label": "Uw activiteitssector?",
+    "opt": {
+      "energy": "Energie, water, afvalbeheer",
+      "health": "Gezondheid, zorg, farma",
+      "transport": "Transport, logistiek",
+      "finance": "Bank, financiën, verzekeringen",
+      "digital": "Digitaal, telecom, cloud, datacenter",
+      "public": "Overheid",
+      "industry": "Industrie, productie, chemie, voeding",
+      "digitalserv": "Digitale diensten (platformen, marktplaatsen)",
+      "other": "Andere / niet in deze lijst"
+    }
+  },
+  "q2": {
+    "label": "Hoeveel mensen telt uw onderneming?",
+    "opt": {
+      "small": "Minder dan 50",
+      "medium": "50 tot 250",
+      "large": "Meer dan 250"
+    }
+  },
+  "q3": {
+    "label": "Bent u leverancier of onderaannemer van een onderneming die al onder NIS2 valt?",
+    "opt": {
+      "yes": "Ja",
+      "maybe": "Ik weet het niet",
+      "no": "Nee"
+    }
+  },
+  "back": "Terug",
+  "restart": "Test opnieuw doen",
+  "verdictLabel": "Uw situatie",
+  "result": {
+    "essential": {
+      "title": "Wellicht een essentiële entiteit",
+      "text": "Uw sector en grootte plaatsen u bij de entiteiten met de strengste NIS2-eisen. De vereisten zijn hoog en de directie draagt persoonlijke aansprakelijkheid."
+    },
+    "important": {
+      "title": "Wellicht een belangrijke entiteit",
+      "text": "Uw profiel valt rechtstreeks onder NIS2 als belangrijke entiteit. U moet uw conformiteit structureren, op een niveau aangepast aan uw risico."
+    },
+    "ricochet": {
+      "title": "Betrokken via de keten (toeleveringsketen)",
+      "text": "Ook zonder rechtstreeks geviseerd te zijn, kan een klant die onder NIS2 valt u contractueel een beveiligingsniveau opleggen. Anticiperen is beter."
+    },
+    "notdirect": {
+      "title": "In principe niet rechtstreeks betrokken",
+      "text": "Op deze criteria viseert NIS2 u vandaag wellicht niet rechtstreeks. Toch opgelet: een klant onder NIS2 kan het u opleggen, en uw systemen beveiligen blijft nuttig."
+    },
+    "cta": "Laten we uw stappenplan bespreken",
+    "disclaimer": "Indicatieve inschatting, geen juridisch advies. De gratis diagnose bevestigt uw exacte situatie."
+  }
+}

@@ -36,6 +36,8 @@ export type { ProcessStepsProps, ProcessStep } from "./ProcessSteps/ProcessSteps
 export { Faq } from "./Faq/Faq";
 export type { FaqProps, FaqItem } from "./Faq/Faq";
 
+export { NIS2Checker } from "./NIS2Checker/NIS2Checker";
+
 export { ArticleCard } from "./ArticleCard/ArticleCard";
 export type { ArticleCardProps } from "./ArticleCard/ArticleCard";
 

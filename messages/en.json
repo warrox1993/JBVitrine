@@ -422,7 +422,8 @@
       "navAria": "Main navigation",
       "cta": "Free assessment",
       "openMenu": "Open menu",
-      "closeMenu": "Close menu"
+      "closeMenu": "Close menu",
+      "incident": "Incident in progress?"
     },
     "footer": {
       "blurb": "Cybersecurity and NIS2 compliance for SMEs in Wallonia. We secure, we test, we develop, we bring you into compliance, and we remediate what we find.",
@@ -1058,7 +1059,9 @@
       "deadlineText": "In force since 18 October 2024. Anticipating reduces the risk.",
       "fine": "Non-compliance: fines reaching several million euros for essential entities, and personal liability of management.",
       "sourcesLabel": "Official sources:",
-      "verified": "Information verified in {date}."
+      "verified": "Information verified in {date}.",
+      "stairSmall": "Small · free",
+      "stairNote": "Entry is progressive. We start at the level that matches your risk, each tier builds on the previous one."
     },
     "illus": {
       "diagnostic": {
@@ -1123,7 +1126,8 @@
       "quote": "«The cybersecurity of an SME does not fit in a 200-page report that gets filed away in a drawer. It plays out weakness by weakness, while staying reachable.»",
       "cred1": "Former telecommunications operator, Belgian Army",
       "cred2": "Technical IT degree, hands-on Linux / Kali practitioner",
-      "cred3": "NIS2 / CyFun (CCB), OWASP, ISO 27001 frameworks"
+      "cred3": "NIS2 / CyFun (CCB), OWASP, ISO 27001 frameworks",
+      "mission": "“I founded Smidjan because too many Walloon SMEs are left alone facing NIS2.”"
     },
     "insight": {
       "kick": "Free guide",
@@ -1992,6 +1996,65 @@
         "infoNote": "<b>Ideal for:</b> serious shops, rapid growth, professional support, peace of mind",
         "cmsLink": "Discover Smidjan CMS in detail"
       }
+    }
+  },
+  "checker": {
+    "eyebrow": "Quick check",
+    "title": "NIS2: does it apply to you?",
+    "lead": "3 questions, 2 minutes, no email. Instant on-screen result.",
+    "progress": "Question {current} / {total}",
+    "q1": {
+      "label": "Your sector of activity?",
+      "opt": {
+        "energy": "Energy, water, waste management",
+        "health": "Health, care, pharma",
+        "transport": "Transport, logistics",
+        "finance": "Banking, finance, insurance",
+        "digital": "Digital, telecom, cloud, datacenter",
+        "public": "Public administration",
+        "industry": "Manufacturing, chemicals, food",
+        "digitalserv": "Digital services (platforms, marketplaces)",
+        "other": "Other / not in this list"
+      }
+    },
+    "q2": {
+      "label": "How many people in the company?",
+      "opt": {
+        "small": "Fewer than 50",
+        "medium": "50 to 250",
+        "large": "More than 250"
+      }
+    },
+    "q3": {
+      "label": "Are you a supplier or subcontractor to a company already subject to NIS2?",
+      "opt": {
+        "yes": "Yes",
+        "maybe": "I don't know",
+        "no": "No"
+      }
+    },
+    "back": "Back",
+    "restart": "Restart the test",
+    "verdictLabel": "Your situation",
+    "result": {
+      "essential": {
+        "title": "Likely an essential entity",
+        "text": "Your sector and size place you among the entities most tightly regulated by NIS2. Requirements are high and management bears personal liability."
+      },
+      "important": {
+        "title": "Likely an important entity",
+        "text": "Your profile falls directly within NIS2's scope as an important entity. You need to structure your compliance at a level matched to your risk."
+      },
+      "ricochet": {
+        "title": "Concerned via the supply chain",
+        "text": "Even without being targeted directly, a client subject to NIS2 can require a security level from you by contract. Better to anticipate."
+      },
+      "notdirect": {
+        "title": "Likely not directly concerned",
+        "text": "On these criteria, NIS2 probably does not target you directly today. Note however: a client subject to NIS2 may impose it, and securing your systems remains worthwhile."
+      },
+      "cta": "Let's discuss your roadmap",
+      "disclaimer": "Indicative estimate, not legal advice. The free assessment confirms your exact situation."
     }
   }
 }

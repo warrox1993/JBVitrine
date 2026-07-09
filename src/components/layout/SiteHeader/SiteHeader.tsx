@@ -79,6 +79,9 @@ export default function SiteHeader() {
           className={`${styles.main} ${open ? styles.open : ""}`}
           aria-label={t("header.navAria")}
         >
+          <Link href="/contact" className={styles.incident}>
+            {t("header.incident")}
+          </Link>
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}

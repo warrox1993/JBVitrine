@@ -14,7 +14,8 @@
     "navAria": "Main navigation",
     "cta": "Free assessment",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "incident": "Incident in progress?"
   },
   "footer": {
     "blurb": "Cybersecurity and NIS2 compliance for SMEs in Wallonia. We secure, we test, we develop, we bring you into compliance, and we remediate what we find.",

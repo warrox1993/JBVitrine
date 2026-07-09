@@ -84,7 +84,9 @@
     "deadlineText": "In force since 18 October 2024. Anticipating reduces the risk.",
     "fine": "Non-compliance: fines reaching several million euros for essential entities, and personal liability of management.",
     "sourcesLabel": "Official sources:",
-    "verified": "Information verified in {date}."
+    "verified": "Information verified in {date}.",
+    "stairSmall": "Small · free",
+    "stairNote": "Entry is progressive. We start at the level that matches your risk, each tier builds on the previous one."
   },
   "illus": {
     "diagnostic": {
@@ -149,7 +151,8 @@
     "quote": "«The cybersecurity of an SME does not fit in a 200-page report that gets filed away in a drawer. It plays out weakness by weakness, while staying reachable.»",
     "cred1": "Former telecommunications operator, Belgian Army",
     "cred2": "Technical IT degree, hands-on Linux / Kali practitioner",
-    "cred3": "NIS2 / CyFun (CCB), OWASP, ISO 27001 frameworks"
+    "cred3": "NIS2 / CyFun (CCB), OWASP, ISO 27001 frameworks",
+    "mission": "“I founded Smidjan because too many Walloon SMEs are left alone facing NIS2.”"
   },
   "insight": {
     "kick": "Free guide",

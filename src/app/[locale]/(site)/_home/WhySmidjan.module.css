@@ -121,6 +121,13 @@
   color: var(--on-dark-muted);
   margin-top: 3px;
 }
+.mission {
+  margin: 12px 0 0;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-accent, #ff6a00);
+}
 .quote {
   margin: 24px 0 0;
   font-size: 16px;

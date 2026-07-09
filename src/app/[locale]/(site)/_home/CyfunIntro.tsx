@@ -34,6 +34,16 @@ export async function CyfunIntro() {
             b: (c) => <b>{c}</b>,
           })}
         </StatHook>
+        <div className={styles.stairs}>
+          <span className={styles.stairSmall}>{t("cyfun.stairSmall")}</span>
+          <span className={styles.stairSep} aria-hidden="true">→</span>
+          <span className={styles.stairStep}>Basic</span>
+          <span className={styles.stairSep} aria-hidden="true">→</span>
+          <span className={styles.stairStep}>Important</span>
+          <span className={styles.stairSep} aria-hidden="true">→</span>
+          <span className={styles.stairStep}>Essential</span>
+        </div>
+        <p className={styles.stairNote}>{t("cyfun.stairNote")}</p>
         <p className={styles.sources}>
           {t("cyfun.verified", { date: verifiedDate })} {t("cyfun.sourcesLabel")}{" "}
           <a

@@ -422,7 +422,8 @@
       "navAria": "Hoofdnavigatie",
       "cta": "Gratis diagnose",
       "openMenu": "Menu openen",
-      "closeMenu": "Menu sluiten"
+      "closeMenu": "Menu sluiten",
+      "incident": "Incident bezig?"
     },
     "footer": {
       "blurb": "Cybersecurity en NIS2-conformiteit voor kmo's in Wallonië. Wij beveiligen, testen, ontwikkelen, brengen in orde en remediëren wat we vinden.",
@@ -1058,7 +1059,9 @@
       "deadlineText": "Van kracht sinds 18 oktober 2024. Anticiperen verlaagt het risico.",
       "fine": "Niet-naleving: boetes die kunnen oplopen tot meerdere miljoenen euro voor essentiële entiteiten, en persoonlijke aansprakelijkheid van de directie.",
       "sourcesLabel": "Officiële bronnen:",
-      "verified": "Informatie geverifieerd in {date}."
+      "verified": "Informatie geverifieerd in {date}.",
+      "stairSmall": "Small · gratis",
+      "stairNote": "De instap is progressief. We starten op het niveau dat bij uw risico past, elk niveau bouwt voort op het vorige."
     },
     "illus": {
       "diagnostic": {
@@ -1123,7 +1126,8 @@
       "quote": "« De cyberbeveiliging van een kmo zit niet in een rapport van 200 pagina's dat in een lade verdwijnt. Ze speelt zich af kwetsbaarheid per kwetsbaarheid, terwijl u bereikbaar blijft. »",
       "cred1": "Oud-medewerker telecommunicatie van het Belgische leger",
       "cred2": "Technisch diploma informatica, Linux / Kali-practicus",
-      "cred3": "Raamwerken NIS2 / CyFun (CCB), OWASP, ISO 27001"
+      "cred3": "Raamwerken NIS2 / CyFun (CCB), OWASP, ISO 27001",
+      "mission": "« Ik richtte Smidjan op omdat te veel Waalse kmo's er alleen voor staan tegenover NIS2. »"
     },
     "insight": {
       "kick": "Gratis gids",
@@ -1992,6 +1996,65 @@
         "infoNote": "<b>Ideaal voor:</b> serieuze winkels, snelle groei, professionele ondersteuning, gemoedsrust",
         "cmsLink": "Ontdek Smidjan CMS in detail"
       }
+    }
+  },
+  "checker": {
+    "eyebrow": "Snelle test",
+    "title": "NIS2: valt u eronder?",
+    "lead": "3 vragen, 2 minuten, zonder e-mail. Meteen resultaat op het scherm.",
+    "progress": "Vraag {current} / {total}",
+    "q1": {
+      "label": "Uw activiteitssector?",
+      "opt": {
+        "energy": "Energie, water, afvalbeheer",
+        "health": "Gezondheid, zorg, farma",
+        "transport": "Transport, logistiek",
+        "finance": "Bank, financiën, verzekeringen",
+        "digital": "Digitaal, telecom, cloud, datacenter",
+        "public": "Overheid",
+        "industry": "Industrie, productie, chemie, voeding",
+        "digitalserv": "Digitale diensten (platformen, marktplaatsen)",
+        "other": "Andere / niet in deze lijst"
+      }
+    },
+    "q2": {
+      "label": "Hoeveel mensen telt uw onderneming?",
+      "opt": {
+        "small": "Minder dan 50",
+        "medium": "50 tot 250",
+        "large": "Meer dan 250"
+      }
+    },
+    "q3": {
+      "label": "Bent u leverancier of onderaannemer van een onderneming die al onder NIS2 valt?",
+      "opt": {
+        "yes": "Ja",
+        "maybe": "Ik weet het niet",
+        "no": "Nee"
+      }
+    },
+    "back": "Terug",
+    "restart": "Test opnieuw doen",
+    "verdictLabel": "Uw situatie",
+    "result": {
+      "essential": {
+        "title": "Wellicht een essentiële entiteit",
+        "text": "Uw sector en grootte plaatsen u bij de entiteiten met de strengste NIS2-eisen. De vereisten zijn hoog en de directie draagt persoonlijke aansprakelijkheid."
+      },
+      "important": {
+        "title": "Wellicht een belangrijke entiteit",
+        "text": "Uw profiel valt rechtstreeks onder NIS2 als belangrijke entiteit. U moet uw conformiteit structureren, op een niveau aangepast aan uw risico."
+      },
+      "ricochet": {
+        "title": "Betrokken via de keten (toeleveringsketen)",
+        "text": "Ook zonder rechtstreeks geviseerd te zijn, kan een klant die onder NIS2 valt u contractueel een beveiligingsniveau opleggen. Anticiperen is beter."
+      },
+      "notdirect": {
+        "title": "In principe niet rechtstreeks betrokken",
+        "text": "Op deze criteria viseert NIS2 u vandaag wellicht niet rechtstreeks. Toch opgelet: een klant onder NIS2 kan het u opleggen, en uw systemen beveiligen blijft nuttig."
+      },
+      "cta": "Laten we uw stappenplan bespreken",
+      "disclaimer": "Indicatieve inschatting, geen juridisch advies. De gratis diagnose bevestigt uw exacte situatie."
     }
   }
 }

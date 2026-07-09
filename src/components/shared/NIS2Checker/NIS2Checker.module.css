@@ -1,0 +1,177 @@
+.checker {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-border, #d7dfeb);
+  border-radius: 18px;
+  padding: 26px 26px 24px;
+  box-shadow: 0 1px 2px rgba(11, 31, 58, 0.06), 0 12px 34px rgba(11, 31, 58, 0.08);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.progress {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted, #657189);
+  white-space: nowrap;
+}
+.bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-border, #e3e9f1);
+  overflow: hidden;
+}
+.bar > span {
+  display: block;
+  height: 100%;
+  background: var(--color-accent, #ff6a00);
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+
+.q {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-inline-size: 0;
+}
+.q legend {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--color-text, #0b1f3a);
+  margin-bottom: 18px;
+  padding: 0;
+}
+
+.opts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.optsWide {
+  grid-template-columns: repeat(3, 1fr);
+}
+.opt {
+  text-align: left;
+  padding: 13px 15px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border, #d7dfeb);
+  background: var(--color-bg-subtle, #f6f8fc);
+  color: var(--color-text, #0b1f3a);
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.08s ease;
+}
+.opt:hover {
+  border-color: var(--color-accent, #ff6a00);
+  background: var(--color-surface, #fff);
+}
+.opt:active { transform: translateY(1px); }
+.opt:focus-visible {
+  outline: 2px solid var(--color-accent, #ff6a00);
+  outline-offset: 2px;
+}
+
+.back {
+  margin-top: 16px;
+  background: none;
+  border: 0;
+  color: var(--color-text-muted, #657189);
+  font: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+  padding: 4px 0;
+}
+.back:hover { color: var(--color-accent, #ff6a00); }
+.back:focus-visible { outline: 2px solid var(--color-accent, #ff6a00); outline-offset: 2px; border-radius: 4px; }
+
+/* ---- result ---- */
+.result {
+  border-radius: 14px;
+  padding: 22px;
+  border: 1px solid var(--color-border, #d7dfeb);
+  border-left-width: 4px;
+}
+.toneHigh { border-left-color: #c23a52; }
+.toneMid { border-left-color: var(--color-accent, #ff6a00); }
+.toneLow { border-left-color: #1f8a5b; }
+
+.verdictLabel {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted, #657189);
+}
+.verdictTitle {
+  margin: 6px 0 8px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--color-text, #0b1f3a);
+}
+.verdictText {
+  margin: 0 0 18px;
+  color: var(--color-text-soft, #35475f);
+  line-height: 1.6;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 20px;
+  border-radius: 999px;
+  background: var(--color-accent, #ff6a00);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.cta:hover { filter: brightness(1.05); }
+.cta:focus-visible { outline: 2px solid var(--color-text, #0b1f3a); outline-offset: 2px; }
+.restart {
+  background: none;
+  border: 0;
+  color: var(--color-text-muted, #657189);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.restart:hover { color: var(--color-accent, #ff6a00); }
+.restart:focus-visible { outline: 2px solid var(--color-accent, #ff6a00); outline-offset: 2px; border-radius: 4px; }
+
+.disclaimer {
+  margin: 16px 0 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-text-muted, #657189);
+}
+
+@media (max-width: 560px) {
+  .checker { padding: 20px 18px; }
+  .opts, .optsWide { grid-template-columns: 1fr; }
+  .q legend { font-size: 1.08rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar > span, .opt { transition: none; }
+}

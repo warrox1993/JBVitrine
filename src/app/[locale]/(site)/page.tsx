@@ -11,6 +11,7 @@ import {
   CyFunTiers,
   ProcessSteps,
   Faq,
+  NIS2Checker,
   CTABox,
 } from "@/components/shared";
 import {
@@ -77,6 +78,7 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
+  const tc = await getTranslations("checker");
   const b = (chunks: ReactNode) => <b>{chunks}</b>;
 
   const faqItems = FAQ_KEYS.map((q) => ({
@@ -135,6 +137,22 @@ export default async function HomePage({
       <Reveal>
         <TrustStrip />
       </Reveal>
+
+      {/* ===== Self-qualification — answers "is this for me?" before anything else ===== */}
+      <Section variant="tint" id="concerne">
+        <Reveal>
+          <SectionHeading
+            center
+            as="h2"
+            eyebrow={tc("eyebrow")}
+            title={tc("title")}
+            lead={tc("lead")}
+          />
+        </Reveal>
+        <Reveal>
+          <NIS2Checker />
+        </Reveal>
+      </Section>
 
       {/* ===== CyFun flagship — the NIS2 proof the hero promises, moved up front ===== */}
       <Section variant="white" id="cyfun">

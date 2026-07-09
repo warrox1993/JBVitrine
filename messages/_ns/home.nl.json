@@ -84,7 +84,9 @@
     "deadlineText": "Van kracht sinds 18 oktober 2024. Anticiperen verlaagt het risico.",
     "fine": "Niet-naleving: boetes die kunnen oplopen tot meerdere miljoenen euro voor essentiële entiteiten, en persoonlijke aansprakelijkheid van de directie.",
     "sourcesLabel": "Officiële bronnen:",
-    "verified": "Informatie geverifieerd in {date}."
+    "verified": "Informatie geverifieerd in {date}.",
+    "stairSmall": "Small · gratis",
+    "stairNote": "De instap is progressief. We starten op het niveau dat bij uw risico past, elk niveau bouwt voort op het vorige."
   },
   "illus": {
     "diagnostic": {
@@ -149,7 +151,8 @@
     "quote": "« De cyberbeveiliging van een kmo zit niet in een rapport van 200 pagina's dat in een lade verdwijnt. Ze speelt zich af kwetsbaarheid per kwetsbaarheid, terwijl u bereikbaar blijft. »",
     "cred1": "Oud-medewerker telecommunicatie van het Belgische leger",
     "cred2": "Technisch diploma informatica, Linux / Kali-practicus",
-    "cred3": "Raamwerken NIS2 / CyFun (CCB), OWASP, ISO 27001"
+    "cred3": "Raamwerken NIS2 / CyFun (CCB), OWASP, ISO 27001",
+    "mission": "« Ik richtte Smidjan op omdat te veel Waalse kmo's er alleen voor staan tegenover NIS2. »"
   },
   "insight": {
     "kick": "Gratis gids",

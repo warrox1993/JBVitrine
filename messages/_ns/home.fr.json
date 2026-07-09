@@ -84,7 +84,9 @@
     "deadlineText": "En vigueur depuis le 18 octobre 2024. Anticiper réduit le risque.",
     "fine": "Non-conformité : amendes pouvant atteindre plusieurs millions d'euros pour les entités essentielles, et responsabilité personnelle de la direction engagée.",
     "sourcesLabel": "Sources officielles :",
-    "verified": "Informations vérifiées en {date}."
+    "verified": "Informations vérifiées en {date}.",
+    "stairSmall": "Small · gratuit",
+    "stairNote": "L'entrée est progressive. On démarre au niveau qui correspond à votre risque, chaque palier s'appuie sur le précédent."
   },
   "illus": {
     "diagnostic": {
@@ -149,7 +151,8 @@
     "quote": "« La cybersécurité d'une PME ne tient pas dans un rapport de 200 pages qu'on range dans un tiroir. Elle se joue faille par faille, en restant joignable. »",
     "cred1": "Ancien des télécommunications de l'Armée belge",
     "cred2": "Diplôme technique en informatique, praticien Linux / Kali",
-    "cred3": "Référentiels NIS2 / CyFun (CCB), OWASP, ISO 27001"
+    "cred3": "Référentiels NIS2 / CyFun (CCB), OWASP, ISO 27001",
+    "mission": "« J'ai créé Smidjan parce que trop de PME wallonnes se retrouvent seules face à NIS2. »"
   },
   "insight": {
     "kick": "Guide gratuit",

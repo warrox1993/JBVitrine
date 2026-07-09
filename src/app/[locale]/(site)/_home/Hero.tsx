@@ -40,7 +40,7 @@ export async function Hero() {
             >
               {t("hero.ctaPrimary")}
             </Button>
-            <Button as="a" href="#cyfun" variant="ghost" size="lg">
+            <Button as="a" href="#concerne" variant="ghost" size="lg">
               {t("hero.ctaSecondary")}
             </Button>
           </div>

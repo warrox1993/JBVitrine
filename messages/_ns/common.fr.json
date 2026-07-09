@@ -14,7 +14,8 @@
     "navAria": "Navigation principale",
     "cta": "Diagnostic gratuit",
     "openMenu": "Ouvrir le menu",
-    "closeMenu": "Fermer le menu"
+    "closeMenu": "Fermer le menu",
+    "incident": "Incident en cours ?"
   },
   "footer": {
     "blurb": "Cybersécurité et conformité NIS2 pour les PME de Wallonie. On sécurise, on teste, on développe, on met en règle, et on corrige ce qu'on trouve.",
