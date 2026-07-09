@@ -1365,7 +1365,7 @@
     "hero": {
       "kicker": "Our expertise",
       "title": "Secure, test, build, <accent>comply</accent>.",
-      "lead": "Hardened infrastructure. Tested applications. Code secure by design. NIS2 / CyFun compliance. A single point of contact, from audit to remediation.",
+      "lead": "One cybersecurity partner for Belgian SMEs: hardened infrastructure, tested applications, NIS2 / CyFun compliance, from audit to remediation. Based in Liège.",
       "ctaPrimary": "Book my free assessment",
       "jumpLabel": "Jump directly to"
     },
@@ -1533,7 +1533,7 @@
           },
           "when": {
             "label": "When",
-            "text": "Before the regulatory deadline, at a client's request, or before an audit."
+            "text": "NIS2 is already in force: at a client's request, before an audit, or to get compliant without waiting for an incident."
           }
         },
         "deliverables": [

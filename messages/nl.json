@@ -1365,7 +1365,7 @@
     "hero": {
       "kicker": "Onze expertise",
       "title": "Beveiligen, testen, ontwikkelen, <accent>conform worden</accent>.",
-      "lead": "Verstevigde infrastructuur. Geteste applicaties. Code secure by design. NIS2- / CyFun-conformiteit. Eén aanspreekpunt, van audit tot remediëring.",
+      "lead": "Eén cybersecuritypartner voor Belgische kmo's: gehard netwerk, geteste applicaties, NIS2 / CyFun-conformiteit, van audit tot remediatie. Gevestigd in Luik.",
       "ctaPrimary": "Mijn gratis diagnose boeken",
       "jumpLabel": "Ga rechtstreeks naar"
     },
@@ -1533,7 +1533,7 @@
           },
           "when": {
             "label": "Wanneer",
-            "text": "Vóór de reglementaire deadline, op vraag van een opdrachtgever, of vóór een audit."
+            "text": "NIS2 is al van kracht: op vraag van een opdrachtgever, vóór een audit, of om u in orde te stellen zonder op een incident te wachten."
           }
         },
         "deliverables": [

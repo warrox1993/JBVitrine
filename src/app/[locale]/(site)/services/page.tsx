@@ -14,6 +14,7 @@ import { Reveal } from "@/components/ui/Reveal/Reveal";
 import {
   ServicePillar,
   CyFunTiers,
+  TrustStrip,
   CTABox,
 } from "@/components/shared";
 import {
@@ -187,6 +188,10 @@ export default async function ServicesPage({
           </Reveal>
         </div>
       </Section>
+
+      <Reveal>
+        <TrustStrip />
+      </Reveal>
 
       {/* ===== Pillar 01 - Sécuriser ===== */}
       <Reveal variant="up">

@@ -110,7 +110,7 @@ export default async function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact">{t("footer.links.incident")}</Link>
+                <Link href="/contact#urgence">{t("footer.links.incident")}</Link>
               </li>
             </ul>
           </div>

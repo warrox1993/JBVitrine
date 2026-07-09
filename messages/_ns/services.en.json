@@ -15,7 +15,7 @@
   "hero": {
     "kicker": "Our expertise",
     "title": "Secure, test, build, <accent>comply</accent>.",
-    "lead": "Hardened infrastructure. Tested applications. Code secure by design. NIS2 / CyFun compliance. A single point of contact, from audit to remediation.",
+    "lead": "One cybersecurity partner for Belgian SMEs: hardened infrastructure, tested applications, NIS2 / CyFun compliance, from audit to remediation. Based in Liège.",
     "ctaPrimary": "Book my free assessment",
     "jumpLabel": "Jump directly to"
   },
@@ -31,16 +31,40 @@
       "title": "Networks & infrastructure",
       "intro": "Block attacks before they reach your data. Defence in depth tailored to an SME, without a dedicated security team.",
       "capabilities": [
-        { "title": "Firewall & segmentation", "description": "Network partitioning, filtering rules, isolation of sensitive zones." },
-        { "title": "VPN & remote access", "description": "Secure remote work and vendor access, strong authentication." },
-        { "title": "EDR / next-generation antivirus", "description": "Detection and blocking of threats on workstations and servers." },
-        { "title": "Monitoring & logging", "description": "Log collection, alerts on suspicious behaviour, traceability." },
-        { "title": "Backups & disaster recovery", "description": "Encrypted, offline backups and a tested recovery plan." },
-        { "title": "Hardening", "description": "Secure configuration of servers, workstations, accounts and services." }
+        {
+          "title": "Firewall & segmentation",
+          "description": "Network partitioning, filtering rules, isolation of sensitive zones."
+        },
+        {
+          "title": "VPN & remote access",
+          "description": "Secure remote work and vendor access, strong authentication."
+        },
+        {
+          "title": "EDR / next-generation antivirus",
+          "description": "Detection and blocking of threats on workstations and servers."
+        },
+        {
+          "title": "Monitoring & logging",
+          "description": "Log collection, alerts on suspicious behaviour, traceability."
+        },
+        {
+          "title": "Backups & disaster recovery",
+          "description": "Encrypted, offline backups and a tested recovery plan."
+        },
+        {
+          "title": "Hardening",
+          "description": "Secure configuration of servers, workstations, accounts and services."
+        }
       ],
       "audience": {
-        "forWho": { "label": "For whom", "text": "SMEs without a dedicated security team, looking for a solid foundation." },
-        "when": { "label": "When", "text": "Network overhaul, migration, after an incident or before an audit." }
+        "forWho": {
+          "label": "For whom",
+          "text": "SMEs without a dedicated security team, looking for a solid foundation."
+        },
+        "when": {
+          "label": "When",
+          "text": "Network overhaul, migration, after an incident or before an audit."
+        }
       },
       "deliverables": [
         "Documented & segmented network architecture",
@@ -55,14 +79,32 @@
       "title": "Audits & pentest",
       "intro": "We think like an attacker to find your weaknesses before they do. OWASP methodology, prioritised remediation. We help you fix them, not just point them out.",
       "capabilities": [
-        { "title": "Security audit", "description": "Organisational and technical assessment of your real exposure." },
-        { "title": "Web & application pentest", "description": "OWASP approach on your sites, applications and exposed APIs." },
-        { "title": "Configuration review", "description": "Servers, cloud, Active Directory: hunting down misconfigurations." },
-        { "title": "Code review", "description": "Source code analysis to detect vulnerabilities at the root." }
+        {
+          "title": "Security audit",
+          "description": "Organisational and technical assessment of your real exposure."
+        },
+        {
+          "title": "Web & application pentest",
+          "description": "OWASP approach on your sites, applications and exposed APIs."
+        },
+        {
+          "title": "Configuration review",
+          "description": "Servers, cloud, Active Directory: hunting down misconfigurations."
+        },
+        {
+          "title": "Code review",
+          "description": "Source code analysis to detect vulnerabilities at the root."
+        }
       ],
       "audience": {
-        "forWho": { "label": "For whom", "text": "Owners of a site or app, or subject to a client / insurer requirement." },
-        "when": { "label": "When", "text": "Before going live, every year, or after a major change." }
+        "forWho": {
+          "label": "For whom",
+          "text": "Owners of a site or app, or subject to a client / insurer requirement."
+        },
+        "when": {
+          "label": "When",
+          "text": "Before going live, every year, or after a major change."
+        }
       },
       "deliverables": [
         "Pentest report prioritised by severity",
@@ -77,14 +119,32 @@
       "title": "Secure web development",
       "intro": "Security built in from the very first line of code, not bolted on afterwards. New projects or bringing a fragile existing one up to standard.",
       "capabilities": [
-        { "title": "Custom sites & applications", "description": "Development tailored to your business processes, without security debt." },
-        { "title": "Secure by design", "description": "Threat modelling and OWASP best practices from the design stage." },
-        { "title": "Application compliance", "description": "GDPR, hardening and bringing a fragile existing application up to standard." },
-        { "title": "Code review & continuous integration", "description": "Automated security checks throughout the development cycle." }
+        {
+          "title": "Custom sites & applications",
+          "description": "Development tailored to your business processes, without security debt."
+        },
+        {
+          "title": "Secure by design",
+          "description": "Threat modelling and OWASP best practices from the design stage."
+        },
+        {
+          "title": "Application compliance",
+          "description": "GDPR, hardening and bringing a fragile existing application up to standard."
+        },
+        {
+          "title": "Code review & continuous integration",
+          "description": "Automated security checks throughout the development cycle."
+        }
       ],
       "audience": {
-        "forWho": { "label": "For whom", "text": "SMEs launching a web project, or taking over an existing app to make it reliable." },
-        "when": { "label": "When", "text": "New development, redesign or application compliance." }
+        "forWho": {
+          "label": "For whom",
+          "text": "SMEs launching a web project, or taking over an existing app to make it reliable."
+        },
+        "when": {
+          "label": "When",
+          "text": "New development, redesign or application compliance."
+        }
       },
       "deliverables": [
         "Delivered, documented & maintainable application",
@@ -99,14 +159,32 @@
       "title": "CyFun / NIS2",
       "intro": "Are you subject to NIS2? The regulation imposes a cyber baseline on thousands of Belgian companies, subcontractors included. We guide you from the audit to preparing for verification, based on the CCB's CyFun framework.",
       "capabilities": [
-        { "title": "Audit & self-assessment", "description": "Assessment of the target level (Basic, Important or Essential) in relation to your exposure." },
-        { "title": "Gap analysis", "description": "Mapping of the missing measures against the CyFun framework." },
-        { "title": "Concrete remediation", "description": "We fix what we find: not just a report, but an executed action plan." },
-        { "title": "Preparation for verification", "description": "Evidence file ready for the self-assessment or the certification body." }
+        {
+          "title": "Audit & self-assessment",
+          "description": "Assessment of the target level (Basic, Important or Essential) in relation to your exposure."
+        },
+        {
+          "title": "Gap analysis",
+          "description": "Mapping of the missing measures against the CyFun framework."
+        },
+        {
+          "title": "Concrete remediation",
+          "description": "We fix what we find: not just a report, but an executed action plan."
+        },
+        {
+          "title": "Preparation for verification",
+          "description": "Evidence file ready for the self-assessment or the certification body."
+        }
       ],
       "audience": {
-        "forWho": { "label": "For whom", "text": "« Important » or « essential » NIS2 entities, and their subcontractors." },
-        "when": { "label": "When", "text": "Before the regulatory deadline, at a client's request, or before an audit." }
+        "forWho": {
+          "label": "For whom",
+          "text": "« Important » or « essential » NIS2 entities, and their subcontractors."
+        },
+        "when": {
+          "label": "When",
+          "text": "NIS2 is already in force: at a client's request, before an audit, or to get compliant without waiting for an incident."
+        }
       },
       "deliverables": [
         "Documented gap analysis report",
@@ -121,9 +199,18 @@
     "kicker": "A single partner",
     "title": "Build, <accent>secure</accent> and bring into compliance, all in one place",
     "lead": "Most providers do one <em>or</em> the other. We cover the whole chain: build, secure, comply. A single point of contact, no passing the ball.",
-    "build": { "label": "Build", "text": "Secure web development, secure by design." },
-    "secure": { "label": "Secure", "text": "Hardened infrastructure, pentest & monitoring." },
-    "comply": { "label": "Comply", "text": "CyFun / NIS2 compliance, from gap to proof." },
+    "build": {
+      "label": "Build",
+      "text": "Secure web development, secure by design."
+    },
+    "secure": {
+      "label": "Secure",
+      "text": "Hardened infrastructure, pentest & monitoring."
+    },
+    "comply": {
+      "label": "Comply",
+      "text": "CyFun / NIS2 compliance, from gap to proof."
+    },
     "aiNote": "<b>Experts augmented by AI</b>, faster, covering more ground. The analysis and the decisions remain human."
   },
   "cyfun": {
@@ -138,7 +225,11 @@
     "text": "30 minutes with an expert to scope the useful engagement. Clear priorities, no commitment.",
     "actionPrimary": "Book my free assessment",
     "actionCall": "Call 0475 20 55 62",
-    "reassurances": ["Reply within 24 h", "Dedicated expert, no subcontracting", "Data in Belgium"]
+    "reassurances": [
+      "Reply within 24 h",
+      "Dedicated expert, no subcontracting",
+      "Data in Belgium"
+    ]
   },
   "visuals": {
     "secure": {

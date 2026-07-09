@@ -81,6 +81,7 @@ export default async function ContactPage({
             contactPoint: {
               '@type': 'ContactPoint',
               contactType: 'sales',
+              telephone: '+32475205562',
               email: 'smidjan.agency@outlook.com',
               availableLanguage: ['fr-BE', 'fr'],
               areaServed: ['BE', 'Wallonie'],
@@ -183,7 +184,7 @@ export default async function ContactPage({
             {/* RIGHT: coordinates */}
             <aside className={cls.side} aria-label={t('side.aria')}>
               {/* Emergency block */}
-              <div id="urgence">
+              <div id="urgence" style={{ scrollMarginTop: '90px' }}>
               <Reveal className={cls.emergBlock}>
                 <div className={`${cls.gridBg} grid-bg`} aria-hidden="true" />
                 <div className={cls.ebPhoto}>
@@ -383,19 +384,19 @@ export default async function ContactPage({
           <div className={cls.steps}>
             <div className={cls.step}>
               <div className={cls.num}>1</div>
-              <h4>{t('expect.step1Title')}</h4>
+              <h3>{t('expect.step1Title')}</h3>
               <p>{t('expect.step1Text')}</p>
             </div>
             <div className={cls.step}>
               <div className={cls.num}>2</div>
-              <h4>{t('expect.step2Title')}</h4>
+              <h3>{t('expect.step2Title')}</h3>
               <p>{t('expect.step2Text')}</p>
             </div>
             <div className={cls.step}>
               <div className={cls.num}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /><path d="m9 12 2 2 4-4" /></svg>
               </div>
-              <h4>{t('expect.step3Title')}</h4>
+              <h3>{t('expect.step3Title')}</h3>
               <p>{t('expect.step3Text')}</p>
             </div>
           </div>

@@ -1365,7 +1365,7 @@
     "hero": {
       "kicker": "Nos expertises",
       "title": "Sécuriser, tester, développer, <accent>se conformer</accent>.",
-      "lead": "Infrastructure durcie. Applications testées. Code secure by design. Conformité NIS2 / CyFun. Un seul interlocuteur, de l'audit à la remédiation.",
+      "lead": "Un partenaire cybersécurité unique pour les PME belges : infrastructure durcie, applications testées, conformité NIS2 / CyFun, de l'audit à la remédiation. Basés à Liège.",
       "ctaPrimary": "Réserver mon diagnostic gratuit",
       "jumpLabel": "Aller directement à"
     },
@@ -1533,7 +1533,7 @@
           },
           "when": {
             "label": "Quand",
-            "text": "Avant l'échéance réglementaire, sur demande d'un donneur d'ordre, ou avant un audit."
+            "text": "NIS2 est déjà en vigueur : à la demande d'un donneur d'ordre, avant un audit, ou pour vous mettre en règle sans attendre un incident."
           }
         },
         "deliverables": [
