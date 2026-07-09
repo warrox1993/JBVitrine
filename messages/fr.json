@@ -507,7 +507,7 @@
     },
     "hero": {
       "badge": "En vigueur depuis le 18 octobre 2024 en Belgique",
-      "title": "NIS2 est en vigueur : <accent>vous devez déjà être conforme</accent>.",
+      "title": "Mettez votre PME en <accent>conformité NIS2</accent>, sans jargon ni surcoût.",
       "lead": "Audit, <b>remédiation</b>, mise au niveau CyFun (CCB) : on ne liste pas vos manques, on les corrige.",
       "ctaPrimary": "Diagnostic NIS2 gratuit",
       "ctaSecondary": "Comparer les 3 niveaux",
@@ -591,9 +591,10 @@
       "title": "Basic, Important, Essential : choisir le <accent>bon niveau</accent>",
       "lead": "Trois niveaux progressifs. Le bon choix dépend de votre catégorie NIS2 et de votre exposition. On vous aide à trancher.",
       "statBigLbl": "Niveaux CyFun",
-      "statTxt": "<b>Basic couvre déjà ~82 % des attaques courantes.</b> Important monte à ~94 %. Essential vise une protection quasi complète.",
-      "levelsAria": "Diagramme en escalier : la couverture face aux attaques croît avec le niveau. Basic environ 82 pour cent, Important environ 94 pour cent, Essential protection quasi complète.",
-      "levelsCap": "Une échelle progressive : plus le niveau visé est élevé, plus la <b>couverture</b> et l''<b>exigence</b> augmentent."
+      "statTxt": "<b>Basic couvre déjà l'essentiel des attaques courantes.</b> Important ajoute la détection, la réponse et la gouvernance. Essential vise une protection quasi complète.",
+      "levelsAria": "Diagramme en escalier : la couverture face aux attaques croît avec le niveau, de Basic à Important puis Essential.",
+      "levelsCap": "Une échelle progressive : plus le niveau visé est élevé, plus la <b>couverture</b> et l''<b>exigence</b> augmentent.",
+      "smallNote": "Avant Basic, le CCB propose un socle Small (7 mesures), gratuit : le point de départ pour se lancer sans budget."
     },
     "accompagnement": {
       "eyebrow": "Notre accompagnement",
@@ -762,7 +763,7 @@
       }
     },
     "finalCta": {
-      "title": "Sachez où vous en êtes, avant qu'il ne soit trop tard",
+      "title": "En 30 minutes, sachez exactement où vous en êtes.",
       "text": "30 min avec un expert : catégorie NIS2, niveau CyFun, priorités claires. Sans engagement, sans jargon.",
       "action1": "Réserver mon diagnostic NIS2",
       "action2": "Appeler le 0475 20 55 62",
@@ -772,7 +773,7 @@
     },
     "diagram": {
       "ringHubSub": "aligné NIST CSF",
-      "coverageAria": "Jauge de couverture : le niveau Basic couvre déjà environ 82 pour cent des attaques les plus courantes.",
+      "coverageAria": "Jauge illustrant que le niveau Basic couvre déjà l'essentiel des attaques les plus courantes.",
       "coverageCovered": "COUVERT",
       "levelsQuasiComplete": "Protection quasi complète",
       "levelsRecommended": "Recommandé PME",
@@ -784,7 +785,11 @@
       "roadmap3Title": "Vérification",
       "roadmap3Sub": "support à la soumission",
       "roadmap4Title": "Suivi continu",
-      "roadmap4Sub": "prêt & maintenu"
+      "roadmap4Sub": "prêt & maintenu",
+      "coverageWord": "Socle",
+      "covBasic": "Socle",
+      "covImportant": "Renforcé",
+      "covEssential": "Maximal"
     }
   },
   "contact": {

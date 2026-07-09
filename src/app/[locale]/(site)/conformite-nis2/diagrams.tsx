@@ -169,12 +169,12 @@ export async function CoverageGauge({ className }: { className?: string }) {
         y="58"
         textAnchor="middle"
         fontFamily={SANS}
-        fontSize="23"
+        fontSize="15"
         fontWeight="800"
         fill="#e85f00"
-        letterSpacing="-.02em"
+        letterSpacing="-.01em"
       >
-        ~82%
+        {t("diagram.coverageWord")}
       </text>
       <text
         x="60"
@@ -229,14 +229,14 @@ export async function LevelsStepChart() {
       <rect x="270" y="73" width="120" height="179" rx="7" fill="#fff3ea" stroke="#ff6a00" strokeWidth="2" />
       <rect x="460" y="64" width="120" height="188" rx="7" fill="#12294a" stroke="#12294a" strokeWidth="1.5" />
       {/* coverage values */}
-      <text x="140" y="122" textAnchor="middle" fontSize="21" fontWeight="800" fill="#1c3a63" letterSpacing="-.02em">
-        ~82%
+      <text x="140" y="120" textAnchor="middle" fontSize="13" fontWeight="800" fill="#1c3a63" letterSpacing="-.01em">
+        {t("diagram.covBasic")}
       </text>
-      <text x="330" y="102" textAnchor="middle" fontSize="21" fontWeight="800" fill="#e85f00" letterSpacing="-.02em">
-        ~94%
+      <text x="330" y="100" textAnchor="middle" fontSize="13" fontWeight="800" fill="#e85f00" letterSpacing="-.01em">
+        {t("diagram.covImportant")}
       </text>
-      <text x="520" y="94" textAnchor="middle" fontSize="21" fontWeight="800" fill="#ffffff" letterSpacing="-.02em">
-        ≈100%
+      <text x="520" y="92" textAnchor="middle" fontSize="13" fontWeight="800" fill="#ffffff" letterSpacing="-.01em">
+        {t("diagram.covEssential")}
       </text>
       <text x="520" y="116" textAnchor="middle" fontSize="10.5" fontWeight="600" fill="#9fb0c9">
         {t("diagram.levelsQuasiShort")}

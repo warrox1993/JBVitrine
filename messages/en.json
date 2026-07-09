@@ -507,7 +507,7 @@
     },
     "hero": {
       "badge": "In force since 18 October 2024 in Belgium",
-      "title": "NIS2 is in force: <accent>you must already be compliant</accent>.",
+      "title": "Bring your SME into <accent>NIS2 compliance</accent>, without jargon or overspend.",
       "lead": "Audit, <b>remediation</b>, alignment with CyFun (CCB): we don't list your gaps, we fix them.",
       "ctaPrimary": "Free NIS2 diagnostic",
       "ctaSecondary": "Compare the 3 levels",
@@ -591,9 +591,10 @@
       "title": "Basic, Important, Essential: choosing the <accent>right level</accent>",
       "lead": "Three progressive levels. The right choice depends on your NIS2 category and your exposure. We help you decide.",
       "statBigLbl": "CyFun levels",
-      "statTxt": "<b>Basic already covers ~82 % of common attacks.</b> Important rises to ~94 %. Essential aims for near-complete protection.",
-      "levelsAria": "Step diagram: coverage against attacks grows with the level. Basic about 82 percent, Important about 94 percent, Essential near-complete protection.",
-      "levelsCap": "A progressive scale: the higher the targeted level, the more the <b>coverage</b> and the <b>requirement</b> increase."
+      "statTxt": "<b>Basic already covers the bulk of common attacks.</b> Important adds detection, response and governance. Essential aims for near-complete protection.",
+      "levelsAria": "Step diagram: coverage against attacks grows with the level, from Basic to Important then Essential.",
+      "levelsCap": "A progressive scale: the higher the targeted level, the more the <b>coverage</b> and the <b>requirement</b> increase.",
+      "smallNote": "Before Basic, the CCB offers a free Small baseline (7 measures): the starting point to get going without a budget."
     },
     "accompagnement": {
       "eyebrow": "Our support",
@@ -762,7 +763,7 @@
       }
     },
     "finalCta": {
-      "title": "Know where you stand, before it is too late",
+      "title": "In 30 minutes, know exactly where you stand.",
       "text": "30 min with an expert: NIS2 category, CyFun level, clear priorities. No commitment, no jargon.",
       "action1": "Book my NIS2 diagnostic",
       "action2": "Call 0475 20 55 62",
@@ -772,7 +773,7 @@
     },
     "diagram": {
       "ringHubSub": "aligned with NIST CSF",
-      "coverageAria": "Coverage gauge: the Basic level already covers about 82 percent of the most common attacks.",
+      "coverageAria": "Gauge showing that the Basic level already covers the bulk of the most common attacks.",
       "coverageCovered": "COVERED",
       "levelsQuasiComplete": "Near-complete protection",
       "levelsRecommended": "Recommended SME",
@@ -784,7 +785,11 @@
       "roadmap3Title": "Verification",
       "roadmap3Sub": "submission support",
       "roadmap4Title": "Continuous follow-up",
-      "roadmap4Sub": "ready & maintained"
+      "roadmap4Sub": "ready & maintained",
+      "coverageWord": "Core",
+      "covBasic": "Core",
+      "covImportant": "Reinforced",
+      "covEssential": "Maximal"
     }
   },
   "contact": {

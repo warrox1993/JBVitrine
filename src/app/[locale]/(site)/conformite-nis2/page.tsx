@@ -10,7 +10,7 @@ import { Icon, type IconName } from "@/components/ui/Icon/Icon";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Breadcrumb } from "@/components/Breadcrumb/Breadcrumb";
-import { CyFunTiers, ProcessSteps, Faq, CTABox } from "@/components/shared";
+import { CyFunTiers, ProcessSteps, Faq, NIS2Checker, CTABox } from "@/components/shared";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { faqPageSchema } from "@/lib/schema";
 import {
@@ -73,6 +73,7 @@ const CHECK = <Icon name="check" strokeWidth={2.4} size={16} />;
 
 export default async function ConformiteNis2Page() {
   const t = await getTranslations("conformite");
+  const tc = await getTranslations("checker");
   const b = (chunks: ReactNode) => <b>{chunks}</b>;
   const accent = (chunks: ReactNode) => (
     <span className={styles.accent}>{chunks}</span>
@@ -183,6 +184,22 @@ export default async function ConformiteNis2Page() {
           </div>
         </Container>
       </section>
+
+      {/* ===== Self-qualification simulator (reused from home) ===== */}
+      <Section variant="tint" id="suis-je-concerne">
+        <Reveal>
+          <SectionHeading
+            center
+            as="h2"
+            eyebrow={<span className={styles.kickerMono}>{tc("eyebrow")}</span>}
+            title={tc("title")}
+            lead={tc("lead")}
+          />
+        </Reveal>
+        <Reveal>
+          <NIS2Checker />
+        </Reveal>
+      </Section>
 
       {/* ===== NIS2 en clair ===== */}
       <Section variant="white">
@@ -418,6 +435,20 @@ export default async function ConformiteNis2Page() {
             title={t.rich("niveaux.title", { accent })}
             lead={t("niveaux.lead")}
           />
+        </Reveal>
+
+        <Reveal>
+          <p
+            style={{
+              textAlign: "center",
+              color: "#c2d2e8",
+              maxWidth: "60ch",
+              margin: "0 auto",
+              fontSize: "0.95rem",
+            }}
+          >
+            {t("niveaux.smallNote")}
+          </p>
         </Reveal>
 
         <Reveal>

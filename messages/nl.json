@@ -507,7 +507,7 @@
     },
     "hero": {
       "badge": "Van kracht sinds 18 oktober 2024 in België",
-      "title": "NIS2 is van kracht: <accent>u moet nu al conform zijn</accent>.",
+      "title": "Breng uw kmo in <accent>NIS2-conformiteit</accent>, zonder jargon of meerkost.",
       "lead": "Audit, <b>remediëring</b>, afstemming op CyFun (CCB): wij sommen uw tekortkomingen niet op, wij verhelpen ze.",
       "ctaPrimary": "Gratis NIS2-diagnose",
       "ctaSecondary": "Vergelijk de 3 niveaus",
@@ -591,9 +591,10 @@
       "title": "Basic, Important, Essential: het <accent>juiste niveau</accent> kiezen",
       "lead": "Drie progressieve niveaus. De juiste keuze hangt af van uw NIS2-categorie en uw blootstelling. Wij helpen u beslissen.",
       "statBigLbl": "CyFun-niveaus",
-      "statTxt": "<b>Basic dekt nu al ~82 % van de courante aanvallen.</b> Important stijgt tot ~94 %. Essential streeft naar een nagenoeg volledige bescherming.",
-      "levelsAria": "Trapdiagram: de dekking tegen aanvallen groeit met het niveau. Basic ongeveer 82 procent, Important ongeveer 94 procent, Essential nagenoeg volledige bescherming.",
-      "levelsCap": "Een progressieve schaal: hoe hoger het beoogde niveau, hoe meer de <b>dekking</b> en de <b>vereiste</b> toenemen."
+      "statTxt": "<b>Basic dekt nu al het merendeel van de courante aanvallen.</b> Important voegt detectie, respons en governance toe. Essential streeft naar een nagenoeg volledige bescherming.",
+      "levelsAria": "Trapdiagram: de dekking tegen aanvallen groeit met het niveau, van Basic over Important naar Essential.",
+      "levelsCap": "Een progressieve schaal: hoe hoger het beoogde niveau, hoe meer de <b>dekking</b> en de <b>vereiste</b> toenemen.",
+      "smallNote": "Vóór Basic biedt het CCB een gratis Small-basis (7 maatregelen): het startpunt om zonder budget te beginnen."
     },
     "accompagnement": {
       "eyebrow": "Onze begeleiding",
@@ -762,7 +763,7 @@
       }
     },
     "finalCta": {
-      "title": "Weet waar u staat, voordat het te laat is",
+      "title": "In 30 minuten weet u precies waar u staat.",
       "text": "30 min met een expert: NIS2-categorie, CyFun-niveau, heldere prioriteiten. Vrijblijvend, zonder jargon.",
       "action1": "Mijn NIS2-diagnose reserveren",
       "action2": "Bel 0475 20 55 62",
@@ -772,7 +773,7 @@
     },
     "diagram": {
       "ringHubSub": "afgestemd op NIST CSF",
-      "coverageAria": "Dekkingsmeter: het niveau Basic dekt nu al ongeveer 82 procent van de meest courante aanvallen.",
+      "coverageAria": "Meter die toont dat het niveau Basic al het merendeel van de meest courante aanvallen dekt.",
       "coverageCovered": "GEDEKT",
       "levelsQuasiComplete": "Nagenoeg volledige bescherming",
       "levelsRecommended": "Aanbevolen kmo",
@@ -784,7 +785,11 @@
       "roadmap3Title": "Verificatie",
       "roadmap3Sub": "ondersteuning bij indiening",
       "roadmap4Title": "Continue opvolging",
-      "roadmap4Sub": "klaar & onderhouden"
+      "roadmap4Sub": "klaar & onderhouden",
+      "coverageWord": "Basis",
+      "covBasic": "Basis",
+      "covImportant": "Versterkt",
+      "covEssential": "Maximaal"
     }
   },
   "contact": {
