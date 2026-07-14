@@ -1283,7 +1283,7 @@
       },
       "tester": {
         "kicker": "Testen",
-        "title": "Audits & pentest",
+        "title": "Audits & beveiligingstests",
         "intro": "We denken als een aanvaller om uw zwakke plekken te vinden vóór hij dat doet. OWASP-methodologie, geprioriteerde remediëring. We helpen u corrigeren, niet enkel vaststellen.",
         "capabilities": [
           {

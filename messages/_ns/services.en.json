@@ -76,7 +76,7 @@
     },
     "tester": {
       "kicker": "Test",
-      "title": "Audits & pentest",
+      "title": "Audits & security testing",
       "intro": "We think like an attacker to find your weaknesses before they do. OWASP methodology, prioritised remediation. We help you fix them, not just point them out.",
       "capabilities": [
         {

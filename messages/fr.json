@@ -1283,7 +1283,7 @@
       },
       "tester": {
         "kicker": "Tester",
-        "title": "Audits & pentest",
+        "title": "Audits & tests de sécurité",
         "intro": "On pense comme un attaquant pour trouver vos failles avant lui. Méthodologie OWASP, remédiation priorisée. On vous aide à corriger, pas juste à constater.",
         "capabilities": [
           {
