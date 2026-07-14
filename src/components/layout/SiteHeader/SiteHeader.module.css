@@ -43,6 +43,7 @@
 .brandText {
   display: inline-block;
   line-height: 1.1;
+  font-family: var(--font-display);
 }
 
 .brandText small {

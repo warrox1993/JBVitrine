@@ -53,11 +53,11 @@ export default function SiteHeader() {
             fill="none"
             aria-hidden="true"
           >
-            <rect width="40" height="40" rx="9" fill="#0b1f3a" />
+            <rect width="40" height="40" rx="9" fill="#0C1A16" />
             <path
               d="M20 8l9 3.4v6.9c0 5.6-3.7 10.7-9 12.3-5.3-1.6-9-6.7-9-12.3v-6.9L20 8Z"
               fill="none"
-              stroke="#ff6a00"
+              stroke="#0B7A5B"
               strokeWidth="2"
             />
             <path
