@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "The agency · Smidjan | Cybersecurity for Walloon SMEs, by a local expert · Liège",
-    "description": "Smidjan is a cybersecurity agency based in Liège, serving SMEs, self-employed professionals and public bodies across Wallonia. Discover the agency and its founder, Jean-Baptiste Dhondt.",
+    "title": "The agency · Smidjan | Cybersecurity for Walloon SMEs, by a local expert · Wallonia",
+    "description": "Smidjan is a cybersecurity agency based in Wallonia, serving SMEs, self-employed professionals and public bodies across the region. Discover the agency and its founder, Jean-Baptiste Dhondt.",
     "ogTitle": "The agency · Smidjan | Cybersecurity for Walloon SMEs",
-    "ogDescription": "A human-scale cybersecurity agency based in Liège, serving SMEs and public bodies across Wallonia.",
-    "ogImageAlt": "Smidjan - Cybersecurity agency in Liège"
+    "ogDescription": "A human-scale cybersecurity agency based in Wallonia, serving SMEs and public bodies across the region.",
+    "ogImageAlt": "Smidjan - Cybersecurity agency in Wallonia"
   },
   "hero": {
     "ariaBreadcrumb": "Breadcrumb",
@@ -15,10 +15,10 @@
     "lead": "Jean-Baptiste Dhondt secures your SME himself. No call centre. No subcontracting.",
     "ctaPrimary": "Book a scoping call",
     "ctaCall": "Call 0475 20 55 62",
-    "badgeLocation": "Based in Liège, active across Wallonia",
+    "badgeLocation": "Based in Wallonia",
     "badgeAccess": "Direct access to the expert",
     "badgeData": "Data hosted in Belgium / EU",
-    "imageAlt": "The Fragnée bridge lit up at night over the Meuse in Liège"
+    "imageAlt": "A bridge lit up at night over a river, symbolising Smidjan's roots in Wallonia"
   },
   "engagements": {
     "eyebrow": "Our commitments",
@@ -53,18 +53,18 @@
     "valueRigueurTitle": "Rigour",
     "valueRigueurText": "NIS2, CyFun, OWASP, ISO 27001: a method we demonstrate, not merely claim.",
     "valueProximiteTitle": "Proximity",
-    "valueProximiteText": "Based in Liège, quick to reach. You talk to the person who does the work.",
+    "valueProximiteText": "Based in Wallonia, quick to reach. You talk to the person who does the work.",
     "valueFranchiseTitle": "Candour",
     "valueFranchiseText": "We say what matters, even what is uncomfortable. No fear-selling.",
     "valuePragmatismeTitle": "Pragmatism",
     "valuePragmatismeText": "Priority to impact, not to the superfluous. The best security is the one you actually apply.",
-    "mapAriaLabel": "Simplified map of Belgium, with a marker on Liège and the area of operation in Wallonia",
+    "mapAriaLabel": "Simplified map of Belgium, with a marker on the area of operation in Wallonia",
     "mapBruxelles": "Brussels",
-    "mapLiege": "Liège",
-    "localityTitle": "Rooted in Liège, active across Wallonia",
+    "mapLiege": "Wallonia",
+    "localityTitle": "Rooted in Wallonia",
     "localityText": "Short lead times, real availability in an emergency.",
     "coverageAlt": "Night view of the Earth from space, lights of European cities, symbol of our coverage area Belgium / Europe",
-    "coverageCaption": "Rooted in Liège. Data <b>hosted in Belgium and in Europe</b>."
+    "coverageCaption": "Rooted in Wallonia. Data <b>hosted in Belgium and in Europe</b>."
   },
   "founder": {
     "eyebrow": "The founder",
@@ -73,14 +73,14 @@
     "portraitAria": "Portrait of the founder, reserved placeholder, photo to come",
     "photoSoon": "Photo to come",
     "name": "Jean-Baptiste Dhondt",
-    "role": "Founder · Cybersecurity expert",
+    "role": "Founder · Cybersecurity & GRC practitioner",
     "quote": "“The security of an SME is not settled with a report filed away in a drawer. It is settled by fixing, one by one, the vulnerabilities that matter.”",
     "credDiploma": "Technical diploma in computing",
     "credArmy": "Former telecommunications operator in the Belgian Army",
     "credExpertise": "Defence-oriented cybersecurity & compliance (GRC)",
     "credReferentials": "Frameworks NIS2 / CyFun (CCB), OWASP, ISO 27001",
     "skillReseaux": "Networks",
-    "skillPentest": "GRC",
+    "skillGRC": "GRC",
     "skillLinux": "Linux",
     "skillCyberdefense": "Cyber defence",
     "skillConformite": "Compliance",

@@ -59,7 +59,7 @@ export const metadata: Metadata = {
         template: '%s',
     },
     description:
-        'Smidjan sécurise les réseaux, l\'infrastructure et les applications des PME wallonnes et les met en conformité NIS2 / CyberFundamentals (CCB). Audit, pentest, remédiation. Diagnostic gratuit en Wallonie.',
+        'Smidjan sécurise les réseaux, l\'infrastructure et les applications des PME wallonnes et les met en conformité NIS2 / CyberFundamentals (CCB). Audit, tests de sécurité, remédiation. Diagnostic gratuit en Wallonie.',
 authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
     creator: 'Smidjan',
     publisher: 'Smidjan',
@@ -97,7 +97,7 @@ authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
     twitter: {
         card: 'summary_large_image',
         title: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME (Wallonie)',
-        description: 'Sécurité des réseaux, pentest et conformité NIS2 / CyFun pour les PME wallonnes. Diagnostic gratuit en Wallonie.',
+        description: 'Sécurité des réseaux, tests de sécurité et conformité NIS2 / CyFun pour les PME wallonnes. Diagnostic gratuit en Wallonie.',
         images: ['/og-image.webp'],
         // Ajoute ton Twitter si tu en as un
         // creator: '@smidjan',

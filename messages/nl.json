@@ -1,11 +1,11 @@
 {
   "agence": {
     "meta": {
-      "title": "Het agentschap · Smidjan | Cyberbeveiliging voor Waalse kmo's, door een lokale expert · Luik",
-      "description": "Smidjan is een cyberbeveiligingsagentschap in Luik, ten dienste van kmo's, zelfstandigen en overheden in Wallonië. Ontdek het agentschap en zijn oprichter, Jean-Baptiste Dhondt.",
+      "title": "Het agentschap · Smidjan | Cyberbeveiliging voor Waalse kmo's, door een lokale expert · Wallonië",
+      "description": "Smidjan is een cyberbeveiligingsagentschap in Wallonië, ten dienste van kmo's, zelfstandigen en overheden in de regio. Ontdek het agentschap en zijn oprichter, Jean-Baptiste Dhondt.",
       "ogTitle": "Het agentschap · Smidjan | Cyberbeveiliging voor Waalse kmo's",
-      "ogDescription": "Een cyberbeveiligingsagentschap op mensenmaat, gevestigd in Luik, ten dienste van kmo's en overheden in Wallonië.",
-      "ogImageAlt": "Smidjan - Cyberbeveiligingsagentschap in Luik"
+      "ogDescription": "Een cyberbeveiligingsagentschap op mensenmaat, gevestigd in Wallonië, ten dienste van kmo's en overheden in de regio.",
+      "ogImageAlt": "Smidjan - Cyberbeveiligingsagentschap in Wallonië"
     },
     "hero": {
       "ariaBreadcrumb": "Kruimelpad",
@@ -16,10 +16,10 @@
       "lead": "Jean-Baptiste Dhondt beveiligt zelf uw kmo. Geen callcenter. Geen onderaanneming.",
       "ctaPrimary": "Een kaderingsgesprek inplannen",
       "ctaCall": "Bel 0475 20 55 62",
-      "badgeLocation": "Gevestigd in Luik, actief in Wallonië",
+      "badgeLocation": "Gevestigd in Wallonië",
       "badgeAccess": "Rechtstreeks contact met de expert",
       "badgeData": "Gegevens gehost in België / EU",
-      "imageAlt": "De verlichte Fragnée-brug 's nachts boven de Maas in Luik"
+      "imageAlt": "Een verlichte brug 's nachts boven een rivier, symbool van de verankering van Smidjan in Wallonië"
     },
     "engagements": {
       "eyebrow": "Onze engagementen",
@@ -54,18 +54,18 @@
       "valueRigueurTitle": "Grondigheid",
       "valueRigueurText": "NIS2, CyFun, OWASP, ISO 27001 : een methode die we aantonen, niet louter beweren.",
       "valueProximiteTitle": "Nabijheid",
-      "valueProximiteText": "Gevestigd in Luik, snel bereikbaar. U spreekt met de persoon die het werk uitvoert.",
+      "valueProximiteText": "Gevestigd in Wallonië, snel bereikbaar. U spreekt met de persoon die het werk uitvoert.",
       "valueFranchiseTitle": "Openhartigheid",
       "valueFranchiseText": "We zeggen wat telt, ook wat ongemakkelijk is. Geen bangmakerij.",
       "valuePragmatismeTitle": "Pragmatisme",
       "valuePragmatismeText": "Prioriteit aan impact, niet aan overbodigheden. De beste beveiliging is die welke men toepast.",
-      "mapAriaLabel": "Vereenvoudigde kaart van België, met een markering op Luik en het actiegebied in Wallonië",
+      "mapAriaLabel": "Vereenvoudigde kaart van België, met een markering op het actiegebied in Wallonië",
       "mapBruxelles": "Brussel",
-      "mapLiege": "Luik",
-      "localityTitle": "Verankerd in Luik, actief in Wallonië",
+      "mapLiege": "Wallonië",
+      "localityTitle": "Verankerd in Wallonië",
       "localityText": "Korte termijnen, reële beschikbaarheid bij spoed.",
       "coverageAlt": "Nachtelijk zicht op de aarde vanuit de ruimte, lichten van de Europese steden, symbool van ons dekkingsgebied België / Europa",
-      "coverageCaption": "Verankerd in Luik. Gegevens <b>gehost in België en in Europa</b>."
+      "coverageCaption": "Verankerd in Wallonië. Gegevens <b>gehost in België en in Europa</b>."
     },
     "founder": {
       "eyebrow": "De oprichter",
@@ -74,14 +74,14 @@
       "portraitAria": "Portret van de oprichter, gereserveerde plaats, foto volgt",
       "photoSoon": "Foto volgt",
       "name": "Jean-Baptiste Dhondt",
-      "role": "Oprichter · Expert in cyberbeveiliging",
+      "role": "Oprichter · Cyberbeveiliging & GRC praktijk",
       "quote": "« De beveiliging van een kmo los je niet op met een rapport dat in een lade verdwijnt. Ze wordt opgelost door, één voor één, de kwetsbaarheden te verhelpen die tellen. »",
       "credDiploma": "Technisch diploma in informatica",
       "credArmy": "Voormalig lid van de telecommunicatie van het Belgische leger",
       "credExpertise": "Gericht op defensieve cyberbeveiliging & conformiteit (GRC)",
       "credReferentials": "Referentiekaders NIS2 / CyFun (CCB), OWASP, ISO 27001",
       "skillReseaux": "Netwerken",
-      "skillPentest": "GRC",
+      "skillGRC": "GRC",
       "skillLinux": "Linux",
       "skillCyberdefense": "Cyberdefensie",
       "skillConformite": "Conformiteit",
@@ -155,7 +155,7 @@
     "method": {
       "eyebrow": "Stap voor stap",
       "title": "Vier <accent>stappen</accent>, van de eerste vaststelling tot duurzame opvolging",
-      "lead": "Audit, pentest, NIS2- / CyFun-conformiteit : telkens dezelfde methode. U weet wat er gebeurt en wat u ontvangt.",
+      "lead": "Audit, beveiligingstests, NIS2- / CyFun-conformiteit : telkens dezelfde methode. U weet wat er gebeurt en wat u ontvangt.",
       "overviewKicker": "Snel overzicht",
       "photo2Alt": "Een consultant rangschikt prioriteiten per kwartaal op een planningsbord, wat de opbouw van een geprioriteerde roadmap samen met de klant illustreert.",
       "photo2Caption": "Een <b>geprioriteerde roadmap</b>, samen met u opgebouwd.",
@@ -260,7 +260,7 @@
       "items": {
         "owasp": {
           "title": "Tests & applicatiebeveiliging",
-          "text": "Webaudits en penetratietests volgens de OWASP-methodologie, de criteria van de sector."
+          "text": "Webaudits en beveiligingstests volgens de OWASP-methodologie, de criteria van de sector."
         },
         "iso": {
           "title": "Beveiligingsbeheer",
@@ -736,7 +736,7 @@
   "contact": {
     "meta": {
       "title": "Contact · Smidjan | Cyberbeveiliging & NIS2-conformiteit in Wallonië",
-      "description": "Gratis diagnose, CyFun/NIS2-audit, pentest of incidentrespons : schrijf naar Smidjan. Een expert antwoordt u binnen 24 werkuren. Gevestigd in Wallonië.",
+      "description": "Gratis diagnose, CyFun/NIS2-audit, beveiligingstests of incidentrespons : schrijf naar Smidjan. Een expert antwoordt u binnen 24 werkuren. Gevestigd in Wallonië.",
       "ogTitle": "Contact · Smidjan",
       "ogDescription": "Laten we het over uw beveiliging hebben. Een expert antwoordt u binnen 24 werkuren.",
       "ogImageAlt": "Contacteer Smidjan, cyberbeveiliging en NIS2-conformiteit in Wallonië",
@@ -750,7 +750,7 @@
       "eyebrow": "Laten we het over uw beveiliging hebben",
       "title": "Een expert antwoordt u : <accent>binnen 24 uur</accent>.",
       "directPromise": "<strong>Een Smidjan-expert</strong>, nooit een callcenter.",
-      "lead": "Diagnose, NIS2-audit, pentest of incident : één aanspreekpunt.",
+      "lead": "Diagnose, NIS2-audit, beveiligingstests of incident : één aanspreekpunt.",
       "ctaPrimary": "Mijn behoefte omschrijven",
       "imageAlt": "Smidjan-team samen rond een laptop in een modern en licht kantoor, gemoedelijk overleg tussen collega's.",
       "assure1": "Antwoord binnen 24 werkuren",
@@ -766,7 +766,7 @@
       "options": {
         "diagnostic": "Gratis diagnose",
         "cyfun": "CyFun / NIS2-audit",
-        "pentest": "Pentest / penetratietest",
+        "pentest": "Beveiligingstests",
         "dev": "Beveiligde webontwikkeling",
         "autre": "Andere aanvraag"
       },
@@ -1095,12 +1095,12 @@
       "hero": {
         "eyebrow": "Contractueel kader",
         "title": "Algemene voorwaarden",
-        "lead": "Het kader dat van toepassing is op de diensten inzake advies, audit, penetratietesten, beveiligde ontwikkeling en begeleiding bij conformiteit die door Smidjan worden geleverd."
+        "lead": "Het kader dat van toepassing is op de diensten inzake advies, audit, beveiligingstests, beveiligde ontwikkeling en begeleiding bij conformiteit die door Smidjan worden geleverd."
       },
       "intro": "Deze algemene voorwaarden regelen de diensten die door Smidjan worden geleverd. Zij vervangen niet de offerte of het ondertekende contract voor een bepaalde opdracht, dat voorrang heeft in geval van tegenstrijdigheid.",
       "objet": {
         "title": "Voorwerp",
-        "body": "Deze algemene voorwaarden regelen de diensten inzake advies, audit, penetratietesten, beveiligde ontwikkeling en begeleiding bij conformiteit (NIS2 / CyberFundamentals) die door Smidjan aan haar professionele klanten worden geleverd."
+        "body": "Deze algemene voorwaarden regelen de diensten inzake advies, audit, beveiligingstests, beveiligde ontwikkeling en begeleiding bij conformiteit (NIS2 / CyberFundamentals) die door Smidjan aan haar professionele klanten worden geleverd."
       },
       "devis": {
         "title": "Offerte en bestelling",
@@ -1114,7 +1114,7 @@
       },
       "responsabilite": {
         "title": "Aansprakelijkheid",
-        "body": "De aansprakelijkheid van Smidjan kan enkel worden ingeroepen in geval van bewezen fout bij de uitvoering van haar diensten. Zij is beperkt tot de directe en voorzienbare schade en, behoudens zware of opzettelijke fout, begrensd tot het totale gefactureerde bedrag voor de betrokken opdracht. Smidjan kan niet aansprakelijk worden gesteld voor de gevolgen van een kwetsbaarheid die niet werd opgespoord tijdens een audit of een penetratietest, aangezien deze diensten een inspanningsverbintenis vormen en geen resultaatsverbintenis."
+        "body": "De aansprakelijkheid van Smidjan kan enkel worden ingeroepen in geval van bewezen fout bij de uitvoering van haar diensten. Zij is beperkt tot de directe en voorzienbare schade en, behoudens zware of opzettelijke fout, begrensd tot het totale gefactureerde bedrag voor de betrokken opdracht. Smidjan kan niet aansprakelijk worden gesteld voor de gevolgen van een kwetsbaarheid die niet werd opgespoord tijdens een audit of een beveiligingstest, aangezien deze diensten een inspanningsverbintenis vormen en geen resultaatsverbintenis."
       },
       "confidentialite": {
         "title": "Vertrouwelijkheid",
@@ -1207,11 +1207,11 @@
   },
   "services": {
     "meta": {
-      "title": "Onze expertise : Cyberbeveiliging, pentest, ontwikkeling & conformiteit | Smidjan Wallonië",
-      "description": "Smidjan beveiligt uw infrastructuur, test uw applicaties (OWASP-pentest), ontwikkelt secure by design en begeleidt u naar NIS2- / CyFun-conformiteit. Eén aanspreekpunt, in Wallonië.",
-      "ogTitle": "Onze expertise : Cyberbeveiliging, pentest, ontwikkeling & conformiteit",
+      "title": "Onze expertise : Cyberbeveiliging, beveiligingstests, ontwikkeling & conformiteit | Smidjan Wallonië",
+      "description": "Smidjan beveiligt uw infrastructuur, test uw applicaties (OWASP-beveiligingstests), ontwikkelt secure by design en begeleidt u naar NIS2- / CyFun-conformiteit. Eén aanspreekpunt, in Wallonië.",
+      "ogTitle": "Onze expertise : Cyberbeveiliging, beveiligingstests, ontwikkeling & conformiteit",
       "ogDescription": "Beveiligen, testen, ontwikkelen, conform worden : vier expertisedomeinen van Smidjan om het cyberrisico van kmo's in België concreet te verlagen.",
-      "ogImageAlt": "Smidjan : Cyberbeveiliging, pentest, beveiligde ontwikkeling & NIS2-conformiteit in Wallonië",
+      "ogImageAlt": "Smidjan : Cyberbeveiliging, beveiligingstests, beveiligde ontwikkeling & NIS2-conformiteit in Wallonië",
       "twitterTitle": "Onze expertise : Smidjan Cyberbeveiliging",
       "twitterDescription": "Beveiligen, testen, ontwikkelen, conform worden : vier expertisedomeinen om het cyberrisico van kmo's te verlagen."
     },
@@ -1291,7 +1291,7 @@
             "description": "Organisatorische en technische evaluatie van uw werkelijke blootstelling."
           },
           {
-            "title": "Web- & applicatiepentest",
+            "title": "Web- & applicatiebeveiligingstests",
             "description": "OWASP-aanpak op uw sites, applicaties en blootgestelde API's."
           },
           {
@@ -1314,12 +1314,12 @@
           }
         },
         "deliverables": [
-          "Pentestrapport geprioriteerd op ernst",
+          "Beveiligingstestrapport geprioriteerd op ernst",
           "Reproduceerbaar exploitatiebewijs",
           "Concrete aanbevelingen & remediëringsplan",
           "Hercontrole (retest) na correctie"
         ],
-        "ctaLabel": "Een pentest plannen"
+        "ctaLabel": "Beveiligingstests plannen"
       },
       "developper": {
         "kicker": "Ontwikkelen",
@@ -1412,7 +1412,7 @@
       },
       "secure": {
         "label": "Secure",
-        "text": "Verstevigde infrastructuur, pentest & monitoring."
+        "text": "Verstevigde infrastructuur, beveiligingstests & monitoring."
       },
       "comply": {
         "label": "Comply",
@@ -1450,7 +1450,7 @@
       "test": {
         "photoAlt": "Beveiligingsanalisten die code en dashboards op meerdere schermen onderzoeken tijdens een audit.",
         "caption": "<b>Zwakke plekken onthullen</b> voordat een echte aanvaller ze uitbuit.",
-        "aria": "Illustratie : een pentest detecteert een kwetsbare applicatiemodule via een gerichte analyse en legt die vervolgens vast in een rapport met resultaten geordend op ernst, met een kritieke kwetsbaarheid gemarkeerd.",
+        "aria": "Illustratie : een beveiligingstest detecteert een kwetsbare applicatiemodule via een gerichte analyse en legt die vervolgens vast in een rapport met resultaten geordend op ernst, met een kritieke kwetsbaarheid gemarkeerd.",
         "appTested": "Geteste applicatie",
         "auditResults": "Auditresultaten",
         "headers": "Beveiligingsheaders : OK",
@@ -1460,7 +1460,7 @@
         "low": "Laag",
         "medium": "Middel",
         "critical": "Kritiek",
-        "pentestReport": "Pentestrapport"
+        "pentestReport": "Beveiligingstestrapport"
       },
       "dev": {
         "photoAlt": "Close-up van een printplaat, symbool voor een applicatiearchitectuur ontworpen secure by design.",

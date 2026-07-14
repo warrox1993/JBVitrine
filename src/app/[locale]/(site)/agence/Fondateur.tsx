@@ -16,7 +16,7 @@ const CREDENTIALS = [
 
 const SKILL_TAGS = [
   "skillReseaux",
-  "skillPentest",
+  "skillGRC",
   "skillLinux",
   "skillCyberdefense",
   "skillConformite",

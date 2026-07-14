@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Onze expertise : Cyberbeveiliging, pentest, ontwikkeling & conformiteit | Smidjan Wallonië",
-    "description": "Smidjan beveiligt uw infrastructuur, test uw applicaties (OWASP-pentest), ontwikkelt secure by design en begeleidt u naar NIS2- / CyFun-conformiteit. Eén aanspreekpunt, in Wallonië.",
-    "ogTitle": "Onze expertise : Cyberbeveiliging, pentest, ontwikkeling & conformiteit",
+    "title": "Onze expertise : Cyberbeveiliging, beveiligingstests, ontwikkeling & conformiteit | Smidjan Wallonië",
+    "description": "Smidjan beveiligt uw infrastructuur, test uw applicaties (OWASP-beveiligingstests), ontwikkelt secure by design en begeleidt u naar NIS2- / CyFun-conformiteit. Eén aanspreekpunt, in Wallonië.",
+    "ogTitle": "Onze expertise : Cyberbeveiliging, beveiligingstests, ontwikkeling & conformiteit",
     "ogDescription": "Beveiligen, testen, ontwikkelen, conform worden : vier expertisedomeinen van Smidjan om het cyberrisico van kmo's in België concreet te verlagen.",
-    "ogImageAlt": "Smidjan : Cyberbeveiliging, pentest, beveiligde ontwikkeling & NIS2-conformiteit in Wallonië",
+    "ogImageAlt": "Smidjan : Cyberbeveiliging, beveiligingstests, beveiligde ontwikkeling & NIS2-conformiteit in Wallonië",
     "twitterTitle": "Onze expertise : Smidjan Cyberbeveiliging",
     "twitterDescription": "Beveiligen, testen, ontwikkelen, conform worden : vier expertisedomeinen om het cyberrisico van kmo's te verlagen."
   },
@@ -84,7 +84,7 @@
           "description": "Organisatorische en technische evaluatie van uw werkelijke blootstelling."
         },
         {
-          "title": "Web- & applicatiepentest",
+          "title": "Web- & applicatiebeveiligingstests",
           "description": "OWASP-aanpak op uw sites, applicaties en blootgestelde API's."
         },
         {
@@ -107,12 +107,12 @@
         }
       },
       "deliverables": [
-        "Pentestrapport geprioriteerd op ernst",
+        "Beveiligingstestrapport geprioriteerd op ernst",
         "Reproduceerbaar exploitatiebewijs",
         "Concrete aanbevelingen & remediëringsplan",
         "Hercontrole (retest) na correctie"
       ],
-      "ctaLabel": "Een pentest plannen"
+      "ctaLabel": "Beveiligingstests plannen"
     },
     "developper": {
       "kicker": "Ontwikkelen",
@@ -205,7 +205,7 @@
     },
     "secure": {
       "label": "Secure",
-      "text": "Verstevigde infrastructuur, pentest & monitoring."
+      "text": "Verstevigde infrastructuur, beveiligingstests & monitoring."
     },
     "comply": {
       "label": "Comply",
@@ -243,7 +243,7 @@
     "test": {
       "photoAlt": "Beveiligingsanalisten die code en dashboards op meerdere schermen onderzoeken tijdens een audit.",
       "caption": "<b>Zwakke plekken onthullen</b> voordat een echte aanvaller ze uitbuit.",
-      "aria": "Illustratie : een pentest detecteert een kwetsbare applicatiemodule via een gerichte analyse en legt die vervolgens vast in een rapport met resultaten geordend op ernst, met een kritieke kwetsbaarheid gemarkeerd.",
+      "aria": "Illustratie : een beveiligingstest detecteert een kwetsbare applicatiemodule via een gerichte analyse en legt die vervolgens vast in een rapport met resultaten geordend op ernst, met een kritieke kwetsbaarheid gemarkeerd.",
       "appTested": "Geteste applicatie",
       "auditResults": "Auditresultaten",
       "headers": "Beveiligingsheaders : OK",
@@ -253,7 +253,7 @@
       "low": "Laag",
       "medium": "Middel",
       "critical": "Kritiek",
-      "pentestReport": "Pentestrapport"
+      "pentestReport": "Beveiligingstestrapport"
     },
     "dev": {
       "photoAlt": "Close-up van een printplaat, symbool voor een applicatiearchitectuur ontworpen secure by design.",

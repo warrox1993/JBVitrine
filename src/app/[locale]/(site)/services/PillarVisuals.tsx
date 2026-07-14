@@ -106,7 +106,7 @@ export async function SecureVisual({ alt }: { alt?: boolean }) {
   );
 }
 
-/** Pillar 02 - Tester audits & pentest: an app being probed and consigned into a severity-ranked audit report. */
+/** Pillar 02 - Tester audits & security testing: an app being probed and consigned into a severity-ranked audit report. */
 export async function TestVisual({ alt }: { alt?: boolean }) {
   const t = await getTranslations("services.visuals.test");
   return (

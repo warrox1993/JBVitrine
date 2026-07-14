@@ -72,12 +72,12 @@
     "hero": {
       "eyebrow": "Cadre contractuel",
       "title": "Conditions générales",
-      "lead": "Le cadre applicable aux prestations de conseil, d'audit, de test d'intrusion, de développement sécurisé et d'accompagnement à la conformité fournies par Smidjan."
+      "lead": "Le cadre applicable aux prestations de conseil, d'audit, de tests de sécurité, de développement sécurisé et d'accompagnement à la conformité fournies par Smidjan."
     },
     "intro": "Les présentes conditions générales encadrent les prestations fournies par Smidjan. Elles ne remplacent pas le devis ou le contrat signé pour une mission donnée, qui prévaut en cas de contradiction.",
     "objet": {
       "title": "Objet",
-      "body": "Les présentes conditions générales régissent les prestations de conseil, d'audit, de test d'intrusion, de développement sécurisé et d'accompagnement à la conformité (NIS2 / CyberFundamentals) fournies par Smidjan à ses clients professionnels."
+      "body": "Les présentes conditions générales régissent les prestations de conseil, d'audit, de tests de sécurité, de développement sécurisé et d'accompagnement à la conformité (NIS2 / CyberFundamentals) fournies par Smidjan à ses clients professionnels."
     },
     "devis": {
       "title": "Devis et commande",
@@ -91,7 +91,7 @@
     },
     "responsabilite": {
       "title": "Responsabilité",
-      "body": "La responsabilité de Smidjan ne peut être engagée qu'en cas de faute prouvée dans l'exécution de ses prestations. Elle est limitée aux dommages directs et prévisibles et, sauf faute lourde ou intentionnelle, plafonnée au montant total facturé pour la mission concernée. Smidjan ne saurait être tenue responsable des conséquences d'une vulnérabilité non détectée lors d'un audit ou d'un test d'intrusion, ces prestations constituant une obligation de moyens et non de résultat."
+      "body": "La responsabilité de Smidjan ne peut être engagée qu'en cas de faute prouvée dans l'exécution de ses prestations. Elle est limitée aux dommages directs et prévisibles et, sauf faute lourde ou intentionnelle, plafonnée au montant total facturé pour la mission concernée. Smidjan ne saurait être tenue responsable des conséquences d'une vulnérabilité non détectée lors d'un audit ou d'un test de sécurité, ces prestations constituant une obligation de moyens et non de résultat."
     },
     "confidentialite": {
       "title": "Confidentialité",

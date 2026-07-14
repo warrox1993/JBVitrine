@@ -112,10 +112,10 @@ export const localBusinessSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Tests d'intrusion & audit de sécurité",
+          name: "Tests de sécurité & audit",
           description:
-            "Pentests web et applicatifs suivant une approche inspirée d'OWASP, avec plan de remédiation priorisé.",
-          serviceType: "Test d'intrusion",
+            "Tests de sécurité web et applicatifs suivant une approche inspirée d'OWASP, avec plan de remédiation priorisé.",
+          serviceType: "Tests de sécurité",
         },
       },
       {

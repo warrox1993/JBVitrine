@@ -1,11 +1,11 @@
 {
   "agence": {
     "meta": {
-      "title": "L'agence · Smidjan | Cybersécurité des PME wallonnes, par un expert local · Liège",
-      "description": "Smidjan est une agence de cybersécurité basée à Liège, au service des PME, indépendants et collectivités de Wallonie. Découvrez l'agence et son fondateur, Jean-Baptiste Dhondt.",
+      "title": "L'agence · Smidjan | Cybersécurité des PME wallonnes, par un expert local · Wallonie",
+      "description": "Smidjan est une agence de cybersécurité basée en Wallonie, au service des PME, indépendants et collectivités de la région. Découvrez l'agence et son fondateur, Jean-Baptiste Dhondt.",
       "ogTitle": "L'agence · Smidjan | Cybersécurité des PME wallonnes",
-      "ogDescription": "Une agence de cybersécurité à taille humaine, basée à Liège, au service des PME et collectivités de Wallonie.",
-      "ogImageAlt": "Smidjan - Agence de cybersécurité à Liège"
+      "ogDescription": "Une agence de cybersécurité à taille humaine, basée en Wallonie, au service des PME et collectivités de la région.",
+      "ogImageAlt": "Smidjan - Agence de cybersécurité en Wallonie"
     },
     "hero": {
       "ariaBreadcrumb": "Fil d'Ariane",
@@ -16,10 +16,10 @@
       "lead": "Jean-Baptiste Dhondt sécurise lui-même votre PME. Pas de centre d'appel. Pas de sous-traitance.",
       "ctaPrimary": "Réserver un appel de cadrage",
       "ctaCall": "Appeler le 0475 20 55 62",
-      "badgeLocation": "Basés à Liège, actifs en Wallonie",
+      "badgeLocation": "Basés en Wallonie",
       "badgeAccess": "Accès direct à l'expert",
       "badgeData": "Données hébergées en Belgique / UE",
-      "imageAlt": "Le pont de Fragnée illuminé la nuit au-dessus de la Meuse, à Liège"
+      "imageAlt": "Un pont illuminé la nuit au-dessus d'un fleuve, symbole de l'ancrage de Smidjan en Wallonie"
     },
     "engagements": {
       "eyebrow": "Nos engagements",
@@ -54,18 +54,18 @@
       "valueRigueurTitle": "Rigueur",
       "valueRigueurText": "NIS2, CyFun, OWASP, ISO 27001 : une méthode qu'on démontre, pas qu'on affirme.",
       "valueProximiteTitle": "Proximité",
-      "valueProximiteText": "Basés à Liège, joignables vite. Vous parlez à la personne qui fait le travail.",
+      "valueProximiteText": "Basés en Wallonie, joignables vite. Vous parlez à la personne qui fait le travail.",
       "valueFranchiseTitle": "Franchise",
       "valueFranchiseText": "On dit ce qui compte, même ce qui dérange. Pas de vente de peur.",
       "valuePragmatismeTitle": "Pragmatisme",
       "valuePragmatismeText": "Priorité à l'impact, pas au superflu. La meilleure sécurité est celle qu'on applique.",
-      "mapAriaLabel": "Carte simplifiée de la Belgique, avec un repère sur Liège et la zone d'action en Wallonie",
+      "mapAriaLabel": "Carte simplifiée de la Belgique, avec un repère sur la zone d'action en Wallonie",
       "mapBruxelles": "Bruxelles",
-      "mapLiege": "Liège",
-      "localityTitle": "Ancrés à Liège, actifs en Wallonie",
+      "mapLiege": "Wallonie",
+      "localityTitle": "Ancrés en Wallonie",
       "localityText": "Délais courts, disponibilité réelle en urgence.",
       "coverageAlt": "Vue nocturne de la Terre depuis l'espace, lumières des villes d'Europe, symbole de notre zone de couverture Belgique / Europe",
-      "coverageCaption": "Ancrés à Liège. Données <b>hébergées en Belgique et en Europe</b>."
+      "coverageCaption": "Ancrés en Wallonie. Données <b>hébergées en Belgique et en Europe</b>."
     },
     "founder": {
       "eyebrow": "Le fondateur",
@@ -74,14 +74,14 @@
       "portraitAria": "Portrait du fondateur, emplacement réservé, photo à venir",
       "photoSoon": "Photo à venir",
       "name": "Jean-Baptiste Dhondt",
-      "role": "Fondateur · Expert en cybersécurité",
+      "role": "Fondateur · Praticien cybersécurité & GRC",
       "quote": "« La sécurité d'une PME ne se règle pas avec un rapport qu'on range dans un tiroir. Elle se règle en corrigeant, une à une, les failles qui comptent. »",
       "credDiploma": "Diplôme technique en informatique",
       "credArmy": "Ancien des télécommunications de l'Armée belge",
       "credExpertise": "Orientation cybersécurité défensive & conformité (GRC)",
       "credReferentials": "Référentiels NIS2 / CyFun (CCB), OWASP, ISO 27001",
       "skillReseaux": "Réseaux",
-      "skillPentest": "GRC",
+      "skillGRC": "GRC",
       "skillLinux": "Linux",
       "skillCyberdefense": "Cyberdéfense",
       "skillConformite": "Conformité",
@@ -155,7 +155,7 @@
     "method": {
       "eyebrow": "Étape par étape",
       "title": "Quatre <accent>étapes</accent>, du premier constat au suivi durable",
-      "lead": "Audit, pentest, conformité NIS2 / CyFun : même méthode à chaque fois. Vous savez ce qui se passe et ce que vous recevez.",
+      "lead": "Audit, tests de sécurité, conformité NIS2 / CyFun : même méthode à chaque fois. Vous savez ce qui se passe et ce que vous recevez.",
       "overviewKicker": "Aperçu rapide",
       "photo2Alt": "Un consultant classe des priorités par trimestre sur un tableau de planification, illustrant la construction d'une feuille de route priorisée avec le client.",
       "photo2Caption": "Une <b>feuille de route priorisée</b>, construite avec vous.",
@@ -260,7 +260,7 @@
       "items": {
         "owasp": {
           "title": "Tests & sécurité applicative",
-          "text": "Audits web et tests d'intrusion selon la méthodologie OWASP, les critères de l'industrie."
+          "text": "Audits web et tests de sécurité selon la méthodologie OWASP, les critères de l'industrie."
         },
         "iso": {
           "title": "Gestion de la sécurité",
@@ -736,7 +736,7 @@
   "contact": {
     "meta": {
       "title": "Contact · Smidjan | Cybersécurité & conformité NIS2 en Wallonie",
-      "description": "Diagnostic gratuit, audit CyFun/NIS2, pentest ou réponse à incident : écrivez à Smidjan. Un expert vous répond sous 24 h ouvrées. Basés en Wallonie.",
+      "description": "Diagnostic gratuit, audit CyFun/NIS2, tests de sécurité ou réponse à incident : écrivez à Smidjan. Un expert vous répond sous 24 h ouvrées. Basés en Wallonie.",
       "ogTitle": "Contact · Smidjan",
       "ogDescription": "Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées.",
       "ogImageAlt": "Contactez Smidjan, cybersécurité et conformité NIS2 en Wallonie",
@@ -750,7 +750,7 @@
       "eyebrow": "Parlons de votre sécurité",
       "title": "Un expert vous répond : <accent>sous 24 heures</accent>.",
       "directPromise": "<strong>Un expert Smidjan</strong>, jamais un centre d'appels.",
-      "lead": "Diagnostic, audit NIS2, pentest ou incident : un seul interlocuteur.",
+      "lead": "Diagnostic, audit NIS2, tests de sécurité ou incident : un seul interlocuteur.",
       "ctaPrimary": "Décrire mon besoin",
       "imageAlt": "Équipe Smidjan réunie autour d'un ordinateur portable dans un bureau moderne et lumineux, échange convivial entre collègues.",
       "assure1": "Réponse sous 24 h ouvrées",
@@ -766,7 +766,7 @@
       "options": {
         "diagnostic": "Diagnostic gratuit",
         "cyfun": "Audit CyFun / NIS2",
-        "pentest": "Pentest / test d'intrusion",
+        "pentest": "Tests de sécurité",
         "dev": "Développement web sécurisé",
         "autre": "Autre demande"
       },
@@ -1095,12 +1095,12 @@
       "hero": {
         "eyebrow": "Cadre contractuel",
         "title": "Conditions générales",
-        "lead": "Le cadre applicable aux prestations de conseil, d'audit, de test d'intrusion, de développement sécurisé et d'accompagnement à la conformité fournies par Smidjan."
+        "lead": "Le cadre applicable aux prestations de conseil, d'audit, de tests de sécurité, de développement sécurisé et d'accompagnement à la conformité fournies par Smidjan."
       },
       "intro": "Les présentes conditions générales encadrent les prestations fournies par Smidjan. Elles ne remplacent pas le devis ou le contrat signé pour une mission donnée, qui prévaut en cas de contradiction.",
       "objet": {
         "title": "Objet",
-        "body": "Les présentes conditions générales régissent les prestations de conseil, d'audit, de test d'intrusion, de développement sécurisé et d'accompagnement à la conformité (NIS2 / CyberFundamentals) fournies par Smidjan à ses clients professionnels."
+        "body": "Les présentes conditions générales régissent les prestations de conseil, d'audit, de tests de sécurité, de développement sécurisé et d'accompagnement à la conformité (NIS2 / CyberFundamentals) fournies par Smidjan à ses clients professionnels."
       },
       "devis": {
         "title": "Devis et commande",
@@ -1114,7 +1114,7 @@
       },
       "responsabilite": {
         "title": "Responsabilité",
-        "body": "La responsabilité de Smidjan ne peut être engagée qu'en cas de faute prouvée dans l'exécution de ses prestations. Elle est limitée aux dommages directs et prévisibles et, sauf faute lourde ou intentionnelle, plafonnée au montant total facturé pour la mission concernée. Smidjan ne saurait être tenue responsable des conséquences d'une vulnérabilité non détectée lors d'un audit ou d'un test d'intrusion, ces prestations constituant une obligation de moyens et non de résultat."
+        "body": "La responsabilité de Smidjan ne peut être engagée qu'en cas de faute prouvée dans l'exécution de ses prestations. Elle est limitée aux dommages directs et prévisibles et, sauf faute lourde ou intentionnelle, plafonnée au montant total facturé pour la mission concernée. Smidjan ne saurait être tenue responsable des conséquences d'une vulnérabilité non détectée lors d'un audit ou d'un test de sécurité, ces prestations constituant une obligation de moyens et non de résultat."
       },
       "confidentialite": {
         "title": "Confidentialité",
@@ -1207,11 +1207,11 @@
   },
   "services": {
     "meta": {
-      "title": "Nos expertises : Cybersécurité, pentest, développement & conformité | Smidjan Wallonie",
-      "description": "Smidjan sécurise votre infrastructure, teste vos applications (pentest OWASP), développe en secure by design et vous accompagne vers la conformité NIS2 / CyFun. Un seul interlocuteur, en Wallonie.",
-      "ogTitle": "Nos expertises : Cybersécurité, pentest, développement & conformité",
+      "title": "Nos expertises : Cybersécurité, tests de sécurité, développement & conformité | Smidjan Wallonie",
+      "description": "Smidjan sécurise votre infrastructure, teste vos applications (tests de sécurité OWASP), développe en secure by design et vous accompagne vers la conformité NIS2 / CyFun. Un seul interlocuteur, en Wallonie.",
+      "ogTitle": "Nos expertises : Cybersécurité, tests de sécurité, développement & conformité",
       "ogDescription": "Sécuriser, tester, développer, se conformer : quatre expertises Smidjan pour réduire concrètement le risque cyber des PME en Belgique.",
-      "ogImageAlt": "Smidjan : Cybersécurité, pentest, développement sécurisé & conformité NIS2 en Wallonie",
+      "ogImageAlt": "Smidjan : Cybersécurité, tests de sécurité, développement sécurisé & conformité NIS2 en Wallonie",
       "twitterTitle": "Nos expertises : Smidjan Cybersécurité",
       "twitterDescription": "Sécuriser, tester, développer, se conformer : quatre expertises pour réduire le risque cyber des PME."
     },
@@ -1291,7 +1291,7 @@
             "description": "Évaluation organisationnelle et technique de votre exposition réelle."
           },
           {
-            "title": "Test d'intrusion web & applicatif",
+            "title": "Tests de sécurité web & applicatif",
             "description": "Approche OWASP sur vos sites, applications et API exposés."
           },
           {
@@ -1314,12 +1314,12 @@
           }
         },
         "deliverables": [
-          "Rapport de pentest priorisé par criticité",
+          "Rapport de tests de sécurité priorisé par criticité",
           "Preuves d'exploitation reproductibles",
           "Recommandations concrètes & plan de remédiation",
           "Contre-vérification (retest) après correction"
         ],
-        "ctaLabel": "Planifier un pentest"
+        "ctaLabel": "Planifier des tests de sécurité"
       },
       "developper": {
         "kicker": "Développer",
@@ -1412,7 +1412,7 @@
       },
       "secure": {
         "label": "Secure",
-        "text": "Infrastructure durcie, pentest & supervision."
+        "text": "Infrastructure durcie, tests de sécurité & supervision."
       },
       "comply": {
         "label": "Comply",
@@ -1450,7 +1450,7 @@
       "test": {
         "photoAlt": "Analystes en sécurité examinant du code et des tableaux de bord sur plusieurs écrans lors d'un audit.",
         "caption": "<b>Révéler les failles</b> avant qu'un vrai attaquant ne les exploite.",
-        "aria": "Illustration : un test d'intrusion détecte un module applicatif vulnérable à l'aide d'une analyse ciblée, puis le consigne dans un rapport de résultats classés par criticité, avec une faille critique signalée.",
+        "aria": "Illustration : un test de sécurité détecte un module applicatif vulnérable à l'aide d'une analyse ciblée, puis le consigne dans un rapport de résultats classés par criticité, avec une faille critique signalée.",
         "appTested": "Application testée",
         "auditResults": "Résultats d'audit",
         "headers": "En-têtes de sécurité : OK",
@@ -1460,7 +1460,7 @@
         "low": "Faible",
         "medium": "Moyen",
         "critical": "Critique",
-        "pentestReport": "Rapport de pentest"
+        "pentestReport": "Rapport de tests de sécurité"
       },
       "dev": {
         "photoAlt": "Plan de circuit imprimé en gros plan, symbolisant une architecture applicative pensée secure by design.",

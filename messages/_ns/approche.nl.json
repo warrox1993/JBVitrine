@@ -44,7 +44,7 @@
   "method": {
     "eyebrow": "Stap voor stap",
     "title": "Vier <accent>stappen</accent>, van de eerste vaststelling tot duurzame opvolging",
-    "lead": "Audit, pentest, NIS2- / CyFun-conformiteit : telkens dezelfde methode. U weet wat er gebeurt en wat u ontvangt.",
+    "lead": "Audit, beveiligingstests, NIS2- / CyFun-conformiteit : telkens dezelfde methode. U weet wat er gebeurt en wat u ontvangt.",
     "overviewKicker": "Snel overzicht",
     "photo2Alt": "Een consultant rangschikt prioriteiten per kwartaal op een planningsbord, wat de opbouw van een geprioriteerde roadmap samen met de klant illustreert.",
     "photo2Caption": "Een <b>geprioriteerde roadmap</b>, samen met u opgebouwd.",
@@ -149,7 +149,7 @@
     "items": {
       "owasp": {
         "title": "Tests & applicatiebeveiliging",
-        "text": "Webaudits en penetratietests volgens de OWASP-methodologie, de criteria van de sector."
+        "text": "Webaudits en beveiligingstests volgens de OWASP-methodologie, de criteria van de sector."
       },
       "iso": {
         "title": "Beveiligingsbeheer",

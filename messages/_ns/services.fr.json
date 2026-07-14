@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Nos expertises : Cybersécurité, pentest, développement & conformité | Smidjan Wallonie",
-    "description": "Smidjan sécurise votre infrastructure, teste vos applications (pentest OWASP), développe en secure by design et vous accompagne vers la conformité NIS2 / CyFun. Un seul interlocuteur, en Wallonie.",
-    "ogTitle": "Nos expertises : Cybersécurité, pentest, développement & conformité",
+    "title": "Nos expertises : Cybersécurité, tests de sécurité, développement & conformité | Smidjan Wallonie",
+    "description": "Smidjan sécurise votre infrastructure, teste vos applications (tests de sécurité OWASP), développe en secure by design et vous accompagne vers la conformité NIS2 / CyFun. Un seul interlocuteur, en Wallonie.",
+    "ogTitle": "Nos expertises : Cybersécurité, tests de sécurité, développement & conformité",
     "ogDescription": "Sécuriser, tester, développer, se conformer : quatre expertises Smidjan pour réduire concrètement le risque cyber des PME en Belgique.",
-    "ogImageAlt": "Smidjan : Cybersécurité, pentest, développement sécurisé & conformité NIS2 en Wallonie",
+    "ogImageAlt": "Smidjan : Cybersécurité, tests de sécurité, développement sécurisé & conformité NIS2 en Wallonie",
     "twitterTitle": "Nos expertises : Smidjan Cybersécurité",
     "twitterDescription": "Sécuriser, tester, développer, se conformer : quatre expertises pour réduire le risque cyber des PME."
   },
@@ -84,7 +84,7 @@
           "description": "Évaluation organisationnelle et technique de votre exposition réelle."
         },
         {
-          "title": "Test d'intrusion web & applicatif",
+          "title": "Tests de sécurité web & applicatif",
           "description": "Approche OWASP sur vos sites, applications et API exposés."
         },
         {
@@ -107,12 +107,12 @@
         }
       },
       "deliverables": [
-        "Rapport de pentest priorisé par criticité",
+        "Rapport de tests de sécurité priorisé par criticité",
         "Preuves d'exploitation reproductibles",
         "Recommandations concrètes & plan de remédiation",
         "Contre-vérification (retest) après correction"
       ],
-      "ctaLabel": "Planifier un pentest"
+      "ctaLabel": "Planifier des tests de sécurité"
     },
     "developper": {
       "kicker": "Développer",
@@ -205,7 +205,7 @@
     },
     "secure": {
       "label": "Secure",
-      "text": "Infrastructure durcie, pentest & supervision."
+      "text": "Infrastructure durcie, tests de sécurité & supervision."
     },
     "comply": {
       "label": "Comply",
@@ -243,7 +243,7 @@
     "test": {
       "photoAlt": "Analystes en sécurité examinant du code et des tableaux de bord sur plusieurs écrans lors d'un audit.",
       "caption": "<b>Révéler les failles</b> avant qu'un vrai attaquant ne les exploite.",
-      "aria": "Illustration : un test d'intrusion détecte un module applicatif vulnérable à l'aide d'une analyse ciblée, puis le consigne dans un rapport de résultats classés par criticité, avec une faille critique signalée.",
+      "aria": "Illustration : un test de sécurité détecte un module applicatif vulnérable à l'aide d'une analyse ciblée, puis le consigne dans un rapport de résultats classés par criticité, avec une faille critique signalée.",
       "appTested": "Application testée",
       "auditResults": "Résultats d'audit",
       "headers": "En-têtes de sécurité : OK",
@@ -253,7 +253,7 @@
       "low": "Faible",
       "medium": "Moyen",
       "critical": "Critique",
-      "pentestReport": "Rapport de pentest"
+      "pentestReport": "Rapport de tests de sécurité"
     },
     "dev": {
       "photoAlt": "Plan de circuit imprimé en gros plan, symbolisant une architecture applicative pensée secure by design.",

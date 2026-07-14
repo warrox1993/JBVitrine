@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Het agentschap · Smidjan | Cyberbeveiliging voor Waalse kmo's, door een lokale expert · Luik",
-    "description": "Smidjan is een cyberbeveiligingsagentschap in Luik, ten dienste van kmo's, zelfstandigen en overheden in Wallonië. Ontdek het agentschap en zijn oprichter, Jean-Baptiste Dhondt.",
+    "title": "Het agentschap · Smidjan | Cyberbeveiliging voor Waalse kmo's, door een lokale expert · Wallonië",
+    "description": "Smidjan is een cyberbeveiligingsagentschap in Wallonië, ten dienste van kmo's, zelfstandigen en overheden in de regio. Ontdek het agentschap en zijn oprichter, Jean-Baptiste Dhondt.",
     "ogTitle": "Het agentschap · Smidjan | Cyberbeveiliging voor Waalse kmo's",
-    "ogDescription": "Een cyberbeveiligingsagentschap op mensenmaat, gevestigd in Luik, ten dienste van kmo's en overheden in Wallonië.",
-    "ogImageAlt": "Smidjan - Cyberbeveiligingsagentschap in Luik"
+    "ogDescription": "Een cyberbeveiligingsagentschap op mensenmaat, gevestigd in Wallonië, ten dienste van kmo's en overheden in de regio.",
+    "ogImageAlt": "Smidjan - Cyberbeveiligingsagentschap in Wallonië"
   },
   "hero": {
     "ariaBreadcrumb": "Kruimelpad",
@@ -15,10 +15,10 @@
     "lead": "Jean-Baptiste Dhondt beveiligt zelf uw kmo. Geen callcenter. Geen onderaanneming.",
     "ctaPrimary": "Een kaderingsgesprek inplannen",
     "ctaCall": "Bel 0475 20 55 62",
-    "badgeLocation": "Gevestigd in Luik, actief in Wallonië",
+    "badgeLocation": "Gevestigd in Wallonië",
     "badgeAccess": "Rechtstreeks contact met de expert",
     "badgeData": "Gegevens gehost in België / EU",
-    "imageAlt": "De verlichte Fragnée-brug 's nachts boven de Maas in Luik"
+    "imageAlt": "Een verlichte brug 's nachts boven een rivier, symbool van de verankering van Smidjan in Wallonië"
   },
   "engagements": {
     "eyebrow": "Onze engagementen",
@@ -53,18 +53,18 @@
     "valueRigueurTitle": "Grondigheid",
     "valueRigueurText": "NIS2, CyFun, OWASP, ISO 27001 : een methode die we aantonen, niet louter beweren.",
     "valueProximiteTitle": "Nabijheid",
-    "valueProximiteText": "Gevestigd in Luik, snel bereikbaar. U spreekt met de persoon die het werk uitvoert.",
+    "valueProximiteText": "Gevestigd in Wallonië, snel bereikbaar. U spreekt met de persoon die het werk uitvoert.",
     "valueFranchiseTitle": "Openhartigheid",
     "valueFranchiseText": "We zeggen wat telt, ook wat ongemakkelijk is. Geen bangmakerij.",
     "valuePragmatismeTitle": "Pragmatisme",
     "valuePragmatismeText": "Prioriteit aan impact, niet aan overbodigheden. De beste beveiliging is die welke men toepast.",
-    "mapAriaLabel": "Vereenvoudigde kaart van België, met een markering op Luik en het actiegebied in Wallonië",
+    "mapAriaLabel": "Vereenvoudigde kaart van België, met een markering op het actiegebied in Wallonië",
     "mapBruxelles": "Brussel",
-    "mapLiege": "Luik",
-    "localityTitle": "Verankerd in Luik, actief in Wallonië",
+    "mapLiege": "Wallonië",
+    "localityTitle": "Verankerd in Wallonië",
     "localityText": "Korte termijnen, reële beschikbaarheid bij spoed.",
     "coverageAlt": "Nachtelijk zicht op de aarde vanuit de ruimte, lichten van de Europese steden, symbool van ons dekkingsgebied België / Europa",
-    "coverageCaption": "Verankerd in Luik. Gegevens <b>gehost in België en in Europa</b>."
+    "coverageCaption": "Verankerd in Wallonië. Gegevens <b>gehost in België en in Europa</b>."
   },
   "founder": {
     "eyebrow": "De oprichter",
@@ -73,14 +73,14 @@
     "portraitAria": "Portret van de oprichter, gereserveerde plaats, foto volgt",
     "photoSoon": "Foto volgt",
     "name": "Jean-Baptiste Dhondt",
-    "role": "Oprichter · Expert in cyberbeveiliging",
+    "role": "Oprichter · Cyberbeveiliging & GRC praktijk",
     "quote": "« De beveiliging van een kmo los je niet op met een rapport dat in een lade verdwijnt. Ze wordt opgelost door, één voor één, de kwetsbaarheden te verhelpen die tellen. »",
     "credDiploma": "Technisch diploma in informatica",
     "credArmy": "Voormalig lid van de telecommunicatie van het Belgische leger",
     "credExpertise": "Gericht op defensieve cyberbeveiliging & conformiteit (GRC)",
     "credReferentials": "Referentiekaders NIS2 / CyFun (CCB), OWASP, ISO 27001",
     "skillReseaux": "Netwerken",
-    "skillPentest": "GRC",
+    "skillGRC": "GRC",
     "skillLinux": "Linux",
     "skillCyberdefense": "Cyberdefensie",
     "skillConformite": "Conformiteit",

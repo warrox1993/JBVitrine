@@ -44,7 +44,7 @@
   "method": {
     "eyebrow": "Step by step",
     "title": "Four <accent>steps</accent>, from the first finding to lasting follow-up",
-    "lead": "Audit, pentest, NIS2 / CyFun compliance: the same method every time. You know what is happening and what you receive.",
+    "lead": "Audit, security testing, NIS2 / CyFun compliance: the same method every time. You know what is happening and what you receive.",
     "overviewKicker": "Quick overview",
     "photo2Alt": "A consultant sorts priorities by quarter on a planning board, illustrating the construction of a prioritised roadmap with the client.",
     "photo2Caption": "A <b>prioritised roadmap</b>, built with you.",
@@ -149,7 +149,7 @@
     "items": {
       "owasp": {
         "title": "Testing & application security",
-        "text": "Web audits and penetration tests following the OWASP methodology, the industry criteria."
+        "text": "Web audits and security tests following the OWASP methodology, the industry criteria."
       },
       "iso": {
         "title": "Security management",

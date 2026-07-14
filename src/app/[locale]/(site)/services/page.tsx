@@ -91,12 +91,12 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": "https://smidjan.be/services#tester",
-      name: "Audits & tests d'intrusion",
+      name: "Audits & tests de sécurité",
       description:
-        "Audits de sécurité et pentests web/applicatifs suivant une approche OWASP, avec plan de remédiation priorisé et contre-vérification.",
+        "Audits de sécurité et tests de sécurité web/applicatifs suivant une approche OWASP, avec plan de remédiation priorisé et contre-vérification.",
       provider: { "@type": "Organization", name: "Smidjan", url: "https://smidjan.be" },
       areaServed: { "@type": "Country", name: "Belgique" },
-      serviceType: "Audit & test d'intrusion",
+      serviceType: "Audit & tests de sécurité",
     },
     {
       "@type": "Service",

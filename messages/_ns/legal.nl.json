@@ -72,12 +72,12 @@
     "hero": {
       "eyebrow": "Contractueel kader",
       "title": "Algemene voorwaarden",
-      "lead": "Het kader dat van toepassing is op de diensten inzake advies, audit, penetratietesten, beveiligde ontwikkeling en begeleiding bij conformiteit die door Smidjan worden geleverd."
+      "lead": "Het kader dat van toepassing is op de diensten inzake advies, audit, beveiligingstests, beveiligde ontwikkeling en begeleiding bij conformiteit die door Smidjan worden geleverd."
     },
     "intro": "Deze algemene voorwaarden regelen de diensten die door Smidjan worden geleverd. Zij vervangen niet de offerte of het ondertekende contract voor een bepaalde opdracht, dat voorrang heeft in geval van tegenstrijdigheid.",
     "objet": {
       "title": "Voorwerp",
-      "body": "Deze algemene voorwaarden regelen de diensten inzake advies, audit, penetratietesten, beveiligde ontwikkeling en begeleiding bij conformiteit (NIS2 / CyberFundamentals) die door Smidjan aan haar professionele klanten worden geleverd."
+      "body": "Deze algemene voorwaarden regelen de diensten inzake advies, audit, beveiligingstests, beveiligde ontwikkeling en begeleiding bij conformiteit (NIS2 / CyberFundamentals) die door Smidjan aan haar professionele klanten worden geleverd."
     },
     "devis": {
       "title": "Offerte en bestelling",
@@ -91,7 +91,7 @@
     },
     "responsabilite": {
       "title": "Aansprakelijkheid",
-      "body": "De aansprakelijkheid van Smidjan kan enkel worden ingeroepen in geval van bewezen fout bij de uitvoering van haar diensten. Zij is beperkt tot de directe en voorzienbare schade en, behoudens zware of opzettelijke fout, begrensd tot het totale gefactureerde bedrag voor de betrokken opdracht. Smidjan kan niet aansprakelijk worden gesteld voor de gevolgen van een kwetsbaarheid die niet werd opgespoord tijdens een audit of een penetratietest, aangezien deze diensten een inspanningsverbintenis vormen en geen resultaatsverbintenis."
+      "body": "De aansprakelijkheid van Smidjan kan enkel worden ingeroepen in geval van bewezen fout bij de uitvoering van haar diensten. Zij is beperkt tot de directe en voorzienbare schade en, behoudens zware of opzettelijke fout, begrensd tot het totale gefactureerde bedrag voor de betrokken opdracht. Smidjan kan niet aansprakelijk worden gesteld voor de gevolgen van een kwetsbaarheid die niet werd opgespoord tijdens een audit of een beveiligingstest, aangezien deze diensten een inspanningsverbintenis vormen en geen resultaatsverbintenis."
     },
     "confidentialite": {
       "title": "Vertrouwelijkheid",

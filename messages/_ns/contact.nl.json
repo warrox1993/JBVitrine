@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Contact · Smidjan | Cyberbeveiliging & NIS2-conformiteit in Wallonië",
-    "description": "Gratis diagnose, CyFun/NIS2-audit, pentest of incidentrespons : schrijf naar Smidjan. Een expert antwoordt u binnen 24 werkuren. Gevestigd in Wallonië.",
+    "description": "Gratis diagnose, CyFun/NIS2-audit, beveiligingstests of incidentrespons : schrijf naar Smidjan. Een expert antwoordt u binnen 24 werkuren. Gevestigd in Wallonië.",
     "ogTitle": "Contact · Smidjan",
     "ogDescription": "Laten we het over uw beveiliging hebben. Een expert antwoordt u binnen 24 werkuren.",
     "ogImageAlt": "Contacteer Smidjan, cyberbeveiliging en NIS2-conformiteit in Wallonië",
@@ -15,7 +15,7 @@
     "eyebrow": "Laten we het over uw beveiliging hebben",
     "title": "Een expert antwoordt u : <accent>binnen 24 uur</accent>.",
     "directPromise": "<strong>Een Smidjan-expert</strong>, nooit een callcenter.",
-    "lead": "Diagnose, NIS2-audit, pentest of incident : één aanspreekpunt.",
+    "lead": "Diagnose, NIS2-audit, beveiligingstests of incident : één aanspreekpunt.",
     "ctaPrimary": "Mijn behoefte omschrijven",
     "imageAlt": "Smidjan-team samen rond een laptop in een modern en licht kantoor, gemoedelijk overleg tussen collega's.",
     "assure1": "Antwoord binnen 24 werkuren",
@@ -31,7 +31,7 @@
     "options": {
       "diagnostic": "Gratis diagnose",
       "cyfun": "CyFun / NIS2-audit",
-      "pentest": "Pentest / penetratietest",
+      "pentest": "Beveiligingstests",
       "dev": "Beveiligde webontwikkeling",
       "autre": "Andere aanvraag"
     },

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Contact · Smidjan | Cybersécurité & conformité NIS2 en Wallonie",
-    "description": "Diagnostic gratuit, audit CyFun/NIS2, pentest ou réponse à incident : écrivez à Smidjan. Un expert vous répond sous 24 h ouvrées. Basés en Wallonie.",
+    "description": "Diagnostic gratuit, audit CyFun/NIS2, tests de sécurité ou réponse à incident : écrivez à Smidjan. Un expert vous répond sous 24 h ouvrées. Basés en Wallonie.",
     "ogTitle": "Contact · Smidjan",
     "ogDescription": "Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées.",
     "ogImageAlt": "Contactez Smidjan, cybersécurité et conformité NIS2 en Wallonie",
@@ -15,7 +15,7 @@
     "eyebrow": "Parlons de votre sécurité",
     "title": "Un expert vous répond : <accent>sous 24 heures</accent>.",
     "directPromise": "<strong>Un expert Smidjan</strong>, jamais un centre d'appels.",
-    "lead": "Diagnostic, audit NIS2, pentest ou incident : un seul interlocuteur.",
+    "lead": "Diagnostic, audit NIS2, tests de sécurité ou incident : un seul interlocuteur.",
     "ctaPrimary": "Décrire mon besoin",
     "imageAlt": "Équipe Smidjan réunie autour d'un ordinateur portable dans un bureau moderne et lumineux, échange convivial entre collègues.",
     "assure1": "Réponse sous 24 h ouvrées",
@@ -31,7 +31,7 @@
     "options": {
       "diagnostic": "Diagnostic gratuit",
       "cyfun": "Audit CyFun / NIS2",
-      "pentest": "Pentest / test d'intrusion",
+      "pentest": "Tests de sécurité",
       "dev": "Développement web sécurisé",
       "autre": "Autre demande"
     },

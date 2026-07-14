@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Our expertise: Cybersecurity, pentest, development & compliance | Smidjan Wallonia",
-    "description": "Smidjan secures your infrastructure, tests your applications (OWASP pentest), builds secure by design and guides you towards NIS2 / CyFun compliance. A single point of contact, in Wallonia.",
-    "ogTitle": "Our expertise: Cybersecurity, pentest, development & compliance",
+    "title": "Our expertise: Cybersecurity, security testing, development & compliance | Smidjan Wallonia",
+    "description": "Smidjan secures your infrastructure, tests your applications (OWASP security testing), builds secure by design and guides you towards NIS2 / CyFun compliance. A single point of contact, in Wallonia.",
+    "ogTitle": "Our expertise: Cybersecurity, security testing, development & compliance",
     "ogDescription": "Secure, test, build, comply: four Smidjan expertise areas to concretely reduce the cyber risk of SMEs in Belgium.",
-    "ogImageAlt": "Smidjan: Cybersecurity, pentest, secure development & NIS2 compliance in Wallonia",
+    "ogImageAlt": "Smidjan: Cybersecurity, security testing, secure development & NIS2 compliance in Wallonia",
     "twitterTitle": "Our expertise: Smidjan Cybersecurity",
     "twitterDescription": "Secure, test, build, comply: four areas of expertise to reduce the cyber risk of SMEs."
   },
@@ -84,7 +84,7 @@
           "description": "Organisational and technical assessment of your real exposure."
         },
         {
-          "title": "Web & application pentest",
+          "title": "Web & application security testing",
           "description": "OWASP approach on your sites, applications and exposed APIs."
         },
         {
@@ -107,12 +107,12 @@
         }
       },
       "deliverables": [
-        "Pentest report prioritised by severity",
+        "Security testing report prioritised by severity",
         "Reproducible proof of exploitation",
         "Concrete recommendations & remediation plan",
         "Re-verification (retest) after correction"
       ],
-      "ctaLabel": "Schedule a pentest"
+      "ctaLabel": "Schedule security testing"
     },
     "developper": {
       "kicker": "Build",
@@ -205,7 +205,7 @@
     },
     "secure": {
       "label": "Secure",
-      "text": "Hardened infrastructure, pentest & monitoring."
+      "text": "Hardened infrastructure, security testing & monitoring."
     },
     "comply": {
       "label": "Comply",
@@ -243,7 +243,7 @@
     "test": {
       "photoAlt": "Security analysts examining code and dashboards on multiple screens during an audit.",
       "caption": "<b>Reveal the flaws</b> before a real attacker exploits them.",
-      "aria": "Illustration: a pentest detects a vulnerable application module through a targeted analysis, then records it in a report of results ranked by severity, with a critical flaw flagged.",
+      "aria": "Illustration: a security test detects a vulnerable application module through a targeted analysis, then records it in a report of results ranked by severity, with a critical flaw flagged.",
       "appTested": "Application tested",
       "auditResults": "Audit results",
       "headers": "Security headers: OK",
@@ -253,7 +253,7 @@
       "low": "Low",
       "medium": "Medium",
       "critical": "Critical",
-      "pentestReport": "Pentest report"
+      "pentestReport": "Security testing report"
     },
     "dev": {
       "photoAlt": "Close-up of a printed circuit board, symbolising an application architecture designed secure by design.",

@@ -44,7 +44,7 @@
   "method": {
     "eyebrow": "Étape par étape",
     "title": "Quatre <accent>étapes</accent>, du premier constat au suivi durable",
-    "lead": "Audit, pentest, conformité NIS2 / CyFun : même méthode à chaque fois. Vous savez ce qui se passe et ce que vous recevez.",
+    "lead": "Audit, tests de sécurité, conformité NIS2 / CyFun : même méthode à chaque fois. Vous savez ce qui se passe et ce que vous recevez.",
     "overviewKicker": "Aperçu rapide",
     "photo2Alt": "Un consultant classe des priorités par trimestre sur un tableau de planification, illustrant la construction d'une feuille de route priorisée avec le client.",
     "photo2Caption": "Une <b>feuille de route priorisée</b>, construite avec vous.",
@@ -149,7 +149,7 @@
     "items": {
       "owasp": {
         "title": "Tests & sécurité applicative",
-        "text": "Audits web et tests d'intrusion selon la méthodologie OWASP, les critères de l'industrie."
+        "text": "Audits web et tests de sécurité selon la méthodologie OWASP, les critères de l'industrie."
       },
       "iso": {
         "title": "Gestion de la sécurité",

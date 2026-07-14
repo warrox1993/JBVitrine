@@ -72,12 +72,12 @@
     "hero": {
       "eyebrow": "Contractual framework",
       "title": "Terms and conditions",
-      "lead": "The framework applicable to the consulting, audit, penetration testing, secure development and compliance support services provided by Smidjan."
+      "lead": "The framework applicable to the consulting, audit, security testing, secure development and compliance support services provided by Smidjan."
     },
     "intro": "These terms and conditions govern the services provided by Smidjan. They do not replace the quotation or the contract signed for a given engagement, which prevails in the event of any contradiction.",
     "objet": {
       "title": "Purpose",
-      "body": "These terms and conditions govern the consulting, audit, penetration testing, secure development and compliance support (NIS2 / CyberFundamentals) services provided by Smidjan to its professional clients."
+      "body": "These terms and conditions govern the consulting, audit, security testing, secure development and compliance support (NIS2 / CyberFundamentals) services provided by Smidjan to its professional clients."
     },
     "devis": {
       "title": "Quotation and order",
@@ -91,7 +91,7 @@
     },
     "responsabilite": {
       "title": "Liability",
-      "body": "Smidjan's liability may only be engaged in the event of a proven fault in the performance of its services. It is limited to direct and foreseeable damage and, except in the event of gross or intentional fault, capped at the total amount invoiced for the engagement concerned. Smidjan cannot be held liable for the consequences of a vulnerability not detected during an audit or a penetration test, as these services constitute an obligation of means and not of result."
+      "body": "Smidjan's liability may only be engaged in the event of a proven fault in the performance of its services. It is limited to direct and foreseeable damage and, except in the event of gross or intentional fault, capped at the total amount invoiced for the engagement concerned. Smidjan cannot be held liable for the consequences of a vulnerability not detected during an audit or a security test, as these services constitute an obligation of means and not of result."
     },
     "confidentialite": {
       "title": "Confidentiality",
