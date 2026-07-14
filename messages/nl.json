@@ -137,8 +137,8 @@
     "philosophy": {
       "eyebrow": "Onze filosofie",
       "title": "<accent>Bewijs</accent>, geen beloftes",
-      "lead": "Te veel dienstverleners verkopen een gevoel van veiligheid. Wij geven u de middelen om ze zelf te controleren : <b>gemeten diagnose</b>, <b>actiegerichte</b> resultaten, bewezen resultaat.",
-      "quote": "« Geloof ons niet op ons woord : de beginafstand, de toegepaste correcties, het gemeten resultaat. » <b>Onze regel, bij elke opdracht.</b>",
+      "lead": "Te veel dienstverleners verkopen een gevoel van veiligheid. Ik geef u de middelen om ze zelf te controleren : <b>gemeten diagnose</b>, <b>actiegerichte</b> resultaten, bewezen resultaat.",
+      "quote": "« Geloof me niet op mijn woord : de beginafstand, de toegepaste correcties, het gemeten resultaat. » <b>Mijn regel, bij elke opdracht.</b>",
       "badCap": "Beloftes",
       "badItem1": "« U bent beschermd », zonder het te bewijzen.",
       "badItem2": "Een rapport van 200 pagina's dat in een lade belandt.",
@@ -197,8 +197,8 @@
     },
     "ai": {
       "eyebrow": "Versterkt door AI",
-      "title": "De AI werkt met ons. Ze <accentOnDark>beslist niet</accentOnDark> in onze plaats.",
-      "lead": "De AI helpt ons breder te monitoren en sneller te sorteren. De analyse en de beslissing blijven menselijk, de uwe en de onze.",
+      "title": "De AI werkt met mij. Ze <accentOnDark>beslist niet</accentOnDark> in mijn plaats.",
+      "lead": "De AI helpt mij breder te monitoren en sneller te sorteren. De analyse en de beslissing blijven menselijk, de uwe en de mijne.",
       "honest": "In alle transparantie : de AI is een <b>ondersteunend hulpmiddel</b>, geen product dat we u verkopen. Ze vervangt nooit de expertise, noch uw validatie.",
       "legendHuman": "Menselijke expert",
       "legendVerified": "Geverifieerde vaststelling",
@@ -256,7 +256,7 @@
       "title": "Een methodologie afgestemd op de <accent>referentie</accent>kaders",
       "lead": "Onze audits en conformiteitstrajecten steunen op erkende referentiekaders, voor vergelijkbare en verdedigbare resultaten.",
       "honestyTitle": "In alle transparantie",
-      "honestyText": "Deze referentiekaders zijn onze <b>werkmethode</b>. De officiële CyFun-<b>certificering</b> wordt afgeleverd door BELAC-geaccrediteerde instellingen, niet door ons. Onze rol : auditeren, corrigeren, u klaarstomen voor de indiening.",
+      "honestyText": "Deze referentiekaders zijn mijn <b>werkmethode</b>. De officiële CyFun-<b>certificering</b> wordt afgeleverd door BELAC-geaccrediteerde instellingen, niet door mij. Mijn rol : auditeren, corrigeren, u klaarstomen voor de indiening.",
       "items": {
         "owasp": {
           "title": "Tests & applicatiebeveiliging",
@@ -273,8 +273,8 @@
       }
     },
     "cta": {
-      "title": "Een gratis diagnose om te weten waar u echt staat",
-      "text": "30 minuten met een expert. U vertrekt met een eerste becijferde vaststelling en duidelijke prioriteiten. Zonder verbintenis.",
+      "title": "Laten we samen de balans opmaken, vrijblijvend",
+      "text": "30 minuten met een expert. U vertrekt met een eerste becijferde vaststelling en duidelijke prioriteiten. Een eerste gesprek gratis en vrijblijvend.",
       "action1": "Contact opnemen",
       "action2": "Bel 0475 20 55 62",
       "reassurance1": "Antwoord binnen 24 u",
@@ -542,7 +542,7 @@
       "title": "Wij beperken ons niet tot auditeren: <accent>wij verhelpen</accent> en maken u klaar",
       "lead": "Geen rapport dat u alleen moet zien te beheren. Wij verhelpen, wij bereiden voor, wij maken u klaar.",
       "photoAlt": "Close-up van een printplaat, symbool voor een secure-by-design architectuur.",
-      "photoCap": "Een <b>begeleiding op het terrein</b>: wij werken met uw teams, niet enkel aan een rapport.",
+      "photoCap": "Een <b>begeleiding op het terrein</b>: ik werk met uw teams, niet enkel aan een rapport.",
       "honesty": {
         "title": "In alle transparantie: wie doet wat",
         "p1": "Smidjan <b>is geen certificeringsinstantie</b> en is niet BELAC-geaccrediteerd. Het <b>officiële CyFun-label</b> wordt uitgereikt door <b>BELAC-geaccrediteerde instanties</b> (Brand Compliance, Trust CHECK, Normec CertUp).",
@@ -561,7 +561,7 @@
         "li1": "Uw conformiteit onafhankelijk verifiëren",
         "li2": "De officiële CyFun-certificering / het label <b>uitreiken</b>",
         "li3": "Het bereikte niveau attesteren (Important / Essential)",
-        "foot": "Bv. <b>Brand Compliance, Trust CHECK, Normec CertUp</b>, onafhankelijk van ons."
+        "foot": "Bv. <b>Brand Compliance, Trust CHECK, Normec CertUp</b>, onafhankelijk van mij."
       },
       "roadmapAria": "Routekaart met vier mijlpalen: Kadering, dan Remediëring, dan Ondersteuning bij de verificatie, tot de Continue opvolging.",
       "process": {
@@ -589,7 +589,7 @@
         "readOnlyTitle": "Alleen-lezen",
         "readOnlyText": "De audit observeert, hij wijzigt uw systemen nooit.",
         "scopeTitle": "Expliciete perimeter",
-        "scopeText": "Uitsluitend de hosts die u ons toevertrouwt. Geen ongevraagde scan.",
+        "scopeText": "Uitsluitend de hosts die u mij toevertrouwt. Geen ongevraagde scan.",
         "credsTitle": "Uw inloggegevens worden nooit opgeslagen",
         "credsText": "Serviceaccount met alleen-lezen, door u geleverd, nooit bewaard of geëxporteerd.",
         "logTitle": "Onveranderlijk logboek",
@@ -606,13 +606,13 @@
       "process": {
         "kicker": "Van de audit tot de hardening",
         "step1Title": "Audit met tools",
-        "step1Desc": "Onze tool verzamelt bewijs en een score per maatregel, enkel op de perimeter die u ons toevertrouwt.",
+        "step1Desc": "Onze tool verzamelt bewijs en een score per maatregel, enkel op de perimeter die u mij toevertrouwt.",
         "step2Title": "Helder rapport",
         "step2Desc": "Samenvatting, vastgestelde kloven en prioriteiten: een leesbaar document, geen ruwe export.",
         "step3Title": "Geprioriteerd remediëringsplan",
         "step3Desc": "De acties worden gerangschikt op risico en op inspanning, voor een realistische uitrol.",
         "step4Title": "Hardening & opvolging",
-        "step4Desc": "Wij voeren de gevalideerde correcties uit en zorgen daarna voor opvolging op termijn."
+        "step4Desc": "Ik voer de gevalideerde correcties uit en zorg daarna voor opvolging op termijn."
       },
       "ctaButton": "Een audit aanvragen",
       "ctaNote": "Geassisteerde zelfevaluatie, zonder risico voor uw systemen."
@@ -684,8 +684,8 @@
       },
       "q3": {
         "question": "Reikt Smidjan de CyFun-certificering uit?",
-        "a1": "<b>Neen.</b> Smidjan is geen certificeringsinstantie en is niet BELAC-geaccrediteerd. De <b>officiële CyFun-certificering</b> wordt uitgereikt door <b>BELAC-geaccrediteerde instanties</b> (Brand Compliance, Trust CHECK, Normec CertUp), onafhankelijk van ons.",
-        "a2": "Onze rol: uw dossier <b>auditeren, remediëren, voorbereiden</b> tot aan de indiening. Wij maken u <b>klaar</b>: de geaccrediteerde instantie valideert uw niveau."
+        "a1": "<b>Neen.</b> Smidjan is geen certificeringsinstantie en is niet BELAC-geaccrediteerd. De <b>officiële CyFun-certificering</b> wordt uitgereikt door <b>BELAC-geaccrediteerde instanties</b> (Brand Compliance, Trust CHECK, Normec CertUp), onafhankelijk van mij.",
+        "a2": "Mijn rol: uw dossier <b>auditeren, remediëren, voorbereiden</b> tot aan de indiening. Ik maak u <b>klaar</b>: de geaccrediteerde instantie valideert uw niveau."
       },
       "q4": {
         "question": "Hoelang duurt het om conform te worden?",
@@ -706,7 +706,7 @@
     "finalCta": {
       "title": "In 30 minuten weet u precies waar u staat.",
       "text": "30 min met een expert: NIS2-categorie, CyFun-niveau, heldere prioriteiten. Vrijblijvend, zonder jargon.",
-      "action1": "Mijn NIS2-diagnose reserveren",
+      "action1": "Contact opnemen",
       "action2": "Bel 0475 20 55 62",
       "reassure1": "Antwoord binnen 24 u",
       "reassure2": "Toegewijde expert, geen onderaanneming",
@@ -759,7 +759,7 @@
     },
     "form": {
       "badge": "Het meest directe",
-      "title": "Stuur ons uw aanvraag",
+      "title": "Stuur mij uw aanvraag",
       "subtitle": "Een paar regels volstaan. Hoe preciezer, hoe sneller we vooruitgaan.",
       "reassure": "Antwoord van een expert binnen 24 werkuren",
       "errorLabel": "Fout",
@@ -819,7 +819,7 @@
       "incidentImageAlt": "Cyberbeveiligingsanalist op de rug gezien, voor meerdere bewakingsschermen in een controlekamer, volop bezig met incidentrespons.",
       "incidentBadge": "Incidentrespons",
       "incidentTitle": "Nood aan een <accent>incidentrespons</accent> ?",
-      "incidentText": "Ransomware, inbraak, datalek ? Zet niets uit. Bel ons. Ik help u de schade te beperken.",
+      "incidentText": "Ransomware, inbraak, datalek ? Zet niets uit. Bel mij. Ik help u de schade te beperken.",
       "incidentNote": "Ik bel u zo snel mogelijk terug.",
       "processTitle": "Hoe het werkt",
       "processAria": "Schema in drie stappen : u schrijft uw aanvraag, een expert belt u terug binnen 24 werkuren, daarna een gratis diagnose.",
@@ -848,7 +848,7 @@
       "eyebrow": "Wat u mag verwachten",
       "title": "Van uw bericht tot de <accent>diagnose</accent>, in drie stappen",
       "intro": "Geen verkooptunnel, een nuttig gesprek vanaf het eerste bericht.",
-      "step1Title": "U schrijft ons",
+      "step1Title": "U schrijft mij",
       "step1Text": "Formulier, e-mail of telefoon. Beschrijf uw behoefte in twee zinnen.",
       "step2Title": "Wij bellen u terug binnen 24 u",
       "step2Text": "Een Smidjan-expert, geen verkoper. Binnen 24 werkuren.",
@@ -858,8 +858,8 @@
     },
     "simpleForm": {
       "back": "Terug naar de keuze",
-      "title": "Stuur ons uw aanvraag",
-      "subtitle": "Kies het type aanvraag en beschrijf uw behoefte. Wij nemen snel opnieuw contact met u op.",
+      "title": "Stuur mij uw aanvraag",
+      "subtitle": "Kies het type aanvraag en beschrijf uw behoefte. Ik neem snel opnieuw contact met u op.",
       "errorLabel": "Fout",
       "labels": {
         "requestType": "Type aanvraag",
@@ -889,7 +889,7 @@
       },
       "submit": "Mijn aanvraag versturen",
       "submitting": "Bezig met verzenden...",
-      "privacy": "Door dit formulier te versturen, gaat u ermee akkoord dat wij uw gegevens gebruiken om opnieuw contact met u op te nemen over uw project.",
+      "privacy": "Door dit formulier te versturen, gaat u ermee akkoord dat ik uw gegevens gebruik om opnieuw contact met u op te nemen over uw project.",
       "success": {
         "title": "Bericht verzonden !",
         "text": "Bedankt voor uw bericht. Ik neem binnen 24 uur contact met u op.",
@@ -1405,7 +1405,7 @@
     "partner": {
       "kicker": "Eén enkele partner",
       "title": "Bouwen, <accent>beveiligen</accent> en conform maken, op één plek",
-      "lead": "De meeste dienstverleners doen het een <em>of</em> het ander. Wij dekken de hele keten : bouwen, beveiligen, conform maken. Eén aanspreekpunt, geen doorverwijzingen.",
+      "lead": "De meeste dienstverleners doen het een <em>of</em> het ander. Ik dek de hele keten : bouwen, beveiligen, conform maken. Eén aanspreekpunt, geen doorverwijzingen.",
       "build": {
         "label": "Build",
         "text": "Beveiligde webontwikkeling, secure by design."
@@ -1428,8 +1428,8 @@
       "transparency": "<b>In alle transparantie :</b> de CyFun-certificering wordt uitgereikt door BELAC-geaccrediteerde organismen, onafhankelijk van Smidjan. Onze rol : audit, gap-analyse, concrete remediëring en voorbereiding op de verificatie, een methodologie afgestemd op het CyFun-referentiekader, zonder in de plaats te treden van de certificeerder."
     },
     "finalCta": {
-      "title": "Een gratis diagnose om te weten waar te beginnen",
-      "text": "30 minuten met een expert om de nuttige opdracht af te bakenen. Duidelijke prioriteiten, vrijblijvend.",
+      "title": "Laten we uw beveiliging samen bekijken",
+      "text": "30 minuten met een expert om de nuttige opdracht af te bakenen. Duidelijke prioriteiten, een eerste gesprek gratis en vrijblijvend.",
       "actionPrimary": "Contact opnemen",
       "actionCall": "Bel 0475 20 55 62",
       "reassurances": [
@@ -1480,7 +1480,7 @@
     "faq": {
       "eyebrow": "Veelgestelde vragen",
       "title": "Uw vragen over onze diensten",
-      "lead": "De vragen die we het vaakst krijgen. Een andere? Stel ze tijdens de gratis diagnose.",
+      "lead": "De vragen die ik het vaakst krijg. Een andere? Stel ze tijdens de gratis diagnose.",
       "q1": {
         "question": "Valt mijn kmo onder NIS2?",
         "answer": "NIS2 richt zich op essentiële en belangrijke entiteiten, en veel kmo's vallen er onrechtstreeks onder, als onderaannemer. Bij twijfel beslissen onze test « Valt mijn kmo onder NIS2? » en de gratis diagnose uw geval."
@@ -1491,7 +1491,7 @@
       },
       "q3": {
         "question": "Leveren jullie het CyFun-certificaat af?",
-        "answer": "Nee. De certificering komt toe aan BELAC-geaccrediteerde instellingen, onafhankelijk van ons. Onze rol: auditen, remediëren en u voorbereiden tot de verificatie."
+        "answer": "Nee. De certificering komt toe aan BELAC-geaccrediteerde instellingen, onafhankelijk van mij. Mijn rol: auditen, remediëren en u voorbereiden tot de verificatie."
       },
       "q4": {
         "question": "Wat kost of hoelang duurt een audit?",

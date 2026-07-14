@@ -26,8 +26,8 @@
   "philosophy": {
     "eyebrow": "Onze filosofie",
     "title": "<accent>Bewijs</accent>, geen beloftes",
-    "lead": "Te veel dienstverleners verkopen een gevoel van veiligheid. Wij geven u de middelen om ze zelf te controleren : <b>gemeten diagnose</b>, <b>actiegerichte</b> resultaten, bewezen resultaat.",
-    "quote": "« Geloof ons niet op ons woord : de beginafstand, de toegepaste correcties, het gemeten resultaat. » <b>Onze regel, bij elke opdracht.</b>",
+    "lead": "Te veel dienstverleners verkopen een gevoel van veiligheid. Ik geef u de middelen om ze zelf te controleren : <b>gemeten diagnose</b>, <b>actiegerichte</b> resultaten, bewezen resultaat.",
+    "quote": "« Geloof me niet op mijn woord : de beginafstand, de toegepaste correcties, het gemeten resultaat. » <b>Mijn regel, bij elke opdracht.</b>",
     "badCap": "Beloftes",
     "badItem1": "« U bent beschermd », zonder het te bewijzen.",
     "badItem2": "Een rapport van 200 pagina's dat in een lade belandt.",
@@ -86,8 +86,8 @@
   },
   "ai": {
     "eyebrow": "Versterkt door AI",
-    "title": "De AI werkt met ons. Ze <accentOnDark>beslist niet</accentOnDark> in onze plaats.",
-    "lead": "De AI helpt ons breder te monitoren en sneller te sorteren. De analyse en de beslissing blijven menselijk, de uwe en de onze.",
+    "title": "De AI werkt met mij. Ze <accentOnDark>beslist niet</accentOnDark> in mijn plaats.",
+    "lead": "De AI helpt mij breder te monitoren en sneller te sorteren. De analyse en de beslissing blijven menselijk, de uwe en de mijne.",
     "honest": "In alle transparantie : de AI is een <b>ondersteunend hulpmiddel</b>, geen product dat we u verkopen. Ze vervangt nooit de expertise, noch uw validatie.",
     "legendHuman": "Menselijke expert",
     "legendVerified": "Geverifieerde vaststelling",
@@ -145,7 +145,7 @@
     "title": "Een methodologie afgestemd op de <accent>referentie</accent>kaders",
     "lead": "Onze audits en conformiteitstrajecten steunen op erkende referentiekaders, voor vergelijkbare en verdedigbare resultaten.",
     "honestyTitle": "In alle transparantie",
-    "honestyText": "Deze referentiekaders zijn onze <b>werkmethode</b>. De officiële CyFun-<b>certificering</b> wordt afgeleverd door BELAC-geaccrediteerde instellingen, niet door ons. Onze rol : auditeren, corrigeren, u klaarstomen voor de indiening.",
+    "honestyText": "Deze referentiekaders zijn mijn <b>werkmethode</b>. De officiële CyFun-<b>certificering</b> wordt afgeleverd door BELAC-geaccrediteerde instellingen, niet door mij. Mijn rol : auditeren, corrigeren, u klaarstomen voor de indiening.",
     "items": {
       "owasp": {
         "title": "Tests & applicatiebeveiliging",
@@ -162,8 +162,8 @@
     }
   },
   "cta": {
-    "title": "Een gratis diagnose om te weten waar u echt staat",
-    "text": "30 minuten met een expert. U vertrekt met een eerste becijferde vaststelling en duidelijke prioriteiten. Zonder verbintenis.",
+    "title": "Laten we samen de balans opmaken, vrijblijvend",
+    "text": "30 minuten met een expert. U vertrekt met een eerste becijferde vaststelling en duidelijke prioriteiten. Een eerste gesprek gratis en vrijblijvend.",
     "action1": "Contact opnemen",
     "action2": "Bel 0475 20 55 62",
     "reassurance1": "Antwoord binnen 24 u",

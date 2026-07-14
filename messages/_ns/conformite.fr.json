@@ -108,7 +108,7 @@
     "title": "On ne se contente pas d'auditer : <accent>on corrige</accent> et on vous amène prêts",
     "lead": "Pas de rapport qu'on vous laisse gérer seul. On corrige, on prépare, on vous amène prêts.",
     "photoAlt": "Gros plan d'un circuit imprimé, illustrant une architecture pensée secure by design.",
-    "photoCap": "Un <b>accompagnement de terrain</b> : nous travaillons avec vos équipes, pas seulement sur un rapport.",
+    "photoCap": "Un <b>accompagnement de terrain</b> : je travaille avec vos équipes, pas seulement sur un rapport.",
     "honesty": {
       "title": "En toute transparence : qui fait quoi",
       "p1": "Smidjan <b>n'est pas un organisme de certification</b>, ni accrédité BELAC. Le <b>label CyFun officiel</b> est délivré par des <b>organismes accrédités BELAC</b> (Brand Compliance, Trust CHECK, Normec CertUp).",
@@ -127,7 +127,7 @@
       "li1": "Vérifier indépendamment votre conformité",
       "li2": "<b>Délivrer</b> la certification / le label CyFun officiel",
       "li3": "Attester le niveau atteint (Important / Essential)",
-      "foot": "Ex. <b>Brand Compliance, Trust CHECK, Normec CertUp</b>, indépendants de nous."
+      "foot": "Ex. <b>Brand Compliance, Trust CHECK, Normec CertUp</b>, indépendants de moi."
     },
     "roadmapAria": "Feuille de route en quatre jalons : Cadrage, puis Remédiation, puis Support à la vérification, jusqu'au Suivi continu.",
     "process": {
@@ -155,7 +155,7 @@
       "readOnlyTitle": "Lecture seule",
       "readOnlyText": "L'audit observe, il ne modifie jamais vos systèmes.",
       "scopeTitle": "Périmètre explicite",
-      "scopeText": "Uniquement les hôtes que vous nous confiez. Aucun scan non demandé.",
+      "scopeText": "Uniquement les hôtes que vous me confiez. Aucun scan non demandé.",
       "credsTitle": "Vos identifiants ne sont jamais stockés",
       "credsText": "Compte de service en lecture seule, fourni par vous, jamais conservé ni exporté.",
       "logTitle": "Journal inaltérable",
@@ -172,13 +172,13 @@
     "process": {
       "kicker": "De l'audit au durcissement",
       "step1Title": "Audit outillé",
-      "step1Desc": "Notre outil collecte des preuves et un score par mesure, sur le seul périmètre que vous nous confiez.",
+      "step1Desc": "Notre outil collecte des preuves et un score par mesure, sur le seul périmètre que vous me confiez.",
       "step2Title": "Rapport clair",
       "step2Desc": "Synthèse, écarts identifiés et priorités : un document lisible, pas un export brut.",
       "step3Title": "Plan de remédiation priorisé",
       "step3Desc": "Les actions sont classées par risque et par effort, pour un déploiement réaliste.",
       "step4Title": "Durcissement & suivi",
-      "step4Desc": "Nous mettons en œuvre les correctifs validés, puis assurons un suivi dans la durée."
+      "step4Desc": "Je mets en œuvre les correctifs validés, puis j'assure un suivi dans la durée."
     },
     "ctaButton": "Demander un audit",
     "ctaNote": "Auto-évaluation assistée, sans risque pour vos systèmes."
@@ -250,8 +250,8 @@
     },
     "q3": {
       "question": "Est-ce que Smidjan délivre la certification CyFun ?",
-      "a1": "<b>Non.</b> Smidjan n'est pas un organisme de certification, ni accrédité BELAC. La <b>certification officielle</b> CyFun est délivrée par des <b>organismes accrédités BELAC</b> (Brand Compliance, Trust CHECK, Normec CertUp), indépendants de nous.",
-      "a2": "Notre rôle : <b>auditer, remédier, préparer</b> votre dossier jusqu'à la soumission. Nous vous rendons <b>prêts</b> : l'organisme accrédité valide votre niveau."
+      "a1": "<b>Non.</b> Smidjan n'est pas un organisme de certification, ni accrédité BELAC. La <b>certification officielle</b> CyFun est délivrée par des <b>organismes accrédités BELAC</b> (Brand Compliance, Trust CHECK, Normec CertUp), indépendants de moi.",
+      "a2": "Mon rôle : <b>auditer, remédier, préparer</b> votre dossier jusqu'à la soumission. Je vous rends <b>prêts</b> : l'organisme accrédité valide votre niveau."
     },
     "q4": {
       "question": "Combien de temps faut-il pour se mettre en conformité ?",
@@ -272,7 +272,7 @@
   "finalCta": {
     "title": "En 30 minutes, sachez exactement où vous en êtes.",
     "text": "30 min avec un expert : catégorie NIS2, niveau CyFun, priorités claires. Sans engagement, sans jargon.",
-    "action1": "Réserver mon diagnostic NIS2",
+    "action1": "Me contacter",
     "action2": "Appeler le 0475 20 55 62",
     "reassure1": "Réponse sous 24 h",
     "reassure2": "Expert dédié, pas de sous-traitance",

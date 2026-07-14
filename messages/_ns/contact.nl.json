@@ -24,7 +24,7 @@
   },
   "form": {
     "badge": "Het meest directe",
-    "title": "Stuur ons uw aanvraag",
+    "title": "Stuur mij uw aanvraag",
     "subtitle": "Een paar regels volstaan. Hoe preciezer, hoe sneller we vooruitgaan.",
     "reassure": "Antwoord van een expert binnen 24 werkuren",
     "errorLabel": "Fout",
@@ -84,7 +84,7 @@
     "incidentImageAlt": "Cyberbeveiligingsanalist op de rug gezien, voor meerdere bewakingsschermen in een controlekamer, volop bezig met incidentrespons.",
     "incidentBadge": "Incidentrespons",
     "incidentTitle": "Nood aan een <accent>incidentrespons</accent> ?",
-    "incidentText": "Ransomware, inbraak, datalek ? Zet niets uit. Bel ons. Ik help u de schade te beperken.",
+    "incidentText": "Ransomware, inbraak, datalek ? Zet niets uit. Bel mij. Ik help u de schade te beperken.",
     "incidentNote": "Ik bel u zo snel mogelijk terug.",
     "processTitle": "Hoe het werkt",
     "processAria": "Schema in drie stappen : u schrijft uw aanvraag, een expert belt u terug binnen 24 werkuren, daarna een gratis diagnose.",
@@ -113,7 +113,7 @@
     "eyebrow": "Wat u mag verwachten",
     "title": "Van uw bericht tot de <accent>diagnose</accent>, in drie stappen",
     "intro": "Geen verkooptunnel, een nuttig gesprek vanaf het eerste bericht.",
-    "step1Title": "U schrijft ons",
+    "step1Title": "U schrijft mij",
     "step1Text": "Formulier, e-mail of telefoon. Beschrijf uw behoefte in twee zinnen.",
     "step2Title": "Wij bellen u terug binnen 24 u",
     "step2Text": "Een Smidjan-expert, geen verkoper. Binnen 24 werkuren.",
@@ -123,8 +123,8 @@
   },
   "simpleForm": {
     "back": "Terug naar de keuze",
-    "title": "Stuur ons uw aanvraag",
-    "subtitle": "Kies het type aanvraag en beschrijf uw behoefte. Wij nemen snel opnieuw contact met u op.",
+    "title": "Stuur mij uw aanvraag",
+    "subtitle": "Kies het type aanvraag en beschrijf uw behoefte. Ik neem snel opnieuw contact met u op.",
     "errorLabel": "Fout",
     "labels": {
       "requestType": "Type aanvraag",
@@ -154,7 +154,7 @@
     },
     "submit": "Mijn aanvraag versturen",
     "submitting": "Bezig met verzenden...",
-    "privacy": "Door dit formulier te versturen, gaat u ermee akkoord dat wij uw gegevens gebruiken om opnieuw contact met u op te nemen over uw project.",
+    "privacy": "Door dit formulier te versturen, gaat u ermee akkoord dat ik uw gegevens gebruik om opnieuw contact met u op te nemen over uw project.",
     "success": {
       "title": "Bericht verzonden !",
       "text": "Bedankt voor uw bericht. Ik neem binnen 24 uur contact met u op.",

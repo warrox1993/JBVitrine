@@ -26,8 +26,8 @@
   "philosophy": {
     "eyebrow": "Our philosophy",
     "title": "<accent>Proof</accent>, not promises",
-    "lead": "Too many providers sell a feeling of security. We give you the means to verify it yourself: <b>measured diagnosis</b>, <b>actionable</b> deliverables, proven result.",
-    "quote": "\"Don't take our word for it: the starting gap, the fixes applied, the measured result.\" <b>Our rule, on every engagement.</b>",
+    "lead": "Too many providers sell a feeling of security. I give you the means to verify it yourself: <b>measured diagnosis</b>, <b>actionable</b> deliverables, proven result.",
+    "quote": "\"Don't take my word for it: the starting gap, the fixes applied, the measured result.\" <b>My rule, on every engagement.</b>",
     "badCap": "Promises",
     "badItem1": "\"You are protected\", without proving it.",
     "badItem2": "A 200-page report that ends up in a drawer.",
@@ -86,8 +86,8 @@
   },
   "ai": {
     "eyebrow": "Augmented by AI",
-    "title": "AI works with us. It does <accentOnDark>not decide</accentOnDark> in our place.",
-    "lead": "AI helps us monitor more broadly and sort faster. The analysis and the decision remain human, yours and ours.",
+    "title": "AI works with me. It does <accentOnDark>not decide</accentOnDark> in my place.",
+    "lead": "AI helps me monitor more broadly and sort faster. The analysis and the decision remain human, yours and mine.",
     "honest": "In full transparency: AI is a <b>support tool</b>, not a product we sell you. It never replaces the expertise or your validation.",
     "legendHuman": "Human expert",
     "legendVerified": "Verified finding",
@@ -145,7 +145,7 @@
     "title": "A methodology aligned with the <accent>reference</accent> frameworks",
     "lead": "Our audits and compliance work rely on recognised frameworks, for comparable and defensible results.",
     "honestyTitle": "In full transparency",
-    "honestyText": "These frameworks are our <b>working method</b>. Official CyFun <b>certification</b> is issued by BELAC-accredited bodies, not by us. Our role: to audit, to fix, to bring you ready for submission.",
+    "honestyText": "These frameworks are my <b>working method</b>. Official CyFun <b>certification</b> is issued by BELAC-accredited bodies, not by me. My role: to audit, to fix, to bring you ready for submission.",
     "items": {
       "owasp": {
         "title": "Testing & application security",
@@ -162,8 +162,8 @@
     }
   },
   "cta": {
-    "title": "A free diagnosis to know where you really stand",
-    "text": "30 minutes with an expert. You leave with a first quantified finding and clear priorities. No commitment.",
+    "title": "Let's take stock, no commitment",
+    "text": "30 minutes with an expert. You leave with a first quantified finding and clear priorities. A free first exchange, no commitment.",
     "action1": "Get in touch",
     "action2": "Call 0475 20 55 62",
     "reassurance1": "Response within 24 h",

@@ -108,7 +108,7 @@
     "title": "We don't just audit: <accent>we fix</accent> and we get you ready",
     "lead": "No report we leave you to manage alone. We fix, we prepare, we get you ready.",
     "photoAlt": "Close-up of a printed circuit board, illustrating a secure-by-design architecture.",
-    "photoCap": "Hands-on <b>field support</b>: we work with your teams, not only on a report.",
+    "photoCap": "Hands-on <b>field support</b>: I work with your teams, not only on a report.",
     "honesty": {
       "title": "In full transparency: who does what",
       "p1": "Smidjan <b>is not a certification body</b>, nor BELAC-accredited. The <b>official CyFun label</b> is issued by <b>BELAC-accredited bodies</b> (Brand Compliance, Trust CHECK, Normec CertUp).",
@@ -127,7 +127,7 @@
       "li1": "Independently verify your compliance",
       "li2": "<b>Issue</b> the official CyFun certification / label",
       "li3": "Attest the level reached (Important / Essential)",
-      "foot": "E.g. <b>Brand Compliance, Trust CHECK, Normec CertUp</b>, independent of us."
+      "foot": "E.g. <b>Brand Compliance, Trust CHECK, Normec CertUp</b>, independent of me."
     },
     "roadmapAria": "Roadmap with four milestones: Scoping, then Remediation, then Verification support, up to Continuous follow-up.",
     "process": {
@@ -155,7 +155,7 @@
       "readOnlyTitle": "Read-only",
       "readOnlyText": "The audit observes, it never modifies your systems.",
       "scopeTitle": "Explicit scope",
-      "scopeText": "Only the hosts you entrust to us. No unrequested scan.",
+      "scopeText": "Only the hosts you entrust to me. No unrequested scan.",
       "credsTitle": "Your credentials are never stored",
       "credsText": "Read-only service account, provided by you, never kept or exported.",
       "logTitle": "Tamper-proof log",
@@ -172,13 +172,13 @@
     "process": {
       "kicker": "From the audit to the hardening",
       "step1Title": "Tool-assisted audit",
-      "step1Desc": "Our tool collects evidence and a score per measure, on the sole scope you entrust to us.",
+      "step1Desc": "Our tool collects evidence and a score per measure, on the sole scope you entrust to me.",
       "step2Title": "Clear report",
       "step2Desc": "Summary, identified gaps and priorities: a readable document, not a raw export.",
       "step3Title": "Prioritised remediation plan",
       "step3Desc": "Actions are ranked by risk and by effort, for a realistic rollout.",
       "step4Title": "Hardening & follow-up",
-      "step4Desc": "We implement the validated fixes, then ensure follow-up over the long term."
+      "step4Desc": "I implement the validated fixes, then ensure follow-up over the long term."
     },
     "ctaButton": "Request an audit",
     "ctaNote": "Assisted self-assessment, without risk for your systems."
@@ -250,8 +250,8 @@
     },
     "q3": {
       "question": "Does Smidjan deliver the CyFun certification?",
-      "a1": "<b>No.</b> Smidjan is not a certification body, nor BELAC-accredited. The <b>official CyFun certification</b> is issued by <b>BELAC-accredited bodies</b> (Brand Compliance, Trust CHECK, Normec CertUp), independent of us.",
-      "a2": "Our role: <b>audit, remediate, prepare</b> your file up to submission. We get you <b>ready</b>: the accredited body validates your level."
+      "a1": "<b>No.</b> Smidjan is not a certification body, nor BELAC-accredited. The <b>official CyFun certification</b> is issued by <b>BELAC-accredited bodies</b> (Brand Compliance, Trust CHECK, Normec CertUp), independent of me.",
+      "a2": "My role: <b>audit, remediate, prepare</b> your file up to submission. I get you <b>ready</b>: the accredited body validates your level."
     },
     "q4": {
       "question": "How long does it take to become compliant?",
@@ -272,7 +272,7 @@
   "finalCta": {
     "title": "In 30 minutes, know exactly where you stand.",
     "text": "30 min with an expert: NIS2 category, CyFun level, clear priorities. No commitment, no jargon.",
-    "action1": "Book my NIS2 diagnostic",
+    "action1": "Get in touch",
     "action2": "Call 0475 20 55 62",
     "reassure1": "Reply within 24 h",
     "reassure2": "Dedicated expert, no subcontracting",

@@ -137,8 +137,8 @@
     "philosophy": {
       "eyebrow": "Our philosophy",
       "title": "<accent>Proof</accent>, not promises",
-      "lead": "Too many providers sell a feeling of security. We give you the means to verify it yourself: <b>measured diagnosis</b>, <b>actionable</b> deliverables, proven result.",
-      "quote": "\"Don't take our word for it: the starting gap, the fixes applied, the measured result.\" <b>Our rule, on every engagement.</b>",
+      "lead": "Too many providers sell a feeling of security. I give you the means to verify it yourself: <b>measured diagnosis</b>, <b>actionable</b> deliverables, proven result.",
+      "quote": "\"Don't take my word for it: the starting gap, the fixes applied, the measured result.\" <b>My rule, on every engagement.</b>",
       "badCap": "Promises",
       "badItem1": "\"You are protected\", without proving it.",
       "badItem2": "A 200-page report that ends up in a drawer.",
@@ -197,8 +197,8 @@
     },
     "ai": {
       "eyebrow": "Augmented by AI",
-      "title": "AI works with us. It does <accentOnDark>not decide</accentOnDark> in our place.",
-      "lead": "AI helps us monitor more broadly and sort faster. The analysis and the decision remain human, yours and ours.",
+      "title": "AI works with me. It does <accentOnDark>not decide</accentOnDark> in my place.",
+      "lead": "AI helps me monitor more broadly and sort faster. The analysis and the decision remain human, yours and mine.",
       "honest": "In full transparency: AI is a <b>support tool</b>, not a product we sell you. It never replaces the expertise or your validation.",
       "legendHuman": "Human expert",
       "legendVerified": "Verified finding",
@@ -256,7 +256,7 @@
       "title": "A methodology aligned with the <accent>reference</accent> frameworks",
       "lead": "Our audits and compliance work rely on recognised frameworks, for comparable and defensible results.",
       "honestyTitle": "In full transparency",
-      "honestyText": "These frameworks are our <b>working method</b>. Official CyFun <b>certification</b> is issued by BELAC-accredited bodies, not by us. Our role: to audit, to fix, to bring you ready for submission.",
+      "honestyText": "These frameworks are my <b>working method</b>. Official CyFun <b>certification</b> is issued by BELAC-accredited bodies, not by me. My role: to audit, to fix, to bring you ready for submission.",
       "items": {
         "owasp": {
           "title": "Testing & application security",
@@ -273,8 +273,8 @@
       }
     },
     "cta": {
-      "title": "A free diagnosis to know where you really stand",
-      "text": "30 minutes with an expert. You leave with a first quantified finding and clear priorities. No commitment.",
+      "title": "Let's take stock, no commitment",
+      "text": "30 minutes with an expert. You leave with a first quantified finding and clear priorities. A free first exchange, no commitment.",
       "action1": "Get in touch",
       "action2": "Call 0475 20 55 62",
       "reassurance1": "Response within 24 h",
@@ -542,7 +542,7 @@
       "title": "We don't just audit: <accent>we fix</accent> and we get you ready",
       "lead": "No report we leave you to manage alone. We fix, we prepare, we get you ready.",
       "photoAlt": "Close-up of a printed circuit board, illustrating a secure-by-design architecture.",
-      "photoCap": "Hands-on <b>field support</b>: we work with your teams, not only on a report.",
+      "photoCap": "Hands-on <b>field support</b>: I work with your teams, not only on a report.",
       "honesty": {
         "title": "In full transparency: who does what",
         "p1": "Smidjan <b>is not a certification body</b>, nor BELAC-accredited. The <b>official CyFun label</b> is issued by <b>BELAC-accredited bodies</b> (Brand Compliance, Trust CHECK, Normec CertUp).",
@@ -561,7 +561,7 @@
         "li1": "Independently verify your compliance",
         "li2": "<b>Issue</b> the official CyFun certification / label",
         "li3": "Attest the level reached (Important / Essential)",
-        "foot": "E.g. <b>Brand Compliance, Trust CHECK, Normec CertUp</b>, independent of us."
+        "foot": "E.g. <b>Brand Compliance, Trust CHECK, Normec CertUp</b>, independent of me."
       },
       "roadmapAria": "Roadmap with four milestones: Scoping, then Remediation, then Verification support, up to Continuous follow-up.",
       "process": {
@@ -589,7 +589,7 @@
         "readOnlyTitle": "Read-only",
         "readOnlyText": "The audit observes, it never modifies your systems.",
         "scopeTitle": "Explicit scope",
-        "scopeText": "Only the hosts you entrust to us. No unrequested scan.",
+        "scopeText": "Only the hosts you entrust to me. No unrequested scan.",
         "credsTitle": "Your credentials are never stored",
         "credsText": "Read-only service account, provided by you, never kept or exported.",
         "logTitle": "Tamper-proof log",
@@ -606,13 +606,13 @@
       "process": {
         "kicker": "From the audit to the hardening",
         "step1Title": "Tool-assisted audit",
-        "step1Desc": "Our tool collects evidence and a score per measure, on the sole scope you entrust to us.",
+        "step1Desc": "Our tool collects evidence and a score per measure, on the sole scope you entrust to me.",
         "step2Title": "Clear report",
         "step2Desc": "Summary, identified gaps and priorities: a readable document, not a raw export.",
         "step3Title": "Prioritised remediation plan",
         "step3Desc": "Actions are ranked by risk and by effort, for a realistic rollout.",
         "step4Title": "Hardening & follow-up",
-        "step4Desc": "We implement the validated fixes, then ensure follow-up over the long term."
+        "step4Desc": "I implement the validated fixes, then ensure follow-up over the long term."
       },
       "ctaButton": "Request an audit",
       "ctaNote": "Assisted self-assessment, without risk for your systems."
@@ -684,8 +684,8 @@
       },
       "q3": {
         "question": "Does Smidjan deliver the CyFun certification?",
-        "a1": "<b>No.</b> Smidjan is not a certification body, nor BELAC-accredited. The <b>official CyFun certification</b> is issued by <b>BELAC-accredited bodies</b> (Brand Compliance, Trust CHECK, Normec CertUp), independent of us.",
-        "a2": "Our role: <b>audit, remediate, prepare</b> your file up to submission. We get you <b>ready</b>: the accredited body validates your level."
+        "a1": "<b>No.</b> Smidjan is not a certification body, nor BELAC-accredited. The <b>official CyFun certification</b> is issued by <b>BELAC-accredited bodies</b> (Brand Compliance, Trust CHECK, Normec CertUp), independent of me.",
+        "a2": "My role: <b>audit, remediate, prepare</b> your file up to submission. I get you <b>ready</b>: the accredited body validates your level."
       },
       "q4": {
         "question": "How long does it take to become compliant?",
@@ -706,7 +706,7 @@
     "finalCta": {
       "title": "In 30 minutes, know exactly where you stand.",
       "text": "30 min with an expert: NIS2 category, CyFun level, clear priorities. No commitment, no jargon.",
-      "action1": "Book my NIS2 diagnostic",
+      "action1": "Get in touch",
       "action2": "Call 0475 20 55 62",
       "reassure1": "Reply within 24 h",
       "reassure2": "Dedicated expert, no subcontracting",
@@ -759,7 +759,7 @@
     },
     "form": {
       "badge": "The most direct",
-      "title": "Send us your request",
+      "title": "Send me your request",
       "subtitle": "A few lines are enough. The more precise, the faster we move forward.",
       "reassure": "Reply from an expert within 24 business hours",
       "errorLabel": "Error",
@@ -848,7 +848,7 @@
       "eyebrow": "What to expect",
       "title": "From your message to the <accent>diagnostic</accent>, in three steps",
       "intro": "No sales funnel, a useful exchange from the very first message.",
-      "step1Title": "You write to us",
+      "step1Title": "You write to me",
       "step1Text": "Form, email or call. Describe your need in two sentences.",
       "step2Title": "We call you back within 24 h",
       "step2Text": "A Smidjan expert, not a salesperson. Within 24 business hours.",
@@ -858,8 +858,8 @@
     },
     "simpleForm": {
       "back": "Back to the choice",
-      "title": "Send us your request",
-      "subtitle": "Choose the type of request and describe your need. We will get back to you promptly.",
+      "title": "Send me your request",
+      "subtitle": "Choose the type of request and describe your need. I will get back to you promptly.",
       "errorLabel": "Error",
       "labels": {
         "requestType": "Request type",
@@ -889,7 +889,7 @@
       },
       "submit": "Send my request",
       "submitting": "Sending...",
-      "privacy": "By submitting this form, you agree that we may use your data to contact you about your project.",
+      "privacy": "By submitting this form, you agree that I may use your data to contact you about your project.",
       "success": {
         "title": "Message sent!",
         "text": "Thank you for your message. I will contact you within 24 hours.",
@@ -1405,7 +1405,7 @@
     "partner": {
       "kicker": "A single partner",
       "title": "Build, <accent>secure</accent> and bring into compliance, all in one place",
-      "lead": "Most providers do one <em>or</em> the other. We cover the whole chain: build, secure, comply. A single point of contact, no passing the ball.",
+      "lead": "Most providers do one <em>or</em> the other. I cover the whole chain: build, secure, comply. A single point of contact, no passing the ball.",
       "build": {
         "label": "Build",
         "text": "Secure web development, secure by design."
@@ -1425,11 +1425,11 @@
       "title": "A graduated framework, support <accent>tailored to you</accent>",
       "lead": "The three tiers of the CyberFundamentals Framework, in brief. Full comparison and NIS2 timeline on the dedicated page.",
       "linkMore": "See the full comparison of the CyFun levels",
-      "transparency": "<b>In full transparency:</b> CyFun certification is issued by BELAC-accredited bodies, independent of Smidjan. Our role: audit, gap analysis, concrete remediation and preparation for verification, a methodology aligned with the CyFun framework, without substituting ourselves for the certifier."
+      "transparency": "<b>In full transparency:</b> CyFun certification is issued by BELAC-accredited bodies, independent of Smidjan. Our role: audit, gap analysis, concrete remediation and preparation for verification, a methodology aligned with the CyFun framework, without substituting myself for the certifier."
     },
     "finalCta": {
-      "title": "A free assessment to know where to start",
-      "text": "30 minutes with an expert to scope the useful engagement. Clear priorities, no commitment.",
+      "title": "Let's take stock of your security",
+      "text": "30 minutes with an expert to scope the useful engagement. Clear priorities, a free first exchange, no commitment.",
       "actionPrimary": "Get in touch",
       "actionCall": "Call 0475 20 55 62",
       "reassurances": [
@@ -1480,7 +1480,7 @@
     "faq": {
       "eyebrow": "Frequently asked questions",
       "title": "Your questions about our services",
-      "lead": "The questions we get most often. Another one? Ask it during the free assessment.",
+      "lead": "The questions I get most often. Another one? Ask it during the free assessment.",
       "q1": {
         "question": "Does NIS2 apply to me?",
         "answer": "NIS2 targets essential and important entities, and many SMEs are covered indirectly, as subcontractors. If in doubt, our 'Does NIS2 apply to me?' check and the free assessment settle your case."
@@ -1491,7 +1491,7 @@
       },
       "q3": {
         "question": "Do you issue the CyFun certificate?",
-        "answer": "No. Certification is granted by BELAC-accredited bodies, independent from us. Our role: audit, remediate and get you ready for the verification."
+        "answer": "No. Certification is granted by BELAC-accredited bodies, independent from me. My role: audit, remediate and get you ready for the verification."
       },
       "q4": {
         "question": "How much does an audit cost or how long does it take?",

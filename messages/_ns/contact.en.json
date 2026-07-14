@@ -24,7 +24,7 @@
   },
   "form": {
     "badge": "The most direct",
-    "title": "Send us your request",
+    "title": "Send me your request",
     "subtitle": "A few lines are enough. The more precise, the faster we move forward.",
     "reassure": "Reply from an expert within 24 business hours",
     "errorLabel": "Error",
@@ -113,7 +113,7 @@
     "eyebrow": "What to expect",
     "title": "From your message to the <accent>diagnostic</accent>, in three steps",
     "intro": "No sales funnel, a useful exchange from the very first message.",
-    "step1Title": "You write to us",
+    "step1Title": "You write to me",
     "step1Text": "Form, email or call. Describe your need in two sentences.",
     "step2Title": "We call you back within 24 h",
     "step2Text": "A Smidjan expert, not a salesperson. Within 24 business hours.",
@@ -123,8 +123,8 @@
   },
   "simpleForm": {
     "back": "Back to the choice",
-    "title": "Send us your request",
-    "subtitle": "Choose the type of request and describe your need. We will get back to you promptly.",
+    "title": "Send me your request",
+    "subtitle": "Choose the type of request and describe your need. I will get back to you promptly.",
     "errorLabel": "Error",
     "labels": {
       "requestType": "Request type",
@@ -154,7 +154,7 @@
     },
     "submit": "Send my request",
     "submitting": "Sending...",
-    "privacy": "By submitting this form, you agree that we may use your data to contact you about your project.",
+    "privacy": "By submitting this form, you agree that I may use your data to contact you about your project.",
     "success": {
       "title": "Message sent!",
       "text": "Thank you for your message. I will contact you within 24 hours.",

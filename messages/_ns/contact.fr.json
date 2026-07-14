@@ -24,7 +24,7 @@
   },
   "form": {
     "badge": "Le plus direct",
-    "title": "Envoyez-nous votre demande",
+    "title": "Envoyez-moi votre demande",
     "subtitle": "Quelques lignes suffisent. Plus c'est précis, plus vite on avance.",
     "reassure": "Réponse d'un expert sous 24 h ouvrées",
     "errorLabel": "Erreur",
@@ -113,7 +113,7 @@
     "eyebrow": "À quoi s'attendre",
     "title": "De votre message au <accent>diagnostic</accent>, en trois temps",
     "intro": "Pas de tunnel commercial, un échange utile dès le premier message.",
-    "step1Title": "Vous nous écrivez",
+    "step1Title": "Vous m'écrivez",
     "step1Text": "Formulaire, e-mail ou appel. Décrivez votre besoin en deux phrases.",
     "step2Title": "On vous rappelle sous 24 h",
     "step2Text": "Un expert Smidjan, pas un commercial. Sous 24 h ouvrées.",
@@ -123,8 +123,8 @@
   },
   "simpleForm": {
     "back": "Retour au choix",
-    "title": "Envoyez-nous votre demande",
-    "subtitle": "Choisissez le type de demande et décrivez-nous votre besoin. Nous vous recontacterons rapidement.",
+    "title": "Envoyez-moi votre demande",
+    "subtitle": "Choisissez le type de demande et décrivez-moi votre besoin. Je vous recontacte rapidement.",
     "errorLabel": "Erreur",
     "labels": {
       "requestType": "Type de demande",
@@ -154,7 +154,7 @@
     },
     "submit": "Envoyer ma demande",
     "submitting": "Envoi en cours...",
-    "privacy": "En soumettant ce formulaire, vous acceptez que nous utilisions vos données pour vous recontacter au sujet de votre projet.",
+    "privacy": "En soumettant ce formulaire, vous acceptez que j'utilise vos données pour vous recontacter au sujet de votre projet.",
     "success": {
       "title": "Message envoyé !",
       "text": "Merci pour votre message. Je vous contacterai dans les 24 heures.",

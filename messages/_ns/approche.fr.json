@@ -26,8 +26,8 @@
   "philosophy": {
     "eyebrow": "Notre philosophie",
     "title": "Des <accent>preuves</accent>, pas des promesses",
-    "lead": "Trop de prestataires vendent un sentiment de sécurité. Nous, on vous donne de quoi la vérifier vous-même : <b>diagnostic mesuré</b>, livrables <b>actionnables</b>, résultat prouvé.",
-    "quote": "« Ne nous croyez pas sur parole : l'écart de départ, les correctifs appliqués, le résultat mesuré. » <b>Notre règle, à chaque mission.</b>",
+    "lead": "Trop de prestataires vendent un sentiment de sécurité. Moi, je vous donne de quoi la vérifier vous-même : <b>diagnostic mesuré</b>, livrables <b>actionnables</b>, résultat prouvé.",
+    "quote": "« Ne me croyez pas sur parole : l'écart de départ, les correctifs appliqués, le résultat mesuré. » <b>Ma règle, à chaque mission.</b>",
     "badCap": "Des promesses",
     "badItem1": "« Vous êtes protégés », sans le prouver.",
     "badItem2": "Un rapport de 200 pages qui finit dans un tiroir.",
@@ -86,8 +86,8 @@
   },
   "ai": {
     "eyebrow": "Augmentés par l'IA",
-    "title": "L'IA travaille avec nous. Elle ne <accentOnDark>décide pas</accentOnDark> à notre place.",
-    "lead": "L'IA nous aide à surveiller plus large et trier plus vite. L'analyse et la décision restent humaines, les vôtres et les nôtres.",
+    "title": "L'IA travaille avec moi. Elle ne <accentOnDark>décide pas</accentOnDark> à ma place.",
+    "lead": "L'IA m'aide à surveiller plus large et trier plus vite. L'analyse et la décision restent humaines, les vôtres et les miennes.",
     "honest": "En toute transparence : l'IA est un <b>outil d'appui</b>, pas un produit qu'on vous vend. Elle ne remplace jamais l'expertise ni votre validation.",
     "legendHuman": "Expert humain",
     "legendVerified": "Constat vérifié",
@@ -145,7 +145,7 @@
     "title": "Une méthodologie alignée sur les cadres de <accent>référence</accent>",
     "lead": "Nos audits et mises en conformité s'appuient sur des référentiels reconnus, pour des résultats comparables et défendables.",
     "honestyTitle": "En toute transparence",
-    "honestyText": "Ces référentiels sont notre <b>méthode de travail</b>. La <b>certification</b> officielle CyFun est délivrée par des organismes accrédités BELAC, pas par nous. Notre rôle : auditer, corriger, vous amener prêts à la soumission.",
+    "honestyText": "Ces référentiels sont ma <b>méthode de travail</b>. La <b>certification</b> officielle CyFun est délivrée par des organismes accrédités BELAC, pas par moi. Mon rôle : auditer, corriger, vous amener prêts à la soumission.",
     "items": {
       "owasp": {
         "title": "Tests & sécurité applicative",
@@ -162,8 +162,8 @@
     }
   },
   "cta": {
-    "title": "Un diagnostic gratuit pour savoir où vous en êtes vraiment",
-    "text": "30 minutes avec un expert. Vous repartez avec un premier constat chiffré et des priorités claires. Sans engagement.",
+    "title": "Faisons le point, sans engagement",
+    "text": "30 minutes avec un expert. Vous repartez avec un premier constat chiffré et des priorités claires. Premier échange gratuit et sans engagement.",
     "action1": "Me contacter",
     "action2": "Appeler le 0475 20 55 62",
     "reassurance1": "Réponse sous 24 h",

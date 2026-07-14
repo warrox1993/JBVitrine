@@ -198,7 +198,7 @@
   "partner": {
     "kicker": "Eén enkele partner",
     "title": "Bouwen, <accent>beveiligen</accent> en conform maken, op één plek",
-    "lead": "De meeste dienstverleners doen het een <em>of</em> het ander. Wij dekken de hele keten : bouwen, beveiligen, conform maken. Eén aanspreekpunt, geen doorverwijzingen.",
+    "lead": "De meeste dienstverleners doen het een <em>of</em> het ander. Ik dek de hele keten : bouwen, beveiligen, conform maken. Eén aanspreekpunt, geen doorverwijzingen.",
     "build": {
       "label": "Build",
       "text": "Beveiligde webontwikkeling, secure by design."
@@ -221,8 +221,8 @@
     "transparency": "<b>In alle transparantie :</b> de CyFun-certificering wordt uitgereikt door BELAC-geaccrediteerde organismen, onafhankelijk van Smidjan. Onze rol : audit, gap-analyse, concrete remediëring en voorbereiding op de verificatie, een methodologie afgestemd op het CyFun-referentiekader, zonder in de plaats te treden van de certificeerder."
   },
   "finalCta": {
-    "title": "Een gratis diagnose om te weten waar te beginnen",
-    "text": "30 minuten met een expert om de nuttige opdracht af te bakenen. Duidelijke prioriteiten, vrijblijvend.",
+    "title": "Laten we uw beveiliging samen bekijken",
+    "text": "30 minuten met een expert om de nuttige opdracht af te bakenen. Duidelijke prioriteiten, een eerste gesprek gratis en vrijblijvend.",
     "actionPrimary": "Contact opnemen",
     "actionCall": "Bel 0475 20 55 62",
     "reassurances": [
@@ -273,7 +273,7 @@
   "faq": {
     "eyebrow": "Veelgestelde vragen",
     "title": "Uw vragen over onze diensten",
-    "lead": "De vragen die we het vaakst krijgen. Een andere? Stel ze tijdens de gratis diagnose.",
+    "lead": "De vragen die ik het vaakst krijg. Een andere? Stel ze tijdens de gratis diagnose.",
     "q1": {
       "question": "Valt mijn kmo onder NIS2?",
       "answer": "NIS2 richt zich op essentiële en belangrijke entiteiten, en veel kmo's vallen er onrechtstreeks onder, als onderaannemer. Bij twijfel beslissen onze test « Valt mijn kmo onder NIS2? » en de gratis diagnose uw geval."
@@ -284,7 +284,7 @@
     },
     "q3": {
       "question": "Leveren jullie het CyFun-certificaat af?",
-      "answer": "Nee. De certificering komt toe aan BELAC-geaccrediteerde instellingen, onafhankelijk van ons. Onze rol: auditen, remediëren en u voorbereiden tot de verificatie."
+      "answer": "Nee. De certificering komt toe aan BELAC-geaccrediteerde instellingen, onafhankelijk van mij. Mijn rol: auditen, remediëren en u voorbereiden tot de verificatie."
     },
     "q4": {
       "question": "Wat kost of hoelang duurt een audit?",
