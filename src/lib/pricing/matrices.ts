@@ -292,7 +292,6 @@ export const pricingMatrices: Record<ProjectType, PricingMatrix> = {
       "security-gdpr": { min: 1200, max: 2000 },
       "security-audit-trail": { min: 1500, max: 2500 },
       "security-ip-whitelist": { min: 500, max: 900 },
-      "security-penetration-test": { min: 2500, max: 4500 },
     },
     design: {
       template: 0,
@@ -321,14 +320,8 @@ export const pricingMatrices: Record<ProjectType, PricingMatrix> = {
       "infra-50plus": { min: 10000, max: 18000 },
 
       // Types d'audit (audit)
-      "pentest-external": { min: 0, max: 0 }, // Inclus dans base
-      "pentest-internal": { min: 2500, max: 4000 },
-      "pentest-white-box": { min: 3500, max: 6000 },
       "code-review-sast": { min: 2500, max: 4500 },
       "infra-audit": { min: 2800, max: 4500 },
-      "pentest-mobile": { min: 3000, max: 5000 },
-      "pentest-api": { min: 2000, max: 3500 },
-      "pentest-wifi": { min: 1500, max: 2500 },
       "social-engineering": { min: 1800, max: 3000 },
       "cloud-security-audit": { min: 3000, max: 5500 },
       "container-security": { min: 2500, max: 4000 },

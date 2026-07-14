@@ -1935,14 +1935,6 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         category: "security",
         selected: false,
       },
-      {
-        id: "security-penetration-test",
-        name: "Pentest inclus",
-        description: "Test de pénétration avant mise en prod",
-        explanation: `Pentest de sécurité par experts certifiés (OSCP, CEH). **C'est quoi ?** Hackers éthiques testent votre sécurité. **Pourquoi ?** Trouvez vulns avant les vrais hackers, conformité (ISO27001 exige pentest), assurance cyber moins chère, et confiance clients. 3-5k€ pour PME, 15-50k€ enterprise. ROI énorme vs coût breach.`,
-        category: "security",
-        selected: false,
-      },
 
       // Sécurité & Conformité (security-compliance)
       {
@@ -2064,7 +2056,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
     id: "auditCyber",
     name: "Audit Cybersécurité",
     description:
-      "Audit de sécurité complet et tests de pénétration professionnels",
+      "Audit de sécurité complet et évaluation de conformité GRC",
     explanation: `Audit cybersécurité complet : infrastructure, applications, processus. **C'est quoi ?** Évaluation complète de votre posture sécurité par experts. **Pourquoi ?** 60% PME hackées ferment sous 6 mois. Audit identifie failles critiques, priorise corrections, et roadmap sécurité. ANSSI recommande audit annuel. 5-15k€ sauvent souvent l'entreprise.`,
     icon: "🔒",
     basePrice: 2000,
@@ -2110,33 +2102,6 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
 
       // Types d'audit (audit)
       {
-        id: "pentest-external",
-        name: "Pentest externe (Black Box)",
-        description:
-          "Test d'intrusion depuis internet sans information préalable",
-        explanation: `Pentest externe (Black Box) : attaque depuis Internet sans info préalable. **C'est quoi ?** Hackers testent depuis l'extérieur comme un vrai attaquant. **Pourquoi ?** Simule vraie attaque (hackers n'ont aucune info), trouve vulns exposées Internet, et compliance. OWASP Top 10 focus. 3-10k€ selon scope. Annuel recommandé.`,
-        category: "audit",
-        selected: true,
-      },
-      {
-        id: "pentest-internal",
-        name: "Pentest interne (Grey Box)",
-        description:
-          "Test d'intrusion depuis le réseau interne avec accès limité",
-        explanation: `Pentest interne (Grey Box) : test avec accès réseau interne (employé malveillant). **C'est quoi ?** Simulation d'attaque depuis l'intérieur (réseau corporate). **Pourquoi ?** 70% des breaches = insider threat ou phishing (attaquant entre dans réseau). Teste segmentation, escalade privilèges, mouvement latéral. Complémente pentest externe. 5-15k€.`,
-        category: "audit",
-        selected: false,
-      },
-      {
-        id: "pentest-white-box",
-        name: "Pentest White Box",
-        description:
-          "Audit complet avec accès aux codes sources et architecture",
-        explanation: `Pentest White Box : audit avec accès code source et architecture. **C'est quoi ?** Test sécurité avec toutes les informations (code, infra, creds). **Pourquoi ?** Profondeur maximale (auditeurs comprennent vraiment l'app), trouve vulns subtiles (logic bugs), et éducatif (dev apprennent). Plus cher (10-30k€) mais ROI sécurité x3.`,
-        category: "audit",
-        selected: false,
-      },
-      {
         id: "code-review-sast",
         name: "Audit de code (SAST)",
         description: "Revue de sécurité statique du code source (OWASP Top 10)",
@@ -2149,30 +2114,6 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         name: "Audit infrastructure & configuration",
         description: "Serveurs, réseau, firewall, pare-feu, routeurs",
         explanation: `Audit infrastructure et configuration : serveurs, réseau, cloud, durcissement. **C'est quoi ?** Revue complète config serveurs, firewalls, cloud selon best practices. **Pourquoi ?** Misconfigurations = cause #1 breaches (Capital One, Equifax). CIS Benchmarks compliance, hardening guide, et quick wins identifiés. 3-20k€ selon taille. Évite catastrophes.`,
-        category: "audit",
-        selected: false,
-      },
-      {
-        id: "pentest-mobile",
-        name: "Pentest application mobile",
-        description: "Test de sécurité iOS/Android (OWASP MASVS)",
-        explanation: `Pentest application mobile : iOS + Android, API, stockage local, certificats. **C'est quoi ?** Test sécu complet de votre app mobile. **Pourquoi ?** Apps mobiles stockent données sensibles (tokens, user data), communiquent APIs, et sont facilement décompilables. OWASP Mobile Top 10. Reverse engineering, MitM, injection. 5-15k€ par plateforme.`,
-        category: "audit",
-        selected: false,
-      },
-      {
-        id: "pentest-api",
-        name: "Audit API REST/GraphQL",
-        description: "Test de sécurité des API (OWASP API Security Top 10)",
-        explanation: `Audit sécurité API REST/GraphQL : auth, injection, rate limiting, IDOR. **C'est quoi ?** Pentest spécialisé API (pas interface web). **Pourquoi ?** APIs = cible privilégiée (automatisable), souvent moins protégées que UI, et exploits = accès data massif. OWASP API Top 10. Broken auth #1. Fuzzing, injection, BOLA/IDOR. 3-10k€.`,
-        category: "audit",
-        selected: false,
-      },
-      {
-        id: "pentest-wifi",
-        name: "Audit Wi-Fi & réseau sans fil",
-        description: "Test de sécurité des réseaux Wi-Fi d'entreprise",
-        explanation: `Audit WiFi et réseau sans fil : WPA3, rogue AP, evil twin, déauth. **C'est quoi ?** Test sécurité de vos réseaux WiFi corporate. **Pourquoi ?** WiFi faible = porte d'entrée réseau. WPA2 cassable, rogue AP passent inaperçus. Test simule attaque café voisin, employee malveillant. WPA3 obligatoire, segmentation invités. 2-5k€. Souvent négligé.`,
         category: "audit",
         selected: false,
       },
@@ -2214,7 +2155,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "webapp-audit-1",
         name: "1 application web",
         description: "Audit OWASP d'une application web complète",
-        explanation: `Audit sécurité 1 application web : OWASP Top 10, business logic, auth. **C'est quoi ?** Pentest complet d'une webapp. **Pourquoi ?** 90% apps ont au moins 1 vulnérabilité critique. Injection SQL, XSS, auth broken. Rapport détaillé + recommandations. 3-8k€ selon complexité. Pré-prod idéal. Fix avant hackers.`,
+        explanation: `Audit sécurité 1 application web : OWASP Top 10, business logic, auth. **C'est quoi ?** Audit sécurité complet d'une webapp. **Pourquoi ?** 90% apps ont au moins 1 vulnérabilité critique. Injection SQL, XSS, auth broken. Rapport détaillé + recommandations. 3-8k€ selon complexité. Pré-prod idéal. Fix avant hackers.`,
         category: "apps",
         selected: false,
         mutuallyExclusive: true,
@@ -2223,7 +2164,7 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
         id: "webapp-audit-2-5",
         name: "2-5 applications web",
         description: "Audit de plusieurs applications web (package)",
-        explanation: `Audit sécurité 2-5 applications web : testing parallèle, rapport consolidé. **C'est quoi ?** Pentest de plusieurs webapps avec économies d'échelle. **Pourquoi ?** Suite d'apps (backoffice + frontend + API)? Audit groupé 20-30% moins cher. Rapport compare maturité sécu entre apps. 10-30k€. Priorise corrections globales.`,
+        explanation: `Audit sécurité 2-5 applications web : testing parallèle, rapport consolidé. **C'est quoi ?** Audit sécurité de plusieurs webapps avec économies d'échelle. **Pourquoi ?** Suite d'apps (backoffice + frontend + API)? Audit groupé 20-30% moins cher. Rapport compare maturité sécu entre apps. 10-30k€. Priorise corrections globales.`,
         category: "apps",
         selected: false,
         mutuallyExclusive: true,
@@ -2399,14 +2340,6 @@ export const projectTypeConfigs: Record<ProjectType, ProjectTypeConfig> = {
       },
 
       // Audits avancés (advanced-audits)
-      {
-        id: "pentest-automated",
-        name: "Pentest automatisé (OWASP ZAP)",
-        description: "Tests de pénétration automatisés avec OWASP ZAP",
-        explanation: `Pentest automatisé OWASP ZAP : scan continu, détection vulnérabilités OWASP Top 10. **C'est quoi ?** Outil open-source automatisant tests sécurité applications web. **Pourquoi ?** Scans réguliers détectent nouvelles vulnérabilités sans coût récurrent audit manuel. Intégrable CI/CD (shift-left security), rapports détaillés, et baseline sécurité. 80% vulns communes détectées automatiquement. Complément pentests manuels. 2-5k€ setup + formation.`,
-        category: "advanced-audits",
-        selected: false,
-      },
       {
         id: "cloud-vulnerability-scan",
         name: "Scan vulnérabilités cloud (AWS, Azure)",
@@ -3337,7 +3270,7 @@ export function getCategoryDescription(
       followup: "Suivi et remédiation",
       training: "Formation de vos équipes",
       reporting: "Rapports et documentation",
-      "advanced-audits": "Audits automatisés avancés (pentest, cloud, SAST)",
+      "advanced-audits": "Audits automatisés avancés (scan continu, cloud, SAST)",
       "response-certification":
         "Gestion d'incidents et certifications (ISO 27001)",
     },
