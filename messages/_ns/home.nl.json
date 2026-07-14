@@ -1,18 +1,18 @@
 {
   "meta": {
-    "title": "Jean-Baptiste Dhondt, Smidjan | Cyberbeveiliging & GRC, Wallonië",
-    "description": "Cyberbeveiligings- en governancepracticus (GRC) in Wallonië. NIS2/CyFun-audits op basis van reële referentiekaders, beveiliging van netwerken, applicaties, AI. Volledige transparantie, geen opgeklopte cijfers.",
-    "ogTitle": "Smidjan : Cyberbeveiliging & GRC",
+    "title": "Jean-Baptiste Dhondt, Smidjan | Cloud-, netwerk- en AI-beveiliging, Wallonië",
+    "description": "Cyberbeveiligingspracticus in Wallonië, gespecialiseerd in cloud-, netwerk- en AI-beveiliging. NIS2/CyFun-conformiteit op basis van reële referentiekaders. Volledige transparantie, geen opgeklopte cijfers.",
+    "ogTitle": "Smidjan : cloud-, netwerk- en AI-beveiliging",
     "ogDescription": "Het traject van een cyberpracticus zichtbaar gemaakt. Wat ik kan, met verifieerbaar bewijs.",
     "ogSiteName": "Smidjan",
-    "ogImageAlt": "Smidjan, cyberbeveiliging en GRC in Wallonië",
-    "twitterTitle": "Smidjan : Cyberbeveiliging & GRC",
-    "twitterDescription": "Cyber/GRC-practicus in Wallonië. NIS2/CyFun-audits, volledige transparantie."
+    "ogImageAlt": "Smidjan, cloud-, netwerk- en AI-beveiliging in Wallonië",
+    "twitterTitle": "Smidjan : cloud-, netwerk- en AI-beveiliging",
+    "twitterDescription": "Practicus cloud-, netwerk- en AI-beveiliging in Wallonië. NIS2/CyFun-conformiteit, volledige transparantie."
   },
   "hero": {
     "h1": "Veiligheid, van binnenuit begrepen.",
     "eyebrow": "whoami",
-    "p1": "Beveiligen is mijn obsessie sinds mijn tienerjaren. Al vroeg, uit noodzaak, leerde ik systemen van binnenuit te begrijpen in plaats van ze te ondergaan. Die logica is nooit verdwenen : van Defensie tot certificeringen, tot vandaag, waar ik de vaardigheden en tools opbouw om volledige infrastructuren te beveiligen. Netwerken, applicaties, AI.",
+    "p1": "Beveiligen is mijn obsessie sinds mijn tienerjaren. Al vroeg, uit noodzaak, leerde ik systemen van binnenuit te begrijpen in plaats van ze te ondergaan. Die logica is nooit verdwenen : van Defensie tot certificeringen, tot vandaag, waar ik de vaardigheden en tools opbouw om volledige infrastructuren te beveiligen. Cloud, netwerken, AI.",
     "p2": "Smidjan is dat traject zichtbaar gemaakt. Geen bureau dat opgeklopte cijfers verkoopt : een practicus die zijn werk toont, wat hij kan en wat hij nog niet kan.",
     "ctaPrimary": "Contacteer mij",
     "ctaSecondary": "Mijn traject",
@@ -22,10 +22,10 @@
   },
   "capabilities": {
     "eyebrow": "Wat ik kan",
-    "title": "Drie vaardigheden ten dienste van veiligheid",
-    "c1": { "index": "01", "title": "Cyber / GRC", "line": "NIS2/CyFun-audits gebouwd op reële referentiekaders, governance en methodologie." },
-    "c2": { "index": "02", "title": "AI-automatisering", "line": "Orkestratie van tools en workflows (n8n, Make), toegepaste prompt engineering." },
-    "c3": { "index": "03", "title": "Veilige webontwikkeling", "line": "Ondersteunde ontwikkeling en beveiliging van code, van de Full Stack bootcamp tot Java/.NET-stages." }
+    "title": "Cloud, netwerken, AI : elke laag beveiligen",
+    "c1": { "index": "01", "title": "Cloudbeveiliging", "line": "Beveiliging en verharding van cloudomgevingen (Azure), configuratie en goede praktijken." },
+    "c2": { "index": "02", "title": "Netwerkbeveiliging", "line": "Beveiliging van netwerken en infrastructuur : segmentatie, verharding, goede praktijken (CCNA lopende)." },
+    "c3": { "index": "03", "title": "AI & automatisering", "line": "Orkestratie van tools en workflows (n8n, Make), en beveiliging van AI-gebruik." }
   },
   "cyfun": {
     "eyebrow": "Vlaggenschipproject",

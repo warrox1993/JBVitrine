@@ -4,12 +4,12 @@ import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./Capabilities.module.css";
 
 const CARDS = [
-  { key: "c1", href: "/conformite-nis2" },
+  { key: "c1", href: "/services" },
   { key: "c2", href: "/services" },
   { key: "c3", href: "/services" },
 ] as const;
 
-/** Home "Capabilities" block: 3 index-mono cards (cyber/GRC, IA, dev). */
+/** Home "Capabilities" block: 3 index-mono cards (cloud, réseaux, IA). */
 export async function Capabilities() {
   const t = await getTranslations("home");
 

@@ -1,18 +1,18 @@
 {
   "meta": {
-    "title": "Jean-Baptiste Dhondt, Smidjan | Cybersécurité & GRC, Wallonie",
-    "description": "Praticien cybersécurité et gouvernance (GRC) en Wallonie. Audits NIS2/CyFun sur référentiels réels, sécurisation réseaux, applications, IA. Transparence totale, zéro chiffre gonflé.",
-    "ogTitle": "Smidjan : Cybersécurité & GRC",
+    "title": "Jean-Baptiste Dhondt, Smidjan | Sécurité cloud, réseaux et IA, Wallonie",
+    "description": "Praticien cybersécurité en Wallonie, spécialisé en sécurité cloud, réseaux et IA. Conformité NIS2/CyFun construite sur des référentiels réels. Transparence totale, zéro chiffre gonflé.",
+    "ogTitle": "Smidjan : sécurité cloud, réseaux et IA",
     "ogDescription": "La trajectoire d'un praticien cyber rendue visible. Ce que je sais faire, avec des preuves vérifiables.",
     "ogSiteName": "Smidjan",
-    "ogImageAlt": "Smidjan, cybersécurité et GRC en Wallonie",
-    "twitterTitle": "Smidjan : Cybersécurité & GRC",
-    "twitterDescription": "Praticien cyber/GRC en Wallonie. Audits NIS2/CyFun, transparence totale."
+    "ogImageAlt": "Smidjan, sécurité cloud, réseaux et IA en Wallonie",
+    "twitterTitle": "Smidjan : sécurité cloud, réseaux et IA",
+    "twitterDescription": "Praticien sécurité cloud, réseaux et IA en Wallonie. Conformité NIS2/CyFun, transparence totale."
   },
   "hero": {
     "h1": "La sécurité, comprise de l'intérieur.",
     "eyebrow": "whoami",
-    "p1": "Sécuriser, c'est mon obsession depuis l'adolescence. Très tôt, par nécessité, j'ai appris à comprendre les systèmes de l'intérieur plutôt qu'à les subir. Cette logique ne m'a jamais quittée : de la Défense aux certifications, jusqu'à aujourd'hui où je construis les compétences et les outils pour sécuriser des infrastructures entières. Réseaux, applications, IA.",
+    "p1": "Sécuriser, c'est mon obsession depuis l'adolescence. Très tôt, par nécessité, j'ai appris à comprendre les systèmes de l'intérieur plutôt qu'à les subir. Cette logique ne m'a jamais quittée : de la Défense aux certifications, jusqu'à aujourd'hui où je construis les compétences et les outils pour sécuriser des infrastructures entières. Cloud, réseaux, IA.",
     "p2": "Smidjan, c'est cette trajectoire rendue visible. Pas une agence qui vend du chiffre gonflé : un praticien qui montre son travail, ce qu'il sait faire et ce qu'il ne sait pas encore.",
     "ctaPrimary": "Me contacter",
     "ctaSecondary": "Mon parcours",
@@ -22,10 +22,10 @@
   },
   "capabilities": {
     "eyebrow": "Ce que je sais faire",
-    "title": "Trois compétences au service de la sécurité",
-    "c1": { "index": "01", "title": "Cyber / GRC", "line": "Audits NIS2/CyFun construits sur des référentiels réels, gouvernance et méthodologie." },
-    "c2": { "index": "02", "title": "Automatisation IA", "line": "Orchestration d'outils et workflows (n8n, Make), prompt engineering appliqué." },
-    "c3": { "index": "03", "title": "Dev web sécurisé", "line": "Développement assisté et sécurisation du code, du bootcamp Full Stack aux stages Java/.NET." }
+    "title": "Cloud, réseaux, IA : sécuriser chaque couche",
+    "c1": { "index": "01", "title": "Sécurité cloud", "line": "Sécurisation et durcissement d'environnements cloud (Azure), configuration et bonnes pratiques." },
+    "c2": { "index": "02", "title": "Sécurité réseaux", "line": "Sécurité des réseaux et de l'infrastructure : segmentation, durcissement, bonnes pratiques (CCNA en cours)." },
+    "c3": { "index": "03", "title": "IA & automatisation", "line": "Orchestration d'outils et workflows (n8n, Make), et sécurisation des usages de l'IA." }
   },
   "cyfun": {
     "eyebrow": "Projet phare",

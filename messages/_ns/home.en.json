@@ -1,18 +1,18 @@
 {
   "meta": {
-    "title": "Jean-Baptiste Dhondt, Smidjan | Cybersecurity & GRC, Wallonia",
-    "description": "Cybersecurity and governance (GRC) practitioner in Wallonia. NIS2/CyFun audits built on real frameworks, securing networks, applications, AI. Full transparency, zero inflated numbers.",
-    "ogTitle": "Smidjan : Cybersecurity & GRC",
+    "title": "Jean-Baptiste Dhondt, Smidjan | Cloud, network and AI security, Wallonia",
+    "description": "Cybersecurity practitioner in Wallonia, specialising in cloud, network and AI security. NIS2/CyFun compliance built on real frameworks. Full transparency, zero inflated numbers.",
+    "ogTitle": "Smidjan : cloud, network and AI security",
     "ogDescription": "A cyber practitioner's path made visible. What I can do, backed by verifiable proof.",
     "ogSiteName": "Smidjan",
-    "ogImageAlt": "Smidjan, cybersecurity and GRC in Wallonia",
-    "twitterTitle": "Smidjan : Cybersecurity & GRC",
-    "twitterDescription": "Cyber/GRC practitioner in Wallonia. NIS2/CyFun audits, full transparency."
+    "ogImageAlt": "Smidjan, cloud, network and AI security in Wallonia",
+    "twitterTitle": "Smidjan : cloud, network and AI security",
+    "twitterDescription": "Cloud, network and AI security practitioner in Wallonia. NIS2/CyFun compliance, full transparency."
   },
   "hero": {
     "h1": "Security, understood from the inside.",
     "eyebrow": "whoami",
-    "p1": "Securing things has been my obsession since my teenage years. Early on, out of necessity, I learned to understand systems from the inside rather than just live with them. That logic never left me : from the Defence forces to certifications, up to today, where I'm building the skills and tools to secure entire infrastructures. Networks, applications, AI.",
+    "p1": "Securing things has been my obsession since my teenage years. Early on, out of necessity, I learned to understand systems from the inside rather than just live with them. That logic never left me : from the Defence forces to certifications, up to today, where I'm building the skills and tools to secure entire infrastructures. Cloud, networks, AI.",
     "p2": "Smidjan is that path made visible. Not an agency selling inflated numbers : a practitioner who shows his work, what he can do and what he can't do yet.",
     "ctaPrimary": "Contact me",
     "ctaSecondary": "My journey",
@@ -22,10 +22,10 @@
   },
   "capabilities": {
     "eyebrow": "What I can do",
-    "title": "Three skills in the service of security",
-    "c1": { "index": "01", "title": "Cyber / GRC", "line": "NIS2/CyFun audits built on real frameworks, governance and methodology." },
-    "c2": { "index": "02", "title": "AI automation", "line": "Orchestration of tools and workflows (n8n, Make), applied prompt engineering." },
-    "c3": { "index": "03", "title": "Secure web development", "line": "Assisted development and code security, from the Full Stack bootcamp to Java/.NET internships." }
+    "title": "Cloud, networks, AI : securing every layer",
+    "c1": { "index": "01", "title": "Cloud security", "line": "Securing and hardening cloud environments (Azure), configuration and best practices." },
+    "c2": { "index": "02", "title": "Network security", "line": "Network and infrastructure security : segmentation, hardening, best practices (CCNA in progress)." },
+    "c3": { "index": "03", "title": "AI & automation", "line": "Orchestration of tools and workflows (n8n, Make), and securing AI usage." }
   },
   "cyfun": {
     "eyebrow": "Flagship project",
