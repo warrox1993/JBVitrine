@@ -251,14 +251,6 @@
         }
       }
     },
-    "stats": {
-      "title": "Een methode, geen verhaal",
-      "lead": "Vier cijfers die onze manier van werken samenvatten.",
-      "label1": "stappen, van diagnose tot continue monitoring",
-      "label2": "beoogde termijn voor een eerste antwoord op uw vraag",
-      "label3": "van de toegepaste correcties hertest vóór afsluiting",
-      "label4": "onderaanneming : één enkel aanspreekpunt, van begin tot eind"
-    },
     "refs": {
       "eyebrow": "Onze referentiekaders",
       "title": "Een methodologie afgestemd op de <accent>referentie</accent>kaders",

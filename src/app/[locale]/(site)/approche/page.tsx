@@ -13,7 +13,6 @@ import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { CTABox } from "@/components/shared/CTABox/CTABox";
 import { ProcessSteps } from "@/components/shared/ProcessSteps/ProcessSteps";
-import { StatsBand } from "@/components/shared/StatsBand/StatsBand";
 import { TrustStrip } from "@/components/shared/TrustStrip/TrustStrip";
 
 import { AiIllustration, ProofVisual, RoadmapIllustration } from "./illustrations";
@@ -411,17 +410,6 @@ export default async function ApprochePage({
           ))}
         </Reveal>
       </Section>
-
-      <StatsBand
-        title={t("stats.title")}
-        lead={t("stats.lead")}
-        stats={[
-          { value: "4", label: t("stats.label1") },
-          { value: "24", accent: "h", label: t("stats.label2") },
-          { value: "100", accent: "%", label: t("stats.label3") },
-          { value: "0", label: t("stats.label4") },
-        ]}
-      />
 
       {/* ===== Référentiels / quality ===== */}
       <Section variant="tint">

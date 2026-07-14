@@ -251,14 +251,6 @@
         }
       }
     },
-    "stats": {
-      "title": "A method, not a pitch",
-      "lead": "Four figures that sum up our way of working.",
-      "label1": "steps, from diagnosis to continuous monitoring",
-      "label2": "target time for a first response to your request",
-      "label3": "of the applied fixes re-tested before closing",
-      "label4": "subcontracting: a single point of contact, end to end"
-    },
     "refs": {
       "eyebrow": "Our frameworks",
       "title": "A methodology aligned with the <accent>reference</accent> frameworks",

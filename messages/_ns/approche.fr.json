@@ -140,14 +140,6 @@
       }
     }
   },
-  "stats": {
-    "title": "Une méthode, pas un discours",
-    "lead": "Quatre chiffres qui résument notre façon de travailler.",
-    "label1": "étapes, du diagnostic à la supervision continue",
-    "label2": "délai visé pour une première réponse à votre demande",
-    "label3": "des correctifs appliqués re-testés avant clôture",
-    "label4": "sous-traitance : un seul interlocuteur, de bout en bout"
-  },
   "refs": {
     "eyebrow": "Nos référentiels",
     "title": "Une méthodologie alignée sur les cadres de <accent>référence</accent>",
