@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Journal : ressources techniques | Smidjan",
-    "description": "Articles techniques sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé. Conseils d'experts pour les PME en Belgique.",
+    "description": "Articles techniques sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé. Conseils d'expert pour les PME en Belgique.",
     "ogTitle": "Journal : ressources techniques | Smidjan",
     "ogDescription": "Articles sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé pour les PME.",
     "ogImageAlt": "Smidjan Blog : articles techniques pour développeurs et entreprises",
@@ -40,7 +40,7 @@
   "cta": {
     "title": "Besoin d'un accompagnement sur mesure ?",
     "text": "Parlons de votre sécurité, de votre conformité NIS2 / CyFun ou de votre projet web sécurisé.",
-    "action": "Nous contacter",
+    "action": "Me contacter",
     "reassurance24h": "Réponse sous 24 h",
     "reassuranceNoCommitment": "Sans engagement"
   },

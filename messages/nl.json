@@ -125,7 +125,7 @@
       "eyebrow": "Onze methode",
       "title": "Cybersecurity die zich <accent>bewijst</accent>, niet die zich laat vertellen.",
       "lead": "Voor kmo's in Wallonië: gemeten acties, resultaten die u zelf verifieert. Onze methode, van diagnose tot opvolging.",
-      "ctaPrimary": "Een gratis diagnose boeken",
+      "ctaPrimary": "Contact opnemen",
       "ctaSecondary": "Bekijk de 4 stappen",
       "promiseTitle": "Onze belofte",
       "promiseSub": "Wat u krijgt, bij elke opdracht",
@@ -283,7 +283,7 @@
     "cta": {
       "title": "Een gratis diagnose om te weten waar u echt staat",
       "text": "30 minuten met een expert. U vertrekt met een eerste becijferde vaststelling en duidelijke prioriteiten. Zonder verbintenis.",
-      "action1": "Mijn gratis diagnose boeken",
+      "action1": "Contact opnemen",
       "action2": "Bel 0475 20 55 62",
       "reassurance1": "Antwoord binnen 24 u",
       "reassurance2": "Toegewijde expert, geen onderaanneming",
@@ -458,7 +458,7 @@
       "badge": "Van kracht sinds 18 oktober 2024 in België",
       "title": "Breng uw kmo in <accent>NIS2-conformiteit</accent>, zonder jargon of meerkost.",
       "lead": "Audit, <b>remediëring</b>, afstemming op CyFun (CCB): wij sommen uw tekortkomingen niet op, wij verhelpen ze.",
-      "ctaPrimary": "Gratis NIS2-diagnose",
+      "ctaPrimary": "Contact opnemen",
       "ctaSecondary": "Vergelijk de 3 niveaus",
       "assure1": "Vrijblijvend",
       "assure2": "Antwoord binnen 24 u",
@@ -549,7 +549,7 @@
       "eyebrow": "Onze begeleiding",
       "title": "Wij beperken ons niet tot auditeren: <accent>wij verhelpen</accent> en maken u klaar",
       "lead": "Geen rapport dat u alleen moet zien te beheren. Wij verhelpen, wij bereiden voor, wij maken u klaar.",
-      "photoAlt": "Twee Smidjan-experts die met een klant samenwerken rond een laptop en NIS2-auditdocumenten",
+      "photoAlt": "Ondertekening van een document in het kader van een NIS2-conformiteitsaudit",
       "photoCap": "Een <b>begeleiding op het terrein</b>: wij werken met uw teams, niet enkel aan een rapport.",
       "honesty": {
         "title": "In alle transparantie: wie doet wat",
@@ -826,15 +826,15 @@
       "aria": "Onze contactgegevens",
       "incidentImageAlt": "Cyberbeveiligingsanalist op de rug gezien, voor meerdere bewakingsschermen in een controlekamer, volop bezig met incidentrespons.",
       "incidentBadge": "Incidentlijn 24/7",
-      "incidentTitle": "Slachtoffer van een <accent>aanval</accent> ?",
-      "incidentText": "Ransomware, inbraak, datalek ? Zet niets uit. Bel ons. Wij beperken de schade, meteen.",
+      "incidentTitle": "Nood aan een <accent>incidentrespons</accent> ?",
+      "incidentText": "Ransomware, inbraak, datalek ? Zet niets uit. Bel ons. Wij beperken de schade.",
       "incidentNote": "Een Smidjan-specialist, dag en nacht.",
       "processTitle": "Hoe het werkt",
       "processAria": "Schema in drie stappen : u schrijft uw aanvraag, een expert belt u terug binnen 24 werkuren, daarna een gratis diagnose.",
       "processStep1": "U schrijft",
       "processStep2": "Terugbellen binnen 24 u",
       "processStep3": "Gratis diagnose",
-      "coordImageAlt": "Glimlachend Smidjan-teamlid aan de telefoon aan zijn bureau met een laptop, klaar om uw aanvraag te beantwoorden.",
+      "coordImageAlt": "Glimlachende persoon aan de telefoon aan een bureau met een laptop, klaar om uw aanvraag te beantwoorden.",
       "coordTag": "Wij antwoorden u",
       "coordTitle": "Onze contactgegevens",
       "coordZoneK": "Interventiezone",
@@ -900,7 +900,7 @@
       "privacy": "Door dit formulier te versturen, gaat u ermee akkoord dat wij uw gegevens gebruiken om opnieuw contact met u op te nemen over uw project.",
       "success": {
         "title": "Bericht verzonden !",
-        "text": "Bedankt voor uw bericht. Ons team neemt binnen 24 uur contact met u op.",
+        "text": "Bedankt voor uw bericht. Ik neem binnen 24 uur contact met u op.",
         "back": "Terug naar de startpagina"
       },
       "errors": {
@@ -1231,7 +1231,7 @@
       "kicker": "Onze expertise",
       "title": "Beveiligen, testen, ontwikkelen, <accent>conform worden</accent>.",
       "lead": "Eén cybersecuritypartner voor Belgische kmo's: gehard netwerk, geteste applicaties, NIS2 / CyFun-conformiteit, van audit tot remediatie. Gevestigd in Wallonië.",
-      "ctaPrimary": "Mijn gratis diagnose boeken",
+      "ctaPrimary": "Contact opnemen",
       "jumpLabel": "Ga rechtstreeks naar"
     },
     "jump": {
@@ -1426,7 +1426,7 @@
         "label": "Comply",
         "text": "CyFun- / NIS2-conformiteit, van kloof tot bewijs."
       },
-      "aiNote": "<b>Experts versterkt door AI</b>, sneller, meer terrein gedekt. De analyse en de beslissingen blijven menselijk."
+      "aiNote": "Een <b>expert versterkt door AI</b>, sneller, meer terrein gedekt. De analyse en de beslissingen blijven menselijk."
     },
     "cyfun": {
       "eyebrow": "De 3 CyFun-niveaus",
@@ -1438,7 +1438,7 @@
     "finalCta": {
       "title": "Een gratis diagnose om te weten waar te beginnen",
       "text": "30 minuten met een expert om de nuttige opdracht af te bakenen. Duidelijke prioriteiten, vrijblijvend.",
-      "actionPrimary": "Mijn gratis diagnose boeken",
+      "actionPrimary": "Contact opnemen",
       "actionCall": "Bel 0475 20 55 62",
       "reassurances": [
         "Antwoord binnen 24 u",
@@ -1625,7 +1625,7 @@
       "successText": "Bedankt voor uw vertrouwen. We hebben uw aanvraag goed ontvangen en sturen u binnen 24 uur een gedetailleerde offerte per e-mail.",
       "successInfoTitle": "En nu?",
       "successItem1": "U ontvangt een bevestigingsmail",
-      "successItem2": "Ons team analyseert uw project",
+      "successItem2": "Ik analyseer uw project",
       "successItem3": "We nemen contact met u op om de details te verfijnen",
       "successItem4": "U ontvangt een gepersonaliseerde offerte",
       "successBackHome": "Terug naar de startpagina",

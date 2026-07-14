@@ -125,7 +125,7 @@
       "eyebrow": "Our method",
       "title": "Cybersecurity that <accent>proves itself</accent>, not one that tells stories.",
       "lead": "For SMEs in Wallonia: measured actions, deliverables you verify yourself. Our method, from assessment to follow-up.",
-      "ctaPrimary": "Book a free diagnosis",
+      "ctaPrimary": "Get in touch",
       "ctaSecondary": "See the 4 steps",
       "promiseTitle": "Our commitment",
       "promiseSub": "What you get, on every engagement",
@@ -283,7 +283,7 @@
     "cta": {
       "title": "A free diagnosis to know where you really stand",
       "text": "30 minutes with an expert. You leave with a first quantified finding and clear priorities. No commitment.",
-      "action1": "Book my free diagnosis",
+      "action1": "Get in touch",
       "action2": "Call 0475 20 55 62",
       "reassurance1": "Response within 24 h",
       "reassurance2": "Dedicated expert, no subcontracting",
@@ -338,7 +338,7 @@
     "cta": {
       "title": "Need tailored support?",
       "text": "Let's talk about your security, your NIS2 / CyFun compliance or your secure web project.",
-      "action": "Contact us",
+      "action": "Get in touch",
       "reassurance24h": "Reply within 24 h",
       "reassuranceNoCommitment": "No commitment"
     },
@@ -458,7 +458,7 @@
       "badge": "In force since 18 October 2024 in Belgium",
       "title": "Bring your SME into <accent>NIS2 compliance</accent>, without jargon or overspend.",
       "lead": "Audit, <b>remediation</b>, alignment with CyFun (CCB): we don't list your gaps, we fix them.",
-      "ctaPrimary": "Free NIS2 diagnostic",
+      "ctaPrimary": "Get in touch",
       "ctaSecondary": "Compare the 3 levels",
       "assure1": "No commitment",
       "assure2": "Reply within 24 h",
@@ -549,7 +549,7 @@
       "eyebrow": "Our support",
       "title": "We don't just audit: <accent>we fix</accent> and we get you ready",
       "lead": "No report we leave you to manage alone. We fix, we prepare, we get you ready.",
-      "photoAlt": "Two Smidjan experts collaborating with a client around a laptop and NIS2 audit documents",
+      "photoAlt": "Signing a document as part of an NIS2 compliance audit process",
       "photoCap": "Hands-on <b>field support</b>: we work with your teams, not only on a report.",
       "honesty": {
         "title": "In full transparency: who does what",
@@ -826,15 +826,15 @@
       "aria": "Our contact details",
       "incidentImageAlt": "Cybersecurity analyst seen from behind, facing several monitoring screens in a control room, in the middle of incident response.",
       "incidentBadge": "Incident line 24/7",
-      "incidentTitle": "Victim of an <accent>attack</accent>?",
-      "incidentText": "Ransomware, intrusion, data breach? Don't shut anything down. Call us. We limit the damage, right away.",
+      "incidentTitle": "Need an <accent>incident response</accent>?",
+      "incidentText": "Ransomware, intrusion, data breach? Don't shut anything down. Call us. We limit the damage.",
       "incidentNote": "A Smidjan responder, day and night.",
       "processTitle": "How it works",
       "processAria": "Three-step diagram: you write your request, an expert calls you back within 24 business hours, then a free diagnostic.",
       "processStep1": "You write",
       "processStep2": "Callback within 24 h",
       "processStep3": "Free diagnostic",
-      "coordImageAlt": "Smiling Smidjan team member on the phone at their desk with a laptop, ready to answer your request.",
+      "coordImageAlt": "Smiling person on the phone at their desk with a laptop, ready to answer your request.",
       "coordTag": "We reply to you",
       "coordTitle": "Our contact details",
       "coordZoneK": "Service area",
@@ -900,7 +900,7 @@
       "privacy": "By submitting this form, you agree that we may use your data to contact you about your project.",
       "success": {
         "title": "Message sent!",
-        "text": "Thank you for your message. Our team will contact you within 24 hours.",
+        "text": "Thank you for your message. I will contact you within 24 hours.",
         "back": "Back to home"
       },
       "errors": {
@@ -1231,7 +1231,7 @@
       "kicker": "Our expertise",
       "title": "Secure, test, build, <accent>comply</accent>.",
       "lead": "One cybersecurity partner for Belgian SMEs: hardened infrastructure, tested applications, NIS2 / CyFun compliance, from audit to remediation. Based in Wallonia.",
-      "ctaPrimary": "Book my free assessment",
+      "ctaPrimary": "Get in touch",
       "jumpLabel": "Jump directly to"
     },
     "jump": {
@@ -1426,7 +1426,7 @@
         "label": "Comply",
         "text": "CyFun / NIS2 compliance, from gap to proof."
       },
-      "aiNote": "<b>Experts augmented by AI</b>, faster, covering more ground. The analysis and the decisions remain human."
+      "aiNote": "An <b>expert augmented by AI</b>, faster, covering more ground. The analysis and the decisions remain human."
     },
     "cyfun": {
       "eyebrow": "The 3 CyFun levels",
@@ -1438,7 +1438,7 @@
     "finalCta": {
       "title": "A free assessment to know where to start",
       "text": "30 minutes with an expert to scope the useful engagement. Clear priorities, no commitment.",
-      "actionPrimary": "Book my free assessment",
+      "actionPrimary": "Get in touch",
       "actionCall": "Call 0475 20 55 62",
       "reassurances": [
         "Reply within 24 h",
@@ -1625,7 +1625,7 @@
       "successText": "Thank you for your trust. We have received your request and will send you a detailed quote by email within 24 hours.",
       "successInfoTitle": "What happens next?",
       "successItem1": "You will receive a confirmation email",
-      "successItem2": "Our team will review your project",
+      "successItem2": "I will review your project",
       "successItem3": "We will contact you to refine the details",
       "successItem4": "You will receive a personalised quote",
       "successBackHome": "Back to home",

@@ -16,7 +16,7 @@
     "kicker": "Nos expertises",
     "title": "Sécuriser, tester, développer, <accent>se conformer</accent>.",
     "lead": "Un partenaire cybersécurité unique pour les PME belges : infrastructure durcie, applications testées, conformité NIS2 / CyFun, de l'audit à la remédiation. Basés en Wallonie.",
-    "ctaPrimary": "Réserver mon diagnostic gratuit",
+    "ctaPrimary": "Me contacter",
     "jumpLabel": "Aller directement à"
   },
   "jump": {
@@ -211,7 +211,7 @@
       "label": "Comply",
       "text": "Conformité CyFun / NIS2, de l'écart à la preuve."
     },
-    "aiNote": "Des <b>experts augmentés par l'IA</b>, plus rapides, plus de terrain couvert. L'analyse et les décisions restent humaines."
+    "aiNote": "Un <b>expert augmenté par l'IA</b>, plus rapide, plus de terrain couvert. L'analyse et les décisions restent humaines."
   },
   "cyfun": {
     "eyebrow": "Les 3 niveaux CyFun",
@@ -223,7 +223,7 @@
   "finalCta": {
     "title": "Un diagnostic gratuit pour savoir par où commencer",
     "text": "30 minutes avec un expert pour cadrer la mission utile. Priorités claires, sans engagement.",
-    "actionPrimary": "Réserver mon diagnostic gratuit",
+    "actionPrimary": "Me contacter",
     "actionCall": "Appeler le 0475 20 55 62",
     "reassurances": [
       "Réponse sous 24 h",

@@ -16,7 +16,7 @@
     "kicker": "Onze expertise",
     "title": "Beveiligen, testen, ontwikkelen, <accent>conform worden</accent>.",
     "lead": "Eén cybersecuritypartner voor Belgische kmo's: gehard netwerk, geteste applicaties, NIS2 / CyFun-conformiteit, van audit tot remediatie. Gevestigd in Wallonië.",
-    "ctaPrimary": "Mijn gratis diagnose boeken",
+    "ctaPrimary": "Contact opnemen",
     "jumpLabel": "Ga rechtstreeks naar"
   },
   "jump": {
@@ -211,7 +211,7 @@
       "label": "Comply",
       "text": "CyFun- / NIS2-conformiteit, van kloof tot bewijs."
     },
-    "aiNote": "<b>Experts versterkt door AI</b>, sneller, meer terrein gedekt. De analyse en de beslissingen blijven menselijk."
+    "aiNote": "Een <b>expert versterkt door AI</b>, sneller, meer terrein gedekt. De analyse en de beslissingen blijven menselijk."
   },
   "cyfun": {
     "eyebrow": "De 3 CyFun-niveaus",
@@ -223,7 +223,7 @@
   "finalCta": {
     "title": "Een gratis diagnose om te weten waar te beginnen",
     "text": "30 minuten met een expert om de nuttige opdracht af te bakenen. Duidelijke prioriteiten, vrijblijvend.",
-    "actionPrimary": "Mijn gratis diagnose boeken",
+    "actionPrimary": "Contact opnemen",
     "actionCall": "Bel 0475 20 55 62",
     "reassurances": [
       "Antwoord binnen 24 u",

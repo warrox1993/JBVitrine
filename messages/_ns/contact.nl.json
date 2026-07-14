@@ -83,15 +83,15 @@
     "aria": "Onze contactgegevens",
     "incidentImageAlt": "Cyberbeveiligingsanalist op de rug gezien, voor meerdere bewakingsschermen in een controlekamer, volop bezig met incidentrespons.",
     "incidentBadge": "Incidentlijn 24/7",
-    "incidentTitle": "Slachtoffer van een <accent>aanval</accent> ?",
-    "incidentText": "Ransomware, inbraak, datalek ? Zet niets uit. Bel ons. Wij beperken de schade, meteen.",
+    "incidentTitle": "Nood aan een <accent>incidentrespons</accent> ?",
+    "incidentText": "Ransomware, inbraak, datalek ? Zet niets uit. Bel ons. Wij beperken de schade.",
     "incidentNote": "Een Smidjan-specialist, dag en nacht.",
     "processTitle": "Hoe het werkt",
     "processAria": "Schema in drie stappen : u schrijft uw aanvraag, een expert belt u terug binnen 24 werkuren, daarna een gratis diagnose.",
     "processStep1": "U schrijft",
     "processStep2": "Terugbellen binnen 24 u",
     "processStep3": "Gratis diagnose",
-    "coordImageAlt": "Glimlachend Smidjan-teamlid aan de telefoon aan zijn bureau met een laptop, klaar om uw aanvraag te beantwoorden.",
+    "coordImageAlt": "Glimlachende persoon aan de telefoon aan een bureau met een laptop, klaar om uw aanvraag te beantwoorden.",
     "coordTag": "Wij antwoorden u",
     "coordTitle": "Onze contactgegevens",
     "coordZoneK": "Interventiezone",
@@ -157,7 +157,7 @@
     "privacy": "Door dit formulier te versturen, gaat u ermee akkoord dat wij uw gegevens gebruiken om opnieuw contact met u op te nemen over uw project.",
     "success": {
       "title": "Bericht verzonden !",
-      "text": "Bedankt voor uw bericht. Ons team neemt binnen 24 uur contact met u op.",
+      "text": "Bedankt voor uw bericht. Ik neem binnen 24 uur contact met u op.",
       "back": "Terug naar de startpagina"
     },
     "errors": {

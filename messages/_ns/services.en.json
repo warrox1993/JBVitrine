@@ -16,7 +16,7 @@
     "kicker": "Our expertise",
     "title": "Secure, test, build, <accent>comply</accent>.",
     "lead": "One cybersecurity partner for Belgian SMEs: hardened infrastructure, tested applications, NIS2 / CyFun compliance, from audit to remediation. Based in Wallonia.",
-    "ctaPrimary": "Book my free assessment",
+    "ctaPrimary": "Get in touch",
     "jumpLabel": "Jump directly to"
   },
   "jump": {
@@ -211,7 +211,7 @@
       "label": "Comply",
       "text": "CyFun / NIS2 compliance, from gap to proof."
     },
-    "aiNote": "<b>Experts augmented by AI</b>, faster, covering more ground. The analysis and the decisions remain human."
+    "aiNote": "An <b>expert augmented by AI</b>, faster, covering more ground. The analysis and the decisions remain human."
   },
   "cyfun": {
     "eyebrow": "The 3 CyFun levels",
@@ -223,7 +223,7 @@
   "finalCta": {
     "title": "A free assessment to know where to start",
     "text": "30 minutes with an expert to scope the useful engagement. Clear priorities, no commitment.",
-    "actionPrimary": "Book my free assessment",
+    "actionPrimary": "Get in touch",
     "actionCall": "Call 0475 20 55 62",
     "reassurances": [
       "Reply within 24 h",

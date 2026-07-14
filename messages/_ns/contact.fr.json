@@ -83,15 +83,15 @@
     "aria": "Nos coordonnées",
     "incidentImageAlt": "Analyste cybersécurité de dos, face à plusieurs écrans de supervision dans une salle de contrôle, en pleine réponse à un incident.",
     "incidentBadge": "Ligne incident 24/7",
-    "incidentTitle": "Victime d'une <accent>attaque</accent> ?",
-    "incidentText": "Rançongiciel, intrusion, fuite de données ? Ne coupez rien. Appelez. On limite les dégâts, tout de suite.",
+    "incidentTitle": "Besoin d'une <accent>réponse à incident</accent> ?",
+    "incidentText": "Rançongiciel, intrusion, fuite de données ? Ne coupez rien. Appelez. On limite les dégâts.",
     "incidentNote": "Un intervenant Smidjan, jour et nuit.",
     "processTitle": "Comment ça marche",
     "processAria": "Schéma en trois étapes : vous écrivez votre demande, un expert vous rappelle sous 24 heures ouvrées, puis diagnostic gratuit.",
     "processStep1": "Vous écrivez",
     "processStep2": "Rappel sous 24 h",
     "processStep3": "Diagnostic gratuit",
-    "coordImageAlt": "Membre de l'équipe Smidjan souriant, au téléphone à son bureau avec un ordinateur portable, prêt à répondre à votre demande.",
+    "coordImageAlt": "Personne souriante, au téléphone à son bureau avec un ordinateur portable, prête à répondre à votre demande.",
     "coordTag": "On vous répond",
     "coordTitle": "Nos coordonnées",
     "coordZoneK": "Zone d'intervention",
@@ -157,7 +157,7 @@
     "privacy": "En soumettant ce formulaire, vous acceptez que nous utilisions vos données pour vous recontacter au sujet de votre projet.",
     "success": {
       "title": "Message envoyé !",
-      "text": "Merci pour votre message. Notre équipe vous contactera dans les 24 heures.",
+      "text": "Merci pour votre message. Je vous contacterai dans les 24 heures.",
       "back": "Retour à l'accueil"
     },
     "errors": {

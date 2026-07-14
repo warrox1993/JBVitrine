@@ -125,7 +125,7 @@
       "eyebrow": "Notre méthode",
       "title": "Une cybersécurité qui se <accent>démontre</accent>, pas qui se raconte.",
       "lead": "Pour les PME de Wallonie : des actions mesurées, des livrables que vous vérifiez vous-même. Notre méthode, du diagnostic au suivi.",
-      "ctaPrimary": "Réserver un diagnostic gratuit",
+      "ctaPrimary": "Me contacter",
       "ctaSecondary": "Voir les 4 étapes",
       "promiseTitle": "Notre engagement",
       "promiseSub": "Ce que vous obtenez, à chaque mission",
@@ -283,7 +283,7 @@
     "cta": {
       "title": "Un diagnostic gratuit pour savoir où vous en êtes vraiment",
       "text": "30 minutes avec un expert. Vous repartez avec un premier constat chiffré et des priorités claires. Sans engagement.",
-      "action1": "Réserver mon diagnostic gratuit",
+      "action1": "Me contacter",
       "action2": "Appeler le 0475 20 55 62",
       "reassurance1": "Réponse sous 24 h",
       "reassurance2": "Expert dédié, pas de sous-traitance",
@@ -299,7 +299,7 @@
   "blog": {
     "meta": {
       "title": "Journal : ressources techniques | Smidjan",
-      "description": "Articles techniques sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé. Conseils d'experts pour les PME en Belgique.",
+      "description": "Articles techniques sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé. Conseils d'expert pour les PME en Belgique.",
       "ogTitle": "Journal : ressources techniques | Smidjan",
       "ogDescription": "Articles sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé pour les PME.",
       "ogImageAlt": "Smidjan Blog : articles techniques pour développeurs et entreprises",
@@ -338,7 +338,7 @@
     "cta": {
       "title": "Besoin d'un accompagnement sur mesure ?",
       "text": "Parlons de votre sécurité, de votre conformité NIS2 / CyFun ou de votre projet web sécurisé.",
-      "action": "Nous contacter",
+      "action": "Me contacter",
       "reassurance24h": "Réponse sous 24 h",
       "reassuranceNoCommitment": "Sans engagement"
     },
@@ -458,7 +458,7 @@
       "badge": "En vigueur depuis le 18 octobre 2024 en Belgique",
       "title": "Mettez votre PME en <accent>conformité NIS2</accent>, sans jargon ni surcoût.",
       "lead": "Audit, <b>remédiation</b>, mise au niveau CyFun (CCB) : on ne liste pas vos manques, on les corrige.",
-      "ctaPrimary": "Diagnostic NIS2 gratuit",
+      "ctaPrimary": "Me contacter",
       "ctaSecondary": "Comparer les 3 niveaux",
       "assure1": "Sans engagement",
       "assure2": "Réponse sous 24 h",
@@ -549,7 +549,7 @@
       "eyebrow": "Notre accompagnement",
       "title": "On ne se contente pas d'auditer : <accent>on corrige</accent> et on vous amène prêts",
       "lead": "Pas de rapport qu'on vous laisse gérer seul. On corrige, on prépare, on vous amène prêts.",
-      "photoAlt": "Deux experts Smidjan collaborant avec un client autour d'un ordinateur portable et de documents d'audit NIS2",
+      "photoAlt": "Signature d'un document dans le cadre d'une démarche d'audit de conformité NIS2",
       "photoCap": "Un <b>accompagnement de terrain</b> : nous travaillons avec vos équipes, pas seulement sur un rapport.",
       "honesty": {
         "title": "En toute transparence : qui fait quoi",
@@ -826,15 +826,15 @@
       "aria": "Nos coordonnées",
       "incidentImageAlt": "Analyste cybersécurité de dos, face à plusieurs écrans de supervision dans une salle de contrôle, en pleine réponse à un incident.",
       "incidentBadge": "Ligne incident 24/7",
-      "incidentTitle": "Victime d'une <accent>attaque</accent> ?",
-      "incidentText": "Rançongiciel, intrusion, fuite de données ? Ne coupez rien. Appelez. On limite les dégâts, tout de suite.",
+      "incidentTitle": "Besoin d'une <accent>réponse à incident</accent> ?",
+      "incidentText": "Rançongiciel, intrusion, fuite de données ? Ne coupez rien. Appelez. On limite les dégâts.",
       "incidentNote": "Un intervenant Smidjan, jour et nuit.",
       "processTitle": "Comment ça marche",
       "processAria": "Schéma en trois étapes : vous écrivez votre demande, un expert vous rappelle sous 24 heures ouvrées, puis diagnostic gratuit.",
       "processStep1": "Vous écrivez",
       "processStep2": "Rappel sous 24 h",
       "processStep3": "Diagnostic gratuit",
-      "coordImageAlt": "Membre de l'équipe Smidjan souriant, au téléphone à son bureau avec un ordinateur portable, prêt à répondre à votre demande.",
+      "coordImageAlt": "Personne souriante, au téléphone à son bureau avec un ordinateur portable, prête à répondre à votre demande.",
       "coordTag": "On vous répond",
       "coordTitle": "Nos coordonnées",
       "coordZoneK": "Zone d'intervention",
@@ -900,7 +900,7 @@
       "privacy": "En soumettant ce formulaire, vous acceptez que nous utilisions vos données pour vous recontacter au sujet de votre projet.",
       "success": {
         "title": "Message envoyé !",
-        "text": "Merci pour votre message. Notre équipe vous contactera dans les 24 heures.",
+        "text": "Merci pour votre message. Je vous contacterai dans les 24 heures.",
         "back": "Retour à l'accueil"
       },
       "errors": {
@@ -1231,7 +1231,7 @@
       "kicker": "Nos expertises",
       "title": "Sécuriser, tester, développer, <accent>se conformer</accent>.",
       "lead": "Un partenaire cybersécurité unique pour les PME belges : infrastructure durcie, applications testées, conformité NIS2 / CyFun, de l'audit à la remédiation. Basés en Wallonie.",
-      "ctaPrimary": "Réserver mon diagnostic gratuit",
+      "ctaPrimary": "Me contacter",
       "jumpLabel": "Aller directement à"
     },
     "jump": {
@@ -1426,7 +1426,7 @@
         "label": "Comply",
         "text": "Conformité CyFun / NIS2, de l'écart à la preuve."
       },
-      "aiNote": "Des <b>experts augmentés par l'IA</b>, plus rapides, plus de terrain couvert. L'analyse et les décisions restent humaines."
+      "aiNote": "Un <b>expert augmenté par l'IA</b>, plus rapide, plus de terrain couvert. L'analyse et les décisions restent humaines."
     },
     "cyfun": {
       "eyebrow": "Les 3 niveaux CyFun",
@@ -1438,7 +1438,7 @@
     "finalCta": {
       "title": "Un diagnostic gratuit pour savoir par où commencer",
       "text": "30 minutes avec un expert pour cadrer la mission utile. Priorités claires, sans engagement.",
-      "actionPrimary": "Réserver mon diagnostic gratuit",
+      "actionPrimary": "Me contacter",
       "actionCall": "Appeler le 0475 20 55 62",
       "reassurances": [
         "Réponse sous 24 h",
@@ -1625,7 +1625,7 @@
       "successText": "Merci pour votre confiance. Nous avons bien reçu votre demande et vous enverrons un devis détaillé par email dans les 24 heures.",
       "successInfoTitle": "Et maintenant ?",
       "successItem1": "Vous recevrez un email de confirmation",
-      "successItem2": "Notre équipe analysera votre projet",
+      "successItem2": "J'analyserai votre projet",
       "successItem3": "Nous vous contacterons pour affiner les détails",
       "successItem4": "Vous recevrez un devis personnalisé",
       "successBackHome": "Retour à l'accueil",
