@@ -111,10 +111,10 @@
   },
   "approche": {
     "meta": {
-      "title": "Notre méthode cybersécurité PME | Smidjan Liège",
-      "description": "Diagnostic mesuré, priorisation par risque, remédiation réelle, supervision continue : découvrez la méthode de Smidjan, cabinet de cybersécurité à Liège, et pourquoi une PME wallonne a intérêt à travailler avec une structure à taille humaine.",
+      "title": "Notre méthode cybersécurité PME | Smidjan Wallonie",
+      "description": "Diagnostic mesuré, priorisation par risque, remédiation réelle, supervision continue : découvrez la méthode de Smidjan, cabinet de cybersécurité en Wallonie, et pourquoi une PME wallonne a intérêt à travailler avec une structure à taille humaine.",
       "ogTitle": "Notre méthode : Approche cybersécurité Smidjan",
-      "ogDescription": "Des preuves, pas des promesses : diagnostic mesuré, priorisation, remédiation réelle et supervision continue. La méthode Smidjan, cybersécurité pour PME à Liège.",
+      "ogDescription": "Des preuves, pas des promesses : diagnostic mesuré, priorisation, remédiation réelle et supervision continue. La méthode Smidjan, cybersécurité pour PME en Wallonie.",
       "ogImageAlt": "Smidjan - Notre méthode de cybersécurité",
       "twitterTitle": "Notre méthode : Approche cybersécurité Smidjan",
       "twitterDescription": "Diagnostic mesuré, priorisation, remédiation réelle, supervision continue. Des preuves, pas des promesses."
@@ -231,7 +231,7 @@
       "items": {
         "local": {
           "title": "Local & réactif",
-          "text": "Basés à Liège, on intervient vite en Wallonie. Vos données restent en Belgique / UE.",
+          "text": "Basés en Wallonie, on intervient vite. Vos données restent en Belgique / UE.",
           "pin": "On répond au téléphone"
         },
         "acces": {
@@ -442,11 +442,11 @@
   },
   "conformite": {
     "meta": {
-      "title": "Conformité NIS2 & CyFun (CCB) pour PME : audit, remédiation & préparation | Smidjan Liège",
-      "description": "Préparez votre conformité NIS2 avec le référentiel CyFun (CyberFundamentals) du CCB. Smidjan réalise l'audit, l'analyse d'écart, la remédiation et la préparation à la vérification pour les 3 niveaux Basic, Important et Essential. Diagnostic gratuit à Liège.",
-      "ogTitle": "Conformité NIS2 & CyFun (CCB) pour les PME | Smidjan Liège",
+      "title": "Conformité NIS2 & CyFun (CCB) pour PME : audit, remédiation & préparation | Smidjan Wallonie",
+      "description": "Préparez votre conformité NIS2 avec le référentiel CyFun (CyberFundamentals) du CCB. Smidjan réalise l'audit, l'analyse d'écart, la remédiation et la préparation à la vérification pour les 3 niveaux Basic, Important et Essential. Diagnostic gratuit en Wallonie.",
+      "ogTitle": "Conformité NIS2 & CyFun (CCB) pour les PME | Smidjan Wallonie",
       "ogDescription": "Audit, analyse d'écart, remédiation et préparation à la vérification CyFun (CCB) pour atteindre votre niveau NIS2. Basic, Important, Essential. Diagnostic gratuit.",
-      "ogImageAlt": "Conformité NIS2 & CyFun, Smidjan, cybersécurité à Liège",
+      "ogImageAlt": "Conformité NIS2 & CyFun, Smidjan, cybersécurité en Wallonie",
       "twitterTitle": "Conformité NIS2 & CyFun (CCB) | Smidjan",
       "twitterDescription": "Audit, remédiation et préparation à la vérification CyFun pour votre conformité NIS2."
     },
@@ -743,11 +743,11 @@
   },
   "contact": {
     "meta": {
-      "title": "Contact · Smidjan | Cybersécurité & conformité NIS2 à Liège",
-      "description": "Diagnostic gratuit, audit CyFun/NIS2, pentest ou réponse à incident : écrivez à Smidjan. Un expert vous répond sous 24 h ouvrées. Basés à Liège, Wallonie.",
+      "title": "Contact · Smidjan | Cybersécurité & conformité NIS2 en Wallonie",
+      "description": "Diagnostic gratuit, audit CyFun/NIS2, pentest ou réponse à incident : écrivez à Smidjan. Un expert vous répond sous 24 h ouvrées. Basés en Wallonie.",
       "ogTitle": "Contact · Smidjan",
       "ogDescription": "Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées.",
-      "ogImageAlt": "Contactez Smidjan, cybersécurité et conformité NIS2 à Liège",
+      "ogImageAlt": "Contactez Smidjan, cybersécurité et conformité NIS2 en Wallonie",
       "twitterTitle": "Contact · Smidjan",
       "twitterDescription": "Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées."
     },
@@ -763,7 +763,7 @@
       "imageAlt": "Équipe Smidjan réunie autour d'un ordinateur portable dans un bureau moderne et lumineux, échange convivial entre collègues.",
       "assure1": "Réponse sous 24 h ouvrées",
       "assure2": "Sans engagement",
-      "assure3": "Basés à Liège"
+      "assure3": "Basés en Wallonie"
     },
     "form": {
       "badge": "Le plus direct",
@@ -838,7 +838,7 @@
       "coordTag": "On vous répond",
       "coordTitle": "Nos coordonnées",
       "coordZoneK": "Zone d'intervention",
-      "coordZoneV": "Liège, Belgique",
+      "coordZoneV": "Wallonie, Belgique",
       "coordZoneSmall": "Sur site ou à distance, sur rendez-vous",
       "coordPhoneK": "Téléphone",
       "coordPhoneSmall": "Standard : demandes générales",
@@ -847,9 +847,9 @@
       "coordHoursK": "Horaires",
       "coordHoursV": "Lun. au ven., 8h30 à 18h00",
       "coordHoursSmall": "Réponse à incident : 24 h/24, 7 j/7",
-      "mapAria": "Carte stylisée indiquant l'implantation de Smidjan à Liège",
-      "mapBadge": "Smidjan · Liège",
-      "mapAddr": "Centre de Liège, Wallonie",
+      "mapAria": "Carte stylisée indiquant l'implantation de Smidjan en Wallonie",
+      "mapBadge": "Smidjan · Wallonie",
+      "mapAddr": "Wallonie, Belgique",
       "mapMore": "Itinéraire"
     },
     "expect": {
@@ -1032,7 +1032,7 @@
   "legal": {
     "meta": {
       "mentions": {
-        "title": "Mentions légales | Smidjan, Cybersécurité Liège",
+        "title": "Mentions légales | Smidjan, Cybersécurité Wallonie",
         "description": "Mentions légales de Smidjan : identification de l'éditeur, responsable de publication, hébergement (Vercel) et propriété intellectuelle du site.",
         "ogTitle": "Mentions légales | Smidjan",
         "ogDescription": "Identification de l'éditeur, hébergement et propriété intellectuelle du site Smidjan."
@@ -1070,9 +1070,9 @@
       },
       "editeur": {
         "title": "Éditeur du site",
-        "intro": "Le présent site est édité par Smidjan, société active en cybersécurité établie à Liège, Belgique.",
+        "intro": "Le présent site est édité par Smidjan, société active en cybersécurité établie en Wallonie, Belgique.",
         "denomination": "<strong>Dénomination :</strong> Smidjan, marque commerciale exploitée par Jean-Baptiste Dhondt (personne physique)",
-        "siege": "<strong>Siège :</strong> Liège, Belgique",
+        "siege": "<strong>Siège :</strong> Wallonie, Belgique",
         "bce": "<strong>Numéro d'entreprise (BCE) :</strong> En cours d'immatriculation",
         "tva": "<strong>Numéro de TVA intracommunautaire :</strong> En cours d'immatriculation",
         "emailLabel": "<strong>E-mail :</strong>",
@@ -1096,7 +1096,7 @@
       },
       "contact": {
         "title": "Contact",
-        "body": "Pour toute question relative au site ou à son contenu : <link>smidjan.agency@outlook.com</link>."
+        "body": "Pour toute question relative au site ou à son contenu : <link>jeanbaptiste.dhondt1@gmail.com</link>."
       }
     },
     "cgv": {
@@ -1152,7 +1152,7 @@
       "intro": "Smidjan attache de l'importance à la protection des données à caractère personnel des visiteurs et clients du site, conformément au Règlement (UE) 2016/679 du 27 avril 2016 (« RGPD ») et à la loi belge du 30 juillet 2018 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel.",
       "responsable": {
         "title": "Responsable de traitement",
-        "body": "Le responsable du traitement des données collectées via ce site est Smidjan, Liège, Belgique : <link>smidjan.agency@outlook.com</link>."
+        "body": "Le responsable du traitement des données collectées via ce site est Smidjan, Wallonie, Belgique : <link>jeanbaptiste.dhondt1@gmail.com</link>."
       },
       "donnees": {
         "title": "Données collectées",
@@ -1204,22 +1204,22 @@
       "droits": {
         "title": "Vos droits",
         "p1": "Conformément aux articles 15 à 22 du RGPD, vous disposez des droits suivants sur vos données : droit d'accès, de rectification, d'effacement, de limitation du traitement, de portabilité, d'opposition, ainsi que le droit de retirer votre consentement à tout moment lorsque le traitement en dépend.",
-        "p2": "Pour exercer ces droits, contactez-nous à l'adresse <link>smidjan.agency@outlook.com</link>. Une réponse vous sera apportée dans les délais prévus par le RGPD.",
+        "p2": "Pour exercer ces droits, contactez-nous à l'adresse <link>jeanbaptiste.dhondt1@gmail.com</link>. Une réponse vous sera apportée dans les délais prévus par le RGPD.",
         "p3": "Vous disposez également du droit d'introduire une réclamation auprès de l'autorité de contrôle belge : <strong>Autorité de protection des données (APD)</strong>, Rue de la Presse 35, 1000 Bruxelles : <link>www.autoriteprotectiondonnees.be</link>."
       },
       "dpo": {
         "title": "Contact délégué à la protection des données",
-        "body": "Compte tenu de sa taille et de la nature de ses traitements, Smidjan n'a pas désigné de délégué à la protection des données (DPO) formel, cette désignation n'étant pas obligatoire dans son cas. Toute question relative au traitement de vos données peut être adressée à <link>smidjan.agency@outlook.com</link>."
+        "body": "Compte tenu de sa taille et de la nature de ses traitements, Smidjan n'a pas désigné de délégué à la protection des données (DPO) formel, cette désignation n'étant pas obligatoire dans son cas. Toute question relative au traitement de vos données peut être adressée à <link>jeanbaptiste.dhondt1@gmail.com</link>."
       }
     }
   },
   "services": {
     "meta": {
-      "title": "Nos expertises : Cybersécurité, pentest, développement & conformité | Smidjan Liège",
-      "description": "Smidjan sécurise votre infrastructure, teste vos applications (pentest OWASP), développe en secure by design et vous accompagne vers la conformité NIS2 / CyFun. Un seul interlocuteur, à Liège.",
+      "title": "Nos expertises : Cybersécurité, pentest, développement & conformité | Smidjan Wallonie",
+      "description": "Smidjan sécurise votre infrastructure, teste vos applications (pentest OWASP), développe en secure by design et vous accompagne vers la conformité NIS2 / CyFun. Un seul interlocuteur, en Wallonie.",
       "ogTitle": "Nos expertises : Cybersécurité, pentest, développement & conformité",
       "ogDescription": "Sécuriser, tester, développer, se conformer : quatre expertises Smidjan pour réduire concrètement le risque cyber des PME en Belgique.",
-      "ogImageAlt": "Smidjan : Cybersécurité, pentest, développement sécurisé & conformité NIS2 à Liège",
+      "ogImageAlt": "Smidjan : Cybersécurité, pentest, développement sécurisé & conformité NIS2 en Wallonie",
       "twitterTitle": "Nos expertises : Smidjan Cybersécurité",
       "twitterDescription": "Sécuriser, tester, développer, se conformer : quatre expertises pour réduire le risque cyber des PME."
     },
@@ -1230,7 +1230,7 @@
     "hero": {
       "kicker": "Nos expertises",
       "title": "Sécuriser, tester, développer, <accent>se conformer</accent>.",
-      "lead": "Un partenaire cybersécurité unique pour les PME belges : infrastructure durcie, applications testées, conformité NIS2 / CyFun, de l'audit à la remédiation. Basés à Liège.",
+      "lead": "Un partenaire cybersécurité unique pour les PME belges : infrastructure durcie, applications testées, conformité NIS2 / CyFun, de l'audit à la remédiation. Basés en Wallonie.",
       "ctaPrimary": "Réserver mon diagnostic gratuit",
       "jumpLabel": "Aller directement à"
     },
@@ -1792,7 +1792,7 @@
         "consentRequired": "Vous devez accepter la politique de confidentialité"
       },
       "globalSlowDown": "Veuillez ralentir. Prenez le temps de remplir le formulaire correctement.",
-      "globalRateLimit": "Vous avez atteint la limite de soumissions. Veuillez réessayer dans une heure ou nous contacter directement à smidjan.agency@outlook.com"
+      "globalRateLimit": "Vous avez atteint la limite de soumissions. Veuillez réessayer dans une heure ou nous contacter directement à jeanbaptiste.dhondt1@gmail.com"
     },
     "category": {
       "summaryExclusive": "Option sélectionnée",

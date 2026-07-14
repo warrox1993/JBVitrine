@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Our expertise: Cybersecurity, pentest, development & compliance | Smidjan Liège",
-    "description": "Smidjan secures your infrastructure, tests your applications (OWASP pentest), builds secure by design and guides you towards NIS2 / CyFun compliance. A single point of contact, in Liège.",
+    "title": "Our expertise: Cybersecurity, pentest, development & compliance | Smidjan Wallonia",
+    "description": "Smidjan secures your infrastructure, tests your applications (OWASP pentest), builds secure by design and guides you towards NIS2 / CyFun compliance. A single point of contact, in Wallonia.",
     "ogTitle": "Our expertise: Cybersecurity, pentest, development & compliance",
     "ogDescription": "Secure, test, build, comply: four Smidjan expertise areas to concretely reduce the cyber risk of SMEs in Belgium.",
-    "ogImageAlt": "Smidjan: Cybersecurity, pentest, secure development & NIS2 compliance in Liège",
+    "ogImageAlt": "Smidjan: Cybersecurity, pentest, secure development & NIS2 compliance in Wallonia",
     "twitterTitle": "Our expertise: Smidjan Cybersecurity",
     "twitterDescription": "Secure, test, build, comply: four areas of expertise to reduce the cyber risk of SMEs."
   },
@@ -15,7 +15,7 @@
   "hero": {
     "kicker": "Our expertise",
     "title": "Secure, test, build, <accent>comply</accent>.",
-    "lead": "One cybersecurity partner for Belgian SMEs: hardened infrastructure, tested applications, NIS2 / CyFun compliance, from audit to remediation. Based in Liège.",
+    "lead": "One cybersecurity partner for Belgian SMEs: hardened infrastructure, tested applications, NIS2 / CyFun compliance, from audit to remediation. Based in Wallonia.",
     "ctaPrimary": "Book my free assessment",
     "jumpLabel": "Jump directly to"
   },

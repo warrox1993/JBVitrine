@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Nos expertises : Cybersécurité, pentest, développement & conformité | Smidjan Liège",
-    "description": "Smidjan sécurise votre infrastructure, teste vos applications (pentest OWASP), développe en secure by design et vous accompagne vers la conformité NIS2 / CyFun. Un seul interlocuteur, à Liège.",
+    "title": "Nos expertises : Cybersécurité, pentest, développement & conformité | Smidjan Wallonie",
+    "description": "Smidjan sécurise votre infrastructure, teste vos applications (pentest OWASP), développe en secure by design et vous accompagne vers la conformité NIS2 / CyFun. Un seul interlocuteur, en Wallonie.",
     "ogTitle": "Nos expertises : Cybersécurité, pentest, développement & conformité",
     "ogDescription": "Sécuriser, tester, développer, se conformer : quatre expertises Smidjan pour réduire concrètement le risque cyber des PME en Belgique.",
-    "ogImageAlt": "Smidjan : Cybersécurité, pentest, développement sécurisé & conformité NIS2 à Liège",
+    "ogImageAlt": "Smidjan : Cybersécurité, pentest, développement sécurisé & conformité NIS2 en Wallonie",
     "twitterTitle": "Nos expertises : Smidjan Cybersécurité",
     "twitterDescription": "Sécuriser, tester, développer, se conformer : quatre expertises pour réduire le risque cyber des PME."
   },
@@ -15,7 +15,7 @@
   "hero": {
     "kicker": "Nos expertises",
     "title": "Sécuriser, tester, développer, <accent>se conformer</accent>.",
-    "lead": "Un partenaire cybersécurité unique pour les PME belges : infrastructure durcie, applications testées, conformité NIS2 / CyFun, de l'audit à la remédiation. Basés à Liège.",
+    "lead": "Un partenaire cybersécurité unique pour les PME belges : infrastructure durcie, applications testées, conformité NIS2 / CyFun, de l'audit à la remédiation. Basés en Wallonie.",
     "ctaPrimary": "Réserver mon diagnostic gratuit",
     "jumpLabel": "Aller directement à"
   },

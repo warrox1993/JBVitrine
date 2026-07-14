@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Contact · Smidjan | Cyberbeveiliging & NIS2-conformiteit in Luik",
-    "description": "Gratis diagnose, CyFun/NIS2-audit, pentest of incidentrespons : schrijf naar Smidjan. Een expert antwoordt u binnen 24 werkuren. Gevestigd in Luik, Wallonië.",
+    "title": "Contact · Smidjan | Cyberbeveiliging & NIS2-conformiteit in Wallonië",
+    "description": "Gratis diagnose, CyFun/NIS2-audit, pentest of incidentrespons : schrijf naar Smidjan. Een expert antwoordt u binnen 24 werkuren. Gevestigd in Wallonië.",
     "ogTitle": "Contact · Smidjan",
     "ogDescription": "Laten we het over uw beveiliging hebben. Een expert antwoordt u binnen 24 werkuren.",
-    "ogImageAlt": "Contacteer Smidjan, cyberbeveiliging en NIS2-conformiteit in Luik",
+    "ogImageAlt": "Contacteer Smidjan, cyberbeveiliging en NIS2-conformiteit in Wallonië",
     "twitterTitle": "Contact · Smidjan",
     "twitterDescription": "Laten we het over uw beveiliging hebben. Een expert antwoordt u binnen 24 werkuren."
   },
@@ -20,7 +20,7 @@
     "imageAlt": "Smidjan-team samen rond een laptop in een modern en licht kantoor, gemoedelijk overleg tussen collega's.",
     "assure1": "Antwoord binnen 24 werkuren",
     "assure2": "Vrijblijvend",
-    "assure3": "Gevestigd in Luik"
+    "assure3": "Gevestigd in Wallonië"
   },
   "form": {
     "badge": "Het meest directe",
@@ -95,7 +95,7 @@
     "coordTag": "Wij antwoorden u",
     "coordTitle": "Onze contactgegevens",
     "coordZoneK": "Interventiezone",
-    "coordZoneV": "Luik, België",
+    "coordZoneV": "Wallonië, België",
     "coordZoneSmall": "Op locatie of op afstand, op afspraak",
     "coordPhoneK": "Telefoon",
     "coordPhoneSmall": "Algemeen nummer : algemene aanvragen",
@@ -104,9 +104,9 @@
     "coordHoursK": "Openingsuren",
     "coordHoursV": "Ma. tot vr., 8.30 tot 18.00 uur",
     "coordHoursSmall": "Incidentrespons : 24 u/24, 7 d/7",
-    "mapAria": "Gestileerde kaart die de vestiging van Smidjan in Luik aangeeft",
-    "mapBadge": "Smidjan · Luik",
-    "mapAddr": "Centrum van Luik, Wallonië",
+    "mapAria": "Gestileerde kaart die de vestiging van Smidjan in Wallonië aangeeft",
+    "mapBadge": "Smidjan · Wallonië",
+    "mapAddr": "Wallonië, België",
     "mapMore": "Route"
   },
   "expect": {

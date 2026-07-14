@@ -111,10 +111,10 @@
   },
   "approche": {
     "meta": {
-      "title": "Onze cybersecurity-methode voor kmo's | Smidjan Luik",
-      "description": "Gemeten diagnose, prioritering op risico, echte remediëring, continue monitoring : ontdek de methode van Smidjan, cybersecuritykantoor in Luik, en waarom een kmo er baat bij heeft om samen te werken met een structuur op mensenmaat.",
+      "title": "Onze cybersecurity-methode voor kmo's | Smidjan Wallonië",
+      "description": "Gemeten diagnose, prioritering op risico, echte remediëring, continue monitoring : ontdek de methode van Smidjan, cybersecuritykantoor in Wallonië, en waarom een kmo er baat bij heeft om samen te werken met een structuur op mensenmaat.",
       "ogTitle": "Onze methode : cybersecurity-aanpak van Smidjan",
-      "ogDescription": "Bewijs, geen beloftes : gemeten diagnose, prioritering, echte remediëring en continue monitoring. De methode van Smidjan, cybersecurity voor kmo's in Luik.",
+      "ogDescription": "Bewijs, geen beloftes : gemeten diagnose, prioritering, echte remediëring en continue monitoring. De methode van Smidjan, cybersecurity voor kmo's in Wallonië.",
       "ogImageAlt": "Smidjan - Onze cybersecuritymethode",
       "twitterTitle": "Onze methode : cybersecurity-aanpak van Smidjan",
       "twitterDescription": "Gemeten diagnose, prioritering, echte remediëring, continue monitoring. Bewijs, geen beloftes."
@@ -231,7 +231,7 @@
       "items": {
         "local": {
           "title": "Lokaal & reactief",
-          "text": "Gevestigd in Luik, we komen snel ter plaatse in Wallonië. Uw gegevens blijven in België / EU.",
+          "text": "Gevestigd in Wallonië, we komen snel ter plaatse. Uw gegevens blijven in België / EU.",
           "pin": "We nemen de telefoon op"
         },
         "acces": {
@@ -442,11 +442,11 @@
   },
   "conformite": {
     "meta": {
-      "title": "NIS2- & CyFun-conformiteit (CCB) voor kmo's: audit, remediëring & voorbereiding | Smidjan Luik",
-      "description": "Bereid uw NIS2-conformiteit voor met het CyFun-referentiekader (CyberFundamentals) van het CCB. Smidjan verzorgt de audit, de gap-analyse, de remediëring en de voorbereiding op de verificatie voor de 3 niveaus Basic, Important en Essential. Gratis diagnose in Luik.",
-      "ogTitle": "NIS2- & CyFun-conformiteit (CCB) voor kmo's | Smidjan Luik",
+      "title": "NIS2- & CyFun-conformiteit (CCB) voor kmo's: audit, remediëring & voorbereiding | Smidjan Wallonië",
+      "description": "Bereid uw NIS2-conformiteit voor met het CyFun-referentiekader (CyberFundamentals) van het CCB. Smidjan verzorgt de audit, de gap-analyse, de remediëring en de voorbereiding op de verificatie voor de 3 niveaus Basic, Important en Essential. Gratis diagnose in Wallonië.",
+      "ogTitle": "NIS2- & CyFun-conformiteit (CCB) voor kmo's | Smidjan Wallonië",
       "ogDescription": "Audit, gap-analyse, remediëring en voorbereiding op de CyFun-verificatie (CCB) om uw NIS2-niveau te bereiken. Basic, Important, Essential. Gratis diagnose.",
-      "ogImageAlt": "NIS2- & CyFun-conformiteit, Smidjan, cyberbeveiliging in Luik",
+      "ogImageAlt": "NIS2- & CyFun-conformiteit, Smidjan, cyberbeveiliging in Wallonië",
       "twitterTitle": "NIS2- & CyFun-conformiteit (CCB) | Smidjan",
       "twitterDescription": "Audit, remediëring en voorbereiding op de CyFun-verificatie voor uw NIS2-conformiteit."
     },
@@ -743,11 +743,11 @@
   },
   "contact": {
     "meta": {
-      "title": "Contact · Smidjan | Cyberbeveiliging & NIS2-conformiteit in Luik",
-      "description": "Gratis diagnose, CyFun/NIS2-audit, pentest of incidentrespons : schrijf naar Smidjan. Een expert antwoordt u binnen 24 werkuren. Gevestigd in Luik, Wallonië.",
+      "title": "Contact · Smidjan | Cyberbeveiliging & NIS2-conformiteit in Wallonië",
+      "description": "Gratis diagnose, CyFun/NIS2-audit, pentest of incidentrespons : schrijf naar Smidjan. Een expert antwoordt u binnen 24 werkuren. Gevestigd in Wallonië.",
       "ogTitle": "Contact · Smidjan",
       "ogDescription": "Laten we het over uw beveiliging hebben. Een expert antwoordt u binnen 24 werkuren.",
-      "ogImageAlt": "Contacteer Smidjan, cyberbeveiliging en NIS2-conformiteit in Luik",
+      "ogImageAlt": "Contacteer Smidjan, cyberbeveiliging en NIS2-conformiteit in Wallonië",
       "twitterTitle": "Contact · Smidjan",
       "twitterDescription": "Laten we het over uw beveiliging hebben. Een expert antwoordt u binnen 24 werkuren."
     },
@@ -763,7 +763,7 @@
       "imageAlt": "Smidjan-team samen rond een laptop in een modern en licht kantoor, gemoedelijk overleg tussen collega's.",
       "assure1": "Antwoord binnen 24 werkuren",
       "assure2": "Vrijblijvend",
-      "assure3": "Gevestigd in Luik"
+      "assure3": "Gevestigd in Wallonië"
     },
     "form": {
       "badge": "Het meest directe",
@@ -838,7 +838,7 @@
       "coordTag": "Wij antwoorden u",
       "coordTitle": "Onze contactgegevens",
       "coordZoneK": "Interventiezone",
-      "coordZoneV": "Luik, België",
+      "coordZoneV": "Wallonië, België",
       "coordZoneSmall": "Op locatie of op afstand, op afspraak",
       "coordPhoneK": "Telefoon",
       "coordPhoneSmall": "Algemeen nummer : algemene aanvragen",
@@ -847,9 +847,9 @@
       "coordHoursK": "Openingsuren",
       "coordHoursV": "Ma. tot vr., 8.30 tot 18.00 uur",
       "coordHoursSmall": "Incidentrespons : 24 u/24, 7 d/7",
-      "mapAria": "Gestileerde kaart die de vestiging van Smidjan in Luik aangeeft",
-      "mapBadge": "Smidjan · Luik",
-      "mapAddr": "Centrum van Luik, Wallonië",
+      "mapAria": "Gestileerde kaart die de vestiging van Smidjan in Wallonië aangeeft",
+      "mapBadge": "Smidjan · Wallonië",
+      "mapAddr": "Wallonië, België",
       "mapMore": "Route"
     },
     "expect": {
@@ -1032,7 +1032,7 @@
   "legal": {
     "meta": {
       "mentions": {
-        "title": "Wettelijke vermeldingen | Smidjan, Cyberbeveiliging Luik",
+        "title": "Wettelijke vermeldingen | Smidjan, Cyberbeveiliging Wallonië",
         "description": "Wettelijke vermeldingen van Smidjan: identificatie van de uitgever, verantwoordelijke voor de publicatie, hosting (Vercel) en intellectuele eigendom van de website.",
         "ogTitle": "Wettelijke vermeldingen | Smidjan",
         "ogDescription": "Identificatie van de uitgever, hosting en intellectuele eigendom van de website van Smidjan."
@@ -1070,9 +1070,9 @@
       },
       "editeur": {
         "title": "Uitgever van de website",
-        "intro": "Deze website wordt uitgegeven door Smidjan, een onderneming actief in cyberbeveiliging, gevestigd te Luik, België.",
+        "intro": "Deze website wordt uitgegeven door Smidjan, een onderneming actief in cyberbeveiliging, gevestigd in Wallonië, België.",
         "denomination": "<strong>Benaming:</strong> Smidjan, handelsmerk uitgebaat door Jean-Baptiste Dhondt (natuurlijke persoon)",
-        "siege": "<strong>Maatschappelijke zetel:</strong> Luik, België",
+        "siege": "<strong>Maatschappelijke zetel:</strong> Wallonië, België",
         "bce": "<strong>Ondernemingsnummer (KBO):</strong> Inschrijving in behandeling",
         "tva": "<strong>Intracommunautair btw-nummer:</strong> Inschrijving in behandeling",
         "emailLabel": "<strong>E-mail:</strong>",
@@ -1096,7 +1096,7 @@
       },
       "contact": {
         "title": "Contact",
-        "body": "Voor elke vraag over de website of de inhoud ervan: <link>smidjan.agency@outlook.com</link>."
+        "body": "Voor elke vraag over de website of de inhoud ervan: <link>jeanbaptiste.dhondt1@gmail.com</link>."
       }
     },
     "cgv": {
@@ -1152,7 +1152,7 @@
       "intro": "Smidjan hecht belang aan de bescherming van de persoonsgegevens van de bezoekers en klanten van de website, in overeenstemming met Verordening (EU) 2016/679 van 27 april 2016 (\"AVG\") en de Belgische wet van 30 juli 2018 betreffende de bescherming van natuurlijke personen met betrekking tot de verwerking van persoonsgegevens.",
       "responsable": {
         "title": "Verwerkingsverantwoordelijke",
-        "body": "De verwerkingsverantwoordelijke voor de via deze website verzamelde gegevens is Smidjan, Luik, België: <link>smidjan.agency@outlook.com</link>."
+        "body": "De verwerkingsverantwoordelijke voor de via deze website verzamelde gegevens is Smidjan, Wallonië, België: <link>jeanbaptiste.dhondt1@gmail.com</link>."
       },
       "donnees": {
         "title": "Verzamelde gegevens",
@@ -1204,22 +1204,22 @@
       "droits": {
         "title": "Uw rechten",
         "p1": "In overeenstemming met de artikelen 15 tot 22 van de AVG beschikt u over de volgende rechten met betrekking tot uw gegevens: recht op inzage, op rectificatie, op wissing, op beperking van de verwerking, op overdraagbaarheid, op bezwaar, evenals het recht om uw toestemming op elk moment in te trekken wanneer de verwerking daarvan afhankelijk is.",
-        "p2": "Om deze rechten uit te oefenen, kunt u ons contacteren op het adres <link>smidjan.agency@outlook.com</link>. U ontvangt een antwoord binnen de door de AVG voorziene termijnen.",
+        "p2": "Om deze rechten uit te oefenen, kunt u ons contacteren op het adres <link>jeanbaptiste.dhondt1@gmail.com</link>. U ontvangt een antwoord binnen de door de AVG voorziene termijnen.",
         "p3": "U beschikt eveneens over het recht om een klacht in te dienen bij de Belgische toezichthoudende autoriteit: <strong>Gegevensbeschermingsautoriteit (GBA)</strong>, Drukpersstraat 35, 1000 Brussel: <link>www.autoriteprotectiondonnees.be</link>."
       },
       "dpo": {
         "title": "Contact functionaris voor gegevensbescherming",
-        "body": "Gelet op haar omvang en de aard van haar verwerkingen heeft Smidjan geen formele functionaris voor gegevensbescherming (DPO) aangesteld, aangezien deze aanstelling in haar geval niet verplicht is. Elke vraag over de verwerking van uw gegevens kan worden gericht aan <link>smidjan.agency@outlook.com</link>."
+        "body": "Gelet op haar omvang en de aard van haar verwerkingen heeft Smidjan geen formele functionaris voor gegevensbescherming (DPO) aangesteld, aangezien deze aanstelling in haar geval niet verplicht is. Elke vraag over de verwerking van uw gegevens kan worden gericht aan <link>jeanbaptiste.dhondt1@gmail.com</link>."
       }
     }
   },
   "services": {
     "meta": {
-      "title": "Onze expertise : Cyberbeveiliging, pentest, ontwikkeling & conformiteit | Smidjan Luik",
-      "description": "Smidjan beveiligt uw infrastructuur, test uw applicaties (OWASP-pentest), ontwikkelt secure by design en begeleidt u naar NIS2- / CyFun-conformiteit. Eén aanspreekpunt, in Luik.",
+      "title": "Onze expertise : Cyberbeveiliging, pentest, ontwikkeling & conformiteit | Smidjan Wallonië",
+      "description": "Smidjan beveiligt uw infrastructuur, test uw applicaties (OWASP-pentest), ontwikkelt secure by design en begeleidt u naar NIS2- / CyFun-conformiteit. Eén aanspreekpunt, in Wallonië.",
       "ogTitle": "Onze expertise : Cyberbeveiliging, pentest, ontwikkeling & conformiteit",
       "ogDescription": "Beveiligen, testen, ontwikkelen, conform worden : vier expertisedomeinen van Smidjan om het cyberrisico van kmo's in België concreet te verlagen.",
-      "ogImageAlt": "Smidjan : Cyberbeveiliging, pentest, beveiligde ontwikkeling & NIS2-conformiteit in Luik",
+      "ogImageAlt": "Smidjan : Cyberbeveiliging, pentest, beveiligde ontwikkeling & NIS2-conformiteit in Wallonië",
       "twitterTitle": "Onze expertise : Smidjan Cyberbeveiliging",
       "twitterDescription": "Beveiligen, testen, ontwikkelen, conform worden : vier expertisedomeinen om het cyberrisico van kmo's te verlagen."
     },
@@ -1230,7 +1230,7 @@
     "hero": {
       "kicker": "Onze expertise",
       "title": "Beveiligen, testen, ontwikkelen, <accent>conform worden</accent>.",
-      "lead": "Eén cybersecuritypartner voor Belgische kmo's: gehard netwerk, geteste applicaties, NIS2 / CyFun-conformiteit, van audit tot remediatie. Gevestigd in Luik.",
+      "lead": "Eén cybersecuritypartner voor Belgische kmo's: gehard netwerk, geteste applicaties, NIS2 / CyFun-conformiteit, van audit tot remediatie. Gevestigd in Wallonië.",
       "ctaPrimary": "Mijn gratis diagnose boeken",
       "jumpLabel": "Ga rechtstreeks naar"
     },
@@ -1792,7 +1792,7 @@
         "consentRequired": "U moet het privacybeleid aanvaarden"
       },
       "globalSlowDown": "Neem het rustiger aan. Neem de tijd om het formulier correct in te vullen.",
-      "globalRateLimit": "U hebt de inzendlimiet bereikt. Probeer het over een uur opnieuw of neem rechtstreeks contact met ons op via smidjan.agency@outlook.com"
+      "globalRateLimit": "U hebt de inzendlimiet bereikt. Probeer het over een uur opnieuw of neem rechtstreeks contact met ons op via jeanbaptiste.dhondt1@gmail.com"
     },
     "category": {
       "summaryExclusive": "Geselecteerde optie",

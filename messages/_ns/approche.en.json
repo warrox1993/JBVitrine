@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Our SME cybersecurity method | Smidjan Liège",
-    "description": "Measured diagnosis, risk-based prioritisation, real remediation, continuous monitoring: discover Smidjan's method, a cybersecurity firm in Liège, and why a Walloon SME benefits from working with a human-scale structure.",
+    "title": "Our SME cybersecurity method | Smidjan Wallonia",
+    "description": "Measured diagnosis, risk-based prioritisation, real remediation, continuous monitoring: discover Smidjan's method, a cybersecurity firm in Wallonia, and why a Walloon SME benefits from working with a human-scale structure.",
     "ogTitle": "Our method: Smidjan's cybersecurity approach",
-    "ogDescription": "Proof, not promises: measured diagnosis, prioritisation, real remediation and continuous monitoring. The Smidjan method, cybersecurity for SMEs in Liège.",
+    "ogDescription": "Proof, not promises: measured diagnosis, prioritisation, real remediation and continuous monitoring. The Smidjan method, cybersecurity for SMEs in Wallonia.",
     "ogImageAlt": "Smidjan - Our cybersecurity method",
     "twitterTitle": "Our method: Smidjan's cybersecurity approach",
     "twitterDescription": "Measured diagnosis, prioritisation, real remediation, continuous monitoring. Proof, not promises."
@@ -120,7 +120,7 @@
     "items": {
       "local": {
         "title": "Local & responsive",
-        "text": "Based in Liège, we intervene quickly across Wallonia. Your data stays in Belgium / the EU.",
+        "text": "Based in Wallonia, we intervene quickly. Your data stays in Belgium / the EU.",
         "pin": "We answer the phone"
       },
       "acces": {

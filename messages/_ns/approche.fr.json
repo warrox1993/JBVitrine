@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Notre méthode cybersécurité PME | Smidjan Liège",
-    "description": "Diagnostic mesuré, priorisation par risque, remédiation réelle, supervision continue : découvrez la méthode de Smidjan, cabinet de cybersécurité à Liège, et pourquoi une PME wallonne a intérêt à travailler avec une structure à taille humaine.",
+    "title": "Notre méthode cybersécurité PME | Smidjan Wallonie",
+    "description": "Diagnostic mesuré, priorisation par risque, remédiation réelle, supervision continue : découvrez la méthode de Smidjan, cabinet de cybersécurité en Wallonie, et pourquoi une PME wallonne a intérêt à travailler avec une structure à taille humaine.",
     "ogTitle": "Notre méthode : Approche cybersécurité Smidjan",
-    "ogDescription": "Des preuves, pas des promesses : diagnostic mesuré, priorisation, remédiation réelle et supervision continue. La méthode Smidjan, cybersécurité pour PME à Liège.",
+    "ogDescription": "Des preuves, pas des promesses : diagnostic mesuré, priorisation, remédiation réelle et supervision continue. La méthode Smidjan, cybersécurité pour PME en Wallonie.",
     "ogImageAlt": "Smidjan - Notre méthode de cybersécurité",
     "twitterTitle": "Notre méthode : Approche cybersécurité Smidjan",
     "twitterDescription": "Diagnostic mesuré, priorisation, remédiation réelle, supervision continue. Des preuves, pas des promesses."
@@ -120,7 +120,7 @@
     "items": {
       "local": {
         "title": "Local & réactif",
-        "text": "Basés à Liège, on intervient vite en Wallonie. Vos données restent en Belgique / UE.",
+        "text": "Basés en Wallonie, on intervient vite. Vos données restent en Belgique / UE.",
         "pin": "On répond au téléphone"
       },
       "acces": {

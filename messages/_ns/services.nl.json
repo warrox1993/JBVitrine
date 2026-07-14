@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Onze expertise : Cyberbeveiliging, pentest, ontwikkeling & conformiteit | Smidjan Luik",
-    "description": "Smidjan beveiligt uw infrastructuur, test uw applicaties (OWASP-pentest), ontwikkelt secure by design en begeleidt u naar NIS2- / CyFun-conformiteit. Eén aanspreekpunt, in Luik.",
+    "title": "Onze expertise : Cyberbeveiliging, pentest, ontwikkeling & conformiteit | Smidjan Wallonië",
+    "description": "Smidjan beveiligt uw infrastructuur, test uw applicaties (OWASP-pentest), ontwikkelt secure by design en begeleidt u naar NIS2- / CyFun-conformiteit. Eén aanspreekpunt, in Wallonië.",
     "ogTitle": "Onze expertise : Cyberbeveiliging, pentest, ontwikkeling & conformiteit",
     "ogDescription": "Beveiligen, testen, ontwikkelen, conform worden : vier expertisedomeinen van Smidjan om het cyberrisico van kmo's in België concreet te verlagen.",
-    "ogImageAlt": "Smidjan : Cyberbeveiliging, pentest, beveiligde ontwikkeling & NIS2-conformiteit in Luik",
+    "ogImageAlt": "Smidjan : Cyberbeveiliging, pentest, beveiligde ontwikkeling & NIS2-conformiteit in Wallonië",
     "twitterTitle": "Onze expertise : Smidjan Cyberbeveiliging",
     "twitterDescription": "Beveiligen, testen, ontwikkelen, conform worden : vier expertisedomeinen om het cyberrisico van kmo's te verlagen."
   },
@@ -15,7 +15,7 @@
   "hero": {
     "kicker": "Onze expertise",
     "title": "Beveiligen, testen, ontwikkelen, <accent>conform worden</accent>.",
-    "lead": "Eén cybersecuritypartner voor Belgische kmo's: gehard netwerk, geteste applicaties, NIS2 / CyFun-conformiteit, van audit tot remediatie. Gevestigd in Luik.",
+    "lead": "Eén cybersecuritypartner voor Belgische kmo's: gehard netwerk, geteste applicaties, NIS2 / CyFun-conformiteit, van audit tot remediatie. Gevestigd in Wallonië.",
     "ctaPrimary": "Mijn gratis diagnose boeken",
     "jumpLabel": "Ga rechtstreeks naar"
   },

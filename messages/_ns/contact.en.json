@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Contact · Smidjan | Cybersecurity & NIS2 compliance in Liège",
-    "description": "Free diagnostic, CyFun/NIS2 audit, pentest or incident response: write to Smidjan. An expert replies within 24 business hours. Based in Liège, Wallonia.",
+    "title": "Contact · Smidjan | Cybersecurity & NIS2 compliance in Wallonia",
+    "description": "Free diagnostic, CyFun/NIS2 audit, pentest or incident response: write to Smidjan. An expert replies within 24 business hours. Based in Wallonia.",
     "ogTitle": "Contact · Smidjan",
     "ogDescription": "Let's talk about your security. An expert replies within 24 business hours.",
-    "ogImageAlt": "Contact Smidjan, cybersecurity and NIS2 compliance in Liège",
+    "ogImageAlt": "Contact Smidjan, cybersecurity and NIS2 compliance in Wallonia",
     "twitterTitle": "Contact · Smidjan",
     "twitterDescription": "Let's talk about your security. An expert replies within 24 business hours."
   },
@@ -20,7 +20,7 @@
     "imageAlt": "Smidjan team gathered around a laptop in a modern, bright office, a friendly exchange between colleagues.",
     "assure1": "Reply within 24 business hours",
     "assure2": "No commitment",
-    "assure3": "Based in Liège"
+    "assure3": "Based in Wallonia"
   },
   "form": {
     "badge": "The most direct",
@@ -95,7 +95,7 @@
     "coordTag": "We reply to you",
     "coordTitle": "Our contact details",
     "coordZoneK": "Service area",
-    "coordZoneV": "Liège, Belgium",
+    "coordZoneV": "Wallonia, Belgium",
     "coordZoneSmall": "On site or remote, by appointment",
     "coordPhoneK": "Phone",
     "coordPhoneSmall": "Switchboard: general enquiries",
@@ -104,9 +104,9 @@
     "coordHoursK": "Hours",
     "coordHoursV": "Mon. to Fri., 8:30 am to 6:00 pm",
     "coordHoursSmall": "Incident response: 24/7",
-    "mapAria": "Stylised map showing Smidjan's location in Liège",
-    "mapBadge": "Smidjan · Liège",
-    "mapAddr": "Liège city centre, Wallonia",
+    "mapAria": "Stylised map showing Smidjan's location in Wallonia",
+    "mapBadge": "Smidjan · Wallonia",
+    "mapAddr": "Wallonia, Belgium",
     "mapMore": "Directions"
   },
   "expect": {

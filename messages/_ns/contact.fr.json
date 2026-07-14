@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Contact · Smidjan | Cybersécurité & conformité NIS2 à Liège",
-    "description": "Diagnostic gratuit, audit CyFun/NIS2, pentest ou réponse à incident : écrivez à Smidjan. Un expert vous répond sous 24 h ouvrées. Basés à Liège, Wallonie.",
+    "title": "Contact · Smidjan | Cybersécurité & conformité NIS2 en Wallonie",
+    "description": "Diagnostic gratuit, audit CyFun/NIS2, pentest ou réponse à incident : écrivez à Smidjan. Un expert vous répond sous 24 h ouvrées. Basés en Wallonie.",
     "ogTitle": "Contact · Smidjan",
     "ogDescription": "Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées.",
-    "ogImageAlt": "Contactez Smidjan, cybersécurité et conformité NIS2 à Liège",
+    "ogImageAlt": "Contactez Smidjan, cybersécurité et conformité NIS2 en Wallonie",
     "twitterTitle": "Contact · Smidjan",
     "twitterDescription": "Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées."
   },
@@ -20,7 +20,7 @@
     "imageAlt": "Équipe Smidjan réunie autour d'un ordinateur portable dans un bureau moderne et lumineux, échange convivial entre collègues.",
     "assure1": "Réponse sous 24 h ouvrées",
     "assure2": "Sans engagement",
-    "assure3": "Basés à Liège"
+    "assure3": "Basés en Wallonie"
   },
   "form": {
     "badge": "Le plus direct",
@@ -95,7 +95,7 @@
     "coordTag": "On vous répond",
     "coordTitle": "Nos coordonnées",
     "coordZoneK": "Zone d'intervention",
-    "coordZoneV": "Liège, Belgique",
+    "coordZoneV": "Wallonie, Belgique",
     "coordZoneSmall": "Sur site ou à distance, sur rendez-vous",
     "coordPhoneK": "Téléphone",
     "coordPhoneSmall": "Standard : demandes générales",
@@ -104,9 +104,9 @@
     "coordHoursK": "Horaires",
     "coordHoursV": "Lun. au ven., 8h30 à 18h00",
     "coordHoursSmall": "Réponse à incident : 24 h/24, 7 j/7",
-    "mapAria": "Carte stylisée indiquant l'implantation de Smidjan à Liège",
-    "mapBadge": "Smidjan · Liège",
-    "mapAddr": "Centre de Liège, Wallonie",
+    "mapAria": "Carte stylisée indiquant l'implantation de Smidjan en Wallonie",
+    "mapBadge": "Smidjan · Wallonie",
+    "mapAddr": "Wallonie, Belgique",
     "mapMore": "Itinéraire"
   },
   "expect": {
