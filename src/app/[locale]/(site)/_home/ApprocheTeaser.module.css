@@ -1,0 +1,77 @@
+/* ApprocheTeaser — centered editorial excerpt, comfortable reading width. */
+.wrap {
+  background: var(--color-bg);
+}
+
+.inner {
+  max-width: 65ch;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  margin: 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  margin: var(--space-3) auto 0;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--color-text);
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.lead {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin: var(--space-4) 0 0;
+  max-inline-size: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.cta:hover,
+.cta:focus-visible {
+  color: var(--color-primary-strong);
+}
+
+.cta span {
+  transition: var(--transition-base);
+}
+
+.cta:hover span,
+.cta:focus-visible span {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta,
+  .cta span {
+    transition: none;
+  }
+  .cta:hover span,
+  .cta:focus-visible span {
+    transform: none;
+  }
+}
