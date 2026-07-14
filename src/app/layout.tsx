@@ -53,13 +53,13 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
     title: {
-        default: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME (Liège, Wallonie)',
+        default: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME (Wallonie)',
         // Les pages définissent des titres auto-brandés ("… | Smidjan : …"),
         // donc pas de suffixe pour éviter de dupliquer "Smidjan".
         template: '%s',
     },
     description:
-        'Smidjan sécurise les réseaux, l\'infrastructure et les applications des PME wallonnes et les met en conformité NIS2 / CyberFundamentals (CCB). Audit, pentest, remédiation. Diagnostic gratuit à Liège.',
+        'Smidjan sécurise les réseaux, l\'infrastructure et les applications des PME wallonnes et les met en conformité NIS2 / CyberFundamentals (CCB). Audit, pentest, remédiation. Diagnostic gratuit en Wallonie.',
 authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
     creator: 'Smidjan',
     publisher: 'Smidjan',
@@ -76,17 +76,17 @@ authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
     },
 
     openGraph: {
-        title: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME (Liège)',
+        title: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME (Wallonie)',
         description:
             'On sécurise vos réseaux, votre infrastructure et vos applications, et on vous met en conformité NIS2 / CyFun, et on corrige ce qu\'on trouve. Diagnostic gratuit pour les PME de Wallonie.',
         url: 'https://smidjan.be',
-        siteName: 'Smidjan, Cybersécurité Liège',
+        siteName: 'Smidjan, Cybersécurité Wallonie',
         images: [
             {
                 url: "https://smidjan.be/og-image.webp",
                 width: 1200,
                 height: 630,
-                alt: 'Smidjan, Cybersécurité & conformité NIS2 pour les PME à Liège',
+                alt: 'Smidjan, Cybersécurité & conformité NIS2 pour les PME en Wallonie',
                 type: 'image/webp',
             }
         ],
@@ -96,8 +96,8 @@ authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
 
     twitter: {
         card: 'summary_large_image',
-        title: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME (Liège)',
-        description: 'Sécurité des réseaux, pentest et conformité NIS2 / CyFun pour les PME wallonnes. Diagnostic gratuit à Liège.',
+        title: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME (Wallonie)',
+        description: 'Sécurité des réseaux, pentest et conformité NIS2 / CyFun pour les PME wallonnes. Diagnostic gratuit en Wallonie.',
         images: ['/og-image.webp'],
         // Ajoute ton Twitter si tu en as un
         // creator: '@smidjan',
@@ -129,10 +129,8 @@ authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
     // Autres métadonnées utiles
     other: {
         'geo.region': 'BE-WAL',
-        'geo.placename': 'Liège',
-        'geo.position': '50.6446374;5.5664509', // Coordonnées GPS Smidjan
-        'contact:phone': '+32 475 20 55 62',
-        'contact:email': 'smidjan.agency@outlook.com',
+        'contact:phone': '+32475205562',
+        'contact:email': 'jeanbaptiste.dhondt1@gmail.com',
     },
 };
 

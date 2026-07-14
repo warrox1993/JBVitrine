@@ -3,8 +3,7 @@ export const SITE_CONFIG = {
   url: "https://smidjan.be",
   email: "jeanbaptiste.dhondt1@gmail.com",
   phone: "0475 20 55 62",
-  description:
-    "Studio web à Liège spécialisé en développement de sites, e-commerce, SEO et design digital",
+  description: "Cybersécurité et gouvernance (GRC) en Wallonie.",
   social: {
     linkedin: "https://www.linkedin.com/in/jean-baptistedhondt",
     facebook: "https://www.facebook.com/profile.php?id=61583157825804",
