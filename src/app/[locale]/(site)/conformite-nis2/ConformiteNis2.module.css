@@ -925,7 +925,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 14px;
-  border: 1px solid rgba(255, 106, 0, 0.35);
+  border: 1px solid rgba(11, 122, 91, 0.35);
   box-shadow: var(--shadow);
 }
 .sectionPhotoFrame :global(img) {

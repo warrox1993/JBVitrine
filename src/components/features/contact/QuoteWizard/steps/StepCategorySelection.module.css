@@ -19,8 +19,8 @@
   display: inline-block !important;
   font-size: 0.875rem !important;
   font-weight: 600 !important;
-  color: #ff6a00 !important;
-  background: rgba(255, 106, 0, 0.1) !important;
+  color: #0b7a5b !important;
+  background: rgba(11, 122, 91, 0.1) !important;
   padding: 0.25rem 0.75rem !important;
   border-radius: 9999px !important;
   margin-bottom: 0.5rem !important;
@@ -102,23 +102,23 @@
 }
 
 .featureCard:hover {
-  border-color: var(--color-accent-1, #ff6a00);
+  border-color: var(--color-accent-1, #0b7a5b);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md-strong);
 }
 
 .featureCard:focus-visible {
   outline: none;
-  border-color: var(--color-accent-1, #ff6a00);
+  border-color: var(--color-accent-1, #0b7a5b);
   box-shadow: 0 0 0 4px
-    color-mix(in srgb, var(--color-accent-1, #ff6a00) 20%, transparent);
+    color-mix(in srgb, var(--color-accent-1, #0b7a5b) 20%, transparent);
 }
 
 .featureCard.selected {
-  border-color: var(--color-accent-1, #ff6a00);
+  border-color: var(--color-accent-1, #0b7a5b);
   background: color-mix(
     in srgb,
-    var(--color-accent-1, #ff6a00) 5%,
+    var(--color-accent-1, #0b7a5b) 5%,
     var(--color-surface, #1e2430)
   );
 }
@@ -142,13 +142,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-accent-1, #ff6a00);
+  color: var(--color-accent-1, #0b7a5b);
   transition: var(--transition-fast);
 }
 
 .featureCard.selected .checkbox {
-  background: var(--color-accent-1, #ff6a00);
-  border-color: var(--color-accent-1, #ff6a00);
+  background: var(--color-accent-1, #0b7a5b);
+  border-color: var(--color-accent-1, #0b7a5b);
   color: var(--white);
 }
 
@@ -185,7 +185,7 @@
 .featurePrice {
   font-size: var(--text-sm, 0.875rem);
   font-weight: 600;
-  color: var(--color-accent-1, #ff6a00);
+  color: var(--color-accent-1, #0b7a5b);
   padding-left: calc(20px + var(--space-3, 1rem));
 }
 
@@ -226,7 +226,7 @@
 .summaryCount {
   font-size: var(--text-xl, 1.25rem);
   font-weight: 700;
-  color: var(--color-accent-1, #ff6a00);
+  color: var(--color-accent-1, #0b7a5b);
 }
 
 .actions {
@@ -249,7 +249,7 @@
 }
 
 .btnPrimary {
-  background: var(--color-accent-1, #ff6a00);
+  background: var(--color-accent-1, #0b7a5b);
   color: var(--white);
 }
 
@@ -271,8 +271,8 @@
 }
 
 .btnSecondary:hover {
-  border-color: var(--color-accent-1, #ff6a00);
-  color: var(--color-accent-1, #ff6a00);
+  border-color: var(--color-accent-1, #0b7a5b);
+  color: var(--color-accent-1, #0b7a5b);
 }
 
 /* Tablet */

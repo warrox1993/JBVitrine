@@ -12,10 +12,10 @@
   display: inline-block;
   font-size: var(--text-sm, 0.875rem);
   font-weight: 600;
-  color: var(--color-accent-1, #ff6a00);
+  color: var(--color-accent-1, #0b7a5b);
   background: color-mix(
     in srgb,
-    var(--color-accent-1, #ff6a00) 10%,
+    var(--color-accent-1, #0b7a5b) 10%,
     transparent
   );
   padding: 0.25rem 0.75rem;
@@ -74,7 +74,7 @@
 }
 
 .required {
-  color: var(--color-accent-1, #ff6a00);
+  color: var(--color-accent-1, #0b7a5b);
 }
 
 .input,
@@ -92,9 +92,9 @@
 .input:focus,
 .textarea:focus {
   outline: none;
-  border-color: var(--color-accent-1, #ff6a00);
+  border-color: var(--color-accent-1, #0b7a5b);
   box-shadow: 0 0 0 4px
-    color-mix(in srgb, var(--color-accent-1, #ff6a00) 15%, transparent);
+    color-mix(in srgb, var(--color-accent-1, #0b7a5b) 15%, transparent);
 }
 
 .input::placeholder,
@@ -150,7 +150,7 @@
 }
 
 .timelineBtn:hover:not(:disabled) {
-  border-color: var(--color-accent-1, #ff6a00);
+  border-color: var(--color-accent-1, #0b7a5b);
 }
 
 .timelineBtn:disabled {
@@ -161,11 +161,11 @@
 .timelineSelected {
   background: color-mix(
     in srgb,
-    var(--color-accent-1, #ff6a00) 10%,
+    var(--color-accent-1, #0b7a5b) 10%,
     var(--color-bg-1, #0d1015)
   );
-  border-color: var(--color-accent-1, #ff6a00);
-  color: var(--color-accent-1, #ff6a00);
+  border-color: var(--color-accent-1, #0b7a5b);
+  color: var(--color-accent-1, #0b7a5b);
 }
 
 /* Checkbox */
@@ -196,7 +196,7 @@
 }
 
 .link {
-  color: var(--color-accent-1, #ff6a00);
+  color: var(--color-accent-1, #0b7a5b);
   text-decoration: underline;
   transition: color var(--transition-fast);
 }
@@ -231,7 +231,7 @@
 }
 
 .btnPrimary {
-  background: var(--color-accent-1, #ff6a00);
+  background: var(--color-accent-1, #0b7a5b);
   color: var(--white);
   flex: 1;
 }
@@ -255,7 +255,7 @@
 }
 
 .btnSecondary:hover:not(:disabled) {
-  border-color: var(--color-accent-1, #ff6a00);
+  border-color: var(--color-accent-1, #0b7a5b);
   transform: translateY(-2px);
 }
 
@@ -454,7 +454,7 @@
   .input:focus,
   .textarea:focus {
     box-shadow: 0 0 0 2px
-      color-mix(in srgb, var(--color-accent-1, #ff6a00) 20%, transparent);
+      color-mix(in srgb, var(--color-accent-1, #0b7a5b) 20%, transparent);
   }
 
   .summaryCard {

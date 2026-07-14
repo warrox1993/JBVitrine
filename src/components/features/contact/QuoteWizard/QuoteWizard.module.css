@@ -29,7 +29,7 @@
   height: 100%;
   background: linear-gradient(
     90deg,
-    var(--color-accent-1, #ff6a00),
+    var(--color-accent-1, #0b7a5b),
     var(--color-accent-2, #ffc43a)
   );
   transition: width var(--transition-smooth);
@@ -190,7 +190,7 @@
   font-size: 3.5rem;
   background: linear-gradient(
     135deg,
-    var(--color-accent-1, #ff6a00),
+    var(--color-accent-1, #0b7a5b),
     var(--color-accent-2, #ffc43a)
   );
   border-radius: 50%;
@@ -260,7 +260,7 @@
   padding: var(--space-3, 1rem);
   background: var(--color-bg-1, #0d1015);
   border-radius: var(--radius-md, 0.75rem);
-  border-left: 3px solid var(--color-accent-1, #ff6a00);
+  border-left: 3px solid var(--color-accent-1, #0b7a5b);
 }
 
 .btnPrimary {
@@ -272,7 +272,7 @@
   transition: var(--transition-fast);
   border: none;
   font-family: inherit;
-  background: var(--color-accent-1, #ff6a00);
+  background: var(--color-accent-1, #0b7a5b);
   color: var(--white);
 }
 

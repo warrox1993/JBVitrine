@@ -15,10 +15,10 @@
   display: inline-block;
   font-size: var(--text-sm, 0.875rem);
   font-weight: 600;
-  color: var(--color-accent-1, #ff6a00);
+  color: var(--color-accent-1, #0b7a5b);
   background: color-mix(
     in srgb,
-    var(--color-accent-1, #ff6a00) 10%,
+    var(--color-accent-1, #0b7a5b) 10%,
     transparent
   );
   padding: 0.25rem 0.75rem;
@@ -93,29 +93,29 @@
 }
 
 .optionCard::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-1, #ff6a00);
+  background: var(--color-accent-1, #0b7a5b);
 }
 
 .optionCard:hover {
-  border-color: var(--color-accent-1, #ff6a00);
+  border-color: var(--color-accent-1, #0b7a5b);
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg-strong);
 }
 
 .optionCard:focus-visible {
   outline: none;
-  border-color: var(--color-accent-1, #ff6a00);
+  border-color: var(--color-accent-1, #0b7a5b);
   box-shadow: 0 0 0 4px
-    color-mix(in srgb, var(--color-accent-1, #ff6a00) 20%, transparent);
+    color-mix(in srgb, var(--color-accent-1, #0b7a5b) 20%, transparent);
 }
 
 .optionCard.selected {
-  border-color: var(--color-accent-1, #ff6a00);
+  border-color: var(--color-accent-1, #0b7a5b);
   background: linear-gradient(
     135deg,
     color-mix(
       in srgb,
-      var(--color-accent-1, #ff6a00) 8%,
+      var(--color-accent-1, #0b7a5b) 8%,
       var(--color-surface, #1e2430)
     ),
     var(--color-surface, #1e2430)
@@ -144,8 +144,8 @@
 }
 
 .optionCard.selected .checkbox {
-  background: var(--color-accent-1, #ff6a00);
-  border-color: var(--color-accent-1, #ff6a00);
+  background: var(--color-accent-1, #0b7a5b);
+  border-color: var(--color-accent-1, #0b7a5b);
 }
 
 .optionTitle {
@@ -250,17 +250,17 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: var(--color-accent-1, #ff6a00);
+  color: var(--color-accent-1, #0b7a5b);
   font-weight: bold;
 }
 
 .pricingBox {
   background: color-mix(
     in srgb,
-    var(--color-accent-1, #ff6a00) 5%,
+    var(--color-accent-1, #0b7a5b) 5%,
     transparent
   );
-  border: 1px solid var(--color-accent-1, #ff6a00);
+  border: 1px solid var(--color-accent-1, #0b7a5b);
   border-radius: var(--radius-md, 0.75rem);
   padding: var(--space-3, 1rem);
   margin: var(--space-3, 1rem) 0;
@@ -269,7 +269,7 @@
 .pricingTitle {
   font-size: var(--text-sm, 0.875rem);
   font-weight: 700;
-  color: var(--color-accent-1, #ff6a00);
+  color: var(--color-accent-1, #0b7a5b);
   margin: 0 0 var(--space-2, 0.5rem) 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -314,7 +314,7 @@
   margin-top: var(--space-3, 1rem);
   background: linear-gradient(
     135deg,
-    var(--color-accent-1, #ff6a00),
+    var(--color-accent-1, #0b7a5b),
     var(--color-accent-2, #ffc43a)
   );
   color: var(--white);
@@ -364,7 +364,7 @@
 }
 
 .btnPrimary {
-  background: var(--color-accent-1, #ff6a00);
+  background: var(--color-accent-1, #0b7a5b);
   color: var(--white);
 }
 
@@ -386,8 +386,8 @@
 }
 
 .btnSecondary:hover {
-  border-color: var(--color-accent-1, #ff6a00);
-  color: var(--color-accent-1, #ff6a00);
+  border-color: var(--color-accent-1, #0b7a5b);
+  color: var(--color-accent-1, #0b7a5b);
 }
 
 /* Tablet */

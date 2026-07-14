@@ -27,12 +27,12 @@ export function ArticleCoverSvg({
   tone = "light",
   className,
 }: ArticleCoverSvgProps) {
-  const stroke = tone === "dark" ? "#ffffff" : "#1c3a63";
+  const stroke = tone === "dark" ? "#ffffff" : "#1e3a32";
   const strokeMuted = tone === "dark" ? "rgba(255,255,255,.45)" : "#c7d0de";
   const fillPlate = tone === "dark" ? "rgba(255,255,255,.08)" : "#ffffff";
-  const accent = tone === "dark" ? "#ff9a4d" : "#ff6a00";
-  const accentSoft = tone === "dark" ? "rgba(255,154,77,.18)" : "#fff3ea";
-  const dark = tone === "dark" ? "rgba(255,255,255,.7)" : "#12294a";
+  const accent = tone === "dark" ? "#34d399" : "#0b7a5b";
+  const accentSoft = tone === "dark" ? "rgba(255,154,77,.18)" : "#d6f0e5";
+  const dark = tone === "dark" ? "rgba(255,255,255,.7)" : "#13251f";
 
   const content = getContent(category, {
     stroke,

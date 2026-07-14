@@ -81,7 +81,7 @@
   height: 46px;
   flex: none;
   border-radius: 11px;
-  background: rgba(255, 106, 0, 0.16);
+  background: rgba(11, 122, 91, 0.16);
   color: var(--orange-on-dark);
   display: flex;
   align-items: center;
@@ -124,7 +124,7 @@
   width: 22px;
   height: 22px;
   border-radius: 6px;
-  background: rgba(255, 106, 0, 0.16);
+  background: rgba(11, 122, 91, 0.16);
   color: var(--orange-on-dark);
   display: flex;
   align-items: center;
@@ -283,7 +283,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 14px;
-  border: 1px solid rgba(255, 106, 0, 0.35);
+  border: 1px solid rgba(11, 122, 91, 0.35);
   box-shadow: var(--shadow);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
@@ -360,7 +360,7 @@
 }
 .mstep:last-child .num {
   background: var(--orange);
-  box-shadow: 0 10px 22px -8px rgba(255, 106, 0, 0.5);
+  box-shadow: 0 10px 22px -8px rgba(11, 122, 91, 0.5);
 }
 .ln {
   width: 2px;
@@ -476,7 +476,7 @@
   width: 44px;
   height: 44px;
   border-radius: 11px;
-  background: rgba(255, 106, 0, 0.16);
+  background: rgba(11, 122, 91, 0.16);
   color: var(--orange-on-dark);
   display: flex;
   align-items: center;
@@ -542,7 +542,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 14px;
-  border: 1px solid rgba(255, 106, 0, 0.35);
+  border: 1px solid rgba(11, 122, 91, 0.35);
   box-shadow: var(--shadow);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }

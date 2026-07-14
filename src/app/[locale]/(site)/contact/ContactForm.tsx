@@ -294,12 +294,12 @@ export function ContactForm() {
         </div>
         <div className={cls.fcIllus} aria-hidden="true">
           <svg viewBox="0 0 88 84" fill="none">
-            <rect x="6" y="18" width="58" height="40" rx="6" fill="#f5f7fa" stroke="#1c3a63" strokeWidth="2" />
-            <path d="M8 22l25 18.2a4 4 0 0 0 4.6 0L62 22" stroke="#1c3a63" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <circle cx="63" cy="56" r="19" fill="#0b1f3a" />
+            <rect x="6" y="18" width="58" height="40" rx="6" fill="#f5f7fa" stroke="#1e3a32" strokeWidth="2" />
+            <path d="M8 22l25 18.2a4 4 0 0 0 4.6 0L62 22" stroke="#1e3a32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="63" cy="56" r="19" fill="#0c1a16" />
             <rect x="54" y="54" width="18" height="15" rx="3" fill="none" stroke="#fff" strokeWidth="2" />
             <path d="M57 54v-4.5a6 6 0 0 1 12 0V54" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-            <circle cx="63" cy="61.5" r="1.9" fill="#ff6a00" />
+            <circle cx="63" cy="61.5" r="1.9" fill="#0b7a5b" />
           </svg>
         </div>
       </div>

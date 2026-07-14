@@ -341,15 +341,15 @@ export default async function ContactPage({
                       <rect x="205" y="160" width="42" height="34" rx="4" />
                       <rect x="285" y="100" width="40" height="34" rx="4" />
                     </g>
-                    <path d="M52 175 C 100 158, 150 168, 197 112" fill="none" stroke="#ff6a00" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="1 7" opacity=".55" />
-                    <circle cx="52" cy="175" r="4.5" fill="#1c3a63" />
+                    <path d="M52 175 C 100 158, 150 168, 197 112" fill="none" stroke="#0b7a5b" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="1 7" opacity=".55" />
+                    <circle cx="52" cy="175" r="4.5" fill="#1e3a32" />
                   </svg>
                   <div className={cls.mapCompass} aria-hidden="true">
                     <svg viewBox="0 0 32 32" fill="none">
                       <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="1.4" opacity=".55" />
                       <path d="M16 4v5M16 23v5M4 16h5M23 16h5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity=".55" />
-                      <path d="M16 7l3.6 9-3.6-2.4-3.6 2.4Z" fill="#0b1f3a" />
-                      <path d="M16 7l3.6 9-3.6-2.4Z" fill="#ff6a00" />
+                      <path d="M16 7l3.6 9-3.6-2.4-3.6 2.4Z" fill="#0c1a16" />
+                      <path d="M16 7l3.6 9-3.6-2.4Z" fill="#0b7a5b" />
                     </svg>
                   </div>
                   <div className={cls.mapPulse} aria-hidden="true">

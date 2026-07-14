@@ -145,10 +145,10 @@ export default async function BlogPage({ params }: PageProps) {
             stroke="#c7d0de"
             strokeWidth="1.4"
           />
-          <circle cx="205" cy="96" r="7.5" fill="#fff" stroke="#1c3a63" strokeWidth="1.6" />
-          <circle cx="300" cy="236" r="7.5" fill="#fff" stroke="#1c3a63" strokeWidth="1.6" />
-          <circle cx="128" cy="264" r="7.5" fill="#fff" stroke="#12294a" strokeWidth="1.6" />
-          <circle cx="246" cy="328" r="6" fill="#ff6a00" />
+          <circle cx="205" cy="96" r="7.5" fill="#fff" stroke="#1e3a32" strokeWidth="1.6" />
+          <circle cx="300" cy="236" r="7.5" fill="#fff" stroke="#1e3a32" strokeWidth="1.6" />
+          <circle cx="128" cy="264" r="7.5" fill="#fff" stroke="#13251f" strokeWidth="1.6" />
+          <circle cx="246" cy="328" r="6" fill="#0b7a5b" />
         </svg>
         <Reveal>
           <div className="wrap">

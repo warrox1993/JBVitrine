@@ -164,7 +164,7 @@ export async function Fondateur() {
                 marginTop: "16px",
                 fontWeight: 600,
                 fontSize: "0.9rem",
-                color: "var(--color-accent, #ff6a00)",
+                color: "var(--color-accent, #0b7a5b)",
                 textDecoration: "underline",
                 textUnderlineOffset: "2px",
               }}

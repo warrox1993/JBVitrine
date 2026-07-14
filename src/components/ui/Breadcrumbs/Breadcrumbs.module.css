@@ -27,12 +27,12 @@
 }
 
 .breadcrumbLink:hover {
-  color: var(--color-accent-1, #ff6b35);
+  color: var(--color-accent-1, #0b7a5b);
   text-decoration: underline;
 }
 
 .breadcrumbLink:focus-visible {
-  outline: 2px solid var(--color-accent-1, #ff6b35);
+  outline: 2px solid var(--color-accent-1, #0b7a5b);
   outline-offset: 2px;
   border-radius: 2px;
 }

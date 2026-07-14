@@ -12,10 +12,10 @@
   display: inline-block;
   font-size: var(--text-sm, 0.875rem);
   font-weight: 600;
-  color: var(--color-accent-1, #ff6a00);
+  color: var(--color-accent-1, #0b7a5b);
   background: color-mix(
     in srgb,
-    var(--color-accent-1, #ff6a00) 10%,
+    var(--color-accent-1, #0b7a5b) 10%,
     transparent
   );
   padding: 0.25rem 0.75rem;
@@ -48,10 +48,10 @@
 .overview {
   background: linear-gradient(
     135deg,
-    color-mix(in srgb, var(--color-accent-1, #ff6a00) 8%, transparent),
+    color-mix(in srgb, var(--color-accent-1, #0b7a5b) 8%, transparent),
     transparent
   );
-  border: 2px solid var(--color-accent-1, #ff6a00);
+  border: 2px solid var(--color-accent-1, #0b7a5b);
   border-radius: var(--radius-lg, 1.25rem);
   padding: var(--space-5, 2.5rem);
   display: flex;
@@ -100,7 +100,7 @@
 .priceValue {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  color: var(--color-accent-1, #ff6a00);
+  color: var(--color-accent-1, #0b7a5b);
   line-height: 1.1;
   margin-bottom: var(--space-2, 0.5rem);
 }
@@ -154,7 +154,7 @@
   color: var(--color-text-1, #f6f7f9);
   margin: 0 0 var(--space-4, 1.5rem) 0;
   padding-bottom: var(--space-3, 1rem);
-  border-bottom: 2px solid var(--color-accent-1, #ff6a00);
+  border-bottom: 2px solid var(--color-accent-1, #0b7a5b);
 }
 
 .breakdownGroup {
@@ -168,7 +168,7 @@
 .categoryTitle {
   font-size: var(--text-base, 1rem);
   font-weight: 600;
-  color: var(--color-accent-1, #ff6a00);
+  color: var(--color-accent-1, #0b7a5b);
   margin: 0 0 var(--space-3, 1rem) 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -207,7 +207,7 @@
 .itemPrice {
   font-size: var(--text-sm, 0.875rem);
   font-weight: 600;
-  color: var(--color-accent-1, #ff6a00);
+  color: var(--color-accent-1, #0b7a5b);
   white-space: nowrap;
 }
 
@@ -306,7 +306,7 @@
 }
 
 .btnPrimary {
-  background: var(--color-accent-1, #ff6a00);
+  background: var(--color-accent-1, #0b7a5b);
   color: var(--white);
   flex: 1;
 }
@@ -329,7 +329,7 @@
 }
 
 .btnSecondary:hover {
-  border-color: var(--color-accent-1, #ff6a00);
+  border-color: var(--color-accent-1, #0b7a5b);
   transform: translateY(-2px);
 }
 

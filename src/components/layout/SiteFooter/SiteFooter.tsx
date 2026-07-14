@@ -23,11 +23,11 @@ export default async function SiteFooter() {
                 fill="none"
                 aria-hidden="true"
               >
-                <rect width="40" height="40" rx="9" fill="#12294a" />
+                <rect width="40" height="40" rx="9" fill="#13251f" />
                 <path
                   d="M20 8l9 3.4v6.9c0 5.6-3.7 10.7-9 12.3-5.3-1.6-9-6.7-9-12.3v-6.9L20 8Z"
                   fill="none"
-                  stroke="#ff6a00"
+                  stroke="#0b7a5b"
                   strokeWidth="2"
                 />
                 <path

@@ -56,7 +56,7 @@
   position: relative;
   border-radius: 14px;
   overflow: hidden;
-  background: linear-gradient(160deg, #1c3a63, #0a1a30);
+  background: linear-gradient(160deg, #1e3a32, #0a1a30);
   border: 1px solid rgba(255, 255, 255, 0.14);
   margin-bottom: 22px;
 }
@@ -175,7 +175,7 @@
 .infraImg {
   position: relative;
   border-radius: 14px !important;
-  border: 1px solid rgba(255, 106, 0, 0.35);
+  border: 1px solid rgba(11, 122, 91, 0.35);
   box-shadow: var(--shadow);
 }
 .infraImg :global(img) {
