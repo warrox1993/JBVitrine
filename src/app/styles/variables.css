@@ -2,19 +2,19 @@
   /* Colors — light-only (refonte-design): dark "Forge/Flame" default retired.
      Semantic tokens now default to the light palette; the legacy
      [data-theme="light"] override block below is kept for back-compat. */
-  --color-bg: #ffffff;
-  --color-bg-alt: #f5f7fb;
-  --color-surface: #f7f9fc;
+  --color-bg: #F5F8F7;
+  --color-bg-alt: #EDF3F1;
+  --color-surface: #FFFFFF;
   --color-surface-glass: rgba(255, 255, 255, 0.82);
-  --color-surface-solid: #ffffff;
-  --color-border: rgba(12, 18, 27, 0.08);
-  --color-text: #0c121b;
-  --color-text-muted: #4a5565;
-  --color-primary: #e86e10;
-  --color-primary-strong: #c25a0d;
-  --color-primary-contrast: #ffffff;
-  --color-secondary: #f7a93e;
-  --color-accent: #2563eb;
+  --color-surface-solid: #FFFFFF;
+  --color-border: rgba(12, 26, 22, 0.10);
+  --color-text: #0C1A16;
+  --color-text-muted: #4A5C55;
+  --color-primary: #0B7A5B;
+  --color-primary-strong: #059669;
+  --color-primary-contrast: #FFFFFF;
+  --color-secondary: #34D399;
+  --color-accent: #0B7A5B;
   --color-danger: #d92d20;
 
   /* Fonts */
@@ -39,19 +39,19 @@
   --color-accent-3: var(--color-primary-strong);
 
   /* Glows */
-  --shadow-glow-outer: 0 0 24px rgba(255, 106, 0, 0.24);
-  --shadow-glow-inner: 0 0 12px rgba(255, 196, 58, 0.12);
-  --color-glow: rgba(255, 106, 0, 0.24);
+  --shadow-glow-outer: 0 0 24px rgba(11, 122, 91, 0.18);
+  --shadow-glow-inner: 0 0 12px rgba(52, 211, 153, 0.12);
+  --color-glow: #D6F0E5;
 
   /* Primary color opacities (for rgba() replacements) */
-  --color-primary-5: rgba(255, 106, 0, 0.05);
-  --color-primary-8: rgba(255, 106, 0, 0.08);
-  --color-primary-12: rgba(255, 106, 0, 0.12);
-  --color-primary-15: rgba(255, 106, 0, 0.15);
-  --color-primary-20: rgba(255, 106, 0, 0.2);
-  --color-primary-24: rgba(255, 106, 0, 0.24);
-  --color-primary-30: rgba(255, 106, 0, 0.3);
-  --color-primary-40: rgba(255, 106, 0, 0.4);
+  --color-primary-5: rgba(11, 122, 91, 0.05);
+  --color-primary-8: rgba(11, 122, 91, 0.08);
+  --color-primary-12: rgba(11, 122, 91, 0.12);
+  --color-primary-15: rgba(11, 122, 91, 0.15);
+  --color-primary-20: rgba(11, 122, 91, 0.20);
+  --color-primary-24: rgba(11, 122, 91, 0.24);
+  --color-primary-30: rgba(11, 122, 91, 0.30);
+  --color-primary-40: rgba(11, 122, 91, 0.40);
 
   /* Status colors */
   --color-success: #10b981;
@@ -152,7 +152,7 @@
   --btn-bg: var(--color-primary);
   --btn-fg: var(--color-primary-contrast);
   --btn-border: transparent;
-  --btn-shadow: 0 10px 24px rgba(255, 106, 0, 0.22);
+  --btn-shadow: 0 10px 24px rgba(11, 122, 91, 0.22);
 
   --btn-bg-hover: color-mix(in srgb, var(--color-primary) 88%, #fff 12%);
   --btn-fg-hover: var(--color-primary-contrast);
@@ -180,19 +180,19 @@
 }
 
 :root[data-theme="light"] {
-  --color-bg: #ffffff;
-  --color-bg-alt: #f5f7fb;
-  --color-surface: #f7f9fc;
+  --color-bg: #F5F8F7;
+  --color-bg-alt: #EDF3F1;
+  --color-surface: #FFFFFF;
   --color-surface-glass: rgba(255, 255, 255, 0.82);
-  --color-surface-solid: #ffffff;
-  --color-border: rgba(12, 18, 27, 0.08);
-  --color-text: #0c121b;
-  --color-text-muted: #4a5565;
-  --color-primary: #e86e10;
-  --color-primary-strong: #c25a0d;
-  --color-primary-contrast: #ffffff;
-  --color-secondary: #f7a93e;
-  --color-accent: #2563eb;
+  --color-surface-solid: #FFFFFF;
+  --color-border: rgba(12, 26, 22, 0.10);
+  --color-text: #0C1A16;
+  --color-text-muted: #4A5C55;
+  --color-primary: #0B7A5B;
+  --color-primary-strong: #059669;
+  --color-primary-contrast: #FFFFFF;
+  --color-secondary: #34D399;
+  --color-accent: #0B7A5B;
   --color-danger: #d92d20;
 
   --color-bg-1: var(--color-bg);
@@ -209,19 +209,19 @@
     #000000 8%
   );
 
-  --shadow-glow-outer: 0 0 24px rgba(232, 110, 16, 0.18);
-  --shadow-glow-inner: 0 0 12px rgba(247, 169, 62, 0.12);
-  --color-glow: rgba(232, 110, 16, 0.18);
+  --shadow-glow-outer: 0 0 24px rgba(11, 122, 91, 0.18);
+  --shadow-glow-inner: 0 0 12px rgba(52, 211, 153, 0.12);
+  --color-glow: #D6F0E5;
 
   /* Primary color opacities (light theme) */
-  --color-primary-5: rgba(232, 110, 16, 0.05);
-  --color-primary-8: rgba(232, 110, 16, 0.08);
-  --color-primary-12: rgba(232, 110, 16, 0.12);
-  --color-primary-15: rgba(232, 110, 16, 0.15);
-  --color-primary-20: rgba(232, 110, 16, 0.2);
-  --color-primary-24: rgba(232, 110, 16, 0.24);
-  --color-primary-30: rgba(232, 110, 16, 0.3);
-  --color-primary-40: rgba(232, 110, 16, 0.4);
+  --color-primary-5: rgba(11, 122, 91, 0.05);
+  --color-primary-8: rgba(11, 122, 91, 0.08);
+  --color-primary-12: rgba(11, 122, 91, 0.12);
+  --color-primary-15: rgba(11, 122, 91, 0.15);
+  --color-primary-20: rgba(11, 122, 91, 0.20);
+  --color-primary-24: rgba(11, 122, 91, 0.24);
+  --color-primary-30: rgba(11, 122, 91, 0.30);
+  --color-primary-40: rgba(11, 122, 91, 0.40);
 
   /* Status colors (light theme) */
   --color-success: #059669;
@@ -252,7 +252,7 @@
   --btn-bg: var(--color-primary);
   --btn-fg: var(--color-primary-contrast);
   --btn-border: transparent;
-  --btn-shadow: 0 12px 30px rgba(232, 110, 16, 0.18);
+  --btn-shadow: 0 12px 30px rgba(11, 122, 91, 0.18);
   --btn-bg-hover: color-mix(in srgb, var(--color-primary) 92%, #000000 8%);
   --btn-fg-hover: var(--color-primary-contrast);
   --btn-border-hover: transparent;
@@ -274,8 +274,8 @@
   --progress-color: var(--color-accent);
   --progress-bg: color-mix(in srgb, var(--color-border), transparent 60%);
 
-  --color-border-hover: rgba(12, 18, 27, 0.14);
-  --color-shadow: rgba(12, 18, 27, 0.08);
+  --color-border-hover: rgba(12, 26, 22, 0.16);
+  --color-shadow: rgba(12, 26, 22, 0.08);
 }
 
 /* ============================================
