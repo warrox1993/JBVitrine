@@ -8,17 +8,16 @@
   },
   "brand": {
     "ariaHome": "Smidjan, accueil",
-    "tagline": "Cybersécurité · Liège"
+    "tagline": "Cybersécurité & GRC"
   },
   "header": {
     "navAria": "Navigation principale",
-    "cta": "Diagnostic gratuit",
+    "cta": "Me contacter",
     "openMenu": "Ouvrir le menu",
-    "closeMenu": "Fermer le menu",
-    "incident": "Incident en cours ?"
+    "closeMenu": "Fermer le menu"
   },
   "footer": {
-    "blurb": "Cybersécurité et conformité NIS2 pour les PME de Wallonie. On sécurise, on teste, on développe, on met en règle, et on corrige ce qu'on trouve.",
+    "blurb": "Praticien en cybersécurité et gouvernance (GRC) en Wallonie. Je construis mes compétences et mes outils au grand jour : ce que je sais faire, avec des preuves, et ce que je ne sais pas encore.",
     "location": "Wallonie, Belgique",
     "servicesHeading": "Services",
     "agenceHeading": "Agence",
@@ -27,25 +26,20 @@
     "copyright": "© 2026 Smidjan · Tous droits réservés.",
     "links": {
       "reseaux": "Réseaux & infrastructure",
-      "audits": "Audits & pentest",
+      "audits": "Audits & tests de sécurité",
       "devWeb": "Développement web sécurisé",
       "conformite": "Conformité NIS2 / CyFun",
       "incident": "Réponse à incident",
       "apropos": "À propos",
       "approche": "Notre approche",
       "ressources": "Ressources & guides",
-      "contact": "Contact",
-      "diagnostic": "Diagnostic gratuit"
+      "contact": "Contact"
     },
     "legal": {
       "mentions": "Mentions légales",
       "privacy": "Politique de confidentialité",
       "cgv": "CGV"
     }
-  },
-  "emergency": {
-    "message": "Incident de sécurité en cours ? Chaque minute compte.",
-    "cta": "Victime d'une attaque ?"
   },
   "breadcrumb": {
     "aria": "Fil d'Ariane",
@@ -78,7 +72,7 @@
       "nis2": "Expertise NIS2 & CyFun",
       "owasp": "Approche OWASP",
       "cyfun": "CyberFundamentals (CCB)",
-      "local": "Local & réactif à Liège",
+      "local": "Local & réactif en Wallonie",
       "expert": "Accès direct à l'expert"
     }
   }

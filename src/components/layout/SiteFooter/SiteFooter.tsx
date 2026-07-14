@@ -130,9 +130,6 @@ export default async function SiteFooter() {
               <li>
                 <Link href="/contact">{t("footer.links.contact")}</Link>
               </li>
-              <li>
-                <Link href="/contact">{t("footer.links.diagnostic")}</Link>
-              </li>
             </ul>
           </div>
 

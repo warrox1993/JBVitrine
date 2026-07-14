@@ -371,17 +371,16 @@
     },
     "brand": {
       "ariaHome": "Smidjan, startpagina",
-      "tagline": "Cybersecurity · Luik"
+      "tagline": "Cyberbeveiliging & GRC"
     },
     "header": {
       "navAria": "Hoofdnavigatie",
-      "cta": "Gratis diagnose",
+      "cta": "Contacteer mij",
       "openMenu": "Menu openen",
-      "closeMenu": "Menu sluiten",
-      "incident": "Incident bezig?"
+      "closeMenu": "Menu sluiten"
     },
     "footer": {
-      "blurb": "Cybersecurity en NIS2-conformiteit voor kmo's in Wallonië. Wij beveiligen, testen, ontwikkelen, brengen in orde en remediëren wat we vinden.",
+      "blurb": "Praktijkbeoefenaar in cyberbeveiliging en governance (GRC) in Wallonië. Ik bouw mijn vaardigheden en tools in alle openheid op: wat ik kan, met bewijs, en wat ik nog niet kan.",
       "location": "Wallonië, België",
       "servicesHeading": "Diensten",
       "agenceHeading": "Bureau",
@@ -390,25 +389,20 @@
       "copyright": "© 2026 Smidjan · Alle rechten voorbehouden.",
       "links": {
         "reseaux": "Netwerken & infrastructuur",
-        "audits": "Audits & pentests",
+        "audits": "Audits & beveiligingstests",
         "devWeb": "Beveiligde webontwikkeling",
         "conformite": "NIS2- / CyFun-conformiteit",
         "incident": "Incidentrespons",
         "apropos": "Over ons",
         "approche": "Onze aanpak",
         "ressources": "Bronnen & gidsen",
-        "contact": "Contact",
-        "diagnostic": "Gratis diagnose"
+        "contact": "Contact"
       },
       "legal": {
         "mentions": "Wettelijke vermeldingen",
         "privacy": "Privacybeleid",
         "cgv": "Algemene voorwaarden"
       }
-    },
-    "emergency": {
-      "message": "Beveiligingsincident aan de gang? Elke minuut telt.",
-      "cta": "Slachtoffer van een aanval?"
     },
     "breadcrumb": {
       "aria": "Kruimelpad",
@@ -441,7 +435,7 @@
         "nis2": "Expertise NIS2 & CyFun",
         "owasp": "OWASP-aanpak",
         "cyfun": "CyberFundamentals (CCB)",
-        "local": "Lokaal & reactief in Luik",
+        "local": "Lokaal & reactief in Wallonië",
         "expert": "Rechtstreeks contact met de expert"
       }
     }

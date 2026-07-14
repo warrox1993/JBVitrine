@@ -8,17 +8,16 @@
   },
   "brand": {
     "ariaHome": "Smidjan, home",
-    "tagline": "Cybersecurity · Liège"
+    "tagline": "Cybersecurity & GRC"
   },
   "header": {
     "navAria": "Main navigation",
-    "cta": "Free assessment",
+    "cta": "Contact me",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu",
-    "incident": "Incident in progress?"
+    "closeMenu": "Close menu"
   },
   "footer": {
-    "blurb": "Cybersecurity and NIS2 compliance for SMEs in Wallonia. We secure, we test, we develop, we bring you into compliance, and we remediate what we find.",
+    "blurb": "Cybersecurity and governance (GRC) practitioner in Wallonia. I build my skills and my tools in the open: what I can do, with evidence, and what I cannot do yet.",
     "location": "Wallonia, Belgium",
     "servicesHeading": "Services",
     "agenceHeading": "Agency",
@@ -27,25 +26,20 @@
     "copyright": "© 2026 Smidjan · All rights reserved.",
     "links": {
       "reseaux": "Networks & infrastructure",
-      "audits": "Audits & pentesting",
+      "audits": "Audits & security testing",
       "devWeb": "Secure web development",
       "conformite": "NIS2 / CyFun compliance",
       "incident": "Incident response",
       "apropos": "About",
       "approche": "Our approach",
       "ressources": "Resources & guides",
-      "contact": "Contact",
-      "diagnostic": "Free assessment"
+      "contact": "Contact"
     },
     "legal": {
       "mentions": "Legal notice",
       "privacy": "Privacy policy",
       "cgv": "Terms of sale"
     }
-  },
-  "emergency": {
-    "message": "Security incident in progress? Every minute counts.",
-    "cta": "Under attack?"
   },
   "breadcrumb": {
     "aria": "Breadcrumb",
@@ -78,7 +72,7 @@
       "nis2": "NIS2 & CyFun expertise",
       "owasp": "OWASP approach",
       "cyfun": "CyberFundamentals (CCB)",
-      "local": "Local & responsive in Liège",
+      "local": "Local & responsive in Wallonia",
       "expert": "Direct access to the expert"
     }
   }
