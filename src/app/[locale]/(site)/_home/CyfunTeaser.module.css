@@ -1,0 +1,122 @@
+/* CyfunTeaser — flagship-project block, tinted background, 8 benefits + honesty note. */
+.wrap {
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-5);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  margin: 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  margin: var(--space-3) 0 0;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--color-text);
+  font-weight: 700;
+  text-wrap: balance;
+  max-width: 32ch;
+}
+
+.lead {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: var(--space-3) 0 0;
+  max-width: 60ch;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3) var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.check {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-12);
+  color: var(--color-primary);
+  margin-top: 0.1em;
+}
+
+.honesty {
+  margin-top: var(--space-6);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+
+.honesty p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.cta:hover,
+.cta:focus-visible {
+  color: var(--color-primary-strong);
+}
+
+.cta span {
+  transition: var(--transition-base);
+}
+
+.cta:hover span,
+.cta:focus-visible span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta,
+  .cta span {
+    transition: none;
+  }
+  .cta:hover span,
+  .cta:focus-visible span {
+    transform: none;
+  }
+}
