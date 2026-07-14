@@ -16,7 +16,7 @@ export async function CyfunTeaser() {
   const t = await getTranslations("home");
 
   return (
-    <div className={styles.wrap}>
+    <>
       <Reveal>
         <p className={styles.eyebrow}>{t("cyfun.eyebrow")}</p>
         <h2 className={styles.title}>{t("cyfun.title")}</h2>
@@ -44,7 +44,7 @@ export async function CyfunTeaser() {
           <span aria-hidden="true">&rarr;</span>
         </Link>
       </Reveal>
-    </div>
+    </>
   );
 }
 

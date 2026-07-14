@@ -8,18 +8,16 @@ export async function ApprocheTeaser() {
   const t = await getTranslations("home");
 
   return (
-    <div className={styles.wrap}>
-      <Reveal className={styles.inner}>
-        <p className={styles.eyebrow}>{t("approche.eyebrow")}</p>
-        <h2 className={styles.title}>{t("approche.title")}</h2>
-        <p className={styles.lead}>{t("approche.p1")}</p>
-        <p className={styles.lead}>{t("approche.p2")}</p>
-        <Link href="/approche" className={styles.cta}>
-          {t("approche.cta")}
-          <span aria-hidden="true">&rarr;</span>
-        </Link>
-      </Reveal>
-    </div>
+    <Reveal className={styles.inner}>
+      <p className={styles.eyebrow}>{t("approche.eyebrow")}</p>
+      <h2 className={styles.title}>{t("approche.title")}</h2>
+      <p className={styles.lead}>{t("approche.p1")}</p>
+      <p className={styles.lead}>{t("approche.p2")}</p>
+      <Link href="/approche" className={styles.cta}>
+        {t("approche.cta")}
+        <span aria-hidden="true">&rarr;</span>
+      </Link>
+    </Reveal>
   );
 }
 

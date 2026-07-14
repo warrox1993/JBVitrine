@@ -1,10 +1,6 @@
-/* ApprocheTeaser — centered editorial excerpt, comfortable reading width. */
-.wrap {
-  background: var(--color-bg);
-}
-
+/* ApprocheTeaser: centered editorial excerpt, comfortable reading width. Background comes from the Section variant. */
 .inner {
-  max-width: 65ch;
+  max-inline-size: 65ch;
   margin: 0 auto;
   text-align: center;
 }
@@ -35,9 +31,6 @@
   color: var(--color-text-muted);
   line-height: 1.65;
   margin: var(--space-4) 0 0;
-  max-inline-size: 65ch;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .cta {

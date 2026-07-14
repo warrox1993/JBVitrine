@@ -1,10 +1,4 @@
-/* CyfunTeaser — flagship-project block, tinted background, 8 benefits + honesty note. */
-.wrap {
-  background: var(--color-bg-alt);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6) var(--space-5);
-}
-
+/* CyfunTeaser: flagship-project block, 8 benefits + honesty note. Background comes from the Section tint variant. */
 .eyebrow {
   font-family: var(--font-mono);
   color: var(--color-primary);

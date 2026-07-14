@@ -14,7 +14,7 @@ export async function Capabilities() {
   const t = await getTranslations("home");
 
   return (
-    <div className={styles.wrap}>
+    <>
       <Reveal>
         <p className={styles.eyebrow}>{t("capabilities.eyebrow")}</p>
         <h2 className={styles.title}>{t("capabilities.title")}</h2>
@@ -34,7 +34,7 @@ export async function Capabilities() {
           </Link>
         ))}
       </Reveal>
-    </div>
+    </>
   );
 }
 

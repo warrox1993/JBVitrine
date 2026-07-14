@@ -14,7 +14,7 @@ export async function Parcours() {
   const items = t.raw("parcours.items") as ParcoursItem[];
 
   return (
-    <div className={styles.wrap}>
+    <>
       <Reveal>
         <p className={styles.eyebrow}>{t("parcours.eyebrow")}</p>
         <h2 className={styles.title}>{t("parcours.title")}</h2>
@@ -33,7 +33,7 @@ export async function Parcours() {
       <Reveal>
         <p className={styles.certs}>{t("parcours.certs")}</p>
       </Reveal>
-    </div>
+    </>
   );
 }
 

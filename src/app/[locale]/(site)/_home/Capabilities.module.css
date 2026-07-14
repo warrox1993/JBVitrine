@@ -1,4 +1,4 @@
-/* Capabilities — eyebrow + heading, then 3 index-mono cards. */
+/* Capabilities: eyebrow + heading, then 3 index-mono cards. */
 .eyebrow {
   font-family: var(--font-mono);
   color: var(--color-primary);

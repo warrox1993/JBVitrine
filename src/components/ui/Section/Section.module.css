@@ -7,7 +7,7 @@
   background: var(--color-surface-solid);
 }
 .tint {
-  background: var(--bg-2);
+  background: var(--color-bg-alt);
 }
 .tint3 {
   background: var(--bg-3);
