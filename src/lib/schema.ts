@@ -13,15 +13,14 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     contactType: "Customer Service",
     telephone: "+32475205562",
-    email: "smidjan.agency@outlook.com",
+    email: "jeanbaptiste.dhondt1@gmail.com",
     availableLanguage: ["fr-BE", "French"],
-    areaServed: ["BE", "Wallonie", "Liège"],
+    areaServed: ["BE", "Wallonie"],
   },
   address: {
     "@type": "PostalAddress",
     addressCountry: "BE",
     addressRegion: "Wallonie",
-    addressLocality: "Liège",
   },
   sameAs: [
     "https://www.linkedin.com/in/jean-baptistedhondt",
@@ -47,31 +46,20 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": "https://smidjan.be/#localbusiness",
-  name: "Smidjan, Cybersécurité & conformité NIS2, Liège",
+  name: "Smidjan, Cybersécurité & conformité NIS2, Wallonie",
   alternateName: "Smidjan Cybersécurité",
   image: "https://smidjan.be/og-image.webp",
   description:
-    "Prestataire cybersécurité à Liège : sécurisation des réseaux, de l'infrastructure et des applications, audit et remédiation, mise en conformité NIS2 / CyberFundamentals (CCB) pour les PME en Belgique et en Wallonie.",
+    "Prestataire cybersécurité en Wallonie : sécurisation des réseaux, de l'infrastructure et des applications, audit et remédiation, mise en conformité NIS2 / CyberFundamentals (CCB) pour les PME en Belgique et en Wallonie.",
   url: "https://smidjan.be",
   telephone: "+32475205562",
-  email: "smidjan.agency@outlook.com",
+  email: "jeanbaptiste.dhondt1@gmail.com",
   address: {
     "@type": "PostalAddress",
     addressCountry: "BE",
     addressRegion: "Wallonie",
-    addressLocality: "Liège",
-    postalCode: "4000",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 50.6446374,
-    longitude: 5.5664509,
   },
   areaServed: [
-    {
-      "@type": "City",
-      name: "Liège",
-    },
     {
       "@type": "State",
       name: "Wallonie",
@@ -160,7 +148,7 @@ export const homeWebPageSchema = {
   "@type": "WebPage",
   "@id": "https://smidjan.be/#webpage",
   url: "https://smidjan.be/",
-  name: "Cybersécurité & conformité NIS2 pour les PME | Smidjan, Liège",
+  name: "Cybersécurité & conformité NIS2 pour les PME | Smidjan, Wallonie",
   description:
     "Sécurité des réseaux, de l'infrastructure et des applications, et mise en conformité NIS2 / CyberFundamentals pour les PME wallonnes.",
   inLanguage: "fr-BE",
