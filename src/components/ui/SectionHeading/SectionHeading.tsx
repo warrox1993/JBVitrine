@@ -23,15 +23,15 @@ export function SectionHeading({
   title,
   lead,
   as = "h2",
-  center,
   onDark,
   id,
   className,
 }: SectionHeadingProps) {
   const Tag = as;
+  // `center` is intentionally ignored: all section headings are left-aligned
+  // to match the home style (site-wide alignment harmonisation).
   const cn = [
     styles.head,
-    center ? styles.center : "",
     onDark ? styles.onDark : "",
     className,
   ]
