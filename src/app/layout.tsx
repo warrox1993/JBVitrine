@@ -11,7 +11,7 @@ import './styles/utilities.css';
 import '../styles/buttons.animations.css';
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
-import { Inter, Instrument_Sans } from 'next/font/google';
+import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import FXReady from './FXReady';
 import { RootEffects } from '@/components/Effects/RootEffects';
 import RouteProgressProvider from '@/app/RouteProgressProvider';
@@ -31,13 +31,23 @@ const inter = Inter({
     adjustFontFallback: true
 });
 
-const instrument = Instrument_Sans({
+const spaceGrotesk = Space_Grotesk({
     subsets: ['latin'],
-    weight: ['400','700'],
+    weight: ['500','600','700'],
     variable: '--font-display',
-    display: 'swap', // Prevent FOIT
+    display: 'swap',
     preload: true,
     fallback: ['system-ui', '-apple-system', 'sans-serif'],
+    adjustFontFallback: true
+});
+
+const jetbrainsMono = JetBrains_Mono({
+    subsets: ['latin'],
+    weight: ['500','700'],
+    variable: '--font-mono',
+    display: 'swap',
+    preload: false,
+    fallback: ['ui-monospace', 'SFMono-Regular', 'monospace'],
     adjustFontFallback: true
 });
 
@@ -153,7 +163,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
                     }}
                 />
             </head>
-            <body className={`${inter.variable} ${instrument.variable}`}>
+            <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
                 <FXReady />
                 <NextIntlClientProvider>
                     <RootEffects>
