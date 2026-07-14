@@ -1,6 +1,8 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import styles from "./WhoamiTerminal.module.css";
+
+const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 type Props = { name: string; role: string };
 
@@ -9,13 +11,15 @@ const CHECK_PATH = "M15.8 20.2l3 3 5.4-6";
 
 export function WhoamiTerminal({ name, role }: Props) {
   const [phase, setPhase] = useState(0); // 0..4 (lignes révélées), 5 = bouclier
-  const reduced = useRef(false);
+
+  useIsoLayoutEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) setPhase(5);
+  }, []);
 
   useEffect(() => {
-    reduced.current =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced.current) { setPhase(5); return; }
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return;
     const timers = [420, 900, 1300, 1750, 2200].map((ms, i) =>
       window.setTimeout(() => setPhase(i + 1), ms)
     );
@@ -23,7 +27,7 @@ export function WhoamiTerminal({ name, role }: Props) {
   }, []);
 
   return (
-    <div className={styles.term} role="img" aria-label={`${name}, ${role}`}>
+    <div className={styles.term} role="group" aria-label={`${name}, ${role}`}>
       <div className={styles.bar}><span/><span/><span/></div>
       <pre className={styles.body}>
         <span className={styles.prompt}>&gt; whoami</span>
