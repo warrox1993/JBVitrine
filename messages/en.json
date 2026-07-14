@@ -19,7 +19,7 @@
       "badgeLocation": "Based in Wallonia",
       "badgeAccess": "Direct access to the expert",
       "badgeData": "Data hosted in Belgium / EU",
-      "imageAlt": "A bridge lit up at night over a river, symbolising Smidjan's roots in Wallonia"
+      "imageAlt": "Server racks in a data center, illustrating infrastructure hardening."
     },
     "engagements": {
       "eyebrow": "Our commitments",
@@ -157,7 +157,7 @@
       "title": "Four <accent>steps</accent>, from the first finding to lasting follow-up",
       "lead": "Audit, security testing, NIS2 / CyFun compliance: the same method every time. You know what is happening and what you receive.",
       "overviewKicker": "Quick overview",
-      "photo2Alt": "A consultant sorts priorities by quarter on a planning board, illustrating the construction of a prioritised roadmap with the client.",
+      "photo2Alt": "Secure development workstation.",
       "photo2Caption": "A <b>prioritised roadmap</b>, built with you.",
       "deliverHead": "What you receive"
     },
@@ -226,7 +226,7 @@
       "eyebrow": "Why Smidjan",
       "title": "The rigour of a firm, the closeness of a <accent>partner</accent>",
       "lead": "A human-scale structure, by choice. Fewer intermediaries, more accountability.",
-      "photoAlt": "A consultant and a company director share a high five around a desk, illustrating the direct relationship with the expert dedicated to your case, without subcontracting.",
+      "photoAlt": "Close-up of a printed circuit board, illustrating a secure-by-design architecture.",
       "photoCaption": "A <b>dedicated expert</b>, directly reachable, never a call centre or a junior.",
       "items": {
         "local": {
@@ -470,7 +470,7 @@
       "eyebrow": "NIS2, in plain terms",
       "title": "What the directive changes for you, <accent>without jargon</accent>",
       "lead": "NIS2 raises the level of cybersecurity required of thousands of organisations. Three questions to find out where you stand.",
-      "photoAlt": "Management board gathered in a meeting room, discussing cyber risks and the governance responsibilities tied to NIS2 compliance",
+      "photoAlt": "Secure development workstation.",
       "photoCap": "NIS2 compliance engages the <b>responsibility of the governing bodies</b>, a matter of governance, not only of IT.",
       "card1": {
         "title": "Who is concerned?",
@@ -502,7 +502,7 @@
       "title": "CyFun: the <accent>Belgian answer</accent> to NIS2, published by the CCB",
       "lead": "The <b>CyberFundamentals Framework (CyFun)</b>, from the <b>Centre for Cybersecurity Belgium (CCB)</b>, is the recognised way to demonstrate your NIS2 compliance.",
       "note": "Based on international standards, translated into <b>progressive measures</b> adapted to your size and your risk.",
-      "photoAlt": "Consultant completing a CyFun compliance checklist on a tablet, measure by measure",
+      "photoAlt": "Server racks in a data center, illustrating infrastructure hardening.",
       "photoCap": "The CyFun self-assessment: a <b>foundation of measures</b> verified one by one, not a statement of intent.",
       "mapHead": "CyFun, aligned with the standards",
       "map": {
@@ -541,7 +541,7 @@
       "eyebrow": "Our support",
       "title": "We don't just audit: <accent>we fix</accent> and we get you ready",
       "lead": "No report we leave you to manage alone. We fix, we prepare, we get you ready.",
-      "photoAlt": "Signing a document as part of an NIS2 compliance audit process",
+      "photoAlt": "Close-up of a printed circuit board, illustrating a secure-by-design architecture.",
       "photoCap": "Hands-on <b>field support</b>: we work with your teams, not only on a report.",
       "honesty": {
         "title": "In full transparency: who does what",
@@ -752,7 +752,7 @@
       "directPromise": "<strong>A Smidjan expert</strong>, never a call center.",
       "lead": "Diagnostic, NIS2 audit, security testing or incident: a single point of contact.",
       "ctaPrimary": "Describe my needs",
-      "imageAlt": "Smidjan team gathered around a laptop in a modern, bright office, a friendly exchange between colleagues.",
+      "imageAlt": "Close-up of a printed circuit board, illustrating a secure-by-design architecture.",
       "assure1": "Reply within 24 business hours",
       "assure2": "No commitment",
       "assure3": "Based in Wallonia"
@@ -826,7 +826,7 @@
       "processStep1": "You write",
       "processStep2": "Callback within 24 h",
       "processStep3": "Free diagnostic",
-      "coordImageAlt": "Smiling person on the phone at their desk with a laptop, ready to answer your request.",
+      "coordImageAlt": "Server racks in a data center, illustrating infrastructure hardening.",
       "coordTag": "We reply to you",
       "coordTitle": "Our contact details",
       "coordZoneK": "Service area",
@@ -1448,7 +1448,7 @@
         "internalNetwork": "Internal network"
       },
       "test": {
-        "photoAlt": "Security analysts examining code and dashboards on multiple screens during an audit.",
+        "photoAlt": "Close-up of a printed circuit board, illustrating a secure-by-design architecture.",
         "caption": "<b>Reveal the flaws</b> before a real attacker exploits them.",
         "aria": "Illustration: a security test detects a vulnerable application module through a targeted analysis, then records it in a report of results ranked by severity, with a critical flaw flagged.",
         "appTested": "Application tested",
@@ -1469,7 +1469,7 @@
         "securityByDesign": "Security built in from the design stage"
       },
       "comply": {
-        "photoAlt": "Team of professionals reviewing documents and a checklist together during a compliance meeting.",
+        "photoAlt": "Server racks in a data center, illustrating infrastructure hardening.",
         "caption": "<b>From audit to proof</b>, all the way to CyFun compliance.",
         "aria": "Illustration: three ascending tiers of the CyFun framework (Basic, Important and Essential) connected by a compliance journey leading to a validation.",
         "basic": "Basic",

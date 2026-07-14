@@ -36,7 +36,7 @@
     "eyebrow": "NIS2, en clair",
     "title": "Ce que la directive change pour vous, <accent>sans jargon</accent>",
     "lead": "NIS2 relève le niveau de cybersécurité exigé de milliers d'organisations. Trois questions pour savoir où vous en êtes.",
-    "photoAlt": "Comité de direction réuni en salle de réunion, discutant des risques cyber et des responsabilités de gouvernance liées à la conformité NIS2",
+    "photoAlt": "Poste de travail de développement sécurisé.",
     "photoCap": "La conformité NIS2 engage la <b>responsabilité des organes de direction</b>, un sujet de gouvernance, pas seulement d'IT.",
     "card1": {
       "title": "Qui est concerné ?",
@@ -68,7 +68,7 @@
     "title": "CyFun : la <accent>réponse belge</accent> à NIS2, publiée par le CCB",
     "lead": "Le <b>CyberFundamentals Framework (CyFun)</b>, du <b>Centre pour la Cybersécurité Belgique (CCB)</b>, est le moyen reconnu de démontrer votre conformité NIS2.",
     "note": "Basé sur les standards internationaux, traduit en <b>mesures progressives</b> adaptées à votre taille et à votre risque.",
-    "photoAlt": "Consultant complétant une checklist de conformité CyFun sur tablette, mesure par mesure",
+    "photoAlt": "Baies de serveurs dans un datacenter, illustrant le durcissement de l'infrastructure.",
     "photoCap": "L'auto-évaluation CyFun : un <b>socle de mesures</b> vérifiées une à une, pas une déclaration d'intention.",
     "mapHead": "CyFun, aligné sur les standards",
     "map": {
@@ -107,7 +107,7 @@
     "eyebrow": "Notre accompagnement",
     "title": "On ne se contente pas d'auditer : <accent>on corrige</accent> et on vous amène prêts",
     "lead": "Pas de rapport qu'on vous laisse gérer seul. On corrige, on prépare, on vous amène prêts.",
-    "photoAlt": "Signature d'un document dans le cadre d'une démarche d'audit de conformité NIS2",
+    "photoAlt": "Gros plan d'un circuit imprimé, illustrant une architecture pensée secure by design.",
     "photoCap": "Un <b>accompagnement de terrain</b> : nous travaillons avec vos équipes, pas seulement sur un rapport.",
     "honesty": {
       "title": "En toute transparence : qui fait quoi",

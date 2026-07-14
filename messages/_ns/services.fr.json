@@ -241,7 +241,7 @@
       "internalNetwork": "Réseau interne"
     },
     "test": {
-      "photoAlt": "Analystes en sécurité examinant du code et des tableaux de bord sur plusieurs écrans lors d'un audit.",
+      "photoAlt": "Gros plan d'un circuit imprimé, illustrant une architecture pensée secure by design.",
       "caption": "<b>Révéler les failles</b> avant qu'un vrai attaquant ne les exploite.",
       "aria": "Illustration : un test de sécurité détecte un module applicatif vulnérable à l'aide d'une analyse ciblée, puis le consigne dans un rapport de résultats classés par criticité, avec une faille critique signalée.",
       "appTested": "Application testée",
@@ -262,7 +262,7 @@
       "securityByDesign": "Sécurité intégrée dès la conception"
     },
     "comply": {
-      "photoAlt": "Équipe de professionnels examinant ensemble des documents et une checklist lors d'une réunion de conformité.",
+      "photoAlt": "Baies de serveurs dans un datacenter, illustrant le durcissement de l'infrastructure.",
       "caption": "<b>De l'audit à la preuve</b>, jusqu'à la conformité CyFun.",
       "aria": "Illustration : trois paliers ascendants du référentiel CyFun (Basic, Important et Essential) reliés par un parcours de mise en conformité aboutissant à une validation.",
       "basic": "Basic",

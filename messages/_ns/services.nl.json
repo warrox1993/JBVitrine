@@ -241,7 +241,7 @@
       "internalNetwork": "Intern netwerk"
     },
     "test": {
-      "photoAlt": "Beveiligingsanalisten die code en dashboards op meerdere schermen onderzoeken tijdens een audit.",
+      "photoAlt": "Close-up van een printplaat, symbool voor een secure-by-design architectuur.",
       "caption": "<b>Zwakke plekken onthullen</b> voordat een echte aanvaller ze uitbuit.",
       "aria": "Illustratie : een beveiligingstest detecteert een kwetsbare applicatiemodule via een gerichte analyse en legt die vervolgens vast in een rapport met resultaten geordend op ernst, met een kritieke kwetsbaarheid gemarkeerd.",
       "appTested": "Geteste applicatie",
@@ -262,7 +262,7 @@
       "securityByDesign": "Beveiliging geïntegreerd vanaf het ontwerp"
     },
     "comply": {
-      "photoAlt": "Team van professionals dat samen documenten en een checklist onderzoekt tijdens een conformiteitsvergadering.",
+      "photoAlt": "Serverracks in een datacenter, ter illustratie van infrastructuurhardening.",
       "caption": "<b>Van audit tot bewijs</b>, tot de CyFun-conformiteit.",
       "aria": "Illustratie : drie oplopende niveaus van het CyFun-referentiekader (Basic, Important en Essential) verbonden door een conformiteitstraject dat uitmondt in een validatie.",
       "basic": "Basic",

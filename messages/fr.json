@@ -19,7 +19,7 @@
       "badgeLocation": "Basés en Wallonie",
       "badgeAccess": "Accès direct à l'expert",
       "badgeData": "Données hébergées en Belgique / UE",
-      "imageAlt": "Un pont illuminé la nuit au-dessus d'un fleuve, symbole de l'ancrage de Smidjan en Wallonie"
+      "imageAlt": "Baies de serveurs dans un datacenter, illustrant le durcissement de l'infrastructure."
     },
     "engagements": {
       "eyebrow": "Nos engagements",
@@ -157,7 +157,7 @@
       "title": "Quatre <accent>étapes</accent>, du premier constat au suivi durable",
       "lead": "Audit, tests de sécurité, conformité NIS2 / CyFun : même méthode à chaque fois. Vous savez ce qui se passe et ce que vous recevez.",
       "overviewKicker": "Aperçu rapide",
-      "photo2Alt": "Un consultant classe des priorités par trimestre sur un tableau de planification, illustrant la construction d'une feuille de route priorisée avec le client.",
+      "photo2Alt": "Poste de travail de développement sécurisé.",
       "photo2Caption": "Une <b>feuille de route priorisée</b>, construite avec vous.",
       "deliverHead": "Ce que vous recevez"
     },
@@ -226,7 +226,7 @@
       "eyebrow": "Pourquoi Smidjan",
       "title": "La rigueur d'un cabinet, la proximité d'un <accent>partenaire</accent>",
       "lead": "Structure à taille humaine, par choix. Moins d'intermédiaires, plus de responsabilité.",
-      "photoAlt": "Un consultant et une dirigeante se félicitent d'un high five autour d'un bureau, illustrant la relation directe avec l'expert dédié à votre dossier, sans sous-traitance.",
+      "photoAlt": "Gros plan d'un circuit imprimé, illustrant une architecture pensée secure by design.",
       "photoCaption": "Un <b>expert dédié</b>, joignable directement, jamais un centre d'appel ni un junior.",
       "items": {
         "local": {
@@ -470,7 +470,7 @@
       "eyebrow": "NIS2, en clair",
       "title": "Ce que la directive change pour vous, <accent>sans jargon</accent>",
       "lead": "NIS2 relève le niveau de cybersécurité exigé de milliers d'organisations. Trois questions pour savoir où vous en êtes.",
-      "photoAlt": "Comité de direction réuni en salle de réunion, discutant des risques cyber et des responsabilités de gouvernance liées à la conformité NIS2",
+      "photoAlt": "Poste de travail de développement sécurisé.",
       "photoCap": "La conformité NIS2 engage la <b>responsabilité des organes de direction</b>, un sujet de gouvernance, pas seulement d'IT.",
       "card1": {
         "title": "Qui est concerné ?",
@@ -502,7 +502,7 @@
       "title": "CyFun : la <accent>réponse belge</accent> à NIS2, publiée par le CCB",
       "lead": "Le <b>CyberFundamentals Framework (CyFun)</b>, du <b>Centre pour la Cybersécurité Belgique (CCB)</b>, est le moyen reconnu de démontrer votre conformité NIS2.",
       "note": "Basé sur les standards internationaux, traduit en <b>mesures progressives</b> adaptées à votre taille et à votre risque.",
-      "photoAlt": "Consultant complétant une checklist de conformité CyFun sur tablette, mesure par mesure",
+      "photoAlt": "Baies de serveurs dans un datacenter, illustrant le durcissement de l'infrastructure.",
       "photoCap": "L'auto-évaluation CyFun : un <b>socle de mesures</b> vérifiées une à une, pas une déclaration d'intention.",
       "mapHead": "CyFun, aligné sur les standards",
       "map": {
@@ -541,7 +541,7 @@
       "eyebrow": "Notre accompagnement",
       "title": "On ne se contente pas d'auditer : <accent>on corrige</accent> et on vous amène prêts",
       "lead": "Pas de rapport qu'on vous laisse gérer seul. On corrige, on prépare, on vous amène prêts.",
-      "photoAlt": "Signature d'un document dans le cadre d'une démarche d'audit de conformité NIS2",
+      "photoAlt": "Gros plan d'un circuit imprimé, illustrant une architecture pensée secure by design.",
       "photoCap": "Un <b>accompagnement de terrain</b> : nous travaillons avec vos équipes, pas seulement sur un rapport.",
       "honesty": {
         "title": "En toute transparence : qui fait quoi",
@@ -752,7 +752,7 @@
       "directPromise": "<strong>Un expert Smidjan</strong>, jamais un centre d'appels.",
       "lead": "Diagnostic, audit NIS2, tests de sécurité ou incident : un seul interlocuteur.",
       "ctaPrimary": "Décrire mon besoin",
-      "imageAlt": "Équipe Smidjan réunie autour d'un ordinateur portable dans un bureau moderne et lumineux, échange convivial entre collègues.",
+      "imageAlt": "Gros plan d'un circuit imprimé, illustrant une architecture pensée secure by design.",
       "assure1": "Réponse sous 24 h ouvrées",
       "assure2": "Sans engagement",
       "assure3": "Basés en Wallonie"
@@ -826,7 +826,7 @@
       "processStep1": "Vous écrivez",
       "processStep2": "Rappel sous 24 h",
       "processStep3": "Diagnostic gratuit",
-      "coordImageAlt": "Personne souriante, au téléphone à son bureau avec un ordinateur portable, prête à répondre à votre demande.",
+      "coordImageAlt": "Baies de serveurs dans un datacenter, illustrant le durcissement de l'infrastructure.",
       "coordTag": "On vous répond",
       "coordTitle": "Nos coordonnées",
       "coordZoneK": "Zone d'intervention",
@@ -1448,7 +1448,7 @@
         "internalNetwork": "Réseau interne"
       },
       "test": {
-        "photoAlt": "Analystes en sécurité examinant du code et des tableaux de bord sur plusieurs écrans lors d'un audit.",
+        "photoAlt": "Gros plan d'un circuit imprimé, illustrant une architecture pensée secure by design.",
         "caption": "<b>Révéler les failles</b> avant qu'un vrai attaquant ne les exploite.",
         "aria": "Illustration : un test de sécurité détecte un module applicatif vulnérable à l'aide d'une analyse ciblée, puis le consigne dans un rapport de résultats classés par criticité, avec une faille critique signalée.",
         "appTested": "Application testée",
@@ -1469,7 +1469,7 @@
         "securityByDesign": "Sécurité intégrée dès la conception"
       },
       "comply": {
-        "photoAlt": "Équipe de professionnels examinant ensemble des documents et une checklist lors d'une réunion de conformité.",
+        "photoAlt": "Baies de serveurs dans un datacenter, illustrant le durcissement de l'infrastructure.",
         "caption": "<b>De l'audit à la preuve</b>, jusqu'à la conformité CyFun.",
         "aria": "Illustration : trois paliers ascendants du référentiel CyFun (Basic, Important et Essential) reliés par un parcours de mise en conformité aboutissant à une validation.",
         "basic": "Basic",

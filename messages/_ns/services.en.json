@@ -241,7 +241,7 @@
       "internalNetwork": "Internal network"
     },
     "test": {
-      "photoAlt": "Security analysts examining code and dashboards on multiple screens during an audit.",
+      "photoAlt": "Close-up of a printed circuit board, illustrating a secure-by-design architecture.",
       "caption": "<b>Reveal the flaws</b> before a real attacker exploits them.",
       "aria": "Illustration: a security test detects a vulnerable application module through a targeted analysis, then records it in a report of results ranked by severity, with a critical flaw flagged.",
       "appTested": "Application tested",
@@ -262,7 +262,7 @@
       "securityByDesign": "Security built in from the design stage"
     },
     "comply": {
-      "photoAlt": "Team of professionals reviewing documents and a checklist together during a compliance meeting.",
+      "photoAlt": "Server racks in a data center, illustrating infrastructure hardening.",
       "caption": "<b>From audit to proof</b>, all the way to CyFun compliance.",
       "aria": "Illustration: three ascending tiers of the CyFun framework (Basic, Important and Essential) connected by a compliance journey leading to a validation.",
       "basic": "Basic",

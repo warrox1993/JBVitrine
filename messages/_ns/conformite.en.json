@@ -36,7 +36,7 @@
     "eyebrow": "NIS2, in plain terms",
     "title": "What the directive changes for you, <accent>without jargon</accent>",
     "lead": "NIS2 raises the level of cybersecurity required of thousands of organisations. Three questions to find out where you stand.",
-    "photoAlt": "Management board gathered in a meeting room, discussing cyber risks and the governance responsibilities tied to NIS2 compliance",
+    "photoAlt": "Secure development workstation.",
     "photoCap": "NIS2 compliance engages the <b>responsibility of the governing bodies</b>, a matter of governance, not only of IT.",
     "card1": {
       "title": "Who is concerned?",
@@ -68,7 +68,7 @@
     "title": "CyFun: the <accent>Belgian answer</accent> to NIS2, published by the CCB",
     "lead": "The <b>CyberFundamentals Framework (CyFun)</b>, from the <b>Centre for Cybersecurity Belgium (CCB)</b>, is the recognised way to demonstrate your NIS2 compliance.",
     "note": "Based on international standards, translated into <b>progressive measures</b> adapted to your size and your risk.",
-    "photoAlt": "Consultant completing a CyFun compliance checklist on a tablet, measure by measure",
+    "photoAlt": "Server racks in a data center, illustrating infrastructure hardening.",
     "photoCap": "The CyFun self-assessment: a <b>foundation of measures</b> verified one by one, not a statement of intent.",
     "mapHead": "CyFun, aligned with the standards",
     "map": {
@@ -107,7 +107,7 @@
     "eyebrow": "Our support",
     "title": "We don't just audit: <accent>we fix</accent> and we get you ready",
     "lead": "No report we leave you to manage alone. We fix, we prepare, we get you ready.",
-    "photoAlt": "Signing a document as part of an NIS2 compliance audit process",
+    "photoAlt": "Close-up of a printed circuit board, illustrating a secure-by-design architecture.",
     "photoCap": "Hands-on <b>field support</b>: we work with your teams, not only on a report.",
     "honesty": {
       "title": "In full transparency: who does what",

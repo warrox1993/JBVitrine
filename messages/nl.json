@@ -19,7 +19,7 @@
       "badgeLocation": "Gevestigd in Wallonië",
       "badgeAccess": "Rechtstreeks contact met de expert",
       "badgeData": "Gegevens gehost in België / EU",
-      "imageAlt": "Een verlichte brug 's nachts boven een rivier, symbool van de verankering van Smidjan in Wallonië"
+      "imageAlt": "Serverracks in een datacenter, ter illustratie van infrastructuurhardening."
     },
     "engagements": {
       "eyebrow": "Onze engagementen",
@@ -157,7 +157,7 @@
       "title": "Vier <accent>stappen</accent>, van de eerste vaststelling tot duurzame opvolging",
       "lead": "Audit, beveiligingstests, NIS2- / CyFun-conformiteit : telkens dezelfde methode. U weet wat er gebeurt en wat u ontvangt.",
       "overviewKicker": "Snel overzicht",
-      "photo2Alt": "Een consultant rangschikt prioriteiten per kwartaal op een planningsbord, wat de opbouw van een geprioriteerde roadmap samen met de klant illustreert.",
+      "photo2Alt": "Beveiligde ontwikkelwerkplek.",
       "photo2Caption": "Een <b>geprioriteerde roadmap</b>, samen met u opgebouwd.",
       "deliverHead": "Wat u ontvangt"
     },
@@ -226,7 +226,7 @@
       "eyebrow": "Waarom Smidjan",
       "title": "De striktheid van een kantoor, de nabijheid van een <accent>partner</accent>",
       "lead": "Een structuur op mensenmaat, uit keuze. Minder tussenpersonen, meer verantwoordelijkheid.",
-      "photoAlt": "Een consultant en een bedrijfsleidster geven elkaar een high five rond een bureau, wat de rechtstreekse relatie illustreert met de expert die aan uw dossier is toegewijd, zonder onderaanneming.",
+      "photoAlt": "Close-up van een printplaat, symbool voor een secure-by-design architectuur.",
       "photoCaption": "Een <b>toegewijde expert</b>, rechtstreeks bereikbaar, nooit een callcenter of een junior.",
       "items": {
         "local": {
@@ -470,7 +470,7 @@
       "eyebrow": "NIS2, helder uitgelegd",
       "title": "Wat de richtlijn voor u verandert, <accent>zonder jargon</accent>",
       "lead": "NIS2 verhoogt het vereiste cyberbeveiligingsniveau van duizenden organisaties. Drie vragen om te weten waar u staat.",
-      "photoAlt": "Directiecomité bijeen in een vergaderzaal, in gesprek over cyberrisico's en de governanceverantwoordelijkheden verbonden aan NIS2-conformiteit",
+      "photoAlt": "Beveiligde ontwikkelwerkplek.",
       "photoCap": "NIS2-conformiteit betrekt de <b>verantwoordelijkheid van de bestuursorganen</b>, een kwestie van governance, niet alleen van IT.",
       "card1": {
         "title": "Wie is betrokken?",
@@ -502,7 +502,7 @@
       "title": "CyFun: het <accent>Belgische antwoord</accent> op NIS2, gepubliceerd door het CCB",
       "lead": "Het <b>CyberFundamentals Framework (CyFun)</b>, van het <b>Centrum voor Cybersecurity België (CCB)</b>, is de erkende manier om uw NIS2-conformiteit aan te tonen.",
       "note": "Gebaseerd op internationale standaarden, vertaald naar <b>progressieve maatregelen</b> afgestemd op uw omvang en uw risico.",
-      "photoAlt": "Consultant die een CyFun-conformiteitschecklist invult op een tablet, maatregel per maatregel",
+      "photoAlt": "Serverracks in een datacenter, ter illustratie van infrastructuurhardening.",
       "photoCap": "De CyFun-zelfevaluatie: een <b>basis van maatregelen</b> die één voor één worden gecontroleerd, geen intentieverklaring.",
       "mapHead": "CyFun, afgestemd op de standaarden",
       "map": {
@@ -541,7 +541,7 @@
       "eyebrow": "Onze begeleiding",
       "title": "Wij beperken ons niet tot auditeren: <accent>wij verhelpen</accent> en maken u klaar",
       "lead": "Geen rapport dat u alleen moet zien te beheren. Wij verhelpen, wij bereiden voor, wij maken u klaar.",
-      "photoAlt": "Ondertekening van een document in het kader van een NIS2-conformiteitsaudit",
+      "photoAlt": "Close-up van een printplaat, symbool voor een secure-by-design architectuur.",
       "photoCap": "Een <b>begeleiding op het terrein</b>: wij werken met uw teams, niet enkel aan een rapport.",
       "honesty": {
         "title": "In alle transparantie: wie doet wat",
@@ -752,7 +752,7 @@
       "directPromise": "<strong>Een Smidjan-expert</strong>, nooit een callcenter.",
       "lead": "Diagnose, NIS2-audit, beveiligingstests of incident : één aanspreekpunt.",
       "ctaPrimary": "Mijn behoefte omschrijven",
-      "imageAlt": "Smidjan-team samen rond een laptop in een modern en licht kantoor, gemoedelijk overleg tussen collega's.",
+      "imageAlt": "Close-up van een printplaat, symbool voor een secure-by-design architectuur.",
       "assure1": "Antwoord binnen 24 werkuren",
       "assure2": "Vrijblijvend",
       "assure3": "Gevestigd in Wallonië"
@@ -826,7 +826,7 @@
       "processStep1": "U schrijft",
       "processStep2": "Terugbellen binnen 24 u",
       "processStep3": "Gratis diagnose",
-      "coordImageAlt": "Glimlachende persoon aan de telefoon aan een bureau met een laptop, klaar om uw aanvraag te beantwoorden.",
+      "coordImageAlt": "Serverracks in een datacenter, ter illustratie van infrastructuurhardening.",
       "coordTag": "Wij antwoorden u",
       "coordTitle": "Onze contactgegevens",
       "coordZoneK": "Interventiezone",
@@ -1448,7 +1448,7 @@
         "internalNetwork": "Intern netwerk"
       },
       "test": {
-        "photoAlt": "Beveiligingsanalisten die code en dashboards op meerdere schermen onderzoeken tijdens een audit.",
+        "photoAlt": "Close-up van een printplaat, symbool voor een secure-by-design architectuur.",
         "caption": "<b>Zwakke plekken onthullen</b> voordat een echte aanvaller ze uitbuit.",
         "aria": "Illustratie : een beveiligingstest detecteert een kwetsbare applicatiemodule via een gerichte analyse en legt die vervolgens vast in een rapport met resultaten geordend op ernst, met een kritieke kwetsbaarheid gemarkeerd.",
         "appTested": "Geteste applicatie",
@@ -1469,7 +1469,7 @@
         "securityByDesign": "Beveiliging geïntegreerd vanaf het ontwerp"
       },
       "comply": {
-        "photoAlt": "Team van professionals dat samen documenten en een checklist onderzoekt tijdens een conformiteitsvergadering.",
+        "photoAlt": "Serverracks in een datacenter, ter illustratie van infrastructuurhardening.",
         "caption": "<b>Van audit tot bewijs</b>, tot de CyFun-conformiteit.",
         "aria": "Illustratie : drie oplopende niveaus van het CyFun-referentiekader (Basic, Important en Essential) verbonden door een conformiteitstraject dat uitmondt in een validatie.",
         "basic": "Basic",
