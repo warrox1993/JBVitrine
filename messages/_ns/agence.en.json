@@ -1,16 +1,16 @@
 {
   "meta": {
-    "title": "The agency · Smidjan | Cybersecurity for Walloon SMEs, by a local expert · Wallonia",
-    "description": "Smidjan is a cybersecurity agency based in Wallonia, serving SMEs, self-employed professionals and public bodies across the region. Discover the agency and its founder, Jean-Baptiste Dhondt.",
-    "ogTitle": "The agency · Smidjan | Cybersecurity for Walloon SMEs",
-    "ogDescription": "A human-scale cybersecurity agency based in Wallonia, serving SMEs and public bodies across the region.",
-    "ogImageAlt": "Smidjan - Cybersecurity agency in Wallonia"
+    "title": "About · Smidjan | Cybersecurity & GRC in Wallonia",
+    "description": "Smidjan is the cybersecurity and governance (GRC) practice of Jean-Baptiste Dhondt in Wallonia, serving SMEs, self-employed professionals and public bodies across the region.",
+    "ogTitle": "About · Smidjan | Cybersecurity & GRC in Wallonia",
+    "ogDescription": "The cybersecurity and governance (GRC) practice of Jean-Baptiste Dhondt, in Wallonia, serving SMEs and public bodies across the region.",
+    "ogImageAlt": "Smidjan - Cybersecurity & GRC in Wallonia"
   },
   "hero": {
     "ariaBreadcrumb": "Breadcrumb",
     "breadcrumbHome": "Home",
-    "breadcrumbHere": "The agency",
-    "eyebrow": "The agency",
+    "breadcrumbHere": "About",
+    "eyebrow": "About",
     "title": "A <accent>local cybersecurity expert</accent>, not an anonymous agency.",
     "lead": "Jean-Baptiste Dhondt secures your SME himself. No call centre. No subcontracting.",
     "ctaPrimary": "Book a scoping call",
@@ -21,9 +21,9 @@
     "imageAlt": "Server racks in a data center, illustrating infrastructure hardening."
   },
   "engagements": {
-    "eyebrow": "Our commitments",
-    "title": "What you are <accentOnDark>entitled to expect</accentOnDark> from us",
-    "lead": "Four principles. On which you can judge us.",
+    "eyebrow": "My commitments",
+    "title": "What you are <accentOnDark>entitled to expect</accentOnDark> from me",
+    "lead": "Four principles. On which you can judge me.",
     "proximiteTitle": "Proximity",
     "proximiteText": "A direct contact, on the phone, never a ticket.",
     "franchiseTitle": "Candour",
@@ -35,7 +35,7 @@
   },
   "cta": {
     "title": "A 30-minute conversation, directly with the founder",
-    "text": "You talk to the person who will do the work. We assess your exposure, we scope your NIS2: you leave with clear priorities.",
+    "text": "You talk to the person who will do the work. I assess your exposure, I scope your NIS2: you leave with clear priorities.",
     "actionPrimary": "Book a scoping call",
     "actionCall": "Call 0475 20 55 62",
     "reassurance1": "Reply within 24 h",
@@ -43,12 +43,12 @@
     "reassurance3": "Data in Belgium"
   },
   "about": {
-    "eyebrow": "Who we are",
+    "eyebrow": "Who I am",
     "title": "A cybersecurity practice built on <accent>proximity</accent>, serving the Walloon economy",
-    "lead": "SMEs, self-employed professionals, regulated professions, public bodies: we protect your networks, your data, your business, and we scope your NIS2 / CyFun.",
-    "p1": "SMEs are prime targets: less well defended, no less exposed. We apply the standards of a large enterprise, without the heaviness.",
+    "lead": "SMEs, self-employed professionals, regulated professions, public bodies: I protect your networks, your data, your business, and I scope your NIS2 / CyFun.",
+    "p1": "SMEs are prime targets: less well defended, no less exposed. I apply the standards of a large enterprise, without the heaviness.",
     "p2": "Securing, testing, achieving compliance: a single point of contact, from start to finish.",
-    "missionTitle": "Our mission",
+    "missionTitle": "My mission",
     "missionText": "Making cybersecurity <b>accessible, concrete and sustainable</b> for Walloon businesses.",
     "valueRigueurTitle": "Rigour",
     "valueRigueurText": "NIS2, CyFun, OWASP, ISO 27001: a method we demonstrate, not merely claim.",
@@ -63,7 +63,7 @@
     "mapLiege": "Wallonia",
     "localityTitle": "Rooted in Wallonia",
     "localityText": "Short lead times, real availability in an emergency.",
-    "coverageAlt": "Night view of the Earth from space, lights of European cities, symbol of our coverage area Belgium / Europe",
+    "coverageAlt": "Night view of the Earth from space, lights of European cities, symbol of my coverage area Belgium / Europe",
     "coverageCaption": "Rooted in Wallonia. Data <b>hosted in Belgium and in Europe</b>."
   },
   "founder": {

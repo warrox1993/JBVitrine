@@ -3,7 +3,7 @@
     "services": "Services",
     "conformite": "Conformité NIS2",
     "approche": "Approche",
-    "agence": "Agence",
+    "agence": "À propos",
     "journal": "Journal"
   },
   "brand": {
@@ -20,7 +20,7 @@
     "blurb": "Praticien en cybersécurité et gouvernance (GRC) en Wallonie. Je construis mes compétences et mes outils au grand jour : ce que je sais faire, avec des preuves, et ce que je ne sais pas encore.",
     "location": "Wallonie, Belgique",
     "servicesHeading": "Services",
-    "agenceHeading": "Agence",
+    "agenceHeading": "Le praticien",
     "certsHeading": "Cadres de référence",
     "langHeading": "Langue",
     "copyright": "© 2026 Smidjan · Tous droits réservés.",
@@ -49,7 +49,7 @@
       "services": "Services",
       "conformite": "Conformité NIS2",
       "approche": "Approche",
-      "agence": "Agence",
+      "agence": "À propos",
       "portfolio": "Portfolio",
       "journal": "Journal",
       "contact": "Contact",
