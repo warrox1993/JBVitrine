@@ -63,7 +63,7 @@ export default async function ConfidentialitePage({
 
   const strong = (chunks: ReactNode) => <strong>{chunks}</strong>;
   const mailLink = (chunks: ReactNode) => (
-    <LegalLink href="mailto:smidjan.agency@outlook.com">{chunks}</LegalLink>
+    <LegalLink href="mailto:jeanbaptiste.dhondt1@gmail.com">{chunks}</LegalLink>
   );
 
   return (

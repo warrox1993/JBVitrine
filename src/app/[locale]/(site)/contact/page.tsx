@@ -70,10 +70,9 @@ export default async function ContactPage({
               '@type': 'Organization',
               name: 'Smidjan',
               url: 'https://smidjan.be',
-              email: 'smidjan.agency@outlook.com',
+              email: 'jeanbaptiste.dhondt1@gmail.com',
               address: {
                 '@type': 'PostalAddress',
-                addressLocality: 'Liège',
                 addressRegion: 'Wallonie',
                 addressCountry: 'BE',
               },
@@ -82,7 +81,7 @@ export default async function ContactPage({
               '@type': 'ContactPoint',
               contactType: 'sales',
               telephone: '+32475205562',
-              email: 'smidjan.agency@outlook.com',
+              email: 'jeanbaptiste.dhondt1@gmail.com',
               availableLanguage: ['fr-BE', 'fr'],
               areaServed: ['BE', 'Wallonie'],
             },
@@ -136,7 +135,7 @@ export default async function ContactPage({
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                 </svg>
-                +32 475 20 55 62
+                0475 20 55 62
               </a>
             </div>
             <div className={cls.headAssure}>
@@ -215,7 +214,7 @@ export default async function ContactPage({
                 </p>
                 <a className={cls.ebTel} href="tel:+32475205562">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" /></svg>
-                  +32 475 20 55 62
+                  0475 20 55 62
                 </a>
                 <div className={cls.ebNote}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
@@ -296,14 +295,14 @@ export default async function ContactPage({
                     <span className={cls.ic}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" /></svg></span>
                     <div>
                       <div className={cls.k}>{t('side.coordPhoneK')}</div>
-                      <div className={cls.v}><a className={cls.telLink} href="tel:+32475205562">+32 475 20 55 62</a><small>{t('side.coordPhoneSmall')}</small></div>
+                      <div className={cls.v}><a className={cls.telLink} href="tel:+32475205562">0475 20 55 62</a><small>{t('side.coordPhoneSmall')}</small></div>
                     </div>
                   </li>
                   <li>
                     <span className={cls.ic}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg></span>
                     <div>
                       <div className={cls.k}>{t('side.coordEmailK')}</div>
-                      <div className={cls.v}><a href="mailto:smidjan.agency@outlook.com">smidjan.agency@outlook.com</a><small>{t('side.coordEmailSmall')}</small></div>
+                      <div className={cls.v}><a href="mailto:jeanbaptiste.dhondt1@gmail.com">jeanbaptiste.dhondt1@gmail.com</a><small>{t('side.coordEmailSmall')}</small></div>
                     </div>
                   </li>
                   <li>

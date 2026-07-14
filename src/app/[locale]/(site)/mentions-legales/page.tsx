@@ -78,11 +78,11 @@ export default async function MentionsLegalesPage({
             <li>{t.rich("mentions.editeur.tva", { strong })}</li>
             <li>
               {t.rich("mentions.editeur.emailLabel", { strong })}{" "}
-              <LegalLink href="mailto:smidjan.agency@outlook.com">smidjan.agency@outlook.com</LegalLink>
+              <LegalLink href="mailto:jeanbaptiste.dhondt1@gmail.com">jeanbaptiste.dhondt1@gmail.com</LegalLink>
             </li>
             <li>
               {t.rich("mentions.editeur.telephoneLabel", { strong })}{" "}
-              <LegalLink href="tel:+32475205562">+32 475 20 55 62</LegalLink>
+              <LegalLink href="tel:+32475205562">0475 20 55 62</LegalLink>
             </li>
           </ul>
           <LegalCallout>{t.rich("mentions.editeur.callout", { b })}</LegalCallout>
@@ -119,7 +119,7 @@ export default async function MentionsLegalesPage({
         <LegalSection id="contact" num="5" title={t("mentions.contact.title")}>
           <p>
             {t.rich("mentions.contact.body", {
-              link: (chunks) => <LegalLink href="mailto:smidjan.agency@outlook.com">{chunks}</LegalLink>,
+              link: (chunks) => <LegalLink href="mailto:jeanbaptiste.dhondt1@gmail.com">{chunks}</LegalLink>,
             })}
           </p>
         </LegalSection>

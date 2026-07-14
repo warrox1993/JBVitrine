@@ -25,7 +25,7 @@ alternates: buildAlternates(locale, "/blog"),
       title: t("meta.ogTitle"),
       description: t("meta.ogDescription"),
       url: "https://smidjan.be/blog",
-      siteName: "Smidjan, Cybersécurité Liège",
+      siteName: "Smidjan, Cybersécurité Wallonie",
       images: [
         {
           url: "https://smidjan.be/og-image.webp",
