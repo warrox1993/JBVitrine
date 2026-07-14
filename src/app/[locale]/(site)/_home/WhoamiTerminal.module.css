@@ -1,0 +1,98 @@
+.term {
+  position: relative;
+  background: var(--color-surface-solid);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 20px 22px 28px;
+  overflow: hidden;
+}
+
+.bar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-border);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.prompt {
+  color: var(--color-text-muted);
+}
+
+.out {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.body > span:last-child::after {
+  content: "";
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: currentColor;
+  animation: whoamiBlink 1s step-end infinite;
+}
+
+.shield {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-top: 18px;
+}
+
+.draw {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: whoamiDrawShield 600ms ease-out forwards;
+}
+
+.drawCheck {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: whoamiDrawCheck 400ms ease-out 500ms forwards;
+}
+
+@keyframes whoamiBlink {
+  0%, 45% { opacity: 1; }
+  46%, 100% { opacity: 0; }
+}
+
+@keyframes whoamiDrawShield {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes whoamiDrawCheck {
+  from { stroke-dashoffset: 40; }
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .body > span:last-child::after {
+    animation: none;
+    opacity: 0;
+  }
+  .draw,
+  .drawCheck {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
