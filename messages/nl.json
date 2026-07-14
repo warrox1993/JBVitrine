@@ -937,233 +937,102 @@
   },
   "home": {
     "meta": {
-      "title": "Cyberbeveiliging & NIS2-conformiteit voor kmo's | Smidjan, Luik, Wallonië",
-      "description": "Beveiliging van netwerk, infrastructuur en applicaties + NIS2 / CyFun-conformiteit voor kmo's. Audit, pentest, remediatie. Gratis diagnose in Luik.",
-      "ogTitle": "Cyberbeveiliging & NIS2-conformiteit voor kmo's | Smidjan, Luik",
-      "ogDescription": "We beveiligen, testen, ontwikkelen, stemmen af op NIS2 / CyFun en verhelpen wat we vinden. Gratis diagnose voor kmo's in Wallonië.",
-      "ogImageAlt": "Smidjan, cyberbeveiliging & NIS2-conformiteit voor kmo's in Luik",
-      "ogSiteName": "Smidjan, cyberbeveiliging Luik",
-      "twitterTitle": "Cyberbeveiliging & NIS2-conformiteit voor kmo's | Smidjan, Luik",
-      "twitterDescription": "Beveiliging, pentest, NIS2 / CyFun-conformiteit voor Waalse kmo's. Gratis diagnose in Luik."
+      "title": "Jean-Baptiste Dhondt, Smidjan | Cyberbeveiliging & GRC, Wallonië",
+      "description": "Cyberbeveiligings- en governancepracticus (GRC) in Wallonië. NIS2/CyFun-audits op basis van reële referentiekaders, beveiliging van netwerken, applicaties, AI. Volledige transparantie, geen opgeklopte cijfers.",
+      "ogTitle": "Smidjan : Cyberbeveiliging & GRC",
+      "ogDescription": "Het traject van een cyberpracticus zichtbaar gemaakt. Wat ik kan, met verifieerbaar bewijs.",
+      "ogSiteName": "Smidjan",
+      "ogImageAlt": "Smidjan, cyberbeveiliging en GRC in Wallonië",
+      "twitterTitle": "Smidjan : Cyberbeveiliging & GRC",
+      "twitterDescription": "Cyber/GRC-practicus in Wallonië. NIS2/CyFun-audits, volledige transparantie."
     },
     "hero": {
-      "badgeTag": "NIS2",
-      "badgeText": "Van kracht in België : uw kmo valt eronder",
-      "title": "Beveiliging en NIS2-conformiteit voor uw kmo. <accent>Een expert in Luik, geen onderaannemer.</accent>",
-      "lead": "Netwerken, applicaties en CyFun-conformiteit, van diagnose tot remediatie. <b>U spreekt met de expert die het werk doet, nooit met een callcenter.</b>",
-      "ctaPrimary": "Gratis NIS2-diagnose",
-      "ctaSecondary": "Valt mijn kmo onder NIS2?",
-      "assure1": "Vrijblijvend",
-      "assure2": "Antwoord binnen 24 u",
-      "assure3": "Gegevens gehost in België",
-      "shieldTitle": "Beveiligingshouding",
-      "shieldSub": "Voorbeeld van een CyFun-evaluatie (ter illustratie)",
-      "item1": "Netwerksegmentatie & firewall",
-      "item2": "Back-ups & herstelplan",
-      "item3": "Multifactorauthenticatie",
-      "item4": "Monitoring & logging",
-      "statusOk": "OK",
-      "statusFix": "Te verhelpen",
-      "footLbl": "Ter illustratie: het niveau <b>Basic</b>, startpunt voor een kmo.",
-      "chipTitle": "CCB · CyberFundamentals",
-      "chipSub": "Officieel Belgisch kader"
+      "h1": "Veiligheid, van binnenuit begrepen.",
+      "eyebrow": "whoami",
+      "p1": "Beveiligen is mijn obsessie sinds mijn tienerjaren. Al vroeg, uit noodzaak, leerde ik systemen van binnenuit te begrijpen in plaats van ze te ondergaan. Die logica is nooit verdwenen : van Defensie tot certificeringen, tot vandaag, waar ik de vaardigheden en tools opbouw om volledige infrastructuren te beveiligen. Netwerken, applicaties, AI.",
+      "p2": "Smidjan is dat traject zichtbaar gemaakt. Geen bureau dat opgeklopte cijfers verkoopt : een practicus die zijn werk toont, wat hij kan en wat hij nog niet kan.",
+      "ctaPrimary": "Contacteer mij",
+      "ctaSecondary": "Mijn traject",
+      "trust1": "Defensie (telecom)",
+      "trust2": "AZ-900",
+      "trust3": "Bachelor Informatica lopende"
     },
-    "services": {
-      "eyebrow": "Onze diensten",
-      "title": "Vier opdrachten, één doel : uw <accent>cyberrisico</accent> verlagen",
-      "lead": "Van infrastructuur tot conformiteit, en we verhelpen wat we vinden."
-    },
-    "cards": {
-      "securiser": {
-        "kicker": "Beveiligen",
-        "title": "Netwerken & infrastructuur",
-        "description": "We vergrendelen uw technische basis voordat een aanval uw gegevens bereikt.",
-        "bullet1": "Firewall & netwerksegmentatie",
-        "bullet2": "Monitoring & detectie",
-        "bullet3": "Back-ups & herstelplan (DRP)"
+    "capabilities": {
+      "eyebrow": "Wat ik kan",
+      "title": "Drie vaardigheden ten dienste van veiligheid",
+      "c1": {
+        "index": "01",
+        "title": "Cyber / GRC",
+        "line": "NIS2/CyFun-audits gebouwd op reële referentiekaders, governance en methodologie."
       },
-      "tester": {
-        "kicker": "Testen",
-        "title": "Audits & pentest",
-        "description": "We denken als een aanvaller om uw kwetsbaarheden te vinden, voordat een echte dat doet.",
-        "bullet1": "Pentests (OWASP)",
-        "bullet2": "Beveiligingsgapanalyse",
-        "bullet3": "Applicatiebeveiliging"
+      "c2": {
+        "index": "02",
+        "title": "AI-automatisering",
+        "line": "Orkestratie van tools en workflows (n8n, Make), toegepaste prompt engineering."
       },
-      "developper": {
-        "kicker": "Ontwikkelen",
+      "c3": {
+        "index": "03",
         "title": "Veilige webontwikkeling",
-        "description": "« Secure by design » : beveiliging geïntegreerd vanaf de eerste regel code.",
-        "bullet1": "Sites & applicaties op maat",
-        "bullet2": "Beveiliging geïntegreerd in de ontwikkelcyclus",
-        "bullet3": "Codereview & hardening"
-      },
-      "conformer": {
-        "kicker": "Conform maken",
-        "title": "NIS2 / CyFun-conformiteit",
-        "description": "Audit, gapanalyse, remediëring : we brengen u naar het door de CCB verwachte CyFun-niveau.",
-        "bullet1": "Diagnose & gapanalyse",
-        "bullet2": "Concrete remediëring",
-        "bullet3": "Voorbereiding op de CCB-verificatie",
-        "linkLabel": "Bekijk de gewijde sectie"
+        "line": "Ondersteunde ontwikkeling en beveiliging van code, van de Full Stack bootcamp tot Java/.NET-stages."
       }
     },
     "cyfun": {
-      "eyebrow": "Kernsectie · Conformiteit",
-      "title": "NIS2 & CyFun : <accent>valt u eronder ?</accent>",
-      "lead": "<b>NIS2</b> is de Europese richtlijn die essentiële en belangrijke ondernemingen, inclusief kmo's en onderaannemers, een minimaal niveau van cyberbeveiliging oplegt. In België steunt ze op het <b>CyFun</b>-raamwerk (CyberFundamentals), gepubliceerd door het <b>CCB</b>.",
-      "hookValue": "Basic",
-      "hook": "<b>Dekt al het merendeel van de courante aanvallen.</b> Het beste startpunt voor een kmo.",
-      "calMonth": "Okt",
-      "calDay": "18",
-      "calYear": "2024",
-      "deadlineTitle": "NIS2 is al van kracht",
-      "deadlineText": "Van kracht sinds 18 oktober 2024. Anticiperen verlaagt het risico.",
-      "fine": "Niet-naleving: boetes die kunnen oplopen tot meerdere miljoenen euro voor essentiële entiteiten, en persoonlijke aansprakelijkheid van de directie.",
-      "sourcesLabel": "Officiële bronnen:",
-      "verified": "Informatie geverifieerd in {date}.",
-      "stairSmall": "Small · gratis",
-      "stairNote": "De instap is progressief. We starten op het niveau dat bij uw risico past, elk niveau bouwt voort op het vorige."
+      "eyebrow": "Vlaggenschipproject",
+      "title": "Een CyFun-auditinstrument dat ik bouw",
+      "lead": "Een auditmethodologie afgestemd op het CyFun-referentiekader, ontworpen om kmo's voor te bereiden op NIS2. Dit is wat het garandeert.",
+      "b1": "Afgestemd op het CyFun-referentiekader.",
+      "b2": "Alleen-lezen : wijzigt nooit uw systemen.",
+      "b3": "Expliciete scope, geen autonome netwerkverkenning.",
+      "b4": "Inloggegevens worden nooit opgeslagen.",
+      "b5": "Onaantastbaar auditlogboek.",
+      "b6": "Remediatie gevalideerd door een mens, nooit automatisch uitgevoerd.",
+      "b7": "Geen gegevens bewaard na de audit.",
+      "b8": "Duidelijke keten : rapport, geprioriteerde remediatie, verharding.",
+      "honesty": "Ondersteunde zelfevaluatie en voorbereiding. Dit is geen officiële certificering, voorbehouden aan BELAC-geaccrediteerde instellingen.",
+      "cta": "Meer weten"
     },
-    "illus": {
-      "diagnostic": {
-        "eyebrow": "Diagnose",
-        "title": "Een duidelijk gaprapport, domein per domein",
-        "text": "<b>Elke CyFun-vereiste wordt gemeten, niet geraden.</b> Een maturiteitsniveau per domein (governance, toegang, netwerk, detectie, continuïteit) samengevoegd tot één globale score."
-      },
-      "data": {
-        "eyebrow": "Datasoevereiniteit",
-        "title": "Gevestigd in Luik, uw gegevens blijven in België",
-        "text": "Geen gedelokaliseerde hosting. <b>Infrastructuur, back-ups, uitwisselingen : alles blijft in België en in de EU</b>, met een aanspreekpunt ter plaatse."
-      }
-    },
-    "honesty": {
-      "title": "In alle transparantie",
-      "text": "De CyFun-certificering wordt afgeleverd door BELAC-geaccrediteerde instellingen, niet door Smidjan. Onze rol : <b>audit, gapanalyse, remediëring</b> en voorbereiding op de verificatie. We stellen de tekortkomingen niet enkel vast : <b>we verhelpen ze</b>.",
-      "ai": "We gebruiken AI om sneller te werken (dreigingsmonitoring, anomaliedetectie, configuratiereview). <b>Analyse en beslissingen blijven 100 % menselijk.</b>"
-    },
-    "process": {
-      "kicker": "Onze methode in 4 stappen",
-      "step1": {
-        "title": "Afbakening & zelfevaluatie",
-        "description": "Perimeter, kritieke activa, CyFun-zelfevaluatie, samen met uw teams."
-      },
-      "step2": {
-        "title": "Gapanalyse & remediëring",
-        "description": "We meten de afstand tot het beoogde niveau en verhelpen die, op basis van risicoprioriteit."
-      },
-      "step3": {
-        "title": "Ondersteuning bij de CCB-verificatie",
-        "description": "We bereiden het dossier voor tot aan de verificatie door de geaccrediteerde instelling."
-      },
-      "step4": {
-        "title": "Continue opvolging",
-        "description": "We houden uw houding op peil in de tijd, niet enkel op de dag zelf."
-      }
-    },
-    "why": {
-      "eyebrow": "Waarom Smidjan",
-      "title": "De grondigheid van een groot kantoor, de <accent>nabijheid</accent> van een partner",
-      "lead": "Een <b>structuur op mensenmaat</b>, uit overtuiging. Minder tussenpersonen, één aanspreekpunt dat uw dossier kent.",
-      "items": {
-        "local": {
-          "title": "Lokaal & reactief",
-          "text": "Gevestigd in Luik, komen we snel tussen in Wallonië. Uw gegevens blijven <b>in België / EU</b>."
+    "parcours": {
+      "eyebrow": "Traject",
+      "title": "Een vastberaden overstap naar cyber",
+      "certs": "Certificeringen : AZ-900 (2026), CCNA lopende, Bachelorjaar 1 Informatica behaald.",
+      "items": [
+        {
+          "period": "2013-2017",
+          "title": "Telecomtechnicus",
+          "desc": "Belgische Defensie."
         },
-        "pragmatism": {
-          "title": "Pragmatisme voor kmo's",
-          "text": "<b>We verhelpen wat er echt toe doet</b>, geen over-engineering, geen nutteloze uitgaven."
+        {
+          "period": "2022-2023",
+          "title": "Veiligheidsagent",
+          "desc": "Europese Commissie."
         },
-        "partner": {
-          "title": "Eén enkele partner",
-          "text": "Bouwen, beveiligen, conform maken : <b>alles op één plaats</b>."
+        {
+          "period": "2025",
+          "title": "Ontwikkelopleiding",
+          "desc": "Java Full Stack bootcamp (TechnoFutur TIC), Java/.NET-stages."
         },
-        "expert": {
-          "title": "Rechtstreeks toegang tot de expert",
-          "text": "<b>U spreekt met de persoon die het werk doet</b>, nooit met een callcenter."
+        {
+          "period": "Vandaag",
+          "title": "Koers naar GRC / cyber",
+          "desc": "Bachelor Informatica (sociale promotie, ISL) naast een job."
         }
-      },
-      "founderName": "Jean-Baptiste Dhondt",
-      "founderRole": "Oprichter · Expert in cyberbeveiliging",
-      "quote": "« De cyberbeveiliging van een kmo zit niet in een rapport van 200 pagina's dat in een lade verdwijnt. Ze speelt zich af kwetsbaarheid per kwetsbaarheid, terwijl u bereikbaar blijft. »",
-      "cred1": "Oud-medewerker telecommunicatie van het Belgische leger",
-      "cred2": "Technisch diploma informatica, Linux / Kali-practicus",
-      "cred3": "Raamwerken NIS2 / CyFun (CCB), OWASP, ISO 27001",
-      "mission": "« Ik richtte Smidjan op omdat te veel Waalse kmo's er alleen voor staan tegenover NIS2. »"
+      ]
     },
-    "insight": {
-      "kick": "Gratis gids",
-      "title": "NIS2 & CyFun : de conformiteitsgids voor <accent>Belgische kmo's</accent>",
-      "text": "Wat de wet zegt, wie betrokken is, welk CyFun-niveau kiezen. <b>Duidelijk, zonder jargon.</b> Bijgewerkt in {date}.",
-      "cta": "Lees de gids",
-      "mockTag": "Gids · Conformiteit",
-      "mockTitle": "NIS2 & CyFun voor kmo's"
+    "approche": {
+      "eyebrow": "Aanpak",
+      "title": "Waar het vandaan komt",
+      "p1": "Als tiener, in een beperkte omgeving, leerde ik begrijpen hoe systemen werken in plaats van ze te ondergaan. Niet uit abstracte nieuwsgierigheid : uit noodzaak. Toen kreeg ik smaak voor het openen van de motorkap, voor zien hoe dingen standhouden, of het begeven.",
+      "p2": "Wat ik kan, toon ik met verifieerbaar bewijs. Wat ik nog niet kan, beweer ik niet.",
+      "cta": "Mijn aanpak in detail"
     },
-    "cta": {
-      "title": "Een <accent>gratis diagnose</accent> om te weten waar u staat",
-      "text": "30 minuten met een expert : uw blootstelling geëvalueerd, uw NIS2-conformiteit afgebakend, duidelijke prioriteiten.",
-      "actionPrimary": "Mijn gratis diagnose reserveren",
-      "actionCall": "Bel 0475 20 55 62",
-      "reassure1": "Antwoord binnen 24 u",
-      "reassure2": "Toegewijde expert, geen onderaanneming",
-      "reassure3": "Gegevens in België"
-    },
-    "fig": {
-      "topology": {
-        "aria": "Schema van een beschermde netwerkarchitectuur : werkstations, centrale server en database gegroepeerd binnen een beveiligde perimeter, waarbij de internetverbinding aan de rand door een firewall wordt gefilterd, met versleutelde interne segmenten.",
-        "perimeter": "BEVEILIGDE PERIMETER",
-        "external": "EXTERN NETWERK",
-        "firewall": "FIREWALL",
-        "internal": "INTERNE INFRASTRUCTUUR"
-      },
-      "audit": {
-        "aria": "Dashboard van een CyFun-conformiteitsaudit (ter illustratie) met het maturiteitsniveau per domein: governance, toegangsbeheer, netwerk, detectie en back-up.",
-        "governance": "Governance & sturing",
-        "access": "Toegangsbeheer (MFA)",
-        "network": "Netwerk & segmentatie",
-        "detection": "Detectie & monitoring",
-        "backup": "Back-up & continuïteit",
-        "scoreLabel": "CyFun-voorbeeld",
-        "scoreBasis": "Ter illustratie, geen echte case"
-      },
-      "belgium": {
-        "aria": "Illustratie van België met Luik gelokaliseerd, verbonden met een door een schild beschermde data-infrastructuur, als symbool voor de hosting van honderd procent van de gegevens in België en in de Europese Unie.",
-        "country": "BELGIË",
-        "city": "Luik",
-        "citySub": "Hoofdzetel & interventies",
-        "hosted": "Gegevens gehost",
-        "hostedSub": "100% in België / EU"
-      }
-    },
-    "faq": {
-      "eyebrow": "Veelgestelde vragen",
-      "title": "NIS2 & CyFun: uw vragen, onze antwoorden",
-      "lead": "De vragen die we het vaakst krijgen. Nog een andere? Stel ze tijdens de gratis diagnose.",
-      "q1": {
-        "question": "Valt mijn kmo onder NIS2?",
-        "a1": "NIS2 richt zich op <b>essentiële</b> en <b>belangrijke</b> entiteiten; veel kmo's vallen er <b>onrechtstreeks</b> onder, als onderaannemer of leverancier.",
-        "a2": "Twijfel? De gratis diagnose beslist uw geval in één gesprek."
-      },
-      "q2": {
-        "question": "CyFun of ISO 27001: wat kiezen?",
-        "a1": "<b>CyFun</b> (CCB) is het Belgische raamwerk voor NIS2, afgestemd op <b>ISO 27001</b>: toegankelijker om te starten, met drie progressieve niveaus.",
-        "a2": "Het blijft een eerste stap naar ISO 27001 als u verder wilt gaan."
-      },
-      "q3": {
-        "question": "Hoelang duurt de conformiteit?",
-        "a1": "Ter indicatie: <b>1 tot 3 maanden</b> voor Basic, <b>3 tot 6</b> voor Important, <b>6 tot 12</b> voor Essential, afhankelijk van uw beginmaturiteit.",
-        "a2": "NIS2 is al van kracht: vroeg starten spreidt de inspanning en het budget."
-      },
-      "q4": {
-        "question": "En als ik niets doe?",
-        "a1": "Administratieve boetes en <b>aansprakelijkheid van de directie</b>, en vooral een incidentrisico dat veel duurder uitvalt dan tijdige conformiteit.",
-        "a2": "De aanpak vermindert een <b>reëel risico</b>, niet zomaar een vinkje."
-      },
-      "q5": {
-        "question": "Levert Smidjan het CyFun-certificaat af?",
-        "a1": "<b>Nee.</b> De CyFun-certificering komt toe aan <b>BELAC-geaccrediteerde instellingen</b>, onafhankelijk van ons.",
-        "a2": "Onze rol: auditen, remediëren en u voorbereiden tot de verificatie."
-      }
+    "contact": {
+      "title": "Laten we het hebben over uw behoefte",
+      "text": "Een opdracht, een functie, een samenwerking : schrijf me, ik antwoord zo snel mogelijk.",
+      "ctaPrimary": "Contacteer mij",
+      "ctaCall": "0475 20 55 62",
+      "reassure1": "Antwoord zo snel mogelijk",
+      "reassure2": "Volledige transparantie",
+      "reassure3": "Wallonië, in het Frans"
     }
   },
   "legal": {
