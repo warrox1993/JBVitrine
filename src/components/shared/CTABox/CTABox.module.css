@@ -8,7 +8,7 @@
   background: var(--bg-2);
 }
 .box {
-  background: linear-gradient(135deg, var(--navy) 0%, #0a1a30 100%);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--ink) 100%);
   border-radius: 20px;
   padding: 56px;
   text-align: center;
@@ -49,7 +49,7 @@
 .sub {
   margin-top: 22px;
   font-size: 13.5px;
-  color: #8496b0;
+  color: var(--on-dark-muted);
   display: flex;
   gap: 20px;
   justify-content: center;
@@ -75,7 +75,7 @@
   }
 }
 
-/* Dark-mode residual fix: gradient lower edge (#0a1a30) merges into the dark
+/* Dark-mode residual fix: gradient lower edge (--ink) merges into the dark
    page bg; add a hairline border to delineate the box. */
 :root[data-theme="dark"] .box {
   border: 1px solid var(--on-dark-line);

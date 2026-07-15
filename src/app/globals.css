@@ -57,46 +57,46 @@
 
 /* ============================================================
    DARK THEME — Layer B (corporate refonte tokens)
-   Navy scale shifts UP one step to become elevated surfaces
-   above the darker page bg (#081525). Neutrals/lines flip;
-   orange base kept. Semantic Layer A lives in variables.css.
+   Ardoise scale shifts UP one step to become elevated surfaces
+   above the darker page bg (#08130F). Neutrals/lines flip;
+   emerald base kept. Semantic Layer A lives in variables.css.
    Light mode is untouched (this only applies under [data-theme=dark]).
    ============================================================ */
 :root[data-theme="dark"] {
-  /* Navy scale — now elevated surfaces (lighter than page bg) */
-  --navy: #10223a;
-  --navy-2: #16304f;
-  --navy-3: #1e3d66;
-  --ink: #0c1a2e;
+  /* Ardoise-green scale — now elevated surfaces (lighter than page bg) */
+  --navy: #0c1a15;
+  --navy-2: #122419;
+  --navy-3: #183227;
+  --ink: #08130f;
 
-  /* Neutrals — lightened for legibility on dark */
-  --slate: #a9b7cc;
-  --muted: #8595ac;
+  /* Neutrals — lightened for legibility on dark, green-tinted */
+  --slate: #a9ccb7;
+  --muted: #85ac95;
 
   /* Lines — light hairlines */
-  --line: rgba(255, 255, 255, 0.1);
-  --line-2: rgba(255, 255, 255, 0.16);
+  --line: rgba(220, 235, 226, 0.1);
+  --line-2: rgba(220, 235, 226, 0.16);
 
   /* Page / well backgrounds */
-  --bg: #081525;
-  --bg-2: #0b1c30;
-  --bg-3: #10223a;
+  --bg: #08130f;
+  --bg-2: #0c1a15;
+  --bg-3: #0f1e17;
   /* --white stays #ffffff: only correct for text-on-navy; card fills that used
      #fff must be re-pointed to a surface token in the per-component pass. */
 
-  /* Orange — base kept; hover brightened; light peach tint → translucent glow */
-  --orange: #ff6a00;
-  --orange-d: #ff7a1a;
-  --orange-t: rgba(255, 106, 0, 0.14);
-  --orange-on-dark: #ff9a4d;
+  /* Emerald — base kept; hover brightened; light tint → translucent glow */
+  --orange: #34d399;
+  --orange-d: #10b981;
+  --orange-t: rgba(52, 211, 153, 0.14);
+  --orange-on-dark: #34d399;
 
   /* On-dark neutrals — already dark-native; become the defaults */
-  --on-dark-text: #eaf1fb;
-  --on-dark-muted: #9fb0c9;
-  --on-dark-line: rgba(255, 255, 255, 0.14);
+  --on-dark-text: #e7f1eb;
+  --on-dark-muted: #9fb4a9;
+  --on-dark-line: rgba(220, 235, 226, 0.14);
 
   --success: #7fe6b0;
-  --focus: #4d8dff;
+  --focus: #34d399;
 
   /* Shadows — deeper on dark */
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 12px 32px rgba(0, 0, 0, 0.55);

@@ -429,7 +429,7 @@
    orange top keyline (no full border) and a layered shadow with a faint
    inset ring. */
 .emergBlock {
-  background: linear-gradient(165deg, var(--navy-2) 0%, var(--navy) 62%, #081527 100%);
+  background: linear-gradient(165deg, var(--navy-2) 0%, var(--navy) 62%, var(--ink) 100%);
   border-radius: 14px;
   padding: 30px;
   color: var(--on-dark-text);
@@ -541,7 +541,7 @@
 
 .emergBlock p {
   font-size: 13.5px;
-  color: #a9b8ce;
+  color: var(--on-dark-muted);
   margin-top: 14px;
   position: relative;
   line-height: 1.6;
@@ -577,7 +577,7 @@
 .ebNote {
   margin-top: 16px;
   font-size: 12.5px;
-  color: #8496b0;
+  color: var(--on-dark-muted);
   display: flex;
   align-items: center;
   gap: 8px;

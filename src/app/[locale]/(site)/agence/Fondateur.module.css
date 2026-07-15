@@ -56,7 +56,7 @@
   position: relative;
   border-radius: 14px;
   overflow: hidden;
-  background: linear-gradient(160deg, #1e3a32, #0a1a30);
+  background: linear-gradient(160deg, var(--navy-3), var(--ink));
   border: 1px solid rgba(255, 255, 255, 0.14);
   margin-bottom: 22px;
 }
@@ -147,7 +147,7 @@
 .foot span {
   font-size: 12px;
   font-weight: 600;
-  color: #cdd8e8;
+  color: var(--on-dark-text);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;

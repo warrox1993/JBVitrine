@@ -279,37 +279,37 @@
 }
 
 /* ============================================
-   DARK THEME (refonte-design — deep navy-graphite)
-   Base bg #081525 sits one step below brand navy so the
-   existing navy panels become valid elevated surfaces.
-   Orange stays CTA/accent only. Layer B (corporate tokens)
-   is redeclared in globals.css. Light mode is untouched.
+   DARK THEME (Émeraude & Ardoise — deep ardoise-green ground)
+   Base bg #08130F is a near-black ardoise-green. Emerald is the
+   accent across the board, mirroring the light identity. Layer B
+   (corporate tokens) is redeclared in globals.css. Light mode is
+   untouched.
    ============================================ */
 :root[data-theme="dark"] {
   color-scheme: dark;
 
   /* Base surfaces — elevation = lighter */
-  --color-bg: #081525;
-  --color-bg-alt: #0b1c30;
-  --color-surface: #10223a;
-  --color-surface-solid: #12243d;
-  --color-surface-glass: rgba(12, 26, 46, 0.72);
+  --color-bg: #08130F;
+  --color-bg-alt: #0C1A15;
+  --color-surface: #0F1E17;
+  --color-surface-solid: #122419;
+  --color-surface-glass: rgba(12, 26, 20, 0.72);
 
   /* Borders — light hairlines */
-  --color-border: rgba(223, 231, 242, 0.12);
-  --color-border-hover: rgba(223, 231, 242, 0.22);
+  --color-border: rgba(220, 235, 226, 0.12);
+  --color-border-hover: rgba(220, 235, 226, 0.22);
   --color-shadow: rgba(0, 0, 0, 0.55);
 
-  /* Text — WCAG AA on #081525 */
-  --color-text: #eaf1fb;
-  --color-text-muted: #9fb0c9;
+  /* Text — WCAG AA on #08130F */
+  --color-text: #E7F1EB;
+  --color-text-muted: #9FB4A9;
 
-  /* Accent — orange stays CTA-only, brightened for dark */
-  --color-primary: #ff7a1a;
-  --color-primary-strong: #ff6a00;
-  --color-primary-contrast: #0a1120;
-  --color-secondary: #f7a93e;
-  --color-accent: #4d8dff;
+  /* Accent — bright emerald for dark */
+  --color-primary: #34D399;
+  --color-primary-strong: #10B981;
+  --color-primary-contrast: #08130F;
+  --color-secondary: #6EE7B7;
+  --color-accent: #34D399;
   --color-danger: #ff6b5e;
 
   /* Legacy scale mappings */
@@ -323,20 +323,20 @@
   --color-accent-2: var(--color-secondary);
   --color-accent-3: var(--color-primary-strong);
 
-  /* Glow — softer on dark */
-  --shadow-glow-outer: 0 0 28px rgba(255, 106, 0, 0.2);
-  --shadow-glow-inner: 0 0 14px rgba(255, 150, 60, 0.14);
-  --color-glow: rgba(255, 106, 0, 0.22);
+  /* Glow — emerald halo on dark */
+  --shadow-glow-outer: 0 0 28px rgba(52, 211, 153, 0.2);
+  --shadow-glow-inner: 0 0 14px rgba(52, 211, 153, 0.14);
+  --color-glow: rgba(52, 211, 153, 0.16);
 
-  /* Primary opacities (orange base) */
-  --color-primary-5: rgba(255, 106, 0, 0.06);
-  --color-primary-8: rgba(255, 106, 0, 0.1);
-  --color-primary-12: rgba(255, 106, 0, 0.14);
-  --color-primary-15: rgba(255, 106, 0, 0.18);
-  --color-primary-20: rgba(255, 106, 0, 0.24);
-  --color-primary-24: rgba(255, 106, 0, 0.28);
-  --color-primary-30: rgba(255, 106, 0, 0.34);
-  --color-primary-40: rgba(255, 106, 0, 0.44);
+  /* Primary opacities (emerald base) */
+  --color-primary-5: rgba(52, 211, 153, 0.06);
+  --color-primary-8: rgba(52, 211, 153, 0.1);
+  --color-primary-12: rgba(52, 211, 153, 0.14);
+  --color-primary-15: rgba(52, 211, 153, 0.18);
+  --color-primary-20: rgba(52, 211, 153, 0.24);
+  --color-primary-24: rgba(52, 211, 153, 0.28);
+  --color-primary-30: rgba(52, 211, 153, 0.34);
+  --color-primary-40: rgba(52, 211, 153, 0.44);
 
   /* Status */
   --color-success: #34d399;
@@ -367,13 +367,13 @@
   /* Component tokens */
   --card-bg: var(--color-surface);
   --card-border: var(--color-border);
-  --color-bg-header: rgba(8, 21, 37, 0.8);
+  --color-bg-header: rgba(8, 19, 15, 0.8);
 
-  /* Buttons — orange fill, dark ink for AA on light orange */
+  /* Buttons — emerald fill, near-black ink for AA on bright emerald */
   --btn-bg: var(--color-primary);
   --btn-fg: var(--color-primary-contrast);
   --btn-border: transparent;
-  --btn-shadow: 0 10px 28px rgba(255, 106, 0, 0.28);
+  --btn-shadow: 0 10px 28px rgba(52, 211, 153, 0.28);
   --btn-bg-hover: color-mix(in srgb, var(--color-primary) 90%, #fff 10%);
   --btn-fg-hover: var(--color-primary-contrast);
   --btn-bg-active: color-mix(in srgb, var(--color-primary-strong) 92%, #000 8%);
