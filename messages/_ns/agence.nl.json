@@ -16,22 +16,7 @@
     "ctaPrimary": "Contacteer mij",
     "ctaCall": "Bel 0475 20 55 62",
     "badgeLocation": "Gevestigd in Wallonië",
-    "badgeAccess": "Rechtstreeks contact, zonder tussenpersoon",
-    "badgeData": "Gegevens gehost in België / EU",
     "imageAlt": "Serverracks in een datacenter, ter illustratie van infrastructuurhardening."
-  },
-  "engagements": {
-    "eyebrow": "Mijn engagementen",
-    "title": "Mijn manier van <accentOnDark>werken</accentOnDark>.",
-    "lead": "Vier principes die mij typeren.",
-    "proximiteTitle": "Direct",
-    "proximiteText": "Eén vast aanspreekpunt, altijd bereikbaar, nooit een ticket.",
-    "franchiseTitle": "Openhartig",
-    "franchiseText": "Ik zeg wat telt, ook wat ongemakkelijk is. Geen bangmakerij.",
-    "corrigeTitle": "Concreet",
-    "corrigeText": "Ik streef naar echte impact: verhelpen, niet enkel auditeren.",
-    "iaTitle": "De mens versterkt door AI",
-    "iaText": "AI versnelt de analyse, de beslissingen blijven menselijk."
   },
   "cta": {
     "title": "Laten we praten",
@@ -41,30 +26,6 @@
     "reassurance1": "Antwoord zo snel mogelijk",
     "reassurance2": "U spreekt rechtstreeks met mij",
     "reassurance3": "Gevestigd in Wallonië"
-  },
-  "about": {
-    "eyebrow": "Wie ben ik",
-    "title": "Waarom <accent>cyberbeveiliging</accent>",
-    "lead": "Geen toeval, geen mode: een heroriëntatie die stap voor stap is opgebouwd, van technische nieuwsgierigheid tot expertise in cloud-, netwerk- en AI-beveiliging.",
-    "p1": "Begrijpen hoe systemen standhouden, en waarom ze het begeven, heeft mij altijd meer geboeid dan enig ander technisch onderwerp. Cyberbeveiliging is het natuurlijke verlengstuk van die nieuwsgierigheid: het vraagt om tegelijk als verdediger en als aanvaller te denken.",
-    "p2": "Na verscheidene jaren bij de telecommunicatie van het Belgische leger koos ik ervoor om die grondigheid om te zetten in een burgerlijke vaardigheid: een technisch diploma, voortdurende zelfstudie (netwerken, Linux, TryHackMe), en een bewuste specialisatie in cloud-, netwerk- en AI-beveiliging.",
-    "missionTitle": "Wat mij drijft",
-    "missionText": "De systemen grondig begrijpen om ze beter te verdedigen, en dat bewijzen met <b>feiten, geen beloftes</b>.",
-    "valueRigueurTitle": "Grondigheid",
-    "valueRigueurText": "NIS2, CyFun, OWASP, ISO 27001: een methode die ik aantoon, niet enkel beweer.",
-    "valueProximiteTitle": "Nabijheid",
-    "valueProximiteText": "Gevestigd in Wallonië, direct en toegankelijk. Ik doe het werk zelf, van begin tot eind.",
-    "valueFranchiseTitle": "Openhartigheid",
-    "valueFranchiseText": "Zeggen wat telt, ook wat ongemakkelijk is. Nooit bangmakerij.",
-    "valuePragmatismeTitle": "Pragmatisme",
-    "valuePragmatismeText": "Prioriteit aan impact, niet aan overbodigheden. De beste beveiliging is die welke men toepast.",
-    "mapAriaLabel": "Vereenvoudigde kaart van België, met een markering op het actiegebied in Wallonië",
-    "mapBruxelles": "Brussel",
-    "mapLiege": "Wallonië",
-    "localityTitle": "Verankerd in Wallonië",
-    "localityText": "Gevestigd in Wallonië, open voor kansen en opdrachten in België en op afstand.",
-    "coverageAlt": "Nachtelijk zicht op de aarde vanuit de ruimte, lichten van de Europese steden, symbool van mijn verankering België / Europa",
-    "coverageCaption": "Verankerd in Wallonië. Gegevens <b>gehost in België en in Europa</b>."
   },
   "founder": {
     "eyebrow": "De oprichter",

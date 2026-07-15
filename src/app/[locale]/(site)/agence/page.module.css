@@ -1,4 +1,4 @@
-/* Agence page — page header + engagements grid.
+/* Agence page — page header.
    Local styles only; shared sections (StatsBand, CTABox) ship their own CSS. */
 
 .pageHero {
@@ -116,64 +116,6 @@
   flex: none;
 }
 
-/* ===== Engagements / valeurs (full-bleed navy Section) ===== */
-.engageGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 52px;
-}
-.engageCard {
-  background: var(--color-surface-solid);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 32px 26px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: var(--shadow-s);
-  transition: border-color 0.16s ease, box-shadow 0.16s ease,
-    transform 0.16s ease;
-}
-.engageCard:hover {
-  border-color: var(--line-2);
-  box-shadow: var(--shadow);
-  transform: translateY(-3px);
-}
-.engageIco {
-  width: 50px;
-  height: 50px;
-  border-radius: 11px;
-  background: var(--navy);
-  color: var(--orange-on-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  flex: none;
-}
-.engageIco svg {
-  width: 26px;
-  height: 26px;
-}
-.engageCard h3 {
-  font-size: 18px;
-  color: var(--color-text);
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
-}
-.engageCard p {
-  margin-top: 12px;
-  font-size: 14.5px;
-  color: var(--slate);
-  line-height: 1.55;
-}
-
-@media (max-width: 1000px) {
-  .engageGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 @media (max-width: 1000px) {
   .heroGrid {
     grid-template-columns: 1fr;
@@ -187,9 +129,6 @@
   .heroInner {
     padding-top: 40px;
     padding-bottom: 44px;
-  }
-  .engageGrid {
-    grid-template-columns: 1fr;
   }
   .badges {
     gap: 14px;

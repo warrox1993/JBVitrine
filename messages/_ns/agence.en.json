@@ -16,22 +16,7 @@
     "ctaPrimary": "Get in touch",
     "ctaCall": "Call 0475 20 55 62",
     "badgeLocation": "Based in Wallonia",
-    "badgeAccess": "Direct access, no middleman",
-    "badgeData": "Data hosted in Belgium / EU",
     "imageAlt": "Server racks in a data center, illustrating infrastructure hardening."
-  },
-  "engagements": {
-    "eyebrow": "My commitments",
-    "title": "My way of <accentOnDark>working</accentOnDark>.",
-    "lead": "Four principles that define me.",
-    "proximiteTitle": "Direct",
-    "proximiteText": "A single point of contact, always reachable, never a ticket.",
-    "franchiseTitle": "Candid",
-    "franchiseText": "I say what matters, even what is uncomfortable. No fear-selling.",
-    "corrigeTitle": "Concrete",
-    "corrigeText": "I aim for real impact: fixing, not just auditing.",
-    "iaTitle": "Human expertise augmented by AI",
-    "iaText": "AI speeds up the analysis, the decisions remain human."
   },
   "cta": {
     "title": "Let's talk",
@@ -41,30 +26,6 @@
     "reassurance1": "Reply as fast as possible",
     "reassurance2": "You talk to me directly",
     "reassurance3": "Based in Wallonia"
-  },
-  "about": {
-    "eyebrow": "Who I am",
-    "title": "Why <accent>cybersecurity</accent>",
-    "lead": "Neither a coincidence nor a trend: a career change built step by step, from technical curiosity to expertise in cloud, network and AI security.",
-    "p1": "Understanding how systems hold together, and why they fail, has always interested me more than any other technical subject. Cybersecurity is the natural extension of that curiosity: it requires thinking like a defender and an attacker at once.",
-    "p2": "After several years in the telecommunications branch of the Belgian Army, I chose to turn that rigour into a civilian skill set: a technical diploma, continuous self-teaching (networks, Linux, TryHackMe), and a deliberate specialisation in cloud, network and AI security.",
-    "missionTitle": "What drives me",
-    "missionText": "Understanding systems in depth to defend them better, and proving it with <b>facts, not promises</b>.",
-    "valueRigueurTitle": "Rigour",
-    "valueRigueurText": "NIS2, CyFun, OWASP, ISO 27001: a method I demonstrate, not merely claim.",
-    "valueProximiteTitle": "Proximity",
-    "valueProximiteText": "Based in Wallonia, direct and accessible. I do the work myself, from start to finish.",
-    "valueFranchiseTitle": "Candour",
-    "valueFranchiseText": "Saying what matters, even what is uncomfortable. Never fear-selling.",
-    "valuePragmatismeTitle": "Pragmatism",
-    "valuePragmatismeText": "Priority to impact, not to the superfluous. The best security is the one you actually apply.",
-    "mapAriaLabel": "Simplified map of Belgium, with a marker on the area of operation in Wallonia",
-    "mapBruxelles": "Brussels",
-    "mapLiege": "Wallonia",
-    "localityTitle": "Rooted in Wallonia",
-    "localityText": "Based in Wallonia, open to opportunities and assignments across Belgium and remotely.",
-    "coverageAlt": "Night view of the Earth from space, lights of European cities, symbol of my roots in Belgium / Europe",
-    "coverageCaption": "Rooted in Wallonia. Data <b>hosted in Belgium and in Europe</b>."
   },
   "founder": {
     "eyebrow": "The founder",

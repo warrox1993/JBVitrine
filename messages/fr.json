@@ -17,22 +17,7 @@
       "ctaPrimary": "Me contacter",
       "ctaCall": "Appeler le 0475 20 55 62",
       "badgeLocation": "Basé en Wallonie",
-      "badgeAccess": "Accès direct, sans intermédiaire",
-      "badgeData": "Données hébergées en Belgique / UE",
       "imageAlt": "Baies de serveurs dans un datacenter, illustrant le durcissement de l'infrastructure."
-    },
-    "engagements": {
-      "eyebrow": "Mes engagements",
-      "title": "Ma façon de <accentOnDark>travailler</accentOnDark>.",
-      "lead": "Quatre principes qui me définissent.",
-      "proximiteTitle": "Direct",
-      "proximiteText": "Un interlocuteur unique et joignable, jamais un ticket.",
-      "franchiseTitle": "Franc",
-      "franchiseText": "Je dis ce qui compte, même ce qui dérange. Pas de vente de peur.",
-      "corrigeTitle": "Concret",
-      "corrigeText": "Je vise l'impact réel : corriger, pas seulement auditer.",
-      "iaTitle": "L'humain augmenté par l'IA",
-      "iaText": "L'IA accélère l'analyse, les décisions restent humaines."
     },
     "cta": {
       "title": "Discutons",
@@ -42,30 +27,6 @@
       "reassurance1": "Réponse au plus vite",
       "reassurance2": "Vous me parlez directement",
       "reassurance3": "Basé en Wallonie"
-    },
-    "about": {
-      "eyebrow": "Qui suis-je",
-      "title": "Pourquoi la <accent>cybersécurité</accent>",
-      "lead": "Ni un hasard, ni une mode : une reconversion construite pas à pas, de la curiosité technique à l'expertise en sécurité cloud, réseaux et IA.",
-      "p1": "Comprendre comment les systèmes tiennent, et pourquoi ils cèdent, m'a toujours intéressé plus que n'importe quel autre sujet technique. La cybersécurité est le prolongement naturel de cette curiosité : elle demande de penser à la fois comme un défenseur et comme un attaquant.",
-      "p2": "Après plusieurs années dans les télécommunications de l'Armée belge, j'ai choisi de transformer cette rigueur en compétence civile : diplôme technique, autoformation continue (réseaux, Linux, TryHackMe), et une spécialisation assumée en sécurité cloud, réseaux et IA.",
-      "missionTitle": "Ce qui me motive",
-      "missionText": "Comprendre les systèmes en profondeur pour mieux les défendre, et le prouver par <b>des faits, pas des promesses</b>.",
-      "valueRigueurTitle": "Rigueur",
-      "valueRigueurText": "NIS2, CyFun, OWASP, ISO 27001 : une méthode que je démontre, pas que j'affirme.",
-      "valueProximiteTitle": "Proximité",
-      "valueProximiteText": "Basé en Wallonie, direct et accessible. Je fais le travail moi-même, du début à la fin.",
-      "valueFranchiseTitle": "Franchise",
-      "valueFranchiseText": "Dire ce qui compte, même ce qui dérange. Jamais de vente de peur.",
-      "valuePragmatismeTitle": "Pragmatisme",
-      "valuePragmatismeText": "Priorité à l'impact, pas au superflu. La meilleure sécurité est celle qu'on applique.",
-      "mapAriaLabel": "Carte simplifiée de la Belgique, avec un repère sur la zone d'action en Wallonie",
-      "mapBruxelles": "Bruxelles",
-      "mapLiege": "Wallonie",
-      "localityTitle": "Ancré en Wallonie",
-      "localityText": "Basé en Wallonie, ouvert aux opportunités et missions en Belgique et en remote.",
-      "coverageAlt": "Vue nocturne de la Terre depuis l'espace, lumières des villes d'Europe, symbole de mon ancrage Belgique / Europe",
-      "coverageCaption": "Ancré en Wallonie. Données <b>hébergées en Belgique et en Europe</b>."
     },
     "founder": {
       "eyebrow": "Le fondateur",

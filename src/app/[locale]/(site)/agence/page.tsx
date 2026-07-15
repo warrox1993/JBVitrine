@@ -9,11 +9,8 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Button } from "@/components/ui/Button/Button";
-import { Section } from "@/components/ui/Section/Section";
-import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { CTABox } from "@/components/shared";
-import { QuiSommesNous } from "./QuiSommesNous";
 import { Fondateur } from "./Fondateur";
 import styles from "./page.module.css";
 
@@ -108,14 +105,6 @@ export default async function AgencePage({
                   <Icon name="map-pin" size={18} />
                   {t("hero.badgeLocation")}
                 </li>
-                <li>
-                  <Icon name="users" size={18} />
-                  {t("hero.badgeAccess")}
-                </li>
-                <li>
-                  <Icon name="check" size={18} />
-                  {t("hero.badgeData")}
-                </li>
               </ul>
             </Reveal>
             <Reveal as="div" className={styles.heroMedia} variant="right" delay={100}>
@@ -134,53 +123,7 @@ export default async function AgencePage({
         </Container>
       </section>
 
-      <QuiSommesNous />
       <Fondateur />
-
-      {/* ===== Engagements / valeurs - full-bleed navy chapter ===== */}
-      <Section variant="navy" gridBg id="engagements">
-        <Reveal>
-          <SectionHeading
-            center
-            onDark
-            eyebrow={t("engagements.eyebrow")}
-            title={t.rich("engagements.title", {
-              accentOnDark: (c) => <span className="accentOnDark">{c}</span>,
-            })}
-            lead={t("engagements.lead")}
-          />
-        </Reveal>
-        <Reveal stagger className={styles.engageGrid}>
-          <article className={styles.engageCard}>
-            <div className={styles.engageIco}>
-              <Icon name="map-pin" strokeWidth={1.7} />
-            </div>
-            <h3>{t("engagements.proximiteTitle")}</h3>
-            <p>{t("engagements.proximiteText")}</p>
-          </article>
-          <article className={styles.engageCard}>
-            <div className={styles.engageIco}>
-              <Icon name="check-circle" strokeWidth={1.7} />
-            </div>
-            <h3>{t("engagements.franchiseTitle")}</h3>
-            <p>{t("engagements.franchiseText")}</p>
-          </article>
-          <article className={styles.engageCard}>
-            <div className={styles.engageIco}>
-              <Icon name="file-check" strokeWidth={1.7} />
-            </div>
-            <h3>{t("engagements.corrigeTitle")}</h3>
-            <p>{t("engagements.corrigeText")}</p>
-          </article>
-          <article className={styles.engageCard}>
-            <div className={styles.engageIco}>
-              <Icon name="sparkles" strokeWidth={1.7} />
-            </div>
-            <h3>{t("engagements.iaTitle")}</h3>
-            <p>{t("engagements.iaText")}</p>
-          </article>
-        </Reveal>
-      </Section>
 
       <CTABox
         id="contact"
