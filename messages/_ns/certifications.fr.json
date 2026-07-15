@@ -25,17 +25,23 @@
       "status": "Obtenu, 2026",
       "name": "AZ-900, Microsoft Azure Fundamentals",
       "description": "Les bases du cloud Azure : concepts, services, sécurité, conformité et tarification.",
-      "verifyLabel": "Vérifier sur Credly"
+      "verifyLabel": "Vérifier sur Credly",
+      "why": "L'AZ-900 pose les fondamentaux du cloud. C'est ma marche de départ : elle m'ouvre la voie vers l'AZ-104 (administration Azure). Un point d'entrée pensé, pas un empilement de certifications."
     },
     "ccna": {
       "status": "En cours",
       "name": "CCNA, Cisco",
-      "description": "Certification réseau de référence : commutation, routage, sécurité de base des infrastructures."
+      "description": "Certification réseau de référence : commutation, routage, sécurité de base des infrastructures.",
+      "why": "En creusant le cloud, un constat s'est imposé : on ne maîtrise pas vraiment le cloud sans maîtriser les réseaux. J'ai donc bifurqué vers le CCNA, avant de revenir à l'AZ-104. Les réseaux d'abord, le cloud ensuite."
     },
     "autoformation": {
       "label": "Auto-formation",
-      "text": "TryHackMe : pratique régulière en défense (bleue) et en réseaux, en complément des certifications officielles."
-    }
+      "text": "TryHackMe : pratique régulière en défense (bleue) et en réseaux, en complément des certifications officielles.",
+      "badge": "Top 15% mondial · TryHackMe"
+    },
+    "whyHeading": "Pourquoi cette certification",
+    "flipHint": "Cliquez pour le pourquoi",
+    "backHint": "Retour"
   },
   "formation": {
     "eyebrow": "Formation & diplômes",
@@ -71,19 +77,23 @@
   "objectifs": {
     "eyebrow": "Objectifs de certification",
     "title": "La suite : ce que je vise, pas ce que j'ai déjà",
-    "lead": "Trois objectifs affichés clairement comme tels : des étapes à venir, pas des acquis.",
+    "lead": "Quatre étapes affichées clairement comme telles : une trajectoire à venir, pas des acquis.",
     "steps": {
       "ccna": {
         "title": "Finaliser le CCNA",
-        "description": "Certification réseau en cours, prochaine étape naturelle."
+        "description": "Certification réseau en cours, prochaine étape naturelle avant de revenir au cloud."
       },
-      "cloud": {
-        "title": "Sécurité cloud",
-        "description": "Viser une certification en sécurité cloud, par exemple Microsoft SC-900 puis AZ-500."
+      "az104": {
+        "title": "AZ-104, administration Azure",
+        "description": "Reprendre l'administration Azure une fois les réseaux consolidés."
       },
-      "securityPlus": {
-        "title": "CompTIA Security+",
-        "description": "Et/ou une certification transversale en sécurité, pour élargir le socle."
+      "security": {
+        "title": "AZ-500 et CompTIA Security+",
+        "description": "Le bagage sécurité : sécurité Azure et une certification transversale."
+      },
+      "architecte": {
+        "title": "Horizon : niveau Architecte",
+        "description": "Viser le niveau Architecte dans les années qui suivent, comme aboutissement de la trajectoire."
       }
     }
   },
@@ -122,6 +132,15 @@
     "text": "Une mission, un poste ou une collaboration : je réponds avec la même transparence que sur cette page.",
     "actionPrimary": "Me contacter",
     "actionCall": "Appeler le 0475 20 55 62",
-    "reassurances": ["Réponse rapide", "Transparence totale", "Basé en Wallonie"]
+    "reassurances": [
+      "Réponse rapide",
+      "Transparence totale",
+      "Basé en Wallonie"
+    ]
+  },
+  "profiles": {
+    "github": "Profil GitHub",
+    "linkedin": "Profil LinkedIn",
+    "tryhackme": "Profil TryHackMe"
   }
 }

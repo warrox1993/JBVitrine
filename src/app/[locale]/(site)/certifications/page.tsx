@@ -10,11 +10,15 @@ import { Icon, IconName } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { CTABox } from "@/components/shared";
 import { ProcessSteps } from "@/components/shared/ProcessSteps/ProcessSteps";
+import { FlipCard } from "./FlipCard";
 import styles from "./page.module.css";
 
 // Placeholder Credly profile URL: the real one must be confirmed before launch.
 // TODO: confirmer l'URL Credly
 const CREDLY_URL = "https://www.credly.com/users/jean-baptiste-dhondt";
+const GITHUB_URL = "https://github.com/warrox1993";
+const LINKEDIN_URL = "https://www.linkedin.com/in/jean-baptistedhondt";
+const TRYHACKME_URL = "https://tryhackme.com/p/Warrox1993";
 
 export async function generateMetadata({
   params,
@@ -70,7 +74,7 @@ type FormationItem = {
   desc: string;
 };
 
-const OBJECTIF_KEYS = ["ccna", "cloud", "securityPlus"] as const;
+const OBJECTIF_KEYS = ["ccna", "az104", "security", "architecte"] as const;
 
 const COMPETENCE_KEYS = ["cloud", "reseaux", "secApp", "grc", "dev", "ia"] as const;
 const COMPETENCE_ICONS: Record<(typeof COMPETENCE_KEYS)[number], IconName> = {
@@ -109,6 +113,35 @@ export default async function CertificationsPage({
               {t.rich("hero.title", { accent: (c) => <span className="accent">{c}</span> })}
             </h1>
             <p className={styles.heroLead}>{t("hero.lead")}</p>
+            <div className={styles.profilesRow}>
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.profileLink}
+              >
+                <Icon name="github" size={18} />
+                {t("profiles.github")}
+              </a>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.profileLink}
+              >
+                <Icon name="linkedin" size={18} />
+                {t("profiles.linkedin")}
+              </a>
+              <a
+                href={TRYHACKME_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.profileLink}
+              >
+                <Icon name="target" size={18} />
+                {t("profiles.tryhackme")}
+              </a>
+            </div>
           </Reveal>
         </div>
       </Section>
@@ -124,36 +157,31 @@ export default async function CertificationsPage({
         </Reveal>
 
         <Reveal stagger className={styles.certGrid}>
-          <article className={styles.certCard}>
-            <div className={styles.certIcon}>
-              <Icon name="shield-check" strokeWidth={1.7} />
-            </div>
-            <span className={`${styles.certStatus} ${styles.statusDone}`}>
-              {t("certs.az900.status")}
-            </span>
-            <h3 className={styles.certName}>{t("certs.az900.name")}</h3>
-            <p className={styles.certDesc}>{t("certs.az900.description")}</p>
-            <a
-              href={CREDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.certVerify}
-            >
-              {t("certs.az900.verifyLabel")}
-              <Icon name="arrow-right" strokeWidth={2.2} />
-            </a>
-          </article>
+          <FlipCard
+            icon={<Icon name="shield-check" strokeWidth={1.7} />}
+            status={t("certs.az900.status")}
+            statusVariant="done"
+            name={t("certs.az900.name")}
+            description={t("certs.az900.description")}
+            verifyHref={CREDLY_URL}
+            verifyLabel={t("certs.az900.verifyLabel")}
+            whyTitle={t("certs.whyHeading")}
+            whyText={t("certs.az900.why")}
+            hint={t("certs.flipHint")}
+            backHint={t("certs.backHint")}
+          />
 
-          <article className={styles.certCard}>
-            <div className={styles.certIcon}>
-              <Icon name="clock" strokeWidth={1.7} />
-            </div>
-            <span className={`${styles.certStatus} ${styles.statusProgress}`}>
-              {t("certs.ccna.status")}
-            </span>
-            <h3 className={styles.certName}>{t("certs.ccna.name")}</h3>
-            <p className={styles.certDesc}>{t("certs.ccna.description")}</p>
-          </article>
+          <FlipCard
+            icon={<Icon name="clock" strokeWidth={1.7} />}
+            status={t("certs.ccna.status")}
+            statusVariant="progress"
+            name={t("certs.ccna.name")}
+            description={t("certs.ccna.description")}
+            whyTitle={t("certs.whyHeading")}
+            whyText={t("certs.ccna.why")}
+            hint={t("certs.flipHint")}
+            backHint={t("certs.backHint")}
+          />
         </Reveal>
 
         <Reveal className={styles.autoformation}>
@@ -161,6 +189,15 @@ export default async function CertificationsPage({
           <div>
             <strong>{t("certs.autoformation.label")}</strong>
             <p>{t("certs.autoformation.text")}</p>
+            <a
+              href={TRYHACKME_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.thmBadge}
+            >
+              <Icon name="target" strokeWidth={2} />
+              {t("certs.autoformation.badge")}
+            </a>
           </div>
         </Reveal>
       </Section>

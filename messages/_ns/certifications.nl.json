@@ -25,17 +25,23 @@
       "status": "Behaald, 2026",
       "name": "AZ-900, Microsoft Azure Fundamentals",
       "description": "De basis van Azure cloud: concepten, diensten, beveiliging, compliance en prijszetting.",
-      "verifyLabel": "Verifiëren op Credly"
+      "verifyLabel": "Verifiëren op Credly",
+      "why": "De AZ-900 legt de basis van cloud computing. Het is mijn startpunt: het opent de weg naar AZ-104 (Azure-beheer). Een doordacht startpunt, geen opeenstapeling van certificaten."
     },
     "ccna": {
       "status": "Lopende",
       "name": "CCNA, Cisco",
-      "description": "Referentiecertificaat netwerken: switching, routing, basisbeveiliging van infrastructuur."
+      "description": "Referentiecertificaat netwerken: switching, routing, basisbeveiliging van infrastructuur.",
+      "why": "Bij het verdiepen in cloud werd een ding duidelijk: je beheerst de cloud niet echt zonder de netwerken te beheersen. Daarom ben ik afgebogen naar het CCNA, voor ik terugkeer naar AZ-104. Eerst de netwerken, dan de cloud."
     },
     "autoformation": {
       "label": "Zelfstudie",
-      "text": "TryHackMe: regelmatige oefening in defensie (blue team) en netwerken, als aanvulling op de officiële certificaten."
-    }
+      "text": "TryHackMe: regelmatige oefening in defensie (blue team) en netwerken, als aanvulling op de officiële certificaten.",
+      "badge": "Wereldwijd top 15% · TryHackMe"
+    },
+    "whyHeading": "Waarom dit certificaat",
+    "flipHint": "Klik voor het waarom",
+    "backHint": "Terug"
   },
   "formation": {
     "eyebrow": "Opleiding & diploma's",
@@ -71,19 +77,23 @@
   "objectifs": {
     "eyebrow": "Certificeringsdoelen",
     "title": "Het vervolg: waar ik naartoe werk, niet wat ik al heb",
-    "lead": "Drie doelen duidelijk als dusdanig getoond: toekomstige stappen, geen behaalde resultaten.",
+    "lead": "Vier stappen duidelijk als dusdanig getoond: een traject dat nog moet komen, geen behaalde resultaten.",
     "steps": {
       "ccna": {
         "title": "CCNA afwerken",
-        "description": "Lopend netwerkcertificaat, logische volgende stap."
+        "description": "Lopend netwerkcertificaat, logische volgende stap voor ik terugkeer naar cloud."
       },
-      "cloud": {
-        "title": "Cloudbeveiliging",
-        "description": "Een certificaat in cloudbeveiliging nastreven, bijvoorbeeld Microsoft SC-900 gevolgd door AZ-500."
+      "az104": {
+        "title": "AZ-104, Azure-beheer",
+        "description": "Azure-beheer weer oppakken zodra de netwerken stevig staan."
       },
-      "securityPlus": {
-        "title": "CompTIA Security+",
-        "description": "En/of een transversaal beveiligingscertificaat, om de basis te verbreden."
+      "security": {
+        "title": "AZ-500 en CompTIA Security+",
+        "description": "De veiligheidsbagage: Azure-beveiliging en een transversaal beveiligingscertificaat."
+      },
+      "architecte": {
+        "title": "Horizon: niveau Architect",
+        "description": "Het niveau Architect nastreven in de jaren die volgen, als bekroning van het traject."
       }
     }
   },
@@ -122,6 +132,15 @@
     "text": "Een opdracht, een functie of een samenwerking: ik antwoord met dezelfde transparantie als op deze pagina.",
     "actionPrimary": "Contacteer mij",
     "actionCall": "Bel 0475 20 55 62",
-    "reassurances": ["Snel antwoord", "Volledige transparantie", "Gevestigd in Wallonië"]
+    "reassurances": [
+      "Snel antwoord",
+      "Volledige transparantie",
+      "Gevestigd in Wallonië"
+    ]
+  },
+  "profiles": {
+    "github": "GitHub-profiel",
+    "linkedin": "LinkedIn-profiel",
+    "tryhackme": "TryHackMe-profiel"
   }
 }

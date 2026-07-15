@@ -1,0 +1,142 @@
+/* FlipCard — 3D flip on click/keyboard, tokens only. */
+
+.card {
+  cursor: pointer;
+  perspective: 1600px;
+  border-radius: var(--radius-lg);
+}
+.card:focus-visible {
+  outline: none;
+}
+.card:focus-visible .inner {
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--color-primary) 45%, transparent),
+    var(--shadow-md);
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  border-radius: var(--radius-lg);
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-solid);
+  box-shadow: var(--shadow-md);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: auto;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+/* ===== Front face ===== */
+.icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-alt);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  flex: none;
+}
+.status {
+  display: inline-flex;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: 6px;
+}
+.statusDone {
+  color: var(--color-primary-strong);
+  background: var(--color-primary-12);
+}
+.statusProgress {
+  color: var(--color-text-muted);
+  background: var(--color-bg-alt);
+}
+.name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+.desc {
+  font-size: 14.5px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: 4px;
+}
+.verify {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-primary-strong);
+  align-self: flex-start;
+}
+.verify:hover {
+  text-decoration: underline;
+}
+.hint {
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+/* ===== Back face ===== */
+.whyTitle {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-primary-strong);
+  margin: 0 0 10px;
+}
+.whyText {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0;
+}
+.backHint {
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+/* ===== Reduced motion: instant swap, no spin ===== */
+@media (prefers-reduced-motion: reduce) {
+  .inner {
+    transition: none;
+  }
+}

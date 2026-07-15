@@ -41,80 +41,42 @@
   line-height: 1.6;
 }
 
+/* ===== Profiles row (GitHub / LinkedIn / TryHackMe) ===== */
+.profilesRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+.profileLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  color: var(--color-text);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.profileLink svg {
+  width: 16px;
+  height: 16px;
+  color: var(--orange-d);
+}
+.profileLink:hover {
+  border-color: var(--orange-d);
+  color: var(--orange-d);
+}
+
 /* ===== Certifications grid ===== */
 .certGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-5, 24px);
   margin-top: var(--space-6, 32px);
-}
-.certCard {
-  border: 1px solid var(--line);
-  border-radius: var(--radius-l);
-  background: var(--bg);
-  padding: 26px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.certIcon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-s);
-  background: var(--bg-2);
-  color: var(--orange);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 6px;
-}
-.certStatus {
-  display: inline-flex;
-  align-self: flex-start;
-  font-family: var(--mono);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  margin-bottom: 6px;
-}
-.statusDone {
-  color: var(--orange-d);
-  background: var(--orange-t);
-}
-.statusProgress {
-  color: var(--slate);
-  background: var(--bg-2);
-}
-.certName {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.3;
-}
-.certDesc {
-  font-size: 14.5px;
-  color: var(--slate);
-  line-height: 1.6;
-  margin-top: 4px;
-}
-.certVerify {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--orange-d);
-}
-.certVerify svg {
-  width: 15px;
-  height: 15px;
-}
-.certVerify:hover {
-  text-decoration: underline;
+  align-items: stretch;
 }
 
 .autoformation {
@@ -148,6 +110,25 @@
   font-size: 14.5px;
   line-height: 1.6;
   margin: 0;
+}
+.thmBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--orange-t);
+  color: var(--orange-d);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+.thmBadge svg {
+  width: 14px;
+  height: 14px;
+}
+.thmBadge:hover {
+  text-decoration: underline;
 }
 
 /* ===== Formation timeline ===== */
