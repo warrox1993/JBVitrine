@@ -128,6 +128,9 @@ export default async function SiteFooter() {
                 <Link href="/certifications">{t("footer.links.certifications")}</Link>
               </li>
               <li>
+                <Link href="/projets">{t("nav.projets")}</Link>
+              </li>
+              <li>
                 <Link href="/blog">{t("footer.links.ressources")}</Link>
               </li>
               <li>

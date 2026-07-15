@@ -1,0 +1,318 @@
+/* /projets — page-scoped styles (lean hero + CyFun flagship case study + projects grid). */
+
+/* ===== Page hero ===== */
+.hero {
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  border-bottom: 1px solid var(--line);
+  padding: 48px 0 56px;
+}
+.heroKicker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+.heroRule {
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--orange);
+  flex: none;
+}
+.kickerMono {
+  font-family: var(--mono) !important;
+  letter-spacing: 0.06em !important;
+}
+.heroTitle {
+  font-size: clamp(31px, 4.2vw, 46px);
+  margin-top: 18px;
+  max-width: 24ch;
+  letter-spacing: -0.025em;
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.heroLead {
+  margin-top: 20px;
+  max-width: 58ch;
+  font-size: 19px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+.heroActions {
+  margin-top: 26px;
+}
+
+/* ===== Flagship: CyFun / NIS2 audit tool ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 18px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--orange-d);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.flagshipBody {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5, 24px);
+  margin-top: var(--space-6, 32px);
+  align-items: start;
+}
+.flagshipBlock {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  padding: 22px;
+}
+.flagshipHeading {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--orange-d);
+  margin: 0 0 10px;
+}
+.flagshipText {
+  font-size: 14.5px;
+  color: var(--color-text);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.guaranteeList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.guaranteeList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+.guaranteeList svg {
+  flex: none;
+  width: 15px;
+  height: 15px;
+  color: var(--orange-d);
+  margin-top: 2px;
+}
+
+.honesty,
+.confidential {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: var(--space-5, 24px);
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--orange);
+  border-radius: var(--radius-s);
+  background: var(--bg);
+}
+.honesty svg,
+.confidential svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  color: var(--orange-d);
+  margin-top: 2px;
+}
+.honesty p {
+  margin: 0;
+  font-size: 14.5px;
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+.confidential p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+
+.flagshipCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--space-5, 24px);
+  color: var(--orange-d);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+}
+.flagshipCta svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.16s ease;
+}
+.flagshipCta:hover {
+  text-decoration: underline;
+}
+.flagshipCta:hover svg {
+  transform: translateX(3px);
+}
+
+/* ===== Other projects grid ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5, 24px);
+  margin-top: var(--space-6, 32px);
+  align-items: stretch;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  padding: 22px;
+}
+.statusPill {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.statusPill svg {
+  width: 13px;
+  height: 13px;
+}
+.statusPublic {
+  background: var(--orange-t);
+  color: var(--orange-d);
+}
+.statusPrivate {
+  background: var(--bg-2);
+  color: var(--slate);
+}
+.cardTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: 14px;
+}
+.cardDesc {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.6;
+  margin-top: 8px;
+  flex: 1;
+}
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+.techTag {
+  padding: 4px 10px;
+  border-radius: var(--radius-s);
+  background: var(--bg-2);
+  color: var(--color-text);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+.repoLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  color: var(--orange-d);
+  font-weight: 700;
+  font-size: 13.5px;
+  text-decoration: none;
+}
+.repoLink svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.16s ease;
+}
+.repoLink:hover {
+  text-decoration: underline;
+}
+.repoLink:hover svg {
+  transform: translateX(3px);
+}
+
+/* ===== Closing band ===== */
+.closing {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.closing p {
+  font-size: 16px;
+  color: var(--color-text);
+  font-weight: 600;
+  margin: 0;
+}
+.closingCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+}
+.closingCta svg {
+  width: 17px;
+  height: 17px;
+  color: var(--orange-d);
+}
+.closingCta:hover {
+  border-color: var(--orange-d);
+  color: var(--orange-d);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .flagshipBody {
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 720px) {
+  .hero {
+    padding: 32px 0 40px;
+  }
+  .closing {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

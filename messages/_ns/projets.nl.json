@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "Projecten & realisaties | Jean-Baptiste Dhondt, Smidjan",
+    "description": "CyFun/NIS2-auditool in ontwikkeling, open-source bibliotheek FormCraft, deze site zelf: het concrete bewijs van een cyberpracticus in omscholing in Wallonië.",
+    "ogTitle": "Projecten & realisaties, Smidjan",
+    "ogDescription": "Wat gebouwd, gedocumenteerd en beveiligd is: GitHub, open-source code en een NIS2-conformiteitstool in ontwikkeling.",
+    "ogImageAlt": "Projecten en realisaties van Jean-Baptiste Dhondt, Smidjan",
+    "twitterTitle": "Projecten & realisaties, Smidjan",
+    "twitterDescription": "Wat gebouwd, gedocumenteerd en beveiligd is, met concreet bewijs."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Projecten & realisaties"
+  },
+  "hero": {
+    "kicker": "Technisch bewijs, geen beloftes",
+    "title": "Projecten & <accent>realisaties</accent>",
+    "lead": "Wat ik bouw, documenteer en beveilig ik. Sommige projecten zijn publiek op GitHub, andere blijven privé: elke status wordt eerlijk vermeld, zonder iets mooier voor te stellen.",
+    "githubCta": "Bekijk mijn GitHub"
+  },
+  "flagship": {
+    "eyebrow": "Vlaggenschipproject",
+    "badge": "In ontwikkeling · Details op aanvraag",
+    "title": "CyFun/NIS2-auditool",
+    "lead": "Een zelfevaluatietool die ik bouw om kmo's voor te bereiden op het CyFun-referentiekader, de Belgische basis van NIS2-conformiteit.",
+    "contexte": {
+      "heading": "Context",
+      "text": "Waalse kmo's moeten zich vandaag positioneren ten opzichte van NIS2. Het CyFun-referentiekader (CyberFundamentals, Centrum voor Cybersecurity België) biedt een duidelijk kader, maar de eigen-maak ervan vraagt tijd en een methode. Daar bereidt deze tool op voor: een gestructureerde diagnose, vóór elke officiële certificeringsstap."
+    },
+    "methode": {
+      "heading": "Methode en garanties",
+      "items": {
+        "aligned": "Afgestemd op het CyFun-referentiekader",
+        "readOnly": "Alleen-lezen: de tool wijzigt nooit de geauditeerde systemen",
+        "scope": "Expliciete auditomvang, vastgelegd vóór elke sessie",
+        "noCreds": "Er worden nooit inloggegevens opgeslagen",
+        "auditLog": "Onaantastbaar auditlogboek van elke actie",
+        "humanValidation": "Elke voorgestelde remediatie wordt door een mens gevalideerd",
+        "noRetention": "Geen enkele gegeven wordt na de audit bewaard"
+      }
+    },
+    "resultat": {
+      "heading": "Resultaat",
+      "text": "Een duidelijk rapport, dat leidt tot een geprioriteerde remediatie en vervolgens tot een geleidelijke verharding van het systeem."
+    },
+    "honesty": "Belangrijk: deze tool is een begeleide zelfevaluatie en voorbereiding, geen officiële certificering. De CyFun-certificering wordt uitsluitend afgeleverd door BELAC-geaccrediteerde instanties.",
+    "confidential": "Eigen tool, solo in ontwikkeling. Interne architectuur en code zijn niet publiek: technische details op aanvraag.",
+    "cta": "Meer over NIS2/CyFun-conformiteit"
+  },
+  "grid": {
+    "eyebrow": "Andere projecten",
+    "title": "Wat al gebouwd is",
+    "lead": "Een open-source bibliotheek, deze site, en oefeningen in applicatiebeveiliging: de rest van het bewijs, publiek of niet.",
+    "statusPublic": "Publiek",
+    "statusPrivate": "Privécode",
+    "repoLabel": "Bekijk de repo",
+    "items": {
+      "formcraft": {
+        "name": "FormCraft",
+        "description": "Open-source C#/Blazor-bibliotheek om typeveilige, dynamische formulieren te bouwen met een elegante fluent API.",
+        "tech": ["C#", "Blazor", ".NET"]
+      },
+      "site": {
+        "name": "Deze site (Smidjan)",
+        "description": "Dit portfolio zelf: Next.js 16, React 19, TypeScript, next-intl (FR/NL/EN), met bijzondere aandacht voor beveiliging (CSP, rate-limiting, verharde headers).",
+        "tech": ["Next.js", "React", "TypeScript", "next-intl"]
+      },
+      "secapp": {
+        "name": "Applicatiebeveiliging (oefeningen)",
+        "description": "Praktische toepassing van Java/Spring Security en de OWASP Top 10: concreet leren om veilige code te schrijven.",
+        "tech": ["Java", "Spring Security", "OWASP Top 10"]
+      }
+    }
+  },
+  "closing": {
+    "text": "Ik publiceer en vervolledig regelmatig mijn projecten.",
+    "cta": "Volg de voortgang op GitHub"
+  },
+  "finalCta": {
+    "title": "Een vraag over een van deze projecten?",
+    "text": "Ik antwoord met dezelfde transparantie als op deze pagina: wat af is, wat in uitvoering is, wat privé blijft.",
+    "actionPrimary": "Contacteer mij",
+    "actionCall": "Bel 0475 20 55 62",
+    "reassurances": ["Snel antwoord", "Volledige transparantie", "Gevestigd in Wallonië"]
+  }
+}

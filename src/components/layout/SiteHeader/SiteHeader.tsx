@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { href: "/approche", labelKey: "nav.approche" },
   { href: "/agence", labelKey: "nav.agence" },
   { href: "/certifications", labelKey: "nav.certifications" },
+  { href: "/projets", labelKey: "nav.projets" },
   { href: "/blog", labelKey: "nav.journal" },
 ] as const;
 
