@@ -83,7 +83,7 @@ export function AdminSidebar({ userRole = "viewer" }: AdminSidebarProps) {
           <p className={styles.navGroupTitle}>Système</p>
           <ul className={styles.navList}>
             <li>
-              <Link href="/" className={styles.navLink} target="_blank">
+              <Link href="/" className={styles.navLink} target="_blank" rel="noopener noreferrer">
                 <ExternalLink size={18} />
                 <span>Voir le site</span>
               </Link>

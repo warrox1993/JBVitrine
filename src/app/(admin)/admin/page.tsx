@@ -69,7 +69,7 @@ export default async function AdminDashboard() {
             <p>Consulter les nouveaux contacts et devis</p>
           </div>
         </Link>
-        <Link href="/" target="_blank" className={styles.shortcutCard}>
+        <Link href="/" target="_blank" rel="noopener noreferrer" className={styles.shortcutCard}>
           <ExternalLink size={24} />
           <div className={styles.shortcutInfo}>
             <h3>Voir le Site</h3>

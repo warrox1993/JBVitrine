@@ -99,6 +99,7 @@ export default async function AdminBlogPage() {
                       className={styles.actionButton}
                       title="Voir sur le site"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <Eye size={18} />
                     </Link>
