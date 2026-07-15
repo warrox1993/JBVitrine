@@ -20,8 +20,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
   min-height: 70px;
+  flex-wrap: nowrap;
 }
 
 .brand {
@@ -30,7 +31,7 @@
   gap: 11px;
   font-weight: 800;
   color: var(--color-text);
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: -0.02em;
 }
 
@@ -54,6 +55,7 @@
   text-transform: uppercase;
   color: var(--muted);
   margin-top: 1px;
+  white-space: nowrap;
 }
 
 .incident {
@@ -78,15 +80,16 @@
 .main {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
 }
 
 .main a {
-  padding: 9px 14px;
+  padding: 8px 10px;
   border-radius: 7px;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--slate);
+  white-space: nowrap;
 }
 
 .main a:hover {
@@ -111,8 +114,10 @@
   align-items: center;
   gap: 8px;
   font-weight: 600;
-  font-size: 14.5px;
+  font-size: 14px;
   color: var(--color-text);
+  white-space: nowrap;
+  flex: none;
 }
 
 .tel svg {
@@ -126,8 +131,8 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font: 600 15px/1 var(--sans);
-  padding: 13px 22px;
+  font: 600 14px/1 var(--sans);
+  padding: 11px 16px;
   border-radius: var(--radius-s);
   cursor: pointer;
   border: 1px solid var(--orange);
@@ -175,7 +180,7 @@
   display: none;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1200px) {
   .nav {
     padding: 0 16px;
     gap: 12px;
