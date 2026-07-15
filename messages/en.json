@@ -223,6 +223,9 @@
     }
   },
   "common": {
+    "a11y": {
+      "skipToContent": "Skip to content"
+    },
     "nav": {
       "services": "Services",
       "conformite": "NIS2 Compliance",

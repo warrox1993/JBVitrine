@@ -34,7 +34,7 @@ export default async function AdminLayout({
   return (
     <div className={styles.adminLayout}>
       {session && <AdminSidebar userRole={session.user?.role || "viewer"} />}
-      <main className={session ? styles.mainContent : styles.authContent}>
+      <main id="main" className={session ? styles.mainContent : styles.authContent}>
         {children}
       </main>
     </div>

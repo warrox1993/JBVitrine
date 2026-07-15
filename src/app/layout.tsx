@@ -18,7 +18,7 @@ import RouteProgressProvider from '@/app/RouteProgressProvider';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { headers } from 'next/headers';
 
 // Optimized font loading with swap and subset for faster FCP/LCP
@@ -146,6 +146,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
     const locale = await getLocale();
+    const t = await getTranslations({ locale, namespace: 'common' });
     // CSP nonce forwarded by src/middleware.ts (x-nonce request header). Needed
     // so this inline script is allowed under the nonce-based script-src.
     const nonce = (await headers()).get('x-nonce') ?? undefined;
@@ -167,6 +168,12 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
                 />
             </head>
             <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+                {/* Skip-to-content: visually hidden until keyboard focus, then
+                    pinned top-left above the sticky header so keyboard/screen
+                    reader users can bypass the nav and jump to <main id="main">. */}
+                <a href="#main" className="skip-link">
+                    {t('a11y.skipToContent')}
+                </a>
                 <FXReady />
                 <NextIntlClientProvider>
                     <RootEffects>

@@ -1,4 +1,7 @@
 {
+  "a11y": {
+    "skipToContent": "Naar inhoud"
+  },
   "nav": {
     "services": "Diensten",
     "conformite": "NIS2-conformiteit",

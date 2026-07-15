@@ -130,3 +130,25 @@
   margin: 0;
   overflow: visible;
 }
+
+/* Skip-to-content link: hidden off-screen until keyboard focus, then pinned
+   top-left above the sticky header (z-index 60 in SiteHeader) so Tab users
+   can bypass the nav and jump straight to <main id="main">. */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: var(--space-2);
+  z-index: 100;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  border-radius: var(--radius-md);
+  font-family: var(--font-base);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: var(--space-2);
+}

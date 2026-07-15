@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import styles from "./Breadcrumbs.module.css";
 
@@ -10,9 +11,13 @@ export interface BreadcrumbsProps {
   items: BreadcrumbItem[];
 }
 
-export function Breadcrumbs({ items }: BreadcrumbsProps) {
+// Server Component: the aria-label is read from i18n (common.breadcrumb.aria,
+// same key the sibling <Breadcrumb> client component uses) so nl/en callers
+// get the correctly localized label instead of a hardcoded French string.
+export async function Breadcrumbs({ items }: BreadcrumbsProps) {
+  const t = await getTranslations("common");
   return (
-    <nav aria-label="Fil d'Ariane" className={styles.breadcrumbs}>
+    <nav aria-label={t("breadcrumb.aria")} className={styles.breadcrumbs}>
       <ol
         className={styles.breadcrumbsList}
         itemScope
