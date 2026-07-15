@@ -359,6 +359,7 @@
       "conformite": "Conformité NIS2",
       "approche": "Approche",
       "agence": "À propos",
+      "certifications": "Certifications",
       "journal": "Journal"
     },
     "brand": {
@@ -387,6 +388,7 @@
         "incident": "Réponse à incident",
         "apropos": "À propos",
         "approche": "Notre approche",
+        "certifications": "Certifications & formation",
         "ressources": "Ressources & guides",
         "contact": "Contact"
       },
@@ -1705,6 +1707,137 @@
       "disclaimer": "Estimation indicative, pas un avis juridique. Le diagnostic gratuit confirme votre situation exacte.",
       "levelLabel": "Point de départ CyFun conseillé",
       "recapLabel": "Basé sur vos réponses"
+    }
+  },
+  "certifications": {
+    "meta": {
+      "title": "Certifications & formation | Jean-Baptiste Dhondt, Smidjan",
+      "description": "AZ-900 obtenu, CCNA en cours, Bachelier en Informatique en cours (ISL). Le parcours de certification et de formation, vérifiable, d'un praticien cyber en reconversion en Wallonie.",
+      "ogTitle": "Certifications & formation, Smidjan",
+      "ogDescription": "Ce qui est obtenu, ce qui est en cours, ce qui est visé. Une trajectoire de certification transparente, sans rien inventer.",
+      "ogImageAlt": "Certifications et formation de Jean-Baptiste Dhondt, Smidjan",
+      "twitterTitle": "Certifications & formation, Smidjan",
+      "twitterDescription": "Ce qui est obtenu, ce qui est en cours, ce qui est visé. Une trajectoire de certification transparente."
+    },
+    "breadcrumb": {
+      "home": "Accueil",
+      "current": "Certifications & formation"
+    },
+    "hero": {
+      "kicker": "État des lieux, vérifiable",
+      "title": "Certifications & <accent>formation</accent>",
+      "lead": "Ce qui est obtenu, ce qui est en cours, ce qui est visé. Aucune date inventée, aucun acquis présenté comme acquis avant de l'être."
+    },
+    "certs": {
+      "eyebrow": "Certifications",
+      "title": "Ce qui est vérifiable aujourd'hui",
+      "lead": "Deux certifications structurent la montée en compétences cloud et réseau.",
+      "az900": {
+        "status": "Obtenu, 2026",
+        "name": "AZ-900, Microsoft Azure Fundamentals",
+        "description": "Les bases du cloud Azure : concepts, services, sécurité, conformité et tarification.",
+        "verifyLabel": "Vérifier sur Credly"
+      },
+      "ccna": {
+        "status": "En cours",
+        "name": "CCNA, Cisco",
+        "description": "Certification réseau de référence : commutation, routage, sécurité de base des infrastructures."
+      },
+      "autoformation": {
+        "label": "Auto-formation",
+        "text": "TryHackMe : pratique régulière en défense (bleue) et en réseaux, en complément des certifications officielles."
+      }
+    },
+    "formation": {
+      "eyebrow": "Formation & diplômes",
+      "title": "Une reconversion construite, pas improvisée",
+      "lead": "Une formation supérieure en cours, complétée par un bootcamp intensif et deux stages en développement.",
+      "items": [
+        {
+          "period": "En cours (Bac 1 validé)",
+          "title": "Bachelier en Informatique",
+          "desc": "ISL, promotion sociale, en parallèle d'une activité professionnelle."
+        },
+        {
+          "period": "2025",
+          "title": "Bootcamp Java Full Stack",
+          "desc": "TechnoFutur TIC."
+        },
+        {
+          "period": "2025",
+          "title": "Stage, architecte logiciel",
+          "desc": "Écosystème Microsoft."
+        },
+        {
+          "period": "2025",
+          "title": "Stage, développement Java/.NET",
+          "desc": "Atypical Consulting."
+        }
+      ],
+      "prior": {
+        "heading": "Avant la reconversion",
+        "text": "Technicien télécom, Défense belge (2013-2017). Agent de sécurité, Commission européenne (2022-2023). Une expérience du terrain et de la rigueur opérationnelle, réinvestie dans la cyber."
+      }
+    },
+    "objectifs": {
+      "eyebrow": "Objectifs de certification",
+      "title": "La suite : ce que je vise, pas ce que j'ai déjà",
+      "lead": "Trois objectifs affichés clairement comme tels : des étapes à venir, pas des acquis.",
+      "steps": {
+        "ccna": {
+          "title": "Finaliser le CCNA",
+          "description": "Certification réseau en cours, prochaine étape naturelle."
+        },
+        "cloud": {
+          "title": "Sécurité cloud",
+          "description": "Viser une certification en sécurité cloud, par exemple Microsoft SC-900 puis AZ-500."
+        },
+        "securityPlus": {
+          "title": "CompTIA Security+",
+          "description": "Et/ou une certification transversale en sécurité, pour élargir le socle."
+        }
+      }
+    },
+    "competences": {
+      "eyebrow": "Compétences",
+      "title": "Le socle technique construit jusqu'ici",
+      "items": {
+        "cloud": {
+          "title": "Cloud & Azure",
+          "description": "Bases solides en cloud Azure (AZ-900) : concepts, sécurité et bonnes pratiques."
+        },
+        "reseaux": {
+          "title": "Réseaux & infrastructure",
+          "description": "Réseaux et infrastructure, renforcés par le CCNA en cours (Cisco)."
+        },
+        "secApp": {
+          "title": "Sécurité applicative",
+          "description": "OWASP, Spring Security : sécuriser le code, pas seulement l'infrastructure."
+        },
+        "grc": {
+          "title": "GRC & conformité",
+          "description": "NIS2, référentiel CyFun : comprendre et outiller la conformité."
+        },
+        "dev": {
+          "title": "Développement",
+          "description": "Java, .NET/C#, TypeScript, Next.js, Spring : construire ce que je sécurise."
+        },
+        "ia": {
+          "title": "IA & automatisation",
+          "description": "n8n, Make : automatiser sans perdre le contrôle ni la sécurité."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Discuter de votre besoin ?",
+      "text": "Une mission, un poste ou une collaboration : je réponds avec la même transparence que sur cette page.",
+      "actionPrimary": "Me contacter",
+      "actionCall": "Appeler le 0475 20 55 62",
+      "reassurances": [
+        "Réponse rapide",
+        "Transparence totale",
+        "Basé en Wallonie"
+      ]
     }
   }
 }

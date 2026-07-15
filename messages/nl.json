@@ -359,6 +359,7 @@
       "conformite": "NIS2-conformiteit",
       "approche": "Aanpak",
       "agence": "Over",
+      "certifications": "Certificaten",
       "journal": "Blog"
     },
     "brand": {
@@ -387,6 +388,7 @@
         "incident": "Incidentrespons",
         "apropos": "Over ons",
         "approche": "Onze aanpak",
+        "certifications": "Certificaten & opleiding",
         "ressources": "Bronnen & gidsen",
         "contact": "Contact"
       },
@@ -1705,6 +1707,137 @@
       "disclaimer": "Indicatieve inschatting, geen juridisch advies. De gratis diagnose bevestigt uw exacte situatie.",
       "levelLabel": "Aanbevolen CyFun-startpunt",
       "recapLabel": "Op basis van uw antwoorden"
+    }
+  },
+  "certifications": {
+    "meta": {
+      "title": "Certificaten & opleiding | Jean-Baptiste Dhondt, Smidjan",
+      "description": "AZ-900 behaald, CCNA lopende, Bachelor Informatica lopende (ISL). Het verifieerbare certificerings- en opleidingstraject van een cyberpracticus in omscholing in Wallonië.",
+      "ogTitle": "Certificaten & opleiding, Smidjan",
+      "ogDescription": "Wat behaald is, wat lopende is, wat het doel is. Een transparant certificeringstraject, zonder iets te verzinnen.",
+      "ogImageAlt": "Certificaten en opleiding van Jean-Baptiste Dhondt, Smidjan",
+      "twitterTitle": "Certificaten & opleiding, Smidjan",
+      "twitterDescription": "Wat behaald is, wat lopende is, wat het doel is. Een transparant certificeringstraject."
+    },
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Certificaten & opleiding"
+    },
+    "hero": {
+      "kicker": "Stand van zaken, verifieerbaar",
+      "title": "Certificaten & <accent>opleiding</accent>",
+      "lead": "Wat behaald is, wat lopende is, wat het doel is. Geen verzonnen data, geen resultaat als behaald voorgesteld voordat het dat effectief is."
+    },
+    "certs": {
+      "eyebrow": "Certificaten",
+      "title": "Wat vandaag verifieerbaar is",
+      "lead": "Twee certificaten structureren de opbouw van cloud- en netwerkvaardigheden.",
+      "az900": {
+        "status": "Behaald, 2026",
+        "name": "AZ-900, Microsoft Azure Fundamentals",
+        "description": "De basis van Azure cloud: concepten, diensten, beveiliging, compliance en prijszetting.",
+        "verifyLabel": "Verifiëren op Credly"
+      },
+      "ccna": {
+        "status": "Lopende",
+        "name": "CCNA, Cisco",
+        "description": "Referentiecertificaat netwerken: switching, routing, basisbeveiliging van infrastructuur."
+      },
+      "autoformation": {
+        "label": "Zelfstudie",
+        "text": "TryHackMe: regelmatige oefening in defensie (blue team) en netwerken, als aanvulling op de officiële certificaten."
+      }
+    },
+    "formation": {
+      "eyebrow": "Opleiding & diploma's",
+      "title": "Een omscholing die opgebouwd is, niet geïmproviseerd",
+      "lead": "Een hogere opleiding die loopt, aangevuld met een intensieve bootcamp en twee stages in ontwikkeling.",
+      "items": [
+        {
+          "period": "Lopende (Bac 1 behaald)",
+          "title": "Bachelor Informatica",
+          "desc": "ISL, sociale promotie, naast een professionele activiteit."
+        },
+        {
+          "period": "2025",
+          "title": "Bootcamp Java Full Stack",
+          "desc": "TechnoFutur TIC."
+        },
+        {
+          "period": "2025",
+          "title": "Stage, software-architect",
+          "desc": "Microsoft-ecosysteem."
+        },
+        {
+          "period": "2025",
+          "title": "Stage, ontwikkeling Java/.NET",
+          "desc": "Atypical Consulting."
+        }
+      ],
+      "prior": {
+        "heading": "Voor de omscholing",
+        "text": "Telecomtechnicus, Belgisch leger (2013-2017). Veiligheidsagent, Europese Commissie (2022-2023). Praktijkervaring en operationele discipline, ingezet in cyber."
+      }
+    },
+    "objectifs": {
+      "eyebrow": "Certificeringsdoelen",
+      "title": "Het vervolg: waar ik naartoe werk, niet wat ik al heb",
+      "lead": "Drie doelen duidelijk als dusdanig getoond: toekomstige stappen, geen behaalde resultaten.",
+      "steps": {
+        "ccna": {
+          "title": "CCNA afwerken",
+          "description": "Lopend netwerkcertificaat, logische volgende stap."
+        },
+        "cloud": {
+          "title": "Cloudbeveiliging",
+          "description": "Een certificaat in cloudbeveiliging nastreven, bijvoorbeeld Microsoft SC-900 gevolgd door AZ-500."
+        },
+        "securityPlus": {
+          "title": "CompTIA Security+",
+          "description": "En/of een transversaal beveiligingscertificaat, om de basis te verbreden."
+        }
+      }
+    },
+    "competences": {
+      "eyebrow": "Vaardigheden",
+      "title": "De technische basis, tot nu toe opgebouwd",
+      "items": {
+        "cloud": {
+          "title": "Cloud & Azure",
+          "description": "Solide basis in Azure cloud (AZ-900): concepten, beveiliging en best practices."
+        },
+        "reseaux": {
+          "title": "Netwerken & infrastructuur",
+          "description": "Netwerken en infrastructuur, versterkt door het lopende CCNA (Cisco)."
+        },
+        "secApp": {
+          "title": "Applicatiebeveiliging",
+          "description": "OWASP, Spring Security: de code beveiligen, niet enkel de infrastructuur."
+        },
+        "grc": {
+          "title": "GRC & compliance",
+          "description": "NIS2, CyFun-referentiekader: compliance begrijpen en er tools voor bouwen."
+        },
+        "dev": {
+          "title": "Ontwikkeling",
+          "description": "Java, .NET/C#, TypeScript, Next.js, Spring: bouwen wat ik beveilig."
+        },
+        "ia": {
+          "title": "AI & automatisering",
+          "description": "n8n, Make: automatiseren zonder controle of veiligheid te verliezen."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Uw behoefte bespreken?",
+      "text": "Een opdracht, een functie of een samenwerking: ik antwoord met dezelfde transparantie als op deze pagina.",
+      "actionPrimary": "Contacteer mij",
+      "actionCall": "Bel 0475 20 55 62",
+      "reassurances": [
+        "Snel antwoord",
+        "Volledige transparantie",
+        "Gevestigd in Wallonië"
+      ]
     }
   }
 }

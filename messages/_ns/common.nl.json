@@ -4,6 +4,7 @@
     "conformite": "NIS2-conformiteit",
     "approche": "Aanpak",
     "agence": "Over",
+    "certifications": "Certificaten",
     "journal": "Blog"
   },
   "brand": {
@@ -32,6 +33,7 @@
       "incident": "Incidentrespons",
       "apropos": "Over ons",
       "approche": "Onze aanpak",
+      "certifications": "Certificaten & opleiding",
       "ressources": "Bronnen & gidsen",
       "contact": "Contact"
     },

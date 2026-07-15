@@ -359,6 +359,7 @@
       "conformite": "NIS2 Compliance",
       "approche": "Approach",
       "agence": "About",
+      "certifications": "Certifications",
       "journal": "Journal"
     },
     "brand": {
@@ -387,6 +388,7 @@
         "incident": "Incident response",
         "apropos": "About",
         "approche": "Our approach",
+        "certifications": "Certifications & training",
         "ressources": "Resources & guides",
         "contact": "Contact"
       },
@@ -1705,6 +1707,137 @@
       "disclaimer": "Indicative estimate, not legal advice. The free assessment confirms your exact situation.",
       "levelLabel": "Recommended CyFun starting point",
       "recapLabel": "Based on your answers"
+    }
+  },
+  "certifications": {
+    "meta": {
+      "title": "Certifications & training | Jean-Baptiste Dhondt, Smidjan",
+      "description": "AZ-900 earned, CCNA in progress, Bachelor's in Computer Science in progress (ISL). The verifiable certification and training path of a cyber practitioner retraining in Wallonia.",
+      "ogTitle": "Certifications & training, Smidjan",
+      "ogDescription": "What's earned, what's in progress, what's targeted. A transparent certification path, nothing invented.",
+      "ogImageAlt": "Certifications and training of Jean-Baptiste Dhondt, Smidjan",
+      "twitterTitle": "Certifications & training, Smidjan",
+      "twitterDescription": "What's earned, what's in progress, what's targeted. A transparent certification path."
+    },
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Certifications & training"
+    },
+    "hero": {
+      "kicker": "Current status, verifiable",
+      "title": "Certifications & <accent>training</accent>",
+      "lead": "What's earned, what's in progress, what's targeted. No invented dates, no result presented as earned before it is."
+    },
+    "certs": {
+      "eyebrow": "Certifications",
+      "title": "What's verifiable today",
+      "lead": "Two certifications structure the build-up of cloud and network skills.",
+      "az900": {
+        "status": "Earned, 2026",
+        "name": "AZ-900, Microsoft Azure Fundamentals",
+        "description": "The basics of Azure cloud: concepts, services, security, compliance and pricing.",
+        "verifyLabel": "Verify on Credly"
+      },
+      "ccna": {
+        "status": "In progress",
+        "name": "CCNA, Cisco",
+        "description": "Reference network certification: switching, routing, basic infrastructure security."
+      },
+      "autoformation": {
+        "label": "Self-study",
+        "text": "TryHackMe: regular practice in defense (blue team) and networking, alongside the official certifications."
+      }
+    },
+    "formation": {
+      "eyebrow": "Training & degrees",
+      "title": "A retraining that is built, not improvised",
+      "lead": "An ongoing higher-education degree, complemented by an intensive bootcamp and two development internships.",
+      "items": [
+        {
+          "period": "In progress (Year 1 passed)",
+          "title": "Bachelor's in Computer Science",
+          "desc": "ISL, adult education track, alongside a professional activity."
+        },
+        {
+          "period": "2025",
+          "title": "Java Full Stack bootcamp",
+          "desc": "TechnoFutur TIC."
+        },
+        {
+          "period": "2025",
+          "title": "Internship, software architect",
+          "desc": "Microsoft ecosystem."
+        },
+        {
+          "period": "2025",
+          "title": "Internship, Java/.NET development",
+          "desc": "Atypical Consulting."
+        }
+      ],
+      "prior": {
+        "heading": "Before the retraining",
+        "text": "Telecom technician, Belgian Defence (2013-2017). Security officer, European Commission (2022-2023). Field experience and operational discipline, reinvested in cyber."
+      }
+    },
+    "objectifs": {
+      "eyebrow": "Certification goals",
+      "title": "What's next: what I'm aiming for, not what I already have",
+      "lead": "Three goals clearly shown as such: steps ahead, not results already earned.",
+      "steps": {
+        "ccna": {
+          "title": "Finish the CCNA",
+          "description": "Network certification in progress, the natural next step."
+        },
+        "cloud": {
+          "title": "Cloud security",
+          "description": "Aim for a cloud security certification, for example Microsoft SC-900 then AZ-500."
+        },
+        "securityPlus": {
+          "title": "CompTIA Security+",
+          "description": "And/or a cross-cutting security certification, to broaden the base."
+        }
+      }
+    },
+    "competences": {
+      "eyebrow": "Skills",
+      "title": "The technical base built so far",
+      "items": {
+        "cloud": {
+          "title": "Cloud & Azure",
+          "description": "Solid foundation in Azure cloud (AZ-900): concepts, security and best practices."
+        },
+        "reseaux": {
+          "title": "Networks & infrastructure",
+          "description": "Networks and infrastructure, reinforced by the CCNA in progress (Cisco)."
+        },
+        "secApp": {
+          "title": "Application security",
+          "description": "OWASP, Spring Security: securing the code, not just the infrastructure."
+        },
+        "grc": {
+          "title": "GRC & compliance",
+          "description": "NIS2, CyFun framework: understanding compliance and building tools for it."
+        },
+        "dev": {
+          "title": "Development",
+          "description": "Java, .NET/C#, TypeScript, Next.js, Spring: building what I secure."
+        },
+        "ia": {
+          "title": "AI & automation",
+          "description": "n8n, Make: automating without losing control or security."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Want to discuss your needs?",
+      "text": "A mission, a role, a collaboration: I reply with the same transparency as on this page.",
+      "actionPrimary": "Contact me",
+      "actionCall": "Call 0475 20 55 62",
+      "reassurances": [
+        "Quick response",
+        "Full transparency",
+        "Based in Wallonia"
+      ]
     }
   }
 }

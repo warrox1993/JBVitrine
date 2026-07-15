@@ -4,6 +4,7 @@
     "conformite": "Conformité NIS2",
     "approche": "Approche",
     "agence": "À propos",
+    "certifications": "Certifications",
     "journal": "Journal"
   },
   "brand": {
@@ -32,6 +33,7 @@
       "incident": "Réponse à incident",
       "apropos": "À propos",
       "approche": "Notre approche",
+      "certifications": "Certifications & formation",
       "ressources": "Ressources & guides",
       "contact": "Contact"
     },

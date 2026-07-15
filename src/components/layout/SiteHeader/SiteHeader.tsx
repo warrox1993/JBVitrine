@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { href: "/conformite-nis2", labelKey: "nav.conformite" },
   { href: "/approche", labelKey: "nav.approche" },
   { href: "/agence", labelKey: "nav.agence" },
+  { href: "/certifications", labelKey: "nav.certifications" },
   { href: "/blog", labelKey: "nav.journal" },
 ] as const;
 
