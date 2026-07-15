@@ -8,7 +8,7 @@ import cls from './ContactForm.module.css';
 /**
  * Contact form: new navy/orange design (refonte-design).
  *
- * SECURED SUBMIT WIRING PRESERVED VERBATIM from SimpleContactForm:
+ * SECURED SUBMIT WIRING PRESERVED VERBATIM from the previous contact form:
  *  - useCsrfToken() singleton hook; submit blocked while token missing.
  *  - reCAPTCHA Enterprise loaded on mount + executed with action "contact_form".
  *  - POST /api/contact/direct with the exact payload shape:
@@ -75,7 +75,7 @@ export function ContactForm() {
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const successRef = useRef<HTMLDivElement>(null);
 
-  // Shared CSRF token hook (singleton, no duplicate API calls). Same as SimpleContactForm.
+  // Shared CSRF token hook (singleton, no duplicate API calls).
   const { csrfToken, error: csrfError } = useCsrfToken();
 
   useEffect(() => {
@@ -89,7 +89,7 @@ export function ContactForm() {
     if (submitSuccess) successRef.current?.focus();
   }, [submitSuccess]);
 
-  // Load reCAPTCHA Enterprise on mount (identical to SimpleContactForm).
+  // Load reCAPTCHA Enterprise on mount.
   useEffect(() => {
     const loadRecaptcha = async () => {
       const { RECAPTCHA_SITE_KEY } = await import('@/config/recaptcha');

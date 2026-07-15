@@ -16,7 +16,6 @@ import { escapeHtml } from "@/lib/security/escape";
 function sanitizeChatText(v: unknown): string {
   if (v === null || v === undefined) return "";
   return String(v)
-    // eslint-disable-next-line no-control-regex
     .replace(/[\x00-\x1F]/g, " ")
     .replace(/</g, "‹")
     .replace(/`/g, "'")

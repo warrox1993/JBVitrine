@@ -18,12 +18,11 @@ const MAX_ENRICH_BODY_BYTES = 16 * 1024; // 16 KB (email + domain only)
 /**
  * SSRF pin: a custom DNS lookup that re-validates the RESOLVED IP against
  * isBlockedIp at connect time. undici invokes this lookup for the actual
- * socket connection, so the IP we validate is the IP fetch connects to —
+ * socket connection, so the IP we validate is the IP fetch connects to,
  * closing the TOCTOU / DNS-rebinding gap between assertPublicHost() and fetch().
  */
 function pinnedLookup(
   hostname: string,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   options: any,
   callback: (
     err: NodeJS.ErrnoException | null,
@@ -34,7 +33,6 @@ function pinnedLookup(
   dnsLookup(
     hostname,
     options,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (err: any, address: any, family: any) => {
     if (err) return callback(err, address, family);
 
@@ -65,7 +63,6 @@ function pinnedLookup(
 // made through it. Reused across requests (cheap, stateless validation).
 const pinnedDispatcher = new Agent({
   connect: {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     lookup: pinnedLookup as any,
   },
 });
@@ -262,7 +259,7 @@ export async function POST(request: NextRequest) {
 
   // NOTE (V-W2): the enrichmentLimiter definition lives in
   // src/lib/rate-limit-redis.ts and is intended to be lowered to ~5/min there
-  // (out of scope for this file — do not edit the limiter definition here).
+  // (out of scope for this file: do not edit the limiter definition here).
   // ✅ Rate limiting with Redis
   const clientIdentifier = getClientIdentifier(request);
   const { success, limit, remaining, reset } = await enrichmentLimiter.limit(clientIdentifier);

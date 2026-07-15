@@ -21,7 +21,8 @@ interface RecaptchaVerificationResult {
 export async function verifyRecaptchaEnterprise(
   token: string,
   expectedAction: string,
-  clientIp?: string,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- kept in signature for call-site compat / future logging use
+  _clientIp?: string,
 ): Promise<RecaptchaVerificationResult> {
   // Validate environment variables
   if (

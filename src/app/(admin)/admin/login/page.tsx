@@ -6,7 +6,6 @@
  */
 
 import { useState, FormEvent, Suspense } from "react";
-import { Breadcrumb } from "@/components/Breadcrumb";
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import cls from "./page.module.css";

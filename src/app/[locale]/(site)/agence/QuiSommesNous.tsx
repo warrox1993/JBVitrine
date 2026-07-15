@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
 
-import OptimizedImage from "@/components/ui/OptimizedImage";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Icon } from "@/components/ui/Icon/Icon";

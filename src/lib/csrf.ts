@@ -12,7 +12,8 @@ function hashToken(token: string): string {
 }
 
 // Store CSRF token (with expiration)
-export async function storeCsrfToken(token: string, ip: string): Promise<void> {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- ip kept in signature for call-site compat; see comment below on why it must stay unused
+export async function storeCsrfToken(token: string, _ip: string): Promise<void> {
   // Bug 429/mobile : la clé ne doit PAS dépendre de l'IP (elle change sur mobile)
   const hashedToken = hashToken(token);
   const key = `csrf:${hashedToken}`;
@@ -31,7 +32,8 @@ export async function storeCsrfToken(token: string, ip: string): Promise<void> {
 // Validate CSRF token
 export async function validateCsrfToken(
   token: string,
-  ip: string,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- ip kept in signature for call-site compat (not used in the key, see storeCsrfToken)
+  _ip: string,
 ): Promise<boolean> {
   if (!token) return false;
 
@@ -59,7 +61,7 @@ export async function validateCsrfToken(
 }
 
 // Fallback in-memory store for development
-// Note: no periodic cleanup here — this file runs in serverless invocations
+// Note: no periodic cleanup here; this file runs in serverless invocations
 // where each invocation has its own memory, so a setInterval never fires
 // usefully. Redis (production) handles expiry via setex TTL.
 const inMemoryCsrf = new Map<string, number>();
