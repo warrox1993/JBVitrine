@@ -1160,8 +1160,8 @@
       },
       "baseLegale": {
         "title": "Base légale",
-        "item1": "L'<strong>exécution de mesures précontractuelles</strong> prises à la demande de la personne concernée, pour le traitement des demandes de contact ;",
-        "item2": "L'<strong>intérêt légitime</strong> de Smidjan à sécuriser son formulaire et son site contre les abus (reCAPTCHA) ;",
+        "item1": "L''<strong>exécution de mesures précontractuelles</strong> prises à la demande de la personne concernée, pour le traitement des demandes de contact ;",
+        "item2": "L''<strong>intérêt légitime</strong> de Smidjan à sécuriser son formulaire et son site contre les abus (reCAPTCHA) ;",
         "item3": "Le <strong>consentement</strong> de l'utilisateur, lorsqu'il est requis pour des cookies de mesure d'audience non essentiels."
       },
       "duree": {
@@ -1221,7 +1221,7 @@
     },
     "hero": {
       "kicker": "Mes expertises",
-      "title": "Sécuriser le cloud, le réseau, et vos usages de l'<accent>IA</accent>.",
+      "title": "Sécuriser le cloud, le réseau, et vos usages de l''<accent>IA</accent>.",
       "lead": "Praticien solo basé en Wallonie, en reconversion vers la cybersécurité. Quatre axes de travail : sécurité cloud, sécurité réseaux, IA & automatisation, et préparation à la conformité NIS2 / CyFun.",
       "ctaPrimary": "Me contacter"
     },
