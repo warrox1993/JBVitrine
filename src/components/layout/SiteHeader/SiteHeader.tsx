@@ -39,10 +39,17 @@ export default function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // Close the mobile menu on route change.
-  useEffect(() => {
+  // Close the mobile menu on route change. Derived during render (React's
+  // "adjusting state when a prop changes" pattern) instead of an effect: an
+  // effect here would run setOpen(false) one render *after* the pathname
+  // already changed, causing an extra re-render and a lint error
+  // (react-hooks/set-state-in-effect). Tracking the previous pathname lets us
+  // reset synchronously in the same render as the navigation.
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setOpen(false);
-  }, [pathname]);
+  }
 
   // Lock body scroll while the mobile menu is open.
   useEffect(() => {
