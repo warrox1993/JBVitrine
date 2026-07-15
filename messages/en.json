@@ -12,12 +12,12 @@
       "breadcrumbHome": "Home",
       "breadcrumbHere": "About",
       "eyebrow": "About",
-      "title": "A <accent>local cybersecurity expert</accent>, not an anonymous agency.",
+      "title": "A <accent>local cybersecurity practitioner</accent>, not an anonymous agency.",
       "lead": "Jean-Baptiste Dhondt secures your SME himself. No call centre. No subcontracting.",
       "ctaPrimary": "Book a scoping call",
       "ctaCall": "Call 0475 20 55 62",
       "badgeLocation": "Based in Wallonia",
-      "badgeAccess": "Direct access to the expert",
+      "badgeAccess": "Direct access, no middleman",
       "badgeData": "Data hosted in Belgium / EU",
       "imageAlt": "Server racks in a data center, illustrating infrastructure hardening."
     },
@@ -40,7 +40,7 @@
       "actionPrimary": "Book a scoping call",
       "actionCall": "Call 0475 20 55 62",
       "reassurance1": "Reply within 24 h",
-      "reassurance2": "Dedicated expert, no subcontracting",
+      "reassurance2": "Single point of contact, no subcontracting",
       "reassurance3": "Data in Belgium"
     },
     "about": {
@@ -111,23 +111,23 @@
   },
   "approche": {
     "meta": {
-      "title": "Our SME cybersecurity method | Smidjan Wallonia",
-      "description": "Measured diagnosis, risk-based prioritisation, real remediation, continuous monitoring: discover Smidjan's method, a cybersecurity firm in Wallonia, and why a Walloon SME benefits from working with a human-scale structure.",
-      "ogTitle": "Our method: Smidjan's cybersecurity approach",
+      "title": "My SME cybersecurity method | Smidjan Wallonia",
+      "description": "Measured diagnosis, risk-based prioritisation, real remediation, continuous monitoring: discover Smidjan's method, a cybersecurity practitioner in Wallonia, and why a Walloon SME benefits from working with a human-scale structure.",
+      "ogTitle": "My method: Smidjan's cybersecurity approach",
       "ogDescription": "Proof, not promises: measured diagnosis, prioritisation, real remediation and continuous monitoring. The Smidjan method, cybersecurity for SMEs in Wallonia.",
-      "ogImageAlt": "Smidjan - Our cybersecurity method",
-      "twitterTitle": "Our method: Smidjan's cybersecurity approach",
+      "ogImageAlt": "Smidjan - My cybersecurity method",
+      "twitterTitle": "My method: Smidjan's cybersecurity approach",
       "twitterDescription": "Measured diagnosis, prioritisation, real remediation, continuous monitoring. Proof, not promises."
     },
     "hero": {
       "breadcrumbHome": "Home",
-      "breadcrumbCurrent": "Approach · Our method",
-      "eyebrow": "Our method",
+      "breadcrumbCurrent": "Approach · My method",
+      "eyebrow": "My method",
       "title": "Cybersecurity that <accent>proves itself</accent>, not one that tells stories.",
-      "lead": "For SMEs in Wallonia: measured actions, deliverables you verify yourself. Our method, from assessment to follow-up.",
+      "lead": "For SMEs in Wallonia: measured actions, deliverables you verify yourself. My method, from assessment to follow-up.",
       "ctaPrimary": "Get in touch",
       "ctaSecondary": "See the 4 steps",
-      "promiseTitle": "Our commitment",
+      "promiseTitle": "My commitment",
       "promiseSub": "What you get, on every engagement",
       "promiseItem1": "A <b>quantified and documented diagnosis</b>, not an impression.",
       "promiseItem2": "<b>Clear priorities</b> by risk and by SME budget.",
@@ -162,7 +162,7 @@
       "cards": {
         "decision": {
           "title": "Human decision",
-          "text": "Every AI finding validated by the expert before any action."
+          "text": "Every AI finding, validated by me before any action."
         }
       }
     },
@@ -171,7 +171,7 @@
       "lead": "A human-scale structure, by choice. Fewer intermediaries, more accountability.",
       "items": {
         "acces": {
-          "title": "Direct access to the expert",
+          "title": "Direct access, no middleman",
           "text": "You speak to the person handling your case. Never a call centre, never a junior.",
           "pin": "Zero subcontracting"
         },
@@ -188,18 +188,18 @@
     },
     "cta": {
       "title": "Let's take stock, no commitment",
-      "text": "30 minutes with an expert. You leave with a first quantified finding and clear priorities. A free first exchange, no commitment.",
+      "text": "30 minutes with me, directly. You leave with a first quantified finding and clear priorities. A free first exchange, no commitment.",
       "action1": "Get in touch",
       "action2": "Call 0475 20 55 62",
       "reassurance1": "Response within 24 h",
-      "reassurance2": "Dedicated expert, no subcontracting",
+      "reassurance2": "Single point of contact, no subcontracting",
       "reassurance3": "Data in Belgium"
     }
   },
   "blog": {
     "meta": {
       "title": "Journal: technical resources | Smidjan",
-      "description": "Technical articles on cybersecurity, NIS2 / CyFun compliance and secure web development. Expert advice for SMEs in Belgium.",
+      "description": "Technical articles on cybersecurity, NIS2 / CyFun compliance and secure web development. Practical insights for SMEs in Belgium.",
       "ogTitle": "Journal: technical resources | Smidjan",
       "ogDescription": "Articles on cybersecurity, NIS2 / CyFun compliance and secure web development for SMEs.",
       "ogImageAlt": "Smidjan Blog: technical articles for developers and businesses",
@@ -345,7 +345,7 @@
         "owasp": "OWASP approach",
         "cyfun": "CyberFundamentals (CCB)",
         "local": "Local & responsive in Wallonia",
-        "expert": "Direct access to the expert"
+        "expert": "Direct access, no middleman"
       }
     }
   },
@@ -371,7 +371,7 @@
       "ctaSecondary": "Compare the 3 levels",
       "assure1": "No commitment",
       "assure2": "Reply within 24 h",
-      "assure3": "A dedicated expert, no subcontracting",
+      "assure3": "A single point of contact, no subcontracting",
       "cardMonth": "Oct",
       "cardYear": "2024",
       "cardTitle": "NIS2 is already in force",
@@ -397,9 +397,9 @@
       "lead": "Three progressive levels. The right choice depends on your NIS2 category and your exposure. We help you decide."
     },
     "audit": {
-      "eyebrow": "Our proprietary tool",
+      "eyebrow": "My proprietary tool",
       "title": "Smidjan runs the CyFun audit with a <accent>proprietary tool, secure by design</accent>",
-      "lead": "Our audit engine, aligned with CyFun (CCB) and NIST CSF 2.0, assesses your compliance quickly and on evidence. Then we fix: remediation and hardening.",
+      "lead": "My audit engine, aligned with CyFun (CCB) and NIST CSF 2.0, assesses your compliance quickly and on evidence. Then I fix: remediation and hardening.",
       "trust": {
         "readOnlyTitle": "Read-only",
         "readOnlyText": "The audit observes, it never modifies your systems.",
@@ -416,7 +416,7 @@
       },
       "honesty": {
         "title": "An assisted self-assessment, not a certification",
-        "p": "Our tool facilitates the <b>CyFun self-assessment</b> and prepares your file. It does not replace the <b>official verification</b>, reserved for BELAC-accredited bodies."
+        "p": "My tool facilitates the <b>CyFun self-assessment</b> and prepares your file. It does not replace the <b>official verification</b>, reserved for BELAC-accredited bodies."
       }
     },
     "financement": {
@@ -426,35 +426,35 @@
     },
     "finalCta": {
       "title": "In 30 minutes, know exactly where you stand.",
-      "text": "30 min with an expert: NIS2 category, CyFun level, clear priorities. No commitment, no jargon.",
+      "text": "30 min with me, directly: NIS2 category, CyFun level, clear priorities. No commitment, no jargon.",
       "action1": "Get in touch",
       "action2": "Call 0475 20 55 62",
       "reassure1": "Reply within 24 h",
-      "reassure2": "Dedicated expert, no subcontracting",
+      "reassure2": "Single point of contact, no subcontracting",
       "reassure3": "Data in Belgium"
     }
   },
   "contact": {
     "meta": {
       "title": "Contact · Smidjan | Cybersecurity & NIS2 compliance in Wallonia",
-      "description": "Free diagnostic, CyFun/NIS2 audit, security testing or incident response: write to Smidjan. An expert replies within 24 business hours. Based in Wallonia.",
+      "description": "Free diagnostic, CyFun/NIS2 audit, security testing or incident response: write to Smidjan. I reply within 24 business hours. Based in Wallonia.",
       "ogTitle": "Contact · Smidjan",
-      "ogDescription": "Let's talk about your security. An expert replies within 24 business hours.",
+      "ogDescription": "Let's talk about your security. I reply within 24 business hours.",
       "ogImageAlt": "Contact Smidjan, cybersecurity and NIS2 compliance in Wallonia",
       "twitterTitle": "Contact · Smidjan",
-      "twitterDescription": "Let's talk about your security. An expert replies within 24 business hours."
+      "twitterDescription": "Let's talk about your security. I reply within 24 business hours."
     },
     "hero": {
       "crumbAria": "Breadcrumb",
       "crumbHome": "Home",
       "crumbContact": "Contact",
       "eyebrow": "Let's talk about your security",
-      "title": "An expert replies to you: <accent>within 24 hours</accent>.",
-      "directPromise": "<strong>A Smidjan expert</strong>, never a call center.",
+      "title": "I reply to you: <accent>within 24 hours</accent>.",
+      "directPromise": "<strong>Me, directly</strong>, never a call center.",
       "lead": "Diagnostic, NIS2 audit, security testing or incident: a single point of contact.",
       "ctaPrimary": "Describe my needs",
       "imageAlt": "Close-up of a printed circuit board, illustrating a secure-by-design architecture.",
-      "assure1": "Reply within 24 business hours",
+      "assure1": "Reply within 24 business hours",
       "assure2": "No commitment",
       "assure3": "Based in Wallonia"
     },
@@ -462,10 +462,10 @@
       "badge": "The most direct",
       "title": "Send me your request",
       "subtitle": "A few lines are enough. The more precise, the faster we move forward.",
-      "reassure": "Reply from an expert within 24 business hours",
+      "reassure": "Personal reply within 24 business hours",
       "errorLabel": "Error",
       "options": {
-        "diagnostic": "Free diagnostic",
+        "diagnostic": "Free first conversation",
         "cyfun": "CyFun / NIS2 audit",
         "pentest": "Security testing",
         "dev": "Secure web development",
@@ -494,7 +494,7 @@
       "note": "Your information stays confidential",
       "success": {
         "title": "Message sent!",
-        "text": "Thank you for your message. A Smidjan expert will reply within 24 business hours."
+        "text": "Thank you for your message. I reply within 24 business hours."
       },
       "errors": {
         "demande": "Request type required",
@@ -516,27 +516,27 @@
       "nis2Intro": "Following the 'Does NIS2 apply to me?' check, I'd like to review my situation and know my next steps."
     },
     "side": {
-      "aria": "Our contact details",
+      "aria": "My contact details",
       "incidentImageAlt": "Cybersecurity analyst seen from behind, facing several monitoring screens in a control room, in the middle of incident response.",
       "incidentBadge": "Incident response",
       "incidentTitle": "Need an <accent>incident response</accent>?",
       "incidentText": "Ransomware, intrusion, data breach? Don't shut anything down. Call. I help you limit the damage.",
       "incidentNote": "I call you back as soon as possible.",
       "processTitle": "How it works",
-      "processAria": "Three-step diagram: you write your request, an expert calls you back within 24 business hours, then a free diagnostic.",
+      "processAria": "Three-step diagram: you write your request, I call you back within 24 business hours, then a free first conversation.",
       "processStep1": "You write",
-      "processStep2": "Callback within 24 h",
-      "processStep3": "Free diagnostic",
+      "processStep2": "Callback within 24 h",
+      "processStep3": "Free first conversation",
       "coordImageAlt": "Server racks in a data center, illustrating infrastructure hardening.",
       "coordTag": "We reply to you",
-      "coordTitle": "Our contact details",
+      "coordTitle": "My contact details",
       "coordZoneK": "Service area",
       "coordZoneV": "Wallonia, Belgium",
       "coordZoneSmall": "On site or remote, by appointment",
       "coordPhoneK": "Phone",
       "coordPhoneSmall": "Switchboard: general enquiries",
       "coordEmailK": "Email",
-      "coordEmailSmall": "Reply within 24 business hours",
+      "coordEmailSmall": "Reply within 24 business hours",
       "coordHoursK": "Hours",
       "coordHoursV": "Mon. to Fri., 8:30 am to 6:00 pm",
       "coordHoursSmall": "Incident response: as soon as possible",
@@ -551,10 +551,10 @@
       "intro": "No sales funnel, a useful exchange from the very first message.",
       "step1Title": "You write to me",
       "step1Text": "Form, email or call. Describe your need in two sentences.",
-      "step2Title": "We call you back within 24 h",
-      "step2Text": "A Smidjan expert, not a salesperson. Within 24 business hours.",
-      "step3Title": "Free diagnostic",
-      "step3Text": "30 minutes to pinpoint your priorities. No commitment, no jargon.",
+      "step2Title": "We call you back within 24 h",
+      "step2Text": "Me directly, not a salesperson. Within 24 business hours.",
+      "step3Title": "Free first conversation",
+      "step3Text": "30 minutes to pinpoint your priorities. No commitment, no jargon.",
       "note": "<b>A single point of contact</b>, from the first message to remediation."
     }
   },
@@ -929,12 +929,12 @@
     },
     "finalCta": {
       "title": "Let's take stock of your security",
-      "text": "30 minutes with an expert to scope the useful engagement. Free first exchange, no commitment.",
+      "text": "30 minutes with me, to scope the useful engagement. Free first exchange, no commitment.",
       "actionPrimary": "Get in touch",
       "actionCall": "Call 0475 20 55 62",
       "reassurances": [
         "Reply within 24 h",
-        "Dedicated expert, no subcontracting",
+        "Single point of contact, no subcontracting",
         "Data in Belgium"
       ]
     }

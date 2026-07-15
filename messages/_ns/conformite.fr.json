@@ -15,16 +15,16 @@
   "hero": {
     "badge": "En vigueur depuis le 18 octobre 2024 en Belgique",
     "title": "Mettez votre PME en <accent>conformité NIS2</accent>, sans jargon ni surcoût.",
-    "lead": "Audit, <b>remédiation</b>, mise au niveau CyFun (CCB) : on ne liste pas vos manques, on les corrige.",
+    "lead": "Audit, <b>remédiation</b>, mise au niveau CyFun (CCB) : on ne liste pas vos manques, on les corrige.",
     "ctaPrimary": "Me contacter",
     "ctaSecondary": "Comparer les 3 niveaux",
     "assure1": "Sans engagement",
-    "assure2": "Réponse sous 24 h",
-    "assure3": "Un expert dédié, pas de sous-traitance",
+    "assure2": "Réponse sous 24 h",
+    "assure3": "Un seul interlocuteur, pas de sous-traitance",
     "cardMonth": "Oct",
     "cardYear": "2024",
     "cardTitle": "NIS2 est déjà en vigueur",
-    "cardText": "Depuis le 18 octobre 2024 : ce n'est plus une échéance, c'est une obligation.",
+    "cardText": "Depuis le 18 octobre 2024 : ce n'est plus une échéance, c'est une obligation.",
     "statSanctionLbl": "SANCTION MAX",
     "statCaLbl": "DU CA MONDIAL",
     "statIncidentLbl": "ALERTE INCIDENT",
@@ -46,9 +46,9 @@
     "lead": "Trois niveaux progressifs. Le bon choix dépend de votre catégorie NIS2 et de votre exposition. On vous aide à trancher."
   },
   "audit": {
-    "eyebrow": "Notre outil propriétaire",
+    "eyebrow": "Mon outil propriétaire",
     "title": "Smidjan mène l'audit CyFun avec un outil <accent>propriétaire, sûr par conception</accent>",
-    "lead": "Notre moteur d'audit, aligné CyFun (CCB) et NIST CSF 2.0, évalue votre conformité vite et sur preuves. Puis on corrige : remédiation et durcissement.",
+    "lead": "Mon moteur d'audit, aligné CyFun (CCB) et NIST CSF 2.0, évalue votre conformité vite et sur preuves. Puis je corrige : remédiation et durcissement.",
     "trust": {
       "readOnlyTitle": "Lecture seule",
       "readOnlyText": "L'audit observe, il ne modifie jamais vos systèmes.",
@@ -65,21 +65,21 @@
     },
     "honesty": {
       "title": "Une auto-évaluation assistée, pas une certification",
-      "p": "Notre outil facilite l''<b>auto-évaluation CyFun</b> et prépare votre dossier. Il ne remplace pas la <b>vérification officielle</b>, réservée aux organismes accrédités BELAC."
+      "p": "Mon outil facilite l''<b>auto-évaluation CyFun</b> et prépare votre dossier. Il ne remplace pas la <b>vérification officielle</b>, réservée aux organismes accrédités BELAC."
     }
   },
   "financement": {
     "eyebrow": "Financer votre conformité",
-    "title": "La conformité coûte moins cher qu'on ne le croit : <accent>une large partie est subsidiée</accent>",
+    "title": "La conformité coûte moins cher qu'on ne le croit : <accent>une large partie est subsidiée</accent>",
     "lead": "Le chèque « cybersécurité » wallon finance une large partie de votre audit et de votre remédiation. Voici comment en profiter."
   },
   "finalCta": {
     "title": "En 30 minutes, sachez exactement où vous en êtes.",
-    "text": "30 min avec un expert : catégorie NIS2, niveau CyFun, priorités claires. Sans engagement, sans jargon.",
+    "text": "30 min avec moi, directement : catégorie NIS2, niveau CyFun, priorités claires. Sans engagement, sans jargon.",
     "action1": "Me contacter",
     "action2": "Appeler le 0475 20 55 62",
     "reassure1": "Réponse sous 24 h",
-    "reassure2": "Expert dédié, pas de sous-traitance",
+    "reassure2": "Un seul interlocuteur, pas de sous-traitance",
     "reassure3": "Données en Belgique"
   }
 }

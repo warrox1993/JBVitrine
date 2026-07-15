@@ -1,22 +1,22 @@
 {
   "meta": {
-    "title": "Our SME cybersecurity method | Smidjan Wallonia",
-    "description": "Measured diagnosis, risk-based prioritisation, real remediation, continuous monitoring: discover Smidjan's method, a cybersecurity firm in Wallonia, and why a Walloon SME benefits from working with a human-scale structure.",
-    "ogTitle": "Our method: Smidjan's cybersecurity approach",
+    "title": "My SME cybersecurity method | Smidjan Wallonia",
+    "description": "Measured diagnosis, risk-based prioritisation, real remediation, continuous monitoring: discover Smidjan's method, a cybersecurity practitioner in Wallonia, and why a Walloon SME benefits from working with a human-scale structure.",
+    "ogTitle": "My method: Smidjan's cybersecurity approach",
     "ogDescription": "Proof, not promises: measured diagnosis, prioritisation, real remediation and continuous monitoring. The Smidjan method, cybersecurity for SMEs in Wallonia.",
-    "ogImageAlt": "Smidjan - Our cybersecurity method",
-    "twitterTitle": "Our method: Smidjan's cybersecurity approach",
+    "ogImageAlt": "Smidjan - My cybersecurity method",
+    "twitterTitle": "My method: Smidjan's cybersecurity approach",
     "twitterDescription": "Measured diagnosis, prioritisation, real remediation, continuous monitoring. Proof, not promises."
   },
   "hero": {
     "breadcrumbHome": "Home",
-    "breadcrumbCurrent": "Approach · Our method",
-    "eyebrow": "Our method",
+    "breadcrumbCurrent": "Approach · My method",
+    "eyebrow": "My method",
     "title": "Cybersecurity that <accent>proves itself</accent>, not one that tells stories.",
-    "lead": "For SMEs in Wallonia: measured actions, deliverables you verify yourself. Our method, from assessment to follow-up.",
+    "lead": "For SMEs in Wallonia: measured actions, deliverables you verify yourself. My method, from assessment to follow-up.",
     "ctaPrimary": "Get in touch",
     "ctaSecondary": "See the 4 steps",
-    "promiseTitle": "Our commitment",
+    "promiseTitle": "My commitment",
     "promiseSub": "What you get, on every engagement",
     "promiseItem1": "A <b>quantified and documented diagnosis</b>, not an impression.",
     "promiseItem2": "<b>Clear priorities</b> by risk and by SME budget.",
@@ -51,7 +51,7 @@
     "cards": {
       "decision": {
         "title": "Human decision",
-        "text": "Every AI finding validated by the expert before any action."
+        "text": "Every AI finding, validated by me before any action."
       }
     }
   },
@@ -60,7 +60,7 @@
     "lead": "A human-scale structure, by choice. Fewer intermediaries, more accountability.",
     "items": {
       "acces": {
-        "title": "Direct access to the expert",
+        "title": "Direct access, no middleman",
         "text": "You speak to the person handling your case. Never a call centre, never a junior.",
         "pin": "Zero subcontracting"
       },
@@ -77,11 +77,11 @@
   },
   "cta": {
     "title": "Let's take stock, no commitment",
-    "text": "30 minutes with an expert. You leave with a first quantified finding and clear priorities. A free first exchange, no commitment.",
+    "text": "30 minutes with me, directly. You leave with a first quantified finding and clear priorities. A free first exchange, no commitment.",
     "action1": "Get in touch",
     "action2": "Call 0475 20 55 62",
     "reassurance1": "Response within 24 h",
-    "reassurance2": "Dedicated expert, no subcontracting",
+    "reassurance2": "Single point of contact, no subcontracting",
     "reassurance3": "Data in Belgium"
   }
 }

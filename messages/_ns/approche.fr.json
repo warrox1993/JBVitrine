@@ -1,22 +1,22 @@
 {
   "meta": {
-    "title": "Notre méthode cybersécurité PME | Smidjan Wallonie",
-    "description": "Diagnostic mesuré, priorisation par risque, remédiation réelle, supervision continue : découvrez la méthode de Smidjan, cabinet de cybersécurité en Wallonie, et pourquoi une PME wallonne a intérêt à travailler avec une structure à taille humaine.",
-    "ogTitle": "Notre méthode : Approche cybersécurité Smidjan",
+    "title": "Ma méthode cybersécurité PME | Smidjan Wallonie",
+    "description": "Diagnostic mesuré, priorisation par risque, remédiation réelle, supervision continue : découvrez la méthode de Smidjan, praticien en cybersécurité en Wallonie, et pourquoi une PME wallonne a intérêt à travailler avec une structure à taille humaine.",
+    "ogTitle": "Ma méthode : Approche cybersécurité Smidjan",
     "ogDescription": "Des preuves, pas des promesses : diagnostic mesuré, priorisation, remédiation réelle et supervision continue. La méthode Smidjan, cybersécurité pour PME en Wallonie.",
-    "ogImageAlt": "Smidjan - Notre méthode de cybersécurité",
-    "twitterTitle": "Notre méthode : Approche cybersécurité Smidjan",
+    "ogImageAlt": "Smidjan - Ma méthode de cybersécurité",
+    "twitterTitle": "Ma méthode : Approche cybersécurité Smidjan",
     "twitterDescription": "Diagnostic mesuré, priorisation, remédiation réelle, supervision continue. Des preuves, pas des promesses."
   },
   "hero": {
     "breadcrumbHome": "Accueil",
-    "breadcrumbCurrent": "Approche · Notre méthode",
-    "eyebrow": "Notre méthode",
+    "breadcrumbCurrent": "Approche · Ma méthode",
+    "eyebrow": "Ma méthode",
     "title": "Une cybersécurité qui se <accent>démontre</accent>, pas qui se raconte.",
-    "lead": "Pour les PME de Wallonie : des actions mesurées, des livrables que vous vérifiez vous-même. Notre méthode, du diagnostic au suivi.",
+    "lead": "Pour les PME de Wallonie : des actions mesurées, des livrables que vous vérifiez vous-même. Ma méthode, du diagnostic au suivi.",
     "ctaPrimary": "Me contacter",
     "ctaSecondary": "Voir les 4 étapes",
-    "promiseTitle": "Notre engagement",
+    "promiseTitle": "Mon engagement",
     "promiseSub": "Ce que vous obtenez, à chaque mission",
     "promiseItem1": "Un <b>diagnostic chiffré</b> et documenté, pas une impression.",
     "promiseItem2": "Des <b>priorités claires</b> par risque et par budget PME.",
@@ -51,7 +51,7 @@
     "cards": {
       "decision": {
         "title": "Décision humaine",
-        "text": "Chaque constat IA validé par l'expert avant toute action."
+        "text": "Chaque constat IA, validé par moi avant toute action."
       }
     }
   },
@@ -60,7 +60,7 @@
     "lead": "Structure à taille humaine, par choix. Moins d'intermédiaires, plus de responsabilité.",
     "items": {
       "acces": {
-        "title": "Accès direct à l'expert",
+        "title": "Accès direct, sans intermédiaire",
         "text": "Vous parlez à la personne qui traite votre dossier. Jamais un centre d'appel, jamais un junior.",
         "pin": "Zéro sous-traitance"
       },
@@ -77,11 +77,11 @@
   },
   "cta": {
     "title": "Faisons le point, sans engagement",
-    "text": "30 minutes avec un expert. Vous repartez avec un premier constat chiffré et des priorités claires. Premier échange gratuit et sans engagement.",
+    "text": "30 minutes avec moi, directement. Vous repartez avec un premier constat chiffré et des priorités claires. Premier échange gratuit et sans engagement.",
     "action1": "Me contacter",
     "action2": "Appeler le 0475 20 55 62",
     "reassurance1": "Réponse sous 24 h",
-    "reassurance2": "Expert dédié, pas de sous-traitance",
+    "reassurance2": "Un seul interlocuteur, pas de sous-traitance",
     "reassurance3": "Données en Belgique"
   }
 }

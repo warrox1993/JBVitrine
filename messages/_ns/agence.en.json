@@ -11,12 +11,12 @@
     "breadcrumbHome": "Home",
     "breadcrumbHere": "About",
     "eyebrow": "About",
-    "title": "A <accent>local cybersecurity expert</accent>, not an anonymous agency.",
+    "title": "A <accent>local cybersecurity practitioner</accent>, not an anonymous agency.",
     "lead": "Jean-Baptiste Dhondt secures your SME himself. No call centre. No subcontracting.",
     "ctaPrimary": "Book a scoping call",
     "ctaCall": "Call 0475 20 55 62",
     "badgeLocation": "Based in Wallonia",
-    "badgeAccess": "Direct access to the expert",
+    "badgeAccess": "Direct access, no middleman",
     "badgeData": "Data hosted in Belgium / EU",
     "imageAlt": "Server racks in a data center, illustrating infrastructure hardening."
   },
@@ -39,7 +39,7 @@
     "actionPrimary": "Book a scoping call",
     "actionCall": "Call 0475 20 55 62",
     "reassurance1": "Reply within 24 h",
-    "reassurance2": "Dedicated expert, no subcontracting",
+    "reassurance2": "Single point of contact, no subcontracting",
     "reassurance3": "Data in Belgium"
   },
   "about": {

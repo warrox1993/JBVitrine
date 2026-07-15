@@ -20,7 +20,7 @@
     "ctaSecondary": "Vergelijk de 3 niveaus",
     "assure1": "Vrijblijvend",
     "assure2": "Antwoord binnen 24 u",
-    "assure3": "Eén toegewijde expert, geen onderaanneming",
+    "assure3": "Eén aanspreekpunt, geen onderaanneming",
     "cardMonth": "Okt",
     "cardYear": "2024",
     "cardTitle": "NIS2 is al van kracht",
@@ -46,9 +46,9 @@
     "lead": "Drie progressieve niveaus. De juiste keuze hangt af van uw NIS2-categorie en uw blootstelling. Wij helpen u beslissen."
   },
   "audit": {
-    "eyebrow": "Onze eigen tool",
+    "eyebrow": "Mijn eigen tool",
     "title": "Smidjan voert de CyFun-audit uit met een <accent>eigen tool, veilig door ontwerp</accent>",
-    "lead": "Onze auditengine, afgestemd op CyFun (CCB) en NIST CSF 2.0, beoordeelt uw conformiteit snel en op basis van bewijs. Daarna verhelpen wij: remediëring en hardening.",
+    "lead": "Mijn auditengine, afgestemd op CyFun (CCB) en NIST CSF 2.0, beoordeelt uw conformiteit snel en op basis van bewijs. Daarna verhelp ik: remediëring en hardening.",
     "trust": {
       "readOnlyTitle": "Alleen-lezen",
       "readOnlyText": "De audit observeert, hij wijzigt uw systemen nooit.",
@@ -65,7 +65,7 @@
     },
     "honesty": {
       "title": "Een geassisteerde zelfevaluatie, geen certificering",
-      "p": "Onze tool vergemakkelijkt de <b>CyFun-zelfevaluatie</b> en bereidt uw dossier voor. Hij vervangt niet de <b>officiële verificatie</b>, voorbehouden aan BELAC-geaccrediteerde instanties."
+      "p": "Mijn tool vergemakkelijkt de <b>CyFun-zelfevaluatie</b> en bereidt uw dossier voor. Hij vervangt niet de <b>officiële verificatie</b>, voorbehouden aan BELAC-geaccrediteerde instanties."
     }
   },
   "financement": {
@@ -75,11 +75,11 @@
   },
   "finalCta": {
     "title": "In 30 minuten weet u precies waar u staat.",
-    "text": "30 min met een expert: NIS2-categorie, CyFun-niveau, heldere prioriteiten. Vrijblijvend, zonder jargon.",
+    "text": "30 min met mij, rechtstreeks: NIS2-categorie, CyFun-niveau, heldere prioriteiten. Vrijblijvend, zonder jargon.",
     "action1": "Contact opnemen",
     "action2": "Bel 0475 20 55 62",
     "reassure1": "Antwoord binnen 24 u",
-    "reassure2": "Toegewijde expert, geen onderaanneming",
+    "reassure2": "Eén aanspreekpunt, geen onderaanneming",
     "reassure3": "Gegevens in België"
   }
 }

@@ -1,24 +1,24 @@
 {
   "meta": {
     "title": "Contact · Smidjan | Cyberbeveiliging & NIS2-conformiteit in Wallonië",
-    "description": "Gratis diagnose, CyFun/NIS2-audit, beveiligingstests of incidentrespons : schrijf naar Smidjan. Een expert antwoordt u binnen 24 werkuren. Gevestigd in Wallonië.",
+    "description": "Gratis diagnose, CyFun/NIS2-audit, beveiligingstests of incidentrespons : schrijf naar Smidjan. Ik antwoord u binnen 24 werkuren. Gevestigd in Wallonië.",
     "ogTitle": "Contact · Smidjan",
-    "ogDescription": "Laten we het over uw beveiliging hebben. Een expert antwoordt u binnen 24 werkuren.",
+    "ogDescription": "Laten we het over uw beveiliging hebben. Ik antwoord u binnen 24 werkuren.",
     "ogImageAlt": "Contacteer Smidjan, cyberbeveiliging en NIS2-conformiteit in Wallonië",
     "twitterTitle": "Contact · Smidjan",
-    "twitterDescription": "Laten we het over uw beveiliging hebben. Een expert antwoordt u binnen 24 werkuren."
+    "twitterDescription": "Laten we het over uw beveiliging hebben. Ik antwoord u binnen 24 werkuren."
   },
   "hero": {
     "crumbAria": "Broodkruimelpad",
     "crumbHome": "Home",
     "crumbContact": "Contact",
     "eyebrow": "Laten we het over uw beveiliging hebben",
-    "title": "Een expert antwoordt u : <accent>binnen 24 uur</accent>.",
-    "directPromise": "<strong>Een Smidjan-expert</strong>, nooit een callcenter.",
+    "title": "Ik antwoord u : <accent>binnen 24 uur</accent>.",
+    "directPromise": "<strong>Ik, rechtstreeks</strong>, nooit een callcenter.",
     "lead": "Diagnose, NIS2-audit, beveiligingstests of incident : één aanspreekpunt.",
     "ctaPrimary": "Mijn behoefte omschrijven",
     "imageAlt": "Close-up van een printplaat, symbool voor een secure-by-design architectuur.",
-    "assure1": "Antwoord binnen 24 werkuren",
+    "assure1": "Antwoord binnen 24 werkuren",
     "assure2": "Vrijblijvend",
     "assure3": "Gevestigd in Wallonië"
   },
@@ -26,10 +26,10 @@
     "badge": "Het meest directe",
     "title": "Stuur mij uw aanvraag",
     "subtitle": "Een paar regels volstaan. Hoe preciezer, hoe sneller we vooruitgaan.",
-    "reassure": "Antwoord van een expert binnen 24 werkuren",
+    "reassure": "Persoonlijk antwoord binnen 24 werkuren",
     "errorLabel": "Fout",
     "options": {
-      "diagnostic": "Gratis diagnose",
+      "diagnostic": "Gratis eerste gesprek",
       "cyfun": "CyFun / NIS2-audit",
       "pentest": "Beveiligingstests",
       "dev": "Beveiligde webontwikkeling",
@@ -57,8 +57,8 @@
     "submitting": "Bezig met verzenden…",
     "note": "Uw gegevens blijven vertrouwelijk",
     "success": {
-      "title": "Bericht verzonden !",
-      "text": "Bedankt voor uw bericht. Een Smidjan-expert antwoordt u binnen 24 werkuren."
+      "title": "Bericht verzonden !",
+      "text": "Bedankt voor uw bericht. Ik antwoord u binnen 24 werkuren."
     },
     "errors": {
       "demande": "Type aanvraag vereist",
@@ -80,27 +80,27 @@
     "nis2Intro": "Naar aanleiding van de test « Valt mijn kmo onder NIS2? » wil ik mijn situatie bespreken en mijn volgende stappen kennen."
   },
   "side": {
-    "aria": "Onze contactgegevens",
+    "aria": "Mijn contactgegevens",
     "incidentImageAlt": "Cyberbeveiligingsanalist op de rug gezien, voor meerdere bewakingsschermen in een controlekamer, volop bezig met incidentrespons.",
     "incidentBadge": "Incidentrespons",
-    "incidentTitle": "Nood aan een <accent>incidentrespons</accent> ?",
+    "incidentTitle": "Nood aan een <accent>incidentrespons</accent> ?",
     "incidentText": "Ransomware, inbraak, datalek ? Zet niets uit. Bel mij. Ik help u de schade te beperken.",
     "incidentNote": "Ik bel u zo snel mogelijk terug.",
     "processTitle": "Hoe het werkt",
-    "processAria": "Schema in drie stappen : u schrijft uw aanvraag, een expert belt u terug binnen 24 werkuren, daarna een gratis diagnose.",
+    "processAria": "Schema in drie stappen : u schrijft uw aanvraag, ik bel u terug binnen 24 werkuren, daarna een gratis eerste gesprek.",
     "processStep1": "U schrijft",
-    "processStep2": "Terugbellen binnen 24 u",
-    "processStep3": "Gratis diagnose",
+    "processStep2": "Terugbellen binnen 24 u",
+    "processStep3": "Gratis eerste gesprek",
     "coordImageAlt": "Serverracks in een datacenter, ter illustratie van infrastructuurhardening.",
     "coordTag": "Wij antwoorden u",
-    "coordTitle": "Onze contactgegevens",
+    "coordTitle": "Mijn contactgegevens",
     "coordZoneK": "Interventiezone",
     "coordZoneV": "Wallonië, België",
     "coordZoneSmall": "Op locatie of op afstand, op afspraak",
     "coordPhoneK": "Telefoon",
     "coordPhoneSmall": "Algemeen nummer : algemene aanvragen",
     "coordEmailK": "E-mail",
-    "coordEmailSmall": "Antwoord binnen 24 werkuren",
+    "coordEmailSmall": "Antwoord binnen 24 werkuren",
     "coordHoursK": "Openingsuren",
     "coordHoursV": "Ma. tot vr., 8.30 tot 18.00 uur",
     "coordHoursSmall": "Incidentrespons: zo snel mogelijk",
@@ -115,10 +115,10 @@
     "intro": "Geen verkooptunnel, een nuttig gesprek vanaf het eerste bericht.",
     "step1Title": "U schrijft mij",
     "step1Text": "Formulier, e-mail of telefoon. Beschrijf uw behoefte in twee zinnen.",
-    "step2Title": "Wij bellen u terug binnen 24 u",
-    "step2Text": "Een Smidjan-expert, geen verkoper. Binnen 24 werkuren.",
-    "step3Title": "Gratis diagnose",
-    "step3Text": "30 minuten om uw prioriteiten in kaart te brengen. Vrijblijvend, zonder jargon.",
+    "step2Title": "Wij bellen u terug binnen 24 u",
+    "step2Text": "Ikzelf, geen verkoper. Binnen 24 werkuren.",
+    "step3Title": "Gratis eerste gesprek",
+    "step3Text": "30 minuten om uw prioriteiten in kaart te brengen. Vrijblijvend, zonder jargon.",
     "note": "<b>Eén aanspreekpunt</b>, van het eerste bericht tot de remediëring."
   }
 }

@@ -1,22 +1,22 @@
 {
   "meta": {
-    "title": "Onze cybersecurity-methode voor kmo's | Smidjan Wallonië",
-    "description": "Gemeten diagnose, prioritering op risico, echte remediëring, continue monitoring : ontdek de methode van Smidjan, cybersecuritykantoor in Wallonië, en waarom een kmo er baat bij heeft om samen te werken met een structuur op mensenmaat.",
-    "ogTitle": "Onze methode : cybersecurity-aanpak van Smidjan",
+    "title": "Mijn cybersecurity-methode voor kmo's | Smidjan Wallonië",
+    "description": "Gemeten diagnose, prioritering op risico, echte remediëring, continue monitoring : ontdek de methode van Smidjan, cybersecuritypracticus in Wallonië, en waarom een kmo er baat bij heeft om samen te werken met een structuur op mensenmaat.",
+    "ogTitle": "Mijn methode : cybersecurity-aanpak van Smidjan",
     "ogDescription": "Bewijs, geen beloftes : gemeten diagnose, prioritering, echte remediëring en continue monitoring. De methode van Smidjan, cybersecurity voor kmo's in Wallonië.",
-    "ogImageAlt": "Smidjan - Onze cybersecuritymethode",
-    "twitterTitle": "Onze methode : cybersecurity-aanpak van Smidjan",
+    "ogImageAlt": "Smidjan - Mijn cybersecuritymethode",
+    "twitterTitle": "Mijn methode : cybersecurity-aanpak van Smidjan",
     "twitterDescription": "Gemeten diagnose, prioritering, echte remediëring, continue monitoring. Bewijs, geen beloftes."
   },
   "hero": {
     "breadcrumbHome": "Home",
-    "breadcrumbCurrent": "Aanpak · Onze methode",
-    "eyebrow": "Onze methode",
+    "breadcrumbCurrent": "Aanpak · Mijn methode",
+    "eyebrow": "Mijn methode",
     "title": "Cybersecurity die zich <accent>bewijst</accent>, niet die zich laat vertellen.",
-    "lead": "Voor kmo's in Wallonië: gemeten acties, resultaten die u zelf verifieert. Onze methode, van diagnose tot opvolging.",
+    "lead": "Voor kmo's in Wallonië: gemeten acties, resultaten die u zelf verifieert. Mijn methode, van diagnose tot opvolging.",
     "ctaPrimary": "Contact opnemen",
     "ctaSecondary": "Bekijk de 4 stappen",
-    "promiseTitle": "Onze belofte",
+    "promiseTitle": "Mijn belofte",
     "promiseSub": "Wat u krijgt, bij elke opdracht",
     "promiseItem1": "Een <b>becijferde en gedocumenteerde diagnose</b>, geen indruk.",
     "promiseItem2": "<b>Duidelijke prioriteiten</b> op risico en op kmo-budget.",
@@ -51,7 +51,7 @@
     "cards": {
       "decision": {
         "title": "Menselijke beslissing",
-        "text": "Elke AI-vaststelling door de expert gevalideerd vóór elke actie."
+        "text": "Elke AI-vaststelling, door mij gevalideerd vóór elke actie."
       }
     }
   },
@@ -60,7 +60,7 @@
     "lead": "Een structuur op mensenmaat, uit keuze. Minder tussenpersonen, meer verantwoordelijkheid.",
     "items": {
       "acces": {
-        "title": "Rechtstreekse toegang tot de expert",
+        "title": "Rechtstreekse toegang, zonder tussenpersoon",
         "text": "U spreekt met de persoon die uw dossier behandelt. Nooit een callcenter, nooit een junior.",
         "pin": "Nul onderaanneming"
       },
@@ -77,11 +77,11 @@
   },
   "cta": {
     "title": "Laten we samen de balans opmaken, vrijblijvend",
-    "text": "30 minuten met een expert. U vertrekt met een eerste becijferde vaststelling en duidelijke prioriteiten. Een eerste gesprek gratis en vrijblijvend.",
+    "text": "30 minuten met mij, rechtstreeks. U vertrekt met een eerste becijferde vaststelling en duidelijke prioriteiten. Een eerste gesprek gratis en vrijblijvend.",
     "action1": "Contact opnemen",
     "action2": "Bel 0475 20 55 62",
     "reassurance1": "Antwoord binnen 24 u",
-    "reassurance2": "Toegewijde expert, geen onderaanneming",
+    "reassurance2": "Eén aanspreekpunt, geen onderaanneming",
     "reassurance3": "Gegevens in België"
   }
 }

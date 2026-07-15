@@ -12,12 +12,12 @@
       "breadcrumbHome": "Accueil",
       "breadcrumbHere": "À propos",
       "eyebrow": "À propos",
-      "title": "Un <accent>expert cybersécurité local</accent>, pas une agence anonyme.",
+      "title": "Un <accent>praticien cybersécurité local</accent>, pas une agence anonyme.",
       "lead": "Jean-Baptiste Dhondt sécurise lui-même votre PME. Pas de centre d'appel. Pas de sous-traitance.",
       "ctaPrimary": "Réserver un appel de cadrage",
       "ctaCall": "Appeler le 0475 20 55 62",
       "badgeLocation": "Basé en Wallonie",
-      "badgeAccess": "Accès direct à l'expert",
+      "badgeAccess": "Accès direct, sans intermédiaire",
       "badgeData": "Données hébergées en Belgique / UE",
       "imageAlt": "Baies de serveurs dans un datacenter, illustrant le durcissement de l'infrastructure."
     },
@@ -40,7 +40,7 @@
       "actionPrimary": "Réserver un appel de cadrage",
       "actionCall": "Appeler le 0475 20 55 62",
       "reassurance1": "Réponse sous 24 h",
-      "reassurance2": "Expert dédié, pas de sous-traitance",
+      "reassurance2": "Un seul interlocuteur, pas de sous-traitance",
       "reassurance3": "Données en Belgique"
     },
     "about": {
@@ -111,23 +111,23 @@
   },
   "approche": {
     "meta": {
-      "title": "Notre méthode cybersécurité PME | Smidjan Wallonie",
-      "description": "Diagnostic mesuré, priorisation par risque, remédiation réelle, supervision continue : découvrez la méthode de Smidjan, cabinet de cybersécurité en Wallonie, et pourquoi une PME wallonne a intérêt à travailler avec une structure à taille humaine.",
-      "ogTitle": "Notre méthode : Approche cybersécurité Smidjan",
+      "title": "Ma méthode cybersécurité PME | Smidjan Wallonie",
+      "description": "Diagnostic mesuré, priorisation par risque, remédiation réelle, supervision continue : découvrez la méthode de Smidjan, praticien en cybersécurité en Wallonie, et pourquoi une PME wallonne a intérêt à travailler avec une structure à taille humaine.",
+      "ogTitle": "Ma méthode : Approche cybersécurité Smidjan",
       "ogDescription": "Des preuves, pas des promesses : diagnostic mesuré, priorisation, remédiation réelle et supervision continue. La méthode Smidjan, cybersécurité pour PME en Wallonie.",
-      "ogImageAlt": "Smidjan - Notre méthode de cybersécurité",
-      "twitterTitle": "Notre méthode : Approche cybersécurité Smidjan",
+      "ogImageAlt": "Smidjan - Ma méthode de cybersécurité",
+      "twitterTitle": "Ma méthode : Approche cybersécurité Smidjan",
       "twitterDescription": "Diagnostic mesuré, priorisation, remédiation réelle, supervision continue. Des preuves, pas des promesses."
     },
     "hero": {
       "breadcrumbHome": "Accueil",
-      "breadcrumbCurrent": "Approche · Notre méthode",
-      "eyebrow": "Notre méthode",
+      "breadcrumbCurrent": "Approche · Ma méthode",
+      "eyebrow": "Ma méthode",
       "title": "Une cybersécurité qui se <accent>démontre</accent>, pas qui se raconte.",
-      "lead": "Pour les PME de Wallonie : des actions mesurées, des livrables que vous vérifiez vous-même. Notre méthode, du diagnostic au suivi.",
+      "lead": "Pour les PME de Wallonie : des actions mesurées, des livrables que vous vérifiez vous-même. Ma méthode, du diagnostic au suivi.",
       "ctaPrimary": "Me contacter",
       "ctaSecondary": "Voir les 4 étapes",
-      "promiseTitle": "Notre engagement",
+      "promiseTitle": "Mon engagement",
       "promiseSub": "Ce que vous obtenez, à chaque mission",
       "promiseItem1": "Un <b>diagnostic chiffré</b> et documenté, pas une impression.",
       "promiseItem2": "Des <b>priorités claires</b> par risque et par budget PME.",
@@ -162,7 +162,7 @@
       "cards": {
         "decision": {
           "title": "Décision humaine",
-          "text": "Chaque constat IA validé par l'expert avant toute action."
+          "text": "Chaque constat IA, validé par moi avant toute action."
         }
       }
     },
@@ -171,7 +171,7 @@
       "lead": "Structure à taille humaine, par choix. Moins d'intermédiaires, plus de responsabilité.",
       "items": {
         "acces": {
-          "title": "Accès direct à l'expert",
+          "title": "Accès direct, sans intermédiaire",
           "text": "Vous parlez à la personne qui traite votre dossier. Jamais un centre d'appel, jamais un junior.",
           "pin": "Zéro sous-traitance"
         },
@@ -188,18 +188,18 @@
     },
     "cta": {
       "title": "Faisons le point, sans engagement",
-      "text": "30 minutes avec un expert. Vous repartez avec un premier constat chiffré et des priorités claires. Premier échange gratuit et sans engagement.",
+      "text": "30 minutes avec moi, directement. Vous repartez avec un premier constat chiffré et des priorités claires. Premier échange gratuit et sans engagement.",
       "action1": "Me contacter",
       "action2": "Appeler le 0475 20 55 62",
       "reassurance1": "Réponse sous 24 h",
-      "reassurance2": "Expert dédié, pas de sous-traitance",
+      "reassurance2": "Un seul interlocuteur, pas de sous-traitance",
       "reassurance3": "Données en Belgique"
     }
   },
   "blog": {
     "meta": {
       "title": "Journal : ressources techniques | Smidjan",
-      "description": "Articles techniques sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé. Conseils d'expert pour les PME en Belgique.",
+      "description": "Articles techniques sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé. Retours d'expérience pour les PME en Belgique.",
       "ogTitle": "Journal : ressources techniques | Smidjan",
       "ogDescription": "Articles sur la cybersécurité, la conformité NIS2 / CyFun et le développement web sécurisé pour les PME.",
       "ogImageAlt": "Smidjan Blog : articles techniques pour développeurs et entreprises",
@@ -345,7 +345,7 @@
         "owasp": "Approche OWASP",
         "cyfun": "CyberFundamentals (CCB)",
         "local": "Local & réactif en Wallonie",
-        "expert": "Accès direct à l'expert"
+        "expert": "Accès direct, sans intermédiaire"
       }
     }
   },
@@ -366,16 +366,16 @@
     "hero": {
       "badge": "En vigueur depuis le 18 octobre 2024 en Belgique",
       "title": "Mettez votre PME en <accent>conformité NIS2</accent>, sans jargon ni surcoût.",
-      "lead": "Audit, <b>remédiation</b>, mise au niveau CyFun (CCB) : on ne liste pas vos manques, on les corrige.",
+      "lead": "Audit, <b>remédiation</b>, mise au niveau CyFun (CCB) : on ne liste pas vos manques, on les corrige.",
       "ctaPrimary": "Me contacter",
       "ctaSecondary": "Comparer les 3 niveaux",
       "assure1": "Sans engagement",
-      "assure2": "Réponse sous 24 h",
-      "assure3": "Un expert dédié, pas de sous-traitance",
+      "assure2": "Réponse sous 24 h",
+      "assure3": "Un seul interlocuteur, pas de sous-traitance",
       "cardMonth": "Oct",
       "cardYear": "2024",
       "cardTitle": "NIS2 est déjà en vigueur",
-      "cardText": "Depuis le 18 octobre 2024 : ce n'est plus une échéance, c'est une obligation.",
+      "cardText": "Depuis le 18 octobre 2024 : ce n'est plus une échéance, c'est une obligation.",
       "statSanctionLbl": "SANCTION MAX",
       "statCaLbl": "DU CA MONDIAL",
       "statIncidentLbl": "ALERTE INCIDENT",
@@ -397,9 +397,9 @@
       "lead": "Trois niveaux progressifs. Le bon choix dépend de votre catégorie NIS2 et de votre exposition. On vous aide à trancher."
     },
     "audit": {
-      "eyebrow": "Notre outil propriétaire",
+      "eyebrow": "Mon outil propriétaire",
       "title": "Smidjan mène l'audit CyFun avec un outil <accent>propriétaire, sûr par conception</accent>",
-      "lead": "Notre moteur d'audit, aligné CyFun (CCB) et NIST CSF 2.0, évalue votre conformité vite et sur preuves. Puis on corrige : remédiation et durcissement.",
+      "lead": "Mon moteur d'audit, aligné CyFun (CCB) et NIST CSF 2.0, évalue votre conformité vite et sur preuves. Puis je corrige : remédiation et durcissement.",
       "trust": {
         "readOnlyTitle": "Lecture seule",
         "readOnlyText": "L'audit observe, il ne modifie jamais vos systèmes.",
@@ -416,56 +416,56 @@
       },
       "honesty": {
         "title": "Une auto-évaluation assistée, pas une certification",
-        "p": "Notre outil facilite l''<b>auto-évaluation CyFun</b> et prépare votre dossier. Il ne remplace pas la <b>vérification officielle</b>, réservée aux organismes accrédités BELAC."
+        "p": "Mon outil facilite l''<b>auto-évaluation CyFun</b> et prépare votre dossier. Il ne remplace pas la <b>vérification officielle</b>, réservée aux organismes accrédités BELAC."
       }
     },
     "financement": {
       "eyebrow": "Financer votre conformité",
-      "title": "La conformité coûte moins cher qu'on ne le croit : <accent>une large partie est subsidiée</accent>",
+      "title": "La conformité coûte moins cher qu'on ne le croit : <accent>une large partie est subsidiée</accent>",
       "lead": "Le chèque « cybersécurité » wallon finance une large partie de votre audit et de votre remédiation. Voici comment en profiter."
     },
     "finalCta": {
       "title": "En 30 minutes, sachez exactement où vous en êtes.",
-      "text": "30 min avec un expert : catégorie NIS2, niveau CyFun, priorités claires. Sans engagement, sans jargon.",
+      "text": "30 min avec moi, directement : catégorie NIS2, niveau CyFun, priorités claires. Sans engagement, sans jargon.",
       "action1": "Me contacter",
       "action2": "Appeler le 0475 20 55 62",
       "reassure1": "Réponse sous 24 h",
-      "reassure2": "Expert dédié, pas de sous-traitance",
+      "reassure2": "Un seul interlocuteur, pas de sous-traitance",
       "reassure3": "Données en Belgique"
     }
   },
   "contact": {
     "meta": {
       "title": "Contact · Smidjan | Cybersécurité & conformité NIS2 en Wallonie",
-      "description": "Diagnostic gratuit, audit CyFun/NIS2, tests de sécurité ou réponse à incident : écrivez à Smidjan. Un expert vous répond sous 24 h ouvrées. Basés en Wallonie.",
+      "description": "Diagnostic gratuit, audit CyFun/NIS2, tests de sécurité ou réponse à incident : écrivez à Smidjan. Je vous réponds sous 24 h ouvrées. Basé en Wallonie.",
       "ogTitle": "Contact · Smidjan",
-      "ogDescription": "Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées.",
+      "ogDescription": "Parlons de votre sécurité. Je vous réponds sous 24 h ouvrées.",
       "ogImageAlt": "Contactez Smidjan, cybersécurité et conformité NIS2 en Wallonie",
       "twitterTitle": "Contact · Smidjan",
-      "twitterDescription": "Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées."
+      "twitterDescription": "Parlons de votre sécurité. Je vous réponds sous 24 h ouvrées."
     },
     "hero": {
       "crumbAria": "Fil d'Ariane",
       "crumbHome": "Accueil",
       "crumbContact": "Contact",
       "eyebrow": "Parlons de votre sécurité",
-      "title": "Un expert vous répond : <accent>sous 24 heures</accent>.",
-      "directPromise": "<strong>Un expert Smidjan</strong>, jamais un centre d'appels.",
+      "title": "Je vous réponds : <accent>sous 24 heures</accent>.",
+      "directPromise": "<strong>Moi, directement</strong>, jamais un centre d'appels.",
       "lead": "Diagnostic, audit NIS2, tests de sécurité ou incident : un seul interlocuteur.",
       "ctaPrimary": "Décrire mon besoin",
       "imageAlt": "Gros plan d'un circuit imprimé, illustrant une architecture pensée secure by design.",
-      "assure1": "Réponse sous 24 h ouvrées",
+      "assure1": "Réponse sous 24 h ouvrées",
       "assure2": "Sans engagement",
-      "assure3": "Basés en Wallonie"
+      "assure3": "Basé en Wallonie"
     },
     "form": {
       "badge": "Le plus direct",
       "title": "Envoyez-moi votre demande",
       "subtitle": "Quelques lignes suffisent. Plus c'est précis, plus vite on avance.",
-      "reassure": "Réponse d'un expert sous 24 h ouvrées",
+      "reassure": "Réponse personnelle sous 24 h ouvrées",
       "errorLabel": "Erreur",
       "options": {
-        "diagnostic": "Diagnostic gratuit",
+        "diagnostic": "Premier échange gratuit",
         "cyfun": "Audit CyFun / NIS2",
         "pentest": "Tests de sécurité",
         "dev": "Développement web sécurisé",
@@ -493,8 +493,8 @@
       "submitting": "Envoi en cours…",
       "note": "Vos informations restent confidentielles",
       "success": {
-        "title": "Message envoyé !",
-        "text": "Merci pour votre message. Un expert Smidjan vous répond sous 24 h ouvrées."
+        "title": "Message envoyé !",
+        "text": "Merci pour votre message. Je vous réponds sous 24 h ouvrées."
       },
       "errors": {
         "demande": "Type de demande requis",
@@ -516,27 +516,27 @@
       "nis2Intro": "Suite au test « Suis-je concerné par NIS2 ? », je souhaite faire le point sur ma situation et connaître mes prochaines étapes."
     },
     "side": {
-      "aria": "Nos coordonnées",
+      "aria": "Mes coordonnées",
       "incidentImageAlt": "Analyste cybersécurité de dos, face à plusieurs écrans de supervision dans une salle de contrôle, en pleine réponse à un incident.",
       "incidentBadge": "Réponse à incident",
-      "incidentTitle": "Besoin d'une <accent>réponse à incident</accent> ?",
+      "incidentTitle": "Besoin d'une <accent>réponse à incident</accent> ?",
       "incidentText": "Rançongiciel, intrusion, fuite de données ? Ne coupez rien. Appelez. Je vous aide à limiter les dégâts.",
       "incidentNote": "Je vous rappelle au plus vite.",
       "processTitle": "Comment ça marche",
-      "processAria": "Schéma en trois étapes : vous écrivez votre demande, un expert vous rappelle sous 24 heures ouvrées, puis diagnostic gratuit.",
+      "processAria": "Schéma en trois étapes : vous écrivez votre demande, je vous rappelle sous 24 heures ouvrées, puis premier échange gratuit.",
       "processStep1": "Vous écrivez",
-      "processStep2": "Rappel sous 24 h",
-      "processStep3": "Diagnostic gratuit",
+      "processStep2": "Rappel sous 24 h",
+      "processStep3": "Premier échange gratuit",
       "coordImageAlt": "Baies de serveurs dans un datacenter, illustrant le durcissement de l'infrastructure.",
       "coordTag": "On vous répond",
-      "coordTitle": "Nos coordonnées",
+      "coordTitle": "Mes coordonnées",
       "coordZoneK": "Zone d'intervention",
       "coordZoneV": "Wallonie, Belgique",
       "coordZoneSmall": "Sur site ou à distance, sur rendez-vous",
       "coordPhoneK": "Téléphone",
       "coordPhoneSmall": "Standard : demandes générales",
       "coordEmailK": "E-mail",
-      "coordEmailSmall": "Réponse sous 24 h ouvrées",
+      "coordEmailSmall": "Réponse sous 24 h ouvrées",
       "coordHoursK": "Horaires",
       "coordHoursV": "Lun. au ven., 8h30 à 18h00",
       "coordHoursSmall": "Réponse à incident : au plus vite",
@@ -551,10 +551,10 @@
       "intro": "Pas de tunnel commercial, un échange utile dès le premier message.",
       "step1Title": "Vous m'écrivez",
       "step1Text": "Formulaire, e-mail ou appel. Décrivez votre besoin en deux phrases.",
-      "step2Title": "On vous rappelle sous 24 h",
-      "step2Text": "Un expert Smidjan, pas un commercial. Sous 24 h ouvrées.",
-      "step3Title": "Diagnostic gratuit",
-      "step3Text": "30 minutes pour cerner vos priorités. Sans engagement, sans jargon.",
+      "step2Title": "On vous rappelle sous 24 h",
+      "step2Text": "Moi directement, pas un commercial. Sous 24 h ouvrées.",
+      "step3Title": "Premier échange gratuit",
+      "step3Text": "30 minutes pour cerner vos priorités. Sans engagement, sans jargon.",
       "note": "<b>Un seul interlocuteur</b>, du premier message à la remédiation."
     }
   },
@@ -929,12 +929,12 @@
     },
     "finalCta": {
       "title": "Faisons le point sur votre sécurité",
-      "text": "30 minutes avec un expert pour cadrer la mission utile. Premier échange gratuit et sans engagement.",
+      "text": "30 minutes avec moi, pour cadrer la mission utile. Premier échange gratuit et sans engagement.",
       "actionPrimary": "Me contacter",
       "actionCall": "Appeler le 0475 20 55 62",
       "reassurances": [
         "Réponse sous 24 h",
-        "Expert dédié, pas de sous-traitance",
+        "Un seul interlocuteur, pas de sous-traitance",
         "Données en Belgique"
       ]
     }

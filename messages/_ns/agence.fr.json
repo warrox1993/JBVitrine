@@ -11,12 +11,12 @@
     "breadcrumbHome": "Accueil",
     "breadcrumbHere": "À propos",
     "eyebrow": "À propos",
-    "title": "Un <accent>expert cybersécurité local</accent>, pas une agence anonyme.",
+    "title": "Un <accent>praticien cybersécurité local</accent>, pas une agence anonyme.",
     "lead": "Jean-Baptiste Dhondt sécurise lui-même votre PME. Pas de centre d'appel. Pas de sous-traitance.",
     "ctaPrimary": "Réserver un appel de cadrage",
     "ctaCall": "Appeler le 0475 20 55 62",
     "badgeLocation": "Basé en Wallonie",
-    "badgeAccess": "Accès direct à l'expert",
+    "badgeAccess": "Accès direct, sans intermédiaire",
     "badgeData": "Données hébergées en Belgique / UE",
     "imageAlt": "Baies de serveurs dans un datacenter, illustrant le durcissement de l'infrastructure."
   },
@@ -39,7 +39,7 @@
     "actionPrimary": "Réserver un appel de cadrage",
     "actionCall": "Appeler le 0475 20 55 62",
     "reassurance1": "Réponse sous 24 h",
-    "reassurance2": "Expert dédié, pas de sous-traitance",
+    "reassurance2": "Un seul interlocuteur, pas de sous-traitance",
     "reassurance3": "Données en Belgique"
   },
   "about": {

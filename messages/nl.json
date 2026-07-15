@@ -12,12 +12,12 @@
       "breadcrumbHome": "Home",
       "breadcrumbHere": "Over",
       "eyebrow": "Over",
-      "title": "Een <accent>lokale cyberbeveiligingsexpert</accent>, geen anoniem agentschap.",
+      "title": "Een <accent>lokale cyberbeveiligingspracticus</accent>, geen anoniem agentschap.",
       "lead": "Jean-Baptiste Dhondt beveiligt zelf uw kmo. Geen callcenter. Geen onderaanneming.",
       "ctaPrimary": "Een kaderingsgesprek inplannen",
       "ctaCall": "Bel 0475 20 55 62",
       "badgeLocation": "Gevestigd in Wallonië",
-      "badgeAccess": "Rechtstreeks contact met de expert",
+      "badgeAccess": "Rechtstreeks contact, zonder tussenpersoon",
       "badgeData": "Gegevens gehost in België / EU",
       "imageAlt": "Serverracks in een datacenter, ter illustratie van infrastructuurhardening."
     },
@@ -40,7 +40,7 @@
       "actionPrimary": "Een kaderingsgesprek inplannen",
       "actionCall": "Bel 0475 20 55 62",
       "reassurance1": "Antwoord binnen 24 u",
-      "reassurance2": "Toegewijde expert, geen onderaanneming",
+      "reassurance2": "Eén aanspreekpunt, geen onderaanneming",
       "reassurance3": "Gegevens in België"
     },
     "about": {
@@ -111,23 +111,23 @@
   },
   "approche": {
     "meta": {
-      "title": "Onze cybersecurity-methode voor kmo's | Smidjan Wallonië",
-      "description": "Gemeten diagnose, prioritering op risico, echte remediëring, continue monitoring : ontdek de methode van Smidjan, cybersecuritykantoor in Wallonië, en waarom een kmo er baat bij heeft om samen te werken met een structuur op mensenmaat.",
-      "ogTitle": "Onze methode : cybersecurity-aanpak van Smidjan",
+      "title": "Mijn cybersecurity-methode voor kmo's | Smidjan Wallonië",
+      "description": "Gemeten diagnose, prioritering op risico, echte remediëring, continue monitoring : ontdek de methode van Smidjan, cybersecuritypracticus in Wallonië, en waarom een kmo er baat bij heeft om samen te werken met een structuur op mensenmaat.",
+      "ogTitle": "Mijn methode : cybersecurity-aanpak van Smidjan",
       "ogDescription": "Bewijs, geen beloftes : gemeten diagnose, prioritering, echte remediëring en continue monitoring. De methode van Smidjan, cybersecurity voor kmo's in Wallonië.",
-      "ogImageAlt": "Smidjan - Onze cybersecuritymethode",
-      "twitterTitle": "Onze methode : cybersecurity-aanpak van Smidjan",
+      "ogImageAlt": "Smidjan - Mijn cybersecuritymethode",
+      "twitterTitle": "Mijn methode : cybersecurity-aanpak van Smidjan",
       "twitterDescription": "Gemeten diagnose, prioritering, echte remediëring, continue monitoring. Bewijs, geen beloftes."
     },
     "hero": {
       "breadcrumbHome": "Home",
-      "breadcrumbCurrent": "Aanpak · Onze methode",
-      "eyebrow": "Onze methode",
+      "breadcrumbCurrent": "Aanpak · Mijn methode",
+      "eyebrow": "Mijn methode",
       "title": "Cybersecurity die zich <accent>bewijst</accent>, niet die zich laat vertellen.",
-      "lead": "Voor kmo's in Wallonië: gemeten acties, resultaten die u zelf verifieert. Onze methode, van diagnose tot opvolging.",
+      "lead": "Voor kmo's in Wallonië: gemeten acties, resultaten die u zelf verifieert. Mijn methode, van diagnose tot opvolging.",
       "ctaPrimary": "Contact opnemen",
       "ctaSecondary": "Bekijk de 4 stappen",
-      "promiseTitle": "Onze belofte",
+      "promiseTitle": "Mijn belofte",
       "promiseSub": "Wat u krijgt, bij elke opdracht",
       "promiseItem1": "Een <b>becijferde en gedocumenteerde diagnose</b>, geen indruk.",
       "promiseItem2": "<b>Duidelijke prioriteiten</b> op risico en op kmo-budget.",
@@ -162,7 +162,7 @@
       "cards": {
         "decision": {
           "title": "Menselijke beslissing",
-          "text": "Elke AI-vaststelling door de expert gevalideerd vóór elke actie."
+          "text": "Elke AI-vaststelling, door mij gevalideerd vóór elke actie."
         }
       }
     },
@@ -171,7 +171,7 @@
       "lead": "Een structuur op mensenmaat, uit keuze. Minder tussenpersonen, meer verantwoordelijkheid.",
       "items": {
         "acces": {
-          "title": "Rechtstreekse toegang tot de expert",
+          "title": "Rechtstreekse toegang, zonder tussenpersoon",
           "text": "U spreekt met de persoon die uw dossier behandelt. Nooit een callcenter, nooit een junior.",
           "pin": "Nul onderaanneming"
         },
@@ -188,18 +188,18 @@
     },
     "cta": {
       "title": "Laten we samen de balans opmaken, vrijblijvend",
-      "text": "30 minuten met een expert. U vertrekt met een eerste becijferde vaststelling en duidelijke prioriteiten. Een eerste gesprek gratis en vrijblijvend.",
+      "text": "30 minuten met mij, rechtstreeks. U vertrekt met een eerste becijferde vaststelling en duidelijke prioriteiten. Een eerste gesprek gratis en vrijblijvend.",
       "action1": "Contact opnemen",
       "action2": "Bel 0475 20 55 62",
       "reassurance1": "Antwoord binnen 24 u",
-      "reassurance2": "Toegewijde expert, geen onderaanneming",
+      "reassurance2": "Eén aanspreekpunt, geen onderaanneming",
       "reassurance3": "Gegevens in België"
     }
   },
   "blog": {
     "meta": {
       "title": "Journal: technische bronnen | Smidjan",
-      "description": "Technische artikelen over cyberbeveiliging, NIS2 / CyFun-conformiteit en veilige webontwikkeling. Deskundig advies voor kmo's in België.",
+      "description": "Technische artikelen over cyberbeveiliging, NIS2 / CyFun-conformiteit en veilige webontwikkeling. Praktische inzichten voor kmo's in België.",
       "ogTitle": "Journal: technische bronnen | Smidjan",
       "ogDescription": "Artikelen over cyberbeveiliging, NIS2 / CyFun-conformiteit en veilige webontwikkeling voor kmo's.",
       "ogImageAlt": "Smidjan Blog: technische artikelen voor ontwikkelaars en bedrijven",
@@ -345,7 +345,7 @@
         "owasp": "OWASP-aanpak",
         "cyfun": "CyberFundamentals (CCB)",
         "local": "Lokaal & reactief in Wallonië",
-        "expert": "Rechtstreeks contact met de expert"
+        "expert": "Rechtstreeks contact, zonder tussenpersoon"
       }
     }
   },
@@ -371,7 +371,7 @@
       "ctaSecondary": "Vergelijk de 3 niveaus",
       "assure1": "Vrijblijvend",
       "assure2": "Antwoord binnen 24 u",
-      "assure3": "Eén toegewijde expert, geen onderaanneming",
+      "assure3": "Eén aanspreekpunt, geen onderaanneming",
       "cardMonth": "Okt",
       "cardYear": "2024",
       "cardTitle": "NIS2 is al van kracht",
@@ -397,9 +397,9 @@
       "lead": "Drie progressieve niveaus. De juiste keuze hangt af van uw NIS2-categorie en uw blootstelling. Wij helpen u beslissen."
     },
     "audit": {
-      "eyebrow": "Onze eigen tool",
+      "eyebrow": "Mijn eigen tool",
       "title": "Smidjan voert de CyFun-audit uit met een <accent>eigen tool, veilig door ontwerp</accent>",
-      "lead": "Onze auditengine, afgestemd op CyFun (CCB) en NIST CSF 2.0, beoordeelt uw conformiteit snel en op basis van bewijs. Daarna verhelpen wij: remediëring en hardening.",
+      "lead": "Mijn auditengine, afgestemd op CyFun (CCB) en NIST CSF 2.0, beoordeelt uw conformiteit snel en op basis van bewijs. Daarna verhelp ik: remediëring en hardening.",
       "trust": {
         "readOnlyTitle": "Alleen-lezen",
         "readOnlyText": "De audit observeert, hij wijzigt uw systemen nooit.",
@@ -416,7 +416,7 @@
       },
       "honesty": {
         "title": "Een geassisteerde zelfevaluatie, geen certificering",
-        "p": "Onze tool vergemakkelijkt de <b>CyFun-zelfevaluatie</b> en bereidt uw dossier voor. Hij vervangt niet de <b>officiële verificatie</b>, voorbehouden aan BELAC-geaccrediteerde instanties."
+        "p": "Mijn tool vergemakkelijkt de <b>CyFun-zelfevaluatie</b> en bereidt uw dossier voor. Hij vervangt niet de <b>officiële verificatie</b>, voorbehouden aan BELAC-geaccrediteerde instanties."
       }
     },
     "financement": {
@@ -426,35 +426,35 @@
     },
     "finalCta": {
       "title": "In 30 minuten weet u precies waar u staat.",
-      "text": "30 min met een expert: NIS2-categorie, CyFun-niveau, heldere prioriteiten. Vrijblijvend, zonder jargon.",
+      "text": "30 min met mij, rechtstreeks: NIS2-categorie, CyFun-niveau, heldere prioriteiten. Vrijblijvend, zonder jargon.",
       "action1": "Contact opnemen",
       "action2": "Bel 0475 20 55 62",
       "reassure1": "Antwoord binnen 24 u",
-      "reassure2": "Toegewijde expert, geen onderaanneming",
+      "reassure2": "Eén aanspreekpunt, geen onderaanneming",
       "reassure3": "Gegevens in België"
     }
   },
   "contact": {
     "meta": {
       "title": "Contact · Smidjan | Cyberbeveiliging & NIS2-conformiteit in Wallonië",
-      "description": "Gratis diagnose, CyFun/NIS2-audit, beveiligingstests of incidentrespons : schrijf naar Smidjan. Een expert antwoordt u binnen 24 werkuren. Gevestigd in Wallonië.",
+      "description": "Gratis diagnose, CyFun/NIS2-audit, beveiligingstests of incidentrespons : schrijf naar Smidjan. Ik antwoord u binnen 24 werkuren. Gevestigd in Wallonië.",
       "ogTitle": "Contact · Smidjan",
-      "ogDescription": "Laten we het over uw beveiliging hebben. Een expert antwoordt u binnen 24 werkuren.",
+      "ogDescription": "Laten we het over uw beveiliging hebben. Ik antwoord u binnen 24 werkuren.",
       "ogImageAlt": "Contacteer Smidjan, cyberbeveiliging en NIS2-conformiteit in Wallonië",
       "twitterTitle": "Contact · Smidjan",
-      "twitterDescription": "Laten we het over uw beveiliging hebben. Een expert antwoordt u binnen 24 werkuren."
+      "twitterDescription": "Laten we het over uw beveiliging hebben. Ik antwoord u binnen 24 werkuren."
     },
     "hero": {
       "crumbAria": "Broodkruimelpad",
       "crumbHome": "Home",
       "crumbContact": "Contact",
       "eyebrow": "Laten we het over uw beveiliging hebben",
-      "title": "Een expert antwoordt u : <accent>binnen 24 uur</accent>.",
-      "directPromise": "<strong>Een Smidjan-expert</strong>, nooit een callcenter.",
+      "title": "Ik antwoord u : <accent>binnen 24 uur</accent>.",
+      "directPromise": "<strong>Ik, rechtstreeks</strong>, nooit een callcenter.",
       "lead": "Diagnose, NIS2-audit, beveiligingstests of incident : één aanspreekpunt.",
       "ctaPrimary": "Mijn behoefte omschrijven",
       "imageAlt": "Close-up van een printplaat, symbool voor een secure-by-design architectuur.",
-      "assure1": "Antwoord binnen 24 werkuren",
+      "assure1": "Antwoord binnen 24 werkuren",
       "assure2": "Vrijblijvend",
       "assure3": "Gevestigd in Wallonië"
     },
@@ -462,10 +462,10 @@
       "badge": "Het meest directe",
       "title": "Stuur mij uw aanvraag",
       "subtitle": "Een paar regels volstaan. Hoe preciezer, hoe sneller we vooruitgaan.",
-      "reassure": "Antwoord van een expert binnen 24 werkuren",
+      "reassure": "Persoonlijk antwoord binnen 24 werkuren",
       "errorLabel": "Fout",
       "options": {
-        "diagnostic": "Gratis diagnose",
+        "diagnostic": "Gratis eerste gesprek",
         "cyfun": "CyFun / NIS2-audit",
         "pentest": "Beveiligingstests",
         "dev": "Beveiligde webontwikkeling",
@@ -493,8 +493,8 @@
       "submitting": "Bezig met verzenden…",
       "note": "Uw gegevens blijven vertrouwelijk",
       "success": {
-        "title": "Bericht verzonden !",
-        "text": "Bedankt voor uw bericht. Een Smidjan-expert antwoordt u binnen 24 werkuren."
+        "title": "Bericht verzonden !",
+        "text": "Bedankt voor uw bericht. Ik antwoord u binnen 24 werkuren."
       },
       "errors": {
         "demande": "Type aanvraag vereist",
@@ -516,27 +516,27 @@
       "nis2Intro": "Naar aanleiding van de test « Valt mijn kmo onder NIS2? » wil ik mijn situatie bespreken en mijn volgende stappen kennen."
     },
     "side": {
-      "aria": "Onze contactgegevens",
+      "aria": "Mijn contactgegevens",
       "incidentImageAlt": "Cyberbeveiligingsanalist op de rug gezien, voor meerdere bewakingsschermen in een controlekamer, volop bezig met incidentrespons.",
       "incidentBadge": "Incidentrespons",
-      "incidentTitle": "Nood aan een <accent>incidentrespons</accent> ?",
+      "incidentTitle": "Nood aan een <accent>incidentrespons</accent> ?",
       "incidentText": "Ransomware, inbraak, datalek ? Zet niets uit. Bel mij. Ik help u de schade te beperken.",
       "incidentNote": "Ik bel u zo snel mogelijk terug.",
       "processTitle": "Hoe het werkt",
-      "processAria": "Schema in drie stappen : u schrijft uw aanvraag, een expert belt u terug binnen 24 werkuren, daarna een gratis diagnose.",
+      "processAria": "Schema in drie stappen : u schrijft uw aanvraag, ik bel u terug binnen 24 werkuren, daarna een gratis eerste gesprek.",
       "processStep1": "U schrijft",
-      "processStep2": "Terugbellen binnen 24 u",
-      "processStep3": "Gratis diagnose",
+      "processStep2": "Terugbellen binnen 24 u",
+      "processStep3": "Gratis eerste gesprek",
       "coordImageAlt": "Serverracks in een datacenter, ter illustratie van infrastructuurhardening.",
       "coordTag": "Wij antwoorden u",
-      "coordTitle": "Onze contactgegevens",
+      "coordTitle": "Mijn contactgegevens",
       "coordZoneK": "Interventiezone",
       "coordZoneV": "Wallonië, België",
       "coordZoneSmall": "Op locatie of op afstand, op afspraak",
       "coordPhoneK": "Telefoon",
       "coordPhoneSmall": "Algemeen nummer : algemene aanvragen",
       "coordEmailK": "E-mail",
-      "coordEmailSmall": "Antwoord binnen 24 werkuren",
+      "coordEmailSmall": "Antwoord binnen 24 werkuren",
       "coordHoursK": "Openingsuren",
       "coordHoursV": "Ma. tot vr., 8.30 tot 18.00 uur",
       "coordHoursSmall": "Incidentrespons: zo snel mogelijk",
@@ -551,10 +551,10 @@
       "intro": "Geen verkooptunnel, een nuttig gesprek vanaf het eerste bericht.",
       "step1Title": "U schrijft mij",
       "step1Text": "Formulier, e-mail of telefoon. Beschrijf uw behoefte in twee zinnen.",
-      "step2Title": "Wij bellen u terug binnen 24 u",
-      "step2Text": "Een Smidjan-expert, geen verkoper. Binnen 24 werkuren.",
-      "step3Title": "Gratis diagnose",
-      "step3Text": "30 minuten om uw prioriteiten in kaart te brengen. Vrijblijvend, zonder jargon.",
+      "step2Title": "Wij bellen u terug binnen 24 u",
+      "step2Text": "Ikzelf, geen verkoper. Binnen 24 werkuren.",
+      "step3Title": "Gratis eerste gesprek",
+      "step3Text": "30 minuten om uw prioriteiten in kaart te brengen. Vrijblijvend, zonder jargon.",
       "note": "<b>Eén aanspreekpunt</b>, van het eerste bericht tot de remediëring."
     }
   },
@@ -929,12 +929,12 @@
     },
     "finalCta": {
       "title": "Laten we uw beveiliging samen bekijken",
-      "text": "30 minuten met een expert om de nuttige opdracht af te bakenen. Eerste gesprek gratis en vrijblijvend.",
+      "text": "30 minuten met mij, om de nuttige opdracht af te bakenen. Eerste gesprek gratis en vrijblijvend.",
       "actionPrimary": "Contact opnemen",
       "actionCall": "Bel 0475 20 55 62",
       "reassurances": [
         "Antwoord binnen 24 u",
-        "Toegewijde expert, geen onderaanneming",
+        "Eén aanspreekpunt, geen onderaanneming",
         "Gegevens in België"
       ]
     }

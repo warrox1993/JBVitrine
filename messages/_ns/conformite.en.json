@@ -20,7 +20,7 @@
     "ctaSecondary": "Compare the 3 levels",
     "assure1": "No commitment",
     "assure2": "Reply within 24 h",
-    "assure3": "A dedicated expert, no subcontracting",
+    "assure3": "A single point of contact, no subcontracting",
     "cardMonth": "Oct",
     "cardYear": "2024",
     "cardTitle": "NIS2 is already in force",
@@ -46,9 +46,9 @@
     "lead": "Three progressive levels. The right choice depends on your NIS2 category and your exposure. We help you decide."
   },
   "audit": {
-    "eyebrow": "Our proprietary tool",
+    "eyebrow": "My proprietary tool",
     "title": "Smidjan runs the CyFun audit with a <accent>proprietary tool, secure by design</accent>",
-    "lead": "Our audit engine, aligned with CyFun (CCB) and NIST CSF 2.0, assesses your compliance quickly and on evidence. Then we fix: remediation and hardening.",
+    "lead": "My audit engine, aligned with CyFun (CCB) and NIST CSF 2.0, assesses your compliance quickly and on evidence. Then I fix: remediation and hardening.",
     "trust": {
       "readOnlyTitle": "Read-only",
       "readOnlyText": "The audit observes, it never modifies your systems.",
@@ -65,7 +65,7 @@
     },
     "honesty": {
       "title": "An assisted self-assessment, not a certification",
-      "p": "Our tool facilitates the <b>CyFun self-assessment</b> and prepares your file. It does not replace the <b>official verification</b>, reserved for BELAC-accredited bodies."
+      "p": "My tool facilitates the <b>CyFun self-assessment</b> and prepares your file. It does not replace the <b>official verification</b>, reserved for BELAC-accredited bodies."
     }
   },
   "financement": {
@@ -75,11 +75,11 @@
   },
   "finalCta": {
     "title": "In 30 minutes, know exactly where you stand.",
-    "text": "30 min with an expert: NIS2 category, CyFun level, clear priorities. No commitment, no jargon.",
+    "text": "30 min with me, directly: NIS2 category, CyFun level, clear priorities. No commitment, no jargon.",
     "action1": "Get in touch",
     "action2": "Call 0475 20 55 62",
     "reassure1": "Reply within 24 h",
-    "reassure2": "Dedicated expert, no subcontracting",
+    "reassure2": "Single point of contact, no subcontracting",
     "reassure3": "Data in Belgium"
   }
 }

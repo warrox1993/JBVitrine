@@ -1,35 +1,35 @@
 {
   "meta": {
     "title": "Contact · Smidjan | Cybersécurité & conformité NIS2 en Wallonie",
-    "description": "Diagnostic gratuit, audit CyFun/NIS2, tests de sécurité ou réponse à incident : écrivez à Smidjan. Un expert vous répond sous 24 h ouvrées. Basés en Wallonie.",
+    "description": "Diagnostic gratuit, audit CyFun/NIS2, tests de sécurité ou réponse à incident : écrivez à Smidjan. Je vous réponds sous 24 h ouvrées. Basé en Wallonie.",
     "ogTitle": "Contact · Smidjan",
-    "ogDescription": "Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées.",
+    "ogDescription": "Parlons de votre sécurité. Je vous réponds sous 24 h ouvrées.",
     "ogImageAlt": "Contactez Smidjan, cybersécurité et conformité NIS2 en Wallonie",
     "twitterTitle": "Contact · Smidjan",
-    "twitterDescription": "Parlons de votre sécurité. Un expert vous répond sous 24 h ouvrées."
+    "twitterDescription": "Parlons de votre sécurité. Je vous réponds sous 24 h ouvrées."
   },
   "hero": {
     "crumbAria": "Fil d'Ariane",
     "crumbHome": "Accueil",
     "crumbContact": "Contact",
     "eyebrow": "Parlons de votre sécurité",
-    "title": "Un expert vous répond : <accent>sous 24 heures</accent>.",
-    "directPromise": "<strong>Un expert Smidjan</strong>, jamais un centre d'appels.",
+    "title": "Je vous réponds : <accent>sous 24 heures</accent>.",
+    "directPromise": "<strong>Moi, directement</strong>, jamais un centre d'appels.",
     "lead": "Diagnostic, audit NIS2, tests de sécurité ou incident : un seul interlocuteur.",
     "ctaPrimary": "Décrire mon besoin",
     "imageAlt": "Gros plan d'un circuit imprimé, illustrant une architecture pensée secure by design.",
-    "assure1": "Réponse sous 24 h ouvrées",
+    "assure1": "Réponse sous 24 h ouvrées",
     "assure2": "Sans engagement",
-    "assure3": "Basés en Wallonie"
+    "assure3": "Basé en Wallonie"
   },
   "form": {
     "badge": "Le plus direct",
     "title": "Envoyez-moi votre demande",
     "subtitle": "Quelques lignes suffisent. Plus c'est précis, plus vite on avance.",
-    "reassure": "Réponse d'un expert sous 24 h ouvrées",
+    "reassure": "Réponse personnelle sous 24 h ouvrées",
     "errorLabel": "Erreur",
     "options": {
-      "diagnostic": "Diagnostic gratuit",
+      "diagnostic": "Premier échange gratuit",
       "cyfun": "Audit CyFun / NIS2",
       "pentest": "Tests de sécurité",
       "dev": "Développement web sécurisé",
@@ -57,8 +57,8 @@
     "submitting": "Envoi en cours…",
     "note": "Vos informations restent confidentielles",
     "success": {
-      "title": "Message envoyé !",
-      "text": "Merci pour votre message. Un expert Smidjan vous répond sous 24 h ouvrées."
+      "title": "Message envoyé !",
+      "text": "Merci pour votre message. Je vous réponds sous 24 h ouvrées."
     },
     "errors": {
       "demande": "Type de demande requis",
@@ -80,27 +80,27 @@
     "nis2Intro": "Suite au test « Suis-je concerné par NIS2 ? », je souhaite faire le point sur ma situation et connaître mes prochaines étapes."
   },
   "side": {
-    "aria": "Nos coordonnées",
+    "aria": "Mes coordonnées",
     "incidentImageAlt": "Analyste cybersécurité de dos, face à plusieurs écrans de supervision dans une salle de contrôle, en pleine réponse à un incident.",
     "incidentBadge": "Réponse à incident",
-    "incidentTitle": "Besoin d'une <accent>réponse à incident</accent> ?",
+    "incidentTitle": "Besoin d'une <accent>réponse à incident</accent> ?",
     "incidentText": "Rançongiciel, intrusion, fuite de données ? Ne coupez rien. Appelez. Je vous aide à limiter les dégâts.",
     "incidentNote": "Je vous rappelle au plus vite.",
     "processTitle": "Comment ça marche",
-    "processAria": "Schéma en trois étapes : vous écrivez votre demande, un expert vous rappelle sous 24 heures ouvrées, puis diagnostic gratuit.",
+    "processAria": "Schéma en trois étapes : vous écrivez votre demande, je vous rappelle sous 24 heures ouvrées, puis premier échange gratuit.",
     "processStep1": "Vous écrivez",
-    "processStep2": "Rappel sous 24 h",
-    "processStep3": "Diagnostic gratuit",
+    "processStep2": "Rappel sous 24 h",
+    "processStep3": "Premier échange gratuit",
     "coordImageAlt": "Baies de serveurs dans un datacenter, illustrant le durcissement de l'infrastructure.",
     "coordTag": "On vous répond",
-    "coordTitle": "Nos coordonnées",
+    "coordTitle": "Mes coordonnées",
     "coordZoneK": "Zone d'intervention",
     "coordZoneV": "Wallonie, Belgique",
     "coordZoneSmall": "Sur site ou à distance, sur rendez-vous",
     "coordPhoneK": "Téléphone",
     "coordPhoneSmall": "Standard : demandes générales",
     "coordEmailK": "E-mail",
-    "coordEmailSmall": "Réponse sous 24 h ouvrées",
+    "coordEmailSmall": "Réponse sous 24 h ouvrées",
     "coordHoursK": "Horaires",
     "coordHoursV": "Lun. au ven., 8h30 à 18h00",
     "coordHoursSmall": "Réponse à incident : au plus vite",
@@ -115,10 +115,10 @@
     "intro": "Pas de tunnel commercial, un échange utile dès le premier message.",
     "step1Title": "Vous m'écrivez",
     "step1Text": "Formulaire, e-mail ou appel. Décrivez votre besoin en deux phrases.",
-    "step2Title": "On vous rappelle sous 24 h",
-    "step2Text": "Un expert Smidjan, pas un commercial. Sous 24 h ouvrées.",
-    "step3Title": "Diagnostic gratuit",
-    "step3Text": "30 minutes pour cerner vos priorités. Sans engagement, sans jargon.",
+    "step2Title": "On vous rappelle sous 24 h",
+    "step2Text": "Moi directement, pas un commercial. Sous 24 h ouvrées.",
+    "step3Title": "Premier échange gratuit",
+    "step3Text": "30 minutes pour cerner vos priorités. Sans engagement, sans jargon.",
     "note": "<b>Un seul interlocuteur</b>, du premier message à la remédiation."
   }
 }

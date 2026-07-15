@@ -11,12 +11,12 @@
     "breadcrumbHome": "Home",
     "breadcrumbHere": "Over",
     "eyebrow": "Over",
-    "title": "Een <accent>lokale cyberbeveiligingsexpert</accent>, geen anoniem agentschap.",
+    "title": "Een <accent>lokale cyberbeveiligingspracticus</accent>, geen anoniem agentschap.",
     "lead": "Jean-Baptiste Dhondt beveiligt zelf uw kmo. Geen callcenter. Geen onderaanneming.",
     "ctaPrimary": "Een kaderingsgesprek inplannen",
     "ctaCall": "Bel 0475 20 55 62",
     "badgeLocation": "Gevestigd in Wallonië",
-    "badgeAccess": "Rechtstreeks contact met de expert",
+    "badgeAccess": "Rechtstreeks contact, zonder tussenpersoon",
     "badgeData": "Gegevens gehost in België / EU",
     "imageAlt": "Serverracks in een datacenter, ter illustratie van infrastructuurhardening."
   },
@@ -39,7 +39,7 @@
     "actionPrimary": "Een kaderingsgesprek inplannen",
     "actionCall": "Bel 0475 20 55 62",
     "reassurance1": "Antwoord binnen 24 u",
-    "reassurance2": "Toegewijde expert, geen onderaanneming",
+    "reassurance2": "Eén aanspreekpunt, geen onderaanneming",
     "reassurance3": "Gegevens in België"
   },
   "about": {
