@@ -109,21 +109,40 @@
   gap: 10px;
 }
 
-.tel {
+.social {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--color-text);
-  white-space: nowrap;
+  gap: 6px;
   flex: none;
+  white-space: nowrap;
 }
 
-.tel svg {
-  width: 16px;
-  height: 16px;
-  color: var(--orange-d);
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--color-text-muted);
+  transition:
+    color 0.16s ease,
+    background 0.16s ease;
+}
+
+.social a svg {
+  width: 19px;
+  height: 19px;
+}
+
+.social a:hover {
+  color: var(--color-primary);
+  background: var(--bg-2);
+}
+
+.social a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .primary {
@@ -187,7 +206,7 @@
   }
 
   .main,
-  .tel {
+  .social {
     display: none;
   }
 

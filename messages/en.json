@@ -240,7 +240,9 @@
       "navAria": "Main navigation",
       "cta": "Contact me",
       "openMenu": "Open menu",
-      "closeMenu": "Close menu"
+      "closeMenu": "Close menu",
+      "githubAria": "GitHub",
+      "linkedinAria": "LinkedIn"
     },
     "footer": {
       "blurb": "Cybersecurity and governance (GRC) practitioner in Wallonia. I build my skills and my tools in the open: what I can do, with evidence, and what I cannot do yet.",

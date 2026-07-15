@@ -6,6 +6,7 @@ import { usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import styles from "./SiteHeader.module.css";
 import { ThemeToggle } from "@/components/ui/ThemeToggle/ThemeToggle";
+import { Icon } from "@/components/ui/Icon/Icon";
 
 const NAV_LINKS = [
   { href: "/services", labelKey: "nav.services" },
@@ -17,10 +18,21 @@ const NAV_LINKS = [
   { href: "/blog", labelKey: "nav.journal" },
 ] as const;
 
+const SOCIAL_LINKS = [
+  { key: "github", href: "https://github.com/warrox1993", icon: "github" as const, ariaKey: "header.githubAria" },
+  {
+    key: "linkedin",
+    href: "https://www.linkedin.com/in/jean-baptistedhondt",
+    icon: "linkedin" as const,
+    ariaKey: "header.linkedinAria",
+  },
+] as const;
+
 /**
- * Sticky top-nav header: brand, nav links, phone, orange CTA + mobile menu.
- * Client component: active link via usePathname, hamburger toggle via state.
- * Ported from the approved corporate mockup.
+ * Sticky top-nav header: brand, nav links, GitHub/LinkedIn icons, orange CTA
+ * + mobile menu. Client component: active link via usePathname, hamburger
+ * toggle via state. Ported from the approved corporate mockup (phone swapped
+ * for profile links: the phone number stays in the footer and contact page).
  */
 export default function SiteHeader() {
   const t = useTranslations("common");
@@ -100,20 +112,19 @@ export default function SiteHeader() {
           <span className={styles.themeDesktop}>
             <ThemeToggle />
           </span>
-          <a className={styles.tel} href="tel:+32475205562">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
-            </svg>
-            0475 20 55 62
-          </a>
+          <span className={styles.social}>
+            {SOCIAL_LINKS.map(({ key, href, icon, ariaKey }) => (
+              <a
+                key={key}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t(ariaKey)}
+              >
+                <Icon name={icon} size={19} />
+              </a>
+            ))}
+          </span>
           <Link className={styles.primary} href="/contact">
             {t("header.cta")}
           </Link>

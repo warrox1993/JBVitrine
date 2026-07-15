@@ -240,7 +240,9 @@
       "navAria": "Navigation principale",
       "cta": "Me contacter",
       "openMenu": "Ouvrir le menu",
-      "closeMenu": "Fermer le menu"
+      "closeMenu": "Fermer le menu",
+      "githubAria": "GitHub",
+      "linkedinAria": "LinkedIn"
     },
     "footer": {
       "blurb": "Praticien en cybersécurité et gouvernance (GRC) en Wallonie. Je construis mes compétences et mes outils au grand jour : ce que je sais faire, avec des preuves, et ce que je ne sais pas encore.",

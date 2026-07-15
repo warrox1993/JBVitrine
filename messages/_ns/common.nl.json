@@ -16,7 +16,9 @@
     "navAria": "Hoofdnavigatie",
     "cta": "Contacteer mij",
     "openMenu": "Menu openen",
-    "closeMenu": "Menu sluiten"
+    "closeMenu": "Menu sluiten",
+    "githubAria": "GitHub",
+    "linkedinAria": "LinkedIn"
   },
   "footer": {
     "blurb": "Praktijkbeoefenaar in cyberbeveiliging en governance (GRC) in Wallonië. Ik bouw mijn vaardigheden en tools in alle openheid op: wat ik kan, met bewijs, en wat ik nog niet kan.",
