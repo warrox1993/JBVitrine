@@ -23,88 +23,32 @@
     "promiseItem3": "Een <b>echte remediëring</b> : we corrigeren wat we vinden.",
     "promiseItem4": "Een <b>verifieerbaar bewijs</b> van de situatie voor en na, zonder jargon."
   },
-  "philosophy": {
-    "eyebrow": "Onze filosofie",
-    "title": "<accent>Bewijs</accent>, geen beloftes",
-    "lead": "Te veel dienstverleners verkopen een gevoel van veiligheid. Ik geef u de middelen om ze zelf te controleren : <b>gemeten diagnose</b>, <b>actiegerichte</b> resultaten, bewezen resultaat.",
-    "quote": "« Geloof me niet op mijn woord : de beginafstand, de toegepaste correcties, het gemeten resultaat. » <b>Mijn regel, bij elke opdracht.</b>",
-    "badCap": "Beloftes",
-    "badItem1": "« U bent beschermd », zonder het te bewijzen.",
-    "badItem2": "Een rapport van 200 pagina's dat in een lade belandt.",
-    "badItem3": "Vastgestelde kwetsbaarheden… maar nooit gecorrigeerd.",
-    "badItem4": "Jargon dat het gebrek aan resultaten verhult.",
-    "goodCap": "Bewijs",
-    "goodItem1": "Een gemeten en toegelichte beginscore.",
-    "goodItem2": "Een geprioriteerd plan, leesbaar voor een niet-technische bestuurder.",
-    "goodItem3": "Correcties die echt worden toegepast en getest.",
-    "goodItem4": "Een vergelijking voor en na die u zelf kunt controleren.",
-    "proofAriaLabel": "Illustratie van een auditrapport : een lijst van vaststellingen die stuk voor stuk worden afgevinkt, gevalideerd met een verificatiezegel.",
-    "proofCaption": "<b>Elke vaststelling, afgevinkt en geverifieerd</b> : het bewijs, niet het verhaal."
-  },
   "method": {
     "eyebrow": "Stap voor stap",
     "title": "Vier <accent>stappen</accent>, van de eerste vaststelling tot duurzame opvolging",
     "lead": "Audit, beveiligingstests, NIS2- / CyFun-conformiteit : telkens dezelfde methode. U weet wat er gebeurt en wat u ontvangt.",
-    "overviewKicker": "Snel overzicht",
-    "photo2Alt": "Beveiligde ontwikkelwerkplek.",
-    "photo2Caption": "Een <b>geprioriteerde roadmap</b>, samen met u opgebouwd.",
-    "deliverHead": "Wat u ontvangt"
+    "overviewKicker": "Snel overzicht"
   },
   "steps": {
     "diagnostic": {
       "kick": "We meten",
-      "title": "Diagnose",
-      "text": "We meten uw werkelijke blootstelling : infrastructuur, netwerken, applicaties. Een becijferde stand van zaken, geen mening.",
-      "d1": "Duidelijk rapport, met beginscore.",
-      "d2": "Mapping van uw activa en risico's.",
-      "d3": "Gap-analyse ten opzichte van het beoogde niveau."
+      "title": "Diagnose"
     },
     "priorisation": {
       "kick": "We beslissen",
-      "title": "Prioritering",
-      "text": "We rangschikken de kwetsbaarheden op risico en op inspanning, een roadmap bedacht voor een <b>kmo-budget</b>. U beslist, met kennis van zaken.",
-      "d1": "Plan geprioriteerd op risico en kost.",
-      "d2": "Becijferde aanbevelingen, zonder overengineering.",
-      "d3": "Realistische planning, samen met u gevalideerd."
+      "title": "Prioritering"
     },
     "remediation": {
       "kick": "We corrigeren",
-      "title": "Remediëring",
-      "text": "Ons verschil : we lijsten de kwetsbaarheden niet op, <b>we corrigeren ze</b>. Hardening, MFA, back-ups, segmentatie : elke actie toegepast en daarna opnieuw getest.",
-      "d1": "Correcties toegepast, niet enkel geadviseerd.",
-      "d2": "Hertest die het effect van elke actie bewijst.",
-      "d3": "Vergelijking voor en na van de score."
+      "title": "Remediëring"
     },
     "supervision": {
       "kick": "We onderhouden",
-      "title": "Monitoring & opvolging",
-      "text": "Beveiliging is geen eenmalig project. We monitoren, we sturen bij, we blijven waakzaam, met één aanspreekpunt, rechtstreeks bereikbaar.",
-      "d1": "Continue monitoring en nuttige waarschuwingen.",
-      "d2": "Opvolgmomenten en dashboard.",
-      "d3": "Rechtstreeks contact met de expert."
+      "title": "Monitoring & opvolging"
     }
   },
   "ai": {
-    "eyebrow": "Versterkt door AI",
-    "title": "De AI werkt met mij. Ze <accentOnDark>beslist niet</accentOnDark> in mijn plaats.",
-    "lead": "De AI helpt mij breder te monitoren en sneller te sorteren. De analyse en de beslissing blijven menselijk, de uwe en de mijne.",
-    "honest": "In alle transparantie : de AI is een <b>ondersteunend hulpmiddel</b>, geen product dat we u verkopen. Ze vervangt nooit de expertise, noch uw validatie.",
-    "legendHuman": "Menselijke expert",
-    "legendVerified": "Geverifieerde vaststelling",
-    "legendAi": "AI-analyse",
     "cards": {
-      "veille": {
-        "title": "Versnelde monitoring",
-        "text": "We anticiperen op de dreigingen die u echt aanbelangen."
-      },
-      "detection": {
-        "title": "Bredere detectie",
-        "text": "Meer geanalyseerde signalen, de anomalie vroeger opgemerkt."
-      },
-      "mailles": {
-        "title": "Niets glipt door de mazen",
-        "text": "Een tweede, geautomatiseerde blik op configuraties en correcties."
-      },
       "decision": {
         "title": "Menselijke beslissing",
         "text": "Elke AI-vaststelling door de expert gevalideerd vóór elke actie."
@@ -113,16 +57,8 @@
   },
   "why": {
     "eyebrow": "Waarom Smidjan",
-    "title": "De striktheid van een kantoor, de nabijheid van een <accent>partner</accent>",
     "lead": "Een structuur op mensenmaat, uit keuze. Minder tussenpersonen, meer verantwoordelijkheid.",
-    "photoAlt": "Close-up van een printplaat, symbool voor een secure-by-design architectuur.",
-    "photoCaption": "Een <b>toegewijde expert</b>, rechtstreeks bereikbaar, nooit een callcenter of een junior.",
     "items": {
-      "local": {
-        "title": "Lokaal & reactief",
-        "text": "Gevestigd in Wallonië, we komen snel ter plaatse. Uw gegevens blijven in België / EU.",
-        "pin": "We nemen de telefoon op"
-      },
       "acces": {
         "title": "Rechtstreekse toegang tot de expert",
         "text": "U spreekt met de persoon die uw dossier behandelt. Nooit een callcenter, nooit een junior.",
@@ -132,34 +68,12 @@
         "title": "Kmo-pragmatisme",
         "text": "We corrigeren wat telt voor uw budget. Elke euro richt zich op een reëel risico, toegelicht.",
         "pin": "Afgestemd op het kmo-budget"
-      },
-      "partenaire": {
-        "title": "Eén enkele partner",
-        "text": "Build, secure, comply : alles op dezelfde plek. Gedaan met dienstverleners die naar elkaar wijzen.",
-        "pin": "Eén aanspreekpunt, van begin tot eind"
       }
     }
   },
   "refs": {
-    "eyebrow": "Onze referentiekaders",
-    "title": "Een methodologie afgestemd op de <accent>referentie</accent>kaders",
-    "lead": "Onze audits en conformiteitstrajecten steunen op erkende referentiekaders, voor vergelijkbare en verdedigbare resultaten.",
     "honestyTitle": "In alle transparantie",
-    "honestyText": "Deze referentiekaders zijn mijn <b>werkmethode</b>. De officiële CyFun-<b>certificering</b> wordt afgeleverd door BELAC-geaccrediteerde instellingen, niet door mij. Mijn rol : auditeren, corrigeren, u klaarstomen voor de indiening.",
-    "items": {
-      "owasp": {
-        "title": "Tests & applicatiebeveiliging",
-        "text": "Webaudits en beveiligingstests volgens de OWASP-methodologie, de criteria van de sector."
-      },
-      "iso": {
-        "title": "Beveiligingsbeheer",
-        "text": "Governance en risicobeheer afgestemd op ISO/IEC 27001, een coherente, gedocumenteerde houding."
-      },
-      "cyfun": {
-        "title": "Belgische & Europese conformiteit",
-        "text": "Conformiteitstrajecten afgestemd op de CyberFundamentals van het CCB en de NIS2-richtlijn, het officiële Belgische referentiekader."
-      }
-    }
+    "honestyText": "Deze referentiekaders zijn mijn <b>werkmethode</b>. De officiële CyFun-<b>certificering</b> wordt afgeleverd door BELAC-geaccrediteerde instellingen, niet door mij. Mijn rol : auditeren, corrigeren, u klaarstomen voor de indiening."
   },
   "cta": {
     "title": "Laten we samen de balans opmaken, vrijblijvend",
@@ -169,11 +83,5 @@
     "reassurance1": "Antwoord binnen 24 u",
     "reassurance2": "Toegewijde expert, geen onderaanneming",
     "reassurance3": "Gegevens in België"
-  },
-  "roadmap": {
-    "diagnostic": "Diagnose",
-    "priorisation": "Prioritering",
-    "remediation": "Remediëring",
-    "supervision": "Monitoring"
   }
 }

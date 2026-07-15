@@ -35,122 +35,20 @@
   "clair": {
     "eyebrow": "NIS2, in plain terms",
     "title": "What the directive changes for you, <accent>without jargon</accent>",
-    "lead": "NIS2 raises the level of cybersecurity required of thousands of organisations. Three questions to find out where you stand.",
-    "photoAlt": "Secure development workstation.",
-    "photoCap": "NIS2 compliance engages the <b>responsibility of the governing bodies</b>, a matter of governance, not only of IT.",
-    "card1": {
-      "title": "Who is concerned?",
-      "intro": "Two categories, depending on sector and size:",
-      "li1": "<b>Essential</b> entities: energy, transport, healthcare, finance, digital infrastructure…",
-      "li2": "<b>Important</b> entities: manufacturing, food industry, digital services, chemicals…",
-      "li3": "By extension, <b>their subcontractors and suppliers</b>.",
-      "pill": "In doubt? Our diagnostic clarifies it"
-    },
-    "card2": {
-      "title": "What is the risk?",
-      "intro": "Legal and financial: not only technical.",
-      "li1": "<b>Significant fines</b>, several million euros for essential entities.",
-      "li2": "<b>Management liability</b> engaged.",
-      "li3": "<b>Notification</b> of incidents to the CCB within short deadlines.",
-      "pill": "A management issue, not only an IT one"
-    },
-    "card3": {
-      "title": "Why now?",
-      "intro": "Already transposed into Belgian law. Every month counts.",
-      "li1": "<b>In force since 18 October 2024.</b>",
-      "li2": "Remediation takes <b>months, not days</b>.",
-      "li3": "Start early: spread out the effort and the budget.",
-      "pill": "Every month gained counts"
-    }
+    "lead": "NIS2 raises the level of cybersecurity required of thousands of organisations. Three questions to find out where you stand."
   },
   "cyfun": {
-    "eyebrow": "The official framework",
-    "title": "CyFun: the <accent>Belgian answer</accent> to NIS2, published by the CCB",
-    "lead": "The <b>CyberFundamentals Framework (CyFun)</b>, from the <b>Centre for Cybersecurity Belgium (CCB)</b>, is the recognised way to demonstrate your NIS2 compliance.",
-    "note": "Based on international standards, translated into <b>progressive measures</b> adapted to your size and your risk.",
-    "photoAlt": "Server racks in a data center, illustrating infrastructure hardening.",
-    "photoCap": "The CyFun self-assessment: a <b>foundation of measures</b> verified one by one, not a statement of intent.",
-    "mapHead": "CyFun, aligned with the standards",
-    "map": {
-      "row1a": "CyberFundamentals (CCB)",
-      "row1b": "Meets the NIS2 requirements",
-      "row2a": "Structure of the functions",
-      "row2b": "Mapped onto the NIST CSF",
-      "row3a": "Controls & best practices",
-      "row3b": "Aligned with ISO/IEC 27001",
-      "row4a": "Three assurance levels",
-      "row4b": "Basic · Important · Essential"
-    },
-    "ringAria": "Diagram: the six functions of CyberFundamentals arranged in a continuous cycle (Govern, Identify, Protect, Detect, Respond, Recover), aligned with the NIST CSF.",
-    "ringCap": "A <b>continuous cycle</b>: each function feeds the next, from governance to recovery.",
-    "functions": {
-      "govern": "Governance, roles and cyber risk management.",
-      "identify": "Inventory of assets and of the risks to protect.",
-      "protect": "Protection measures: MFA, hardening, access.",
-      "detect": "Monitoring and detection of anomalies.",
-      "respond": "Incident response and notification.",
-      "recover": "Business recovery and return to normal."
-    },
-    "fnNote": "<b>Govern, Identify, Protect, Detect, Respond, Recover</b>: the entire cyber risk life cycle."
+    "lead": "The <b>CyberFundamentals Framework (CyFun)</b>, from the <b>Centre for Cybersecurity Belgium (CCB)</b>, is the recognised way to demonstrate your NIS2 compliance."
   },
   "niveaux": {
     "eyebrow": "The 3 assurance levels",
     "title": "Basic, Important, Essential: choosing the <accent>right level</accent>",
-    "lead": "Three progressive levels. The right choice depends on your NIS2 category and your exposure. We help you decide.",
-    "statBigLbl": "CyFun levels",
-    "statTxt": "<b>Basic already covers the bulk of common attacks.</b> Important adds detection, response and governance. Essential aims for near-complete protection.",
-    "levelsAria": "Step diagram: coverage against attacks grows with the level, from Basic to Important then Essential.",
-    "levelsCap": "A progressive scale: the higher the targeted level, the more the <b>coverage</b> and the <b>requirement</b> increase.",
-    "smallNote": "Before Basic, the CCB offers a free Small baseline (7 measures): the starting point to get going without a budget."
-  },
-  "accompagnement": {
-    "eyebrow": "Our support",
-    "title": "We don't just audit: <accent>we fix</accent> and we get you ready",
-    "lead": "No report we leave you to manage alone. We fix, we prepare, we get you ready.",
-    "photoAlt": "Close-up of a printed circuit board, illustrating a secure-by-design architecture.",
-    "photoCap": "Hands-on <b>field support</b>: I work with your teams, not only on a report.",
-    "honesty": {
-      "title": "In full transparency: who does what",
-      "p1": "Smidjan <b>is not a certification body</b>, nor BELAC-accredited. The <b>official CyFun label</b> is issued by <b>BELAC-accredited bodies</b> (Brand Compliance, Trust CHECK, Normec CertUp).",
-      "p2": "Our role: <b>audit, remediate, prepare</b> your file up to submission: get you <b>ready to obtain it</b>."
-    },
-    "roleSmidjan": {
-      "title": "Smidjan's role",
-      "li1": "Audit your posture & the gap to the targeted level",
-      "li2": "Concretely <b>remediate</b> the identified gaps",
-      "li3": "Prepare the file & the submission",
-      "li4": "Maintain your compliance over time",
-      "foot": "Our mission: get you <b>ready and compliant</b>."
-    },
-    "roleBelac": {
-      "title": "The role of the BELAC-accredited body",
-      "li1": "Independently verify your compliance",
-      "li2": "<b>Issue</b> the official CyFun certification / label",
-      "li3": "Attest the level reached (Important / Essential)",
-      "foot": "E.g. <b>Brand Compliance, Trust CHECK, Normec CertUp</b>, independent of me."
-    },
-    "roadmapAria": "Roadmap with four milestones: Scoping, then Remediation, then Verification support, up to Continuous follow-up.",
-    "process": {
-      "kicker": "Our method in 4 steps",
-      "step1Title": "Scoping & self-assessment",
-      "step1Desc": "Scope, critical assets, targeted CyFun level, confirmed NIS2 category, together with your teams.",
-      "step2Title": "Gap analysis & remediation",
-      "step2Desc": "Gap measured, shortcomings fixed: plan prioritised by risk and by effort.",
-      "step3Title": "Support for the CCB verification",
-      "step3Desc": "Evidence file, documentation, liaison with the accredited body up to submission.",
-      "step4Title": "Continuous follow-up",
-      "step4Desc": "Periodic review and re-assessment to maintain your compliance over the long term."
-    }
+    "lead": "Three progressive levels. The right choice depends on your NIS2 category and your exposure. We help you decide."
   },
   "audit": {
     "eyebrow": "Our proprietary tool",
     "title": "Smidjan runs the CyFun audit with a <accent>proprietary tool, secure by design</accent>",
     "lead": "Our audit engine, aligned with CyFun (CCB) and NIST CSF 2.0, assesses your compliance quickly and on evidence. Then we fix: remediation and hardening.",
-    "panelTitle": "Secure by design",
-    "panelText": "A rigorous and traceable audit, designed never to put your systems at risk.",
-    "chip1": "3 CyFun levels",
-    "chip2": "Aligned with NIST CSF 2.0",
-    "chip3": "PDF report",
     "trust": {
       "readOnlyTitle": "Read-only",
       "readOnlyText": "The audit observes, it never modifies your systems.",
@@ -168,106 +66,12 @@
     "honesty": {
       "title": "An assisted self-assessment, not a certification",
       "p": "Our tool facilitates the <b>CyFun self-assessment</b> and prepares your file. It does not replace the <b>official verification</b>, reserved for BELAC-accredited bodies."
-    },
-    "process": {
-      "kicker": "From the audit to the hardening",
-      "step1Title": "Tool-assisted audit",
-      "step1Desc": "Our tool collects evidence and a score per measure, on the sole scope you entrust to me.",
-      "step2Title": "Clear report",
-      "step2Desc": "Summary, identified gaps and priorities: a readable document, not a raw export.",
-      "step3Title": "Prioritised remediation plan",
-      "step3Desc": "Actions are ranked by risk and by effort, for a realistic rollout.",
-      "step4Title": "Hardening & follow-up",
-      "step4Desc": "I implement the validated fixes, then ensure follow-up over the long term."
-    },
-    "ctaButton": "Request an audit",
-    "ctaNote": "Assisted self-assessment, without risk for your systems."
+    }
   },
   "financement": {
     "eyebrow": "Financing your compliance",
     "title": "Compliance costs less than people think: <accent>a large part is subsidised</accent>",
-    "lead": "The Walloon cybersecurity voucher finances a large part of your audit and your remediation. Here is how to make use of it.",
-    "cards": {
-      "card1Lbl": "Coverage",
-      "card1Desc": "of the provider's fees for the audit, the coaching and the labelling.",
-      "card2Lbl": "Cap over 3 years",
-      "card2Desc": "per beneficiary, within the de minimis ceiling of 200,000 € over 3 years (max 100,000 €/year).",
-      "card3Num": "Free",
-      "card3Lbl": "CCB CyberFundamentals tools",
-      "card3Desc": "the « Small » level (7 measures) is free; the CCB recommends at least the Basic level."
-    },
-    "details": {
-      "title": "The cybersecurity voucher (chèques-entreprises.be)",
-      "lead": "Run by the Walloon Region, it covers the fees of a <b>certified provider</b> for three services: <b>audit</b>, <b>coaching</b> and <b>labelling</b> « Keep It Secure ».",
-      "note1": "Reserved for <b>SMEs</b> (< 250 employees, < 50 M€ turnover). Application <b>100 % online</b>, eligibility check within <b>~5 working days</b> (the final decision takes longer).",
-      "note2": "In addition: the « digital maturity » voucher (~50 %). At federal level, the <b>CCB</b> offers <b>CyberFundamentals</b> free of charge: « Small » level (7 measures) free, <b>Basic</b> recommended at least."
-    },
-    "map": {
-      "head": "Cybersecurity voucher, in brief",
-      "row1a": "Beneficiaries",
-      "row1b": "SMEs (< 250 employees, < 50 M€ turnover)",
-      "row2a": "Covers",
-      "row2b": "Audit, coaching, labelling",
-      "row3a": "Coverage",
-      "row3b": "75 % of the fees",
-      "row4a": "Cap",
-      "row4b": "50,000 € excl. VAT over 3 years (de minimis ceiling 200,000 €)",
-      "row5a": "Application",
-      "row5b": "100 % online, via a certified provider",
-      "row6a": "Decision",
-      "row6b": "Eligibility check within ~5 working days"
-    },
-    "process": {
-      "kicker": "How to make use of it, in 3 steps",
-      "step1Title": "Register on the platform",
-      "step1Desc": "Company file on cheques-entreprises.be, SME eligibility checked (headcount, turnover, remaining portfolio).",
-      "step2Title": "Choose the eligible service",
-      "step2Desc": "Audit, coaching or labelling « Keep It Secure », with a certified provider.",
-      "step3Title": "Carry out the audit or the remediation",
-      "step3Desc": "The provider carries out the service; the voucher covers up to 75 % of the fees, within the cap."
-    },
-    "honesty": {
-      "title": "Our role: support you, not deliver the aid",
-      "p1": "Smidjan is <b>not necessarily registered</b> as a certified provider on chèques-entreprises.be. Our role: <b>identify the aids</b>, <b>frame the eligible service</b> and <b>build the file</b> with you.",
-      "p2": "Eligibility and approved provider: <b>to be verified</b> on the official platform <link>cheques-entreprises.be</link>."
-    },
-    "ctaButton": "Let's talk about your file",
-    "ctaNote": "Free diagnostic, no commitment."
-  },
-  "faq": {
-    "eyebrow": "Frequently asked questions",
-    "title": "NIS2 & CyFun: your questions, our answers",
-    "lead": "Your most frequent questions. Another one in mind? Ask it during the free diagnostic.",
-    "q1": {
-      "question": "Am I concerned by NIS2?",
-      "a1": "Depending on your sector and your size. NIS2 targets <b>essential</b> entities (energy, healthcare, transport, finance…) and <b>important</b> ones (manufacturing, food industry, digital services…). Many SMEs are concerned <b>indirectly</b>, as suppliers or subcontractors.",
-      "a2": "In doubt? Our <b>free diagnostic</b> clarifies your situation in a single conversation."
-    },
-    "q2": {
-      "question": "What is the difference between CyFun and ISO/IEC 27001?",
-      "a1": "<b>ISO/IEC 27001</b> is the international reference standard for information security. <b>CyFun</b> is the CCB's Belgian framework, designed to meet NIS2 and <b>aligned with ISO 27001</b> and the NIST CSF.",
-      "a2": "In practice: CyFun is a more <b>accessible</b> entry point for an SME, with its three progressive levels (Basic → Essential), and a first step towards ISO 27001 if needed."
-    },
-    "q3": {
-      "question": "Does Smidjan deliver the CyFun certification?",
-      "a1": "<b>No.</b> Smidjan is not a certification body, nor BELAC-accredited. The <b>official CyFun certification</b> is issued by <b>BELAC-accredited bodies</b> (Brand Compliance, Trust CHECK, Normec CertUp), independent of me.",
-      "a2": "My role: <b>audit, remediate, prepare</b> your file up to submission. I get you <b>ready</b>: the accredited body validates your level."
-    },
-    "q4": {
-      "question": "How long does it take to become compliant?",
-      "a1": "It depends on the targeted level and your starting maturity. As an indication: <b>1 to 3 months</b> for Basic, <b>3 to 6 months</b> for Important, <b>6 to 12 months</b> for Essential.",
-      "a2": "NIS2 is <b>already in force</b>: better to start now. The earlier you begin, the more you spread out the effort and the budget, and reduce your exposure."
-    },
-    "q5": {
-      "question": "What happens if I do nothing?",
-      "a1": "<b>Significant fines</b>, <b>management liability</b> engaged. And above all: an incident (ransomware, data breach) costs far more than early compliance.",
-      "a2": "The CyFun approach reduces a <b>real risk</b>, not just a box to tick."
-    },
-    "q6": {
-      "question": "Which CyFun level should I choose for my SME?",
-      "a1": "For most SMEs, <b>Important</b> is the best balance, the most common. <b>Basic</b> already covers the essentials. <b>Essential</b> targets « essential » NIS2 entities and strong security requirements.",
-      "a2": "The right level depends on your NIS2 category and your exposure. We recommend it to you from the <b>scoping</b> stage."
-    }
+    "lead": "The Walloon cybersecurity voucher finances a large part of your audit and your remediation. Here is how to make use of it."
   },
   "finalCta": {
     "title": "In 30 minutes, know exactly where you stand.",
@@ -277,25 +81,5 @@
     "reassure1": "Reply within 24 h",
     "reassure2": "Dedicated expert, no subcontracting",
     "reassure3": "Data in Belgium"
-  },
-  "diagram": {
-    "ringHubSub": "aligned with NIST CSF",
-    "coverageAria": "Gauge showing that the Basic level already covers the bulk of the most common attacks.",
-    "coverageCovered": "COVERED",
-    "levelsQuasiComplete": "Near-complete protection",
-    "levelsRecommended": "Recommended SME",
-    "levelsQuasiShort": "near-complete",
-    "roadmap1Title": "Scoping",
-    "roadmap1Sub": "& self-assessment",
-    "roadmap2Title": "Remediation",
-    "roadmap2Sub": "gap analysis & fixes",
-    "roadmap3Title": "Verification",
-    "roadmap3Sub": "submission support",
-    "roadmap4Title": "Continuous follow-up",
-    "roadmap4Sub": "ready & maintained",
-    "coverageWord": "Core",
-    "covBasic": "Core",
-    "covImportant": "Reinforced",
-    "covEssential": "Maximal"
   }
 }

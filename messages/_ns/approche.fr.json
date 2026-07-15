@@ -23,88 +23,32 @@
     "promiseItem3": "Une <b>remédiation réelle</b>, on corrige ce qu'on trouve.",
     "promiseItem4": "Une <b>preuve vérifiable</b> du avant / après, sans jargon."
   },
-  "philosophy": {
-    "eyebrow": "Notre philosophie",
-    "title": "Des <accent>preuves</accent>, pas des promesses",
-    "lead": "Trop de prestataires vendent un sentiment de sécurité. Moi, je vous donne de quoi la vérifier vous-même : <b>diagnostic mesuré</b>, livrables <b>actionnables</b>, résultat prouvé.",
-    "quote": "« Ne me croyez pas sur parole : l'écart de départ, les correctifs appliqués, le résultat mesuré. » <b>Ma règle, à chaque mission.</b>",
-    "badCap": "Des promesses",
-    "badItem1": "« Vous êtes protégés », sans le prouver.",
-    "badItem2": "Un rapport de 200 pages qui finit dans un tiroir.",
-    "badItem3": "Des failles constatées… mais jamais corrigées.",
-    "badItem4": "Du jargon qui masque le manque de résultats.",
-    "goodCap": "Des preuves",
-    "goodItem1": "Un score de départ mesuré et expliqué.",
-    "goodItem2": "Un plan priorisé, lisible par un dirigeant non technique.",
-    "goodItem3": "Des correctifs réellement appliqués et testés.",
-    "goodItem4": "Une comparaison avant / après que vous pouvez vérifier.",
-    "proofAriaLabel": "Illustration d'un rapport d'audit : une liste de constats cochés un par un, validée par un sceau de vérification.",
-    "proofCaption": "<b>Chaque constat, coché et vérifié</b> : la preuve, pas le discours."
-  },
   "method": {
     "eyebrow": "Étape par étape",
     "title": "Quatre <accent>étapes</accent>, du premier constat au suivi durable",
     "lead": "Audit, tests de sécurité, conformité NIS2 / CyFun : même méthode à chaque fois. Vous savez ce qui se passe et ce que vous recevez.",
-    "overviewKicker": "Aperçu rapide",
-    "photo2Alt": "Poste de travail de développement sécurisé.",
-    "photo2Caption": "Une <b>feuille de route priorisée</b>, construite avec vous.",
-    "deliverHead": "Ce que vous recevez"
+    "overviewKicker": "Aperçu rapide"
   },
   "steps": {
     "diagnostic": {
       "kick": "On mesure",
-      "title": "Diagnostic",
-      "text": "On mesure votre exposition réelle : infrastructure, réseaux, applications. Un état des lieux chiffré, pas une opinion.",
-      "d1": "Rapport clair, avec score de départ.",
-      "d2": "Cartographie de vos actifs et risques.",
-      "d3": "Analyse d'écart avec le niveau visé."
+      "title": "Diagnostic"
     },
     "priorisation": {
       "kick": "On décide",
-      "title": "Priorisation",
-      "text": "On classe les failles par risque et par effort, une feuille de route pensée pour un <b>budget de PME</b>. Vous décidez, en connaissance de cause.",
-      "d1": "Plan priorisé par risque et coût.",
-      "d2": "Recommandations chiffrées, sans sur-ingénierie.",
-      "d3": "Calendrier réaliste, validé avec vous."
+      "title": "Priorisation"
     },
     "remediation": {
       "kick": "On corrige",
-      "title": "Remédiation",
-      "text": "Notre différence : on ne liste pas les failles, <b>on les corrige</b>. Durcissement, MFA, sauvegardes, segmentation : chaque action appliquée, puis re-testée.",
-      "d1": "Correctifs appliqués, pas seulement conseillés.",
-      "d2": "Re-test qui prouve l'effet de chaque action.",
-      "d3": "Comparatif avant / après du score."
+      "title": "Remédiation"
     },
     "supervision": {
       "kick": "On maintient",
-      "title": "Supervision & suivi",
-      "text": "La sécurité n'est pas un projet ponctuel. On surveille, on ajuste, on reste en veille, avec un interlocuteur unique, joignable directement.",
-      "d1": "Supervision continue et alertes utiles.",
-      "d2": "Points de suivi et tableau de bord.",
-      "d3": "Contact direct avec l'expert."
+      "title": "Supervision & suivi"
     }
   },
   "ai": {
-    "eyebrow": "Augmentés par l'IA",
-    "title": "L'IA travaille avec moi. Elle ne <accentOnDark>décide pas</accentOnDark> à ma place.",
-    "lead": "L'IA m'aide à surveiller plus large et trier plus vite. L'analyse et la décision restent humaines, les vôtres et les miennes.",
-    "honest": "En toute transparence : l'IA est un <b>outil d'appui</b>, pas un produit qu'on vous vend. Elle ne remplace jamais l'expertise ni votre validation.",
-    "legendHuman": "Expert humain",
-    "legendVerified": "Constat vérifié",
-    "legendAi": "Analyse IA",
     "cards": {
-      "veille": {
-        "title": "Veille accélérée",
-        "text": "On anticipe les menaces qui vous concernent vraiment."
-      },
-      "detection": {
-        "title": "Détection élargie",
-        "text": "Plus de signaux analysés, l'anomalie repérée plus tôt."
-      },
-      "mailles": {
-        "title": "Rien ne passe entre les mailles",
-        "text": "Un second regard automatisé sur configs et correctifs."
-      },
       "decision": {
         "title": "Décision humaine",
         "text": "Chaque constat IA validé par l'expert avant toute action."
@@ -113,16 +57,8 @@
   },
   "why": {
     "eyebrow": "Pourquoi Smidjan",
-    "title": "La rigueur d'un cabinet, la proximité d'un <accent>partenaire</accent>",
     "lead": "Structure à taille humaine, par choix. Moins d'intermédiaires, plus de responsabilité.",
-    "photoAlt": "Gros plan d'un circuit imprimé, illustrant une architecture pensée secure by design.",
-    "photoCaption": "Un <b>expert dédié</b>, joignable directement, jamais un centre d'appel ni un junior.",
     "items": {
-      "local": {
-        "title": "Local & réactif",
-        "text": "Basés en Wallonie, on intervient vite. Vos données restent en Belgique / UE.",
-        "pin": "On répond au téléphone"
-      },
       "acces": {
         "title": "Accès direct à l'expert",
         "text": "Vous parlez à la personne qui traite votre dossier. Jamais un centre d'appel, jamais un junior.",
@@ -132,34 +68,12 @@
         "title": "Pragmatisme PME",
         "text": "On corrige ce qui compte pour votre budget. Chaque euro cible un risque réel, expliqué.",
         "pin": "Adapté au budget PME"
-      },
-      "partenaire": {
-        "title": "Un seul partenaire",
-        "text": "Build, secure, comply : tout au même endroit. Fini les prestataires qui se renvoient la balle.",
-        "pin": "Un interlocuteur, bout en bout"
       }
     }
   },
   "refs": {
-    "eyebrow": "Nos référentiels",
-    "title": "Une méthodologie alignée sur les cadres de <accent>référence</accent>",
-    "lead": "Nos audits et mises en conformité s'appuient sur des référentiels reconnus, pour des résultats comparables et défendables.",
     "honestyTitle": "En toute transparence",
-    "honestyText": "Ces référentiels sont ma <b>méthode de travail</b>. La <b>certification</b> officielle CyFun est délivrée par des organismes accrédités BELAC, pas par moi. Mon rôle : auditer, corriger, vous amener prêts à la soumission.",
-    "items": {
-      "owasp": {
-        "title": "Tests & sécurité applicative",
-        "text": "Audits web et tests de sécurité selon la méthodologie OWASP, les critères de l'industrie."
-      },
-      "iso": {
-        "title": "Gestion de la sécurité",
-        "text": "Gouvernance et gestion des risques alignées ISO/IEC 27001, une posture cohérente, documentée."
-      },
-      "cyfun": {
-        "title": "Conformité belge & européenne",
-        "text": "Mises en conformité alignées sur le CyberFundamentals du CCB et la directive NIS2, le référentiel officiel belge."
-      }
-    }
+    "honestyText": "Ces référentiels sont ma <b>méthode de travail</b>. La <b>certification</b> officielle CyFun est délivrée par des organismes accrédités BELAC, pas par moi. Mon rôle : auditer, corriger, vous amener prêts à la soumission."
   },
   "cta": {
     "title": "Faisons le point, sans engagement",
@@ -169,11 +83,5 @@
     "reassurance1": "Réponse sous 24 h",
     "reassurance2": "Expert dédié, pas de sous-traitance",
     "reassurance3": "Données en Belgique"
-  },
-  "roadmap": {
-    "diagnostic": "Diagnostic",
-    "priorisation": "Priorisation",
-    "remediation": "Remédiation",
-    "supervision": "Supervision"
   }
 }

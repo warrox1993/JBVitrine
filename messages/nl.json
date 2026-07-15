@@ -134,88 +134,32 @@
       "promiseItem3": "Een <b>echte remediëring</b> : we corrigeren wat we vinden.",
       "promiseItem4": "Een <b>verifieerbaar bewijs</b> van de situatie voor en na, zonder jargon."
     },
-    "philosophy": {
-      "eyebrow": "Onze filosofie",
-      "title": "<accent>Bewijs</accent>, geen beloftes",
-      "lead": "Te veel dienstverleners verkopen een gevoel van veiligheid. Ik geef u de middelen om ze zelf te controleren : <b>gemeten diagnose</b>, <b>actiegerichte</b> resultaten, bewezen resultaat.",
-      "quote": "« Geloof me niet op mijn woord : de beginafstand, de toegepaste correcties, het gemeten resultaat. » <b>Mijn regel, bij elke opdracht.</b>",
-      "badCap": "Beloftes",
-      "badItem1": "« U bent beschermd », zonder het te bewijzen.",
-      "badItem2": "Een rapport van 200 pagina's dat in een lade belandt.",
-      "badItem3": "Vastgestelde kwetsbaarheden… maar nooit gecorrigeerd.",
-      "badItem4": "Jargon dat het gebrek aan resultaten verhult.",
-      "goodCap": "Bewijs",
-      "goodItem1": "Een gemeten en toegelichte beginscore.",
-      "goodItem2": "Een geprioriteerd plan, leesbaar voor een niet-technische bestuurder.",
-      "goodItem3": "Correcties die echt worden toegepast en getest.",
-      "goodItem4": "Een vergelijking voor en na die u zelf kunt controleren.",
-      "proofAriaLabel": "Illustratie van een auditrapport : een lijst van vaststellingen die stuk voor stuk worden afgevinkt, gevalideerd met een verificatiezegel.",
-      "proofCaption": "<b>Elke vaststelling, afgevinkt en geverifieerd</b> : het bewijs, niet het verhaal."
-    },
     "method": {
       "eyebrow": "Stap voor stap",
       "title": "Vier <accent>stappen</accent>, van de eerste vaststelling tot duurzame opvolging",
       "lead": "Audit, beveiligingstests, NIS2- / CyFun-conformiteit : telkens dezelfde methode. U weet wat er gebeurt en wat u ontvangt.",
-      "overviewKicker": "Snel overzicht",
-      "photo2Alt": "Beveiligde ontwikkelwerkplek.",
-      "photo2Caption": "Een <b>geprioriteerde roadmap</b>, samen met u opgebouwd.",
-      "deliverHead": "Wat u ontvangt"
+      "overviewKicker": "Snel overzicht"
     },
     "steps": {
       "diagnostic": {
         "kick": "We meten",
-        "title": "Diagnose",
-        "text": "We meten uw werkelijke blootstelling : infrastructuur, netwerken, applicaties. Een becijferde stand van zaken, geen mening.",
-        "d1": "Duidelijk rapport, met beginscore.",
-        "d2": "Mapping van uw activa en risico's.",
-        "d3": "Gap-analyse ten opzichte van het beoogde niveau."
+        "title": "Diagnose"
       },
       "priorisation": {
         "kick": "We beslissen",
-        "title": "Prioritering",
-        "text": "We rangschikken de kwetsbaarheden op risico en op inspanning, een roadmap bedacht voor een <b>kmo-budget</b>. U beslist, met kennis van zaken.",
-        "d1": "Plan geprioriteerd op risico en kost.",
-        "d2": "Becijferde aanbevelingen, zonder overengineering.",
-        "d3": "Realistische planning, samen met u gevalideerd."
+        "title": "Prioritering"
       },
       "remediation": {
         "kick": "We corrigeren",
-        "title": "Remediëring",
-        "text": "Ons verschil : we lijsten de kwetsbaarheden niet op, <b>we corrigeren ze</b>. Hardening, MFA, back-ups, segmentatie : elke actie toegepast en daarna opnieuw getest.",
-        "d1": "Correcties toegepast, niet enkel geadviseerd.",
-        "d2": "Hertest die het effect van elke actie bewijst.",
-        "d3": "Vergelijking voor en na van de score."
+        "title": "Remediëring"
       },
       "supervision": {
         "kick": "We onderhouden",
-        "title": "Monitoring & opvolging",
-        "text": "Beveiliging is geen eenmalig project. We monitoren, we sturen bij, we blijven waakzaam, met één aanspreekpunt, rechtstreeks bereikbaar.",
-        "d1": "Continue monitoring en nuttige waarschuwingen.",
-        "d2": "Opvolgmomenten en dashboard.",
-        "d3": "Rechtstreeks contact met de expert."
+        "title": "Monitoring & opvolging"
       }
     },
     "ai": {
-      "eyebrow": "Versterkt door AI",
-      "title": "De AI werkt met mij. Ze <accentOnDark>beslist niet</accentOnDark> in mijn plaats.",
-      "lead": "De AI helpt mij breder te monitoren en sneller te sorteren. De analyse en de beslissing blijven menselijk, de uwe en de mijne.",
-      "honest": "In alle transparantie : de AI is een <b>ondersteunend hulpmiddel</b>, geen product dat we u verkopen. Ze vervangt nooit de expertise, noch uw validatie.",
-      "legendHuman": "Menselijke expert",
-      "legendVerified": "Geverifieerde vaststelling",
-      "legendAi": "AI-analyse",
       "cards": {
-        "veille": {
-          "title": "Versnelde monitoring",
-          "text": "We anticiperen op de dreigingen die u echt aanbelangen."
-        },
-        "detection": {
-          "title": "Bredere detectie",
-          "text": "Meer geanalyseerde signalen, de anomalie vroeger opgemerkt."
-        },
-        "mailles": {
-          "title": "Niets glipt door de mazen",
-          "text": "Een tweede, geautomatiseerde blik op configuraties en correcties."
-        },
         "decision": {
           "title": "Menselijke beslissing",
           "text": "Elke AI-vaststelling door de expert gevalideerd vóór elke actie."
@@ -224,16 +168,8 @@
     },
     "why": {
       "eyebrow": "Waarom Smidjan",
-      "title": "De striktheid van een kantoor, de nabijheid van een <accent>partner</accent>",
       "lead": "Een structuur op mensenmaat, uit keuze. Minder tussenpersonen, meer verantwoordelijkheid.",
-      "photoAlt": "Close-up van een printplaat, symbool voor een secure-by-design architectuur.",
-      "photoCaption": "Een <b>toegewijde expert</b>, rechtstreeks bereikbaar, nooit een callcenter of een junior.",
       "items": {
-        "local": {
-          "title": "Lokaal & reactief",
-          "text": "Gevestigd in Wallonië, we komen snel ter plaatse. Uw gegevens blijven in België / EU.",
-          "pin": "We nemen de telefoon op"
-        },
         "acces": {
           "title": "Rechtstreekse toegang tot de expert",
           "text": "U spreekt met de persoon die uw dossier behandelt. Nooit een callcenter, nooit een junior.",
@@ -243,34 +179,12 @@
           "title": "Kmo-pragmatisme",
           "text": "We corrigeren wat telt voor uw budget. Elke euro richt zich op een reëel risico, toegelicht.",
           "pin": "Afgestemd op het kmo-budget"
-        },
-        "partenaire": {
-          "title": "Eén enkele partner",
-          "text": "Build, secure, comply : alles op dezelfde plek. Gedaan met dienstverleners die naar elkaar wijzen.",
-          "pin": "Eén aanspreekpunt, van begin tot eind"
         }
       }
     },
     "refs": {
-      "eyebrow": "Onze referentiekaders",
-      "title": "Een methodologie afgestemd op de <accent>referentie</accent>kaders",
-      "lead": "Onze audits en conformiteitstrajecten steunen op erkende referentiekaders, voor vergelijkbare en verdedigbare resultaten.",
       "honestyTitle": "In alle transparantie",
-      "honestyText": "Deze referentiekaders zijn mijn <b>werkmethode</b>. De officiële CyFun-<b>certificering</b> wordt afgeleverd door BELAC-geaccrediteerde instellingen, niet door mij. Mijn rol : auditeren, corrigeren, u klaarstomen voor de indiening.",
-      "items": {
-        "owasp": {
-          "title": "Tests & applicatiebeveiliging",
-          "text": "Webaudits en beveiligingstests volgens de OWASP-methodologie, de criteria van de sector."
-        },
-        "iso": {
-          "title": "Beveiligingsbeheer",
-          "text": "Governance en risicobeheer afgestemd op ISO/IEC 27001, een coherente, gedocumenteerde houding."
-        },
-        "cyfun": {
-          "title": "Belgische & Europese conformiteit",
-          "text": "Conformiteitstrajecten afgestemd op de CyberFundamentals van het CCB en de NIS2-richtlijn, het officiële Belgische referentiekader."
-        }
-      }
+      "honestyText": "Deze referentiekaders zijn mijn <b>werkmethode</b>. De officiële CyFun-<b>certificering</b> wordt afgeleverd door BELAC-geaccrediteerde instellingen, niet door mij. Mijn rol : auditeren, corrigeren, u klaarstomen voor de indiening."
     },
     "cta": {
       "title": "Laten we samen de balans opmaken, vrijblijvend",
@@ -280,12 +194,6 @@
       "reassurance1": "Antwoord binnen 24 u",
       "reassurance2": "Toegewijde expert, geen onderaanneming",
       "reassurance3": "Gegevens in België"
-    },
-    "roadmap": {
-      "diagnostic": "Diagnose",
-      "priorisation": "Prioritering",
-      "remediation": "Remediëring",
-      "supervision": "Monitoring"
     }
   },
   "blog": {
@@ -478,122 +386,20 @@
     "clair": {
       "eyebrow": "NIS2, helder uitgelegd",
       "title": "Wat de richtlijn voor u verandert, <accent>zonder jargon</accent>",
-      "lead": "NIS2 verhoogt het vereiste cyberbeveiligingsniveau van duizenden organisaties. Drie vragen om te weten waar u staat.",
-      "photoAlt": "Beveiligde ontwikkelwerkplek.",
-      "photoCap": "NIS2-conformiteit betrekt de <b>verantwoordelijkheid van de bestuursorganen</b>, een kwestie van governance, niet alleen van IT.",
-      "card1": {
-        "title": "Wie is betrokken?",
-        "intro": "Twee categorieën, naargelang sector en omvang:",
-        "li1": "<b>Essentiële</b> entiteiten: energie, transport, gezondheidszorg, financiën, digitale infrastructuur…",
-        "li2": "<b>Belangrijke</b> entiteiten: productie, voedingsindustrie, digitale diensten, chemie…",
-        "li3": "Bij uitbreiding, <b>hun onderaannemers en leveranciers</b>.",
-        "pill": "Twijfel? Onze diagnose brengt duidelijkheid"
-      },
-      "card2": {
-        "title": "Wat is het risico?",
-        "intro": "Juridisch en financieel: niet alleen technisch.",
-        "li1": "<b>Aanzienlijke boetes</b>, meerdere miljoenen euro voor essentiële entiteiten.",
-        "li2": "<b>Verantwoordelijkheid van de directie</b> in het geding.",
-        "li3": "<b>Melding</b> van incidenten aan het CCB binnen korte termijnen.",
-        "pill": "Een directiekwestie, niet alleen van IT"
-      },
-      "card3": {
-        "title": "Waarom nu?",
-        "intro": "Al omgezet in Belgisch recht. Elke maand telt.",
-        "li1": "<b>Van kracht sinds 18 oktober 2024.</b>",
-        "li2": "Remediëring vergt <b>maanden, geen dagen</b>.",
-        "li3": "Vroeg starten: spreid de inspanning en het budget.",
-        "pill": "Elke gewonnen maand telt"
-      }
+      "lead": "NIS2 verhoogt het vereiste cyberbeveiligingsniveau van duizenden organisaties. Drie vragen om te weten waar u staat."
     },
     "cyfun": {
-      "eyebrow": "Het officiële kader",
-      "title": "CyFun: het <accent>Belgische antwoord</accent> op NIS2, gepubliceerd door het CCB",
-      "lead": "Het <b>CyberFundamentals Framework (CyFun)</b>, van het <b>Centrum voor Cybersecurity België (CCB)</b>, is de erkende manier om uw NIS2-conformiteit aan te tonen.",
-      "note": "Gebaseerd op internationale standaarden, vertaald naar <b>progressieve maatregelen</b> afgestemd op uw omvang en uw risico.",
-      "photoAlt": "Serverracks in een datacenter, ter illustratie van infrastructuurhardening.",
-      "photoCap": "De CyFun-zelfevaluatie: een <b>basis van maatregelen</b> die één voor één worden gecontroleerd, geen intentieverklaring.",
-      "mapHead": "CyFun, afgestemd op de standaarden",
-      "map": {
-        "row1a": "CyberFundamentals (CCB)",
-        "row1b": "Beantwoordt aan de NIS2-vereisten",
-        "row2a": "Structuur van de functies",
-        "row2b": "Gemapt op het NIST CSF",
-        "row3a": "Controles & goede praktijken",
-        "row3b": "Afgestemd op ISO/IEC 27001",
-        "row4a": "Drie assuranceniveaus",
-        "row4b": "Basic · Important · Essential"
-      },
-      "ringAria": "Diagram: de zes functies van CyberFundamentals in een doorlopende cyclus (Govern, Identify, Protect, Detect, Respond, Recover), afgestemd op het NIST CSF.",
-      "ringCap": "Een <b>doorlopende cyclus</b>: elke functie voedt de volgende, van governance tot herstel.",
-      "functions": {
-        "govern": "Governance, rollen en beheer van het cyberrisico.",
-        "identify": "Inventaris van de activa en de te beschermen risico's.",
-        "protect": "Beschermingsmaatregelen: MFA, hardening, toegang.",
-        "detect": "Toezicht en detectie van anomalieën.",
-        "respond": "Reactie op incidenten en melding.",
-        "recover": "Bedrijfscontinuïteit en terugkeer naar normaal."
-      },
-      "fnNote": "<b>Govern, Identify, Protect, Detect, Respond, Recover</b>: de volledige levenscyclus van het cyberrisico."
+      "lead": "Het <b>CyberFundamentals Framework (CyFun)</b>, van het <b>Centrum voor Cybersecurity België (CCB)</b>, is de erkende manier om uw NIS2-conformiteit aan te tonen."
     },
     "niveaux": {
       "eyebrow": "De 3 assuranceniveaus",
       "title": "Basic, Important, Essential: het <accent>juiste niveau</accent> kiezen",
-      "lead": "Drie progressieve niveaus. De juiste keuze hangt af van uw NIS2-categorie en uw blootstelling. Wij helpen u beslissen.",
-      "statBigLbl": "CyFun-niveaus",
-      "statTxt": "<b>Basic dekt nu al het merendeel van de courante aanvallen.</b> Important voegt detectie, respons en governance toe. Essential streeft naar een nagenoeg volledige bescherming.",
-      "levelsAria": "Trapdiagram: de dekking tegen aanvallen groeit met het niveau, van Basic over Important naar Essential.",
-      "levelsCap": "Een progressieve schaal: hoe hoger het beoogde niveau, hoe meer de <b>dekking</b> en de <b>vereiste</b> toenemen.",
-      "smallNote": "Vóór Basic biedt het CCB een gratis Small-basis (7 maatregelen): het startpunt om zonder budget te beginnen."
-    },
-    "accompagnement": {
-      "eyebrow": "Onze begeleiding",
-      "title": "Wij beperken ons niet tot auditeren: <accent>wij verhelpen</accent> en maken u klaar",
-      "lead": "Geen rapport dat u alleen moet zien te beheren. Wij verhelpen, wij bereiden voor, wij maken u klaar.",
-      "photoAlt": "Close-up van een printplaat, symbool voor een secure-by-design architectuur.",
-      "photoCap": "Een <b>begeleiding op het terrein</b>: ik werk met uw teams, niet enkel aan een rapport.",
-      "honesty": {
-        "title": "In alle transparantie: wie doet wat",
-        "p1": "Smidjan <b>is geen certificeringsinstantie</b> en is niet BELAC-geaccrediteerd. Het <b>officiële CyFun-label</b> wordt uitgereikt door <b>BELAC-geaccrediteerde instanties</b> (Brand Compliance, Trust CHECK, Normec CertUp).",
-        "p2": "Onze rol: uw dossier <b>auditeren, remediëren, voorbereiden</b> tot aan de indiening: u <b>klaar maken om het te behalen</b>."
-      },
-      "roleSmidjan": {
-        "title": "De rol van Smidjan",
-        "li1": "Uw houding & de kloof tot het beoogde niveau auditeren",
-        "li2": "De vastgestelde tekortkomingen concreet <b>remediëren</b>",
-        "li3": "Het dossier & de indiening voorbereiden",
-        "li4": "Uw conformiteit in de tijd onderhouden",
-        "foot": "Onze opdracht: u <b>klaar en conform</b> maken."
-      },
-      "roleBelac": {
-        "title": "De rol van de BELAC-geaccrediteerde instantie",
-        "li1": "Uw conformiteit onafhankelijk verifiëren",
-        "li2": "De officiële CyFun-certificering / het label <b>uitreiken</b>",
-        "li3": "Het bereikte niveau attesteren (Important / Essential)",
-        "foot": "Bv. <b>Brand Compliance, Trust CHECK, Normec CertUp</b>, onafhankelijk van mij."
-      },
-      "roadmapAria": "Routekaart met vier mijlpalen: Kadering, dan Remediëring, dan Ondersteuning bij de verificatie, tot de Continue opvolging.",
-      "process": {
-        "kicker": "Onze methode in 4 stappen",
-        "step1Title": "Kadering & zelfevaluatie",
-        "step1Desc": "Perimeter, kritieke activa, beoogd CyFun-niveau, bevestigde NIS2-categorie, samen met uw teams.",
-        "step2Title": "Gap-analyse & remediëring",
-        "step2Desc": "Kloof gemeten, tekortkomingen verholpen: plan geprioriteerd op risico en op inspanning.",
-        "step3Title": "Ondersteuning bij de CCB-verificatie",
-        "step3Desc": "Bewijsdossier, documentatie, contact met de geaccrediteerde instantie tot aan de indiening.",
-        "step4Title": "Continue opvolging",
-        "step4Desc": "Periodieke herziening en herevaluatie om uw conformiteit op termijn te behouden."
-      }
+      "lead": "Drie progressieve niveaus. De juiste keuze hangt af van uw NIS2-categorie en uw blootstelling. Wij helpen u beslissen."
     },
     "audit": {
       "eyebrow": "Onze eigen tool",
       "title": "Smidjan voert de CyFun-audit uit met een <accent>eigen tool, veilig door ontwerp</accent>",
       "lead": "Onze auditengine, afgestemd op CyFun (CCB) en NIST CSF 2.0, beoordeelt uw conformiteit snel en op basis van bewijs. Daarna verhelpen wij: remediëring en hardening.",
-      "panelTitle": "Veilig door ontwerp",
-      "panelText": "Een grondige en traceerbare audit, opgezet om uw systemen nooit in gevaar te brengen.",
-      "chip1": "3 CyFun-niveaus",
-      "chip2": "Afgestemd op NIST CSF 2.0",
-      "chip3": "PDF-rapport",
       "trust": {
         "readOnlyTitle": "Alleen-lezen",
         "readOnlyText": "De audit observeert, hij wijzigt uw systemen nooit.",
@@ -611,106 +417,12 @@
       "honesty": {
         "title": "Een geassisteerde zelfevaluatie, geen certificering",
         "p": "Onze tool vergemakkelijkt de <b>CyFun-zelfevaluatie</b> en bereidt uw dossier voor. Hij vervangt niet de <b>officiële verificatie</b>, voorbehouden aan BELAC-geaccrediteerde instanties."
-      },
-      "process": {
-        "kicker": "Van de audit tot de hardening",
-        "step1Title": "Audit met tools",
-        "step1Desc": "Onze tool verzamelt bewijs en een score per maatregel, enkel op de perimeter die u mij toevertrouwt.",
-        "step2Title": "Helder rapport",
-        "step2Desc": "Samenvatting, vastgestelde kloven en prioriteiten: een leesbaar document, geen ruwe export.",
-        "step3Title": "Geprioriteerd remediëringsplan",
-        "step3Desc": "De acties worden gerangschikt op risico en op inspanning, voor een realistische uitrol.",
-        "step4Title": "Hardening & opvolging",
-        "step4Desc": "Ik voer de gevalideerde correcties uit en zorg daarna voor opvolging op termijn."
-      },
-      "ctaButton": "Een audit aanvragen",
-      "ctaNote": "Geassisteerde zelfevaluatie, zonder risico voor uw systemen."
+      }
     },
     "financement": {
       "eyebrow": "Uw conformiteit financieren",
       "title": "Conformiteit kost minder dan men denkt: <accent>een groot deel wordt gesubsidieerd</accent>",
-      "lead": "De Waalse cyberbeveiligingscheque financiert een groot deel van uw audit en uw remediëring. Zo maakt u er gebruik van.",
-      "cards": {
-        "card1Lbl": "Tegemoetkoming",
-        "card1Desc": "van het ereloon van de dienstverlener voor de audit, de coaching en de labelling.",
-        "card2Lbl": "Plafond over 3 jaar",
-        "card2Desc": "per begunstigde, binnen het de-minimisplafond van 200 000 € over 3 jaar (max. 100 000 €/jaar).",
-        "card3Num": "Gratis",
-        "card3Lbl": "CCB CyberFundamentals-tools",
-        "card3Desc": "het niveau « Small » (7 maatregelen) is gratis; het CCB beveelt minstens het niveau Basic aan."
-      },
-      "details": {
-        "title": "De cyberbeveiligingscheque (chèques-entreprises.be)",
-        "lead": "Gedragen door het Waalse Gewest, dekt hij het ereloon van een <b>gecertificeerde dienstverlener</b> voor drie prestaties: <b>audit</b>, <b>coaching</b> en <b>labelling</b> « Keep It Secure ».",
-        "note1": "Voorbehouden aan <b>kmo's</b> (< 250 werknemers, < 50 M€ omzet). Aanvraag <b>100 % online</b>, ontvankelijkheid binnen <b>~5 werkdagen</b> (de eindbeslissing duurt langer).",
-        "note2": "Aanvullend: de cheque « digitale maturiteit » (~50 %). Op federaal niveau biedt het <b>CCB</b> gratis <b>CyberFundamentals</b> aan: niveau « Small » (7 maatregelen) gratis, <b>Basic</b> minstens aanbevolen."
-      },
-      "map": {
-        "head": "Cyberbeveiligingscheque, in het kort",
-        "row1a": "Begunstigden",
-        "row1b": "Kmo's (< 250 werknemers, < 50 M€ omzet)",
-        "row2a": "Dekt",
-        "row2b": "Audit, coaching, labelling",
-        "row3a": "Tegemoetkoming",
-        "row3b": "75 % van het ereloon",
-        "row4a": "Plafond",
-        "row4b": "50 000 € excl. btw over 3 jaar (de-minimisplafond 200 000 €)",
-        "row5a": "Aanvraag",
-        "row5b": "100 % online, via een gecertificeerde dienstverlener",
-        "row6a": "Beslissing",
-        "row6b": "Ontvankelijkheid binnen ~5 werkdagen"
-      },
-      "process": {
-        "kicker": "Hoe ervan gebruikmaken, in 3 stappen",
-        "step1Title": "Zich inschrijven op het platform",
-        "step1Desc": "Ondernemingsdossier op cheques-entreprises.be, kmo-ontvankelijkheid gecontroleerd (personeel, omzet, resterende portefeuille).",
-        "step2Title": "De ontvankelijke prestatie kiezen",
-        "step2Desc": "Audit, coaching of labelling « Keep It Secure », met een gecertificeerde dienstverlener.",
-        "step3Title": "De audit of de remediëring uitvoeren",
-        "step3Desc": "De dienstverlener voert de prestatie uit; de cheque dekt tot 75 % van het ereloon, binnen de grens van het plafond."
-      },
-      "honesty": {
-        "title": "Onze rol: u begeleiden, niet de steun uitreiken",
-        "p1": "Smidjan is <b>niet noodzakelijk ingeschreven</b> als gecertificeerde dienstverlener op chèques-entreprises.be. Onze rol: <b>de steunmaatregelen identificeren</b>, <b>de ontvankelijke prestatie kaderen</b> en <b>het dossier opbouwen</b> met u.",
-        "p2": "Ontvankelijkheid en erkende dienstverlener: <b>te verifiëren</b> op het officiële platform <link>cheques-entreprises.be</link>."
-      },
-      "ctaButton": "Laten we uw dossier bespreken",
-      "ctaNote": "Gratis diagnose, vrijblijvend."
-    },
-    "faq": {
-      "eyebrow": "Veelgestelde vragen",
-      "title": "NIS2 & CyFun: uw vragen, onze antwoorden",
-      "lead": "Uw meest gestelde vragen. Nog een andere in gedachten? Stel ze tijdens de gratis diagnose.",
-      "q1": {
-        "question": "Ben ik betrokken bij NIS2?",
-        "a1": "Naargelang uw sector en uw omvang. NIS2 richt zich op <b>essentiële</b> entiteiten (energie, gezondheidszorg, transport, financiën…) en <b>belangrijke</b> entiteiten (productie, voedingsindustrie, digitale diensten…). Veel kmo's zijn <b>onrechtstreeks</b> betrokken, als leverancier of onderaannemer.",
-        "a2": "Twijfel? Onze <b>gratis diagnose</b> verheldert uw situatie in één gesprek."
-      },
-      "q2": {
-        "question": "Wat is het verschil tussen CyFun en ISO/IEC 27001?",
-        "a1": "<b>ISO/IEC 27001</b> is de internationale referentienorm voor informatiebeveiliging. <b>CyFun</b> is het Belgische kader van het CCB, opgezet om te beantwoorden aan NIS2 en <b>afgestemd op ISO 27001</b> en het NIST CSF.",
-        "a2": "In de praktijk: CyFun is een meer <b>toegankelijk</b> startpunt voor een kmo, met zijn drie progressieve niveaus (Basic → Essential), en een eerste opstap naar ISO 27001 indien nodig."
-      },
-      "q3": {
-        "question": "Reikt Smidjan de CyFun-certificering uit?",
-        "a1": "<b>Neen.</b> Smidjan is geen certificeringsinstantie en is niet BELAC-geaccrediteerd. De <b>officiële CyFun-certificering</b> wordt uitgereikt door <b>BELAC-geaccrediteerde instanties</b> (Brand Compliance, Trust CHECK, Normec CertUp), onafhankelijk van mij.",
-        "a2": "Mijn rol: uw dossier <b>auditeren, remediëren, voorbereiden</b> tot aan de indiening. Ik maak u <b>klaar</b>: de geaccrediteerde instantie valideert uw niveau."
-      },
-      "q4": {
-        "question": "Hoelang duurt het om conform te worden?",
-        "a1": "Dat hangt af van het beoogde niveau en uw uitgangsmaturiteit. Ter indicatie: <b>1 tot 3 maanden</b> voor Basic, <b>3 tot 6 maanden</b> voor Important, <b>6 tot 12 maanden</b> voor Essential.",
-        "a2": "NIS2 is <b>al van kracht</b>: u start beter nu. Hoe vroeger u begint, hoe meer u de inspanning en het budget spreidt, en uw blootstelling vermindert."
-      },
-      "q5": {
-        "question": "Wat gebeurt er als ik niets doe?",
-        "a1": "<b>Aanzienlijke boetes</b>, <b>verantwoordelijkheid van de directie</b> in het geding. En vooral: een incident (ransomware, datalek) kost veel meer dan een tijdige conformering.",
-        "a2": "De CyFun-aanpak vermindert een <b>reëel risico</b>, niet enkel een vakje om aan te vinken."
-      },
-      "q6": {
-        "question": "Welk CyFun-niveau kiezen voor mijn kmo?",
-        "a1": "Voor de meeste kmo's is <b>Important</b> het beste evenwicht, het meest voorkomend. <b>Basic</b> dekt al het essentiële. <b>Essential</b> richt zich op de « essentiële » NIS2-entiteiten en de strenge beveiligingsvereisten.",
-        "a2": "Het juiste niveau hangt af van uw NIS2-categorie en uw blootstelling. Wij bevelen het u aan vanaf de <b>kadering</b>."
-      }
+      "lead": "De Waalse cyberbeveiligingscheque financiert een groot deel van uw audit en uw remediëring. Zo maakt u er gebruik van."
     },
     "finalCta": {
       "title": "In 30 minuten weet u precies waar u staat.",
@@ -720,26 +432,6 @@
       "reassure1": "Antwoord binnen 24 u",
       "reassure2": "Toegewijde expert, geen onderaanneming",
       "reassure3": "Gegevens in België"
-    },
-    "diagram": {
-      "ringHubSub": "afgestemd op NIST CSF",
-      "coverageAria": "Meter die toont dat het niveau Basic al het merendeel van de meest courante aanvallen dekt.",
-      "coverageCovered": "GEDEKT",
-      "levelsQuasiComplete": "Nagenoeg volledige bescherming",
-      "levelsRecommended": "Aanbevolen kmo",
-      "levelsQuasiShort": "nagenoeg volledig",
-      "roadmap1Title": "Kadering",
-      "roadmap1Sub": "& zelfevaluatie",
-      "roadmap2Title": "Remediëring",
-      "roadmap2Sub": "gap-analyse & correcties",
-      "roadmap3Title": "Verificatie",
-      "roadmap3Sub": "ondersteuning bij indiening",
-      "roadmap4Title": "Continue opvolging",
-      "roadmap4Sub": "klaar & onderhouden",
-      "coverageWord": "Basis",
-      "covBasic": "Basis",
-      "covImportant": "Versterkt",
-      "covEssential": "Maximaal"
     }
   },
   "contact": {
@@ -864,70 +556,6 @@
       "step3Title": "Gratis diagnose",
       "step3Text": "30 minuten om uw prioriteiten in kaart te brengen. Vrijblijvend, zonder jargon.",
       "note": "<b>Eén aanspreekpunt</b>, van het eerste bericht tot de remediëring."
-    },
-    "simpleForm": {
-      "back": "Terug naar de keuze",
-      "title": "Stuur mij uw aanvraag",
-      "subtitle": "Kies het type aanvraag en beschrijf uw behoefte. Ik neem snel opnieuw contact met u op.",
-      "errorLabel": "Fout",
-      "labels": {
-        "requestType": "Type aanvraag",
-        "email": "Professioneel e-mailadres",
-        "name": "Naam en voornaam",
-        "company": "Onderneming",
-        "companyOptional": "(optioneel)",
-        "phone": "Telefoon",
-        "phoneOptional": "(optioneel)",
-        "message": "Uw bericht"
-      },
-      "options": {
-        "placeholder": "Selecteer het type aanvraag",
-        "cv": "Sollicitatie (cv)",
-        "technical": "Technisch probleem (bestaande site/project)",
-        "assistance": "Ondersteuningsaanvraag",
-        "bug": "Een bug op de site melden",
-        "partnership": "Voorstel tot samenwerking",
-        "other": "Andere aanvraag"
-      },
-      "placeholders": {
-        "email": "u@onderneming.be",
-        "name": "Jan Janssens",
-        "company": "Naam van uw onderneming",
-        "phone": "+32 XXX XX XX XX",
-        "message": "Beschrijf uw aanvraag in detail..."
-      },
-      "submit": "Mijn aanvraag versturen",
-      "submitting": "Bezig met verzenden...",
-      "privacy": "Door dit formulier te versturen, gaat u ermee akkoord dat ik uw gegevens gebruik om opnieuw contact met u op te nemen over uw project.",
-      "success": {
-        "title": "Bericht verzonden !",
-        "text": "Bedankt voor uw bericht. Ik neem binnen 24 uur contact met u op.",
-        "back": "Terug naar de startpagina"
-      },
-      "errors": {
-        "requestType": "Type aanvraag vereist",
-        "emailRequired": "E-mailadres vereist",
-        "emailInvalid": "Ongeldig e-mailadres",
-        "emailTooLong": "E-mailadres te lang",
-        "nameRequired": "Naam vereist (minimum 2 tekens)",
-        "nameTooLong": "Naam te lang (maximum 100 tekens)",
-        "invalidChars": "Ongeldige tekens gedetecteerd",
-        "companyTooLong": "Bedrijfsnaam te lang",
-        "phoneInvalid": "Ongeldig telefoonnummer",
-        "messageRequired": "Bericht vereist (minimum 10 tekens)",
-        "messageTooLong": "Bericht te lang (maximum 5000 tekens)",
-        "csrf": "Beveiligingstoken ontbreekt. Herlaad de pagina.",
-        "generic": "Er is een fout opgetreden. Probeer het opnieuw."
-      }
-    },
-    "modeSelector": {
-      "back": "Terug",
-      "wizardTitle": "Nieuw project",
-      "wizardDescription": "Website, e-commerce, applicatie, cyberaudit, AI : stel uw project samen en ontvang een onmiddellijke offerte",
-      "wizardBadge": "Voor projecten",
-      "directTitle": "Andere aanvraag",
-      "directDescription": "Cv, technische ondersteuning, bug, samenwerking of elke andere aanvraag die niet met een nieuw project verband houdt",
-      "directBadge": "Buiten projecten"
     }
   },
   "home": {

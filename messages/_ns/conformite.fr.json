@@ -35,122 +35,20 @@
   "clair": {
     "eyebrow": "NIS2, en clair",
     "title": "Ce que la directive change pour vous, <accent>sans jargon</accent>",
-    "lead": "NIS2 relève le niveau de cybersécurité exigé de milliers d'organisations. Trois questions pour savoir où vous en êtes.",
-    "photoAlt": "Poste de travail de développement sécurisé.",
-    "photoCap": "La conformité NIS2 engage la <b>responsabilité des organes de direction</b>, un sujet de gouvernance, pas seulement d'IT.",
-    "card1": {
-      "title": "Qui est concerné ?",
-      "intro": "Deux catégories, selon secteur et taille :",
-      "li1": "Entités <b>essentielles</b> : énergie, transport, santé, finance, infrastructures numériques…",
-      "li2": "Entités <b>importantes</b> : fabrication, agroalimentaire, services numériques, chimie…",
-      "li3": "Par ricochet, <b>leurs sous-traitants et fournisseurs</b>.",
-      "pill": "Un doute ? Notre diagnostic le clarifie"
-    },
-    "card2": {
-      "title": "Quel est le risque ?",
-      "intro": "Juridique et financier : pas seulement technique.",
-      "li1": "<b>Amendes significatives</b>, plusieurs millions d'euros pour les entités essentielles.",
-      "li2": "<b>Responsabilité de la direction</b> engagée.",
-      "li3": "<b>Notification</b> des incidents au CCB sous délais courts.",
-      "pill": "Un enjeu de direction, pas seulement d'IT"
-    },
-    "card3": {
-      "title": "Pourquoi maintenant ?",
-      "intro": "Déjà transposée en droit belge. Chaque mois compte.",
-      "li1": "<b>En vigueur depuis le 18 octobre 2024.</b>",
-      "li2": "La remédiation prend <b>des mois, pas des jours</b>.",
-      "li3": "Démarrer tôt : étaler l'effort et le budget.",
-      "pill": "Chaque mois gagné compte"
-    }
+    "lead": "NIS2 relève le niveau de cybersécurité exigé de milliers d'organisations. Trois questions pour savoir où vous en êtes."
   },
   "cyfun": {
-    "eyebrow": "Le cadre officiel",
-    "title": "CyFun : la <accent>réponse belge</accent> à NIS2, publiée par le CCB",
-    "lead": "Le <b>CyberFundamentals Framework (CyFun)</b>, du <b>Centre pour la Cybersécurité Belgique (CCB)</b>, est le moyen reconnu de démontrer votre conformité NIS2.",
-    "note": "Basé sur les standards internationaux, traduit en <b>mesures progressives</b> adaptées à votre taille et à votre risque.",
-    "photoAlt": "Baies de serveurs dans un datacenter, illustrant le durcissement de l'infrastructure.",
-    "photoCap": "L'auto-évaluation CyFun : un <b>socle de mesures</b> vérifiées une à une, pas une déclaration d'intention.",
-    "mapHead": "CyFun, aligné sur les standards",
-    "map": {
-      "row1a": "CyberFundamentals (CCB)",
-      "row1b": "Répond aux exigences de NIS2",
-      "row2a": "Structure des fonctions",
-      "row2b": "Mappée sur le NIST CSF",
-      "row3a": "Contrôles & bonnes pratiques",
-      "row3b": "Alignés sur ISO/IEC 27001",
-      "row4a": "Trois niveaux d'assurance",
-      "row4b": "Basic · Important · Essential"
-    },
-    "ringAria": "Diagramme : les six fonctions du CyberFundamentals disposées en cycle continu (Govern, Identify, Protect, Detect, Respond, Recover), alignées sur le NIST CSF.",
-    "ringCap": "Un <b>cycle continu</b> : chaque fonction alimente la suivante, de la gouvernance à la reprise.",
-    "functions": {
-      "govern": "Gouvernance, rôles et gestion du risque cyber.",
-      "identify": "Inventaire des actifs et des risques à protéger.",
-      "protect": "Mesures de protection : MFA, durcissement, accès.",
-      "detect": "Supervision et détection des anomalies.",
-      "respond": "Réponse aux incidents et notification.",
-      "recover": "Reprise d'activité et retour à la normale."
-    },
-    "fnNote": "<b>Govern, Identify, Protect, Detect, Respond, Recover</b> : tout le cycle de vie du risque cyber."
+    "lead": "Le <b>CyberFundamentals Framework (CyFun)</b>, du <b>Centre pour la Cybersécurité Belgique (CCB)</b>, est le moyen reconnu de démontrer votre conformité NIS2."
   },
   "niveaux": {
     "eyebrow": "Les 3 niveaux d'assurance",
     "title": "Basic, Important, Essential : choisir le <accent>bon niveau</accent>",
-    "lead": "Trois niveaux progressifs. Le bon choix dépend de votre catégorie NIS2 et de votre exposition. On vous aide à trancher.",
-    "statBigLbl": "Niveaux CyFun",
-    "statTxt": "<b>Basic couvre déjà l'essentiel des attaques courantes.</b> Important ajoute la détection, la réponse et la gouvernance. Essential vise une protection quasi complète.",
-    "levelsAria": "Diagramme en escalier : la couverture face aux attaques croît avec le niveau, de Basic à Important puis Essential.",
-    "levelsCap": "Une échelle progressive : plus le niveau visé est élevé, plus la <b>couverture</b> et l''<b>exigence</b> augmentent.",
-    "smallNote": "Avant Basic, le CCB propose un socle Small (7 mesures), gratuit : le point de départ pour se lancer sans budget."
-  },
-  "accompagnement": {
-    "eyebrow": "Notre accompagnement",
-    "title": "On ne se contente pas d'auditer : <accent>on corrige</accent> et on vous amène prêts",
-    "lead": "Pas de rapport qu'on vous laisse gérer seul. On corrige, on prépare, on vous amène prêts.",
-    "photoAlt": "Gros plan d'un circuit imprimé, illustrant une architecture pensée secure by design.",
-    "photoCap": "Un <b>accompagnement de terrain</b> : je travaille avec vos équipes, pas seulement sur un rapport.",
-    "honesty": {
-      "title": "En toute transparence : qui fait quoi",
-      "p1": "Smidjan <b>n'est pas un organisme de certification</b>, ni accrédité BELAC. Le <b>label CyFun officiel</b> est délivré par des <b>organismes accrédités BELAC</b> (Brand Compliance, Trust CHECK, Normec CertUp).",
-      "p2": "Notre rôle : <b>auditer, remédier, préparer</b> votre dossier jusqu'à la soumission : vous rendre <b>prêts à l'obtenir</b>."
-    },
-    "roleSmidjan": {
-      "title": "Le rôle de Smidjan",
-      "li1": "Auditer votre posture & l'écart au niveau visé",
-      "li2": "<b>Remédier</b> concrètement aux manques identifiés",
-      "li3": "Préparer le dossier & la soumission",
-      "li4": "Maintenir votre conformité dans le temps",
-      "foot": "Notre mission : vous rendre <b>prêts et conformes</b>."
-    },
-    "roleBelac": {
-      "title": "Le rôle de l'organisme accrédité BELAC",
-      "li1": "Vérifier indépendamment votre conformité",
-      "li2": "<b>Délivrer</b> la certification / le label CyFun officiel",
-      "li3": "Attester le niveau atteint (Important / Essential)",
-      "foot": "Ex. <b>Brand Compliance, Trust CHECK, Normec CertUp</b>, indépendants de moi."
-    },
-    "roadmapAria": "Feuille de route en quatre jalons : Cadrage, puis Remédiation, puis Support à la vérification, jusqu'au Suivi continu.",
-    "process": {
-      "kicker": "Notre méthode en 4 étapes",
-      "step1Title": "Cadrage & auto-évaluation",
-      "step1Desc": "Périmètre, actifs critiques, niveau CyFun visé, catégorie NIS2 confirmée, avec vos équipes.",
-      "step2Title": "Analyse d'écart & remédiation",
-      "step2Desc": "Écart mesuré, manques corrigés : plan priorisé par risque et par effort.",
-      "step3Title": "Support à la vérification CCB",
-      "step3Desc": "Dossier de preuves, documentation, liaison avec l'organisme accrédité jusqu'à la soumission.",
-      "step4Title": "Suivi continu",
-      "step4Desc": "Revue périodique et réévaluation pour maintenir votre conformité dans la durée."
-    }
+    "lead": "Trois niveaux progressifs. Le bon choix dépend de votre catégorie NIS2 et de votre exposition. On vous aide à trancher."
   },
   "audit": {
     "eyebrow": "Notre outil propriétaire",
     "title": "Smidjan mène l'audit CyFun avec un outil <accent>propriétaire, sûr par conception</accent>",
     "lead": "Notre moteur d'audit, aligné CyFun (CCB) et NIST CSF 2.0, évalue votre conformité vite et sur preuves. Puis on corrige : remédiation et durcissement.",
-    "panelTitle": "Sûr par conception",
-    "panelText": "Un audit rigoureux et traçable, pensé pour ne jamais mettre vos systèmes en danger.",
-    "chip1": "3 niveaux CyFun",
-    "chip2": "Aligné NIST CSF 2.0",
-    "chip3": "Rapport PDF",
     "trust": {
       "readOnlyTitle": "Lecture seule",
       "readOnlyText": "L'audit observe, il ne modifie jamais vos systèmes.",
@@ -168,106 +66,12 @@
     "honesty": {
       "title": "Une auto-évaluation assistée, pas une certification",
       "p": "Notre outil facilite l''<b>auto-évaluation CyFun</b> et prépare votre dossier. Il ne remplace pas la <b>vérification officielle</b>, réservée aux organismes accrédités BELAC."
-    },
-    "process": {
-      "kicker": "De l'audit au durcissement",
-      "step1Title": "Audit outillé",
-      "step1Desc": "Notre outil collecte des preuves et un score par mesure, sur le seul périmètre que vous me confiez.",
-      "step2Title": "Rapport clair",
-      "step2Desc": "Synthèse, écarts identifiés et priorités : un document lisible, pas un export brut.",
-      "step3Title": "Plan de remédiation priorisé",
-      "step3Desc": "Les actions sont classées par risque et par effort, pour un déploiement réaliste.",
-      "step4Title": "Durcissement & suivi",
-      "step4Desc": "Je mets en œuvre les correctifs validés, puis j'assure un suivi dans la durée."
-    },
-    "ctaButton": "Demander un audit",
-    "ctaNote": "Auto-évaluation assistée, sans risque pour vos systèmes."
+    }
   },
   "financement": {
     "eyebrow": "Financer votre conformité",
     "title": "La conformité coûte moins cher qu'on ne le croit : <accent>une large partie est subsidiée</accent>",
-    "lead": "Le chèque « cybersécurité » wallon finance une large partie de votre audit et de votre remédiation. Voici comment en profiter.",
-    "cards": {
-      "card1Lbl": "Prise en charge",
-      "card1Desc": "des honoraires du prestataire pour l'audit, le coaching et la labellisation.",
-      "card2Lbl": "Plafond sur 3 ans",
-      "card2Desc": "par bénéficiaire, dans la limite de minimis de 200 000 € sur 3 ans (max 100 000 €/an).",
-      "card3Num": "Gratuit",
-      "card3Lbl": "Outils CCB CyberFundamentals",
-      "card3Desc": "le niveau « Small » (7 mesures) est gratuit ; le CCB recommande au minimum le niveau Basic."
-    },
-    "details": {
-      "title": "Le chèque « cybersécurité » (chèques-entreprises.be)",
-      "lead": "Porté par la Région wallonne, il couvre les honoraires d'un <b>prestataire certifié</b> pour trois prestations : <b>audit</b>, <b>coaching</b> et <b>labellisation</b> « Keep It Secure ».",
-      "note1": "Réservé aux <b>PME</b> (< 250 employés, < 50 M€ de CA). Démarche <b>100 % en ligne</b>, recevabilité en <b>~5 jours ouvrés</b> (la décision finale est plus longue).",
-      "note2": "En complément : le chèque « maturité numérique » (~50 %). Côté fédéral, le <b>CCB</b> propose gratuitement <b>CyberFundamentals</b> : niveau « Small » (7 mesures) gratuit, <b>Basic</b> recommandé au minimum."
-    },
-    "map": {
-      "head": "Chèque cybersécurité, en bref",
-      "row1a": "Bénéficiaires",
-      "row1b": "PME (< 250 employés, < 50 M€ de CA)",
-      "row2a": "Couvre",
-      "row2b": "Audit, coaching, labellisation",
-      "row3a": "Prise en charge",
-      "row3b": "75 % des honoraires",
-      "row4a": "Plafond",
-      "row4b": "50 000 € HTVA sur 3 ans (plafond de minimis 200 000 €)",
-      "row5a": "Démarche",
-      "row5b": "100 % en ligne, via un prestataire certifié",
-      "row6a": "Décision",
-      "row6b": "Recevabilité en ~5 jours ouvrés"
-    },
-    "process": {
-      "kicker": "Comment en profiter, en 3 étapes",
-      "step1Title": "S'inscrire sur la plateforme",
-      "step1Desc": "Dossier d'entreprise sur cheques-entreprises.be, éligibilité PME vérifiée (effectifs, CA, portefeuille restant).",
-      "step2Title": "Choisir la prestation éligible",
-      "step2Desc": "Audit, coaching ou labellisation « Keep It Secure », avec un prestataire certifié.",
-      "step3Title": "Réaliser l'audit ou la remédiation",
-      "step3Desc": "Le prestataire réalise la prestation ; le chèque couvre jusqu'à 75 % des honoraires, dans la limite du plafond."
-    },
-    "honesty": {
-      "title": "Notre rôle : vous accompagner, pas délivrer l'aide",
-      "p1": "Smidjan n'est <b>pas nécessairement inscrit</b> comme prestataire certifié sur chèques-entreprises.be. Notre rôle : <b>identifier les aides</b>, <b>cadrer la prestation éligible</b> et <b>monter le dossier</b> avec vous.",
-      "p2": "Éligibilité et prestataire agréé : <b>à vérifier</b> sur la plateforme officielle <link>cheques-entreprises.be</link>."
-    },
-    "ctaButton": "Parlons de votre dossier",
-    "ctaNote": "Diagnostic gratuit, sans engagement."
-  },
-  "faq": {
-    "eyebrow": "Questions fréquentes",
-    "title": "NIS2 & CyFun : vos questions, nos réponses",
-    "lead": "Vos questions les plus fréquentes. Une autre en tête ? Posez-la lors du diagnostic gratuit.",
-    "q1": {
-      "question": "Suis-je concerné par NIS2 ?",
-      "a1": "Selon votre secteur et votre taille. NIS2 vise les entités <b>essentielles</b> (énergie, santé, transport, finance…) et <b>importantes</b> (fabrication, agroalimentaire, services numériques…). Beaucoup de PME sont concernées <b>indirectement</b>, comme fournisseurs ou sous-traitants.",
-      "a2": "Un doute ? Notre <b>diagnostic gratuit</b> clarifie votre situation en un échange."
-    },
-    "q2": {
-      "question": "Quelle est la différence entre CyFun et ISO/IEC 27001 ?",
-      "a1": "<b>ISO/IEC 27001</b> est la norme internationale de référence en sécurité de l'information. <b>CyFun</b> est le cadre belge du CCB, conçu pour répondre à NIS2 et <b>aligné sur ISO 27001</b> et le NIST CSF.",
-      "a2": "En pratique : CyFun est un point d'entrée plus <b>accessible</b> pour une PME, avec ses trois niveaux progressifs (Basic → Essential), et une première marche vers l'ISO 27001 si besoin."
-    },
-    "q3": {
-      "question": "Est-ce que Smidjan délivre la certification CyFun ?",
-      "a1": "<b>Non.</b> Smidjan n'est pas un organisme de certification, ni accrédité BELAC. La <b>certification officielle</b> CyFun est délivrée par des <b>organismes accrédités BELAC</b> (Brand Compliance, Trust CHECK, Normec CertUp), indépendants de moi.",
-      "a2": "Mon rôle : <b>auditer, remédier, préparer</b> votre dossier jusqu'à la soumission. Je vous rends <b>prêts</b> : l'organisme accrédité valide votre niveau."
-    },
-    "q4": {
-      "question": "Combien de temps faut-il pour se mettre en conformité ?",
-      "a1": "Ça dépend du niveau visé et de votre maturité de départ. À titre indicatif : <b>1 à 3 mois</b> pour Basic, <b>3 à 6 mois</b> pour Important, <b>6 à 12 mois</b> pour Essential.",
-      "a2": "NIS2 est <b>déjà en vigueur</b> : mieux vaut démarrer maintenant. Plus tôt vous commencez, plus vous étalez l'effort et le budget, et réduisez votre exposition."
-    },
-    "q5": {
-      "question": "Que se passe-t-il si je ne fais rien ?",
-      "a1": "<b>Amendes significatives</b>, <b>responsabilité de la direction</b> engagée. Et surtout : un incident (rançongiciel, fuite de données) coûte bien plus cher qu'une mise en conformité anticipée.",
-      "a2": "La démarche CyFun réduit un <b>risque réel</b>, pas seulement une case à cocher."
-    },
-    "q6": {
-      "question": "Quel niveau CyFun choisir pour ma PME ?",
-      "a1": "Pour la plupart des PME, <b>Important</b> est le meilleur équilibre, le plus courant. <b>Basic</b> couvre déjà l'essentiel. <b>Essential</b> vise les entités « essentielles » NIS2 et les exigences de sécurité fortes.",
-      "a2": "Le bon niveau dépend de votre catégorie NIS2 et de votre exposition. On vous le recommande dès le <b>cadrage</b>."
-    }
+    "lead": "Le chèque « cybersécurité » wallon finance une large partie de votre audit et de votre remédiation. Voici comment en profiter."
   },
   "finalCta": {
     "title": "En 30 minutes, sachez exactement où vous en êtes.",
@@ -277,25 +81,5 @@
     "reassure1": "Réponse sous 24 h",
     "reassure2": "Expert dédié, pas de sous-traitance",
     "reassure3": "Données en Belgique"
-  },
-  "diagram": {
-    "ringHubSub": "aligné NIST CSF",
-    "coverageAria": "Jauge illustrant que le niveau Basic couvre déjà l'essentiel des attaques les plus courantes.",
-    "coverageCovered": "COUVERT",
-    "levelsQuasiComplete": "Protection quasi complète",
-    "levelsRecommended": "Recommandé PME",
-    "levelsQuasiShort": "quasi complet",
-    "roadmap1Title": "Cadrage",
-    "roadmap1Sub": "& auto-évaluation",
-    "roadmap2Title": "Remédiation",
-    "roadmap2Sub": "analyse d'écart & correctifs",
-    "roadmap3Title": "Vérification",
-    "roadmap3Sub": "support à la soumission",
-    "roadmap4Title": "Suivi continu",
-    "roadmap4Sub": "prêt & maintenu",
-    "coverageWord": "Socle",
-    "covBasic": "Socle",
-    "covImportant": "Renforcé",
-    "covEssential": "Maximal"
   }
 }
