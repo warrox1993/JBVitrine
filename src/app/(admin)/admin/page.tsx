@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 
 import { getAllArticles } from "@/lib/blogActions";
-import { Button } from "@/components/ui/Button/Button";
 import styles from "./page.module.css";
 import Link from "next/link";
 

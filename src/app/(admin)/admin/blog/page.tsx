@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { 
-  Plus, 
-  FileText, 
-  Clock, 
-  Edit, 
-  Eye,
-  Activity
+import {
+  Plus,
+  FileText,
+  Clock,
+  Edit,
+  Eye
 } from "lucide-react";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { getAllArticles } from "@/lib/blogActions";
