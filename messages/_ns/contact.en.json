@@ -81,7 +81,7 @@
   },
   "side": {
     "aria": "My contact details",
-    "incidentImageAlt": "Cybersecurity analyst seen from behind, facing several monitoring screens in a control room, in the middle of incident response.",
+    "incidentImageAlt": "Technical workstation with monitoring screens, no staff visible.",
     "incidentBadge": "Incident response",
     "incidentTitle": "Need an <accent>incident response</accent>?",
     "incidentText": "Ransomware, intrusion, data breach? Don't shut anything down. Call. I help you limit the damage.",
