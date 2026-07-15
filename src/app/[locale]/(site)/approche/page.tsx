@@ -7,15 +7,12 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { Button } from "@/components/ui/Button/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon, type IconName } from "@/components/ui/Icon/Icon";
-import OptimizedImage from "@/components/ui/OptimizedImage/OptimizedImage";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { CTABox } from "@/components/shared/CTABox/CTABox";
 import { ProcessSteps } from "@/components/shared/ProcessSteps/ProcessSteps";
-import { TrustStrip } from "@/components/shared/TrustStrip/TrustStrip";
 
-import { AiIllustration, ProofVisual, RoadmapIllustration } from "./illustrations";
 import styles from "./page.module.css";
 
 export async function generateMetadata({
@@ -28,7 +25,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-alternates: buildAlternates(locale, "/approche"),
+    alternates: buildAlternates(locale, "/approche"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
@@ -68,25 +65,12 @@ alternates: buildAlternates(locale, "/approche"),
 
 const methodStepKeys = ["diagnostic", "priorisation", "remediation", "supervision"] as const;
 
-const aiCardMeta: { key: string; icon: IconName }[] = [
-  { key: "veille", icon: "search" },
-  { key: "detection", icon: "alert-triangle" },
-  { key: "mailles", icon: "layers" },
-  { key: "decision", icon: "check" },
-];
-
-const whyMeta: { key: string; icon: IconName; pinIcon: IconName }[] = [
-  { key: "local", icon: "map-pin", pinIcon: "phone" },
-  { key: "acces", icon: "users", pinIcon: "check" },
-  { key: "pragmatisme", icon: "target", pinIcon: "check" },
-  { key: "partenaire", icon: "layers", pinIcon: "check" },
-];
-
-const refMeta: { key: string; icon: IconName; code: string }[] = [
-  { key: "owasp", icon: "code", code: "OWASP" },
-  { key: "iso", icon: "shield-check", code: "ISO/IEC 27001" },
-  { key: "cyfun", icon: "layers", code: "CyFun · NIS2 (CCB)" },
-];
+type ValueItem = {
+  icon: IconName;
+  title: string;
+  text: ReactNode;
+  pin?: string;
+};
 
 export default async function ApprochePage({
   params,
@@ -99,7 +83,31 @@ export default async function ApprochePage({
 
   const b = (chunks: ReactNode) => <b>{chunks}</b>;
   const accent = (chunks: ReactNode) => <span className="accent">{chunks}</span>;
-  const accentOnDark = (chunks: ReactNode) => <span className="accentOnDark">{chunks}</span>;
+
+  const values: ValueItem[] = [
+    {
+      icon: "users",
+      title: t("why.items.acces.title"),
+      text: t("why.items.acces.text"),
+      pin: t("why.items.acces.pin"),
+    },
+    {
+      icon: "alert-circle",
+      title: t("refs.honestyTitle"),
+      text: t.rich("refs.honestyText", { b }),
+    },
+    {
+      icon: "target",
+      title: t("why.items.pragmatisme.title"),
+      text: t("why.items.pragmatisme.text"),
+      pin: t("why.items.pragmatisme.pin"),
+    },
+    {
+      icon: "check",
+      title: t("ai.cards.decision.title"),
+      text: t("ai.cards.decision.text"),
+    },
+  ];
 
   return (
     <>
@@ -171,97 +179,26 @@ export default async function ApprochePage({
         </div>
       </section>
 
-      <TrustStrip />
-
-      {/* ===== Philosophy ===== */}
+      {/* ===== Ma façon de travailler ===== */}
       <Section variant="white">
-        <Reveal as="div" stagger className={styles.philoGrid}>
-          <div>
-            <SectionHeading
-              eyebrow={t("philosophy.eyebrow")}
-              title={t.rich("philosophy.title", { accent })}
-              lead={t.rich("philosophy.lead", { b })}
-            />
-            <blockquote className={styles.quote}>{t.rich("philosophy.quote", { b })}</blockquote>
-          </div>
-          <div className={styles.contrast}>
-            <div className={`${styles.col} ${styles.bad}`}>
-              <div className={styles.cap}>
-                <span className={styles.capBadge}>
-                  <Icon name="alert-circle" size={15} />
-                </span>
-                {t("philosophy.badCap")}
-              </div>
-              <ul>
-                <li>
-                  <Icon name="alert-circle" size={16} />
-                  {t("philosophy.badItem1")}
-                </li>
-                <li>
-                  <Icon name="alert-circle" size={16} />
-                  {t("philosophy.badItem2")}
-                </li>
-                <li>
-                  <Icon name="alert-circle" size={16} />
-                  {t("philosophy.badItem3")}
-                </li>
-                <li>
-                  <Icon name="alert-circle" size={16} />
-                  {t("philosophy.badItem4")}
-                </li>
-              </ul>
-            </div>
-            <div className={`${styles.col} ${styles.good}`}>
-              <div className={styles.cap}>
-                <span className={styles.capBadge}>
-                  <Icon name="check" size={15} strokeWidth={2.6} />
-                </span>
-                {t("philosophy.goodCap")}
-              </div>
-              <ul>
-                <li>
-                  <Icon name="check" size={16} strokeWidth={2.4} />
-                  {t("philosophy.goodItem1")}
-                </li>
-                <li>
-                  <Icon name="check" size={16} strokeWidth={2.4} />
-                  {t("philosophy.goodItem2")}
-                </li>
-                <li>
-                  <Icon name="check" size={16} strokeWidth={2.4} />
-                  {t("philosophy.goodItem3")}
-                </li>
-                <li>
-                  <Icon name="check" size={16} strokeWidth={2.4} />
-                  {t("philosophy.goodItem4")}
-                </li>
-              </ul>
-            </div>
-            <div
-              className={styles.proofVisual}
-              role="img"
-              aria-label={t("philosophy.proofAriaLabel")}
-            >
-              <ProofVisual />
-              <p className={styles.proofCaption}>{t.rich("philosophy.proofCaption", { b })}</p>
-            </div>
-          </div>
+        <Reveal>
+          <SectionHeading
+            eyebrow={t("philosophy.eyebrow")}
+            title={t.rich("philosophy.title", { accent })}
+            lead={t.rich("philosophy.lead", { b })}
+          />
+          <blockquote className={styles.quote}>{t.rich("philosophy.quote", { b })}</blockquote>
         </Reveal>
       </Section>
 
-      {/* ===== Method ===== */}
+      {/* ===== Method (4 steps) ===== */}
       <Section variant="tint" id="method">
         <Reveal>
           <SectionHeading
-            center
             eyebrow={t("method.eyebrow")}
             title={t.rich("method.title", { accent })}
             lead={t("method.lead")}
           />
-        </Reveal>
-
-        <Reveal variant="scale" className={styles.roadmap}>
-          <RoadmapIllustration />
         </Reveal>
 
         <div className={styles.overview}>
@@ -273,172 +210,32 @@ export default async function ApprochePage({
             }))}
           />
         </div>
-
-        <Reveal as="div" stagger className={styles.methodGallery}>
-          <figure className={styles.methodPhoto}>
-            <OptimizedImage
-              src="/images/pages/approche/planification-roadmap.jpg"
-              alt={t("method.photo2Alt")}
-              width={1400}
-              height={933}
-              sizePreset="card"
-              className={styles.methodPhotoFrame}
-            />
-            <figcaption className={styles.methodPhotoCap}>
-              {t.rich("method.photo2Caption", { b })}
-            </figcaption>
-          </figure>
-        </Reveal>
-
-        <Reveal as="div" stagger className={styles.stepsDetail}>
-          {methodStepKeys.map((key, i) => (
-            <article key={key} className={styles.mstep}>
-              <div className={styles.idx}>
-                <div className={styles.num}>{String(i + 1).padStart(2, "0")}</div>
-                {i < methodStepKeys.length - 1 ? <div className={styles.ln} /> : null}
-              </div>
-              <div>
-                <div className={styles.kick}>{t(`steps.${key}.kick`)}</div>
-                <h3 className={styles.stepTitle}>{t(`steps.${key}.title`)}</h3>
-                <p className={styles.stepText}>{t.rich(`steps.${key}.text`, { b })}</p>
-              </div>
-              <div className={styles.deliverCol}>
-                <div className={styles.deliverHead}>
-                  <Icon name="file-check" size={16} />
-                  {t("method.deliverHead")}
-                </div>
-                <ul>
-                  {(["d1", "d2", "d3"] as const).map((d) => (
-                    <li key={d}>
-                      <Icon name="check" size={15} strokeWidth={2.4} />
-                      {t(`steps.${key}.${d}`)}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))}
-        </Reveal>
       </Section>
 
-      {/* ===== AI companion ===== */}
-      <Section variant="navy" gridBg id="ia">
-        <Reveal as="div" stagger className={styles.aiGrid}>
-          <div>
-            <SectionHeading
-              onDark
-              eyebrow={t("ai.eyebrow")}
-              title={t.rich("ai.title", { accentOnDark })}
-              lead={t("ai.lead")}
-            />
-            <div className={styles.aiHonest}>
-              <Icon name="alert-circle" size={22} />
-              <p>{t.rich("ai.honest", { b })}</p>
-            </div>
-          </div>
-          <Reveal as="div" stagger className={styles.aiCards}>
-            {aiCardMeta.map((card) => (
-              <div key={card.key} className={styles.aiCard}>
-                <div className={styles.aiIcon}>
-                  <Icon name={card.icon} size={22} />
-                </div>
-                <h3>{t(`ai.cards.${card.key}.title`)}</h3>
-                <p>{t(`ai.cards.${card.key}.text`)}</p>
-              </div>
-            ))}
-          </Reveal>
-          <div className={styles.aiIllustration}>
-            <AiIllustration />
-            <div className={styles.legend}>
-              <span>
-                <i className={styles.legendDot} aria-hidden="true" />
-                {t("ai.legendHuman")}
-              </span>
-              <span>
-                <i className={styles.legendDot} aria-hidden="true" />
-                {t("ai.legendVerified")}
-              </span>
-              <span>
-                <i className={styles.legendDot} aria-hidden="true" />
-                {t("ai.legendAi")}
-              </span>
-            </div>
-          </div>
-        </Reveal>
-      </Section>
-
-      {/* ===== Why Smidjan ===== */}
+      {/* ===== Values ===== */}
       <Section variant="white">
         <Reveal>
-          <SectionHeading
-            center
-            eyebrow={t("why.eyebrow")}
-            title={t.rich("why.title", { accent })}
-            lead={t("why.lead")}
-          />
+          <Eyebrow>{t("why.eyebrow")}</Eyebrow>
+          <p className={styles.valuesLead}>{t("why.lead")}</p>
         </Reveal>
-
-        <Reveal variant="scale" as="figure" className={styles.sectionPhoto}>
-          <OptimizedImage
-            src="/images/pages/approche/collaboration-expert.jpg"
-            alt={t("why.photoAlt")}
-            width={1200}
-            height={800}
-            sizePreset="hero"
-            className={styles.sectionPhotoFrame}
-          />
-          <figcaption className={styles.sectionPhotoCap}>
-            {t.rich("why.photoCaption", { b })}
-          </figcaption>
-        </Reveal>
-
         <Reveal as="div" stagger className={styles.whyGrid}>
-          {whyMeta.map((item) => (
-            <div key={item.key} className={styles.whyItem}>
+          {values.map((item) => (
+            <div key={item.title} className={styles.whyItem}>
               <div className={styles.whyIcon}>
                 <Icon name={item.icon} size={24} />
               </div>
               <div>
-                <h3 className={styles.whyTitle}>{t(`why.items.${item.key}.title`)}</h3>
-                <p className={styles.whyText}>{t(`why.items.${item.key}.text`)}</p>
-                <span className={styles.whyPin}>
-                  <Icon name={item.pinIcon} size={14} strokeWidth={2.4} />
-                  {t(`why.items.${item.key}.pin`)}
-                </span>
+                <h3 className={styles.whyTitle}>{item.title}</h3>
+                <p className={styles.whyText}>{item.text}</p>
+                {item.pin ? (
+                  <span className={styles.whyPin}>
+                    <Icon name="check" size={14} strokeWidth={2.4} />
+                    {item.pin}
+                  </span>
+                ) : null}
               </div>
             </div>
           ))}
-        </Reveal>
-      </Section>
-
-      {/* ===== Référentiels / quality ===== */}
-      <Section variant="tint">
-        <Reveal>
-          <SectionHeading
-            center
-            eyebrow={t("refs.eyebrow")}
-            title={t.rich("refs.title", { accent })}
-            lead={t("refs.lead")}
-          />
-        </Reveal>
-        <Reveal as="div" stagger className={styles.refsGrid}>
-          {refMeta.map((ref) => (
-            <article key={ref.key} className={styles.refCard}>
-              <div className={styles.refIcon}>
-                <Icon name={ref.icon} size={26} />
-              </div>
-              <div className={styles.refCode}>{ref.code}</div>
-              <h3 className={styles.refTitle}>{t(`refs.items.${ref.key}.title`)}</h3>
-              <p className={styles.refText}>{t(`refs.items.${ref.key}.text`)}</p>
-            </article>
-          ))}
-        </Reveal>
-        <Reveal className={styles.refsHonesty}>
-          <Icon name="alert-circle" size={26} />
-          <div>
-            <h4>{t("refs.honestyTitle")}</h4>
-            <p>{t.rich("refs.honestyText", { b })}</p>
-          </div>
         </Reveal>
       </Section>
 

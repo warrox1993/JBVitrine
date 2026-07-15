@@ -133,13 +133,7 @@
   margin-top: 1px;
 }
 
-/* ===== Philosophy ===== */
-.philoGrid {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 56px;
-  align-items: center;
-}
+/* ===== Ma façon de travailler ===== */
 .quote {
   margin: 32px 0 0;
   padding: 20px 24px;
@@ -149,436 +143,30 @@
   font-size: 15px;
   color: var(--color-text);
   font-style: normal;
+  max-width: 62ch;
 }
 .quote b {
   color: var(--color-text);
 }
-.contrast {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-}
-.col {
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 24px 22px;
-  background: var(--bg-2);
-}
-.col.good {
-  background: var(--color-surface-solid);
-  border-color: var(--line-2);
-  box-shadow: var(--shadow);
-}
-.cap {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font: 700 11.5px/1 var(--mono);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.col.bad .cap {
-  color: var(--muted);
-}
-.col.good .cap {
-  color: var(--orange-d);
-}
-.capBadge {
-  width: 26px;
-  height: 26px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: none;
-}
-.col.bad .capBadge {
-  background: var(--bg-3);
-  color: var(--muted);
-}
-.col.good .capBadge {
-  background: var(--orange-t);
-  color: var(--orange-d);
-}
-.col ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 12px;
-}
-.col li {
-  font-size: 14px;
-  color: var(--slate);
-  display: flex;
-  gap: 9px;
-  align-items: flex-start;
-  line-height: 1.45;
-}
-.col li svg {
-  flex: none;
-  margin-top: 2px;
-}
-.col.bad li svg {
-  color: var(--muted);
-}
-.col.good li svg {
-  color: var(--orange-d);
-}
-.proofVisual {
-  grid-column: 1 / -1;
-  margin-top: 4px;
-  background: var(--color-surface-solid);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 22px 24px 18px;
-  box-shadow: var(--shadow-s);
-}
-.proofVisual svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.proofCaption {
-  margin-top: 14px;
-  font-size: 13px;
-  color: var(--muted);
-  text-align: center;
-}
-.proofCaption b {
-  color: var(--navy-3);
-}
-/* Dark: --navy-3 stays a deep blue and would sink into the now-dark
-   proofVisual card. Lift the emphasised text to primary ink in dark only. */
-:root[data-theme="dark"] .proofCaption b {
-  color: var(--color-text);
-}
 
 /* ===== Method ===== */
-.roadmap {
-  margin-top: 44px;
-}
-.roadmap svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 .overview {
   margin-top: 28px;
-  margin-bottom: 8px;
 }
 
-/* Real photography (in addition to the inline-SVG illustrations) */
-.methodGallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  margin-top: 44px;
-}
-.methodPhoto {
-  margin: 0;
-}
-.methodPhotoFrame {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid rgba(11, 122, 91, 0.35);
-  box-shadow: var(--shadow);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-.methodPhotoFrame :global(img) {
-  filter: saturate(0.85) contrast(1.03);
-}
-.methodPhotoFrame::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(11, 31, 58, 0) 45%, rgba(11, 31, 58, 0.55) 100%),
-    linear-gradient(135deg, rgba(11, 31, 58, 0.22), transparent 60%);
-  pointer-events: none;
-}
-.methodPhotoFrame:hover {
-  box-shadow: 0 22px 48px -18px rgba(11, 31, 58, 0.4);
-  transform: translateY(-3px);
-}
-.methodPhotoCap {
-  margin-top: 12px;
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.5;
-  text-align: center;
-}
-.methodPhotoCap b {
-  color: var(--color-text);
-  font-weight: 600;
-}
-.stepsDetail {
-  display: grid;
-  gap: 28px;
-  margin-top: 60px;
-}
-.mstep {
-  background: var(--color-surface-solid);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 36px 38px;
-  display: grid;
-  grid-template-columns: auto 1fr 1.05fr;
-  gap: 28px;
-  align-items: start;
-  box-shadow: var(--shadow-s);
-  transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
-}
-.mstep:hover {
-  border-color: var(--line-2);
-  box-shadow: var(--shadow);
-  transform: translateY(-2px);
-}
-.idx {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.num {
-  width: 62px;
-  height: 62px;
-  border-radius: 14px;
-  background: var(--navy);
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 21px;
-  letter-spacing: 0.01em;
-  font-family: var(--mono);
-  flex: none;
-  box-shadow: 0 10px 22px -8px rgba(11, 31, 58, 0.45);
-}
-.mstep:last-child .num {
-  background: var(--orange);
-  box-shadow: 0 10px 22px -8px rgba(11, 122, 91, 0.5);
-}
-.ln {
-  width: 2px;
-  flex: 1;
-  background: var(--line);
-  border-radius: 2px;
-  min-height: 14px;
-}
-.kick {
-  font: 700 11.5px/1 var(--mono);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--orange-d);
-  margin-bottom: 9px;
-}
-.stepTitle {
-  font-size: 23px;
-  color: var(--color-text);
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-.stepText {
-  margin-top: 11px;
-  font-size: 14.5px;
+/* ===== Values ===== */
+.valuesLead {
+  margin-top: 14px;
+  max-width: 56ch;
+  font-size: 15.5px;
   color: var(--slate);
-  line-height: 1.55;
+  line-height: 1.6;
 }
-.stepText b {
-  color: var(--color-text);
-}
-.deliverCol {
-  background: var(--bg-2);
-  border: 1px solid var(--line);
-  border-radius: 11px;
-  padding: 22px 24px;
-}
-.deliverHead {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font: 700 11px/1 var(--mono);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-text);
-  margin-bottom: 14px;
-}
-.deliverHead svg {
-  color: var(--orange-d);
-}
-.deliverCol ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 9px;
-}
-.deliverCol li {
-  font-size: 13.5px;
-  color: var(--slate);
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  line-height: 1.45;
-}
-.deliverCol li svg {
-  color: var(--orange-d);
-  flex: none;
-  margin-top: 2px;
-}
-
-/* ===== AI companion ===== */
-.aiGrid {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 56px;
-  align-items: center;
-}
-.aiHonest {
-  margin-top: 28px;
-  display: flex;
-  gap: 13px;
-  align-items: flex-start;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-left: 3px solid var(--orange-on-dark);
-  border-radius: 10px;
-  padding: 20px 22px;
-}
-.aiHonest svg {
-  color: var(--orange-on-dark);
-  flex: none;
-  margin-top: 1px;
-}
-.aiHonest p {
-  font-size: 14px;
-  color: #c3cfe0;
-}
-.aiHonest b {
-  color: var(--white);
-}
-.aiCards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-.aiCard {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 13px;
-  padding: 26px 24px;
-}
-.aiIcon {
-  width: 44px;
-  height: 44px;
-  border-radius: 11px;
-  background: rgba(11, 122, 91, 0.16);
-  color: var(--orange-on-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-.aiCard h4 {
-  color: var(--white);
-  font-size: 16px;
-  font-weight: 700;
-}
-.aiCard p {
-  font-size: 13.5px;
-  color: var(--on-dark-muted);
-  margin-top: 8px;
-}
-.aiIllustration {
-  grid-column: 1 / -1;
-  margin-top: 8px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 30px 24px 22px;
-}
-.aiIllustration svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 760px;
-  margin: 0 auto;
-}
-.legend {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin-top: 18px;
-  flex-wrap: wrap;
-}
-.legend span {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--on-dark-muted);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.legendDot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--orange-on-dark);
-  flex: none;
-}
-
-/* ===== Why Smidjan ===== */
-/* Real photography (in addition to the inline-SVG illustrations) */
-.sectionPhoto {
-  margin: 40px auto 0;
-  max-width: 860px;
-}
-.sectionPhotoFrame {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid rgba(11, 122, 91, 0.35);
-  box-shadow: var(--shadow);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-.sectionPhotoFrame :global(img) {
-  filter: saturate(0.85) contrast(1.03);
-}
-.sectionPhotoFrame::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(11, 31, 58, 0) 45%, rgba(11, 31, 58, 0.55) 100%),
-    linear-gradient(135deg, rgba(11, 31, 58, 0.22), transparent 60%);
-  pointer-events: none;
-}
-.sectionPhotoFrame:hover {
-  box-shadow: 0 22px 48px -18px rgba(11, 31, 58, 0.4);
-  transform: translateY(-3px);
-}
-.sectionPhotoCap {
-  margin-top: 12px;
-  text-align: center;
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.5;
-}
-.sectionPhotoCap b {
-  color: var(--color-text);
-  font-weight: 600;
-}
-
 .whyGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  margin-top: 52px;
+  margin-top: 32px;
 }
 .whyItem {
   display: flex;
@@ -633,93 +221,6 @@
   flex: none;
 }
 
-/* ===== Référentiels ===== */
-.refsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 52px;
-}
-.refCard {
-  background: var(--color-surface-solid);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 30px 28px;
-  box-shadow: var(--shadow-s);
-  transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
-}
-.refCard:hover {
-  border-color: var(--line-2);
-  box-shadow: var(--shadow);
-  transform: translateY(-3px);
-}
-.refIcon {
-  width: 50px;
-  height: 50px;
-  border-radius: 11px;
-  background: var(--navy);
-  color: var(--orange-on-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-.refCode {
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--orange-d);
-  margin-bottom: 8px;
-}
-.refTitle {
-  font-size: 18px;
-  color: var(--color-text);
-  font-weight: 700;
-}
-.refText {
-  margin-top: 10px;
-  font-size: 14px;
-  color: var(--slate);
-}
-.refsHonesty {
-  margin-top: 38px;
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  background: var(--bg-3);
-  border: 1px solid var(--line);
-  border-left: 3px solid var(--navy-3);
-  border-radius: 10px;
-  padding: 24px 26px;
-}
-.refsHonesty svg {
-  color: var(--navy-3);
-  flex: none;
-}
-.refsHonesty h4 {
-  font-size: 15.5px;
-  color: var(--color-text);
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-.refsHonesty p {
-  font-size: 14px;
-  color: var(--slate);
-}
-.refsHonesty p b {
-  color: var(--color-text);
-}
-
-/* Dark-mode residual fix: navy-3 border/icon are nearly invisible on the dark
-   callout; use the orange accent instead. */
-:root[data-theme="dark"] .refsHonesty {
-  border-left-color: var(--orange-d);
-}
-:root[data-theme="dark"] .refsHonesty svg {
-  color: var(--orange-d);
-}
-
 /* ===== Responsive ===== */
 @media (max-width: 1000px) {
   .heroGrid {
@@ -729,53 +230,13 @@
   .promiseCard {
     max-width: 480px;
   }
-  .philoGrid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-  .mstep {
-    grid-template-columns: auto 1fr;
-    gap: 22px;
-  }
-  .mstep .deliverCol {
-    grid-column: 1 / -1;
-    margin-top: 4px;
-  }
-  .methodGallery {
-    grid-template-columns: 1fr;
-  }
-  .aiGrid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
   .whyGrid {
-    grid-template-columns: 1fr;
-  }
-  .refsGrid {
     grid-template-columns: 1fr;
   }
 }
 @media (max-width: 720px) {
   .hero {
     padding: 28px 0 48px;
-  }
-  .contrast {
-    grid-template-columns: 1fr;
-  }
-  .aiCards {
-    grid-template-columns: 1fr;
-  }
-  .mstep {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 26px 22px;
-  }
-  .idx {
-    flex-direction: row;
-    align-items: center;
-  }
-  .ln {
-    display: none;
   }
   /* Stack the two "lg" hero buttons full-width on mobile. Target the anchors
      Button renders (its own class is hashed, so a `.btnFull` hook never
@@ -790,29 +251,18 @@
     justify-content: center;
     white-space: normal;
   }
-  /* Trim oversized card paddings so content keeps room at 320–390px. */
+  /* Trim oversized card paddings so content keeps room at 320-390px. */
   .promiseCard {
     padding: 26px 22px 24px;
   }
-  .refCard {
-    padding: 26px 22px;
-  }
   .whyItem {
     padding: 22px;
-  }
-  .aiIllustration {
-    padding: 24px 18px 20px;
   }
 }
 @media (max-width: 480px) {
   .promiseIcon {
     width: 42px;
     height: 42px;
-  }
-  .num {
-    width: 52px;
-    height: 52px;
-    font-size: 18px;
   }
   .quote {
     padding: 18px 18px;
