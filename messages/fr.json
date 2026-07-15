@@ -380,6 +380,12 @@
       "agenceHeading": "Le praticien",
       "certsHeading": "Cadres de référence",
       "langHeading": "Langue",
+      "profilesHeading": "Profils",
+      "profiles": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "tryhackme": "TryHackMe"
+      },
       "copyright": "© 2026 Smidjan · Tous droits réservés.",
       "links": {
         "reseaux": "Réseaux & infrastructure",
@@ -944,7 +950,8 @@
       "ctaSecondary": "Mon parcours",
       "trust1": "Défense (télécom)",
       "trust2": "AZ-900",
-      "trust3": "Bachelier Informatique en cours"
+      "trust3": "Bachelier Informatique en cours",
+      "availability": "Basé en Wallonie, autorisé à travailler en UE. Ouvert aux missions et aux opportunités, Bruxelles, Wallonie ou télétravail."
     },
     "capabilities": {
       "eyebrow": "Ce que je sais faire",

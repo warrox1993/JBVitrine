@@ -25,6 +25,12 @@
     "agenceHeading": "The practitioner",
     "certsHeading": "Reference frameworks",
     "langHeading": "Language",
+    "profilesHeading": "Profiles",
+    "profiles": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "tryhackme": "TryHackMe"
+    },
     "copyright": "© 2026 Smidjan · All rights reserved.",
     "links": {
       "reseaux": "Networks & infrastructure",

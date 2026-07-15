@@ -42,6 +42,7 @@ export async function Hero() {
               </React.Fragment>
             ))}
           </p>
+          <p className={styles.availability}>{t("hero.availability")}</p>
         </Reveal>
 
         <Reveal variant="scale" delay={120} className={styles.visual}>

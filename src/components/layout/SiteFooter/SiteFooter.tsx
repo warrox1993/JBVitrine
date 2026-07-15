@@ -1,7 +1,18 @@
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher/LocaleSwitcher";
+import { Icon } from "@/components/ui/Icon/Icon";
 import styles from "./SiteFooter.module.css";
+
+const PROFILE_LINKS = [
+  { key: "github", href: "https://github.com/warrox1993", icon: "github" as const },
+  {
+    key: "linkedin",
+    href: "https://www.linkedin.com/in/jean-baptistedhondt",
+    icon: "linkedin" as const,
+  },
+  { key: "tryhackme", href: "https://tryhackme.com/p/Warrox1993", icon: "shield" as const },
+];
 
 /**
  * Rich navy footer with a 3px orange top border.
@@ -89,6 +100,19 @@ export default async function SiteFooter() {
                 </svg>
                 <a href="mailto:jeanbaptiste.dhondt1@gmail.com">jeanbaptiste.dhondt1@gmail.com</a>
               </li>
+            </ul>
+            <h2 className={`${styles.heading} ${styles.headingSpaced}`}>
+              {t("footer.profilesHeading")}
+            </h2>
+            <ul className={styles.profiles}>
+              {PROFILE_LINKS.map(({ key, href, icon }) => (
+                <li key={key}>
+                  <a href={href} target="_blank" rel="noopener noreferrer">
+                    <Icon name={icon} size={17} />
+                    <span>{t(`footer.profiles.${key}`)}</span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

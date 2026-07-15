@@ -25,6 +25,12 @@
     "agenceHeading": "Le praticien",
     "certsHeading": "Cadres de référence",
     "langHeading": "Langue",
+    "profilesHeading": "Profils",
+    "profiles": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "tryhackme": "TryHackMe"
+    },
     "copyright": "© 2026 Smidjan · Tous droits réservés.",
     "links": {
       "reseaux": "Réseaux & infrastructure",

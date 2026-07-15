@@ -25,6 +25,12 @@
     "agenceHeading": "De praktijk",
     "certsHeading": "Referentiekaders",
     "langHeading": "Taal",
+    "profilesHeading": "Profielen",
+    "profiles": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "tryhackme": "TryHackMe"
+    },
     "copyright": "© 2026 Smidjan · Alle rechten voorbehouden.",
     "links": {
       "reseaux": "Netwerken & infrastructuur",

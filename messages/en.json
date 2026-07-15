@@ -380,6 +380,12 @@
       "agenceHeading": "The practitioner",
       "certsHeading": "Reference frameworks",
       "langHeading": "Language",
+      "profilesHeading": "Profiles",
+      "profiles": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "tryhackme": "TryHackMe"
+      },
       "copyright": "© 2026 Smidjan · All rights reserved.",
       "links": {
         "reseaux": "Networks & infrastructure",
@@ -944,7 +950,8 @@
       "ctaSecondary": "My journey",
       "trust1": "Defence (telecom)",
       "trust2": "AZ-900",
-      "trust3": "IT Bachelor's degree in progress"
+      "trust3": "IT Bachelor's degree in progress",
+      "availability": "Based in Wallonia, authorised to work in the EU. Open to freelance missions and opportunities, in Brussels, Wallonia or remote."
     },
     "capabilities": {
       "eyebrow": "What I can do",
