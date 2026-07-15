@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -63,12 +64,14 @@ export default async function BlogPage({ params }: PageProps) {
   const t = await getTranslations("blog");
   const blogArticles = await getAllArticles();
   const [featured] = blogArticles;
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
 
   return (
     <div className={styles.pageRoot}>
       {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -94,6 +97,7 @@ export default async function BlogPage({ params }: PageProps) {
       {/* Blog Schema */}
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",

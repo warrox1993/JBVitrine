@@ -92,7 +92,7 @@ const nextConfig: NextConfig = {
   },
 
   // Redirections SEO refonte. Next émet un 308 (permanent, préserve la méthode)
-  // pour `permanent: true` — l'équivalent moderne du 301.
+  // pour `permanent: true`, l'équivalent moderne du 301.
   async redirects() {
     return [
       // Ancienne structure "produits/*"
@@ -101,7 +101,7 @@ const nextConfig: NextConfig = {
         destination: "/services",
         permanent: true,
       },
-      // Refonte : positionnement cyber-first — le CMS/e-commerce n'est plus un
+      // Refonte : positionnement cyber-first, le CMS/e-commerce n'est plus un
       // service. On renvoie vers l'offre développement web sécurisé.
       {
         source: "/cms-ecommerce",
@@ -166,50 +166,12 @@ const nextConfig: NextConfig = {
   },
 
   // Security Headers
+  // NOTE: Content-Security-Policy is NOT set here anymore. It now needs a
+  // per-request nonce in script-src (to drop 'unsafe-inline'), which a
+  // static next.config.ts header can't provide, so it's built and applied by
+  // src/middleware.ts for every request instead. Everything else below is
+  // still static and stays here.
   async headers() {
-    // CSP conditionnelle: Vercel Live autorisé en dev et preview
-    // Note: Turbopack ne set pas toujours NODE_ENV, donc on détecte aussi via VERCEL_ENV
-
-
-    const baseCsp = [
-      "default-src 'self'",
-      // Styles: 'unsafe-inline' pour CSS-in-JS + Google Fonts
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      // Fonts: Google Fonts + Perplexity AI + data URIs
-      "font-src 'self' https://fonts.gstatic.com https://r2cdn.perplexity.ai data:",
-      // Images: self + HTTPS externe + data URIs + blob + Google Maps
-      "img-src 'self' https: data: blob: https://maps.googleapis.com https://maps.gstatic.com",
-      // Connexions: Vercel Analytics + Speed Insights + reCAPTCHA + Google Maps + Vercel Live
-      "connect-src 'self' https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com https://*.googleapis.com https://vercel.live wss://ws-us3.pusher.com https://sockjs-us3.pusher.com",
-      // Fermeture sécurité object/frame
-      "object-src 'none'",
-      // Allow Google Maps + reCAPTCHA + Vercel Live embeds
-      "frame-src https://www.google.com https://recaptcha.google.com https://www.recaptcha.net https://maps.googleapis.com https://vercel.live",
-      "frame-ancestors 'none'",
-      // Base et form
-      "base-uri 'self'",
-      "form-action 'self'",
-      // Upgrade HTTP → HTTPS
-      "upgrade-insecure-requests",
-    ];
-
-    // Dev/Preview/Prod: autorise Vercel Live + reCAPTCHA + Google Maps
-    // Vercel Live needs to be allowed even in prod if used for feedback/preview
-    // script-src: 'unsafe-eval' and Vercel Live are DEV-only (HMR / preview
-    // toolbar); both are removed in production.
-    // TODO(security): migrate to per-request nonces to also drop 'unsafe-inline'
-    // — requires a preview-deploy smoke test of JSON-LD, Vercel Analytics,
-    // Google Maps and reCAPTCHA before promoting to production.
-    const scriptSrc =
-      "script-src 'self' 'unsafe-inline'" +
-      (process.env.NODE_ENV === "production"
-        ? ""
-        : " 'unsafe-eval' https://vercel.live https://*.vercel.live") +
-      " https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com";
-    baseCsp.push(scriptSrc);
-
-    const csp = baseCsp.join("; ");
-
     return [
       {
         source: "/:path*",
@@ -238,10 +200,6 @@ const nextConfig: NextConfig = {
             key: "Permissions-Policy",
             value:
               "camera=(), microphone=(), geolocation=(), interest-cohort=()",
-          },
-          {
-            key: "Content-Security-Policy",
-            value: csp,
           },
         ],
       },

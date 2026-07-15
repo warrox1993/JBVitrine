@@ -19,6 +19,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale } from 'next-intl/server';
+import { headers } from 'next/headers';
 
 // Optimized font loading with swap and subset for faster FCP/LCP
 const inter = Inter({
@@ -145,6 +146,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
     const locale = await getLocale();
+    // CSP nonce forwarded by src/middleware.ts (x-nonce request header). Needed
+    // so this inline script is allowed under the nonce-based script-src.
+    const nonce = (await headers()).get('x-nonce') ?? undefined;
     return (
         <html lang={locale} data-theme="light" suppressHydrationWarning>
             <head>
@@ -155,6 +159,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
                     dark theme is visually signed off. To follow the OS instead,
                     swap the fallback to: (m?'dark':'light'). Zero-dependency. */}
                 <script
+                    nonce={nonce}
                     dangerouslySetInnerHTML={{
                         __html:
                             "(function(){try{var s=localStorage.getItem('smidjan-theme');document.documentElement.setAttribute('data-theme',(s==='dark'||s==='light')?s:'light');}catch(e){}})();",
