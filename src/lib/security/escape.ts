@@ -65,3 +65,17 @@ export function jsonLdSafe(obj: unknown): string {
     .replace(/\u2028/g, "\\u2028")
     .replace(/\u2029/g, "\\u2029");
 }
+
+/**
+ * Mask a client IP / identifier before writing it to logs. console.warn/error
+ * survive the production `removeConsole` setting, so never log a raw IP (PII).
+ * Keeps only the first octet of an IPv4 (or a short prefix otherwise).
+ */
+export function maskIp(ip: unknown): string {
+  if (!ip || typeof ip !== "string") return "unknown";
+  const parts = ip.split(".");
+  if (parts.length === 4) {
+    return `${parts[0]}.x.x.x`;
+  }
+  return ip.length > 8 ? `${ip.substring(0, 8)}***` : "***";
+}

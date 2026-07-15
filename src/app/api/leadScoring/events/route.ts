@@ -5,6 +5,7 @@
  */
 
 import { NextRequest, NextResponse } from "next/server";
+import { maskIp } from "@/lib/security/escape";
 import { db } from "@/lib/db";
 import {
   leadScoringLimiter,
@@ -35,7 +36,7 @@ export async function POST(request: NextRequest) {
     if (!success) {
       console.warn(
         "[LeadScoring/events] Rate limit exceeded for:",
-        clientIdentifier,
+        maskIp(clientIdentifier),
       );
       return NextResponse.json(
         { error: "Too many requests" },

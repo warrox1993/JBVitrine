@@ -5,6 +5,7 @@
  */
 
 import { NextRequest, NextResponse } from "next/server";
+import { maskIp } from "@/lib/security/escape";
 import { db } from "@/lib/db";
 import { redis } from "@/lib/redis";
 import { requireAuth } from "@/lib/auth";
@@ -75,7 +76,7 @@ export async function POST(request: NextRequest) {
     if (!success) {
       console.warn(
         "[LeadScoring/leads] Rate limit exceeded for:",
-        clientIdentifier,
+        maskIp(clientIdentifier),
       );
       return NextResponse.json(
         {
@@ -345,7 +346,7 @@ export async function GET(request: NextRequest) {
     if (!success) {
       console.warn(
         "[LeadScoring/leads] GET rate limit exceeded for:",
-        clientIdentifier,
+        maskIp(clientIdentifier),
       );
       return NextResponse.json(
         { error: "Too many requests" },
