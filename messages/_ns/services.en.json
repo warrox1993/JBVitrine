@@ -1,228 +1,90 @@
 {
   "meta": {
-    "title": "Our expertise: Cybersecurity, security testing, development & compliance | Smidjan Wallonia",
-    "description": "Smidjan secures your infrastructure, tests your applications (OWASP security testing), builds secure by design and guides you towards NIS2 / CyFun compliance. A single point of contact, in Wallonia.",
-    "ogTitle": "Our expertise: Cybersecurity, security testing, development & compliance",
-    "ogDescription": "Secure, test, build, comply: four Smidjan expertise areas to concretely reduce the cyber risk of SMEs in Belgium.",
-    "ogImageAlt": "Smidjan: Cybersecurity, security testing, secure development & NIS2 compliance in Wallonia",
-    "twitterTitle": "Our expertise: Smidjan Cybersecurity",
-    "twitterDescription": "Secure, test, build, comply: four areas of expertise to reduce the cyber risk of SMEs."
+    "title": "Cloud, network, AI security & NIS2 compliance | Smidjan Wallonia",
+    "description": "Securing your cloud environments and networks, automating and securing your AI usage, and preparing your NIS2 compliance with the CyFun framework. Solo practitioner retraining into cybersecurity, based in Wallonia.",
+    "ogTitle": "Cloud, network, AI security & NIS2 compliance",
+    "ogDescription": "Four areas of expertise to secure your infrastructure and prepare your NIS2 compliance: cloud, network, AI, CyFun.",
+    "ogImageAlt": "Smidjan: cloud, network, AI security and NIS2 / CyFun compliance in Wallonia",
+    "twitterTitle": "Cloud, network, AI security & compliance: Smidjan",
+    "twitterDescription": "Four areas of expertise to secure your infrastructure: cloud, network, AI, NIS2 / CyFun compliance."
   },
   "breadcrumb": {
     "home": "Home",
     "services": "Services"
   },
   "hero": {
-    "kicker": "Our expertise",
-    "title": "Secure, test, build, <accent>comply</accent>.",
-    "lead": "One cybersecurity partner for Belgian SMEs: hardened infrastructure, tested applications, NIS2 / CyFun compliance, from audit to remediation. Based in Wallonia.",
-    "ctaPrimary": "Get in touch",
-    "jumpLabel": "Jump directly to"
+    "kicker": "My expertise",
+    "title": "Securing the cloud, the network, and your <accent>AI</accent> usage.",
+    "lead": "Solo practitioner based in Wallonia, retraining into cybersecurity. Four areas of work: cloud security, network security, AI & automation, and preparing for NIS2 / CyFun compliance.",
+    "ctaPrimary": "Get in touch"
   },
-  "jump": {
-    "securiser": "Secure",
-    "tester": "Test",
-    "developper": "Build",
-    "conformer": "Comply"
+  "pillarsIntro": {
+    "eyebrow": "My expertise",
+    "title": "Four areas, one point of contact"
   },
   "pillars": {
-    "securiser": {
-      "kicker": "Secure",
-      "title": "Networks & infrastructure",
-      "intro": "Block attacks before they reach your data. Defence in depth tailored to an SME, without a dedicated security team.",
+    "cloud": {
+      "index": "01",
+      "title": "Cloud security",
+      "description": "Securing your cloud environments (Azure): configuration, hardening, access management and best practices.",
       "capabilities": [
-        {
-          "title": "Firewall & segmentation",
-          "description": "Network partitioning, filtering rules, isolation of sensitive zones."
-        },
-        {
-          "title": "VPN & remote access",
-          "description": "Secure remote work and vendor access, strong authentication."
-        },
-        {
-          "title": "EDR / next-generation antivirus",
-          "description": "Detection and blocking of threats on workstations and servers."
-        },
-        {
-          "title": "Monitoring & logging",
-          "description": "Log collection, alerts on suspicious behaviour, traceability."
-        },
-        {
-          "title": "Backups & disaster recovery",
-          "description": "Encrypted, offline backups and a tested recovery plan."
-        },
-        {
-          "title": "Hardening",
-          "description": "Secure configuration of servers, workstations, accounts and services."
-        }
-      ],
-      "audience": {
-        "forWho": {
-          "label": "For whom",
-          "text": "SMEs without a dedicated security team, looking for a solid foundation."
-        },
-        "when": {
-          "label": "When",
-          "text": "Network overhaul, migration, after an incident or before an audit."
-        }
-      },
-      "deliverables": [
-        "Documented & segmented network architecture",
-        "Backup policy + tested disaster recovery plan",
-        "Monitoring dashboard",
-        "Hardening report & recommendations"
-      ],
-      "ctaLabel": "Secure my infrastructure"
+        "Secure configuration of Azure resources",
+        "Identity and access management",
+        "Applying hardening best practices"
+      ]
     },
-    "tester": {
-      "kicker": "Test",
-      "title": "Audits & security testing",
-      "intro": "We think like an attacker to find your weaknesses before they do. OWASP methodology, prioritised remediation. We help you fix them, not just point them out.",
+    "reseaux": {
+      "index": "02",
+      "title": "Network security",
+      "description": "Protecting your networks and infrastructure: segmentation, hardening, configuration review and best practices (CCNA in progress).",
       "capabilities": [
-        {
-          "title": "Security audit",
-          "description": "Organisational and technical assessment of your real exposure."
-        },
-        {
-          "title": "Web & application security testing",
-          "description": "OWASP approach on your sites, applications and exposed APIs."
-        },
-        {
-          "title": "Configuration review",
-          "description": "Servers, cloud, Active Directory: hunting down misconfigurations."
-        },
-        {
-          "title": "Code review",
-          "description": "Source code analysis to detect vulnerabilities at the root."
-        }
-      ],
-      "audience": {
-        "forWho": {
-          "label": "For whom",
-          "text": "Owners of a site or app, or subject to a client / insurer requirement."
-        },
-        "when": {
-          "label": "When",
-          "text": "Before going live, every year, or after a major change."
-        }
-      },
-      "deliverables": [
-        "Security testing report prioritised by severity",
-        "Reproducible proof of exploitation",
-        "Concrete recommendations & remediation plan",
-        "Re-verification (retest) after correction"
-      ],
-      "ctaLabel": "Schedule security testing"
+        "Network segmentation and partitioning",
+        "Equipment configuration review",
+        "Hardening according to best practices"
+      ]
     },
-    "developper": {
-      "kicker": "Build",
-      "title": "Secure web development",
-      "intro": "Security built in from the very first line of code, not bolted on afterwards. New projects or bringing a fragile existing one up to standard.",
+    "ia": {
+      "index": "03",
+      "title": "AI & automation",
+      "description": "Automating your tasks with reliable workflows (n8n, Make) and securing your AI usage.",
       "capabilities": [
-        {
-          "title": "Custom sites & applications",
-          "description": "Development tailored to your business processes, without security debt."
-        },
-        {
-          "title": "Secure by design",
-          "description": "Threat modelling and OWASP best practices from the design stage."
-        },
-        {
-          "title": "Application compliance",
-          "description": "GDPR, hardening and bringing a fragile existing application up to standard."
-        },
-        {
-          "title": "Code review & continuous integration",
-          "description": "Automated security checks throughout the development cycle."
-        }
-      ],
-      "audience": {
-        "forWho": {
-          "label": "For whom",
-          "text": "SMEs launching a web project, or taking over an existing app to make it reliable."
-        },
-        "when": {
-          "label": "When",
-          "text": "New development, redesign or application compliance."
-        }
-      },
-      "deliverables": [
-        "Delivered, documented & maintainable application",
-        "Coverage of the OWASP control points",
-        "Security tests & technical documentation",
-        "Knowledge transfer to your teams"
-      ],
-      "ctaLabel": "Discuss my project"
+        "Automation workflows (n8n, Make)",
+        "Securing AI usage and tools",
+        "Making existing automations more reliable"
+      ]
     },
-    "conformer": {
-      "kicker": "Comply",
-      "title": "CyFun / NIS2",
-      "intro": "Are you subject to NIS2? The regulation imposes a cyber baseline on thousands of Belgian companies, subcontractors included. We guide you from the audit to preparing for verification, based on the CCB's CyFun framework.",
+    "conformite": {
+      "index": "04",
+      "title": "NIS2 / CyFun compliance",
+      "description": "Preparing your NIS2 compliance with the CyFun framework, through my audit tool.",
       "capabilities": [
-        {
-          "title": "Audit & self-assessment",
-          "description": "Assessment of the target level (Basic, Important or Essential) in relation to your exposure."
-        },
-        {
-          "title": "Gap analysis",
-          "description": "Mapping of the missing measures against the CyFun framework."
-        },
-        {
-          "title": "Concrete remediation",
-          "description": "We fix what we find: not just a report, but an executed action plan."
-        },
-        {
-          "title": "Preparation for verification",
-          "description": "Evidence file ready for the self-assessment or the certification body."
-        }
+        "Self-assessment aligned with the CyFun framework",
+        "Gap analysis and action prioritisation",
+        "Preparing the evidence file"
       ],
-      "audience": {
-        "forWho": {
-          "label": "For whom",
-          "text": "« Important » or « essential » NIS2 entities, and their subcontractors."
-        },
-        "when": {
-          "label": "When",
-          "text": "NIS2 is already in force: at a client's request, before an audit, or to get compliant without waiting for an incident."
-        }
-      },
-      "deliverables": [
-        "Documented gap analysis report",
-        "Prioritised remediation plan",
-        "Evidence file for the target level",
-        "Follow-up until full remediation"
-      ],
-      "ctaLabel": "Discover our CyFun support"
+      "linkLabel": "Discover the CyFun audit tool"
     }
   },
-  "partner": {
-    "kicker": "A single partner",
-    "title": "Build, <accent>secure</accent> and bring into compliance, all in one place",
-    "lead": "Most providers do one <em>or</em> the other. I cover the whole chain: build, secure, comply. A single point of contact, no passing the ball.",
-    "build": {
-      "label": "Build",
-      "text": "Secure web development, secure by design."
+  "faq": {
+    "eyebrow": "Frequently asked questions",
+    "title": "Your questions about my expertise",
+    "lead": "The questions I get asked most often.",
+    "q1": {
+      "question": "Does NIS2 apply to my SME?",
+      "answer": "NIS2 targets essential and important entities, and many SMEs are covered indirectly, as subcontractors. The CyFun audit tool and a free first conversation help clarify your situation."
     },
-    "secure": {
-      "label": "Secure",
-      "text": "Hardened infrastructure, security testing & monitoring."
+    "q2": {
+      "question": "Do you carry out penetration testing (pentests)?",
+      "answer": "No, I do not offer offensive penetration testing. My work is defensive: cloud security, network security, AI automation, and preparing for NIS2 / CyFun compliance."
     },
-    "comply": {
-      "label": "Comply",
-      "text": "CyFun / NIS2 compliance, from gap to proof."
-    },
-    "aiNote": "An <b>expert augmented by AI</b>, faster, covering more ground. The analysis and the decisions remain human."
-  },
-  "cyfun": {
-    "eyebrow": "The 3 CyFun levels",
-    "title": "A graduated framework, support <accent>tailored to you</accent>",
-    "lead": "The three tiers of the CyberFundamentals Framework, in brief. Full comparison and NIS2 timeline on the dedicated page.",
-    "linkMore": "See the full comparison of the CyFun levels",
-    "transparency": "<b>In full transparency:</b> CyFun certification is issued by BELAC-accredited bodies, independent of Smidjan. Our role: audit, gap analysis, concrete remediation and preparation for verification, a methodology aligned with the CyFun framework, without substituting myself for the certifier."
+    "q3": {
+      "question": "Do you issue the CyFun certification?",
+      "answer": "No. Certification is issued by BELAC-accredited bodies, independent from me. My role: auditing, analysing gaps, and preparing your file."
+    }
   },
   "finalCta": {
     "title": "Let's take stock of your security",
-    "text": "30 minutes with an expert to scope the useful engagement. Clear priorities, a free first exchange, no commitment.",
+    "text": "30 minutes with an expert to scope the useful engagement. Free first exchange, no commitment.",
     "actionPrimary": "Get in touch",
     "actionCall": "Call 0475 20 55 62",
     "reassurances": [
@@ -230,65 +92,5 @@
       "Dedicated expert, no subcontracting",
       "Data in Belgium"
     ]
-  },
-  "visuals": {
-    "secure": {
-      "photoAlt": "Server racks in a secure datacenter, illustrating the hardening of the network infrastructure.",
-      "caption": "<b>Block attacks</b> before they reach your data.",
-      "aria": "Diagram of a firewall filtering inbound traffic: a connection attempt coming from the internet is blocked before it reaches the segmented internal network, made up of a server, a workstation and a storage space.",
-      "internet": "Internet",
-      "firewall": "Firewall",
-      "internalNetwork": "Internal network"
-    },
-    "test": {
-      "photoAlt": "Close-up of a printed circuit board, illustrating a secure-by-design architecture.",
-      "caption": "<b>Reveal the flaws</b> before a real attacker exploits them.",
-      "aria": "Illustration: a security test detects a vulnerable application module through a targeted analysis, then records it in a report of results ranked by severity, with a critical flaw flagged.",
-      "appTested": "Application tested",
-      "auditResults": "Audit results",
-      "headers": "Security headers: OK",
-      "auth": "Authentication: OK",
-      "sqlInjection": "SQL injection: Critical",
-      "tls": "TLS encryption: OK",
-      "low": "Low",
-      "medium": "Medium",
-      "critical": "Critical",
-      "pentestReport": "Security testing report"
-    },
-    "dev": {
-      "photoAlt": "Close-up of a printed circuit board, symbolising an application architecture designed secure by design.",
-      "caption": "<b>Security, from the very first line</b> of code, not added afterwards.",
-      "aria": "Illustration: a code window with a highlighted security function, paired with a validation shield symbolising secure by design development.",
-      "securityByDesign": "Security built in from the design stage"
-    },
-    "comply": {
-      "photoAlt": "Server racks in a data center, illustrating infrastructure hardening.",
-      "caption": "<b>From audit to proof</b>, all the way to CyFun compliance.",
-      "aria": "Illustration: three ascending tiers of the CyFun framework (Basic, Important and Essential) connected by a compliance journey leading to a validation.",
-      "basic": "Basic",
-      "important": "Important",
-      "essential": "Essential"
-    }
-  },
-  "faq": {
-    "eyebrow": "Frequently asked questions",
-    "title": "Your questions about our services",
-    "lead": "The questions I get most often. Another one? Ask it during the free assessment.",
-    "q1": {
-      "question": "Does NIS2 apply to me?",
-      "answer": "NIS2 targets essential and important entities, and many SMEs are covered indirectly, as subcontractors. If in doubt, our 'Does NIS2 apply to me?' check and the free assessment settle your case."
-    },
-    "q2": {
-      "question": "Do you do development AND security?",
-      "answer": "Yes. Networks, applications, secure code and compliance: one point of contact, from audit to remediation. That is our difference, no middlemen."
-    },
-    "q3": {
-      "question": "Do you issue the CyFun certificate?",
-      "answer": "No. Certification is granted by BELAC-accredited bodies, independent from me. My role: audit, remediate and get you ready for the verification."
-    },
-    "q4": {
-      "question": "How much does an audit cost or how long does it take?",
-      "answer": "It depends on the scope and your maturity. The initial assessment is free and no-commitment; it frames scope, duration and budget before any quote."
-    }
   }
 }

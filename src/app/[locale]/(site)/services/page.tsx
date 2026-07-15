@@ -1,29 +1,15 @@
 import type { Metadata } from "next";
 import { buildAlternates } from "@/i18n/metadata";
-import Link from "next/link";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
-import { Icon } from "@/components/ui/Icon/Icon";
-import { LinkMore } from "@/components/ui/LinkMore/LinkMore";
+import { Icon, IconName } from "@/components/ui/Icon/Icon";
 import { Button } from "@/components/ui/Button/Button";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
-import {
-  ServicePillar,
-  CyFunTiers,
-  TrustStrip,
-  Faq,
-  CTABox,
-} from "@/components/shared";
-import {
-  SecureVisual,
-  TestVisual,
-  DevVisual,
-  ComplyVisual,
-} from "./PillarVisuals";
+import { ServiceCard, TrustStrip, Faq, CTABox } from "@/components/shared";
 import styles from "./page.module.css";
 
 export async function generateMetadata({
@@ -80,41 +66,41 @@ const jsonLd = {
   itemListElement: [
     {
       "@type": "Service",
-      "@id": "https://smidjan.be/services#securiser",
-      name: "Sécuriser réseaux & infrastructure",
+      "@id": "https://smidjan.be/services#cloud",
+      name: "Sécurité cloud",
       description:
-        "Segmentation réseau, VPN, EDR, supervision, sauvegardes et durcissement pour bloquer les attaques avant qu'elles n'atteignent vos données.",
-      provider: { "@type": "Organization", name: "Smidjan", url: "https://smidjan.be" },
+        "Sécuriser vos environnements cloud (Azure) : configuration, durcissement, gestion des accès et bonnes pratiques.",
+      provider: { "@type": "Person", name: "Jean-Baptiste Dhondt", url: "https://smidjan.be" },
       areaServed: { "@type": "Country", name: "Belgique" },
-      serviceType: "Sécurité réseau & infrastructure",
+      serviceType: "Sécurité cloud",
     },
     {
       "@type": "Service",
-      "@id": "https://smidjan.be/services#tester",
-      name: "Audits & tests de sécurité",
+      "@id": "https://smidjan.be/services#reseaux",
+      name: "Sécurité réseaux",
       description:
-        "Audits de sécurité et tests de sécurité web/applicatifs suivant une approche OWASP, avec plan de remédiation priorisé et contre-vérification.",
-      provider: { "@type": "Organization", name: "Smidjan", url: "https://smidjan.be" },
+        "Protéger vos réseaux et votre infrastructure : segmentation, durcissement, revue de configuration et bonnes pratiques.",
+      provider: { "@type": "Person", name: "Jean-Baptiste Dhondt", url: "https://smidjan.be" },
       areaServed: { "@type": "Country", name: "Belgique" },
-      serviceType: "Audit & tests de sécurité",
+      serviceType: "Sécurité réseaux",
     },
     {
       "@type": "Service",
-      "@id": "https://smidjan.be/services#developper",
-      name: "Développement web sécurisé",
+      "@id": "https://smidjan.be/services#ia",
+      name: "IA & automatisation",
       description:
-        "Sites et applications sur mesure conçus secure by design, ainsi que la remise à niveau d'applications existantes fragiles.",
-      provider: { "@type": "Organization", name: "Smidjan", url: "https://smidjan.be" },
+        "Automatiser vos tâches avec des workflows fiables (n8n, Make) et sécuriser vos usages de l'IA.",
+      provider: { "@type": "Person", name: "Jean-Baptiste Dhondt", url: "https://smidjan.be" },
       areaServed: { "@type": "Country", name: "Belgique" },
-      serviceType: "Développement web sécurisé",
+      serviceType: "IA & automatisation",
     },
     {
       "@type": "Service",
-      "@id": "https://smidjan.be/services#conformer",
+      "@id": "https://smidjan.be/services#conformite",
       name: "Conformité NIS2 / CyFun",
       description:
-        "Accompagnement à la conformité au référentiel CyberFundamentals (CyFun) du CCB, de l'audit à la préparation à la vérification.",
-      provider: { "@type": "Organization", name: "Smidjan", url: "https://smidjan.be" },
+        "Préparer votre conformité NIS2 avec le référentiel CyFun, via un outil d'audit.",
+      provider: { "@type": "Person", name: "Jean-Baptiste Dhondt", url: "https://smidjan.be" },
       areaServed: { "@type": "Country", name: "Belgique" },
       serviceType: "Conformité NIS2 / CyFun",
     },
@@ -130,6 +116,14 @@ const breadcrumbJsonLd = {
   ],
 };
 
+const PILLAR_KEYS = ["cloud", "reseaux", "ia", "conformite"] as const;
+const PILLAR_ICONS: Record<(typeof PILLAR_KEYS)[number], IconName> = {
+  cloud: "globe",
+  reseaux: "server",
+  ia: "sparkles",
+  conformite: "file-check",
+};
+
 export default async function ServicesPage({
   params,
 }: {
@@ -138,7 +132,7 @@ export default async function ServicesPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("services");
-  const FAQ_KEYS = ["q1", "q2", "q3", "q4"] as const;
+  const FAQ_KEYS = ["q1", "q2", "q3"] as const;
   const faqItems = FAQ_KEYS.map((q) => ({
     question: t(`faq.${q}.question`),
     answer: <p>{t(`faq.${q}.answer`)}</p>,
@@ -197,13 +191,6 @@ export default async function ServicesPage({
                 0475 20 55 62
               </a>
             </div>
-            <p className={styles.jumpLabel}>{t("hero.jumpLabel")}</p>
-          </Reveal>
-          <Reveal as="ul" stagger className={styles.jump}>
-            <li><Link className={styles.jumpLink} href="#securiser"><span className={styles.jumpNum}>01</span>{t("jump.securiser")}</Link></li>
-            <li><Link className={styles.jumpLink} href="#tester"><span className={styles.jumpNum}>02</span>{t("jump.tester")}</Link></li>
-            <li><Link className={styles.jumpLink} href="#developper"><span className={styles.jumpNum}>03</span>{t("jump.developper")}</Link></li>
-            <li><Link className={styles.jumpLink} href="#conformer"><span className={styles.jumpNum}>04</span>{t("jump.conformer")}</Link></li>
           </Reveal>
         </div>
       </Section>
@@ -212,160 +199,28 @@ export default async function ServicesPage({
         <TrustStrip />
       </Reveal>
 
-      {/* ===== Pillar 01 - Sécuriser ===== */}
-      <Reveal variant="up">
-        <ServicePillar
-          id="securiser"
-          index="01"
-          icon="server"
-          kicker={t("pillars.securiser.kicker")}
-          title={t("pillars.securiser.title")}
-          intro={t("pillars.securiser.intro")}
-          visual={<SecureVisual />}
-          capabilities={t.raw("pillars.securiser.capabilities")}
-          audience={[
-            { label: t("pillars.securiser.audience.forWho.label"), text: t("pillars.securiser.audience.forWho.text"), icon: "users" },
-            { label: t("pillars.securiser.audience.when.label"), text: t("pillars.securiser.audience.when.text"), icon: "clock" },
-          ]}
-          deliverables={t.raw("pillars.securiser.deliverables")}
-          ctaLabel={t("pillars.securiser.ctaLabel")}
-          ctaHref="/contact"
-        />
-      </Reveal>
-
-      {/* ===== Pillar 02 - Tester ===== */}
-      <Reveal variant="up">
-        <ServicePillar
-          id="tester"
-          index="02"
-          icon="target"
-          kicker={t("pillars.tester.kicker")}
-          title={t("pillars.tester.title")}
-          intro={t("pillars.tester.intro")}
-          visual={<TestVisual alt />}
-          alt
-          capabilities={t.raw("pillars.tester.capabilities")}
-          audience={[
-            { label: t("pillars.tester.audience.forWho.label"), text: t("pillars.tester.audience.forWho.text"), icon: "users" },
-            { label: t("pillars.tester.audience.when.label"), text: t("pillars.tester.audience.when.text"), icon: "clock" },
-          ]}
-          deliverables={t.raw("pillars.tester.deliverables")}
-          ctaLabel={t("pillars.tester.ctaLabel")}
-          ctaHref="/contact"
-        />
-      </Reveal>
-
-      {/* ===== Pillar 03 - Développer ===== */}
-      <Reveal variant="up">
-        <ServicePillar
-          id="developper"
-          index="03"
-          icon="code"
-          kicker={t("pillars.developper.kicker")}
-          title={t("pillars.developper.title")}
-          intro={t("pillars.developper.intro")}
-          visual={<DevVisual />}
-          capabilities={t.raw("pillars.developper.capabilities")}
-          audience={[
-            { label: t("pillars.developper.audience.forWho.label"), text: t("pillars.developper.audience.forWho.text"), icon: "users" },
-            { label: t("pillars.developper.audience.when.label"), text: t("pillars.developper.audience.when.text"), icon: "clock" },
-          ]}
-          deliverables={t.raw("pillars.developper.deliverables")}
-          ctaLabel={t("pillars.developper.ctaLabel")}
-          ctaHref="/contact"
-        />
-      </Reveal>
-
-      {/* ===== "Un seul partenaire" cross-cut band - full-bleed navy chapter ===== */}
-      <Section variant="navy" gridBg className={styles.partner}>
-        <div className={styles.partnerBox}>
-          <Reveal variant="left">
-            <Eyebrow onDark className={styles.kickerMono}>{t("partner.kicker")}</Eyebrow>
-            <h2>
-              {t.rich("partner.title", { accent: (c) => <span className="accentOnDark">{c}</span> })}
-            </h2>
-            <p className={styles.partnerLead}>
-              {t.rich("partner.lead", { em: (c) => <em>{c}</em> })}
-            </p>
-          </Reveal>
-          <Reveal as="div" stagger className={styles.chain}>
-            <div className={styles.node}>
-              <div className={styles.nodeIcon}><Icon name="code" strokeWidth={1.8} /></div>
-              <b>{t("partner.build.label")}</b>
-              <p>{t("partner.build.text")}</p>
-              <span className={styles.plus} aria-hidden="true">+</span>
-            </div>
-            <div className={styles.node}>
-              <div className={styles.nodeIcon}><Icon name="shield-check" strokeWidth={1.8} /></div>
-              <b>{t("partner.secure.label")}</b>
-              <p>{t("partner.secure.text")}</p>
-              <span className={styles.plus} aria-hidden="true">+</span>
-            </div>
-            <div className={styles.node}>
-              <div className={styles.nodeIcon}><Icon name="file-check" strokeWidth={1.8} /></div>
-              <b>{t("partner.comply.label")}</b>
-              <p>{t("partner.comply.text")}</p>
-            </div>
-          </Reveal>
-        </div>
-        <Reveal variant="up" delay={140}>
-          <div className={styles.aiNote}>
-            <Icon name="sparkles" strokeWidth={1.8} />
-            <span>
-              {t.rich("partner.aiNote", { b: (c) => <b>{c}</b> })}
-            </span>
-          </div>
-        </Reveal>
-      </Section>
-
-      {/* ===== Pillar 04 - Se conformer (CyFun / NIS2) ===== */}
-      <Reveal variant="up">
-        <ServicePillar
-          id="conformer"
-          index="04"
-          icon="file-check"
-          kicker={t("pillars.conformer.kicker")}
-          title={t("pillars.conformer.title")}
-          intro={t("pillars.conformer.intro")}
-          visual={<ComplyVisual alt />}
-          alt
-          capabilities={t.raw("pillars.conformer.capabilities")}
-          audience={[
-            { label: t("pillars.conformer.audience.forWho.label"), text: t("pillars.conformer.audience.forWho.text"), icon: "users" },
-            { label: t("pillars.conformer.audience.when.label"), text: t("pillars.conformer.audience.when.text"), icon: "clock" },
-          ]}
-          deliverables={t.raw("pillars.conformer.deliverables")}
-          ctaLabel={t("pillars.conformer.ctaLabel")}
-          ctaHref="/conformite-nis2"
-        />
-      </Reveal>
-
-      {/* ===== CyFun teaser - 3 niveaux + transparency block ===== */}
-      <Section variant="tint">
-        <Reveal variant="up">
+      {/* ===== 4 pillars, lean grid ===== */}
+      <Section variant="white">
+        <Reveal>
           <SectionHeading
-            center
-            eyebrow={t("cyfun.eyebrow")}
-            title={t.rich("cyfun.title", { accent: (c) => <span className="accent">{c}</span> })}
-            lead={t("cyfun.lead")}
-            className={styles.cyfunTeaser}
+            eyebrow={t("pillarsIntro.eyebrow")}
+            title={t("pillarsIntro.title")}
+            className={styles.pillarsHeading}
           />
-          <div style={{ textAlign: "center" }}>
-            <LinkMore href="/conformite-nis2" className={styles.cyfunLinkMore}>
-              {t("cyfun.linkMore")}
-            </LinkMore>
-          </div>
         </Reveal>
-        <Reveal variant="up" delay={80}>
-          <CyFunTiers showTable={false} />
-        </Reveal>
-        <Reveal variant="up" delay={120}>
-          <div className={styles.transparency}>
-            <Icon name="alert-circle" strokeWidth={2} />
-            <p>
-              {t.rich("cyfun.transparency", { b: (c) => <b>{c}</b> })}
-            </p>
-          </div>
+        <Reveal stagger className={styles.grid}>
+          {PILLAR_KEYS.map((key) => (
+            <ServiceCard
+              key={key}
+              icon={PILLAR_ICONS[key]}
+              kicker={t(`pillars.${key}.index`)}
+              title={t(`pillars.${key}.title`)}
+              description={t(`pillars.${key}.description`)}
+              bullets={t.raw(`pillars.${key}.capabilities`)}
+              href={key === "conformite" ? "/conformite-nis2" : undefined}
+              linkLabel={key === "conformite" ? t("pillars.conformite.linkLabel") : undefined}
+            />
+          ))}
         </Reveal>
       </Section>
 
@@ -373,7 +228,6 @@ export default async function ServicesPage({
       <Section variant="tint" id="faq">
         <Reveal>
           <SectionHeading
-            center
             as="h2"
             eyebrow={t("faq.eyebrow")}
             title={t("faq.title")}
