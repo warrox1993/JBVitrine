@@ -549,7 +549,7 @@
     },
     "capabilities": {
       "eyebrow": "What I'm learning",
-      "title": "Cloud, networks, AI : securing every layer",
+      "title": "Securing every layer",
       "c1": {
         "index": "01",
         "title": "Cloud security",
@@ -557,11 +557,16 @@
       },
       "c2": {
         "index": "02",
-        "title": "Network security",
-        "line": "Network and infrastructure security : segmentation, hardening, best practices (CCNA in progress)."
+        "title": "Network & infra security",
+        "line": "Segmentation, hardening and best practices for network and infrastructure (CCNA in progress)."
       },
       "c3": {
         "index": "03",
+        "title": "Web security",
+        "line": "Applications and sites built secure by design, with an OWASP-inspired approach."
+      },
+      "c4": {
+        "index": "04",
         "title": "AI & automation",
         "line": "Orchestration of tools and workflows (n8n, Make), and securing AI usage."
       }

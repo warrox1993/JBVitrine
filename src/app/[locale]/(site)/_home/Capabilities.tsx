@@ -7,9 +7,10 @@ const CARDS = [
   { key: "c1", href: "/services" },
   { key: "c2", href: "/services" },
   { key: "c3", href: "/services" },
+  { key: "c4", href: "/services" },
 ] as const;
 
-/** Home "Capabilities" block: 3 index-mono cards (cloud, réseaux, IA). */
+/** Home "Capabilities" block: 4 index-mono cards (cloud, réseau/infra, web, IA). */
 export async function Capabilities() {
   const t = await getTranslations("home");
 

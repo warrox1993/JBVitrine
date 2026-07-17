@@ -549,7 +549,7 @@
     },
     "capabilities": {
       "eyebrow": "Ce que j'apprends",
-      "title": "Cloud, réseaux, IA : sécuriser chaque couche",
+      "title": "Sécuriser chaque couche",
       "c1": {
         "index": "01",
         "title": "Sécurité cloud",
@@ -557,11 +557,16 @@
       },
       "c2": {
         "index": "02",
-        "title": "Sécurité réseaux",
-        "line": "Sécurité des réseaux et de l'infrastructure : segmentation, durcissement, bonnes pratiques (CCNA en cours)."
+        "title": "Sécurité réseau & infra",
+        "line": "Segmentation, durcissement et bonnes pratiques réseau et infrastructure (CCNA en cours)."
       },
       "c3": {
         "index": "03",
+        "title": "Sécurité web",
+        "line": "Applications et sites pensés secure by design, avec une approche inspirée d'OWASP."
+      },
+      "c4": {
+        "index": "04",
         "title": "IA & automatisation",
         "line": "Orchestration d'outils et workflows (n8n, Make), et sécurisation des usages de l'IA."
       }
