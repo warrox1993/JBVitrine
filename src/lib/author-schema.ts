@@ -27,6 +27,10 @@ export const authorSchema = {
     "@id": "https://smidjan.be/#organization",
     name: "Smidjan",
   },
+  alumniOf: [
+    { "@type": "Organization", name: "ISL - Institut Saint-Laurent" },
+    { "@type": "Organization", name: "TechnoFutur TIC" },
+  ],
   knowsAbout: [
     "Cybersécurité",
     "NIS2",

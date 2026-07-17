@@ -139,7 +139,10 @@ export const personSchema = {
     name: "Microsoft Certified: Azure Fundamentals (AZ-900)",
     recognizedBy: { "@type": "Organization", name: "Microsoft" },
   },
-  alumniOf: { "@type": "EducationalOrganization", name: "TechnoFutur TIC" },
+  alumniOf: [
+    { "@type": "EducationalOrganization", name: "ISL - Institut Saint-Laurent" },
+    { "@type": "EducationalOrganization", name: "TechnoFutur TIC" },
+  ],
   sameAs: [
     "https://www.linkedin.com/in/jean-baptistedhondt",
     "https://github.com/warrox1993",

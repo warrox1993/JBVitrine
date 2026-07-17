@@ -54,13 +54,13 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
     title: {
-        default: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME (Wallonie)',
+        default: 'Jean-Baptiste Dhondt (Smidjan) | Sécurité cloud, réseau, infra & web, Wallonie',
         // Les pages définissent des titres auto-brandés ("… | Smidjan : …"),
         // donc pas de suffixe pour éviter de dupliquer "Smidjan".
         template: '%s',
     },
     description:
-        'Smidjan sécurise les réseaux, l\'infrastructure et les applications des PME wallonnes et les met en conformité NIS2 / CyberFundamentals (CCB). Audit, tests de sécurité, remédiation. Diagnostic gratuit en Wallonie.',
+        'Jean-Baptiste Dhondt (Smidjan), praticien en cybersécurité en Wallonie : sécurité cloud, réseau, infrastructure et web, et préparation à la conformité NIS2 / CyberFundamentals (CCB). Je montre mon travail, avec des preuves.',
 authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
     creator: 'Smidjan',
     publisher: 'Smidjan',
@@ -77,17 +77,17 @@ authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
     },
 
     openGraph: {
-        title: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME (Wallonie)',
+        title: 'Jean-Baptiste Dhondt (Smidjan) | Sécurité cloud, réseau, infra & web, Wallonie',
         description:
-            'On sécurise vos réseaux, votre infrastructure et vos applications, et on vous met en conformité NIS2 / CyFun, et on corrige ce qu\'on trouve. Diagnostic gratuit pour les PME de Wallonie.',
+            'Praticien en cybersécurité en Wallonie : sécurité cloud, réseau, infrastructure et web, et préparation à la conformité NIS2 / CyberFundamentals. Je montre mon travail, avec des preuves.',
         url: 'https://smidjan.be',
-        siteName: 'Smidjan, Cybersécurité Wallonie',
+        siteName: 'Smidjan',
         images: [
             {
                 url: "https://smidjan.be/og-image.webp",
                 width: 1200,
                 height: 630,
-                alt: 'Smidjan, Cybersécurité & conformité NIS2 pour les PME en Wallonie',
+                alt: 'Jean-Baptiste Dhondt, Smidjan : sécurité cloud, réseau, infra et web en Wallonie',
                 type: 'image/webp',
             }
         ],
@@ -97,8 +97,8 @@ authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
 
     twitter: {
         card: 'summary_large_image',
-        title: 'Smidjan | Cybersécurité & conformité NIS2 pour les PME (Wallonie)',
-        description: 'Sécurité des réseaux, tests de sécurité et conformité NIS2 / CyFun pour les PME wallonnes. Diagnostic gratuit en Wallonie.',
+        title: 'Jean-Baptiste Dhondt (Smidjan) | Sécurité cloud, réseau, infra & web, Wallonie',
+        description: 'Praticien sécurité cloud, réseau, infra & web en Wallonie. Préparation NIS2 / CyFun. Transparence totale.',
         images: ['/og-image.webp'],
         // Ajoute ton Twitter si tu en as un
         // creator: '@smidjan',
