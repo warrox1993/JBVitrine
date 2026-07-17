@@ -7,7 +7,7 @@ export const organizationSchema = {
   url: "https://smidjan.be",
   logo: "https://smidjan.be/images/logoheader/logo-200.png",
   description:
-    "Smidjan sécurise les réseaux, l'infrastructure et les applications des PME wallonnes, et les met en conformité NIS2 / CyberFundamentals (CCB). Audit, remédiation et accompagnement, en Belgique.",
+    "Smidjan est la pratique de Jean-Baptiste Dhondt en sécurité cloud, réseau, infrastructure et web, avec un axe conformité NIS2 / CyberFundamentals (CCB). Basé en Wallonie, en Belgique.",
   foundingDate: "2025",
   contactPoint: {
     "@type": "ContactPoint",
@@ -35,7 +35,7 @@ export const websiteSchema = {
   name: "Smidjan",
   url: "https://smidjan.be",
   description:
-    "Cybersécurité des réseaux, de l'infrastructure et des applications, et mise en conformité NIS2 / CyberFundamentals pour les PME en Belgique.",
+    "Portfolio de Jean-Baptiste Dhondt (Smidjan) : sécurité cloud, réseau, infrastructure et web, et conformité NIS2 / CyberFundamentals, en Wallonie.",
   inLanguage: "fr-BE",
   publisher: {
     "@id": "https://smidjan.be/#organization",
@@ -50,7 +50,7 @@ export const localBusinessSchema = {
   alternateName: "Smidjan Cybersécurité",
   image: "https://smidjan.be/og-image.webp",
   description:
-    "Prestataire cybersécurité en Wallonie : sécurisation des réseaux, de l'infrastructure et des applications, audit et remédiation, mise en conformité NIS2 / CyberFundamentals (CCB) pour les PME en Belgique et en Wallonie.",
+    "Jean-Baptiste Dhondt (Smidjan), praticien en cybersécurité en Wallonie : sécurité cloud, réseau et infrastructure, sécurité web, et accompagnement à la conformité NIS2 / CyberFundamentals (CCB).",
   url: "https://smidjan.be",
   telephone: "+32475205562",
   email: "jeanbaptiste.dhondt1@gmail.com",
@@ -69,15 +69,6 @@ export const localBusinessSchema = {
       name: "Belgique",
     },
   ],
-  priceRange: "€€-€€€",
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00",
-    },
-  ],
   sameAs: [
     "https://www.linkedin.com/in/jean-baptistedhondt",
     "https://www.facebook.com/jeanbaptiste.dhondt",
@@ -86,48 +77,12 @@ export const localBusinessSchema = {
   // Services offerts : positionnement cyber-first
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Services de cybersécurité Smidjan",
+    name: "Prestations de cybersécurité Smidjan",
     itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Conformité NIS2 & CyberFundamentals (CCB)",
-          description:
-            "Audit d'écart, remédiation et accompagnement jusqu'à la vérification, aux niveaux Basic, Important et Essential du référentiel CyberFundamentals.",
-          serviceType: "Conformité & audit cybersécurité",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Sécurité des réseaux & de l'infrastructure",
-          description:
-            "Segmentation, pare-feu, durcissement, sauvegardes et supervision pour protéger vos systèmes.",
-          serviceType: "Sécurité infrastructure",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Tests de sécurité & audit",
-          description:
-            "Tests de sécurité web et applicatifs suivant une approche inspirée d'OWASP, avec plan de remédiation priorisé.",
-          serviceType: "Tests de sécurité",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Développement web sécurisé",
-          description:
-            "Applications et sites conçus avec la sécurité intégrée dès la conception (secure by design).",
-          serviceType: "Développement web sécurisé",
-        },
-      },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sécurité cloud", description: "Sécurisation et durcissement d'environnements cloud (Azure), configuration et bonnes pratiques.", serviceType: "Sécurité cloud" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sécurité réseau & infrastructure", description: "Segmentation, durcissement et bonnes pratiques réseau et infrastructure.", serviceType: "Sécurité infrastructure" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sécurité web", description: "Applications et sites conçus secure by design, avec une approche inspirée d'OWASP.", serviceType: "Sécurité applicative" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Conformité NIS2 & CyberFundamentals (CCB)", description: "Analyse d'écart, remédiation et accompagnement, aux niveaux Basic, Important et Essential.", serviceType: "Conformité & audit" } },
     ],
   },
   // Agrégat de notes (à ajouter quand tu auras des avis clients)
@@ -148,9 +103,9 @@ export const homeWebPageSchema = {
   "@type": "WebPage",
   "@id": "https://smidjan.be/#webpage",
   url: "https://smidjan.be/",
-  name: "Cybersécurité & conformité NIS2 pour les PME | Smidjan, Wallonie",
+  name: "Jean-Baptiste Dhondt · Sécurité cloud, réseau, infra & web | Smidjan",
   description:
-    "Sécurité des réseaux, de l'infrastructure et des applications, et mise en conformité NIS2 / CyberFundamentals pour les PME wallonnes.",
+    "Portfolio de Jean-Baptiste Dhondt : sécurité cloud, réseau, infrastructure et web, et conformité NIS2 / CyberFundamentals, en Wallonie.",
   inLanguage: "fr-BE",
   isPartOf: { "@id": "https://smidjan.be/#organization" },
   about: { "@id": "https://smidjan.be/#organization" },
@@ -160,26 +115,35 @@ export const homeWebPageSchema = {
   reviewedBy: { "@id": "https://smidjan.be/#founder" },
 };
 
-// Person Schema : le fondateur, à partir des faits déjà publiés sur la home et /agence.
+// Person Schema : le praticien, à partir des faits déjà publiés sur la home et /agence.
 export const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": "https://smidjan.be/#founder",
   name: "Jean-Baptiste Dhondt",
-  jobTitle: "Fondateur & expert en cybersécurité",
+  jobTitle: "Praticien en cybersécurité, cloud, réseau, infra & web",
   worksFor: { "@id": "https://smidjan.be/#organization" },
   url: "https://smidjan.be/agence",
   knowsAbout: [
-    "Cybersécurité",
+    "Sécurité cloud",
+    "Sécurité réseau",
+    "Sécurité de l'infrastructure",
+    "Sécurité web",
     "NIS2",
     "CyberFundamentals (CCB)",
-    "Tests d'intrusion",
-    "ISO/IEC 27001",
-    "Sécurité des réseaux",
+    "IA & automatisation",
   ],
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "certification",
+    name: "Microsoft Certified: Azure Fundamentals (AZ-900)",
+    recognizedBy: { "@type": "Organization", name: "Microsoft" },
+  },
+  alumniOf: { "@type": "EducationalOrganization", name: "TechnoFutur TIC" },
   sameAs: [
     "https://www.linkedin.com/in/jean-baptistedhondt",
     "https://github.com/warrox1993",
+    "https://tryhackme.com/p/Warrox1993",
   ],
 };
 
@@ -193,7 +157,7 @@ export const faqPageSchema = {
       name: "Suis-je concerné par NIS2 ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Cela dépend de votre secteur et de la taille de votre entreprise. NIS2 vise les entités essentielles (énergie, santé, transport, finance, infrastructures numériques…) et les entités importantes (fabrication, agroalimentaire, services numériques, chimie…). De nombreuses PME sont concernées, y compris indirectement en tant que fournisseurs ou sous-traitants. En cas de doute, notre diagnostic gratuit clarifie votre situation.",
+        text: "Cela dépend de votre secteur et de la taille de votre entreprise. NIS2 vise les entités essentielles (énergie, santé, transport, finance, infrastructures numériques…) et les entités importantes (fabrication, agroalimentaire, services numériques, chimie…). De nombreuses PME sont concernées, y compris indirectement en tant que fournisseurs ou sous-traitants. En cas de doute, un premier échange gratuit clarifie votre situation.",
       },
     },
     {

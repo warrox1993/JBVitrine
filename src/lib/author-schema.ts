@@ -17,11 +17,11 @@ export const authorSchema = {
     url: "https://smidjan.be/images/team/jb-dhondt.webp",
     width: 400,
     height: 400,
-    caption: "Jean-Baptiste Dhondt, fondateur et expert en cybersécurité",
+    caption: "Jean-Baptiste Dhondt, praticien en cybersécurité, cloud, réseau, infra & web",
   },
-  jobTitle: "Fondateur & expert en cybersécurité",
+  jobTitle: "Praticien en cybersécurité, cloud, réseau, infra & web",
   description:
-    "Fondateur de Smidjan, expert en cybersécurité et conformité NIS2 / CyberFundamentals (CCB) pour les PME en Belgique. Sécurité des réseaux, de l'infrastructure et des applications, audit et remédiation.",
+    "Praticien en cybersécurité (Smidjan) : sécurité cloud, réseau, infrastructure et web, et conformité NIS2 / CyberFundamentals (CCB), en Wallonie.",
   worksFor: {
     "@type": "Organization",
     "@id": "https://smidjan.be/#organization",
@@ -35,7 +35,7 @@ export const authorSchema = {
     "Cybersécurité",
     "NIS2",
     "CyberFundamentals (CCB)",
-    "Tests d'intrusion",
+    "Sécurité cloud",
     "OWASP",
     "ISO/IEC 27001",
     "Sécurité des réseaux",
