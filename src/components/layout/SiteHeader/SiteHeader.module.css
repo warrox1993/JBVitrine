@@ -58,25 +58,6 @@
   white-space: nowrap;
 }
 
-.incident {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #c23a52;
-  font-weight: 600;
-  font-size: 0.82rem;
-  white-space: nowrap;
-}
-.incident::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #c23a52;
-}
-:root[data-theme="dark"] .incident { color: #f0687f; }
-:root[data-theme="dark"] .incident::before { background: #f0687f; }
-
 .main {
   display: flex;
   align-items: center;

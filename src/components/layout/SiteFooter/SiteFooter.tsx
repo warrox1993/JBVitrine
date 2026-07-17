@@ -133,9 +133,6 @@ export default async function SiteFooter() {
                   {t("footer.links.conformite")}
                 </Link>
               </li>
-              <li>
-                <Link href="/contact#urgence">{t("footer.links.incident")}</Link>
-              </li>
             </ul>
           </div>
 
