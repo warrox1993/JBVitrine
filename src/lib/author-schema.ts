@@ -27,10 +27,6 @@ export const authorSchema = {
     "@id": "https://smidjan.be/#organization",
     name: "Smidjan",
   },
-  alumniOf: {
-    "@type": "Organization",
-    name: "HEPL - Haute École de la Province de Liège",
-  },
   knowsAbout: [
     "Cybersécurité",
     "NIS2",
@@ -48,7 +44,6 @@ export const authorSchema = {
   ],
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Liège",
     addressRegion: "Wallonie",
     addressCountry: "BE",
   },
