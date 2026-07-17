@@ -46,7 +46,7 @@ export async function Hero() {
         </Reveal>
 
         <Reveal variant="scale" delay={120} className={styles.visual}>
-          <WhoamiTerminal name="Jean-Baptiste Dhondt" role="Sécurité cloud · réseaux · IA" />
+          <WhoamiTerminal name="Jean-Baptiste Dhondt" role="Sécurité cloud · réseau · infra · web" />
         </Reveal>
       </Container>
     </section>
