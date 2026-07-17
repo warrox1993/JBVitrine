@@ -22,7 +22,7 @@
     "availability": "Based in Wallonia, authorised to work in the EU. Open to freelance missions and opportunities, in Brussels, Wallonia or remote."
   },
   "capabilities": {
-    "eyebrow": "What I can do",
+    "eyebrow": "What I'm learning",
     "title": "Cloud, networks, AI : securing every layer",
     "c1": { "index": "01", "title": "Cloud security", "line": "Securing and hardening cloud environments (Azure), configuration and best practices." },
     "c2": { "index": "02", "title": "Network security", "line": "Network and infrastructure security : segmentation, hardening, best practices (CCNA in progress)." },
