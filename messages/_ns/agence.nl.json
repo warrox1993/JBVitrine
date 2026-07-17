@@ -1,9 +1,9 @@
 {
   "meta": {
     "title": "Over · Smidjan | Cloud- & netwerkbeveiliging in Wallonië",
-    "description": "Smidjan is de cyberbeveiligings- en governancepraktijk (GRC) van Jean-Baptiste Dhondt in Wallonië, ten dienste van kmo's, zelfstandigen en overheden in de regio.",
+    "description": "Smidjan is de cyberbeveiligings- en governancepraktijk (GRC) van Jean-Baptiste Dhondt: cloud-, netwerk-, infra- en webbeveiliging, NIS2/CyFun-conformiteit, in Wallonië.",
     "ogTitle": "Over · Smidjan | Cloud- & netwerkbeveiliging in Wallonië",
-    "ogDescription": "De cyberbeveiligings- en governancepraktijk (GRC) van Jean-Baptiste Dhondt, in Wallonië, ten dienste van kmo's en overheden in de regio.",
+    "ogDescription": "De cyberbeveiligings- en governancepraktijk (GRC) van Jean-Baptiste Dhondt: cloud-, netwerk-, infra- en webbeveiliging, NIS2/CyFun-conformiteit, in Wallonië.",
     "ogImageAlt": "Smidjan - Cloud- & netwerkbeveiliging in Wallonië"
   },
   "hero": {
@@ -11,8 +11,8 @@
     "breadcrumbHome": "Home",
     "breadcrumbHere": "Over",
     "eyebrow": "Over",
-    "title": "Van de Belgische Defensie naar <accent>cloud-, netwerk- & AI-beveiliging</accent>.",
-    "lead": "Voormalig lid van de telecommunicatie van het Belgische leger, in vastberaden heroriëntatie naar cyberbeveiliging. Ik bouw mijn expertise op in cloud-, netwerk- en AI-beveiliging, in alle openheid.",
+    "title": "Van de Belgische Defensie naar <accent>cloud-, netwerk-, infra- & webbeveiliging</accent>.",
+    "lead": "Voormalig lid van de telecommunicatie van het Belgische leger, in vastberaden heroriëntatie naar cyberbeveiliging. Ik bouw mijn expertise op in cloud-, netwerk-, infra- en webbeveiliging, in alle openheid.",
     "ctaPrimary": "Contacteer mij",
     "ctaCall": "Bel 0475 20 55 62",
     "badgeLocation": "Gevestigd in Wallonië",
@@ -30,15 +30,15 @@
   "founder": {
     "eyebrow": "De oprichter",
     "title": "Jean-Baptiste Dhondt : <accent>een vastberaden heroriëntatie</accent> naar cyberbeveiliging",
-    "lead": "Technische nieuwsgierigheid, grondigheid uit de militaire telecommunicatie en voortdurende bijscholing: een heroriëntatie naar cyberbeveiliging, gericht op verdediging, met een specialisatie in cloud-, netwerk- en AI-beveiliging.",
+    "lead": "Technische nieuwsgierigheid, grondigheid uit de militaire telecommunicatie en voortdurende bijscholing: een heroriëntatie naar cyberbeveiliging, gericht op verdediging, met een specialisatie in cloud-, netwerk-, infra- en webbeveiliging.",
     "portraitAria": "Portret van de oprichter, gereserveerde plaats, foto volgt",
     "photoSoon": "Foto volgt",
     "name": "Jean-Baptiste Dhondt",
-    "role": "Oprichter · Praktijk cloud-, netwerk- & AI-beveiliging",
+    "role": "Praktijkbeoefenaar · Cloud-, netwerk-, infra- & webbeveiliging",
     "quote": "« De beveiliging van een kmo los je niet op met een rapport dat in een lade verdwijnt. Ze wordt opgelost door, één voor één, de kwetsbaarheden te verhelpen die tellen. »",
     "credDiploma": "Technisch diploma in informatica",
     "credArmy": "Voormalig lid van de telecommunicatie van het Belgische leger",
-    "credExpertise": "Specialisatie cloud-, netwerk- & AI-beveiliging, conformiteit NIS2/CyFun",
+    "credExpertise": "Specialisatie cloud-, netwerk-, infra- & webbeveiliging, conformiteit NIS2/CyFun",
     "credReferentials": "Referentiekaders NIS2 / CyFun (CCB), OWASP, ISO 27001",
     "skillReseaux": "Netwerken",
     "skillGRC": "GRC",
@@ -63,7 +63,7 @@
     "stepArmyTitle": "Telecommunicatie van het Belgische leger",
     "stepArmyText": "Kritieke netwerken beschermen in een veeleisende omgeving. Die grondigheid, vandaag toegepast op ondernemingen.",
     "stepTodayLabel": "Vandaag",
-    "stepTodayTitle": "Focus op cloud-, netwerk- & AI-beveiliging",
+    "stepTodayTitle": "Focus op cloud-, netwerk-, infra- & webbeveiliging",
     "stepTodayText": "De dreigingen begrijpen om beter te verdedigen en in conformiteit te brengen. Dat is Smidjan.",
     "linkedinLabel": "Bekijk het LinkedIn-profiel",
     "linkedinUrl": "https://www.linkedin.com/in/jean-baptistedhondt"

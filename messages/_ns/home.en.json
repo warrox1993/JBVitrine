@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "Jean-Baptiste Dhondt, Smidjan | Cloud, network and AI security, Wallonia",
-    "description": "Cybersecurity practitioner in Wallonia, specialising in cloud, network and AI security. NIS2/CyFun compliance built on real frameworks. Full transparency, zero inflated numbers.",
-    "ogTitle": "Smidjan : cloud, network and AI security",
+    "title": "Jean-Baptiste Dhondt, Smidjan | Cloud, network, infra & web security, Wallonia",
+    "description": "Cybersecurity practitioner in Wallonia, specialising in cloud, network, infra & web security. NIS2/CyFun compliance built on real frameworks. Full transparency, zero inflated numbers.",
+    "ogTitle": "Smidjan : cloud, network, infra & web security",
     "ogDescription": "A cyber practitioner's path made visible. What I can do, backed by verifiable proof.",
     "ogSiteName": "Smidjan",
-    "ogImageAlt": "Smidjan, cloud, network and AI security in Wallonia",
-    "twitterTitle": "Smidjan : cloud, network and AI security",
-    "twitterDescription": "Cloud, network and AI security practitioner in Wallonia. NIS2/CyFun compliance, full transparency."
+    "ogImageAlt": "Smidjan, cloud, network, infra & web security in Wallonia",
+    "twitterTitle": "Smidjan : cloud, network, infra & web security",
+    "twitterDescription": "Cloud, network, infra & web security practitioner in Wallonia. NIS2/CyFun compliance, full transparency."
   },
   "hero": {
     "h1": "Security, understood from the inside.",

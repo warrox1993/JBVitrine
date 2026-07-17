@@ -2,9 +2,9 @@
   "agence": {
     "meta": {
       "title": "About · Smidjan | Cloud & network security in Wallonia",
-      "description": "Smidjan is the cybersecurity and governance (GRC) practice of Jean-Baptiste Dhondt in Wallonia, serving SMEs, self-employed professionals and public bodies across the region.",
+      "description": "Smidjan is the cybersecurity and governance (GRC) practice of Jean-Baptiste Dhondt: cloud, network, infra & web security, NIS2/CyFun compliance, in Wallonia.",
       "ogTitle": "About · Smidjan | Cloud & network security in Wallonia",
-      "ogDescription": "The cybersecurity and governance (GRC) practice of Jean-Baptiste Dhondt, in Wallonia, serving SMEs and public bodies across the region.",
+      "ogDescription": "The cybersecurity and governance (GRC) practice of Jean-Baptiste Dhondt: cloud, network, infra & web security, NIS2/CyFun compliance, in Wallonia.",
       "ogImageAlt": "Smidjan - Cloud & network security in Wallonia"
     },
     "hero": {
@@ -12,8 +12,8 @@
       "breadcrumbHome": "Home",
       "breadcrumbHere": "About",
       "eyebrow": "About",
-      "title": "From the Belgian Armed Forces to <accent>cloud, network & AI security</accent>.",
-      "lead": "Former telecommunications operator in the Belgian Army, now in a determined career change into cybersecurity. I am building my expertise in cloud, network and AI security, in the open.",
+      "title": "From the Belgian Armed Forces to <accent>cloud, network, infra & web security</accent>.",
+      "lead": "Former telecommunications operator in the Belgian Army, now in a determined career change into cybersecurity. I am building my expertise in cloud, network, infra & web security, in the open.",
       "ctaPrimary": "Get in touch",
       "ctaCall": "Call 0475 20 55 62",
       "badgeLocation": "Based in Wallonia",
@@ -31,15 +31,15 @@
     "founder": {
       "eyebrow": "The founder",
       "title": "Jean-Baptiste Dhondt: <accent>a determined career change</accent> into cybersecurity",
-      "lead": "Technical curiosity, rigour carried over from military telecommunications and continuous training: a career change into cybersecurity, defence-oriented, with a specialisation in cloud, network and AI security.",
+      "lead": "Technical curiosity, rigour carried over from military telecommunications and continuous training: a career change into cybersecurity, defence-oriented, with a specialisation in cloud, network, infra & web security.",
       "portraitAria": "Portrait of the founder, reserved placeholder, photo to come",
       "photoSoon": "Photo to come",
       "name": "Jean-Baptiste Dhondt",
-      "role": "Founder · Cloud, network & AI security practitioner",
+      "role": "Practitioner · Cloud, network, infra & web security",
       "quote": "“The security of an SME is not settled with a report filed away in a drawer. It is settled by fixing, one by one, the vulnerabilities that matter.”",
       "credDiploma": "Technical diploma in computing",
       "credArmy": "Former telecommunications operator in the Belgian Army",
-      "credExpertise": "Specialising in cloud, network & AI security, NIS2/CyFun compliance",
+      "credExpertise": "Specialising in cloud, network, infra & web security, NIS2/CyFun compliance",
       "credReferentials": "Frameworks NIS2 / CyFun (CCB), OWASP, ISO 27001",
       "skillReseaux": "Networks",
       "skillGRC": "GRC",
@@ -64,7 +64,7 @@
       "stepArmyTitle": "Telecommunications in the Belgian Army",
       "stepArmyText": "Protecting critical networks in a demanding environment. That rigour, applied today to businesses.",
       "stepTodayLabel": "Today",
-      "stepTodayTitle": "Focused on cloud, network & AI security",
+      "stepTodayTitle": "Focused on cloud, network, infra & web security",
       "stepTodayText": "Understanding threats to defend better and reach compliance. That is Smidjan.",
       "linkedinLabel": "View the LinkedIn profile",
       "linkedinUrl": "https://www.linkedin.com/in/jean-baptistedhondt"
@@ -486,7 +486,7 @@
     },
     "expect": {
       "eyebrow": "What to expect",
-      "title": "From your message to the <accent>diagnostic</accent>, in three steps",
+      "title": "From your message to the <accent>first conversation</accent>, in three steps",
       "intro": "No sales funnel, a useful exchange from the very first message.",
       "step1Title": "You write to me",
       "step1Text": "Form, email or call. Describe your need in two sentences.",
@@ -499,14 +499,14 @@
   },
   "home": {
     "meta": {
-      "title": "Jean-Baptiste Dhondt, Smidjan | Cloud, network and AI security, Wallonia",
-      "description": "Cybersecurity practitioner in Wallonia, specialising in cloud, network and AI security. NIS2/CyFun compliance built on real frameworks. Full transparency, zero inflated numbers.",
-      "ogTitle": "Smidjan : cloud, network and AI security",
+      "title": "Jean-Baptiste Dhondt, Smidjan | Cloud, network, infra & web security, Wallonia",
+      "description": "Cybersecurity practitioner in Wallonia, specialising in cloud, network, infra & web security. NIS2/CyFun compliance built on real frameworks. Full transparency, zero inflated numbers.",
+      "ogTitle": "Smidjan : cloud, network, infra & web security",
       "ogDescription": "A cyber practitioner's path made visible. What I can do, backed by verifiable proof.",
       "ogSiteName": "Smidjan",
-      "ogImageAlt": "Smidjan, cloud, network and AI security in Wallonia",
-      "twitterTitle": "Smidjan : cloud, network and AI security",
-      "twitterDescription": "Cloud, network and AI security practitioner in Wallonia. NIS2/CyFun compliance, full transparency."
+      "ogImageAlt": "Smidjan, cloud, network, infra & web security in Wallonia",
+      "twitterTitle": "Smidjan : cloud, network, infra & web security",
+      "twitterDescription": "Cloud, network, infra & web security practitioner in Wallonia. NIS2/CyFun compliance, full transparency."
     },
     "hero": {
       "h1": "Security, understood from the inside.",
