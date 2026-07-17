@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "À propos · Smidjan | Cybersécurité & GRC en Wallonie",
+    "title": "À propos · Smidjan | Sécurité cloud & réseau en Wallonie",
     "description": "Smidjan est la pratique cybersécurité et gouvernance (GRC) de Jean-Baptiste Dhondt en Wallonie, au service des PME, indépendants et collectivités de la région.",
-    "ogTitle": "À propos · Smidjan | Cybersécurité & GRC en Wallonie",
+    "ogTitle": "À propos · Smidjan | Sécurité cloud & réseau en Wallonie",
     "ogDescription": "La pratique cybersécurité et gouvernance (GRC) de Jean-Baptiste Dhondt, en Wallonie, au service des PME et collectivités de la région.",
-    "ogImageAlt": "Smidjan - Cybersécurité & GRC en Wallonie"
+    "ogImageAlt": "Smidjan - Sécurité cloud & réseau en Wallonie"
   },
   "hero": {
     "ariaBreadcrumb": "Fil d'Ariane",

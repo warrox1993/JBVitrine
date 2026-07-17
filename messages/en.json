@@ -1,11 +1,11 @@
 {
   "agence": {
     "meta": {
-      "title": "About · Smidjan | Cybersecurity & GRC in Wallonia",
+      "title": "About · Smidjan | Cloud & network security in Wallonia",
       "description": "Smidjan is the cybersecurity and governance (GRC) practice of Jean-Baptiste Dhondt in Wallonia, serving SMEs, self-employed professionals and public bodies across the region.",
-      "ogTitle": "About · Smidjan | Cybersecurity & GRC in Wallonia",
+      "ogTitle": "About · Smidjan | Cloud & network security in Wallonia",
       "ogDescription": "The cybersecurity and governance (GRC) practice of Jean-Baptiste Dhondt, in Wallonia, serving SMEs and public bodies across the region.",
-      "ogImageAlt": "Smidjan - Cybersecurity & GRC in Wallonia"
+      "ogImageAlt": "Smidjan - Cloud & network security in Wallonia"
     },
     "hero": {
       "ariaBreadcrumb": "Breadcrumb",
@@ -237,7 +237,7 @@
     },
     "brand": {
       "ariaHome": "Smidjan, home",
-      "tagline": "Cybersecurity & GRC"
+      "tagline": "Cloud, network, infra & web security"
     },
     "header": {
       "navAria": "Main navigation",
