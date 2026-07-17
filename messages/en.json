@@ -571,6 +571,18 @@
         "line": "Orchestration of tools and workflows (n8n, Make), and securing AI usage."
       }
     },
+    "recruiter": {
+      "eyebrow": "For a recruiter",
+      "availK": "Availability",
+      "availV": "Open to opportunities",
+      "locK": "Location",
+      "locV": "Wallonia · authorized to work in the EU · remote",
+      "focusK": "Focus",
+      "focusV": "Cloud, network, infra & web security",
+      "ctaLinkedin": "LinkedIn",
+      "ctaParcours": "See my journey",
+      "ctaGithub": "GitHub"
+    },
     "cyfun": {
       "eyebrow": "Flagship project",
       "title": "A CyFun audit tool I'm building",

@@ -13,6 +13,7 @@ import {
   homeWebPageSchema,
 } from "@/lib/schema";
 import { Hero } from "./_home/Hero";
+import { RecruiterBand } from "./_home/RecruiterBand";
 import { Capabilities } from "./_home/Capabilities";
 import { CyfunTeaser } from "./_home/CyfunTeaser";
 import { Parcours } from "./_home/Parcours";
@@ -94,6 +95,8 @@ export default async function HomePage({
       />
 
       <Hero />
+
+      <RecruiterBand />
 
       <Section variant="white" id="savoir-faire">
         <Capabilities />

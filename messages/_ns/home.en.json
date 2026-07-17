@@ -29,6 +29,18 @@
     "c3": { "index": "03", "title": "Web security", "line": "Applications and sites built secure by design, with an OWASP-inspired approach." },
     "c4": { "index": "04", "title": "AI & automation", "line": "Orchestration of tools and workflows (n8n, Make), and securing AI usage." }
   },
+  "recruiter": {
+    "eyebrow": "For a recruiter",
+    "availK": "Availability",
+    "availV": "Open to opportunities",
+    "locK": "Location",
+    "locV": "Wallonia · authorized to work in the EU · remote",
+    "focusK": "Focus",
+    "focusV": "Cloud, network, infra & web security",
+    "ctaLinkedin": "LinkedIn",
+    "ctaParcours": "See my journey",
+    "ctaGithub": "GitHub"
+  },
   "cyfun": {
     "eyebrow": "Flagship project",
     "title": "A CyFun audit tool I'm building",

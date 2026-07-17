@@ -571,6 +571,18 @@
         "line": "Orkestratie van tools en workflows (n8n, Make), en beveiliging van AI-gebruik."
       }
     },
+    "recruiter": {
+      "eyebrow": "Voor een recruiter",
+      "availK": "Beschikbaarheid",
+      "availV": "Open voor opportuniteiten",
+      "locK": "Locatie",
+      "locV": "Wallonië · gemachtigd om in de EU te werken · telewerk",
+      "focusK": "Focus",
+      "focusV": "Cloud-, netwerk-, infra- & websecurity",
+      "ctaLinkedin": "LinkedIn",
+      "ctaParcours": "Mijn traject bekijken",
+      "ctaGithub": "GitHub"
+    },
     "cyfun": {
       "eyebrow": "Vlaggenschipproject",
       "title": "Een CyFun-auditinstrument dat ik bouw",

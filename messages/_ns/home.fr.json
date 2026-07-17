@@ -29,6 +29,18 @@
     "c3": { "index": "03", "title": "Sécurité web", "line": "Applications et sites pensés secure by design, avec une approche inspirée d'OWASP." },
     "c4": { "index": "04", "title": "IA & automatisation", "line": "Orchestration d'outils et workflows (n8n, Make), et sécurisation des usages de l'IA." }
   },
+  "recruiter": {
+    "eyebrow": "Pour un recruteur",
+    "availK": "Disponibilité",
+    "availV": "Ouvert aux opportunités",
+    "locK": "Localisation",
+    "locV": "Wallonie · autorisé à travailler en UE · télétravail",
+    "focusK": "Focus",
+    "focusV": "Sécurité cloud, réseau, infra & web",
+    "ctaLinkedin": "LinkedIn",
+    "ctaParcours": "Voir mon parcours",
+    "ctaGithub": "GitHub"
+  },
   "cyfun": {
     "eyebrow": "Projet phare",
     "title": "Un outil d'audit CyFun que je construis",
