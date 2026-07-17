@@ -542,6 +542,11 @@
         "index": "04",
         "title": "AI & automation",
         "line": "Orchestration of tools and workflows (n8n, Make), and securing AI usage."
+      },
+      "c5": {
+        "index": "05",
+        "title": "Offensive security",
+        "line": "Offensive practice on TryHackMe (global top 15%): understanding attacks to defend better."
       }
     },
     "recruiter": {

@@ -542,6 +542,11 @@
         "index": "04",
         "title": "AI & automatisering",
         "line": "Orkestratie van tools en workflows (n8n, Make), en beveiliging van AI-gebruik."
+      },
+      "c5": {
+        "index": "05",
+        "title": "Offensieve beveiliging",
+        "line": "Offensieve praktijk op TryHackMe (wereldwijd top 15%) : de aanval begrijpen om beter te verdedigen."
       }
     },
     "recruiter": {

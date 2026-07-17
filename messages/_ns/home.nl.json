@@ -27,7 +27,8 @@
     "c1": { "index": "01", "title": "Cloudbeveiliging", "line": "Beveiliging en verharding van cloudomgevingen (Azure), configuratie en goede praktijken." },
     "c2": { "index": "02", "title": "Netwerk- & infrabeveiliging", "line": "Segmentatie, verharding en goede praktijken voor netwerk en infrastructuur (CCNA lopende)." },
     "c3": { "index": "03", "title": "Webbeveiliging", "line": "Applicaties en sites secure by design, met een aanpak geïnspireerd op OWASP." },
-    "c4": { "index": "04", "title": "AI & automatisering", "line": "Orkestratie van tools en workflows (n8n, Make), en beveiliging van AI-gebruik." }
+    "c4": { "index": "04", "title": "AI & automatisering", "line": "Orkestratie van tools en workflows (n8n, Make), en beveiliging van AI-gebruik." },
+    "c5": { "index": "05", "title": "Offensieve beveiliging", "line": "Offensieve praktijk op TryHackMe (wereldwijd top 15%) : de aanval begrijpen om beter te verdedigen." }
   },
   "recruiter": {
     "eyebrow": "Voor een recruiter",

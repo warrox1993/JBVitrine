@@ -40,6 +40,7 @@ export const authorSchema = {
     "ISO/IEC 27001",
     "Sécurité des réseaux",
     "Sécurité des applications",
+    "Sécurité offensive (TryHackMe)",
   ],
   sameAs: [
     "https://www.linkedin.com/in/jean-baptistedhondt",

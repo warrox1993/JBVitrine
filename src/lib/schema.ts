@@ -132,6 +132,7 @@ export const personSchema = {
     "NIS2",
     "CyberFundamentals (CCB)",
     "IA & automatisation",
+    "Sécurité offensive (TryHackMe)",
   ],
   hasCredential: {
     "@type": "EducationalOccupationalCredential",

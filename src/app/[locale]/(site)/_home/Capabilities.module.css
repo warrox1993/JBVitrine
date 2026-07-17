@@ -1,4 +1,4 @@
-/* Capabilities: eyebrow + heading, then 4 index-mono cards (2x2 grid). */
+/* Capabilities: eyebrow + heading, then 5 index-mono cards (3-col grid, 3+2 layout). */
 .eyebrow {
   font-family: var(--font-mono);
   color: var(--color-primary);
@@ -23,7 +23,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-4);
   margin-top: var(--space-6);
 }
@@ -83,6 +83,12 @@
 .card:hover .arrow,
 .card:focus-visible .arrow {
   transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {

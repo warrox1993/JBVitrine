@@ -27,7 +27,8 @@
     "c1": { "index": "01", "title": "Sécurité cloud", "line": "Sécurisation et durcissement d'environnements cloud (Azure), configuration et bonnes pratiques." },
     "c2": { "index": "02", "title": "Sécurité réseau & infra", "line": "Segmentation, durcissement et bonnes pratiques réseau et infrastructure (CCNA en cours)." },
     "c3": { "index": "03", "title": "Sécurité web", "line": "Applications et sites pensés secure by design, avec une approche inspirée d'OWASP." },
-    "c4": { "index": "04", "title": "IA & automatisation", "line": "Orchestration d'outils et workflows (n8n, Make), et sécurisation des usages de l'IA." }
+    "c4": { "index": "04", "title": "IA & automatisation", "line": "Orchestration d'outils et workflows (n8n, Make), et sécurisation des usages de l'IA." },
+    "c5": { "index": "05", "title": "Sécurité offensive", "line": "Pratique offensive sur TryHackMe (Top 15% mondial) : comprendre l'attaque pour mieux défendre." }
   },
   "recruiter": {
     "eyebrow": "Pour un recruteur",
