@@ -7,18 +7,16 @@
 
 export const authorSchema = {
   "@type": "Person",
-  "@id": "https://smidjan.be/#person-jean-baptiste-dhondt",
+  // Même @id que personSchema (schema.ts) pour que Google consolide les deux
+  // nœuds en une seule entité (E-E-A-T) au lieu de deux personnes distinctes.
+  "@id": "https://smidjan.be/#founder",
   name: "Jean-Baptiste Dhondt",
   givenName: "Jean-Baptiste",
   familyName: "Dhondt",
   url: "https://smidjan.be/agence",
-  image: {
-    "@type": "ImageObject",
-    url: "https://smidjan.be/images/team/jb-dhondt.webp",
-    width: 400,
-    height: 400,
-    caption: "Jean-Baptiste Dhondt, praticien en cybersécurité, cloud, réseau, infra & web",
-  },
+  // Pas de champ `image` : le portrait est un placeholder « photo à venir » et
+  // le fichier /images/team/jb-dhondt.webp n'existe pas. On ne référence pas une
+  // image inexistante en JSON-LD (honnêteté + évite un lien cassé).
   jobTitle: "Praticien en cybersécurité, cloud, réseau, infra & web",
   description:
     "Praticien en cybersécurité (Smidjan) : sécurité cloud, réseau, infrastructure et web, et conformité NIS2 / CyberFundamentals (CCB), en Wallonie.",

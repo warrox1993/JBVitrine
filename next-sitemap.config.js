@@ -50,11 +50,17 @@ module.exports = {
     if (path === "/") {
       priority = 1.0;
       changefreq = "daily";
-    } else if (path === "/services" || path === "/cms-ecommerce") {
-      priority = 0.9; // Pages clés commerciales
+    } else if (path === "/conformite-nis2" || path === "/services") {
+      priority = 0.9; // Pages piliers / offre
       changefreq = "weekly";
-    } else if (path === "/contact") {
-      priority = 0.8; // Page de conversion
+    } else if (
+      path === "/contact" ||
+      path === "/approche" ||
+      path === "/agence" ||
+      path === "/certifications" ||
+      path === "/projets"
+    ) {
+      priority = 0.8; // Pages de conversion / confiance
       changefreq = "monthly";
     } else if (path === "/blog") {
       priority = 0.8; // Page blog principale
@@ -62,13 +68,10 @@ module.exports = {
     } else if (path.startsWith("/blog/")) {
       priority = 0.7; // Articles individuels
       changefreq = "monthly";
-    } else if (path === "/about") {
-      priority = 0.6;
-      changefreq = "monthly";
     } else if (
-      path.includes("/legal-notice") ||
-      path.includes("/privacy") ||
-      path.includes("/terms")
+      path.includes("/mentions-legales") ||
+      path.includes("/confidentialite") ||
+      path.includes("/cgv")
     ) {
       priority = 0.3; // Pages légales
       changefreq = "yearly";

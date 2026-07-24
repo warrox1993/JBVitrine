@@ -7,7 +7,12 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { guardRoute } from "@/lib/auth/guard";
-import { escapeXml } from "@/lib/security/escape";
+import { escapeXml, escapeCsvCell } from "@/lib/security/escape";
+
+// Neutralize spreadsheet formula injection THEN XML-encode. Excel treats
+// ss:Type="String" cells as literal text, so this is defense-in-depth, but it
+// keeps parity with the CSV export and protects if a cell is ever re-typed.
+const cell = (v: unknown): string => escapeXml(escapeCsvCell(v));
 
 export async function GET() {
   const denied = await guardRoute("sales");
@@ -63,11 +68,11 @@ function generateExcelXML(leads: any[]): string {
       <Cell ss:StyleID="grade${escapeXml(lead.score_grade)}"><Data ss:Type="String">${escapeXml(lead.score_grade)}</Data></Cell>
       <Cell ss:StyleID="score"><Data ss:Type="Number">${lead.score_total}</Data></Cell>
       <Cell><Data ss:Type="Number">${lead.score_confidence}</Data></Cell>
-      <Cell><Data ss:Type="String">${escapeXml(lead.name)}</Data></Cell>
-      <Cell><Data ss:Type="String">${escapeXml(lead.email)}</Data></Cell>
-      <Cell><Data ss:Type="String">${escapeXml(lead.company || "")}</Data></Cell>
-      <Cell><Data ss:Type="String">${escapeXml(lead.phone || "")}</Data></Cell>
-      <Cell><Data ss:Type="String">${escapeXml(lead.project_type || "")}</Data></Cell>
+      <Cell><Data ss:Type="String">${cell(lead.name)}</Data></Cell>
+      <Cell><Data ss:Type="String">${cell(lead.email)}</Data></Cell>
+      <Cell><Data ss:Type="String">${cell(lead.company || "")}</Data></Cell>
+      <Cell><Data ss:Type="String">${cell(lead.phone || "")}</Data></Cell>
+      <Cell><Data ss:Type="String">${cell(lead.project_type || "")}</Data></Cell>
       <Cell ss:StyleID="currency"><Data ss:Type="Number">${estimate.min || 0}</Data></Cell>
       <Cell ss:StyleID="currency"><Data ss:Type="Number">${estimate.max || 0}</Data></Cell>
       <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${breakdown.project || 0}</Data></Cell>
@@ -75,9 +80,9 @@ function generateExcelXML(leads: any[]): string {
       <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${breakdown.completion || 0}</Data></Cell>
       <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${breakdown.enrichment || 0}</Data></Cell>
       <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${breakdown.behavioral || 0}</Data></Cell>
-      <Cell><Data ss:Type="String">${escapeXml(enrichment.company || "")}</Data></Cell>
+      <Cell><Data ss:Type="String">${cell(enrichment.company || "")}</Data></Cell>
       <Cell><Data ss:Type="Number">${lead.enrichment_score || 0}</Data></Cell>
-      <Cell><Data ss:Type="String">${escapeXml(lead.confidence_level || "")}</Data></Cell>
+      <Cell><Data ss:Type="String">${cell(lead.confidence_level || "")}</Data></Cell>
     </Row>`;
     })
     .join("");

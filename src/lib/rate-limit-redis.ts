@@ -109,11 +109,26 @@ export const leadScoringLimiter = new Ratelimit({
  * 1. x-real-ip (trusted platform-provided client IP)
  * 2. x-forwarded-for FIRST entry — ONLY as a fallback when x-real-ip is absent
  *    (e.g. local/self-hosted dev without the Vercel proxy)
- * 3. A single constant bucket — we deliberately do NOT fall back to a
- *    client-controlled fingerprint (user-agent / accept-language), because an
- *    attacker could rotate those to evade the limit. A shared constant bucket
- *    fails closed for rate-limiting purposes (it will throttle harder, never
- *    weaker).
+ * 3. A per-request UNIQUE bucket — see the availability note below.
+ *
+ * AVAILABILITY FIX (bug 429): the previous implementation returned a single
+ * CONSTANT bucket ("shared_no_ip_bucket") whenever no IP could be extracted.
+ * That collapsed EVERY such request into ONE shared rate-limit budget, so as
+ * soon as the aggregate no-IP traffic exceeded a limiter's ceiling (e.g. 60/min
+ * for the CSRF token endpoint) any client — including on its very first request
+ * — received a 429. If a deployment/proxy fails to surface a client IP at all,
+ * this throttled the ENTIRE site down to one shared bucket. We now fall back to
+ * a per-request unique key instead: a request we cannot attribute to a client
+ * gets its own bucket (fail-open for rate-limiting) rather than poisoning a
+ * bucket shared with unrelated legitimate users.
+ *
+ * SECURITY NOTE: this is fail-open ONLY on the path where no IP is available.
+ * Behind Vercel, real external requests always carry a platform-set
+ * `x-forwarded-for` (clients cannot strip it), so genuine abusers are still
+ * limited by their real IP via priority 1/2. We deliberately do NOT fall back
+ * to a client-controlled fingerprint (user-agent / accept-language), which an
+ * attacker could rotate. If your proxy does not set x-real-ip/x-forwarded-for,
+ * configure trusted IP forwarding rather than relying on this fallback.
  *
  * @param request - Next.js request object
  * @returns Unique identifier for the client
@@ -136,13 +151,14 @@ export function getClientIdentifier(request: Request): string {
     }
   }
 
-  // Priority 3: constant bucket. Do NOT use a client-controlled fingerprint
-  // (would let attackers rotate headers to bypass rate limiting). A shared
-  // constant bucket fails closed (over-throttles) rather than open.
+  // Priority 3: per-request UNIQUE bucket. Cannot attribute this request to a
+  // client, so give it its own bucket instead of a shared constant one (which
+  // caused the site-wide 429 bug). Sliding-window keys expire with the window,
+  // so these ephemeral keys self-clean and do not accumulate in Redis.
   console.warn(
     "⚠️ Could not extract a trusted client IP (no x-real-ip / x-forwarded-for); " +
-      "using shared constant rate-limit bucket.",
+      "using a per-request unique rate-limit bucket (fail-open).",
   );
-  return "shared_no_ip_bucket";
+  return `no_ip_${crypto.randomUUID()}`;
 }
 

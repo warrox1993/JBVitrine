@@ -4,6 +4,7 @@ import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { Reveal } from '@/components/ui/Reveal/Reveal';
+import { Link } from '@/i18n/navigation';
 import { ContactForm } from './ContactForm';
 import cls from './page.module.css';
 
@@ -111,7 +112,7 @@ export default async function ContactPage({
         <div className={`wrap ${cls.pageHeadInner}`}>
           <Reveal as="div" className={cls.pageHeadText}>
             <nav className={cls.crumbs} aria-label={t('hero.crumbAria')}>
-              <a href="/">{t('hero.crumbHome')}</a>
+              <Link href="/">{t('hero.crumbHome')}</Link>
               <span aria-hidden="true">·</span>
               <span>{t('hero.crumbContact')}</span>
             </nav>

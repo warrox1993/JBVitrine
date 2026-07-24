@@ -17,7 +17,7 @@
       "ctaPrimary": "Get in touch",
       "ctaCall": "Call 0475 20 55 62",
       "badgeLocation": "Based in Wallonia",
-      "imageAlt": "Server racks in a data center, illustrating infrastructure hardening."
+      "imageAlt": "View of Liège at night, the city where Smidjan supports organisations across Wallonia."
     },
     "cta": {
       "title": "Let's talk",
@@ -94,6 +94,12 @@
       "promiseItem2": "<b>Clear priorities</b> by risk and by SME budget.",
       "promiseItem3": "Real <b>remediation</b>: we fix what we find.",
       "promiseItem4": "<b>Verifiable proof</b> of the before and after, without jargon."
+    },
+    "philosophy": {
+      "eyebrow": "How I work",
+      "title": "<accent>Understand</accent> before acting",
+      "lead": "I'd rather <b>explain</b> than impress: every recommendation is justified, prioritised and adapted to your reality — no needless jargon, no overselling.",
+      "quote": "Useful security is the security you <b>understand</b> and can sustain over time."
     },
     "method": {
       "eyebrow": "Step by step",

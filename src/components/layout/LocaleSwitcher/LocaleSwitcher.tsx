@@ -29,7 +29,7 @@ export function LocaleSwitcher({
           href={pathname}
           locale={loc}
           className={loc === locale ? activeClassName : undefined}
-          aria-current={loc === locale ? "true" : undefined}
+          aria-current={loc === locale ? "page" : undefined}
           hrefLang={loc}
         >
           {LABELS[loc]}

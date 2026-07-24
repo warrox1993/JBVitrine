@@ -8,7 +8,6 @@ export const organizationSchema = {
   logo: "https://smidjan.be/images/logoheader/logo-200.png",
   description:
     "Smidjan est la pratique de Jean-Baptiste Dhondt en sécurité cloud, réseau, infrastructure et web, avec un axe conformité NIS2 / CyberFundamentals (CCB). Basé en Wallonie, en Belgique.",
-  foundingDate: "2025",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Service",
@@ -24,7 +23,6 @@ export const organizationSchema = {
   },
   sameAs: [
     "https://www.linkedin.com/in/jean-baptistedhondt",
-    "https://www.facebook.com/jeanbaptiste.dhondt",
     "https://github.com/warrox1993",
   ],
 };
@@ -71,26 +69,13 @@ export const localBusinessSchema = {
   ],
   sameAs: [
     "https://www.linkedin.com/in/jean-baptistedhondt",
-    "https://www.facebook.com/jeanbaptiste.dhondt",
     "https://github.com/warrox1993",
   ],
-  // Services offerts : positionnement cyber-first
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Prestations de cybersécurité Smidjan",
-    itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sécurité cloud", description: "Sécurisation et durcissement d'environnements cloud (Azure), configuration et bonnes pratiques.", serviceType: "Sécurité cloud" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sécurité réseau & infrastructure", description: "Segmentation, durcissement et bonnes pratiques réseau et infrastructure.", serviceType: "Sécurité infrastructure" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sécurité web", description: "Applications et sites conçus secure by design, avec une approche inspirée d'OWASP.", serviceType: "Sécurité applicative" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Conformité NIS2 & CyberFundamentals (CCB)", description: "Analyse d'écart, remédiation et accompagnement, aux niveaux Basic, Important et Essential.", serviceType: "Conformité & audit" } },
-    ],
-  },
-  // Agrégat de notes (à ajouter quand tu auras des avis clients)
-  // aggregateRating: {
-  //   "@type": "AggregateRating",
-  //   ratingValue: "5",
-  //   reviewCount: "12"
-  // }
+  // NOTE: pas de hasOfferCatalog (catalogue d'offres payantes) ni de foundingDate
+  // tant que l'entité n'est pas immatriculée (BCE/TVA « en cours »). Annoncer en
+  // JSON-LD une ProfessionalService avec offres payantes contredirait les mentions
+  // légales et le footer, qui omettent volontairement BCE/TVA. À réintroduire une
+  // fois l'immatriculation finalisée.
 };
 
 // Date de dernière révision du contenu de la home. Source UNIQUE, réutilisée par le

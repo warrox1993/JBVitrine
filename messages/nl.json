@@ -17,7 +17,7 @@
       "ctaPrimary": "Contacteer mij",
       "ctaCall": "Bel 0475 20 55 62",
       "badgeLocation": "Gevestigd in Wallonië",
-      "imageAlt": "Serverracks in een datacenter, ter illustratie van infrastructuurhardening."
+      "imageAlt": "Zicht op Luik bij nacht, de stad waar Smidjan organisaties in Wallonië begeleidt."
     },
     "cta": {
       "title": "Laten we praten",
@@ -94,6 +94,12 @@
       "promiseItem2": "<b>Duidelijke prioriteiten</b> op risico en op kmo-budget.",
       "promiseItem3": "Een <b>echte remediëring</b> : we corrigeren wat we vinden.",
       "promiseItem4": "Een <b>verifieerbaar bewijs</b> van de situatie voor en na, zonder jargon."
+    },
+    "philosophy": {
+      "eyebrow": "Mijn manier van werken",
+      "title": "<accent>Begrijpen</accent> voor ik handel",
+      "lead": "Ik <b>leg liever uit</b> dan te imponeren: elke aanbeveling wordt onderbouwd, geprioriteerd en afgestemd op uw realiteit — geen onnodig jargon, geen overselling.",
+      "quote": "Nuttige beveiliging is de beveiliging die u <b>begrijpt</b> en op termijn kunt volhouden."
     },
     "method": {
       "eyebrow": "Stap voor stap",

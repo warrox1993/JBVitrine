@@ -11,9 +11,14 @@ function secretsMatch(a: string, b: string): boolean {
   return timingSafeEqual(ab, bb);
 }
 
+// Support both the Vercel Marketplace Upstash integration vars (KV_REST_API_*)
+// and the legacy UPSTASH_REDIS_REST_* names — same fallback order as
+// src/lib/rate-limit-redis.ts. Without this, the purge tool silently connected
+// to an unconfigured client (200 OK, 0 keys deleted), making it impossible to
+// lift a rate-limit block manually.
 const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL!,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+  url: (process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL)!,
+  token: (process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN)!,
 });
 
 // SECURITY (V-W7): strict IPv4/IPv6 shape check. Rejects globs/wildcards

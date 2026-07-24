@@ -4,6 +4,7 @@ import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { getAllArticles } from "@/lib/blogActions";
+import { jsonLdSafe } from "@/lib/security/escape";
 import { BlogFilter } from "@/components/features/blog/BlogFilter";
 import { FeaturedArticle } from "@/components/features/blog/FeaturedArticle";
 import { CTABox } from "@/components/shared";
@@ -73,7 +74,7 @@ export default async function BlogPage({ params }: PageProps) {
         type="application/ld+json"
         nonce={nonce}
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: jsonLdSafe({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
@@ -99,7 +100,7 @@ export default async function BlogPage({ params }: PageProps) {
         type="application/ld+json"
         nonce={nonce}
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: jsonLdSafe({
             "@context": "https://schema.org",
             "@type": "Blog",
             name: t("jsonLd.blogName"),

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { useCsrfToken } from '@/hooks/useCsrfToken';
 import cls from './ContactForm.module.css';
 
@@ -189,15 +190,34 @@ export function ContactForm() {
 
     try {
       // Generate reCAPTCHA Enterprise token (action MUST be "contact_form").
+      //
+      // BUG FIX: `grecaptcha.enterprise.ready(cb)` returns `undefined`, NOT a
+      // Promise tied to the callback. The previous `await ready(async cb)`
+      // resolved on the next microtask — BEFORE the inner `execute()` (a real
+      // network call) had assigned the token — so `recaptchaToken` was almost
+      // always sent empty and `/api/contact/direct` rejected every submission
+      // with a 400. We wrap ready()/execute() in an explicit Promise so we
+      // actually await the token before building the payload.
       let recaptchaToken = '';
-      if (typeof window !== 'undefined' && (window as any).grecaptcha?.enterprise) {
+      const grecaptcha = (window as unknown as {
+        grecaptcha?: {
+          enterprise?: {
+            ready: (cb: () => void) => void;
+            execute: (siteKey: string, opts: { action: string }) => Promise<string>;
+          };
+        };
+      }).grecaptcha;
+      if (typeof window !== 'undefined' && grecaptcha?.enterprise) {
+        const enterprise = grecaptcha.enterprise;
         try {
           const { RECAPTCHA_SITE_KEY } = await import('@/config/recaptcha');
-          await (window as any).grecaptcha.enterprise.ready(async () => {
-            recaptchaToken = await (window as any).grecaptcha.enterprise.execute(
-              RECAPTCHA_SITE_KEY,
-              { action: 'contact_form' }
-            );
+          recaptchaToken = await new Promise<string>((resolve, reject) => {
+            enterprise.ready(() => {
+              enterprise
+                .execute(RECAPTCHA_SITE_KEY, { action: 'contact_form' })
+                .then(resolve)
+                .catch(reject);
+            });
           });
         } catch (error) {
           console.error('reCAPTCHA Enterprise error:', error);
@@ -379,9 +399,11 @@ export function ContactForm() {
               value={data.company}
               onChange={(e) => update('company', e.target.value)}
               className={errors.company ? cls.inputError : ''}
+              aria-invalid={errors.company ? true : undefined}
+              aria-describedby={errors.company ? 'company-error' : undefined}
               disabled={isSubmitting}
             />
-            {errors.company && <span className={cls.errorText}>{errors.company}</span>}
+            {errors.company && <span id="company-error" role="alert" className={cls.errorText}>{errors.company}</span>}
           </div>
         </div>
 
@@ -449,18 +471,20 @@ export function ContactForm() {
             name="rgpd"
             checked={data.rgpd}
             onChange={(e) => update('rgpd', e.target.checked)}
+            aria-invalid={errors.rgpd ? true : undefined}
+            aria-describedby={errors.rgpd ? 'rgpd-error' : undefined}
             disabled={isSubmitting}
             required
           />
           <label htmlFor="rgpd">
             {t.rich('form.consent', {
-              link: (c) => <a href="/confidentialite">{c}</a>,
+              link: (c) => <Link href="/confidentialite">{c}</Link>,
             })}{' '}
             <span className={cls.req} aria-hidden="true">*</span>
           </label>
         </div>
         {errors.rgpd && (
-          <span className={cls.errorText} style={{ marginTop: '-16px', marginBottom: '16px' }}>
+          <span id="rgpd-error" role="alert" className={cls.errorText} style={{ marginTop: '-16px', marginBottom: '16px' }}>
             {errors.rgpd}
           </span>
         )}

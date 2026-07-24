@@ -17,7 +17,7 @@
       "ctaPrimary": "Me contacter",
       "ctaCall": "Appeler le 0475 20 55 62",
       "badgeLocation": "Basé en Wallonie",
-      "imageAlt": "Baies de serveurs dans un datacenter, illustrant le durcissement de l'infrastructure."
+      "imageAlt": "Vue de Liège de nuit, ville où Smidjan accompagne les organisations en Wallonie."
     },
     "cta": {
       "title": "Discutons",
@@ -94,6 +94,12 @@
       "promiseItem2": "Des <b>priorités claires</b> par risque et par budget PME.",
       "promiseItem3": "Une <b>remédiation réelle</b>, on corrige ce qu'on trouve.",
       "promiseItem4": "Une <b>preuve vérifiable</b> du avant / après, sans jargon."
+    },
+    "philosophy": {
+      "eyebrow": "Ma façon de travailler",
+      "title": "Comprendre <accent>avant</accent> d'agir",
+      "lead": "Je préfère <b>expliquer</b> plutôt qu'impressionner : chaque recommandation est justifiée, priorisée et adaptée à votre réalité — pas de jargon inutile, pas de sur-vente.",
+      "quote": "La sécurité utile, c'est celle que vous <b>comprenez</b> et que vous pouvez tenir dans le temps."
     },
     "method": {
       "eyebrow": "Étape par étape",

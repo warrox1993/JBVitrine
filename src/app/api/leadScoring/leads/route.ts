@@ -58,6 +58,19 @@ function gradeFromScore(total: number): LeadGrade {
 }
 
 export async function POST(request: NextRequest) {
+  // AUDIT 2026-07-24 — KILL-SWITCH (désactivé par défaut → 410 Gone).
+  // Ce POST public non authentifié permettait la FORGE de leads "HOT"
+  // (score fourni par le client) + le FLOOD de notifications (email/Slack/
+  // Discord). Orphelin depuis la suppression du QuoteWizard : seul le GET admin
+  // (dashboard) est légitime. Réactivable via LEADSCORING_ENDPOINTS_ENABLED=true
+  // (avec reCAPTCHA obligatoire + score recalculé serveur). Voir reports/audit-2026-07-24/.
+  if (process.env.LEADSCORING_ENDPOINTS_ENABLED !== "true") {
+    return NextResponse.json(
+      { error: "Gone", message: "This endpoint has been retired." },
+      { status: 410 },
+    );
+  }
+
   try {
     // ✅ Payload size guard (reject oversized blobs before parsing)
     const contentLength = Number(request.headers.get("content-length") || 0);

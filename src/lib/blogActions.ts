@@ -4,6 +4,7 @@ import fs from "fs/promises";
 import path from "path";
 import { revalidatePath } from "next/cache";
 import { requireAuth } from "@/lib/auth";
+import blogData from "@/data/blogArticles.json";
 
 export interface BlogArticle {
   slug: string;
@@ -52,25 +53,16 @@ function revalidateBlogCache(slug?: string): void {
 }
 
 export async function getAllArticles(): Promise<BlogArticle[]> {
-  try {
-    const fileContent = await fs.readFile(BLOG_DATA_PATH, "utf-8");
-    const data: BlogData = JSON.parse(fileContent);
-    return data.articles.sort(
-      (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-    );
-  } catch (error) {
-    // File missing = legitimately empty blog.
-    if ((error as NodeJS.ErrnoException)?.code === "ENOENT") {
-      return [];
-    }
-    // Read/parse failed on an EXISTING file: throw instead of returning [], so
-    // writers (createArticle/update/delete) don't overwrite the whole blog file
-    // with a single article on a transient read failure. Also surfaces a corrupt
-    // file instead of silently showing an empty blog.
-    console.error("Error reading blog articles:", error);
-    throw new Error("Impossible de lire les articles du blog");
-  }
+  // Static import: blogArticles.json is bundled at build time, so reads happen
+  // in-memory with no runtime fs.readFile against process.cwd(). The previous
+  // fs-based read was unreliable on Vercel's serverless filesystem (process.cwd()
+  // does not point at the traced bundle root) and returned 500s on /blog/[slug]
+  // in production. Copy before sort so we never mutate the imported module.
+  const articles = (blogData as BlogData).articles;
+  return [...articles].sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
 }
 
 export async function getArticleBySlug(

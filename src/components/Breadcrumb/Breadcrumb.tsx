@@ -23,7 +23,6 @@ interface BreadcrumbProps {
 // Chaque chemin pointe vers une clé de traduction (namespace "common").
 const ROUTE_LABEL_KEYS: Record<string, string> = {
   '/': 'breadcrumb.home',
-  '/about': 'breadcrumb.routes.about',
   '/services': 'breadcrumb.routes.services',
   '/conformite-nis2': 'breadcrumb.routes.conformite',
   '/approche': 'breadcrumb.routes.approche',
@@ -32,7 +31,6 @@ const ROUTE_LABEL_KEYS: Record<string, string> = {
   '/blog': 'breadcrumb.routes.journal',
   '/journal': 'breadcrumb.routes.journal',
   '/contact': 'breadcrumb.routes.contact',
-  '/cms-ecommerce': 'breadcrumb.routes.cmsEcommerce',
   '/devis': 'breadcrumb.routes.devis',
   '/mentions-legales': 'breadcrumb.routes.mentionsLegales',
   '/politique-confidentialite': 'breadcrumb.routes.confidentialite',

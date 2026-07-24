@@ -8,13 +8,14 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "eslint . --max-warnings=100",
+    "typecheck": "tsc --noEmit",
     "perf:build": "next build",
     "perf:start": "next start",
     "perf:lh:desktop": "npx lighthouse http://localhost:3000/ --output html --output json --output-path reports/performance/lh-desktop --chrome-flags=\"--headless=new\" --throttling-method=devtools --form-factor=desktop --screenEmulation.mobile=false",
     "perf:lh:mobile": "npx lighthouse http://localhost:3000/ --output html --output json --output-path reports/performance/lh-mobile --chrome-flags=\"--headless=new\" --throttling-method=devtools --form-factor=mobile --screenEmulation.mobile=true",
     "open": "powershell -NoProfile -Command \"start '' 'http://localhost:3000/'\"",
     "perf:all": "npm run perf:build && start cmd /c \"npm run perf:start\" && timeout 5 && npm run perf:lh:desktop && npm run perf:lh:mobile",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
