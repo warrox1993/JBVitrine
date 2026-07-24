@@ -4,19 +4,20 @@
   position: fixed;
   right: 0;
   bottom: 0;
-  width: 220px;
-  height: 220px;
+  width: 260px;
+  height: 260px;
   overflow: hidden;
   z-index: 55;
   pointer-events: none; /* only the ribbon + close capture clicks */
-  /* Hidden until .show; entrance slides/fades in from the corner. */
+  /* Hidden until .show; entrance slides/fades in from the corner, and the same
+     transition plays in reverse for the auto-fade-out. */
   visibility: hidden;
   opacity: 0;
-  transform: translate(24px, 24px);
+  transform: translate(26px, 26px);
   transition:
-    opacity 0.55s ease,
-    transform 0.6s cubic-bezier(0.16, 0.84, 0.3, 1),
-    visibility 0s linear 0.6s;
+    opacity 0.6s ease,
+    transform 0.7s cubic-bezier(0.16, 0.84, 0.3, 1),
+    visibility 0s linear 0.7s;
 }
 
 .host.show {
@@ -24,41 +25,42 @@
   opacity: 1;
   transform: translate(0, 0);
   transition:
-    opacity 0.55s ease,
-    transform 0.6s cubic-bezier(0.16, 0.84, 0.3, 1);
+    opacity 0.6s ease,
+    transform 0.7s cubic-bezier(0.16, 0.84, 0.3, 1);
 }
 
 /* The diagonal band itself. */
 .ribbon {
   position: absolute;
-  bottom: 46px;
-  right: -60px;
-  width: 240px;
+  bottom: 52px;
+  right: -66px;
+  width: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  padding: 10px 58px;
+  gap: 11px;
+  padding: 13px 60px;
   transform: rotate(-45deg);
   transform-origin: center;
   pointer-events: auto;
 
-  background: linear-gradient(135deg, #0d221c 0%, #081310 55%, #0a1712 100%);
-  color: #eafff6;
+  /* Rich emerald band with a deluxe gold trim — visible but not neon. */
+  background: linear-gradient(135deg, #13a277 0%, #0a6b50 52%, #0a4536 100%);
+  color: #f4fff9;
   font-family: var(--mono, ui-monospace, monospace);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 
-  /* Emerald hairline on the leading edge + soft depth + faint inner sheen. */
-  border-top: 1px solid rgba(52, 211, 153, 0.5);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  border-top: 1.5px solid rgba(240, 214, 145, 0.85); /* gold hairline */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.32),
-    0 0 22px rgba(16, 185, 129, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    0 14px 36px rgba(0, 0, 0, 0.4),
+    0 0 34px rgba(16, 185, 129, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .label {
@@ -66,34 +68,34 @@
 }
 
 .dot {
-  width: 7px;
-  height: 7px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   flex: none;
-  background: #34d399;
-  box-shadow: 0 0 8px 1px rgba(52, 211, 153, 0.75);
-  animation: ribbonPulse 2.4s ease-in-out infinite;
+  background: radial-gradient(circle at 35% 35%, #ffe9a8, #f0c674 70%);
+  box-shadow: 0 0 10px 1px rgba(245, 210, 130, 0.9);
+  animation: ribbonPulse 2.2s ease-in-out infinite;
 }
 
 @keyframes ribbonPulse {
   0%,
   100% {
     opacity: 1;
-    box-shadow: 0 0 8px 1px rgba(52, 211, 153, 0.75);
+    box-shadow: 0 0 10px 1px rgba(245, 210, 130, 0.9);
   }
   50% {
-    opacity: 0.55;
-    box-shadow: 0 0 3px 0 rgba(52, 211, 153, 0.4);
+    opacity: 0.5;
+    box-shadow: 0 0 3px 0 rgba(245, 210, 130, 0.45);
   }
 }
 
 /* Small dismiss control at the ribbon's inner corner. */
 .close {
   position: absolute;
-  right: 118px;
-  bottom: 118px;
-  width: 26px;
-  height: 26px;
+  right: 132px;
+  bottom: 132px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -101,10 +103,10 @@
   padding: 0;
   cursor: pointer;
   pointer-events: auto;
-  color: #d6efe6;
-  background: rgba(10, 22, 18, 0.92);
-  border: 1px solid rgba(52, 211, 153, 0.4);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  color: #f6efdc;
+  background: rgba(10, 51, 40, 0.95);
+  border: 1px solid rgba(240, 214, 145, 0.6);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.34);
   transition:
     color 0.16s ease,
     background 0.16s ease,
@@ -112,19 +114,19 @@
 }
 
 .close svg {
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   display: block;
 }
 
 .close:hover {
   color: #fff;
-  background: rgba(16, 41, 33, 0.98);
-  transform: scale(1.08);
+  background: rgba(16, 74, 58, 1);
+  transform: scale(1.1);
 }
 
 .close:focus-visible {
-  outline: 2px solid #34d399;
+  outline: 2px solid #f0d691;
   outline-offset: 2px;
 }
 
@@ -144,21 +146,21 @@
   }
 }
 
-/* Shrink slightly on small phones so the flag stays discreet. */
+/* Shrink slightly on small phones so the flag stays tasteful. */
 @media (max-width: 480px) {
   .host {
-    width: 188px;
-    height: 188px;
+    width: 214px;
+    height: 214px;
   }
   .ribbon {
-    bottom: 40px;
-    right: -66px;
-    padding: 9px 58px;
-    font-size: 10px;
-    letter-spacing: 0.14em;
+    bottom: 44px;
+    right: -70px;
+    padding: 11px 58px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
   }
   .close {
-    right: 100px;
-    bottom: 100px;
+    right: 112px;
+    bottom: 112px;
   }
 }

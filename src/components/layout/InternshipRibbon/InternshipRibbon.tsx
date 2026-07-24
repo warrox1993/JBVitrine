@@ -6,13 +6,15 @@ import styles from "./InternshipRibbon.module.css";
 
 const STORAGE_KEY = "smidjan.internshipRibbon.dismissed";
 const APPEAR_DELAY_MS = 3000;
+/** How long the ribbon stays on screen before it auto-fades out. */
+const VISIBLE_MS = 8000;
 
 /**
- * Sober "open to an internship" diagonal ribbon pinned to the bottom-right
- * corner. It fades/slides in 3s after the page opens (deluxe-cyber look: deep
- * near-black band, emerald hairline + status dot), can be dismissed with the ×
- * or Escape, and stays dismissed for the rest of the browser session. Auto-hide
- * of motion is respected via CSS (prefers-reduced-motion).
+ * "Open to an internship" diagonal ribbon pinned to the bottom-right corner.
+ * It fades/slides in ~3s after the page opens (deluxe-cyber look: emerald band,
+ * gold trim + status dot), stays for a few seconds, then smoothly fades out on
+ * its own. Can also be dismissed early with the × or Escape (which remembers the
+ * choice for the session). Motion is disabled under prefers-reduced-motion.
  */
 export function InternshipRibbon() {
   const t = useTranslations("common");
@@ -34,6 +36,15 @@ export function InternshipRibbon() {
     const timer = setTimeout(() => setVisible(true), APPEAR_DELAY_MS);
     return () => clearTimeout(timer);
   }, []);
+
+  // Once shown, auto-fade out after the visible window (unless dismissed first).
+  // Auto-hide does NOT set the session flag, so it appears again on a full
+  // reload — only an explicit × / Escape suppresses it for the session.
+  useEffect(() => {
+    if (!visible) return;
+    const timer = setTimeout(() => setVisible(false), VISIBLE_MS);
+    return () => clearTimeout(timer);
+  }, [visible]);
 
   const dismiss = useCallback(() => {
     setVisible(false);
