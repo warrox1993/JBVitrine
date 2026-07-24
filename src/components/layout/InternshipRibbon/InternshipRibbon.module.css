@@ -1,0 +1,164 @@
+/* Bottom-right diagonal "internship" ribbon. Fixed, overlays the page, clipped
+   to a corner square so the rotated band reads as a corner flag. */
+.host {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  z-index: 55;
+  pointer-events: none; /* only the ribbon + close capture clicks */
+  /* Hidden until .show; entrance slides/fades in from the corner. */
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(24px, 24px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.6s cubic-bezier(0.16, 0.84, 0.3, 1),
+    visibility 0s linear 0.6s;
+}
+
+.host.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0, 0);
+  transition:
+    opacity 0.55s ease,
+    transform 0.6s cubic-bezier(0.16, 0.84, 0.3, 1);
+}
+
+/* The diagonal band itself. */
+.ribbon {
+  position: absolute;
+  bottom: 46px;
+  right: -60px;
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 58px;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  pointer-events: auto;
+
+  background: linear-gradient(135deg, #0d221c 0%, #081310 55%, #0a1712 100%);
+  color: #eafff6;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  /* Emerald hairline on the leading edge + soft depth + faint inner sheen. */
+  border-top: 1px solid rgba(52, 211, 153, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.32),
+    0 0 22px rgba(16, 185, 129, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.label {
+  line-height: 1;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: none;
+  background: #34d399;
+  box-shadow: 0 0 8px 1px rgba(52, 211, 153, 0.75);
+  animation: ribbonPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes ribbonPulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 8px 1px rgba(52, 211, 153, 0.75);
+  }
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 3px 0 rgba(52, 211, 153, 0.4);
+  }
+}
+
+/* Small dismiss control at the ribbon's inner corner. */
+.close {
+  position: absolute;
+  right: 118px;
+  bottom: 118px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  color: #d6efe6;
+  background: rgba(10, 22, 18, 0.92);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition:
+    color 0.16s ease,
+    background 0.16s ease,
+    transform 0.12s ease;
+}
+
+.close svg {
+  width: 13px;
+  height: 13px;
+  display: block;
+}
+
+.close:hover {
+  color: #fff;
+  background: rgba(16, 41, 33, 0.98);
+  transform: scale(1.08);
+}
+
+.close:focus-visible {
+  outline: 2px solid #34d399;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .host {
+    transition:
+      opacity 0.2s ease,
+      visibility 0s linear 0.2s;
+    transform: none;
+  }
+  .host.show {
+    transition: opacity 0.2s ease;
+    transform: none;
+  }
+  .dot {
+    animation: none;
+  }
+}
+
+/* Shrink slightly on small phones so the flag stays discreet. */
+@media (max-width: 480px) {
+  .host {
+    width: 188px;
+    height: 188px;
+  }
+  .ribbon {
+    bottom: 40px;
+    right: -66px;
+    padding: 9px 58px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+  .close {
+    right: 100px;
+    bottom: 100px;
+  }
+}

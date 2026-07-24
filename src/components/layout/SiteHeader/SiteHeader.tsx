@@ -1,12 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import styles from "./SiteHeader.module.css";
 import { ThemeToggle } from "@/components/ui/ThemeToggle/ThemeToggle";
-import { Icon } from "@/components/ui/Icon/Icon";
 
 const NAV_LINKS = [
   { href: "/services", labelKey: "nav.services" },
@@ -18,26 +17,22 @@ const NAV_LINKS = [
   { href: "/blog", labelKey: "nav.journal" },
 ] as const;
 
-const SOCIAL_LINKS = [
-  { key: "github", href: "https://github.com/warrox1993", icon: "github" as const, ariaKey: "header.githubAria" },
-  {
-    key: "linkedin",
-    href: "https://www.linkedin.com/in/jean-baptistedhondt",
-    icon: "linkedin" as const,
-    ariaKey: "header.linkedinAria",
-  },
-] as const;
-
 /**
- * Sticky top-nav header: brand, nav links, GitHub/LinkedIn icons, orange CTA
- * + mobile menu. Client component: active link via usePathname, hamburger
- * toggle via state. Ported from the approved corporate mockup (phone swapped
- * for profile links: the phone number stays in the footer and contact page).
+ * Top-nav header — slimmed for a portfolio: brand, nav links, theme toggle,
+ * single CTA (+ mobile menu). Social links live in the footer/contact page,
+ * not here, to reduce header clutter.
+ *
+ * Semi-sticky behaviour: the bar stays visible at the very top of the page
+ * and while the user is actively scrolling (either direction); after a short
+ * idle with no scroll (and past the top) it slides up out of view, reappearing
+ * smoothly on the next scroll. It never hides while the mobile menu is open,
+ * and auto-hide is disabled entirely under prefers-reduced-motion.
  */
 export default function SiteHeader() {
   const t = useTranslations("common");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   // Close the mobile menu on route change. Derived during render (React's
   // "adjusting state when a prop changes" pattern) instead of an effect: an
@@ -51,21 +46,105 @@ export default function SiteHeader() {
     setOpen(false);
   }
 
-  // Lock body scroll while the mobile menu is open.
+  const headerRef = useRef<HTMLElement | null>(null);
+  const toggleRef = useRef<HTMLButtonElement | null>(null);
+
+  // While the mobile menu is open: lock body scroll, close on Escape, and
+  // restore focus to the hamburger when it closes (it behaves modally).
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        // Return focus to the trigger; clicking a link (route change) instead
+        // lets the destination page manage focus, so we only do this on Escape.
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = prev;
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  // Semi-sticky: reveal on scroll activity, hide after idle when scrolled.
+  // `hidden` is driven ONLY from the scroll handler / idle timer (async
+  // callbacks — the pattern the set-state-in-effect lint allows); the effect
+  // body itself never calls setState. The menu-open case is handled by the
+  // derived `barHidden` below, not by resetting state here.
+  const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => {
+    // Never auto-hide while the mobile menu is open (the menu anchors to the
+    // bar); the derived `barHidden` keeps it shown, so we just skip wiring.
+    if (open) return;
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (reduceMotion) return; // keep the bar permanently visible; no motion.
+
+    const TOP_ZONE = 12; // px: always show the bar this close to the top
+    const IDLE_MS = 2200; // hide after this long without any scroll
+
+    const clearIdle = () => {
+      if (idleTimer.current) clearTimeout(idleTimer.current);
+      idleTimer.current = null;
+    };
+    const scheduleHide = () => {
+      clearIdle();
+      idleTimer.current = setTimeout(() => {
+        // Never hide the bar while one of its own controls holds keyboard
+        // focus — that would push a focused link/CTA off-screen (WCAG 2.4.11).
+        if (
+          window.scrollY > TOP_ZONE &&
+          !headerRef.current?.contains(document.activeElement)
+        ) {
+          setHidden(true);
+        }
+      }, IDLE_MS);
+    };
+    const onScroll = () => {
+      if (window.scrollY <= TOP_ZONE) {
+        setHidden(false);
+        clearIdle();
+        return;
+      }
+      // Any scroll (up or down) reveals the bar, then re-arms the idle timer.
+      setHidden(false);
+      scheduleHide();
+    };
+    // Reveal immediately when focus enters the header via the keyboard.
+    const onFocusIn = () => {
+      setHidden(false);
+      clearIdle();
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    const headerEl = headerRef.current;
+    headerEl?.addEventListener("focusin", onFocusIn);
+    scheduleHide();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      headerEl?.removeEventListener("focusin", onFocusIn);
+      clearIdle();
     };
   }, [open]);
 
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(`${href}/`);
 
+  // The bar is only ever hidden while the mobile menu is closed.
+  const barHidden = hidden && !open;
+
   return (
-    <header className={styles.site}>
+    <header
+      ref={headerRef}
+      className={`${styles.site} ${barHidden ? styles.hidden : ""}`}
+      data-hidden={barHidden || undefined}
+    >
       <div className={styles.nav}>
         <Link className={styles.brand} href="/" aria-label={t("brand.ariaHome")}>
           <svg
@@ -89,10 +168,7 @@ export default function SiteHeader() {
               strokeLinejoin="round"
             />
           </svg>
-          <span className={styles.brandText}>
-            Smidjan
-            <small>{t("brand.tagline")}</small>
-          </span>
+          <span className={styles.brandText}>Smidjan</span>
         </Link>
 
         <nav
@@ -119,23 +195,11 @@ export default function SiteHeader() {
           <span className={styles.themeDesktop}>
             <ThemeToggle />
           </span>
-          <span className={styles.social}>
-            {SOCIAL_LINKS.map(({ key, href, icon, ariaKey }) => (
-              <a
-                key={key}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={t(ariaKey)}
-              >
-                <Icon name={icon} size={19} />
-              </a>
-            ))}
-          </span>
           <Link className={styles.primary} href="/contact">
             {t("header.cta")}
           </Link>
           <button
+            ref={toggleRef}
             type="button"
             className={styles.toggle}
             aria-label={open ? t("header.closeMenu") : t("header.openMenu")}

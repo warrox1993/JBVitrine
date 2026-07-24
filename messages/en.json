@@ -318,6 +318,11 @@
         "local": "Local & responsive in Wallonia",
         "expert": "Direct access, no middleman"
       }
+    },
+    "internship": {
+      "label": "Open to an internship",
+      "aria": "Notice: open to an internship",
+      "close": "Close"
     }
   },
   "conformite": {

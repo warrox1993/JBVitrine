@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import SiteHeader from "@/components/layout/SiteHeader/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter/SiteFooter";
+import { InternshipRibbon } from "@/components/layout/InternshipRibbon/InternshipRibbon";
 
 export default function SiteLayout({ children }: { children: ReactNode }) {
   return (
@@ -10,6 +11,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
         {children}
       </main>
       <SiteFooter />
+      <InternshipRibbon />
     </>
   );
 }

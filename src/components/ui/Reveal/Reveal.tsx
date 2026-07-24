@@ -58,6 +58,13 @@ export interface RevealProps {
   className?: string;
   /** Re-animate every time it enters the viewport (default: once). */
   repeat?: boolean;
+  /**
+   * Above-the-fold opt-out: render children in the visible state from SSR and
+   * skip the IntersectionObserver entirely. Use for hero / LCP content so the
+   * text/image paints on the first frame instead of waiting for hydration —
+   * an `opacity:0` wrapper is excluded from LCP and hides content if JS is slow.
+   */
+  priority?: boolean;
 }
 
 /**
@@ -74,6 +81,7 @@ export function Reveal({
   delay = 0,
   className = "",
   repeat = false,
+  priority = false,
 }: RevealProps) {
   const Tag = (as || "div") as ElementType;
   const ref = useRef<HTMLElement | null>(null);
@@ -81,9 +89,9 @@ export function Reveal({
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    // Reduced motion is handled below via `prefersReducedMotion` directly
-    // (no setState needed here): skip wiring the observer entirely.
-    if (prefersReducedMotion) return;
+    // Reduced motion / above-the-fold priority are handled below via the
+    // `isShown` derivation (no setState needed here): skip the observer.
+    if (prefersReducedMotion || priority) return;
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(
@@ -104,9 +112,9 @@ export function Reveal({
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [repeat, prefersReducedMotion]);
+  }, [repeat, prefersReducedMotion, priority]);
 
-  const isShown = prefersReducedMotion || shown;
+  const isShown = prefersReducedMotion || priority || shown;
   const base = stagger ? styles.stagger : `${styles.reveal} ${styles[variant]}`;
   const cn = [base, isShown ? styles.in : "", className].filter(Boolean).join(" ");
 

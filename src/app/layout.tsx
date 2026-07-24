@@ -141,8 +141,7 @@ export const viewport: Viewport = {
     initialScale: 1,
 };
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastHost } from '@/components/feedback/ToastHost';
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
     const locale = await getLocale();
@@ -181,18 +180,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
                         {children}
                     </RootEffects>
                 </NextIntlClientProvider>
-                <ToastContainer
-                    position="bottom-right"
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="light"
-                />
+                <ToastHost />
                 {process.env.NODE_ENV === 'production' && (
                     <>
                         <Analytics />

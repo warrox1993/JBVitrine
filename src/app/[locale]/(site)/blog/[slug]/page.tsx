@@ -198,7 +198,7 @@ export default async function BlogArticlePage({ params }: Props) {
       </div>
 
       <header className={styles.articleHead}>
-        <Reveal>
+        <Reveal priority>
           <div className={`wrap ${styles.narrow}`}>
             <span className={styles.catTag}>{article.category}</span>
             <h1 className={styles.title}>{article.title}</h1>
@@ -223,7 +223,7 @@ export default async function BlogArticlePage({ params }: Props) {
         </Reveal>
       </header>
 
-      <Reveal>
+      <Reveal priority>
         <div className={`wrap ${styles.narrow}`}>
           {article.coverImage ? (
             <figure className={styles.heroPhoto}>

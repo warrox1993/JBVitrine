@@ -5,6 +5,20 @@
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: saturate(1.4) blur(10px);
   border-bottom: 1px solid var(--line);
+  /* Semi-sticky: slide the bar in/out smoothly (see SiteHeader.tsx). */
+  transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Auto-hidden state — bar slides up off-screen; reappears on scroll. */
+.site.hidden {
+  transform: translateY(-100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site {
+    transition: none;
+  }
 }
 
 /* Dark: the light 0.92 white glass would stay white; repoint to the themed
@@ -43,19 +57,8 @@
 
 .brandText {
   display: inline-block;
-  line-height: 1.1;
+  line-height: 1;
   font-family: var(--font-display);
-}
-
-.brandText small {
-  display: block;
-  font-weight: 500;
-  font-size: 10.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 1px;
-  white-space: nowrap;
 }
 
 .main {
@@ -88,42 +91,6 @@
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.social {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  flex: none;
-  white-space: nowrap;
-}
-
-.social a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  color: var(--color-text-muted);
-  transition:
-    color 0.16s ease,
-    background 0.16s ease;
-}
-
-.social a svg {
-  width: 19px;
-  height: 19px;
-}
-
-.social a:hover {
-  color: var(--color-primary);
-  background: var(--bg-2);
-}
-
-.social a:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
 }
 
 .primary {
@@ -186,8 +153,7 @@
     gap: 12px;
   }
 
-  .main,
-  .social {
+  .main {
     display: none;
   }
 

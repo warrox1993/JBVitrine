@@ -15,7 +15,7 @@ export async function Hero() {
   return (
     <section className={styles.hero}>
       <Container className={styles.grid}>
-        <Reveal>
+        <Reveal priority>
           <p className={styles.eyebrow}>{t("hero.eyebrow")}</p>
           <h1 className={styles.title}>{t("hero.h1")}</h1>
           <p className={styles.lead}>{t("hero.p1")}</p>

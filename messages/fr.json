@@ -318,6 +318,11 @@
         "local": "Local & réactif en Wallonie",
         "expert": "Accès direct, sans intermédiaire"
       }
+    },
+    "internship": {
+      "label": "En recherche de stage",
+      "aria": "Information : en recherche de stage",
+      "close": "Fermer"
     }
   },
   "conformite": {

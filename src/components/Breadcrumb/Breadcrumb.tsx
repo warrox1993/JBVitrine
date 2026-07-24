@@ -40,7 +40,6 @@ const ROUTE_LABEL_KEYS: Record<string, string> = {
   '/admin/blog': 'breadcrumb.routes.adminBlog',
   '/admin/blog/new': 'breadcrumb.routes.adminArticleNew',
   '/admin/leads': 'breadcrumb.routes.adminLeads',
-  '/admin/articles/new': 'breadcrumb.routes.adminArticleNew',
   '/admin/login': 'breadcrumb.routes.adminLogin',
   '/privacy': 'breadcrumb.routes.confidentialite',
   '/terms': 'breadcrumb.routes.cgv',

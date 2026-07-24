@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { useCsrfToken } from '@/hooks/useCsrfToken';
+import { validateEmail } from '@/lib/validation';
 import cls from './ContactForm.module.css';
 
 /**
@@ -139,7 +140,9 @@ export function ContactForm() {
 
     if (!data.email) {
       newErrors.email = t('form.errors.emailRequired');
-    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(data.email)) {
+    } else if (!validateEmail(data.email)) {
+      // Source unique de vérité, alignée sur le serveur (/api/contact/direct)
+      // pour éviter qu'un email "valide" côté client soit rejeté côté serveur.
       newErrors.email = t('form.errors.emailInvalid');
     } else if (data.email.length > 254) {
       newErrors.email = t('form.errors.emailTooLong');

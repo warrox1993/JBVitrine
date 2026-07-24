@@ -318,6 +318,11 @@
         "local": "Lokaal & reactief in Wallonië",
         "expert": "Rechtstreeks contact, zonder tussenpersoon"
       }
+    },
+    "internship": {
+      "label": "Op zoek naar een stage",
+      "aria": "Melding: op zoek naar een stage",
+      "close": "Sluiten"
     }
   },
   "conformite": {

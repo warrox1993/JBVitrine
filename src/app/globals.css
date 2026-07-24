@@ -161,7 +161,6 @@ body {
   background-blend-mode: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size-adjust: 0.5;
 }
 
 @supports (color: color-mix(in srgb, white, black)) {
@@ -261,16 +260,6 @@ body {
     linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 38px 38px;
-}
-
-/* Phone Input Global Dark Theme Styles */
-.PhoneInputCountrySelect {
-  color-scheme: dark !important;
-}
-
-.PhoneInputCountrySelect option {
-  background-color: #1a1a1a !important;
-  color: #e0e0e0 !important;
 }
 
 /* Masquer tous les fils d'Ariane visibles sur le site public.

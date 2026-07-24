@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Image indisponible">
+  <rect width="1200" height="675" fill="#e9edf3"/>
+  <g fill="none" stroke="#b8c2d0" stroke-width="3">
+    <rect x="450" y="250" width="300" height="200" rx="12"/>
+    <circle cx="530" cy="320" r="26"/>
+    <path d="M470 430 L560 350 L620 400 L700 320 L730 430 Z" fill="#b8c2d0" stroke="none"/>
+  </g>
+  <text x="600" y="510" font-family="system-ui, sans-serif" font-size="28" fill="#8a97a8" text-anchor="middle">Image indisponible</text>
+</svg>

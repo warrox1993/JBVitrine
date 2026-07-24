@@ -10,24 +10,26 @@ marked.setOptions({
   breaks: false, // Don't convert \n to <br> for cleaner paragraphs
 });
 
-// Custom renderer to handle custom heading IDs like {#id}
+// Custom renderer. On ne surcharge QUE ce qui a besoin d'un comportement
+// spécifique (ancres de titres, échappement des blocs de code, rel sur les
+// liens). Les paragraphes, listes et l'inline (gras/italique/code/liens) sont
+// laissés au rendu par défaut de marked : les surcharger avec `token.text`
+// renvoyait le markdown BRUT (marked v5+ donne le texte non parsé dans `.text`),
+// d'où les « ** » et « - » affichés littéralement dans les articles.
 const renderer = {
-  heading({ tokens, depth, text }: Tokens.Heading) {
-    // Get raw text from tokens
+  heading(this: { parser: { parseInline: (t: Tokens.Heading["tokens"]) => string } }, { tokens, depth }: Tokens.Heading) {
+    // Ancre personnalisée "Titre {#custom-id}" pour la table des matières.
     const rawText = tokens.map((t) => ("text" in t ? t.text : "")).join("");
-
-    // Check if text has a custom ID like "Title {#custom-id}"
     const match = rawText.match(/^(.+?)\s*\{#([a-z0-9-]+)\}\s*$/);
 
     if (match) {
       const [, title, id] = match;
-      // Parse the title to handle markdown formatting (bold, italic, etc.)
       const parsedTitle = marked.parseInline(title.trim());
       return `<h${depth} id="${id}">${parsedTitle}</h${depth}>\n`;
     }
 
-    // No custom ID, use the text as-is
-    return `<h${depth}>${text}</h${depth}>\n`;
+    // Parse l'inline du titre (gras/italique/liens), ne PAS utiliser le brut.
+    return `<h${depth}>${this.parser.parseInline(tokens)}</h${depth}>\n`;
   },
 
   code({ text, lang }: Tokens.Code) {
@@ -40,32 +42,6 @@ const renderer = {
       .replace(/'/g, "&#039;");
 
     return `<pre><code class="language-${escapeHtml(language)}">${escaped}</code></pre>\n`;
-  },
-
-  paragraph({ text }: Tokens.Paragraph) {
-    return `<p>${text}</p>\n`;
-  },
-
-  list({ ordered, items }: Tokens.List) {
-    const type = ordered ? "ol" : "ul";
-    const body = items.map((item) => this.listitem(item)).join("");
-    return `<${type}>\n${body}</${type}>\n`;
-  },
-
-  listitem({ text }: Tokens.ListItem) {
-    return `<li>${text}</li>\n`;
-  },
-
-  strong({ text }: Tokens.Strong) {
-    return `<strong>${text}</strong>`;
-  },
-
-  em({ text }: Tokens.Em) {
-    return `<em>${text}</em>`;
-  },
-
-  codespan({ text }: Tokens.Codespan) {
-    return `<code>${text}</code>`;
   },
 
   link({ href, title, text }: Tokens.Link) {
