@@ -10,7 +10,7 @@
   z-index: 55;
   pointer-events: none; /* only the ribbon + close capture clicks */
   /* Hidden until .show; entrance slides/fades in from the corner, and the same
-     transition plays in reverse for the auto-fade-out. */
+     transition plays in reverse when the visitor dismisses it (× / Escape). */
   visibility: hidden;
   opacity: 0;
   transform: translate(26px, 26px);

@@ -8,7 +8,7 @@ const CARDS = [
   { key: "c2", href: "/services" },
   { key: "c3", href: "/services" },
   { key: "c4", href: "/services" },
-  { key: "c5", href: "/certifications" },
+  { key: "c5", href: "/cv" },
 ] as const;
 
 /** Home "Capabilities" block: 5 index-mono cards (cloud, réseau/infra, web, IA, sécurité offensive). */

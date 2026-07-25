@@ -2,10 +2,8 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { social } from "@/config/site";
 import styles from "./RecruiterBand.module.css";
-
-const LINKEDIN = "https://www.linkedin.com/in/jean-baptistedhondt";
-const GITHUB = "https://github.com/warrox1993";
 
 /** Home recruiter band: availability/location/focus + direct links. Placed under the hero. */
 export async function RecruiterBand() {
@@ -30,13 +28,16 @@ export async function RecruiterBand() {
             ))}
           </dl>
           <div className={styles.ctas}>
-            <a className={styles.ctaPrimary} href={LINKEDIN} target="_blank" rel="noopener noreferrer">
+            <a className={styles.ctaPrimary} href={social.linkedin} target="_blank" rel="noopener noreferrer">
               {t("recruiter.ctaLinkedin")}
             </a>
+            <Link className={styles.ctaGhost} href="/cv">
+              {t("recruiter.ctaCv")}
+            </Link>
             <Link className={styles.ctaGhost} href="/agence">
               {t("recruiter.ctaParcours")}
             </Link>
-            <a className={styles.ctaGhost} href={GITHUB} target="_blank" rel="noopener noreferrer">
+            <a className={styles.ctaGhost} href={social.github} target="_blank" rel="noopener noreferrer">
               {t("recruiter.ctaGithub")}
             </a>
           </div>

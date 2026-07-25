@@ -6,21 +6,27 @@ import { usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import styles from "./SiteHeader.module.css";
 import { ThemeToggle } from "@/components/ui/ThemeToggle/ThemeToggle";
+import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher/LocaleSwitcher";
+import { Icon } from "@/components/ui/Icon/Icon";
+import { social } from "@/config/site";
 
+// Portfolio-oriented nav. "Services" is reframed as "Compétences"; the former
+// "Approche" now lives inside "À propos" (/agence) and "Certifications" inside
+// the new "CV" page — so both are dropped here to keep the bar uncluttered.
 const NAV_LINKS = [
-  { href: "/services", labelKey: "nav.services" },
+  { href: "/services", labelKey: "nav.competences" },
   { href: "/conformite-nis2", labelKey: "nav.conformite" },
-  { href: "/approche", labelKey: "nav.approche" },
   { href: "/agence", labelKey: "nav.agence" },
-  { href: "/certifications", labelKey: "nav.certifications" },
   { href: "/projets", labelKey: "nav.projets" },
+  { href: "/cv", labelKey: "nav.cv" },
   { href: "/blog", labelKey: "nav.journal" },
 ] as const;
 
 /**
- * Top-nav header — slimmed for a portfolio: brand, nav links, theme toggle,
- * single CTA (+ mobile menu). Social links live in the footer/contact page,
- * not here, to reduce header clutter.
+ * Top-nav header — brand, nav links, a compact utilities cluster (language
+ * switcher + GitHub/LinkedIn + theme) and a single CTA (+ mobile menu). The
+ * social links and locale switcher live here as icon-sized controls so the bar
+ * stays a portfolio "command center" without feeling crowded.
  *
  * Semi-sticky behaviour: the bar stays visible at the very top of the page
  * and while the user is actively scrolling (either direction); after a short
@@ -186,15 +192,66 @@ export default function SiteHeader() {
               {t(link.labelKey)}
             </Link>
           ))}
-          <span className={styles.themeMobile}>
-            <ThemeToggle />
-          </span>
+          {/* Utilities repeated inside the mobile dropdown (hidden on desktop,
+              where they live in the header row instead). */}
+          <div className={styles.utilsMobile}>
+            <LocaleSwitcher
+              className={styles.lang}
+              activeClassName={styles.langActive}
+            />
+            <span className={styles.socialRow}>
+              <a
+                href={social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className={styles.social}
+              >
+                <Icon name="github" size={20} />
+              </a>
+              <a
+                href={social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className={styles.social}
+              >
+                <Icon name="linkedin" size={20} />
+              </a>
+              <ThemeToggle />
+            </span>
+          </div>
         </nav>
 
         <div className={styles.cta}>
-          <span className={styles.themeDesktop}>
+          {/* Desktop-only utilities cluster: language + social + theme. */}
+          <div className={styles.utilsDesktop}>
+            <LocaleSwitcher
+              className={styles.lang}
+              activeClassName={styles.langActive}
+            />
+            <span className={styles.socialRow}>
+              <a
+                href={social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className={styles.social}
+              >
+                <Icon name="github" size={19} />
+              </a>
+              <a
+                href={social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className={styles.social}
+              >
+                <Icon name="linkedin" size={19} />
+              </a>
+            </span>
             <ThemeToggle />
-          </span>
+          </div>
           <Link className={styles.primary} href="/contact">
             {t("header.cta")}
           </Link>

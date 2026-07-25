@@ -124,6 +124,28 @@ const nextConfig: NextConfig = {
         destination: "/agence",
         permanent: true,
       },
+      // "Approche" fusionnée dans "À propos" (/agence) — on garde les liens vivants.
+      {
+        source: "/approche",
+        destination: "/agence",
+        permanent: true,
+      },
+      {
+        source: "/:locale(nl|en)/approche",
+        destination: "/:locale/agence",
+        permanent: true,
+      },
+      // "Certifications" fusionnées dans la page "CV".
+      {
+        source: "/certifications",
+        destination: "/cv",
+        permanent: true,
+      },
+      {
+        source: "/:locale(nl|en)/certifications",
+        destination: "/:locale/cv",
+        permanent: true,
+      },
       // Pages légales renommées (FR)
       {
         source: "/legal-notice",

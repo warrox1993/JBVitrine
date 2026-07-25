@@ -1,0 +1,23 @@
+/**
+ * Single source of truth for off-site identity: profile URLs and direct
+ * contact points. Everything that would otherwise be hardcoded across pages
+ * (header, footer, contact, schema.org) should read from here so there is one
+ * place to change a handle or number. Extend as the "zero hardcoding" cleanup
+ * folds the remaining literals in.
+ */
+export const social = {
+  github: "https://github.com/warrox1993",
+  linkedin: "https://www.linkedin.com/in/jean-baptistedhondt",
+  tryhackme: "https://tryhackme.com/p/Warrox1993",
+} as const;
+
+export const contact = {
+  email: "jeanbaptiste.dhondt1@gmail.com",
+  /** E.164 for tel: links. */
+  phoneHref: "tel:+32475205562",
+  /** Human-readable phone shown in the UI. */
+  phoneLabel: "0475 20 55 62",
+} as const;
+
+/** Canonical production origin (no trailing slash). */
+export const siteUrl = "https://smidjan.be";

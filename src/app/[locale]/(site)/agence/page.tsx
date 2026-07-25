@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/Button/Button";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { CTABox } from "@/components/shared";
 import { Fondateur } from "./Fondateur";
+import { Demarche } from "./Demarche";
 import styles from "./page.module.css";
 
 export async function generateMetadata({
@@ -127,6 +128,8 @@ export default async function AgencePage({
       </section>
 
       <Fondateur />
+
+      <Demarche />
 
       <CTABox
         id="contact"

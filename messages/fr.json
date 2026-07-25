@@ -234,10 +234,12 @@
     },
     "nav": {
       "services": "Services",
+      "competences": "Compétences",
       "conformite": "Conformité NIS2",
       "approche": "Approche",
       "agence": "À propos",
       "certifications": "Certifications",
+      "cv": "CV",
       "journal": "Journal",
       "projets": "Projets"
     },
@@ -492,20 +494,20 @@
       "coordZoneV": "Wallonie, Belgique",
       "coordPhoneK": "Téléphone",
       "coordEmailK": "E-mail",
-      "coordHoursK": "Horaires",
-      "coordHoursV": "Lun. au ven., 8h30 à 18h00"
+      "coordHoursK": "Disponibilité",
+      "coordHoursV": "En semaine — réponse rapide"
     },
     "expect": {
-      "eyebrow": "À quoi s'attendre",
-      "title": "De votre message au <accent>premier échange</accent>, en trois temps",
-      "intro": "Pas de tunnel commercial, un échange utile dès le premier message.",
+      "eyebrow": "Après votre message",
+      "title": "De votre message à un <accent>premier échange</accent>, sans détour",
+      "intro": "Un échange direct et concret dès le premier message — pas de tunnel commercial.",
       "step1Title": "Vous m'écrivez",
-      "step1Text": "Formulaire, e-mail ou appel. Décrivez votre besoin en deux phrases.",
-      "step2Title": "On vous rappelle sous 24 h",
-      "step2Text": "Moi directement, pas un commercial. Sous 24 h ouvrées.",
-      "step3Title": "Premier échange gratuit",
-      "step3Text": "30 minutes pour cerner vos priorités. Sans engagement, sans jargon.",
-      "note": "<b>Un seul interlocuteur</b>, du premier message à la remédiation."
+      "step1Text": "Formulaire, e-mail ou LinkedIn : décrivez en deux phrases votre projet, un poste ou votre question.",
+      "step2Title": "Je vous réponds vite",
+      "step2Text": "Moi, directement — en général sous 24 h en semaine.",
+      "step3Title": "On échange",
+      "step3Text": "Un appel ou quelques messages pour cerner l'essentiel. Sans engagement, sans jargon.",
+      "note": "<b>Un seul interlocuteur</b> : moi, du premier message à la suite."
     }
   },
   "home": {
@@ -569,6 +571,7 @@
       "focusK": "Focus",
       "focusV": "Sécurité cloud, réseau, infra & web",
       "ctaLinkedin": "LinkedIn",
+      "ctaCv": "Voir mon CV",
       "ctaParcours": "Voir mon parcours",
       "ctaGithub": "GitHub"
     },
@@ -1071,6 +1074,42 @@
       "disclaimer": "Estimation indicative, pas un avis juridique. Le diagnostic gratuit confirme votre situation exacte.",
       "levelLabel": "Point de départ CyFun conseillé",
       "recapLabel": "Basé sur vos réponses"
+    }
+  },
+  "cv": {
+    "meta": {
+      "title": "CV — Jean-Baptiste Dhondt | Cybersécurité, cloud, réseau & dev",
+      "description": "Le CV de Jean-Baptiste Dhondt : parcours, formation, certifications et compétences en cybersécurité, cloud, réseau, infrastructure et développement. En recherche de stage à partir de 2027.",
+      "ogTitle": "CV — Jean-Baptiste Dhondt",
+      "ogDescription": "Parcours, formation, certifications et compétences — cybersécurité, cloud, réseau & dev.",
+      "ogImageAlt": "CV de Jean-Baptiste Dhondt",
+      "twitterTitle": "CV — Jean-Baptiste Dhondt",
+      "twitterDescription": "Parcours, formation, certifications et compétences."
+    },
+    "breadcrumb": { "home": "Accueil", "current": "CV" },
+    "hero": {
+      "kicker": "Curriculum vitæ",
+      "name": "Jean-Baptiste Dhondt",
+      "role": "Cybersécurité · cloud · réseau · infrastructure & web",
+      "summary": "En reconversion vers la cybersécurité, avec une expérience de terrain (Défense belge, Commission européenne) réinvestie dans la sécurité cloud, réseau et applicative. Bachelier en informatique en cours, bootcamp Java Full Stack et deux stages de développement en 2025.",
+      "availLabel": "Disponibilité",
+      "availValue": "Recherche un stage à partir de 2027",
+      "locLabel": "Localisation",
+      "locValue": "Wallonie · autorisé à travailler dans l'UE · télétravail",
+      "focusLabel": "Focus",
+      "focusValue": "Sécurité cloud, réseau, infra & web",
+      "ctaContact": "Me contacter",
+      "pdfNote": "Version PDF sur demande"
+    },
+    "languages": {
+      "eyebrow": "Langues",
+      "title": "Langues",
+      "note": "Niveaux à préciser.",
+      "items": [
+        { "lang": "Français", "level": "Langue maternelle" },
+        { "lang": "Néerlandais", "level": "À préciser" },
+        { "lang": "Anglais", "level": "À préciser" }
+      ]
     }
   },
   "certifications": {

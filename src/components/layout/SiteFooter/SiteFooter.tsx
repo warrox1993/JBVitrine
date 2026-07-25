@@ -2,16 +2,13 @@ import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher/LocaleSwitcher";
 import { Icon } from "@/components/ui/Icon/Icon";
+import { social } from "@/config/site";
 import styles from "./SiteFooter.module.css";
 
 const PROFILE_LINKS = [
-  { key: "github", href: "https://github.com/warrox1993", icon: "github" as const },
-  {
-    key: "linkedin",
-    href: "https://www.linkedin.com/in/jean-baptistedhondt",
-    icon: "linkedin" as const,
-  },
-  { key: "tryhackme", href: "https://tryhackme.com/p/Warrox1993", icon: "shield" as const },
+  { key: "github", href: social.github, icon: "github" as const },
+  { key: "linkedin", href: social.linkedin, icon: "linkedin" as const },
+  { key: "tryhackme", href: social.tryhackme, icon: "shield" as const },
 ];
 
 /**
@@ -143,10 +140,7 @@ export default async function SiteFooter() {
                 <Link href="/agence">{t("footer.links.apropos")}</Link>
               </li>
               <li>
-                <Link href="/approche">{t("footer.links.approche")}</Link>
-              </li>
-              <li>
-                <Link href="/certifications">{t("footer.links.certifications")}</Link>
+                <Link href="/cv">{t("nav.cv")}</Link>
               </li>
               <li>
                 <Link href="/projets">{t("nav.projets")}</Link>

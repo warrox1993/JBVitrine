@@ -234,10 +234,12 @@
     },
     "nav": {
       "services": "Diensten",
+      "competences": "Vaardigheden",
       "conformite": "NIS2-conformiteit",
       "approche": "Aanpak",
       "agence": "Over",
       "certifications": "Certificaten",
+      "cv": "CV",
       "journal": "Blog",
       "projets": "Projecten"
     },
@@ -492,20 +494,20 @@
       "coordZoneV": "Wallonië, België",
       "coordPhoneK": "Telefoon",
       "coordEmailK": "E-mail",
-      "coordHoursK": "Openingsuren",
-      "coordHoursV": "Ma. tot vr., 8.30 tot 18.00 uur"
+      "coordHoursK": "Beschikbaarheid",
+      "coordHoursV": "Tijdens de week — snel antwoord"
     },
     "expect": {
-      "eyebrow": "Wat u mag verwachten",
-      "title": "Van uw bericht tot het <accent>eerste gesprek</accent>, in drie stappen",
-      "intro": "Geen verkooptunnel, een nuttig gesprek vanaf het eerste bericht.",
+      "eyebrow": "Na uw bericht",
+      "title": "Van uw bericht tot een <accent>eerste gesprek</accent>, zonder omwegen",
+      "intro": "Een direct en concreet gesprek vanaf het eerste bericht — geen verkooptunnel.",
       "step1Title": "U schrijft mij",
-      "step1Text": "Formulier, e-mail of telefoon. Beschrijf uw behoefte in twee zinnen.",
-      "step2Title": "Wij bellen u terug binnen 24 u",
-      "step2Text": "Ikzelf, geen verkoper. Binnen 24 werkuren.",
-      "step3Title": "Gratis eerste gesprek",
-      "step3Text": "30 minuten om uw prioriteiten in kaart te brengen. Vrijblijvend, zonder jargon.",
-      "note": "<b>Eén aanspreekpunt</b>, van het eerste bericht tot de remediëring."
+      "step1Text": "Formulier, e-mail of LinkedIn: beschrijf in twee zinnen uw project, een functie of uw vraag.",
+      "step2Title": "Ik antwoord snel",
+      "step2Text": "Ikzelf, rechtstreeks — meestal binnen 24 u tijdens de week.",
+      "step3Title": "We wisselen uit",
+      "step3Text": "Een gesprek of enkele berichten om de kern te vatten. Vrijblijvend, zonder jargon.",
+      "note": "<b>Eén aanspreekpunt</b>: ik, van het eerste bericht tot het vervolg."
     }
   },
   "home": {
@@ -569,6 +571,7 @@
       "focusK": "Focus",
       "focusV": "Cloud-, netwerk-, infra- & websecurity",
       "ctaLinkedin": "LinkedIn",
+      "ctaCv": "Mijn cv bekijken",
       "ctaParcours": "Mijn traject bekijken",
       "ctaGithub": "GitHub"
     },
@@ -1071,6 +1074,42 @@
       "disclaimer": "Indicatieve inschatting, geen juridisch advies. De gratis diagnose bevestigt uw exacte situatie.",
       "levelLabel": "Aanbevolen CyFun-startpunt",
       "recapLabel": "Op basis van uw antwoorden"
+    }
+  },
+  "cv": {
+    "meta": {
+      "title": "CV — Jean-Baptiste Dhondt | Cyberbeveiliging, cloud, netwerk & dev",
+      "description": "Het cv van Jean-Baptiste Dhondt: traject, opleiding, certificaten en vaardigheden in cyberbeveiliging, cloud, netwerk, infrastructuur en ontwikkeling. Op zoek naar een stage vanaf 2027.",
+      "ogTitle": "CV — Jean-Baptiste Dhondt",
+      "ogDescription": "Traject, opleiding, certificaten en vaardigheden — cyberbeveiliging, cloud, netwerk & dev.",
+      "ogImageAlt": "CV van Jean-Baptiste Dhondt",
+      "twitterTitle": "CV — Jean-Baptiste Dhondt",
+      "twitterDescription": "Traject, opleiding, certificaten en vaardigheden."
+    },
+    "breadcrumb": { "home": "Home", "current": "CV" },
+    "hero": {
+      "kicker": "Curriculum vitae",
+      "name": "Jean-Baptiste Dhondt",
+      "role": "Cyberbeveiliging · cloud · netwerk · infrastructuur & web",
+      "summary": "In heroriëntatie naar cyberbeveiliging, met terreinervaring (Belgische Defensie, Europese Commissie) die ik inzet voor cloud-, netwerk- en applicatiebeveiliging. Bachelor informatica lopende, Java Full Stack-bootcamp en twee ontwikkelingsstages in 2025.",
+      "availLabel": "Beschikbaarheid",
+      "availValue": "Op zoek naar een stage vanaf 2027",
+      "locLabel": "Locatie",
+      "locValue": "Wallonië · gemachtigd om in de EU te werken · telewerk",
+      "focusLabel": "Focus",
+      "focusValue": "Cloud-, netwerk-, infra- & webbeveiliging",
+      "ctaContact": "Contacteer mij",
+      "pdfNote": "Pdf-versie op aanvraag"
+    },
+    "languages": {
+      "eyebrow": "Talen",
+      "title": "Talen",
+      "note": "Niveaus nog te preciseren.",
+      "items": [
+        { "lang": "Frans", "level": "Moedertaal" },
+        { "lang": "Nederlands", "level": "Te preciseren" },
+        { "lang": "Engels", "level": "Te preciseren" }
+      ]
     }
   },
   "certifications": {

@@ -234,10 +234,12 @@
     },
     "nav": {
       "services": "Services",
+      "competences": "Skills",
       "conformite": "NIS2 Compliance",
       "approche": "Approach",
       "agence": "About",
       "certifications": "Certifications",
+      "cv": "CV",
       "journal": "Journal",
       "projets": "Projects"
     },
@@ -492,20 +494,20 @@
       "coordZoneV": "Wallonia, Belgium",
       "coordPhoneK": "Phone",
       "coordEmailK": "Email",
-      "coordHoursK": "Hours",
-      "coordHoursV": "Mon. to Fri., 8:30 am to 6:00 pm"
+      "coordHoursK": "Availability",
+      "coordHoursV": "Weekdays — quick reply"
     },
     "expect": {
-      "eyebrow": "What to expect",
-      "title": "From your message to the <accent>first conversation</accent>, in three steps",
-      "intro": "No sales funnel, a useful exchange from the very first message.",
+      "eyebrow": "After your message",
+      "title": "From your message to a <accent>first conversation</accent>, no detours",
+      "intro": "A direct, concrete exchange from the very first message — no sales funnel.",
       "step1Title": "You write to me",
-      "step1Text": "Form, email or call. Describe your need in two sentences.",
-      "step2Title": "We call you back within 24 h",
-      "step2Text": "Me directly, not a salesperson. Within 24 business hours.",
-      "step3Title": "Free first conversation",
-      "step3Text": "30 minutes to pinpoint your priorities. No commitment, no jargon.",
-      "note": "<b>A single point of contact</b>, from the first message to remediation."
+      "step1Text": "Form, email or LinkedIn: describe your project, a role or your question in two sentences.",
+      "step2Title": "I reply quickly",
+      "step2Text": "Me, directly — usually within 24 h on weekdays.",
+      "step3Title": "We talk",
+      "step3Text": "A call or a few messages to get to the essentials. No commitment, no jargon.",
+      "note": "<b>A single point of contact</b>: me, from the first message onward."
     }
   },
   "home": {
@@ -569,6 +571,7 @@
       "focusK": "Focus",
       "focusV": "Cloud, network, infra & web security",
       "ctaLinkedin": "LinkedIn",
+      "ctaCv": "View my CV",
       "ctaParcours": "See my journey",
       "ctaGithub": "GitHub"
     },
@@ -1071,6 +1074,42 @@
       "disclaimer": "Indicative estimate, not legal advice. The free assessment confirms your exact situation.",
       "levelLabel": "Recommended CyFun starting point",
       "recapLabel": "Based on your answers"
+    }
+  },
+  "cv": {
+    "meta": {
+      "title": "CV — Jean-Baptiste Dhondt | Cybersecurity, cloud, network & dev",
+      "description": "Jean-Baptiste Dhondt's CV: background, education, certifications and skills in cybersecurity, cloud, network, infrastructure and development. Seeking an internship from 2027.",
+      "ogTitle": "CV — Jean-Baptiste Dhondt",
+      "ogDescription": "Background, education, certifications and skills — cybersecurity, cloud, network & dev.",
+      "ogImageAlt": "Jean-Baptiste Dhondt's CV",
+      "twitterTitle": "CV — Jean-Baptiste Dhondt",
+      "twitterDescription": "Background, education, certifications and skills."
+    },
+    "breadcrumb": { "home": "Home", "current": "CV" },
+    "hero": {
+      "kicker": "Curriculum vitae",
+      "name": "Jean-Baptiste Dhondt",
+      "role": "Cybersecurity · cloud · network · infrastructure & web",
+      "summary": "Transitioning into cybersecurity, with field experience (Belgian Defence, European Commission) reinvested in cloud, network and application security. Bachelor in computer science in progress, Java Full Stack bootcamp and two development internships in 2025.",
+      "availLabel": "Availability",
+      "availValue": "Seeking an internship from 2027",
+      "locLabel": "Location",
+      "locValue": "Wallonia · authorised to work in the EU · remote",
+      "focusLabel": "Focus",
+      "focusValue": "Cloud, network, infra & web security",
+      "ctaContact": "Contact me",
+      "pdfNote": "PDF version on request"
+    },
+    "languages": {
+      "eyebrow": "Languages",
+      "title": "Languages",
+      "note": "Levels to be confirmed.",
+      "items": [
+        { "lang": "French", "level": "Native" },
+        { "lang": "Dutch", "level": "To be confirmed" },
+        { "lang": "English", "level": "To be confirmed" }
+      ]
     }
   },
   "certifications": {
