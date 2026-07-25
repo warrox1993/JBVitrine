@@ -6,6 +6,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { Link } from "@/i18n/navigation";
+import { JourneyRail } from "./JourneyRail";
 import styles from "./Fondateur.module.css";
 
 const CREDENTIALS = [
@@ -23,63 +24,30 @@ const SKILL_TAGS = [
   "skillConformite",
 ] as const;
 
+/** Chronological steps rendered as a numbered (01–05) journey list. */
 const JOURNEY = [
-  {
-    key: false,
-    tkey: "Start",
-    icon: (
-      <>
-        <path d="m13 2-3 7h4l-3 7" />
-        <path d="M5 12a7 7 0 0 1 14 0" />
-      </>
-    ),
-  },
-  {
-    key: false,
-    tkey: "Selftaught",
-    icon: (
-      <>
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <path d="M8 21h8M12 17v4M7 8l3 2-3 2M13 12h3" />
-      </>
-    ),
-  },
-  {
-    key: false,
-    tkey: "Training",
-    icon: (
-      <>
-        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-        <path d="M6 12v5c3 3 9 3 12 0v-5" />
-      </>
-    ),
-  },
-  {
-    key: true,
-    tkey: "Army",
-    icon: (
-      <>
-        <path d="M12 2 4 5v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3Z" />
-        <path d="M12 8v4M12 16h.01" />
-      </>
-    ),
-  },
-  {
-    key: false,
-    tkey: "Today",
-    icon: (
-      <>
-        <path d="M11 3a8 8 0 1 0 8 8" />
-        <path d="M21 3l-9 9M21 3v5M21 3h-5" />
-        <path d="m6 12 2 2 4-4" />
-      </>
-    ),
-  },
-];
+  { key: false, tkey: "Start" },
+  { key: false, tkey: "Selftaught" },
+  { key: false, tkey: "Training" },
+  { key: true, tkey: "Army" },
+  { key: false, tkey: "Today" },
+] as const;
 
 /** "Le fondateur" - Jean-Baptiste Dhondt profile + professional journey. */
 export async function Fondateur() {
   const t = await getTranslations("agence");
+
+  // Resolve each step's copy once; reused by both the numbered <ol> and its
+  // sticky year-rail so the two stay perfectly in sync.
+  const journeySteps = JOURNEY.map((step, i) => ({
+    id: `journey-${step.tkey}`,
+    number: String(i + 1).padStart(2, "0"),
+    label: t(`founder.step${step.tkey}Label`),
+    title: t(`founder.step${step.tkey}Title`),
+    text: t(`founder.step${step.tkey}Text`),
+    key: step.key,
+  }));
+
   return (
     <section className={styles.founderSec}>
       <Container>
@@ -197,20 +165,29 @@ export async function Fondateur() {
               <figcaption className={styles.infraCap}>{t("founder.infraCaption")}</figcaption>
             </figure>
 
-            <ol className={styles.journey}>
-              {JOURNEY.map((step) => (
-                <li key={step.tkey} className={step.key ? styles.key : undefined}>
-                  <div className={styles.dot}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      {step.icon}
-                    </svg>
-                  </div>
-                  <div className={styles.yr}>{t(`founder.step${step.tkey}Label`)}</div>
-                  <h4>{t(`founder.step${step.tkey}Title`)}</h4>
-                  <p>{t(`founder.step${step.tkey}Text`)}</p>
-                </li>
-              ))}
-            </ol>
+            <div className={styles.journeyLayout}>
+              <JourneyRail
+                steps={journeySteps.map(({ id, number, label }) => ({ id, number, label }))}
+              />
+              <ol className={styles.journey}>
+                {journeySteps.map((step) => (
+                  <li
+                    key={step.id}
+                    id={step.id}
+                    className={step.key ? styles.key : undefined}
+                  >
+                    <span className={styles.num} aria-hidden="true">
+                      {step.number}
+                    </span>
+                    <div className={styles.entryBody}>
+                      <div className={styles.yr}>{step.label}</div>
+                      <h4>{step.title}</h4>
+                      <p>{step.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
             <Link href="/maintenant" className={styles.nowLink}>
               {t("founder.nowLink")}
               <Icon name="arrow-right" size={16} strokeWidth={2.2} />

@@ -1,0 +1,452 @@
+/* BentoGrid: asymmetric dashboard of 7 tiles summarizing the profile.
+   Desktop (>=1024px): 4-col / 3-row named-area bento (2x2 identity tile,
+   wide project tile, two small tiles, a bottom row, wide contact tile).
+   Tablet (>=640px): 2-col reflow. Mobile (<640px): natural 1-col stack in
+   DOM/reading order — no grid-area needed, browsers fall back to auto
+   placement when the named area doesn't exist in grid-template-areas. */
+
+.eyebrow {
+  font-family: var(--mono);
+  color: var(--orange-d);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  margin: 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  margin: var(--space-3) 0 0;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--color-text);
+  font-weight: 700;
+  text-wrap: balance;
+  max-width: 32ch;
+}
+
+.lead {
+  font-size: var(--text-lg);
+  color: var(--slate);
+  line-height: 1.6;
+  margin: var(--space-3) 0 0;
+  max-width: 60ch;
+}
+
+/* ---- grid shell ---- */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "identity identity"
+      "clawkwerk clawkwerk"
+      "certs status"
+      "github thm"
+      "contact contact";
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, minmax(200px, auto));
+    grid-template-areas:
+      "identity identity clawkwerk clawkwerk"
+      "identity identity certs status"
+      "github thm contact contact";
+  }
+}
+
+.identity {
+  grid-area: identity;
+}
+.clawkwerk {
+  grid-area: clawkwerk;
+}
+.certs {
+  grid-area: certs;
+}
+.status {
+  grid-area: status;
+}
+.github {
+  grid-area: github;
+}
+.thm {
+  grid-area: thm;
+}
+.contact {
+  grid-area: contact;
+}
+
+/* ---- shared tile chrome ---- */
+
+.tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--space-4);
+  background: var(--color-surface-solid);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-s);
+  color: inherit;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.interactive {
+  transition:
+    transform 0.25s cubic-bezier(0.2, 0.6, 0.2, 1),
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.interactive:hover,
+.interactive:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-30);
+}
+
+.interactive:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.tileIcon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-12);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.tileBadge {
+  display: inline-flex;
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange-d);
+  background: var(--color-primary-12);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-2);
+}
+
+.tileTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.tileText {
+  font-size: var(--text-sm);
+  color: var(--slate);
+  line-height: 1.55;
+  margin: 6px 0 0;
+  flex: 1;
+}
+
+.tileArrow {
+  display: inline-flex;
+  align-self: flex-end;
+  color: var(--color-primary);
+  margin-top: var(--space-2);
+  transition: transform 0.25s ease;
+}
+
+.interactive:hover .tileArrow,
+.interactive:focus-visible .tileArrow {
+  transform: translateX(4px);
+}
+
+/* ---- 1. identity tile ---- */
+
+.identity {
+  padding: var(--space-5);
+  background: linear-gradient(135deg, var(--color-surface-solid), var(--bg-2));
+}
+
+.identity::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(var(--line) 1px, transparent 1px);
+  background-size: 16px 16px;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 85%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 85%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.prompt,
+.identityName,
+.identityRole,
+.identityText,
+.badges,
+.identityLink {
+  position: relative;
+  z-index: 1;
+}
+
+.prompt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 var(--space-3);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  color: var(--slate);
+}
+
+.sigil {
+  color: var(--orange-d);
+  font-weight: 700;
+}
+
+.identityName {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.identityRole {
+  margin: 4px 0 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.identityText {
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-sm);
+  color: var(--slate);
+  line-height: 1.6;
+  flex: 1;
+  max-width: 52ch;
+}
+
+.badges {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+}
+
+.badge {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--slate);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.identityLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  margin-top: var(--space-4);
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+.identityLink:hover,
+.identityLink:focus-visible {
+  color: var(--color-primary-strong);
+}
+
+.identityLink:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.identityLinkIcon {
+  transition: transform 0.25s ease;
+}
+
+.identityLink:hover .identityLinkIcon,
+.identityLink:focus-visible .identityLinkIcon {
+  transform: translateX(4px);
+}
+
+/* ---- 3. certifications tile ---- */
+
+.certList {
+  list-style: none;
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.certList li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  color: var(--slate);
+}
+
+.certOk,
+.certPending {
+  display: inline-flex;
+  flex: none;
+}
+
+.certOk {
+  color: var(--color-primary);
+}
+
+.certPending {
+  color: var(--slate);
+}
+
+/* ---- 4. "en ce moment" status tile ---- */
+
+.status {
+  padding-top: calc(var(--space-4) + 2px);
+}
+
+.liveDot {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 9px;
+  height: 9px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+}
+
+.liveDot::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  border: 1px solid var(--color-primary-30);
+  animation: bentoPulse 2.4s ease-out infinite;
+}
+
+@keyframes bentoPulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* ---- 6. TryHackMe tile ---- */
+
+.thmStat {
+  font-family: var(--mono);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+  margin: 2px 0 0;
+}
+
+/* ---- 7. contact CTA tile — filled accent, stands out from the rest ---- */
+
+.contact {
+  background: linear-gradient(135deg, var(--orange), var(--orange-d));
+  border-color: transparent;
+  color: var(--bg);
+}
+
+.contact .tileTitle,
+.contact .tileText {
+  color: var(--bg);
+}
+
+.contact .tileIcon {
+  background: color-mix(in srgb, var(--bg) 20%, transparent);
+  color: var(--bg);
+}
+
+.contact .tileArrow {
+  color: var(--bg);
+}
+
+.contact.interactive:hover,
+.contact.interactive:focus-visible {
+  border-color: transparent;
+}
+
+/* ---- dark theme: the dotted grid on the identity tile relies on --line's
+   own low alpha in dark mode, so undo the extra dampening applied for the
+   light (opaque --line) case. ---- */
+:root[data-theme="dark"] .identity::before {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .identity {
+    padding: var(--space-4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive,
+  .tileArrow,
+  .identityLinkIcon {
+    transition: none;
+  }
+  .interactive:hover,
+  .interactive:focus-visible {
+    transform: none;
+  }
+  .interactive:hover .tileArrow,
+  .interactive:focus-visible .tileArrow {
+    transform: none;
+  }
+  .identityLink:hover .identityLinkIcon,
+  .identityLink:focus-visible .identityLinkIcon {
+    transform: none;
+  }
+  .liveDot::after {
+    animation: none;
+    display: none;
+  }
+}

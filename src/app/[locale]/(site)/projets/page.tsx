@@ -12,6 +12,7 @@ import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { Button } from "@/components/ui/Button/Button";
 import { CTABox } from "@/components/shared";
+import { ProjectCover, type ProjectCoverKey } from "./ProjectCover";
 import styles from "./page.module.css";
 
 const GITHUB_URL = "https://github.com/warrox1993";
@@ -77,7 +78,7 @@ const METHODE_KEYS = [
 ] as const;
 
 type GridItem = {
-  key: "clawkwerk" | "formcraft" | "site" | "secapp";
+  key: ProjectCoverKey;
   status: "public" | "private";
   repoUrl?: string;
 };
@@ -192,48 +193,62 @@ export default async function ProjetsPage({
         </Reveal>
       </Section>
 
-      {/* ===== Other projects grid ===== */}
+      {/* ===== Other projects: case-study bands ===== */}
       <Section variant="white">
         <Reveal>
           <SectionHeading eyebrow={t("grid.eyebrow")} title={t("grid.title")} lead={t("grid.lead")} />
         </Reveal>
 
-        <Reveal stagger className={styles.grid}>
-          {GRID_ITEMS.map((item) => {
+        <div className={styles.bands}>
+          {GRID_ITEMS.map((item, index) => {
             const tech = t.raw(`grid.items.${item.key}.tech`) as string[];
             const isPublic = item.status === "public";
+            const reverse = index % 2 === 1;
             return (
-              <div key={item.key} className={styles.card}>
-                <span
-                  className={`${styles.statusPill} ${isPublic ? styles.statusPublic : styles.statusPrivate}`}
-                >
-                  <Icon name={isPublic ? "github" : "lock"} size={13} strokeWidth={2} />
-                  {isPublic ? t("grid.statusPublic") : t("grid.statusPrivate")}
-                </span>
-                <h3 className={styles.cardTitle}>{t(`grid.items.${item.key}.name`)}</h3>
-                <p className={styles.cardDesc}>{t(`grid.items.${item.key}.description`)}</p>
-                <div className={styles.techTags}>
-                  {tech.map((tag) => (
-                    <span key={tag} className={styles.techTag}>
-                      {tag}
-                    </span>
-                  ))}
+              <Reveal
+                key={item.key}
+                as="article"
+                variant={reverse ? "left" : "right"}
+                className={`${styles.band} ${reverse ? styles.bandReverse : ""}`}
+              >
+                <div className={styles.bandMedia}>
+                  <ProjectCover projectKey={item.key} />
                 </div>
-                {item.repoUrl ? (
-                  <a
-                    href={item.repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.repoLink}
+                <div className={styles.bandBody}>
+                  <span className={styles.bandIndex} aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    className={`${styles.bandStatus} ${isPublic ? styles.bandStatusPublic : styles.bandStatusPrivate}`}
                   >
-                    {t("grid.repoLabel")}
-                    <Icon name="arrow-right" size={15} />
-                  </a>
-                ) : null}
-              </div>
+                    <Icon name={isPublic ? "github" : "lock"} size={13} strokeWidth={2} />
+                    {isPublic ? t("grid.statusPublic") : t("grid.statusPrivate")}
+                  </span>
+                  <h3 className={styles.bandTitle}>{t(`grid.items.${item.key}.name`)}</h3>
+                  <p className={styles.bandDesc}>{t(`grid.items.${item.key}.description`)}</p>
+                  <div className={styles.bandTech}>
+                    {tech.map((tag) => (
+                      <span key={tag} className={styles.bandTechTag}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  {item.repoUrl ? (
+                    <a
+                      href={item.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.bandRepo}
+                    >
+                      {t("grid.repoLabel")}
+                      <Icon name="arrow-right" size={15} />
+                    </a>
+                  ) : null}
+                </div>
+              </Reveal>
             );
           })}
-        </Reveal>
+        </div>
       </Section>
 
       {/* ===== Closing: keep following on GitHub ===== */}

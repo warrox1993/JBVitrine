@@ -201,56 +201,48 @@
   font-weight: 600;
 }
 
+/* Journey — sticky year-rail + numbered (01–05) chronological list
+   (Brittany Chiang–style experience list). `.journeyLayout` is the
+   two-column shell: a sticky rail of year labels (JourneyRail.tsx) on the
+   left, the numbered `<ol>` entries scrolling past on the right. */
+.journeyLayout {
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  gap: 32px;
+  margin-top: 34px;
+}
+
 .journey {
   list-style: none;
-  margin: 34px 0 0;
+  margin: 0;
   padding: 0;
-  position: relative;
-}
-.journey::before {
-  content: "";
-  position: absolute;
-  left: 22px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: linear-gradient(180deg, var(--line-2), var(--line));
-  z-index: 0;
+  min-width: 0;
 }
 .journey li {
-  position: relative;
-  padding: 0 0 32px 62px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 18px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+.journey li:first-child {
+  border-top: none;
+  padding-top: 0;
 }
 .journey li:last-child {
   padding-bottom: 0;
 }
-.dot {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  background: var(--color-surface-solid);
-  border: 1px solid var(--line);
-  color: var(--color-text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  box-shadow: var(--shadow-s);
+.num {
+  font: 700 15px/1 var(--mono);
+  letter-spacing: 0.01em;
+  color: var(--line-2);
+  padding-top: 2px;
 }
-.dot svg {
-  width: 22px;
-  height: 22px;
-  color: var(--navy-3);
+.entryBody {
+  min-width: 0;
 }
-.key .dot {
-  background: var(--navy);
-  border-color: var(--navy);
-}
-.key .dot svg {
-  color: var(--orange-on-dark);
+.key .num {
+  color: var(--orange-d);
 }
 .yr {
   font: 700 11px/1 var(--sans);
@@ -281,12 +273,18 @@
     top: auto;
   }
 }
+/* Below ~760px: the sticky rail is hidden (JourneyRail.module.css) and the
+   per-entry `.yr` label becomes the only label — a normal stacked block
+   above each entry's title, single column, no sticky behavior. */
+@media (max-width: 760px) {
+  .journeyLayout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
 @media (max-width: 720px) {
   .founderSec {
     padding: 60px 0;
-  }
-  .journey li {
-    padding-left: 56px;
   }
 }
 @media (max-width: 480px) {
@@ -299,8 +297,11 @@
 }
 
 /* ===== Dark-mode legibility overrides (added; light mode untouched) ===== */
-:root[data-theme="dark"] .dot svg {
-  color: var(--orange-d);
+/* `.num`'s default (var(--line-2)) is a faint hairline tint by design in
+   light mode; on dark its equivalent is a low-opacity white that reads too
+   dim for a numeral meant to stay legible-but-secondary, so brighten it. */
+:root[data-theme="dark"] .num {
+  color: var(--muted);
 }
 
 /* "En ce moment" link — continues the journey timeline toward /maintenant */

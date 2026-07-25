@@ -197,6 +197,38 @@
     }
   },
   "common": {
+    "palette": {
+      "trigger": {
+        "ariaLabel": "Opdrachtenpalet openen (Ctrl/⌘ + K)"
+      },
+      "dialogAria": "Opdrachtenpalet",
+      "placeholder": "Ga naar…",
+      "closeAria": "Opdrachtenpalet sluiten",
+      "empty": "Geen resultaat voor '{query}'.",
+      "copied": "E-mailadres gekopieerd",
+      "groups": {
+        "navigation": "Navigatie",
+        "actions": "Acties"
+      },
+      "commands": {
+        "home": "Home",
+        "cv": "Vaardigheden & cv",
+        "nis2": "NIS2-conformiteit",
+        "agence": "Over mij",
+        "projets": "Projecten",
+        "maintenant": "Waar ik nu mee bezig ben",
+        "blog": "Journaal",
+        "contact": "Contacteer mij",
+        "github": "GitHub openen",
+        "linkedin": "LinkedIn openen",
+        "copyEmail": "E-mailadres kopiëren"
+      },
+      "hints": {
+        "navigate": "Navigeren",
+        "select": "Openen",
+        "close": "Sluiten"
+      }
+    },
     "a11y": {
       "skipToContent": "Naar inhoud"
     },
@@ -453,6 +485,49 @@
     }
   },
   "home": {
+    "bento": {
+      "eyebrow": "Overzicht",
+      "title": "Het profiel, in één oogopslag",
+      "lead": "Zeven kernpunten die het traject samenvatten: vlaggenschipproject, verifieerbare certificeringen, waar ik nu aan werk, en hoe u mij bereikt.",
+      "identity": {
+        "name": "Jean-Baptiste Dhondt",
+        "role": "Cybersecurity-practicus — cloud, netwerk, applicatiebeveiliging",
+        "text": "Ik beveilig door systemen van binnenuit te begrijpen: van Defensie tot certificeringen, tot de infrastructuren die ik vandaag bouw en verhard.",
+        "badges": [
+          "Defensie (telecom)",
+          "AZ-900",
+          "Bachelor Informatica lopende"
+        ],
+        "cta": "Bekijk mijn volledige cv"
+      },
+      "clawkwerk": {
+        "badge": "Open source · Go",
+        "title": "ClawkWerk",
+        "text": "CyFun / NIS2-auditinstrument voor Belgische kmo's: alleen-lezen, zonder opgeslagen inloggegevens."
+      },
+      "certs": {
+        "title": "Certificeringen",
+        "az900": "AZ-900 — behaald",
+        "ccna": "CCNA — lopende"
+      },
+      "status": {
+        "title": "Op dit moment",
+        "text": "CCNA (Cisco) in voorbereiding, homelab in opbouw — koers naar een stage in 2027."
+      },
+      "github": {
+        "title": "GitHub",
+        "text": "Publieke code: ClawkWerk, FormCraft en deze site zelf."
+      },
+      "thm": {
+        "title": "TryHackMe",
+        "stat": "Top 15 %",
+        "text": "Wereldwijde ranglijst, regelmatige offensieve oefening."
+      },
+      "contact": {
+        "title": "Laten we praten over uw behoefte",
+        "text": "Een opdracht, een functie of een stage vanaf 2027: ik antwoord met dezelfde transparantie als op deze site."
+      }
+    },
     "securityScan": {
       "eyebrow": "Bewijs — dogfooding",
       "title": "Ik beveilig mijn eigen site",
@@ -1074,6 +1149,9 @@
     }
   },
   "cv": {
+    "sidebar": {
+      "heading": "Op deze pagina"
+    },
     "meta": {
       "title": "CV — Jean-Baptiste Dhondt | Cyberbeveiliging, cloud, netwerk & dev",
       "description": "Het cv van Jean-Baptiste Dhondt: traject, opleiding, certificaten en vaardigheden in cyberbeveiliging, cloud, netwerk, infrastructuur en ontwikkeling. Op zoek naar een stage vanaf 2027.",

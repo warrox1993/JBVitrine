@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale, getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { HtmlLangSync } from "@/components/i18n/HtmlLangSync";
+import { CommandPalette } from "@/components/layout/CommandPalette/CommandPalette";
 
 // Pre-render all locales at build time.
 export function generateStaticParams() {
@@ -37,6 +38,7 @@ export default async function LocaleLayout({
     <NextIntlClientProvider key={locale} locale={locale} messages={messages}>
       <HtmlLangSync />
       {children}
+      <CommandPalette />
     </NextIntlClientProvider>
   );
 }

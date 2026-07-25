@@ -197,6 +197,38 @@
     }
   },
   "common": {
+    "palette": {
+      "trigger": {
+        "ariaLabel": "Ouvrir la palette de commandes (Ctrl/⌘ + K)"
+      },
+      "dialogAria": "Palette de commandes",
+      "placeholder": "Aller à…",
+      "closeAria": "Fermer la palette de commandes",
+      "empty": "Aucun résultat pour « {query} ».",
+      "copied": "Adresse e-mail copiée",
+      "groups": {
+        "navigation": "Navigation",
+        "actions": "Actions"
+      },
+      "commands": {
+        "home": "Accueil",
+        "cv": "Compétences & CV",
+        "nis2": "Conformité NIS2",
+        "agence": "À propos",
+        "projets": "Projets",
+        "maintenant": "En ce moment",
+        "blog": "Journal",
+        "contact": "Me contacter",
+        "github": "Ouvrir GitHub",
+        "linkedin": "Ouvrir LinkedIn",
+        "copyEmail": "Copier l'adresse e-mail"
+      },
+      "hints": {
+        "navigate": "Parcourir",
+        "select": "Ouvrir",
+        "close": "Fermer"
+      }
+    },
     "a11y": {
       "skipToContent": "Aller au contenu"
     },
@@ -453,6 +485,49 @@
     }
   },
   "home": {
+    "bento": {
+      "eyebrow": "Vue d'ensemble",
+      "title": "Le profil, en un coup d'œil",
+      "lead": "Sept repères qui résument la trajectoire : projet phare, certifications vérifiables, ce qui se construit en ce moment, et comment me joindre.",
+      "identity": {
+        "name": "Jean-Baptiste Dhondt",
+        "role": "Praticien cybersécurité — cloud, réseau, sécurité applicative",
+        "text": "Je sécurise en comprenant les systèmes de l'intérieur : de la Défense aux certifications, jusqu'aux infrastructures que je construis et durcis aujourd'hui.",
+        "badges": [
+          "Défense (télécom)",
+          "AZ-900",
+          "Bachelier Info en cours"
+        ],
+        "cta": "Voir mon CV complet"
+      },
+      "clawkwerk": {
+        "badge": "Open source · Go",
+        "title": "ClawkWerk",
+        "text": "Outil d'audit CyFun / NIS2 pour les PME belges : lecture seule, sans identifiant stocké."
+      },
+      "certs": {
+        "title": "Certifications",
+        "az900": "AZ-900 — obtenu",
+        "ccna": "CCNA — en cours"
+      },
+      "status": {
+        "title": "En ce moment",
+        "text": "CCNA (Cisco) en préparation, homelab en construction — cap sur un stage en 2027."
+      },
+      "github": {
+        "title": "GitHub",
+        "text": "Code public : ClawkWerk, FormCraft et ce site lui-même."
+      },
+      "thm": {
+        "title": "TryHackMe",
+        "stat": "Top 15 %",
+        "text": "Classement mondial, pratique offensive régulière."
+      },
+      "contact": {
+        "title": "Discutons de votre besoin",
+        "text": "Une mission, un poste ou un stage à partir de 2027 : je réponds avec la même transparence que sur ce site."
+      }
+    },
     "securityScan": {
       "eyebrow": "Preuve — dogfooding",
       "title": "Je sécurise mon propre site",
@@ -1074,6 +1149,9 @@
     }
   },
   "cv": {
+    "sidebar": {
+      "heading": "Sur cette page"
+    },
     "meta": {
       "title": "CV — Jean-Baptiste Dhondt | Cybersécurité, cloud, réseau & dev",
       "description": "Le CV de Jean-Baptiste Dhondt : parcours, formation, certifications et compétences en cybersécurité, cloud, réseau, infrastructure et développement. En recherche de stage à partir de 2027.",

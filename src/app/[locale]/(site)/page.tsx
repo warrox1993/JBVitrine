@@ -15,6 +15,7 @@ import {
 } from "@/lib/schema";
 import { Hero } from "./_home/Hero";
 import { RecruiterBand } from "./_home/RecruiterBand";
+import { BentoGrid } from "./_home/BentoGrid";
 import { Capabilities } from "./_home/Capabilities";
 import { CyfunTeaser } from "./_home/CyfunTeaser";
 import { Parcours } from "./_home/Parcours";
@@ -99,6 +100,10 @@ export default async function HomePage({
       <Hero />
 
       <RecruiterBand />
+
+      <Section variant="tint" id="vue-ensemble">
+        <BentoGrid />
+      </Section>
 
       <Section variant="white" id="savoir-faire">
         <Capabilities />

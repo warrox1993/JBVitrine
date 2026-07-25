@@ -1,6 +1,7 @@
-/* /certifications — page-scoped styles (lean hero + certs/formation/objectifs/skills). */
+/* /cv — split-screen sticky layout: a left identity/nav rail + a scrolling
+   right column of sections (certs/formation/objectifs/skills/...). */
 
-/* ===== Page hero ===== */
+/* ===== Page hero (legacy, currently unused on this page) ===== */
 .hero {
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
   border-bottom: 1px solid var(--line);
@@ -41,6 +42,54 @@
   line-height: 1.6;
 }
 
+/* ===== Split-screen shell (sticky left rail + scrolling right column) ===== */
+.splitWrap {
+  padding: 32px 0 72px;
+}
+.splitGrid {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  gap: 64px;
+  margin-top: 22px;
+  align-items: start;
+}
+
+/* Left rail: stretches to the full height of the row (= the right column's
+   height) so the sticky child inside can stick for the whole scroll and the
+   divider line runs the full length. */
+.sidebar {
+  align-self: stretch;
+  border-right: 1px solid var(--line);
+  padding-right: 40px;
+}
+.sidebarInner {
+  position: sticky;
+  top: 96px;
+  max-height: calc(100vh - 128px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 12px;
+  scrollbar-width: thin;
+}
+
+/* Right column: the stacked CV sections. Tighter vertical rhythm than a
+   full-bleed page section (--section-y is read by Section.module.css). */
+.mainCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  --section-y: 64px;
+}
+/* Each stacked section reads as a distinct panel in the reading rail.
+   scroll-margin-top clears the floating header pill on anchor-jump/
+   scrollIntoView (native #hash navigation and the CvSideNav client nav). */
+.panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  scroll-margin-top: 112px;
+}
+
 /* ===== Profiles row (GitHub / LinkedIn / TryHackMe) ===== */
 .profilesRow {
   display: flex;
@@ -73,7 +122,7 @@
 /* ===== Certifications grid ===== */
 .certGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-5, 24px);
   margin-top: var(--space-6, 32px);
   align-items: stretch;
@@ -214,7 +263,7 @@
 /* ===== Compétences grid ===== */
 .competencesGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: var(--space-5, 24px);
   margin-top: var(--space-6, 32px);
 }
@@ -251,47 +300,34 @@
   margin-top: 6px;
 }
 
-/* ===== CV identity header ===== */
-.idHero {
-  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
-  border-bottom: 1px solid var(--line);
-  padding: 40px 0 56px;
-}
-.idGrid {
-  display: grid;
-  grid-template-columns: 1.35fr 0.9fr;
-  gap: 48px;
-  align-items: start;
-  margin-top: 20px;
-}
+/* ===== CV identity (sticky sidebar content) ===== */
 .idName {
-  font-size: clamp(30px, 4vw, 46px);
+  font-size: clamp(27px, 2.2vw, 36px);
   margin-top: 16px;
   letter-spacing: -0.03em;
   color: var(--color-text);
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.15;
 }
 .idRole {
   margin-top: 10px;
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: 14px;
   color: var(--orange-d);
   letter-spacing: 0.02em;
 }
 .idSummary {
-  margin-top: 18px;
-  max-width: 58ch;
-  font-size: 16.5px;
+  margin-top: 16px;
+  font-size: 15px;
   color: var(--slate);
   line-height: 1.65;
 }
 .idActions {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 26px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 24px;
 }
 .idPdfNote {
   font-size: 13px;
@@ -302,6 +338,7 @@
 .idFacts {
   display: grid;
   gap: 2px;
+  margin-top: 28px;
   background: var(--color-surface-solid);
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -358,7 +395,7 @@
 /* ===== Languages ===== */
 .langGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 16px;
   margin-top: 8px;
 }
@@ -461,15 +498,27 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
-  .competencesGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .idGrid {
+  .splitGrid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 0;
+    margin-top: 16px;
   }
-  .langGrid {
-    grid-template-columns: 1fr;
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding-right: 0;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+  }
+  .sidebarInner {
+    position: static;
+    top: auto;
+    max-height: none;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+  .mainCol {
+    --section-y: 48px;
   }
   .beyondGrid {
     grid-template-columns: 1fr;
@@ -477,17 +526,11 @@
   }
 }
 @media (max-width: 720px) {
-  .hero,
-  .idHero {
+  .hero {
     padding: 32px 0 40px;
   }
-  .certGrid {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 480px) {
-  .competencesGrid {
-    grid-template-columns: 1fr;
+  .splitWrap {
+    padding: 24px 0 48px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

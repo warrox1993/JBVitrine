@@ -1,0 +1,72 @@
+/* JourneyRail — sticky year/label index next to the founder's numbered
+   journey list. `.track` is the actual grid item placed in
+   `.journeyLayout` (Fondateur.module.css): CSS Grid's default
+   align-items:stretch makes it match the taller <ol> column's height, which
+   gives the inner `.rail` (position: sticky) room to travel before it
+   naturally releases once the list ends. Below 760px the whole rail is
+   hidden — the per-entry label in the list becomes the only label, as a
+   normal stacked block (see Fondateur.module.css `.yr`). */
+.track {
+  min-width: 0;
+}
+
+.rail {
+  position: sticky;
+  top: 96px;
+}
+
+.railList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.railItem {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  opacity: 0.4;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.railNum {
+  font: 700 12px/1 var(--mono);
+  color: var(--slate);
+  transition: color 0.25s ease;
+}
+
+.railLabel {
+  font: 600 11.5px/1.3 var(--sans);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--slate);
+  transition: color 0.25s ease;
+}
+
+.railItem.active {
+  opacity: 1;
+  transform: translateX(3px);
+}
+.railItem.active .railNum,
+.railItem.active .railLabel {
+  color: var(--orange-d);
+}
+
+@media (max-width: 760px) {
+  .track {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .railItem {
+    transition: none;
+  }
+  .railItem.active {
+    transform: none;
+  }
+}
