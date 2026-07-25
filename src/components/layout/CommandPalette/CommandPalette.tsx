@@ -345,7 +345,7 @@ export function CommandPalette() {
         aria-label={t("trigger.ariaLabel")}
         title={t("trigger.ariaLabel")}
       >
-        <Icon name="search" size={16} />
+        <Icon name="search" size={20} />
         <span className={styles.triggerKbd} aria-hidden="true">
           {shortcutLabel}
         </span>
