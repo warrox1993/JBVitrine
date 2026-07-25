@@ -16,7 +16,6 @@ import { social } from "@/config/site";
 // the new "CV" page — so both are dropped here to keep the bar uncluttered.
 const NAV_LINKS = [
   { href: "/services", labelKey: "nav.competences" },
-  { href: "/conformite-nis2", labelKey: "nav.conformite" },
   { href: "/agence", labelKey: "nav.agence" },
   { href: "/projets", labelKey: "nav.projets" },
   { href: "/cv", labelKey: "nav.cv" },
