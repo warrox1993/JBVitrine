@@ -1,18 +1,19 @@
+/* Transparent floating container: it holds the rounded "pill" (.nav) a little
+   below the top edge so the pill reads as a detached, premium capsule that the
+   page scrolls behind. */
 .site {
   position: sticky;
   top: 0;
   z-index: 60;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: saturate(1.4) blur(10px);
-  border-bottom: 1px solid var(--line);
-  /* Semi-sticky: slide the bar in/out smoothly (see SiteHeader.tsx). */
+  padding: 14px 20px 0;
+  /* Semi-sticky: slide the pill in/out smoothly (see SiteHeader.tsx). */
   transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
-/* Auto-hidden state — bar slides up off-screen; reappears on scroll. */
+/* Auto-hidden state — pill slides up off-screen; reappears on scroll. */
 .site.hidden {
-  transform: translateY(-100%);
+  transform: translateY(-140%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -21,22 +22,34 @@
   }
 }
 
-/* Dark: the light 0.92 white glass would stay white; repoint to the themed
-   translucent surface. Light keeps the exact rgba above (pixel-identical). */
-:root[data-theme="dark"] .site {
-  background: var(--color-surface-glass);
-}
-
+/* The floating pill. */
 .nav {
-  max-width: var(--maxw);
+  position: relative;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 8px 14px 8px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  min-height: 70px;
+  min-height: 62px;
   flex-wrap: nowrap;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: saturate(1.7) blur(16px);
+  border: 1px solid rgba(240, 214, 145, 0.55); /* gold hairline */
+  box-shadow:
+    0 14px 40px -14px rgba(11, 31, 58, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Dark: translucent themed surface + softer gold rim. */
+:root[data-theme="dark"] .nav {
+  background: var(--color-surface-glass);
+  border-color: rgba(240, 214, 145, 0.32);
+  box-shadow:
+    0 16px 44px -14px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .brand {
@@ -199,7 +212,7 @@
 
 @media (max-width: 1200px) {
   .nav {
-    padding: 0 16px;
+    padding: 8px 10px 8px 18px;
     gap: 12px;
   }
 
@@ -244,17 +257,20 @@
     font-size: 14px;
   }
 
+  /* Dropdown menu: a rounded card that drops just below the floating pill
+     (.nav is position:relative), aligned to the pill's width. */
   .main.open {
     display: flex;
     position: absolute;
-    top: 70px;
+    top: calc(100% + 10px);
     left: 0;
     right: 0;
     flex-direction: column;
     align-items: stretch;
     background: var(--color-surface-solid);
-    border-bottom: 1px solid var(--line);
-    padding: 12px 24px 20px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 14px 18px 18px;
     gap: 2px;
     box-shadow: var(--shadow);
   }
