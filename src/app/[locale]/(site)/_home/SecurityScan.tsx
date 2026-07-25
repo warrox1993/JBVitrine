@@ -108,7 +108,6 @@ export function SecurityScan() {
       <div className={styles.head}>
         <span className={styles.eyebrow}>{t("eyebrow")}</span>
         <h2 className={styles.title}>{t("title")}</h2>
-        <p className={styles.lead}>{t("lead")}</p>
       </div>
 
       <div className={styles.terminal} ref={rootRef} aria-label={t("title")}>
@@ -154,6 +153,7 @@ export function SecurityScan() {
           )}
         </div>
       </div>
+      <p className={styles.scanNote}>{t("lead")}</p>
       <p className={styles.foot}>{t("foot")}</p>
     </Reveal>
   );

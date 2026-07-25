@@ -1338,6 +1338,11 @@
       "statusPrivate": "Privécode",
       "repoLabel": "Bekijk de repo",
       "items": {
+        "clawkwerk": {
+          "name": "ClawkWerk",
+          "description": "CyFun (CCB) / NIS2-audittool geschreven in Go: read-only, agentless, gemaakt voor Belgische kmo's. Een gestructureerde conformiteitsdiagnose, zonder intrusieve installatie.",
+          "tech": ["Go", "CyFun / NIS2", "CLI", "Read-only"]
+        },
         "formcraft": {
           "name": "FormCraft",
           "description": "Open-source C#/Blazor-bibliotheek om typeveilige, dynamische formulieren te bouwen met een elegante fluent API.",

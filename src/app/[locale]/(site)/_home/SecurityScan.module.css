@@ -24,6 +24,15 @@
   line-height: 1.6;
   max-width: 60ch;
 }
+/* Small caption under the scan — the live/honest disclaimer, deliberately quiet. */
+.scanNote {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--slate);
+  opacity: 0.8;
+  line-height: 1.5;
+  max-width: 60ch;
+}
 
 /* Terminal card */
 .terminal {

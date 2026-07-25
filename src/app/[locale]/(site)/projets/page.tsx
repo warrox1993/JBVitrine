@@ -77,12 +77,13 @@ const METHODE_KEYS = [
 ] as const;
 
 type GridItem = {
-  key: "formcraft" | "site" | "secapp";
+  key: "clawkwerk" | "formcraft" | "site" | "secapp";
   status: "public" | "private";
   repoUrl?: string;
 };
 
 const GRID_ITEMS: GridItem[] = [
+  { key: "clawkwerk", status: "public", repoUrl: CLAWKWERK_URL },
   { key: "formcraft", status: "public", repoUrl: FORMCRAFT_URL },
   { key: "site", status: "private" },
   { key: "secapp", status: "private" },
