@@ -65,42 +65,17 @@ export async function Fondateur() {
           <Reveal as="aside" className={styles.profile}>
             <div className={`${styles.gridBg} grid-bg`} aria-hidden="true" />
 
-            {/* Portrait placeholder illustration - to be replaced by a real photo */}
-            <div
-              className={styles.portrait}
-              role="img"
-              aria-label={t("founder.portraitAria")}
-            >
-              <svg viewBox="0 0 300 210" fill="none" aria-hidden="true">
-                <circle cx="26" cy="26" r="1.4" fill="#fff" opacity=".14" />
-                <circle cx="60" cy="14" r="1.4" fill="#fff" opacity=".14" />
-                <circle cx="272" cy="188" r="1.4" fill="#fff" opacity=".14" />
-                <circle cx="240" cy="200" r="1.4" fill="#fff" opacity=".14" />
-                {/* geometric bust silhouette */}
-                <circle cx="150" cy="78" r="42" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.38)" strokeWidth="1.6" />
-                <path d="M66 214C66 156 102 128 150 128C198 128 234 156 234 214" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.34)" strokeWidth="1.6" />
-                {/* camera / placeholder glyph, subtle */}
-                <g opacity=".55" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="132" y="150" width="36" height="26" rx="4" />
-                  <path d="M142 150l3-6h10l3 6" />
-                  <circle cx="150" cy="163" r="7" />
-                </g>
-                {/* camera-frame crop ticks */}
-                <g stroke="var(--orange-on-dark)" strokeWidth="2" strokeLinecap="round">
-                  <path d="M14 30V14h16" />
-                  <path d="M286 30V14h-16" />
-                  <path d="M14 196v16h16" />
-                  <path d="M286 196v16h-16" />
-                </g>
-              </svg>
-              <span className={styles.portraitTag}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="m21 15-5-5L5 21" />
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                </svg>
-                {t("founder.photoSoon")}
-              </span>
+            {/* Portrait — real photo of Jean-Baptiste (adds a human face to the CV). */}
+            <div className={styles.portrait}>
+              <OptimizedImage
+                src="/images/jean-baptiste-dhondt.jpg"
+                alt={t("founder.portraitAria")}
+                width={1080}
+                height={1080}
+                sizePreset="card"
+                aspectRatio="square"
+                priority
+              />
             </div>
 
             <div className={styles.top}>

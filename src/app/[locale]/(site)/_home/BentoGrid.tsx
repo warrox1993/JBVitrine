@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 import { social } from "@/config/site";
 import styles from "./BentoGrid.module.css";
 
@@ -28,12 +29,24 @@ export async function BentoGrid() {
       <Reveal stagger className={styles.grid}>
         {/* 1. Identity / hook — large, not a link (already the hero's job); one inline CTA to /cv. */}
         <article className={`${styles.tile} ${styles.identity}`}>
-          <p className={styles.prompt}>
-            <span className={styles.sigil} aria-hidden="true">
-              $
-            </span>{" "}
-            whoami
-          </p>
+          <div className={styles.identityHead}>
+            <span className={styles.avatar}>
+              <OptimizedImage
+                src="/images/jean-baptiste-dhondt.jpg"
+                alt={t("identity.name")}
+                width={1080}
+                height={1080}
+                sizePreset="avatar"
+                aspectRatio="square"
+              />
+            </span>
+            <p className={styles.prompt}>
+              <span className={styles.sigil} aria-hidden="true">
+                $
+              </span>{" "}
+              whoami
+            </p>
+          </div>
           <h3 className={styles.identityName}>{t("identity.name")}</h3>
           <p className={styles.identityRole}>{t("identity.role")}</p>
           <p className={styles.identityText}>{t("identity.text")}</p>

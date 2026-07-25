@@ -202,6 +202,7 @@
   pointer-events: none;
 }
 
+.identityHead,
 .prompt,
 .identityName,
 .identityRole,
@@ -212,11 +213,30 @@
   z-index: 1;
 }
 
+.identityHead {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 var(--space-3);
+}
+.avatar {
+  display: block;
+  flex: none;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--color-surface-solid);
+  box-shadow:
+    0 0 0 1px var(--line),
+    var(--shadow-s);
+}
+
 .prompt {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin: 0 0 var(--space-3);
+  margin: 0;
   font-family: var(--mono);
   font-size: 12.5px;
   letter-spacing: 0.05em;
