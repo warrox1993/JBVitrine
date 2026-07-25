@@ -1159,6 +1159,14 @@
         "status": "En cours",
         "name": "CCNA, Cisco",
         "description": "Certification réseau de référence : commutation, routage, sécurité de base des infrastructures.",
+      "learn": {
+        "heading": "Ce que couvre le CCNA",
+        "items": [
+          { "label": "Fondamentaux & accès réseau (40 %)", "topics": "Modèles OSI / TCP-IP, câblage & interfaces, VLAN, trunking 802.1Q, EtherChannel, Spanning Tree, Wi-Fi & architecture WLAN." },
+          { "label": "Connectivité IP & services (35 %)", "topics": "Routage statique & OSPF, adressage IPv4 / IPv6, NAT, DHCP, DNS, NTP, QoS, SNMP, Syslog." },
+          { "label": "Sécurité & automatisation (25 %)", "topics": "Sécurité des ports, ACL, VPN, AAA & 802.1X, bonnes pratiques de durcissement, REST API, automatisation (Ansible) & réseau programmable." }
+        ]
+      },
         "why": "En creusant le cloud, un constat s'est imposé : on ne maîtrise pas vraiment le cloud sans maîtriser les réseaux. J'ai donc bifurqué vers le CCNA, avant de revenir à l'AZ-104. Les réseaux d'abord, le cloud ensuite."
       },
       "autoformation": {

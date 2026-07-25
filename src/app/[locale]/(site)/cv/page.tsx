@@ -246,6 +246,7 @@ export default async function CvPage({
             statusVariant="progress"
             name={tc("certs.ccna.name")}
             description={tc("certs.ccna.description")}
+            learn={tc.raw("certs.ccna.learn") as FlipCardLearn}
             whyTitle={tc("certs.whyHeading")}
             whyText={tc("certs.ccna.why")}
             hint={tc("certs.flipHint")}

@@ -1159,6 +1159,14 @@
         "status": "In progress",
         "name": "CCNA, Cisco",
         "description": "Reference network certification: switching, routing, basic infrastructure security.",
+      "learn": {
+        "heading": "What the CCNA covers",
+        "items": [
+          { "label": "Network fundamentals & access (40%)", "topics": "OSI / TCP-IP models, cabling & interfaces, VLANs, 802.1Q trunking, EtherChannel, Spanning Tree, Wi-Fi & WLAN architecture." },
+          { "label": "IP connectivity & services (35%)", "topics": "Static routing & OSPF, IPv4 / IPv6 addressing, NAT, DHCP, DNS, NTP, QoS, SNMP, Syslog." },
+          { "label": "Security & automation (25%)", "topics": "Port security, ACLs, VPNs, AAA & 802.1X, hardening practices, REST APIs, automation (Ansible) & programmable networking." }
+        ]
+      },
         "why": "Digging into cloud made one thing clear: you don't really master the cloud without mastering networks. So I branched into the CCNA, before coming back to AZ-104. Networks first, cloud after."
       },
       "autoformation": {

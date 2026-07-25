@@ -27,7 +27,7 @@
 /* Cards carrying a syllabus need more room; the whole grid row follows suit
    via .card/.inner height:100%, so sibling cards stay aligned. */
 .inner.tall {
-  min-height: 500px;
+  min-height: 660px;
 }
 .inner.flipped {
   transform: rotateY(180deg);
