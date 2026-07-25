@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
-import { Breadcrumb } from "@/components/Breadcrumb/Breadcrumb";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
 import styles from "./LegalLayout.module.css";
@@ -34,14 +34,19 @@ export interface LegalLayoutProps {
  */
 export async function LegalLayout({ active, eyebrow, title, lead, visual, children }: LegalLayoutProps) {
   const t = await getTranslations("legal");
+  const tCommon = await getTranslations("common");
   const navLabelFor = (key: LegalPageKey) => t(`nav.items.${key}`);
-  const activeItem = NAV_ITEMS.find((item) => item.key === active);
 
   return (
     <div>
       <section className={styles.pageHero}>
         <div className="wrap">
-          <Breadcrumb items={activeItem ? [{ label: navLabelFor(activeItem.key), href: activeItem.href }] : undefined} />
+          <Breadcrumbs
+            items={[
+              { label: tCommon("breadcrumb.home"), href: "/" },
+              { label: navLabelFor(active) },
+            ]}
+          />
           <div className={styles.heroInner}>
             <div className={styles.heroText}>
               <Eyebrow>{eyebrow}</Eyebrow>

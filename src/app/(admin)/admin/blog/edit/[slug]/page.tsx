@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Breadcrumb } from "@/components/Breadcrumb";
+import { getTranslations } from "next-intl/server";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { getArticleBySlug } from "@/lib/blogActions";
 import { BlogForm } from "@/components/features/admin/BlogForm";
 import styles from "./page.module.css";
@@ -26,12 +27,15 @@ export default async function EditArticlePage({ params }: Props) {
     notFound();
   }
 
+  const t = await getTranslations("common");
+
   return (
     <div className={styles.container}>
-      <Breadcrumb items={[
+      <Breadcrumbs items={[
+        { label: t("breadcrumb.home"), href: "/" },
         { label: 'Admin', href: '/admin' },
         { label: 'Blog', href: '/admin/blog' },
-        { label: 'Éditer', href: `/admin/blog/edit/${slug}` }
+        { label: 'Éditer' }
       ]} />
 
       <div className={styles.header}>

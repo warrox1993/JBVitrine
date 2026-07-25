@@ -7,7 +7,8 @@ import {
   Edit,
   Eye
 } from "lucide-react";
-import { Breadcrumb } from "@/components/Breadcrumb";
+import { getTranslations } from "next-intl/server";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { getAllArticles } from "@/lib/blogActions";
 import { DeleteArticleButton } from "../DeleteArticleButton";
 import { Button } from "@/components/ui/Button/Button";
@@ -23,12 +24,14 @@ export const metadata: Metadata = {
 
 export default async function AdminBlogPage() {
   const articles = await getAllArticles();
+  const t = await getTranslations("common");
 
   return (
     <div className={styles.container}>
-      <Breadcrumb items={[
+      <Breadcrumbs items={[
+        { label: t("breadcrumb.home"), href: "/" },
         { label: 'Admin', href: '/admin' },
-        { label: 'Blog', href: '/admin/blog' }
+        { label: 'Blog' }
       ]} />
 
       <div className={styles.header}>

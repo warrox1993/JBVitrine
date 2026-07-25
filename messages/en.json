@@ -248,25 +248,7 @@
     },
     "breadcrumb": {
       "aria": "Breadcrumb",
-      "home": "Home",
-      "routes": {
-        "services": "Services",
-        "conformite": "NIS2 Compliance",
-        "approche": "Approach",
-        "agence": "About",
-        "portfolio": "Portfolio",
-        "journal": "Journal",
-        "contact": "Contact",
-        "devis": "Quote Request",
-        "mentionsLegales": "Legal Notice",
-        "confidentialite": "Privacy Policy",
-        "cgv": "Terms of Sale",
-        "admin": "Administration",
-        "adminBlog": "Blog Management",
-        "adminArticleNew": "New Article",
-        "adminLeads": "Lead Management",
-        "adminLogin": "Admin Login"
-      }
+      "home": "Home"
     },
     "trust": {
       "label": "Expertise, reference frameworks & commitments",

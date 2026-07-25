@@ -11,9 +11,9 @@ export interface BreadcrumbsProps {
   items: BreadcrumbItem[];
 }
 
-// Server Component: the aria-label is read from i18n (common.breadcrumb.aria,
-// same key the sibling <Breadcrumb> client component uses) so nl/en callers
-// get the correctly localized label instead of a hardcoded French string.
+// Server Component: the aria-label is read from i18n (common.breadcrumb.aria)
+// so nl/en callers get the correctly localized label instead of a hardcoded
+// French string.
 export async function Breadcrumbs({ items }: BreadcrumbsProps) {
   const t = await getTranslations("common");
   return (

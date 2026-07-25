@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/Button/Button";
 import { Icon, type IconName } from "@/components/ui/Icon/Icon";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
-import { Breadcrumb } from "@/components/Breadcrumb/Breadcrumb";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { CyFunTiers, NIS2Checker, CTABox } from "@/components/shared";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./ConformiteNis2.module.css";
@@ -64,6 +64,7 @@ alternates: buildAlternates(locale, "/conformite-nis2"),
 
 export default async function ConformiteNis2Page() {
   const t = await getTranslations("conformite");
+  const tCommon = await getTranslations("common");
   const tc = await getTranslations("checker");
   const b = (chunks: ReactNode) => <b>{chunks}</b>;
   const accent = (chunks: ReactNode) => (
@@ -72,10 +73,11 @@ export default async function ConformiteNis2Page() {
 
   return (
     <>
-      <Breadcrumb
+      <Breadcrumbs
         items={[
+          { label: tCommon("breadcrumb.home"), href: "/" },
           { label: t("breadcrumb.services"), href: "/services" },
-          { label: t("breadcrumb.current"), href: "/conformite-nis2" },
+          { label: t("breadcrumb.current") },
         ]}
       />
 

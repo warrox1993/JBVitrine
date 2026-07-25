@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumb } from "@/components/Breadcrumb";
+import { getTranslations } from "next-intl/server";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { BlogForm } from "@/components/features/admin/BlogForm";
 import styles from "./page.module.css";
 
@@ -12,13 +13,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function NewArticlePage() {
+export default async function NewArticlePage() {
+  const t = await getTranslations("common");
   return (
     <div className={styles.container}>
-      <Breadcrumb items={[
+      <Breadcrumbs items={[
+        { label: t("breadcrumb.home"), href: "/" },
         { label: 'Admin', href: '/admin' },
         { label: 'Blog', href: '/admin/blog' },
-        { label: 'Nouvel Article', href: '/admin/blog/new' }
+        { label: 'Nouvel Article' }
       ]} />
 
       <div className={styles.header}>

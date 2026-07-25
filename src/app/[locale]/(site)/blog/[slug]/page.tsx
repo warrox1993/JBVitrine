@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Breadcrumb } from "@/components/Breadcrumb";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Section } from "@/components/ui/Section/Section";
 import { ArticleCard, CTABox } from "@/components/shared";
@@ -189,10 +189,11 @@ export default async function BlogArticlePage({ params }: Props) {
 
       <div className={styles.breadcrumbBar}>
         <div className="wrap">
-          <Breadcrumb
+          <Breadcrumbs
             items={[
+              { label: t("breadcrumb.home"), href: "/" },
               { label: t("breadcrumb.journal"), href: "/blog" },
-              { label: article.title, href: `/blog/${slug}` },
+              { label: article.title },
             ]}
           />
         </div>

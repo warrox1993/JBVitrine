@@ -248,25 +248,7 @@
     },
     "breadcrumb": {
       "aria": "Fil d'Ariane",
-      "home": "Accueil",
-      "routes": {
-        "services": "Services",
-        "conformite": "Conformité NIS2",
-        "approche": "Approche",
-        "agence": "À propos",
-        "portfolio": "Portfolio",
-        "journal": "Journal",
-        "contact": "Contact",
-        "devis": "Demande de Devis",
-        "mentionsLegales": "Mentions Légales",
-        "confidentialite": "Politique de Confidentialité",
-        "cgv": "Conditions Générales de Vente",
-        "admin": "Administration",
-        "adminBlog": "Gestion Blog",
-        "adminArticleNew": "Nouvel Article",
-        "adminLeads": "Gestion Leads",
-        "adminLogin": "Connexion Admin"
-      }
+      "home": "Accueil"
     },
     "trust": {
       "label": "Expertise, cadres de référence & engagements",

@@ -7,7 +7,7 @@
 import { getResend } from "@/lib/email/resend-client";
 import { getLeadColor } from "@/lib/constants/colors";
 import { escapeHtml } from "@/lib/security/escape";
-import { contact } from "@/config/site";
+import { contact, siteUrl } from "@/config/site";
 
 /**
  * Sanitize a value for plain-text chat webhooks (Slack/Discord).
@@ -110,7 +110,7 @@ export async function sendSlackNotification(
             },
           ],
           footer: "Smidjan Lead Scoring System",
-          footer_icon: "https://smidjan.be/favicon.ico",
+          footer_icon: `${siteUrl}/favicon.ico`,
           ts: Math.floor(Date.now() / 1000),
         },
       ],
@@ -200,7 +200,7 @@ export async function sendDiscordNotification(
       ],
       footer: {
         text: "Smidjan Lead Scoring System",
-        icon_url: "https://smidjan.be/favicon.ico",
+        icon_url: `${siteUrl}/favicon.ico`,
       },
       timestamp: new Date().toISOString(),
     };

@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import { siteUrl } from "@/config/site";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Breadcrumb } from "@/components/Breadcrumb";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { getAllArticles } from "@/lib/blogActions";
 import { jsonLdSafe } from "@/lib/security/escape";
 import { BlogFilter } from "@/components/features/blog/BlogFilter";
@@ -132,7 +132,7 @@ export default async function BlogPage({ params }: PageProps) {
 
       <div className={styles.breadcrumbBar}>
         <div className="wrap">
-          <Breadcrumb />
+          <Breadcrumbs items={[{ label: t("breadcrumb.home"), href: "/" }, { label: t("breadcrumb.journal") }]} />
         </div>
       </div>
 

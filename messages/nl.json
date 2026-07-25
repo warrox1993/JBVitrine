@@ -248,25 +248,7 @@
     },
     "breadcrumb": {
       "aria": "Kruimelpad",
-      "home": "Home",
-      "routes": {
-        "services": "Diensten",
-        "conformite": "NIS2-conformiteit",
-        "approche": "Aanpak",
-        "agence": "Over",
-        "portfolio": "Portfolio",
-        "journal": "Blog",
-        "contact": "Contact",
-        "devis": "Offerteaanvraag",
-        "mentionsLegales": "Wettelijke Vermeldingen",
-        "confidentialite": "Privacybeleid",
-        "cgv": "Algemene Voorwaarden",
-        "admin": "Beheer",
-        "adminBlog": "Blogbeheer",
-        "adminArticleNew": "Nieuw Artikel",
-        "adminLeads": "Leadbeheer",
-        "adminLogin": "Admin-login"
-      }
+      "home": "Home"
     },
     "trust": {
       "label": "Expertise, referentiekaders & engagementen",
