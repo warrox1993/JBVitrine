@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { contact } from "@/config/site";
+import { contact, siteUrl } from "@/config/site";
 import { buildAlternates } from "@/i18n/metadata";
 import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
@@ -28,11 +28,11 @@ alternates: buildAlternates(locale, "/conformite-nis2"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
-      url: "https://smidjan.be/conformite-nis2",
+      url: `${siteUrl}/conformite-nis2`,
       siteName: "Smidjan",
       images: [
         {
-          url: "https://smidjan.be/og-image.webp",
+          url: `${siteUrl}/og-image.webp`,
           width: 1200,
           height: 630,
           alt: t("ogImageAlt"),

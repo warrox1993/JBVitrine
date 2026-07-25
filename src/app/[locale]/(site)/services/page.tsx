@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { contact } from "@/config/site";
+import { contact, siteUrl } from "@/config/site";
 import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -28,11 +28,11 @@ alternates: buildAlternates(locale, "/services"),
   openGraph: {
     title: t("ogTitle"),
     description: t("ogDescription"),
-    url: "https://smidjan.be/services",
+    url: `${siteUrl}/services`,
     siteName: "Smidjan",
     images: [
       {
-        url: "https://smidjan.be/og-image.webp",
+        url: `${siteUrl}/og-image.webp`,
         width: 1200,
         height: 630,
         alt: t("ogImageAlt"),
@@ -72,7 +72,7 @@ const jsonLd = {
       name: "Sécurité cloud",
       description:
         "Sécuriser vos environnements cloud (Azure) : configuration, durcissement, gestion des accès et bonnes pratiques.",
-      provider: { "@type": "Person", name: "Jean-Baptiste Dhondt", url: "https://smidjan.be" },
+      provider: { "@type": "Person", name: "Jean-Baptiste Dhondt", url: siteUrl },
       areaServed: { "@type": "Country", name: "Belgique" },
       serviceType: "Sécurité cloud",
     },
@@ -82,7 +82,7 @@ const jsonLd = {
       name: "Sécurité réseaux",
       description:
         "Protéger vos réseaux et votre infrastructure : segmentation, durcissement, revue de configuration et bonnes pratiques.",
-      provider: { "@type": "Person", name: "Jean-Baptiste Dhondt", url: "https://smidjan.be" },
+      provider: { "@type": "Person", name: "Jean-Baptiste Dhondt", url: siteUrl },
       areaServed: { "@type": "Country", name: "Belgique" },
       serviceType: "Sécurité réseaux",
     },
@@ -92,7 +92,7 @@ const jsonLd = {
       name: "IA & automatisation",
       description:
         "Automatiser vos tâches avec des workflows fiables (n8n, Make) et sécuriser vos usages de l'IA.",
-      provider: { "@type": "Person", name: "Jean-Baptiste Dhondt", url: "https://smidjan.be" },
+      provider: { "@type": "Person", name: "Jean-Baptiste Dhondt", url: siteUrl },
       areaServed: { "@type": "Country", name: "Belgique" },
       serviceType: "IA & automatisation",
     },
@@ -102,7 +102,7 @@ const jsonLd = {
       name: "Conformité NIS2 / CyFun",
       description:
         "Préparer votre conformité NIS2 avec le référentiel CyFun, via un outil d'audit.",
-      provider: { "@type": "Person", name: "Jean-Baptiste Dhondt", url: "https://smidjan.be" },
+      provider: { "@type": "Person", name: "Jean-Baptiste Dhondt", url: siteUrl },
       areaServed: { "@type": "Country", name: "Belgique" },
       serviceType: "Conformité NIS2 / CyFun",
     },
@@ -113,8 +113,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Accueil", item: "https://smidjan.be" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://smidjan.be/services" },
+    { "@type": "ListItem", position: 1, name: "Accueil", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/services` },
   ],
 };
 

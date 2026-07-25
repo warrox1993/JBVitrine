@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { contact } from "@/config/site";
+import { contact, siteUrl } from "@/config/site";
 import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import type { ReactNode } from "react";
@@ -27,7 +27,7 @@ export async function generateMetadata({
       title: t("mentions.ogTitle"),
       description: t("mentions.ogDescription"),
       type: "website",
-      url: "https://smidjan.be/mentions-legales",
+      url: `${siteUrl}/mentions-legales`,
     },
     robots: {
       index: true,
@@ -42,8 +42,8 @@ async function BreadcrumbJsonLd() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: t("breadcrumb.home"), item: "https://smidjan.be/" },
-      { "@type": "ListItem", position: 2, name: t("nav.items.mentions"), item: "https://smidjan.be/mentions-legales" },
+      { "@type": "ListItem", position: 1, name: t("breadcrumb.home"), item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 2, name: t("nav.items.mentions"), item: `${siteUrl}/mentions-legales` },
     ],
   };
   const nonce = (await headers()).get("x-nonce") ?? undefined;

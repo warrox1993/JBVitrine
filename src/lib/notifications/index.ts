@@ -7,6 +7,7 @@
 import { getResend } from "@/lib/email/resend-client";
 import { getLeadColor } from "@/lib/constants/colors";
 import { escapeHtml } from "@/lib/security/escape";
+import { contact } from "@/config/site";
 
 /**
  * Sanitize a value for plain-text chat webhooks (Slack/Discord).
@@ -362,7 +363,7 @@ export async function sendSalesEmailNotification(
     `;
 
     const { error } = await getResend().emails.send({
-      from: "Smidjan Lead Scoring <contact@smidjan.be>",
+      from: `Smidjan Lead Scoring <${contact.senderEmail}>`,
       to: ["jeanbaptiste.dhondt1@gmail.com"],
       subject: `${emoji} Nouveau lead ${lead.grade} : ${lead.name} (Score ${lead.score}/100)`,
       html: html,

@@ -33,7 +33,6 @@
     "next-intl": "^4.13.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-phone-number-input": "^3.4.13",
     "react-toastify": "^11.0.2",
     "resend": "^6.4.0",
     "sanitize-html": "^2.17.5",
@@ -41,7 +40,6 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@fullhuman/postcss-purgecss": "^7.0.2",
     "@next/bundle-analyzer": "^16.0.1",
     "@playwright/test": "^1.56.1",
     "@types/node": "^25.0.3",

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { contact } from "@/config/site";
+import { contact, siteUrl } from "@/config/site";
 import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -31,11 +31,11 @@ export async function generateMetadata({
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
-      url: "https://smidjan.be/projets",
+      url: `${siteUrl}/projets`,
       siteName: "Smidjan",
       images: [
         {
-          url: "https://smidjan.be/og-image.webp",
+          url: `${siteUrl}/og-image.webp`,
           width: 1200,
           height: 630,
           alt: t("ogImageAlt"),

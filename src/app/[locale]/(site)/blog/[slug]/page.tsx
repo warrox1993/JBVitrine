@@ -15,6 +15,7 @@ import { getAllArticles, getArticleBySlug, type BlogArticle } from "@/lib/blogAc
 import { markdownToHtml } from "@/lib/markdown";
 import { jsonLdSafe } from "@/lib/security/escape";
 import { authorSchema } from "@/lib/author-schema";
+import { siteUrl } from "@/config/site";
 import cardStyles from "@/components/shared/ArticleCard/ArticleCard.module.css";
 import styles from "./page.module.css";
 
@@ -64,11 +65,11 @@ alternates: buildAlternates(locale, `/blog/${slug}`),
     openGraph: {
       title: article.title,
       description: article.excerpt,
-      url: `https://smidjan.be/blog/${slug}`,
+      url: `${siteUrl}/blog/${slug}`,
       siteName: "Smidjan",
       images: [
         {
-          url: "https://smidjan.be/og-image.webp",
+          url: `${siteUrl}/og-image.webp`,
           width: 1200,
           height: 630,
           alt: article.title,
@@ -130,25 +131,25 @@ export default async function BlogArticlePage({ params }: Props) {
             "@type": "BlogPosting",
             headline: article.title,
             description: article.excerpt,
-            image: "https://smidjan.be/og-image.webp",
+            image: `${siteUrl}/og-image.webp`,
             datePublished: article.publishedAt,
             dateModified: article.publishedAt,
             author: {
               "@type": "Organization",
               name: "Smidjan",
-              url: "https://smidjan.be",
+              url: siteUrl,
             },
             publisher: {
               "@type": "Organization",
               name: "Smidjan",
               logo: {
                 "@type": "ImageObject",
-                url: "https://smidjan.be/images/logoheader/logo-200.png",
+                url: `${siteUrl}/images/logoheader/logo-200.png`,
               },
             },
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": `https://smidjan.be/blog/${slug}`,
+              "@id": `${siteUrl}/blog/${slug}`,
             },
           }),
         }}
@@ -167,19 +168,19 @@ export default async function BlogArticlePage({ params }: Props) {
                 "@type": "ListItem",
                 position: 1,
                 name: t("breadcrumb.home"),
-                item: "https://smidjan.be",
+                item: siteUrl,
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: t("breadcrumb.journal"),
-                item: "https://smidjan.be/blog",
+                item: `${siteUrl}/blog`,
               },
               {
                 "@type": "ListItem",
                 position: 3,
                 name: article.title,
-                item: `https://smidjan.be/blog/${slug}`,
+                item: `${siteUrl}/blog/${slug}`,
               },
             ],
           }),

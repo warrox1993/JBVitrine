@@ -13,7 +13,7 @@ import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { CTABox } from "@/components/shared";
 import { ProcessSteps } from "@/components/shared/ProcessSteps/ProcessSteps";
 import { authorSchema } from "@/lib/author-schema";
-import { social, credentials } from "@/config/site";
+import { social, credentials, siteUrl } from "@/config/site";
 import { FlipCard } from "./FlipCard";
 import styles from "./page.module.css";
 
@@ -31,11 +31,11 @@ export async function generateMetadata({
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
-      url: "https://smidjan.be/cv",
+      url: `${siteUrl}/cv`,
       siteName: "Smidjan",
       images: [
         {
-          url: "https://smidjan.be/og-image.webp",
+          url: `${siteUrl}/og-image.webp`,
           width: 1200,
           height: 630,
           alt: t("ogImageAlt"),

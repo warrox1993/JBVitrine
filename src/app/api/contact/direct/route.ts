@@ -10,6 +10,7 @@ import { validateCsrfToken } from "@/lib/csrf";
 import { validateEmail, sanitizeString } from "@/lib/validation";
 import { verifyRecaptchaEnterprise } from "@/lib/recaptcha";
 import { escapeHtml } from "@/lib/security/escape";
+import { contact } from "@/config/site";
 
 const REQUEST_TYPE_LABELS: Record<string, string> = {
   cv: "Candidature (CV)",
@@ -233,7 +234,7 @@ export async function POST(request: Request) {
     const requestTypeLabel =
       REQUEST_TYPE_LABELS[requestType] || "Autre demande";
     const { data, error } = await getResend().emails.send({
-      from: "Smidjan Contact <contact@smidjan.be>",
+      from: `Smidjan Contact <${contact.senderEmail}>`,
       to: ["smidjan.agency@outlook.com"],
       replyTo: email,
       subject: `[${requestTypeLabel.toUpperCase()}] Nouveau message de ${safeName}${safeCompany ? ` (${safeCompany})` : ""}`,

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
+import { siteUrl } from "@/config/site";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { getAllArticles } from "@/lib/blogActions";
@@ -26,11 +27,11 @@ alternates: buildAlternates(locale, "/blog"),
     openGraph: {
       title: t("meta.ogTitle"),
       description: t("meta.ogDescription"),
-      url: "https://smidjan.be/blog",
+      url: `${siteUrl}/blog`,
       siteName: "Smidjan, Cybersécurité Wallonie",
       images: [
         {
-          url: "https://smidjan.be/og-image.webp",
+          url: `${siteUrl}/og-image.webp`,
           width: 1200,
           height: 630,
           alt: t("meta.ogImageAlt"),
@@ -82,13 +83,13 @@ export default async function BlogPage({ params }: PageProps) {
                 "@type": "ListItem",
                 position: 1,
                 name: t("breadcrumb.home"),
-                item: "https://smidjan.be",
+                item: siteUrl,
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: t("breadcrumb.journal"),
-                item: "https://smidjan.be/blog",
+                item: `${siteUrl}/blog`,
               },
             ],
           }),
@@ -105,13 +106,13 @@ export default async function BlogPage({ params }: PageProps) {
             "@type": "Blog",
             name: t("jsonLd.blogName"),
             description: t("jsonLd.blogDescription"),
-            url: "https://smidjan.be/blog",
+            url: `${siteUrl}/blog`,
             publisher: {
               "@type": "Organization",
               name: "Smidjan",
               logo: {
                 "@type": "ImageObject",
-                url: "https://smidjan.be/images/logoheader/logo-200.png",
+                url: `${siteUrl}/images/logoheader/logo-200.png`,
               },
             },
             blogPost: blogArticles.map((article) => ({
@@ -119,7 +120,7 @@ export default async function BlogPage({ params }: PageProps) {
               headline: article.title,
               description: article.excerpt,
               datePublished: article.publishedAt,
-              url: `https://smidjan.be/blog/${article.slug}`,
+              url: `${siteUrl}/blog/${article.slug}`,
               author: {
                 "@type": "Organization",
                 name: "Smidjan",

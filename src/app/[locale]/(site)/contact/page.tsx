@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { contact } from "@/config/site";
+import { contact, siteUrl } from "@/config/site";
 import { headers } from 'next/headers';
 import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -24,10 +24,10 @@ export async function generateMetadata({
       title: t('ogTitle'),
       description: t('ogDescription'),
       type: 'website',
-      url: 'https://smidjan.be/contact',
+      url: `${siteUrl}/contact`,
       images: [
         {
-          url: 'https://smidjan.be/og/contact-og.webp',
+          url: `${siteUrl}/og/contact-og.webp`,
           width: 1200,
           height: 630,
           alt: t('ogImageAlt'),
@@ -69,11 +69,11 @@ export default async function ContactPage({
             '@context': 'https://schema.org',
             '@type': 'ContactPage',
             name: 'Contact · Smidjan',
-            url: 'https://smidjan.be/contact',
+            url: `${siteUrl}/contact`,
             about: {
               '@type': 'Organization',
               name: 'Smidjan',
-              url: 'https://smidjan.be',
+              url: siteUrl,
               email: contact.email,
               address: {
                 '@type': 'PostalAddress',
@@ -101,8 +101,8 @@ export default async function ContactPage({
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://smidjan.be' },
-              { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://smidjan.be/contact' },
+              { '@type': 'ListItem', position: 1, name: 'Accueil', item: siteUrl },
+              { '@type': 'ListItem', position: 2, name: 'Contact', item: `${siteUrl}/contact` },
             ],
           }),
         }}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { contact } from "@/config/site";
+import { contact, siteUrl } from "@/config/site";
 import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import type { ReactNode } from "react";
@@ -27,7 +27,7 @@ export async function generateMetadata({
       title: t("confidentialite.ogTitle"),
       description: t("confidentialite.ogDescription"),
       type: "website",
-      url: "https://smidjan.be/confidentialite",
+      url: `${siteUrl}/confidentialite`,
     },
     robots: {
       index: true,
@@ -42,12 +42,12 @@ async function BreadcrumbJsonLd() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: t("breadcrumb.home"), item: "https://smidjan.be/" },
+      { "@type": "ListItem", position: 1, name: t("breadcrumb.home"), item: `${siteUrl}/` },
       {
         "@type": "ListItem",
         position: 2,
         name: t("nav.items.confidentialite"),
-        item: "https://smidjan.be/confidentialite",
+        item: `${siteUrl}/confidentialite`,
       },
     ],
   };

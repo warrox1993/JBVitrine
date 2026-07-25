@@ -10,6 +10,7 @@ import { getResend } from "@/lib/email/resend-client";
 import { db } from "@/lib/db";
 import { timingSafeEqual } from "crypto";
 import { escapeHtml } from "@/lib/security/escape";
+import { contact, siteUrl } from "@/config/site";
 
 // Shared handler. Vercel Cron invokes the path with GET (+ Authorization:
 // Bearer CRON_SECRET), so we export BOTH GET and POST — otherwise the daily
@@ -82,7 +83,7 @@ async function handleDigest(request: NextRequest) {
 
     // Send email
     const { data, error } = await getResend().emails.send({
-      from: "Smidjan Lead Digest <contact@smidjan.be>",
+      from: `Smidjan Lead Digest <${contact.senderEmail}>`,
       to: ["smidjan.agency@outlook.com"],
       subject: `📊 Daily Lead Digest - ${stats.total} nouveaux leads (${stats.hot} HOT)`,
       html: emailHTML,
@@ -247,7 +248,7 @@ function generateDigestEmail(
       }
 
       <div style="text-align: center; margin-top: 30px;">
-        <a href="${process.env.NEXT_PUBLIC_BASE_URL || "https://smidjan.be"}/admin/leads" class="cta">
+        <a href="${process.env.NEXT_PUBLIC_BASE_URL || siteUrl}/admin/leads" class="cta">
           Voir tous les leads
         </a>
       </div>

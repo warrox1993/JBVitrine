@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { contact } from "@/config/site";
+import { contact, siteUrl } from "@/config/site";
 import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import { authorSchema } from "@/lib/author-schema";
@@ -31,11 +31,11 @@ alternates: buildAlternates(locale, "/agence"),
     openGraph: {
       title: t("ogTitle"),
       description: t("ogDescription"),
-      url: "https://smidjan.be/agence",
+      url: `${siteUrl}/agence`,
       siteName: "Smidjan",
       images: [
         {
-          url: "https://smidjan.be/og-image.webp",
+          url: `${siteUrl}/og-image.webp`,
           width: 1200,
           height: 630,
           alt: t("ogImageAlt"),
