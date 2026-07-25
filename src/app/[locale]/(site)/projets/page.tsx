@@ -16,6 +16,7 @@ import styles from "./page.module.css";
 
 const GITHUB_URL = "https://github.com/warrox1993";
 const FORMCRAFT_URL = "https://github.com/warrox1993/FormCraft";
+const CLAWKWERK_URL = "https://github.com/warrox1993/ClawkWerk";
 
 export async function generateMetadata({
   params,
@@ -173,7 +174,16 @@ export default async function ProjetsPage({
           <p>{t("flagship.confidential")}</p>
         </Reveal>
 
-        <Reveal>
+        <Reveal className={styles.flagshipActions}>
+          <a
+            href={CLAWKWERK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.flagshipRepo}
+          >
+            <Icon name="github" size={17} />
+            {t("flagship.repoLabel")}
+          </a>
           <Link href="/conformite-nis2" className={styles.flagshipCta}>
             {t("flagship.cta")}
             <Icon name="arrow-right" size={16} />

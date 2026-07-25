@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { Link } from "@/i18n/navigation";
 import styles from "./Fondateur.module.css";
 
 const CREDENTIALS = [
@@ -210,6 +211,10 @@ export async function Fondateur() {
                 </li>
               ))}
             </ol>
+            <Link href="/maintenant" className={styles.nowLink}>
+              {t("founder.nowLink")}
+              <Icon name="arrow-right" size={16} strokeWidth={2.2} />
+            </Link>
           </Reveal>
         </div>
       </Container>

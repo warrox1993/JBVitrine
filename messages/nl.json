@@ -67,6 +67,7 @@
       "stepTodayTitle": "Focus op cloud-, netwerk-, infra- & webbeveiliging",
       "stepTodayText": "De dreigingen begrijpen om beter te verdedigen en in conformiteit te brengen. Dat is Smidjan.",
       "linkedinLabel": "Bekijk het LinkedIn-profiel",
+      "nowLink": "Bekijk wat ik nu leer",
       "linkedinUrl": "https://www.linkedin.com/in/jean-baptistedhondt"
     }
   },
@@ -1301,8 +1302,9 @@
     },
     "flagship": {
       "eyebrow": "Vlaggenschipproject",
-      "badge": "In ontwikkeling · Details op aanvraag",
-      "title": "CyFun/NIS2-auditool",
+      "badge": "Open source · geschreven in Go",
+      "repoLabel": "Bekijk de code op GitHub",
+      "title": "ClawkWerk — CyFun/NIS2-auditool",
       "lead": "Een zelfevaluatietool die ik bouw om kmo's voor te bereiden op het CyFun-referentiekader, de Belgische basis van NIS2-conformiteit.",
       "contexte": {
         "heading": "Context",

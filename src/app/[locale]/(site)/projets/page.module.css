@@ -145,11 +145,36 @@
   line-height: 1.6;
 }
 
+.flagshipActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 22px;
+  margin-top: var(--space-5, 24px);
+}
+.flagshipRepo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: var(--radius-full, 999px);
+  background: var(--color-text, #14181f);
+  color: var(--color-surface-solid, #fff);
+  font-weight: 700;
+  font-size: 14.5px;
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+.flagshipRepo:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
 .flagshipCta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: var(--space-5, 24px);
   color: var(--orange-d);
   font-weight: 700;
   font-size: 15px;

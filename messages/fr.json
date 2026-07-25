@@ -67,6 +67,7 @@
       "stepTodayTitle": "Cap sur la sécurité cloud, réseau, infra & web",
       "stepTodayText": "Comprendre les menaces pour mieux défendre et mettre en conformité. C'est Smidjan.",
       "linkedinLabel": "Voir le profil LinkedIn",
+      "nowLink": "Voir ce que j'apprends en ce moment",
       "linkedinUrl": "https://www.linkedin.com/in/jean-baptistedhondt"
     }
   },
@@ -1301,8 +1302,9 @@
     },
     "flagship": {
       "eyebrow": "Projet phare",
-      "badge": "En développement · Détails sur demande",
-      "title": "Outil d'audit CyFun / NIS2",
+      "badge": "Open source · écrit en Go",
+      "repoLabel": "Voir le code sur GitHub",
+      "title": "ClawkWerk — outil d'audit CyFun / NIS2",
       "lead": "Un outil d'auto-évaluation que je construis pour préparer les PME au référentiel CyFun, socle belge de la conformité NIS2.",
       "contexte": {
         "heading": "Contexte",

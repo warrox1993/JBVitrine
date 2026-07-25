@@ -67,6 +67,7 @@
       "stepTodayTitle": "Focused on cloud, network, infra & web security",
       "stepTodayText": "Understanding threats to defend better and reach compliance. That is Smidjan.",
       "linkedinLabel": "View the LinkedIn profile",
+      "nowLink": "See what I'm learning right now",
       "linkedinUrl": "https://www.linkedin.com/in/jean-baptistedhondt"
     }
   },
@@ -1301,8 +1302,9 @@
     },
     "flagship": {
       "eyebrow": "Flagship project",
-      "badge": "In development · Details on request",
-      "title": "CyFun / NIS2 audit tool",
+      "badge": "Open source · written in Go",
+      "repoLabel": "View the code on GitHub",
+      "title": "ClawkWerk — CyFun / NIS2 audit tool",
       "lead": "A self-assessment tool I am building to help SMEs prepare for the CyFun framework, the Belgian foundation of NIS2 compliance.",
       "contexte": {
         "heading": "Context",
