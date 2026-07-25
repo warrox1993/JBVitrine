@@ -9,6 +9,7 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle/ThemeToggle";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher/LocaleSwitcher";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { BrandMark } from "@/components/ui/BrandMark/BrandMark";
+import { SlideHighlight } from "@/components/ui/SlideHighlight/SlideHighlight";
 import { social } from "@/config/site";
 
 // Portfolio-oriented nav. "Services" is reframed as "Compétences"; the former
@@ -162,16 +163,26 @@ export default function SiteHeader() {
           className={`${styles.main} ${open ? styles.open : ""}`}
           aria-label={t("header.navAria")}
         >
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={isActive(link.href) ? styles.active : undefined}
-              aria-current={isActive(link.href) ? "page" : undefined}
-            >
-              {t(link.labelKey)}
-            </Link>
-          ))}
+          {/* Shared sliding highlight: only visible on the desktop pill row
+              (hidden under the mobile card breakpoint via .navHighlight). The
+              wrapper itself is a plain div so it works identically whether
+              CSS renders it as a horizontal row (desktop) or a stacked
+              dropdown (mobile, highlight just hidden there). */}
+          <SlideHighlight
+            className={styles.navList}
+            highlightClassName={styles.navHighlight}
+          >
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={isActive(link.href) ? styles.active : undefined}
+                aria-current={isActive(link.href) ? "page" : undefined}
+              >
+                {t(link.labelKey)}
+              </Link>
+            ))}
+          </SlideHighlight>
           {/* Utilities repeated inside the mobile dropdown (hidden on desktop,
               where they live in the header row instead). */}
           <div className={styles.utilsMobile}>

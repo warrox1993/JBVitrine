@@ -207,6 +207,10 @@
 }
 .bandMedia {
   order: 1;
+  /* Matches ProjectCover's own --radius-l so the spotlight glow/edge-ring
+     (border-radius: inherit, see Spotlight.module.css) hugs the same
+     rounded corners as the panel it sits on top of. */
+  border-radius: var(--radius-l);
 }
 .bandBody {
   order: 2;

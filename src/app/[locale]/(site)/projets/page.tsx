@@ -12,6 +12,8 @@ import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { Button } from "@/components/ui/Button/Button";
 import { CTABox } from "@/components/shared";
+import { Spotlight } from "@/components/ui/Spotlight/Spotlight";
+import spotlight from "@/components/ui/Spotlight/Spotlight.module.css";
 import { ProjectCover, type ProjectCoverKey } from "./ProjectCover";
 import styles from "./page.module.css";
 
@@ -199,6 +201,7 @@ export default async function ProjetsPage({
           <SectionHeading eyebrow={t("grid.eyebrow")} title={t("grid.title")} lead={t("grid.lead")} />
         </Reveal>
 
+        <Spotlight>
         <div className={styles.bands}>
           {GRID_ITEMS.map((item, index) => {
             const tech = t.raw(`grid.items.${item.key}.tech`) as string[];
@@ -211,7 +214,10 @@ export default async function ProjetsPage({
                 variant={reverse ? "left" : "right"}
                 className={`${styles.band} ${reverse ? styles.bandReverse : ""}`}
               >
-                <div className={styles.bandMedia}>
+                <div
+                  className={`${styles.bandMedia} ${spotlight.card}`}
+                  data-spotlight-card=""
+                >
                   <ProjectCover projectKey={item.key} />
                 </div>
                 <div className={styles.bandBody}>
@@ -249,6 +255,7 @@ export default async function ProjetsPage({
             );
           })}
         </div>
+        </Spotlight>
       </Section>
 
       {/* ===== Closing: keep following on GitHub ===== */}

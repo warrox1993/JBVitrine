@@ -101,27 +101,27 @@ export default async function HomePage({
 
       <RecruiterBand />
 
-      <Section variant="tint" id="vue-ensemble">
+      <Section variant="tint" id="vue-ensemble" divider>
         <BentoGrid />
       </Section>
 
-      <Section variant="white" id="savoir-faire">
+      <Section variant="white" id="savoir-faire" divider>
         <Capabilities />
       </Section>
 
-      <Section variant="tint" id="cyfun">
+      <Section variant="tint" id="cyfun" divider>
         <CyfunTeaser />
       </Section>
 
-      <Section variant="white" id="parcours">
+      <Section variant="white" id="parcours" divider>
         <Parcours />
       </Section>
 
-      <Section variant="tint" id="approche">
+      <Section variant="tint" id="approche" divider>
         <ApprocheTeaser />
       </Section>
 
-      <Section variant="white" id="securite">
+      <Section variant="white" id="securite" divider>
         <SecurityScan />
       </Section>
 

@@ -34,8 +34,18 @@
   max-width: 60ch;
 }
 
+/* Registers --scan-beam-angle as an animatable <angle> so the conic-gradient
+   below can be spun via a custom-property keyframe (no transform/rotate,
+   which would also spin the gradient's own aspect ratio). */
+@property --scan-beam-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
 /* Terminal card */
 .terminal {
+  position: relative;
   margin-top: 28px;
   border-radius: 16px;
   overflow: hidden;
@@ -45,6 +55,40 @@
     0 30px 70px -30px rgba(0, 0, 0, 0.6),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
   max-width: 720px;
+}
+
+/* Orbiting scan-beam — a thin conic-gradient highlight that slowly travels
+   the card's perimeter (a literal "security scan" of the border). One beam,
+   restrained opacity: a hint of motion, not a disco light. */
+.terminal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--scan-beam-angle),
+    transparent 68%,
+    var(--color-primary),
+    transparent 78%
+  );
+  opacity: 0.55;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: scanBeamSpin 6s linear infinite;
+}
+
+@keyframes scanBeamSpin {
+  to {
+    --scan-beam-angle: 360deg;
+  }
 }
 .bar {
   display: flex;
@@ -170,5 +214,11 @@
   }
   .hState {
     grid-column: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal::after {
+    animation: none;
   }
 }

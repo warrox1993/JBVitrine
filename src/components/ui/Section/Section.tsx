@@ -10,6 +10,12 @@ export interface SectionProps {
   gridBg?: boolean;
   /** Wrap children in a `.container`. Set false to control layout yourself. */
   contained?: boolean;
+  /**
+   * Opt-in gradient hairline (transparent → accent → transparent) across the
+   * top edge, used to separate sections with "a line of light" instead of a
+   * flat grey rule. Defaults to false so existing pages are unaffected.
+   */
+  divider?: boolean;
   id?: string;
   className?: string;
 }
@@ -23,10 +29,13 @@ export function Section({
   variant = "white",
   gridBg,
   contained = true,
+  divider = false,
   id,
   className,
 }: SectionProps) {
-  const cn = [styles.section, styles[variant], className].filter(Boolean).join(" ");
+  const cn = [styles.section, styles[variant], divider ? styles.divider : "", className]
+    .filter(Boolean)
+    .join(" ");
   return (
     <section id={id} className={cn}>
       {gridBg ? <div className={`${styles.gridBg} grid-bg`} aria-hidden="true" /> : null}

@@ -3,6 +3,8 @@ import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import OptimizedImage from "@/components/ui/OptimizedImage";
+import { Spotlight } from "@/components/ui/Spotlight/Spotlight";
+import spotlight from "@/components/ui/Spotlight/Spotlight.module.css";
 import { social } from "@/config/site";
 import styles from "./BentoGrid.module.css";
 
@@ -26,9 +28,17 @@ export async function BentoGrid() {
         <p className={styles.lead}>{t("lead")}</p>
       </Reveal>
 
-      <Reveal stagger className={styles.grid}>
-        {/* 1. Identity / hook — large, not a link (already the hero's job); one inline CTA to /cv. */}
-        <article className={`${styles.tile} ${styles.identity}`}>
+      <Spotlight>
+        <Reveal stagger className={styles.grid}>
+        {/* 1. Identity / hook — large, not a link (already the hero's job); one inline CTA to /cv.
+            Note: owns its own ::before (dot-grid texture, see BentoGrid.module.css), so it only
+            takes the spotlight `.edge` (border ring) here — the ambient glow is merged directly
+            into `.identity::before` instead of the shared `.glow` class to avoid two rules
+            fighting over the same pseudo-element. */}
+        <article
+          className={`${styles.tile} ${styles.identity} ${spotlight.base} ${spotlight.edge}`}
+          data-spotlight-card=""
+        >
           <div className={styles.identityHead}>
             <span className={styles.avatar}>
               <OptimizedImage
@@ -71,7 +81,8 @@ export async function BentoGrid() {
         {/* 2. Flagship project — ClawkWerk, links to /projets. */}
         <Link
           href="/projets"
-          className={`${styles.tile} ${styles.interactive} ${styles.clawkwerk}`}
+          className={`${styles.tile} ${styles.interactive} ${styles.clawkwerk} ${spotlight.card}`}
+          data-spotlight-card=""
         >
           <span className={styles.tileBadge}>{t("clawkwerk.badge")}</span>
           <span className={styles.tileIcon} aria-hidden="true">
@@ -87,7 +98,8 @@ export async function BentoGrid() {
         {/* 3. Certifications — AZ-900 + CCNA, links to /cv. */}
         <Link
           href="/cv"
-          className={`${styles.tile} ${styles.interactive} ${styles.certs}`}
+          className={`${styles.tile} ${styles.interactive} ${styles.certs} ${spotlight.card}`}
+          data-spotlight-card=""
         >
           <span className={styles.tileIcon} aria-hidden="true">
             <Icon name="file-check" size={20} strokeWidth={2.1} />
@@ -112,7 +124,8 @@ export async function BentoGrid() {
         {/* 4. "En ce moment" live status — links to /maintenant. */}
         <Link
           href="/maintenant"
-          className={`${styles.tile} ${styles.interactive} ${styles.status}`}
+          className={`${styles.tile} ${styles.interactive} ${styles.status} ${spotlight.card}`}
+          data-spotlight-card=""
         >
           <span className={styles.liveDot} aria-hidden="true" />
           <span className={styles.tileIcon} aria-hidden="true">
@@ -127,7 +140,8 @@ export async function BentoGrid() {
           href={social.github}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${styles.tile} ${styles.interactive} ${styles.github}`}
+          className={`${styles.tile} ${styles.interactive} ${styles.github} ${spotlight.card}`}
+          data-spotlight-card=""
         >
           <span className={styles.tileIcon} aria-hidden="true">
             <Icon name="github" size={20} strokeWidth={2} />
@@ -141,7 +155,8 @@ export async function BentoGrid() {
           href={social.tryhackme}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${styles.tile} ${styles.interactive} ${styles.thm}`}
+          className={`${styles.tile} ${styles.interactive} ${styles.thm} ${spotlight.card}`}
+          data-spotlight-card=""
         >
           <span className={styles.tileIcon} aria-hidden="true">
             <Icon name="target" size={20} strokeWidth={2.1} />
@@ -154,7 +169,8 @@ export async function BentoGrid() {
         {/* 7. Contact CTA — filled accent tile, links to /contact. */}
         <Link
           href="/contact"
-          className={`${styles.tile} ${styles.interactive} ${styles.contact}`}
+          className={`${styles.tile} ${styles.interactive} ${styles.contact} ${spotlight.card}`}
+          data-spotlight-card=""
         >
           <span className={styles.tileIcon} aria-hidden="true">
             <Icon name="mail" size={20} strokeWidth={2.1} />
@@ -165,7 +181,8 @@ export async function BentoGrid() {
             <Icon name="arrow-right" size={18} strokeWidth={2.3} />
           </span>
         </Link>
-      </Reveal>
+        </Reveal>
+      </Spotlight>
     </>
   );
 }

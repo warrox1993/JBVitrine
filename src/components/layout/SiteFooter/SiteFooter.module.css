@@ -136,6 +136,19 @@
   margin-top: 28px;
 }
 
+/* Positioning context for the shared sliding highlight (see SlideHighlight);
+   the <ul> renders inside it unchanged, so the grid/column layout above is
+   untouched — this only adds a relatively-positioned box around it. */
+.linksHighlight {
+  position: relative;
+}
+
+/* Rounded rect (not a full pill) to match the column's rectangular link
+   list, as opposed to the header's pill-shaped nav. */
+.linksHighlightBlock {
+  border-radius: var(--radius);
+}
+
 .links {
   list-style: none;
   margin: 0;
@@ -144,7 +157,16 @@
   gap: 11px;
 }
 
+/* Padding + equal negative margin: gives each link a comfortable highlight
+   hit-box (matched by the shared sliding block) without shifting the text or
+   the column's own rhythm — the box grows outward, the flow footprint stays
+   identical to the old bare `<a>`. Kept just under the 11px row gap so two
+   adjacent hit-boxes never overlap. */
 .links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 8px;
+  margin: -5px -8px;
   font-size: 14px;
   color: var(--on-dark-muted);
 }

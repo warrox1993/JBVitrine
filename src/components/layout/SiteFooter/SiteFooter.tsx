@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher/LocaleSwitcher";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { BrandMark } from "@/components/ui/BrandMark/BrandMark";
+import { SlideHighlight } from "@/components/ui/SlideHighlight/SlideHighlight";
 import { social, contact } from "@/config/site";
 import styles from "./SiteFooter.module.css";
 
@@ -96,46 +97,58 @@ export default async function SiteFooter() {
 
           <div>
             <h2 className={styles.heading}>{t("footer.servicesHeading")}</h2>
-            <ul className={styles.links}>
-              <li>
-                <Link href="/services">{t("footer.links.reseaux")}</Link>
-              </li>
-              <li>
-                <Link href="/services">{t("footer.links.audits")}</Link>
-              </li>
-              <li>
-                <Link href="/services">{t("footer.links.devWeb")}</Link>
-              </li>
-              <li>
-                <Link href="/conformite-nis2">
-                  {t("footer.links.conformite")}
-                </Link>
-              </li>
-            </ul>
+            <SlideHighlight
+              className={styles.linksHighlight}
+              highlightClassName={styles.linksHighlightBlock}
+            >
+              <ul className={styles.links}>
+                <li>
+                  <Link href="/services">{t("footer.links.reseaux")}</Link>
+                </li>
+                <li>
+                  <Link href="/services">{t("footer.links.audits")}</Link>
+                </li>
+                <li>
+                  <Link href="/services">{t("footer.links.devWeb")}</Link>
+                </li>
+                <li>
+                  <Link href="/conformite-nis2">
+                    {t("footer.links.conformite")}
+                  </Link>
+                </li>
+              </ul>
+            </SlideHighlight>
           </div>
 
           <div>
             <h2 className={styles.heading}>{t("footer.agenceHeading")}</h2>
-            <ul className={styles.links}>
-              <li>
-                <Link href="/agence">{t("footer.links.apropos")}</Link>
-              </li>
-              <li>
-                <Link href="/cv">{t("nav.cv")}</Link>
-              </li>
-              <li>
-                <Link href="/projets">{t("nav.projets")}</Link>
-              </li>
-              <li>
-                <Link href="/maintenant">{t("footer.links.maintenant")}</Link>
-              </li>
-              <li>
-                <Link href="/blog">{t("footer.links.ressources")}</Link>
-              </li>
-              <li>
-                <Link href="/contact">{t("footer.links.contact")}</Link>
-              </li>
-            </ul>
+            <SlideHighlight
+              className={styles.linksHighlight}
+              highlightClassName={styles.linksHighlightBlock}
+            >
+              <ul className={styles.links}>
+                <li>
+                  <Link href="/agence">{t("footer.links.apropos")}</Link>
+                </li>
+                <li>
+                  <Link href="/cv">{t("nav.cv")}</Link>
+                </li>
+                <li>
+                  <Link href="/projets">{t("nav.projets")}</Link>
+                </li>
+                <li>
+                  <Link href="/maintenant">
+                    {t("footer.links.maintenant")}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog">{t("footer.links.ressources")}</Link>
+                </li>
+                <li>
+                  <Link href="/contact">{t("footer.links.contact")}</Link>
+                </li>
+              </ul>
+            </SlideHighlight>
           </div>
 
           <div>

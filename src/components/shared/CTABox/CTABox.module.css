@@ -7,6 +7,14 @@
 .final.tint {
   background: var(--bg-2);
 }
+/* Registers --cta-beam-angle as an animatable <angle> so the conic-gradient
+   below can be spun via a custom-property keyframe. */
+@property --cta-beam-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
 .box {
   background: linear-gradient(135deg, var(--navy) 0%, var(--ink) 100%);
   border-radius: 20px;
@@ -15,6 +23,46 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 30px 70px -30px rgba(11, 31, 58, 0.6);
+}
+
+/* Orbiting scan-beam — a thin conic-gradient highlight that slowly travels
+   the card's border. One beam, restrained opacity: a hint of motion, not a
+   disco light. Painted last so it sits above the grid overlay. */
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--cta-beam-angle),
+    transparent 68%,
+    var(--color-primary),
+    transparent 78%
+  );
+  opacity: 0.55;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: ctaBeamSpin 6s linear infinite;
+}
+
+@keyframes ctaBeamSpin {
+  to {
+    --cta-beam-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .box::after {
+    animation: none;
+  }
 }
 .gridBg {
   position: absolute;

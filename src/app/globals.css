@@ -177,14 +177,19 @@ body {
   }
 }
 
+/* On-brand translucent emerald wash (30% of --color-primary) instead of an
+   opaque block. --color-primary and --color-text are both theme-aware
+   custom properties (see styles/variables.css), so this single rule already
+   resolves to accessible contrast in light AND dark — verified against both
+   token sets, no separate [data-theme="dark"]::selection override needed. */
 ::selection {
-  background: var(--color-accent-1);
-  color: #fff;
+  background: color-mix(in oklch, var(--color-primary) 30%, transparent);
+  color: var(--color-text);
 }
 
 ::-moz-selection {
-  background: var(--color-accent-1);
-  color: #fff;
+  background: color-mix(in oklch, var(--color-primary) 30%, transparent);
+  color: var(--color-text);
 }
 
 :focus-visible {
@@ -199,12 +204,48 @@ body {
   }
 }
 
+/* ============================================================
+   View Transitions — circular theme reveal (ThemeToggle)
+   ThemeToggle.tsx sets --vt-x/--vt-y (the toggle button's center, in px)
+   then calls document.startViewTransition() around the theme flip. The new
+   theme's snapshot unfurls from that point instead of hard-cutting; the old
+   snapshot just stays put underneath (no cross-fade animation needed).
+   Inert everywhere else: browsers without the API never create these
+   pseudo-elements, and ThemeToggle only calls startViewTransition when it
+   exists, so this CSS has zero effect there (plain instant swap).
+   ============================================================ */
+::view-transition-old(root) {
+  animation: none;
+}
+
+::view-transition-new(root) {
+  animation: vtCircle 0.5s ease both;
+}
+
+@keyframes vtCircle {
+  from {
+    clip-path: circle(0 at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
+  to {
+    clip-path: circle(150% at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+
+  /* Belt-and-suspenders: ThemeToggle already skips startViewTransition when
+     motion is reduced, but guard the pseudo-elements too in case a future
+     view transition is triggered from elsewhere. */
+  ::view-transition-group(*),
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
   }
 }
 

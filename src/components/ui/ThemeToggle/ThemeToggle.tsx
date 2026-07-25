@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useRef, useSyncExternalStore } from "react";
 import { SunIcon } from "@/components/icons/SunIcon";
 import { MoonIcon } from "@/components/icons/MoonIcon";
 import styles from "./ThemeToggle.module.css";
@@ -47,26 +47,61 @@ export function ThemeToggle() {
     getThemeSnapshot,
     getThemeServerSnapshot,
   );
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   function toggle() {
     const next: Theme =
       document.documentElement.getAttribute("data-theme") === "dark"
         ? "light"
         : "dark";
-    document.documentElement.setAttribute("data-theme", next);
-    try {
-      localStorage.setItem("smidjan-theme", next);
-    } catch {
-      /* localStorage unavailable (private mode): ignore */
+
+    // The actual theme flip + persistence, run either instantly or inside
+    // the View Transition's callback (see below).
+    const applyTheme = () => {
+      document.documentElement.setAttribute("data-theme", next);
+      try {
+        localStorage.setItem("smidjan-theme", next);
+      } catch {
+        /* localStorage unavailable (private mode): ignore */
+      }
+      // No local setState: the MutationObserver above picks up the attribute
+      // change and useSyncExternalStore re-renders this component with it.
+    };
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    // Progressive enhancement: circular reveal growing from the toggle
+    // button, via the View Transitions API. Falls back to an instant swap
+    // when the API is unsupported (e.g. older Safari) or motion is reduced.
+    if (
+      !reducedMotion &&
+      typeof document.startViewTransition === "function" &&
+      buttonRef.current
+    ) {
+      const { left, top, width, height } =
+        buttonRef.current.getBoundingClientRect();
+      const root = document.documentElement;
+      root.style.setProperty("--vt-x", `${left + width / 2}px`);
+      root.style.setProperty("--vt-y", `${top + height / 2}px`);
+      try {
+        document.startViewTransition(applyTheme);
+      } catch {
+        // Defensive: some engines can throw (e.g. transition already in
+        // flight). Never leave the toggle inert.
+        applyTheme();
+      }
+    } else {
+      applyTheme();
     }
-    // No local setState: the MutationObserver above picks up the attribute
-    // change and useSyncExternalStore re-renders this component with it.
   }
 
   const isDark = theme === "dark";
 
   return (
     <button
+      ref={buttonRef}
       type="button"
       className={styles.toggle}
       onClick={toggle}

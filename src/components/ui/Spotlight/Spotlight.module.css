@@ -1,0 +1,93 @@
+/* Spotlight — cursor-tracked "scanner" highlight for a group of cards.
+   Spotlight.tsx writes --mx/--my (px, relative to each card) while the
+   pointer is over it; these classes turn that into a low-alpha radial glow
+   and a hairline edge-glow border that both appear to follow the cursor.
+
+   Consumers add `data-spotlight-card` + one of:
+     .base  — CSS vars + position; always required on the card.
+     .glow  — the ambient radial highlight (::before). Skip on a card that
+              already owns its `::before` for something else and merge the
+              gradient into that rule instead (see BentoGrid's `.identity`).
+     .edge  — the 1px cursor-lit border ring (::after).
+     .card  — `.base` + `.glow` + `.edge` combined, for the common case. */
+
+/* The wrapper itself must not affect layout: it only exists to host the
+   delegated pointermove listener around whatever grid/flex the caller
+   already renders as children. */
+.root {
+  display: contents;
+}
+
+.base {
+  --spotlight-glow: color-mix(in oklch, var(--orange) 18%, transparent);
+  --spotlight-border: color-mix(in oklch, var(--orange) 32%, transparent);
+  position: relative;
+}
+
+.glow::before,
+.edge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.glow::before {
+  background: radial-gradient(
+    380px circle at var(--mx, 15%) var(--my, -10%),
+    var(--spotlight-glow),
+    transparent 45%
+  );
+}
+
+.edge::after {
+  padding: 1px;
+  background: radial-gradient(
+    260px circle at var(--mx, 15%) var(--my, -10%),
+    var(--spotlight-border),
+    transparent 70%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.card {
+  composes: base glow edge;
+}
+
+/* Fine pointer + motion allowed: reveal on hover/focus, cursor-tracked. */
+@media (hover: hover) and (pointer: fine) {
+  .glow:hover::before,
+  .glow:focus-visible::before {
+    opacity: 1;
+  }
+  .edge:hover::after,
+  .edge:focus-visible::after {
+    opacity: 1;
+  }
+}
+
+/* Touch / no hover: Spotlight.tsx never attaches listeners here — show a
+   static, very faint glow anchored in a fixed corner instead (the --mx/--my
+   fallback values above). No edge-ring in this mode: it reads as cursor
+   feedback, which doesn't apply on touch. */
+@media (hover: none), (pointer: coarse) {
+  .glow::before {
+    opacity: 0.5;
+  }
+}
+
+/* Dark theme: brighter, more present emerald than the faint light-mode wash. */
+:root[data-theme="dark"] .base {
+  --spotlight-glow: color-mix(in oklch, var(--color-primary) 40%, transparent);
+  --spotlight-border: color-mix(in oklch, var(--color-primary) 55%, transparent);
+}

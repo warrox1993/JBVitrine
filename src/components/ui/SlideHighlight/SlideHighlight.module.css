@@ -1,0 +1,34 @@
+/* Wrapper just needs to be a positioning context; it otherwise stays
+   invisible in the box model (no padding/margin of its own) so it never
+   affects the surrounding flex/grid layout it's dropped into. */
+.wrap {
+  position: relative;
+}
+
+/* The single sliding block. Absolutely positioned elements always paint
+   after normal in-flow content in the same stacking context, so this sits
+   above the links automatically — no z-index needed. `pointer-events: none`
+   guarantees it never swallows clicks on the link underneath it. */
+.highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  border-radius: var(--radius);
+  background: color-mix(in oklch, var(--color-primary) 12%, transparent);
+  pointer-events: none;
+  transform: translate(0, 0);
+  transition:
+    transform 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.18s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .highlight {
+    transition: none;
+  }
+}

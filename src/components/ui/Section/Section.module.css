@@ -28,6 +28,25 @@
   position: relative;
 }
 
+/* Opt-in gradient hairline (see `divider` prop) — a fade
+   transparent → accent → transparent across the full section width, instead
+   of a flat grey rule. `.section` is already `position: relative`. */
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--color-primary) 55%, transparent),
+    transparent
+  );
+  pointer-events: none;
+}
+
 @media (max-width: 720px) {
   .section {
     padding: 60px 0;

@@ -80,7 +80,17 @@
   gap: 2px;
 }
 
-.main a {
+/* Wraps just the NAV_LINKS row (not .utilsMobile) so the shared sliding
+   highlight (see SlideHighlight) can measure/glide between these items only.
+   Desktop: the same flex row .main used to be. Mobile: becomes the stacked
+   column inside the open dropdown card (see the 1200px media query below). */
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.navList a {
   padding: 8px 10px;
   border-radius: 7px;
   font-weight: 500;
@@ -89,15 +99,25 @@
   white-space: nowrap;
 }
 
-.main a:hover {
+/* Hover background removed: the shared sliding block (rendered above the
+   link, pointer-events: none) is now the primary hover affordance. Keep the
+   text-color shift for a crisp state change even when reduced-motion hides
+   the slide. */
+.navList a:hover {
   color: var(--color-text);
-  background: var(--bg-2);
 }
 
-.main a.active {
+.navList a.active {
   color: var(--color-text);
   background: var(--bg-2);
   font-weight: 600;
+}
+
+/* The sliding block itself: pill-shaped to match the header's own pill
+   silhouette. Hidden on the mobile dropdown breakpoint (see media query
+   below) — the brief scopes this effect to the desktop nav only. */
+.navHighlight {
+  border-radius: var(--radius-full);
 }
 
 .cta {
@@ -275,11 +295,27 @@
     box-shadow: var(--shadow);
   }
 
-  .main.open a {
+  /* The wrapper becomes the stacked column of links inside the open card
+     (it used to be .main itself doing this job before the SlideHighlight
+     wrapper existed). */
+  .main.open .navList {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+  }
+
+  .main.open .navList a {
     display: flex;
     align-items: center;
     min-height: 44px;
     padding: 12px 10px;
+  }
+
+  /* Scope this micro-interaction to the desktop pill row: the mobile
+     dropdown is a "card", not the shared-highlight nav bar. */
+  .navHighlight {
+    display: none;
   }
 }
 
