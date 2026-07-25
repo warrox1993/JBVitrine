@@ -8,27 +8,13 @@ export type { TrustStripProps, TrustItem } from "./TrustStrip/TrustStrip";
 export { ServiceCard } from "./ServiceCard/ServiceCard";
 export type { ServiceCardProps } from "./ServiceCard/ServiceCard";
 
-export { ServicePillar } from "./ServicePillar/ServicePillar";
-export type {
-  ServicePillarProps,
-  PillarCapability,
-  PillarAudience,
-} from "./ServicePillar/ServicePillar";
-
-export {
-  CyFunTiers,
-  DEFAULT_CYFUN_TIERS,
-  DEFAULT_CYFUN_TABLE,
-} from "./CyFunTiers/CyFunTiers";
+export { CyFunTiers } from "./CyFunTiers/CyFunTiers";
 export type {
   CyFunTiersProps,
   CyFunTier,
   CyFunTableRow,
   TierLevel,
 } from "./CyFunTiers/CyFunTiers";
-
-export { StatsBand } from "./StatsBand/StatsBand";
-export type { StatsBandProps, StatItem } from "./StatsBand/StatsBand";
 
 export { ProcessSteps } from "./ProcessSteps/ProcessSteps";
 export type { ProcessStepsProps, ProcessStep } from "./ProcessSteps/ProcessSteps";
@@ -43,6 +29,3 @@ export type { ArticleCardProps } from "./ArticleCard/ArticleCard";
 
 export { CTABox } from "./CTABox/CTABox";
 export type { CTABoxProps, CTAAction } from "./CTABox/CTABox";
-
-export { StatHook } from "./StatHook/StatHook";
-export type { StatHookProps } from "./StatHook/StatHook";

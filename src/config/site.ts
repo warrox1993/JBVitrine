@@ -11,10 +11,17 @@ export const social = {
   tryhackme: "https://tryhackme.com/p/Warrox1993",
 } as const;
 
+/** Raw phone in E.164 — the single source; the tel: href is derived from it. */
+const phone = "+32475205562";
+
 export const contact = {
   email: "jeanbaptiste.dhondt1@gmail.com",
-  /** E.164 for tel: links. */
-  phoneHref: "tel:+32475205562",
+  /** Server-side sender address (transactional mail) — distinct from the public inbox. */
+  senderEmail: "contact@smidjan.be",
+  /** Phone in E.164 (e.g. for schema.org telephone). */
+  phone,
+  /** tel: link derived from the E.164 number. */
+  phoneHref: `tel:${phone}`,
   /** Human-readable phone shown in the UI. */
   phoneLabel: "0475 20 55 62",
 } as const;

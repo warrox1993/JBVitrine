@@ -2,11 +2,6 @@
 .head {
   max-width: 720px;
 }
-.center {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
 .title {
   font-size: clamp(30px, 3.8vw, 46px);
   margin-top: 14px;
@@ -23,11 +18,6 @@
   line-height: 1.65;
   max-width: 60ch;
 }
-.center .lead {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* On-dark variant (navy section backgrounds) */
 .onDark .title {
   color: var(--white);

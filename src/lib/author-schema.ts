@@ -5,6 +5,8 @@
  * plutôt qu'une organisation, ce qui est mieux pour les blogs.
  */
 
+import { social, siteUrl } from "@/config/site";
+
 export const authorSchema = {
   "@type": "Person",
   // Même @id que personSchema (schema.ts) pour que Google consolide les deux
@@ -13,7 +15,7 @@ export const authorSchema = {
   name: "Jean-Baptiste Dhondt",
   givenName: "Jean-Baptiste",
   familyName: "Dhondt",
-  url: "https://smidjan.be/agence",
+  url: `${siteUrl}/agence`,
   // Pas de champ `image` : le portrait est un placeholder « photo à venir » et
   // le fichier /images/team/jb-dhondt.webp n'existe pas. On ne référence pas une
   // image inexistante en JSON-LD (honnêteté + évite un lien cassé).
@@ -40,11 +42,7 @@ export const authorSchema = {
     "Sécurité des applications",
     "Sécurité offensive (TryHackMe)",
   ],
-  sameAs: [
-    "https://www.linkedin.com/in/jean-baptistedhondt",
-    "https://github.com/warrox1993",
-    "https://smidjan.be",
-  ],
+  sameAs: [social.linkedin, social.github, siteUrl],
   address: {
     "@type": "PostalAddress",
     addressRegion: "Wallonie",
@@ -55,13 +53,3 @@ export const authorSchema = {
     name: "Belgique",
   },
 } as const;
-
-/**
- * Fonction helper pour obtenir le schema author avec possibilité de l'étendre
- */
-export function getAuthorSchema(overrides?: Partial<typeof authorSchema>) {
-  return {
-    ...authorSchema,
-    ...overrides,
-  };
-}

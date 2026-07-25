@@ -63,6 +63,73 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+/* Signature entrance: the band settles like a pressed plaque finding its rest
+   angle (tiny rotate/scale overshoot then correct). Transform-only → fully
+   compositor-driven. Same easing family as .host.show so the slide-in and the
+   settle read as one choreographed gesture. Runs once when .show is applied. */
+.host.show .ribbon {
+  animation: ribbonSettle 0.85s cubic-bezier(0.16, 0.84, 0.3, 1) both;
+}
+
+@keyframes ribbonSettle {
+  0% {
+    transform: rotate(-47deg) scale(0.9);
+  }
+  58% {
+    transform: rotate(-44.3deg) scale(1.035);
+  }
+  78% {
+    transform: rotate(-45.3deg) scale(0.99);
+  }
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+}
+
+/* Idle signature: a slim gold glint sweeps the band once on arrival, then again
+   every 7s — a slow "catching the light" luxury shimmer, not a loop you notice.
+   Pure ::after (no markup change), sized to .ribbon so anything past the edges
+   is caught by .host's existing overflow:hidden corner clip. Opacity+transform
+   only. ~0.14 sweeps/sec of a soft highlight → nowhere near WCAG 2.3.1's flash
+   threshold. */
+.ribbon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 42%,
+    rgba(255, 241, 209, 0.55) 50%,
+    transparent 58%
+  );
+  opacity: 0;
+  transform: translateX(-130%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.host.show .ribbon::after {
+  animation: ribbonSheen 7s ease-in-out 1.5s infinite;
+}
+
+@keyframes ribbonSheen {
+  0% {
+    transform: translateX(-130%);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.9;
+  }
+  30% {
+    transform: translateX(130%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(130%);
+    opacity: 0;
+  }
+}
+
 .label {
   line-height: 1;
 }
@@ -140,6 +207,14 @@
   .host.show {
     transition: opacity 0.2s ease;
     transform: none;
+  }
+  /* No settle, no shimmer: the ribbon appears instantly in its resting pose. */
+  .host.show .ribbon {
+    animation: none;
+  }
+  .ribbon::after {
+    animation: none;
+    opacity: 0;
   }
   .dot {
     animation: none;

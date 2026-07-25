@@ -1,5 +1,4 @@
 import { CSSProperties } from "react";
-import { toPercentage } from "@/lib/animations";
 import styles from "./ProgressBar.module.css";
 
 export type ProgressBarProps = {
@@ -37,7 +36,8 @@ export function ProgressBar({
   ariaLabel,
   color,
 }: ProgressBarProps) {
-  const percentage = toPercentage(value, max, 1);
+  // Percentage of the bar to fill, rounded to 1 decimal.
+  const percentage = Number(((value / max) * 100).toFixed(1));
   const fillStyle: CSSProperties = {
     [direction === "horizontal" ? "width" : "height"]: `${percentage}%`,
   };

@@ -1,3 +1,5 @@
+import { social, contact } from "@/config/site";
+
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -11,8 +13,8 @@ export const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Service",
-    telephone: "+32475205562",
-    email: "jeanbaptiste.dhondt1@gmail.com",
+    telephone: contact.phone,
+    email: contact.email,
     availableLanguage: ["fr-BE", "French"],
     areaServed: ["BE", "Wallonie"],
   },
@@ -21,10 +23,7 @@ export const organizationSchema = {
     addressCountry: "BE",
     addressRegion: "Wallonie",
   },
-  sameAs: [
-    "https://www.linkedin.com/in/jean-baptistedhondt",
-    "https://github.com/warrox1993",
-  ],
+  sameAs: [social.linkedin, social.github],
 };
 
 export const websiteSchema = {
@@ -50,8 +49,8 @@ export const localBusinessSchema = {
   description:
     "Jean-Baptiste Dhondt (Smidjan), praticien en cybersécurité en Wallonie : sécurité cloud, réseau et infrastructure, sécurité web, et accompagnement à la conformité NIS2 / CyberFundamentals (CCB).",
   url: "https://smidjan.be",
-  telephone: "+32475205562",
-  email: "jeanbaptiste.dhondt1@gmail.com",
+  telephone: contact.phone,
+  email: contact.email,
   address: {
     "@type": "PostalAddress",
     addressCountry: "BE",
@@ -67,10 +66,7 @@ export const localBusinessSchema = {
       name: "Belgique",
     },
   ],
-  sameAs: [
-    "https://www.linkedin.com/in/jean-baptistedhondt",
-    "https://github.com/warrox1993",
-  ],
+  sameAs: [social.linkedin, social.github],
   // NOTE: pas de hasOfferCatalog (catalogue d'offres payantes) ni de foundingDate
   // tant que l'entité n'est pas immatriculée (BCE/TVA « en cours »). Annoncer en
   // JSON-LD une ProfessionalService avec offres payantes contredirait les mentions
@@ -129,11 +125,7 @@ export const personSchema = {
     { "@type": "EducationalOrganization", name: "ISL - Institut Saint-Laurent" },
     { "@type": "EducationalOrganization", name: "TechnoFutur TIC" },
   ],
-  sameAs: [
-    "https://www.linkedin.com/in/jean-baptistedhondt",
-    "https://github.com/warrox1993",
-    "https://tryhackme.com/p/Warrox1993",
-  ],
+  sameAs: [social.linkedin, social.github, social.tryhackme],
 };
 
 // FAQPage Schema : reflète la FAQ visible de /conformite-nis2 (NIS2 / CyFun)

@@ -10,7 +10,6 @@ export interface SectionHeadingProps {
   lead?: React.ReactNode;
   /** Heading level for the title (default h2). */
   as?: "h1" | "h2" | "h3";
-  center?: boolean;
   /** Style for navy backgrounds (white title, muted lead, tinted eyebrow). */
   onDark?: boolean;
   id?: string;
@@ -28,8 +27,6 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   const Tag = as;
-  // `center` is intentionally ignored: all section headings are left-aligned
-  // to match the home style (site-wide alignment harmonisation).
   const cn = [
     styles.head,
     onDark ? styles.onDark : "",

@@ -2,7 +2,7 @@ import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher/LocaleSwitcher";
 import { Icon } from "@/components/ui/Icon/Icon";
-import { social } from "@/config/site";
+import { social, contact } from "@/config/site";
 import styles from "./SiteFooter.module.css";
 
 const PROFILE_LINKS = [
@@ -80,7 +80,7 @@ export default async function SiteFooter() {
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                 </svg>
-                <a href="tel:+32475205562">0475 20 55 62</a>
+                <a href={contact.phoneHref}>{contact.phoneLabel}</a>
               </li>
               <li>
                 <svg
@@ -95,7 +95,7 @@ export default async function SiteFooter() {
                   <rect x="2" y="4" width="20" height="16" rx="2" />
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
-                <a href="mailto:jeanbaptiste.dhondt1@gmail.com">jeanbaptiste.dhondt1@gmail.com</a>
+                <a href={`mailto:${contact.email}`}>{contact.email}</a>
               </li>
             </ul>
             <h2 className={`${styles.heading} ${styles.headingSpaced}`}>
