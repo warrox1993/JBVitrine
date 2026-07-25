@@ -1042,7 +1042,7 @@
     "learning": {
       "title": "Wat ik nu leer",
       "items": [
-        { "title": "CCNA (Cisco)", "desc": "Netwerken: routing, switching, security — ter voorbereiding van de certificering." },
+        { "title": "CCNA (Cisco)", "desc": "Mijn aanpak: het CCNA-traject op Pluralsight, oefenen met Packet Tracer-labs die de community op GitHub deelt, daarna de proefexamens van Boson. Ik doe het officiële examen pas vanaf 800/1000 op de proef.", "href": "https://www.pluralsight.com/paths/cisco-ccna-cisco-certified-network-associate-200-301", "links": [ { "label": "GitHub-labs", "href": "https://github.com/topics/ccna" }, { "label": "Boson proefexamens", "href": "https://boson.com/product/exsim-max-for-cisco-200-301-ccna/" } ] },
         { "title": "Azure-beveiliging (AZ-104 → AZ-500)", "desc": "Beheer en beveiliging van de Microsoft-cloud, in het verlengde van AZ-900." },
         { "title": "Offensieve beveiliging (TryHackMe)", "desc": "Aanvallen begrijpen om beter te verdedigen — gestage voortgang." }
       ]

@@ -27,7 +27,13 @@ export async function generateMetadata({
   };
 }
 
-type ListItem = { title: string; desc: string };
+type ResourceLink = { label: string; href: string };
+type ListItem = {
+  title: string;
+  desc: string;
+  href?: string;
+  links?: ResourceLink[];
+};
 type Milestone = { period: string; title: string; desc: string };
 
 export default async function MaintenantPage({
@@ -75,8 +81,36 @@ export default async function MaintenantPage({
                 <li key={it.title}>
                   <Icon name="check" size={16} strokeWidth={2.4} />
                   <div>
-                    <b>{it.title}</b>
+                    <b>
+                      {it.href ? (
+                        <a
+                          href={it.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.titleLink}
+                        >
+                          {it.title}
+                        </a>
+                      ) : (
+                        it.title
+                      )}
+                    </b>
                     <span>{it.desc}</span>
+                    {it.links && it.links.length > 0 && (
+                      <span className={styles.resLinks}>
+                        {it.links.map((l) => (
+                          <a
+                            key={l.href}
+                            href={l.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.resChip}
+                          >
+                            {l.label}
+                          </a>
+                        ))}
+                      </span>
+                    )}
                   </div>
                 </li>
               ))}

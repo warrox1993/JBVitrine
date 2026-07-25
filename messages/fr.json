@@ -1042,7 +1042,7 @@
     "learning": {
       "title": "J'apprends en ce moment",
       "items": [
-        { "title": "CCNA (Cisco)", "desc": "Réseaux : routage, switching, sécurité — en préparation de la certification." },
+        { "title": "CCNA (Cisco)", "desc": "Ma méthode : le cursus CCNA sur Pluralsight, de l'entraînement sur des labs Packet Tracer partagés par la communauté sur GitHub, puis les examens blancs Boson. Je ne passe l'examen officiel qu'à partir de 800/1000 en blanc.", "href": "https://www.pluralsight.com/paths/cisco-ccna-cisco-certified-network-associate-200-301", "links": [ { "label": "Labs GitHub", "href": "https://github.com/topics/ccna" }, { "label": "Examens blancs Boson", "href": "https://boson.com/product/exsim-max-for-cisco-200-301-ccna/" } ] },
         { "title": "Sécurité Azure (AZ-104 → AZ-500)", "desc": "Administration et sécurité du cloud Microsoft, dans la continuité de l'AZ-900." },
         { "title": "Sécurité offensive (TryHackMe)", "desc": "Comprendre les attaques pour mieux défendre — progression régulière." }
       ]

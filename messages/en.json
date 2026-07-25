@@ -1042,7 +1042,7 @@
     "learning": {
       "title": "What I'm learning now",
       "items": [
-        { "title": "CCNA (Cisco)", "desc": "Networking: routing, switching, security — preparing for the certification." },
+        { "title": "CCNA (Cisco)", "desc": "My method: the CCNA path on Pluralsight, practising on Packet Tracer labs the community shares on GitHub, then Boson practice exams. I only sit the real exam once I hit at least 800/1000 on the mocks.", "href": "https://www.pluralsight.com/paths/cisco-ccna-cisco-certified-network-associate-200-301", "links": [ { "label": "GitHub labs", "href": "https://github.com/topics/ccna" }, { "label": "Boson practice exams", "href": "https://boson.com/product/exsim-max-for-cisco-200-301-ccna/" } ] },
         { "title": "Azure security (AZ-104 → AZ-500)", "desc": "Microsoft cloud administration and security, building on AZ-900." },
         { "title": "Offensive security (TryHackMe)", "desc": "Understanding attacks to defend better — steady progress." }
       ]
