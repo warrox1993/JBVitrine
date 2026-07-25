@@ -114,7 +114,7 @@ export default async function HomePage({
 
       <RecruiterBand />
 
-      <Section variant="tint" id="vue-ensemble" divider>
+      <Section variant="tint" id="vue-ensemble" divider bleed>
         <BentoGrid />
       </Section>
 

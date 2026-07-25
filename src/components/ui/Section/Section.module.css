@@ -28,6 +28,14 @@
   position: relative;
 }
 
+/* Opt-in full-bleed feature band (see `bleed` prop): widen this one section's
+   container well past the 1180px default so it stands out as the "wide moment"
+   against the tighter sections around it. Side padding is kept (the .container
+   class), so content never touches the edge or the fixed left index rail. */
+.bleed .inner {
+  max-width: min(1520px, 100%);
+}
+
 /* Opt-in gradient hairline (see `divider` prop) — a fade
    transparent → accent → transparent across the full section width, instead
    of a flat grey rule. `.section` is already `position: relative`. */

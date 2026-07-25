@@ -16,6 +16,12 @@ export interface SectionProps {
    * flat grey rule. Defaults to false so existing pages are unaffected.
    */
   divider?: boolean;
+  /**
+   * Opt-in "breakout": widen this section's container well beyond the default
+   * 1180px so it reads as a full-bleed feature band against the tighter
+   * sections around it. Defaults to false — use on ONE section only.
+   */
+  bleed?: boolean;
   id?: string;
   className?: string;
 }
@@ -30,10 +36,17 @@ export function Section({
   gridBg,
   contained = true,
   divider = false,
+  bleed = false,
   id,
   className,
 }: SectionProps) {
-  const cn = [styles.section, styles[variant], divider ? styles.divider : "", className]
+  const cn = [
+    styles.section,
+    styles[variant],
+    divider ? styles.divider : "",
+    bleed ? styles.bleed : "",
+    className,
+  ]
     .filter(Boolean)
     .join(" ");
   return (
