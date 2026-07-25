@@ -1,7 +1,7 @@
 // src/app/layout.tsx
 // Critical CSS first (variables, breakpoints, typography)
 import './styles/variables.css';
-import { contact } from "@/config/site";
+import { contact, siteUrl } from "@/config/site";
 import './styles/breakpoints.css';
 import './styles/typography.css'; // Unified typography (mobile-first)
 import './globals.css';
@@ -62,12 +62,11 @@ export const metadata: Metadata = {
     },
     description:
         'Jean-Baptiste Dhondt (Smidjan), praticien en cybersécurité en Wallonie : sécurité cloud, réseau, infrastructure et web, et préparation à la conformité NIS2 / CyberFundamentals (CCB). Je montre mon travail, avec des preuves.',
-authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
+authors: [{ name: 'Smidjan', url: siteUrl }],
     creator: 'Smidjan',
     publisher: 'Smidjan',
 
-    // IMPORTANT: Remplace par ton vrai domaine dès que disponible
-    metadataBase: new URL('https://smidjan.be'),
+    metadataBase: new URL(siteUrl),
 
     alternates: {
         canonical: '/',
@@ -81,11 +80,11 @@ authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
         title: 'Jean-Baptiste Dhondt (Smidjan) | Sécurité cloud, réseau, infra & web, Wallonie',
         description:
             'Praticien en cybersécurité en Wallonie : sécurité cloud, réseau, infrastructure et web, et préparation à la conformité NIS2 / CyberFundamentals. Je montre mon travail, avec des preuves.',
-        url: 'https://smidjan.be',
+        url: siteUrl,
         siteName: 'Smidjan',
         images: [
             {
-                url: "https://smidjan.be/og-image.webp",
+                url: `${siteUrl}/og-image.webp`,
                 width: 1200,
                 height: 630,
                 alt: 'Jean-Baptiste Dhondt, Smidjan : sécurité cloud, réseau, infra et web en Wallonie',
