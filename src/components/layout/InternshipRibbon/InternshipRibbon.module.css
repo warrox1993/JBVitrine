@@ -1,96 +1,61 @@
-/* Bottom-right diagonal "internship" ribbon. Fixed, overlays the page, clipped
-   to a corner square so the rotated band reads as a corner flag. It appears on
-   its own, holds, then auto-retracts — there is no manual dismiss. */
+/* "Internship" availability pill — floats in the bottom-right corner, clearly
+   detached from the edges so it's fully legible. It slides up on its own a
+   moment after load, holds, then retracts. No manual dismiss. */
 .host {
   position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 320px;
-  height: 320px;
-  overflow: hidden;
+  right: 24px;
+  bottom: 24px;
   z-index: 55;
   pointer-events: none; /* purely informational — nothing to click */
-  /* Hidden until .show; entrance slides/fades in from the corner. When .show is
-     removed (auto-hide) the same transition plays in reverse to retract it. */
-  visibility: hidden;
   opacity: 0;
-  transform: translate(30px, 30px);
+  visibility: hidden;
+  transform: translateY(18px);
   transition:
-    opacity 0.6s ease,
-    transform 0.7s cubic-bezier(0.16, 0.84, 0.3, 1),
-    visibility 0s linear 0.7s;
+    opacity 0.5s ease,
+    transform 0.55s cubic-bezier(0.16, 0.84, 0.3, 1),
+    visibility 0s linear 0.55s;
 }
 
 .host.show {
-  visibility: visible;
   opacity: 1;
-  transform: translate(0, 0);
+  visibility: visible;
+  transform: translateY(0);
   transition:
-    opacity 0.6s ease,
-    transform 0.7s cubic-bezier(0.16, 0.84, 0.3, 1);
+    opacity 0.5s ease,
+    transform 0.55s cubic-bezier(0.16, 0.84, 0.3, 1);
 }
 
-/* The diagonal band itself — larger so the label reads clearly. */
+/* The pill itself. */
 .ribbon {
-  position: absolute;
-  bottom: 66px;
-  right: -78px;
-  width: 348px;
-  display: flex;
+  position: relative;
+  overflow: hidden; /* clip the gold sheen sweep */
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 12px;
-  padding: 16px 72px;
-  transform: rotate(-45deg);
-  transform-origin: center;
+  padding: 15px 24px;
+  border-radius: 999px;
 
-  /* Rich emerald band with a deluxe gold trim — visible but not neon. */
-  background: linear-gradient(135deg, #13a277 0%, #0a6b50 52%, #0a4536 100%);
+  /* Rich emerald with a deluxe gold trim — visible but not neon. */
+  background: linear-gradient(135deg, #13a277 0%, #0a6b50 55%, #0a4536 100%);
   color: #f4fff9;
   font-family: var(--mono, ui-monospace, monospace);
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   white-space: nowrap;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 
-  border-top: 1.5px solid rgba(240, 214, 145, 0.85); /* gold hairline */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1.5px solid rgba(240, 214, 145, 0.6); /* gold hairline */
   box-shadow:
-    0 16px 40px rgba(0, 0, 0, 0.42),
-    0 0 40px rgba(16, 185, 129, 0.42),
+    0 18px 44px -12px rgba(0, 0, 0, 0.55),
+    0 0 40px rgba(16, 185, 129, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-/* Signature entrance: the band settles like a pressed plaque finding its rest
-   angle (tiny rotate/scale overshoot then correct). Transform-only → fully
-   compositor-driven. Same easing family as .host.show so the slide-in and the
-   settle read as one choreographed gesture. Runs once when .show is applied. */
-.host.show .ribbon {
-  animation: ribbonSettle 0.85s cubic-bezier(0.16, 0.84, 0.3, 1) both;
-}
-
-@keyframes ribbonSettle {
-  0% {
-    transform: rotate(-47deg) scale(0.9);
-  }
-  58% {
-    transform: rotate(-44.3deg) scale(1.035);
-  }
-  78% {
-    transform: rotate(-45.3deg) scale(0.99);
-  }
-  100% {
-    transform: rotate(-45deg) scale(1);
-  }
-}
-
-/* Idle signature: a slim gold glint sweeps the band once on arrival, then again
-   every 7s — a slow "catching the light" luxury shimmer, not a loop you notice.
-   Pure ::after (no markup change), sized to .ribbon so anything past the edges
-   is caught by .host's existing overflow:hidden corner clip. Opacity+transform
-   only. Well below WCAG 2.3.1's flash threshold. */
+/* Idle signature: a slim gold glint sweeps the pill once on arrival, then again
+   every 7s — a slow "catching the light" luxury shimmer. Opacity+transform only,
+   well below WCAG 2.3.1's flash threshold. */
 .ribbon::after {
   content: "";
   position: absolute;
@@ -98,7 +63,7 @@
   background: linear-gradient(
     100deg,
     transparent 42%,
-    rgba(255, 241, 209, 0.55) 50%,
+    rgba(255, 241, 209, 0.5) 50%,
     transparent 58%
   );
   opacity: 0;
@@ -108,7 +73,7 @@
 }
 
 .host.show .ribbon::after {
-  animation: ribbonSheen 7s ease-in-out 1.5s infinite;
+  animation: ribbonSheen 7s ease-in-out 1s infinite;
 }
 
 @keyframes ribbonSheen {
@@ -166,10 +131,6 @@
     transition: opacity 0.2s ease;
     transform: none;
   }
-  /* No settle, no shimmer: the ribbon appears instantly in its resting pose. */
-  .host.show .ribbon {
-    animation: none;
-  }
   .ribbon::after {
     animation: none;
     opacity: 0;
@@ -179,18 +140,20 @@
   }
 }
 
-/* Slightly smaller on phones so the flag stays tasteful, but still legible. */
-@media (max-width: 480px) {
+/* Phones: sit above the bottom edge, full-ish width, text may wrap. */
+@media (max-width: 560px) {
   .host {
-    width: 264px;
-    height: 264px;
+    right: 12px;
+    bottom: 16px;
+    left: 12px;
+    display: flex;
+    justify-content: center;
   }
   .ribbon {
-    bottom: 54px;
-    right: -76px;
-    width: 300px;
-    padding: 13px 64px;
+    padding: 13px 18px;
     font-size: 13px;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.1em;
+    white-space: normal;
+    text-align: center;
   }
 }
