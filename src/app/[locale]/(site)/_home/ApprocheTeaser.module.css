@@ -1,8 +1,26 @@
-/* ApprocheTeaser: centered editorial excerpt, comfortable reading width. Background comes from the Section variant. */
-.inner {
-  max-inline-size: 65ch;
-  margin: 0 auto;
-  text-align: center;
+/* ApprocheTeaser: personal-origin editorial excerpt, as an asymmetric band —
+   mirrors CyfunTeaser with the sides swapped: narrow rail (paragraphs + CTA)
+   on the left, wide feature column (eyebrow + heading + quote mark) on the
+   right. The heading stays first in the DOM (sane reading order); `order`
+   below only changes where it lands visually. Background comes from the
+   Section tint variant. */
+
+.band {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.rail {
+  order: 1;
+  min-width: 0;
+  padding-top: var(--space-2);
+}
+
+.feature {
+  order: 2;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -18,7 +36,7 @@
 .title {
   font-family: var(--font-display);
   font-size: var(--text-3xl);
-  margin: var(--space-3) auto 0;
+  margin: var(--space-3) 0 0;
   letter-spacing: -0.02em;
   line-height: 1.15;
   color: var(--color-text);
@@ -26,11 +44,31 @@
   text-wrap: balance;
 }
 
+/* Quote-mark badge — the wide column's "graphic" device, giving it the same
+   visual weight as CyfunTeaser's benefits card. Purely decorative
+   (aria-hidden), soft tinted circle so it reads as an editorial ornament
+   rather than another piece of content. */
+.mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  margin-top: var(--space-6);
+  border-radius: var(--radius-full);
+  background: var(--color-primary-8);
+  color: var(--color-primary-40);
+}
+
 .lead {
   font-size: var(--text-lg);
   color: var(--color-text-muted);
   line-height: 1.65;
   margin: var(--space-4) 0 0;
+}
+
+.lead:first-child {
+  margin-top: 0;
 }
 
 .cta {
@@ -56,6 +94,36 @@
 .cta:hover span,
 .cta:focus-visible span {
   transform: translateX(4px);
+}
+
+/* Collapse the band to a single column. `order` is reset so the natural DOM
+   order takes over: heading/feature first, then the rail — the required
+   "feature above text" mobile stacking. */
+@media (max-width: 820px) {
+  .band {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .rail,
+  .feature {
+    order: initial;
+  }
+
+  .rail {
+    padding-top: 0;
+  }
+
+  .mark {
+    width: 72px;
+    height: 72px;
+    margin-top: var(--space-5);
+  }
+
+  .mark svg {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

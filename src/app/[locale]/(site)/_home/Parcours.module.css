@@ -1,4 +1,6 @@
-/* Parcours: eyebrow + heading, then a vertical timeline (rail + emerald dots). */
+/* Parcours: eyebrow + heading, then a compact index of title-left / year-right
+   rows (no vertical rail/dots) — scannable, uses the horizontal width instead
+   of stacking tall. Inspired by editorial "experience" lists. */
 .eyebrow {
   font-family: var(--font-mono);
   color: var(--color-primary);
@@ -21,81 +23,91 @@
   max-width: 32ch;
 }
 
-.timeline {
-  position: relative;
+.list {
   margin-top: var(--space-6);
-  padding-left: var(--space-5);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 0.4em;
-  bottom: 0.4em;
-  left: 5px;
-  width: 2px;
-  background: var(--color-border);
+  border-top: 1px solid var(--color-border);
 }
 
 .item {
-  position: relative;
+  display: grid;
+  grid-template-columns: 2.25rem 1fr auto;
+  grid-template-areas: "num title period" "num desc desc";
+  align-items: baseline;
+  column-gap: var(--space-4);
+  row-gap: var(--space-1);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-base);
 }
 
-.item::before {
-  content: "";
-  position: absolute;
-  top: 0.4em;
-  left: calc(-1 * var(--space-5) + 1px);
-  width: 11px;
-  height: 11px;
-  border-radius: var(--radius-full);
-  background: var(--color-primary);
-  box-shadow: 0 0 0 4px var(--color-bg);
+.item:hover {
+  background: var(--color-bg-alt);
 }
 
-.period {
-  display: block;
+.index {
+  grid-area: num;
   font-family: var(--font-mono);
-  color: var(--color-primary);
   font-size: var(--text-sm);
   font-weight: 600;
-  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+  align-self: start;
 }
 
 .itemTitle {
+  grid-area: title;
   font-family: var(--font-display);
   font-size: var(--text-lg);
   font-weight: 700;
   color: var(--color-text);
-  margin: var(--space-1) 0 0;
+  margin: 0;
+}
+
+.period {
+  grid-area: period;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-align: right;
+  white-space: nowrap;
 }
 
 .desc {
+  grid-area: desc;
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   line-height: 1.6;
-  margin: var(--space-1) 0 0;
+  margin: 0;
+  max-width: 60ch;
 }
 
 .certs {
-  margin-top: var(--space-6);
-  padding-left: var(--space-5);
+  margin-top: var(--space-5);
+  padding-left: calc(2.25rem + var(--space-4));
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  .timeline {
-    padding-left: var(--space-4);
+@media (max-width: 640px) {
+  .item {
+    grid-template-columns: 1.75rem 1fr;
+    grid-template-areas: "num title" "num period" "num desc";
+    row-gap: 0.2rem;
   }
-  .item::before {
-    left: calc(-1 * var(--space-4) + 1px);
+
+  .period {
+    text-align: left;
+    margin-top: 0.1rem;
   }
+
   .certs {
-    padding-left: var(--space-4);
+    padding-left: calc(1.75rem + var(--space-4));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item {
+    transition: none;
   }
 }

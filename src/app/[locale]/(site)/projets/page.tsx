@@ -221,16 +221,23 @@ export default async function ProjetsPage({
                   <ProjectCover projectKey={item.key} />
                 </div>
                 <div className={styles.bandBody}>
-                  <span className={styles.bandIndex} aria-hidden="true">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span
-                    className={`${styles.bandStatus} ${isPublic ? styles.bandStatusPublic : styles.bandStatusPrivate}`}
-                  >
-                    <Icon name={isPublic ? "github" : "lock"} size={13} strokeWidth={2} />
-                    {isPublic ? t("grid.statusPublic") : t("grid.statusPrivate")}
-                  </span>
-                  <h3 className={styles.bandTitle}>{t(`grid.items.${item.key}.name`)}</h3>
+                  <div className={styles.bandHeader}>
+                    <div className={styles.bandHeaderTitle}>
+                      <span className={styles.bandIndex} aria-hidden="true">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <h3 className={styles.bandTitle}>{t(`grid.items.${item.key}.name`)}</h3>
+                    </div>
+                    <div className={styles.bandHeaderMeta}>
+                      <span
+                        className={`${styles.bandStatus} ${isPublic ? styles.bandStatusPublic : styles.bandStatusPrivate}`}
+                      >
+                        <Icon name={isPublic ? "github" : "lock"} size={13} strokeWidth={2} />
+                        {isPublic ? t("grid.statusPublic") : t("grid.statusPrivate")}
+                      </span>
+                      {tech[0] ? <span className={styles.bandTechTag}>{tech[0]}</span> : null}
+                    </div>
+                  </div>
                   <p className={styles.bandDesc}>{t(`grid.items.${item.key}.description`)}</p>
                   <div className={styles.bandTech}>
                     {tech.map((tag) => (

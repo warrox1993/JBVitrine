@@ -21,6 +21,7 @@ import { CyfunTeaser } from "./_home/CyfunTeaser";
 import { Parcours } from "./_home/Parcours";
 import { ApprocheTeaser } from "./_home/ApprocheTeaser";
 import { SecurityScan } from "./_home/SecurityScan";
+import { SectionRail } from "./_home/SectionRail";
 
 export async function generateMetadata({
   params,
@@ -95,6 +96,18 @@ export default async function HomePage({
         type="application/ld+json"
         nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeWebPageSchema) }}
+      />
+
+      <SectionRail
+        items={[
+          { id: "vue-ensemble", label: t("rail.vueEnsemble") },
+          { id: "savoir-faire", label: t("rail.savoirFaire") },
+          { id: "cyfun", label: t("rail.cyfun") },
+          { id: "parcours", label: t("rail.parcours") },
+          { id: "approche", label: t("rail.approche") },
+          { id: "securite", label: t("rail.securite") },
+          { id: "contact", label: t("rail.contact") },
+        ]}
       />
 
       <Hero />

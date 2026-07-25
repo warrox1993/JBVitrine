@@ -485,6 +485,15 @@
     }
   },
   "home": {
+    "rail": {
+      "vueEnsemble": "Overzicht",
+      "savoirFaire": "Expertise",
+      "cyfun": "CyFun",
+      "parcours": "Traject",
+      "approche": "Aanpak",
+      "securite": "Beveiliging",
+      "contact": "Contact"
+    },
     "bento": {
       "eyebrow": "Overzicht",
       "title": "Het profiel, in één oogopslag",

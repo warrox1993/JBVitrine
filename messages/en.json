@@ -485,6 +485,15 @@
     }
   },
   "home": {
+    "rail": {
+      "vueEnsemble": "Overview",
+      "savoirFaire": "Expertise",
+      "cyfun": "CyFun",
+      "parcours": "Journey",
+      "approche": "Approach",
+      "securite": "Security",
+      "contact": "Contact"
+    },
     "bento": {
       "eyebrow": "Overview",
       "title": "The profile, at a glance",

@@ -1,4 +1,23 @@
-/* CyfunTeaser: flagship-project block, 8 benefits + honesty note. Background comes from the Section tint variant. */
+/* CyfunTeaser: flagship-project block as an asymmetric band — wide feature
+   column (heading + 8-point benefits panel) beside a narrow rail (lead +
+   honesty note + CTA). Background comes from the Section tint variant. */
+
+.band {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.feature {
+  min-width: 0;
+}
+
+.rail {
+  min-width: 0;
+  padding-top: var(--space-2);
+}
+
 .eyebrow {
   font-family: var(--font-mono);
   color: var(--color-primary);
@@ -18,15 +37,7 @@
   color: var(--color-text);
   font-weight: 700;
   text-wrap: balance;
-  max-width: 32ch;
-}
-
-.lead {
-  font-size: var(--text-lg);
-  color: var(--color-text-muted);
-  line-height: 1.6;
-  margin: var(--space-3) 0 0;
-  max-width: 60ch;
+  max-width: 24ch;
 }
 
 .grid {
@@ -34,6 +45,25 @@
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-3) var(--space-4);
   margin-top: var(--space-6);
+  padding: var(--space-5);
+  background: var(--color-surface-solid);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient hairline across the panel's top edge — the same "line of light"
+   device used by Section's `divider`, scoped to this benefits card so the
+   feature column reads as a distinct visual block, not just a text list. */
+.grid::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  opacity: 0.7;
 }
 
 .item {
@@ -57,8 +87,15 @@
   margin-top: 0.1em;
 }
 
+.lead {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
 .honesty {
-  margin-top: var(--space-6);
+  margin-top: var(--space-5);
   padding: var(--space-3) var(--space-4);
   background: var(--color-surface);
   border-left: 3px solid var(--color-primary);
@@ -98,9 +135,25 @@
   transform: translateX(4px);
 }
 
-@media (max-width: 768px) {
+/* Feature panel gets cramped for two columns before the band itself stacks
+   (see the 820px breakpoint below); drop to one column a little earlier so
+   the checklist never wraps into three-line rows in the tablet range. */
+@media (max-width: 960px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Collapse the band to a single column: feature (heading) above, rail
+   (copy + CTA) below — matches the natural DOM order, no reflow needed. */
+@media (max-width: 820px) {
+  .band {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .rail {
+    padding-top: 0;
   }
 }
 

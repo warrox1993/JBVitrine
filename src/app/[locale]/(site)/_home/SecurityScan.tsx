@@ -105,56 +105,60 @@ export function SecurityScan() {
 
   return (
     <Reveal>
-      <div className={styles.head}>
-        <span className={styles.eyebrow}>{t("eyebrow")}</span>
-        <h2 className={styles.title}>{t("title")}</h2>
-      </div>
-
-      <div className={styles.terminal} ref={rootRef} aria-label={t("title")}>
-        <div className={styles.bar} aria-hidden="true">
-          <span className={styles.dot} />
-          <span className={styles.dot} />
-          <span className={styles.dot} />
-        </div>
-        <div className={styles.body}>
-          <div className={styles.prompt}>
-            <span className={styles.sigil}>$</span> scan --headers smidjan.be
+      <div className={styles.band}>
+        <div className={styles.rail}>
+          <div className={styles.head}>
+            <span className={styles.eyebrow}>{t("eyebrow")}</span>
+            <h2 className={styles.title}>{t("title")}</h2>
           </div>
-          <ul className={styles.rows}>
-            {checks.slice(0, revealed).map((c) => (
-              <li key={c.key} className={styles.row}>
-                <span
-                  className={c.present ? styles.ok : styles.ko}
-                  aria-hidden="true"
-                >
-                  {c.present ? "✓" : "✕"}
-                </span>
-                <span className={styles.hName}>{c.header}</span>
-                <span className={styles.hState}>
-                  {c.present ? t("present") : t("absent")}
-                </span>
-              </li>
-            ))}
-          </ul>
-          {finalGrade && (
-            <div className={styles.result}>
-              <span className={styles.resultLabel}>{t("resultLabel")}</span>
-              <span
-                className={`${styles.gradeBadge} ${
-                  finalGrade === "A+" ? styles.gradeTop : ""
-                }`}
-              >
-                {finalGrade}
-              </span>
-              <span className={styles.resultNote}>
-                {t("score", { passed, total })}
-              </span>
+          <p className={styles.scanNote}>{t("lead")}</p>
+          <p className={styles.foot}>{t("foot")}</p>
+        </div>
+
+        <div className={styles.terminal} ref={rootRef} aria-label={t("title")}>
+          <div className={styles.bar} aria-hidden="true">
+            <span className={styles.dot} />
+            <span className={styles.dot} />
+            <span className={styles.dot} />
+          </div>
+          <div className={styles.body}>
+            <div className={styles.prompt}>
+              <span className={styles.sigil}>$</span> scan --headers smidjan.be
             </div>
-          )}
+            <ul className={styles.rows}>
+              {checks.slice(0, revealed).map((c) => (
+                <li key={c.key} className={styles.row}>
+                  <span
+                    className={c.present ? styles.ok : styles.ko}
+                    aria-hidden="true"
+                  >
+                    {c.present ? "✓" : "✕"}
+                  </span>
+                  <span className={styles.hName}>{c.header}</span>
+                  <span className={styles.hState}>
+                    {c.present ? t("present") : t("absent")}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            {finalGrade && (
+              <div className={styles.result}>
+                <span className={styles.resultLabel}>{t("resultLabel")}</span>
+                <span
+                  className={`${styles.gradeBadge} ${
+                    finalGrade === "A+" ? styles.gradeTop : ""
+                  }`}
+                >
+                  {finalGrade}
+                </span>
+                <span className={styles.resultNote}>
+                  {t("score", { passed, total })}
+                </span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-      <p className={styles.scanNote}>{t("lead")}</p>
-      <p className={styles.foot}>{t("foot")}</p>
     </Reveal>
   );
 }
