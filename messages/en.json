@@ -496,7 +496,7 @@
         "badges": [
           "Defence (telecom)",
           "AZ-900",
-          "IT Bachelor's in progress"
+          "Bachelor's in Management Programming (in progress)"
         ],
         "cta": "View my full CV"
       },
@@ -557,7 +557,7 @@
       "ctaSecondary": "My journey",
       "trust1": "Defence (telecom)",
       "trust2": "AZ-900",
-      "trust3": "IT Bachelor's degree in progress",
+      "trust3": "Bachelor's in Management Programming (in progress)",
       "availability": "Based in Wallonia, authorised to work in the EU. Open to freelance missions and opportunities, in Brussels, Wallonia or remote."
     },
     "capabilities": {
@@ -620,7 +620,7 @@
     "parcours": {
       "eyebrow": "Journey",
       "title": "A determined shift into cyber",
-      "certs": "Certifications : AZ-900 (2026), CCNA in progress, first-year IT Bachelor's completed.",
+      "certs": "Certifications : AZ-900 (2026), CCNA in progress, first and second Bachelor's years completed.",
       "items": [
         {
           "period": "2013-2017",
@@ -640,7 +640,7 @@
         {
           "period": "Today",
           "title": "Heading toward GRC / cyber",
-          "desc": "IT Bachelor's degree (adult education, ISL) alongside a job."
+          "desc": "Bachelor's in Management Programming (adult education, ISL) alongside a job."
         }
       ]
     },
@@ -750,7 +750,7 @@
         "title": "Use of the site",
         "p1": "You are free to browse this site and to quote its content fairly, citing the source. Please do not misuse it: no mass automated scraping, no attempt to harm its security or availability, and no reuse that suggests an affiliation or partnership that does not exist.",
         "h3": "Content for information only",
-        "p2": "The information published here (skills, projects, notes on NIS2 / CyFun) is provided for informational and educational purposes. Jean-Baptiste is a Bachelor's student in computer science (ISL school) and is continuing his training: the content reflects a level still being built and may evolve. It does not constitute personalised professional advice on which to base a decision without a prior conversation."
+        "p2": "The information published here (skills, projects, notes on NIS2 / CyFun) is provided for informational and educational purposes. Jean-Baptiste is a Bachelor's student in Management Programming (ISL school) and is continuing his training: the content reflects a level still being built and may evolve. It does not constitute personalised professional advice on which to base a decision without a prior conversation."
       },
       "responsabilite": {
         "title": "Liability",
@@ -1136,7 +1136,7 @@
       "title": "My roadmap to the <accent>internship</accent>",
       "lead": "Concrete goals, step by step. To be refined over time.",
       "items": [
-        { "period": "Ongoing", "title": "Foundations & certifications", "desc": "Computer science degree, AZ-900 earned, CCNA in preparation." },
+        { "period": "Ongoing", "title": "Foundations & certifications", "desc": "Bachelor's in Management Programming, AZ-900 earned, CCNA in preparation." },
         { "period": "2026", "title": "Go deeper into security", "desc": "AZ-104/AZ-500, offensive and defensive labs, published writeups." },
         { "period": "2027", "title": "Cybersecurity internship", "desc": "Goal: an internship to apply and grow these skills in a team, for real." }
       ]
@@ -1166,7 +1166,7 @@
       "kicker": "Curriculum vitae",
       "name": "Jean-Baptiste Dhondt",
       "role": "Cybersecurity · cloud · network · infrastructure & web",
-      "summary": "Transitioning into cybersecurity, with field experience (Belgian Defence, European Commission) reinvested in cloud, network and application security. Bachelor in computer science in progress, Java Full Stack bootcamp and two development internships in 2025.",
+      "summary": "Transitioning into cybersecurity, with field experience (Belgian Defence, European Commission) reinvested in cloud, network and application security. Bachelor's in Management Programming in progress, Java Full Stack bootcamp and two development internships in 2025.",
       "availLabel": "Availability",
       "availValue": "Seeking an internship from 2027",
       "locLabel": "Location",
@@ -1199,7 +1199,7 @@
   "certifications": {
     "meta": {
       "title": "Certifications & training | Jean-Baptiste Dhondt, Smidjan",
-      "description": "AZ-900 earned, CCNA in progress, Bachelor's in Computer Science in progress (ISL). The verifiable certification and training path of a cyber practitioner retraining in Wallonia.",
+      "description": "AZ-900 earned, CCNA in progress, Bachelor's in Management Programming in progress (ISL). The verifiable certification and training path of a cyber practitioner retraining in Wallonia.",
       "ogTitle": "Certifications & training, Smidjan",
       "ogDescription": "What's earned, what's in progress, what's targeted. A transparent certification path, nothing invented.",
       "ogImageAlt": "Certifications and training of Jean-Baptiste Dhondt, Smidjan",
@@ -1263,8 +1263,8 @@
       "lead": "An ongoing higher-education degree, complemented by an intensive bootcamp and two development internships.",
       "items": [
         {
-          "period": "In progress (Year 1 passed)",
-          "title": "Bachelor's in Computer Science",
+          "period": "In progress (Years 1 and 2 passed)",
+          "title": "Bachelor's in Management Programming",
           "desc": "ISL, adult education track, alongside a professional activity."
         },
         {

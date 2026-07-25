@@ -496,7 +496,7 @@
         "badges": [
           "Défense (télécom)",
           "AZ-900",
-          "Bachelier Info en cours"
+          "Bachelier en programmation de gestion (en cours)"
         ],
         "cta": "Voir mon CV complet"
       },
@@ -557,7 +557,7 @@
       "ctaSecondary": "Mon parcours",
       "trust1": "Défense (télécom)",
       "trust2": "AZ-900",
-      "trust3": "Bachelier Informatique en cours",
+      "trust3": "Bachelier en programmation de gestion (en cours)",
       "availability": "Basé en Wallonie, autorisé à travailler en UE. Ouvert aux missions et aux opportunités, Bruxelles, Wallonie ou télétravail."
     },
     "capabilities": {
@@ -620,7 +620,7 @@
     "parcours": {
       "eyebrow": "Parcours",
       "title": "Une reconversion déterminée vers la cyber",
-      "certs": "Certifications : AZ-900 (2026), CCNA en cours, Bac 1 Informatique validé.",
+      "certs": "Certifications : AZ-900 (2026), CCNA en cours, Bac 1 et Bac 2 validés.",
       "items": [
         {
           "period": "2013-2017",
@@ -640,7 +640,7 @@
         {
           "period": "Aujourd'hui",
           "title": "Cap GRC / cyber",
-          "desc": "Bachelier Informatique (promotion sociale, ISL) en parallèle d'un emploi."
+          "desc": "Bachelier en programmation de gestion (promotion sociale, ISL) en parallèle d'un emploi."
         }
       ]
     },
@@ -750,7 +750,7 @@
         "title": "Utilisation du site",
         "p1": "Vous êtes libre de consulter ce site et d'en citer le contenu de manière loyale, en indiquant la source. Il est demandé de ne pas en faire un usage abusif : extraction massive automatisée, tentative d'atteinte à sa sécurité ou à sa disponibilité, ou réutilisation laissant croire à une affiliation ou à un partenariat qui n'existe pas.",
         "h3": "Contenu à titre informatif",
-        "p2": "Les informations publiées ici (compétences, projets, notes sur NIS2 / CyFun) le sont à titre informatif et pédagogique. Jean-Baptiste est étudiant Bachelier en informatique (école ISL) et poursuit sa formation : le contenu reflète un niveau en construction et peut évoluer. Il ne constitue pas un conseil professionnel personnalisé sur lequel fonder une décision sans échange préalable."
+        "p2": "Les informations publiées ici (compétences, projets, notes sur NIS2 / CyFun) le sont à titre informatif et pédagogique. Jean-Baptiste est étudiant en Bachelier en programmation de gestion (école ISL) et poursuit sa formation : le contenu reflète un niveau en construction et peut évoluer. Il ne constitue pas un conseil professionnel personnalisé sur lequel fonder une décision sans échange préalable."
       },
       "responsabilite": {
         "title": "Responsabilité",
@@ -1136,7 +1136,7 @@
       "title": "Ma feuille de route vers le <accent>stage</accent>",
       "lead": "Des objectifs concrets, étape par étape. À affiner au fil du temps.",
       "items": [
-        { "period": "En cours", "title": "Fondations & certifications", "desc": "Bachelier en informatique, AZ-900 obtenu, CCNA en préparation." },
+        { "period": "En cours", "title": "Fondations & certifications", "desc": "Bachelier en programmation de gestion, AZ-900 obtenu, CCNA en préparation." },
         { "period": "2026", "title": "Approfondir la cybersécurité", "desc": "AZ-104 / AZ-500, labos offensifs et défensifs, writeups publiés." },
         { "period": "2027", "title": "Stage en cybersécurité", "desc": "Objectif : un stage pour appliquer et développer ces compétences en équipe et en conditions réelles." }
       ]
@@ -1166,7 +1166,7 @@
       "kicker": "Curriculum vitæ",
       "name": "Jean-Baptiste Dhondt",
       "role": "Cybersécurité · cloud · réseau · infrastructure & web",
-      "summary": "En reconversion vers la cybersécurité, avec une expérience de terrain (Défense belge, Commission européenne) réinvestie dans la sécurité cloud, réseau et applicative. Bachelier en informatique en cours, bootcamp Java Full Stack et deux stages de développement en 2025.",
+      "summary": "En reconversion vers la cybersécurité, avec une expérience de terrain (Défense belge, Commission européenne) réinvestie dans la sécurité cloud, réseau et applicative. Bachelier en programmation de gestion en cours, bootcamp Java Full Stack et deux stages de développement en 2025.",
       "availLabel": "Disponibilité",
       "availValue": "Recherche un stage à partir de 2027",
       "locLabel": "Localisation",
@@ -1199,7 +1199,7 @@
   "certifications": {
     "meta": {
       "title": "Certifications & formation | Jean-Baptiste Dhondt, Smidjan",
-      "description": "AZ-900 obtenu, CCNA en cours, Bachelier en Informatique en cours (ISL). Le parcours de certification et de formation, vérifiable, d'un praticien cyber en reconversion en Wallonie.",
+      "description": "AZ-900 obtenu, CCNA en cours, Bachelier en programmation de gestion en cours (ISL). Le parcours de certification et de formation, vérifiable, d'un praticien cyber en reconversion en Wallonie.",
       "ogTitle": "Certifications & formation, Smidjan",
       "ogDescription": "Ce qui est obtenu, ce qui est en cours, ce qui est visé. Une trajectoire de certification transparente, sans rien inventer.",
       "ogImageAlt": "Certifications et formation de Jean-Baptiste Dhondt, Smidjan",
@@ -1263,8 +1263,8 @@
       "lead": "Une formation supérieure en cours, complétée par un bootcamp intensif et deux stages en développement.",
       "items": [
         {
-          "period": "En cours (Bac 1 validé)",
-          "title": "Bachelier en Informatique",
+          "period": "En cours (Bac 1 et Bac 2 validés)",
+          "title": "Bachelier en programmation de gestion",
           "desc": "ISL, promotion sociale, en parallèle d'une activité professionnelle."
         },
         {

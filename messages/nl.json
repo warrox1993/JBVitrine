@@ -496,7 +496,7 @@
         "badges": [
           "Defensie (telecom)",
           "AZ-900",
-          "Bachelor Informatica lopende"
+          "Bachelor programmeren (lopende)"
         ],
         "cta": "Bekijk mijn volledige cv"
       },
@@ -557,7 +557,7 @@
       "ctaSecondary": "Mijn traject",
       "trust1": "Defensie (telecom)",
       "trust2": "AZ-900",
-      "trust3": "Bachelor Informatica lopende",
+      "trust3": "Bachelor programmeren (lopende)",
       "availability": "Gevestigd in Wallonië, gemachtigd om in de EU te werken. Open voor opdrachten en kansen, in Brussel, Wallonië of op afstand."
     },
     "capabilities": {
@@ -620,7 +620,7 @@
     "parcours": {
       "eyebrow": "Traject",
       "title": "Een vastberaden overstap naar cyber",
-      "certs": "Certificeringen : AZ-900 (2026), CCNA lopende, Bachelorjaar 1 Informatica behaald.",
+      "certs": "Certificeringen : AZ-900 (2026), CCNA lopende, Bachelorjaar 1 en 2 behaald.",
       "items": [
         {
           "period": "2013-2017",
@@ -640,7 +640,7 @@
         {
           "period": "Vandaag",
           "title": "Koers naar GRC / cyber",
-          "desc": "Bachelor Informatica (sociale promotie, ISL) naast een job."
+          "desc": "Bachelor programmeren – programmation de gestion (sociale promotie, ISL) naast een job."
         }
       ]
     },
@@ -750,7 +750,7 @@
         "title": "Gebruik van de site",
         "p1": "U bent vrij om deze site te raadplegen en de inhoud ervan correct te citeren, met vermelding van de bron. Gevraagd wordt er geen oneigenlijk gebruik van te maken: massale geautomatiseerde extractie, pogingen om de beveiliging of de beschikbaarheid ervan aan te tasten, of hergebruik dat de indruk wekt van een band of partnerschap dat niet bestaat.",
         "h3": "Inhoud ter informatie",
-        "p2": "De hier gepubliceerde informatie (vaardigheden, projecten, notities over NIS2 / CyFun) is louter informatief en pedagogisch bedoeld. Jean-Baptiste is student Bachelor in de informatica (school ISL) en zet zijn opleiding voort: de inhoud weerspiegelt een niveau in opbouw en kan evolueren. Ze vormt geen gepersonaliseerd professioneel advies waarop men een beslissing kan baseren zonder voorafgaand overleg."
+        "p2": "De hier gepubliceerde informatie (vaardigheden, projecten, notities over NIS2 / CyFun) is louter informatief en pedagogisch bedoeld. Jean-Baptiste is student Bachelor programmeren – programmation de gestion (school ISL) en zet zijn opleiding voort: de inhoud weerspiegelt een niveau in opbouw en kan evolueren. Ze vormt geen gepersonaliseerd professioneel advies waarop men een beslissing kan baseren zonder voorafgaand overleg."
       },
       "responsabilite": {
         "title": "Aansprakelijkheid",
@@ -1136,7 +1136,7 @@
       "title": "Mijn roadmap naar de <accent>stage</accent>",
       "lead": "Concrete doelen, stap voor stap. Nog te verfijnen.",
       "items": [
-        { "period": "Lopend", "title": "Fundamenten & certificeringen", "desc": "Bachelor informatica, AZ-900 behaald, CCNA in voorbereiding." },
+        { "period": "Lopend", "title": "Fundamenten & certificeringen", "desc": "Bachelor programmeren, AZ-900 behaald, CCNA in voorbereiding." },
         { "period": "2026", "title": "Cyberbeveiliging verdiepen", "desc": "AZ-104/AZ-500, offensieve en defensieve labs, gepubliceerde writeups." },
         { "period": "2027", "title": "Stage in cyberbeveiliging", "desc": "Doel: een stage om deze vaardigheden in een team en in de praktijk toe te passen." }
       ]
@@ -1166,7 +1166,7 @@
       "kicker": "Curriculum vitae",
       "name": "Jean-Baptiste Dhondt",
       "role": "Cyberbeveiliging · cloud · netwerk · infrastructuur & web",
-      "summary": "In heroriëntatie naar cyberbeveiliging, met terreinervaring (Belgische Defensie, Europese Commissie) die ik inzet voor cloud-, netwerk- en applicatiebeveiliging. Bachelor informatica lopende, Java Full Stack-bootcamp en twee ontwikkelingsstages in 2025.",
+      "summary": "In heroriëntatie naar cyberbeveiliging, met terreinervaring (Belgische Defensie, Europese Commissie) die ik inzet voor cloud-, netwerk- en applicatiebeveiliging. Bachelor programmeren lopende, Java Full Stack-bootcamp en twee ontwikkelingsstages in 2025.",
       "availLabel": "Beschikbaarheid",
       "availValue": "Op zoek naar een stage vanaf 2027",
       "locLabel": "Locatie",
@@ -1199,7 +1199,7 @@
   "certifications": {
     "meta": {
       "title": "Certificaten & opleiding | Jean-Baptiste Dhondt, Smidjan",
-      "description": "AZ-900 behaald, CCNA lopende, Bachelor Informatica lopende (ISL). Het verifieerbare certificerings- en opleidingstraject van een cyberpracticus in omscholing in Wallonië.",
+      "description": "AZ-900 behaald, CCNA lopende, Bachelor programmeren lopende (ISL). Het verifieerbare certificerings- en opleidingstraject van een cyberpracticus in omscholing in Wallonië.",
       "ogTitle": "Certificaten & opleiding, Smidjan",
       "ogDescription": "Wat behaald is, wat lopende is, wat het doel is. Een transparant certificeringstraject, zonder iets te verzinnen.",
       "ogImageAlt": "Certificaten en opleiding van Jean-Baptiste Dhondt, Smidjan",
@@ -1263,8 +1263,8 @@
       "lead": "Een hogere opleiding die loopt, aangevuld met een intensieve bootcamp en twee stages in ontwikkeling.",
       "items": [
         {
-          "period": "Lopende (Bac 1 behaald)",
-          "title": "Bachelor Informatica",
+          "period": "Lopende (Bac 1 en Bac 2 behaald)",
+          "title": "Bachelor programmeren (programmation de gestion)",
           "desc": "ISL, sociale promotie, naast een professionele activiteit."
         },
         {
