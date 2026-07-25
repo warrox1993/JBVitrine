@@ -17,7 +17,7 @@
       "ctaPrimary": "Me contacter",
       "ctaCall": "Appeler le 0475 20 55 62",
       "badgeLocation": "Basé en Wallonie",
-      "imageAlt": "Vue de Liège de nuit, ville où Smidjan accompagne les organisations en Wallonie."
+      "imageAlt": "Vue de Liège de nuit, la région de Wallonie où je vis, j'étudie et je pratique la cybersécurité."
     },
     "cta": {
       "title": "Discutons",
@@ -29,7 +29,7 @@
       "reassurance3": "Basé en Wallonie"
     },
     "founder": {
-      "eyebrow": "Le fondateur",
+      "eyebrow": "Qui je suis",
       "title": "Jean-Baptiste Dhondt : <accent>une reconversion déterminée</accent> vers la cybersécurité",
       "lead": "Curiosité technique, rigueur héritée des télécommunications militaires et formation continue : une reconversion vers la cybersécurité, orientée défense, avec une spécialisation en sécurité cloud, réseau, infra & web.",
       "portraitAria": "Portrait du fondateur, emplacement réservé, photo à venir",
@@ -48,7 +48,7 @@
       "skillConformite": "Conformité",
       "journeyEyebrow": "Le parcours",
       "narrativeTitle": "De la passion de l'informatique à la <accent>défense d'entreprises</accent>",
-      "intro": "Pas un consultant standard : un praticien. Il a compris les systèmes de l'intérieur avant d'en faire un métier.",
+      "intro": "Pas un consultant standard : un praticien. J'ai appris à comprendre les systèmes de l'intérieur bien avant d'en faire un métier.",
       "infraAlt": "Baies de serveurs et câblage réseau dans une salle informatique, illustrant l'expertise en sécurisation d'infrastructures",
       "infraCaption": "Réseaux, serveurs, durcissement d'infrastructure : le terrain de jeu quotidien.",
       "stepStartLabel": "Le point de départ",
@@ -112,17 +112,17 @@
     },
     "why": {
       "eyebrow": "Pourquoi Smidjan",
-      "lead": "Structure à taille humaine, par choix. Moins d'intermédiaires, plus de responsabilité.",
+      "lead": "Une seule personne derrière ce nom : moi. Moins d'intermédiaires, plus de responsabilité.",
       "items": {
         "acces": {
           "title": "Accès direct, sans intermédiaire",
-          "text": "Vous parlez à la personne qui traite votre dossier. Jamais un centre d'appel, jamais un junior.",
+          "text": "Vous parlez directement à la personne qui fait le travail : moi. Jamais un centre d'appel, jamais un sous-traitant.",
           "pin": "Zéro sous-traitance"
         },
         "pragmatisme": {
-          "title": "Pragmatisme PME",
-          "text": "On corrige ce qui compte pour votre budget. Chaque euro cible un risque réel, expliqué.",
-          "pin": "Adapté au budget PME"
+          "title": "Pragmatisme avant tout",
+          "text": "Je me concentre sur ce qui compte vraiment : chaque action cible un risque réel, priorisé et expliqué.",
+          "pin": "Priorité au risque réel"
         }
       }
     },
@@ -253,7 +253,7 @@
     "footer": {
       "blurb": "Praticien en cybersécurité et gouvernance (GRC) en Wallonie. Je construis mes compétences et mes outils au grand jour : ce que je sais faire, avec des preuves, et ce que je ne sais pas encore.",
       "location": "Wallonie, Belgique",
-      "servicesHeading": "Services",
+      "servicesHeading": "Compétences",
       "agenceHeading": "Le praticien",
       "certsHeading": "Cadres de référence",
       "langHeading": "Langue",
@@ -947,7 +947,7 @@
         "forWho": "Pour qui :",
         "coveredHead": "Ce qui est couvert",
         "deliverableLabel": "Livrable",
-        "ctaDefault": "Demander un diagnostic",
+        "ctaDefault": "Me contacter",
         "basic": {
           "name": "Basic",
           "coverage": "Socle essentiel",
@@ -956,7 +956,7 @@
           "covered2": "Sauvegardes, MFA, mises à jour",
           "covered3": "Couvre l'essentiel des attaques courantes",
           "deliverable": "Rapport d'écart + plan de remédiation priorisé, prêt pour l'auto-évaluation CyFun.",
-          "ctaLabel": "Demander un diagnostic"
+          "ctaLabel": "Me contacter"
         },
         "important": {
           "name": "Important",
@@ -967,7 +967,7 @@
           "covered2": "Détection & réponse aux incidents",
           "covered3": "Gouvernance & gestion des risques",
           "deliverable": "Dossier de conformité complet + accompagnement jusqu'à la vérification par un organisme accrédité.",
-          "ctaLabel": "Demander un diagnostic"
+          "ctaLabel": "Me contacter"
         },
         "essential": {
           "name": "Essential",
@@ -977,7 +977,7 @@
           "covered2": "Mesures avancées & tests réguliers",
           "covered3": "Amélioration continue mesurée",
           "deliverable": "Programme de sécurité complet, documentation d'audit et feuille de route pluriannuelle.",
-          "ctaLabel": "Demander un diagnostic"
+          "ctaLabel": "Me contacter"
         }
       },
       "table": {
@@ -1034,7 +1034,7 @@
       "note": "*Durées indicatives, variables selon votre maturité de départ, la taille du périmètre et vos ressources internes. Elles sont précisées lors du cadrage."
     },
     "pillar": {
-      "capabilitiesHead": "Ce que nous mettons en place",
+      "capabilitiesHead": "Ce que je mets en place",
       "deliverablesHead": "Livrables"
     }
   },

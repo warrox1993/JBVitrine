@@ -17,7 +17,7 @@
       "ctaPrimary": "Get in touch",
       "ctaCall": "Call 0475 20 55 62",
       "badgeLocation": "Based in Wallonia",
-      "imageAlt": "View of Liège at night, the city where Smidjan supports organisations across Wallonia."
+      "imageAlt": "View of Liège at night, the region of Wallonia where I live, study and practise cybersecurity."
     },
     "cta": {
       "title": "Let's talk",
@@ -29,7 +29,7 @@
       "reassurance3": "Based in Wallonia"
     },
     "founder": {
-      "eyebrow": "The founder",
+      "eyebrow": "Who I am",
       "title": "Jean-Baptiste Dhondt: <accent>a determined career change</accent> into cybersecurity",
       "lead": "Technical curiosity, rigour carried over from military telecommunications and continuous training: a career change into cybersecurity, defence-oriented, with a specialisation in cloud, network, infra & web security.",
       "portraitAria": "Portrait of the founder, reserved placeholder, photo to come",
@@ -48,7 +48,7 @@
       "skillConformite": "Compliance",
       "journeyEyebrow": "The journey",
       "narrativeTitle": "From a passion for computing to the <accent>defence of businesses</accent>",
-      "intro": "Not a standard consultant: a practitioner. He understood systems from the inside before making a profession of it.",
+      "intro": "Not a standard consultant: a practitioner. I learned to understand systems from the inside long before making a profession of it.",
       "infraAlt": "Server racks and network cabling in a data room, illustrating expertise in securing infrastructure",
       "infraCaption": "Networks, servers, infrastructure hardening: the daily playing field.",
       "stepStartLabel": "The starting point",
@@ -112,17 +112,17 @@
     },
     "why": {
       "eyebrow": "Why Smidjan",
-      "lead": "A human-scale structure, by choice. Fewer intermediaries, more accountability.",
+      "lead": "One person behind this name: me. Fewer intermediaries, more accountability.",
       "items": {
         "acces": {
           "title": "Direct access, no middleman",
-          "text": "You speak to the person handling your case. Never a call centre, never a junior.",
+          "text": "You speak directly to the person doing the work: me. Never a call centre, never a subcontractor.",
           "pin": "Zero subcontracting"
         },
         "pragmatisme": {
-          "title": "SME pragmatism",
-          "text": "We fix what matters for your budget. Every euro targets a real, explained risk.",
-          "pin": "Tailored to the SME budget"
+          "title": "Pragmatism above all",
+          "text": "I focus on what truly matters: every action targets a real risk, prioritised and explained.",
+          "pin": "Real risk first"
         }
       }
     },
@@ -253,7 +253,7 @@
     "footer": {
       "blurb": "Cybersecurity and governance (GRC) practitioner in Wallonia. I build my skills and my tools in the open: what I can do, with evidence, and what I cannot do yet.",
       "location": "Wallonia, Belgium",
-      "servicesHeading": "Services",
+      "servicesHeading": "Skills",
       "agenceHeading": "The practitioner",
       "certsHeading": "Reference frameworks",
       "langHeading": "Language",
@@ -947,7 +947,7 @@
         "forWho": "For whom:",
         "coveredHead": "What's covered",
         "deliverableLabel": "Deliverable",
-        "ctaDefault": "Request a diagnostic",
+        "ctaDefault": "Get in touch",
         "basic": {
           "name": "Basic",
           "coverage": "Essential baseline",
@@ -956,7 +956,7 @@
           "covered2": "Backups, MFA, updates",
           "covered3": "Covers the bulk of common attacks",
           "deliverable": "Gap report + prioritised remediation plan, ready for the CyFun self-assessment.",
-          "ctaLabel": "Request a diagnostic"
+          "ctaLabel": "Get in touch"
         },
         "important": {
           "name": "Important",
@@ -967,7 +967,7 @@
           "covered2": "Detection and incident response",
           "covered3": "Governance and risk management",
           "deliverable": "Complete compliance dossier + support through to verification by an accredited body.",
-          "ctaLabel": "Request a diagnostic"
+          "ctaLabel": "Get in touch"
         },
         "essential": {
           "name": "Essential",
@@ -977,7 +977,7 @@
           "covered2": "Advanced measures and regular testing",
           "covered3": "Measured continuous improvement",
           "deliverable": "Complete security programme, audit documentation and a multi-year roadmap.",
-          "ctaLabel": "Request a diagnostic"
+          "ctaLabel": "Get in touch"
         }
       },
       "table": {
@@ -1034,7 +1034,7 @@
       "note": "*Indicative durations, varying with your starting maturity, the size of the scope and your internal resources. They are confirmed during scoping."
     },
     "pillar": {
-      "capabilitiesHead": "What we put in place",
+      "capabilitiesHead": "What I put in place",
       "deliverablesHead": "Deliverables"
     }
   },

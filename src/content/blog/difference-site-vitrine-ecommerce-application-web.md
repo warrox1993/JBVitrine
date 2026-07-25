@@ -409,7 +409,7 @@ Vous avez des **besoins métier complexes**, des **workflows spécifiques**, ou 
 
 Chez Smidjan, nous accompagnons les entreprises belges dans le choix et la réalisation de leur projet digital depuis plus de 5 ans. Que vous soyez à **Liège**, **Namur**, **Charleroi**, **Bruxelles**, ou ailleurs en Wallonie, nous sommes là pour vous conseiller.
 
-👉 **[Obtenez un devis personnalisé en 2 minutes](/contact#quote-wizard)**
+👉 **[Me contacter](/contact)**
 
 Ou contactez-nous directement pour un **audit gratuit** de vos besoins :
 📧 Email : [contact.smidjan@outlook.com](mailto:contact.smidjan@outlook.com)

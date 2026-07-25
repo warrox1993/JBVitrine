@@ -477,7 +477,7 @@ Chez **Smidjan**, nous aidons les entreprises belges à **automatiser leurs proc
 - ✅ IA prédictive (ventes, churn, stocks)
 - ✅ Génération de contenu automatique
 
-👉 **[Demandez un devis d'automatisation IA](/contact#quote-wizard)**
+👉 **[Me contacter](/contact)**
 
 📧 Email : [contact.smidjan@outlook.com](mailto:contact.smidjan@outlook.com)
 

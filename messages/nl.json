@@ -17,7 +17,7 @@
       "ctaPrimary": "Contacteer mij",
       "ctaCall": "Bel 0475 20 55 62",
       "badgeLocation": "Gevestigd in Wallonië",
-      "imageAlt": "Zicht op Luik bij nacht, de stad waar Smidjan organisaties in Wallonië begeleidt."
+      "imageAlt": "Zicht op Luik bij nacht, de regio in Wallonië waar ik woon, studeer en cyberbeveiliging in de praktijk breng."
     },
     "cta": {
       "title": "Laten we praten",
@@ -29,7 +29,7 @@
       "reassurance3": "Gevestigd in Wallonië"
     },
     "founder": {
-      "eyebrow": "De oprichter",
+      "eyebrow": "Wie ik ben",
       "title": "Jean-Baptiste Dhondt : <accent>een vastberaden heroriëntatie</accent> naar cyberbeveiliging",
       "lead": "Technische nieuwsgierigheid, grondigheid uit de militaire telecommunicatie en voortdurende bijscholing: een heroriëntatie naar cyberbeveiliging, gericht op verdediging, met een specialisatie in cloud-, netwerk-, infra- en webbeveiliging.",
       "portraitAria": "Portret van de oprichter, gereserveerde plaats, foto volgt",
@@ -48,7 +48,7 @@
       "skillConformite": "Conformiteit",
       "journeyEyebrow": "Het parcours",
       "narrativeTitle": "Van passie voor informatica tot de <accent>verdediging van ondernemingen</accent>",
-      "intro": "Geen standaardconsultant : een praktijkmens. Hij begreep de systemen van binnenuit voordat hij er een beroep van maakte.",
+      "intro": "Geen standaardconsultant : een praktijkmens. Ik leerde systemen van binnenuit begrijpen lang voordat ik er mijn beroep van maakte.",
       "infraAlt": "Serverrekken en netwerkbekabeling in een computerruimte, illustratie van de expertise in het beveiligen van infrastructuur",
       "infraCaption": "Netwerken, servers, verharding van infrastructuur : het dagelijkse speelveld.",
       "stepStartLabel": "Het vertrekpunt",
@@ -112,17 +112,17 @@
     },
     "why": {
       "eyebrow": "Waarom Smidjan",
-      "lead": "Een structuur op mensenmaat, uit keuze. Minder tussenpersonen, meer verantwoordelijkheid.",
+      "lead": "Eén persoon achter deze naam : ik. Minder tussenpersonen, meer verantwoordelijkheid.",
       "items": {
         "acces": {
           "title": "Rechtstreekse toegang, zonder tussenpersoon",
-          "text": "U spreekt met de persoon die uw dossier behandelt. Nooit een callcenter, nooit een junior.",
+          "text": "U spreekt rechtstreeks met de persoon die het werk doet : ik. Nooit een callcenter, nooit een onderaannemer.",
           "pin": "Nul onderaanneming"
         },
         "pragmatisme": {
-          "title": "Kmo-pragmatisme",
-          "text": "We corrigeren wat telt voor uw budget. Elke euro richt zich op een reëel risico, toegelicht.",
-          "pin": "Afgestemd op het kmo-budget"
+          "title": "Pragmatisme voor alles",
+          "text": "Ik richt me op wat écht telt : elke actie viseert een reëel risico, geprioriteerd en toegelicht.",
+          "pin": "Voorrang aan het reële risico"
         }
       }
     },
@@ -253,7 +253,7 @@
     "footer": {
       "blurb": "Praktijkbeoefenaar in cyberbeveiliging en governance (GRC) in Wallonië. Ik bouw mijn vaardigheden en tools in alle openheid op: wat ik kan, met bewijs, en wat ik nog niet kan.",
       "location": "Wallonië, België",
-      "servicesHeading": "Diensten",
+      "servicesHeading": "Vaardigheden",
       "agenceHeading": "De praktijk",
       "certsHeading": "Referentiekaders",
       "langHeading": "Taal",
@@ -947,7 +947,7 @@
         "forWho": "Voor wie:",
         "coveredHead": "Wat wordt gedekt",
         "deliverableLabel": "Opleverstuk",
-        "ctaDefault": "Een diagnose aanvragen",
+        "ctaDefault": "Contacteer mij",
         "basic": {
           "name": "Basic",
           "coverage": "Essentiële basis",
@@ -956,7 +956,7 @@
           "covered2": "Back-ups, MFA, updates",
           "covered3": "Dekt het merendeel van de courante aanvallen",
           "deliverable": "Gap-analyse + geprioriteerd remediëringsplan, klaar voor de CyFun-zelfevaluatie.",
-          "ctaLabel": "Een diagnose aanvragen"
+          "ctaLabel": "Contacteer mij"
         },
         "important": {
           "name": "Important",
@@ -967,7 +967,7 @@
           "covered2": "Detectie en respons op incidenten",
           "covered3": "Governance en risicobeheer",
           "deliverable": "Volledig conformiteitsdossier + begeleiding tot aan de verificatie door een geaccrediteerde instantie.",
-          "ctaLabel": "Een diagnose aanvragen"
+          "ctaLabel": "Contacteer mij"
         },
         "essential": {
           "name": "Essential",
@@ -977,7 +977,7 @@
           "covered2": "Geavanceerde maatregelen en regelmatige tests",
           "covered3": "Gemeten continue verbetering",
           "deliverable": "Volledig beveiligingsprogramma, auditdocumentatie en meerjarige routekaart.",
-          "ctaLabel": "Een diagnose aanvragen"
+          "ctaLabel": "Contacteer mij"
         }
       },
       "table": {
@@ -1034,7 +1034,7 @@
       "note": "*Indicatieve doorlooptijden, afhankelijk van uw beginmaturiteit, de omvang van de scope en uw interne middelen. Ze worden gepreciseerd tijdens de scoping."
     },
     "pillar": {
-      "capabilitiesHead": "Wat we opzetten",
+      "capabilitiesHead": "Wat ik opzet",
       "deliverablesHead": "Opleveringen"
     }
   },
