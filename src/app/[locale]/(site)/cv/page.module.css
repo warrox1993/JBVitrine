@@ -380,6 +380,85 @@
   color: var(--slate);
 }
 
+/* ===== Au-delà du code : passions & initiative ===== */
+.beyondGrid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: var(--space-5, 24px);
+  margin-top: var(--space-6, 32px);
+  align-items: start;
+}
+.beyondTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 14px;
+}
+.passions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.passionChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-full, 999px);
+  background: var(--bg);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.projectCard {
+  display: flex;
+  gap: 16px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--orange);
+  border-radius: 14px;
+  background: var(--bg);
+}
+.projectIcon {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: var(--radius-md, 10px);
+  background: color-mix(in srgb, var(--orange) 12%, transparent);
+  color: var(--orange-d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.projectName {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.projectText {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--slate);
+  margin-top: 6px;
+}
+.projectTag {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 12px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full, 999px);
+  background: var(--color-bg-alt, rgba(0, 0, 0, 0.04));
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
   .competencesGrid {
@@ -391,6 +470,10 @@
   }
   .langGrid {
     grid-template-columns: 1fr;
+  }
+  .beyondGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
 @media (max-width: 720px) {

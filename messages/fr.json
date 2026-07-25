@@ -1102,9 +1102,19 @@
       "title": "Langues",
       "items": [
         { "lang": "Français", "level": "Langue maternelle" },
-        { "lang": "Néerlandais", "level": "À préciser" },
-        { "lang": "Anglais", "level": "À préciser" }
+        { "lang": "Néerlandais", "level": "A1 · notions de base" },
+        { "lang": "Anglais", "level": "B1 · intermédiaire" }
       ]
+    },
+    "beyond": {
+      "eyebrow": "Au-delà du code",
+      "title": "Passions & initiatives",
+      "passionsTitle": "Mes passions",
+      "passions": ["Tir à l'arc", "Balades en nature", "Running"],
+      "projectTitle": "Initiative entrepreneuriale",
+      "projectName": "Crêpes bio en foires & brocantes",
+      "projectText": "Le week-end, je tiens mon propre stand de crêpes bio sur des foires et brocantes de la région de Liège. Un petit projet qui m'apprend le sens du contact, l'autonomie et la gestion — de l'approvisionnement jusqu'à la caisse.",
+      "projectTag": "Liège · week-ends"
     }
   },
   "certifications": {
@@ -1134,6 +1144,14 @@
         "status": "Obtenu · janvier 2026",
         "name": "AZ-900, Microsoft Azure Fundamentals",
         "description": "Les bases du cloud Azure : concepts, services, sécurité, conformité et tarification.",
+      "learn": {
+        "heading": "Ce que couvre l'AZ-900",
+        "items": [
+          { "label": "Concepts du cloud (25–30 %)", "topics": "Modèle de responsabilité partagée, IaaS / PaaS / SaaS, cloud public / privé / hybride, modèle à la consommation, haute disponibilité & scalabilité." },
+          { "label": "Architecture & services Azure (35–40 %)", "topics": "Régions & zones de disponibilité, groupes de ressources et abonnements, calcul (VM, conteneurs, fonctions), réseau (VNet, VPN, ExpressRoute, DNS), stockage (blob, niveaux, redondance), identité (Entra ID, MFA, RBAC, Zero Trust, Defender for Cloud)." },
+          { "label": "Gestion & gouvernance (30–35 %)", "topics": "Gestion des coûts (calculatrice de prix, tags), gouvernance (Azure Policy, verrous de ressources, Purview), déploiement (portail, CLI / PowerShell, ARM & IaC, Azure Arc), supervision (Advisor, Service Health, Azure Monitor)." }
+        ]
+      },
         "verifyLabel": "Vérifier sur Microsoft Learn",
         "why": "L'AZ-900 pose les fondamentaux du cloud. C'est ma marche de départ : elle m'ouvre la voie vers l'AZ-104 (administration Azure). Un point d'entrée pensé, pas un empilement de certifications."
       },

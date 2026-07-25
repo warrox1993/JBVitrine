@@ -14,7 +14,7 @@ import { CTABox } from "@/components/shared";
 import { ProcessSteps } from "@/components/shared/ProcessSteps/ProcessSteps";
 import { authorSchema } from "@/lib/author-schema";
 import { social, credentials, siteUrl } from "@/config/site";
-import { FlipCard } from "./FlipCard";
+import { FlipCard, type FlipCardLearn } from "./FlipCard";
 import styles from "./page.module.css";
 
 export async function generateMetadata({
@@ -105,6 +105,7 @@ export default async function CvPage({
   const tc = await getTranslations("certifications");
   const formationItems = tc.raw("formation.items") as FormationItem[];
   const languageItems = t.raw("languages.items") as LanguageItem[];
+  const passionItems = t.raw("beyond.passions") as string[];
   const nonce = (await headers()).get("x-nonce") ?? undefined;
 
   return (
@@ -230,6 +231,7 @@ export default async function CvPage({
             statusVariant="done"
             name={tc("certs.az900.name")}
             description={tc("certs.az900.description")}
+            learn={tc.raw("certs.az900.learn") as FlipCardLearn}
             verifyHref={credentials.az900VerifyUrl}
             verifyLabel={tc("certs.az900.verifyLabel")}
             whyTitle={tc("certs.whyHeading")}
@@ -321,6 +323,38 @@ export default async function CvPage({
             </div>
           ))}
         </Reveal>
+      </Section>
+
+      {/* ===== Au-delà du code : passions & initiatives ===== */}
+      <Section variant="white">
+        <Reveal>
+          <SectionHeading eyebrow={t("beyond.eyebrow")} title={t("beyond.title")} />
+        </Reveal>
+        <div className={styles.beyondGrid}>
+          <Reveal className={styles.beyondCol}>
+            <h3 className={styles.beyondTitle}>{t("beyond.passionsTitle")}</h3>
+            <ul className={styles.passions}>
+              {passionItems.map((p) => (
+                <li key={p} className={styles.passionChip}>
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+          <Reveal variant="right" className={styles.beyondCol}>
+            <h3 className={styles.beyondTitle}>{t("beyond.projectTitle")}</h3>
+            <div className={styles.projectCard}>
+              <div className={styles.projectIcon}>
+                <Icon name="sparkles" strokeWidth={1.7} />
+              </div>
+              <div>
+                <strong className={styles.projectName}>{t("beyond.projectName")}</strong>
+                <p className={styles.projectText}>{t("beyond.projectText")}</p>
+                <span className={styles.projectTag}>{t("beyond.projectTag")}</span>
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </Section>
 
       {/* ===== Final CTA ===== */}

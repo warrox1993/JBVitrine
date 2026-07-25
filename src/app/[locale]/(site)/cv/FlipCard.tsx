@@ -3,12 +3,20 @@
 import { useState, type KeyboardEvent, type ReactNode } from "react";
 import styles from "./FlipCard.module.css";
 
+/** A syllabus block shown on the front face: a heading + labelled topic lines. */
+export interface FlipCardLearn {
+  heading: string;
+  items: { label: string; topics: string }[];
+}
+
 export interface FlipCardProps {
   icon?: ReactNode;
   status: string;
   statusVariant: "done" | "progress";
   name: string;
   description: string;
+  /** Optional "what this covers" syllabus, rendered on the front face. */
+  learn?: FlipCardLearn;
   verifyHref?: string;
   verifyLabel?: string;
   whyTitle: string;
@@ -31,6 +39,7 @@ export function FlipCard({
   statusVariant,
   name,
   description,
+  learn,
   verifyHref,
   verifyLabel,
   whyTitle,
@@ -62,12 +71,29 @@ export function FlipCard({
       onClick={toggle}
       onKeyDown={handleKeyDown}
     >
-      <div className={`${styles.inner} ${flipped ? styles.flipped : ""}`}>
+      <div
+        className={`${styles.inner} ${flipped ? styles.flipped : ""} ${
+          learn ? styles.tall : ""
+        }`}
+      >
         <div className={`${styles.face} ${styles.front}`}>
           {icon ? <div className={styles.icon}>{icon}</div> : null}
           <span className={`${styles.status} ${statusClass}`}>{status}</span>
           <h3 className={styles.name}>{name}</h3>
           <p className={styles.desc}>{description}</p>
+          {learn ? (
+            <div className={styles.learn}>
+              <span className={styles.learnHeading}>{learn.heading}</span>
+              <ul className={styles.learnList}>
+                {learn.items.map((it) => (
+                  <li key={it.label}>
+                    <strong>{it.label}</strong>
+                    <span>{it.topics}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
           {verifyHref ? (
             <a
               href={verifyHref}

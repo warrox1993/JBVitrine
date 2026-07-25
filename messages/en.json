@@ -1102,9 +1102,19 @@
       "title": "Languages",
       "items": [
         { "lang": "French", "level": "Native" },
-        { "lang": "Dutch", "level": "To be confirmed" },
-        { "lang": "English", "level": "To be confirmed" }
+        { "lang": "Dutch", "level": "A1 · basics" },
+        { "lang": "English", "level": "B1 · intermediate" }
       ]
+    },
+    "beyond": {
+      "eyebrow": "Beyond the code",
+      "title": "Passions & initiatives",
+      "passionsTitle": "My passions",
+      "passions": ["Archery", "Nature walks", "Running"],
+      "projectTitle": "Entrepreneurial initiative",
+      "projectName": "Organic crêpes at fairs & flea markets",
+      "projectText": "On weekends I run my own organic-crêpe stand at fairs and flea markets around Liège. A small venture that teaches me customer contact, autonomy and hands-on management — from sourcing to the till.",
+      "projectTag": "Liège · weekends"
     }
   },
   "certifications": {
@@ -1134,6 +1144,14 @@
         "status": "Earned · January 2026",
         "name": "AZ-900, Microsoft Azure Fundamentals",
         "description": "The basics of Azure cloud: concepts, services, security, compliance and pricing.",
+      "learn": {
+        "heading": "What AZ-900 covers",
+        "items": [
+          { "label": "Cloud concepts (25–30%)", "topics": "Shared responsibility model, IaaS / PaaS / SaaS, public / private / hybrid cloud, consumption-based model, high availability & scalability." },
+          { "label": "Azure architecture & services (35–40%)", "topics": "Regions & availability zones, resource groups and subscriptions, compute (VMs, containers, functions), networking (VNet, VPN, ExpressRoute, DNS), storage (blob, tiers, redundancy), identity (Entra ID, MFA, RBAC, Zero Trust, Defender for Cloud)." },
+          { "label": "Management & governance (30–35%)", "topics": "Cost management (pricing calculator, tags), governance (Azure Policy, resource locks, Purview), deployment (portal, CLI / PowerShell, ARM & IaC, Azure Arc), monitoring (Advisor, Service Health, Azure Monitor)." }
+        ]
+      },
         "verifyLabel": "Verify on Microsoft Learn",
         "why": "The AZ-900 lays the cloud fundamentals. It's my starting point: it opens the way to AZ-104 (Azure administration). A deliberate entry point, not a stack of certifications."
       },

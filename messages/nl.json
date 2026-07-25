@@ -1102,9 +1102,19 @@
       "title": "Talen",
       "items": [
         { "lang": "Frans", "level": "Moedertaal" },
-        { "lang": "Nederlands", "level": "Te preciseren" },
-        { "lang": "Engels", "level": "Te preciseren" }
+        { "lang": "Nederlands", "level": "A1 · basiskennis" },
+        { "lang": "Engels", "level": "B1 · gemiddeld" }
       ]
+    },
+    "beyond": {
+      "eyebrow": "Naast de code",
+      "title": "Passies & initiatieven",
+      "passionsTitle": "Mijn passies",
+      "passions": ["Boogschieten", "Wandelen in de natuur", "Hardlopen"],
+      "projectTitle": "Ondernemersinitiatief",
+      "projectName": "Bio-pannenkoeken op markten & rommelmarkten",
+      "projectText": "In het weekend run ik mijn eigen kraam met bio-pannenkoeken op markten en rommelmarkten in de regio Luik. Een klein project dat me klantcontact, zelfstandigheid en beheer leert — van inkoop tot kassa.",
+      "projectTag": "Luik · weekends"
     }
   },
   "certifications": {
@@ -1134,6 +1144,14 @@
         "status": "Behaald · januari 2026",
         "name": "AZ-900, Microsoft Azure Fundamentals",
         "description": "De basis van Azure cloud: concepten, diensten, beveiliging, compliance en prijszetting.",
+      "learn": {
+        "heading": "Wat AZ-900 behandelt",
+        "items": [
+          { "label": "Cloudconcepten (25–30 %)", "topics": "Gedeelde verantwoordelijkheid, IaaS / PaaS / SaaS, publieke / private / hybride cloud, verbruiksmodel, hoge beschikbaarheid & schaalbaarheid." },
+          { "label": "Azure-architectuur & -services (35–40 %)", "topics": "Regio's & beschikbaarheidszones, resourcegroepen en abonnementen, compute (VM's, containers, functions), netwerk (VNet, VPN, ExpressRoute, DNS), opslag (blob, tiers, redundantie), identiteit (Entra ID, MFA, RBAC, Zero Trust, Defender for Cloud)." },
+          { "label": "Beheer & governance (30–35 %)", "topics": "Kostenbeheer (prijscalculator, tags), governance (Azure Policy, resource locks, Purview), implementatie (portal, CLI / PowerShell, ARM & IaC, Azure Arc), monitoring (Advisor, Service Health, Azure Monitor)." }
+        ]
+      },
         "verifyLabel": "Verifiëren op Microsoft Learn",
         "why": "De AZ-900 legt de basis van cloud computing. Het is mijn startpunt: het opent de weg naar AZ-104 (Azure-beheer). Een doordacht startpunt, geen opeenstapeling van certificaten."
       },
