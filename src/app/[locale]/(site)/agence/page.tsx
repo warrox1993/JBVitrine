@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { contact } from "@/config/site";
 import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import { authorSchema } from "@/lib/author-schema";
@@ -100,7 +101,7 @@ export default async function AgencePage({
                 >
                   {t("hero.ctaPrimary")}
                 </Button>
-                <Button as="a" href="tel:+32475205562" variant="ghost" size="lg">
+                <Button as="a" href={contact.phoneHref} variant="ghost" size="lg">
                   {t("hero.ctaCall")}
                 </Button>
               </div>
@@ -137,7 +138,7 @@ export default async function AgencePage({
         text={t("cta.text")}
         actions={[
           { label: t("cta.actionPrimary"), href: "/contact" },
-          { label: t("cta.actionCall"), href: "tel:+32475205562", variant: "ghostD" },
+          { label: t("cta.actionCall"), href: contact.phoneHref, variant: "ghostD" },
         ]}
         reassurances={[
           t("cta.reassurance1"),

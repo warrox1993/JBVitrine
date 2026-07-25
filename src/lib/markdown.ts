@@ -34,12 +34,7 @@ const renderer = {
 
   code({ text, lang }: Tokens.Code) {
     const language = lang || "";
-    const escaped = text
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
+    const escaped = escapeHtml(text);
 
     return `<pre><code class="language-${escapeHtml(language)}">${escaped}</code></pre>\n`;
   },

@@ -145,28 +145,3 @@ export async function validateRecaptcha(
   console.log(`${action} reCAPTCHA verified`, { score: recaptchaResult.score });
   return { success: true };
 }
-
-/**
- * Run multiple middleware checks sequentially
- * Returns first failure or success if all pass
- */
-export function runMiddleware(
-  request: NextRequest,
-  checks: ((
-    req: NextRequest,
-  ) => MiddlewareResult | Promise<MiddlewareResult>)[],
-): Promise<MiddlewareResult> {
-  return checks.reduce<Promise<MiddlewareResult>>(
-    async (promise, check) => {
-      const prevResult = await promise;
-      if (!prevResult.success) {
-        return prevResult;
-      }
-      return check(request);
-    },
-    Promise.resolve({
-      success: true,
-      clientIdentifier: getClientIdentifier(request),
-    }),
-  );
-}

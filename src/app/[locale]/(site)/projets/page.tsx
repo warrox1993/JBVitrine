@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { contact } from "@/config/site";
 import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -241,7 +242,7 @@ export default async function ProjetsPage({
         text={t("finalCta.text")}
         actions={[
           { label: t("finalCta.actionPrimary"), href: "/contact" },
-          { label: t("finalCta.actionCall"), href: "tel:+32475205562", variant: "ghostD" },
+          { label: t("finalCta.actionCall"), href: contact.phoneHref, variant: "ghostD" },
         ]}
         reassurances={t.raw("finalCta.reassurances")}
       />

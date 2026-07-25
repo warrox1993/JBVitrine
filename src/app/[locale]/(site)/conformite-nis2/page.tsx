@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { contact } from "@/config/site";
 import { buildAlternates } from "@/i18n/metadata";
 import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
@@ -298,7 +299,7 @@ export default async function ConformiteNis2Page() {
           text={t("finalCta.text")}
           actions={[
             { label: t("finalCta.action1"), href: "/contact", variant: "primary" },
-            { label: t("finalCta.action2"), href: "tel:+32475205562", variant: "ghostD" },
+            { label: t("finalCta.action2"), href: contact.phoneHref, variant: "ghostD" },
           ]}
           reassurances={[
             t("finalCta.reassure1"),

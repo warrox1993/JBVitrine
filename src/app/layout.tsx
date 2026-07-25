@@ -1,6 +1,7 @@
 // src/app/layout.tsx
 // Critical CSS first (variables, breakpoints, typography)
 import './styles/variables.css';
+import { contact } from "@/config/site";
 import './styles/breakpoints.css';
 import './styles/typography.css'; // Unified typography (mobile-first)
 import './globals.css';
@@ -130,8 +131,8 @@ authors: [{ name: 'Smidjan', url: 'https://smidjan.be' }],
     // Autres métadonnées utiles
     other: {
         'geo.region': 'BE-WAL',
-        'contact:phone': '+32475205562',
-        'contact:email': 'jeanbaptiste.dhondt1@gmail.com',
+        'contact:phone': contact.phone,
+        'contact:email': contact.email,
     },
 };
 

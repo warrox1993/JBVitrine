@@ -13,7 +13,7 @@ import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { CTABox } from "@/components/shared";
 import { ProcessSteps } from "@/components/shared/ProcessSteps/ProcessSteps";
 import { authorSchema } from "@/lib/author-schema";
-import { social } from "@/config/site";
+import { social, credentials } from "@/config/site";
 import { FlipCard } from "./FlipCard";
 import styles from "./page.module.css";
 
@@ -87,9 +87,6 @@ const COMPETENCE_ICONS: Record<(typeof COMPETENCE_KEYS)[number], IconName> = {
   dev: "code",
   ia: "sparkles",
 };
-
-// Placeholder Credly profile URL: the real one must be confirmed before launch.
-const CREDLY_URL = "https://www.credly.com/users/jean-baptiste-dhondt";
 
 const PROFILE_LINKS = [
   { key: "github", href: social.github, icon: "github" as const },
@@ -233,7 +230,7 @@ export default async function CvPage({
             statusVariant="done"
             name={tc("certs.az900.name")}
             description={tc("certs.az900.description")}
-            verifyHref={CREDLY_URL}
+            verifyHref={credentials.az900VerifyUrl}
             verifyLabel={tc("certs.az900.verifyLabel")}
             whyTitle={tc("certs.whyHeading")}
             whyText={tc("certs.az900.why")}

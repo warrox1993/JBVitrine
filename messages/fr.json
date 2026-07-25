@@ -71,30 +71,6 @@
     }
   },
   "approche": {
-    "meta": {
-      "title": "Ma méthode cybersécurité PME | Smidjan Wallonie",
-      "description": "Diagnostic mesuré, priorisation par risque, remédiation réelle, supervision continue : découvrez la méthode de Smidjan, praticien en cybersécurité en Wallonie, et pourquoi une PME wallonne a intérêt à travailler avec une structure à taille humaine.",
-      "ogTitle": "Ma méthode : Approche cybersécurité Smidjan",
-      "ogDescription": "Des preuves, pas des promesses : diagnostic mesuré, priorisation, remédiation réelle et supervision continue. La méthode Smidjan, cybersécurité pour PME en Wallonie.",
-      "ogImageAlt": "Smidjan - Ma méthode de cybersécurité",
-      "twitterTitle": "Ma méthode : Approche cybersécurité Smidjan",
-      "twitterDescription": "Diagnostic mesuré, priorisation, remédiation réelle, supervision continue. Des preuves, pas des promesses."
-    },
-    "hero": {
-      "breadcrumbHome": "Accueil",
-      "breadcrumbCurrent": "Approche · Ma méthode",
-      "eyebrow": "Ma méthode",
-      "title": "Une cybersécurité qui se <accent>démontre</accent>, pas qui se raconte.",
-      "lead": "Pour les PME de Wallonie : des actions mesurées, des livrables que vous vérifiez vous-même. Ma méthode, du diagnostic au suivi.",
-      "ctaPrimary": "Me contacter",
-      "ctaSecondary": "Voir les 4 étapes",
-      "promiseTitle": "Mon engagement",
-      "promiseSub": "Ce que vous obtenez, à chaque mission",
-      "promiseItem1": "Un <b>diagnostic chiffré</b> et documenté, pas une impression.",
-      "promiseItem2": "Des <b>priorités claires</b> par risque et par budget PME.",
-      "promiseItem3": "Une <b>remédiation réelle</b>, on corrige ce qu'on trouve.",
-      "promiseItem4": "Une <b>preuve vérifiable</b> du avant / après, sans jargon."
-    },
     "philosophy": {
       "eyebrow": "Ma façon de travailler",
       "title": "Comprendre <accent>avant</accent> d'agir",
@@ -152,15 +128,6 @@
     "refs": {
       "honestyTitle": "En toute transparence",
       "honestyText": "Ces référentiels sont ma <b>méthode de travail</b>. La <b>certification</b> officielle CyFun est délivrée par des organismes accrédités BELAC, pas par moi. Mon rôle : auditer, corriger, vous amener prêts à la soumission."
-    },
-    "cta": {
-      "title": "Faisons le point, sans engagement",
-      "text": "30 minutes avec moi, directement. Vous repartez avec un premier constat chiffré et des priorités claires. Premier échange gratuit et sans engagement.",
-      "action1": "Me contacter",
-      "action2": "Appeler le 0475 20 55 62",
-      "reassurance1": "Réponse sous 24 h",
-      "reassurance2": "Un seul interlocuteur, pas de sous-traitance",
-      "reassurance3": "Données en Belgique"
     }
   },
   "blog": {
@@ -233,12 +200,9 @@
       "skipToContent": "Aller au contenu"
     },
     "nav": {
-      "services": "Services",
       "competences": "Compétences",
       "conformite": "Conformité NIS2",
-      "approche": "Approche",
       "agence": "À propos",
-      "certifications": "Certifications",
       "cv": "CV",
       "journal": "Journal",
       "projets": "Projets"
@@ -251,9 +215,7 @@
       "navAria": "Navigation principale",
       "cta": "Me contacter",
       "openMenu": "Ouvrir le menu",
-      "closeMenu": "Fermer le menu",
-      "githubAria": "GitHub",
-      "linkedinAria": "LinkedIn"
+      "closeMenu": "Fermer le menu"
     },
     "footer": {
       "blurb": "Praticien en cybersécurité et gouvernance (GRC) en Wallonie. Je construis mes compétences et mes outils au grand jour : ce que je sais faire, avec des preuves, et ce que je ne sais pas encore.",
@@ -275,8 +237,6 @@
         "devWeb": "Développement web sécurisé",
         "conformite": "Conformité NIS2 / CyFun",
         "apropos": "À propos",
-        "approche": "Notre approche",
-        "certifications": "Certifications & formation",
         "ressources": "Ressources & guides",
         "contact": "Contact"
       },
@@ -290,7 +250,6 @@
       "aria": "Fil d'Ariane",
       "home": "Accueil",
       "routes": {
-        "about": "À Propos",
         "services": "Services",
         "conformite": "Conformité NIS2",
         "approche": "Approche",
@@ -298,7 +257,6 @@
         "portfolio": "Portfolio",
         "journal": "Journal",
         "contact": "Contact",
-        "cmsEcommerce": "CMS E-commerce",
         "devis": "Demande de Devis",
         "mentionsLegales": "Mentions Légales",
         "confidentialite": "Politique de Confidentialité",
@@ -323,7 +281,6 @@
     },
     "internship": {
       "label": "En recherche de stage",
-      "aria": "Information : en recherche de stage",
       "close": "Fermer"
     }
   },
@@ -398,8 +355,6 @@
       }
     },
     "financement": {
-      "eyebrow": "Financer votre conformité",
-      "title": "La conformité coûte moins cher qu'on ne le croit : <accent>une large partie est subsidiée</accent>",
       "lead": "Le chèque « cybersécurité » wallon finance une large partie de votre audit et de votre remédiation. Voici comment en profiter."
     },
     "finalCta": {
@@ -1104,7 +1059,6 @@
     "languages": {
       "eyebrow": "Langues",
       "title": "Langues",
-      "note": "Niveaux à préciser.",
       "items": [
         { "lang": "Français", "level": "Langue maternelle" },
         { "lang": "Néerlandais", "level": "À préciser" },
@@ -1136,10 +1090,10 @@
       "title": "Ce qui est vérifiable aujourd'hui",
       "lead": "Deux certifications structurent la montée en compétences cloud et réseau.",
       "az900": {
-        "status": "Obtenu, 2026",
+        "status": "Obtenu · janvier 2026",
         "name": "AZ-900, Microsoft Azure Fundamentals",
         "description": "Les bases du cloud Azure : concepts, services, sécurité, conformité et tarification.",
-        "verifyLabel": "Vérifier sur Credly",
+        "verifyLabel": "Vérifier sur Microsoft Learn",
         "why": "L'AZ-900 pose les fondamentaux du cloud. C'est ma marche de départ : elle m'ouvre la voie vers l'AZ-104 (administration Azure). Un point d'entrée pensé, pas un empilement de certifications."
       },
       "ccna": {

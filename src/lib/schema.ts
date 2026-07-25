@@ -1,4 +1,4 @@
-import { social, contact } from "@/config/site";
+import { social, contact, credentials } from "@/config/site";
 
 export const organizationSchema = {
   "@context": "https://schema.org",
@@ -120,6 +120,8 @@ export const personSchema = {
     credentialCategory: "certification",
     name: "Microsoft Certified: Azure Fundamentals (AZ-900)",
     recognizedBy: { "@type": "Organization", name: "Microsoft" },
+    url: credentials.az900VerifyUrl,
+    dateCreated: credentials.az900EarnedDate,
   },
   alumniOf: [
     { "@type": "EducationalOrganization", name: "ISL - Institut Saint-Laurent" },
@@ -128,104 +130,3 @@ export const personSchema = {
   sameAs: [social.linkedin, social.github, social.tryhackme],
 };
 
-// FAQPage Schema : reflète la FAQ visible de /conformite-nis2 (NIS2 / CyFun)
-export const faqPageSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Suis-je concerné par NIS2 ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Cela dépend de votre secteur et de la taille de votre entreprise. NIS2 vise les entités essentielles (énergie, santé, transport, finance, infrastructures numériques…) et les entités importantes (fabrication, agroalimentaire, services numériques, chimie…). De nombreuses PME sont concernées, y compris indirectement en tant que fournisseurs ou sous-traitants. En cas de doute, un premier échange gratuit clarifie votre situation.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Quelle est la différence entre CyFun et ISO/IEC 27001 ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "ISO/IEC 27001 est une norme internationale de management de la sécurité de l'information. CyberFundamentals (CyFun) est le cadre belge du CCB, conçu pour répondre à NIS2 et aligné sur ISO 27001 et le NIST CSF. CyFun est souvent un point d'entrée plus accessible et progressif pour une PME, avec ses trois niveaux (Basic, Important, Essential), tout en restant compatible avec une démarche ISO 27001 ultérieure.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Est-ce que Smidjan délivre la certification CyFun ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Non. Smidjan n'est pas un organisme de certification et n'est pas accrédité BELAC. La certification / vérification officielle CyFun est délivrée par des organismes accrédités par BELAC, indépendants de nous. Notre rôle est complémentaire : audit, analyse d'écart, remédiation et préparation. Nous vous rendons prêts et conformes pour que l'organisme accrédité valide votre niveau.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Combien de temps faut-il pour se mettre en conformité ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Cela dépend du niveau visé, de votre maturité de départ et de la taille du périmètre. À titre indicatif : de l'ordre de 1 à 3 mois pour Basic, 3 à 6 mois pour Important et 6 à 12 mois pour Essential. Comme NIS2 est déjà en vigueur, il est recommandé de lancer la démarche sans attendre.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Que se passe-t-il si je ne fais rien ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "La non-conformité expose à des amendes administratives significatives et engage la responsabilité des organes de direction. Surtout, l'absence de mesures augmente votre exposition réelle : un incident (rançongiciel, fuite de données) coûte généralement bien plus cher qu'une mise en conformité anticipée.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Quel niveau CyFun choisir pour ma PME ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Pour beaucoup de PME, le niveau Important offre le bon équilibre entre exigence et effort. Le niveau Basic est un excellent point de départ (il couvre l'essentiel des attaques courantes), tandis qu'Essential s'adresse aux entités essentielles NIS2 et aux organisations à forte exigence de sécurité. Lors du cadrage, nous recommandons le niveau le plus pertinent, ni surdimensionné, ni insuffisant.",
-      },
-    },
-  ],
-};
-
-// Article Schema Template - Pour les articles de blog
-export interface ArticleSchemaProps {
-  title: string;
-  description: string;
-  author: string;
-  datePublished: string;
-  dateModified?: string;
-  image?: string;
-  url: string;
-}
-
-export const createArticleSchema = ({
-  title,
-  description,
-  author,
-  datePublished,
-  dateModified,
-  image = "https://smidjan.be/og-image.webp",
-  url,
-}: ArticleSchemaProps) => ({
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  headline: title,
-  description: description,
-  image: image,
-  datePublished: datePublished,
-  dateModified: dateModified || datePublished,
-  author: {
-    "@type": "Person",
-    name: author,
-    url: "https://smidjan.be/agence",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Smidjan",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://smidjan.be/images/logoheader/logo-200.png",
-    },
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": url,
-  },
-});

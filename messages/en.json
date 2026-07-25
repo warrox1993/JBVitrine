@@ -71,30 +71,6 @@
     }
   },
   "approche": {
-    "meta": {
-      "title": "My SME cybersecurity method | Smidjan Wallonia",
-      "description": "Measured diagnosis, risk-based prioritisation, real remediation, continuous monitoring: discover Smidjan's method, a cybersecurity practitioner in Wallonia, and why a Walloon SME benefits from working with a human-scale structure.",
-      "ogTitle": "My method: Smidjan's cybersecurity approach",
-      "ogDescription": "Proof, not promises: measured diagnosis, prioritisation, real remediation and continuous monitoring. The Smidjan method, cybersecurity for SMEs in Wallonia.",
-      "ogImageAlt": "Smidjan - My cybersecurity method",
-      "twitterTitle": "My method: Smidjan's cybersecurity approach",
-      "twitterDescription": "Measured diagnosis, prioritisation, real remediation, continuous monitoring. Proof, not promises."
-    },
-    "hero": {
-      "breadcrumbHome": "Home",
-      "breadcrumbCurrent": "Approach · My method",
-      "eyebrow": "My method",
-      "title": "Cybersecurity that <accent>proves itself</accent>, not one that tells stories.",
-      "lead": "For SMEs in Wallonia: measured actions, deliverables you verify yourself. My method, from assessment to follow-up.",
-      "ctaPrimary": "Get in touch",
-      "ctaSecondary": "See the 4 steps",
-      "promiseTitle": "My commitment",
-      "promiseSub": "What you get, on every engagement",
-      "promiseItem1": "A <b>quantified and documented diagnosis</b>, not an impression.",
-      "promiseItem2": "<b>Clear priorities</b> by risk and by SME budget.",
-      "promiseItem3": "Real <b>remediation</b>: we fix what we find.",
-      "promiseItem4": "<b>Verifiable proof</b> of the before and after, without jargon."
-    },
     "philosophy": {
       "eyebrow": "How I work",
       "title": "<accent>Understand</accent> before acting",
@@ -152,15 +128,6 @@
     "refs": {
       "honestyTitle": "In full transparency",
       "honestyText": "These frameworks are my <b>working method</b>. Official CyFun <b>certification</b> is issued by BELAC-accredited bodies, not by me. My role: to audit, to fix, to bring you ready for submission."
-    },
-    "cta": {
-      "title": "Let's take stock, no commitment",
-      "text": "30 minutes with me, directly. You leave with a first quantified finding and clear priorities. A free first exchange, no commitment.",
-      "action1": "Get in touch",
-      "action2": "Call 0475 20 55 62",
-      "reassurance1": "Response within 24 h",
-      "reassurance2": "Single point of contact, no subcontracting",
-      "reassurance3": "Data in Belgium"
     }
   },
   "blog": {
@@ -233,12 +200,9 @@
       "skipToContent": "Skip to content"
     },
     "nav": {
-      "services": "Services",
       "competences": "Skills",
       "conformite": "NIS2 Compliance",
-      "approche": "Approach",
       "agence": "About",
-      "certifications": "Certifications",
       "cv": "CV",
       "journal": "Journal",
       "projets": "Projects"
@@ -251,9 +215,7 @@
       "navAria": "Main navigation",
       "cta": "Contact me",
       "openMenu": "Open menu",
-      "closeMenu": "Close menu",
-      "githubAria": "GitHub",
-      "linkedinAria": "LinkedIn"
+      "closeMenu": "Close menu"
     },
     "footer": {
       "blurb": "Cybersecurity and governance (GRC) practitioner in Wallonia. I build my skills and my tools in the open: what I can do, with evidence, and what I cannot do yet.",
@@ -275,8 +237,6 @@
         "devWeb": "Secure web development",
         "conformite": "NIS2 / CyFun compliance",
         "apropos": "About",
-        "approche": "Our approach",
-        "certifications": "Certifications & training",
         "ressources": "Resources & guides",
         "contact": "Contact"
       },
@@ -290,7 +250,6 @@
       "aria": "Breadcrumb",
       "home": "Home",
       "routes": {
-        "about": "About",
         "services": "Services",
         "conformite": "NIS2 Compliance",
         "approche": "Approach",
@@ -298,7 +257,6 @@
         "portfolio": "Portfolio",
         "journal": "Journal",
         "contact": "Contact",
-        "cmsEcommerce": "CMS E-commerce",
         "devis": "Quote Request",
         "mentionsLegales": "Legal Notice",
         "confidentialite": "Privacy Policy",
@@ -323,7 +281,6 @@
     },
     "internship": {
       "label": "Open to an internship",
-      "aria": "Notice: open to an internship",
       "close": "Close"
     }
   },
@@ -398,8 +355,6 @@
       }
     },
     "financement": {
-      "eyebrow": "Financing your compliance",
-      "title": "Compliance costs less than people think: <accent>a large part is subsidised</accent>",
       "lead": "The Walloon cybersecurity voucher finances a large part of your audit and your remediation. Here is how to make use of it."
     },
     "finalCta": {
@@ -1104,7 +1059,6 @@
     "languages": {
       "eyebrow": "Languages",
       "title": "Languages",
-      "note": "Levels to be confirmed.",
       "items": [
         { "lang": "French", "level": "Native" },
         { "lang": "Dutch", "level": "To be confirmed" },
@@ -1136,10 +1090,10 @@
       "title": "What's verifiable today",
       "lead": "Two certifications structure the build-up of cloud and network skills.",
       "az900": {
-        "status": "Earned, 2026",
+        "status": "Earned · January 2026",
         "name": "AZ-900, Microsoft Azure Fundamentals",
         "description": "The basics of Azure cloud: concepts, services, security, compliance and pricing.",
-        "verifyLabel": "Verify on Credly",
+        "verifyLabel": "Verify on Microsoft Learn",
         "why": "The AZ-900 lays the cloud fundamentals. It's my starting point: it opens the way to AZ-104 (Azure administration). A deliberate entry point, not a stack of certifications."
       },
       "ccna": {

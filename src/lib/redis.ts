@@ -75,14 +75,3 @@ export async function checkRateLimit(
     resetTime: record.resetTime,
   };
 }
-
-// Clear rate limit for an IP (useful for testing)
-export async function clearRateLimit(ip: string, namespace: string = "default"): Promise<void> {
-  const key = `rate_limit:${namespace}:${ip}`;
-
-  if (redis) {
-    await redis.del(key);
-  } else {
-    memoryStore.delete(key);
-  }
-}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { contact } from "@/config/site";
 import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -123,7 +124,7 @@ export default async function HomePage({
             { label: t("contact.ctaPrimary"), href: "/contact" },
             {
               label: t("contact.ctaCall"),
-              href: "tel:+32475205562",
+              href: contact.phoneHref,
               variant: "ghostD",
             },
           ]}

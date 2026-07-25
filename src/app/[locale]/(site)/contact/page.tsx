@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { contact } from "@/config/site";
 import { headers } from 'next/headers';
 import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -73,7 +74,7 @@ export default async function ContactPage({
               '@type': 'Organization',
               name: 'Smidjan',
               url: 'https://smidjan.be',
-              email: 'jeanbaptiste.dhondt1@gmail.com',
+              email: contact.email,
               address: {
                 '@type': 'PostalAddress',
                 addressRegion: 'Wallonie',
@@ -83,8 +84,8 @@ export default async function ContactPage({
             contactPoint: {
               '@type': 'ContactPoint',
               contactType: 'customer support',
-              telephone: '+32475205562',
-              email: 'jeanbaptiste.dhondt1@gmail.com',
+              telephone: contact.phone,
+              email: contact.email,
               availableLanguage: ['fr-BE', 'fr'],
               areaServed: ['BE', 'Wallonie'],
             },
@@ -140,11 +141,11 @@ export default async function ContactPage({
                 <ul className={cls.coord}>
                   <li>
                     <span className={cls.k}>{t('side.coordEmailK')}</span>
-                    <a href="mailto:jeanbaptiste.dhondt1@gmail.com">jeanbaptiste.dhondt1@gmail.com</a>
+                    <a href={`mailto:${contact.email}`}>{contact.email}</a>
                   </li>
                   <li>
                     <span className={cls.k}>{t('side.coordPhoneK')}</span>
-                    <a href="tel:+32475205562">0475 20 55 62</a>
+                    <a href={contact.phoneHref}>{contact.phoneLabel}</a>
                   </li>
                   <li>
                     <span className={cls.k}>{t('side.coordZoneK')}</span>

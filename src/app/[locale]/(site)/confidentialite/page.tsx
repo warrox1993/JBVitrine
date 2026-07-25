@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { contact } from "@/config/site";
 import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import type { ReactNode } from "react";
@@ -65,7 +66,7 @@ export default async function ConfidentialitePage({
 
   const strong = (chunks: ReactNode) => <strong>{chunks}</strong>;
   const mailLink = (chunks: ReactNode) => (
-    <LegalLink href="mailto:jeanbaptiste.dhondt1@gmail.com">{chunks}</LegalLink>
+    <LegalLink href={`mailto:${contact.email}`}>{chunks}</LegalLink>
   );
 
   return (

@@ -99,26 +99,6 @@ async function fetchCsrfToken(): Promise<string | null> {
 }
 
 /**
- * Get the cached CSRF token synchronously (may be null)
- */
-export function getCachedCsrfToken(): string | null {
-  if (globalCsrfToken && globalTokenExpiry && Date.now() < globalTokenExpiry) {
-    return globalCsrfToken;
-  }
-  return null;
-}
-
-/**
- * Clear the cached CSRF token (for testing or logout)
- */
-export function clearCsrfToken(): void {
-  globalCsrfToken = null;
-  globalTokenExpiry = null;
-  fetchPromise = null;
-  console.log("[useCsrfToken] Cache cleared");
-}
-
-/**
  * Hook to get and manage CSRF token
  */
 export function useCsrfToken() {

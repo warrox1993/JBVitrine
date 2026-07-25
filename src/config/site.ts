@@ -26,5 +26,13 @@ export const contact = {
   phoneLabel: "0475 20 55 62",
 } as const;
 
+/** Publicly-verifiable credentials (single source, reused by CV + schema.org). */
+export const credentials = {
+  /** Microsoft Certified: Azure Fundamentals (AZ-900), earned 2026-01-13. */
+  az900VerifyUrl:
+    "https://learn.microsoft.com/en-us/users/jeanbaptistedhondt-5414/credentials/certification/azure-fundamentals",
+  az900EarnedDate: "2026-01-13",
+} as const;
+
 /** Canonical production origin (no trailing slash). */
 export const siteUrl = "https://smidjan.be";
