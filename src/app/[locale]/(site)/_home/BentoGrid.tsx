@@ -46,7 +46,8 @@ export async function BentoGrid() {
                 alt={t("identity.name")}
                 width={1080}
                 height={1080}
-                sizePreset="avatar"
+                sizes="176px"
+                quality={92}
                 aspectRatio="square"
               />
             </span>
