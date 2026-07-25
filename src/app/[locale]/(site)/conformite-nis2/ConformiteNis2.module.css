@@ -241,6 +241,23 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  animation: floatChipBounce 2.4s ease-in-out infinite;
+}
+
+@keyframes floatChipBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floatChip {
+    animation: none;
+  }
 }
 .floatChip .ic {
   width: 38px;

@@ -201,20 +201,12 @@
   font-weight: 600;
 }
 
-/* Journey — sticky year-rail + numbered (01–05) chronological list
-   (Brittany Chiang–style experience list). `.journeyLayout` is the
-   two-column shell: a sticky rail of year labels (JourneyRail.tsx) on the
-   left, the numbered `<ol>` entries scrolling past on the right. */
-.journeyLayout {
-  display: grid;
-  grid-template-columns: 108px 1fr;
-  gap: 32px;
-  margin-top: 34px;
-}
-
+/* Journey — numbered (01–05) chronological list (Brittany Chiang–style
+   experience list). Each entry carries its own number + year label, so the
+   marker travels with its text down the page — no separate pinned rail. */
 .journey {
   list-style: none;
-  margin: 0;
+  margin: 34px 0 0;
   padding: 0;
   min-width: 0;
 }
@@ -271,15 +263,6 @@
   .profile {
     position: static;
     top: auto;
-  }
-}
-/* Below ~760px: the sticky rail is hidden (JourneyRail.module.css) and the
-   per-entry `.yr` label becomes the only label — a normal stacked block
-   above each entry's title, single column, no sticky behavior. */
-@media (max-width: 760px) {
-  .journeyLayout {
-    grid-template-columns: 1fr;
-    gap: 0;
   }
 }
 @media (max-width: 720px) {

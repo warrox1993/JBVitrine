@@ -6,7 +6,6 @@ import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { Link } from "@/i18n/navigation";
-import { JourneyRail } from "./JourneyRail";
 import styles from "./Fondateur.module.css";
 
 const CREDENTIALS = [
@@ -165,29 +164,24 @@ export async function Fondateur() {
               <figcaption className={styles.infraCap}>{t("founder.infraCaption")}</figcaption>
             </figure>
 
-            <div className={styles.journeyLayout}>
-              <JourneyRail
-                steps={journeySteps.map(({ id, number, label }) => ({ id, number, label }))}
-              />
-              <ol className={styles.journey}>
-                {journeySteps.map((step) => (
-                  <li
-                    key={step.id}
-                    id={step.id}
-                    className={step.key ? styles.key : undefined}
-                  >
-                    <span className={styles.num} aria-hidden="true">
-                      {step.number}
-                    </span>
-                    <div className={styles.entryBody}>
-                      <div className={styles.yr}>{step.label}</div>
-                      <h4>{step.title}</h4>
-                      <p>{step.text}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </div>
+            <ol className={styles.journey}>
+              {journeySteps.map((step) => (
+                <li
+                  key={step.id}
+                  id={step.id}
+                  className={step.key ? styles.key : undefined}
+                >
+                  <span className={styles.num} aria-hidden="true">
+                    {step.number}
+                  </span>
+                  <div className={styles.entryBody}>
+                    <div className={styles.yr}>{step.label}</div>
+                    <h4>{step.title}</h4>
+                    <p>{step.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
             <Link href="/maintenant" className={styles.nowLink}>
               {t("founder.nowLink")}
               <Icon name="arrow-right" size={16} strokeWidth={2.2} />
