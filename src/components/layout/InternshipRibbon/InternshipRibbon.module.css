@@ -25,7 +25,7 @@
     transform 0.55s cubic-bezier(0.16, 0.84, 0.3, 1);
 }
 
-/* The pill itself. */
+/* The pill itself — a link to the contact page. */
 .ribbon {
   position: relative;
   overflow: hidden; /* clip the gold sheen sweep */
@@ -34,6 +34,13 @@
   gap: 12px;
   padding: 15px 24px;
   border-radius: 999px;
+  pointer-events: auto; /* clickable (the host stays click-through) */
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    border-color 0.16s ease;
 
   /* Rich emerald with a deluxe gold trim — visible but not neon. */
   background: linear-gradient(135deg, #13a277 0%, #0a6b50 55%, #0a4536 100%);
@@ -51,6 +58,22 @@
     0 18px 44px -12px rgba(0, 0, 0, 0.55),
     0 0 40px rgba(16, 185, 129, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Hover / keyboard focus: lift + stronger gold rim and glow (invites the click
+   through to the contact page). */
+.ribbon:hover,
+.ribbon:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(240, 214, 145, 0.95);
+  box-shadow:
+    0 22px 52px -12px rgba(0, 0, 0, 0.6),
+    0 0 52px rgba(16, 185, 129, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+.ribbon:focus-visible {
+  outline: 2px solid #f0d691;
+  outline-offset: 3px;
 }
 
 /* Idle signature: a slim gold glint sweeps the pill once on arrival, then again
