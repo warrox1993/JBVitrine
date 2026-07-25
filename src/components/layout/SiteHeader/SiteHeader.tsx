@@ -8,6 +8,7 @@ import styles from "./SiteHeader.module.css";
 import { ThemeToggle } from "@/components/ui/ThemeToggle/ThemeToggle";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher/LocaleSwitcher";
 import { Icon } from "@/components/ui/Icon/Icon";
+import { BrandMark } from "@/components/ui/BrandMark/BrandMark";
 import { social } from "@/config/site";
 
 // Portfolio-oriented nav. "Services" is reframed as "Compétences"; the former
@@ -153,27 +154,7 @@ export default function SiteHeader() {
     >
       <div className={styles.nav}>
         <Link className={styles.brand} href="/" aria-label={t("brand.ariaHome")}>
-          <svg
-            className={styles.logo}
-            viewBox="0 0 40 40"
-            fill="none"
-            aria-hidden="true"
-          >
-            <rect width="40" height="40" rx="9" fill="#0C1A16" />
-            <path
-              d="M20 8l9 3.4v6.9c0 5.6-3.7 10.7-9 12.3-5.3-1.6-9-6.7-9-12.3v-6.9L20 8Z"
-              fill="none"
-              stroke="#0B7A5B"
-              strokeWidth="2"
-            />
-            <path
-              d="M15.8 20.2l3 3 5.4-6"
-              stroke="#fff"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <BrandMark className={styles.logo} />
           <span className={styles.brandText}>Smidjan</span>
         </Link>
 
