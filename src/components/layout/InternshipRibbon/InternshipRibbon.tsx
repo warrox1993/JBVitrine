@@ -1,62 +1,39 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import styles from "./InternshipRibbon.module.css";
 
-const STORAGE_KEY = "smidjan.internshipRibbon.dismissed";
-/** Short entrance delay so the slide-in reads without feeling absent. */
-const APPEAR_DELAY_MS = 600;
+/** How long after load the ribbon slides in. */
+const APPEAR_DELAY_MS = 1200;
+/** How long it stays before retracting on its own. */
+const VISIBLE_MS = 9000;
 
 /**
- * "Open to an internship" diagonal ribbon pinned to the bottom-right corner.
- * It fades/slides in shortly after the page opens (deluxe-cyber look: emerald
- * band, gold trim + status dot) and then STAYS — it is a standing call-to-action
- * (Jean-Baptiste is looking for an internship), so it must remain visible, not
- * auto-hide. The visitor can dismiss it with the × or Escape (remembered for the
- * session). Motion is disabled under prefers-reduced-motion.
+ * "Open to an internship" corner ribbon (bottom-right). It broadcasts itself:
+ * slides in a short moment after the page opens, holds long enough to read,
+ * then retracts on its own — there is NO manual dismiss by design. Deluxe look:
+ * emerald band, gold trim, a pulsing gold status dot and a single gold sheen
+ * sweep on entry. Motion is reduced under prefers-reduced-motion.
  */
 export function InternshipRibbon() {
   const t = useTranslations("common");
-  // The host always renders but stays visibility:hidden until `visible` flips,
-  // so there is never a flash for a visitor who already dismissed it (we simply
-  // never schedule the reveal in that case). `visible` is only ever set inside
-  // the timeout callback — no synchronous setState in the effect body.
   const [visible, setVisible] = useState(false);
 
+  // Slide in a moment after load. setState lives in the async timeout callback,
+  // not the effect body (the pattern the set-state-in-effect lint allows).
   useEffect(() => {
-    let dismissed = false;
-    try {
-      dismissed = sessionStorage.getItem(STORAGE_KEY) === "1";
-    } catch {
-      dismissed = false;
-    }
-    if (dismissed) return;
-
-    const timer = setTimeout(() => setVisible(true), APPEAR_DELAY_MS);
-    return () => clearTimeout(timer);
+    const show = setTimeout(() => setVisible(true), APPEAR_DELAY_MS);
+    return () => clearTimeout(show);
   }, []);
 
-  const dismiss = useCallback(() => {
-    setVisible(false);
-    try {
-      sessionStorage.setItem(STORAGE_KEY, "1");
-    } catch {
-      /* storage unavailable — dismissing for this render is enough */
-    }
-  }, []);
-
+  // Once shown, retract on its own after the visible window.
   useEffect(() => {
     if (!visible) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") dismiss();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [visible, dismiss]);
+    const hide = setTimeout(() => setVisible(false), VISIBLE_MS);
+    return () => clearTimeout(hide);
+  }, [visible]);
 
-  // The host always renders (SSR-stable), but stays visibility:hidden until
-  // `visible` flips — so a dismissed visitor simply never sees it, no flash.
   return (
     <div
       className={`${styles.host} ${visible ? styles.show : ""}`}
@@ -66,17 +43,6 @@ export function InternshipRibbon() {
         <span className={styles.dot} aria-hidden="true" />
         <span className={styles.label}>{t("internship.label")}</span>
       </div>
-      <button
-        type="button"
-        className={styles.close}
-        onClick={dismiss}
-        aria-label={t("internship.close")}
-        tabIndex={visible ? 0 : -1}
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-          <path d="M6 6l12 12M18 6 6 18" strokeWidth="2" strokeLinecap="round" />
-        </svg>
-      </button>
     </div>
   );
 }

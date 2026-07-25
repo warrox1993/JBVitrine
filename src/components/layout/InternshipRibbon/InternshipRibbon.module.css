@@ -1,19 +1,20 @@
 /* Bottom-right diagonal "internship" ribbon. Fixed, overlays the page, clipped
-   to a corner square so the rotated band reads as a corner flag. */
+   to a corner square so the rotated band reads as a corner flag. It appears on
+   its own, holds, then auto-retracts — there is no manual dismiss. */
 .host {
   position: fixed;
   right: 0;
   bottom: 0;
-  width: 260px;
-  height: 260px;
+  width: 320px;
+  height: 320px;
   overflow: hidden;
   z-index: 55;
-  pointer-events: none; /* only the ribbon + close capture clicks */
-  /* Hidden until .show; entrance slides/fades in from the corner, and the same
-     transition plays in reverse when the visitor dismisses it (× / Escape). */
+  pointer-events: none; /* purely informational — nothing to click */
+  /* Hidden until .show; entrance slides/fades in from the corner. When .show is
+     removed (auto-hide) the same transition plays in reverse to retract it. */
   visibility: hidden;
   opacity: 0;
-  transform: translate(26px, 26px);
+  transform: translate(30px, 30px);
   transition:
     opacity 0.6s ease,
     transform 0.7s cubic-bezier(0.16, 0.84, 0.3, 1),
@@ -29,28 +30,27 @@
     transform 0.7s cubic-bezier(0.16, 0.84, 0.3, 1);
 }
 
-/* The diagonal band itself. */
+/* The diagonal band itself — larger so the label reads clearly. */
 .ribbon {
   position: absolute;
-  bottom: 52px;
-  right: -66px;
-  width: 280px;
+  bottom: 66px;
+  right: -78px;
+  width: 348px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 11px;
-  padding: 13px 60px;
+  gap: 12px;
+  padding: 16px 72px;
   transform: rotate(-45deg);
   transform-origin: center;
-  pointer-events: auto;
 
   /* Rich emerald band with a deluxe gold trim — visible but not neon. */
   background: linear-gradient(135deg, #13a277 0%, #0a6b50 52%, #0a4536 100%);
   color: #f4fff9;
   font-family: var(--mono, ui-monospace, monospace);
-  font-size: 12.5px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   white-space: nowrap;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
@@ -58,8 +58,8 @@
   border-top: 1.5px solid rgba(240, 214, 145, 0.85); /* gold hairline */
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow:
-    0 14px 36px rgba(0, 0, 0, 0.4),
-    0 0 34px rgba(16, 185, 129, 0.4),
+    0 16px 40px rgba(0, 0, 0, 0.42),
+    0 0 40px rgba(16, 185, 129, 0.42),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -90,8 +90,7 @@
    every 7s — a slow "catching the light" luxury shimmer, not a loop you notice.
    Pure ::after (no markup change), sized to .ribbon so anything past the edges
    is caught by .host's existing overflow:hidden corner clip. Opacity+transform
-   only. ~0.14 sweeps/sec of a soft highlight → nowhere near WCAG 2.3.1's flash
-   threshold. */
+   only. Well below WCAG 2.3.1's flash threshold. */
 .ribbon::after {
   content: "";
   position: absolute;
@@ -135,8 +134,8 @@
 }
 
 .dot {
-  width: 9px;
-  height: 9px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   flex: none;
   background: radial-gradient(circle at 35% 35%, #ffe9a8, #f0c674 70%);
@@ -154,47 +153,6 @@
     opacity: 0.5;
     box-shadow: 0 0 3px 0 rgba(245, 210, 130, 0.45);
   }
-}
-
-/* Small dismiss control at the ribbon's inner corner. */
-.close {
-  position: absolute;
-  right: 132px;
-  bottom: 132px;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  cursor: pointer;
-  pointer-events: auto;
-  color: #f6efdc;
-  background: rgba(10, 51, 40, 0.95);
-  border: 1px solid rgba(240, 214, 145, 0.6);
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.34);
-  transition:
-    color 0.16s ease,
-    background 0.16s ease,
-    transform 0.12s ease;
-}
-
-.close svg {
-  width: 14px;
-  height: 14px;
-  display: block;
-}
-
-.close:hover {
-  color: #fff;
-  background: rgba(16, 74, 58, 1);
-  transform: scale(1.1);
-}
-
-.close:focus-visible {
-  outline: 2px solid #f0d691;
-  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -221,21 +179,18 @@
   }
 }
 
-/* Shrink slightly on small phones so the flag stays tasteful. */
+/* Slightly smaller on phones so the flag stays tasteful, but still legible. */
 @media (max-width: 480px) {
   .host {
-    width: 214px;
-    height: 214px;
+    width: 264px;
+    height: 264px;
   }
   .ribbon {
-    bottom: 44px;
-    right: -70px;
-    padding: 11px 58px;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-  }
-  .close {
-    right: 112px;
-    bottom: 112px;
+    bottom: 54px;
+    right: -76px;
+    width: 300px;
+    padding: 13px 64px;
+    font-size: 13px;
+    letter-spacing: 0.14em;
   }
 }
