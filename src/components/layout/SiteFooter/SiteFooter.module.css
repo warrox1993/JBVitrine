@@ -245,4 +245,21 @@
     min-height: 44px;
     padding: 8px 14px;
   }
+
+  /* Comfortable tap targets for footer nav / contact / legal links on touch:
+     the desktop line-height (~25px) is fine with a mouse but small for a
+     thumb, so give each link a ~40px hit area on small screens. */
+  .links {
+    gap: 2px;
+  }
+  .links a,
+  .contact a,
+  .bottomLinks a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+  }
+  .bottomLinks {
+    gap: 4px 18px;
+  }
 }
