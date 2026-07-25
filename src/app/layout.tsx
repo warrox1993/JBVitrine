@@ -174,12 +174,13 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
                     {t('a11y.skipToContent')}
                 </a>
                 <FXReady />
-                <NextIntlClientProvider>
-                    <RootEffects>
-                        <RouteProgressProvider />
-                        {children}
-                    </RootEffects>
-                </NextIntlClientProvider>
+                {/* The next-intl client provider lives in app/[locale]/layout.tsx
+                    (not here): the root layout is cached across soft navigations,
+                    so a provider here would freeze on the first locale. */}
+                <RootEffects>
+                    <RouteProgressProvider />
+                    {children}
+                </RootEffects>
                 <ToastHost />
                 {process.env.NODE_ENV === 'production' && (
                     <>
