@@ -5,6 +5,7 @@ import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { Reveal } from '@/components/ui/Reveal/Reveal';
+import { CopyButton } from '@/components/ui/CopyButton/CopyButton';
 import { Link } from '@/i18n/navigation';
 import { ContactForm } from './ContactForm';
 import cls from './page.module.css';
@@ -141,11 +142,25 @@ export default async function ContactPage({
                 <ul className={cls.coord}>
                   <li>
                     <span className={cls.k}>{t('side.coordEmailK')}</span>
-                    <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                    <span className={cls.coordValue}>
+                      <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                      <CopyButton
+                        value={contact.email}
+                        copyLabel={t('side.copyEmail')}
+                        copiedLabel={t('side.copied')}
+                      />
+                    </span>
                   </li>
                   <li>
                     <span className={cls.k}>{t('side.coordPhoneK')}</span>
-                    <a href={contact.phoneHref}>{contact.phoneLabel}</a>
+                    <span className={cls.coordValue}>
+                      <a href={contact.phoneHref}>{contact.phoneLabel}</a>
+                      <CopyButton
+                        value={contact.phoneLabel}
+                        copyLabel={t('side.copyPhone')}
+                        copiedLabel={t('side.copied')}
+                      />
+                    </span>
                   </li>
                   <li>
                     <span className={cls.k}>{t('side.coordZoneK')}</span>

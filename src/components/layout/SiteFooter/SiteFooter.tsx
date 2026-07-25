@@ -127,6 +127,9 @@ export default async function SiteFooter() {
                 <Link href="/projets">{t("nav.projets")}</Link>
               </li>
               <li>
+                <Link href="/maintenant">{t("footer.links.maintenant")}</Link>
+              </li>
+              <li>
                 <Link href="/blog">{t("footer.links.ressources")}</Link>
               </li>
               <li>
@@ -156,7 +159,10 @@ export default async function SiteFooter() {
         <div className={styles.bottom}>
           {/* Placeholder: TVA/BCE number intentionally omitted until the
               real BCE number is provided by the client. */}
-          <div>{t("footer.copyright")}</div>
+          <div>
+            {t("footer.copyright")}
+            <span className={styles.builtWith}>{t("footer.builtWith")}</span>
+          </div>
           <div className={styles.bottomLinks}>
             <Link href="/mentions-legales">{t("footer.legal.mentions")}</Link>
             <Link href="/confidentialite">{t("footer.legal.privacy")}</Link>

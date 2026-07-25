@@ -231,12 +231,14 @@
         "tryhackme": "TryHackMe"
       },
       "copyright": "© 2026 Smidjan · Alle rechten voorbehouden.",
+      "builtWith": "Ontworpen & gebouwd met Next.js",
       "links": {
         "reseaux": "Netwerken & infrastructuur",
         "audits": "Audits & beveiligingstests",
         "devWeb": "Beveiligde webontwikkeling",
         "conformite": "NIS2- / CyFun-conformiteit",
         "apropos": "Over ons",
+        "maintenant": "Op dit moment",
         "ressources": "Bronnen & gidsen",
         "contact": "Contact"
       },
@@ -430,6 +432,9 @@
       "coordZoneV": "Wallonië, België",
       "coordPhoneK": "Telefoon",
       "coordEmailK": "E-mail",
+      "copyEmail": "E-mailadres kopiëren",
+      "copyPhone": "Nummer kopiëren",
+      "copied": "Gekopieerd",
       "coordHoursK": "Beschikbaarheid",
       "coordHoursV": "Tijdens de week — snel antwoord"
     },
@@ -1020,6 +1025,51 @@
       "disclaimer": "Indicatieve inschatting, geen juridisch advies. De gratis diagnose bevestigt uw exacte situatie.",
       "levelLabel": "Aanbevolen CyFun-startpunt",
       "recapLabel": "Op basis van uw antwoorden"
+    }
+  },
+  "maintenant": {
+    "meta": {
+      "title": "Op dit moment — Jean-Baptiste Dhondt | Smidjan",
+      "description": "Wat ik leer, wat ik bouw, en mijn roadmap naar een stage in cyberbeveiliging vanaf 2027."
+    },
+    "breadcrumb": { "home": "Home", "current": "Op dit moment" },
+    "hero": {
+      "eyebrow": "Op dit moment",
+      "title": "Wat ik <accent>nu</accent> bouw",
+      "lead": "Een eerlijke momentopname van mijn voortgang: wat ik leer, mijn lopende labs, en de koers naar een stage vanaf 2027.",
+      "updated": "Laatst bijgewerkt: aan te vullen"
+    },
+    "learning": {
+      "title": "Wat ik nu leer",
+      "items": [
+        { "title": "CCNA (Cisco)", "desc": "Netwerken: routing, switching, security — ter voorbereiding van de certificering." },
+        { "title": "Azure-beveiliging (AZ-104 → AZ-500)", "desc": "Beheer en beveiliging van de Microsoft-cloud, in het verlengde van AZ-900." },
+        { "title": "Offensieve beveiliging (TryHackMe)", "desc": "Aanvallen begrijpen om beter te verdedigen — gestage voortgang." }
+      ]
+    },
+    "building": {
+      "title": "Wat ik bouw",
+      "items": [
+        { "title": "Een homelab", "desc": "Netwerksegmentatie, firewall, zelf-gehoste diensten om echt te oefenen." },
+        { "title": "Dit portfolio", "desc": "Geharde Next.js-site (A+ beveiligingsheaders) — beveiliging eerst op mijn eigen site toegepast." },
+        { "title": "Writeups", "desc": "Documentatie van mijn labs en NIS2/CyFun-cases in de blog." }
+      ]
+    },
+    "roadmap": {
+      "eyebrow": "Koers 2027",
+      "title": "Mijn roadmap naar de <accent>stage</accent>",
+      "lead": "Concrete doelen, stap voor stap. Nog te verfijnen.",
+      "items": [
+        { "period": "Lopend", "title": "Fundamenten & certificeringen", "desc": "Bachelor informatica, AZ-900 behaald, CCNA in voorbereiding." },
+        { "period": "2026", "title": "Cyberbeveiliging verdiepen", "desc": "AZ-104/AZ-500, offensieve en defensieve labs, gepubliceerde writeups." },
+        { "period": "2027", "title": "Stage in cyberbeveiliging", "desc": "Doel: een stage om deze vaardigheden in een team en in de praktijk toe te passen." }
+      ]
+    },
+    "cta": {
+      "title": "Een stage voor mij?",
+      "text": "Ik zoek een stage vanaf 2027 in cloud-, netwerk-, infra- of webbeveiliging. Laten we praten.",
+      "action": "Contacteer mij",
+      "actionCv": "Bekijk mijn cv"
     }
   },
   "cv": {

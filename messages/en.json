@@ -231,12 +231,14 @@
         "tryhackme": "TryHackMe"
       },
       "copyright": "© 2026 Smidjan · All rights reserved.",
+      "builtWith": "Designed & built with Next.js",
       "links": {
         "reseaux": "Networks & infrastructure",
         "audits": "Audits & security testing",
         "devWeb": "Secure web development",
         "conformite": "NIS2 / CyFun compliance",
         "apropos": "About",
+        "maintenant": "Now",
         "ressources": "Resources & guides",
         "contact": "Contact"
       },
@@ -430,6 +432,9 @@
       "coordZoneV": "Wallonia, Belgium",
       "coordPhoneK": "Phone",
       "coordEmailK": "Email",
+      "copyEmail": "Copy email address",
+      "copyPhone": "Copy phone number",
+      "copied": "Copied",
       "coordHoursK": "Availability",
       "coordHoursV": "Weekdays — quick reply"
     },
@@ -1020,6 +1025,51 @@
       "disclaimer": "Indicative estimate, not legal advice. The free assessment confirms your exact situation.",
       "levelLabel": "Recommended CyFun starting point",
       "recapLabel": "Based on your answers"
+    }
+  },
+  "maintenant": {
+    "meta": {
+      "title": "Now — Jean-Baptiste Dhondt | Smidjan",
+      "description": "What I'm learning, what I'm building, and my roadmap toward a cybersecurity internship from 2027."
+    },
+    "breadcrumb": { "home": "Home", "current": "Now" },
+    "hero": {
+      "eyebrow": "Right now",
+      "title": "What I'm building <accent>now</accent>",
+      "lead": "An honest snapshot of my progress: what I'm learning, my labs in progress, and the path toward an internship from 2027.",
+      "updated": "Last updated: to be filled in"
+    },
+    "learning": {
+      "title": "What I'm learning now",
+      "items": [
+        { "title": "CCNA (Cisco)", "desc": "Networking: routing, switching, security — preparing for the certification." },
+        { "title": "Azure security (AZ-104 → AZ-500)", "desc": "Microsoft cloud administration and security, building on AZ-900." },
+        { "title": "Offensive security (TryHackMe)", "desc": "Understanding attacks to defend better — steady progress." }
+      ]
+    },
+    "building": {
+      "title": "What I'm building",
+      "items": [
+        { "title": "A homelab", "desc": "Network segmentation, firewall, self-hosted services to practise for real." },
+        { "title": "This portfolio", "desc": "A hardened Next.js site (A+ security headers) — security applied to my own site first." },
+        { "title": "Writeups", "desc": "Documenting my labs and NIS2 / CyFun cases on the blog." }
+      ]
+    },
+    "roadmap": {
+      "eyebrow": "Heading to 2027",
+      "title": "My roadmap to the <accent>internship</accent>",
+      "lead": "Concrete goals, step by step. To be refined over time.",
+      "items": [
+        { "period": "Ongoing", "title": "Foundations & certifications", "desc": "Computer science degree, AZ-900 earned, CCNA in preparation." },
+        { "period": "2026", "title": "Go deeper into security", "desc": "AZ-104/AZ-500, offensive and defensive labs, published writeups." },
+        { "period": "2027", "title": "Cybersecurity internship", "desc": "Goal: an internship to apply and grow these skills in a team, for real." }
+      ]
+    },
+    "cta": {
+      "title": "An internship for me?",
+      "text": "I'm looking for an internship from 2027 in cloud, network, infra or web security. Let's talk.",
+      "action": "Contact me",
+      "actionCv": "View my CV"
     }
   },
   "cv": {

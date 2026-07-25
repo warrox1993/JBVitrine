@@ -160,6 +160,13 @@
   gap: 0.15rem;
 }
 
+.coordValue {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 2px;
+}
+
 .coord .k {
   font-family: var(--font-mono);
   font-size: 0.68rem;

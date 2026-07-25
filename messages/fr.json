@@ -231,12 +231,14 @@
         "tryhackme": "TryHackMe"
       },
       "copyright": "© 2026 Smidjan · Tous droits réservés.",
+      "builtWith": "Conçu & développé avec Next.js",
       "links": {
         "reseaux": "Réseaux & infrastructure",
         "audits": "Audits & tests de sécurité",
         "devWeb": "Développement web sécurisé",
         "conformite": "Conformité NIS2 / CyFun",
         "apropos": "À propos",
+        "maintenant": "En ce moment",
         "ressources": "Ressources & guides",
         "contact": "Contact"
       },
@@ -430,6 +432,9 @@
       "coordZoneV": "Wallonie, Belgique",
       "coordPhoneK": "Téléphone",
       "coordEmailK": "E-mail",
+      "copyEmail": "Copier l'adresse e-mail",
+      "copyPhone": "Copier le numéro",
+      "copied": "Copié",
       "coordHoursK": "Disponibilité",
       "coordHoursV": "En semaine — réponse rapide"
     },
@@ -1020,6 +1025,51 @@
       "disclaimer": "Estimation indicative, pas un avis juridique. Le diagnostic gratuit confirme votre situation exacte.",
       "levelLabel": "Point de départ CyFun conseillé",
       "recapLabel": "Basé sur vos réponses"
+    }
+  },
+  "maintenant": {
+    "meta": {
+      "title": "En ce moment — Jean-Baptiste Dhondt | Smidjan",
+      "description": "Ce que j'apprends, ce que je construis, et ma feuille de route vers un stage en cybersécurité à partir de 2027."
+    },
+    "breadcrumb": { "home": "Accueil", "current": "En ce moment" },
+    "hero": {
+      "eyebrow": "En ce moment",
+      "title": "Ce que je construis <accent>maintenant</accent>",
+      "lead": "Un instantané honnête de ma progression : ce que j'apprends, mes labos en cours, et le cap vers un stage à partir de 2027.",
+      "updated": "Dernière mise à jour : à compléter"
+    },
+    "learning": {
+      "title": "J'apprends en ce moment",
+      "items": [
+        { "title": "CCNA (Cisco)", "desc": "Réseaux : routage, switching, sécurité — en préparation de la certification." },
+        { "title": "Sécurité Azure (AZ-104 → AZ-500)", "desc": "Administration et sécurité du cloud Microsoft, dans la continuité de l'AZ-900." },
+        { "title": "Sécurité offensive (TryHackMe)", "desc": "Comprendre les attaques pour mieux défendre — progression régulière." }
+      ]
+    },
+    "building": {
+      "title": "Ce que je construis",
+      "items": [
+        { "title": "Un homelab", "desc": "Segmentation réseau, pare-feu, services auto-hébergés pour m'exercer en conditions réelles." },
+        { "title": "Ce portfolio", "desc": "Site Next.js durci (en-têtes de sécurité A+) — la sécurité appliquée d'abord sur mon propre site." },
+        { "title": "Des writeups", "desc": "Documentation de mes labos et de cas NIS2 / CyFun dans le journal." }
+      ]
+    },
+    "roadmap": {
+      "eyebrow": "Cap 2027",
+      "title": "Ma feuille de route vers le <accent>stage</accent>",
+      "lead": "Des objectifs concrets, étape par étape. À affiner au fil du temps.",
+      "items": [
+        { "period": "En cours", "title": "Fondations & certifications", "desc": "Bachelier en informatique, AZ-900 obtenu, CCNA en préparation." },
+        { "period": "2026", "title": "Approfondir la cybersécurité", "desc": "AZ-104 / AZ-500, labos offensifs et défensifs, writeups publiés." },
+        { "period": "2027", "title": "Stage en cybersécurité", "desc": "Objectif : un stage pour appliquer et développer ces compétences en équipe et en conditions réelles." }
+      ]
+    },
+    "cta": {
+      "title": "Un stage à me proposer ?",
+      "text": "Je cherche un stage à partir de 2027 en sécurité cloud, réseau, infrastructure ou web. Parlons-en.",
+      "action": "Me contacter",
+      "actionCv": "Voir mon CV"
     }
   },
   "cv": {

@@ -1,0 +1,140 @@
+.hero {
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  border-bottom: 1px solid var(--line);
+  padding: 40px 0 52px;
+}
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #13a277;
+  box-shadow: 0 0 0 3px rgba(19, 162, 119, 0.18);
+  flex: none;
+  animation: nowDot 2s ease-in-out infinite;
+}
+@keyframes nowDot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+.kickerMono {
+  font-family: var(--mono) !important;
+  letter-spacing: 0.06em !important;
+}
+.h1 {
+  font-size: clamp(32px, 4.4vw, 50px);
+  margin-top: 16px;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  font-weight: 800;
+  line-height: 1.13;
+}
+.lead {
+  margin-top: 18px;
+  max-width: 56ch;
+  font-size: 18.5px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+.updated {
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--orange-d);
+  letter-spacing: 0.02em;
+}
+
+/* Two columns: learning / building */
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.colTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+}
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+.list li {
+  display: flex;
+  gap: 12px;
+}
+.list li svg {
+  color: var(--orange-d);
+  flex: none;
+  margin-top: 3px;
+}
+.list li div {
+  display: grid;
+  gap: 3px;
+}
+.list li b {
+  font-size: 15.5px;
+  color: var(--color-text);
+}
+.list li span {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.55;
+}
+
+/* Roadmap timeline */
+.timeline {
+  display: grid;
+  gap: 16px;
+  margin-top: 30px;
+}
+.milestone {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 12px 12px 0;
+  background: var(--color-surface-solid);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-s);
+}
+.period {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--orange-d);
+  text-transform: uppercase;
+}
+.mTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: 6px;
+}
+.mDesc {
+  font-size: 14.5px;
+  color: var(--slate);
+  line-height: 1.6;
+  margin-top: 6px;
+}
+
+@media (max-width: 760px) {
+  .cols {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
