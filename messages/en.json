@@ -171,11 +171,11 @@
       "readMore": "Read"
     },
     "cta": {
-      "title": "Need tailored support?",
+      "title": "A question, a project, a collaboration?",
       "text": "Let's talk about your security, your NIS2 / CyFun compliance or your secure web project.",
       "action": "Get in touch",
-      "reassurance24h": "Reply within 24 h",
-      "reassuranceNoCommitment": "No commitment"
+      "reassurance24h": "I reply personally",
+      "reassuranceNoCommitment": "A direct conversation"
     },
     "article": {
       "metaTitle": "{title} | Smidjan Blog",
@@ -278,7 +278,7 @@
       "legal": {
         "mentions": "Legal notice",
         "privacy": "Privacy policy",
-        "cgv": "Terms of sale"
+        "cgv": "Terms of use"
       }
     },
     "breadcrumb": {
@@ -303,9 +303,9 @@
   "conformite": {
     "meta": {
       "title": "NIS2 & CyFun (CCB) compliance for SMEs: audit, remediation & preparation | Smidjan Wallonia",
-      "description": "Prepare your NIS2 compliance with the CCB's CyFun (CyberFundamentals) framework. Smidjan handles the audit, the gap analysis, the remediation and the preparation for verification across the 3 levels Basic, Important and Essential. Free diagnostic in Wallonia.",
+      "description": "Understand NIS2 compliance and the CCB's CyFun (CyberFundamentals) framework. Jean-Baptiste Dhondt (“Smidjan”), training in cybersecurity in Wallonia, explains the audit, the gap analysis and the preparation for verification across the 3 levels Basic, Important and Essential, and what he can help with.",
       "ogTitle": "NIS2 & CyFun (CCB) compliance for SMEs | Smidjan Wallonia",
-      "ogDescription": "Audit, gap analysis, remediation and preparation for CyFun (CCB) verification to reach your NIS2 level. Basic, Important, Essential. Free diagnostic.",
+      "ogDescription": "Audit, gap analysis and preparation for CyFun (CCB) verification for your NIS2 level: what I can do and what I'm training on. Basic, Important, Essential.",
       "ogImageAlt": "NIS2 & CyFun compliance, Smidjan, cybersecurity in Wallonia",
       "twitterTitle": "NIS2 & CyFun (CCB) compliance | Smidjan",
       "twitterDescription": "Audit, remediation and preparation for CyFun verification for your NIS2 compliance."
@@ -316,13 +316,13 @@
     },
     "hero": {
       "badge": "In force since 18 October 2024 in Belgium",
-      "title": "Bring your SME into <accent>NIS2 compliance</accent>, without jargon or overspend.",
-      "lead": "Audit, <b>remediation</b>, alignment with CyFun (CCB): we don't list your gaps, we fix them.",
+      "title": "Understanding <accent>NIS2 compliance</accent> and the CyFun framework, without jargon.",
+      "lead": "Audit, gap analysis, alignment with <b>CyFun (CCB)</b>: here's how it works, and what I can help you with or practise alongside you.",
       "ctaPrimary": "Get in touch",
       "ctaSecondary": "Compare the 3 levels",
-      "assure1": "No commitment",
-      "assure2": "Reply within 24 h",
-      "assure3": "A single point of contact, no subcontracting",
+      "assure1": "An educational approach",
+      "assure2": "I reply personally",
+      "assure3": "One point of contact: me",
       "cardMonth": "Oct",
       "cardYear": "2024",
       "cardTitle": "NIS2 is already in force",
@@ -330,7 +330,7 @@
       "statSanctionLbl": "MAX PENALTY",
       "statCaLbl": "OF GLOBAL TURNOVER",
       "statIncidentLbl": "INCIDENT ALERT",
-      "cardFoot": "<b>Every month counts.</b> We bring you to the expected level and reduce the risk of a penalty.",
+      "cardFoot": "<b>Every month counts.</b> Understanding the expected level early means reducing the risk of a penalty.",
       "chipTitle": "CCB · CyberFundamentals",
       "chipSub": "Official Belgian framework"
     },
@@ -371,15 +371,15 @@
       }
     },
     "financement": {
-      "lead": "The Walloon cybersecurity voucher finances a large part of your audit and your remediation. Here is how to make use of it."
+      "lead": "The Walloon cybersecurity voucher can finance a large part of an audit and remediation effort. Here, for information, is how the scheme works."
     },
     "finalCta": {
-      "title": "In 30 minutes, know exactly where you stand.",
-      "text": "30 min with me, directly: NIS2 category, CyFun level, clear priorities. No commitment, no jargon.",
+      "title": "In 30 minutes, let's take stock of your NIS2 situation.",
+      "text": "30 min with me, directly: NIS2 category, CyFun level, first priorities. An honest conversation, no jargon.",
       "action1": "Get in touch",
       "action2": "Call 0475 20 55 62",
-      "reassure1": "Reply within 24 h",
-      "reassure2": "Single point of contact, no subcontracting",
+      "reassure1": "I reply personally",
+      "reassure2": "One point of contact: me",
       "reassure3": "Data in Belgium"
     }
   },
@@ -670,10 +670,10 @@
         "ogDescription": "Identification of the publisher, hosting and intellectual property of the Smidjan website."
       },
       "cgv": {
-        "title": "Terms and conditions | Smidjan",
-        "description": "Smidjan's general service terms: purpose, quotation, performance, liability, confidentiality and Belgian law applicable to cybersecurity engagements.",
-        "ogTitle": "Terms and conditions | Smidjan",
-        "ogDescription": "Contractual framework for Smidjan's consulting, audit and secure development services."
+        "title": "Terms of use | Smidjan",
+        "description": "Terms of use of Jean-Baptiste Dhondt's personal website (“Smidjan”): purpose of the site, intellectual property, limitation of liability and applicable Belgian law. A personal portfolio, with nothing for sale online.",
+        "ogTitle": "Terms of use | Smidjan",
+        "ogDescription": "Terms of use of Jean-Baptiste Dhondt's personal portfolio (“Smidjan”): use of the site, informational content and Belgian law."
       },
       "confidentialite": {
         "title": "Privacy policy (GDPR) | Smidjan",
@@ -691,7 +691,7 @@
       "items": {
         "mentions": "Legal notice",
         "confidentialite": "Privacy policy",
-        "cgv": "Terms and conditions"
+        "cgv": "Terms of use"
       }
     },
     "mentions": {
@@ -702,18 +702,18 @@
       },
       "editeur": {
         "title": "Website publisher",
-        "intro": "This website is published by Smidjan, a company active in cybersecurity based in Wallonia, Belgium.",
-        "denomination": "<strong>Name:</strong> Smidjan, a trade name operated by Jean-Baptiste Dhondt (natural person)",
-        "siege": "<strong>Registered office:</strong> Wallonia, Belgium",
-        "bce": "<strong>Company number (CBE):</strong> Registration in progress",
-        "tva": "<strong>Intra-community VAT number:</strong> Registration in progress",
+        "intro": "This website is a personal portfolio published by Jean-Baptiste Dhondt (“Smidjan”), a natural person based in Wallonia, Belgium.",
+        "denomination": "<strong>Publisher:</strong> Jean-Baptiste Dhondt, a natural person, publishing under the name “Smidjan”",
+        "siege": "<strong>Location:</strong> Wallonia, Belgium",
+        "bce": "<strong>Status:</strong> Private individual (natural person) — “Smidjan” is a pseudonym, not a registered company.",
+        "tva": "<strong>Nature of the site:</strong> A personal portfolio, with no commercial activity or online sale of services.",
         "emailLabel": "<strong>E-mail:</strong>",
         "telephoneLabel": "<strong>Telephone:</strong>",
-        "callout": "In full transparency: at the time this page was drafted, Smidjan had not yet completed its registration (CBE/VAT). <b>No company number may be published as long as it has not been officially assigned.</b> This information will be added as soon as it is obtained, and before any final publication of the website online."
+        "callout": "In full transparency: “Smidjan” is not a registered business. <b>This site sells nothing and undertakes no commercial activity; it is one person's portfolio, and that person is currently in training.</b> If a self-employed activity were ever declared, these notices would be updated accordingly."
       },
       "responsable": {
         "title": "Person responsible for publication",
-        "body": "Jean-Baptiste Dhondt, founder of Smidjan, acts as the person responsible for the publication of this website."
+        "body": "Jean-Baptiste Dhondt, publisher of the site under the name “Smidjan”, acts as the person responsible for the publication of this website."
       },
       "hebergement": {
         "title": "Hosting",
@@ -722,9 +722,9 @@
       },
       "propriete": {
         "title": "Intellectual property",
-        "p1": "All the elements of this website (texts, structure, graphics, logo, source code) are protected by Belgian and international intellectual property law and remain the property of Smidjan, unless otherwise stated. Any reproduction, representation, modification or exploitation, in whole or in part, without prior written authorisation, is prohibited.",
+        "p1": "All the elements of this website (texts, structure, graphics, logo, source code) are protected by Belgian and international intellectual property law and remain the property of Jean-Baptiste Dhondt, unless otherwise stated. Any reproduction, representation, modification or exploitation, in whole or in part, without prior written authorisation, is prohibited.",
         "h3": "Limitation of liability",
-        "p2": "Despite the care taken in drafting this website, Smidjan cannot guarantee the accuracy, completeness or permanent currency of the information published on it, and cannot be held liable for the consequences of any use of this information, nor for interruptions or technical malfunctions beyond its control."
+        "p2": "Despite the care taken in drafting this website, Jean-Baptiste Dhondt cannot guarantee the accuracy, completeness or permanent currency of the information published on it, and cannot be held liable for the consequences of any use of this information, nor for interruptions or technical malfunctions beyond his control."
       },
       "contact": {
         "title": "Contact",
@@ -733,75 +733,75 @@
     },
     "cgv": {
       "hero": {
-        "eyebrow": "Contractual framework",
-        "title": "Terms and conditions",
-        "lead": "The framework applicable to the consulting, audit, security testing, secure development and compliance support services provided by Smidjan."
+        "eyebrow": "Personal portfolio",
+        "title": "Terms of use",
+        "lead": "The rules for using this personal website, the ownership of its content and the limits of liability that apply. It's a portfolio: nothing is sold online."
       },
-      "intro": "These terms and conditions govern the services provided by Smidjan. They do not replace the quotation or the contract signed for a given engagement, which prevails in the event of any contradiction.",
+      "intro": "This website is the personal portfolio of Jean-Baptiste Dhondt, also known as “Smidjan”. These terms simply describe how the site may be viewed and used. They are not an offer of sale: any possible collaboration would be discussed case by case, person to person.",
       "objet": {
-        "title": "Purpose",
-        "body": "These terms and conditions govern the consulting, audit, security testing, secure development and compliance support (NIS2 / CyberFundamentals) services provided by Smidjan to its professional clients."
+        "title": "Purpose of the site",
+        "body": "This website presents the background, skills and projects of Jean-Baptiste Dhondt in cybersecurity (cloud and network security, automation, NIS2 / CyberFundamentals compliance). It is informational and a way to get in touch, as part of a search for an internship from 2027."
       },
       "devis": {
-        "title": "Quotation and order",
-        "body": "Every service is the subject of a prior quotation detailing the scope, the deliverables, the indicative schedule and the price. The service is deemed accepted upon signature of the quotation, upon its written confirmation (including by e-mail), or upon payment of any deposit."
+        "title": "No online sale",
+        "body": "This website offers no product or service for sale and allows no order or payment online. It describes what Jean-Baptiste can do and what he is training on. Any possible collaboration, internship or engagement would always be discussed directly and case by case, with no commitment on either side until something is agreed in writing."
       },
       "execution": {
-        "title": "Performance of the services",
-        "p1": "Smidjan undertakes to perform the services diligently, in accordance with the professional standards of the trade and the applicable frameworks (in particular OWASP, ISO/IEC 27001, CyberFundamentals). The communicated timeframes are given for indicative purposes only, unless an explicit contrary commitment is made in the quotation.",
-        "h3": "Price and terms of payment",
-        "p2": "Prices are set in euros, exclusive or inclusive of all taxes as indicated in the quotation. The invoicing terms (any deposit, due dates and milestones) are specified in the quotation specific to each engagement, which the client accepts upon signature or upon validation by e-mail. Any sum not paid by its due date may give rise, after a formal notice that has remained without effect, to the interest and compensation provided for by the Belgian Act of 2 August 2002 on combating late payment in commercial transactions, where it applies."
+        "title": "Use of the site",
+        "p1": "You are free to browse this site and to quote its content fairly, citing the source. Please do not misuse it: no mass automated scraping, no attempt to harm its security or availability, and no reuse that suggests an affiliation or partnership that does not exist.",
+        "h3": "Content for information only",
+        "p2": "The information published here (skills, projects, notes on NIS2 / CyFun) is provided for informational and educational purposes. Jean-Baptiste is a Bachelor's student in computer science (ISL school) and is continuing his training: the content reflects a level still being built and may evolve. It does not constitute personalised professional advice on which to base a decision without a prior conversation."
       },
       "responsabilite": {
         "title": "Liability",
-        "body": "Smidjan's liability may only be engaged in the event of a proven fault in the performance of its services. It is limited to direct and foreseeable damage and, except in the event of gross or intentional fault, capped at the total amount invoiced for the engagement concerned. Smidjan cannot be held liable for the consequences of a vulnerability not detected during an audit or a security test, as these services constitute an obligation of means and not of result."
+        "body": "The content of this site is provided “as is”, without any guarantee of accuracy, completeness or permanent currency. Jean-Baptiste Dhondt cannot be held liable for the consequences of any use of this information, nor for interruptions or technical malfunctions of the site beyond his control."
       },
       "confidentialite": {
         "title": "Confidentiality",
-        "p1": "Each party undertakes to keep strictly confidential the technical, commercial or organisational information exchanged in the context of the engagement, throughout its duration and after its end, unless otherwise agreed in writing or subject to a legal obligation of disclosure.",
-        "p2": "The personal data processed on this occasion is processed in accordance with our <link>privacy policy</link>."
+        "p1": "The information you send me via the contact form or by e-mail stays between us and is used only to reply to you. Should a conversation lead to a collaboration, each of us would naturally treat any sensitive information shared on that occasion with discretion.",
+        "p2": "The personal data processed on this occasion is processed in accordance with my <link>privacy policy</link>."
       },
       "propriete": {
-        "title": "Intellectual property of the deliverables",
-        "body": "Unless otherwise stipulated in the quotation, the reports, analyses and recommendations delivered to the client are granted to it for use for its internal needs. The methodologies, tools and templates specific to Smidjan remain its property. For custom development services, the scope of the transfer of rights to the delivered code is specified in the corresponding quotation."
+        "title": "Intellectual property of the site",
+        "body": "All the elements of this site (texts, structure, graphics, logo, source code) remain the property of Jean-Baptiste Dhondt, unless otherwise stated. You may link to it and quote short extracts while citing the source; any reproduction or substantial reuse without prior written authorisation is not permitted."
       },
       "resiliation": {
-        "title": "Termination",
-        "body": "In the event of a serious breach by one party of its obligations, not remedied within a reasonable time after a written formal notice, the other party may terminate the ongoing engagement, without prejudice to the sums already due for the work carried out."
+        "title": "Links and third-party sites",
+        "body": "This site may link to third-party sites (official frameworks, tools, professional networks). These links are provided for your convenience; I have no control over their content or their practices and cannot be held responsible for them."
       },
       "droit": {
         "title": "Applicable law and competent jurisdiction",
-        "body": "These terms and conditions are governed by <strong>Belgian law</strong>. Any dispute relating to their validity, their interpretation or their performance falls within the exclusive jurisdiction of the courts of the judicial district of <strong>Liège</strong>, subject to the mandatory provisions applicable in matters of consumer protection.",
-        "callout": "This document is a <b>template</b>: it must be adapted to each engagement and validated by a lawyer before any contractual use. In the event of any contradiction, the quotation or contract signed by both parties always prevails over this generic outline."
+        "body": "These terms of use are governed by <strong>Belgian law</strong>. Any dispute relating to the use of this site falls within the jurisdiction of the courts of the judicial district of <strong>Liège</strong>, subject to the applicable mandatory provisions.",
+        "callout": "To be clear: <b>“Smidjan” is a personal project name, not a company.</b> This website is an individual portfolio and involves no online sale of services. Any engagement or internship would be the subject of a separate written agreement, discussed case by case."
       }
     },
     "conf": {
       "hero": {
         "eyebrow": "Data protection",
         "title": "Privacy policy (GDPR)",
-        "lead": "What we collect via the contact form, why, for how long, with whom, and an honest answer about the cookies and third-party services used."
+        "lead": "What I collect via the contact form, why, for how long, with whom, and an honest answer about the cookies and third-party services used."
       },
-      "intro": "Smidjan attaches importance to the protection of the personal data of the website's visitors and clients, in accordance with Regulation (EU) 2016/679 of 27 April 2016 (\"GDPR\") and the Belgian Act of 30 July 2018 on the protection of natural persons with regard to the processing of personal data.",
+      "intro": "I attach importance to the protection of the personal data of this website's visitors, in accordance with Regulation (EU) 2016/679 of 27 April 2016 (“GDPR”) and the Belgian Act of 30 July 2018 on the protection of natural persons with regard to the processing of personal data.",
       "responsable": {
         "title": "Data controller",
-        "body": "The controller of the data collected via this website is Smidjan, Wallonia, Belgium: <link>jeanbaptiste.dhondt1@gmail.com</link>."
+        "body": "The controller of the data collected via this website is Jean-Baptiste Dhondt (“Smidjan”), a natural person based in Wallonia, Belgium: <link>jeanbaptiste.dhondt1@gmail.com</link>."
       },
       "donnees": {
         "title": "Data collected",
-        "formulaire": "<strong>Contact form / diagnosis request:</strong> surname, first name, company (optional), e-mail address, telephone number (optional), content of the message.",
+        "formulaire": "<strong>Contact form:</strong> surname, first name, organisation (optional), e-mail address, telephone number (optional), content of the message.",
         "navigation": "<strong>Browsing data:</strong> IP address, browser and device type, pages viewed, collected for security purposes and, where applicable, for audience measurement.",
         "recaptcha": "<strong>Data from Google reCAPTCHA:</strong> technical signals used to distinguish a human user from a robot when submitting the contact form."
       },
       "finalites": {
         "title": "Purposes of the processing",
-        "item1": "Respond to requests for contact, quotation or free diagnosis;",
+        "item1": "Respond to contact requests and to the messages sent to me;",
         "item2": "Ensure the security and integrity of the contact form (anti-spam and anti-robot protection);",
         "item3": "Measure and improve the use of the website, where applicable, by means of statistical tools."
       },
       "baseLegale": {
         "title": "Legal basis",
         "item1": "The <strong>performance of pre-contractual measures</strong> taken at the request of the data subject, for the handling of contact requests;",
-        "item2": "The <strong>legitimate interest</strong> of Smidjan in securing its form and its website against abuse (reCAPTCHA);",
+        "item2": "My <strong>legitimate interest</strong> in securing the form and the website against abuse (reCAPTCHA);",
         "item3": "The <strong>consent</strong> of the user, where it is required for non-essential audience measurement cookies."
       },
       "duree": {
@@ -810,11 +810,11 @@
       },
       "destinataires": {
         "title": "Recipients of the data",
-        "body": "The data is processed by Smidjan's authorised staff and, where applicable, by its technical subprocessors (hosting, e-mail, anti-spam and audience measurement tools). It is neither sold, nor rented, nor transferred to third parties for commercial purposes."
+        "body": "The data is processed by me and, where applicable, by my technical subprocessors (hosting, e-mail, anti-spam and audience measurement tools). It is neither sold, nor rented, nor transferred to third parties for commercial purposes."
       },
       "cookies": {
         "title": "Cookies & third-party services",
-        "p1": "This website is not free of cookies or trackers: we do not claim to operate \"without any cookie\". The following categories may be used:",
+        "p1": "This website is not free of cookies or trackers: I do not claim to operate “without any cookie”. The following categories may be used:",
         "table": {
           "type": "Type",
           "finalite": "Purpose",
@@ -836,12 +836,12 @@
       "droits": {
         "title": "Your rights",
         "p1": "In accordance with Articles 15 to 22 of the GDPR, you have the following rights over your data: the right of access, of rectification, of erasure, of restriction of processing, of portability, of objection, as well as the right to withdraw your consent at any time where the processing depends on it.",
-        "p2": "To exercise these rights, contact us at <link>jeanbaptiste.dhondt1@gmail.com</link>. A reply will be provided within the timeframes laid down by the GDPR.",
+        "p2": "To exercise these rights, write to me at <link>jeanbaptiste.dhondt1@gmail.com</link>. A reply will be provided within the timeframes laid down by the GDPR.",
         "p3": "You also have the right to lodge a complaint with the Belgian supervisory authority: <strong>Data Protection Authority (DPA)</strong>, Rue de la Presse 35, 1000 Brussels: <link>www.autoriteprotectiondonnees.be</link>."
       },
       "dpo": {
         "title": "Data protection officer contact",
-        "body": "Given its size and the nature of its processing activities, Smidjan has not appointed a formal data protection officer (DPO), as this appointment is not mandatory in its case. Any question relating to the processing of your data may be sent to <link>jeanbaptiste.dhondt1@gmail.com</link>."
+        "body": "Given the personal nature of the site and the very limited volume of processing, I have not appointed a data protection officer (DPO), as this appointment is not mandatory in my case. Any question relating to the processing of your data may be sent to <link>jeanbaptiste.dhondt1@gmail.com</link>."
       }
     }
   },
@@ -918,7 +918,7 @@
       "lead": "The questions I get asked most often.",
       "q1": {
         "question": "Does NIS2 apply to my SME?",
-        "answer": "NIS2 targets essential and important entities, and many SMEs are covered indirectly, as subcontractors. The CyFun audit tool and a free first conversation help clarify your situation."
+        "answer": "NIS2 targets essential and important entities, and many SMEs are covered indirectly, as subcontractors. The CyFun audit tool and a first conversation help clarify your situation."
       },
       "q2": {
         "question": "Do you carry out penetration testing (pentests)?",
@@ -931,12 +931,12 @@
     },
     "finalCta": {
       "title": "Let's take stock of your security",
-      "text": "30 minutes with me, to scope the useful engagement. Free first exchange, no commitment.",
+      "text": "30 minutes with me, to understand your need and see what I can bring. A simple, direct first conversation.",
       "actionPrimary": "Get in touch",
       "actionCall": "Call 0475 20 55 62",
       "reassurances": [
-        "Reply within 24 h",
-        "Single point of contact, no subcontracting",
+        "I reply personally",
+        "One point of contact: me",
         "Data in Belgium"
       ]
     }
@@ -946,7 +946,7 @@
       "cards": {
         "forWho": "For whom:",
         "coveredHead": "What's covered",
-        "deliverableLabel": "Deliverable",
+        "deliverableLabel": "What I prepare",
         "ctaDefault": "Get in touch",
         "basic": {
           "name": "Basic",
@@ -955,7 +955,7 @@
           "covered1": "Essential cyber-hygiene measures",
           "covered2": "Backups, MFA, updates",
           "covered3": "Covers the bulk of common attacks",
-          "deliverable": "Gap report + prioritised remediation plan, ready for the CyFun self-assessment.",
+          "deliverable": "I can help you produce a gap report and a prioritised remediation plan, ready for the CyFun self-assessment.",
           "ctaLabel": "Get in touch"
         },
         "important": {
@@ -966,7 +966,7 @@
           "covered1": "The entire Basic level, reinforced",
           "covered2": "Detection and incident response",
           "covered3": "Governance and risk management",
-          "deliverable": "Complete compliance dossier + support through to verification by an accredited body.",
+          "deliverable": "I can help you build the compliance dossier and prepare for verification by an accredited body.",
           "ctaLabel": "Get in touch"
         },
         "essential": {
@@ -976,7 +976,7 @@
           "covered1": "The entire Important level, deepened",
           "covered2": "Advanced measures and regular testing",
           "covered3": "Measured continuous improvement",
-          "deliverable": "Complete security programme, audit documentation and a multi-year roadmap.",
+          "deliverable": "I can contribute to structuring a security programme: audit documentation and a multi-year roadmap, a demanding level I keep training on.",
           "ctaLabel": "Get in touch"
         }
       },
@@ -1012,7 +1012,7 @@
             "essential": "Advanced measures, regular testing and continuous improvement."
           },
           "livrable": {
-            "criterion": "Smidjan deliverable",
+            "criterion": "What I can prepare",
             "basic": "Gap report + prioritised remediation plan.",
             "important": "Complete compliance dossier + verification support.",
             "essential": "Complete security programme + multi-year roadmap."
@@ -1098,7 +1098,7 @@
         "level": "Small, free, to get started"
       },
       "cta": "Let's discuss your roadmap",
-      "disclaimer": "Indicative estimate, not legal advice. The free assessment confirms your exact situation.",
+      "disclaimer": "Indicative estimate, not legal advice. A more detailed conversation confirms your exact situation.",
       "levelLabel": "Recommended CyFun starting point",
       "recapLabel": "Based on your answers"
     }
