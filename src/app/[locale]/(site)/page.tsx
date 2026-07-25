@@ -19,6 +19,7 @@ import { Capabilities } from "./_home/Capabilities";
 import { CyfunTeaser } from "./_home/CyfunTeaser";
 import { Parcours } from "./_home/Parcours";
 import { ApprocheTeaser } from "./_home/ApprocheTeaser";
+import { SecurityScan } from "./_home/SecurityScan";
 
 export async function generateMetadata({
   params,
@@ -113,6 +114,10 @@ export default async function HomePage({
 
       <Section variant="tint" id="approche">
         <ApprocheTeaser />
+      </Section>
+
+      <Section variant="white" id="securite">
+        <SecurityScan />
       </Section>
 
       <Reveal>

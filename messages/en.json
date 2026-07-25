@@ -447,6 +447,16 @@
     }
   },
   "home": {
+    "securityScan": {
+      "eyebrow": "Proof — dogfooding",
+      "title": "I secure my own site",
+      "lead": "This scan reads the security headers this site actually returns, live. Nothing is faked: the grade reflects the real configuration.",
+      "present": "present",
+      "absent": "missing",
+      "resultLabel": "Result:",
+      "score": "{passed}/{total} critical headers",
+      "foot": "Headers checked: CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy. Security starts with my own site."
+    },
     "meta": {
       "title": "Jean-Baptiste Dhondt, Smidjan | Cloud, network, infra & web security, Wallonia",
       "description": "Cybersecurity practitioner in Wallonia, specialising in cloud, network, infra & web security. NIS2/CyFun compliance built on real frameworks. Full transparency, zero inflated numbers.",

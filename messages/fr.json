@@ -447,6 +447,16 @@
     }
   },
   "home": {
+    "securityScan": {
+      "eyebrow": "Preuve — dogfooding",
+      "title": "Je sécurise mon propre site",
+      "lead": "Ce scan lit en direct les en-têtes de sécurité que ce site renvoie. Rien n'est simulé : la note reflète la vraie configuration.",
+      "present": "présent",
+      "absent": "absent",
+      "resultLabel": "Résultat :",
+      "score": "{passed}/{total} en-têtes critiques",
+      "foot": "En-têtes vérifiés : CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy. La sécurité, je l'applique d'abord sur mon propre site."
+    },
     "meta": {
       "title": "Jean-Baptiste Dhondt, Smidjan | Sécurité cloud, réseau, infra & web, Wallonie",
       "description": "Praticien cybersécurité en Wallonie, spécialisé en sécurité cloud, réseau, infra & web. Conformité NIS2/CyFun construite sur des référentiels réels. Transparence totale, zéro chiffre gonflé.",
