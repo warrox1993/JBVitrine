@@ -60,6 +60,18 @@ function buildCsp(nonce: string): string {
   return baseCsp.join("; ");
 }
 
+/**
+ * Routes invoked by Vercel Cron. They live under /api/admin but must NOT be
+ * gated on a session cookie — the scheduler has none. Each one authenticates
+ * itself with requireCronAuth() (Authorization: Bearer <CRON_SECRET>).
+ *
+ * MUST mirror the `crons` array in vercel.json.
+ */
+const CRON_PATHS = new Set([
+  "/api/admin/leads/digest",
+  "/api/admin/leads/cleanup",
+]);
+
 // List of suspicious user agents (common bots, scanners)
 const SUSPICIOUS_USER_AGENTS = [
   "sqlmap",
@@ -205,8 +217,16 @@ export async function proxy(request: NextRequest) {
 
   // 5. Authentication check for admin API routes
   if (pathname.startsWith("/api/admin")) {
-    // Skip digest endpoint (protected by CRON_SECRET)
-    if (pathname === "/api/admin/leads/digest") {
+    // Vercel Cron requests carry `Authorization: Bearer <CRON_SECRET>` and NO
+    // session cookie, so getToken() below would reject them with 401 before the
+    // route ever runs. Cron paths are therefore exempted here and authenticated
+    // by requireCronAuth() inside the handler (constant-time, fail-closed).
+    //
+    // This used to be a hardcoded equality on the digest path alone, so adding
+    // /api/admin/leads/cleanup silently broke the nightly GDPR retention job:
+    // BOTH the proxy and the route answer 401, which made the failure invisible.
+    // Keep this set in sync with the `crons` array in vercel.json.
+    if (CRON_PATHS.has(pathname)) {
       // Continue to next step
     } else {
       const token = await getToken({

@@ -11,9 +11,11 @@ import type { NeonQueryFunction } from "@neondatabase/serverless";
 import * as bcrypt from "bcryptjs";
 import {
   loginLimiter,
+  loginIdentifier,
   getClientIdentifierFromHeaders,
 } from "@/lib/rate-limit-redis";
 import { headers } from "next/headers";
+import { isPasswordLengthValid } from "./bcrypt-cost";
 
 let _sql: NeonQueryFunction<false, false> | null = null;
 function getSql() {
@@ -68,6 +70,13 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
+        // Reject over-long passwords instead of letting bcrypt truncate them
+        // silently at 72 bytes. Returning null (rather than a distinct error)
+        // keeps the response indistinguishable from a wrong password.
+        if (!isPasswordLengthValid(credentials.password as string)) {
+          return null;
+        }
+
         // Apply rate limiting.
         // SECURITY (V-W6): fail CLOSED. The "too many attempts" case must
         // bubble up. Any OTHER failure (e.g. Redis unreachable) must ALSO stop
@@ -86,7 +95,20 @@ export const authOptions: NextAuthOptions = {
             headersList.get(name),
           );
 
-          const { success } = await loginLimiter.limit(`login_${ip}`);
+          const { success, reason } = await loginLimiter.limit(loginIdentifier(ip));
+
+          // SECURITY: @upstash/ratelimit is fail-OPEN by default. It races the
+          // Redis call against `config.timeout ?? 5e3` and, on timeout,
+          // RESOLVES with `{ success: true, reason: "timeout" }` instead of
+          // throwing. Without this check, the catch below never fires on a
+          // slow/hanging Upstash — merely making Redis SLOW (not dead) disabled
+          // brute-force protection entirely, which is the exact attack the
+          // comment above says it prevents.
+          if (reason === "timeout") {
+            throw new Error(
+              "Service d'authentification temporairement indisponible. Veuillez réessayer.",
+            );
+          }
 
           if (!success) {
             throw new Error("Trop de tentatives de connexion. Veuillez patienter 15 minutes.");

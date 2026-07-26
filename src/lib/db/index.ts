@@ -173,7 +173,13 @@ export const db = {
      * by default. Called by /api/admin/leads/cleanup.
      */
     async deleteOlderThan(monthsToKeep: number): Promise<number> {
-      const months = Math.max(1, Math.floor(monthsToKeep));
+      // Math.max(1, NaN) is NaN, not 1 — the clamp alone does NOT make this
+      // safe. A non-finite value must fall back explicitly, because a zero or
+      // negative interval turns `created_at < NOW() - INTERVAL * n` into a
+      // condition every row satisfies: the whole table is deleted.
+      const months = Number.isFinite(monthsToKeep)
+        ? Math.max(1, Math.floor(monthsToKeep))
+        : 1;
 
       const result = await sql`
         WITH deleted AS (
@@ -281,7 +287,13 @@ export const db = {
      * also removes the associated behavioural events.
      */
     async deleteOlderThan(monthsToKeep: number): Promise<number> {
-      const months = Math.max(1, Math.floor(monthsToKeep));
+      // Math.max(1, NaN) is NaN, not 1 — the clamp alone does NOT make this
+      // safe. A non-finite value must fall back explicitly, because a zero or
+      // negative interval turns `created_at < NOW() - INTERVAL * n` into a
+      // condition every row satisfies: the whole table is deleted.
+      const months = Number.isFinite(monthsToKeep)
+        ? Math.max(1, Math.floor(monthsToKeep))
+        : 1;
 
       const result = await sql`
         WITH deleted AS (
@@ -344,7 +356,13 @@ export const db = {
      * accumulated indefinitely.
      */
     async deleteOlderThan(monthsToKeep: number): Promise<number> {
-      const months = Math.max(1, Math.floor(monthsToKeep));
+      // Math.max(1, NaN) is NaN, not 1 — the clamp alone does NOT make this
+      // safe. A non-finite value must fall back explicitly, because a zero or
+      // negative interval turns `created_at < NOW() - INTERVAL * n` into a
+      // condition every row satisfies: the whole table is deleted.
+      const months = Number.isFinite(monthsToKeep)
+        ? Math.max(1, Math.floor(monthsToKeep))
+        : 1;
 
       const result = await sql`
         WITH deleted AS (
@@ -406,6 +424,31 @@ export const db = {
       `;
 
       return result[0];
+    },
+
+    /**
+     * Delete quotes older than `monthsToKeep`.
+     *
+     * GDPR: this table carries the same direct identifiers as `leads` (email,
+     * name, company, phone) plus the full quote payload. It was left out of the
+     * first retention job, so it kept its data indefinitely while the rest of
+     * the system reported compliance.
+     */
+    async deleteOlderThan(monthsToKeep: number): Promise<number> {
+      const months = Number.isFinite(monthsToKeep)
+        ? Math.max(1, Math.floor(monthsToKeep))
+        : 1;
+
+      const result = await sql`
+        WITH deleted AS (
+          DELETE FROM quotes
+          WHERE created_at < NOW() - (INTERVAL '1 month' * ${months})
+          RETURNING id
+        )
+        SELECT COUNT(*)::int AS deleted_count FROM deleted;
+      `;
+
+      return Number(result[0]?.deleted_count ?? 0);
     },
   },
 

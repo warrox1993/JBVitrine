@@ -270,20 +270,58 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Erase every trace of one data subject, by email (GDPR art. 17, right to
--- erasure). Run manually on request:  SELECT * FROM erase_lead_by_email('x@y.z');
-CREATE OR REPLACE FUNCTION erase_lead_by_email(subject_email TEXT)
+-- Same window as leads: quotes carry the identical direct identifiers
+-- (email, name, company, phone) plus the full quote payload.
+CREATE OR REPLACE FUNCTION cleanup_old_quotes(months_to_keep INTEGER DEFAULT 24)
 RETURNS TABLE(deleted_count BIGINT) AS $$
 BEGIN
   RETURN QUERY
   WITH deleted AS (
-    DELETE FROM leads
-    WHERE LOWER(email) = LOWER(subject_email)
-    RETURNING *
+    DELETE FROM quotes
+    WHERE created_at < NOW() - INTERVAL '1 month' * months_to_keep
+    RETURNING id
   )
   SELECT COUNT(*) FROM deleted;
 END;
-$$ LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql
+SET search_path = pg_catalog, public;
+
+-- Erase every trace of one data subject, by email (GDPR art. 17, right to
+-- erasure). Run manually on request:  SELECT * FROM erase_lead_by_email('x@y.z');
+--
+-- Covers leads AND quotes, and the sessions (with their cascading events)
+-- referenced by the erased leads. The first version only touched `leads`, so
+-- answering an erasure request left the subject's identifiers in `quotes` and
+-- their full browsing history in sessions/events — a documented failure to
+-- comply, in writing.
+CREATE OR REPLACE FUNCTION erase_lead_by_email(subject_email TEXT)
+RETURNS TABLE(leads_deleted BIGINT, quotes_deleted BIGINT, sessions_deleted BIGINT) AS $$
+DECLARE
+  subject_sessions TEXT[];
+BEGIN
+  SELECT ARRAY(
+    SELECT DISTINCT session_id FROM leads
+    WHERE LOWER(email) = LOWER(subject_email) AND session_id IS NOT NULL
+  ) INTO subject_sessions;
+
+  RETURN QUERY
+  WITH del_leads AS (
+    DELETE FROM leads WHERE LOWER(email) = LOWER(subject_email) RETURNING id
+  ),
+  del_quotes AS (
+    DELETE FROM quotes WHERE LOWER(email) = LOWER(subject_email) RETURNING id
+  ),
+  -- events cascade via fk_session ON DELETE CASCADE
+  del_sessions AS (
+    DELETE FROM sessions WHERE session_id = ANY(subject_sessions) RETURNING id
+  )
+  SELECT
+    (SELECT COUNT(*) FROM del_leads),
+    (SELECT COUNT(*) FROM del_quotes),
+    (SELECT COUNT(*) FROM del_sessions);
+END;
+$$ LANGUAGE plpgsql
+SET search_path = pg_catalog, public;
 
 -- ============================================================================
 -- SEED DATA (for testing)

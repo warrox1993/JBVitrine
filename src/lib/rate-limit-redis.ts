@@ -74,6 +74,30 @@ export const contactLimiter = new Ratelimit({
 });
 
 /**
+ * Raw-attempt ceiling for the public contact endpoint.
+ *
+ * This is NOT the anti-spam quota — that stays `contactLimiter` at 3/hour and
+ * is untouched. This one caps how many times the endpoint can be *hit* at all.
+ *
+ * WHY: the send quota is deliberately consumed at the very end of the handler,
+ * so a submission rejected early (wrong Content-Type, bad Origin, malformed
+ * JSON) costs the caller nothing and is not counted anywhere. That left the
+ * most exposed public route of the site with no rate ceiling at all: a single
+ * IP could loop `curl --data 'not-json'` indefinitely, burning Vercel
+ * invocations and Redis commands, invisible to getSecurityStats().
+ *
+ * 30 per 10 minutes leaves ample room for genuine typos and retries while
+ * ending the flood.
+ */
+export const contactAttemptLimiter = new Ratelimit({
+  redis,
+  limiter: Ratelimit.slidingWindow(30, "10 m"),
+  analytics: true,
+  ephemeralCache: EPHEMERAL_CACHE,
+  prefix: "smidjan_v1_contact_attempt",
+});
+
+/**
  * Rate limiter for admin login
  * Limit: 5 attempts per 15 minutes per user
  */
@@ -84,6 +108,15 @@ export const loginLimiter = new Ratelimit({
   ephemeralCache: EPHEMERAL_CACHE,
   prefix: "smidjan_v3_login",
 });
+
+/**
+ * The identifier shape the login limiter is keyed by.
+ *
+ * Exported so the call site and the purge table below cannot drift apart: they
+ * used to repeat the `login_${ip}` template textually in two files, which is
+ * the same class of bug as the stale prefix list that made the purge a no-op.
+ */
+export const loginIdentifier = (ip: string) => `login_${ip}`;
 
 /**
  * Rate limiter for lead enrichment API
@@ -226,7 +259,8 @@ export const ALL_LIMITERS: ReadonlyArray<{
 }> = [
   { name: "quote", limiter: quoteLimiter, identifierFor: (ip) => ip },
   { name: "contact", limiter: contactLimiter, identifierFor: (ip) => ip },
-  { name: "login", limiter: loginLimiter, identifierFor: (ip) => `login_${ip}` },
+  { name: "contactAttempt", limiter: contactAttemptLimiter, identifierFor: (ip) => ip },
+  { name: "login", limiter: loginLimiter, identifierFor: loginIdentifier },
   { name: "enrichment", limiter: enrichmentLimiter, identifierFor: (ip) => ip },
   { name: "csrf", limiter: csrfLimiter, identifierFor: (ip) => ip },
   { name: "leadScoring", limiter: leadScoringLimiter, identifierFor: (ip) => ip },

@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { getResend } from "@/lib/email/resend-client";
-import { contactLimiter, getClientIdentifier } from "@/lib/rate-limit-redis";
+import {
+  contactLimiter,
+  contactAttemptLimiter,
+  getClientIdentifier,
+} from "@/lib/rate-limit-redis";
 import {
   logSecurityEvent,
   SecurityEventType,
@@ -49,6 +53,41 @@ function readString(value: unknown): string | null {
 
 export async function POST(request: Request) {
   try {
+    // Get client info for security logging. Use the trusted identifier
+    // (x-real-ip set by the Vercel proxy) — NOT the spoofable left-most
+    // x-forwarded-for — so the rate-limit key, IP-block lookup and security
+    // event attribution can't be forged (no bypass / no victim-IP poisoning).
+    const clientIp = getClientIdentifier(request);
+    const userAgent = request.headers.get("user-agent") || undefined;
+
+    // Raw-attempt ceiling — FIRST gate, before Content-Type, Origin, parsing or
+    // any outbound call.
+    //
+    // The 3/hour send quota is deliberately charged at the very END of this
+    // handler, so early rejections (415, bad Origin, malformed JSON) cost the
+    // caller nothing and are recorded nowhere. Without this gate the most
+    // exposed public route of the site had no rate ceiling at all: a single IP
+    // could loop indefinitely — no 429, no counter, invisible to
+    // getSecurityStats(). It must sit ahead of the cheap validators too,
+    // otherwise a flood simply sends the wrong Content-Type and slips past.
+    //
+    // This is a DIFFERENT limiter with its own prefix. It caps raw *attempts*
+    // and does not touch the 3/hour *send* policy.
+    let attempt: Awaited<ReturnType<typeof contactAttemptLimiter.limit>> | null = null;
+    try {
+      attempt = await contactAttemptLimiter.limit(clientIp);
+    } catch (attemptError) {
+      // Fail OPEN here on purpose: this is a flood guard, not the anti-spam
+      // control. The 3/hour quota below fails CLOSED and stays authoritative.
+      console.error("Attempt limiter unavailable (failing open):", attemptError);
+    }
+    if (attempt && !attempt.success && attempt.reason !== "timeout") {
+      return NextResponse.json(
+        { error: "Trop de tentatives. Veuillez patienter quelques minutes." },
+        { status: 429, headers: { "Retry-After": "600" } },
+      );
+    }
+
     // SECURITY: require application/json. Without it, `request.json()` happily
     // parses a body sent by a cross-origin form with enctype="text/plain",
     // which needs no CORS preflight — a working CSRF vector even though the
@@ -63,13 +102,6 @@ export async function POST(request: Request) {
     // ties the request to our own origin.
     const originCheck = validateCSRF(request);
     if (!originCheck.success) return originCheck.response;
-
-    // Get client info for security logging. Use the trusted identifier
-    // (x-real-ip set by the Vercel proxy) — NOT the spoofable left-most
-    // x-forwarded-for — so the rate-limit key, IP-block lookup and security
-    // event attribution can't be forged (no bypass / no victim-IP poisoning).
-    const clientIp = getClientIdentifier(request);
-    const userAgent = request.headers.get("user-agent") || undefined;
 
     // Check if IP is blocked
     if (await isIpBlocked(clientIp)) {
@@ -266,9 +298,10 @@ export async function POST(request: Request) {
     const safeMessage = sanitizeString(message);
 
     // Rate limiting: 3 per hour per client — the intended anti-spam ceiling,
-    // UNCHANGED. Consumed here, as the last gate before the side effect, so
-    // only a fully valid submission spends one of the three slots. See the
-    // ordering note at the top of the handler.
+    // UNCHANGED. Consumed here, as the last gate before the side effect.
+    //
+    // NOTE: a consumed slot is NOT refunded if the mail then fails to send —
+    // see the Resend error branch below, which refunds explicitly.
     let rateLimit: Awaited<ReturnType<typeof contactLimiter.limit>>;
     try {
       rateLimit = await contactLimiter.limit(clientIp);
@@ -282,6 +315,22 @@ export async function POST(request: Request) {
         { status: 503 },
       );
     }
+
+    // SECURITY (fail-open by default): @upstash/ratelimit races the Redis call
+    // against a timer (`this.timeout = config.timeout ?? 5e3`) and, on timeout,
+    // RESOLVES with `{ success: true, reason: "timeout" }` — it does NOT throw.
+    // The catch above therefore only covers FAST failures (connection refused,
+    // 4xx). On the common failure mode — a slow/hanging Upstash — the quota
+    // check silently passes and mail goes out with no limit at all. Treat a
+    // timeout as a failure, so the fail-closed intent above is real.
+    if (rateLimit.reason === "timeout") {
+      console.error("Rate limit backend timed out (failing closed)");
+      return NextResponse.json(
+        { error: "Service temporairement indisponible. Veuillez réessayer." },
+        { status: 503 },
+      );
+    }
+
     if (!rateLimit.success) {
       await logSecurityEvent({
         type: SecurityEventType.RATE_LIMIT_EXCEEDED,
@@ -301,6 +350,20 @@ export async function POST(request: Request) {
           resetTime: rateLimit.reset,
         },
         { status: 429 },
+      );
+    }
+
+    // Burn the CSRF token ATOMICALLY, immediately before the side effect.
+    //
+    // validateCsrfToken above is a plain read, so N concurrent requests with
+    // the same token all pass it. DEL is atomic and reports whether it actually
+    // removed the key, so exactly one racer proceeds. Doing this here rather
+    // than after the send is what makes single-use real: consuming afterwards
+    // left the token replayable for its whole 1h TTL.
+    if (!(await consumeCsrfToken(csrfToken))) {
+      return NextResponse.json(
+        { error: "Token de sécurité déjà utilisé. Rechargez la page." },
+        { status: 409 },
       );
     }
 
@@ -392,19 +455,18 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("Resend error:", error);
-      // Leave the CSRF token alive: the submission was valid, the failure is
-      // ours, and the visitor must be able to retry without reloading.
+      // Refund the quota slot: the submission was valid, the failure is OURS.
+      // Without this, three Resend incidents cost the visitor all three hourly
+      // slots and produce a 429 without a single mail ever being sent — the
+      // original bug, merely narrowed to provider outages.
+      await contactLimiter.limit(clientIp, { rate: -1 }).catch((refundError) => {
+        console.error("Failed to refund the rate-limit slot:", refundError);
+      });
       return NextResponse.json(
         { error: "Failed to send email" },
         { status: 500 },
       );
     }
-
-    // Burn the CSRF token now that it has authorised a real side effect. Doing
-    // this here — rather than on the first read inside validateCsrfToken —
-    // preserves one-time-use without invalidating the token of a visitor whose
-    // submission was rejected.
-    await consumeCsrfToken(csrfToken);
 
     return NextResponse.json({
       success: true,

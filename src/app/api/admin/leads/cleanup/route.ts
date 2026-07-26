@@ -46,21 +46,26 @@ async function handleCleanup(request: NextRequest) {
 
   try {
     // Order matters: purge events first, then sessions (whose cascade would
-    // remove events anyway), then leads. Each step is reported separately so a
-    // partial failure is visible rather than silent.
+    // remove events anyway), then leads and quotes. Each step is reported
+    // separately so a partial failure is visible rather than silent.
     const events = await db.events.deleteOlderThan(windows.events);
     const sessions = await db.sessions.deleteOlderThan(windows.sessions);
     const leads = await db.leads.deleteOlderThan(windows.leads);
+    // `quotes` holds the same direct identifiers as `leads` (email, name,
+    // company, phone). It was missing from the first version of this job, so
+    // the route advertised art. 5.1.e compliance while one table kept its data
+    // for ever.
+    const quotes = await db.quotes.deleteOlderThan(windows.leads);
 
     console.log("🧹 Retention cleanup complete", {
       windows,
-      deleted: { events, sessions, leads },
+      deleted: { events, sessions, leads, quotes },
     });
 
     return NextResponse.json({
       success: true,
       retentionMonths: windows,
-      deleted: { events, sessions, leads },
+      deleted: { events, sessions, leads, quotes },
     });
   } catch (error) {
     console.error("❌ Retention cleanup failed:", error);

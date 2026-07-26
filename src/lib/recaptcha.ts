@@ -39,10 +39,21 @@ function allowedRecaptchaHostnames(): Set<string> {
   hosts.add(canonical);
   hosts.add(canonical.startsWith("www.") ? canonical.slice(4) : `www.${canonical}`);
 
-  // Vercel sets VERCEL_URL to this deployment's own hostname — keeps preview
-  // deployments functional without loosening production.
-  if (process.env.VERCEL_URL) {
-    hosts.add(process.env.VERCEL_URL.toLowerCase());
+  // Vercel-provided hostnames for THIS deployment. All three are set by the
+  // platform and cannot be influenced by a third party, so adding them does not
+  // widen the allowlist to *.vercel.app in general:
+  //   VERCEL_URL                     – the unique deployment URL
+  //   VERCEL_BRANCH_URL              – the branch alias shown in PRs
+  //   VERCEL_PROJECT_PRODUCTION_URL  – the project's production alias
+  // Only VERCEL_URL was listed before, so opening a preview from the link
+  // Vercel posts on a pull request returned "Vérification anti-bot échouée"
+  // even though the token was perfectly valid.
+  for (const envVar of [
+    process.env.VERCEL_URL,
+    process.env.VERCEL_BRANCH_URL,
+    process.env.VERCEL_PROJECT_PRODUCTION_URL,
+  ]) {
+    if (envVar) hosts.add(envVar.toLowerCase());
   }
 
   if (process.env.NODE_ENV !== "production") {
@@ -143,7 +154,8 @@ export async function verifyRecaptchaEnterprise(
     const tokenHostname = (data.tokenProperties?.hostname ?? "")
       .toString()
       .toLowerCase();
-    let hostnameOk = true;
+
+    let hostnameOk: boolean;
     if (tokenHostname) {
       hostnameOk = allowedRecaptchaHostnames().has(tokenHostname);
       if (!hostnameOk) {
@@ -153,9 +165,17 @@ export async function verifyRecaptchaEnterprise(
         });
       }
     } else {
+      // FAIL CLOSED. This used to default to `true` and merely log, which
+      // silently disabled origin pinning — and reCAPTCHA is the only real
+      // anti-bot control on this route (validateCSRF only stops browsers; a
+      // server-side script just sets its own Origin header). Google omits
+      // hostname for mobile tokens (androidPackageName / iosBundleId) and some
+      // WAF tokens; if you ever need those, opt in explicitly rather than
+      // leaving the gate open by default.
+      hostnameOk = process.env.RECAPTCHA_ALLOW_MISSING_HOSTNAME === "true";
       console.error(
         "⚠️ reCAPTCHA response carried no tokenProperties.hostname — cannot pin " +
-          "the token origin. Check the site key type / API version.",
+          `the token origin. Rejecting (set RECAPTCHA_ALLOW_MISSING_HOSTNAME=true to allow). accepted=${hostnameOk}`,
       );
     }
 

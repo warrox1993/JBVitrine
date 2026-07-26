@@ -29,8 +29,15 @@ const LIMITS = {
 
 const SLUG_RE = /^[a-z0-9][a-z0-9-]*$/;
 const TOC_ID_RE = /^[a-z0-9][a-z0-9-]*$/;
-/** Same shape the markdown renderer produces for heading anchors. */
-const COVER_IMAGE_RE = /^\/[A-Za-z0-9._\-/]+$/;
+/**
+ * A local path: one leading slash, then no second slash.
+ *
+ * The `(?!\/)` lookahead is load-bearing. Without it, `/` sits inside the
+ * character class, so "//evil.com/x.jpg" matched — a protocol-relative URL,
+ * the exact opposite of the "never an absolute URL" rule below. It would then
+ * reach <Image src={coverImage}> and be handed to the image optimizer.
+ */
+const COVER_IMAGE_RE = /^\/(?!\/)[A-Za-z0-9._\-/]+$/;
 
 export type BlogArticleValidation =
   | { ok: true; article: BlogArticle }

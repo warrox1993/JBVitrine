@@ -226,9 +226,29 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Permissions-Policy",
+            // `interest-cohort=()` is dropped: FLoC was abandoned, the
+            // directive is dead weight. Replaced by the powerful features this
+            // site genuinely never uses.
             value:
-              "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+              "camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), midi=(), display-capture=(), xr-spatial-tracking=()",
           },
+          {
+            // Severs window.opener for anything that opens this site, which
+            // X-Frame-Options / frame-ancestors do NOT cover. Safe here: auth
+            // is CredentialsProvider only, so there is no OAuth popup to break.
+            key: "Cross-Origin-Opener-Policy",
+            value: "same-origin",
+          },
+          {
+            // Stops other origins from embedding our assets (hotlinking).
+            key: "Cross-Origin-Resource-Policy",
+            value: "same-origin",
+          },
+          // NOTE: Cross-Origin-Embedder-Policy is deliberately NOT set.
+          // `require-corp` would break the reCAPTCHA and Google Maps iframes
+          // declared in the CSP frame-src, and buys nothing here — this site
+          // uses none of the APIs that need cross-origin isolation
+          // (SharedArrayBuffer, high-resolution timers, memory measurement).
         ],
       },
     ];

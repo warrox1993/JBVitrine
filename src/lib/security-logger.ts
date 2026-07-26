@@ -27,8 +27,20 @@ function dayStamp(date: Date): string {
  * IP_HASH_PEPPER takes precedence when set.
  */
 function ipKeyHash(ip: string): string {
-  const pepper =
-    process.env.IP_HASH_PEPPER || process.env.NEXTAUTH_SECRET || "";
+  const pepper = process.env.IP_HASH_PEPPER || process.env.NEXTAUTH_SECRET;
+
+  // Fail loudly rather than degrade silently. This module is imported by public
+  // routes (/api/contact/direct, /api/company/verify) that run fine without
+  // NEXTAUTH_SECRET, so an empty pepper WAS reachable — and an unpeppered
+  // SHA-256 over the ~4 billion IPv4 space is exhaustively reversible in
+  // minutes on a GPU. The key space would then be a plaintext list of visitor
+  // IPs, which is exactly what this function exists to prevent.
+  if (!pepper) {
+    throw new Error(
+      "IP_HASH_PEPPER (or NEXTAUTH_SECRET) must be set: refusing to pseudonymise IPs with an empty pepper",
+    );
+  }
+
   return createHash("sha256").update(`${pepper}:${ip}`).digest("hex").slice(0, 32);
 }
 
@@ -48,6 +60,21 @@ export interface SecurityEvent {
   details: Record<string, any>;
   timestamp: number;
 }
+
+/**
+ * Event types that count towards the automatic IP block.
+ *
+ * Deliberately EXCLUDES SecurityEventType.INVALID_INPUT: a malformed email or
+ * an over-long message is a user mistake, not an attack, and must never
+ * contribute to a 24h lockout. CAPTCHA_FAILED is likewise excluded — a Google
+ * outage would otherwise lock out every legitimate visitor in minutes.
+ */
+const ABUSE_EVENTS: ReadonlySet<SecurityEventType> = new Set([
+  SecurityEventType.INVALID_CSRF,
+  SecurityEventType.XSS_ATTEMPT,
+  SecurityEventType.SUSPICIOUS_PATTERN,
+  SecurityEventType.RATE_LIMIT_EXCEEDED,
+]);
 
 // Log security events
 export async function logSecurityEvent(event: SecurityEvent): Promise<void> {
@@ -79,10 +106,32 @@ export async function logSecurityEvent(event: SecurityEvent): Promise<void> {
       await redis.incr(counterKey);
       await redis.expire(counterKey, COUNTER_TTL_SECONDS);
 
-      // Also track per client, keyed by a peppered hash rather than the IP.
-      const ipKey = `security_ip:${ipKeyHash(event.ip)}`;
-      await redis.incr(ipKey);
-      await redis.expire(ipKey, 24 * 60 * 60); // Reset daily
+      // Per-client abuse counter, keyed by a peppered hash rather than the IP.
+      //
+      // Two deliberate restrictions, both of which were bugs before:
+      //
+      // 1. Only ADVERSARIAL events count. This counter drives isIpBlocked(),
+      //    which returns a hard 403 for 24h. Counting INVALID_INPUT (a
+      //    mistyped email, a too-long message) meant 21 typos behind a shared
+      //    CGNAT/office IP locked everyone out of the site's only contact
+      //    channel — with an error inviting them to "contact support" through
+      //    the very form that was blocked.
+      //
+      // 2. The TTL is set ONLY when the key is created (NX). It used to be
+      //    re-armed on every event, so the window was sliding, not daily: the
+      //    "already blocked" branch in /api/contact/direct logs an event of its
+      //    own, which pushed the expiry out another 24h. The block could never
+      //    lapse as long as the client kept knocking — permanent, not
+      //    "temporary" as the user-facing message claims.
+      //
+      // Unattributable requests (no client IP) are skipped entirely: their
+      // identifier is a fresh UUID per request, so counting them would just
+      // grow the keyspace one dead key at a time.
+      if (ABUSE_EVENTS.has(event.type) && !event.ip.startsWith("no_ip_")) {
+        const ipKey = `security_ip:${ipKeyHash(event.ip)}`;
+        await redis.incr(ipKey);
+        await redis.expire(ipKey, 24 * 60 * 60, "NX");
+      }
     } catch (error) {
       console.error("Failed to log security event to Redis:", error);
     }

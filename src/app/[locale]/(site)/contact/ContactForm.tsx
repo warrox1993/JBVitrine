@@ -264,15 +264,21 @@ export function ContactForm() {
       });
 
       if (!response.ok) {
-        // A 403 means the CSRF token was refused (expired, or already spent by
-        // an earlier successful send). Pull a fresh one so the next attempt has
-        // a usable token instead of replaying the dead one.
-        if (response.status === 403) {
+        // 403 = token refused (expired). 409 = token already burned by a
+        // concurrent or earlier successful send. Either way the cached token is
+        // dead and the client caches it for ~55 min, so fetch a fresh one or
+        // every retry replays the same useless value.
+        if (response.status === 403 || response.status === 409) {
           await refreshCsrfToken();
         }
         const err = await response.json().catch(() => ({}));
         throw new Error(err?.error || t('form.errors.submit'));
       }
+
+      // The token is single-use and was just burned server-side. Refresh it now
+      // so a second message in the same session doesn't fail once before
+      // working.
+      void refreshCsrfToken();
 
       await response.json().catch(() => ({}));
       setSubmitSuccess(true);

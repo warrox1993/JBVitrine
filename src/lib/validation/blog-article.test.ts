@@ -99,6 +99,23 @@ test("n'accepte qu'un chemin local pour coverImage", () => {
   );
 });
 
+test("rejette une URL protocol-relative en coverImage (le bug corrigé)", () => {
+  // "//evil.com/x.jpg" commence par "/" et ne contient pas "..", donc la
+  // première version de la regex l'acceptait : le navigateur la résout en
+  // https://evil.com/x.jpg.
+  for (const payload of [
+    "//evil.com/x.jpg",
+    "////evil.com/x.jpg",
+    "//evil.com",
+  ]) {
+    assert.equal(
+      validateBlogArticle({ ...valid, coverImage: payload }).ok,
+      false,
+      `payload accepté : ${payload}`,
+    );
+  }
+});
+
 test("rejette un corps qui n'est pas un objet", () => {
   assert.equal(validateBlogArticle(null).ok, false);
   assert.equal(validateBlogArticle("chaîne").ok, false);

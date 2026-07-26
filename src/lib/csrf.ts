@@ -65,20 +65,32 @@ export async function validateCsrfToken(
 }
 
 /**
- * Burn a CSRF token so it cannot be replayed. Call this ONLY after the request
- * it authorised has succeeded — never on a validation failure, or the caller
- * locks the user out of their own retry (see {@link validateCsrfToken}).
+ * Atomically burn a CSRF token, returning whether THIS caller won the race.
+ *
+ * Call it immediately before the side effect the token authorises. `DEL` is
+ * atomic and reports how many keys it removed, so exactly one of N concurrent
+ * requests carrying the same token gets `true`; the rest get `false` and must
+ * be rejected.
+ *
+ * That restores single-use, which validateCsrfToken alone cannot provide: it is
+ * a plain read, so N concurrent requests all pass it. Consuming after the side
+ * effect (the previous design) left the token replayable for its full 1h TTL,
+ * and the code claimed "preserves one-time-use" while doing the opposite.
+ *
+ * @returns true if the token existed and was burned by this call.
  */
-export async function consumeCsrfToken(token: string): Promise<void> {
-  if (!token || typeof token !== "string") return;
+export async function consumeCsrfToken(token: string): Promise<boolean> {
+  if (!token || typeof token !== "string") return false;
 
   const hashedToken = hashToken(token);
 
   if (redis) {
-    await redis.del(`csrf:${hashedToken}`);
-  } else {
-    inMemoryCsrf.delete(hashedToken);
+    // redis.del returns the number of keys actually removed (0 or 1).
+    const removed = await redis.del(`csrf:${hashedToken}`);
+    return removed === 1;
   }
+
+  return inMemoryCsrf.delete(hashedToken);
 }
 
 // Fallback in-memory store for development

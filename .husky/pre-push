@@ -1,0 +1,37 @@
+#!/usr/bin/env sh
+# ============================================================================
+# Gate déterministe avant chaque `git push` (husky v9).
+# Bloque le push si une étape échoue. Ne peut PAS lancer les agents Claude
+# (script shell) → la revue par agents se fait via la commande /pre-push.
+# Pour pusher malgré tout (urgence) : `git push --no-verify`.
+# ============================================================================
+set -e
+
+echo "──────────────────────────────────────────────"
+echo "🔒 pre-push — gate qualité déterministe"
+echo "──────────────────────────────────────────────"
+
+echo "▶ 1/4  Lint (eslint)…"
+npm run lint
+
+echo "▶ 2/5  Typecheck (tsc --noEmit)…"
+npm run typecheck
+
+echo "▶ 3/5  Tests unitaires (node:test)…"
+npm test
+
+echo "▶ 4/5  Build…"
+# Sur Windows, Smart App Control bloque le binaire natif SWC de Next (non
+# signé), et Turbopack refuse alors de démarrer. On bascule automatiquement sur
+# webpack plutôt que de faire échouer le gate pour une raison de poste.
+# Vercel construit sous Linux avec Turbopack : la prod n'est pas concernée.
+if ! npm run build; then
+  echo "⚠  Turbopack indisponible — nouvelle tentative avec webpack…"
+  npm run build:webpack
+fi
+
+echo "▶ 5/5  Tests E2E (Playwright)…"
+npx playwright test
+
+echo "✅ Gate déterministe OK — push autorisé."
+echo "   (Revue par les agents : lance /pre-push dans Claude Code avant de pusher.)"

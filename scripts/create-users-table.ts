@@ -11,7 +11,11 @@ config({ path: resolve(process.cwd(), ".env.local") });
 import { neon } from "@neondatabase/serverless";
 import * as bcrypt from "bcryptjs";
 import { randomBytes } from "crypto";
-import { BCRYPT_COST } from "../src/lib/auth/bcrypt-cost";
+import {
+  BCRYPT_COST,
+  BCRYPT_MAX_PASSWORD_BYTES,
+  isPasswordLengthValid,
+} from "../src/lib/auth/bcrypt-cost";
 
 if (!process.env.DATABASE_URL) {
   throw new Error("DATABASE_URL environment variable is not set");
@@ -78,6 +82,14 @@ async function createUsersTable() {
     const usedGeneratedPassword = !process.env.ADMIN_INITIAL_PASSWORD;
     const plainPassword =
       process.env.ADMIN_INITIAL_PASSWORD || generatedPassword;
+    // Refuse to seed a password bcrypt would silently truncate at 72 bytes —
+    // the admin would then be able to log in with only its first 72 bytes.
+    if (!isPasswordLengthValid(plainPassword)) {
+      throw new Error(
+        `ADMIN_INITIAL_PASSWORD exceeds ${BCRYPT_MAX_PASSWORD_BYTES} bytes (UTF-8); bcrypt would silently truncate it.`,
+      );
+    }
+
     const passwordHash = await bcrypt.hash(plainPassword, BCRYPT_COST);
 
     const existingUsers = await sql`
