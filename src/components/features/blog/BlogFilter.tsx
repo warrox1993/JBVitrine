@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import type { BlogArticle } from "@/lib/blogActions";
-import { ArticleCard } from "@/components/shared";
+import { ArticleCard } from "@/components/shared/ArticleCard/ArticleCard";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { ArticleCoverSvg } from "./ArticleCoverSvg";
 import cardStyles from "@/components/shared/ArticleCard/ArticleCard.module.css";

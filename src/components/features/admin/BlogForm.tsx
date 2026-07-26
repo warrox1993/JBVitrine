@@ -224,7 +224,9 @@ export function BlogForm({ article, mode }: BlogFormProps) {
 
       <div className={styles.formGroup}>
         <div className={styles.tocHeader}>
-          <label className={styles.label}>Table des matières</label>
+          {/* Not a <label>: it labels no control. An orphan <label> is an axe
+              failure and misreports the group as a form field. */}
+          <span className={styles.label}>Table des matières</span>
           <Button
             type="button"
             onClick={addTocItem}
@@ -243,6 +245,8 @@ export function BlogForm({ article, mode }: BlogFormProps) {
               value={item.title}
               onChange={(e) => updateTocItem(index, "title", e.target.value)}
               placeholder="Titre de la section"
+              // A placeholder is not an accessible name — it disappears on input.
+              aria-label={`Titre de la section ${index + 1}`}
               className={styles.input}
             />
             <input
@@ -250,6 +254,7 @@ export function BlogForm({ article, mode }: BlogFormProps) {
               value={item.id}
               onChange={(e) => updateTocItem(index, "id", e.target.value)}
               placeholder="id-de-la-section"
+              aria-label={`Identifiant d'ancre de la section ${index + 1}`}
               className={styles.input}
             />
             <button

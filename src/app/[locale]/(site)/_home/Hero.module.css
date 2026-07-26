@@ -49,7 +49,11 @@
   letter-spacing: -0.03em;
   line-height: 1.02;
   color: var(--color-text);
-  font-weight: 800;
+  /* 700 = the heaviest weight Space Grotesk is actually loaded at (see
+     src/app/layout.tsx: weight ['500','600','700']). Asking for 800 made the
+     browser SYNTHESISE a fake bold by smearing the 700 outlines — extra paint
+     work and visibly muddier letterforms than the real cut. */
+  font-weight: 700;
   text-wrap: balance;
   overflow-wrap: break-word;
   max-width: 16ch;

@@ -61,6 +61,9 @@ export function DeleteArticleButton({ slug, title }: DeleteArticleButtonProps) {
       className={`${styles.actionButton} ${styles.delete}`}
       onClick={handleDelete}
       disabled={isDeleting}
+      // Icon-only button: `title` is only the last-resort fallback in the
+      // accessible-name algorithm and is not exposed on touch. aria-label is.
+      aria-label="Supprimer l'article"
       title="Supprimer l'article"
     >
       {isDeleting ? <Loader2 size={18} className={styles.spin} /> : <Trash2 size={18} />}

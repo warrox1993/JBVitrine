@@ -115,7 +115,10 @@ export function SecurityScan() {
           <p className={styles.foot}>{t("foot")}</p>
         </div>
 
-        <div className={styles.terminal} ref={rootRef} aria-label={t("title")}>
+        {/* role="group" is required for the aria-label to survive: a bare <div>
+            maps to the "generic" role, and screen readers silently drop
+            aria-label on generic elements — the name was being thrown away. */}
+        <div className={styles.terminal} ref={rootRef} role="group" aria-label={t("title")}>
           <div className={styles.bar} aria-hidden="true">
             <span className={styles.dot} />
             <span className={styles.dot} />

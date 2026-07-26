@@ -5,7 +5,7 @@ import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Section } from "@/components/ui/Section/Section";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
-import { CTABox } from "@/components/shared";
+import { CTABox } from "@/components/shared/CTABox/CTABox";
 import {
   organizationSchema,
   websiteSchema,

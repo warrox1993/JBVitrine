@@ -65,7 +65,6 @@ export function ScrollProgress(): React.ReactPortal | null {
       const displayValue = isScrolling ? scrollProgress : Math.max(scrollProgress, route);
 
       setFillScale(displayValue);
-      bar.setAttribute("aria-valuenow", String(Math.round(displayValue * 100)));
       setVisibility(isScrolling || route > 0);
       ticking = false;
     };
@@ -115,15 +114,14 @@ export function ScrollProgress(): React.ReactPortal | null {
     return null;
   }
 
+  // Purely decorative: this bar mirrors the browser's own scroll position, which
+  // assistive tech already exposes natively. It was declared role="progressbar"
+  // with no accessible name (axe `aria-progressbar-name`), which put a nameless,
+  // constantly-mutating widget in the accessibility tree — noise, not
+  // information. It contains nothing focusable, so aria-hidden is the correct
+  // tool here (unlike the internship pill, which does carry information).
   const node = (
-    <div
-      ref={barRef}
-      className={styles.progressBar}
-      role="progressbar"
-      aria-valuenow={0}
-      aria-valuemin={0}
-      aria-valuemax={100}
-    >
+    <div ref={barRef} className={styles.progressBar} aria-hidden="true">
       <div ref={fillRef} className={styles.progressFill} />
     </div>
   );

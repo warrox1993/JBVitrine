@@ -11,7 +11,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Icon, IconName } from "@/components/ui/Icon/Icon";
 import { Button } from "@/components/ui/Button/Button";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
-import { ServiceCard, TrustStrip, Faq, CTABox } from "@/components/shared";
+import { CTABox } from "@/components/shared/CTABox/CTABox";
+import { Faq } from "@/components/shared/Faq/Faq";
+import { ServiceCard } from "@/components/shared/ServiceCard/ServiceCard";
+import { TrustStrip } from "@/components/shared/TrustStrip/TrustStrip";
 import styles from "./page.module.css";
 import { jsonLdSafe } from "@/lib/security/escape";
 

@@ -297,7 +297,9 @@
       }
     },
     "internship": {
-      "label": "Op zoek naar een stage"
+      "label": "Op zoek naar een stage",
+      "linkLabel": "Op zoek naar een stage — contacteer mij",
+      "srStatus": "Op zoek naar een stage vanaf 2027 — zie de contactpagina."
     }
   },
   "conformite": {

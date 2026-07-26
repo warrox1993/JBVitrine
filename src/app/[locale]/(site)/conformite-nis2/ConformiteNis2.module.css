@@ -173,9 +173,14 @@
   padding-bottom: 6px;
   margin-top: 2px;
 }
-.dcTop h3 {
+/* Was `.dcTop h3` — promoted to h2 so the page has no skipped heading level.
+   line-height / margin-bottom are pinned to the values the h3 inherited, so the
+   card renders exactly as before. */
+.dcTop h2 {
   color: var(--white);
   font-size: 19px;
+  line-height: 1.2;
+  margin-bottom: var(--space-3);
 }
 .dcTop p {
   font-size: 13px;
@@ -325,11 +330,14 @@
   color: var(--navy-3);
   flex: none;
 }
-.honesty h4 {
+/* Was `.honesty h4` — demoted to h3 (its section heading is an h2), no skip.
+   line-height pinned to the h4 default so nothing moves. */
+.honesty h3 {
   font-size: 16.5px;
   margin-bottom: 7px;
   color: var(--color-text);
   font-weight: 700;
+  line-height: 1.25;
 }
 .honesty p {
   font-size: 14.5px;
@@ -372,7 +380,9 @@
   justify-content: center;
   margin-bottom: 16px;
 }
-.trustCard h4 {
+/* Was `.trustCard h4` — h3 under the section's h2. Every visual property is set
+   here and h3/h4 share the same default margin-bottom, so rendering is identical. */
+.trustCard h3 {
   font-size: 15.5px;
   color: var(--color-text);
   font-weight: 700;

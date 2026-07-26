@@ -26,14 +26,21 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
 
-  // CSS Optimization (Next.js 16 built-in)
-  // Simplified for Vercel stability
   experimental: {
-    optimizeCss: true, // Enable CSS minification
-    // Tree-shake large packages to reduce bundle size
+    // NOTE: `optimizeCss: true` used to be set here with the comment "Enable
+    // CSS minification". It did neither. Next only minifies CSS through this
+    // flag when the `beasties` (ex-`critters`) package is installed, and it
+    // isn't a dependency of this project — verified: the built HTML contained
+    // ZERO inline <style> blocks, i.e. no critical CSS was ever inlined, and
+    // removing the flag changed the emitted CSS byte-for-byte. It was dead
+    // config that only made the build look like it was doing something.
+    //
+    // Tree-shake large packages to reduce bundle size.
     optimizePackageImports: [
       "lucide-react", // Icon library
-      "react-bootstrap", // UI components
+      // NOTE: "react-bootstrap" was listed here but is not (and was not) a
+      // dependency of this project — see package.json. Optimising imports for
+      // a package that is never imported is a no-op.
     ],
   },
 

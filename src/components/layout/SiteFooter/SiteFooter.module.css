@@ -244,6 +244,21 @@
   flex-wrap: wrap;
 }
 
+/* Contraste (WCAG 2.2 AA, 1.4.3) — ces liens DOIVENT porter une couleur
+   explicite.
+   `.bottom` fixe bien `color: var(--on-dark-muted)`, mais la règle globale
+   `a { color: var(--color-accent-1) }` de app/styles/typography.css est plus
+   spécifique qu'un héritage et l'emporte. Les liens tombaient donc sur le vert
+   de marque #0b7a5b, qui ne donne que 3.36:1 sur le fond --navy #0c1a16 : sous
+   le seuil de 4.5:1 exigé pour du texte de 13px.
+   Mesuré sur les 22 liens du footer : c'était le SEUL groupe sans couleur
+   propre, et donc les 3 seuls échecs. --on-dark-muted donne 8.15:1 (AAA) et
+   aligne visuellement ces liens légaux secondaires sur le texte de copyright
+   qui les jouxte. Le survol passe déjà en blanc. */
+.bottomLinks a {
+  color: var(--on-dark-muted);
+}
+
 .bottomLinks a:hover {
   color: var(--white);
 }

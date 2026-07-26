@@ -290,6 +290,8 @@ export function LeadsDashboard({ breadcrumb }: { breadcrumb?: React.ReactNode })
           <input
             type="search"
             placeholder="Rechercher par nom, email, entreprise..."
+            // A placeholder is not an accessible name — it disappears on input.
+            aria-label="Rechercher un lead par nom, email ou entreprise"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className={cls.searchInput}

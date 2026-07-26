@@ -8,7 +8,7 @@ import { getAllArticles } from "@/lib/blogActions";
 import { jsonLdSafe } from "@/lib/security/escape";
 import { BlogFilter } from "@/components/features/blog/BlogFilter";
 import { FeaturedArticle } from "@/components/features/blog/FeaturedArticle";
-import { CTABox } from "@/components/shared";
+import { CTABox } from "@/components/shared/CTABox/CTABox";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./page.module.css";
 

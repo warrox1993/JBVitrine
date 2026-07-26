@@ -387,7 +387,10 @@ export function CommandPalette() {
                 aria-label={t("placeholder")}
                 className={styles.input}
                 role="combobox"
-                aria-expanded="true"
+                // Must track the listbox for real: announcing "expanded" while
+                // the list is empty tells the screen reader there are results to
+                // arrow through when there are none.
+                aria-expanded={flatItems.length > 0}
                 aria-controls={listboxId}
                 aria-activedescendant={activeOptionId}
                 aria-autocomplete="list"

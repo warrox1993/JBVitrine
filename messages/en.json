@@ -297,7 +297,9 @@
       }
     },
     "internship": {
-      "label": "Open to an internship"
+      "label": "Open to an internship",
+      "linkLabel": "Open to an internship — contact me",
+      "srStatus": "Open to an internship from 2027 — see the contact page."
     }
   },
   "conformite": {

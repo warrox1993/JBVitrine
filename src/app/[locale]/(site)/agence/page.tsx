@@ -12,7 +12,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Button } from "@/components/ui/Button/Button";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
-import { CTABox } from "@/components/shared";
+import { CTABox } from "@/components/shared/CTABox/CTABox";
 import { Fondateur } from "./Fondateur";
 import { Demarche } from "./Demarche";
 import styles from "./page.module.css";

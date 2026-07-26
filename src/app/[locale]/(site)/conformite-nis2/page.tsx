@@ -10,7 +10,9 @@ import { Icon, type IconName } from "@/components/ui/Icon/Icon";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
-import { CyFunTiers, NIS2Checker, CTABox } from "@/components/shared";
+import { CTABox } from "@/components/shared/CTABox/CTABox";
+import { CyFunTiers } from "@/components/shared/CyFunTiers/CyFunTiers";
+import { NIS2Checker } from "@/components/shared/NIS2Checker/NIS2Checker";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./ConformiteNis2.module.css";
 
@@ -137,7 +139,11 @@ export default async function ConformiteNis2Page() {
                   <span className={styles.y}>{t("hero.cardYear")}</span>
                 </div>
                 <div>
-                  <h3>{t("hero.cardTitle")}</h3>
+                  {/* h2, not h3: this is the first heading under the page <h1>.
+                      A skipped level breaks heading-based navigation for screen
+                      reader users. Styles pinned in the CSS module so the
+                      rendering is unchanged. */}
+                  <h2>{t("hero.cardTitle")}</h2>
                   <p>{t("hero.cardText")}</p>
                 </div>
               </div>
@@ -254,7 +260,7 @@ export default async function ConformiteNis2Page() {
               <div className={styles.trustIco}>
                 <Icon name={c.icon} size={22} strokeWidth={1.8} />
               </div>
-              <h4>{c.title}</h4>
+              <h3>{c.title}</h3>
               <p>{c.text}</p>
             </article>
           ))}
@@ -264,7 +270,7 @@ export default async function ConformiteNis2Page() {
           <div className={styles.honesty}>
             <Icon name="alert-circle" size={30} strokeWidth={1.8} />
             <div>
-              <h4>{t("audit.honesty.title")}</h4>
+              <h3>{t("audit.honesty.title")}</h3>
               <p>{t.rich("audit.honesty.p", { b })}</p>
             </div>
           </div>

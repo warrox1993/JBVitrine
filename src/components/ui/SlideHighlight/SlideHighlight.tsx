@@ -56,6 +56,8 @@ export function SlideHighlight({
   const highlightRef = useRef<HTMLSpanElement | null>(null);
   const activeItemRef = useRef<HTMLElement | null>(null);
   const hasPositionedRef = useRef(false);
+  const restoreFrameRef = useRef<number | null>(null);
+  const moveFrameRef = useRef<number | null>(null);
 
   const moveTo = useCallback((item: HTMLElement | null, instant = false) => {
     const container = containerRef.current;
@@ -74,10 +76,21 @@ export function SlideHighlight({
     highlight.style.transform = `translate(${x}px, ${y}px)`;
     highlight.style.opacity = "1";
     if (snap) {
-      // Force layout so the instant jump commits before handing transitions
-      // back to the stylesheet (which also honours prefers-reduced-motion).
-      void highlight.offsetHeight;
-      highlight.style.transition = "";
+      // Hand transitions back to the stylesheet on the NEXT frame. This used
+      // to read `highlight.offsetHeight` to flush the instant jump, which
+      // forces a SYNCHRONOUS layout in the middle of a pointer handler
+      // (read -> write -> read, the classic layout-thrash pattern). A rAF
+      // callback runs before the next style/layout pass, so the snap has
+      // already been committed with `transition: none` and restoring the
+      // stylesheet value cannot animate it: same visual result, no forced
+      // reflow. prefers-reduced-motion is still honoured by the stylesheet.
+      if (restoreFrameRef.current !== null) {
+        cancelAnimationFrame(restoreFrameRef.current);
+      }
+      restoreFrameRef.current = requestAnimationFrame(() => {
+        restoreFrameRef.current = null;
+        highlight.style.transition = "";
+      });
       hasPositionedRef.current = true;
     }
     activeItemRef.current = item;
@@ -98,7 +111,18 @@ export function SlideHighlight({
   const handlePointerOver = (e: ReactPointerEvent<HTMLElement>) => {
     if (e.pointerType === "touch") return; // no ghost highlight on tap/scroll
     const item = resolveItem(e.target);
-    if (item) moveTo(item);
+    if (!item) return;
+    // Batch the two getBoundingClientRect() reads into the next animation
+    // frame rather than running them inline: pointerover can fire several
+    // times per frame while the cursor sweeps a nav, and each inline call
+    // would force its own layout right after the previous frame's writes.
+    if (moveFrameRef.current !== null) {
+      cancelAnimationFrame(moveFrameRef.current);
+    }
+    moveFrameRef.current = requestAnimationFrame(() => {
+      moveFrameRef.current = null;
+      moveTo(item);
+    });
   };
 
   const handlePointerLeave = () => {
@@ -122,7 +146,15 @@ export function SlideHighlight({
       if (activeItemRef.current) moveTo(activeItemRef.current, true);
     };
     window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize);
+      if (moveFrameRef.current !== null) {
+        cancelAnimationFrame(moveFrameRef.current);
+      }
+      if (restoreFrameRef.current !== null) {
+        cancelAnimationFrame(restoreFrameRef.current);
+      }
+    };
   }, [moveTo]);
 
   return (

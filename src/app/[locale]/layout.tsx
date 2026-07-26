@@ -3,6 +3,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { setRequestLocale, getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { pickClientMessages } from "@/i18n/clientMessages";
 import { HtmlLangSync } from "@/components/i18n/HtmlLangSync";
 import { CommandPalette } from "@/components/layout/CommandPalette/CommandPalette";
 
@@ -33,7 +34,11 @@ export default async function LocaleLayout({
     notFound();
   }
   setRequestLocale(locale);
-  const messages = await getMessages();
+  // Only the namespaces Client Components actually read are serialised into
+  // the RSC payload. Handing the full message set to the provider inlined the
+  // whole locale file into every document (144 KB of the homepage's 197 KB).
+  // Server Components are unaffected: they use getTranslations() server-side.
+  const messages = pickClientMessages(await getMessages());
   return (
     <NextIntlClientProvider key={locale} locale={locale} messages={messages}>
       <HtmlLangSync />

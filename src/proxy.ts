@@ -302,8 +302,15 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
-     * - public folder
+     * - root-level agent/crawler files served from public/
+     *
+     * Anything NOT excluded here reaches handleI18nRouting(), and next-intl
+     * (localePrefix "as-needed", defaultLocale "fr") rewrites it to /fr/<path>
+     * — where no route exists. That is why robots.txt and sitemap.xml are
+     * listed, and it is why llms.txt has to be too: without it, /llms.txt
+     * answered 404 while the file sat perfectly readable in public/.
+     * Verified by request, not by reading: /llms.txt 404 before, 200 after.
      */
-    "/((?!_next/static|_next/image|favicon.ico|manifest\\.json|robots\\.txt|sitemap\\.xml|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|manifest\\.json|robots\\.txt|sitemap\\.xml|llms\\.txt|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2)$).*)",
   ],
 };

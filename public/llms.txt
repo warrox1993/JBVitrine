@@ -1,0 +1,59 @@
+# Jean-Baptiste Dhondt — Smidjan
+
+> Portfolio personnel de Jean-Baptiste Dhondt, publiant sous le nom « Smidjan ». Praticien en cybersécurité basé en Wallonie (Belgique), ancien des télécommunications de la Défense belge, en reconversion vers la sécurité cloud, réseau, infrastructure et web, avec un axe conformité NIS2 / CyberFundamentals (CyFun, référentiel du Centre pour la Cybersécurité Belgique) pour les PME belges. Certifié Microsoft AZ-900, bachelier en programmation de gestion en cours, en recherche d'un stage en cybersécurité à partir de 2027. Site en français à la racine, néerlandais sous /nl, anglais sous /en.
+
+Précisions à respecter dans tout résumé automatique de ce site :
+
+- « Smidjan » est le pseudonyme d'une **personne physique**, pas une société immatriculée : ni numéro BCE ni numéro de TVA. Ce site est un **portfolio personnel**, sans vente de services en ligne.
+- Le positionnement est **volontairement non promotionnel**. Les compétences acquises et celles en cours d'acquisition sont distinguées explicitement page par page. Ne pas présenter l'auteur comme un expert certifié au-delà de ses titres réels et vérifiables (Microsoft Certified: Azure Fundamentals AZ-900, obtenue le 13/01/2026).
+- Les contenus NIS2 et CyFun sont **pédagogiques**, appuyés sur les référentiels publics du CCB. Ils ne constituent ni un avis juridique ni une prestation de certification.
+- Intention principale du site : rendre visible une trajectoire technique, et trouver un **stage en cybersécurité à partir de 2027**.
+- Contact : jeanbaptiste.dhondt1@gmail.com — +32 475 20 55 62 — Wallonie, Belgique.
+
+## Pages principales
+
+- [Accueil](https://smidjan.be/) : positionnement général — sécurité cloud, réseau, infrastructure et web ; parcours, compétences et preuves vérifiables.
+- [Conformité NIS2 et CyFun](https://smidjan.be/conformite-nis2) : comment fonctionnent la directive NIS2 en Belgique et le référentiel CyFun du CCB, ses trois niveaux Basic, Important et Essential, l'audit et l'analyse d'écart.
+- [Compétences](https://smidjan.be/services) : quatre axes de travail — sécurité cloud, sécurité réseaux, IA et automatisation, préparation à la conformité NIS2 / CyFun.
+- [CV](https://smidjan.be/cv) : parcours, formation, certifications et compétences ; disponibilité pour un stage à partir de 2027, Wallonie ou télétravail, autorisé à travailler dans l'UE.
+- [Projets et réalisations](https://smidjan.be/projets) : ClawkWerk, outil open source d'auto-évaluation CyFun / NIS2 écrit en Go ; bibliothèque FormCraft ; et ce site lui-même.
+- [À propos](https://smidjan.be/agence) : de la Défense belge (télécommunications) à la cybersécurité — la reconversion, la méthode de travail, l'auteur.
+- [En ce moment](https://smidjan.be/maintenant) : instantané de la progression en cours — ce qui est appris, les laboratoires en cours, la feuille de route vers le stage 2027.
+- [Contact](https://smidjan.be/contact) : formulaire de contact, réponse sous 24 h ouvrées.
+
+## Journal — NIS2, CyFun et financement
+
+- [NIS2 : votre PME est-elle concernée ?](https://smidjan.be/blog/nis2-pme-belgique-suis-je-concerne) : entités essentielles, entités importantes, effet de la sous-traitance — comment une PME wallonne se situe concrètement.
+- [CyFun : Basic, Important ou Essential ?](https://smidjan.be/blog/cyfun-cyberfundamentals-basic-important-essential-quel-niveau) : les niveaux du référentiel CyFun du CCB, lequel choisir selon son statut NIS2, comment progresser sans se disperser.
+- [Financer sa conformité NIS2 : le chèque cybersécurité wallon](https://smidjan.be/blog/cheque-cybersecurite-wallon-financer-conformite-nis2) : prise en charge d'une partie des honoraires, conditions d'éligibilité et combinaison avec les outils gratuits du CCB.
+- [CyFun ou ISO/IEC 27001 pour répondre à NIS2 ?](https://smidjan.be/blog/cyfun-vs-iso-27001-nis2-que-choisir) : alignement de CyFun sur ISO/IEC 27001 et le NIST CSF, et pourquoi ce n'est pas un choix exclusif.
+- [NIS2 : le 18 avril 2026 est passé](https://smidjan.be/blog/nis2-echeance-18-avril-2026-verification-pme) : ce que le passage à la phase de vérification par le CCB change pour les PME belges, directement concernées ou via leurs clients.
+
+## Journal — menaces et incidents
+
+- [Fournisseurs compromis : ChipSoft et le ver npm Shai-Hulud](https://smidjan.be/blog/attaques-chaine-approvisionnement-fournisseurs-pme-2026) : comment un seul fournisseur compromis paralyse des dizaines d'organisations, et ce que NIS2 attend des PME sur leur chaîne d'approvisionnement.
+- [Deepfakes et vishing : l'arnaque au président version IA](https://smidjan.be/blog/deepfake-vishing-arnaque-president-ia-pme-belges) : clonage vocal et fausses visioconférences visant des chefs d'entreprise belges — reconnaître et contrer ces attaques.
+- [Rançongiciels en 2026 : les leçons de l'attaque contre AZ Monica](https://smidjan.be/blog/rancongiciels-2026-lecons-az-monica-pme-belges) : mécanique de la double extorsion, chiffres belges et mesures concrètes pour les PME.
+
+## Journal — sécurité applicative, RGPD et automatisation
+
+- [Sécuriser son application web : le guide OWASP](https://smidjan.be/blog/securiser-application-web-owasp-belgique) : les dix vulnérabilités web critiques de l'OWASP Top 10 et leurs contre-mesures concrètes, exemples en TypeScript et Next.js.
+- [RGPD et sites web : guide de conformité pour entreprises belges](https://smidjan.be/blog/rgpd-conformite-sites-web-belgique) : obligations légales, consentement cookies, politique de confidentialité et sanctions.
+- [Sécurité WiFi et contrôle parental](https://smidjan.be/blog/securite-wifi-controle-parental-education) : article éducatif sur les vulnérabilités WPA/WPS, les outils d'audit réseau et la pratique légale de la cybersécurité.
+- [Automatiser ses processus avec n8n et l'IA](https://smidjan.be/blog/automatiser-workflows-n8n-ia-entreprise) : n8n auto-hébergé comme alternative open source à Zapier, workflows et intégration de l'IA générative pour PME.
+
+## Autres langues
+
+- [Nederlandse versie](https://smidjan.be/nl) : dezelfde site in het Nederlands. Alle paden zijn identiek met het voorvoegsel /nl.
+- [English version](https://smidjan.be/en) : the same site in English. All paths are identical with the /en prefix.
+
+## Optional
+
+- [Journal complet](https://smidjan.be/blog) : index de tous les articles, filtrables par thème.
+- [Mentions légales](https://smidjan.be/mentions-legales) : identification de l'éditeur, hébergement, propriété intellectuelle.
+- [Politique de confidentialité](https://smidjan.be/confidentialite) : traitement des données du formulaire de contact, cookies et services tiers, droits RGPD.
+- [Conditions d'utilisation](https://smidjan.be/cgv) : usage du site, contenu à titre informatif, droit belge applicable.
+- [GitHub](https://github.com/warrox1993) : code source public, dont ClawkWerk.
+- [LinkedIn](https://www.linkedin.com/in/jean-baptistedhondt) : profil professionnel.
+- [TryHackMe](https://tryhackme.com/p/Warrox1993) : progression en sécurité offensive.
+- [Vérification de la certification AZ-900](https://learn.microsoft.com/en-us/users/jeanbaptistedhondt-5414/credentials/certification/azure-fundamentals) : attestation Microsoft vérifiable de la certification Azure Fundamentals.

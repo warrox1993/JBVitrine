@@ -11,7 +11,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { Button } from "@/components/ui/Button/Button";
-import { CTABox } from "@/components/shared";
+import { CTABox } from "@/components/shared/CTABox/CTABox";
 import { Spotlight } from "@/components/ui/Spotlight/Spotlight";
 import spotlight from "@/components/ui/Spotlight/Spotlight.module.css";
 import { ProjectCover, type ProjectCoverKey } from "./ProjectCover";

@@ -8,7 +8,7 @@ import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
-import { CTABox } from "@/components/shared";
+import { CTABox } from "@/components/shared/CTABox/CTABox";
 import styles from "./page.module.css";
 
 export async function generateMetadata({

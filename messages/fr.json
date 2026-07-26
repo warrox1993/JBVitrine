@@ -297,7 +297,9 @@
       }
     },
     "internship": {
-      "label": "En recherche de stage"
+      "label": "En recherche de stage",
+      "linkLabel": "En recherche de stage — me contacter",
+      "srStatus": "En recherche de stage à partir de 2027 — voir la page contact."
     }
   },
   "conformite": {

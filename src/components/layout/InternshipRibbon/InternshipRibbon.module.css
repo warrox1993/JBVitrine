@@ -6,8 +6,13 @@
   right: 24px;
   bottom: 24px;
   z-index: 55;
-  pointer-events: none; /* purely informational — nothing to click */
+  pointer-events: none; /* the host is click-through; only the pill is clickable */
   opacity: 0;
+  /* `visibility`, not just `opacity` — an opacity-0 pill would still be
+     hit-testable and focusable, i.e. an invisible keyboard stop. The retracted
+     host is also `inert` in the component (see InternshipRibbon.tsx). Keep both:
+     `visibility` is delayed below so the pill can animate out, and `inert` is
+     what guarantees it is unreachable during that fade. */
   visibility: hidden;
   transform: translateY(18px);
   transition:

@@ -10,7 +10,7 @@ import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Icon, IconName } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
-import { CTABox } from "@/components/shared";
+import { CTABox } from "@/components/shared/CTABox/CTABox";
 import { ProcessSteps } from "@/components/shared/ProcessSteps/ProcessSteps";
 import { authorSchema } from "@/lib/author-schema";
 import { social, credentials, siteUrl } from "@/config/site";
