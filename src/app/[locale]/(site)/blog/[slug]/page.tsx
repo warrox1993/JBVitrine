@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
@@ -118,14 +117,12 @@ export default async function BlogArticlePage({ params }: Props) {
     .join("")
     .toUpperCase();
 
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
 
   return (
     <article className={styles.article}>
       {/* Article Schema */}
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{
           __html: jsonLdSafe({
             "@context": "https://schema.org",
@@ -159,7 +156,6 @@ export default async function BlogArticlePage({ params }: Props) {
       {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{
           __html: jsonLdSafe({
             "@context": "https://schema.org",

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { contact, siteUrl } from "@/config/site";
-import { headers } from 'next/headers';
 import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
@@ -58,14 +57,12 @@ export default async function ContactPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('contact');
-  const nonce = (await headers()).get('x-nonce') ?? undefined;
 
   return (
     <>
       {/* JSON-LD: ContactPage */}
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{
           __html: jsonLdSafe({
             '@context': 'https://schema.org',
@@ -97,7 +94,6 @@ export default async function ContactPage({
       {/* JSON-LD: BreadcrumbList */}
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{
           __html: jsonLdSafe({
             '@context': 'https://schema.org',

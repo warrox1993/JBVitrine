@@ -3,6 +3,7 @@ import { getToken } from "next-auth/jwt";
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 import { maskIp } from "./lib/security/escape";
+import { themeScriptCspHash } from "./lib/security/theme-script";
 
 // next-intl locale routing (FR at "/", NL/EN prefixed). Applied only to the
 // localized site routes below (/api and /admin keep their own handling).
@@ -46,11 +47,34 @@ function buildCsp(nonce: string): string {
     "upgrade-insecure-requests",
   ];
 
-  // script-src: per-request nonce replaces 'unsafe-inline'. 'unsafe-eval'
-  // and Vercel Live stay DEV-only (HMR / preview toolbar); both are removed
-  // in production.
+  // script-src: per-request nonce replaces 'unsafe-inline'.
+  //
+  // ARCHITECTURAL CONSTRAINT, measured — read before "optimising" this away:
+  // a per-request nonce and static prerendering are MUTUALLY EXCLUSIVE. Static
+  // HTML is produced once at build time, so it cannot carry a value that
+  // changes per request. Next puts this nonce on its own inline scripts (28 of
+  // them on the homepage — the RSC payload, the hydration bootstrap); if a page
+  // were ever prerendered, those scripts would ship without a nonce and the
+  // browser would refuse to execute them, leaving a dead page.
+  //
+  // So the CDN-cacheability win discussed in the perf audit is not free: it
+  // costs either 'unsafe-inline' (do NOT) or a move to hash-based/strict-dynamic
+  // CSP covering every script Next emits. Do not remove the nonce here in the
+  // name of performance without solving that first.
+  //
+  // The static hash alongside it covers the no-flash theme initialiser in
+  // app/layout.tsx. That script MUST be inline (it has to run before first
+  // paint), but it is also the same bytes on every request — so a hash suits it
+  // better than a nonce, and it means the root layout no longer has to read
+  // headers() just to obtain one. Source and digest live together in
+  // lib/security/theme-script.ts, with a test pinning the pair.
+  //
+  // Both a nonce and a hash being present is fine: they are alternative
+  // allow-list sources, and either one makes the browser ignore
+  // 'unsafe-inline' — so this adds an allowance for exactly one known script,
+  // and weakens nothing.
   const scriptSrc =
-    `script-src 'self' 'nonce-${nonce}'` +
+    `script-src 'self' 'nonce-${nonce}' ${themeScriptCspHash()}` +
     (process.env.NODE_ENV === "production"
       ? ""
       : " 'unsafe-eval' https://vercel.live https://*.vercel.live") +

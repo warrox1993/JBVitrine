@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { contact, siteUrl } from "@/config/site";
-import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import type { ReactNode } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -52,8 +51,7 @@ async function BreadcrumbJsonLd() {
       },
     ],
   };
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
-  return <script type="application/ld+json" nonce={nonce} dangerouslySetInnerHTML={{ __html: jsonLdSafe(json) }} />;
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdSafe(json) }} />;
 }
 
 export default async function ConfidentialitePage({

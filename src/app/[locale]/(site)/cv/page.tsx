@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -108,7 +107,6 @@ export default async function CvPage({
   const formationItems = tc.raw("formation.items") as FormationItem[];
   const languageItems = t.raw("languages.items") as LanguageItem[];
   const passionItems = t.raw("beyond.passions") as string[];
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
 
   // Section anchors for the sticky sidebar nav — labels reuse the same
   // eyebrows shown atop each section below, so the nav and the destination
@@ -127,7 +125,6 @@ export default async function CvPage({
       {/* Person JSON-LD — a CV is the canonical place to describe the person. */}
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{
           __html: jsonLdSafe({ "@context": "https://schema.org", ...authorSchema }),
         }}

@@ -64,3 +64,9 @@ Allow: /
 
 # Host
 Host: https://smidjan.be
+
+# Sitemap — served at the root by src/app/sitemap.ts (App Router convention).
+# This file is now hand-maintained: `next-sitemap` was removed because it could
+# not enumerate App Router routes under the dynamic [locale] segment and kept
+# clobbering both this file and public/sitemap.xml on every build.
+Sitemap: https://smidjan.be/sitemap.xml

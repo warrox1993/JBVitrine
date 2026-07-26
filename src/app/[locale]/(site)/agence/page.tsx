@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { contact, siteUrl } from "@/config/site";
-import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import { authorSchema } from "@/lib/author-schema";
 import { Link } from "@/i18n/navigation";
@@ -63,12 +62,10 @@ export default async function AgencePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("agence");
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
   return (
     <>
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{
           __html: jsonLdSafe({ "@context": "https://schema.org", ...authorSchema }),
         }}

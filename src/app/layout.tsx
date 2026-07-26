@@ -19,7 +19,7 @@ import RouteProgressProvider from '@/app/RouteProgressProvider';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { getLocale, getTranslations } from 'next-intl/server';
-import { headers } from 'next/headers';
+import { THEME_INIT_SCRIPT } from '@/lib/security/theme-script';
 
 // Optimized font loading with swap and subset for faster FCP/LCP
 const inter = Inter({
@@ -145,9 +145,11 @@ import { ToastHost } from '@/components/feedback/ToastHost';
 export default async function RootLayout({ children }: { children: ReactNode }) {
     const locale = await getLocale();
     const t = await getTranslations({ locale, namespace: 'common' });
-    // CSP nonce forwarded by src/proxy.ts (x-nonce request header). Needed
-    // so this inline script is allowed under the nonce-based script-src.
-    const nonce = (await headers()).get('x-nonce') ?? undefined;
+    // No headers() here on purpose. Reading a request header in the ROOT layout
+    // opts every page in the app into dynamic rendering — no prerender, no CDN
+    // cache, a function invocation per visit. The theme script below is allowed
+    // by a static 'sha256-…' in script-src instead of a per-request nonce; see
+    // lib/security/theme-script.ts and the note in src/proxy.ts.
     return (
         <html lang={locale} data-theme="light" suppressHydrationWarning>
             <head>
@@ -157,13 +159,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
                     opt-in via the header toggle for now (not OS-auto) until the
                     dark theme is visually signed off. To follow the OS instead,
                     swap the fallback to: (m?'dark':'light'). Zero-dependency. */}
-                <script
-                    nonce={nonce}
-                    dangerouslySetInnerHTML={{
-                        __html:
-                            "(function(){try{var s=localStorage.getItem('smidjan-theme');document.documentElement.setAttribute('data-theme',(s==='dark'||s==='light')?s:'light');}catch(e){}})();",
-                    }}
-                />
+                <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
             </head>
             <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
                 {/* Skip-to-content: visually hidden until keyboard focus, then

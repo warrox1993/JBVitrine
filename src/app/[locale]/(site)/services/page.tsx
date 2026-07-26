@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { contact, siteUrl } from "@/config/site";
-import { headers } from "next/headers";
 import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -152,22 +151,18 @@ export default async function ServicesPage({
       acceptedAnswer: { "@type": "Answer", text: t(`faq.${q}.answer`) },
     })),
   };
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
   return (
     <>
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: jsonLdSafe(jsonLd) }}
       />
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: jsonLdSafe(breadcrumbJsonLd) }}
       />
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: jsonLdSafe(faqSchema) }}
       />
 
