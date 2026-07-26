@@ -14,6 +14,20 @@ import { escapeXml, escapeCsvCell } from "@/lib/security/escape";
 // keeps parity with the CSV export and protects if a cell is ever re-typed.
 const cell = (v: unknown): string => escapeXml(escapeCsvCell(v));
 
+/**
+ * Coerce a value destined for an `ss:Type="Number"` cell.
+ *
+ * SECURITY: several of these values come from JSONB columns fed by the client
+ * (`estimate`, `score_breakdown`, `enrichment_data`), so they are not guaranteed
+ * to be numbers. `${estimate.min || 0}` interpolated a string verbatim, letting
+ * a crafted value close the tag and inject arbitrary SpreadsheetML
+ * (`</Data></Cell><Cell>…`). Number() collapses anything non-numeric to 0.
+ */
+const num = (v: unknown): number => {
+  const n = Number(v);
+  return Number.isFinite(n) ? n : 0;
+};
+
 export async function GET() {
   const denied = await guardRoute("sales");
   if (denied) return denied;
@@ -66,22 +80,22 @@ function generateExcelXML(leads: any[]): string {
       <Cell><Data ss:Type="String">${new Date(lead.created_at).toLocaleDateString("fr-FR")}</Data></Cell>
       <Cell><Data ss:Type="String">${new Date(lead.created_at).toLocaleTimeString("fr-FR")}</Data></Cell>
       <Cell ss:StyleID="grade${escapeXml(lead.score_grade)}"><Data ss:Type="String">${escapeXml(lead.score_grade)}</Data></Cell>
-      <Cell ss:StyleID="score"><Data ss:Type="Number">${lead.score_total}</Data></Cell>
-      <Cell><Data ss:Type="Number">${lead.score_confidence}</Data></Cell>
+      <Cell ss:StyleID="score"><Data ss:Type="Number">${num(lead.score_total)}</Data></Cell>
+      <Cell><Data ss:Type="Number">${num(lead.score_confidence)}</Data></Cell>
       <Cell><Data ss:Type="String">${cell(lead.name)}</Data></Cell>
       <Cell><Data ss:Type="String">${cell(lead.email)}</Data></Cell>
       <Cell><Data ss:Type="String">${cell(lead.company || "")}</Data></Cell>
       <Cell><Data ss:Type="String">${cell(lead.phone || "")}</Data></Cell>
       <Cell><Data ss:Type="String">${cell(lead.project_type || "")}</Data></Cell>
-      <Cell ss:StyleID="currency"><Data ss:Type="Number">${estimate.min || 0}</Data></Cell>
-      <Cell ss:StyleID="currency"><Data ss:Type="Number">${estimate.max || 0}</Data></Cell>
-      <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${breakdown.project || 0}</Data></Cell>
-      <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${breakdown.engagement || 0}</Data></Cell>
-      <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${breakdown.completion || 0}</Data></Cell>
-      <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${breakdown.enrichment || 0}</Data></Cell>
-      <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${breakdown.behavioral || 0}</Data></Cell>
+      <Cell ss:StyleID="currency"><Data ss:Type="Number">${num(estimate.min)}</Data></Cell>
+      <Cell ss:StyleID="currency"><Data ss:Type="Number">${num(estimate.max)}</Data></Cell>
+      <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${num(breakdown.project)}</Data></Cell>
+      <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${num(breakdown.engagement)}</Data></Cell>
+      <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${num(breakdown.completion)}</Data></Cell>
+      <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${num(breakdown.enrichment)}</Data></Cell>
+      <Cell ss:StyleID="breakdown"><Data ss:Type="Number">${num(breakdown.behavioral)}</Data></Cell>
       <Cell><Data ss:Type="String">${cell(enrichment.company || "")}</Data></Cell>
-      <Cell><Data ss:Type="Number">${lead.enrichment_score || 0}</Data></Cell>
+      <Cell><Data ss:Type="Number">${num(lead.enrichment_score)}</Data></Cell>
       <Cell><Data ss:Type="String">${cell(lead.confidence_level || "")}</Data></Cell>
     </Row>`;
     })

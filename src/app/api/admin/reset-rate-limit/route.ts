@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { timingSafeEqual } from "crypto";
 import { Redis } from "@upstash/redis";
 import { guardRoute } from "@/lib/auth/guard";
+import { resetRateLimitsForIp } from "@/lib/rate-limit-redis";
 
 /** Constant-time string comparison (returns false on length mismatch). */
 function secretsMatch(a: string, b: string): boolean {
@@ -96,39 +97,55 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // SECURITY (V-W7): prefixes below match the CURRENT limiter instances in
-    // src/lib/rate-limit-redis.ts (the old smidjan_quote/smidjan_contact/
-    // smidjan_enrichment prefixes were stale and matched nothing).
-    const patterns = [
-      `rate_limit:*:${ipToReset}`,
-      `smidjan_v4_quote:${ipToReset}`,
-      `smidjan_v3_contact:${ipToReset}`,
-      `smidjan_v3_login:${ipToReset}`,
-      `smidjan_v3_enrichment:${ipToReset}`,
-      `smidjan_v3_csrf:${ipToReset}`,
-      `smidjan_v3_leadscore:${ipToReset}`,
-    ];
+    // AVAILABILITY (bug 429): purge the @upstash/ratelimit limiters through the
+    // library's own resetUsedTokens rather than a hand-written key glob.
+    //
+    // The previous implementation matched `smidjan_v3_contact:<ip>` exactly, but
+    // a sliding window stores `prefix:identifier:<window number>` — so SCAN
+    // matched nothing, deletedCount stayed 0, and the route still answered
+    // `success: true`. The block looked permanent and unfixable. resetUsedTokens
+    // knows the real key layout AND clears the in-process ephemeral cache.
+    const limiterResults = await resetRateLimitsForIp(ipToReset);
+    const failed = limiterResults.filter((r) => !r.ok);
 
+    // The legacy counter in src/lib/redis.ts uses plain `rate_limit:<ns>:<ip>`
+    // keys (no window suffix), so those still need a SCAN sweep.
     let deletedCount = 0;
-    for (const pattern of patterns) {
-      try {
-        // SECURITY (V-W7): SCAN instead of KEYS — KEYS is O(N) blocking over
-        // the whole keyspace; SCAN iterates incrementally without blocking
-        // other Redis clients.
-        const keys = await scanAllKeys(pattern);
-        if (keys && keys.length > 0) {
-          await redis.del(...keys);
-          deletedCount += keys.length;
-        }
-      } catch (e) {
-        console.error(`Error deleting keys for pattern ${pattern}:`, e);
+    const legacyPattern = `rate_limit:*:${ipToReset}`;
+    let legacyError: string | null = null;
+    try {
+      // SECURITY (V-W7): SCAN instead of KEYS — KEYS is O(N) blocking over
+      // the whole keyspace; SCAN iterates incrementally without blocking
+      // other Redis clients.
+      const keys = await scanAllKeys(legacyPattern);
+      if (keys && keys.length > 0) {
+        await redis.del(...keys);
+        deletedCount += keys.length;
       }
+    } catch (e) {
+      legacyError = e instanceof Error ? e.message : "unknown error";
+      console.error(`Error deleting keys for pattern ${legacyPattern}:`, e);
+    }
+
+    // Report honestly: never claim success when nothing could be purged.
+    if (failed.length > 0 || legacyError) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: `Partial reset for IP ${ipToReset}: ${failed.length} limiter(s) failed`,
+          limiters: limiterResults,
+          legacyKeysDeleted: deletedCount,
+          legacyError,
+        },
+        { status: 502 },
+      );
     }
 
     return NextResponse.json({
       success: true,
-      message: `Deleted ${deletedCount} rate limit keys for IP ${ipToReset}`,
-      deletedCount,
+      message: `Reset ${limiterResults.length} rate limiters (+${deletedCount} legacy key(s)) for IP ${ipToReset}`,
+      limiters: limiterResults.map((r) => r.name),
+      legacyKeysDeleted: deletedCount,
     });
   } catch (error) {
     console.error("Reset rate limit error:", error);

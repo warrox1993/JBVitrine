@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/Button/Button";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { ServiceCard, TrustStrip, Faq, CTABox } from "@/components/shared";
 import styles from "./page.module.css";
+import { jsonLdSafe } from "@/lib/security/escape";
 
 export async function generateMetadata({
   params,
@@ -154,17 +155,17 @@ export default async function ServicesPage({
       <script
         type="application/ld+json"
         nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdSafe(jsonLd) }}
       />
       <script
         type="application/ld+json"
         nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdSafe(breadcrumbJsonLd) }}
       />
       <script
         type="application/ld+json"
         nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdSafe(faqSchema) }}
       />
 
       {/* ===== Page hero ===== */}

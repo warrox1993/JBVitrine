@@ -22,6 +22,7 @@ import { Parcours } from "./_home/Parcours";
 import { ApprocheTeaser } from "./_home/ApprocheTeaser";
 import { SecurityScan } from "./_home/SecurityScan";
 import { SectionRail } from "./_home/SectionRail";
+import { jsonLdSafe } from "@/lib/security/escape";
 
 export async function generateMetadata({
   params,
@@ -75,27 +76,27 @@ export default async function HomePage({
       <script
         type="application/ld+json"
         nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdSafe(organizationSchema) }}
       />
       <script
         type="application/ld+json"
         nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdSafe(websiteSchema) }}
       />
       <script
         type="application/ld+json"
         nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdSafe(localBusinessSchema) }}
       />
       <script
         type="application/ld+json"
         nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdSafe(personSchema) }}
       />
       <script
         type="application/ld+json"
         nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeWebPageSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdSafe(homeWebPageSchema) }}
       />
 
       <SectionRail

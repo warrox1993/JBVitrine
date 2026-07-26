@@ -11,6 +11,7 @@ import {
   LegalTable,
 } from "@/components/shared/LegalLayout/LegalLayout";
 import { PrivacyVisual } from "@/components/shared/LegalLayout/LegalVisuals";
+import { jsonLdSafe } from "@/lib/security/escape";
 
 export async function generateMetadata({
   params,
@@ -52,7 +53,7 @@ async function BreadcrumbJsonLd() {
     ],
   };
   const nonce = (await headers()).get("x-nonce") ?? undefined;
-  return <script type="application/ld+json" nonce={nonce} dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }} />;
+  return <script type="application/ld+json" nonce={nonce} dangerouslySetInnerHTML={{ __html: jsonLdSafe(json) }} />;
 }
 
 export default async function ConfidentialitePage({

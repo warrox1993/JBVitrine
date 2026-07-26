@@ -115,6 +115,10 @@ export async function verifyCompanyWithCBE(
           Authorization: `Bearer ${apiSecret}`,
           Accept: "application/json",
         },
+        // /api/company/verify is public (10 req / 5 min per IP). Without a
+        // timeout, a slow upstream holds the serverless function open until the
+        // platform limit — a cheap resource-exhaustion lever.
+        signal: AbortSignal.timeout(5000),
       },
     );
 

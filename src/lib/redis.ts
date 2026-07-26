@@ -34,20 +34,36 @@ export async function checkRateLimit(
   if (redis) {
     // Use Redis for production
     try {
-      const count = await redis.incr(key);
+      // AVAILABILITY (bug 429): the TTL must be (re)asserted on EVERY call, not
+      // only when `count === 1`.
+      //
+      // The previous version did `incr`, then `pexpire` in a separate
+      // round-trip guarded by `count === 1`. If that second call was lost
+      // (network blip, function timeout between the two, or a pre-existing key
+      // with no TTL), the counter NEVER expired: `incr` kept climbing, and past
+      // `config.limit` the IP was refused forever. `pttl` then returned -1, so
+      // the response advertised a `resetTime` that would never arrive.
+      //
+      // PEXPIRE ... NX sets the TTL only when the key has none, so it is safe to
+      // send on every request — it never extends a running window.
+      const pipeline = redis.pipeline();
+      pipeline.incr(key);
+      pipeline.pexpire(key, config.windowMs, "NX");
+      pipeline.pttl(key);
+      const [count, , ttl] = (await pipeline.exec()) as [number, number, number];
 
-      if (count === 1) {
-        // First request, set expiration
+      // Belt-and-braces: if the key somehow still has no TTL, force one rather
+      // than leaving an immortal counter behind.
+      if (typeof ttl !== "number" || ttl < 0) {
         await redis.pexpire(key, config.windowMs);
       }
 
-      const ttl = await redis.pttl(key);
-      const resetTime = now + (ttl > 0 ? ttl : config.windowMs);
+      const effectiveTtl = typeof ttl === "number" && ttl > 0 ? ttl : config.windowMs;
 
       return {
         allowed: count <= config.limit,
         remaining: Math.max(0, config.limit - count),
-        resetTime,
+        resetTime: now + effectiveTtl,
       };
     } catch (error) {
       console.error("Redis rate limit error:", error);

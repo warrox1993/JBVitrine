@@ -9,7 +9,10 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { neon } from "@neondatabase/serverless";
 import type { NeonQueryFunction } from "@neondatabase/serverless";
 import * as bcrypt from "bcryptjs";
-import { loginLimiter } from "@/lib/rate-limit-redis";
+import {
+  loginLimiter,
+  getClientIdentifierFromHeaders,
+} from "@/lib/rate-limit-redis";
 import { headers } from "next/headers";
 
 let _sql: NeonQueryFunction<false, false> | null = null;
@@ -33,11 +36,17 @@ export interface User {
  * SECURITY (V-W6): constant dummy bcrypt hash (of a random string) used to run
  * an equivalent bcrypt.compare when the account does not exist, so that
  * response timing does not reveal whether an email is registered (account
- * enumeration via timing side-channel). This is a real bcrypt hash (cost 10)
- * that no user password will ever match.
+ * enumeration via timing side-channel). This is a real bcrypt hash that no user
+ * password will ever match.
+ *
+ * It MUST use the same cost as real password hashes (see BCRYPT_COST in
+ * ./bcrypt-cost). At cost 10 against real hashes at cost 12, the "unknown
+ * account" path ran ~4x faster and the timing channel it was meant to close
+ * stayed wide open. Regenerate with:
+ *   node -e "const b=require('bcryptjs');console.log(b.hashSync(require('crypto').randomBytes(32).toString('hex'),12))"
  */
 const DUMMY_BCRYPT_HASH =
-  "$2a$10$k1wbIrmNyFAPwPVPSVa/zecw2BCEnBwVS2GbrmgzxFUOqW9dk4TCW";
+  "$2b$12$d.YNce6UO3dqVoQS6xbs7OPZAyNtaTWN4ew8ayq3tLP6Of8jkJoIi";
 
 /**
  * How often (ms) to re-validate the user's is_active/role against the DB inside
@@ -66,12 +75,16 @@ export const authOptions: NextAuthOptions = {
         // who can knock out Redis would disable brute-force protection.
         try {
           const headersList = await headers();
-          // Prefer the platform-trusted client IP (x-real-ip) over the
-          // spoofable left segment of x-forwarded-for.
-          const ip =
-            headersList.get("x-real-ip") ||
-            headersList.get("x-forwarded-for")?.split(",")[0] ||
-            "unknown";
+          // AVAILABILITY (bug 429): resolve the identifier through the shared
+          // helper. The previous `|| "unknown"` fallback funnelled EVERY
+          // unattributable attempt into the single bucket
+          // `smidjan_v3_login:login_unknown` (5 per 15 min for the whole
+          // world), so once six such attempts landed, the admin was refused
+          // "Trop de tentatives" on their very first try. The helper hands out a
+          // per-request bucket instead of a shared constant one.
+          const ip = getClientIdentifierFromHeaders((name) =>
+            headersList.get(name),
+          );
 
           const { success } = await loginLimiter.limit(`login_${ip}`);
 
@@ -112,13 +125,12 @@ export const authOptions: NextAuthOptions = {
 
           const user = users[0];
 
-          // Check if user is active
-          if (!user.is_active) {
-            console.log("❌ User is inactive:", credentials.email);
-            return null;
-          }
-
-          // Verify password
+          // Verify password FIRST.
+          // SECURITY: the is_active check used to short-circuit here, returning
+          // without running bcrypt.compare. That made a deactivated account
+          // answer ~100 ms faster than a wrong password, which is enough to
+          // enumerate deactivated accounts by timing. Always pay the bcrypt
+          // cost before branching on account state.
           const isValid = await bcrypt.compare(
             credentials.password as string,
             user.password_hash as string,
@@ -126,6 +138,12 @@ export const authOptions: NextAuthOptions = {
 
           if (!isValid) {
             console.log("❌ Invalid password for:", credentials.email);
+            return null;
+          }
+
+          // Check if user is active (after the constant-cost password check).
+          if (!user.is_active) {
+            console.log("❌ User is inactive:", credentials.email);
             return null;
           }
 

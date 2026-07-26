@@ -264,7 +264,12 @@ export async function POST(request: NextRequest) {
       confidence_level: lead.confidenceLevel || "low",
       project_type: quoteData.projectType,
       quote_data: quoteData,
-      estimate: estimate,
+      // SECURITY: persist the SERVER-bounded numbers, not the raw client object.
+      // `estimate` was stored verbatim, and its members are then interpolated
+      // into the digest email's HTML and into ss:Type="Number" cells of the
+      // Excel export. A string value (e.g. an <img onerror=...> payload) sailed
+      // through `toLocaleString()` unescaped. Store what we validated.
+      estimate: { min: safeEstimateMin, max: safeEstimateMax },
       behavioral_data: behavioral,
       session_id: behavioral?.sessionId,
     });
@@ -379,17 +384,23 @@ export async function GET(request: NextRequest) {
     const rawOffset = parseInt(searchParams.get("offset") || "0", 10);
     const limit = Math.min(Math.max(1, Number.isNaN(rawLimit) ? 50 : rawLimit), 100);
     const offset = Math.max(0, Number.isNaN(rawOffset) ? 0 : rawOffset);
-    const grade = searchParams.get("grade") as
-      | "HOT"
-      | "WARM"
-      | "COLD"
-      | "SPAM"
-      | null;
+    // Validate `grade` at RUNTIME. The previous `as "HOT" | ...` was only a
+    // TypeScript cast — erased at build time — so any string reached the query.
+    const rawGrade = searchParams.get("grade");
+    const grade = VALID_GRADES.find((g) => g === rawGrade);
+    if (rawGrade && !grade) {
+      return NextResponse.json(
+        { error: `Invalid grade. Expected one of: ${VALID_GRADES.join(", ")}` },
+        { status: 400 },
+      );
+    }
 
     let leads;
 
     if (grade) {
-      leads = await db.leads.getByGrade(grade);
+      // Propagate the clamp: getByGrade used to return the WHOLE matching set,
+      // sidestepping the `limit <= 100` ceiling enforced just above.
+      leads = await db.leads.getByGrade(grade, { limit, offset });
     } else {
       leads = await db.leads.getAll({ limit, offset });
     }

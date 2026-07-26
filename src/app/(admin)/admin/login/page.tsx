@@ -8,27 +8,8 @@
 import { useState, FormEvent, Suspense } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { sanitizeCallbackUrl } from "@/lib/security/callback-url";
 import cls from "./page.module.css";
-
-/**
- * Sanitizes a callback URL to ensure it only points to an internal path.
- * Rejects anything that is not a same-origin absolute path (must start with
- * "/" and must not start with "//", which browsers treat as protocol-relative
- * and would allow redirecting to an external host).
- */
-function sanitizeCallbackUrl(rawCallbackUrl: string | null): string {
-  const fallback = "/admin/leads";
-
-  if (!rawCallbackUrl) {
-    return fallback;
-  }
-
-  if (!rawCallbackUrl.startsWith("/") || rawCallbackUrl.startsWith("//")) {
-    return fallback;
-  }
-
-  return rawCallbackUrl;
-}
 
 function LoginForm() {
   const router = useRouter();

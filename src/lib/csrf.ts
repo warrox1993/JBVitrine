@@ -29,34 +29,55 @@ export async function storeCsrfToken(token: string, _ip: string): Promise<void> 
   }
 }
 
-// Validate CSRF token
+/**
+ * Check that a CSRF token exists and has not expired — WITHOUT consuming it.
+ *
+ * AVAILABILITY (bug 429): this used to delete the token on the very first read,
+ * even when the request went on to fail (missing captcha, invalid email, mail
+ * provider error…). The client caches its token for ~55 min and had no refresh
+ * path, so every retry replayed a token the server had already destroyed and
+ * came back 403 — while each attempt still burned one of the 3 hourly slots.
+ * Three failed attempts therefore produced a one-hour 429 without a single mail
+ * ever being sent.
+ *
+ * Callers MUST call {@link consumeCsrfToken} once the request has fully
+ * succeeded, so one-time-use is preserved for requests that actually did
+ * something.
+ */
 export async function validateCsrfToken(
   token: string,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars -- ip kept in signature for call-site compat (not used in the key, see storeCsrfToken)
   _ip: string,
 ): Promise<boolean> {
-  if (!token) return false;
+  if (!token || typeof token !== "string") return false;
 
   const hashedToken = hashToken(token);
   const key = `csrf:${hashedToken}`;
 
   if (redis) {
     const exists = await redis.get(key);
-    if (exists) {
-      // Delete token after use (one-time use)
-      await redis.del(key);
-      return true;
-    }
-    return false;
+    return !!exists;
+  }
+
+  // Fallback to in-memory
+  const expiry = inMemoryCsrf.get(hashedToken);
+  return !!expiry && Date.now() < expiry;
+}
+
+/**
+ * Burn a CSRF token so it cannot be replayed. Call this ONLY after the request
+ * it authorised has succeeded — never on a validation failure, or the caller
+ * locks the user out of their own retry (see {@link validateCsrfToken}).
+ */
+export async function consumeCsrfToken(token: string): Promise<void> {
+  if (!token || typeof token !== "string") return;
+
+  const hashedToken = hashToken(token);
+
+  if (redis) {
+    await redis.del(`csrf:${hashedToken}`);
   } else {
-    // Fallback to in-memory
-    const memKey = hashedToken;
-    const expiry = inMemoryCsrf.get(memKey);
-    if (expiry && Date.now() < expiry) {
-      inMemoryCsrf.delete(memKey);
-      return true;
-    }
-    return false;
+    inMemoryCsrf.delete(hashedToken);
   }
 }
 

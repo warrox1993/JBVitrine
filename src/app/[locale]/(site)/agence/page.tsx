@@ -16,6 +16,7 @@ import { CTABox } from "@/components/shared";
 import { Fondateur } from "./Fondateur";
 import { Demarche } from "./Demarche";
 import styles from "./page.module.css";
+import { jsonLdSafe } from "@/lib/security/escape";
 
 export async function generateMetadata({
   params,
@@ -69,7 +70,7 @@ export default async function AgencePage({
         type="application/ld+json"
         nonce={nonce}
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({ "@context": "https://schema.org", ...authorSchema }),
+          __html: jsonLdSafe({ "@context": "https://schema.org", ...authorSchema }),
         }}
       />
       {/* ===== Page header ===== */}

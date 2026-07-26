@@ -4,10 +4,53 @@
  * @see https://cloud.google.com/recaptcha-enterprise/docs/
  */
 
+import { siteUrl } from "@/config/site";
+
 interface RecaptchaVerificationResult {
   success: boolean;
   score?: number;
   error?: string;
+}
+
+/**
+ * Hostnames a reCAPTCHA token may legitimately have been generated on.
+ *
+ * SECURITY: the site key is public by design (NEXT_PUBLIC_RECAPTCHA_SITE_ID), so
+ * anyone can embed it on their own page and mint valid, high-scoring tokens.
+ * Without asserting `tokenProperties.hostname`, such a token is accepted here —
+ * which, combined with a route that skips the Origin check, removes both
+ * anti-CSRF guards at once. Google reports the origin it saw; we pin it.
+ *
+ * Sources, in order: an explicit override, the canonical production origin, and
+ * the current Vercel deployment host (so preview deployments keep working).
+ */
+function allowedRecaptchaHostnames(): Set<string> {
+  const hosts = new Set<string>();
+
+  const override = process.env.RECAPTCHA_ALLOWED_HOSTNAMES;
+  if (override) {
+    for (const h of override.split(",")) {
+      const trimmed = h.trim().toLowerCase();
+      if (trimmed) hosts.add(trimmed);
+    }
+  }
+
+  const canonical = new URL(siteUrl).hostname.toLowerCase();
+  hosts.add(canonical);
+  hosts.add(canonical.startsWith("www.") ? canonical.slice(4) : `www.${canonical}`);
+
+  // Vercel sets VERCEL_URL to this deployment's own hostname — keeps preview
+  // deployments functional without loosening production.
+  if (process.env.VERCEL_URL) {
+    hosts.add(process.env.VERCEL_URL.toLowerCase());
+  }
+
+  if (process.env.NODE_ENV !== "production") {
+    hosts.add("localhost");
+    hosts.add("127.0.0.1");
+  }
+
+  return hosts;
 }
 
 /**
@@ -69,6 +112,10 @@ export async function verifyRecaptchaEnterprise(
             siteKey: siteKey,
           },
         }),
+        // Never let a slow upstream pin the serverless function open until the
+        // platform timeout — that is a cheap resource-exhaustion lever on a
+        // public endpoint.
+        signal: AbortSignal.timeout(5000),
       },
     );
 
@@ -88,10 +135,35 @@ export async function verifyRecaptchaEnterprise(
 
     const data = await response.json();
 
+    // Verify the token was minted on one of OUR origins.
+    // `hostname` comes from Google's API over TLS, not from the client, so it
+    // cannot be stripped or forged by an attacker. When Google omits it we log
+    // loudly and let the request through rather than taking the contact form
+    // offline over a configuration anomaly.
+    const tokenHostname = (data.tokenProperties?.hostname ?? "")
+      .toString()
+      .toLowerCase();
+    let hostnameOk = true;
+    if (tokenHostname) {
+      hostnameOk = allowedRecaptchaHostnames().has(tokenHostname);
+      if (!hostnameOk) {
+        console.warn("❌ reCAPTCHA hostname mismatch:", {
+          got: tokenHostname,
+          action: expectedAction,
+        });
+      }
+    } else {
+      console.error(
+        "⚠️ reCAPTCHA response carried no tokenProperties.hostname — cannot pin " +
+          "the token origin. Check the site key type / API version.",
+      );
+    }
+
     // Check if token is valid and action matches
     const isValid =
       data.tokenProperties?.valid &&
-      data.tokenProperties?.action === expectedAction;
+      data.tokenProperties?.action === expectedAction &&
+      hostnameOk;
 
     if (!data.tokenProperties?.valid) {
       console.warn(

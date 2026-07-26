@@ -218,6 +218,14 @@ ORDER BY date DESC;
 -- ============================================================================
 -- CLEANUP FUNCTION (for archiving old data)
 -- ============================================================================
+-- NOTE: these functions are the SQL-side equivalent of the retention job at
+-- /api/admin/leads/cleanup (run daily by Vercel Cron, see vercel.json). They are
+-- kept for manual/psql use; the route does not depend on them being installed.
+--
+-- GDPR (art. 5.1.e storage limitation): before that route existed, NOTHING ever
+-- called cleanup_old_events() — no cron, no script — and there was no equivalent
+-- for `leads` or `sessions` at all, so personal data was retained indefinitely.
+
 CREATE OR REPLACE FUNCTION cleanup_old_events(months_to_keep INTEGER DEFAULT 3)
 RETURNS TABLE(deleted_count BIGINT) AS $$
 BEGIN
@@ -225,6 +233,52 @@ BEGIN
   WITH deleted AS (
     DELETE FROM events
     WHERE created_at < NOW() - INTERVAL '1 month' * months_to_keep
+    RETURNING *
+  )
+  SELECT COUNT(*) FROM deleted;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Sessions carry navigation history, referrer, UTM and device data.
+-- Deleting a session cascades to its events (fk_session ON DELETE CASCADE).
+CREATE OR REPLACE FUNCTION cleanup_old_sessions(months_to_keep INTEGER DEFAULT 6)
+RETURNS TABLE(deleted_count BIGINT) AS $$
+BEGIN
+  RETURN QUERY
+  WITH deleted AS (
+    DELETE FROM sessions
+    WHERE created_at < NOW() - INTERVAL '1 month' * months_to_keep
+    RETURNING *
+  )
+  SELECT COUNT(*) FROM deleted;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Leads hold direct identifiers (email, name, company, phone) plus the
+-- enrichment_data / behavioral_data JSONB blobs. Longest window of the three,
+-- since a lead is a business record, but still bounded.
+CREATE OR REPLACE FUNCTION cleanup_old_leads(months_to_keep INTEGER DEFAULT 24)
+RETURNS TABLE(deleted_count BIGINT) AS $$
+BEGIN
+  RETURN QUERY
+  WITH deleted AS (
+    DELETE FROM leads
+    WHERE created_at < NOW() - INTERVAL '1 month' * months_to_keep
+    RETURNING *
+  )
+  SELECT COUNT(*) FROM deleted;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Erase every trace of one data subject, by email (GDPR art. 17, right to
+-- erasure). Run manually on request:  SELECT * FROM erase_lead_by_email('x@y.z');
+CREATE OR REPLACE FUNCTION erase_lead_by_email(subject_email TEXT)
+RETURNS TABLE(deleted_count BIGINT) AS $$
+BEGIN
+  RETURN QUERY
+  WITH deleted AS (
+    DELETE FROM leads
+    WHERE LOWER(email) = LOWER(subject_email)
     RETURNING *
   )
   SELECT COUNT(*) FROM deleted;

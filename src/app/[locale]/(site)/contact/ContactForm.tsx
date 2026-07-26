@@ -78,7 +78,10 @@ export function ContactForm() {
   const successRef = useRef<HTMLDivElement>(null);
 
   // Shared CSRF token hook (singleton, no duplicate API calls).
-  const { csrfToken, error: csrfError } = useCsrfToken();
+  // `refresh` matters: the token is single-use server-side and cached here for
+  // ~55 min, so a rejected submission must fetch a fresh one before the visitor
+  // retries — otherwise every retry replays a dead token and comes back 403.
+  const { csrfToken, error: csrfError, refresh: refreshCsrfToken } = useCsrfToken();
 
   useEffect(() => {
     if (csrfError) {
@@ -120,9 +123,16 @@ export function ContactForm() {
   }, []);
 
   // Pre-fill the form when the visitor arrives from the NIS2 self-check ("?nis2=...").
+  //
+  // An effect is the right tool here: `window.location` does not exist during
+  // SSR, so this cannot be a lazy state initializer. We deliberately do NOT use
+  // `useSearchParams()` either — this component sits outside a Suspense
+  // boundary, so reading it would opt the whole (otherwise static) contact page
+  // into dynamic rendering, for a one-shot query-string read.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.has('nis2')) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- reads window after mount; see comment above
       setData((prev) => ({
         ...prev,
         demande: 'diagnostic',
@@ -254,6 +264,12 @@ export function ContactForm() {
       });
 
       if (!response.ok) {
+        // A 403 means the CSRF token was refused (expired, or already spent by
+        // an earlier successful send). Pull a fresh one so the next attempt has
+        // a usable token instead of replaying the dead one.
+        if (response.status === 403) {
+          await refreshCsrfToken();
+        }
         const err = await response.json().catch(() => ({}));
         throw new Error(err?.error || t('form.errors.submit'));
       }

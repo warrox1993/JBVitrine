@@ -17,6 +17,7 @@ import { social, credentials, siteUrl } from "@/config/site";
 import { FlipCard, type FlipCardLearn } from "./FlipCard";
 import { CvSideNav, type CvSideNavItem } from "./CvSideNav";
 import styles from "./page.module.css";
+import { jsonLdSafe } from "@/lib/security/escape";
 
 export async function generateMetadata({
   params,
@@ -128,7 +129,7 @@ export default async function CvPage({
         type="application/ld+json"
         nonce={nonce}
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({ "@context": "https://schema.org", ...authorSchema }),
+          __html: jsonLdSafe({ "@context": "https://schema.org", ...authorSchema }),
         }}
       />
 

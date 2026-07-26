@@ -122,6 +122,9 @@ export async function sendSlackNotification(
         "Content-Type": "application/json",
       },
       body: JSON.stringify(message),
+      // A notification must never hold the request open until the platform
+      // timeout if Slack is slow.
+      signal: AbortSignal.timeout(5000),
     });
 
     if (!response.ok) {
@@ -214,6 +217,8 @@ export async function sendDiscordNotification(
         username: "Lead Scoring Bot",
         embeds: [embed],
       }),
+      // Same reasoning as the Slack webhook above.
+      signal: AbortSignal.timeout(5000),
     });
 
     if (!response.ok) {
@@ -364,7 +369,7 @@ export async function sendSalesEmailNotification(
 
     const { error } = await getResend().emails.send({
       from: `Smidjan Lead Scoring <${contact.senderEmail}>`,
-      to: ["jeanbaptiste.dhondt1@gmail.com"],
+      to: [contact.notificationsEmail],
       subject: `${emoji} Nouveau lead ${lead.grade} : ${lead.name} (Score ${lead.score}/100)`,
       html: html,
       replyTo: lead.email,

@@ -23,6 +23,29 @@ const redis = new Redis({
 });
 
 /**
+ * AVAILABILITY (bug 429): `ephemeralCache` MUST be disabled on every limiter.
+ *
+ * @upstash/ratelimit enables an in-process Map cache by default when the option
+ * is left undefined (see the constructor in @upstash/ratelimit/dist/index.js:
+ * `else if (config.ephemeralCache === void 0) this.ctx.cache = new Cache(new Map())`).
+ * Once a request is refused, `slidingWindow.limit()` short-circuits on
+ * `ctx.cache.isBlocked(identifier)` and returns `{ success: false,
+ * reason: "cacheBlock" }` WITHOUT ever consulting Redis, until
+ * `reset = (currentWindow + 1) * windowSize` — i.e. up to TWICE the window
+ * (~2 h for the "1 h" limiters).
+ *
+ * Two consequences, both observed in production:
+ *  - purging the Redis keys does NOT lift the block, because the warm serverless
+ *    instance answers 429 from its own memory;
+ *  - a block outlives its own window, so a visitor stays locked out well past
+ *    the advertised reset time.
+ *
+ * Disabling it costs one Redis round-trip per call and makes Redis the single
+ * source of truth, which is what /api/admin/reset-rate-limit purges.
+ */
+const EPHEMERAL_CACHE = false;
+
+/**
  * Rate limiter for quote submissions
  * Limit: 3 requests per hour per user (anti-spam)
  *
@@ -32,17 +55,21 @@ export const quoteLimiter = new Ratelimit({
   redis,
   limiter: Ratelimit.slidingWindow(3, "1 h"),
   analytics: true,
+  ephemeralCache: EPHEMERAL_CACHE,
   prefix: "smidjan_v4_quote",
 });
 
 /**
  * Rate limiter for contact form
  * Limit: 3 requests per hour per user (anti-spam)
+ *
+ * DO NOT CHANGE the 3-per-hour policy: it is the intended anti-spam ceiling.
  */
 export const contactLimiter = new Ratelimit({
   redis,
   limiter: Ratelimit.slidingWindow(3, "1 h"),
   analytics: true,
+  ephemeralCache: EPHEMERAL_CACHE,
   prefix: "smidjan_v3_contact",
 });
 
@@ -54,6 +81,7 @@ export const loginLimiter = new Ratelimit({
   redis,
   limiter: Ratelimit.slidingWindow(5, "15 m"),
   analytics: true,
+  ephemeralCache: EPHEMERAL_CACHE,
   prefix: "smidjan_v3_login",
 });
 
@@ -67,6 +95,7 @@ export const enrichmentLimiter = new Ratelimit({
   redis,
   limiter: Ratelimit.slidingWindow(5, "1 m"),
   analytics: true,
+  ephemeralCache: EPHEMERAL_CACHE,
   prefix: "smidjan_v3_enrichment",
 });
 
@@ -78,6 +107,7 @@ export const csrfLimiter = new Ratelimit({
   redis,
   limiter: Ratelimit.slidingWindow(60, "1 m"),
   analytics: true,
+  ephemeralCache: EPHEMERAL_CACHE,
   prefix: "smidjan_v3_csrf",
 });
 
@@ -89,6 +119,7 @@ export const leadScoringLimiter = new Ratelimit({
   redis,
   limiter: Ratelimit.slidingWindow(100, "1 m"),
   analytics: true,
+  ephemeralCache: EPHEMERAL_CACHE,
   prefix: "smidjan_v3_leadscore",
 });
 
@@ -134,8 +165,26 @@ export const leadScoringLimiter = new Ratelimit({
  * @returns Unique identifier for the client
  */
 export function getClientIdentifier(request: Request): string {
+  return getClientIdentifierFromHeaders((name) => request.headers.get(name));
+}
+
+/**
+ * Same resolution as {@link getClientIdentifier}, for call sites that only hold
+ * a header accessor rather than a `Request` — e.g. `await headers()` inside a
+ * NextAuth `authorize()` callback.
+ *
+ * SECURITY (bug 429): every rate-limit call site MUST go through this function.
+ * Hand-rolled `... || "unknown"` fallbacks recreate the shared-constant-bucket
+ * bug: all unattributable requests collapse into ONE budget, so the limiter
+ * starts answering 429 to unrelated visitors on their very first request.
+ *
+ * @param get - reads a request header by name (case-insensitive), or null
+ */
+export function getClientIdentifierFromHeaders(
+  get: (name: string) => string | null | undefined,
+): string {
   // Priority 1: x-real-ip — trusted client IP set by the Vercel proxy.
-  const realIP = request.headers.get("x-real-ip");
+  const realIP = get("x-real-ip");
   if (realIP && realIP.trim() !== "" && realIP.trim() !== "unknown") {
     return realIP.trim();
   }
@@ -143,7 +192,7 @@ export function getClientIdentifier(request: Request): string {
   // Priority 2: x-forwarded-for first entry — ONLY when x-real-ip is missing.
   // Not trustworthy behind Vercel (spoofable), but useful for local/self-hosted
   // dev where no trusted proxy sets x-real-ip.
-  const forwardedFor = request.headers.get("x-forwarded-for");
+  const forwardedFor = get("x-forwarded-for");
   if (forwardedFor) {
     const clientIP = forwardedFor.split(",")[0].trim();
     if (clientIP && clientIP !== "" && clientIP !== "unknown") {
@@ -160,5 +209,56 @@ export function getClientIdentifier(request: Request): string {
       "using a per-request unique rate-limit bucket (fail-open).",
   );
   return `no_ip_${crypto.randomUUID()}`;
+}
+
+/**
+ * Every limiter, with the identifier shape it is keyed by, so the admin purge
+ * tool has ONE source of truth instead of a hand-maintained list of prefixes
+ * that silently drifts out of sync (which made the purge a no-op).
+ *
+ * `identifierFor` mirrors what the call site passes to `.limit(...)`: the login
+ * limiter prefixes the IP with "login_", the others use the raw identifier.
+ */
+export const ALL_LIMITERS: ReadonlyArray<{
+  name: string;
+  limiter: Ratelimit;
+  identifierFor: (ip: string) => string;
+}> = [
+  { name: "quote", limiter: quoteLimiter, identifierFor: (ip) => ip },
+  { name: "contact", limiter: contactLimiter, identifierFor: (ip) => ip },
+  { name: "login", limiter: loginLimiter, identifierFor: (ip) => `login_${ip}` },
+  { name: "enrichment", limiter: enrichmentLimiter, identifierFor: (ip) => ip },
+  { name: "csrf", limiter: csrfLimiter, identifierFor: (ip) => ip },
+  { name: "leadScoring", limiter: leadScoringLimiter, identifierFor: (ip) => ip },
+];
+
+/**
+ * Clear every limiter's usage for one IP.
+ *
+ * Uses the library's own `resetUsedTokens`, which knows the real key layout
+ * (`prefix:identifier:<window number>` for a sliding window) AND clears the
+ * in-process ephemeral cache. Deleting keys by hand-written glob missed the
+ * window suffix and therefore purged nothing.
+ *
+ * @returns per-limiter outcome, so the caller can report a genuine failure
+ *          instead of an unconditional "success".
+ */
+export async function resetRateLimitsForIp(
+  ip: string,
+): Promise<Array<{ name: string; ok: boolean; error?: string }>> {
+  return Promise.all(
+    ALL_LIMITERS.map(async ({ name, limiter, identifierFor }) => {
+      try {
+        await limiter.resetUsedTokens(identifierFor(ip));
+        return { name, ok: true };
+      } catch (e) {
+        return {
+          name,
+          ok: false,
+          error: e instanceof Error ? e.message : "unknown error",
+        };
+      }
+    }),
+  );
 }
 

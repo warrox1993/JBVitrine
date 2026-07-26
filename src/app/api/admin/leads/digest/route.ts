@@ -8,33 +8,35 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getResend } from "@/lib/email/resend-client";
 import { db } from "@/lib/db";
-import { timingSafeEqual } from "crypto";
+import { requireCronAuth } from "@/lib/security/cron";
 import { escapeHtml } from "@/lib/security/escape";
 import { contact, siteUrl } from "@/config/site";
+
+/**
+ * Render a stored estimate bound as a plain number for the HTML digest.
+ *
+ * SECURITY: `lead.estimate` is a JSONB column fed from the client, so its
+ * members are NOT guaranteed to be numbers. `String.prototype.toLocaleString`
+ * exists, so a string value used to pass straight through unescaped into this
+ * email's HTML — a stored-XSS-style injection into the owner's inbox. Coercing
+ * through Number() makes a non-numeric value render as 0 and closes the sink
+ * regardless of what is already stored in the table.
+ */
+function formatBudget(value: unknown): string {
+  const n = Number(value);
+  return (Number.isFinite(n) ? n : 0).toLocaleString("fr-BE");
+}
 
 // Shared handler. Vercel Cron invokes the path with GET (+ Authorization:
 // Bearer CRON_SECRET), so we export BOTH GET and POST — otherwise the daily
 // digest 405s and never runs.
 async function handleDigest(request: NextRequest) {
   try {
-    // 🔒 C2 : aucun fallback en dur — refuser si le secret n'est pas configuré
-    const cronSecret = process.env.CRON_SECRET;
-    if (!cronSecret) {
-      console.error("CRON_SECRET manquant : endpoint digest désactivé");
-      return NextResponse.json({ error: "Service unavailable" }, { status: 503 });
-    }
-
-    const authHeader = request.headers.get("authorization") || "";
-    const expected = `Bearer ${cronSecret}`;
-    const provided = Buffer.from(authHeader);
-    const reference = Buffer.from(expected);
-    const authorized =
-      provided.length === reference.length &&
-      timingSafeEqual(provided, reference);
-
-    if (!authorized) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+    // 🔒 C2 : aucun fallback en dur — refuser si le secret n'est pas configuré.
+    // Logique partagée avec /api/admin/leads/cleanup (comparaison en temps
+    // constant, fail-closed si CRON_SECRET est absent).
+    const auth = requireCronAuth(request);
+    if (!auth.ok) return auth.response;
 
     // Get date range (last 24 hours)
     const now = new Date();
@@ -84,7 +86,7 @@ async function handleDigest(request: NextRequest) {
     // Send email
     const { data, error } = await getResend().emails.send({
       from: `Smidjan Lead Digest <${contact.senderEmail}>`,
-      to: ["smidjan.agency@outlook.com"],
+      to: [contact.notificationsEmail],
       subject: `📊 Daily Lead Digest - ${stats.total} nouveaux leads (${stats.hot} HOT)`,
       html: emailHTML,
     });
@@ -92,7 +94,12 @@ async function handleDigest(request: NextRequest) {
     if (error) {
       console.error("❌ Failed to send digest email:", error);
       return NextResponse.json(
-        { error: "Failed to send email", details: error },
+        {
+          error: "Failed to send email",
+          // Consistent with the other routes: never leak provider internals to
+          // the caller in production.
+          details: process.env.NODE_ENV === "development" ? error : undefined,
+        },
         { status: 500 },
       );
     }
@@ -205,7 +212,7 @@ function generateDigestEmail(
           <div class="lead-info">📧 ${escapeHtml(lead.email)}</div>
           ${lead.company ? `<div class="lead-info">🏢 ${escapeHtml(lead.company)}</div>` : ""}
           ${lead.phone ? `<div class="lead-info">📞 ${escapeHtml(lead.phone)}</div>` : ""}
-          <div class="lead-info">💼 ${escapeHtml(lead.project_type)} | Budget: ${lead.estimate?.min?.toLocaleString()}-${lead.estimate?.max?.toLocaleString()} EUR</div>
+          <div class="lead-info">💼 ${escapeHtml(lead.project_type)} | Budget: ${formatBudget(lead.estimate?.min)}-${formatBudget(lead.estimate?.max)} EUR</div>
           <div class="lead-score">
             <div class="score-bar">
               <div class="score-fill" style="width: ${lead.score_total}%"></div>
@@ -236,7 +243,7 @@ function generateDigestEmail(
             <span class="lead-badge badge-warm">WARM ${lead.score_total}/100</span>
           </div>
           <div class="lead-info">📧 ${escapeHtml(lead.email)}</div>
-          <div class="lead-info">💼 ${escapeHtml(lead.project_type)} | Budget: ${lead.estimate?.min?.toLocaleString()}-${lead.estimate?.max?.toLocaleString()} EUR</div>
+          <div class="lead-info">💼 ${escapeHtml(lead.project_type)} | Budget: ${formatBudget(lead.estimate?.min)}-${formatBudget(lead.estimate?.max)} EUR</div>
         </div>
         `,
           )

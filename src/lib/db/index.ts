@@ -124,13 +124,25 @@ export const db = {
     },
 
     /**
-     * Get leads by grade
+     * Get leads by grade.
+     *
+     * Paginated like getAll: an unbounded variant returned the ENTIRE matching
+     * set, which bypassed the caller's `limit <= 100` clamp and made
+     * `?grade=HOT` a full-table dump (unbounded memory + bandwidth).
      */
-    async getByGrade(grade: "HOT" | "WARM" | "COLD" | "SPAM") {
+    async getByGrade(
+      grade: "HOT" | "WARM" | "COLD" | "SPAM",
+      options: { limit?: number; offset?: number } = {},
+    ) {
+      const limit = options.limit || 50;
+      const offset = options.offset || 0;
+
       const result = await sql`
         SELECT * FROM leads
         WHERE score_grade = ${grade}
-        ORDER BY created_at DESC;
+        ORDER BY created_at DESC
+        LIMIT ${limit}
+        OFFSET ${offset};
       `;
 
       return result;
@@ -139,14 +151,40 @@ export const db = {
     /**
      * Get hot leads (for priority follow-up)
      */
-    async getHotLeads() {
+    async getHotLeads(options: { limit?: number } = {}) {
+      const limit = options.limit || 50;
+
       const result = await sql`
         SELECT * FROM leads
         WHERE score_grade = 'HOT'
-        ORDER BY created_at DESC;
+        ORDER BY created_at DESC
+        LIMIT ${limit};
       `;
 
       return result;
+    },
+
+    /**
+     * Delete leads older than `monthsToKeep`.
+     *
+     * GDPR (art. 5.1.e "storage limitation" / art. 17): the leads table holds
+     * email, name, company, phone plus enrichment/behavioural JSONB, and nothing
+     * in the schema or the cron config ever expired it — retention was unlimited
+     * by default. Called by /api/admin/leads/cleanup.
+     */
+    async deleteOlderThan(monthsToKeep: number): Promise<number> {
+      const months = Math.max(1, Math.floor(monthsToKeep));
+
+      const result = await sql`
+        WITH deleted AS (
+          DELETE FROM leads
+          WHERE created_at < NOW() - (INTERVAL '1 month' * ${months})
+          RETURNING id
+        )
+        SELECT COUNT(*)::int AS deleted_count FROM deleted;
+      `;
+
+      return Number(result[0]?.deleted_count ?? 0);
     },
   },
 
@@ -234,6 +272,28 @@ export const db = {
 
       return result[0];
     },
+
+    /**
+     * Delete sessions older than `monthsToKeep`.
+     *
+     * Sessions store navigation history, referrer, UTM and device fingerprint
+     * data. The events table cascades on session_id (see db/schema.sql), so this
+     * also removes the associated behavioural events.
+     */
+    async deleteOlderThan(monthsToKeep: number): Promise<number> {
+      const months = Math.max(1, Math.floor(monthsToKeep));
+
+      const result = await sql`
+        WITH deleted AS (
+          DELETE FROM sessions
+          WHERE created_at < NOW() - (INTERVAL '1 month' * ${months})
+          RETURNING id
+        )
+        SELECT COUNT(*)::int AS deleted_count FROM deleted;
+      `;
+
+      return Number(result[0]?.deleted_count ?? 0);
+    },
   },
 
   /**
@@ -274,6 +334,28 @@ export const db = {
       `;
 
       return result;
+    },
+
+    /**
+     * Delete events older than `monthsToKeep`.
+     *
+     * db/schema.sql defines a cleanup_old_events() function, but nothing in the
+     * repo ever called it (no cron, no script), so behavioural events also
+     * accumulated indefinitely.
+     */
+    async deleteOlderThan(monthsToKeep: number): Promise<number> {
+      const months = Math.max(1, Math.floor(monthsToKeep));
+
+      const result = await sql`
+        WITH deleted AS (
+          DELETE FROM events
+          WHERE created_at < NOW() - (INTERVAL '1 month' * ${months})
+          RETURNING id
+        )
+        SELECT COUNT(*)::int AS deleted_count FROM deleted;
+      `;
+
+      return Number(result[0]?.deleted_count ?? 0);
     },
   },
 

@@ -11,6 +11,7 @@ config({ path: resolve(process.cwd(), ".env.local") });
 import { neon } from "@neondatabase/serverless";
 import * as bcrypt from "bcryptjs";
 import { randomBytes } from "crypto";
+import { BCRYPT_COST } from "../src/lib/auth/bcrypt-cost";
 
 if (!process.env.DATABASE_URL) {
   throw new Error("DATABASE_URL environment variable is not set");
@@ -77,7 +78,7 @@ async function createUsersTable() {
     const usedGeneratedPassword = !process.env.ADMIN_INITIAL_PASSWORD;
     const plainPassword =
       process.env.ADMIN_INITIAL_PASSWORD || generatedPassword;
-    const passwordHash = await bcrypt.hash(plainPassword, 12);
+    const passwordHash = await bcrypt.hash(plainPassword, BCRYPT_COST);
 
     const existingUsers = await sql`
       SELECT email FROM users WHERE email = 'contact.smidjan@outlook.com'

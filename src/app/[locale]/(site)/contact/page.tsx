@@ -9,6 +9,7 @@ import { CopyButton } from '@/components/ui/CopyButton/CopyButton';
 import { Link } from '@/i18n/navigation';
 import { ContactForm } from './ContactForm';
 import cls from './page.module.css';
+import { jsonLdSafe } from "@/lib/security/escape";
 
 export async function generateMetadata({
   params,
@@ -66,7 +67,7 @@ export default async function ContactPage({
         type="application/ld+json"
         nonce={nonce}
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: jsonLdSafe({
             '@context': 'https://schema.org',
             '@type': 'ContactPage',
             name: 'Contact · Smidjan',
@@ -98,7 +99,7 @@ export default async function ContactPage({
         type="application/ld+json"
         nonce={nonce}
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: jsonLdSafe({
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [

@@ -1,16 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import { updateArticle } from "@/lib/blogActions";
-import type { BlogArticle } from "@/lib/blogActions";
 import { guardRoute } from "@/lib/auth/guard";
-import { validateCSRF } from "@/lib/api/middleware";
+import { validateContentType, validateCSRF } from "@/lib/api/middleware";
+import { validateBlogArticle } from "@/lib/validation/blog-article";
 
 type Context = {
   params: Promise<{ slug: string }>;
 };
 
+/** Reject oversized bodies before parsing (markdown content is the bulk). */
+const MAX_BODY_BYTES = 512 * 1024;
+
 export async function PUT(request: NextRequest, context: Context) {
   const denied = await guardRoute("sales");
   if (denied) return denied;
+
+  const contentTypeCheck = validateContentType(request);
+  if (!contentTypeCheck.success) return contentTypeCheck.response;
 
   // SECURITY (V-W7): explicit CSRF check as defense-in-depth beyond SameSite
   // cookies, since this route mutates blog content.
@@ -18,21 +24,27 @@ export async function PUT(request: NextRequest, context: Context) {
   if (!csrfCheck.success) return csrfCheck.response;
 
   try {
+    if (Number(request.headers.get("content-length") ?? 0) > MAX_BODY_BYTES) {
+      return NextResponse.json(
+        { success: false, error: "Payload trop volumineux" },
+        { status: 413 },
+      );
+    }
+
     const { slug } = await context.params;
     const body = await request.json();
 
-    const article: BlogArticle = {
-      slug: body.slug,
-      title: body.title,
-      excerpt: body.excerpt,
-      publishedAt: body.publishedAt,
-      category: body.category,
-      readTime: body.readTime,
-      content: body.content,
-      tableOfContents: body.tableOfContents || [],
-    };
+    // Validate at runtime — a `BlogArticle` type annotation checks nothing once
+    // compiled, so a malformed payload used to reach the stored JSON directly.
+    const validation = validateBlogArticle(body);
+    if (!validation.ok) {
+      return NextResponse.json(
+        { success: false, error: validation.error },
+        { status: 400 },
+      );
+    }
 
-    const result = await updateArticle(slug, article);
+    const result = await updateArticle(slug, validation.article);
 
     if (result.success) {
       return NextResponse.json({ success: true });

@@ -18,6 +18,13 @@ export const contact = {
   email: "jeanbaptiste.dhondt1@gmail.com",
   /** Server-side sender address (transactional mail) — distinct from the public inbox. */
   senderEmail: "contact@smidjan.be",
+  /**
+   * Where server-side notifications land (contact form, leads digest, alerts).
+   * Overridable via NOTIFICATIONS_EMAIL so the address is not pinned in git.
+   */
+  get notificationsEmail(): string {
+    return process.env.NOTIFICATIONS_EMAIL || "smidjan.agency@outlook.com";
+  },
   /** Phone in E.164 (e.g. for schema.org telephone). */
   phone,
   /** tel: link derived from the E.164 number. */

@@ -6,7 +6,8 @@ import {
   SecurityEventType,
   isIpBlocked,
 } from "@/lib/security-logger";
-import { validateCsrfToken } from "@/lib/csrf";
+import { validateCsrfToken, consumeCsrfToken } from "@/lib/csrf";
+import { validateContentType, validateCSRF } from "@/lib/api/middleware";
 import { validateEmail, sanitizeString } from "@/lib/validation";
 import { verifyRecaptchaEnterprise } from "@/lib/recaptcha";
 import { escapeHtml } from "@/lib/security/escape";
@@ -21,8 +22,48 @@ const REQUEST_TYPE_LABELS: Record<string, string> = {
   other: "Autre demande",
 };
 
+/** Reject oversized payloads before parsing (same guard as /api/leadScoring/leads). */
+const MAX_BODY_BYTES = 64 * 1024;
+
+/** Per-field length ceilings, enforced for every field including optional ones. */
+const MAX_LENGTHS = {
+  name: 100,
+  company: 100,
+  phone: 32,
+  email: 254,
+  message: 5000,
+} as const;
+
+/**
+ * Read a body field as a trimmed string, or null when it is absent/not a string.
+ *
+ * Guards against type confusion: `{"name": ["a","b"]}` has a `.length` of 2, so
+ * a bare length check passed it through and the later `.trim()` threw a
+ * TypeError, surfacing as a 500. Anything that is not a string is rejected.
+ */
+function readString(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  return trimmed.length > 0 ? trimmed : null;
+}
+
 export async function POST(request: Request) {
   try {
+    // SECURITY: require application/json. Without it, `request.json()` happily
+    // parses a body sent by a cross-origin form with enctype="text/plain",
+    // which needs no CORS preflight — a working CSRF vector even though the
+    // CSRF token itself is checked below.
+    const contentTypeCheck = validateContentType(request);
+    if (!contentTypeCheck.success) return contentTypeCheck.response;
+
+    // SECURITY: strict Origin/Referer check, same control the other mutating
+    // routes (/api/company/verify, /api/leadScoring/leads) already apply. The
+    // CSRF token alone is not bound to a session or cookie, so anyone can GET
+    // one from the public /api/csrf/token and replay it; this is what actually
+    // ties the request to our own origin.
+    const originCheck = validateCSRF(request);
+    if (!originCheck.success) return originCheck.response;
+
     // Get client info for security logging. Use the trusted identifier
     // (x-real-ip set by the Vercel proxy) — NOT the spoofable left-most
     // x-forwarded-for — so the rate-limit key, IP-block lookup and security
@@ -48,39 +89,39 @@ export async function POST(request: Request) {
       );
     }
 
-    // Rate limiting: same 3-per-hour anti-spam policy as /api/contact.
-    const rateLimit = await contactLimiter.limit(clientIp);
-    if (!rateLimit.success) {
-      await logSecurityEvent({
-        type: SecurityEventType.RATE_LIMIT_EXCEEDED,
-        ip: clientIp,
-        userAgent,
-        details: {
-          resetTime: new Date(rateLimit.reset).toISOString(),
-          remaining: rateLimit.remaining,
-        },
-        timestamp: Date.now(),
-      });
-      return NextResponse.json(
-        {
-          error: "Trop de requêtes. Veuillez réessayer dans 10 minutes.",
-          resetTime: rateLimit.reset,
-        },
-        { status: 429 },
-      );
+    // NOTE ON ORDERING (bug 429): the 3-per-hour anti-spam quota is consumed at
+    // the very END of this handler, right before the mail is sent — NOT here.
+    //
+    // It used to be debited first, ahead of CSRF, captcha and field validation.
+    // Every rejected submission still burned a slot, so three typos (or three
+    // empty POSTs from an attacker, who never had to solve the captcha) locked
+    // the site's only conversion channel for a full hour without a single mail
+    // being sent. The ceiling itself is unchanged: 3 per hour.
+
+    // Reject oversized bodies before parsing.
+    const contentLength = Number(request.headers.get("content-length") ?? 0);
+    if (contentLength > MAX_BODY_BYTES) {
+      return NextResponse.json({ error: "Payload trop volumineux" }, { status: 413 });
     }
 
-    const body = await request.json();
-    const {
-      requestType,
-      email,
-      name,
-      company,
-      phone,
-      message,
-      csrfToken,
-      recaptchaToken,
-    } = body;
+    let body: Record<string, unknown>;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json({ error: "Corps de requête invalide" }, { status: 400 });
+    }
+    if (typeof body !== "object" || body === null || Array.isArray(body)) {
+      return NextResponse.json({ error: "Corps de requête invalide" }, { status: 400 });
+    }
+
+    const requestType = readString(body.requestType);
+    const email = readString(body.email);
+    const name = readString(body.name);
+    const company = readString(body.company);
+    const phone = readString(body.phone);
+    const message = readString(body.message);
+    const csrfToken = readString(body.csrfToken);
+    const recaptchaToken = readString(body.recaptchaToken);
 
     // CSRF validation
     if (!csrfToken || !(await validateCsrfToken(csrfToken, clientIp))) {
@@ -187,16 +228,27 @@ export async function POST(request: Request) {
       );
     }
 
-    // Length validations
-    if (name.length > 100 || message.length > 5000) {
+    // Length validations — every field, including the optional ones. `phone`
+    // previously had no ceiling at all.
+    const tooLong = (
+      [
+        ["name", name],
+        ["company", company],
+        ["phone", phone],
+        ["email", email],
+        ["message", message],
+      ] as const
+    ).find(([field, value]) => value !== null && value.length > MAX_LENGTHS[field]);
+
+    if (tooLong) {
       await logSecurityEvent({
         type: SecurityEventType.INVALID_INPUT,
         ip: clientIp,
         userAgent,
         details: {
           reason: "Data too long",
-          nameLength: name.length,
-          messageLength: message.length,
+          field: tooLong[0],
+          length: tooLong[1]?.length,
         },
         timestamp: Date.now(),
       });
@@ -206,37 +258,59 @@ export async function POST(request: Request) {
       );
     }
 
-    if (company && company.length > 100) {
+    // ✅ Sanitize all inputs using centralized helper (already trimmed by readString)
+    const safeName = sanitizeString(name);
+    const safeEmail = sanitizeString(email);
+    const safeCompany = company ? sanitizeString(company) : "";
+    const safePhone = phone ? sanitizeString(phone) : "";
+    const safeMessage = sanitizeString(message);
+
+    // Rate limiting: 3 per hour per client — the intended anti-spam ceiling,
+    // UNCHANGED. Consumed here, as the last gate before the side effect, so
+    // only a fully valid submission spends one of the three slots. See the
+    // ordering note at the top of the handler.
+    let rateLimit: Awaited<ReturnType<typeof contactLimiter.limit>>;
+    try {
+      rateLimit = await contactLimiter.limit(clientIp);
+    } catch (limitError) {
+      // Fail CLOSED for anti-spam (never send mail without a quota check), but
+      // with an explicit 503 instead of a generic 500 so the visitor is told to
+      // retry rather than shown "Internal server error".
+      console.error("Rate limit backend unavailable (failing closed):", limitError);
+      return NextResponse.json(
+        { error: "Service temporairement indisponible. Veuillez réessayer." },
+        { status: 503 },
+      );
+    }
+    if (!rateLimit.success) {
       await logSecurityEvent({
-        type: SecurityEventType.INVALID_INPUT,
+        type: SecurityEventType.RATE_LIMIT_EXCEEDED,
         ip: clientIp,
         userAgent,
         details: {
-          reason: "Company name too long",
-          companyLength: company.length,
+          resetTime: new Date(rateLimit.reset).toISOString(),
+          remaining: rateLimit.remaining,
         },
         timestamp: Date.now(),
       });
       return NextResponse.json(
-        { error: "Nom d'entreprise trop long" },
-        { status: 400 },
+        {
+          // The window is slidingWindow(3, "1 h") — the previous copy said
+          // "10 minutes", which is why a 429 read as arbitrary/immediate.
+          error: "Trop de requêtes. Veuillez réessayer dans une heure.",
+          resetTime: rateLimit.reset,
+        },
+        { status: 429 },
       );
     }
-
-    // ✅ Sanitize all inputs using centralized helper
-    const safeName = sanitizeString(name.trim());
-    const safeEmail = sanitizeString(email.trim());
-    const safeCompany = company ? sanitizeString(company.trim()) : "";
-    const safePhone = phone ? sanitizeString(phone.trim()) : "";
-    const safeMessage = sanitizeString(message.trim());
 
     // Send email via Resend
     const requestTypeLabel =
       REQUEST_TYPE_LABELS[requestType] || "Autre demande";
     const { data, error } = await getResend().emails.send({
       from: `Smidjan Contact <${contact.senderEmail}>`,
-      to: ["smidjan.agency@outlook.com"],
-      replyTo: email,
+      to: [contact.notificationsEmail],
+      replyTo: safeEmail,
       subject: `[${requestTypeLabel.toUpperCase()}] Nouveau message de ${safeName}${safeCompany ? ` (${safeCompany})` : ""}`,
       html: `
         <!DOCTYPE html>
@@ -318,11 +392,19 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("Resend error:", error);
+      // Leave the CSRF token alive: the submission was valid, the failure is
+      // ours, and the visitor must be able to retry without reloading.
       return NextResponse.json(
         { error: "Failed to send email" },
         { status: 500 },
       );
     }
+
+    // Burn the CSRF token now that it has authorised a real side effect. Doing
+    // this here — rather than on the first read inside validateCsrfToken —
+    // preserves one-time-use without invalidating the token of a visitor whose
+    // submission was rejected.
+    await consumeCsrfToken(csrfToken);
 
     return NextResponse.json({
       success: true,
