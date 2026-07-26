@@ -39,12 +39,19 @@ const renderer = {
     return `<pre><code class="language-${escapeHtml(language)}">${escaped}</code></pre>\n`;
   },
 
-  link({ href, title, text }: Tokens.Link) {
+  link(
+    this: { parser: { parseInline: (t: Tokens.Link["tokens"]) => string } },
+    { href, title, tokens }: Tokens.Link,
+  ) {
     // 🔒 E1 : n'autoriser que les schémas d'URL sûrs
     const safe = /^(https?:|mailto:|\/|#)/i.test(href ?? "");
     const finalHref = safe ? href : "#";
     const titleAttr = title ? ` title="${escapeHtml(title)}"` : "";
-    return `<a href="${escapeHtml(finalHref ?? "#")}"${titleAttr} rel="noopener noreferrer">${text}</a>`;
+    // Parse l'inline du libellé, comme heading() ci-dessus. L'ancien code
+    // interpolait `text` (markdown BRUT depuis marked v5+) sans échappement :
+    // `[**gras**](url)` rendait littéralement « **gras** », et la sécurité
+    // reposait entièrement sur sanitize-html en aval.
+    return `<a href="${escapeHtml(finalHref ?? "#")}"${titleAttr} rel="noopener noreferrer">${this.parser.parseInline(tokens)}</a>`;
   },
 };
 

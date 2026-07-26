@@ -3,7 +3,6 @@ import { buildAlternates } from "@/i18n/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
-import { Button } from "@/components/ui/Button/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Section } from "@/components/ui/Section/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";

@@ -18,7 +18,6 @@ import { RootEffects } from '@/components/Effects/RootEffects';
 import RouteProgressProvider from '@/app/RouteProgressProvider';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { headers } from 'next/headers';
 
@@ -146,7 +145,7 @@ import { ToastHost } from '@/components/feedback/ToastHost';
 export default async function RootLayout({ children }: { children: ReactNode }) {
     const locale = await getLocale();
     const t = await getTranslations({ locale, namespace: 'common' });
-    // CSP nonce forwarded by src/middleware.ts (x-nonce request header). Needed
+    // CSP nonce forwarded by src/proxy.ts (x-nonce request header). Needed
     // so this inline script is allowed under the nonce-based script-src.
     const nonce = (await headers()).get('x-nonce') ?? undefined;
     return (

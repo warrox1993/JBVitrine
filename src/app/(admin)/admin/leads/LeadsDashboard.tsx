@@ -100,8 +100,13 @@ export function LeadsDashboard({ breadcrumb }: { breadcrumb?: React.ReactNode })
     }
   }, [filter, calculateStats]);
 
-  // Fetch leads from API
+  // Fetch leads from API.
+  // Data fetching is the canonical "synchronize with an external system" case
+  // for an effect; fetchLeads flips `loading` synchronously on entry, which is
+  // what trips the rule. Re-runs when `filter` changes (via the fetchLeads
+  // callback identity).
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- on-mount/on-filter data fetch, see comment above
     fetchLeads();
   }, [fetchLeads]);
 

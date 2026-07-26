@@ -16,6 +16,33 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+### Windows : Turbopack bloqué par Smart App Control
+
+Si `npm run dev` / `npm run build` échoue avec :
+
+```
+⚠ Attempted to load @next/swc-win32-x64-msvc, but an error occurred:
+  Une stratégie de contrôle d'application a bloqué ce fichier.
+Error: Turbopack is not supported on this platform (win32/x64)
+```
+
+Ce n'est **pas** un paquet corrompu. Le binaire natif SWC livré par Next n'est pas
+signé Authenticode, et Smart App Control (Windows 11, mode Enforcement) refuse de
+charger un binaire non signé et sans réputation. L'intégrité du paquet est
+vérifiable : le hash du lockfile correspond à celui publié sur npm.
+
+Contournement local, sans toucher à la sécurité du poste :
+
+```bash
+npm run dev:webpack     # au lieu de npm run dev
+npm run build:webpack   # au lieu de npm run build
+```
+
+Cela n'affecte que ta machine : **Vercel construit sous Linux** avec un autre
+binaire, donc `npm run build` (Turbopack) reste le chemin utilisé en production.
+La réputation SAC arrive généralement d'elle-même après quelques jours d'usage
+répandu de la version.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

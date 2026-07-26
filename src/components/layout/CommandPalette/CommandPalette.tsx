@@ -197,6 +197,7 @@ export function CommandPalette() {
         .userAgentData?.platform ??
       navigator.platform ??
       "";
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- must run post-mount: `navigator` is absent during SSR and the label must match the server markup on first paint (see comment above)
     if (/mac/i.test(platform)) setShortcutLabel("⌘K");
   }, []);
 
@@ -446,6 +447,7 @@ export function CommandPalette() {
                           className={`${styles.item} ${active ? styles.itemActive : ""}`}
                           onMouseDown={(e) => e.preventDefault()}
                           onMouseEnter={() => setActiveIndex(index)}
+                          // eslint-disable-next-line react-hooks/refs -- runCommand reaches copyEmail, which reads copyTimerRef inside an async .then(); this arrow is a click handler and never runs during render, but the rule cannot prove it through the call graph
                           onClick={() => runCommand(cmd)}
                         >
                           <Icon

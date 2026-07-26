@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import styles from "./CvSideNav.module.css";
 
 export interface CvSideNavItem {
@@ -23,12 +23,18 @@ export interface CvSideNavProps {
  */
 export function CvSideNav({ items, heading }: CvSideNavProps) {
   const [activeId, setActiveId] = useState<string>(items[0]?.id ?? "");
-  const itemsRef = useRef(items);
-  itemsRef.current = items;
+
+  // Stable dependency: the observer only cares about WHICH ids to watch, and the
+  // parent re-creates `items` as a fresh array on every render. Joining the ids
+  // gives a primitive that changes only when the sections actually change.
+  // (Previously the component wrote `itemsRef.current = items` during render,
+  // which mutates a ref in the render phase — unsafe under concurrent React.)
+  const ids = items.map((item) => item.id).join("|");
 
   useEffect(() => {
-    const sections = itemsRef.current
-      .map((item) => document.getElementById(item.id))
+    const sections = ids
+      .split("|")
+      .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
     if (sections.length === 0) return;
 
@@ -50,7 +56,7 @@ export function CvSideNav({ items, heading }: CvSideNavProps) {
     );
     sections.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [ids]);
 
   function handleClick(event: MouseEvent<HTMLAnchorElement>, id: string) {
     const target = document.getElementById(id);

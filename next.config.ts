@@ -81,7 +81,13 @@ const nextConfig: NextConfig = {
   },
 
   turbopack: {
-    root: __dirname,
+    // `process.cwd()` rather than `__dirname`: Next may load this config as an
+    // ES module (it does whenever the native SWC binary is unavailable and it
+    // falls back), and `__dirname` does not exist in ESM scope — the config then
+    // fails to load with "__dirname is not defined in ES module scope" and the
+    // whole build dies. next build/dev always runs from the project root, so
+    // cwd is the same directory and works under both module systems.
+    root: process.cwd(),
   },
 
   // Webpack optimization for production builds
@@ -191,7 +197,7 @@ const nextConfig: NextConfig = {
   // NOTE: Content-Security-Policy is NOT set here anymore. It now needs a
   // per-request nonce in script-src (to drop 'unsafe-inline'), which a
   // static next.config.ts header can't provide, so it's built and applied by
-  // src/middleware.ts for every request instead. Everything else below is
+  // src/proxy.ts for every request instead. Everything else below is
   // still static and stays here.
   async headers() {
     return [
