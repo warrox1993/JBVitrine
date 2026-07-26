@@ -10,8 +10,21 @@
  * of it: db/schema.sql defines cleanup_old_events() but no cron, script or route
  * ever called it, so retention was effectively unlimited.
  *
- * Invoked daily by Vercel Cron (see vercel.json) with
- * `Authorization: Bearer <CRON_SECRET>`.
+ * NOT scheduled in vercel.json for now — the deletes are irreversible (plain
+ * DELETE, no soft-delete) and nobody has yet confirmed how old the live data
+ * is. Trigger it by hand, starting with the dry run:
+ *
+ *   # count only, deletes nothing
+ *   curl -H "Authorization: Bearer $CRON_SECRET" \
+ *        "https://smidjan.be/api/admin/leads/cleanup?dryRun=1"
+ *
+ *   # actually purge
+ *   curl -X POST -H "Authorization: Bearer $CRON_SECRET" \
+ *        "https://smidjan.be/api/admin/leads/cleanup"
+ *
+ * Re-add the cron entry to vercel.json once the dry-run numbers look right.
+ * The path must stay in CRON_PATHS in src/proxy.ts either way, otherwise the
+ * proxy's admin gate answers 401 before this handler ever runs.
  */
 
 import { NextRequest, NextResponse } from "next/server";
@@ -44,7 +57,26 @@ async function handleCleanup(request: NextRequest) {
 
   const windows = retention();
 
+  // Dry run: report what WOULD be deleted, touch nothing. Default for GET so a
+  // stray browser hit or an accidental cron re-enable cannot destroy data;
+  // deleting requires an explicit POST.
+  const dryRun =
+    request.method === "GET" ||
+    request.nextUrl.searchParams.get("dryRun") === "1";
+
   try {
+    if (dryRun) {
+      const counts = await db.retention.countOlderThan(windows);
+      console.log("🔍 Retention dry run", { windows, wouldDelete: counts });
+      return NextResponse.json({
+        success: true,
+        dryRun: true,
+        retentionMonths: windows,
+        wouldDelete: counts,
+        hint: "POST (sans dryRun) pour supprimer réellement.",
+      });
+    }
+
     // Order matters: purge events first, then sessions (whose cascade would
     // remove events anyway), then leads and quotes. Each step is reported
     // separately so a partial failure is visible rather than silent.

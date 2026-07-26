@@ -453,6 +453,51 @@ export const db = {
   },
 
   /**
+   * Retention helpers (read-only counterpart of the deleteOlderThan methods).
+   */
+  retention: {
+    /**
+     * Count what a purge WOULD delete, without deleting anything.
+     *
+     * Backs the dry-run mode of /api/admin/leads/cleanup: the deletes are
+     * irreversible, so the operator must be able to see the blast radius first.
+     */
+    async countOlderThan(windows: {
+      leads: number;
+      sessions: number;
+      events: number;
+    }): Promise<{
+      events: number;
+      sessions: number;
+      leads: number;
+      quotes: number;
+    }> {
+      const clamp = (n: number) =>
+        Number.isFinite(n) ? Math.max(1, Math.floor(n)) : 1;
+      const [ev, se, le, qu] = [
+        clamp(windows.events),
+        clamp(windows.sessions),
+        clamp(windows.leads),
+        clamp(windows.leads),
+      ];
+
+      const [events, sessions, leads, quotes] = await Promise.all([
+        sql`SELECT COUNT(*)::int AS c FROM events   WHERE created_at < NOW() - (INTERVAL '1 month' * ${ev})`,
+        sql`SELECT COUNT(*)::int AS c FROM sessions WHERE created_at < NOW() - (INTERVAL '1 month' * ${se})`,
+        sql`SELECT COUNT(*)::int AS c FROM leads    WHERE created_at < NOW() - (INTERVAL '1 month' * ${le})`,
+        sql`SELECT COUNT(*)::int AS c FROM quotes   WHERE created_at < NOW() - (INTERVAL '1 month' * ${qu})`,
+      ]);
+
+      return {
+        events: Number(events[0]?.c ?? 0),
+        sessions: Number(sessions[0]?.c ?? 0),
+        leads: Number(leads[0]?.c ?? 0),
+        quotes: Number(quotes[0]?.c ?? 0),
+      };
+    },
+  },
+
+  /**
    * Analytics queries
    */
   analytics: {
