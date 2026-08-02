@@ -297,9 +297,9 @@
       }
     },
     "internship": {
-      "label": "Open to an internship",
-      "linkLabel": "Open to an internship — contact me",
-      "srStatus": "Open to an internship from 2027 — see the contact page."
+      "label": "Available immediately",
+      "linkLabel": "Available immediately — get in touch",
+      "srStatus": "Available immediately for a role in security, networking or infrastructure — see the contact page."
     }
   },
   "conformite": {
@@ -523,7 +523,7 @@
       },
       "status": {
         "title": "Right now",
-        "text": "CCNA (Cisco) in preparation, homelab under construction — heading toward an internship in 2027."
+        "text": "CCNA and AZ-900 earned, AZ-104 in preparation, permanent Proxmox/GNS3 lab — available immediately."
       },
       "github": {
         "title": "GitHub",
@@ -536,7 +536,7 @@
       },
       "contact": {
         "title": "Let's talk about your need",
-        "text": "A mission, a role or an internship from 2027: I answer with the same transparency as on this site."
+        "text": "A mission or a role in security, networking or infrastructure: I answer with the same transparency as on this site."
       }
     },
     "securityScan": {
@@ -1119,7 +1119,10 @@
       "title": "Now — Jean-Baptiste Dhondt | Smidjan",
       "description": "What I'm learning, what I'm building, and my roadmap toward a cybersecurity internship from 2027."
     },
-    "breadcrumb": { "home": "Home", "current": "Now" },
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Now"
+    },
     "hero": {
       "eyebrow": "Right now",
       "title": "What I'm building <accent>now</accent>",
@@ -1129,17 +1132,46 @@
     "learning": {
       "title": "What I'm learning now",
       "items": [
-        { "title": "CCNA (Cisco)", "desc": "My method: the CCNA path on Pluralsight, practising on Packet Tracer labs the community shares on GitHub, then Boson practice exams. I only sit the real exam once I hit at least 800/1000 on the mocks.", "href": "https://www.pluralsight.com/paths/cisco-ccna-cisco-certified-network-associate-200-301", "links": [ { "label": "GitHub labs", "href": "https://github.com/topics/ccna" }, { "label": "Boson practice exams", "href": "https://boson.com/product/exsim-max-for-cisco-200-301-ccna/" } ] },
-        { "title": "Azure security (AZ-104 → AZ-500)", "desc": "Microsoft cloud administration and security, building on AZ-900." },
-        { "title": "Offensive security (TryHackMe)", "desc": "Understanding attacks to defend better — steady progress." }
+        {
+          "title": "CCNA (Cisco)",
+          "desc": "My method: the CCNA path on Pluralsight, practising on Packet Tracer labs the community shares on GitHub, then Boson practice exams. I only sit the real exam once I hit at least 800/1000 on the mocks.",
+          "href": "https://www.pluralsight.com/paths/cisco-ccna-cisco-certified-network-associate-200-301",
+          "links": [
+            {
+              "label": "GitHub labs",
+              "href": "https://github.com/topics/ccna"
+            },
+            {
+              "label": "Boson practice exams",
+              "href": "https://boson.com/product/exsim-max-for-cisco-200-301-ccna/"
+            }
+          ]
+        },
+        {
+          "title": "Azure security (AZ-104 → AZ-500)",
+          "desc": "Microsoft cloud administration and security, building on AZ-900."
+        },
+        {
+          "title": "Offensive security (TryHackMe)",
+          "desc": "Understanding attacks to defend better — steady progress."
+        }
       ]
     },
     "building": {
       "title": "What I'm building",
       "items": [
-        { "title": "A homelab", "desc": "Network segmentation, firewall, self-hosted services to practise for real." },
-        { "title": "This portfolio", "desc": "A hardened Next.js site (A+ security headers) — security applied to my own site first." },
-        { "title": "Writeups", "desc": "Documenting my labs and NIS2 / CyFun cases on the blog." }
+        {
+          "title": "A homelab",
+          "desc": "Network segmentation, firewall, self-hosted services to practise for real."
+        },
+        {
+          "title": "This portfolio",
+          "desc": "A hardened Next.js site (A+ security headers) — security applied to my own site first."
+        },
+        {
+          "title": "Writeups",
+          "desc": "Documenting my labs and NIS2 / CyFun cases on the blog."
+        }
       ]
     },
     "roadmap": {
@@ -1147,14 +1179,26 @@
       "title": "My roadmap to the <accent>internship</accent>",
       "lead": "Concrete goals, step by step. To be refined over time.",
       "items": [
-        { "period": "Ongoing", "title": "Foundations & certifications", "desc": "Bachelor's in Management Programming, AZ-900 earned, CCNA in preparation." },
-        { "period": "2026", "title": "Go deeper into security", "desc": "AZ-104/AZ-500, offensive and defensive labs, published writeups." },
-        { "period": "2027", "title": "Cybersecurity internship", "desc": "Goal: an internship to apply and grow these skills in a team, for real." }
+        {
+          "period": "Ongoing",
+          "title": "Foundations & certifications",
+          "desc": "Bachelor's in Management Programming, AZ-900 earned, CCNA in preparation."
+        },
+        {
+          "period": "2026",
+          "title": "Go deeper into security",
+          "desc": "AZ-104/AZ-500, offensive and defensive labs, published writeups."
+        },
+        {
+          "period": "2027",
+          "title": "Cybersecurity internship",
+          "desc": "Goal: an internship to apply and grow these skills in a team, for real."
+        }
       ]
     },
     "cta": {
-      "title": "An internship for me?",
-      "text": "I'm looking for an internship from 2027 in cloud, network, infra or web security. Let's talk.",
+      "title": "A role or a mission for me?",
+      "text": "I'm available immediately in cloud, network, infrastructure or web security. Let's talk.",
       "action": "Contact me",
       "actionCv": "View my CV"
     }
@@ -1172,39 +1216,218 @@
       "twitterTitle": "CV — Jean-Baptiste Dhondt",
       "twitterDescription": "Background, education, certifications and skills."
     },
-    "breadcrumb": { "home": "Home", "current": "CV" },
+    "breadcrumb": {
+      "home": "Home",
+      "current": "CV"
+    },
     "hero": {
       "kicker": "Curriculum vitae",
       "name": "Jean-Baptiste Dhondt",
-      "role": "Cybersecurity · cloud · network · infrastructure & web",
-      "summary": "Transitioning into cybersecurity, with field experience (Belgian Defence, European Commission) reinvested in cloud, network and application security. Bachelor's in Management Programming in progress, Java Full Stack bootcamp and two development internships in 2025.",
+      "role": "Security · networking · infrastructure",
+      "summary": "Practitioner from the Belgian Defence, in the final year of a bachelor's in business programming. Seven years of field experience in classified environments and under security clearance, reinvested in securing networks, systems and infrastructure. CCNA and AZ-900 earned, AZ-104 in preparation.",
       "availLabel": "Availability",
-      "availValue": "Seeking an internship from 2027",
+      "availValue": "Available immediately",
       "locLabel": "Location",
-      "locValue": "Wallonia · authorised to work in the EU · remote",
+      "locValue": "Brussels & Wallonia · based in Liège · mobile, willing to relocate",
       "focusLabel": "Focus",
-      "focusValue": "Cloud, network, infra & web security",
+      "focusValue": "Security, networking & infrastructure",
       "ctaContact": "Contact me",
-      "pdfNote": "PDF version on request"
+      "pdfNote": "PDF version on request",
+      "clearanceLabel": "Security clearances",
+      "clearanceValue": "Belgian Defence · European institution",
+      "mobilityLabel": "Mobility",
+      "mobilityValue": "A2 & B licence · own vehicle",
+      "ctaPdf": "Download the CV (PDF)",
+      "pdfMeta": "PDF · 1 page",
+      "motto": "Audit, isolate, fix, document.",
+      "mottoLabel": "How I work"
     },
     "languages": {
       "eyebrow": "Languages",
       "title": "Languages",
       "items": [
-        { "lang": "French", "level": "Native" },
-        { "lang": "Dutch", "level": "A1 · basics" },
-        { "lang": "English", "level": "B1 · intermediate" }
+        {
+          "lang": "French",
+          "level": "Native"
+        },
+        {
+          "lang": "Dutch",
+          "level": "A1 · basics"
+        },
+        {
+          "lang": "English",
+          "level": "B1 · intermediate"
+        }
       ]
     },
     "beyond": {
       "eyebrow": "Beyond the code",
       "title": "Passions & initiatives",
       "passionsTitle": "My passions",
-      "passions": ["Archery", "Nature walks", "Running"],
+      "passions": [
+        "Archery",
+        "Nature walks",
+        "Running"
+      ],
       "projectTitle": "Entrepreneurial initiative",
       "projectName": "Organic crêpes at fairs & flea markets",
       "projectText": "On weekends I run my own organic-crêpe stand at fairs and flea markets around Liège. A small venture that teaches me customer contact, autonomy and hands-on management — from sourcing to the till.",
       "projectTag": "Liège · weekends"
+    },
+    "parcours": {
+      "eyebrow": "Background",
+      "title": "Roles and <accent>education</accent>",
+      "lead": "From the military field to infrastructure security, by way of development. Roles and education share one timeline, because they ran in parallel.",
+      "legendPoste": "Role",
+      "legendFormation": "Education",
+      "items": [
+        {
+          "period": "2026 →",
+          "kind": "poste",
+          "title": "Administrative officer — debt recovery",
+          "org": "CPAS de Liège · DGF5 — since April 2026",
+          "desc": "VBA automation of the reminder workflow across roughly 1,500 files a day; action logging and the end of double data entry."
+        },
+        {
+          "period": "2025",
+          "kind": "poste",
+          "title": ".NET developer",
+          "org": "Atypical Consulting, Waremme · Sept – Nov",
+          "desc": "C# and Blazor applications within a consultancy team."
+        },
+        {
+          "period": "2025",
+          "kind": "poste",
+          "title": "Odoo developer",
+          "org": "AWIT, Liège · Sept",
+          "desc": "Development and customisation of Odoo modules in Python and XML within a consultancy team."
+        },
+        {
+          "period": "2025 → 27",
+          "kind": "formation",
+          "title": "Bachelor in business programming",
+          "org": "Institut Saint-Laurent, Liège · adult education",
+          "desc": "Final year in progress, evening classes alongside full-time work. Degree expected June 2027."
+        },
+        {
+          "period": "2025",
+          "kind": "formation",
+          "title": "Java Full Stack bootcamp — cybersecurity",
+          "org": "TechnoFutur TIC · Feb – Aug",
+          "desc": "Intensive programme focused on secure development."
+        },
+        {
+          "period": "2022 → 23",
+          "kind": "poste",
+          "title": "Security officer",
+          "org": "Protection Unit — European Commission assignment",
+          "desc": "Access control and security procedures in a European institution, under clearance."
+        },
+        {
+          "period": "2021 → 24",
+          "kind": "formation",
+          "title": "Bachelor of Laws",
+          "org": "UCLouvain · Sept 2021 – June 2024",
+          "desc": "Two years completed, not graduated."
+        },
+        {
+          "period": "2017 → 21",
+          "kind": "formation",
+          "title": "Return to study and working life",
+          "org": "Secondary diploma in evening classes · security officer training",
+          "desc": "Alongside that, roles in commercial representation."
+        },
+        {
+          "period": "2013 → 17",
+          "kind": "poste",
+          "title": "Infantry, then CIS technician",
+          "org": "Belgian Defence",
+          "desc": "Cabling, installation and operational maintenance of network equipment in classified environments."
+        }
+      ]
+    },
+    "stack": {
+      "eyebrow": "Stack",
+      "title": "Tools I <accent>actually</accent> use",
+      "lead": "What I handle in the lab, in training or on the job. Nothing declarative: every tool listed here has run on a machine I built or broke myself.",
+      "groups": [
+        {
+          "label": "Offensive",
+          "items": [
+            "Kali",
+            "Burp Suite",
+            "Metasploit",
+            "John the Ripper",
+            "Hydra",
+            "Gobuster"
+          ]
+        },
+        {
+          "label": "Defensive",
+          "items": [
+            "Wazuh",
+            "Suricata",
+            "Wireshark"
+          ]
+        },
+        {
+          "label": "Network",
+          "items": [
+            "VLAN · STP · OSPF",
+            "pfSense",
+            "WireGuard",
+            "IAS"
+          ]
+        },
+        {
+          "label": "Systems",
+          "items": [
+            "Linux · Ubuntu · Fedora",
+            "Windows 10/11 · Server",
+            "AD · GPO · Kerberos",
+            "Bash",
+            "PowerShell",
+            "KVM/QEMU",
+            "VMware ESXi"
+          ]
+        },
+        {
+          "label": "Development",
+          "items": [
+            "Java",
+            ".NET · Blazor",
+            "Spring Boot",
+            "Next.js",
+            "SQL",
+            "VBA"
+          ]
+        }
+      ]
+    },
+    "projets": {
+      "eyebrow": "Projects",
+      "title": "What I have <accent>built</accent>",
+      "lead": "Three concrete builds, one defended before a jury and one kept running permanently.",
+      "items": [
+        {
+          "num": "01",
+          "name": "ClawkWerk",
+          "tag": "Final project · Go",
+          "desc": "NIS2 / CyberFundamentals audit tool: automated evidence collection and compliance assessment."
+        },
+        {
+          "num": "02",
+          "name": "JIMCO",
+          "tag": "3 machines · defended before a jury",
+          "desc": "Windows Server, Windows 11 and Linux built from scratch: Active Directory, mail, Bash and PowerShell scripts, segregated IT and HR services."
+        },
+        {
+          "num": "03",
+          "name": "Permanent lab",
+          "tag": "Proxmox · GNS3",
+          "desc": "VLAN, pfSense, WireGuard, Suricata, Wazuh monitoring and a Kali workstation for offensive testing in an isolated environment."
+        }
+      ]
     }
   },
   "certifications": {
@@ -1234,29 +1457,47 @@
         "status": "Earned · January 2026",
         "name": "AZ-900, Microsoft Azure Fundamentals",
         "description": "The basics of Azure cloud: concepts, services, security, compliance and pricing.",
-      "learn": {
-        "heading": "What AZ-900 covers",
-        "items": [
-          { "label": "Cloud concepts (25–30%)", "topics": "Shared responsibility model, IaaS / PaaS / SaaS, public / private / hybrid cloud, consumption-based model, high availability & scalability." },
-          { "label": "Azure architecture & services (35–40%)", "topics": "Regions & availability zones, resource groups and subscriptions, compute (VMs, containers, functions), networking (VNet, VPN, ExpressRoute, DNS), storage (blob, tiers, redundancy), identity (Entra ID, MFA, RBAC, Zero Trust, Defender for Cloud)." },
-          { "label": "Management & governance (30–35%)", "topics": "Cost management (pricing calculator, tags), governance (Azure Policy, resource locks, Purview), deployment (portal, CLI / PowerShell, ARM & IaC, Azure Arc), monitoring (Advisor, Service Health, Azure Monitor)." }
-        ]
-      },
+        "learn": {
+          "heading": "What AZ-900 covers",
+          "items": [
+            {
+              "label": "Cloud concepts (25–30%)",
+              "topics": "Shared responsibility model, IaaS / PaaS / SaaS, public / private / hybrid cloud, consumption-based model, high availability & scalability."
+            },
+            {
+              "label": "Azure architecture & services (35–40%)",
+              "topics": "Regions & availability zones, resource groups and subscriptions, compute (VMs, containers, functions), networking (VNet, VPN, ExpressRoute, DNS), storage (blob, tiers, redundancy), identity (Entra ID, MFA, RBAC, Zero Trust, Defender for Cloud)."
+            },
+            {
+              "label": "Management & governance (30–35%)",
+              "topics": "Cost management (pricing calculator, tags), governance (Azure Policy, resource locks, Purview), deployment (portal, CLI / PowerShell, ARM & IaC, Azure Arc), monitoring (Advisor, Service Health, Azure Monitor)."
+            }
+          ]
+        },
         "verifyLabel": "Verify on Microsoft Learn",
         "why": "The AZ-900 lays the cloud fundamentals. It's my starting point: it opens the way to AZ-104 (Azure administration). A deliberate entry point, not a stack of certifications."
       },
       "ccna": {
-        "status": "In progress",
+        "status": "Earned in 2026",
         "name": "CCNA, Cisco",
         "description": "Reference network certification: switching, routing, basic infrastructure security.",
-      "learn": {
-        "heading": "What the CCNA covers",
-        "items": [
-          { "label": "Network fundamentals & access (40%)", "topics": "OSI / TCP-IP models, cabling & interfaces, VLANs, 802.1Q trunking, EtherChannel, Spanning Tree, Wi-Fi & WLAN architecture." },
-          { "label": "IP connectivity & services (35%)", "topics": "Static routing & OSPF, IPv4 / IPv6 addressing, NAT, DHCP, DNS, NTP, QoS, SNMP, Syslog." },
-          { "label": "Security & automation (25%)", "topics": "Port security, ACLs, VPNs, AAA & 802.1X, hardening practices, REST APIs, automation (Ansible) & programmable networking." }
-        ]
-      },
+        "learn": {
+          "heading": "What the CCNA covers",
+          "items": [
+            {
+              "label": "Network fundamentals & access (40%)",
+              "topics": "OSI / TCP-IP models, cabling & interfaces, VLANs, 802.1Q trunking, EtherChannel, Spanning Tree, Wi-Fi & WLAN architecture."
+            },
+            {
+              "label": "IP connectivity & services (35%)",
+              "topics": "Static routing & OSPF, IPv4 / IPv6 addressing, NAT, DHCP, DNS, NTP, QoS, SNMP, Syslog."
+            },
+            {
+              "label": "Security & automation (25%)",
+              "topics": "Port security, ACLs, VPNs, AAA & 802.1X, hardening practices, REST APIs, automation (Ansible) & programmable networking."
+            }
+          ]
+        },
         "why": "Digging into cloud made one thing clear: you don't really master the cloud without mastering networks. So I branched into the CCNA, before coming back to AZ-104. Networks first, cloud after."
       },
       "autoformation": {
@@ -1266,7 +1507,38 @@
       },
       "whyHeading": "Why this certification",
       "flipHint": "Click for the why",
-      "backHint": "Back"
+      "backHint": "Back",
+      "az104": {
+        "status": "In preparation",
+        "name": "AZ-104, Azure Administrator",
+        "description": "Day-to-day Azure administration: identity, governance, storage, compute, virtual networking and monitoring.",
+        "why": "The logical follow-up to AZ-900: moving from concepts to actually administering a tenant, which is what a cloud infrastructure role expects.",
+        "learn": {
+          "heading": "What AZ-104 covers",
+          "items": [
+            {
+              "label": "Identity & governance (20–25%)",
+              "topics": "Entra ID, RBAC, subscriptions, policies, management groups"
+            },
+            {
+              "label": "Storage (15–20%)",
+              "topics": "Storage accounts, blobs, files, backup, replication"
+            },
+            {
+              "label": "Compute (20–25%)",
+              "topics": "Virtual machines, scale sets, App Service, containers"
+            },
+            {
+              "label": "Virtual networking (15–20%)",
+              "topics": "VNet, NSG, peering, VPN, load balancing, private DNS"
+            },
+            {
+              "label": "Monitoring & backup (10–15%)",
+              "topics": "Azure Monitor, alerts, Log Analytics, Recovery Services"
+            }
+          ]
+        }
+      }
     },
     "formation": {
       "eyebrow": "Training & degrees",
@@ -1331,8 +1603,8 @@
           "description": "Solid foundation in Azure cloud (AZ-900): concepts, security and best practices."
         },
         "reseaux": {
-          "title": "Networks & infrastructure",
-          "description": "Networks and infrastructure, reinforced by the CCNA in progress (Cisco)."
+          "title": "Networking & infrastructure",
+          "description": "Cisco CCNA certified: switching, routing, VLAN, STP, OSPF, and pfSense in the lab."
         },
         "secApp": {
           "title": "Application security",
@@ -1430,7 +1702,12 @@
         "clawkwerk": {
           "name": "ClawkWerk",
           "description": "CyFun (CCB) / NIS2 audit tool written in Go: read-only, agentless, built for Belgian SMEs. A structured compliance diagnostic, with no intrusive install.",
-          "tech": ["Go", "CyFun / NIS2", "CLI", "Read-only"]
+          "tech": [
+            "Go",
+            "CyFun / NIS2",
+            "CLI",
+            "Read-only"
+          ]
         },
         "formcraft": {
           "name": "FormCraft",

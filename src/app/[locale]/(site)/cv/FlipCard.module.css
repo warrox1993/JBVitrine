@@ -48,6 +48,15 @@
   overflow: auto;
 }
 
+/* The unrotated face. It carries no declarations of its own — .face already
+   describes it — but the class must EXIST: the component renders
+   `${styles.face} ${styles.front}`, and without a rule here `styles.front` is
+   undefined and React writes the literal string "undefined" into the class
+   attribute of every card. */
+.front {
+  transform: none;
+}
+
 .back {
   transform: rotateY(180deg);
 }

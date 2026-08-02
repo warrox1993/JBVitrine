@@ -335,6 +335,6 @@ export const config = {
      * answered 404 while the file sat perfectly readable in public/.
      * Verified by request, not by reading: /llms.txt 404 before, 200 after.
      */
-    "/((?!_next/static|_next/image|favicon.ico|manifest\\.json|robots\\.txt|sitemap\\.xml|llms\\.txt|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|manifest\\.json|robots\\.txt|sitemap\\.xml|llms\\.txt|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|pdf)$).*)",
   ],
 };

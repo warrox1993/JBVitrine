@@ -43,3 +43,19 @@ export const credentials = {
 
 /** Canonical production origin (no trailing slash). */
 export const siteUrl = "https://smidjan.be";
+
+/**
+ * Downloadable CV, served straight from public/.
+ *
+ * Must be linked with a PLAIN <a download>, never <Button as="a">: that
+ * component routes internal hrefs through next-intl's locale-aware Link, which
+ * would rewrite this to /nl/… or /en/… where no file exists. The extension is
+ * also excluded from the proxy matcher (src/proxy.ts) for the same reason
+ * robots.txt and llms.txt are — otherwise next-intl rewrites the request and
+ * the file 404s while sitting perfectly readable on disk.
+ */
+export const cvPdf = {
+  path: "/CV-Jean-Baptiste-Dhondt.pdf",
+  /** Filename suggested to the browser on download. */
+  filename: "CV-Jean-Baptiste-Dhondt.pdf",
+} as const;

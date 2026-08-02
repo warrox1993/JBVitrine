@@ -12,7 +12,7 @@ import { Reveal } from "@/components/ui/Reveal/Reveal";
 import { CTABox } from "@/components/shared/CTABox/CTABox";
 import { ProcessSteps } from "@/components/shared/ProcessSteps/ProcessSteps";
 import { authorSchema } from "@/lib/author-schema";
-import { social, credentials, siteUrl } from "@/config/site";
+import { social, credentials, siteUrl, cvPdf } from "@/config/site";
 import { FlipCard, type FlipCardLearn } from "./FlipCard";
 import { CvSideNav, type CvSideNavItem } from "./CvSideNav";
 import styles from "./page.module.css";
@@ -66,9 +66,24 @@ export async function generateMetadata({
   };
 }
 
-type FormationItem = {
+/** One entry of the single interleaved timeline: a job OR a course. */
+type ParcoursItem = {
   period: string;
+  kind: "poste" | "formation";
   title: string;
+  org: string;
+  desc: string;
+};
+
+type StackGroup = {
+  label: string;
+  items: string[];
+};
+
+type ProjetItem = {
+  num: string;
+  name: string;
+  tag: string;
   desc: string;
 };
 
@@ -104,7 +119,9 @@ export default async function CvPage({
   setRequestLocale(locale);
   const t = await getTranslations("cv");
   const tc = await getTranslations("certifications");
-  const formationItems = tc.raw("formation.items") as FormationItem[];
+  const parcoursItems = t.raw("parcours.items") as ParcoursItem[];
+  const stackGroups = t.raw("stack.groups") as StackGroup[];
+  const projetItems = t.raw("projets.items") as ProjetItem[];
   const languageItems = t.raw("languages.items") as LanguageItem[];
   const passionItems = t.raw("beyond.passions") as string[];
 
@@ -112,10 +129,12 @@ export default async function CvPage({
   // eyebrows shown atop each section below, so the nav and the destination
   // always read the same word.
   const NAV_SECTIONS: CvSideNavItem[] = [
-    { id: "formation", label: tc("formation.eyebrow") },
+    { id: "parcours", label: t("parcours.eyebrow") },
     { id: "certifications", label: tc("certs.eyebrow") },
-    { id: "objectifs", label: tc("objectifs.eyebrow") },
     { id: "competences", label: tc("competences.eyebrow") },
+    { id: "stack", label: t("stack.eyebrow") },
+    { id: "projets", label: t("projets.eyebrow") },
+    { id: "objectifs", label: tc("objectifs.eyebrow") },
     { id: "langues", label: t("languages.eyebrow") },
     { id: "beyond", label: t("beyond.eyebrow") },
   ];
@@ -164,7 +183,18 @@ export default async function CvPage({
                   >
                     {t("hero.ctaContact")}
                   </Button>
-                  <span className={styles.idPdfNote}>{t("hero.pdfNote")}</span>
+                  {/* Plain <a download>, NOT <Button as="a">: that component
+                      sends internal hrefs through next-intl's Link, which would
+                      rewrite this to /nl/… or /en/… and 404. */}
+                  <a
+                    href={cvPdf.path}
+                    download={cvPdf.filename}
+                    className={styles.idPdfLink}
+                  >
+                    <Icon name="download" size={18} strokeWidth={2} />
+                    <span>{t("hero.ctaPdf")}</span>
+                    <span className={styles.idPdfMeta}>{t("hero.pdfMeta")}</span>
+                  </a>
                 </div>
 
                 <CvSideNav items={NAV_SECTIONS} heading={t("sidebar.heading")} />
@@ -185,6 +215,22 @@ export default async function CvPage({
                     <span className={styles.idFactK}>{t("hero.focusLabel")}</span>
                     <span className={styles.idFactV}>{t("hero.focusValue")}</span>
                   </div>
+                  {/* Security clearances are the single most distinguishing
+                      fact on this CV for an infrastructure role — surfaced in
+                      the sticky column rather than buried in the timeline. */}
+                  <div className={styles.idFact}>
+                    <span className={styles.idFactK}>{t("hero.clearanceLabel")}</span>
+                    <span className={styles.idFactV}>{t("hero.clearanceValue")}</span>
+                  </div>
+                  <div className={styles.idFact}>
+                    <span className={styles.idFactK}>{t("hero.mobilityLabel")}</span>
+                    <span className={styles.idFactV}>{t("hero.mobilityValue")}</span>
+                  </div>
+                </div>
+
+                <div className={styles.idMotto}>
+                  <span className={styles.idMottoLabel}>{t("hero.mottoLabel")}</span>
+                  <p className={styles.idMottoText}>{t("hero.motto")}</p>
                 </div>
 
                 <div className={styles.profilesRow}>
@@ -206,29 +252,45 @@ export default async function CvPage({
 
             {/* ===== Scrolling right column: the CV sections ===== */}
             <div className={styles.mainCol}>
-              {/* ===== Formation & diplômes ===== */}
-              <Section id="formation" variant="tint" className={styles.panel}>
+              {/* ===== Parcours : postes et formations dans un seul fil ===== */}
+              <Section id="parcours" variant="tint" className={styles.panel}>
                 <Reveal>
                   <SectionHeading
-                    eyebrow={tc("formation.eyebrow")}
-                    title={tc("formation.title")}
-                    lead={tc("formation.lead")}
+                    eyebrow={t("parcours.eyebrow")}
+                    title={t.rich("parcours.title", {
+                      accent: (chunks) => <span className="accent">{chunks}</span>,
+                    })}
+                    lead={t("parcours.lead")}
                   />
                 </Reveal>
 
+                {/* Legend, so the filled/hollow markers below are decodable
+                    rather than decorative. */}
+                <Reveal className={styles.timelineLegend}>
+                  <span className={styles.legendItem}>
+                    <span className={`${styles.legendDot} ${styles.legendDotPoste}`} aria-hidden="true" />
+                    {t("parcours.legendPoste")}
+                  </span>
+                  <span className={styles.legendItem}>
+                    <span className={`${styles.legendDot} ${styles.legendDotFormation}`} aria-hidden="true" />
+                    {t("parcours.legendFormation")}
+                  </span>
+                </Reveal>
+
                 <Reveal stagger className={styles.timeline}>
-                  {formationItems.map((item) => (
-                    <div key={`${item.period}-${item.title}`} className={styles.timelineItem}>
+                  {parcoursItems.map((item) => (
+                    <div
+                      key={`${item.period}-${item.title}`}
+                      className={`${styles.timelineItem} ${
+                        item.kind === "poste" ? styles.timelinePoste : styles.timelineFormation
+                      }`}
+                    >
                       <span className={styles.timelinePeriod}>{item.period}</span>
                       <h3 className={styles.timelineTitle}>{item.title}</h3>
+                      <p className={styles.timelineOrg}>{item.org}</p>
                       <p className={styles.timelineDesc}>{item.desc}</p>
                     </div>
                   ))}
-                </Reveal>
-
-                <Reveal className={styles.priorBox}>
-                  <h3 className={styles.priorHeading}>{tc("formation.prior.heading")}</h3>
-                  <p className={styles.priorText}>{tc("formation.prior.text")}</p>
                 </Reveal>
               </Section>
 
@@ -258,15 +320,30 @@ export default async function CvPage({
                     backHint={tc("certs.backHint")}
                   />
 
+                  {/* CCNA is EARNED (2026) — it was still shown as "in
+                      progress", which understated the CV. */}
                   <FlipCard
-                    icon={<Icon name="clock" strokeWidth={1.7} />}
+                    icon={<Icon name="shield-check" strokeWidth={1.7} />}
                     status={tc("certs.ccna.status")}
-                    statusVariant="progress"
+                    statusVariant="done"
                     name={tc("certs.ccna.name")}
                     description={tc("certs.ccna.description")}
                     learn={tc.raw("certs.ccna.learn") as FlipCardLearn}
                     whyTitle={tc("certs.whyHeading")}
                     whyText={tc("certs.ccna.why")}
+                    hint={tc("certs.flipHint")}
+                    backHint={tc("certs.backHint")}
+                  />
+
+                  <FlipCard
+                    icon={<Icon name="clock" strokeWidth={1.7} />}
+                    status={tc("certs.az104.status")}
+                    statusVariant="progress"
+                    name={tc("certs.az104.name")}
+                    description={tc("certs.az104.description")}
+                    learn={tc.raw("certs.az104.learn") as FlipCardLearn}
+                    whyTitle={tc("certs.whyHeading")}
+                    whyText={tc("certs.az104.why")}
                     hint={tc("certs.flipHint")}
                     backHint={tc("certs.backHint")}
                   />
@@ -332,6 +409,64 @@ export default async function CvPage({
                         {tc(`competences.items.${key}.description`)}
                       </p>
                     </div>
+                  ))}
+                </Reveal>
+              </Section>
+
+              {/* ===== Stack technique ===== */}
+              <Section id="stack" variant="tint" className={styles.panel}>
+                <Reveal>
+                  <SectionHeading
+                    eyebrow={t("stack.eyebrow")}
+                    title={t.rich("stack.title", {
+                      accent: (chunks) => <span className="accent">{chunks}</span>,
+                    })}
+                    lead={t("stack.lead")}
+                  />
+                </Reveal>
+
+                <Reveal stagger className={styles.stackGrid}>
+                  {stackGroups.map((group) => (
+                    <div key={group.label} className={styles.stackGroup}>
+                      <h3 className={styles.stackLabel}>{group.label}</h3>
+                      <ul className={styles.stackItems}>
+                        {group.items.map((item) => (
+                          <li key={item} className={styles.stackChip}>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </Reveal>
+              </Section>
+
+              {/* ===== Projets ===== */}
+              <Section id="projets" variant="white" className={styles.panel}>
+                <Reveal>
+                  <SectionHeading
+                    eyebrow={t("projets.eyebrow")}
+                    title={t.rich("projets.title", {
+                      accent: (chunks) => <span className="accent">{chunks}</span>,
+                    })}
+                    lead={t("projets.lead")}
+                  />
+                </Reveal>
+
+                <Reveal stagger className={styles.cvProjectsGrid}>
+                  {projetItems.map((item) => (
+                    <article key={item.num} className={styles.cvProjectCard}>
+                      <span className={styles.cvProjectNum} aria-hidden="true">
+                        {item.num}
+                      </span>
+                      <div>
+                        <h3 className={styles.cvProjectName}>
+                          {item.name}
+                          <span className={styles.cvProjectTag}>{item.tag}</span>
+                        </h3>
+                        <p className={styles.cvProjectDesc}>{item.desc}</p>
+                      </div>
+                    </article>
                   ))}
                 </Reveal>
               </Section>
