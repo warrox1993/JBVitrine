@@ -70,6 +70,7 @@ export function validateBlogArticle(body: unknown): BlogArticleValidation {
     "title",
     "excerpt",
     "publishedAt",
+    "updatedAt",
     "category",
     "readTime",
     "coverImage",
@@ -110,6 +111,26 @@ export function validateBlogArticle(body: unknown): BlogArticleValidation {
     publishedAt = input.publishedAt.trim();
     if (Number.isNaN(new Date(publishedAt).getTime())) {
       errors.push("publishedAt doit être une date valide (ISO 8601)");
+    }
+  }
+
+  // updatedAt is optional, but when present it must parse AND not predate
+  // publishedAt — an article "updated" before it was written would emit a
+  // <lastmod> older than its own publication date and read as broken data.
+  let updatedAt: string | undefined;
+  if (input.updatedAt !== undefined && input.updatedAt !== null && input.updatedAt !== "") {
+    if (typeof input.updatedAt !== "string") {
+      errors.push("updatedAt doit être une chaîne");
+    } else {
+      const value = input.updatedAt.trim();
+      const parsed = new Date(value).getTime();
+      if (Number.isNaN(parsed)) {
+        errors.push("updatedAt doit être une date valide (ISO 8601)");
+      } else if (publishedAt && parsed < new Date(publishedAt).getTime()) {
+        errors.push("updatedAt ne peut pas être antérieur à publishedAt");
+      } else {
+        updatedAt = value;
+      }
     }
   }
 
@@ -177,6 +198,7 @@ export function validateBlogArticle(body: unknown): BlogArticleValidation {
       title,
       excerpt,
       publishedAt,
+      ...(updatedAt ? { updatedAt } : {}),
       category,
       readTime,
       ...(coverImage ? { coverImage } : {}),

@@ -131,12 +131,16 @@ export default async function BlogArticlePage({ params }: Props) {
             description: article.excerpt,
             image: `${siteUrl}/og-image.webp`,
             datePublished: article.publishedAt,
-            dateModified: article.publishedAt,
-            author: {
-              "@type": "Organization",
-              name: "Smidjan",
-              url: siteUrl,
-            },
+            // Reflect the real last revision. Copying publishedAt here meant a
+            // rewritten article kept advertising its original date, so crawlers
+            // had no signal to come back and re-read it.
+            dateModified: article.updatedAt ?? article.publishedAt,
+            // A named PERSON, not an Organization. The legal pages state that
+            // "Smidjan" is the pseudonym of a natural person, and Google's
+            // author signals (E-E-A-T) attach to people, not brands. The shared
+            // @id consolidates this node with the ones on /cv and /agence
+            // instead of creating three unrelated entities.
+            author: authorSchema,
             publisher: {
               "@type": "Organization",
               name: "Smidjan",

@@ -11,6 +11,14 @@ export interface BlogArticle {
   title: string;
   excerpt: string;
   publishedAt: string;
+  /**
+   * ISO date of the last substantive revision, when there has been one.
+   *
+   * Drives <lastmod> in the sitemap and dateModified in the article's JSON-LD:
+   * without it, a rewritten article still advertises its original date and
+   * crawlers have no reason to come back and re-read it.
+   */
+  updatedAt?: string;
   category: string;
   readTime: string;
   /** Optional real photo cover (e.g. "/images/blog/<slug>.jpg"). Falls back to ArticleCoverSvg when unset. */

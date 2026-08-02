@@ -88,12 +88,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const articles = await getAllArticles();
     blogPages = articles.map((article) => {
       const path = `/blog/${article.slug}`;
-      const published = new Date(article.publishedAt);
+      // <lastmod> must reflect the last REVISION, not the original publication:
+      // a rewritten article that still advertises its 2025 date gives crawlers
+      // no reason to come back and re-read it.
+      const stamp = new Date(article.updatedAt ?? article.publishedAt);
       return {
         url: localized(path, DEFAULT_LOCALE),
-        // Fall back to now if publishedAt is unparseable, so one bad entry
-        // cannot emit an invalid <lastmod> and void the whole document.
-        lastModified: Number.isNaN(published.getTime()) ? now : published,
+        // Fall back to now if the date is unparseable, so one bad entry cannot
+        // emit an invalid <lastmod> and void the whole document.
+        lastModified: Number.isNaN(stamp.getTime()) ? now : stamp,
         changeFrequency: "monthly" as const,
         priority: 0.7,
         alternates: alternates(path),

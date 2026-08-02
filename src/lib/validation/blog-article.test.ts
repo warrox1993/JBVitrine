@@ -116,6 +116,27 @@ test("rejette une URL protocol-relative en coverImage (le bug corrigé)", () => 
   }
 });
 
+test("accepte updatedAt et le rend disponible", () => {
+  const ok = validateBlogArticle({ ...valid, updatedAt: "2026-08-03" });
+  assert.equal(ok.ok, true);
+  if (ok.ok) assert.equal(ok.article.updatedAt, "2026-08-03");
+
+  // Absent = pas de clé parasite dans l'objet stocké.
+  const sans = validateBlogArticle(valid);
+  assert.equal(sans.ok, true);
+  if (sans.ok) assert.equal("updatedAt" in sans.article, false);
+});
+
+test("rejette un updatedAt invalide ou antérieur à la publication", () => {
+  assert.equal(validateBlogArticle({ ...valid, updatedAt: "pas-une-date" }).ok, false);
+
+  // Un article « mis à jour » avant d'avoir été écrit émettrait un <lastmod>
+  // plus ancien que sa propre date de publication : donnée incohérente.
+  const anterieur = validateBlogArticle({ ...valid, updatedAt: "2020-01-01" });
+  assert.equal(anterieur.ok, false);
+  if (!anterieur.ok) assert.match(anterieur.error, /antérieur/);
+});
+
 test("rejette un corps qui n'est pas un objet", () => {
   assert.equal(validateBlogArticle(null).ok, false);
   assert.equal(validateBlogArticle("chaîne").ok, false);
