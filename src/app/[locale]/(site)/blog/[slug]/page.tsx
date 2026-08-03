@@ -93,6 +93,9 @@ export default async function BlogArticlePage({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("blog");
+  // Nom accessible du rail : partage par toutes les pages, et traduit — la
+  // valeur par defaut du composant etait une chaine francaise en dur.
+  const tA11y = await getTranslations("common.a11y");
   const article = await getArticleBySlug(slug);
 
   if (!article) {
@@ -194,11 +197,14 @@ export default async function BlogArticlePage({ params }: Props) {
           ancres posées sur les <h2> par le rendu markdown. */}
       {article.tableOfContents && article.tableOfContents.length > 0 && (
         <SectionRail
+          // Nom DIFFÉRENT de celui du sommaire en ligne plus bas : les deux
+          // portaient « Sommaire de l'article », donc un lecteur d'écran
+          // affichait deux repères de navigation indistinguables.
+          ariaLabel={tA11y("sectionRail")}
           items={article.tableOfContents.map((entry) => ({
             id: entry.id,
             label: entry.title,
           }))}
-          ariaLabel={t("article.tocAriaLabel")}
         />
       )}
 

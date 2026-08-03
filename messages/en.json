@@ -236,7 +236,8 @@
       }
     },
     "a11y": {
-      "skipToContent": "Skip to content"
+      "skipToContent": "Skip to content",
+      "sectionRail": "Section navigation"
     },
     "nav": {
       "competences": "Skills",

@@ -236,7 +236,8 @@
       }
     },
     "a11y": {
-      "skipToContent": "Naar inhoud"
+      "skipToContent": "Naar inhoud",
+      "sectionRail": "Sectienavigatie"
     },
     "nav": {
       "competences": "Vaardigheden",

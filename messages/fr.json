@@ -236,7 +236,8 @@
       }
     },
     "a11y": {
-      "skipToContent": "Aller au contenu"
+      "skipToContent": "Aller au contenu",
+      "sectionRail": "Navigation par section"
     },
     "nav": {
       "competences": "Compétences",

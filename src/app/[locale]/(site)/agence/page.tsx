@@ -63,6 +63,9 @@ export default async function AgencePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("agence");
+  // Nom accessible du rail : partage par toutes les pages, et traduit — la
+  // valeur par defaut du composant etait une chaine francaise en dur.
+  const tA11y = await getTranslations("common.a11y");
   return (
     <>
       <script
@@ -72,6 +75,7 @@ export default async function AgencePage({
         }}
       />
       <SectionRail
+        ariaLabel={tA11y("sectionRail")}
         items={[
           { id: "apercu", label: t("rail.apercu") },
           { id: "praticien", label: t("rail.praticien") },

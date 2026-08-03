@@ -138,6 +138,9 @@ export default async function ServicesPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("services");
+  // Nom accessible du rail : partage par toutes les pages, et traduit — la
+  // valeur par defaut du composant etait une chaine francaise en dur.
+  const tA11y = await getTranslations("common.a11y");
   const FAQ_KEYS = ["q1", "q2", "q3"] as const;
   const faqItems = FAQ_KEYS.map((q) => ({
     question: t(`faq.${q}.question`),
@@ -164,6 +167,7 @@ export default async function ServicesPage({
       />
 
       <SectionRail
+        ariaLabel={tA11y("sectionRail")}
         items={[
           { id: "apercu", label: t("rail.apercu") },
           { id: "prestations", label: t("rail.prestations") },

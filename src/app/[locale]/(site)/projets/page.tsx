@@ -212,6 +212,9 @@ export default async function ProjetsPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("projets");
+  // Nom accessible du rail : partage par toutes les pages, et traduit — la
+  // valeur par defaut du composant etait une chaine francaise en dur.
+  const tA11y = await getTranslations("common.a11y");
 
   // Les textes sont résolus ici, côté serveur, pour que les panneaux puissent
   // traverser la frontière client sans emmener next-intl avec eux.
@@ -231,6 +234,7 @@ export default async function ProjetsPage({
   return (
     <>
       <SectionRail
+        ariaLabel={tA11y("sectionRail")}
         items={[
           { id: "apercu", label: t("rail.apercu") },
           { id: "projet-phare", label: t("rail.phare") },

@@ -10,8 +10,14 @@ export interface SectionRailItem {
 
 export interface SectionRailProps {
   items: SectionRailItem[];
-  /** Optional, localized label for the nav landmark (defaults to a neutral string). */
-  ariaLabel?: string;
+  /**
+   * Nom accessible du repère de navigation. OBLIGATOIRE, et volontairement sans
+   * valeur par défaut : la précédente était la chaîne française « Sommaire »
+   * codée en dur, qui s'est retrouvée telle quelle sur les pages néerlandaises
+   * et anglaises. Un défaut qui ne peut pas être oublié est un défaut qui ne
+   * peut pas se reproduire — le compilateur le réclame maintenant.
+   */
+  ariaLabel: string;
 }
 
 /**
@@ -26,7 +32,7 @@ export interface SectionRailProps {
  * Elle ne suppose rien de son contenu — seulement que chaque `id` correspond à
  * un élément réellement présent dans le document.
  */
-export function SectionRail({ items, ariaLabel = "Sommaire" }: SectionRailProps) {
+export function SectionRail({ items, ariaLabel }: SectionRailProps) {
   const [activeId, setActiveId] = useState<string>(items[0]?.id ?? "");
 
   // Stable dependency: the observer only cares about WHICH ids to watch, and the

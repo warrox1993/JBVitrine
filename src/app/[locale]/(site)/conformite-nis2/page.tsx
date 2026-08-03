@@ -77,6 +77,7 @@ export default async function ConformiteNis2Page() {
   return (
     <>
       <SectionRail
+        ariaLabel={tCommon("a11y.sectionRail")}
         items={[
           { id: "top", label: t("rail.apercu") },
           { id: "suis-je-concerne", label: t("rail.concerne") },

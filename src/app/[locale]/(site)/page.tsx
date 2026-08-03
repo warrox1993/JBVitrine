@@ -68,6 +68,9 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
+  // Nom accessible du rail : partage par toutes les pages, et traduit — la
+  // valeur par defaut du composant etait une chaine francaise en dur.
+  const tA11y = await getTranslations("common.a11y");
 
   return (
     <>
@@ -93,6 +96,7 @@ export default async function HomePage({
       />
 
       <SectionRail
+        ariaLabel={tA11y("sectionRail")}
         items={[
           { id: "vue-ensemble", label: t("rail.vueEnsemble") },
           { id: "savoir-faire", label: t("rail.savoirFaire") },

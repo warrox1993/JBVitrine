@@ -44,6 +44,9 @@ export default async function MaintenantPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("maintenant");
+  // Nom accessible du rail : partage par toutes les pages, et traduit — la
+  // valeur par defaut du composant etait une chaine francaise en dur.
+  const tA11y = await getTranslations("common.a11y");
   const learning = t.raw("learning.items") as ListItem[];
   const building = t.raw("building.items") as ListItem[];
   const roadmap = t.raw("roadmap.items") as Milestone[];
@@ -51,6 +54,7 @@ export default async function MaintenantPage({
   return (
     <>
       <SectionRail
+        ariaLabel={tA11y("sectionRail")}
         items={[
           { id: "apercu", label: t("rail.apercu") },
           { id: "en-cours", label: t("rail.enCours") },
