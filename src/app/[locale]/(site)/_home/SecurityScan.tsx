@@ -54,7 +54,11 @@ export function SecurityScan() {
           }
         }
       },
-      { threshold: 0.35 },
+      // Seuil nul, pas un ratio : `threshold` est une fraction de l'élément, donc
+      // un seuil de 0.35 rendait le démarrage du scan impossible dès que la carte
+      // dépassait ~2.9x la hauteur de la fenêtre — le terminal serait resté vide
+      // pour toujours. Même panne que celle rencontrée sur le journal.
+      { threshold: 0, rootMargin: "0px 0px -12% 0px" },
     );
     io.observe(el);
     return () => io.disconnect();

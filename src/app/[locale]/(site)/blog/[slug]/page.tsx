@@ -248,7 +248,13 @@ export default async function BlogArticlePage({ params }: Props) {
       </Reveal>
 
       <section className={styles.articleSection}>
-        <Reveal>
+        {/* `priority` : ce bloc porte le corps de l'article, c'est-à-dire tout le
+            contenu utile de la page. Une animation d'entrée le met à `opacity: 0`
+            jusqu'à ce que du JS le révèle — le texte disparaît donc au moindre
+            grain de sable côté client, et il est exclu du calcul du LCP. Le
+            contenu principal ne doit dépendre de rien : il est rendu visible dès
+            le HTML serveur. L'animation reste sur les blocs décoratifs. */}
+        <Reveal priority>
           <div className={`wrap ${styles.narrow}`}>
             {article.tableOfContents && article.tableOfContents.length > 0 && (
               <nav className={styles.toc} aria-label={t("article.tocAriaLabel")}>
