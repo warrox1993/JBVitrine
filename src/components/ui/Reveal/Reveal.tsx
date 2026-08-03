@@ -108,7 +108,16 @@ export function Reveal({
           }
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+      // `threshold` est une fraction de l'ÉLÉMENT, pas de la fenêtre : un bloc
+      // plus haut que ~8x la fenêtre ne peut jamais atteindre 0.12 et reste
+      // alors invisible pour toujours. C'est arrivé en production sur la grille
+      // du journal : 7457 px de haut sur un écran de 844 px, soit un ratio
+      // plafonné à 0.104 pour un seuil de 0.12 — les 12 cartes restaient à
+      // `opacity: 0` même après avoir scrollé toute la page.
+      // Un seuil de 0 est indépendant de la taille du contenu ; le léger retard
+      // à l'entrée reste assuré par le rootMargin, qui lui est exprimé en
+      // pourcentage de la fenêtre.
+      { threshold: 0, rootMargin: "0px 0px -8% 0px" },
     );
     io.observe(el);
     return () => io.disconnect();
