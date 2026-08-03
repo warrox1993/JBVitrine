@@ -1716,31 +1716,12 @@
     },
     "grid": {
       "eyebrow": "Andere projecten",
-      "title": "Wat al gebouwd is",
-      "lead": "Een open-source bibliotheek, deze site, en oefeningen in applicatiebeveiliging: de rest van het bewijs, publiek of niet.",
+      "title": "Wat ik bouw",
+      "lead": "Twee toestanden, één pagina: wat vandaag draait, en wat nog in aanbouw is. Niets wordt als af gepresenteerd voordat het dat is.",
       "statusPublic": "Publiek",
       "statusPrivate": "Privécode",
       "repoLabel": "Bekijk de repo",
       "items": {
-        "clawkwerk": {
-          "name": "ClawkWerk",
-          "description": "CyFun (CCB) / NIS2-audittool geschreven in Go: read-only, agentless, gemaakt voor Belgische kmo's. Een gestructureerde conformiteitsdiagnose, zonder intrusieve installatie.",
-          "tech": [
-            "Go",
-            "CyFun / NIS2",
-            "CLI",
-            "Read-only"
-          ]
-        },
-        "formcraft": {
-          "name": "FormCraft",
-          "description": "Open-source C#/Blazor-bibliotheek om typeveilige, dynamische formulieren te bouwen met een elegante fluent API.",
-          "tech": [
-            "C#",
-            "Blazor",
-            ".NET"
-          ]
-        },
         "site": {
           "name": "Deze site (Smidjan)",
           "description": "Dit portfolio zelf: Next.js 16, React 19, TypeScript, next-intl (FR/NL/EN), met bijzondere aandacht voor beveiliging (CSP, rate-limiting, verharde headers).",
@@ -1751,16 +1732,43 @@
             "next-intl"
           ]
         },
-        "secapp": {
-          "name": "Applicatiebeveiliging (oefeningen)",
-          "description": "Praktische toepassing van Java/Spring Security en de OWASP Top 10: concreet leren om veilige code te schrijven.",
+        "beecuit": {
+          "name": "Au Fil des Saveurs",
+          "description": "Meertalige webshop (FR/NL/DE/EN) voor een ambachtelijke koekjesbakkerij — een fictief merk als demonstratie. Stripe-betaling met ondertekende webhooks, abonnementen, cadeaubonnen, B2B-offertes en beheeromgeving; TOTP-tweefactorauthenticatie, rate limiting en AVG-conforme accountverwijdering. Online, gedekt door 64 testbestanden.",
           "tech": [
-            "Java",
-            "Spring Security",
-            "OWASP Top 10"
+            "Next.js 15",
+            "TypeScript",
+            "PostgreSQL / Drizzle",
+            "Stripe",
+            "Auth.js"
+          ]
+        },
+        "clawkwerk": {
+          "name": "ClawkWerk",
+          "description": "CyFun (CCB) / NIS2-audittool geschreven in Go: read-only, agentless, gemaakt voor Belgische kmo's. Een gestructureerde conformiteitsdiagnose, zonder intrusieve installatie.",
+          "tech": [
+            "Go",
+            "CyFun / NIS2",
+            "CLI",
+            "Read-only"
+          ]
+        },
+        "pdfrunner": {
+          "name": "ConvertPDF",
+          "description": "Windows-desktoptoepassing die documenten omzet tussen PDF, Word, Excel en HTML, en audio lokaal naar tekst transcribeert met Whisper. Bewust een prototype: de MVVM-architectuur en de conversie werken, meerdere in de interface aangekondigde functies moeten nog geïmplementeerd worden.",
+          "tech": [
+            "C#",
+            ".NET 10",
+            "WPF",
+            "MVVM",
+            "Whisper"
           ]
         }
-      }
+      },
+      "tabBuilt": "Al gebouwd",
+      "tabInProgress": "In aanbouw",
+      "tabsAriaLabel": "Projecten filteren op stand van zaken",
+      "liveLabel": "Bekijk de live site"
     },
     "closing": {
       "text": "Ik publiceer en vervolledig regelmatig mijn projecten.",

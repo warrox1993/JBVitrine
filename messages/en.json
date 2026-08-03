@@ -1716,31 +1716,12 @@
     },
     "grid": {
       "eyebrow": "Other projects",
-      "title": "What is already built",
-      "lead": "An open-source library, this site, and application security exercises: the rest of the evidence, public or not.",
+      "title": "What I build",
+      "lead": "Two states, one page: what runs today, and what is still under construction. Nothing is presented as finished before it is.",
       "statusPublic": "Public",
       "statusPrivate": "Private code",
       "repoLabel": "View the repo",
       "items": {
-        "clawkwerk": {
-          "name": "ClawkWerk",
-          "description": "CyFun (CCB) / NIS2 audit tool written in Go: read-only, agentless, built for Belgian SMEs. A structured compliance diagnostic, with no intrusive install.",
-          "tech": [
-            "Go",
-            "CyFun / NIS2",
-            "CLI",
-            "Read-only"
-          ]
-        },
-        "formcraft": {
-          "name": "FormCraft",
-          "description": "Open-source C#/Blazor library to build type-safe, dynamic forms with an elegant fluent API.",
-          "tech": [
-            "C#",
-            "Blazor",
-            ".NET"
-          ]
-        },
         "site": {
           "name": "This site (Smidjan)",
           "description": "This portfolio itself: Next.js 16, React 19, TypeScript, next-intl (FR/NL/EN), with particular attention paid to security (CSP, rate limiting, hardened headers).",
@@ -1751,16 +1732,43 @@
             "next-intl"
           ]
         },
-        "secapp": {
-          "name": "Application security (exercises)",
-          "description": "Hands-on practice with Java/Spring Security and the OWASP Top 10: concrete learning of secure coding.",
+        "beecuit": {
+          "name": "Au Fil des Saveurs",
+          "description": "Multilingual online shop (FR/NL/DE/EN) for an artisan biscuit bakery — a fictional brand used as a demonstration. Stripe payment with signed webhooks, subscriptions, gift cards, B2B quotes and an admin back-office; TOTP two-factor authentication, rate limiting and GDPR-compliant account deletion. Live, covered by 64 test files.",
           "tech": [
-            "Java",
-            "Spring Security",
-            "OWASP Top 10"
+            "Next.js 15",
+            "TypeScript",
+            "PostgreSQL / Drizzle",
+            "Stripe",
+            "Auth.js"
+          ]
+        },
+        "clawkwerk": {
+          "name": "ClawkWerk",
+          "description": "CyFun (CCB) / NIS2 audit tool written in Go: read-only, agentless, built for Belgian SMEs. A structured compliance diagnostic, with no intrusive install.",
+          "tech": [
+            "Go",
+            "CyFun / NIS2",
+            "CLI",
+            "Read-only"
+          ]
+        },
+        "pdfrunner": {
+          "name": "ConvertPDF",
+          "description": "Windows desktop application that converts documents between PDF, Word, Excel and HTML, and transcribes audio to text locally with Whisper. Deliberately a prototype: the MVVM architecture and conversion work, several features announced in the interface still need implementing.",
+          "tech": [
+            "C#",
+            ".NET 10",
+            "WPF",
+            "MVVM",
+            "Whisper"
           ]
         }
-      }
+      },
+      "tabBuilt": "Already built",
+      "tabInProgress": "Under construction",
+      "tabsAriaLabel": "Filter projects by completion state",
+      "liveLabel": "View the live site"
     },
     "closing": {
       "text": "I regularly publish and expand my projects.",

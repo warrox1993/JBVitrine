@@ -16,11 +16,15 @@ import { CTABox } from "@/components/shared/CTABox/CTABox";
 import { Spotlight } from "@/components/ui/Spotlight/Spotlight";
 import spotlight from "@/components/ui/Spotlight/Spotlight.module.css";
 import { ProjectCover, type ProjectCoverKey } from "./ProjectCover";
+import { ProjectsSwitch } from "./ProjectsSwitch";
 import styles from "./page.module.css";
 
 const GITHUB_URL = "https://github.com/warrox1993";
-const FORMCRAFT_URL = "https://github.com/warrox1993/FormCraft";
 const CLAWKWERK_URL = "https://github.com/warrox1993/ClawkWerk";
+const VITRINE_URL = "https://github.com/warrox1993/JBVitrine";
+const BEECUIT_URL = "https://github.com/warrox1993/Beecuit";
+const BEECUIT_LIVE_URL = "https://beecuit.vercel.app";
+const PDFRUNNER_URL = "https://github.com/warrox1993/PDFRunner";
 
 export async function generateMetadata({
   params,
@@ -84,14 +88,121 @@ type GridItem = {
   key: ProjectCoverKey;
   status: "public" | "private";
   repoUrl?: string;
+  /** Adresse où le projet tourne réellement, quand il en a une. */
+  liveUrl?: string;
 };
 
-const GRID_ITEMS: GridItem[] = [
-  { key: "clawkwerk", status: "public", repoUrl: CLAWKWERK_URL },
-  { key: "formcraft", status: "public", repoUrl: FORMCRAFT_URL },
-  { key: "site", status: "private" },
-  { key: "secapp", status: "private" },
+/* Deux groupes, une seule page : la bascule ProjectsSwitch laisse le visiteur
+   choisir entre ce qui tourne aujourd'hui et ce qui est encore en chantier.
+   Le classement suit l'état réel des dépôts, vérifié sur l'API GitHub et sur
+   les déploiements — pas l'ambition qu'on en a. */
+
+const BUILT_ITEMS: GridItem[] = [
+  // Le dépôt de ce site est public (vérifié via l'API GitHub) : l'afficher
+  // comme privé privait la page de sa preuve la plus directe — le code que le
+  // visiteur est en train de parcourir.
+  { key: "site", status: "public", repoUrl: VITRINE_URL },
+  { key: "beecuit", status: "public", repoUrl: BEECUIT_URL, liveUrl: BEECUIT_LIVE_URL },
 ];
+
+const WIP_ITEMS: GridItem[] = [
+  { key: "clawkwerk", status: "public", repoUrl: CLAWKWERK_URL },
+  { key: "pdfrunner", status: "public", repoUrl: PDFRUNNER_URL },
+];
+
+/** Une bande de projet, avec tous ses textes déjà résolus côté serveur. */
+type BandeRendue = {
+  key: ProjectCoverKey;
+  name: string;
+  description: string;
+  tech: string[];
+  isPublic: boolean;
+  statusLabel: string;
+  repoUrl?: string;
+  liveUrl?: string;
+  repoLabel: string;
+  liveLabel: string;
+};
+
+/**
+ * Rend une pile de bandes. Ne reçoit que des chaînes déjà traduites : c'est ce
+ * qui permet de la passer telle quelle en `panel` au composant client, sans y
+ * faire entrer next-intl.
+ */
+function Bandes({ items }: { items: BandeRendue[] }) {
+  return (
+    <Spotlight>
+      <div className={styles.bands}>
+        {items.map((item, index) => {
+          const reverse = index % 2 === 1;
+          return (
+            <Reveal
+              key={item.key}
+              as="article"
+              variant={reverse ? "left" : "right"}
+              className={`${styles.band} ${reverse ? styles.bandReverse : ""}`}
+            >
+              <div className={`${styles.bandMedia} ${spotlight.card}`} data-spotlight-card="">
+                <ProjectCover projectKey={item.key} />
+              </div>
+              <div className={styles.bandBody}>
+                <div className={styles.bandHeader}>
+                  <div className={styles.bandHeaderTitle}>
+                    <span className={styles.bandIndex} aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className={styles.bandTitle}>{item.name}</h3>
+                  </div>
+                  <div className={styles.bandHeaderMeta}>
+                    <span
+                      className={`${styles.bandStatus} ${item.isPublic ? styles.bandStatusPublic : styles.bandStatusPrivate}`}
+                    >
+                      <Icon name={item.isPublic ? "github" : "lock"} size={13} strokeWidth={2} />
+                      {item.statusLabel}
+                    </span>
+                    {item.tech[0] ? <span className={styles.bandTechTag}>{item.tech[0]}</span> : null}
+                  </div>
+                </div>
+                <p className={styles.bandDesc}>{item.description}</p>
+                <div className={styles.bandTech}>
+                  {item.tech.map((tag) => (
+                    <span key={tag} className={styles.bandTechTag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className={styles.bandLinks}>
+                  {item.liveUrl ? (
+                    <a
+                      href={item.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.bandRepo}
+                    >
+                      {item.liveLabel}
+                      <Icon name="arrow-right" size={15} />
+                    </a>
+                  ) : null}
+                  {item.repoUrl ? (
+                    <a
+                      href={item.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.bandRepo}
+                    >
+                      {item.repoLabel}
+                      <Icon name="arrow-right" size={15} />
+                    </a>
+                  ) : null}
+                </div>
+              </div>
+            </Reveal>
+          );
+        })}
+      </div>
+    </Spotlight>
+  );
+}
 
 export default async function ProjetsPage({
   params,
@@ -101,6 +212,21 @@ export default async function ProjetsPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("projets");
+
+  // Les textes sont résolus ici, côté serveur, pour que les panneaux puissent
+  // traverser la frontière client sans emmener next-intl avec eux.
+  const enBande = (item: GridItem): BandeRendue => ({
+    ...item,
+    name: t(`grid.items.${item.key}.name`),
+    description: t(`grid.items.${item.key}.description`),
+    tech: t.raw(`grid.items.${item.key}.tech`) as string[],
+    isPublic: item.status === "public",
+    statusLabel: item.status === "public" ? t("grid.statusPublic") : t("grid.statusPrivate"),
+    repoLabel: t("grid.repoLabel"),
+    liveLabel: t("grid.liveLabel"),
+  });
+  const bandesConstruites = BUILT_ITEMS.map(enBande);
+  const bandesEnCours = WIP_ITEMS.map(enBande);
 
   return (
     <>
@@ -211,68 +337,26 @@ export default async function ProjetsPage({
           <SectionHeading eyebrow={t("grid.eyebrow")} title={t("grid.title")} lead={t("grid.lead")} />
         </Reveal>
 
-        <Spotlight>
-        <div className={styles.bands}>
-          {GRID_ITEMS.map((item, index) => {
-            const tech = t.raw(`grid.items.${item.key}.tech`) as string[];
-            const isPublic = item.status === "public";
-            const reverse = index % 2 === 1;
-            return (
-              <Reveal
-                key={item.key}
-                as="article"
-                variant={reverse ? "left" : "right"}
-                className={`${styles.band} ${reverse ? styles.bandReverse : ""}`}
-              >
-                <div
-                  className={`${styles.bandMedia} ${spotlight.card}`}
-                  data-spotlight-card=""
-                >
-                  <ProjectCover projectKey={item.key} />
-                </div>
-                <div className={styles.bandBody}>
-                  <div className={styles.bandHeader}>
-                    <div className={styles.bandHeaderTitle}>
-                      <span className={styles.bandIndex} aria-hidden="true">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <h3 className={styles.bandTitle}>{t(`grid.items.${item.key}.name`)}</h3>
-                    </div>
-                    <div className={styles.bandHeaderMeta}>
-                      <span
-                        className={`${styles.bandStatus} ${isPublic ? styles.bandStatusPublic : styles.bandStatusPrivate}`}
-                      >
-                        <Icon name={isPublic ? "github" : "lock"} size={13} strokeWidth={2} />
-                        {isPublic ? t("grid.statusPublic") : t("grid.statusPrivate")}
-                      </span>
-                      {tech[0] ? <span className={styles.bandTechTag}>{tech[0]}</span> : null}
-                    </div>
-                  </div>
-                  <p className={styles.bandDesc}>{t(`grid.items.${item.key}.description`)}</p>
-                  <div className={styles.bandTech}>
-                    {tech.map((tag) => (
-                      <span key={tag} className={styles.bandTechTag}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  {item.repoUrl ? (
-                    <a
-                      href={item.repoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.bandRepo}
-                    >
-                      {t("grid.repoLabel")}
-                      <Icon name="arrow-right" size={15} />
-                    </a>
-                  ) : null}
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
-        </Spotlight>
+        {/* Les deux panneaux sont rendus ici, côté serveur ; ProjectsSwitch ne
+            fait que choisir lequel afficher. Les traductions restent donc dans
+            ce composant serveur. */}
+        <ProjectsSwitch
+          ariaLabel={t("grid.tabsAriaLabel")}
+          tabs={[
+            {
+              id: "construit",
+              label: t("grid.tabBuilt"),
+              count: bandesConstruites.length,
+              panel: <Bandes items={bandesConstruites} />,
+            },
+            {
+              id: "en-cours",
+              label: t("grid.tabInProgress"),
+              count: bandesEnCours.length,
+              panel: <Bandes items={bandesEnCours} />,
+            },
+          ]}
+        />
       </Section>
 
       {/* ===== Closing: keep following on GitHub ===== */}

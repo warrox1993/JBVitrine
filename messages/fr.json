@@ -1716,31 +1716,12 @@
     },
     "grid": {
       "eyebrow": "Autres projets",
-      "title": "Ce qui est déjà construit",
-      "lead": "Une bibliothèque open-source, ce site, et des exercices de sécurité applicative : le reste de la preuve, publique ou non.",
+      "title": "Ce que je construis",
+      "lead": "Deux états, une seule page : ce qui tourne aujourd'hui, et ce qui est encore en chantier. Rien n'est présenté comme terminé avant de l'être.",
       "statusPublic": "Public",
       "statusPrivate": "Code privé",
       "repoLabel": "Voir le repo",
       "items": {
-        "clawkwerk": {
-          "name": "ClawkWerk",
-          "description": "Outil d'audit CyFun (CCB) / NIS2 écrit en Go : read-only, agentless, pensé pour les PME belges. Un diagnostic de conformité structuré, sans installation intrusive.",
-          "tech": [
-            "Go",
-            "CyFun / NIS2",
-            "CLI",
-            "Read-only"
-          ]
-        },
-        "formcraft": {
-          "name": "FormCraft",
-          "description": "Bibliothèque C#/Blazor open-source pour construire des formulaires dynamiques et typés avec une API fluide et élégante.",
-          "tech": [
-            "C#",
-            "Blazor",
-            ".NET"
-          ]
-        },
         "site": {
           "name": "Ce site (Smidjan)",
           "description": "Ce portfolio lui-même : Next.js 16, React 19, TypeScript, next-intl (FR/NL/EN), avec une attention particulière portée à la sécurité (CSP, rate-limiting, en-têtes durcis).",
@@ -1751,16 +1732,43 @@
             "next-intl"
           ]
         },
-        "secapp": {
-          "name": "Sécurité applicative (exercices)",
-          "description": "Mise en pratique de Java/Spring Security et de l'OWASP Top 10 : apprentissage concret de l'écriture de code sécurisé.",
+        "beecuit": {
+          "name": "Au Fil des Saveurs",
+          "description": "Boutique en ligne multilingue (FR/NL/DE/EN) pour une biscuiterie artisanale — marque fictive servant de démonstration. Paiement Stripe avec webhooks signés, abonnements, cartes-cadeaux, devis B2B et back-office ; double authentification TOTP, limitation de débit et suppression de compte conforme au RGPD. En ligne, couverte par 64 fichiers de tests.",
           "tech": [
-            "Java",
-            "Spring Security",
-            "OWASP Top 10"
+            "Next.js 15",
+            "TypeScript",
+            "PostgreSQL / Drizzle",
+            "Stripe",
+            "Auth.js"
+          ]
+        },
+        "clawkwerk": {
+          "name": "ClawkWerk",
+          "description": "Outil d'audit CyFun (CCB) / NIS2 écrit en Go : read-only, agentless, pensé pour les PME belges. Un diagnostic de conformité structuré, sans installation intrusive.",
+          "tech": [
+            "Go",
+            "CyFun / NIS2",
+            "CLI",
+            "Read-only"
+          ]
+        },
+        "pdfrunner": {
+          "name": "ConvertPDF",
+          "description": "Application de bureau Windows qui convertit des documents entre PDF, Word, Excel et HTML, et transcrit de l'audio en texte localement avec Whisper. Prototype assumé : l'architecture MVVM et la conversion fonctionnent, plusieurs fonctions annoncées dans l'interface restent à implémenter.",
+          "tech": [
+            "C#",
+            ".NET 10",
+            "WPF",
+            "MVVM",
+            "Whisper"
           ]
         }
-      }
+      },
+      "tabBuilt": "Déjà construit",
+      "tabInProgress": "En cours de construction",
+      "tabsAriaLabel": "Filtrer les projets par état d'avancement",
+      "liveLabel": "Voir le site en ligne"
     },
     "closing": {
       "text": "Je publie et je complète régulièrement mes projets.",
