@@ -6,23 +6,137 @@ import { Reveal } from "@/components/ui/Reveal/Reveal";
 import styles from "./SecurityScan.module.css";
 
 /**
- * Live "security headers" scan of THIS site — dogfooding. On reveal, it does a
- * same-origin HEAD request, reads the real response headers, and grades them.
- * Nothing is faked: the grade reflects whatever the server actually sends
- * (HSTS, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy,
- * Permissions-Policy). If a header were missing, the grade would drop — which
- * is the point: it proves the practitioner secures his own site.
+ * Scan en direct des en-têtes de sécurité de CE site — dogfooding. À l'entrée
+ * dans le champ, une requête HEAD de même origine lit les en-têtes réellement
+ * renvoyés, puis les note.
+ *
+ * Il ne teste PAS leur présence mais leur VALEUR. C'est toute la différence :
+ * `Strict-Transport-Security: max-age=1` et `Referrer-Policy: unsafe-url` sont
+ * présents et ne protègent de rien. Un scanner qui coche « présent » donne une
+ * fausse assurance — exactement ce qu'un auditeur reproche à un rapport.
+ *
+ * Chaque ligne affiche donc un verdict (conforme / faible / absent) ET l'extrait
+ * de la valeur lue, pour que le visiteur puisse la recouper dans ses propres
+ * outils de développement. Si la configuration se dégradait, la note baisserait
+ * toute seule.
  */
 
-type Check = { key: string; header: string; present: boolean };
+type Verdict = "strong" | "weak" | "absent";
+type Check = { key: string; header: string; verdict: Verdict; detail: string };
 
-const HEADERS: { header: string; label: string }[] = [
-  { header: "content-security-policy", label: "Content-Security-Policy" },
-  { header: "strict-transport-security", label: "Strict-Transport-Security" },
-  { header: "x-frame-options", label: "X-Frame-Options" },
-  { header: "x-content-type-options", label: "X-Content-Type-Options" },
-  { header: "referrer-policy", label: "Referrer-Policy" },
-  { header: "permissions-policy", label: "Permissions-Policy" },
+/**
+ * Chaque en-tête a son propre contrôle, parce que « présent » ne prouve rien :
+ * un `Strict-Transport-Security: max-age=1` ou un `Referrer-Policy: unsafe-url`
+ * sont présents et inutiles. C'est la valeur qui décide.
+ *
+ * `detail` renvoie un extrait de la valeur RÉELLEMENT lue, en notation
+ * technique — donc identique dans les trois langues, et vérifiable par le
+ * visiteur qui ouvre ses propres outils de développement.
+ */
+type Audit = (value: string) => { verdict: "strong" | "weak"; detail: string };
+
+const HEADERS: { header: string; label: string; audit: Audit }[] = [
+  {
+    header: "content-security-policy",
+    label: "Content-Security-Policy",
+    audit: (v) => {
+      const scriptSrc = /script-src([^;]*)/i.exec(v)?.[1] ?? "";
+      const parNonce = /'nonce-|'sha(256|384|512)-/.test(scriptSrc);
+      const strictDynamic = /'strict-dynamic'/.test(scriptSrc);
+      // 'unsafe-inline' est ignoré par le navigateur dès qu'un nonce ou un hash
+      // est présent : il n'est une faiblesse que sans eux.
+      const inlineActif = /'unsafe-inline'/.test(scriptSrc) && !parNonce;
+      const evalActif = /'unsafe-eval'/.test(scriptSrc);
+      const objet = /object-src\s+'none'/i.test(v);
+      const cadres = /frame-ancestors\s+('none'|'self')/i.test(v);
+      const base = /base-uri/i.test(v);
+      const jetons = [
+        parNonce ? "nonce" : null,
+        strictDynamic ? "strict-dynamic" : null,
+        objet ? "object-src 'none'" : null,
+        cadres ? "frame-ancestors" : null,
+        base ? "base-uri" : null,
+        inlineActif ? "unsafe-inline" : null,
+        evalActif ? "unsafe-eval" : null,
+      ].filter(Boolean);
+      return {
+        verdict: parNonce && !inlineActif && !evalActif && objet && cadres && base ? "strong" : "weak",
+        detail: jetons.join(" · "),
+      };
+    },
+  },
+  {
+    header: "strict-transport-security",
+    label: "Strict-Transport-Security",
+    audit: (v) => {
+      const maxAge = Number(/max-age=(\d+)/i.exec(v)?.[1] ?? 0);
+      const sousDomaines = /includeSubDomains/i.test(v);
+      // 6 mois : le seuil exigé pour figurer sur la liste de preload.
+      const SIX_MOIS = 15_768_000;
+      return {
+        verdict: maxAge >= SIX_MOIS && sousDomaines ? "strong" : "weak",
+        detail: [
+          `max-age=${maxAge}`,
+          sousDomaines ? "includeSubDomains" : null,
+          /preload/i.test(v) ? "preload" : null,
+        ]
+          .filter(Boolean)
+          .join(" · "),
+      };
+    },
+  },
+  {
+    header: "x-frame-options",
+    label: "X-Frame-Options",
+    audit: (v) => ({
+      verdict: /^(deny|sameorigin)$/i.test(v.trim()) ? "strong" : "weak",
+      detail: v.trim(),
+    }),
+  },
+  {
+    header: "x-content-type-options",
+    label: "X-Content-Type-Options",
+    audit: (v) => ({
+      verdict: /nosniff/i.test(v) ? "strong" : "weak",
+      detail: v.trim(),
+    }),
+  },
+  {
+    header: "referrer-policy",
+    label: "Referrer-Policy",
+    audit: (v) => {
+      // Les valeurs qui ne fuitent pas le chemin complet vers un tiers.
+      const sures = ["no-referrer", "same-origin", "strict-origin", "strict-origin-when-cross-origin"];
+      return {
+        verdict: sures.includes(v.trim().toLowerCase()) ? "strong" : "weak",
+        detail: v.trim(),
+      };
+    },
+  },
+  {
+    header: "permissions-policy",
+    label: "Permissions-Policy",
+    audit: (v) => {
+      const refusees = (v.match(/=\(\s*\)/g) ?? []).length;
+      return { verdict: refusees >= 4 ? "strong" : "weak", detail: `${refusees} × =()` };
+    },
+  },
+  {
+    header: "cross-origin-opener-policy",
+    label: "Cross-Origin-Opener-Policy",
+    audit: (v) => ({
+      verdict: /^same-origin(-allow-popups)?$/i.test(v.trim()) ? "strong" : "weak",
+      detail: v.trim(),
+    }),
+  },
+  {
+    header: "cross-origin-resource-policy",
+    label: "Cross-Origin-Resource-Policy",
+    audit: (v) => ({
+      verdict: /^(same-origin|same-site)$/i.test(v.trim()) ? "strong" : "weak",
+      detail: v.trim(),
+    }),
+  },
 ];
 
 function grade(passed: number, total: number): string {
@@ -79,12 +193,14 @@ export function SecurityScan() {
         headers = null;
       }
       if (cancelled) return;
-      const result: Check[] = HEADERS.map(({ header, label }) => ({
-        key: header,
-        header: label,
-        // If the fetch failed (headers === null) we can't verify — mark absent.
-        present: headers ? headers.get(header) !== null : false,
-      }));
+      const result: Check[] = HEADERS.map(({ header, label, audit }) => {
+        // Si la requête a échoué, on ne peut rien affirmer : on l'annonce comme
+        // absent plutôt que de laisser croire à un contrôle qui n'a pas eu lieu.
+        const value = headers?.get(header) ?? null;
+        if (value === null) return { key: header, header: label, verdict: "absent", detail: "" };
+        const { verdict, detail } = audit(value);
+        return { key: header, header: label, verdict, detail };
+      });
       setChecks(result);
     })();
     return () => {
@@ -103,7 +219,8 @@ export function SecurityScan() {
     return () => clearTimeout(id);
   }, [checks, revealed]);
 
-  const passed = checks.filter((c) => c.present).length;
+  // Seul « strong » compte : un en-tête présent mais mal réglé ne protège de rien.
+  const passed = checks.filter((c) => c.verdict === "strong").length;
   const total = checks.length || HEADERS.length;
   const finalGrade = done ? grade(passed, total) : null;
 
@@ -136,15 +253,29 @@ export function SecurityScan() {
               {checks.slice(0, revealed).map((c) => (
                 <li key={c.key} className={styles.row}>
                   <span
-                    className={c.present ? styles.ok : styles.ko}
+                    className={
+                      c.verdict === "strong"
+                        ? styles.ok
+                        : c.verdict === "weak"
+                          ? styles.warn
+                          : styles.ko
+                    }
                     aria-hidden="true"
                   >
-                    {c.present ? "✓" : "✕"}
+                    {c.verdict === "strong" ? "✓" : c.verdict === "weak" ? "!" : "✕"}
                   </span>
                   <span className={styles.hName}>{c.header}</span>
                   <span className={styles.hState}>
-                    {c.present ? t("present") : t("absent")}
+                    {c.verdict === "strong"
+                      ? t("strong")
+                      : c.verdict === "weak"
+                        ? t("weak")
+                        : t("absent")}
                   </span>
+                  {/* La valeur réellement lue : c'est elle qui rend le scan
+                      vérifiable, et elle est en notation technique donc
+                      identique dans les trois langues. */}
+                  {c.detail ? <span className={styles.hValue}>{c.detail}</span> : null}
                 </li>
               ))}
             </ul>

@@ -555,12 +555,13 @@
     "securityScan": {
       "eyebrow": "Bewijs — dogfooding",
       "title": "Ik beveilig mijn eigen site",
-      "lead": "Deze scan leest live de beveiligingsheaders die deze site terugstuurt. Niets is gesimuleerd: de score weerspiegelt de echte configuratie.",
-      "present": "aanwezig",
+      "lead": "Deze scan leest live de beveiligingsheaders die deze site terugstuurt en controleert hun WAARDE, niet alleen hun aanwezigheid: een slecht ingestelde header is een nutteloze header. Niets is nagebootst.",
+      "strong": "conform",
+      "weak": "zwak",
       "absent": "afwezig",
       "resultLabel": "Resultaat:",
       "score": "{passed}/{total} kritieke headers",
-      "foot": "Gecontroleerde headers: CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy. Beveiliging pas ik eerst op mijn eigen site toe."
+      "foot": "Acht headers gecontroleerd, waarde inbegrepen: CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, COOP en CORP. Beveiliging pas ik eerst op mijn eigen site toe."
     },
     "meta": {
       "title": "Jean-Baptiste Dhondt, Smidjan | Cloud-, netwerk-, infra- en webbeveiliging, Wallonië",

@@ -555,12 +555,13 @@
     "securityScan": {
       "eyebrow": "Preuve — dogfooding",
       "title": "Je sécurise mon propre site",
-      "lead": "Ce scan lit en direct les en-têtes de sécurité que ce site renvoie. Rien n'est simulé : la note reflète la vraie configuration.",
-      "present": "présent",
+      "lead": "Ce scan lit en direct les en-têtes de sécurité renvoyés par ce site et vérifie leur VALEUR, pas seulement leur présence : un en-tête mal réglé est un en-tête inutile. Rien n'est simulé.",
+      "strong": "conforme",
+      "weak": "faible",
       "absent": "absent",
       "resultLabel": "Résultat :",
       "score": "{passed}/{total} en-têtes critiques",
-      "foot": "En-têtes vérifiés : CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy. La sécurité, je l'applique d'abord sur mon propre site."
+      "foot": "Huit en-têtes vérifiés, valeur comprise : CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, COOP et CORP. La sécurité, je l'applique d'abord sur mon propre site."
     },
     "meta": {
       "title": "Jean-Baptiste Dhondt, Smidjan | Sécurité cloud, réseau, infra & web, Wallonie",

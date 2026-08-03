@@ -555,12 +555,13 @@
     "securityScan": {
       "eyebrow": "Proof — dogfooding",
       "title": "I secure my own site",
-      "lead": "This scan reads the security headers this site actually returns, live. Nothing is faked: the grade reflects the real configuration.",
-      "present": "present",
+      "lead": "This scan reads the security headers this site actually returns and checks their VALUE, not merely their presence: a badly configured header is a useless one. Nothing is simulated.",
+      "strong": "compliant",
+      "weak": "weak",
       "absent": "missing",
       "resultLabel": "Result:",
       "score": "{passed}/{total} critical headers",
-      "foot": "Headers checked: CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy. Security starts with my own site."
+      "foot": "Eight headers checked, values included: CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, COOP and CORP. Security is something I apply to my own site first."
     },
     "meta": {
       "title": "Jean-Baptiste Dhondt, Smidjan | Cloud, network, infra & web security, Wallonia",
