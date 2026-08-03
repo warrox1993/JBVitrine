@@ -54,10 +54,12 @@
 }
 
 .dash {
-  width: 8px;
+  width: 10px;
   height: 2px;
   flex: none;
-  background: var(--line);
+  /* --line est la teinte des séparateurs : à 2px de haut, elle disparaissait
+     sur le fond. --line-2 garde le trait discret tout en le rendant visible. */
+  background: var(--line-2);
   border-radius: var(--radius-full);
   transition:
     width 0.25s ease,
@@ -74,36 +76,34 @@
   background: var(--color-primary);
 }
 
+/* Tous les libellés sont lisibles AU REPOS : le rail doit s'annoncer de
+   lui-même. Auparavant seul celui de la section active s'affichait, les autres
+   se réduisant à un tiret de 8px — on ne découvrait le sommaire qu'en posant
+   la souris dessus, donc par hasard.
+   Le plafond de 150px est celui que la mise en page réserve en permanence
+   (--rail-lane) : un titre de section d'article, plus long, est abrégé par
+   l'ellipse et se lit en entier au survol. */
 .label {
-  opacity: 0;
-  max-width: 0;
+  max-width: 150px;
   overflow: hidden;
   white-space: nowrap;
-  /* Les libellés de l'accueil tiennent en un mot, mais un titre de section
-     d'article peut faire une phrase entière. Sans ellipse, il était tranché en
-     plein mot et donnait l'impression d'un affichage cassé. */
   text-overflow: ellipsis;
   transition:
     opacity 0.2s ease,
-    max-width 0.25s ease;
+    max-width 0.25s ease,
+    color 0.2s ease;
 }
 
-/* Idle state: only the active section's label stays legible — every
-   other item is a bare dot, keeping the rail unobtrusive.
-   Plafond volontairement bas : c'est cette largeur que la mise en page doit
-   réserver en permanence (--rail-lane). Un titre de section d'article, plus
-   long, est abrégé par l'ellipse et lisible en entier au survol. */
+/* La section en cours se détache du reste par la couleur et la graisse, pas
+   par la présence : c'est ce qui permet de lire le rail d'un coup d'œil. */
 .active .label {
-  opacity: 1;
-  max-width: 150px;
   color: var(--color-text);
+  font-weight: 700;
 }
 
-/* Hovering (or focusing) the rail reveals every label, dimmed, so the
-   whole outline can be scanned at a glance. */
+/* Au survol (ou au focus clavier), les libellés se déploient en entier. */
 .rail:hover .label,
 .rail:focus-within .label {
-  opacity: 0.6;
   max-width: 260px;
 }
 
@@ -118,11 +118,6 @@
   box-shadow: var(--shadow-lift);
   padding: 14px 16px;
   margin-left: -16px;
-}
-
-.rail:hover .active .label,
-.rail:focus-within .active .label {
-  opacity: 1;
 }
 
 .link:focus-visible {
