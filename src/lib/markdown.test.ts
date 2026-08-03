@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { markdownToHtml } from "./markdown";
+import { markdownToHtml, stripLeadingH1 } from "./markdown";
 
 /**
  * Ces tests verrouillent DEUX choses à la fois :
@@ -104,4 +104,35 @@ test("rend correctement le markdown de base (garde-fou marked)", () => {
 
 test("renvoie une chaîne vide sur entrée vide", () => {
   assert.equal(markdownToHtml(""), "");
+});
+
+/**
+ * stripLeadingH1 — les articles répétaient leur propre titre en tête de corps,
+ * en 80px alors que le vrai <h1> de la page en fait 44 : deux <h1> sur la même
+ * page, et un déséquilibre visuel à l'ouverture de chaque article.
+ */
+test("stripLeadingH1 retire le titre en tête et les blancs qui suivent", () => {
+  const out = stripLeadingH1("# Mon titre\n\n\nPremier paragraphe.\n");
+  assert.equal(out, "Premier paragraphe.\n");
+});
+
+test("stripLeadingH1 ne touche qu'au PREMIER H1 et laisse les autres titres", () => {
+  const out = stripLeadingH1("# Titre\n\n## Section {#section}\n\nTexte.\n# Autre\n");
+  assert.equal(out, "## Section {#section}\n\nTexte.\n# Autre\n");
+});
+
+test("stripLeadingH1 ignore les # à l'intérieur d'un bloc de code", () => {
+  // Un commentaire shell n'est pas un titre : le retirer casserait l'exemple.
+  const src = "```bash\n# installe le paquet\napt install nginx\n```\n\n# Vrai titre\n\nTexte.\n";
+  assert.equal(stripLeadingH1(src), "```bash\n# installe le paquet\napt install nginx\n```\n\nTexte.\n");
+});
+
+test("stripLeadingH1 laisse intact un contenu sans H1", () => {
+  const src = "## Direct en section\n\nTexte.\n";
+  assert.equal(stripLeadingH1(src), src);
+});
+
+test("stripLeadingH1 ne confond pas un ## avec un #", () => {
+  const src = "## Pas un H1\n\nTexte.\n";
+  assert.equal(stripLeadingH1(src), src);
 });

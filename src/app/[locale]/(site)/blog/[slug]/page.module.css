@@ -154,6 +154,15 @@
   display: grid;
   gap: 9px;
 }
+/* Un article aligne 10 à 16 sections : en une colonne, le sommaire occupait
+   un écran entier avant que la lecture ne commence. Deux colonnes le ramènent
+   à un bloc qu'on embrasse d'un coup d'œil. */
+@media (min-width: 760px) {
+  .toc ol {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 34px;
+  }
+}
 .toc a {
   font-size: 14.5px;
   font-weight: 600;
@@ -176,17 +185,34 @@
   max-width: 100%;
   height: auto;
 }
+/* Les sections n'étaient séparées que par une marge : sur un article de 10 à
+   16 sections, rien n'indiquait où l'une finissait et l'autre commençait, et
+   le texte défilait d'un bloc. Un filet en tête de section donne le rythme et
+   rend l'article scannable sans alourdir la page. */
 .prose :global(h2) {
-  font-size: 26px;
-  margin-top: 52px;
+  font-size: 29px;
+  margin-top: 64px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
   scroll-margin-top: 90px;
   color: var(--color-text);
   font-weight: 700;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
+  letter-spacing: -0.02em;
+  line-height: 1.22;
+  /* Un titre de section ne doit jamais rester seul en bas d'écran. */
+  break-after: avoid;
 }
 .prose :global(h2:first-child) {
   margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+/* Chapô : le premier paragraphe pose le sujet, il mérite d'être distinct du
+   corps sans devenir un second titre. */
+.prose > :global(p:first-of-type) {
+  font-size: 19.5px;
+  line-height: 1.68;
+  color: var(--navy-3);
 }
 .prose :global(h3) {
   font-size: 19px;
@@ -281,6 +307,17 @@
   overflow-x: auto;
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  margin: 30px 0;
+}
+/* Une table de comparaison a besoin de plus d'air que la colonne de lecture :
+   comprimée à 712 px, elle coupait les mots en plein milieu (« Reconnaiss /
+   ance internationa / le »). Sur grand écran elle déborde symétriquement de
+   la colonne de texte, sans jamais atteindre le rail de sections à gauche. */
+@media (min-width: 1240px) {
+  .prose :global(table) {
+    width: calc(100% + 160px);
+    margin-left: -80px;
+  }
 }
 .prose :global(thead th) {
   background: var(--bg-2);
@@ -299,6 +336,25 @@
   vertical-align: top;
   color: var(--slate);
   line-height: 1.55;
+}
+/* `.prose` autorise la coupure à l'intérieur des mots pour que les URLs
+   interminables ne débordent pas sur mobile. Hérité dans une cellule étroite,
+   cela découpait des mots ordinaires. Les cellules reviennent donc à une
+   césure normale : le tableau défile horizontalement plutôt que de mutiler
+   son texte. La largeur minimale des colonnes déclenche ce défilement au
+   lieu de les écraser. */
+.prose :global(th),
+.prose :global(td) {
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  min-width: 168px;
+}
+.prose :global(th:first-child),
+.prose :global(td:first-child) {
+  min-width: 140px;
+  font-weight: 600;
+  color: var(--color-text);
 }
 .prose :global(tbody tr:last-child td) {
   border-bottom: none;

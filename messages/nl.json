@@ -69,6 +69,12 @@
       "linkedinLabel": "Bekijk het LinkedIn-profiel",
       "nowLink": "Bekijk wat ik nu leer",
       "linkedinUrl": "https://www.linkedin.com/in/jean-baptistedhondt"
+    },
+    "rail": {
+      "apercu": "Overzicht",
+      "praticien": "De vakman",
+      "demarche": "Aanpak",
+      "contact": "Contact"
     }
   },
   "approche": {
@@ -383,6 +389,13 @@
       "reassure1": "Ik antwoord persoonlijk",
       "reassure2": "Eén aanspreekpunt: ikzelf",
       "reassure3": "Gegevens in België"
+    },
+    "rail": {
+      "apercu": "Overzicht",
+      "concerne": "Ben ik betrokken?",
+      "methode": "Methode",
+      "niveaux": "Niveaus",
+      "contact": "Contact"
     }
   },
   "contact": {
@@ -950,6 +963,11 @@
         "Eén aanspreekpunt: ikzelf",
         "Gegevens in België"
       ]
+    },
+    "rail": {
+      "apercu": "Overzicht",
+      "prestations": "Diensten",
+      "faq": "Vragen"
     }
   },
   "sharedui": {
@@ -1201,6 +1219,11 @@
       "text": "Ik ben onmiddellijk beschikbaar in cloud-, netwerk-, infra- of webbeveiliging. Laten we praten.",
       "action": "Contacteer mij",
       "actionCv": "Bekijk mijn cv"
+    },
+    "rail": {
+      "apercu": "Overzicht",
+      "enCours": "Op dit moment",
+      "feuilleDeRoute": "Roadmap"
     }
   },
   "cv": {
@@ -1753,6 +1776,12 @@
         "Volledige transparantie",
         "Gevestigd in Wallonië"
       ]
+    },
+    "rail": {
+      "apercu": "Overzicht",
+      "phare": "Vlaggenschip",
+      "realisations": "Realisaties",
+      "suite": "Vervolg"
     }
   }
 }

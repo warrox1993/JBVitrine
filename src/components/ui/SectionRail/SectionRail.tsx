@@ -15,11 +15,16 @@ export interface SectionRailProps {
 }
 
 /**
- * SectionRail — a slim sticky "spine" for the home page, fixed in the left
- * gutter on wide viewports only. Highlights the section currently in view
- * (IntersectionObserver scroll-spy) and smooth-scrolls to the target on
- * click, respecting `prefers-reduced-motion`. Hidden entirely below 1280px
- * so it never crowds narrower layouts.
+ * SectionRail — fine « colonne vertébrale » fixée dans la gouttière gauche sur
+ * grand écran. Elle surligne la section en cours de lecture (scroll-spy par
+ * IntersectionObserver) et défile en douceur vers la cible au clic, en
+ * respectant `prefers-reduced-motion`. Masquée sous 1280px pour ne jamais
+ * encombrer les mises en page étroites.
+ *
+ * Partagée par toutes les pages à sections : l'accueil, les pages de contenu
+ * et les articles du journal (où les entrées viennent de `tableOfContents`).
+ * Elle ne suppose rien de son contenu — seulement que chaque `id` correspond à
+ * un élément réellement présent dans le document.
  */
 export function SectionRail({ items, ariaLabel = "Sommaire" }: SectionRailProps) {
   const [activeId, setActiveId] = useState<string>(items[0]?.id ?? "");
@@ -75,7 +80,11 @@ export function SectionRail({ items, ariaLabel = "Sommaire" }: SectionRailProps)
   if (items.length === 0) return null;
 
   return (
-    <nav className={styles.rail} aria-label={ariaLabel}>
+    // `data-section-rail` est le point d'accroche des styles globaux : les
+    // classes des CSS Modules sont hachées, donc inutilisables depuis une
+    // feuille globale. C'est lui qui déclenche la réservation de la voie du
+    // rail dans globals.css.
+    <nav className={styles.rail} aria-label={ariaLabel} data-section-rail="">
       <ul className={styles.list}>
         {items.map((item) => {
           const isActive = activeId === item.id;
@@ -85,6 +94,10 @@ export function SectionRail({ items, ariaLabel = "Sommaire" }: SectionRailProps)
                 href={`#${item.id}`}
                 className={`${styles.link} ${isActive ? styles.active : ""}`}
                 aria-current={isActive ? "true" : undefined}
+                // Les titres de section d'article dépassent la largeur du rail
+                // et sont abrégés par une ellipse : l'infobulle native rend le
+                // libellé complet lisible sans élargir la colonne.
+                title={item.label}
                 onClick={(event) => handleClick(event, item.id)}
               >
                 <span className={styles.dash} aria-hidden="true" />

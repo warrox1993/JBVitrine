@@ -59,7 +59,7 @@ export async function Demarche() {
   return (
     <>
       {/* ===== Ma façon de travailler ===== */}
-      <Section variant="white">
+      <Section id="demarche" variant="white">
         <Reveal>
           <SectionHeading
             eyebrow={t("philosophy.eyebrow")}

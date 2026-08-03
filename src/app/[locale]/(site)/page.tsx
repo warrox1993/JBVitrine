@@ -20,7 +20,7 @@ import { CyfunTeaser } from "./_home/CyfunTeaser";
 import { Parcours } from "./_home/Parcours";
 import { ApprocheTeaser } from "./_home/ApprocheTeaser";
 import { SecurityScan } from "./_home/SecurityScan";
-import { SectionRail } from "./_home/SectionRail";
+import { SectionRail } from "@/components/ui/SectionRail/SectionRail";
 import { jsonLdSafe } from "@/lib/security/escape";
 
 export async function generateMetadata({

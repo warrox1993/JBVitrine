@@ -11,8 +11,9 @@ import { ArticleCard } from "@/components/shared/ArticleCard/ArticleCard";
 import { CTABox } from "@/components/shared/CTABox/CTABox";
 import { ArticleCoverSvg } from "@/components/features/blog/ArticleCoverSvg";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { SectionRail } from "@/components/ui/SectionRail/SectionRail";
 import { getAllArticles, getArticleBySlug, type BlogArticle } from "@/lib/blogActions";
-import { markdownToHtml } from "@/lib/markdown";
+import { markdownToHtml, stripLeadingH1 } from "@/lib/markdown";
 import { jsonLdSafe } from "@/lib/security/escape";
 import { authorSchema } from "@/lib/author-schema";
 import { siteUrl } from "@/config/site";
@@ -188,6 +189,19 @@ export default async function BlogArticlePage({ params }: Props) {
         }}
       />
 
+      {/* Même repère de lecture que sur l'accueil : les sections viennent du
+          sommaire de l'article, dont les identifiants sont exactement les
+          ancres posées sur les <h2> par le rendu markdown. */}
+      {article.tableOfContents && article.tableOfContents.length > 0 && (
+        <SectionRail
+          items={article.tableOfContents.map((entry) => ({
+            id: entry.id,
+            label: entry.title,
+          }))}
+          ariaLabel={t("article.tocAriaLabel")}
+        />
+      )}
+
       <div className={styles.breadcrumbBar}>
         <div className="wrap">
           <Breadcrumbs
@@ -272,7 +286,9 @@ export default async function BlogArticlePage({ params }: Props) {
             <div
               className={styles.prose}
               dangerouslySetInnerHTML={{
-                __html: markdownToHtml(article.content || ""),
+                // stripLeadingH1 : le markdown répète le titre de l'article en
+                // tête de corps, alors que la page le rend déjà dans son <h1>.
+                __html: markdownToHtml(stripLeadingH1(article.content || "")),
               }}
             />
 

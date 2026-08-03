@@ -69,6 +69,12 @@
       "linkedinLabel": "Voir le profil LinkedIn",
       "nowLink": "Voir ce que j'apprends en ce moment",
       "linkedinUrl": "https://www.linkedin.com/in/jean-baptistedhondt"
+    },
+    "rail": {
+      "apercu": "Aperçu",
+      "praticien": "Le praticien",
+      "demarche": "Démarche",
+      "contact": "Contact"
     }
   },
   "approche": {
@@ -383,6 +389,13 @@
       "reassure1": "Je réponds personnellement",
       "reassure2": "Un interlocuteur unique : moi",
       "reassure3": "Données en Belgique"
+    },
+    "rail": {
+      "apercu": "Vue d'ensemble",
+      "concerne": "Suis-je concerné ?",
+      "methode": "Méthode",
+      "niveaux": "Niveaux",
+      "contact": "Contact"
     }
   },
   "contact": {
@@ -950,6 +963,11 @@
         "Un interlocuteur unique : moi",
         "Données en Belgique"
       ]
+    },
+    "rail": {
+      "apercu": "Aperçu",
+      "prestations": "Prestations",
+      "faq": "Questions"
     }
   },
   "sharedui": {
@@ -1201,6 +1219,11 @@
       "text": "Je suis disponible immédiatement en sécurité cloud, réseau, infrastructure ou web. Parlons-en.",
       "action": "Me contacter",
       "actionCv": "Voir mon CV"
+    },
+    "rail": {
+      "apercu": "Aperçu",
+      "enCours": "En ce moment",
+      "feuilleDeRoute": "Feuille de route"
     }
   },
   "cv": {
@@ -1753,6 +1776,12 @@
         "Transparence totale",
         "Basé en Wallonie"
       ]
+    },
+    "rail": {
+      "apercu": "Aperçu",
+      "phare": "Projet phare",
+      "realisations": "Réalisations",
+      "suite": "La suite"
     }
   }
 }

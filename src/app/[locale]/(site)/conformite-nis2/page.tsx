@@ -14,6 +14,7 @@ import { CTABox } from "@/components/shared/CTABox/CTABox";
 import { CyFunTiers } from "@/components/shared/CyFunTiers/CyFunTiers";
 import { NIS2Checker } from "@/components/shared/NIS2Checker/NIS2Checker";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { SectionRail } from "@/components/ui/SectionRail/SectionRail";
 import styles from "./ConformiteNis2.module.css";
 
 export async function generateMetadata({
@@ -75,6 +76,16 @@ export default async function ConformiteNis2Page() {
 
   return (
     <>
+      <SectionRail
+        items={[
+          { id: "top", label: t("rail.apercu") },
+          { id: "suis-je-concerne", label: t("rail.concerne") },
+          { id: "methode-audit", label: t("rail.methode") },
+          { id: "niveaux", label: t("rail.niveaux") },
+          { id: "contact", label: t("rail.contact") },
+        ]}
+      />
+
       <Breadcrumbs
         items={[
           { label: tCommon("breadcrumb.home"), href: "/" },

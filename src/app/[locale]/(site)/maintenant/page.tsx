@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Section } from "@/components/ui/Section/Section";
+import { SectionRail } from "@/components/ui/SectionRail/SectionRail";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
@@ -49,7 +50,15 @@ export default async function MaintenantPage({
 
   return (
     <>
-      <section className={styles.hero}>
+      <SectionRail
+        items={[
+          { id: "apercu", label: t("rail.apercu") },
+          { id: "en-cours", label: t("rail.enCours") },
+          { id: "feuille-de-route", label: t("rail.feuilleDeRoute") },
+        ]}
+      />
+
+      <section id="apercu" className={styles.hero}>
         <div className="container">
           <Breadcrumbs
             items={[
@@ -71,7 +80,7 @@ export default async function MaintenantPage({
         </div>
       </section>
 
-      <Section variant="white">
+      <Section id="en-cours" variant="white">
         <div className={styles.cols}>
           <Reveal className={styles.col}>
             <h2 className={styles.colTitle}>{t("learning.title")}</h2>
@@ -132,7 +141,7 @@ export default async function MaintenantPage({
         </div>
       </Section>
 
-      <Section variant="tint">
+      <Section id="feuille-de-route" variant="tint">
         <Reveal>
           <SectionHeading
             eyebrow={t("roadmap.eyebrow")}

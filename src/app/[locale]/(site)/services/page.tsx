@@ -14,6 +14,7 @@ import { CTABox } from "@/components/shared/CTABox/CTABox";
 import { Faq } from "@/components/shared/Faq/Faq";
 import { ServiceCard } from "@/components/shared/ServiceCard/ServiceCard";
 import { TrustStrip } from "@/components/shared/TrustStrip/TrustStrip";
+import { SectionRail } from "@/components/ui/SectionRail/SectionRail";
 import styles from "./page.module.css";
 import { jsonLdSafe } from "@/lib/security/escape";
 
@@ -161,13 +162,21 @@ export default async function ServicesPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdSafe(breadcrumbJsonLd) }}
       />
+
+      <SectionRail
+        items={[
+          { id: "apercu", label: t("rail.apercu") },
+          { id: "prestations", label: t("rail.prestations") },
+          { id: "faq", label: t("rail.faq") },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdSafe(faqSchema) }}
       />
 
       {/* ===== Page hero ===== */}
-      <Section variant="white" className={styles.hero} contained={false}>
+      <Section variant="white" className={styles.hero} contained={false} id="apercu">
         <div className="container">
           <Breadcrumbs items={[{ label: t("breadcrumb.home"), href: "/" }, { label: t("breadcrumb.services") }]} />
           <Reveal>
@@ -205,7 +214,7 @@ export default async function ServicesPage({
       </Reveal>
 
       {/* ===== 4 pillars, lean grid ===== */}
-      <Section variant="white">
+      <Section variant="white" id="prestations">
         <Reveal>
           <SectionHeading
             eyebrow={t("pillarsIntro.eyebrow")}

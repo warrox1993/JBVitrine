@@ -11,6 +11,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Button } from "@/components/ui/Button/Button";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
+import { SectionRail } from "@/components/ui/SectionRail/SectionRail";
 import { CTABox } from "@/components/shared/CTABox/CTABox";
 import { Fondateur } from "./Fondateur";
 import { Demarche } from "./Demarche";
@@ -70,8 +71,17 @@ export default async function AgencePage({
           __html: jsonLdSafe({ "@context": "https://schema.org", ...authorSchema }),
         }}
       />
+      <SectionRail
+        items={[
+          { id: "apercu", label: t("rail.apercu") },
+          { id: "praticien", label: t("rail.praticien") },
+          { id: "demarche", label: t("rail.demarche") },
+          { id: "contact", label: t("rail.contact") },
+        ]}
+      />
+
       {/* ===== Page header ===== */}
-      <section className={styles.pageHero}>
+      <section id="apercu" className={styles.pageHero}>
         <Container className={styles.heroInner}>
           <div className={styles.heroGrid}>
             <Reveal as="div" className={styles.heroText}>

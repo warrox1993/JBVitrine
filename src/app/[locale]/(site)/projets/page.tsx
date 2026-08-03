@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs/Breadcrumbs";
 import { Eyebrow } from "@/components/ui/Eyebrow/Eyebrow";
 import { Section } from "@/components/ui/Section/Section";
+import { SectionRail } from "@/components/ui/SectionRail/SectionRail";
 import { SectionHeading } from "@/components/ui/SectionHeading/SectionHeading";
 import { Icon } from "@/components/ui/Icon/Icon";
 import { Reveal } from "@/components/ui/Reveal/Reveal";
@@ -103,8 +104,17 @@ export default async function ProjetsPage({
 
   return (
     <>
+      <SectionRail
+        items={[
+          { id: "apercu", label: t("rail.apercu") },
+          { id: "projet-phare", label: t("rail.phare") },
+          { id: "realisations", label: t("rail.realisations") },
+          { id: "suite", label: t("rail.suite") },
+        ]}
+      />
+
       {/* ===== Page hero ===== */}
-      <Section variant="white" className={styles.hero} contained={false}>
+      <Section id="apercu" variant="white" className={styles.hero} contained={false}>
         <div className="container">
           <Breadcrumbs
             items={[{ label: t("breadcrumb.home"), href: "/" }, { label: t("breadcrumb.current") }]}
@@ -134,7 +144,7 @@ export default async function ProjetsPage({
       </Section>
 
       {/* ===== Flagship: CyFun / NIS2 audit tool ===== */}
-      <Section variant="tint">
+      <Section id="projet-phare" variant="tint">
         <Reveal>
           <SectionHeading
             eyebrow={t("flagship.eyebrow")}
@@ -196,7 +206,7 @@ export default async function ProjetsPage({
       </Section>
 
       {/* ===== Other projects: case-study bands ===== */}
-      <Section variant="white">
+      <Section id="realisations" variant="white">
         <Reveal>
           <SectionHeading eyebrow={t("grid.eyebrow")} title={t("grid.title")} lead={t("grid.lead")} />
         </Reveal>
@@ -266,7 +276,7 @@ export default async function ProjetsPage({
       </Section>
 
       {/* ===== Closing: keep following on GitHub ===== */}
-      <Section variant="tint">
+      <Section id="suite" variant="tint">
         <Reveal className={styles.closing}>
           <p>{t("closing.text")}</p>
           <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className={styles.closingCta}>

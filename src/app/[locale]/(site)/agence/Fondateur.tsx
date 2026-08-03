@@ -48,7 +48,7 @@ export async function Fondateur() {
   }));
 
   return (
-    <section className={styles.founderSec}>
+    <section id="praticien" className={styles.founderSec}>
       <Container>
         <Reveal className={styles.secHead}>
           <Eyebrow className={styles.kickerMono}>{t("founder.eyebrow")}</Eyebrow>

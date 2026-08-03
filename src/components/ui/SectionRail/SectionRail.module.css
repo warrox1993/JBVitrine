@@ -1,0 +1,138 @@
+/* SectionRail — index de sections en fine « colonne vertébrale » collante.
+   Fixée dans la gouttière gauche, centrée verticalement, réduite à des tirets
+   tant qu'on ne la survole pas. Desktop uniquement (>=1280px) : entièrement
+   masquée sur les fenêtres plus étroites pour ne jamais gêner la pastille ⌘K
+   (en bas à gauche) ni le bandeau de stage (en bas à droite). */
+
+.rail {
+  display: none;
+  position: fixed;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40; /* sous l'en-tête, la palette et les modales */
+  /* Un article du journal peut aligner 16 sections, contre 7 sur l'accueil :
+     sans plafond, la liste déborderait de la fenêtre et les dernières entrées
+     deviendraient inatteignables. La barre de défilement est masquée — le rail
+     doit rester un trait discret, pas un panneau. */
+  max-height: 76vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  overscroll-behavior: contain;
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .rail {
+    display: block;
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 2px;
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--slate);
+  border-radius: var(--radius-full);
+}
+
+.dash {
+  width: 8px;
+  height: 2px;
+  flex: none;
+  background: var(--line);
+  border-radius: var(--radius-full);
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.link:hover:not(.active) .dash {
+  width: 14px;
+  background: var(--color-primary-strong);
+}
+
+.active .dash {
+  width: 20px;
+  background: var(--color-primary);
+}
+
+.label {
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  /* Les libellés de l'accueil tiennent en un mot, mais un titre de section
+     d'article peut faire une phrase entière. Sans ellipse, il était tranché en
+     plein mot et donnait l'impression d'un affichage cassé. */
+  text-overflow: ellipsis;
+  transition:
+    opacity 0.2s ease,
+    max-width 0.25s ease;
+}
+
+/* Idle state: only the active section's label stays legible — every
+   other item is a bare dot, keeping the rail unobtrusive.
+   Plafond volontairement bas : c'est cette largeur que la mise en page doit
+   réserver en permanence (--rail-lane). Un titre de section d'article, plus
+   long, est abrégé par l'ellipse et lisible en entier au survol. */
+.active .label {
+  opacity: 1;
+  max-width: 150px;
+  color: var(--color-text);
+}
+
+/* Hovering (or focusing) the rail reveals every label, dimmed, so the
+   whole outline can be scanned at a glance. */
+.rail:hover .label,
+.rail:focus-within .label {
+  opacity: 0.6;
+  max-width: 260px;
+}
+
+/* Déployé, le rail dépasse la voie qui lui est réservée et recouvre le texte.
+   C'est acceptable pour un geste volontaire et transitoire, à condition que
+   les libellés restent lisibles : on leur pose un fond. */
+.rail:hover,
+.rail:focus-within {
+  background: var(--color-surface-solid);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lift);
+  padding: 14px 16px;
+  margin-left: -16px;
+}
+
+.rail:hover .active .label,
+.rail:focus-within .active .label {
+  opacity: 1;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dash,
+  .label {
+    transition: none;
+  }
+}

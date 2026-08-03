@@ -53,6 +53,10 @@
   --maxw: 1180px;
   --section-y: 88px; /* 60px under 720px */
   --header-height: 64px; /* new short top-nav; retires the 80–140px clamp */
+  /* Largeur au repos du rail de sections, marge de respiration comprise :
+     24px de décalage + le tiret + le libellé actif (plafonné à 150px). Sert à
+     lui réserver sa voie quand la fenêtre n'en laisse pas d'elle-même. */
+  --rail-lane: 218px;
 }
 
 /* ============================================================
@@ -278,6 +282,29 @@ body {
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 0 24px;
+}
+
+/* ---- Voie du rail de sections -------------------------------------------
+   Le rail (SectionRail) est un calque fixe posé dans la gouttière gauche. Mais
+   `.container` monte jusqu'à --container-max (1440px) : sur une fenêtre de
+   1440, la gouttière est nulle et le rail s'imprimait par-dessus le texte —
+   constaté sur l'accueil (« Aperçu » à cheval sur le chapô), /projets,
+   /services, /agence et /conformite-nis2.
+
+   On réserve donc symétriquement la largeur qui MANQUE, et seulement celle-là :
+   dès que la fenêtre est assez large pour offrir la voie d'elle-même, le
+   `max()` retombe sur le retrait normal et la mise en page est inchangée.
+   Le sélecteur ne s'applique qu'aux pages qui portent réellement un rail. */
+@media (min-width: 1280px) {
+  body:has([data-section-rail]) .container {
+    padding-inline: max(
+      var(--container-padding),
+      calc(var(--rail-lane) - max(0px, (100vw - var(--container-max)) / 2))
+    );
+  }
+  body:has([data-section-rail]) .wrap {
+    padding-inline: max(24px, calc(var(--rail-lane) - max(0px, (100vw - var(--maxw)) / 2)));
+  }
 }
 
 /* Inline emphasis: highlight a key word in a heading with the brand orange.

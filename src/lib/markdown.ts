@@ -58,6 +58,44 @@ const renderer = {
 marked.use({ renderer });
 
 /**
+ * Retire le premier titre de niveau 1 d'un article.
+ *
+ * Chaque article du journal commence par `# Son titre`, qui est aussi rendu
+ * par la page dans son `<h1>`. Sans ce filtre, le titre s'affiche deux fois :
+ * une fois dans l'en-tête, une seconde en tête du corps et dans une taille
+ * plus grande que le vrai titre — c'est ce qui déséquilibrait visuellement les
+ * articles, et cela produisait deux `<h1>` sur la même page.
+ *
+ * Le markdown source garde son `# Titre` : c'est lui qui documente l'article,
+ * et le test de contenu continue d'exiger exactement un H1. Seul le rendu le
+ * retire. Les `#` à l'intérieur d'un bloc de code (commentaires shell) ne sont
+ * pas des titres et sont donc ignorés. Seule la syntaxe ATX (`# Titre`) est
+ * traitée : c'est la seule utilisée, et un titre « souligné » se reconnaît sur
+ * deux lignes, ce que ce filtre volontairement ne tente pas de deviner.
+ */
+export function stripLeadingH1(markdown: string): string {
+  const lines = markdown.split("\n");
+  let inCode = false;
+
+  for (let i = 0; i < lines.length; i++) {
+    if (/^\s*```/.test(lines[i])) {
+      inCode = !inCode;
+      continue;
+    }
+    if (inCode) continue;
+    if (!/^#\s+\S/.test(lines[i])) continue;
+
+    // Le titre trouvé : on l'enlève, ainsi que les lignes vides qui le
+    // suivaient, pour ne pas laisser un blanc en tête de corps d'article.
+    let j = i + 1;
+    while (j < lines.length && lines[j].trim() === "") j++;
+    return [...lines.slice(0, i), ...lines.slice(j)].join("\n");
+  }
+
+  return markdown;
+}
+
+/**
  * Convert Markdown to HTML
  */
 export function markdownToHtml(markdown: string): string {

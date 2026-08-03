@@ -69,6 +69,12 @@
       "linkedinLabel": "View the LinkedIn profile",
       "nowLink": "See what I'm learning right now",
       "linkedinUrl": "https://www.linkedin.com/in/jean-baptistedhondt"
+    },
+    "rail": {
+      "apercu": "Overview",
+      "praticien": "The practitioner",
+      "demarche": "Approach",
+      "contact": "Contact"
     }
   },
   "approche": {
@@ -383,6 +389,13 @@
       "reassure1": "I reply personally",
       "reassure2": "One point of contact: me",
       "reassure3": "Data in Belgium"
+    },
+    "rail": {
+      "apercu": "Overview",
+      "concerne": "Am I concerned?",
+      "methode": "Method",
+      "niveaux": "Levels",
+      "contact": "Contact"
     }
   },
   "contact": {
@@ -950,6 +963,11 @@
         "One point of contact: me",
         "Data in Belgium"
       ]
+    },
+    "rail": {
+      "apercu": "Overview",
+      "prestations": "Services",
+      "faq": "Questions"
     }
   },
   "sharedui": {
@@ -1201,6 +1219,11 @@
       "text": "I'm available immediately in cloud, network, infrastructure or web security. Let's talk.",
       "action": "Contact me",
       "actionCv": "View my CV"
+    },
+    "rail": {
+      "apercu": "Overview",
+      "enCours": "Right now",
+      "feuilleDeRoute": "Roadmap"
     }
   },
   "cv": {
@@ -1753,6 +1776,12 @@
         "Full transparency",
         "Based in Wallonia"
       ]
+    },
+    "rail": {
+      "apercu": "Overview",
+      "phare": "Flagship",
+      "realisations": "Work",
+      "suite": "What's next"
     }
   }
 }
